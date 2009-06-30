@@ -6,6 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
+import jetbrains.mps.checkedName.PropertyReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class PreferencePage_Behavior {
 
@@ -16,6 +20,16 @@ public class PreferencePage_Behavior {
     String componentName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "name");
     String pageName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name"));
     return componentName + "_" + pageName + "_PreferencesPage";
+  }
+
+  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
+    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
+    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "name"));
+    return props;
+  }
+
+  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
+    return "Fix Name";
   }
 
 }

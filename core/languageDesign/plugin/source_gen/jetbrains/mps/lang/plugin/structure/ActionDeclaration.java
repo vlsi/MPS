@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ActionDeclaration extends BaseConcept implements IClassifier {
+public class ActionDeclaration extends BaseConcept implements IClassifier, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionDeclaration";
   public static final String ICON_PATH = "iconPath";
   public static final String CAPTION = "caption";

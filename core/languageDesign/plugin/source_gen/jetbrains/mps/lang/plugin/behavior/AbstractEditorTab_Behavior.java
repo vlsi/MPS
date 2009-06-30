@@ -6,6 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.checkedName.PropertyReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class AbstractEditorTab_Behavior {
 
@@ -18,6 +22,13 @@ public class AbstractEditorTab_Behavior {
 
   public static String call_getGeneratedClassFQName_1213877534658(SNode thisNode) {
     return SNodeOperations.getModel(thisNode).getLongName() + "." + AbstractEditorTab_Behavior.call_getGeneratedName_1213877534648(thisNode);
+  }
+
+  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
+    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
+    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "name"));
+    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "emptyCaption"));
+    return props;
   }
 
 }

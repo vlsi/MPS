@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ActionGroupDeclaration extends BaseConcept implements INamedConcept, ActionGroupMember, IClassifier {
+public class ActionGroupDeclaration extends BaseConcept implements INamedConcept, ActionGroupMember, IClassifier, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration";
   public static final String CAPTION = "caption";
   public static final String MNEMONIC = "mnemonic";

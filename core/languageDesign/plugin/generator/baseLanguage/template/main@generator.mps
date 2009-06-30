@@ -11307,6 +11307,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="5003188907304823207">
     <property name="name" value="mc_CheckedName" />
+    <property name="package" value="CheckedName" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5003188907304823208">
       <link role="applicableConcept" targetNodeId="1.1628770029971140534" resolveInfo="PropertyRefExpression" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5003188907304823209">

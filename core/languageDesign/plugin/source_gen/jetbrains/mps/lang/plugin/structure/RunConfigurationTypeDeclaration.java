@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RunConfigurationTypeDeclaration extends BaseConcept implements INamedConcept {
+public class RunConfigurationTypeDeclaration extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration";
   public static final String ICON_PATH = "iconPath";
   public static final String CAPTION = "caption";

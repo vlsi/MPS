@@ -26,6 +26,10 @@ public class ICheckedNamePolicy_Behavior {
     return ListSequence.fromList(new ArrayList<PropertyReference>());
   }
 
+  public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {
+    return "Fix Naming Issues";
+  }
+
   public static List<SNode> call_getDescendantsToCheck_1628770029971140562(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), "virtual_getDescendantsToCheck_1628770029971140562", PARAMETERS_1628770029971140562);
   }

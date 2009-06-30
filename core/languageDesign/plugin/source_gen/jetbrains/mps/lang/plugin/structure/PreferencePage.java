@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PreferencePage extends BaseConcept implements INamedConcept {
+public class PreferencePage extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.PreferencePage";
   public static final String ICON = "icon";
   public static final String NAME = "name";

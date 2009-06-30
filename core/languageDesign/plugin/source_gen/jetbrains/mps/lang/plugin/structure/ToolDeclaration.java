@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ToolDeclaration extends BaseConcept implements IClassifier {
+public class ToolDeclaration extends BaseConcept implements IClassifier, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
   public static final String CAPTION = "caption";
   public static final String NUMBER = "number";

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractEditorTab extends BaseConcept implements INamedConcept {
+public class AbstractEditorTab extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.AbstractEditorTab";
   public static final String EMPTY_CAPTION = "emptyCaption";
   public static final String NAME = "name";

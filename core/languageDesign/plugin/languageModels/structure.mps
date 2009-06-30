@@ -551,6 +551,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205850901791">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305148998">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206112950172">
       <property name="value" value="Action" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
@@ -616,6 +619,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1208976595346">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305280019">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206113005758">
       <property name="value" value="Tool" />
@@ -702,6 +708,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1207490795355">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305156385">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204989879672">
       <property name="value" value="Group" />
@@ -825,6 +834,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203852222501">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305272346">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1203851854402">
@@ -1736,6 +1748,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210686769921">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305175518">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1210686783787">
       <property name="name" value="icon" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
@@ -2634,6 +2649,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7035278950562850753">
       <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305278360">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7035278950562851062">
     <property name="package" value="RunConfigs" />
@@ -2686,6 +2704,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8294332872984075963">
       <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305279260">
+      <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="678887849223472871">
