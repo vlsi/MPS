@@ -8,10 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
 import jetbrains.mps.checkedName.PropertyReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class ActionDeclaration_Behavior {
 
@@ -32,10 +29,8 @@ public class ActionDeclaration_Behavior {
     return type;
   }
 
-  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
-    List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
-    ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "caption"));
-    return props;
+  public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
+    return new PropertyReference(thisNode, "caption");
   }
 
   public static String virtual_getFixIntentionCaption_1628770029971140579(SNode thisNode) {

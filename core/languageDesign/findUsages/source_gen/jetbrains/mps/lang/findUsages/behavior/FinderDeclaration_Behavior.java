@@ -9,10 +9,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.checkedName.PropertyReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class FinderDeclaration_Behavior {
 
@@ -35,10 +32,8 @@ public class FinderDeclaration_Behavior {
     return "Fix Finder Name";
   }
 
-  public static List<PropertyReference> virtual_getPropertiesToCheck_1628770029971140570(SNode thisNode) {
-    List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
-    ListSequence.fromList(result).addElement(new PropertyReference(thisNode, "description"));
-    return result;
+  public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
+    return new PropertyReference(thisNode, "description");
   }
 
 }
