@@ -215,7 +215,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1205588512401(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ExtensionPoint"), "name");
+    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GroupAnchor"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1205683930662(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -317,7 +317,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1214315533895(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ExtensionPoint"), "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GroupAnchor"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1215266495353(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -434,7 +434,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1227013726776(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ExtensionPoint"), "name");
+    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GroupAnchor"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1227013726786(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -480,7 +480,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1228241175505(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "point", false), "jetbrains.mps.lang.plugin.structure.ExtensionPoint"), "name");
+    return "LABEL_ID_" + SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "point", false), "jetbrains.mps.lang.plugin.structure.GroupAnchor"), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1228327768637(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -686,7 +686,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1205588393902(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ExtensionPoint");
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GroupAnchor");
   }
 
   public static boolean ifMacro_Condition_1205681795854(final IOperationContext operationContext, final IfMacroContext _context) {

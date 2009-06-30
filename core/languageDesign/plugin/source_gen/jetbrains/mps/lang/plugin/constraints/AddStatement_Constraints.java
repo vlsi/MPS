@@ -14,7 +14,7 @@ public class AddStatement_Constraints {
   }
 
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ExtensionPoint"));
+    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) && !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GroupAnchor"));
   }
 
 }

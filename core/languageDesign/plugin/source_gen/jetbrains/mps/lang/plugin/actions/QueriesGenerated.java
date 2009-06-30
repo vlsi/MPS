@@ -133,7 +133,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExtensionPoint");
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupAnchor");
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
       ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
