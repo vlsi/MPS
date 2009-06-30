@@ -2990,13 +2990,17 @@
                           <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1226410564235" />
                         </node>
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226410564236">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226410564237">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226410564238">
-                              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226410564239">
-                                <link role="applicableNode" targetNodeId="1226410564230" resolveInfo="sequenceType" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226410564240">
-                                <link role="link" targetNodeId="8.1151689745422" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8468166043514828848">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8468166043514828849">
+                              <link role="baseMethodDeclaration" targetNodeId="2v.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                              <link role="classConcept" targetNodeId="2v.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8468166043514828850">
+                                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8468166043514828851">
+                                  <link role="applicableNode" targetNodeId="1226410564230" resolveInfo="sequenceType" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8468166043514828852">
+                                  <link role="link" targetNodeId="8.1151689745422" />
+                                </node>
                               </node>
                             </node>
                           </node>
@@ -3298,13 +3302,17 @@
                             <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1226410635752" />
                           </node>
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226410635753">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226410635754">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226410635755">
-                                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226410635756">
-                                  <link role="applicableNode" targetNodeId="1226410635747" resolveInfo="sequenceType" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1226410635757">
-                                  <link role="link" targetNodeId="8.1151689745422" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8468166043514828840">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8468166043514828843">
+                                <link role="baseMethodDeclaration" targetNodeId="2v.1201536134312" resolveInfo="getTypeCoercedToClassifierType" />
+                                <link role="classConcept" targetNodeId="2v.1201536121399" resolveInfo="ClassifierTypeUtil" />
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8468166043514828844">
+                                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="8468166043514828845">
+                                    <link role="applicableNode" targetNodeId="1226410635747" resolveInfo="sequenceType" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8468166043514828846">
+                                    <link role="link" targetNodeId="8.1151689745422" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

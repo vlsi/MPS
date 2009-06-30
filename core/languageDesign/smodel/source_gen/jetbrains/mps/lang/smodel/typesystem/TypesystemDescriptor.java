@@ -413,6 +413,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SEnumMemberType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       ComparisonRule_Runtime comparisonRule = new linkAccessTypesAreComparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }

@@ -951,7 +951,7 @@ public class QueriesGenerated {
       IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_1);
       if (coercedNode_1 != null) {
-        return SLinkOperations.getTarget(coercedNode_1, "elementType", true);
+        return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_1, "elementType", true));
       } else
       {
       }
@@ -968,7 +968,7 @@ public class QueriesGenerated {
       IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_2);
       if (coercedNode_2 != null) {
-        return SLinkOperations.getTarget(coercedNode_2, "elementType", true);
+        return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_2, "elementType", true));
       } else
       {
       }
