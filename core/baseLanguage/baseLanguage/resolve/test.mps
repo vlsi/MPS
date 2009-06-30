@@ -64,9 +64,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3546978053677359453" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3546978053677359454">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3546978053677359472">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1915986058312142722">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1915986058312142745">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3546978053677359473" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1915986058312142726">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1915986058312142749">
               <link role="fieldDeclaration" targetNodeId="3546978053677359442" resolveInfo="myName" />
             </node>
           </node>
@@ -78,6 +78,11 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1915986058312142732">
               <property name="value" value="3" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1915986058312142751">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1915986058312142752">
+            <link role="variableDeclaration" targetNodeId="1915986058312142729" resolveInfo="a" />
           </node>
         </node>
       </node>
