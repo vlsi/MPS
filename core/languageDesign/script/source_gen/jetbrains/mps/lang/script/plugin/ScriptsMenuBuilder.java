@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Comparator;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.action.BaseAction;
 
 public class ScriptsMenuBuilder {
 
@@ -53,8 +52,8 @@ public class ScriptsMenuBuilder {
     return byLanguageGroup;
   }
 
-  public BaseAction create_MoreAction() {
-    return new RunMigrationScriptsAction(this.allScripts, "More...", this.applyToSelection);
+  public List<MigrationScript> getAllScripts() {
+    return this.allScripts;
   }
 
 }

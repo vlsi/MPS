@@ -24,6 +24,32 @@ import java.util.*;
 
 
 public class ScriptsActionGroupHelper {
+  private static final Set<String> ourSelectedScripts = new HashSet<String>();
+
+  public static Set<String> getSelectedScripts() {
+    return ourSelectedScripts;
+  }
+
+  public static void sortScripts(List<MigrationScript> scripts) {
+    // sort by build, then by category
+    Collections.sort(scripts, new Comparator<MigrationScript>() {
+      public int compare(MigrationScript s1, MigrationScript s2) {
+        String fromBuild1 = s1.getMigrationFromBuild();
+        String fromBuild2 = s2.getMigrationFromBuild();
+        if (fromBuild1 == null) fromBuild1 = "";
+        if (fromBuild2 == null) fromBuild2 = "";
+        if (fromBuild1.compareTo(fromBuild2) == 0) {
+          String cat1 = s1.getCategory();
+          String cat2 = s2.getCategory();
+          if (cat1 == null) cat1 = "";
+          if (cat2 == null) cat2 = "";
+          return cat1.compareTo(cat2);
+        }
+        return fromBuild1.compareTo(fromBuild2);
+      }
+    });
+  }
+
   public static List<MigrationScript> getMigrationScripts(List<Language> languages) {
     List<MigrationScript> migrationScripts = new ArrayList<MigrationScript>();
     for (Language language : languages) {

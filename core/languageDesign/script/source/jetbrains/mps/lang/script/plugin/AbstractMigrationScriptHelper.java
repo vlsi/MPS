@@ -29,25 +29,14 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Igor Alshannikov
- * Mar 25, 2008
- */
-public abstract class AbstractMigrationScriptAction extends BaseAction {
-  private boolean myApplyToSelection;
-
-  public AbstractMigrationScriptAction(String name, boolean applyToSelection) {
-    super(name);
-    myApplyToSelection = applyToSelection;
-  }
-
-  protected void doRunScripts(List<MigrationScript> scripts, IScope scope, IOperationContext context) {
+public abstract class AbstractMigrationScriptHelper {
+  public static void doRunScripts(List<MigrationScript> scripts, IScope scope, IOperationContext context) {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-  protected IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules) {
+  public static IScope createMigrationScope(List<SModelDescriptor> models, List<IModule> modules,boolean applyToSelection) {
     MigrationScope migrationScope = new MigrationScope();
-    if (myApplyToSelection) {
+    if (applyToSelection) {
       for (SModelDescriptor model : models) {
         migrationScope.addModel(model);
       }

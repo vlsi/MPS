@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,27 +32,29 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Apr 24, 2007
  */
-public class RunMigrationScriptAction extends AbstractMigrationScriptAction {
+public class RunMigrationScriptAction extends BaseAction {
   private MigrationScript myScript;
+  private boolean myApplyToSelection;
   private Project myProject;
   private IOperationContext myContext;
   private List<SModelDescriptor> myModels;
   private List<IModule> myModules;
 
   public RunMigrationScriptAction(MigrationScript script, String name, boolean applyToSelection) {
-    super(name, applyToSelection);
+    super(name);
     myScript = script;
+    myApplyToSelection = applyToSelection;
   }
 
   protected void doExecute(AnActionEvent e) {
-    IScope migrationScope = createMigrationScope(myModels, myModules);
+    IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules,myApplyToSelection);
     if (migrationScope.getModelDescriptors().isEmpty()) {
       return;
     }
 
     List<MigrationScript> scripts = new ArrayList<MigrationScript>();
     scripts.add(myScript);
-    doRunScripts(scripts, migrationScope, myContext);
+    AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
   }
 
   protected boolean collectActionData(AnActionEvent e) {

@@ -55,7 +55,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       this.add(menuBuilder.create_ByBuildPopup());
       this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      this.add(menuBuilder.create_MoreAction());
+      this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
