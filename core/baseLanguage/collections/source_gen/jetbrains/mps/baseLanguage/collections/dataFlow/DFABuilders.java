@@ -43,6 +43,17 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.JoinOperation", new JoinOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", new InsertElementOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", new ListElementAccessExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", new ContainsKeyOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", new ContainsValueOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MapEntry", new MapEntry_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MapInitializer", new MapInitializer_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", new HashMapCreator_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", new MapOperationExpression_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", new MapRemoveOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", new PutAllOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", new ChunkOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", new ComparatorSortOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.SortOperation", new SortOperation_DataFlow());
   }
 
 }
