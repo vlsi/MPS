@@ -29,4 +29,6 @@ public final class Test extends StateMachineTest {
     assertEquals("unlockedPanel", getController().getCurrentState().getName());
   }
 
+  
+
 }
