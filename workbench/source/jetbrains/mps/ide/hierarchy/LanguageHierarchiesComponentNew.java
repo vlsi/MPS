@@ -236,8 +236,8 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
             newFrontier.add(ancestor);
             ConceptContainer parentConceptContainer = processed.get(ancestor);
             if (parentConceptContainer == null) {
-              parentConceptContainer = new ConceptContainer(concept, this, concept.getModel() != structureModel);
-              processed.put(concept, parentConceptContainer);
+              parentConceptContainer = new ConceptContainer(ancestor, this, concept.getModel() != structureModel);
+              processed.put(ancestor, parentConceptContainer);
             }
             parentConceptContainer.addChild(descConceptContainer);
           }
