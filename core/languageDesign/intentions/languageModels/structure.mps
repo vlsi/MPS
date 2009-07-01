@@ -212,9 +212,6 @@
       <property name="value" value="parameter" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240317878395">
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1199874763892" resolveInfo="usesParameterObject" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1240316330895">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1216468774225" resolveInfo="showName" />
     </node>
