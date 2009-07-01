@@ -13,25 +13,50 @@ public class TraversalAxisUtil {
   public static String getOperationSign(TraversalAxis axis) {
     switch (axis) {
       case ANCESTORS:
-        return "^^";
+        return "\\\\ancestors";
       case CHILDREN:
         return "\\";
       case DESCENDANTS:
-        return "\\\\";
+        return "\\\\descendants";
       case SELF_DESCENDANTS:
-        return "\\\\.";
+        return "\\\\descendants+";
       case PRECEDING_SIBLINGS:
-        return "<<";
+        return "\\\\preceding";
       case PRECEDING_SIBLINGS_SELF:
-        return "<<.";
+        return "\\\\preceding+";
       case FOLLOWING_SIBLINGS:
-        return ">>";
+        return "\\\\following";
       case SELF_FOLLOWING_SIBLINGS:
-        return ">>.";
+        return "\\\\following+";
       case SELF_ANCESTORS:
-        return "^^.";
+        return "\\\\ancestors+";
       default:
         return "???";
+    }
+  }
+
+  public static boolean isAbbreviated(TraversalAxis axis) {
+    switch (axis) {
+      case CHILDREN:
+        return true;
+      case DESCENDANTS:
+        // fall through
+      case ANCESTORS:
+        // fall through
+      case PRECEDING_SIBLINGS:
+        // fall through
+      case FOLLOWING_SIBLINGS:
+        // fall through
+      case SELF_DESCENDANTS:
+        // fall through
+      case SELF_ANCESTORS:
+        // fall through
+      case PRECEDING_SIBLINGS_SELF:
+        // fall through
+      case SELF_FOLLOWING_SIBLINGS:
+        return false;
+      default:
+        return false;
     }
   }
 

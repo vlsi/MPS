@@ -11,7 +11,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -32,6 +32,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <maxImportIndex value="21" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)" version="-1" />
@@ -483,7 +484,7 @@
                     <link role="link" targetNodeId="6.1071489727083" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876805071">
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876805071">
                   <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876805072">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876805073">
                       <property name="name" value="it" />
@@ -512,7 +513,7 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1227876794363">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1227876794363">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876794364">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876794365">
                     <property name="name" value="it" />
@@ -567,7 +568,7 @@
                       <link role="link" targetNodeId="6.1071489727083" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876801383">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876801383">
                     <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876801384">
                       <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876801385">
                         <property name="name" value="it" />
@@ -704,7 +705,7 @@
                     <link role="link" targetNodeId="6.1071489727083" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876799156">
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876799156">
                   <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876799157">
                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876799158">
                       <property name="name" value="it" />
@@ -746,7 +747,7 @@
                   </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1227876794646">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1227876794646">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876794647">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876794648">
                     <property name="name" value="it" />
@@ -801,7 +802,7 @@
                       <link role="link" targetNodeId="6.1071489727083" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876800331">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876800331">
                     <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876800332">
                       <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876800333">
                         <property name="name" value="it" />
@@ -1242,9 +1243,27 @@
             <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466849571">
               <property name="axis" value="CHILDREN" />
               <link role="usedFeature" targetNodeId="4145095496975344219" resolveInfo="link" />
-              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466853197">
+              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="7098165822328194787">
                 <property name="name" value="intfc" />
                 <link role="paramRef" targetNodeId="6.1169127628841" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822327402120">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822327402122">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822327402125">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822327402121">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822327402127">
+              <property name="axis" value="CHILDREN" />
+              <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
+              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="7098165822327402128">
+                <property name="paramValue" value="implements" />
+                <property name="name" value="implements" />
               </node>
             </node>
           </node>
@@ -1253,7 +1272,7 @@
           <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1199388480570">
             <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1199388480591">
               <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199388473313">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822327879145">
                 <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
               </node>
             </node>
@@ -1261,6 +1280,76 @@
               <property name="axis" value="ANCESTORS" />
             </node>
           </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822327680384">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822327680680">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822327680683">
+              <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822328906898">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822327680685">
+              <property name="axis" value="SELF_ANCESTORS" />
+              <link role="usedFeature" targetNodeId="4145095496975144451" resolveInfo="allChildren" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822327879147">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822327879442">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822327879445">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822327879148">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822327879447">
+              <property name="axis" value="SELF_FOLLOWING_SIBLINGS" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822328906900">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822328907201">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822328907204">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822328906901">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822328907206">
+              <property name="axis" value="CHILDREN" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822328907258">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822328907260">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822328907263">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822328907259">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822328907265">
+              <property name="axis" value="CHILDREN" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7098165822329084456">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="7098165822329084751">
+            <node role="operand" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="7098165822329084754">
+              <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7098165822329084457">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="7098165822329084756">
+              <property name="axis" value="CHILDREN" />
+              <link role="usedFeature" targetNodeId="4145095496975144451" resolveInfo="allChildren" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328155743">
+          <property name="value" value="!@#$&amp;" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184773021187">
@@ -1439,7 +1528,7 @@
                   <link role="link" targetNodeId="6.1071489727083" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876802909">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876802909">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876802910">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876802911">
                     <property name="name" value="it" />
@@ -1708,7 +1797,7 @@
                   <link role="link" targetNodeId="6.1071489727083" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227876796142">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227876796142">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227876796143">
                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1227876796144">
                     <property name="name" value="it" />

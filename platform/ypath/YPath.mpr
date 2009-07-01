@@ -143,5 +143,8 @@
     <mapping directory="/Volumes/Sparky/Development/MPS-workspace" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
+  <UsedPathMacros>
+    <macro name="panacea" />
+  </UsedPathMacros>
 </project>
 

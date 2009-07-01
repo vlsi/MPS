@@ -17,7 +17,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
@@ -44,7 +44,7 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895905b2(jetbrains.mps.ypath.generator.baseLanguage.template.helper)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c895905a6(jetbrains.mps.ypath.actions)" version="-1" />
@@ -794,7 +794,7 @@
                                                   </node>
                                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1225096837551" />
                                                 </node>
-                                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096843065">
+                                                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096843065">
                                                   <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096843066">
                                                     <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096843067">
                                                       <property name="name" value="it" />
@@ -1035,7 +1035,7 @@
                                             </node>
                                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1225096837653" />
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096842857">
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096842857">
                                             <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096842858">
                                               <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096842859">
                                                 <property name="name" value="it" />
@@ -3208,7 +3208,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1225096843434" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096843435">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096843435">
                                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096843436">
                                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096843437">
                                     <property name="name" value="it" />
@@ -3399,7 +3399,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1465573729715750653" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1465573729715750654">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1465573729715750654">
                                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1465573729715750655">
                                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1465573729715750656">
                                     <property name="name" value="it" />
@@ -3650,7 +3650,7 @@
                                 </node>
                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1225096836950" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096843116">
+                              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096843116">
                                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096843117">
                                   <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096843118">
                                     <property name="name" value="it" />
@@ -3911,8 +3911,8 @@
                                           <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode" id="1225096837088" />
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1225096837089">
                                             <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1225096837090">
-                                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1225096837091">
-                                                <link role="conceptDeclaration" targetNodeId="5.1152141311721" resolveInfo="SequenceCreatorWithSupplier" />
+                                              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8648997073529561746">
+                                                <link role="conceptDeclaration" targetNodeId="4.1076505808687" resolveInfo="WhileStatement" />
                                               </node>
                                             </node>
                                             <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="1225096837092" />
@@ -3920,7 +3920,7 @@
                                         </node>
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1225096837093" />
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096842906">
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096842906">
                                         <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096842907">
                                           <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096842908">
                                             <property name="name" value="it" />
@@ -5042,7 +5042,7 @@
                                               </node>
                                             </node>
                                           </node>
-                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096842884">
+                                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096842884">
                                             <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096842885">
                                               <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096842886">
                                                 <property name="name" value="it" />
@@ -5288,7 +5288,7 @@
                                                 </node>
                                               </node>
                                             </node>
-                                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096842935">
+                                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096842935">
                                               <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096842936">
                                                 <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096842937">
                                                   <property name="name" value="it" />
@@ -5555,7 +5555,7 @@
                                             </node>
                                           </node>
                                         </node>
-                                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096843094">
+                                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096843094">
                                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096843095">
                                             <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096843096">
                                               <property name="name" value="it" />
@@ -5768,7 +5768,7 @@
                                                 </node>
                                               </node>
                                             </node>
-                                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096843144">
+                                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096843144">
                                               <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096843145">
                                                 <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096843146">
                                                   <property name="name" value="it" />

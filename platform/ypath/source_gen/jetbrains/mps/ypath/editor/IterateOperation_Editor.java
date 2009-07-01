@@ -17,6 +17,8 @@ import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.ypath.runtime.TraversalAxis;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -25,10 +27,14 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import java.util.List;
@@ -52,9 +58,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_7857_0(context, node));
-    if (renderingCondition7857_3(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_7857_3(context, node));
-    }
+    editorCell.addEditorCell(this.createCollection_7857_3(context, node));
     return editorCell;
   }
 
@@ -64,6 +68,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_7857_5(context, node));
     editorCell.addEditorCell(this.createCollection_7857_2(context, node));
     return editorCell;
   }
@@ -76,7 +81,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7857_0(context, node, "used feature:"));
     editorCell.addEditorCell(this.createRefCell_7857_1(context, node));
-    if (renderingCondition7857_4(node, context, context.getOperationContext().getScope())) {
+    if (renderingCondition7857_3(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7857_4(context, node));
     }
     return editorCell;
@@ -88,6 +93,9 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    if (renderingCondition7857_4(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_7857_4(context, node, "::"));
+    }
     if (renderingCondition7857_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_7857_1(context, node, "*"));
     }
@@ -108,6 +116,17 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7857_2(context, node, "/"));
     editorCell.addEditorCell(this.createRefNode_7857_3(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_7857_5(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_7857_5(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_7857_3(context, node, "iterate: "));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7857_1(context, node));
     return editorCell;
   }
 
@@ -136,6 +155,22 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstant_7857_3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7857_3(editorCell, node, context);
+    setupLabel_Constant_7857_3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_7857_4(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_7857_4(editorCell, node, context);
+    setupLabel_Constant_7857_4(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createReadOnlyModelAccessor_7857_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
@@ -153,6 +188,26 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_7857_0(editorCell, node, context);
     setupLabel_ReadOnlyModelAccessor_7857_0(editorCell, node, context);
+    return editorCell;
+  }
+
+  public EditorCell createReadOnlyModelAccessor_7857_1(final EditorContext context, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+
+      public String getText() {
+        return TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS")).getName();
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    setupBasic_ReadOnlyModelAccessor_7857_1(editorCell, node, context);
+    setupLabel_ReadOnlyModelAccessor_7857_1(editorCell, node, context);
     return editorCell;
   }
 
@@ -319,6 +374,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
           this.set(StyleAttributes.EDITABLE, false);
         }
       };
@@ -332,6 +388,15 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_7857_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
     IterateOperation_DELETE.setCellActions(editorCell, node, context);
   }
 
@@ -356,6 +421,42 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ReadOnlyModelAccessor_7857_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_7857_0");
+    Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.EDITABLE, false);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Collection_7857_5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7857_5");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_7857_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7857_3");
+  }
+
+  private static void setupBasic_ReadOnlyModelAccessor_7857_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_7857_1");
+  }
+
+  private static void setupBasic_Constant_7857_4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7857_4");
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_7857_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -382,6 +483,15 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   private static void setupLabel_ReadOnlyModelAccessor_7857_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_Constant_7857_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_7857_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_7857_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   public static boolean renderingCondition7857_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "usedFeature", false) == null);
   }
@@ -395,11 +505,11 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition7857_3(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "usedFeature", false) == null) || !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "usedFeature", false), "default"));
+    return (SLinkOperations.getTarget(node, "paramObject", true) != null);
   }
 
   public static boolean renderingCondition7857_4(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "paramObject", true) != null);
+    return !(TraversalAxisUtil.isAbbreviated(TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"))));
   }
 
   public static class _Inline7857_0 extends AbstractCellProvider {
@@ -508,6 +618,15 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_7857_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+            this.set(StyleAttributes.EDITABLE, false);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupLabel_Property_7857_1(EditorCell_Label editorCell, SNode node, EditorContext context) {

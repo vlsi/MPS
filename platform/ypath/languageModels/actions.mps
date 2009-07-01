@@ -18,7 +18,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905a8(jetbrains.mps.ypath.constraints)" version="49" />
@@ -44,7 +44,7 @@
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="25" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="30" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <import index="30" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)" version="-1" />
   <import index="40" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="45" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -628,7 +628,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1197710512785" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096926381">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096926381">
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096926382">
                         <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096926383">
                           <property name="name" value="it" />
@@ -934,7 +934,7 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1178975709854">
                       <link role="variableDeclaration" targetNodeId="1178975227557" resolveInfo="instances" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096928276">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096928276">
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096928277">
                         <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096928278">
                           <property name="name" value="it" />
@@ -1040,7 +1040,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385395753">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385468977">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385468978">
-                  <property name="value" value="^^" />
+                  <property name="value" value="\\\\ancestors" />
                 </node>
               </node>
             </node>
@@ -1066,7 +1066,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385414941">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385478897">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385478898">
-                  <property name="value" value="\\\\" />
+                  <property name="value" value="\\\\descendants" />
                 </node>
               </node>
             </node>
@@ -1079,7 +1079,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385420234">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385483234">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385483235">
-                  <property name="value" value="\\\\." />
+                  <property name="value" value="\\\\descendants+" />
                 </node>
               </node>
             </node>
@@ -1092,7 +1092,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385425998">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385487040">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385487041">
-                  <property name="value" value="&lt;&lt;" />
+                  <property name="value" value="\\\\preceding" />
                 </node>
               </node>
             </node>
@@ -1105,7 +1105,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385432188">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385491198">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385491199">
-                  <property name="value" value="&lt;&lt;." />
+                  <property name="value" value="\\\\preceding+" />
                 </node>
               </node>
             </node>
@@ -1118,7 +1118,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385439530">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385494840">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385494841">
-                  <property name="value" value="&gt;&gt;" />
+                  <property name="value" value="\\\\following" />
                 </node>
               </node>
             </node>
@@ -1131,7 +1131,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385446412">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385499232">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385499233">
-                  <property name="value" value="&gt;&gt;." />
+                  <property name="value" value="\\\\following+" />
                 </node>
               </node>
             </node>
@@ -1144,7 +1144,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199385453681">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199385502958">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199385502959">
-                  <property name="value" value="^^." />
+                  <property name="value" value="\\\\ancestors+" />
                 </node>
               </node>
             </node>
@@ -1164,6 +1164,134 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1179161879728">
         <property name="name" value="axis" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192554736257">
+          <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="7098165822328196765">
+      <property name="name" value="isAbbreviated" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="7098165822328196766" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7098165822328196767" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196768">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SwitchStatement" id="7098165822328196769">
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196770">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196771">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.CHILDREN" resolveInfo="CHILDREN" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196772">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7098165822328196872">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7098165822328196874">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196774">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196775">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196776">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196773">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196778">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196779">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196780">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196781">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196782">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196783">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196784">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196785">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196786">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196787">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196788">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196876">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196791">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196792">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196793">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196794">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196795">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196796">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196797">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196798">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196799">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196800">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196801">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="7098165822328196802">
+                <property name="value" value="fall through" />
+              </node>
+            </node>
+          </node>
+          <node role="case" type="jetbrains.mps.baseLanguage.structure.SwitchCase" id="7098165822328196803">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="7098165822328196804">
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
+            </node>
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196805">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7098165822328196806">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7098165822328196807">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7098165822328196808">
+            <link role="variableDeclaration" targetNodeId="7098165822328196812" resolveInfo="axis" />
+          </node>
+          <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7098165822328196809">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7098165822328196810">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7098165822328196811">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7098165822328196812">
+        <property name="name" value="axis" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7098165822328196813">
           <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
         </node>
       </node>
@@ -2124,7 +2252,7 @@
                       <link role="link" targetNodeId="1.1183980376561" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096925930">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096925930">
                     <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096925931">
                       <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096925932">
                         <property name="name" value="it" />
@@ -3486,7 +3614,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1198013650674" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096925111">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096925111">
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096925112">
                         <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096925113">
                           <property name="name" value="it" />
@@ -3662,7 +3790,7 @@
                       </node>
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1198013650751" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1225096926622">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1225096926622">
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1225096926623">
                         <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1225096926624">
                           <property name="name" value="it" />

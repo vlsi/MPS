@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet;
 
 public class TreePathType_Editor extends DefaultNodeEditor {
 
@@ -112,10 +113,12 @@ public class TreePathType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6561_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6561_1");
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_6561_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6561_2");
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_Constant_6561_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

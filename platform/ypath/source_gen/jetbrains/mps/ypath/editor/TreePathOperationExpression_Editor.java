@@ -136,12 +136,21 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_7232_1(EditorCell editorCell, SNode node, EditorContext context) {
     if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     TreePathOperationExpression_DELETE.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Alternation_7232_0(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_7232_0(EditorCell editorCell, SNode node, EditorContext context) {
