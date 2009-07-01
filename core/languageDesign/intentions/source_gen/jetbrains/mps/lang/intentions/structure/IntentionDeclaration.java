@@ -4,14 +4,13 @@ package jetbrains.mps.lang.intentions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class IntentionDeclaration extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
+public class IntentionDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.lang.intentions.structure.IntentionDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

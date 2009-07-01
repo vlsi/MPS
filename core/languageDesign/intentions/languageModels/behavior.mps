@@ -43,7 +43,6 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877237627">
     <link role="concept" targetNodeId="1.1192794744107" resolveInfo="IntentionDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877237628">
@@ -109,42 +108,11 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2180200154984979543">
-      <property name="name" value="getDescendantsToCheck" />
-      <link role="overriddenMethod" targetNodeId="7.1628770029971140562" resolveInfo="getDescendantsToCheck" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2180200154984979546">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2180200154984979550">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2180200154984979551">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2180200154984979552">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2180200154984979553">
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2180200154984979555">
-                  <link role="link" targetNodeId="1.1192795926648" />
-                </node>
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2180200154984979560" />
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2180200154984979556">
-                <link role="link" targetNodeId="2v.1137022507850" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="2180200154984979557">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="2180200154984979558">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2180200154984979559">
-                  <link role="conceptDeclaration" targetNodeId="2v.1070475926800" resolveInfo="StringLiteral" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="2180200154984979548">
-        <link role="elementConcept" targetNodeId="2v.1070475926800" resolveInfo="StringLiteral" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2180200154984979549" />
-    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877237647">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877237648" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1240396432370">
     <property name="package" value="parameterized" />
