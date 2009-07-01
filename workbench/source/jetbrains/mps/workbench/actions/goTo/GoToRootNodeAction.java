@@ -41,15 +41,6 @@ import java.util.List;
 public class GoToRootNodeAction extends BaseAction {
   private static boolean myUseCache = true;
 
-  public GoToRootNodeAction() {
-    super("Go To Root Node");
-  }
-
-  @NotNull
-  protected String getKeyStroke() {
-    return "ctrl N";
-  }
-
   public static void setUseCache(boolean useCache) {
     myUseCache = useCache;
   }

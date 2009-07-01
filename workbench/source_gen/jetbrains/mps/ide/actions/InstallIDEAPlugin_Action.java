@@ -21,7 +21,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
 
-  public Frame frame;
+  private Frame frame;
 
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);

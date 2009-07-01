@@ -17,9 +17,9 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowNodeInExplorer_Action.class);
 
-  public SNode node;
-  public MPSProject project;
-  public IOperationContext context;
+  private SNode node;
+  private MPSProject project;
+  private IOperationContext context;
 
   public ShowNodeInExplorer_Action() {
     super("Show Node In Explorer", "", ICON);

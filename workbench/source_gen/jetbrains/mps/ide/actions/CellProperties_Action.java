@@ -17,8 +17,8 @@ public class CellProperties_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CellProperties_Action.class);
 
-  public Frame frame;
-  public EditorCell cell;
+  private Frame frame;
+  private EditorCell cell;
 
   public CellProperties_Action() {
     super("Cell Properties", "", ICON);

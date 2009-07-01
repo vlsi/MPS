@@ -21,7 +21,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   private SNode node;
-  public IOperationContext context;
+  private IOperationContext context;
 
   public GoToConceptDeclaration_Action() {
     super("Go To Concept Declaration", "", ICON);

@@ -16,8 +16,8 @@ public class FindInstancesByCondition_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindInstancesByCondition_Action.class);
 
-  public IOperationContext context;
-  public IModule langModule;
+  private IOperationContext context;
+  private IModule langModule;
 
   public FindInstancesByCondition_Action() {
     super("Find Instances By Condition", "", ICON);

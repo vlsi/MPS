@@ -22,8 +22,8 @@ public class DeleteLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(DeleteLine_Action.class);
 
-  public EditorComponent editor;
-  public EditorCell currentCell;
+  private EditorComponent editor;
+  private EditorCell currentCell;
 
   public DeleteLine_Action() {
     super("Delete Line", "", ICON);

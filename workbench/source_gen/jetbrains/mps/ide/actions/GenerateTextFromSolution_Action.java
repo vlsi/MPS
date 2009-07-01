@@ -27,10 +27,10 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTextFromSolution_Action.class);
 
-  public MPSProject mpsProject;
-  public IOperationContext context;
-  public IModule module;
-  public Frame frame;
+  private MPSProject mpsProject;
+  private IOperationContext context;
+  private IModule module;
+  private Frame frame;
 
   public GenerateTextFromSolution_Action() {
     super("Generate Text from Solution", "", ICON);

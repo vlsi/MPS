@@ -30,10 +30,10 @@ public class PasteNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(PasteNode_Action.class);
 
-  public String pack;
-  public IOperationContext context;
-  public SModelDescriptor contextModel;
-  public SNode node;
+  private String pack;
+  private IOperationContext context;
+  private SModelDescriptor contextModel;
+  private SNode node;
 
   public PasteNode_Action() {
     super("Paste", "", ICON);

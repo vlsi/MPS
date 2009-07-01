@@ -27,8 +27,8 @@ public class FastFindNodeUsages_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/usages.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(FastFindNodeUsages_Action.class);
 
-  public IOperationContext context;
-  public EditorCell cell;
+  private IOperationContext context;
+  private EditorCell cell;
   private SNode node;
 
   public FastFindNodeUsages_Action() {

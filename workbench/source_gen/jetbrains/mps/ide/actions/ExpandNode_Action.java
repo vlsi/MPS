@@ -19,7 +19,7 @@ public class ExpandNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ExpandNode_Action.class);
 
-  public IOperationContext context;
+  private IOperationContext context;
 
   public ExpandNode_Action() {
     super("Expand All", "", ICON);

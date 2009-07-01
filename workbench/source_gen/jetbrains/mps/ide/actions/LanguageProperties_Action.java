@@ -22,8 +22,8 @@ public class LanguageProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(LanguageProperties_Action.class);
 
-  public IOperationContext context;
-  public IModule module;
+  private IOperationContext context;
+  private IModule module;
 
   public LanguageProperties_Action() {
     super("Language Properties", "", ICON);

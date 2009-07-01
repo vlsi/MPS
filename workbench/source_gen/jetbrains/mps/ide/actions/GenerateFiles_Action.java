@@ -25,8 +25,8 @@ public class GenerateFiles_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateFiles_Action.class);
 
-  public MPSProject project;
-  public TreeNode ppNode;
+  private MPSProject project;
+  private TreeNode ppNode;
 
   public GenerateFiles_Action() {
     super("Generate Files", "Generate files from all models under this namespace", ICON);

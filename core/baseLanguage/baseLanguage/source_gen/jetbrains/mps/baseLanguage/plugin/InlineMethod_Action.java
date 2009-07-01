@@ -21,9 +21,9 @@ public class InlineMethod_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(InlineMethod_Action.class);
 
   private SNode node;
-  public Frame frame;
-  public Project project;
-  public IOperationContext operationContext;
+  private Frame frame;
+  private Project project;
+  private IOperationContext operationContext;
 
   public InlineMethod_Action() {
     super("Inline Method", "", ICON);

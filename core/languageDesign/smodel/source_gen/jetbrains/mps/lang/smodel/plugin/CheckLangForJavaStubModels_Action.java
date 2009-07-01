@@ -25,8 +25,8 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(CheckLangForJavaStubModels_Action.class);
 
-  public IModule module;
-  public Frame frame;
+  private IModule module;
+  private Frame frame;
 
   public CheckLangForJavaStubModels_Action() {
     super("Check for java_stubs usages", "", ICON);

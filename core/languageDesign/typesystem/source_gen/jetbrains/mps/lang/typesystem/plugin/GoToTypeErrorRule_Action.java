@@ -18,9 +18,9 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
 
-  public IOperationContext operationContext;
-  public MPSProject project;
-  public SNode node;
+  private IOperationContext operationContext;
+  private MPSProject project;
+  private SNode node;
 
   public GoToTypeErrorRule_Action() {
     super("Go To Rule Which Caused Error", "", ICON);

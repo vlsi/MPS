@@ -20,9 +20,9 @@ public class NewDevKit_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewDevKit_Action.class);
 
-  public Frame frame;
-  public MPSProject project;
-  public Project ideaProject;
+  private Frame frame;
+  private MPSProject project;
+  private Project ideaProject;
 
   public NewDevKit_Action() {
     super("New DevKit", "", ICON);

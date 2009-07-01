@@ -21,7 +21,7 @@ public class CopyThisDown_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
 
-  public EditorComponent editor;
+  private EditorComponent editor;
   private List<SNode> inputNodes;
 
   public CopyThisDown_Action() {

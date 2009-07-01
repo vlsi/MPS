@@ -524,6 +524,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1227008846812" resolveInfo="ActionConstructionParameter" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="394857668356997869">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="places" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="394857668356997868" resolveInfo="ActionPlaceSpecification" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1203083803952">
       <property name="name" value="iconPath" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
@@ -1129,30 +1135,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205675355325">
-    <property name="package" value="Actions.Groups.GroupMembers" />
-    <property name="name" value="ParameterizedActionCreator" />
-    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205675413186">
-      <property name="role" value="constructorDeclaration" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068580123140" resolveInfo="ConstructorDeclaration" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205675486953">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="actualArgument" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205675508671">
-      <property name="value" value="java action" />
-      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1205676232975">
-      <link role="intfc" targetNodeId="1204391079391" resolveInfo="ActionGroupMember" />
-    </node>
-    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1227012955733" />
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1205676676847">
     <property name="package" value="Actions.Groups" />
     <property name="name" value="mnemonic" />
@@ -1360,6 +1342,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207145771679">
       <property name="value" value="addJavaAction" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="942461864549392124">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="1227012987922" />
   </node>
@@ -2983,6 +2968,52 @@
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1628770029971140540">
       <property name="value" value="propRef" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="394857668356997867">
+    <property name="package" value="Actions.Action.Places" />
+    <property name="name" value="SimpleActionPlace" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="394857668357022341">
+      <link role="intfc" targetNodeId="394857668356997868" resolveInfo="ActionPlaceSpecification" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="394857668357022347">
+      <property name="value" value="action place" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="394857668357346072">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="394857668356997868">
+    <property name="package" value="Actions.Action.Places" />
+    <property name="name" value="ActionPlaceSpecification" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="394857668357022342">
+    <property name="package" value="Actions.Action.Places" />
+    <property name="name" value="ToolActionPlace" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="394857668357022343">
+      <link role="intfc" targetNodeId="394857668356997868" resolveInfo="ActionPlaceSpecification" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="394857668357022346">
+      <property name="value" value="tool action place" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="394857668357022344">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="394857668357342104">
+    <property name="package" value="Actions.Action.Places" />
+    <property name="name" value="EverywhereActionPlace" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="394857668357342105">
+      <link role="intfc" targetNodeId="394857668356997868" resolveInfo="ActionPlaceSpecification" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="394857668357342106">
+      <property name="value" value="everywhere" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>

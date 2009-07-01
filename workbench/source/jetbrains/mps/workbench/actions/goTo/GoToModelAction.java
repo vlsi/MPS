@@ -41,15 +41,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class GoToModelAction extends BaseAction {
-  public GoToModelAction() {
-    super("Go To Model");
-  }
-
-  @NotNull
-  protected String getKeyStroke() {
-    return "ctrl alt shift M";
-  }
-
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

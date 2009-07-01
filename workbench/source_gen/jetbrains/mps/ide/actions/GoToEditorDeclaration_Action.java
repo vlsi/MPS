@@ -37,12 +37,12 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/editor.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public IEditor editor;
-  public IOperationContext context;
-  public IScope scope;
-  public IModule module;
+  private MPSProject project;
+  private Frame frame;
+  private IEditor editor;
+  private IOperationContext context;
+  private IScope scope;
+  private IModule module;
   private SNode node;
 
   public GoToEditorDeclaration_Action() {

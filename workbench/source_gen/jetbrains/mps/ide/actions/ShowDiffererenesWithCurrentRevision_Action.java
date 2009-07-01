@@ -19,11 +19,11 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowDiffererenesWithCurrentRevision_Action.class);
 
-  public Frame frame;
-  public SNode node;
-  public Project project;
-  public IOperationContext context;
-  public SModelDescriptor model;
+  private Frame frame;
+  private SNode node;
+  private Project project;
+  private IOperationContext context;
+  private SModelDescriptor model;
 
   public ShowDiffererenesWithCurrentRevision_Action() {
     super("Compare with the same repository revision", "", ICON);

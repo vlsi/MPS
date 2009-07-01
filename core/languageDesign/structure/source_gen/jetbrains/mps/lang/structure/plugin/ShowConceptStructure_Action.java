@@ -19,7 +19,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ShowConceptStructure_Action.class);
 
   private SNode node;
-  public MPSProject project;
+  private MPSProject project;
 
   public ShowConceptStructure_Action() {
     super("Show Concept Structure", "", ICON);

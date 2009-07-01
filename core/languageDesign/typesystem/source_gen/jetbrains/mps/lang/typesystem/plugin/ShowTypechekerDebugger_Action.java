@@ -15,7 +15,7 @@ public class ShowTypechekerDebugger_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowTypechekerDebugger_Action.class);
 
-  public MPSProject project;
+  private MPSProject project;
 
   public ShowTypechekerDebugger_Action() {
     super("Show Typechecker Debugger", "", ICON);

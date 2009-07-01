@@ -27,8 +27,8 @@ public class MakeProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MakeProject_Action.class);
 
-  public Project ideaProject;
-  public MPSProject project;
+  private Project ideaProject;
+  private MPSProject project;
 
   public MakeProject_Action() {
     super("Make Project", "", ICON);

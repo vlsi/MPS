@@ -20,10 +20,10 @@ public class ShowMappingsPartitioning_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowMappingsPartitioning_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public IScope scope;
-  public List<SModelDescriptor> models;
+  private MPSProject project;
+  private Frame frame;
+  private IScope scope;
+  private List<SModelDescriptor> models;
 
   public ShowMappingsPartitioning_Action() {
     super("Show Mappings Partitioning", "", ICON);

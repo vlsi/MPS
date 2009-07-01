@@ -17,7 +17,7 @@ public class RefactorModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(RefactorModel_Action.class);
 
-  public SModelDescriptor model;
+  private SModelDescriptor model;
 
   public RefactorModel_Action() {
     super("Refactor Helgins Model", "", ICON);

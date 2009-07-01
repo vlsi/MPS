@@ -19,9 +19,9 @@ public class ShowDFA_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowDFA_Action.class);
 
-  public IOperationContext context;
+  private IOperationContext context;
   private SNode node;
-  public Frame frame;
+  private Frame frame;
 
   public ShowDFA_Action() {
     super("Show DFA (under construction)", "", ICON);

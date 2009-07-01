@@ -27,8 +27,8 @@ public class RebuildProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RebuildProject_Action.class);
 
-  public Project ideaProject;
-  public MPSProject project;
+  private Project ideaProject;
+  private MPSProject project;
 
   public RebuildProject_Action() {
     super("Rebuild Project", "", ICON);

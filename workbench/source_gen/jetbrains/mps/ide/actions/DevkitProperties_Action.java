@@ -22,8 +22,8 @@ public class DevkitProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(DevkitProperties_Action.class);
 
-  public IOperationContext context;
-  public IModule module;
+  private IOperationContext context;
+  private IModule module;
 
   public DevkitProperties_Action() {
     super("DevKit Properties", "", ICON);

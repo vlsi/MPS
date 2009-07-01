@@ -24,10 +24,10 @@ public class HighlightInstances_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(HighlightInstances_Action.class);
 
-  public EditorComponent editorComponent;
-  public EditorCell editorCell;
-  public IScope scope;
-  public SModelDescriptor model;
+  private EditorComponent editorComponent;
+  private EditorCell editorCell;
+  private IScope scope;
+  private SModelDescriptor model;
   private SNode node;
 
   public HighlightInstances_Action() {

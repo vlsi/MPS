@@ -22,9 +22,9 @@ public class RenameNamespace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameNamespace_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public TreeNode treeNode;
+  private MPSProject project;
+  private Frame frame;
+  private TreeNode treeNode;
 
   public RenameNamespace_Action() {
     super("Rename", "", ICON);

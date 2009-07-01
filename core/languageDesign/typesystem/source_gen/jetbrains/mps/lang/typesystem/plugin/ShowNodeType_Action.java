@@ -24,9 +24,9 @@ public class ShowNodeType_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/types.png", "jetbrains.mps.lang.typesystem"), true);
   private static Logger LOG = Logger.getLogger(ShowNodeType_Action.class);
 
-  public IOperationContext context;
-  public Frame frame;
-  public SNode node;
+  private IOperationContext context;
+  private Frame frame;
+  private SNode node;
 
   public ShowNodeType_Action() {
     super("Show Type", "Show node's HELGINS type", ICON);

@@ -33,11 +33,11 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/usages.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(FindSpecificNodeUsages_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public IOperationContext context;
-  public SModelDescriptor model;
-  public EditorCell cell;
+  private MPSProject project;
+  private Frame frame;
+  private IOperationContext context;
+  private SModelDescriptor model;
+  private EditorCell cell;
   private SNode node;
 
   public FindSpecificNodeUsages_Action() {

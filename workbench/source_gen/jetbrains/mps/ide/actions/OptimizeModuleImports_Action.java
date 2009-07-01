@@ -25,9 +25,9 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(OptimizeModuleImports_Action.class);
 
-  public IOperationContext context;
-  public IModule module;
-  public Frame frame;
+  private IOperationContext context;
+  private IModule module;
+  private Frame frame;
 
   public OptimizeModuleImports_Action() {
     super("Optimize Imports", "", ICON);

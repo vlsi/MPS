@@ -22,8 +22,8 @@ public class AddModuleToProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddModuleToProject_Action.class);
 
-  public List<IModule> modules;
-  public MPSProject mpsProject;
+  private List<IModule> modules;
+  private MPSProject mpsProject;
 
   public AddModuleToProject_Action() {
     super("Add To Project", "", ICON);

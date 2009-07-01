@@ -27,7 +27,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
 
   private SModel model;
   private SNode node;
-  public MPSProject project;
+  private MPSProject project;
 
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);

@@ -22,9 +22,9 @@ public class ShowParameters_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowParameters_Action.class);
 
-  public Frame frame;
-  public EditorComponent editor;
-  public EditorCell cell;
+  private Frame frame;
+  private EditorComponent editor;
+  private EditorCell cell;
 
   public ShowParameters_Action() {
     super("Show Parameters", "", ICON);

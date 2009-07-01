@@ -22,8 +22,8 @@ public class NewAspectModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
 
-  public IModule module;
-  public MPSProject project;
+  private IModule module;
+  private MPSProject project;
   private LanguageAspect aspect;
 
   public NewAspectModel_Action(LanguageAspect aspect_par) {

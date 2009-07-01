@@ -19,8 +19,8 @@ public class ShowNodeMessages_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowNodeMessages_Action.class);
 
-  public SNode node;
-  public EditorComponent editorComponent;
+  private SNode node;
+  private EditorComponent editorComponent;
 
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);

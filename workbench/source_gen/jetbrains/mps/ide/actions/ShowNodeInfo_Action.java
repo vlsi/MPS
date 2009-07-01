@@ -21,10 +21,10 @@ public class ShowNodeInfo_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowNodeInfo_Action.class);
 
-  public Frame frame;
-  public EditorComponent editor;
-  public EditorCell cell;
-  public SNode node;
+  private Frame frame;
+  private EditorComponent editor;
+  private EditorCell cell;
+  private SNode node;
 
   public ShowNodeInfo_Action() {
     super("Show Node Info", "", ICON);

@@ -24,9 +24,9 @@ public class ShowGenerationTraceback_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ShowGenerationTraceback_Action.class);
 
   private SNode node;
-  public IOperationContext context;
+  private IOperationContext context;
   private List<SNode> nodes;
-  public Frame frame;
+  private Frame frame;
 
   public ShowGenerationTraceback_Action() {
     super("Show Generation Traceback", "", ICON);

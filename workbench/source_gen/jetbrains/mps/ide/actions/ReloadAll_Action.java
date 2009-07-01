@@ -22,7 +22,7 @@ public class ReloadAll_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/reload.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ReloadAll_Action.class);
 
-  public Project project;
+  private Project project;
 
   public ReloadAll_Action() {
     super("Reload All Classes", "Reload all MPS classes", ICON);

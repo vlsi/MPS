@@ -21,7 +21,7 @@ public class EditNode_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(EditNode_Action.class);
 
   private List<SNode> nodes;
-  public IOperationContext context;
+  private IOperationContext context;
 
   public EditNode_Action() {
     super("Edit", "", ICON);

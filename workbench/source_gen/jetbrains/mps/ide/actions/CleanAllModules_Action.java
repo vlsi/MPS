@@ -25,7 +25,7 @@ public class CleanAllModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CleanAllModules_Action.class);
 
-  public Project project;
+  private Project project;
 
   public CleanAllModules_Action() {
     super("Clean All", "", ICON);

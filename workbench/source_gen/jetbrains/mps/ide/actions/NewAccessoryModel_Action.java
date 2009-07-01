@@ -26,8 +26,8 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
 
-  public Frame frame;
-  public IModule module;
+  private Frame frame;
+  private IModule module;
 
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);

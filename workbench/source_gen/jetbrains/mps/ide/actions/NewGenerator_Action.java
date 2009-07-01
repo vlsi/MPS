@@ -22,9 +22,9 @@ public class NewGenerator_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewGenerator_Action.class);
 
-  public Frame frame;
-  public IModule module;
-  public Project project;
+  private Frame frame;
+  private IModule module;
+  private Project project;
 
   public NewGenerator_Action() {
     super("New Generator", "", ICON);

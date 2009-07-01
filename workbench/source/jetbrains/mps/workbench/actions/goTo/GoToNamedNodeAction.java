@@ -44,15 +44,6 @@ import java.util.List;
 public class GoToNamedNodeAction extends BaseAction {
   private static boolean myUseCache = true;
 
-  public GoToNamedNodeAction() {
-    super("Go To Symbol");
-  }
-
-  @NotNull
-  protected String getKeyStroke() {
-    return "ctrl alt shift N";
-  }
-
   public static void setUseCache(boolean useCache) {
     myUseCache = useCache;
   }

@@ -17,8 +17,8 @@ public class ShowModuleDependencies_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowModuleDependencies_Action.class);
 
-  public Project project;
-  public IModule module;
+  private Project project;
+  private IModule module;
 
   public ShowModuleDependencies_Action() {
     super("Show Dependencies", "", ICON);

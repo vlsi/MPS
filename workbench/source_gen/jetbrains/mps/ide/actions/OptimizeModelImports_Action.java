@@ -22,9 +22,9 @@ public class OptimizeModelImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(OptimizeModelImports_Action.class);
 
-  public IOperationContext context;
-  public List<SModelDescriptor> models;
-  public Frame frame;
+  private IOperationContext context;
+  private List<SModelDescriptor> models;
+  private Frame frame;
 
   public OptimizeModelImports_Action() {
     super("Optimize Imports", "", ICON);

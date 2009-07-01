@@ -19,9 +19,9 @@ public class CloneModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CloneModel_Action.class);
 
-  public SModelDescriptor model;
-  public IOperationContext context;
-  public Integer selSize;
+  private SModelDescriptor model;
+  private IOperationContext context;
+  private Integer selSize;
 
   public CloneModel_Action() {
     super("Clone Model", "", ICON);

@@ -23,8 +23,8 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowGenerationTrace_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
+  private MPSProject project;
+  private Frame frame;
   private List<SNode> nodes;
 
   public ShowGenerationTrace_Action() {

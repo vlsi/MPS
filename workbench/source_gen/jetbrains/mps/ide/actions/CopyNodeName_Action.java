@@ -16,7 +16,7 @@ public class CopyNodeName_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CopyNodeName_Action.class);
 
-  public SNode node;
+  private SNode node;
 
   public CopyNodeName_Action() {
     super("Copy Node FQName", "", ICON);

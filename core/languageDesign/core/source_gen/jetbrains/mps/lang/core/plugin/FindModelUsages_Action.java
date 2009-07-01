@@ -23,9 +23,9 @@ public class FindModelUsages_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
-  public IScope scope;
-  public IOperationContext context;
-  public SModelDescriptor model;
+  private IScope scope;
+  private IOperationContext context;
+  private SModelDescriptor model;
 
   public FindModelUsages_Action() {
     super("Find Usages", "", ICON);

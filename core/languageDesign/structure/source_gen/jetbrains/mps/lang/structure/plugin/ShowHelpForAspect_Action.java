@@ -16,8 +16,8 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowHelpForAspect_Action.class);
 
-  public SModelDescriptor model;
-  public IModule module;
+  private SModelDescriptor model;
+  private IModule module;
   private SNode node;
 
   public ShowHelpForAspect_Action() {

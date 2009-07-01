@@ -8,18 +8,20 @@ import jetbrains.mps.logging.Logger;
 public class Generate_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Generate_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Generate";
+  public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
+  public static final String LABEL_ID_generateModule = ID + "generateModule";
+  public static final String LABEL_ID_generateModel = ID + "generateModel";
 
   public Generate_ActionGroup() {
     super("Generate", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.workbench.actions.generate.SaveTransientModelsAction", "jetbrains.mps.ide");
+      this.addAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", false);
+      this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.generate.GenerateTextFromModelsAction", "jetbrains.mps.ide");
+      this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModel);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

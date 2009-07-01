@@ -16,7 +16,7 @@ public class CopyModuleName_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CopyModuleName_Action.class);
 
-  public IModule module;
+  private IModule module;
 
   public CopyModuleName_Action() {
     super("Copy Module Name", "", ICON);

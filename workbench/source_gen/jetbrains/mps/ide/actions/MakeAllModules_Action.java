@@ -27,7 +27,7 @@ public class MakeAllModules_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\compile.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(MakeAllModules_Action.class);
 
-  public Project project;
+  private Project project;
 
   public MakeAllModules_Action() {
     super("Make All", "", ICON);

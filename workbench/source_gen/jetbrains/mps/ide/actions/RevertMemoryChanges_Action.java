@@ -15,7 +15,7 @@ public class RevertMemoryChanges_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RevertMemoryChanges_Action.class);
 
-  public SModelDescriptor model;
+  private SModelDescriptor model;
 
   public RevertMemoryChanges_Action() {
     super("Revert Memory Changes", "", ICON);

@@ -20,9 +20,9 @@ public class SetModuleFolder_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SetModuleFolder_Action.class);
 
-  public Frame frame;
-  public IOperationContext context;
-  public MPSProject project;
+  private Frame frame;
+  private IOperationContext context;
+  private MPSProject project;
 
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);

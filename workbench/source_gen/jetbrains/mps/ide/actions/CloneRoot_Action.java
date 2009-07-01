@@ -23,7 +23,7 @@ public class CloneRoot_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CloneRoot_Action.class);
 
-  public MPSProject project;
+  private MPSProject project;
   private List<SNode> nodes;
 
   public CloneRoot_Action() {

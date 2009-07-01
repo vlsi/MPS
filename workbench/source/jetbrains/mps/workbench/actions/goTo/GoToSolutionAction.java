@@ -38,15 +38,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToSolutionAction extends BaseAction {
-  public GoToSolutionAction() {
-    super("Go To Solution");
-  }
-
-  @NotNull
-  protected String getKeyStroke() {
-    return "ctrl alt shift S";
-  }
-
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

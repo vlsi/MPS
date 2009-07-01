@@ -21,15 +21,15 @@ public class GoToNodeById_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToNodeById_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public IOperationContext context;
-  public SModelDescriptor model;
+  private MPSProject project;
+  private Frame frame;
+  private IOperationContext context;
+  private SModelDescriptor model;
 
   public GoToNodeById_Action() {
-    super("Go To Node by ID", "", ICON);
+    super("Go to Node by ID", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull()

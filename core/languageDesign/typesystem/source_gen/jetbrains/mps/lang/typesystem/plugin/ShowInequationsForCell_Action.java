@@ -17,7 +17,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowInequationsForCell_Action.class);
 
-  public EditorCell selectedCell;
+  private EditorCell selectedCell;
 
   public ShowInequationsForCell_Action() {
     super("Show Inequations For Cell", "", ICON);

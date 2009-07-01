@@ -19,7 +19,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ExtractMethod_Action.class);
 
   private List<SNode> nodes;
-  public Frame frame;
+  private Frame frame;
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);

@@ -21,10 +21,10 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ModelPropertiesWOShortcut_Action.class);
 
-  public SModelDescriptor model;
-  public IOperationContext context;
-  public ActionPlace place;
-  public MPSProject project;
+  private SModelDescriptor model;
+  private IOperationContext context;
+  private ActionPlace place;
+  private MPSProject project;
 
   public ModelPropertiesWOShortcut_Action() {
     super("Model Properties", "", ICON);

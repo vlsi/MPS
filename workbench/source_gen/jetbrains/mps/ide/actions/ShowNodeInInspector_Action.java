@@ -17,8 +17,8 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowNodeInInspector_Action.class);
 
-  public SNode node;
-  public EditorComponent editor;
+  private SNode node;
+  private EditorComponent editor;
 
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);

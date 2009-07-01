@@ -20,8 +20,8 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RemoveModuleFromProject_Action.class);
 
-  public IOperationContext context;
-  public MPSProject project;
+  private IOperationContext context;
+  private MPSProject project;
 
   public RemoveModuleFromProject_Action() {
     super("Remove From Project", "", ICON);

@@ -23,8 +23,8 @@ public class CleanModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CleanModule_Action.class);
 
-  public Project project;
-  public IOperationContext context;
+  private Project project;
+  private IOperationContext context;
 
   public CleanModule_Action() {
     super("Clean", "", ICON);

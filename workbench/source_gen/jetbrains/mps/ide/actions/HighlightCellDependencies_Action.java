@@ -22,8 +22,8 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(HighlightCellDependencies_Action.class);
 
-  public EditorComponent editorComponent;
-  public EditorCell editorCell;
+  private EditorComponent editorComponent;
+  private EditorCell editorCell;
 
   public HighlightCellDependencies_Action() {
     super("Higlighted Cell's Dependent Nodes", "", ICON);

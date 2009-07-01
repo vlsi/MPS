@@ -17,8 +17,8 @@ public class AddMissingImports_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddMissingImports_Action.class);
 
-  public SModelDescriptor modelDescriptor;
-  public IOperationContext context;
+  private SModelDescriptor modelDescriptor;
+  private IOperationContext context;
 
   public AddMissingImports_Action() {
     super("Fix Missing Imports", "", ICON);

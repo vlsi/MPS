@@ -21,8 +21,8 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowDifferencesWithModelOnDisk_Action.class);
 
-  public SModelDescriptor modelDescriptor;
-  public Frame frame;
+  private SModelDescriptor modelDescriptor;
+  private Frame frame;
 
   public ShowDifferencesWithModelOnDisk_Action() {
     super("Show Differences With Model On Disk", "", ICON);

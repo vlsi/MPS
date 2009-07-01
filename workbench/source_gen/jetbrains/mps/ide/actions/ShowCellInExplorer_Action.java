@@ -19,8 +19,8 @@ public class ShowCellInExplorer_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\cellExplorer.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowCellInExplorer_Action.class);
 
-  public IOperationContext context;
-  public EditorCell cell;
+  private IOperationContext context;
+  private EditorCell cell;
 
   public ShowCellInExplorer_Action() {
     super("Show Cell In Explorer", "", ICON);

@@ -4,18 +4,18 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 
 public class PackageActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(PackageActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.PackageActions";
+  public static final String LABEL_ID_createRootNode = ID + "createRootNode";
 
   public PackageActions_ActionGroup() {
     super("PackageActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new CreateRootNodeGroup());
+      this.addAnchor(PackageActions_ActionGroup.LABEL_ID_createRootNode);
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
       this.addSeparator();

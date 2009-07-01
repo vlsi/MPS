@@ -16,7 +16,7 @@ public class ShowBookmarks_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowBookmarks_Action.class);
 
-  public Project project;
+  private Project project;
 
   public ShowBookmarks_Action() {
     super("Show Bookmarks", "", ICON);

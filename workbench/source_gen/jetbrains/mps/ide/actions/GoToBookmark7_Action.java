@@ -16,7 +16,7 @@ public class GoToBookmark7_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToBookmark7_Action.class);
 
-  public Project project;
+  private Project project;
 
   public GoToBookmark7_Action() {
     super("Go To Bookmark 7", "", ICON);

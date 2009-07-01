@@ -18,8 +18,8 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindInstancesByConditionAndNode_Action.class);
 
-  public IOperationContext context;
-  public IModule langModule;
+  private IOperationContext context;
+  private IModule langModule;
   private SNode node;
 
   public FindInstancesByConditionAndNode_Action() {

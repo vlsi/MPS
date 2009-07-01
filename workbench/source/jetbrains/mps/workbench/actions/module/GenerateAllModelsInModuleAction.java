@@ -47,19 +47,11 @@ public class GenerateAllModelsInModuleAction extends BaseAction {
   private Set<IModule> myModules;
 
   public GenerateAllModelsInModuleAction(boolean regenerate) {
-    super("Generate Models In Module");
+    super("");
     myRegenerate = regenerate;
-    updateShortcuts();
     setIsAlwaysVisible(false);
-    setExecuteOutsideCommand(true);
-
+    setExecuteOutsideCommand(true);    
     addPlace(null);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    if (myRegenerate) return "";
-    return "ctrl F9";
   }
 
   protected void doUpdate(AnActionEvent e) {

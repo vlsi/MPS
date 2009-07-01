@@ -18,8 +18,8 @@ public class ReplacementQueryActionWithNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ReplacementQueryActionWithNode_Action.class);
 
-  public IOperationContext context;
-  public IModule langModule;
+  private IOperationContext context;
+  private IModule langModule;
   private SNode node;
 
   public ReplacementQueryActionWithNode_Action() {

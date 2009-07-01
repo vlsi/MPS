@@ -24,8 +24,8 @@ public class RenamePackage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenamePackage_Action.class);
 
-  public Frame frame;
-  public TreeNode ppNode;
+  private Frame frame;
+  private TreeNode ppNode;
 
   public RenamePackage_Action() {
     super("Rename", "", ICON);

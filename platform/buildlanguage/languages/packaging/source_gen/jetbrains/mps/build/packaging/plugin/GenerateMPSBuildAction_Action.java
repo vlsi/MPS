@@ -21,9 +21,9 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
 
-  public MPSProject project;
-  public IOperationContext operationContext;
-  public SModelDescriptor modelDescriptor;
+  private MPSProject project;
+  private IOperationContext operationContext;
+  private SModelDescriptor modelDescriptor;
 
   public GenerateMPSBuildAction_Action() {
     super("Generate Build Files", "Generate Build Files And Place Them Into Base Directory", ICON);

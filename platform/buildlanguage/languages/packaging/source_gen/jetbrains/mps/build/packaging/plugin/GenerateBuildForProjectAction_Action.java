@@ -17,8 +17,8 @@ public class GenerateBuildForProjectAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateBuildForProjectAction_Action.class);
 
-  public MPSProject mpsProject;
-  public Project project;
+  private MPSProject mpsProject;
+  private Project project;
 
   public GenerateBuildForProjectAction_Action() {
     super("Build Script", "", ICON);

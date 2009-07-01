@@ -19,10 +19,10 @@ public class AddLanguageImport_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddLanguageImport_Action.class);
 
-  public Project project;
-  public MPSProject mpsProject;
-  public IModule module;
-  public SModelDescriptor model;
+  private Project project;
+  private MPSProject mpsProject;
+  private IModule module;
+  private SModelDescriptor model;
 
   public AddLanguageImport_Action() {
     super("Add Language Import", "", ICON);

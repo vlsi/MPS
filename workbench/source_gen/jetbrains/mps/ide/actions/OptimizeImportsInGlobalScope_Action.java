@@ -26,7 +26,7 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(OptimizeImportsInGlobalScope_Action.class);
 
-  public IOperationContext context;
+  private IOperationContext context;
 
   public OptimizeImportsInGlobalScope_Action() {
     super("Optimize Imports Everywhere", "", ICON);

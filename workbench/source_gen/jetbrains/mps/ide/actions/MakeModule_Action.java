@@ -23,8 +23,8 @@ public class MakeModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MakeModule_Action.class);
 
-  public Project project;
-  public IModule module;
+  private Project project;
+  private IModule module;
 
   public MakeModule_Action() {
     super("Make", "", ICON);

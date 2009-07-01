@@ -15,7 +15,7 @@ public class ShowModelRepository_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowModelRepository_Action.class);
 
-  public MPSProject project;
+  private MPSProject project;
 
   public ShowModelRepository_Action() {
     super("Show Model Repository", "", ICON);

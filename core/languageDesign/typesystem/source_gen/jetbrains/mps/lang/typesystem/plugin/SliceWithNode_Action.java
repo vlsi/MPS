@@ -18,7 +18,7 @@ public class SliceWithNode_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(SliceWithNode_Action.class);
 
   private SNode n;
-  public MPSProject project;
+  private MPSProject project;
 
   public SliceWithNode_Action() {
     super("Slice With Selected Node", "", ICON);

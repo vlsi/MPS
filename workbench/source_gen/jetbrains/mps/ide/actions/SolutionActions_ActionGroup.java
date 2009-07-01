@@ -9,6 +9,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(SolutionActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.SolutionActions";
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
+  public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
 
   public SolutionActions_ActionGroup() {
@@ -23,8 +24,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", true);
-      this.addAction("jetbrains.mps.workbench.actions.module.GenerateAllModelsInModuleAction", "jetbrains.mps.ide", false);
+      this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_generateModule);
       this.addAction("jetbrains.mps.ide.actions.GenerateTextFromSolution_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.CheckSolution_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.OptimizeModuleImports_Action", "jetbrains.mps.ide");

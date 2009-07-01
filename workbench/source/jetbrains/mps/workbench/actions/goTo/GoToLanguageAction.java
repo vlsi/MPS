@@ -35,15 +35,6 @@ import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.NotNull;
 
 public class GoToLanguageAction extends BaseAction {
-  public GoToLanguageAction() {
-    super("Go To Language");
-  }
-
-  @NotNull
-  protected String getKeyStroke() {
-    return "ctrl alt shift L";
-  }
-
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

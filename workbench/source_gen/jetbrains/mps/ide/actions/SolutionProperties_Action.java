@@ -22,8 +22,8 @@ public class SolutionProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\solutionProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(SolutionProperties_Action.class);
 
-  public IOperationContext context;
-  public IModule module;
+  private IOperationContext context;
+  private IModule module;
 
   public SolutionProperties_Action() {
     super("Solution Properties", "", ICON);

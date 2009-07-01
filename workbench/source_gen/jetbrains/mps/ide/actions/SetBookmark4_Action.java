@@ -17,8 +17,8 @@ public class SetBookmark4_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SetBookmark4_Action.class);
 
-  public SNode node;
-  public Project project;
+  private SNode node;
+  private Project project;
 
   public SetBookmark4_Action() {
     super("Set Bookmark 4", "", ICON);

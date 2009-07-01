@@ -16,7 +16,7 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RemoveAllBookmarks_Action.class);
 
-  public Project project;
+  private Project project;
 
   public RemoveAllBookmarks_Action() {
     super("Remove All Bookmarks", "", ICON);

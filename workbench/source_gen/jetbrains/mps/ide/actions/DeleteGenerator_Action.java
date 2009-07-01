@@ -23,9 +23,9 @@ public class DeleteGenerator_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteGenerator_Action.class);
 
-  public Project project;
-  public IOperationContext contxet;
-  public IModule module;
+  private Project project;
+  private IOperationContext contxet;
+  private IModule module;
 
   public DeleteGenerator_Action() {
     super("Delete Generator...", "", ICON);

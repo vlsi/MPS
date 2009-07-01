@@ -26,7 +26,7 @@ public class RebuildAllModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RebuildAllModules_Action.class);
 
-  public Project project;
+  private Project project;
 
   public RebuildAllModules_Action() {
     super("Rebuild All", "", ICON);

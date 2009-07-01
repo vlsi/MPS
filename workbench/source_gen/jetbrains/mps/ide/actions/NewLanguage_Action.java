@@ -21,9 +21,9 @@ public class NewLanguage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
 
-  public MPSProject project;
-  public Project ideaProject;
-  public Frame frame;
+  private MPSProject project;
+  private Project ideaProject;
+  private Frame frame;
   private String folder;
 
   public NewLanguage_Action(String folder_par) {

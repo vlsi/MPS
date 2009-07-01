@@ -27,9 +27,9 @@ public class CleanProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CleanProject_Action.class);
 
-  public IOperationContext context;
-  public Project ideaProject;
-  public MPSProject project;
+  private IOperationContext context;
+  private Project ideaProject;
+  private MPSProject project;
 
   public CleanProject_Action() {
     super("Clean", "", ICON);

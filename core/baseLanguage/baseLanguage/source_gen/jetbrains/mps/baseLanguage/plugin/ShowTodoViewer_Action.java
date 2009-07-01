@@ -16,7 +16,7 @@ public class ShowTodoViewer_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true);
   private static Logger LOG = Logger.getLogger(ShowTodoViewer_Action.class);
 
-  public MPSProject project;
+  private MPSProject project;
 
   public ShowTodoViewer_Action() {
     super("Show Todo Tool", "", ICON);

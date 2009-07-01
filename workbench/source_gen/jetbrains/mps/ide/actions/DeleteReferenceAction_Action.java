@@ -17,7 +17,7 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteReferenceAction_Action.class);
 
-  public TreeNode node;
+  private TreeNode node;
 
   public DeleteReferenceAction_Action() {
     super("Delete", "", ICON);

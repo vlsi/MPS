@@ -16,7 +16,7 @@ public class MPSProjectPaths_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MPSProjectPaths_Action.class);
 
-  public Project project;
+  private Project project;
 
   public MPSProjectPaths_Action() {
     super("Project Paths", "", ICON);

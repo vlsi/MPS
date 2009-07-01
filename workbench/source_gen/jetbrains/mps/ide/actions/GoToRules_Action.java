@@ -21,13 +21,13 @@ public class GoToRules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToRules_Action.class);
 
-  public Frame frame;
-  public IOperationContext context;
-  public EditorCell cell;
+  private Frame frame;
+  private IOperationContext context;
+  private EditorCell cell;
   private SNode node;
 
   public GoToRules_Action() {
-    super("Go To Typesystem Rules", "", ICON);
+    super("Go to Typesystem Rules", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }

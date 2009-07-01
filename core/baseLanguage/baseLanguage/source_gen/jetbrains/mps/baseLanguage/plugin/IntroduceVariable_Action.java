@@ -22,9 +22,9 @@ public class IntroduceVariable_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
 
   private SNode node;
-  public EditorContext context;
-  public EditorComponent component;
-  public Frame frame;
+  private EditorContext context;
+  private EditorComponent component;
+  private Frame frame;
 
   public IntroduceVariable_Action() {
     super("Introduce Variable...", "", ICON);

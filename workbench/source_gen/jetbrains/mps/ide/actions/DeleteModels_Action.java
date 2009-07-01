@@ -24,10 +24,10 @@ public class DeleteModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteModels_Action.class);
 
-  public Frame frame;
-  public Project project;
-  public IModule contextModule;
-  public List<SModelDescriptor> models;
+  private Frame frame;
+  private Project project;
+  private IModule contextModule;
+  private List<SModelDescriptor> models;
 
   public DeleteModels_Action() {
     super("Delete Models", "", ICON);

@@ -28,8 +28,8 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTemplateQueries_Action.class);
 
-  public IModule module;
-  public IOperationContext context;
+  private IModule module;
+  private IOperationContext context;
   private boolean regenerate;
 
   public GenerateTemplateQueries_Action(boolean regenerate_par) {

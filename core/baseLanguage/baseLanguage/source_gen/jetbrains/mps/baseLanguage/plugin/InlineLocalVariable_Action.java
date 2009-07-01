@@ -18,9 +18,9 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(InlineLocalVariable_Action.class);
 
-  public EditorContext editorContext;
+  private EditorContext editorContext;
   private SNode node;
-  public Frame frame;
+  private Frame frame;
 
   public InlineLocalVariable_Action() {
     super("Inline Local Variable", "", ICON);

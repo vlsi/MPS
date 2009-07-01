@@ -24,9 +24,9 @@ public class CheckModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CheckModel_Action.class);
 
-  public Project project;
-  public SModelDescriptor model;
-  public IOperationContext operationContext;
+  private Project project;
+  private SModelDescriptor model;
+  private IOperationContext operationContext;
 
   public CheckModel_Action() {
     super("Check Model", "", ICON);

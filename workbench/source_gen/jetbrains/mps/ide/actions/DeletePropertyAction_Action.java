@@ -17,7 +17,7 @@ public class DeletePropertyAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeletePropertyAction_Action.class);
 
-  public TreeNode node;
+  private TreeNode node;
 
   public DeletePropertyAction_Action() {
     super("Delete", "", ICON);

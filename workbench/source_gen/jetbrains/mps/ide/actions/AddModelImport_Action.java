@@ -19,10 +19,10 @@ public class AddModelImport_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AddModelImport_Action.class);
 
-  public Project project;
-  public MPSProject mpsProject;
-  public IModule module;
-  public SModelDescriptor model;
+  private Project project;
+  private MPSProject mpsProject;
+  private IModule module;
+  private SModelDescriptor model;
 
   public AddModelImport_Action() {
     super("Add Model Import", "", ICON);

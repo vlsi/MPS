@@ -26,9 +26,9 @@ public class HighlightUsages_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(HighlightUsages_Action.class);
 
-  public EditorComponent editorComponent;
-  public EditorCell editorCell;
-  public SModelDescriptor model;
+  private EditorComponent editorComponent;
+  private EditorCell editorCell;
+  private SModelDescriptor model;
 
   public HighlightUsages_Action() {
     super("Highlight Usages", "", ICON);

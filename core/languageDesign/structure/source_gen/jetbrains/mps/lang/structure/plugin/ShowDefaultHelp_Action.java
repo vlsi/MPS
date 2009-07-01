@@ -17,8 +17,8 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowDefaultHelp_Action.class);
 
-  public IModule module;
-  public SModelDescriptor model;
+  private IModule module;
+  private SModelDescriptor model;
   private SNode node;
 
   public ShowDefaultHelp_Action() {

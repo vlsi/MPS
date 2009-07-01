@@ -18,8 +18,8 @@ public class RenameSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameSolution_Action.class);
 
-  public Frame frame;
-  public IModule module;
+  private Frame frame;
+  private IModule module;
 
   public RenameSolution_Action() {
     super("Rename Solution", "", ICON);

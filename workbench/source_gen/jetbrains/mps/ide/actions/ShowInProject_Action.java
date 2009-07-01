@@ -19,8 +19,8 @@ public class ShowInProject_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\project.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowInProject_Action.class);
 
-  public IOperationContext context;
-  public SNode node;
+  private IOperationContext context;
+  private SNode node;
 
   public ShowInProject_Action() {
     super("Show Node In Project", "", ICON);

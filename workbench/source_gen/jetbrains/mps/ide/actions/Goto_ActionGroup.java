@@ -4,6 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import com.intellij.ide.actions.GotoActionAction;
+import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
+import jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction;
+import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
+import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
+import jetbrains.mps.workbench.actions.goTo.GoToSolutionAction;
+import jetbrains.mps.workbench.actions.goTo.GoToDevkitAction;
 
 public class Goto_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Goto_ActionGroup.class);
@@ -14,20 +21,20 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToActionAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToNamedNodeAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());
+      this.addAction("jetbrains.mps.ide.actions.GoToNamedNode_Action", "jetbrains.mps.ide", new GoToNamedNodeAction());
       this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToEditorDeclaration_Action", "jetbrains.mps.ide");
       this.addAction("jetbrains.mps.ide.actions.GoToRules_Action", "jetbrains.mps.ide");
       this.addSeparator();
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToModelAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToLanguageAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToSolutionAction", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.workbench.actions.goTo.GoToDevkitAction", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.GoToModel_Action", "jetbrains.mps.ide", new GoToModelAction());
+      this.addAction("jetbrains.mps.ide.actions.GoToLanguage_Action", "jetbrains.mps.ide", new GoToLanguageAction());
+      this.addAction("jetbrains.mps.ide.actions.GoToSolution_Action", "jetbrains.mps.ide", new GoToSolutionAction());
+      this.addAction("jetbrains.mps.ide.actions.GoToDevkit_Action", "jetbrains.mps.ide", new GoToDevkitAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

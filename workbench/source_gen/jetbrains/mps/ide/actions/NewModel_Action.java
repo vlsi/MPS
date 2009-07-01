@@ -24,10 +24,10 @@ public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewModel_Action.class);
 
-  public Frame frame;
-  public MPSProject project;
-  public IOperationContext context;
-  public IModule module;
+  private Frame frame;
+  private MPSProject project;
+  private IOperationContext context;
+  private IModule module;
 
   public NewModel_Action() {
     super("Model", "", ICON);

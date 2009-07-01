@@ -16,8 +16,8 @@ public class ShowHelpForNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowHelpForNode_Action.class);
 
-  public SModelDescriptor model;
-  public IModule module;
+  private SModelDescriptor model;
+  private IModule module;
   private SNode node;
 
   public ShowHelpForNode_Action() {

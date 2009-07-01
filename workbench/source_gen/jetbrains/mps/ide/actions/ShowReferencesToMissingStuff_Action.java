@@ -23,9 +23,9 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowReferencesToMissingStuff_Action.class);
 
-  public MPSProject project;
-  public IScope scope;
-  public SModelDescriptor model;
+  private MPSProject project;
+  private IScope scope;
+  private SModelDescriptor model;
 
   public ShowReferencesToMissingStuff_Action() {
     super("Show References To Missing Models/Languages", "", ICON);

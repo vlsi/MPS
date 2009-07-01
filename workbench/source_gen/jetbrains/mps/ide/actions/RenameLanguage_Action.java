@@ -19,9 +19,9 @@ public class RenameLanguage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameLanguage_Action.class);
 
-  public Project project;
-  public Frame frame;
-  public IModule module;
+  private Project project;
+  private Frame frame;
+  private IModule module;
 
   public RenameLanguage_Action() {
     super("Rename Language", "", ICON);

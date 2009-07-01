@@ -19,7 +19,7 @@ public class ShowClassInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowClassInHierarchy_Action.class);
 
-  public IOperationContext context;
+  private IOperationContext context;
   private SNode node;
 
   public ShowClassInHierarchy_Action() {

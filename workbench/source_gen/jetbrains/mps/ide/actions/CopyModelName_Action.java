@@ -16,7 +16,7 @@ public class CopyModelName_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(CopyModelName_Action.class);
 
-  public SModelDescriptor model;
+  private SModelDescriptor model;
 
   public CopyModelName_Action() {
     super("Copy Model Name", "", ICON);

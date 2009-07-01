@@ -18,8 +18,8 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateCustomMPSBuildForProjectAction_Action.class);
 
-  public MPSProject mpsProject;
-  public Project project;
+  private MPSProject mpsProject;
+  private Project project;
 
   public GenerateCustomMPSBuildForProjectAction_Action() {
     super("Custom MPS Build Script", "", ICON);

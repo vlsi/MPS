@@ -23,10 +23,10 @@ public class RenameModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameModel_Action.class);
 
-  public Project project;
-  public Frame frame;
-  public SModelDescriptor model;
-  public IModule module;
+  private Project project;
+  private Frame frame;
+  private SModelDescriptor model;
+  private IModule module;
 
   public RenameModel_Action() {
     super("Rename Model", "", ICON);

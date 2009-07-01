@@ -20,8 +20,8 @@ public class GeneratorProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GeneratorProperties_Action.class);
 
-  public MPSProject project;
-  public IModule module;
+  private MPSProject project;
+  private IModule module;
 
   public GeneratorProperties_Action() {
     super("Generator Properties", "", ICON);

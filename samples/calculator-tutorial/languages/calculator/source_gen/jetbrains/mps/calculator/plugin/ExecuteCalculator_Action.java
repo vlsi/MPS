@@ -52,7 +52,7 @@ public class ExecuteCalculator_Action extends GeneratedAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSDataKeys.SNODE);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.calculator.structure.Calcualtor"))) {
           node = null;

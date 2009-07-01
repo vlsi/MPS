@@ -32,11 +32,11 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowRulesWhichAffectNodeType_Action.class);
 
-  public EditorCell cell;
-  public IOperationContext operationContext;
-  public MPSProject project;
+  private EditorCell cell;
+  private IOperationContext operationContext;
+  private MPSProject project;
   private SNode node;
-  public Frame frame;
+  private Frame frame;
 
   public ShowRulesWhichAffectNodeType_Action() {
     super("Show Rules Which Affect Node's Type", "", ICON);

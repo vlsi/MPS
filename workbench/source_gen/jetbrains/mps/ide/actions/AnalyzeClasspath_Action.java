@@ -17,8 +17,8 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(AnalyzeClasspath_Action.class);
 
-  public IModule module;
-  public IOperationContext context;
+  private IModule module;
+  private IOperationContext context;
 
   public AnalyzeClasspath_Action() {
     super("Analyze Classpath", "", ICON);

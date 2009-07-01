@@ -21,9 +21,9 @@ public class NewSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewSolution_Action.class);
 
-  public MPSProject project;
-  public Project ideaProject;
-  public Frame frame;
+  private MPSProject project;
+  private Project ideaProject;
+  private Frame frame;
   private String folder;
 
   public NewSolution_Action(String folder_par) {

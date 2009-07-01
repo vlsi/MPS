@@ -17,7 +17,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowBookmarksDialog_Action.class);
 
-  public Project project;
+  private Project project;
 
   public ShowBookmarksDialog_Action() {
     super("Show Bookmarks Dialog", "", ICON);

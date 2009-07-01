@@ -17,7 +17,7 @@ public class RenameVariable_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(RenameVariable_Action.class);
 
   private SNode node;
-  public Frame frame;
+  private Frame frame;
 
   public RenameVariable_Action() {
     super("Rename Variable", "", ICON);

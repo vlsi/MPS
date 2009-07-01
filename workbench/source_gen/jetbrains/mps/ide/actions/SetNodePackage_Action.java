@@ -32,8 +32,8 @@ public class SetNodePackage_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SetNodePackage_Action.class);
 
-  public Frame frame;
-  public IScope scope;
+  private Frame frame;
+  private IScope scope;
   private List<SNode> nodes;
 
   public SetNodePackage_Action() {

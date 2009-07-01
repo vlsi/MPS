@@ -23,8 +23,8 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
-  public MPSProject project;
-  public IOperationContext context;
+  private MPSProject project;
+  private IOperationContext context;
   private SNode node;
 
   public ShowConceptInHierarchy_Action() {

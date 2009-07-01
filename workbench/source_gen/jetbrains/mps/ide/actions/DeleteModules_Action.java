@@ -25,10 +25,10 @@ public class DeleteModules_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteModules_Action.class);
 
-  public Project project;
-  public MPSProject mpsProject;
-  public List<IModule> modules;
-  public Integer selSize;
+  private Project project;
+  private MPSProject mpsProject;
+  private List<IModule> modules;
+  private Integer selSize;
 
   public DeleteModules_Action() {
     super("Delete Module...", "", ICON);

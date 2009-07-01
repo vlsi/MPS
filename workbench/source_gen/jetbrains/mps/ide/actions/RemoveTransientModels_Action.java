@@ -19,7 +19,7 @@ public class RemoveTransientModels_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RemoveTransientModels_Action.class);
 
-  public MPSProject project;
+  private MPSProject project;
 
   public RemoveTransientModels_Action() {
     super("Remove Transient Models", "", ICON);

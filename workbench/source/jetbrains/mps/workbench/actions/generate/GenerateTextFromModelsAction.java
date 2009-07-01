@@ -20,13 +20,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
   public GenerateTextFromModelsAction() {
-    super("Generate Text From Current Model");
+    super("");
     addPlace(null);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "shift F10";
   }
 
   public IGenerationType getGenerationType() {

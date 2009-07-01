@@ -23,9 +23,9 @@ public class DeleteNode_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(DeleteNode_Action.class);
 
-  public Project project;
-  public List<SNode> nodes;
-  public IOperationContext context;
+  private Project project;
+  private List<SNode> nodes;
+  private IOperationContext context;
 
   public DeleteNode_Action() {
     super("Delete", "", ICON);

@@ -15,7 +15,7 @@ public class PrintNodeID_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(PrintNodeID_Action.class);
 
-  public SNode node;
+  private SNode node;
 
   public PrintNodeID_Action() {
     super("Print Node ID To System.out", "", ICON);

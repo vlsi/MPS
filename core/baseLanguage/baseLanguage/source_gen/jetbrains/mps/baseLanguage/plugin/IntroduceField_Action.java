@@ -22,9 +22,9 @@ public class IntroduceField_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(IntroduceField_Action.class);
 
   private SNode node;
-  public EditorComponent component;
-  public EditorContext context;
-  public Frame frame;
+  private EditorComponent component;
+  private EditorContext context;
+  private Frame frame;
 
   public IntroduceField_Action() {
     super("Introduce Field...", "", ICON);

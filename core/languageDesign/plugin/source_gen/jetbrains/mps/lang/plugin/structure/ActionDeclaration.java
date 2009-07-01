@@ -30,6 +30,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   public static final String METHOD_DECLARATION = "methodDeclaration";
   public static final String PARAMETER = "parameter";
   public static final String CONSTRUCTION_PARAMETER = "constructionParameter";
+  public static final String PLACES = "places";
 
   public ActionDeclaration(SNode node) {
     super(node);
@@ -197,6 +198,26 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
 
   public void insertConstructionParameter(ActionConstructionParameterDeclaration prev, ActionConstructionParameterDeclaration node) {
     this.insertChild(prev, ActionDeclaration.CONSTRUCTION_PARAMETER, node);
+  }
+
+  public int getPlacesesCount() {
+    return this.getChildCount(ActionDeclaration.PLACES);
+  }
+
+  public Iterator<ActionPlaceSpecification> placeses() {
+    return this.children(ActionPlaceSpecification.class, ActionDeclaration.PLACES);
+  }
+
+  public List<ActionPlaceSpecification> getPlaceses() {
+    return this.getChildren(ActionPlaceSpecification.class, ActionDeclaration.PLACES);
+  }
+
+  public void addPlaces(ActionPlaceSpecification node) {
+    this.addChild(ActionDeclaration.PLACES, node);
+  }
+
+  public void insertPlaces(ActionPlaceSpecification prev, ActionPlaceSpecification node) {
+    this.insertChild(prev, ActionDeclaration.PLACES, node);
   }
 
 

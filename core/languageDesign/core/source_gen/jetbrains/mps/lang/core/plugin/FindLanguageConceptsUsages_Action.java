@@ -27,9 +27,9 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindLanguageConceptsUsages_Action.class);
 
-  public IModule module;
-  public IOperationContext context;
-  public IScope scope;
+  private IModule module;
+  private IOperationContext context;
+  private IScope scope;
 
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);

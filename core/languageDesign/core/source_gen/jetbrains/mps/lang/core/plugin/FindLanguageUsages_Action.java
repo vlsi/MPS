@@ -23,9 +23,9 @@ public class FindLanguageUsages_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
 
-  public IModule module;
-  public IOperationContext context;
-  public IScope scope;
+  private IModule module;
+  private IOperationContext context;
+  private IScope scope;
 
   public FindLanguageUsages_Action() {
     super("Find Usages", "", ICON);

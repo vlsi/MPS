@@ -22,11 +22,11 @@ public class RunMigrationScripts_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
 
-  public MPSProject project;
-  public Frame frame;
-  public IOperationContext context;
-  public List<SModelDescriptor> models;
-  public List<IModule> modules;
+  private MPSProject project;
+  private Frame frame;
+  private IOperationContext context;
+  private List<SModelDescriptor> models;
+  private List<IModule> modules;
   private List<MigrationScript> scripts;
   private boolean selectionOnly;
 

@@ -16,8 +16,8 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ReplacementQueryAction_Action.class);
 
-  public IOperationContext context;
-  public IModule langModule;
+  private IOperationContext context;
+  private IModule langModule;
 
   public ReplacementQueryAction_Action() {
     super("Modify Instances By Condition", "", ICON);

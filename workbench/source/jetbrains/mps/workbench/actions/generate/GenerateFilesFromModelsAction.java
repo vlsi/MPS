@@ -20,13 +20,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   public GenerateFilesFromModelsAction() {
-    super("Generate Files From Current Model");
+    super("");
     addPlace(null);
-  }
-
-  @NotNull
-  public String getKeyStroke() {
-    return "shift F9";
   }
 
   public IGenerationType getGenerationType() {

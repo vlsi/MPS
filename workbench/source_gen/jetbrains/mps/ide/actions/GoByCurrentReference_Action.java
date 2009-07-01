@@ -28,11 +28,11 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoByCurrentReference_Action.class);
 
-  public MPSProject project;
-  public EditorComponent editorComponent;
-  public EditorCell cell;
-  public IOperationContext context;
-  public SNode node;
+  private MPSProject project;
+  private EditorComponent editorComponent;
+  private EditorCell cell;
+  private IOperationContext context;
+  private SNode node;
 
   public GoByCurrentReference_Action() {
     super("Go By Current Reference", "", ICON);
