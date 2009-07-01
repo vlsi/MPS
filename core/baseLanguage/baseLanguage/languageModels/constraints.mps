@@ -21,7 +21,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
@@ -2098,7 +2098,7 @@
                   <link role="link" targetNodeId="1.1233824939343" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1240847798766">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1240847798766">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240847798767">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240847798768">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240847798769">

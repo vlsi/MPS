@@ -137,15 +137,15 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_WhereOperationNew_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_WhereOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_SelectOperationNew_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_SelectOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_SortOperationNew_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_SortOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

@@ -10,7 +10,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
@@ -735,7 +735,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207743926765">
                         <link role="variableDeclaration" targetNodeId="1207743649435" resolveInfo="input" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1221825186279">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1221825186279">
                         <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1207743926767">
                           <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="1221825185528">
                             <property name="name" value="it" />
@@ -826,7 +826,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7556115255731757469">
                         <link role="variableDeclaration" targetNodeId="7556115255731757386" resolveInfo="input" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="7556115255731757470">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="7556115255731757470">
                         <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="7556115255731757471">
                           <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="7556115255731757472">
                             <property name="name" value="it" />

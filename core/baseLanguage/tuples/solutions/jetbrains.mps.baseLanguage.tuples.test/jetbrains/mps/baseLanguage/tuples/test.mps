@@ -14,7 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d2(jetbrains.mps.baseLanguage.unitTest.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
@@ -620,7 +620,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="1240941179617" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1240941184662">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1240941184662">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240941184663">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240941184664">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240941200798">
@@ -698,7 +698,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="1241009587746" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1241009587747">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1241009587747">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241009587748">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241009587749">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241009587750">
@@ -767,7 +767,7 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" id="1241009714384" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1241009714385">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1241009714385">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241009714386">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241009714387">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="668576388509553871">

@@ -23,7 +23,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -735,7 +735,7 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238503942229">
               <link role="variableDeclaration" targetNodeId="1238502072965" resolveInfo="paths" />
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" id="1238503942230">
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperation" id="1238503942230">
               <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1238503942231">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238503942232">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238503942233">

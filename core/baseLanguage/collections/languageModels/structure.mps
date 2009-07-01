@@ -332,6 +332,36 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="5">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="SortOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" featureKind="CONCEPT" />
+          <value featureName="SortOperation" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SortOperation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="6">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="SelectOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" featureKind="CONCEPT" />
+          <value featureName="SelectOperation" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
+    <refactoringContext modelVersion="7">
+      <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="WhereOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" featureKind="CONCEPT" />
+          <value featureName="WhereOperation" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -343,7 +373,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -1060,7 +1090,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1202120902084">
-    <property name="name" value="WhereOperationNew" />
+    <property name="name" value="WhereOperation" />
     <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1202120914925">
@@ -1080,7 +1110,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1202128969694">
-    <property name="name" value="SelectOperationNew" />
+    <property name="name" value="SelectOperation" />
     <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1202129035304">
@@ -1160,7 +1190,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1205679737078">
-    <property name="name" value="SortOperationNew" />
+    <property name="name" value="SortOperation" />
     <property name="package" value="sequence.closures" />
     <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205679819055">

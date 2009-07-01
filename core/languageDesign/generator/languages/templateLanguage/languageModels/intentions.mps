@@ -20,7 +20,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
@@ -2713,7 +2713,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227218669092">
                     <link role="variableDeclaration" targetNodeId="1227218039959" resolveInfo="configs" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227218669093">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227218669093">
                     <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227218669094">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227218669095">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227218669096">
@@ -3101,7 +3101,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227221178656">
                     <link role="variableDeclaration" targetNodeId="1227221178642" resolveInfo="configs" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227221178657">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227221178657">
                     <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227221178658">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227221178659">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227221178660">
@@ -4949,7 +4949,7 @@
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1227319800132">
                           <link role="variableDeclaration" targetNodeId="1227319800119" resolveInfo="localMCs" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="1227319800133">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="1227319800133">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1227319800134">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227319800135">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227319800136">
@@ -5409,7 +5409,7 @@
                   <link role="baseMethodDeclaration" targetNodeId="34.1213877394546" resolveInfo="getPropertyDeclarations" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" id="7840798570674993611">
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" id="7840798570674993611">
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="7840798570674993612">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7840798570674993613">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7840798570674993620">

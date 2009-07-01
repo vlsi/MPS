@@ -31,7 +31,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
@@ -5327,7 +5327,7 @@
                           <link role="link" targetNodeId="1.1239548562987" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1241018417745">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1241018417745">
                         <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241018417746">
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018417747">
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241018417748">
@@ -5374,7 +5374,7 @@
                               <link role="link" targetNodeId="1.1239560910577" />
                             </node>
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" id="8911874220955537737">
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperation" id="8911874220955537737">
                             <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="8911874220955537738">
                               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8911874220955537739">
                                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8911874220955537740">
@@ -5401,7 +5401,7 @@
                             </node>
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="8911874220955537749">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="8911874220955537749">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="8911874220955537750">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8911874220955537751">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8911874220955537752">
@@ -5446,7 +5446,7 @@
                             <link role="link" targetNodeId="1.1239548562987" />
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="8911874220955537709">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="8911874220955537709">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="8911874220955537710">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8911874220955537711">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8911874220955537712">
@@ -6050,7 +6050,7 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018440899">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241018440900">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018440901">
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1241018440902">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1241018440902">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241018440903">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018440904">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241018440905">
@@ -6105,7 +6105,7 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018440923">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241018440924">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241018440925">
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1241018440926">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1241018440926">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241018440927">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241018440928">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241018440929">
@@ -6517,7 +6517,7 @@
                             <link role="link" targetNodeId="1.1239529553065" />
                           </node>
                         </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1239703578262">
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1239703578262">
                           <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1239703578263">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239703578264">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239703578265">
@@ -6832,7 +6832,7 @@
                         <link role="link" targetNodeId="1.1239529553065" />
                       </node>
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" id="1239641965349">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" id="1239641965349">
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1239641965350">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239641965351">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1239641965352">

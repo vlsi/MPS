@@ -34,7 +34,7 @@ import jetbrains.mps.util.Condition;
 public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.SortOperationNew") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.SortOperation") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation");
   }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1224446775945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -94,7 +94,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(pdb, "name", "b");
   }
 
-  public static void nodeFactory_NodeSetup_SelectOperationNew_1225118817882(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_SelectOperation_1225118817882(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
@@ -103,7 +103,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(pd, "name", "it");
   }
 
-  public static void nodeFactory_NodeSetup_WhereOperationNew_1225119083461(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_WhereOperation_1225119083461(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
@@ -112,7 +112,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(pd, "name", "it");
   }
 
-  public static void nodeFactory_NodeSetup_SortOperationNew_1225119114839(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_SortOperation_1225119114839(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode sel = SLinkOperations.getTarget(_context.getNewNode(), "closure", true);
     if ((sel == null)) {
       sel = SLinkOperations.setNewChild(_context.getNewNode(), "closure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
@@ -139,7 +139,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(pd, "name", "it");
   }
 
-  public static void nodeFactory_NodeSetup_SortOperationNew_1225119783188(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_SortOperation_1225119783188(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode sd = SLinkOperations.setNewChild(_context.getNewNode(), "ascending", "jetbrains.mps.baseLanguage.collections.structure.SortDirection");
     SPropertyOperations.set(sd, "value", "" + (true));
   }
