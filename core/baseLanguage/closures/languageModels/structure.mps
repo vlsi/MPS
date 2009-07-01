@@ -405,6 +405,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1235747086343">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6274993319806952092">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1241531154556" resolveInfo="legalAsStatement" />
+    </node>
   </node>
 </model>
 
