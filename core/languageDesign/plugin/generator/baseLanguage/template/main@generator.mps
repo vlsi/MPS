@@ -9990,47 +9990,6 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218740463664" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1227009210292">
-    <property name="name" value="reduce_ActionConstructionParameterReferenceOperation" />
-    <property name="package" value="Actions.Action" />
-    <link role="applicableConcept" targetNodeId="1.1227008925923" resolveInfo="ActionConstructorParameterReferenceOperation" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1227009210293">
-      <property name="name" value="GeneratedClass" />
-      <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1227009210294">
-        <property name="name" value="method" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1227009210295" />
-        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227009210296" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227009210297">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227009210298">
-            <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1227009210299">
-              <property name="fieldName" value="fieldName" />
-              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1227009210300" />
-              <node role="propertyMacro$property_attribute$fieldName" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1227009210301">
-                <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1227009210302">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1227009210303">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1227009210304">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227009210305">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227009210306">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1227009210307" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1227009762108">
-                            <link role="link" targetNodeId="1.1227008991854" />
-                          </node>
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1227009766656">
-                          <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227009210310" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1227013290509">
     <property name="package" value="Actions.Group" />
     <property name="name" value="reduce_AddStatement" />

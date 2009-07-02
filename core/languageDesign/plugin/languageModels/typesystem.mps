@@ -1435,7 +1435,9 @@
                 <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1628770029971140732">
                   <link role="variableDeclaration" targetNodeId="1628770029971140742" resolveInfo="s" />
                 </node>
-                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140733" />
+                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140733">
+                  <property name="value" value="String does not satisfy naming policies" />
+                </node>
                 <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1628770029971140734">
                   <link role="quickFix" targetNodeId="1628770029971140674" resolveInfo="FixNamingPolicy_literal_once" />
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1628770029971140735">
@@ -1537,7 +1539,9 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WarningStatement" id="1628770029971140773">
-                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140774" />
+                <node role="warningText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1628770029971140774">
+                  <property name="value" value="String does not satisfy naming policies" />
+                </node>
                 <node role="helginsIntention" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" id="1628770029971140775">
                   <link role="quickFix" targetNodeId="1628770029971140695" resolveInfo="FixNamingPolicy_property_once" />
                   <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument" id="1628770029971140776">

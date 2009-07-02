@@ -37,7 +37,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider.putArgument("caption", "Fix String");
           intentionProvider.putArgument("literal", s);
           IErrorTarget errorTarget = new NodeErrorTarget();
-          typeCheckingContext.reportWarning(s, "", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140731", intentionProvider, errorTarget);
+          typeCheckingContext.reportWarning(s, "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140731", intentionProvider, errorTarget);
         }
       }
     }
@@ -61,7 +61,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
           intentionProvider.putArgument("property", p);
           IErrorTarget errorTarget = new NodeErrorTarget();
           errorTarget = new PropertyErrorTarget(p.getProperty());
-          typeCheckingContext.reportWarning(p.getNode(), "", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140773", intentionProvider, errorTarget);
+          typeCheckingContext.reportWarning(p.getNode(), "String does not satisfy naming policies", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140773", intentionProvider, errorTarget);
         }
       }
     }

@@ -7,8 +7,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_1240406910049 = {SNode.class};
@@ -26,6 +28,29 @@ public class IntentionDeclaration_Behavior {
 
   public static boolean virtual_isParameterized_1240406910049(SNode thisNode) {
     return false;
+  }
+
+  public static SNode virtual_getDescendantToCheck_3745452943050928880(SNode thisNode) {
+    if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(SLinkOperations.getTarget(thisNode, "descriptionFunction", true)))) {
+      return null;
+    }
+    SNode stmt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "body", true), "statement", true)).first();
+    if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
+      SNode expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true);
+      if (!(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
+        return null;
+      }
+      return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
+    } else if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      SNode expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
+      if (!(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
+        return null;
+      }
+      return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
+    } else
+    {
+      return null;
+    }
   }
 
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {
