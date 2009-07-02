@@ -374,44 +374,42 @@ public class TestMain {
     });
 
     result.dump(System.out);
-    String message = null;
+    StringBuilder message = new StringBuilder();
 
     if (result.isOk()) {
       if (treatThisWarningAsError != null) {
         int i = result.warningsStartsWith(treatThisWarningAsError);
 
         if (i > 0) {
-          message = "No generation errors.\nNo compilation problems.\nThere're [" + i + "]  warnings start with [" + treatThisWarningAsError + "]";
+          message.append("No generation errors.\nNo compilation problems.\nThere're [").append(i).append("]  warnings start with [").append(treatThisWarningAsError).append("]");
         }
-      } else {
-        message = null;
       }
     } else {
-      message = "";
       if (result.hasGenerationErrors()) {
-        message = "[" + result.myGenerationErrors.size() + "] generation errors.\n";
+        message.append("[").append(result.myGenerationErrors.size()).append("] generation errors.\n");
         for (String error : result.myGenerationErrors) {
-          message = message + error + "\n";
+          message.append(error).append("\n");
         }
       }
       if (result.hasGenerationWarnings()) {
-        message += "[" + result.myGenerationWarnings.size() + "] generation warnings.\n";
+        message.append("[").append(result.myGenerationWarnings.size()).append("] generation warnings.\n");
         for (String error : result.myGenerationWarnings) {
-          message = message + error + "\n";
+          message.append(error).append("\n");
         }
       }
       if (result.hasCompilationProblems()) {
-        message += "[" + result.myCompilationProblems.size() + "] compilation problems.\n";
+        message.append("[").append(result.myCompilationProblems.size()).append("] compilation problems.\n");
         for (String error : result.myCompilationProblems) {
-          message = message + error + "\n";
+          message.append(message).append(error).append("\n");
         }
       }
     }
 
-    if (message != null) System.out.println(message);
+    System.out.println(message);
+    
     System.out.println("testing took " + (System.currentTimeMillis() - start) + " ms");
 
-    return message;
+    return message.toString();
   }
 
 
