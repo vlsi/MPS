@@ -67,11 +67,6 @@ public class PathProvider {
   }
 
   private static void appendNodePathThroughNamedConcepts(List<PathItem> path, SNode node) {
-    if (node.getParent() != null) {
-      appendNodePathThroughNamedConcepts(path, node.getParent());
-    }
-
-
     String name;
     try{
       name = node.getName();
@@ -83,6 +78,10 @@ public class PathProvider {
       if (node != node.getContainingRoot()) {
         path.add(new PathItem(PathItemRole.ROLE_ROOT_TO_TARGET_NODE, node));
       }
+    }
+
+    if (node.getParent() != null) {
+      appendNodePathThroughNamedConcepts(path, node.getParent());
     }
   }
 
