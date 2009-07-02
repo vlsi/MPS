@@ -25,7 +25,7 @@ public class GoToSolution_Action extends GeneratedAction {
 
   @NotNull()
   public String getKeyStroke() {
-    return "ctrl shift S";
+    return "ctrl alt shift S";
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {

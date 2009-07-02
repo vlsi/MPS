@@ -22180,7 +22180,7 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3906874221886742457">
       <property name="keycode" value="VK_S" />
-      <property name="modifiers" value="ctrl+shift" />
+      <property name="modifiers" value="ctrl+alt+shift" />
     </node>
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.DoUpdateBlock" id="3906874221886742458">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3906874221886742459">
