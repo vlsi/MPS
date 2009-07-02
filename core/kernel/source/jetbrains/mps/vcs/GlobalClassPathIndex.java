@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
@@ -43,6 +44,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
   }
 
+  private final VcsContextFactory myVcsContextFactory;
   private final MPSModuleRepository myModuleRepository;
   private final Map<FilePath, ArrayList<IModule>> myClassPathIndex = new HashMap<FilePath, ArrayList<IModule>>();
   private final HashSet<FilePath> myExcludedClassPath = new HashSet<FilePath>();
@@ -78,6 +80,11 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     }
   };
 
+  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, VcsContextFactory factory) {
+    myModuleRepository = moduleRepository;
+    myVcsContextFactory = factory;
+  }
+
   private void notifyListeners() {
     for (ExclusionChangedListener l : myListeners) {
       l.exclusionChanged();
@@ -92,10 +99,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     myListeners.remove(l);
   }
 
-  public GlobalClassPathIndex(final MPSModuleRepository moduleRepository) {
-    myModuleRepository = moduleRepository;
-  }
-
   private void moduleInitialized(IModule module) {
     updateClassesGen(module);
     updateClassPath(module, module.getClassPathItem());
@@ -104,7 +107,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void updateClassesGen(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
-    FilePath classesGenPath = VFileSystem.getFilePath(classesGen);
+    FilePath classesGenPath = VFileSystem.getFilePath(myVcsContextFactory, classesGen);
     if (classesGenPath == null) return;
     myExcludedClassPath.add(classesGenPath);
   }
@@ -118,7 +121,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(classPath);
+      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
       if (classPathFile != null && classPathFile.isDirectory()) {
         dealWithClassPathOnModuleInit(module, classPathFile);
       }
@@ -165,7 +168,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(classPath);
+      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
       if (classPathFile != null && classPathFile.isDirectory()) {
         dealWithClassPathOnModuleRemove(module, classPathFile);
       }
@@ -199,7 +202,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(classPath);
+      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
       if (classPathFile != null && classPathFile.isDirectory()) {
         dealWithClassPathOnModuleAdd(module, classPathFile);
       }

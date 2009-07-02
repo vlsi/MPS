@@ -175,6 +175,22 @@ public class VFileSystem {
     return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
   }
 
+  public static FilePath getFilePath(VcsContextFactory factory, IFile file) {
+    return getFilePath(factory, file.toFile());
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, String file) {
+    return getFilePath(factory, new File(file));
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, VirtualFile file) {
+    return factory.createFilePathOn(file);
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, File file) {
+    return factory.createFilePathOn(file);
+  }
+
   public static boolean processFilesRecursively(final VirtualFile root, final Processor<VirtualFile> processor) {
     final LinkedList<VirtualFile> queue = new LinkedList<VirtualFile>();
     queue.add(root);
