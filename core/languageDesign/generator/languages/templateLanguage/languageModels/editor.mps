@@ -4943,6 +4943,7 @@
                 <link role="variableDeclaration" targetNodeId="1216145971156" resolveInfo="node" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1225741743301">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="192987795197996441" />
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="1225741743302">
                   <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1225741743303">
                     <link role="concept" targetNodeId="1.1087833466690" resolveInfo="NodeMacro" />
