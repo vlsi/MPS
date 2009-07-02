@@ -17,7 +17,6 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.ide.ConceptDeclarationEditor;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
@@ -47,7 +46,7 @@ import java.util.List;
 import java.util.Set;
 
 public class TabbedEditor implements IEditor {
-  public static final Logger LOG = Logger.getLogger(ConceptDeclarationEditor.class);
+  public static final Logger LOG = Logger.getLogger(TabbedEditor.class);
 
   private LazyTabbedPane myTabbedPane = new MyLazyTabbedPane(this);
   protected IOperationContext myOperationContext;

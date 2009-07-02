@@ -27,7 +27,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
-import jetbrains.mps.ide.ConceptDeclarationEditor.ConceptEditorOpenHandler;
+import jetbrains.mps.ide.conceptEditor.ConceptEditorOpenHandler;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;

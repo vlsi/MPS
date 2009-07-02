@@ -176,6 +176,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     return myComponent;
   }
 
+  public TabbedEditor getTabbedEditor() {
+    return myTabbedEditor;
+  }
+
   protected IOperationContext getOperationContext() {
     return myTabbedEditor.getOperationContext();
   }
