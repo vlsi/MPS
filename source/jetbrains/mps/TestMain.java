@@ -408,7 +408,9 @@ public class TestMain {
       }
     }
 
-    System.out.println(message);
+    if (message != null) {
+      System.out.println(message);
+    }
     
     System.out.println("testing took " + (System.currentTimeMillis() - start) + " ms");
 
