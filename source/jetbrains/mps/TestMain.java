@@ -380,7 +380,7 @@ public class TestMain {
     if (result.isOk()) {
       if (treatThisWarningAsError != null) {
         int i = result.warningsStartsWith(treatThisWarningAsError);
-
+        
         if (i > 0) {
           message.append("No generation errors.\nNo compilation problems.\nThere're [").append(i).append("]  warnings start with [").append(treatThisWarningAsError).append("]");
         }
@@ -404,7 +404,7 @@ public class TestMain {
       if (result.hasCompilationProblems()) {
         message.append("[").append(result.myCompilationProblems.size()).append("] compilation problems.\n");
         for (String error : firstHundred(result.myCompilationProblems)) {
-          message.append(message).append(error).append("\n");
+          message.append(error).append("\n");
         }
       }
     }
