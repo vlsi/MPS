@@ -40,12 +40,16 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     // 
     for(SNode interfaceNode : derivedInterfacesUsages) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(interfaceNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        // class implements interface case
         if (SNodeOperations.hasRole(interfaceNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
           ListSequence.fromList(_results).addElement(SNodeOperations.getParent(interfaceNode));
           for(SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(interfaceNode), scope, indicator))) {
             ListSequence.fromList(_results).addElement(classNode);
           }
         }
+      } else if (SNodeOperations.isInstanceOf(interfaceNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        // anonymous class case
+        ListSequence.fromList(_results).addElement(interfaceNode);
       }
     }
   }

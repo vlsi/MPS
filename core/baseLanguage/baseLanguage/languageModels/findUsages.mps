@@ -353,6 +353,9 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200411794357">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1200411794363">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200411794364">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3745452943051260876">
+                  <property name="value" value="class implements interface case" />
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1200411794365">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200411794366">
                     <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="1200425027085">
@@ -406,6 +409,28 @@
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1200411794374">
                   <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1200411794375">
                     <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  </node>
+                </node>
+              </node>
+              <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="3745452943051260864">
+                <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3745452943051260866">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="3745452943051260874">
+                    <property name="value" value="anonymous class case" />
+                  </node>
+                  <node role="statement" type="jetbrains.mps.lang.findUsages.structure.ResultStatement" id="3745452943051260871">
+                    <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3745452943051260872">
+                      <link role="variableDeclaration" targetNodeId="1200411794380" resolveInfo="interfaceNode" />
+                    </node>
+                  </node>
+                </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3745452943051260867">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3745452943051260868">
+                    <link role="variableDeclaration" targetNodeId="1200411794380" resolveInfo="interfaceNode" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="3745452943051260869">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3745452943051260870">
+                      <link role="conceptDeclaration" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+                    </node>
                   </node>
                 </node>
               </node>
