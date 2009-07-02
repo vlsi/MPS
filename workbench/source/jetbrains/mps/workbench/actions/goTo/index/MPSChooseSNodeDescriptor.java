@@ -23,10 +23,20 @@ import com.intellij.util.indexing.ID;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.javastub.classpath.ClassPathModelRootManager;
+import jetbrains.mps.javastub.classpath.ClassPathModelProvider;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.Annotation;
+import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.baseLanguage.structure.EnumClass;
 
 import java.util.HashSet;
 import java.util.List;
@@ -84,8 +94,61 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         }
       }
     }
+
+    addJavaStubs(keys, scope);
+
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
+
+  private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {
+    for (IModule m : scope.getVisibleModules()) {
+      for (SModelRoot root : m.getSModelRoots()) {
+        IModelRootManager manager = root.getManager();
+        if (manager instanceof ClassPathModelRootManager) {
+          ClassPathModelRootManager classpathManager = (ClassPathModelRootManager) manager;
+          iterateClassPath(classpathManager.getClassPathItem(), result, "");
+        }
+      }
+    }
+  }
+
+  private void iterateClassPath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
+    for (String cls : item.getAvailableClasses(pack)) {
+      if (cls.contains("$")) continue;
+
+      byte[] content = item.getClass("".equals(pack) ? cls : pack + "." + cls);
+
+      String conceptFqName = ClassConcept.concept;
+      switch (ClassPathModelProvider.getClassifierKind(content)) {
+        case CLASS:
+          conceptFqName = ClassConcept.concept;
+          break;
+        case INTERFACE:
+          conceptFqName = Interface.concept;
+          break;
+        case ANNOTATIONS:
+          conceptFqName = Annotation.concept;
+          break;
+        case ENUM:
+          conceptFqName = EnumClass.concept;
+          break;
+        case UNKNOWNG:
+          continue;
+      }
+
+      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, 0) {
+        @Override
+        public SModelReference getModelReference() {
+          return ClassPathModelProvider.uidForPackage(pack);
+        }
+      });
+    }
+
+    for (String subpack : item.getSubpackages(pack)) {
+      iterateClassPath(item, result, subpack);
+    }
+  }
+  
 
   public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
     return new RootNodeElement(object) {

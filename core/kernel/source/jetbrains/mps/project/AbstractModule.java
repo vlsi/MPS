@@ -839,7 +839,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private class MyClassPathModelRootManager extends ClassPathModelRootManager {
-    protected IClassPathItem getClassPathItem() {      
+    public IClassPathItem getClassPathItem() {      
       return myClassPath;
     }
   }

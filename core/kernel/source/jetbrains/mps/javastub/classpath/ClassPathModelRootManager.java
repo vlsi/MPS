@@ -109,7 +109,7 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
     return false;
   }
 
-  protected abstract IClassPathItem getClassPathItem();
+  public abstract IClassPathItem getClassPathItem();
 
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
