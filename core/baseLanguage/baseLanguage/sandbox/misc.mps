@@ -68,10 +68,14 @@
           </node>
           <node role="item" type="jetbrains.mps.lang.typesystem.structure.MatchStatementItem" id="2671095921098736711">
             <node role="condition" type="jetbrains.mps.lang.typesystem.structure.PatternCondition" id="2671095921098736721">
+              <property name="name" value="ignored" />
               <node role="pattern" type="jetbrains.mps.lang.pattern.structure.PatternExpression" id="2671095921098736722">
                 <node role="patternNode" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2671095921098736723">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2671095921098736725">
                     <property name="value" value="abc" />
+                    <node role="_attr_$property_attribute$value" type="jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration" id="6451547795115855602">
+                      <property name="varName" value="val" />
+                    </node>
                   </node>
                 </node>
               </node>
