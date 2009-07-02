@@ -383,6 +383,8 @@ public class TestMain {
         if (i > 0) {
           message.append("No generation errors.\nNo compilation problems.\nThere're [").append(i).append("]  warnings start with [").append(treatThisWarningAsError).append("]");
         }
+      } else {
+        message = null;
       }
     } else {
       if (result.hasGenerationErrors()) {
@@ -391,6 +393,7 @@ public class TestMain {
           message.append(error).append("\n");
         }
       }
+      
       if (result.hasGenerationWarnings()) {
         message.append("[").append(result.myGenerationWarnings.size()).append("] generation warnings.\n");
         for (String error : result.myGenerationWarnings) {
@@ -409,6 +412,10 @@ public class TestMain {
     
     System.out.println("testing took " + (System.currentTimeMillis() - start) + " ms");
 
+    if (message == null) {
+      return null;
+    }
+    
     return message.toString();
   }
 
