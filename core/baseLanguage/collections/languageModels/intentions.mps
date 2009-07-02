@@ -471,5 +471,53 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="2826767102480497650">
+    <property name="package" value="sequence" />
+    <property name="name" value="add_sequence_initializer" />
+    <property name="isAvailableInChildNodes" value="true" />
+    <link role="forConcept" targetNodeId="1.1224414427926" resolveInfo="SequenceCreator" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="2826767102480497651">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2826767102480497652">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2826767102480497672">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2826767102480497673">
+            <property name="value" value="Add initializer" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="2826767102480497653">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2826767102480497654">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2826767102480498800">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2826767102480498807">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2826767102480498802">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="2826767102480498801" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2826767102480498806">
+                <link role="link" targetNodeId="1.1224414466839" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="2826767102480498811">
+              <link role="concept" targetNodeId="2v.1199569711397" resolveInfo="ClosureLiteral" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="2826767102480497674">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2826767102480497675">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2826767102480497676">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2826767102480497683">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2826767102480497678">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="2826767102480497677" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2826767102480497682">
+                <link role="link" targetNodeId="1.1224414466839" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="2826767102480498799" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

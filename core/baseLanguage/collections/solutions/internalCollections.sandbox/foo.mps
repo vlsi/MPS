@@ -44,6 +44,15 @@
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1229014761949">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="1229014761950">
                 <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1229014761951" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="2826767102480533360">
+                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2826767102480533361">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" id="2826767102480533379">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2826767102480533400">
+                        <property name="value" value="2" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -97,6 +106,13 @@
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2082595846407768907">
                 <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="2082595846407768908">
                   <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="2082595846407768909" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2826767102480486853">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2826767102480486854">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" id="2826767102480486856">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="2826767102480486857" />
                 </node>
               </node>
             </node>
