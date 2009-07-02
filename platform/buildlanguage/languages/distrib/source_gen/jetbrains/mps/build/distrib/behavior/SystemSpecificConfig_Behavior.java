@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class SystemSpecificConfig_Behavior {
+  private static Class[] PARAMETERS_1231769123888 = {SNode.class};
   private static Class[] PARAMETERS_1234793567442 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -26,7 +27,7 @@ public class SystemSpecificConfig_Behavior {
     return DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode)) + "." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode));
   }
 
-  public static String call_getVMOptionsFilePath_1231769123888(SNode thisNode) {
+  public static String virtual_getVMOptionsFilePath_1231769123888(SNode thisNode) {
     SNode distConf = SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode);
     String vmoptionsDir = AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(distConf, "vmOptionsDir", true));
     if (StringUtils.isEmpty(vmoptionsDir) || vmoptionsDir.equals(".")) {
@@ -49,8 +50,16 @@ public class SystemSpecificConfig_Behavior {
     }).distinct().toListSequence();
   }
 
+  public static String call_getVMOptionsFilePath_1231769123888(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), "virtual_getVMOptionsFilePath_1231769123888", PARAMETERS_1231769123888);
+  }
+
   public static List<SNode> call_getAllUsedVariable_1234793567442(SNode thisNode) {
     return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), "virtual_getAllUsedVariable_1234793567442", PARAMETERS_1234793567442);
+  }
+
+  public static String callSuper_getVMOptionsFilePath_1231769123888(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.SystemSpecificConfig"), callerConceptFqName, "virtual_getVMOptionsFilePath_1231769123888", PARAMETERS_1231769123888);
   }
 
   public static List<SNode> callSuper_getAllUsedVariable_1234793567442(SNode thisNode, String callerConceptFqName) {

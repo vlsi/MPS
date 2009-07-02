@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class WindowsConfig_Behavior {
 
@@ -59,6 +61,19 @@ public class WindowsConfig_Behavior {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "examplesDir", true));
     }
     return result;
+  }
+
+  public static String virtual_getVMOptionsFilePath_1231769123888(SNode thisNode) {
+    SNode distConf = SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode);
+    String vmoptionsDir = AbstractPath_Behavior.call_getFullPath_1230059208735(SLinkOperations.getTarget(distConf, "vmOptionsDir", true));
+    if (StringUtils.isEmpty(vmoptionsDir) || vmoptionsDir.equals(".")) {
+      return WindowsConfig_Behavior.call_getVMOptionsTargetFileName_8356548439144137599(thisNode);
+    }
+    return vmoptionsDir + SConceptPropertyOperations.getString(thisNode, "pathSeparator") + WindowsConfig_Behavior.call_getVMOptionsTargetFileName_8356548439144137599(thisNode);
+  }
+
+  public static String call_getVMOptionsTargetFileName_8356548439144137599(SNode thisNode) {
+    return DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode)) + ".exe." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode));
   }
 
 }

@@ -109,6 +109,7 @@
     <property name="startup.bat.name" value="mps.bat" />
     <property name="startup.bat" value="${scripts.folder}/${startup.bat.name}" />
     <property name="vmoptions.file.name" value="mps.vmoptions" />
+    <property name="vmoptions.exe.file.name" value="mps.exe.vmoptions" />
     <property name="vmoptions.file" value="${scripts.folder}/${vmoptions.file.name}" />
     <property name="root.folder.name" value="MPS" />
     <property name="root.folder" value="${deploy.dir}/${root.folder.name}" />
@@ -135,7 +136,7 @@
     <copy file="${mps_home}/build/resources/mps.uninst.ico" tofile="${uninstaller.icon}" />
     <copy file="${license.src.path}" tofile="${license.path}" />
     <unzip src="${jre.zip.path}" dest="${jre.unzipped.path}/jre" />
-    <copy file="${vmoptions.file}" todir="${root.folder}/bin" />
+    <copy file="${vmoptions.file}" tofile="${root.folder}/bin/${vmoptions.exe.file.name}" />
     <java classpath="${mps_home}/platform/buildlanguage/languages/distrib/classes" classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${deploy.dir}" failonerror="true">
       <arg file="${nsis.script.path.tmp}/../install.nsh" />
       <arg file="${nsis.script.path.tmp}/../uninstall.nsh" />
@@ -164,6 +165,6 @@
     <delete file="${nsis.script.path.tmp}/../install.nsh" />
     <delete file="${nsis.script.path.tmp}/../uninstall.nsh" />
     <delete dir="${deploy.dir}/nsis" />
-    <delete file="${root.folder}/bin/${vmoptions.file.name}" />
+    <delete file="${root.folder}/bin/${vmoptions.exe.file.name}" />
   </target>
 </project>
