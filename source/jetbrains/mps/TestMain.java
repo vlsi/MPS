@@ -44,6 +44,7 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
+import java.util.List;
 
 public class TestMain {
   private static final Logger LOG = Logger.getLogger(TestMain.class);
@@ -389,20 +390,20 @@ public class TestMain {
     } else {
       if (result.hasGenerationErrors()) {
         message.append("[").append(result.myGenerationErrors.size()).append("] generation errors.\n");
-        for (String error : result.myGenerationErrors) {
+        for (String error : firstHundred(result.myGenerationErrors)) {
           message.append(error).append("\n");
         }
       }
       
       if (result.hasGenerationWarnings()) {
         message.append("[").append(result.myGenerationWarnings.size()).append("] generation warnings.\n");
-        for (String error : result.myGenerationWarnings) {
+        for (String error : firstHundred(result.myGenerationWarnings)) {
           message.append(error).append("\n");
         }
       }
       if (result.hasCompilationProblems()) {
         message.append("[").append(result.myCompilationProblems.size()).append("] compilation problems.\n");
-        for (String error : result.myCompilationProblems) {
+        for (String error : firstHundred(result.myCompilationProblems)) {
           message.append(message).append(error).append("\n");
         }
       }
@@ -419,6 +420,16 @@ public class TestMain {
     }
     
     return message.toString();
+  }
+
+  private static <T> List<T> firstHundred(List<T> list) {
+    int hundred = 100;
+
+    if (list.size() < hundred) {
+      return list;
+    }
+
+    return list.subList(0, hundred);
   }
 
 
