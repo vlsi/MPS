@@ -20,6 +20,7 @@ import junit.framework.TestCase;
 import java.io.File;
 
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+import jetbrains.mps.project.TestResult;
 
 import javax.swing.SwingUtilities;
 
@@ -44,19 +45,19 @@ public class BaseMPSTest extends TestCase {
   }
 
    protected void assertGenerates(File project, String... configurations) {
-    String res = testProject(project, configurations);
-    assertTrue(res, res == null);
+    TestResult res = testProject(project, configurations);
+    assertTrue(res == null);
   }
 
   protected void assertGenerates(File project) {
     assertGenerates(project, new String[0]);
   }
 
-  protected String testProject(File project, String[] configurations) {
+  protected TestResult testProject(File project, String[] configurations) {
     return TestMain.testProject(project, configurations);
   }
 
-  protected String testProject(File project) {
+  protected TestResult testProject(File project) {
     return TestMain.testProject(project, new String[0]);
   }
 

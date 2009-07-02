@@ -61,8 +61,8 @@ public class TestMain {
       return;
     }
 
-    String error = testProject(projectFile);
-    System.exit(error == null ? 0 : 1);
+    TestResult result = testProject(projectFile);
+    System.exit(result.isOk() ? 0 : 1);
   }
 
 
@@ -337,22 +337,17 @@ public class TestMain {
     return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
   }
 
-  public static String testProject(File projectFile) {
-    return testProject(projectFile, (String) null, new String[0]);
-  }
-
-  public static String testProject(File projectFile, String[] configurations) {
-    return testProject(projectFile, (String) null, configurations);
+  public static TestResult testProject(File projectFile) {
+    return testProject(projectFile, new String[0]);
   }
 
   /**
    * Null result means no problems, not null result contains error description.
    *
    * @param projectFile
-   * @param treatThisWarningAsError
    * @return
    */
-  public static String testProject(File projectFile, String treatThisWarningAsError, String[] configurations) {
+  public static TestResult testProject(File projectFile, String[] configurations) {
     IdeMain.setTestMode(TestMode.CORE_TEST) ;
     long start = System.currentTimeMillis();
     configureMPS();
@@ -375,51 +370,32 @@ public class TestMain {
     });
 
     result.dump(System.out);
-    StringBuilder message = new StringBuilder();
 
-    if (result.isOk()) {
-      if (treatThisWarningAsError != null) {
-        int i = result.warningsStartsWith(treatThisWarningAsError);
-        
-        if (i > 0) {
-          message.append("No generation errors.\nNo compilation problems.\nThere're [").append(i).append("]  warnings start with [").append(treatThisWarningAsError).append("]");
-        }
-      } else {
-        message = null;
-      }
-    } else {
+    if (!result.isOk()) {
       if (result.hasGenerationErrors()) {
-        message.append("[").append(result.myGenerationErrors.size()).append("] generation errors.\n");
-        for (String error : firstHundred(result.myGenerationErrors)) {
-          message.append(error).append("\n");
+        System.out.println("there were " + result.myGenerationErrors.size() + " generation error");
+        for (String error : result.myGenerationErrors) {
+          System.out.println(error);
         }
       }
       
       if (result.hasGenerationWarnings()) {
-        message.append("[").append(result.myGenerationWarnings.size()).append("] generation warnings.\n");
-        for (String error : firstHundred(result.myGenerationWarnings)) {
-          message.append(error).append("\n");
+        System.out.println("there were " + result.myGenerationWarnings.size() + " generation warnings");
+        for (String warning : result.myGenerationWarnings) {
+          System.out.println(warning);
         }
       }
       if (result.hasCompilationProblems()) {
-        message.append("[").append(result.myCompilationProblems.size()).append("] compilation problems.\n");
-        for (String error : firstHundred(result.myCompilationProblems)) {
-          message.append(error).append("\n");
+        System.out.println("there were " + result.myCompilationProblems.size() + " compilation problems");
+        for (String compilationProblem : result.myCompilationProblems) {
+          System.out.println(compilationProblem);
         }
       }
     }
 
-    if (message != null) {
-      System.out.println(message);
-    }
-    
     System.out.println("testing took " + (System.currentTimeMillis() - start) + " ms");
 
-    if (message == null) {
-      return null;
-    }
-    
-    return message.toString();
+    return result;
   }
 
   private static <T> List<T> firstHundred(List<T> list) {
