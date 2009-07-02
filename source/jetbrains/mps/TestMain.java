@@ -398,17 +398,6 @@ public class TestMain {
     return result;
   }
 
-  private static <T> List<T> firstHundred(List<T> list) {
-    int hundred = 100;
-
-    if (list.size() < hundred) {
-      return list;
-    }
-
-    return list.subList(0, hundred);
-  }
-
-
   public static void configureMPS() {
     System.setProperty("idea.is.internal", "true");
     System.setProperty("idea.no.jre.check", "true");
