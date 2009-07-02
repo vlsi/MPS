@@ -881,6 +881,22 @@
               </node>
             </node>
           </node>
+          <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="8356548439143925480">
+            <property name="file" value="false" />
+            <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="8356548439143925481">
+              <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="8356548439143925482">
+                <property name="name" value="mps_home" />
+              </node>
+              <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="8356548439143925483">
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="8356548439143925484">
+                  <property name="path" value="lib" />
+                </node>
+                <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="8356548439143925486">
+                  <property name="path" value="jmock2.4" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="entry" type="jetbrains.mps.build.packaging.structure.Folder" id="1234971270148">
             <property name="file" value="false" />
             <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1234971270149">
@@ -1069,54 +1085,6 @@
                 </node>
                 <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1234971270219">
                   <property name="path" value="httpclient" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="entry" type="jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent" id="1239375077843">
-            <node role="ifTrue" type="jetbrains.mps.build.packaging.structure.Folder" id="1239375106045">
-              <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1239375106046">
-                <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239375106047">
-                  <property name="name" value="mps_home" />
-                </node>
-                <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239375106048">
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375106049">
-                    <property name="path" value="core" />
-                  </node>
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375106050">
-                    <property name="path" value="runtime" />
-                  </node>
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375106051">
-                    <property name="path" value="lib" />
-                  </node>
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375106053">
-                    <property name="path" value="jmock2.4" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="ifFaulse" type="jetbrains.mps.build.packaging.structure.Folder" id="1239375109756">
-              <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="1239375109757">
-                <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239375109758">
-                  <property name="name" value="mps_home" />
-                </node>
-                <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="1239375109759">
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375118364">
-                    <property name="path" value="lib" />
-                  </node>
-                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="1239375122092">
-                    <property name="path" value="jmock2.4" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.build.packaging.structure.NotCondition" id="1239376581571">
-              <node role="condition" type="jetbrains.mps.build.packaging.structure.FileExistsCondition" id="1239376584805">
-                <node role="pathToCheck" type="jetbrains.mps.build.packaging.structure.NonExistingPath" id="1239376584806">
-                  <property name="pathToCheck" value="lib/mps.jar" />
-                  <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="1239376584807">
-                    <property name="name" value="mps_home" />
-                  </node>
                 </node>
               </node>
             </node>

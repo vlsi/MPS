@@ -31,6 +31,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/jgoodies" />
     <mkdir dir="${deploy.dir}/MPS/lib/jetbrains-ideframework" />
     <mkdir dir="${deploy.dir}/MPS/lib/jna" />
+    <mkdir dir="${deploy.dir}/MPS/lib/jmock2.4" />
     <mkdir dir="${deploy.dir}/MPS/lib/joda-time" />
     <mkdir dir="${deploy.dir}/MPS/lib/junit4" />
     <mkdir dir="${deploy.dir}/MPS/lib/log4j" />
@@ -43,7 +44,6 @@
     <mkdir dir="${deploy.dir}/MPS/lib/xstream" />
     <mkdir dir="${deploy.dir}/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/MPS/lib/httpclient" />
-    <mkdir dir="${deploy.dir}/MPS/lib/jmock2.4" />
     <mkdir dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
@@ -123,6 +123,9 @@
     <copy todir="${deploy.dir}/MPS/lib/jna">
       <fileset dir="${mps_home}/lib/jna" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
+    <copy todir="${deploy.dir}/MPS/lib/jmock2.4">
+      <fileset dir="${mps_home}/lib/jmock2.4" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
     <copy todir="${deploy.dir}/MPS/lib/joda-time">
       <fileset dir="${mps_home}/lib/joda-time" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
@@ -158,9 +161,6 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/httpclient">
       <fileset dir="${mps_home}/lib/httpclient" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
-    </copy>
-    <copy todir="${deploy.dir}/MPS/lib/jmock2.4">
-      <fileset dir="${mps_home}/core/runtime/lib/jmock2.4" />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp">
       <fileset dir="${mps_home}/core/idea-patch/classes" />
