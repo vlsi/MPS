@@ -53,18 +53,19 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
   public void disposeComponent() {
   }
 
+  private boolean isExcluded(FilePath path) {
+    return myGlobalClassPathIndex.isExcluded(path) || FileTypeManager.getInstance().isFileIgnored(path.getName());
+  }
+
   public boolean isExcluded(VirtualFile file) {
-    if (myGlobalClassPathIndex.isExcluded(file)) return true;
+    FilePath path = VFileSystem.getFilePath(file);
+    if (isExcluded(path)) return true;
 
-    if (FileTypeManager.getInstance().isFileIgnored(file.getName()) || FileTypeManager.getInstance().isFileIgnored(file.getPath())) {
-      return true;
-    }
-
-    VirtualFile parent = file.getParent();
+    FilePath parentPath = path.getParentPath();
     while (true) {
-      if (parent == null) return false;
-      if (myGlobalClassPathIndex.isExcluded(parent)) return true;      
-      parent = parent.getParent();
+      if (parentPath == null) return false;
+      if (isExcluded(parentPath)) return true;      
+      parentPath = parentPath.getParentPath();
     }
   }
 }
