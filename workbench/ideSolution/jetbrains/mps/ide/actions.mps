@@ -19949,14 +19949,16 @@
     <node role="updateBlock" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" id="6840593892233915886">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6840593892233915887">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6840593892233915888">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="6840593892233915889">
-            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6840593892233915890">
-              <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6840593892233915891">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6840593892233915892" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="6840593892233915893">
-                <link role="member" targetNodeId="6840593892233915897" resolveInfo="module" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="4994094281321727358">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="4994094281321727359">
+              <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4994094281321727360">
+                <link role="classifier" targetNodeId="40.~Language" resolveInfo="Language" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4994094281321727361">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4994094281321727362" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="4994094281321727363">
+                  <link role="member" targetNodeId="6840593892233915897" resolveInfo="module" />
+                </node>
               </node>
             </node>
           </node>

@@ -40,7 +40,7 @@ public class RenameModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return RenameModel_Action.this.module instanceof Language;
+    return !(RenameModel_Action.this.module instanceof Language);
   }
 
   public void doUpdate(@NotNull() AnActionEvent event) {
