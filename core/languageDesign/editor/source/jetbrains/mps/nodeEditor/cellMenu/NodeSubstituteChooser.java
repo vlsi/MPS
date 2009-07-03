@@ -493,6 +493,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myPopupWindow.dispose();
       myPopupWindow = null;
     }
+    mySubstituteActions.clear();
   }
 
   private void tryToApplyIntelligentInput() {
