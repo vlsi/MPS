@@ -628,12 +628,6 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1216650020899">
-      <link role="applicableConcept" targetNodeId="1.1185788614172" resolveInfo="NormalTypeClause" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216650028245">
-        <link role="template" targetNodeId="1185789352998" resolveInfo="NormalTypeClause_to_Expression" />
-      </node>
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240324482753">
       <link role="applicableConcept" targetNodeId="1.1240322207314" resolveInfo="ConceptTypeClause" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1240324711888">
@@ -15182,6 +15176,12 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="84006253453154249">
+      <link role="applicableConcept" targetNodeId="1.1185788614172" resolveInfo="NormalTypeClause" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="84006253453154250">
+        <link role="template" targetNodeId="1185789352998" resolveInfo="NormalTypeClause_to_Expression" />
       </node>
     </node>
   </node>
