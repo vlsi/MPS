@@ -16,6 +16,9 @@
 package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.FocusWatcher;
+import com.intellij.ui.FocusTrackback;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,10 +29,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JComponent;
 import java.awt.Frame;
 import java.awt.HeadlessException;
+import java.awt.event.FocusEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class ModelDifferenceDialog extends BaseDialog {
 
   private ModelDifferenceComponent myDifferenceComponent;
+  private FocusTrackback myFocusTrackback;
+  private FocusWatcher myFocusWatcher;
 
   public ModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
     super(parent, windowTitle);
@@ -61,6 +69,22 @@ public class ModelDifferenceDialog extends BaseDialog {
         myDifferenceComponent.showDifference(oldModel, newModel);
       }
     });
+    myFocusTrackback = new FocusTrackback(this, parent, false);
+    WindowAdapter focusListener = new WindowAdapter() {
+      public void windowOpened(WindowEvent e) {
+        if (myDifferenceComponent != null) {
+          myDifferenceComponent.requestFocusInWindow();
+          myFocusTrackback.registerFocusComponent(myDifferenceComponent);
+        }
+      }
+    };
+    addWindowListener(focusListener);
+    myFocusWatcher = new FocusWatcher() {
+      protected void focusLostImpl(final FocusEvent e) {
+        myFocusTrackback.consume();
+      }
+    };
+    myFocusWatcher.install(myDifferenceComponent);
   }
 
   public void addAction(AnAction action) {
@@ -78,5 +102,11 @@ public class ModelDifferenceDialog extends BaseDialog {
   @Button(name = "Close", position = 0, defaultButton = true)
   public void onClose() {
     dispose();
+  }
+
+  @Override
+  public void dispose() {
+    myFocusTrackback.restoreFocus();
+    super.dispose();
   }
 }
