@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -129,8 +130,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
 
     if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.isInitialized()) {
-      IScope scope = getOperationContext().getScope();
-      setErrorState(getSModelDescriptor().isValid(scope) ? ErrorState.NONE : ErrorState.ERROR);
+      final IScope scope = getOperationContext().getScope();
+      boolean isValid = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return getSModelDescriptor().isValid(scope);
+        }
+      });
+      setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
       List<String> errors = getSModelDescriptor().validate(scope);
       if (errors.isEmpty()) {
         setTooltipText(null);
