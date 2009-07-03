@@ -428,10 +428,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private SModelDescriptor getCurrentModel() {
-    TreePath[] selection = getTree().getSelectionPaths();
-    if (selection == null) return null;
-    if (selection.length != 1) return null;
-    MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
+    TreePath selectionPath = getTree().getLeadSelectionPath();
+    if (selectionPath == null) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
     while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
