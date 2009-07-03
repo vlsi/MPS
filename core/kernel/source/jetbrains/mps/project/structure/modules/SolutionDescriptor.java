@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 public class SolutionDescriptor extends ModuleDescriptor {
   private String myOutputPath;
   private boolean myExternallyVisible;
+  private boolean myEnableJavaStubs=false;
 
   public String getOutputPath() {
     return myOutputPath;
@@ -33,5 +34,13 @@ public class SolutionDescriptor extends ModuleDescriptor {
 
   public void setExternallyVisible(boolean externallyVisible) {
     myExternallyVisible = externallyVisible;
+  }
+
+  public boolean isEnableJavaStubs() {
+    return myEnableJavaStubs;
+  }
+
+  public void setEnableJavaStubs(boolean enableJavaStubs) {
+    myEnableJavaStubs = enableJavaStubs;
   }
 }

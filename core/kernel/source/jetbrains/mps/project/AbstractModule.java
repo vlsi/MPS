@@ -475,9 +475,12 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
-    if (getClassesGen() != null && getClassesGen().exists()) {
-      result.add(getClassesGen().getCanonicalPath());
+    if (areJavaStubsEnabled()) {
+      if (getClassesGen() != null && getClassesGen().exists()) {
+        result.add(getClassesGen().getCanonicalPath());
+      }
     }
+
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (ClassPathEntry entry : descriptor.getClassPaths()) {
@@ -623,10 +626,6 @@ public abstract class AbstractModule implements IModule {
     loadJavaStubModelRoots();
 
     myManager.dispose();
-
-    if (!areJavaStubsEnabled()) {
-      return;
-    }
 
     myManager = new MyClassPathModelRootManager();
 
