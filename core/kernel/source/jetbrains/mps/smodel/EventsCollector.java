@@ -21,6 +21,7 @@ import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.logging.Logger;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -28,6 +29,8 @@ import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class EventsCollector {
+  private static final Logger LOG = Logger.getLogger(EventsCollector.class);
+
   private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
 
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
@@ -155,7 +158,11 @@ public class EventsCollector {
     private void fireCommandStarted(CommandEvent e) {
       synchronized (myLock) {
         for (CommandListener l : myListeners) {
-          l.commandStarted(e);
+          try {
+            l.commandStarted(e);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
@@ -163,7 +170,11 @@ public class EventsCollector {
     private void fireBeforeCommandFinished(CommandEvent e) {
       synchronized (myLock) {
         for (CommandListener l : myListeners) {
-          l.beforeCommandFinished(e);
+          try {
+            l.beforeCommandFinished(e);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
@@ -171,7 +182,11 @@ public class EventsCollector {
     private void fireCommandFinished(CommandEvent e) {
       synchronized (myLock) {
         for (CommandListener l : myListeners) {
-          l.commandFinished(e);
+          try {
+            l.commandFinished(e);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
@@ -179,7 +194,11 @@ public class EventsCollector {
     private void fireUndoTransparentActionStarted() {
       synchronized (myLock) {
         for (CommandListener l : myListeners) {
-          l.undoTransparentActionStarted();
+          try {
+            l.undoTransparentActionStarted();
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
@@ -187,7 +206,11 @@ public class EventsCollector {
     private void fireUndoTransparentActionFinished() {
       synchronized (myLock) {
         for (CommandListener l : myListeners) {
-          l.undoTransparentActionFinished();
+          try {
+            l.undoTransparentActionFinished();
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
