@@ -94,10 +94,6 @@ public class Solution extends AbstractModule {
     setSolutionDescriptor(newDescriptor, true);
   }
 
-  protected boolean areJavaStubsEnabled() {
-    return getSolutionDescriptor().isEnableJavaStubs();
-  }
-
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
 
@@ -164,6 +160,15 @@ public class Solution extends AbstractModule {
     for (String subpack : getClassPathItem().getSubpackages(current)) {
       collectRuntimePackages(result, subpack);
     }
+  }
+
+  public List<String> getClassPath() {
+    List<String> result = new ArrayList<String>();
+    if (getClassesGen() != null && getClassesGen().exists()) {
+      result.add(getClassesGen().getPath());
+    }
+    result.addAll(super.getClassPath());
+    return result;
   }
 
   public boolean reloadClassesAfterGeneration() {
