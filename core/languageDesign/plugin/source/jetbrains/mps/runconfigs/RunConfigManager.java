@@ -63,7 +63,6 @@ public class RunConfigManager implements ProjectComponent {
   public void projectOpened() {
     myReloadListener = new MyReloadListener();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-    myReloadListener.onReload();
   }
 
   public void projectClosed() {
@@ -79,18 +78,7 @@ public class RunConfigManager implements ProjectComponent {
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
 
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-    final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
-    synchronized (myConfigsLock) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          mySortedConfigs = createConfigs(mpsProject);
-          for (ConfigurationType ct : mySortedConfigs) {
-            epConfigType.registerExtension(ct);
-          }
-        }
-      });
-    }
+    addConfigTypes();
 
     final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
     getRunManager().initializeConfigurationTypes(configurationTypes);
@@ -105,6 +93,30 @@ public class RunConfigManager implements ProjectComponent {
 
 
     myLoaded = true;
+  }
+
+  public void firstInit(){
+    if (myProject.isDisposed()) return;
+    if (myLoaded) return;
+
+    addConfigTypes();
+
+    myLoaded = true;
+  }
+
+  private void addConfigTypes() {
+    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
+    synchronized (myConfigsLock) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          mySortedConfigs = createConfigs(mpsProject);
+          for (ConfigurationType ct : mySortedConfigs) {
+            epConfigType.registerExtension(ct);
+          }
+        }
+      });
+    }
   }
 
   private void disposeRunConfigs() {

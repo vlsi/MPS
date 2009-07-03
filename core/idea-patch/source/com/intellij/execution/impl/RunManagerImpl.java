@@ -30,6 +30,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 import jetbrains.mps.util.annotation.Patch;
+import jetbrains.mps.util.annotation.PatchConstr;
+import jetbrains.mps.runconfigs.RunConfigManager;
 
 
 public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, ProjectComponent {
@@ -65,14 +67,19 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   private List<Element> myUnloadedElements = null;
   private JDOMExternalizableStringList myOrder = new JDOMExternalizableStringList();
 
+  @PatchConstr
   public RunManagerImpl(final Project project,
-                        PropertiesComponent propertiesComponent) {
+                        PropertiesComponent propertiesComponent,
+                        RunConfigManager runManager) {
     myConfig = new RunManagerConfig(propertiesComponent, this);
     myProject = project;
+
+    runManager.firstInit();
 
     initConfigurationTypes();
   }
 
+  @Patch
   // separate method needed for tests
   public final void initializeConfigurationTypes(@NotNull final ConfigurationType[] factories) {
     Arrays.sort(factories, new Comparator<ConfigurationType>() {
@@ -301,6 +308,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     return true;
   }
 
+  @Patch
   public void writeExternal(@NotNull final Element parentNode) throws WriteExternalException {
     if (myTempConfiguration != null) {
       addConfigurationElement(parentNode, myTempConfiguration, TEMP_CONFIGURATION);
@@ -321,6 +329,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     order.addAll(myConfigurations.keySet()); //temp && stable configurations
     order.writeExternal(parentNode);
 
+    getSelectedConfiguration();
     if (mySelectedConfiguration != null) {
       parentNode.setAttribute(SELECTED_ATTR, getUniqueName(mySelectedConfiguration.getConfiguration()));
     }
