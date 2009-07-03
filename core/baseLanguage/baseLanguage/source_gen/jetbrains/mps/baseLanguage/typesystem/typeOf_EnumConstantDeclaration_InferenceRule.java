@@ -26,7 +26,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(enumConstantDeclaration, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438608", true), (SNode)constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438604", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438608", true), (SNode)constructedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241009438604", intentionProvider);
     }
     final SNode instanceType_typevar_1241009438611 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

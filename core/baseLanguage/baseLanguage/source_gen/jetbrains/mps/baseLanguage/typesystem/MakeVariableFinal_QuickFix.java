@@ -17,7 +17,7 @@ public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SPropertyOperations.set(SLinkOperations.getTarget(((SNode)this.getField("varRef")[0]), "variableDeclaration", false), "isFinal", "" + (true));
+    SPropertyOperations.set(SLinkOperations.getTarget(((SNode)MakeVariableFinal_QuickFix.this.getField("varRef")[0]), "variableDeclaration", false), "isFinal", "" + (true));
   }
 
 }

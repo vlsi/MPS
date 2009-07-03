@@ -18,9 +18,9 @@ public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickF
   }
 
   public void execute(SNode node) {
-    SNode expression = SLinkOperations.getTarget(((SNode)this.getField("antiquotation")[0]), "expression", true);
-    SNode parent = SNodeOperations.getParent(((SNode)this.getField("antiquotation")[0]));
-    parent.removeChild(((SNode)this.getField("antiquotation")[0]));
+    SNode expression = SLinkOperations.getTarget(((SNode)ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]), "expression", true);
+    SNode parent = SNodeOperations.getParent(((SNode)ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]));
+    parent.removeChild(((SNode)ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]));
     SNode classifierType = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassifierType");
     SNode referenceAntiquotation = SLinkOperations.setNewChild(classifierType, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", "classifier"), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
     SLinkOperations.setTarget(referenceAntiquotation, "expression", expression, true);

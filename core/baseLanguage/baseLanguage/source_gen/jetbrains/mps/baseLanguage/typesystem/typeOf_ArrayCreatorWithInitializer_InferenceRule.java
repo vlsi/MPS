@@ -19,15 +19,15 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractIn
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext) {
     for(SNode value : SLinkOperations.getTargets(arrayCreator, "initValue", true)) {
       {
-        SNode _nodeToCheck_1029348928467 = arrayCreator;
+        SNode _nodeToCheck_1029348928467 = value;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(value, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600272400", true), (SNode)SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600269225", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600272400", true), (SNode)SLinkOperations.getTarget(arrayCreator, "componentType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175600269225", false, 0, intentionProvider);
       }
     }
     {
       SNode _nodeToCheck_1029348928467 = arrayCreator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(arrayCreator, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1205279600881", true), (SNode)new _Quotations.QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1205279600879", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1205279600881", true), (SNode)new _Quotations.QuotationClass_8().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(arrayCreator, "componentType", true)), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1205279600879", intentionProvider);
     }
   }
 

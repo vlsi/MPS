@@ -14759,6 +14759,11 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1215528394348">
     <property name="name" value="Inequations" />
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="8417933508988548833">
+      <property name="name" value="quickFix" />
+      <link role="sourceConcept" targetNodeId="1.1216383170661" resolveInfo="TypesystemQuickFix" />
+      <link role="targetConcept" targetNodeId="3.1068390468198" resolveInfo="ClassConcept" />
+    </node>
     <node role="postMappingScript" type="jetbrains.mps.lang.generator.structure.MappingScriptReference" id="1224063935861">
       <link role="mappingScript" targetNodeId="1224062580252" resolveInfo="insertTypeContextIntoQuotations" />
     </node>
@@ -14768,6 +14773,7 @@
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1216648718712">
       <link role="applicableConcept" targetNodeId="1.1216383170661" resolveInfo="HelginsQuickFix" />
       <link role="template" targetNodeId="1216640177593" resolveInfo="QuickFix" />
+      <link role="labelDeclaration" targetNodeId="8417933508988548833" resolveInfo="quickFix" />
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1215528578195">
       <property name="applyToConceptInheritors" value="true" />
@@ -15795,7 +15801,31 @@
                         <link role="classifier" targetNodeId="2.~Object" resolveInfo="Object" />
                       </node>
                     </node>
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1216643034988" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8417933508988546421">
+                      <link role="classConcept" targetNodeId="1216643027188" resolveInfo="C" />
+                      <node role="referenceMacro$link_attribute$classConcept" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="8417933508988548834">
+                        <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="8417933508988548835">
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8417933508988548836">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8417933508988548837">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8417933508988548839">
+                                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="8417933508988548838" />
+                                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" id="8417933508988548843">
+                                  <link role="label" targetNodeId="8417933508988548833" resolveInfo="quickFix" />
+                                  <node role="inputNode" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8417933508988566891">
+                                    <property name="asCast" value="true" />
+                                    <link role="concept" targetNodeId="1.1216383170661" resolveInfo="TypesystemQuickFix" />
+                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8417933508988548846">
+                                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8417933508988548845" />
+                                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" id="8417933508988548850" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1216643034989">
                       <property name="value" value="" />
                       <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1216643034990">

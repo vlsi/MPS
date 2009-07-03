@@ -28,6 +28,9 @@ public class check_StaticMethodScope_NonTypesystemRule extends AbstractNonTypesy
     if (!(ListSequence.fromList(staticMethods).contains(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false)))) {
       {
         BaseIntentionProvider intentionProvider = null;
+        intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.ChooseAppropriateMethodDeclaration_QuickFix", true);
+        intentionProvider.putArgument("methodCall", staticMethodCall);
+        intentionProvider.putArgument("classifier", null);
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(staticMethodCall, "Incorrect method reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2913480580301828959", intentionProvider, errorTarget);
       }

@@ -28,14 +28,14 @@ public class typeof_BaseAssignmentExpression_InferenceRule extends AbstractInfer
       typeCheckingContext.reportTypeError(lval, "unexpected in left part or assignment", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519229331", intentionProvider, errorTarget);
     }
     {
-      SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;
+      SNode _nodeToCheck_1029348928467 = rval;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(rval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519338112", true), (SNode)typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519345897", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519336188", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519338112", true), (SNode)typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519345897", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519336188", true, 0, intentionProvider);
     }
     {
-      SNode _nodeToCheck_1029348928467 = baseAssignmentExpression;
+      SNode _nodeToCheck_1029348928467 = ae;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(ae, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206550949101", true), (SNode)typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519357200", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206550949099", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206550949101", true), (SNode)typeCheckingContext.typeOf(lval, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175519357200", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1206550949099", intentionProvider);
     }
   }
 

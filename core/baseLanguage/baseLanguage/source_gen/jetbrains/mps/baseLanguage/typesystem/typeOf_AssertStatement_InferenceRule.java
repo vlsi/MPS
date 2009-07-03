@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_AssertStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -17,15 +17,15 @@ public class typeOf_AssertStatement_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode assertStatement, final TypeCheckingContext typeCheckingContext) {
     {
-      SNode _nodeToCheck_1029348928467 = assertStatement;
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(assertStatement, "condition", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(assertStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899056092", true), (SNode)new _Quotations.QuotationClass_33().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899078020", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899056092", true), (SNode)new _Quotations.QuotationClass_33().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899078020", false, 0, intentionProvider);
     }
     if ((SLinkOperations.getTarget(assertStatement, "message", true) != null)) {
       {
-        SNode _nodeToCheck_1029348928467 = assertStatement;
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(assertStatement, "message", true);
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(assertStatement, "message", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899107820", true), (SNode)new _Quotations.QuotationClass_34().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899115123", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899107820", true), (SNode)new _Quotations.QuotationClass_34().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176899115123", false, 0, intentionProvider);
       }
     }
   }

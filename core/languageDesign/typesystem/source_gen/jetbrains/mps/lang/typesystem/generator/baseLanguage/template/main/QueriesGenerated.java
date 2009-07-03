@@ -1343,6 +1343,10 @@ public class QueriesGenerated {
     return null;
   }
 
+  public static Object referenceMacro_GetReferent_8417933508988548835(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.as(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix"), "quickFix");
+  }
+
   public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
   }

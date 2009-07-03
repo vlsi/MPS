@@ -30,7 +30,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
           {
             SNode _nodeToCheck_1029348928467 = varRef;
             BaseIntentionProvider intentionProvider = null;
-            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(varRef, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode)new _Quotations.QuotationClass_17().createNode(SLinkOperations.getTarget(matchedNode_0, "componentType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", intentionProvider);
+            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode)new _Quotations.QuotationClass_17().createNode(SLinkOperations.getTarget(matchedNode_0, "componentType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", intentionProvider);
           }
           break;
         }

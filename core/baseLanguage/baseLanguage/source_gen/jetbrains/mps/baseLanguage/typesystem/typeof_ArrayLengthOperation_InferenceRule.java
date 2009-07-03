@@ -18,7 +18,7 @@ public class typeof_ArrayLengthOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = lengthOperation;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(lengthOperation, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1208891064552", true), (SNode)new _Quotations.QuotationClass_85().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1208891068843", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1208891064552", true), (SNode)new _Quotations.QuotationClass_85().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1208891068843", intentionProvider);
     }
   }
 

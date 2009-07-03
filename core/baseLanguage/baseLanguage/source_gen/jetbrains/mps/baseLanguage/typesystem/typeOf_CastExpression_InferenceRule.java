@@ -20,7 +20,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(castExpression, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode)SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485155", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485160", true), (SNode)SLinkOperations.getTarget(castExpression, "type", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485155", intentionProvider);
       }
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
