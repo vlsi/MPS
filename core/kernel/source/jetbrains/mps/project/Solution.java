@@ -94,10 +94,6 @@ public class Solution extends AbstractModule {
     setSolutionDescriptor(newDescriptor, true);
   }
 
-  protected boolean areJavaStubsEnabled() {
-    return getSolutionDescriptor().isEnableJavaStubs();
-  }
-
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     mySolutionDescriptor = newDescriptor;
 
