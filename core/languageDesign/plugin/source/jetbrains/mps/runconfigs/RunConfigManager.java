@@ -19,6 +19,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.extensions.ExtensionPoint;
+import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.util.containers.HashMap;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -38,6 +40,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jdom.Element;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -49,6 +52,7 @@ public class RunConfigManager implements ProjectComponent {
   private List<ConfigurationType> mySortedConfigs = new ArrayList<ConfigurationType>();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
+  private Element myState = null;
 
   private MyReloadListener myReloadListener;
 
@@ -59,6 +63,7 @@ public class RunConfigManager implements ProjectComponent {
   public void projectOpened() {
     myReloadListener = new MyReloadListener();
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+    myReloadListener.onReload();
   }
 
   public void projectClosed() {
@@ -87,9 +92,17 @@ public class RunConfigManager implements ProjectComponent {
       });
     }
 
-    //todo reinit
     final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    ((RunManagerImpl) RunManagerEx.getInstanceEx(myProject)).initializeConfigurationTypes(configurationTypes);
+    getRunManager().initializeConfigurationTypes(configurationTypes);
+
+    if (myState!=null){
+      try {
+        getRunManager().readExternal(myState);
+      } catch (InvalidDataException e) {
+        LOG.error(e);
+      }
+    }
+
 
     myLoaded = true;
   }
@@ -102,6 +115,14 @@ public class RunConfigManager implements ProjectComponent {
     synchronized (myConfigsLock) {
       Collections.reverse(mySortedConfigs);
 
+      Element newState = new Element("root");
+      try {
+        getRunManager().writeExternal(newState);
+        myState = newState;
+      } catch (WriteExternalException e) {
+        LOG.error(e);
+      }
+
       final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -113,6 +134,10 @@ public class RunConfigManager implements ProjectComponent {
       mySortedConfigs.clear();
     }
     myLoaded = false;
+  }
+
+  private RunManagerImpl getRunManager() {
+    return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
 
   private ArrayList<ConfigurationType> createConfigs(MPSProject project) {
@@ -179,19 +204,11 @@ public class RunConfigManager implements ProjectComponent {
   private class MyReloadListener extends ReloadAdapter {
     private volatile boolean myIsDisposed = false;
 
-    public void onBeforeReload() {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myIsDisposed) return;
-          disposeRunConfigs();
-        }
-      });
-    }
-
     public void onReload() {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           if (myIsDisposed) return;
+          disposeRunConfigs();
           initRunConfigs();
         }
       });
