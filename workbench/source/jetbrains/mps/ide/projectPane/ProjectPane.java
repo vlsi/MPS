@@ -440,10 +440,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private IModule getCurrentModule() {
-    TreePath[] selection = getTree().getSelectionPaths();
-    if (selection == null) return null;
-    if (selection.length != 1) return null;
-    MPSTreeNode treeNode = (MPSTreeNode) selection[0].getLastPathComponent();
+    TreePath selectionPath = getTree().getLeadSelectionPath();
+    if (selectionPath == null) return null;
+    MPSTreeNode treeNode = (MPSTreeNode) selectionPath.getLastPathComponent();
     while (treeNode != null && !(treeNode instanceof ProjectModuleTreeNode)) {
       treeNode = (MPSTreeNode) treeNode.getParent();
     }
@@ -452,21 +451,22 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
   }
 
   private ActionPlace getPlace() {
-    if (getSelectedTreeNode() instanceof SNodeTreeNode) {
+    TreeNode treeNode = getSelectedTreeNode();
+    if (treeNode instanceof SNodeTreeNode) {
       return ActionPlace.PROJECT_PANE_SNODE;
-    } else if (getSelectedTreeNode() instanceof SModelTreeNode) {
+    } else if (treeNode instanceof SModelTreeNode) {
       return ActionPlace.PROJECT_PANE_SMODEL;
-    } else if (getSelectedTreeNode() instanceof ProjectTreeNode) {
+    } else if (treeNode instanceof ProjectTreeNode) {
       return ActionPlace.PROJECT_PANE_PROJECT;
-    } else if (getSelectedTreeNode() instanceof GeneratorTreeNode) {
+    } else if (treeNode instanceof GeneratorTreeNode) {
       return ActionPlace.PROJECT_PANE_GENERATOR;
-    } else if (getSelectedTreeNode() instanceof TransientModelsTreeNode) {
+    } else if (treeNode instanceof TransientModelsTreeNode) {
       return ActionPlace.PROJECT_PANE_TRANSIENT_MODULES;
-    } else if (getSelectedTreeNode() instanceof PackageNode) {
+    } else if (treeNode instanceof PackageNode) {
       return ActionPlace.PROJECT_PANE_PACKAGE;
-    } else if (getSelectedTreeNode() instanceof NamespaceTextNode) {
+    } else if (treeNode instanceof NamespaceTextNode) {
       return ActionPlace.PROJECT_PANE_NAMESPACE;
-    } else if (getSelectedTreeNode() instanceof ProjectModuleTreeNode) {
+    } else if (treeNode instanceof ProjectModuleTreeNode) {
       IModule module = getSelectedModule();
       if (module instanceof Language) {
         return ActionPlace.PROJECT_PANE_LANGUAGE;
