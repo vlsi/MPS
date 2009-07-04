@@ -24,15 +24,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.watching.ModelChangesWatcher.IReloadListener;
+import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -140,6 +138,9 @@ class ReloadSession {
     for (final IModule module : myDeletedModules) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
+          for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+            SModelRepository.getInstance().removeModelDescriptor(model);
+          }
           String text = "Unloading removed module " + module.getModuleFqName();
           LOG.info(text);
           MPSModuleRepository.getInstance().removeModule(module);
