@@ -125,12 +125,10 @@ public final class SNode {
   }
 
   public void addNextSibling(SNode newSibling) {
-    assert myParent != null && myRoleInParent != null;
     myParent.insertChild(this, myRoleInParent, newSibling);
   }
 
   public void addPrevSibling(SNode newSibling) {
-    assert myParent != null && myRoleInParent != null;
     myParent.insertChild(this, myRoleInParent, newSibling, true);
   }
 
@@ -983,10 +981,13 @@ public final class SNode {
       throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
     }
 
+    if (getTopmostAncestor() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
     ModelChange.assertLegalNodeChange(this);
 
     _children().add(index, child);
-
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
