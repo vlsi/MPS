@@ -138,9 +138,8 @@ class ReloadSession {
     for (final IModule module : myDeletedModules) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          for (SModelDescriptor model : module.getOwnModelDescriptors()) {
-            SModelRepository.getInstance().removeModelDescriptor(model);
-          }
+          module.dispose();
+
           String text = "Unloading removed module " + module.getModuleFqName();
           LOG.info(text);
           MPSModuleRepository.getInstance().removeModule(module);
