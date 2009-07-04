@@ -493,7 +493,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myPopupWindow.dispose();
       myPopupWindow = null;
     }
-    mySubstituteActions.clear();
   }
 
   private void tryToApplyIntelligentInput() {
@@ -516,6 +515,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern, CellSide.RIGHT);
       }
     }
+  }
+
+  public void clearContent() {
+    setNodeSubstituteInfo(null);
+    mySubstituteActions.clear();
   }
 
   private enum PopupWindowPosition {
