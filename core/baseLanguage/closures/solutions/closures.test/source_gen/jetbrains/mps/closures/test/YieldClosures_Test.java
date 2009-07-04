@@ -1055,15 +1055,15 @@ __switch__:
                       this.__CP__ = 3;
                       this.yield(_2__yield);
                       return true;
-                    case 4:
-                      this.__CP__ = 6;
-                      break;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 5:
                       //  last statement
                       this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -1115,19 +1115,19 @@ __switch__:
                       this._3__yield = this._3__yield_it.next();
                       this.__CP__ = 5;
                       break;
-                    case 6:
-                      this.__CP__ = 4;
-                      this.yield(_3__yield);
-                      return true;
                     case 2:
                       this.__CP__ = 3;
                       this.yield(1);
                       return true;
-                    case 5:
-                      this.__CP__ = 6;
-                      break;
+                    case 6:
+                      this.__CP__ = 4;
+                      this.yield(_3__yield);
+                      return true;
                     case 0:
                       this.__CP__ = 2;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -1199,14 +1199,14 @@ __switch__:
                       this.__CP__ = 7;
                       this.yield(_6__yield);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 4:
                       this.__CP__ = 6;
                       break;
                     case 8:
                       this.__CP__ = 9;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -1237,9 +1237,9 @@ __switch__:
             return new YieldingIterator <Integer>() {
 
               private int __CP__ = 0;
+              private int _2_i;
               private Integer _6__yield;
               private Iterator<Integer> _6__yield_it;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1276,14 +1276,14 @@ __switch__:
                       this.__CP__ = 7;
                       this.yield(_6__yield);
                       return true;
-                    case 8:
-                      this.__CP__ = 9;
-                      break;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 4:
                       this.__CP__ = 6;
+                      break;
+                    case 8:
+                      this.__CP__ = 9;
                       break;
                     default:
                       break __loop__;

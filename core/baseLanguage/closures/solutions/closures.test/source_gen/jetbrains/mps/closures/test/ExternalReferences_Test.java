@@ -4,9 +4,9 @@ package jetbrains.mps.closures.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
@@ -14,14 +14,14 @@ public class ExternalReferences_Test extends TestCase {
 
   @Test()
   public void test_localVariableDeclaration() throws Exception {
-    final int foo = 42;
+    final Wrappers._int foo = new Wrappers._int(42);
     int bar = new _FunctionTypes._return_P0_E0 <Integer>() {
 
       public Integer invoke() {
-        return foo;
+        return foo.value++ ;
       }
     }.invoke();
-    Assert.assertEquals(foo, bar);
+    Assert.assertEquals(foo.value, bar);
   }
 
   @Test()
