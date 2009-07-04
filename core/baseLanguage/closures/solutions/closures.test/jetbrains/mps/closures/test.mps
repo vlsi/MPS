@@ -6528,10 +6528,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1202834755155">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1202834755156">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1202834760204">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="6289591591668470604">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6289591591668470605">
-                          <link role="variableDeclaration" targetNodeId="1202834740476" resolveInfo="foo" />
-                        </node>
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6289591591668470605">
+                        <link role="variableDeclaration" targetNodeId="1202834740476" resolveInfo="foo" />
                       </node>
                     </node>
                   </node>
