@@ -6,32 +6,6 @@
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
-  <component name="CodeSearch/QueryHistory">
-    <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)$" />
-      </queryExtra>
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)$" packages="" caseSensitive="false" />
-      </queryExtra>
-    </query>
-    <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)|(xml)$" />
-      </queryExtra>
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)|(xml)$" packages="(uwaterloo\.ca)|(mit\.edu)" caseSensitive="false" />
-      </queryExtra>
-    </query>
-    <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)|(xml)|(txt)$" />
-      </queryExtra>
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)|(xml)|(txt)$" packages="sourceforge\.net" caseSensitive="false" />
-      </queryExtra>
-    </query>
-  </component>
   <component name="CodeStyleProjectProfileManger">
     <option name="PROJECT_PROFILE" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -156,28 +130,8 @@
       <entry name="?*.zip" />
     </wildcardResourcePatterns>
   </component>
-  <component name="CopyrightManager" default="JetBrains Apache 2.0">
-    <copyright>
-      <option name="notice" value="Copyright 2003-2009 JetBrains s.r.o.&#10;&#10;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#10;you may not use this file except in compliance with the License.&#10;You may obtain a copy of the License at&#10;&#10;http://www.apache.org/licenses/LICENSE-2.0&#10;&#10;Unless required by applicable law or agreed to in writing, software&#10;distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#10;WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#10;See the License for the specific language governing permissions and&#10;limitations under the License." />
-      <option name="keyword" value="Copyright" />
-      <option name="myName" value="JetBrains Apache 2.0" />
-      <option name="myLocal" value="true" />
-    </copyright>
+  <component name="CopyrightManager" default="">
     <module2copyright />
-    <LanguageOptions name="JAVA">
-      <option name="fileTypeOverride" value="3" />
-      <option name="relativeBefore" value="true" />
-      <option name="addBlankAfter" value="false" />
-      <option name="fileLocation" value="1" />
-      <option name="block" value="true" />
-      <option name="separateBefore" value="false" />
-      <option name="separateAfter" value="false" />
-      <option name="prefixLines" value="true" />
-      <option name="lenBefore" value="80" />
-      <option name="lenAfter" value="80" />
-      <option name="box" value="false" />
-      <option name="filler" value=" " />
-    </LanguageOptions>
   </component>
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
@@ -207,156 +161,6 @@
     <option name="PRINT_LINE_NUMBERS" value="false" />
     <option name="OPEN_IN_BROWSER" value="false" />
     <option name="OUTPUT_DIRECTORY" />
-  </component>
-  <component name="FacetAutodetectingManager">
-    <autodetection-disabled>
-      <facet-type id="web">
-        <modules>
-          <module name="webrSamples_depot" />
-          <module name="webrSamples_hello" />
-          <module name="charisma-app" />
-          <module name="MPS" />
-          <module name="stwiki-webapp">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/stwiki/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/app/stwiki/exploded/WEB-INF/web.xml" />
-            </files>
-          </module>
-          <module name="MForum">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/MForum/exploded/WEB-INF/web.xml" />
-            </files>
-          </module>
-          <module name="accounting">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/accounting/web-app/WEB-INF/web.xml" />
-            </files>
-          </module>
-          <module name="charisma">
-            <files>
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/web.xml" />
-            </files>
-          </module>
-          <module name="PubMedDB">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/PubMedDB/WEB-INF/web.xml" />
-            </files>
-          </module>
-          <module name="search-watch">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/search-watch/WEB-INF/web.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-      <facet-type id="jpa">
-        <modules>
-          <module name="MPS">
-            <files>
-              <file url="file://$PROJECT_DIR$/META-INF/persistence.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-      <facet-type id="gwt">
-        <modules>
-          <module name="GWTEditor">
-            <files>
-              <file url="file://$PROJECT_DIR$/app/GWTEditor/source/jetbrains/gwteditor/GWTEditor.gwt.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-      <facet-type id="Spring">
-        <modules>
-          <module name="MForum" />
-          <module name="MPS" />
-          <module name="PubMedDB" />
-          <module name="accounting" />
-          <module name="baseLanguageExt" />
-          <module name="blogs" />
-          <module name="businessRules" />
-          <module name="charisma-app" />
-          <module name="core" />
-          <module name="dnq" />
-          <module name="dnq-runtime" />
-          <module name="search-watch" />
-          <module name="stwiki-webapp" />
-          <module name="webr" />
-          <module name="webrRuntime" />
-          <module name="webrRuntime_notifications" />
-          <module name="webrSamples_depot" />
-          <module name="webrSamples_hello" />
-          <module name="webrSamples_sandbox" />
-          <module name="webr_userManagement" />
-          <module name="charisma">
-            <files>
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/persistentStore.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/testPersistentStore.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/com/jetbrains/teamsys/core/spring/transientStore.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/activity/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/admin/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/entityBrowser/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/errors/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/flex/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/SecurityRequestProcessorImplConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/datetimeConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/notificationsConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/userManagementConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/main/webConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/businessRulesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/charismaTextIndexConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/entityMetaDataConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/modelMetadataConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/persistent/storeConfigurationDatabase.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/project/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/rss/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/editRoles/converterConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/security/roles/converterConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/tests/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/user/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/webtests/webUnitConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/wiki/wikiLinkHandlersConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/issue/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/linkIssue/converterConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/tagIssue/converterConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/charisma/workspace/workspace/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/notifications/runtime/spring/email.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/converter/converterManagerConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/error/actionFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ActionRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/ClasspathRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/EventRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/FileUploadRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/HtmlTemplateRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/PersistentFileRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/TextRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/requestProcessor/actionConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTConfigConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/rest/RESTRequestProcessorConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiLinkHandlersConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/webr/runtime/wiki/wikiManagerConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/mps/wiki/runtime/higlighter/java/higlighterBeansConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/exploded/WEB-INF/classes/jetbrains/teamsys/dnq/runtime/files/entityMetaDataConfiguration.xml" />
-            </files>
-          </module>
-          <module name="dates">
-            <files>
-              <file url="file://$PROJECT_DIR$/core/baseLanguage/dates/tests_gen/jetbrains/mps/baseLanguage/ext/dates/unittest/tests/datetimeConfiguration.xml" />
-            </files>
-          </module>
-          <module name="charisma-agent">
-            <files>
-              <file url="file://$PROJECT_DIR$/charisma-agent/solutions/classes_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
-              <file url="file://$PROJECT_DIR$/charisma-agent/solutions/source_gen/jetbrains/charisma/desktopagent/ResourceFactoriesConfiguration.xml" />
-            </files>
-          </module>
-        </modules>
-      </facet-type>
-    </autodetection-disabled>
   </component>
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
   <component name="InspectionProjectProfileManager">
@@ -1070,7 +874,7 @@
       <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files (x86)/Java/jdk1.6.0_12" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
