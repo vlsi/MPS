@@ -1,3 +1,4 @@
+-client
 -Xss1024k
 -ea
 -Xmx1200m

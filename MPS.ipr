@@ -2,7 +2,7 @@
 <project relativePaths="false" version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
-    <buildFile url="file://C:/charisma/charisma-gentesting.xml">
+    <buildFile url="file://$CHARISMA_HOME$/charisma-gentesting.xml">
       <additionalClassPath />
       <antReference projectDefault="true" />
       <customJdkName value="" />
@@ -1015,7 +1015,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" filepath="$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" group="platform/xml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -1075,11 +1075,11 @@
     </configuration>
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-ea -Xmx1024m -XX:MaxPermSize=200m  -Xss1024k -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError" />
+      <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-6-sun" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files (x86)/Java/jdk1.6.0_12" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -1159,8 +1159,8 @@
                     <value>
                       <list>
                         <SvnBranchItem>
-                          <option name="creationDateMillis" value="1246526500022" />
-                          <option name="revision" value="45822" />
+                          <option name="creationDateMillis" value="1246624828244" />
+                          <option name="revision" value="45871" />
                           <option name="url" value="http://svn.jetbrains.org/mps/branches/1.0" />
                         </SvnBranchItem>
                         <SvnBranchItem>
@@ -1731,5 +1731,8 @@
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
+  <UsedPathMacros>
+    <macro name="CHARISMA_HOME" description="" />
+  </UsedPathMacros>
 </project>
 

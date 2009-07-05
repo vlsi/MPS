@@ -30,11 +30,11 @@ import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.HashSet;
+import java.util.ArrayList;
 
 public class ClassLoaderManager implements ApplicationComponent {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
@@ -126,8 +126,6 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Rebuilding ui...");
       callAfterReloadHandlers();
-
-      System.gc();
     } finally {
       indicator.popState();
     }
