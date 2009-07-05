@@ -126,8 +126,6 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       indicator.setText2("Rebuilding ui...");
       callAfterReloadHandlers();
-            
-      System.gc();
     } finally {
       indicator.popState();
     }
