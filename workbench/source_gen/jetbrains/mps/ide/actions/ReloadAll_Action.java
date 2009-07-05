@@ -60,22 +60,18 @@ public class ReloadAll_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      int iteration = 0;
-      while (true) {
-        System.out.println("iteration = " + iteration++);        
-        ProgressManager.getInstance().run(new Task.Modal(ReloadAll_Action.this.project, "Reloading Classes", false) {
+      ProgressManager.getInstance().run(new Task.Modal(ReloadAll_Action.this.project, "Reloading Classes", false) {
 
-          public void run(@NotNull() final ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
-            ModelAccess.instance().runReadAction(new Runnable() {
+        public void run(@NotNull() final ProgressIndicator indicator) {
+          indicator.setIndeterminate(true);
+          ModelAccess.instance().runReadAction(new Runnable() {
 
-              public void run() {
-                ClassLoaderManager.getInstance().reloadAll(indicator);
-              }
-            });
-          }
-        });
-      }
+            public void run() {
+              ClassLoaderManager.getInstance().reloadAll(indicator);
+            }
+          });
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ReloadAll", t);
