@@ -7,9 +7,11 @@ import jetbrains.mps.smodel.constraints.IModelConstraints;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.SimpleSearchScope;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
@@ -28,6 +30,9 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+      return new SimpleSearchScope(new ArrayList());
+    }
     SNode instance = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
