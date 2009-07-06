@@ -88,8 +88,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
       dialog.setVisible(true);
       if (dialog.isRunChecked()) {
         AbstractMigrationScriptHelper.doRunScripts(dialog.getCheckedScripts(), scope, RunMigrationScripts_Action.this.context);
-      } else if (dialog.isOpenSelected())
-      {
+      } else if (dialog.isOpenSelected()) {
         RunMigrationScripts_Action.this.project.getComponent(MPSEditorOpener.class).editNode(dialog.getSelectedScripts().get(0).getNode(), RunMigrationScripts_Action.this.context);
       }
     } catch (Throwable t) {

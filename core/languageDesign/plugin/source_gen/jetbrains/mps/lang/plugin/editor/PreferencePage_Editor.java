@@ -101,7 +101,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6322_3(context, node, "icon"));
     editorCell.addEditorCell(this.createConstant_6322_4(context, node, ":"));
     editorCell.addEditorCell(this.createAlternation_6322_0(context, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_954487605981593366(node, context), "_954487605981593365"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_6045703196599367781(node, context), "_6045703196599367780"));
     return editorCell;
   }
 
@@ -244,7 +244,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   public EditorCell createImage_6322_0(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_954487605981593355(node, context));
+    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_6045703196599367770(node, context));
     setupBasic_Image_6322_0(editorCell, node, context);
     editorCell.setDescent(0);
     return editorCell;
@@ -719,7 +719,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_6322_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static String _image_provider_954487605981593355(SNode node, EditorContext editorContext) {
+  public static String _image_provider_6045703196599367770(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "icon");
   }
 
@@ -740,7 +740,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static JComponent _QueryFunction_JComponent_954487605981593366(SNode node, EditorContext editorContext) {
+  public static JComponent _QueryFunction_JComponent_6045703196599367781(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 

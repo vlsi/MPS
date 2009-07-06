@@ -13,11 +13,11 @@ public class FixNamingPolicy_property_once_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription() {
-    return ((String)this.getField("caption")[0]);
+    return ((String)FixNamingPolicy_property_once_QuickFix.this.getField("caption")[0]);
   }
 
   public void execute(SNode node) {
-    ((PropertyReference)this.getField("property")[0]).setValue(NameUtil.captionWithNamingPolicy(((PropertyReference)this.getField("property")[0]).getValue()));
+    ((PropertyReference)FixNamingPolicy_property_once_QuickFix.this.getField("property")[0]).setValue(NameUtil.captionWithNamingPolicy(((PropertyReference)FixNamingPolicy_property_once_QuickFix.this.getField("property")[0]).getValue()));
   }
 
 }

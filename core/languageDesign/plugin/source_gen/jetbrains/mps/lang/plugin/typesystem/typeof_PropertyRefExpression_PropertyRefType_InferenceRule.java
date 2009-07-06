@@ -19,7 +19,7 @@ public class typeof_PropertyRefExpression_PropertyRefType_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = expression;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(expression, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140817", true), (SNode)SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.PropertyRefType", null), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140811", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140817", true), (SNode)SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.PropertyRefType", null), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1628770029971140811", intentionProvider);
     }
   }
 

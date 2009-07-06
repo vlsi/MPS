@@ -28,9 +28,9 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       typeCheckingContext.reportTypeError(SLinkOperations.getTarget(mae, "index", true), "Tuple index must be a constant expression", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238859427576", intentionProvider, errorTarget);
     }
     {
-      SNode _nodeToCheck_1029348928467 = mae;
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mae, "index", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(mae, "index", true), "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode)new _Quotations.QuotationClass_1().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857999186", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode)new _Quotations.QuotationClass_1().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857999186", false, 0, intentionProvider);
     }
     if (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true))) {
       Object idxValue = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(mae, "index", true), SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModelDescriptor().getModule());
@@ -53,7 +53,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
               {
                 SNode _nodeToCheck_1029348928467 = mae;
                 BaseIntentionProvider intentionProvider = null;
-                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(mae, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode)ListSequence.fromList(mtypes).getElement(index), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", intentionProvider);
+                typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864289746", true), (SNode)ListSequence.fromList(mtypes).getElement(index), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238864299354", intentionProvider);
               }
             }
           }

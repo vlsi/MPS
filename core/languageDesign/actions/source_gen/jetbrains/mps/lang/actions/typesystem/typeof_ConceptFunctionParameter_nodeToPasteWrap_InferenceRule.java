@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule exten
     {
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(node, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1221137387963", true), (SNode)new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToPasteWrap_Behavior.call_getWrapper_1221137356128(node), "sourceConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1221137397106", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1221137387963", true), (SNode)new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToPasteWrap_Behavior.call_getWrapper_1221137356128(node), "sourceConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1221137397106", intentionProvider);
     }
   }
 

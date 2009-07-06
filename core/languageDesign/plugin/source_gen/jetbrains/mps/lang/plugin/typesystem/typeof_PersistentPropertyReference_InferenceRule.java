@@ -19,7 +19,7 @@ public class typeof_PersistentPropertyReference_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = propertyReference;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(propertyReference, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181178303", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(propertyReference, "member", false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181187066", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181181600", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181178303", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(propertyReference, "member", false), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181187066", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210181181600", intentionProvider);
     }
   }
 

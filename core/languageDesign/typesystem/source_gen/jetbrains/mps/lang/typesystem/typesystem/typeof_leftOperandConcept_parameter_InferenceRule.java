@@ -22,7 +22,7 @@ public class typeof_leftOperandConcept_parameter_InferenceRule extends AbstractI
       {
         SNode _nodeToCheck_1029348928467 = concept_parameter;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(concept_parameter, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083427979", true), (SNode)new _Quotations.QuotationClass_38().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "leftOperandType", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083427968", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083427979", true), (SNode)new _Quotations.QuotationClass_38().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "leftOperandType", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083427968", intentionProvider);
       }
     }
   }

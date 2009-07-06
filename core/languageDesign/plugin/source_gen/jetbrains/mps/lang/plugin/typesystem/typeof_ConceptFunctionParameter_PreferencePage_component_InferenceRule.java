@@ -20,7 +20,7 @@ public class typeof_ConceptFunctionParameter_PreferencePage_component_InferenceR
     {
       SNode _nodeToCheck_1029348928467 = component;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(component, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690935802", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(component, "jetbrains.mps.lang.plugin.structure.PreferencePage", false, false), "component", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690958118", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690956261", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690935802", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(component, "jetbrains.mps.lang.plugin.structure.PreferencePage", false, false), "component", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690958118", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1210690956261", intentionProvider);
     }
   }
 

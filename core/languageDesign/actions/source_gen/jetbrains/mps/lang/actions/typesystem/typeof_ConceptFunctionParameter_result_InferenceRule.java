@@ -21,7 +21,7 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = result;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(result, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766217", true), (SNode)new _Quotations.QuotationClass_1().createNode(conceptOfResult, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766215", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766217", true), (SNode)new _Quotations.QuotationClass_1().createNode(conceptOfResult, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766215", intentionProvider);
     }
   }
 
