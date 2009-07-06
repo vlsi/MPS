@@ -92,7 +92,11 @@ public class DefaultCellInfo implements CellInfo {
         return null;
       }
       if (myCellNumber < parent.getChildCount()) {
-        return parent.getChildAt(myCellNumber);
+        EditorCell editorCell = parent.getChildAt(myCellNumber);
+        if (editorCell.getCellId() != null) {
+          return null;
+        }
+        return editorCell;
       } else {
         return null;
       }
