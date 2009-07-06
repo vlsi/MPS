@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.DeprecatedVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.util.Computable;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NonNls;
@@ -115,11 +116,15 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   }
 
   public boolean isValid() {
-    SNode node = myNode.getNode();
-    if (node == null) {
-      return false;
-    }
-    return node.isRegistered();
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        SNode node = myNode.getNode();
+        if (node == null) {
+          return false;
+        }
+        return node.isRegistered();
+      }
+    });
   }
 
   public long getTimeStamp() {
