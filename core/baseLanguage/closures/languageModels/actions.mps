@@ -268,12 +268,17 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229707010078">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1229707010079">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229707011866">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229707011542">
-                  <link role="variableDeclaration" targetNodeId="1229707001491" resolveInfo="nodes" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8889998649496380244">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8889998649496380304">
+                <property name="value" value="false" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1229707010079">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229707011866">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229707011542">
+                    <link role="variableDeclaration" targetNodeId="1229707001491" resolveInfo="nodes" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1237042865707" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1237042865707" />
               </node>
             </node>
           </node>
