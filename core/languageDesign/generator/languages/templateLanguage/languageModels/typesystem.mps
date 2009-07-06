@@ -699,7 +699,7 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1178667032128">
         <link role="concept" targetNodeId="3.1167951328751" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1178908772191" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1980960612890669489" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667009996">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1178667729634">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667729635">
@@ -1000,7 +1000,7 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1178667975635">
         <link role="concept" targetNodeId="10.1137021947720" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1178908794040" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1980960612890672465" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178667968419">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1178668081224">
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1178668087405">

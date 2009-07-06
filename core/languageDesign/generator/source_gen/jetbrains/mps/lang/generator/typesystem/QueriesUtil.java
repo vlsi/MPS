@@ -66,7 +66,7 @@ public class QueriesUtil {
     }
   }
 
-  private static SNode getEnclosing_SourceSubstituteMacro(SNode node, SNode currMacroNode) {
+  public static SNode getEnclosing_SourceSubstituteMacro(SNode node, SNode currMacroNode) {
     if (node == null) {
       return null;
     }
@@ -165,7 +165,7 @@ __switch__:
     return Sequence.fromIterable(TFs).first();
   }
 
-  private static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {
+  public static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {
     if (macro == null) {
       return null;
     }
