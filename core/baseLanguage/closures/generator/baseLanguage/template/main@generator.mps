@@ -15262,10 +15262,10 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1207145263600">
-                <link role="baseMethodDeclaration" targetNodeId="13.1207078442157" resolveInfo="collectLocalVariableDeclarationsToWrap" />
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5415035327164076914">
+                <link role="baseMethodDeclaration" targetNodeId="13.1207078442157" resolveInfo="collectVariableDeclarationsToWrap" />
                 <link role="classConcept" targetNodeId="13.1207078435086" resolveInfo="WrappersUtils" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207145263601">
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5415035327164076915">
                   <link role="variableDeclaration" targetNodeId="1207145219757" resolveInfo="cl" />
                 </node>
               </node>
