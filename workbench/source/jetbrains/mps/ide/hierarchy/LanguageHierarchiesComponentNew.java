@@ -63,6 +63,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
   private Language myLanguage;
   private IOperationContext myOperationContext;
   private List<ConceptContainer> myRoots = new ArrayList<ConceptContainer>();
+  private List<ConceptContainer> myNodes = new ArrayList<ConceptContainer>();
   private float myScale = 1f;
   private boolean mySkipAncestors = true;
   private int myWidth = 0;
@@ -106,7 +107,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
           myScale += 0.2;
           if (myScale > 6) myScale = 6;
           myScaleField.setText((int) (myScale * 100) + "%");
-          relayout();
+          relayout1();
           LanguageHierarchiesComponentNew.this.invalidate();
           getExternalComponent().revalidate();
           getExternalComponent().repaint();
@@ -119,7 +120,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
           myScale -= 0.2;
           if (myScale < 0.2) myScale = 0.2f;
           myScaleField.setText((int) (myScale * 100) + "%");
-          relayout();
+          relayout1();
           LanguageHierarchiesComponentNew.this.invalidate();
           getExternalComponent().revalidate();
           getExternalComponent().repaint();
@@ -131,7 +132,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
         if (myScale != 1) {
           myScale = 1;
           myScaleField.setText((int) (myScale * 100) + "%");
-          relayout();
+          relayout1();
           LanguageHierarchiesComponentNew.this.invalidate();
           getExternalComponent().revalidate();
           getExternalComponent().repaint();
@@ -192,7 +193,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 
-  public List<ConceptContainer> createHierarchyForest() {
+  public void createHierarchyForest() {
     List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<AbstractConceptDeclaration, ConceptContainer> processed = new HashMap<AbstractConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
@@ -240,6 +241,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
               processed.put(ancestor, parentConceptContainer);
             }
             parentConceptContainer.addChild(descConceptContainer);
+            descConceptContainer.setRank(Math.max(descConceptContainer.getRank(), parentConceptContainer.getRank() + 1));
           }
         }
         if (root) {
@@ -249,9 +251,37 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       conceptFrontier = newFrontier;
       newFrontier = new HashSet<AbstractConceptDeclaration>();
     }
-    return result;
+    myRoots = result;
+    myNodes = new ArrayList<ConceptContainer>(processed.values());
+    Collections.sort(myNodes);
+    return;
   }
 
+  private void relayout1() {
+    if (myRoots.isEmpty()) return;
+    int level = 0;
+    int y = 0;
+    int x = 0;
+    ConceptContainer prev = null;
+    for (ConceptContainer conceptContainer : myNodes) {
+      if (conceptContainer.getRank() == 0) {
+        conceptContainer.updateSubtreeWidth();
+      }
+      if (conceptContainer.getRank() > level) {
+        level++;
+        x = 0;
+        y += 3 * SPACING * myScale + (prev == null ? 0 : prev.getHeight());
+      }
+      int subtreeWidth = conceptContainer.getSubtreeWidth();
+      conceptContainer.setX(x + (subtreeWidth - conceptContainer.getWidth()) / 2);
+      conceptContainer.setY((int) (y + SPACING * myScale));
+      x += subtreeWidth;
+      //todo
+      
+      //
+      prev = conceptContainer;
+    }
+  }
 
 
   private void relayout() {
@@ -296,8 +326,8 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         mySelectedConceptContainer = null;
-        myRoots = createHierarchyForest();
-        relayout();
+        createHierarchyForest();
+        relayout1();
       }
     });
   }
@@ -361,13 +391,14 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
     return null;
   }
 
-  public static class ConceptContainer {
+  public static class ConceptContainer implements Comparable<ConceptContainer> {
 
     private SNodePointer myNodePointer;
     private int myX;
     private int myY;
     private int myWidth;
     private int myHeight;
+    private int myRank = 0;
     private Color myColor = ColorAndGraphicsUtil.saturateColor(Color.BLUE, 0.2f);
     private boolean myRootable = false;
     private int mySubtreeWidth = 0;
@@ -412,6 +443,14 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
           }
         }
       });
+    }
+
+    public void setRank(int rank) {
+      myRank = rank;
+    }
+
+    public int getRank() {
+      return myRank;
     }
 
     public AbstractConceptDeclaration getNode() {
@@ -653,6 +692,10 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
 
     public void removeMouseListener(MouseListener listener) {
       myMouseListeners.remove(listener);
+    }
+
+    public int compareTo(ConceptContainer o) {
+      return myRank - o.myRank;
     }
   }
 }
