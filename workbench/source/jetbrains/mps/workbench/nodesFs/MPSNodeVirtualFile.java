@@ -54,7 +54,6 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
     });
   }
 
-  @NotNull
   public SNode getNode() {
     return myNode.getNode();
   }
