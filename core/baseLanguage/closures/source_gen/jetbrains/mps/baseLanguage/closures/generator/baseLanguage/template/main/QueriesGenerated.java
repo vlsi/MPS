@@ -317,7 +317,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219934617805(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept")).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
+    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept")).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
   }
 
   public static boolean baseMappingRule_Condition_1228828862668(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -404,7 +404,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1232364643901(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return Flags.NEEDS_INITIALIZER.isFlagged(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true));
+    return (SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true) != null) && Flags.NEEDS_INITIALIZER.isFlagged(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true));
   }
 
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
