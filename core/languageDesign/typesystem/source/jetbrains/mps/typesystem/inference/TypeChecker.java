@@ -114,7 +114,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public SubtypingCache getGlobalSubtypingCache() {
-    return mySubtypingCache;
+    return myGlobalSubtypingCache;
   }
 
   public void enableGlobalSubtypingCache() {
