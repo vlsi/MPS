@@ -91,6 +91,7 @@
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="8696125237882104177" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1167756687276">
+        <property name="attractsFocus" value="0" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1167756690247">
           <property name="text" value="value :" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310994492">
@@ -99,6 +100,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1167756850114">
           <property name="noTargetText" value="&lt;none&gt;" />
+          <property name="attractsFocus" value="2" />
           <link role="relationDeclaration" targetNodeId="1.1167756362303" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996677">
@@ -287,6 +289,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1167770426896">
           <property name="noTargetText" value="&lt;none&gt;" />
+          <property name="attractsFocus" value="2" />
           <link role="relationDeclaration" targetNodeId="1.1167770376702" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993574">
@@ -1212,6 +1215,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1168380475678">
             <property name="text" value=":" />
+            <property name="attractsFocus" value="2" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310993868">
               <property name="flag" value="false" />
             </node>
@@ -1993,6 +1997,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1168281881385">
             <property name="noTargetText" value="&lt;current source node&gt;" />
+            <property name="attractsFocus" value="2" />
             <link role="relationDeclaration" targetNodeId="1.1168281849769" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996005">
@@ -2164,6 +2169,7 @@
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1168291602966">
             <property name="noTargetText" value="&lt;none&gt;" />
+            <property name="attractsFocus" value="2" />
             <link role="relationDeclaration" targetNodeId="1.1168291362368" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995101">

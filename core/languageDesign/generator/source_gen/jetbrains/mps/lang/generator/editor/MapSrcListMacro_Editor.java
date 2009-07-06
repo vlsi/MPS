@@ -494,6 +494,9 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2762_0(EditorCell editorCell, SNode node, EditorContext context) {
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
   }
 
   private static void setupBasic_Collection_2762_4(EditorCell editorCell, SNode node, EditorContext context) {

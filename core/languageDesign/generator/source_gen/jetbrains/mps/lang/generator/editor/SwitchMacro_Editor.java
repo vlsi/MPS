@@ -442,6 +442,9 @@ public class SwitchMacro_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
   }
 
   private static void setupBasic_RefNode_3956_0(EditorCell editorCell, SNode node, EditorContext context) {
