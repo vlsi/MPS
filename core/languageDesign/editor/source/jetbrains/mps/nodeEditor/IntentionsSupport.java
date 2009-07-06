@@ -135,6 +135,7 @@ public class IntentionsSupport {
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
+              if (myEditor.isDisposed()) return;
               if (myEditor.getSelectedCell() != null) {
                 adjustLightBulbLocation();
                 myShowIntentionsAction.setEnabled(availablePresent[0]);
@@ -148,6 +149,7 @@ public class IntentionsSupport {
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
+              if (myEditor.isDisposed()) return;
               if (myEditor.getSelectedCell() != null) {
                 setLightBulbVisibility(enabledPresent[0]);
               } else {

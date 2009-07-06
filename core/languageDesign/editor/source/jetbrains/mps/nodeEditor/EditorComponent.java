@@ -118,6 +118,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myRelayoutRequested = false;
   private boolean myIsEditable = true;
 
+  private boolean myDisposed = false;
+
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -882,6 +884,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void dispose() {
+    if (myDisposed) throw new IllegalStateException(); 
+    myDisposed = true;
+
     if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
       hideMessageToolTip();
     }
@@ -908,6 +913,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onRemove();
       myRootCell = null;
     }
+  }
+
+  public boolean isDisposed() {
+    return myDisposed;
   }
 
   private void addOurListeners(SModelDescriptor sm) {
