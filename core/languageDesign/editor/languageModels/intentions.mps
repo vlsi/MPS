@@ -3407,8 +3407,8 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241019000383">
                         <link role="variableDeclaration" targetNodeId="1238689884095" resolveInfo="editor" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1241019000384">
-                        <link role="link" targetNodeId="1.1166049300910" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609955">
+                        <link role="baseMethodDeclaration" targetNodeId="4.7055725856388417603" resolveInfo="getConceptDeclaration" />
                       </node>
                     </node>
                     <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241019007838">
@@ -3485,8 +3485,8 @@
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1239370696018">
                 <link role="variableDeclaration" targetNodeId="1239370683608" resolveInfo="node" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1239370711336">
-                <link role="link" targetNodeId="1.1166049300910" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609938">
+                <link role="baseMethodDeclaration" targetNodeId="4.7055725856388417603" resolveInfo="getConceptDeclaration" />
               </node>
             </node>
           </node>

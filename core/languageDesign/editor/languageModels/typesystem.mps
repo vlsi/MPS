@@ -142,8 +142,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1179767174645">
-                  <link role="link" targetNodeId="3.1166049300910" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609956">
+                  <link role="baseMethodDeclaration" targetNodeId="12.7055725856388417603" resolveInfo="getConceptDeclaration" />
                 </node>
               </node>
             </node>
@@ -204,8 +204,8 @@
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1179766709117">
-              <link role="link" targetNodeId="3.1166049300910" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609958">
+              <link role="baseMethodDeclaration" targetNodeId="12.7055725856388417603" resolveInfo="getConceptDeclaration" />
             </node>
           </node>
         </node>
@@ -387,8 +387,8 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179768073044">
               <link role="variableDeclaration" targetNodeId="1179768059971" resolveInfo="hostComponent" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1179768085257">
-              <link role="link" targetNodeId="3.1166049300910" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609957">
+              <link role="baseMethodDeclaration" targetNodeId="12.7055725856388417603" resolveInfo="getConceptDeclaration" />
             </node>
           </node>
         </node>

@@ -18,10 +18,10 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="C:/Documents and Settings/kostik/MPSProjects/IndentDemo/solutions/IndentDemo.sandbox/IndentDemo.sandbox.msd" />
+      <solutionPath path="C:/Documents and Settings/Kostik/MPSProjects/IndentDemo/solutions/IndentDemo.sandbox/IndentDemo.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="C:/Documents and Settings/kostik/MPSProjects/IndentDemo/languages/IndentDemo/IndentDemo.mpl" />
+      <languagePath path="C:/Documents and Settings/Kostik/MPSProjects/IndentDemo/languages/IndentDemo/IndentDemo.mpl" />
       <languagePath path="${project}/editor.mpl" />
     </projectLanguages>
     <projectDevkits />

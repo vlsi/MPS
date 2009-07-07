@@ -7278,8 +7278,8 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198590097499">
                     <link role="variableDeclaration" targetNodeId="1198588572591" resolveInfo="container" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1198590101349">
-                    <link role="link" targetNodeId="2.1166049300910" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7055725856388609926">
+                    <link role="baseMethodDeclaration" targetNodeId="30.7055725856388417603" resolveInfo="getConceptDeclaration" />
                   </node>
                 </node>
               </node>
