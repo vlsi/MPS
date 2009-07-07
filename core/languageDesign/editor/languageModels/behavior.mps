@@ -5515,5 +5515,38 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7055725856388840245">
+    <link role="concept" targetNodeId="1.1088185857835" resolveInfo="InlineEditorComponent" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7055725856388840246">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7055725856388840247" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7055725856388840248">
+      <property name="name" value="getConceptDeclaration" />
+      <link role="overriddenMethod" targetNodeId="7055725856388417603" resolveInfo="getConceptDeclaration" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7055725856388840251">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7055725856388840281">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856388840282">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856388840283">
+              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7055725856388840287">
+                <link role="concept" targetNodeId="1.1088013125922" resolveInfo="CellModel_RefCell" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856388840288">
+                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7055725856388840289" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="7055725856388840290" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7055725856388840285">
+                <link role="link" targetNodeId="1.1088013239202" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7055725856388840286">
+              <link role="link" targetNodeId="15.1071599976176" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="7055725856388840252" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7055725856388840253" />
+    </node>
+  </node>
 </model>
 
