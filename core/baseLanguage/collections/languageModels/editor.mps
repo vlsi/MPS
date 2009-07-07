@@ -140,7 +140,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1153944293571">
       <link role="relationDeclaration" targetNodeId="1.1153944258490" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1153944293572">
-        <link role="conceptDeclaration" targetNodeId="1.1153944193378" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1153944301918">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />

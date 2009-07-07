@@ -1113,7 +1113,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1136891232433">
         <link role="relationDeclaration" targetNodeId="1.1136890071566" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1136891232432">
-          <link role="conceptDeclaration" targetNodeId="1.1136720037779" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1136891238607">
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934061">
@@ -1135,7 +1134,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1136891206929">
         <link role="relationDeclaration" targetNodeId="1.1136890007360" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1136891206928">
-          <link role="conceptDeclaration" targetNodeId="1.1136720037781" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1136891217556">
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1214314934235">
@@ -1213,7 +1211,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1220024232617">
         <link role="relationDeclaration" targetNodeId="1.1220024163613" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1220024232618">
-          <link role="conceptDeclaration" targetNodeId="1.1137418540378" resolveInfo="LinkPatternVariableDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1220024232619">
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
             <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1220024232620">

@@ -59,7 +59,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1205752934708">
         <link role="relationDeclaration" targetNodeId="5.1205752917136" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1205752934709">
-          <link role="conceptDeclaration" targetNodeId="5.1205751982837" resolveInfo="IClassifier" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205752935414">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -87,7 +86,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1205769396163">
         <link role="relationDeclaration" targetNodeId="5.1205769403793" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1205769396164">
-          <link role="conceptDeclaration" targetNodeId="5.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205769397479">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -328,7 +326,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1213999826700">
       <link role="relationDeclaration" targetNodeId="5.1213999117683" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1213999826701">
-        <link role="conceptDeclaration" targetNodeId="5.1213999088275" resolveInfo="DefaultClassifierField" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1213999830409">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -359,7 +356,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1218736930196">
           <link role="relationDeclaration" targetNodeId="5.1218736638915" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1218736930197">
-            <link role="conceptDeclaration" targetNodeId="3.1107461130800" resolveInfo="Classifier" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1218736934855">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />

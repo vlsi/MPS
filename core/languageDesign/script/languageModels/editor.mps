@@ -346,7 +346,6 @@
             <property name="noTargetText" value="&lt;choose concept&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1177457957477" />
             <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1177551438479">
-              <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
               <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1177551438480">
                 <property name="readOnly" value="true" />
                 <link role="relationDeclaration" targetNodeId="2.1169194664001" />

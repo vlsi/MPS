@@ -57,7 +57,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1159268661795">
         <link role="relationDeclaration" targetNodeId="1.1159268661479" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1159268661796">
-          <link role="conceptDeclaration" targetNodeId="1.1159268590033" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1159268661797">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -105,7 +104,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1219697884425">
         <link role="relationDeclaration" targetNodeId="1.1161696749763" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1219697884426">
-          <link role="conceptDeclaration" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1219697890195">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -144,7 +142,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1209476379605">
         <link role="relationDeclaration" targetNodeId="1.1209476075374" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1209476379606">
-          <link role="conceptDeclaration" targetNodeId="1.1162556266355" resolveInfo="BarConcept" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1209476428083">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />

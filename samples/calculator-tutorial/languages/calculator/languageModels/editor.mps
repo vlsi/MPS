@@ -77,7 +77,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1241363135168">
       <link role="relationDeclaration" targetNodeId="1.1241363105304" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1241363135169">
-        <link role="conceptDeclaration" targetNodeId="1.1241362608529" resolveInfo="InputField" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1241363140468">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />

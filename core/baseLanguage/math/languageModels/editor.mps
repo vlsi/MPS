@@ -94,7 +94,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1235730072336">
       <link role="relationDeclaration" targetNodeId="1.1235730054504" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1235730072337">
-        <link role="conceptDeclaration" targetNodeId="1.1235729930489" resolveInfo="SumVariableDeclaration" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1235730073417">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />

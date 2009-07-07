@@ -754,7 +754,6 @@
         <link role="relationDeclaration" targetNodeId="1.1229629839560" />
         <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="KeyWord" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1236783662917">
-          <link role="conceptDeclaration" targetNodeId="4.1081236700938" resolveInfo="StaticMethodDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1236783662918">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="5.1169194664001" resolveInfo="name" />
@@ -826,7 +825,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1236783673730">
           <link role="relationDeclaration" targetNodeId="1.1232476496647" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1236783673731">
-            <link role="conceptDeclaration" targetNodeId="1.1229599114269" resolveInfo="ControlClosureLiteral" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1236783679722">
               <property name="separatorText" value="," />
               <link role="relationDeclaration" targetNodeId="1.1199569906740" />

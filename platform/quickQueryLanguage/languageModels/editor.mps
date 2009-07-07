@@ -59,7 +59,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1218795568071">
           <link role="relationDeclaration" targetNodeId="1.1219753034317" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1218795568072">
-            <link role="conceptDeclaration" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1218795571418">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
@@ -131,7 +130,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1219745786565">
           <link role="relationDeclaration" targetNodeId="1.1219753034317" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1219745786566">
-            <link role="conceptDeclaration" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1219745786567">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
