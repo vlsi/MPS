@@ -115,6 +115,10 @@ public class QueriesGenerated {
             return result;
           }
 
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+
           public String getMatchingText(String pattern) {
             return "collection (vertical)";
           }
@@ -164,6 +168,10 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "";
           }
 
           public String getMatchingText(String pattern) {
@@ -217,6 +225,10 @@ public class QueriesGenerated {
             return result;
           }
 
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+
           public String getMatchingText(String pattern) {
             return "collection (indent)";
           }
@@ -263,40 +275,13 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Collection", _context.getCurrentTargetNode());
-            SNode indent = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Indent", null);
-            EditorCellModel_Behavior.call_setSelectable_1241444765326(indent, false);
-            SLinkOperations.insertChildFirst(result, "childCellModel", indent);
-            if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection", true, false) != null) && EditorCellModel_Behavior.call_isSelectable_1219420196673(result)) {
-              EditorCellModel_Behavior.call_setSelectable_1241444765326(result, false);
-            }
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
+            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
             return result;
           }
 
           public String getDescriptionText(String pattern) {
-            return "collection (with indent)";
-          }
-
-          public String getMatchingText(String pattern) {
-            return "[_";
-          }
-
-          public String getVisibleMatchingText(String pattern) {
-            return this.getMatchingText(pattern);
-          }
-        });
-      }
-    }
-    {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellModel");
-      SNode childConcept = (SNode)_context.getChildConcept();
-      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
-          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
-            SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
-            return result;
+            return "";
           }
 
           public String getMatchingText(String pattern) {
@@ -321,6 +306,10 @@ public class QueriesGenerated {
             return result;
           }
 
+          public String getDescriptionText(String pattern) {
+            return "indent collection";
+          }
+
           public String getMatchingText(String pattern) {
             return "(-";
           }
@@ -341,6 +330,10 @@ public class QueriesGenerated {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", _context.getCurrentTargetNode());
             SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "";
           }
 
           public String getMatchingText(String pattern) {
@@ -394,6 +387,10 @@ public class QueriesGenerated {
             return result;
           }
 
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+
           public String getMatchingText(String pattern) {
             return "child node cell list (horizontal)";
           }
@@ -443,6 +440,10 @@ public class QueriesGenerated {
             return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", _context.getCurrentTargetNode());
           }
 
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+
           public String getMatchingText(String pattern) {
             return "referent node cell";
           }
@@ -461,6 +462,10 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNode", _context.getCurrentTargetNode());
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "";
           }
 
           public String getMatchingText(String pattern) {
@@ -483,6 +488,10 @@ public class QueriesGenerated {
             return SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Property", _context.getCurrentTargetNode());
           }
 
+          public String getDescriptionText(String pattern) {
+            return "";
+          }
+
           public String getMatchingText(String pattern) {
             return "property";
           }
@@ -502,6 +511,10 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", _context.getCurrentTargetNode());
             return result;
+          }
+
+          public String getDescriptionText(String pattern) {
+            return "";
           }
 
           public String getMatchingText(String pattern) {
