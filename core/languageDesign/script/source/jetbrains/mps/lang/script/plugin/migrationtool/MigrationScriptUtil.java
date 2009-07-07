@@ -61,7 +61,6 @@ public class MigrationScriptUtil {
 
     aClass = l.getClass(fqClassName);
     if (aClass == null) {
-      LOG.error("class " + fqClassName + " not found");
       return null;
     }
 
