@@ -129,7 +129,7 @@ public class IntentionsSupport {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               enabledPresent[0] = !getEnabledIntentions().isEmpty();
-              availablePresent[0] = !getAvailableIntentions().isEmpty();
+              availablePresent[0] = hasIntentions();
             }
           });
 
@@ -303,6 +303,15 @@ public class IntentionsSupport {
     });
   }
 
+  private boolean hasIntentions() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        SNode node = myEditor.getSelectedNode();
+        EditorContext editorContext = myEditor.getEditorContext();
+        return IntentionsManager.getInstance().hasAvailableIntentions(node, editorContext);
+      }
+    });
+  }
 
   private Set<Pair<Intention, SNode>> getAvailableIntentions() {
     final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
