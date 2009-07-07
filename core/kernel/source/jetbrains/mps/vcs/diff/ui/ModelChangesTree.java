@@ -279,10 +279,10 @@ class ModelChangesTree extends MPSTree {
       }
 
       if (myExcludetNodes.contains(id)) {
-        String text = getText() + " " + getSNode().getId();        
+        String text = getText();
         setText("<html><s>" + TreeTextUtil.toHtml(text) + "</s></html>");
       } else {
-        setText(getText() + " " + getSNode().getId());
+        setText(getText());
       }
     }
 
