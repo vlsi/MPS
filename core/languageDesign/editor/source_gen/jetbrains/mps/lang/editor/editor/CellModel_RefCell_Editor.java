@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -85,7 +86,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_8529_2(context, node, "effective type"));
+    editorCell.addEditorCell(this.createConstant_8529_2(context, node, "effective type (deprectated)"));
     editorCell.addEditorCell(this.createRefCell_8529_5(context, node));
     return editorCell;
   }
@@ -108,7 +109,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_8529_2(context, node));
-    editorCell.addEditorCell(this.createCollection_8529_3(context, node));
+    if (renderingCondition8529_2(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8529_3(context, node));
+    }
     editorCell.addEditorCell(this.createCollection_8529_4(context, node));
     if (renderingCondition8529_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8529_6(context, node));
@@ -449,6 +452,15 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8529_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8529_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Constant_8529_3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -628,6 +640,10 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition8529_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
+  }
+
+  public static boolean renderingCondition8529_2(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "editorComponent", true), "conceptDeclaration", false) != null);
   }
 
   public static class _Inline8529_0 extends AbstractCellProvider {
