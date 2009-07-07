@@ -3394,7 +3394,7 @@
                       <link role="classConcept" targetNodeId="33.~IntentionsManager" resolveInfo="IntentionsManager" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228145549396">
-                      <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):java.util.Set" resolveInfo="getAvailableIntentionsForExactNode" />
+                      <link role="baseMethodDeclaration" targetNodeId="33.~IntentionsManager.getAvailableIntentionsForExactNode(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean,boolean):java.util.Set" resolveInfo="getAvailableIntentionsForExactNode" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1228145549397">
                         <link role="variableDeclaration" targetNodeId="1225991152924" resolveInfo="node" />
                       </node>
@@ -3408,6 +3408,9 @@
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1228145549401">
                         <property name="value" value="false" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2925366645633289820">
+                        <property name="value" value="true" />
                       </node>
                     </node>
                   </node>
