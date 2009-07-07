@@ -17,6 +17,9 @@ public class MacroIntentionsUtil {
     if ((enclosingMacro == null)) {
       return QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
     }
+    if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
+      return getConceptFrom(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
+    }
     return null;
   }
 
@@ -26,31 +29,40 @@ public class MacroIntentionsUtil {
       return QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
     }
     if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
-      SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
-      return getConceptFrom(TypeChecker.getInstance().getTypeOf(query));
+      return getConceptFrom(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
     }
     return null;
   }
 
-  public static SNode getConceptFrom(SNode returnType) {
-    {
-      _Patterns.Pattern_0 pattern_0 = new _Patterns.Pattern_0();
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_0);
-      if (coercedNode_0 != null) {
-        return pattern_0.PatternVar0;
-      } else
+  private static SNode getConceptFrom(SNode macro) {
+    SNode query = QueriesUtil.getQueryFunction_fromSourceSubstituteMacro(macro);
+    SNode returnType = TypeChecker.getInstance().getTypeOf(query);
+    // ======
+    if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery")) {
       {
+        _Patterns.Pattern_0 pattern_0 = new _Patterns.Pattern_0();
+        SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_0);
+        if (coercedNode_0 != null) {
+          return pattern_0.PatternVar0;
+        } else
         {
-          _Patterns.Pattern_1 pattern_1 = new _Patterns.Pattern_1();
-          SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_1);
-          if (coercedNode_1 != null) {
-            return pattern_1.PatternVar1;
-          } else
-          {
-            return null;
-          }
+          return null;
         }
       }
+    } else if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery")) {
+      {
+        _Patterns.Pattern_1 pattern_1 = new _Patterns.Pattern_1();
+        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_1);
+        if (coercedNode_1 != null) {
+          return pattern_1.PatternVar1;
+        } else
+        {
+          return null;
+        }
+      }
+    } else
+    {
+      return null;
     }
   }
 

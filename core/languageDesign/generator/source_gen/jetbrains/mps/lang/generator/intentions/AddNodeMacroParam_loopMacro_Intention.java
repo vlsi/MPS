@@ -91,8 +91,9 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
 
   public static List<Intention> instances(final SNode node, final EditorContext editorContext) {
     List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
-    if (parameter(node, editorContext) != null) {
-      for(SNode param : parameter(node, editorContext)) {
+    List<SNode> paramList = parameter(node, editorContext);
+    if (paramList != null) {
+      for(SNode param : paramList) {
         AddNodeMacroParam_loopMacro_Intention intention = new AddNodeMacroParam_loopMacro_Intention();
         intention.myParameter = param;
         ListSequence.fromList(list).addElement(intention);
