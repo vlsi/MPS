@@ -505,43 +505,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225199833695" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225199828091" />
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5057435703890973415">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5057435703890973416" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5057435703890973417" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5057435703890973418" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5057435703890973552">
-      <property name="name" value="equals" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5057435703890973553" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5057435703890973554" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5057435703890973555">
-        <property name="name" value="p0" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5057435703890973556">
-          <link role="classifier" targetNodeId="15.~Object" resolveInfo="Object" />
-        </node>
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5057435703890973557" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5057435703890973625">
-      <property name="name" value="finalize" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="5057435703890973626" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5057435703890973627" />
-      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5057435703890973628">
-        <link role="classifier" targetNodeId="15.~Throwable" resolveInfo="Throwable" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5057435703890973629" />
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5057435703890973620">
-      <property name="name" value="clone" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="5057435703890973621" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5057435703890973622">
-        <link role="classifier" targetNodeId="15.~Object" resolveInfo="Object" />
-      </node>
-      <node role="throwsItem" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5057435703890973623">
-        <link role="classifier" targetNodeId="15.~CloneNotSupportedException" resolveInfo="CloneNotSupportedException" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5057435703890973624" />
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1192803081348">
       <property name="name" value="getDescription" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1192803081350" />
