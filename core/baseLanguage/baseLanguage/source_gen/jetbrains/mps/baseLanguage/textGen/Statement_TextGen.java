@@ -4,12 +4,21 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class Statement_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
-    this.appendNewLine();
-    this.append("???");
+    if (SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")) {
+      this.append("/* error: statement w/o textGen:");
+      this.append(BaseConcept_Behavior.call_getPresentation_1213877396640(node));
+      this.append(" */");
+    } else
+    {
+      this.appendNewLine();
+    }
   }
 
 }

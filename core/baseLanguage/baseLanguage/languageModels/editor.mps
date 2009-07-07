@@ -2591,9 +2591,10 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1075381298843">
     <property name="name" value="Statement_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123157" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Error" id="1078746085984">
-      <property name="name" value="nodeBox" />
-      <property name="text" value="&lt;statement&gt;" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2619109493058710584">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="2619109493058902432">
+        <property name="flag" value="true" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1079605716538">

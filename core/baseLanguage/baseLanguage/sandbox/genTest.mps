@@ -261,6 +261,7 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1237561820393" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237561820394" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237561820395">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3409542372145597538" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237815529937">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237815529938">
             <property name="name" value="o" />
@@ -311,6 +312,16 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237815548983">
               <link role="baseMethodDeclaration" targetNodeId="14.~String.toString():java.lang.String" resolveInfo="toString" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3409542372145628907" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3409542372145628909">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3409542372145628910">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3409542372145628911" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3409542372145628913">
+              <property name="value" value="23" />
             </node>
           </node>
         </node>
