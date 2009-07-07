@@ -39,7 +39,7 @@ public class ModelDifferenceDialog extends BaseDialog {
   private FocusTrackback myFocusTrackback;
   private FocusWatcher myFocusWatcher;
 
-  public ModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal) throws HeadlessException {
+  public ModelDifferenceDialog(final IOperationContext context, final Frame parent, final SModel oldModel, final SModel newModel, String windowTitle, boolean modal, final String[] contentTitles) throws HeadlessException {
     super(parent, windowTitle);
     setModal(modal);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -58,7 +58,7 @@ public class ModelDifferenceDialog extends BaseDialog {
               final RootDifferenceDialog dialog = new RootDifferenceDialog(context.getMainFrame(), newModel, oldModel, false);
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                  dialog.init(context, node, "new", "old");
+                  dialog.init(context, node, contentTitles[1], contentTitles[0]);
                 }
               });
 

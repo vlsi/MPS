@@ -17,19 +17,14 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.diff.DiffContent;
-import com.intellij.openapi.diff.DiffManager;
-import com.intellij.openapi.diff.DiffRequest;
-import com.intellij.openapi.diff.DiffTool;
+import com.intellij.openapi.diff.*;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
@@ -39,6 +34,7 @@ import jetbrains.mps.MPSProjectHolder;
 import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JFrame;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
@@ -56,7 +52,9 @@ public class ModelDiffTool implements DiffTool {
         public ModelDifferenceDialog compute() {
           MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
           IOperationContext context = new ModuleContext(oldModel.getModelDescriptor().getModule(), project);
-          return new ModelDifferenceDialog(context, WindowManager.getInstance().getFrame(request.getProject()), oldModel, newModel, request.getWindowTitle(), !request.getHints().contains(DiffTool.HINT_SHOW_FRAME));
+          boolean modal = !request.getHints().contains(DiffTool.HINT_SHOW_FRAME);
+          JFrame frame = WindowManager.getInstance().getFrame(request.getProject());
+          return new ModelDifferenceDialog(context, frame, oldModel, newModel, request.getWindowTitle(), modal, request.getContentTitles());
         }
       });
       AnAction action = new AnAction("View As Text", "View As Text", Icons.TEXT_ICON) {
@@ -70,7 +68,6 @@ public class ModelDiffTool implements DiffTool {
       };
       d.addAction(action);
       d.showDialog();
-
     } catch (IOException e) {
       e.printStackTrace();
     } catch (ReadException e) {
@@ -114,7 +111,13 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
-    return readModel(content.getBytes(), path);
+    SModel sModel = readModel(content.getBytes(), path);
+    if (content instanceof DocumentContent) {
+      SModelRepository repository = SModelRepository.getInstance();
+      SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
+      return sModelDescriptor.getSModel();
+    }
+    return sModel;
   }
 
   public static SModel readModel(byte[] bytes, String path) throws IOException, ReadException {
