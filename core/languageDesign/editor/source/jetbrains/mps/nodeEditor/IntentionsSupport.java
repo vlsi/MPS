@@ -124,6 +124,7 @@ public class IntentionsSupport {
     myShowIntentionsThread.set(new Thread("Intentions") {
       public void run() {
         try {
+          if (myEditor.isDisposed()) return;
           final boolean[] enabledPresent = new boolean[1];
           final boolean[] availablePresent = new boolean[1];
           ModelAccess.instance().runReadAction(new Runnable() {
