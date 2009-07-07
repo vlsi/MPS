@@ -19412,7 +19412,7 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1229342973941" />
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239878594225" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2732406307364786670" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1236001821442">

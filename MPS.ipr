@@ -39,10 +39,55 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="groovy">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="gsp">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="java">
           <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="2" />
           <option name="TAB_SIZE" value="8" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="jsp">
+          <option name="INDENT_SIZE" value="4" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
+          <option name="USE_TAB_CHARACTER" value="false" />
+          <option name="SMART_TABS" value="false" />
+          <option name="LABEL_INDENT_SIZE" value="0" />
+          <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+        </ADDITIONAL_INDENT_OPTIONS>
+        <ADDITIONAL_INDENT_OPTIONS fileType="sql">
+          <option name="INDENT_SIZE" value="2" />
+          <option name="CONTINUATION_INDENT_SIZE" value="8" />
+          <option name="TAB_SIZE" value="4" />
           <option name="USE_TAB_CHARACTER" value="false" />
           <option name="SMART_TABS" value="false" />
           <option name="LABEL_INDENT_SIZE" value="0" />
@@ -244,7 +289,9 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
@@ -338,7 +385,9 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -487,7 +536,9 @@
               <list size="0" />
             </value>
           </option>
+          <option name="ADD_EJB_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -829,7 +880,7 @@
     </configuration>
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false" sample_coverage="true" runner="emma">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true " />
+      <option name="VM_PARAMETERS" value="-client -ea -Xmx1024m -Xss1024k -XX:PermSize=92m -Dmps.internal=true" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -913,8 +964,8 @@
                     <value>
                       <list>
                         <SvnBranchItem>
-                          <option name="creationDateMillis" value="1246624828244" />
-                          <option name="revision" value="45871" />
+                          <option name="creationDateMillis" value="1246968909171" />
+                          <option name="revision" value="45953" />
                           <option name="url" value="http://svn.jetbrains.org/mps/branches/1.0" />
                         </SvnBranchItem>
                         <SvnBranchItem>
@@ -1305,9 +1356,7 @@
         <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/ant-1.7.0/ant-src.zip!/" />
-      </SOURCES>
+      <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
     <library name="Beansbinding">
