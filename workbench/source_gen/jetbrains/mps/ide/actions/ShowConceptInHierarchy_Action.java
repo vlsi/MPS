@@ -10,14 +10,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.IEditor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
@@ -25,10 +27,10 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
 
   private MPSProject project;
   private IOperationContext context;
-  private SNode node;
+  private IEditor editor;
 
   public ShowConceptInHierarchy_Action() {
-    super("Show Concept In Hierarchy", "", ICON);
+    super("Show Concept in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -38,9 +40,16 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     return "ctrl H";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return ShowConceptInHierarchy_Action.this.getConceptNode() != null;
+  }
+
   public void doUpdate(@NotNull() AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "ShowConceptInHierarchy", t);
@@ -54,18 +63,6 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    {
-      SNode node = event.getData(MPSDataKeys.NODE);
-      if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-          node = null;
-        }
-      }
-      this.node = node;
-    }
-    if (this.node == null) {
-      return false;
-    }
     this.project = event.getData(MPSDataKeys.MPS_PROJECT);
     if (this.project == null) {
       return false;
@@ -74,19 +71,35 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
+    this.editor = event.getData(MPSDataKeys.MPS_EDITOR);
+    if (this.editor == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.node)), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
+      tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowConceptInHierarchy", t);
       }
     }
+  }
+
+  /* package */SNode getConceptNode() {
+    if (!(ShowConceptInHierarchy_Action.this.editor instanceof TabbedEditor)) {
+      return null;
+    }
+    TabbedEditor tabbedEditor = (TabbedEditor)ShowConceptInHierarchy_Action.this.editor;
+    SNode editedNode = (tabbedEditor).getEditedNode();
+    if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      return null;
+    }
+    return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
 
 }
