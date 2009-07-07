@@ -249,7 +249,11 @@ public abstract class DiffEditorComponent extends EditorComponent {
           SNodeId id = visibleNode.getSNodeId();
           int newRelativePos = getViewport().getViewPosition().y - findNodeCell(visibleNode).getY();
 
-          SNode nodeById = otherComponent.getEditedNode().getModel().getNodeById(id);
+          SNode sNode = otherComponent.getEditedNode();
+          if (sNode == null) {
+            return;
+          }
+          SNode nodeById = sNode.getModel().getNodeById(id);
           EditorCell oldCell = otherComponent.findNodeCell(nodeById);
           Point position = getViewport().getViewPosition();
           if (oldCell != null) {

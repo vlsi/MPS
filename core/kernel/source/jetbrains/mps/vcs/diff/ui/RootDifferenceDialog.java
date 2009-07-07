@@ -74,8 +74,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
-        oldNode[0] = myOldModel.getRootByName(node.getName());
-        newNode[0] = myNewModel.getRootByName(node.getName());
+        oldNode[0] = myOldModel.getNodeById(node.getSNodeId());
+        newNode[0] = myNewModel.getNodeById(node.getSNodeId());
       }
     });
 
