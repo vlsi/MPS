@@ -6754,8 +6754,9 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638507403">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1221638507404">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1221638507405">
-                              <link role="baseMethodDeclaration" targetNodeId="27.~ImplementMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Frame)" resolveInfo="ImplementMethodDialog" />
+                              <link role="baseMethodDeclaration" targetNodeId="27.~ImplementMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,java.awt.Frame)" resolveInfo="ImplementMethodDialog" />
                               <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1221638511288" />
+                              <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1590806752905751010" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638507407">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638507408">
                                   <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1221638513227" />

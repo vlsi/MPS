@@ -12567,8 +12567,9 @@
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445558">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034571024">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034571026">
-                                <link role="baseMethodDeclaration" targetNodeId="65.~OverrideMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Frame)" resolveInfo="OverrideMethodDialog" />
+                                <link role="baseMethodDeclaration" targetNodeId="65.~OverrideMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,java.awt.Frame)" resolveInfo="OverrideMethodDialog" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1198254034709" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1590806752905751077" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446121">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332446074">
                                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1198254025398" />
@@ -12645,8 +12646,9 @@
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332445666">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213034572704">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213034572706">
-                                <link role="baseMethodDeclaration" targetNodeId="65.~ImplementMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,java.awt.Frame)" resolveInfo="ImplementMethodDialog" />
+                                <link role="baseMethodDeclaration" targetNodeId="65.~ImplementMethodDialog.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,java.awt.Frame)" resolveInfo="ImplementMethodDialog" />
                                 <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1198254119522" />
+                                <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1590806752905751075" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332469569">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204332468369">
                                     <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1198254121694" />

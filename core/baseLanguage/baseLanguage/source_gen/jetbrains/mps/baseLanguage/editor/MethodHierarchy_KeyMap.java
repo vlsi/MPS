@@ -128,7 +128,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       SwingUtilities.invokeLater(new Runnable() {
 
         public void run() {
-          new OverrideMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+          new OverrideMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
       });
     }
@@ -177,7 +177,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       SwingUtilities.invokeLater(new Runnable() {
 
         public void run() {
-          new ImplementMethodDialog(node, editorContext.getOperationContext().getMainFrame()).showDialog();
+          new ImplementMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
       });
     }
