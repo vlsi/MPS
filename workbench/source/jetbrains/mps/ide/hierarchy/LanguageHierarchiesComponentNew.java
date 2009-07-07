@@ -54,7 +54,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class LanguageHierarchiesComponentNew extends JComponent implements Scrollable, DataProvider {
-  private static final int SPACING = 10;
+  private static final int SPACING = 15;
   private static final int PADDING_X = 5;
   private static final int PADDING_Y = 5;
 
@@ -64,6 +64,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
   private IOperationContext myOperationContext;
   private List<ConceptContainer> myRoots = new ArrayList<ConceptContainer>();
   private List<ConceptContainer> myNodes = new ArrayList<ConceptContainer>();
+  private List<ConceptContainer>[] myLevels;
   private float myScale = 1f;
   private boolean mySkipAncestors = true;
   private int myWidth = 0;
@@ -241,7 +242,6 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
               processed.put(ancestor, parentConceptContainer);
             }
             parentConceptContainer.addChild(descConceptContainer);
-            descConceptContainer.setRank(Math.max(descConceptContainer.getRank(), parentConceptContainer.getRank() + 1));
           }
         }
         if (root) {
@@ -252,73 +252,139 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       newFrontier = new HashSet<AbstractConceptDeclaration>();
     }
     myRoots = result;
+    Set<ConceptContainer> frontier = new HashSet<ConceptContainer>(myRoots);
+    Set<ConceptContainer> newContFrontier = new HashSet<ConceptContainer>();
+    Set<ConceptContainer> containers = new HashSet<ConceptContainer>();
+    int maxRank = 0;
+    while (!frontier.isEmpty()) {
+      for (ConceptContainer container : frontier) {
+        if (containers.contains(container)) {
+          continue;
+        }
+        containers.add(container);
+        for (ConceptContainer child : container.getChildren()) {
+          newContFrontier.add(child);
+          child.setRank(Math.max(child.getRank(), container.getRank() + 1));
+          maxRank = Math.max(child.getRank(), maxRank);
+        }
+      }
+      frontier = newContFrontier;
+      newContFrontier = new HashSet<ConceptContainer>();
+    }
+
+    myLevels = new List[maxRank+1];
+    
+
     myNodes = new ArrayList<ConceptContainer>(processed.values());
+
+    for (ConceptContainer conceptContainer : myNodes) {
+      List<ConceptContainer> list = myLevels[conceptContainer.getRank()];
+      if (list == null) {
+        list = new ArrayList<ConceptContainer>();
+        myLevels[conceptContainer.getRank()] = list;
+      }
+      list.add(conceptContainer);
+    }
+
+    for (int i = 0; i < myLevels.length; i++) {
+      List<ConceptContainer> list = myLevels[i];
+      if (i == 0) {
+        Collections.sort(list, new Comparator<ConceptContainer>() {
+          public int compare(ConceptContainer o1, ConceptContainer o2) {
+            return o1.getChildren().size() - o2.getChildren().size();
+          }
+        });
+        List<ConceptContainer> newList = new ArrayList<ConceptContainer>();
+        for (int j = 0; j < list.size(); j+=2) {
+          newList.add(list.get(j));
+        }
+        int last = list.size() - 1;
+        last = last - (list.size() % 2);
+        for (int j = last; j >= 0; j-=2) {
+          newList.add(list.get(j));
+        }
+        myLevels[i] = newList;
+      } else {
+        final int j = i;
+        Collections.sort(list, new Comparator<ConceptContainer>() {
+          public int compare(ConceptContainer o1, ConceptContainer o2) {
+            List<ConceptContainer> prevList = myLevels[j - 1];
+            float sum1 = 0;
+            float n1 = 0;
+            for (ConceptContainer parent1 : o1.getParents()) {
+              sum1+= prevList.indexOf(parent1);
+              n1++;
+            }
+            float sum2 = 0;
+            float n2 = 0;
+             for (ConceptContainer parent2 : o2.getParents()) {
+              sum2+= prevList.indexOf(parent2);
+              n2++;
+            }
+            return Math.round((sum1/n1) - (sum2/n2));
+          }
+        });
+      }
+    }
+
     Collections.sort(myNodes);
     return;
   }
 
   private void relayout1() {
     if (myRoots.isEmpty()) return;
-    int level = 0;
-    int y = 0;
-    int x = 0;
-    ConceptContainer prev = null;
-    for (ConceptContainer conceptContainer : myNodes) {
-      if (conceptContainer.getRank() == 0) {
-        conceptContainer.updateSubtreeWidth();
-      }
-      if (conceptContainer.getRank() > level) {
-        level++;
-        x = 0;
-        y += 3 * SPACING * myScale + (prev == null ? 0 : prev.getHeight());
-      }
-      int subtreeWidth = conceptContainer.getSubtreeWidth();
-      conceptContainer.setX(x + (subtreeWidth - conceptContainer.getWidth()) / 2);
-      conceptContainer.setY((int) (y + SPACING * myScale));
-      x += subtreeWidth;
-      //todo
-      
-      //
-      prev = conceptContainer;
-    }
-  }
-
-
-  private void relayout() {
-    if (myRoots.isEmpty()) return;
-
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         int y = 0;
         int x = 0;
         int maxWidth = 0;
-        for (ConceptContainer root : myRoots) {
-          root.updateSubtreeWidth();
-          maxWidth = Math.max(maxWidth, root.getSubtreeWidth());
+        int nextLevelsCount = 0;
+        int curLevel = 0;
+        ConceptContainer prev = null;
+        for (List<ConceptContainer> list : myLevels) {
+          for (ConceptContainer conceptContainer : list) {
+            conceptContainer.updateSize();
+
+            if (!conceptContainer.getChildren().isEmpty()) {
+              nextLevelsCount ++;
+              curLevel++;
+            }
+            conceptContainer.setLevel(curLevel);
+            conceptContainer.setY((int) (y + SPACING * myScale));
+            x += conceptContainer.getWidth() + 2 * SPACING * myScale;
+
+            prev = conceptContainer;
+          }
+
+          maxWidth = Math.max(x, maxWidth);
+          x = 0;
+          curLevel = 0;
+          y += (nextLevelsCount + 2) * SPACING * myScale + (prev == null ? 0 : prev.getHeight());
+          nextLevelsCount = 0;
         }
-        myHeight = relayoutChildren(myRoots, x, y, true);
+
+        maxWidth = Math.max(x, maxWidth);
+        for (List<ConceptContainer> containers : myLevels) {
+          if (containers != null && !containers.isEmpty()) {
+            int size = containers.size();
+
+            float requiredSpace = 0;
+            for (ConceptContainer conceptContainer : containers) {
+              requiredSpace += (conceptContainer.getWidth() + 2 * SPACING * myScale);
+            }
+            float wholeCredit = maxWidth - requiredSpace;
+            int credit = (int) Math.round(wholeCredit / size);
+            int x1 = 0;
+            int space = Math.round(2 * SPACING * myScale + credit);
+            for (ConceptContainer conceptContainer : containers) {
+              conceptContainer.setX(x1 + (space) / 2);
+              x1 += (conceptContainer.getWidth() + space);
+            }
+          }
+        }
         myWidth = maxWidth;
-      }
-    });
-
-  }
-
-  private int relayoutChildren(List<ConceptContainer> currentChildren, int x, int y, boolean vertical) {
-    int y_ = y;
-    for (ConceptContainer root : currentChildren) {
-      int subtreeWidth = root.getSubtreeWidth();
-      root.setX(x + (subtreeWidth - root.getWidth()) / 2);
-      root.setY((int) (y + SPACING * myScale));
-      int newY = relayoutChildren(root.getChildren(), x, (int) (y + SPACING * myScale + root.getHeight()), false);
-      if (vertical) {
-        y = (int) (newY + root.getHeight() + 3 * SPACING * myScale);
-        y_ = y;
-      } else {
-        x += subtreeWidth;
-        y_ = (int) (Math.max(y_, Math.max(y + SPACING * myScale + root.getHeight(), newY)));
-      }
-    }
-    return y_;
+        myHeight = y;
+      }});
   }
 
 
@@ -352,8 +418,12 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (ConceptContainer root : myRoots) {
-          root.paintTree(g);
+        List<Vertical> verticals = new ArrayList<Vertical>();
+        for (ConceptContainer node : myNodes) {
+          node.paintTree(g, verticals);
+        }
+        for (Vertical vertical : verticals) {
+          vertical.drawVertical(g);
         }
       }
     });
@@ -399,6 +469,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
     private int myWidth;
     private int myHeight;
     private int myRank = 0;
+    private int myLevel = 0;
     private Color myColor = ColorAndGraphicsUtil.saturateColor(Color.BLUE, 0.2f);
     private boolean myRootable = false;
     private int mySubtreeWidth = 0;
@@ -505,49 +576,6 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       child.myParents.add(this);
     }
 
-    public void sortSubtree() {
-      Collections.sort(myChildren, new Comparator<ConceptContainer>() {
-        public int compare(ConceptContainer o1, ConceptContainer o2) {
-          return o1.getText().compareTo(o2.getText());
-        }
-      });
-      for (ConceptContainer child : myChildren) {
-        child.sortSubtree();
-      }
-    }
-
-    public void updateSubtreeWidth() {
-      updateSize();
-      int sum = 0;
-      for (ConceptContainer conceptContainer : myChildren) {
-        conceptContainer.updateSubtreeWidth();
-        sum += conceptContainer.mySubtreeWidth;
-      }
-      mySubtreeWidth = (int) (Math.max(sum, myWidth + 2 * SPACING * myComponent.myScale));
-      if (sum < mySubtreeWidth) {
-        Map<ConceptContainer, Integer> sizes = new HashMap<ConceptContainer, Integer>();
-        computeSubtreeSizes(sizes);
-        updateSubtreeWidth1(sizes);
-      }
-    }
-
-    private void updateSubtreeWidth1(Map<ConceptContainer, Integer> sizes) {
-      int whole = sizes.get(this) - 1;
-      for (ConceptContainer child : myChildren) {
-        child.mySubtreeWidth = (mySubtreeWidth * sizes.get(child)) / whole;
-        child.updateSubtreeWidth1(sizes);
-      }
-    }
-
-    private int computeSubtreeSizes(Map<ConceptContainer, Integer> sizes) {
-      int size = 1;
-      for (ConceptContainer child : myChildren) {
-        size += child.computeSubtreeSizes(sizes);
-      }
-      sizes.put(this, size);
-      return size;
-    }
-
     public int getSubtreeWidth() {
       return mySubtreeWidth;
     }
@@ -588,16 +616,6 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       myY = y;
     }
 
-    public void moveTo(int newX, int newY) {
-      int deltaX = newX - myX;
-      int deltaY = newY - myY;
-      myX = newX;
-      myY = newY;
-      for (ConceptContainer child : myChildren) {
-        child.moveTo(child.getX() + deltaX, child.getY() + deltaY);
-      }
-    }
-
     public Point getEntryPoint() {
       return new Point(myX + myWidth / 2, myY);
     }
@@ -606,7 +624,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       return new Point(myX + myWidth / 2, myY + myHeight);
     }
 
-    public void paintTree(Graphics g) {
+    public void paintTree(Graphics g, List<Vertical> verticals) {
       paint(g);
       if (myChildren.isEmpty()) return;
       int outX = getOutPoint().x;
@@ -619,19 +637,20 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
         int x = childEntryPoint.x;
         if (x < firstX) firstX = x;
         if (x > lastX) lastX = x;
-        y = childEntryPoint.y;
       }
-      y = (y + outY) / 2;
+      y = y + Math.round(SPACING * myComponent.myScale * (getLevel()));
+
       g.setColor(Color.BLACK);
       g.drawLine(firstX, y, lastX, y);
-      g.drawLine(outX, outY, outX, y);
+      verticals.add(new Vertical(outX, outY, y));
+
       for (ConceptContainer child : myChildren) {
         g.setColor(Color.BLACK);
         Point childEntryPoint = child.getEntryPoint();
-        g.drawLine(childEntryPoint.x, y, childEntryPoint.x, childEntryPoint.y);
-        child.paintTree(g);
+        verticals.add(new Vertical(childEntryPoint.x, y, childEntryPoint.y));
       }
     }
+
 
     protected boolean mouseClicked(MouseEvent ev) {
       if (checkMouseEvent(ev)) {
@@ -696,6 +715,39 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
 
     public int compareTo(ConceptContainer o) {
       return myRank - o.myRank;
+    }
+
+    public void setLevel(int level) {
+      myLevel = level;
+    }
+
+    public int getLevel() {
+      return myLevel;
+    }
+
+    public List<ConceptContainer> getParents() {
+      return new ArrayList<ConceptContainer>(myParents);
+    }
+  }
+
+  private static class Vertical {
+    private int myX;
+    private int myY1;
+    private int myY2;
+
+    public Vertical(int x, int y1, int y2) {
+      myX = x;
+      myY1 = y1;
+      myY2 = y2;
+    }
+
+    public void drawVertical(Graphics g) {
+      int y1_ = Math.min(myY1, myY2);
+      int y2_ = Math.max(myY1, myY2);
+      g.setColor(Color.WHITE);
+      g.fillRect(myX-1, y1_+1, 3, (y2_ - y1_) - 2);
+      g.setColor(Color.BLACK);
+      g.drawLine(myX, y1_, myX, y2_);
     }
   }
 }
