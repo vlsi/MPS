@@ -5674,11 +5674,34 @@
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234281952735" />
                       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1234281952736" />
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234281952737">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7943011994032877549">
+                          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7943011994032877550">
+                            <property name="name" value="titles" />
+                            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="7943011994032877552">
+                              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7943011994032877551">
+                                <link role="classifier" targetNodeId="73.~String" resolveInfo="String" />
+                              </node>
+                            </node>
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7943011994032877558">
+                              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="7943011994032877563">
+                                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7943011994032877562">
+                                  <link role="classifier" targetNodeId="73.~String" resolveInfo="String" />
+                                </node>
+                                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7943011994032877566">
+                                  <property name="value" value="Disk" />
+                                </node>
+                                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7943011994032877568">
+                                  <property name="value" value="Memory" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234281978978">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234281978979">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1234281978980">
                               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1234281978981">
-                                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean)" resolveInfo="ModelDifferenceDialog" />
+                                <link role="baseMethodDeclaration" targetNodeId="98.~ModelDifferenceDialog.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,java.awt.Frame,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.SModel,java.lang.String,boolean,java.lang.String[])" resolveInfo="ModelDifferenceDialog" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8308833415850531651">
                                   <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent" id="8308833415850531652" />
                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8308833415850531653">
@@ -5706,6 +5729,9 @@
                                 </node>
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234281978988">
                                   <property name="value" value="true" />
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7943011994032877573">
+                                  <link role="variableDeclaration" targetNodeId="7943011994032877550" resolveInfo="titles" />
                                 </node>
                               </node>
                             </node>
