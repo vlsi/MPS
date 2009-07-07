@@ -85,7 +85,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174643056495">
         <link role="relationDeclaration" targetNodeId="1.1174642800329" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174643056496">
-          <link role="conceptDeclaration" targetNodeId="8.1071489090640" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174643059857">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -530,7 +529,6 @@
         <property name="value" value="0.0" />
       </node>
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174650488859">
-        <link role="conceptDeclaration" targetNodeId="1.1174642743670" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174650491174">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -690,7 +688,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174666294979">
       <link role="relationDeclaration" targetNodeId="1.1174666276259" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174666294980">
-        <link role="conceptDeclaration" targetNodeId="1.1174665551739" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174666297138">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -746,7 +743,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174990265997">
       <link role="relationDeclaration" targetNodeId="1.1174989822012" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174990265998">
-        <link role="conceptDeclaration" targetNodeId="19.1136720037781" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174990269469">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -765,7 +761,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174990298112">
       <link role="relationDeclaration" targetNodeId="1.1174989841903" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174990298113">
-        <link role="conceptDeclaration" targetNodeId="19.1137418540378" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174990300162">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -784,7 +779,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1174990327274">
       <link role="relationDeclaration" targetNodeId="1.1174989274720" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1174990327275">
-        <link role="conceptDeclaration" targetNodeId="19.1136720037779" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1174990329402">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
@@ -1890,7 +1884,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1207648211853">
           <link role="relationDeclaration" targetNodeId="1.1193733730717" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1207648211854">
-            <link role="conceptDeclaration" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1207648211855">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -1917,7 +1910,6 @@
           <property name="noTargetText" value="&lt;auto&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1207648185033" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1207648246933">
-            <link role="conceptDeclaration" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1207648250873">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2331,7 +2323,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1203432771309">
       <link role="relationDeclaration" targetNodeId="1.1203432751071" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1203432771310">
-        <link role="conceptDeclaration" targetNodeId="1.1203432538703" resolveInfo="ListVarDeclaration" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1203432777530">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2355,7 +2346,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1205762743622">
       <link role="relationDeclaration" targetNodeId="1.1205762683928" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1205762743623">
-        <link role="conceptDeclaration" targetNodeId="1.1205762105978" resolveInfo="WhenConcreteVariableDeclaration" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1205762746782">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2437,7 +2427,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1216644938058">
           <link role="relationDeclaration" targetNodeId="1.1216388525179" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1216644938059">
-            <link role="conceptDeclaration" targetNodeId="1.1216383170661" resolveInfo="HelginsQuickFix" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1216644938060">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2479,7 +2468,6 @@
         <link role="relationDeclaration" targetNodeId="1.1216386999476" />
         <link role="styleClass" targetNodeId="27.1198595398954" resolveInfo="Field" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1216387685386">
-          <link role="conceptDeclaration" targetNodeId="1.1216383482742" resolveInfo="QuickFixArgument" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1216387687189">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2665,7 +2653,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1212575851420">
         <link role="relationDeclaration" targetNodeId="1.1212575801821" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1212575851421">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1212575856814">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -2702,7 +2689,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1212763726768">
       <link role="relationDeclaration" targetNodeId="1.1212763674348" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1212763726769">
-        <link role="conceptDeclaration" targetNodeId="1.1212573344738" resolveInfo="ChildTypeRestriction" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1212763729005">
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -2930,7 +2916,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1216390449476">
       <link role="relationDeclaration" targetNodeId="1.1216390348810" />
       <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1216390449477">
-        <link role="conceptDeclaration" targetNodeId="1.1216383482742" resolveInfo="QuickFixArgument" />
         <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1216390449478">
           <property name="readOnly" value="true" />
           <link role="styleClass" targetNodeId="27.1198595398954" resolveInfo="Field" />
@@ -3175,7 +3160,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1223035186573">
         <link role="relationDeclaration" targetNodeId="1.1223035057290" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1223035186574">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223035190126">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3242,7 +3226,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1223056748889">
           <link role="relationDeclaration" targetNodeId="1.1223056618750" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1223056748890">
-            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223056756729">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3267,7 +3250,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1223056781582">
           <link role="relationDeclaration" targetNodeId="1.1223056595771" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1223056781583">
-            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223056783746">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3285,7 +3267,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1223056821393">
           <link role="relationDeclaration" targetNodeId="1.1223056618509" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1223056821394">
-            <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1223056824695">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3556,7 +3537,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1227096600198">
         <link role="relationDeclaration" targetNodeId="1.1227096521710" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1227096600199">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288299" resolveInfo="PropertyDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227096609435">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -3577,7 +3557,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1227096675494">
         <link role="relationDeclaration" targetNodeId="1.1227096645744" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1227096675495">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1227096679713">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3692,7 +3671,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230561006740">
         <link role="relationDeclaration" targetNodeId="1.1230554396851" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230561006741">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230561006742">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3705,7 +3683,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230561033890">
         <link role="relationDeclaration" targetNodeId="1.1230560176540" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230561033891">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230561037850">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
@@ -3746,7 +3723,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230562206156">
           <link role="relationDeclaration" targetNodeId="1.1230558876059" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230562206157">
-            <link role="conceptDeclaration" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230562210962">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -3763,7 +3739,6 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1230562259010">
           <link role="relationDeclaration" targetNodeId="1.1230558885001" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1230562259011">
-            <link role="conceptDeclaration" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1230562260390">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -4021,7 +3996,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1239035863994">
         <link role="relationDeclaration" targetNodeId="1.1239033527410" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1239035863995">
-          <link role="conceptDeclaration" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1239035867481">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -4059,7 +4033,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1239035946865">
         <link role="relationDeclaration" targetNodeId="1.1239035918530" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1239035946866">
-          <link role="conceptDeclaration" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1239035949930">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -4098,7 +4071,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1240322414284">
         <link role="relationDeclaration" targetNodeId="1.1240322227198" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1240322414285">
-          <link role="conceptDeclaration" targetNodeId="8.1071489090640" resolveInfo="ConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240322415689">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
@@ -4131,7 +4103,6 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1240322691632">
         <link role="relationDeclaration" targetNodeId="1.1240322663260" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1240322691633">
-          <link role="conceptDeclaration" targetNodeId="8.1071489288298" resolveInfo="LinkDeclaration" />
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240322700075">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="8.1071599776563" resolveInfo="role" />
