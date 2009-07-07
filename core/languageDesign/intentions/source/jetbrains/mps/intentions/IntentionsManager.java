@@ -353,9 +353,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
             addIntention(intention);
             myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
             myIntentionsLanguages.put(cls, l);
-          } else {
-            LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
-          }
+          } 
         } catch (Throwable throwable) {
           LOG.error(throwable, intentionDeclaration);
         }
