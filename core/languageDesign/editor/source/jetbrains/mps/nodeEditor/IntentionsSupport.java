@@ -124,7 +124,7 @@ public class IntentionsSupport {
     myShowIntentionsThread.set(new Thread("Intentions") {
       public void run() {
         try {
-          if (myEditor.isDisposed()) return;
+          if (isInconsistentEditor()) return;
           final boolean[] enabledPresent = new boolean[1];
           final boolean[] availablePresent = new boolean[1];
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -136,7 +136,7 @@ public class IntentionsSupport {
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              if (myEditor.isDisposed()) return;
+              if (isInconsistentEditor()) return;
               if (myEditor.getSelectedCell() != null) {
                 adjustLightBulbLocation();
                 myShowIntentionsAction.setEnabled(availablePresent[0]);
@@ -150,7 +150,7 @@ public class IntentionsSupport {
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              if (myEditor.isDisposed()) return;
+              if (isInconsistentEditor()) return;
               if (myEditor.getSelectedCell() != null) {
                 setLightBulbVisibility(enabledPresent[0]);
               } else {
@@ -167,6 +167,10 @@ public class IntentionsSupport {
     });
 
     myShowIntentionsThread.get().start();
+  }
+
+  private boolean isInconsistentEditor(){
+    return myEditor.isDisposed() || !myEditor.hasNode();
   }
 
   private void adjustLightBulbLocation() {

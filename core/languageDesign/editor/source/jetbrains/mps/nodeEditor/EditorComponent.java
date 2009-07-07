@@ -915,6 +915,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  public boolean hasNode(){
+    return getSelectedNode()!=null;
+  }
+
   public boolean isDisposed() {
     return myDisposed;
   }
