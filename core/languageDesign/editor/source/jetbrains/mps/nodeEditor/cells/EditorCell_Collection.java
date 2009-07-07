@@ -198,7 +198,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
     addCellAt(0, myOpeningBrace, true);
     addCellAt(myEditorCells.length, myClosingBrace, true);
-    getEditor().addCellSelectionListener(myLastCellSelectionListener);
   }
 
   private void removeBraces() {
@@ -725,12 +724,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     for (EditorCell child : myEditorCells) {
       ((EditorCell_Basic) child).onAdd();
     }
+    if (myLastCellSelectionListener != null) {
+      getEditor().addCellSelectionListener(myLastCellSelectionListener);
+    }
   }
 
   public void onRemove() {
     if (myLastCellSelectionListener != null) {
-      setBracesEnabled(false);
-      removeBraces();
+      setBracesEnabled(false);            
+      getEditor().removeCellSelectionListener(myLastCellSelectionListener);
     }
     for (EditorCell child : myEditorCells) {
       ((EditorCell_Basic) child).onRemove();
