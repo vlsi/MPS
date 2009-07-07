@@ -34,14 +34,15 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.*;
 
 
 @State(
@@ -92,17 +93,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public void disposeComponent() {
   }
 
-  public Set<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, @NotNull final EditorContext context) {
+  private Set<Pair<Intention, SNode>> getAvailableIntentions_delete(final SNode node, @NotNull final EditorContext context) {
     return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false)) {
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false)) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
         SNode parent = node.getParent();
         while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true)) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false)) {
             result.add(new Pair<Intention, SNode>(intention, parent));
           }
           parent = parent.getParent();
@@ -113,31 +114,68 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  public Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context) {
+    try {
+      long start = System.currentTimeMillis();
+      //TypeChecker.getInstance().enableGlobalSubtypingCache();
+      Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
+        public Set<Pair<Intention, SNode>> compute() {
+          Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+
+          for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, true)) {
+            result.add(new Pair<Intention, SNode>(intention, node));
+          }
+          SNode parent = node.getParent();
+          while (parent != null) {
+            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, true)) {
+              result.add(new Pair<Intention, SNode>(intention, parent));
+            }
+            parent = parent.getParent();
+          }
+
+          return result;
+        }
+      });
+      System.out.printf("" + (System.currentTimeMillis() - start) + "\n");
+      return intentions;
+    } finally {
+      TypeChecker.getInstance().clearGlobalSubtypingCache();
+    }
+  }
+
+  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext) {
+    return !getAvailableIntentions_delete(node, editorContext).isEmpty();
+  }
+
+  public Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized) {
     Set<Intention> result = new HashSet<Intention>();
 
     for (String conceptFQName : myIntentions.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
         List<Intention> intentions = new ArrayList<Intention>();
-        for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
-          if (intention.isParameterized()) {
-            Method method = null;
-            try {
-              method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
-            } catch (NoSuchMethodException e) {
-              e.printStackTrace();
+        if (!instantiateParameterized) {
+          intentions.addAll(myIntentions.get(conceptFQName));
+        } else {
+          for (Intention intention : myIntentions.get(conceptFQName)) {
+            if (intention.isParameterized()) {
+              Method method = null;
+              try {
+                method = intention.getClass().getMethod("instances", SNode.class, EditorContext.class);
+              } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+              }
+              Object[] arguments = new Object[]{node, context};
+              try {
+                List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
+                intentions.addAll(parameterizedIntentions);
+              } catch (IllegalAccessException e) {
+                e.printStackTrace();
+              } catch (InvocationTargetException e) {
+                e.printStackTrace();
+              }
+            } else {
+              intentions.add(intention);
             }
-            Object[] arguments = new Object[]{node, context};
-            try {
-              List<Intention> parameterizedIntentions = (List<Intention>) method.invoke(null, arguments);
-              intentions.addAll(parameterizedIntentions);
-            } catch (IllegalAccessException e) {
-              e.printStackTrace();
-            } catch (InvocationTargetException e) {
-              e.printStackTrace();
-            }
-          } else {
-            intentions.add(intention);
           }
         }
         Collections.sort(intentions, new Comparator<Intention>() {
@@ -192,7 +230,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
     Set<Intention> disabled = getDisabledIntentions();
 
-    for (Pair<Intention, SNode> ip : getAvailableIntentions(node, context)) {
+    for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context)) {
       if (!disabled.contains(ip.first)) {
         result.add(ip);
       }
@@ -201,7 +239,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public Set<Pair<Intention, SNode>> getDisabledAvailableIntentions(SNode node, EditorContext context) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions(node, context));
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions_delete(node, context));
     result.retainAll(getDisabledIntentions());
     return result;
   }
@@ -267,7 +305,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     });
   }
 
-  public void load(){
+  public void load() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {

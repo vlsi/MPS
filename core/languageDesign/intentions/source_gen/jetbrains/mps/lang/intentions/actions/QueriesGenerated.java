@@ -23,8 +23,10 @@ public class QueriesGenerated {
 
         public Object calculate() {
           List<SNode> parameters = ListSequence.fromList(new ArrayList<SNode>());
-          if (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", false, false) != null) {
-            ListSequence.fromList(parameters).addElement(SNodeOperations.getConceptDeclaration(SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.IntentionParameter", null)));
+          boolean inParInt = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", false, false) != null;
+          boolean notInApplicable = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", false, false) == null;
+          if (inParInt && notInApplicable) {
+            ListSequence.fromList(parameters).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter"));
           }
           return parameters;
         }
