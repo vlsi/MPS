@@ -62,9 +62,17 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
               } else
               {
                 {
-                  SNode _nodeToCheck_1029348928467 = expr;
-                  BaseIntentionProvider intentionProvider = null;
-                  typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275785", true), (SNode)new _Quotations.QuotationClass_31().createNode(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275783", intentionProvider);
+                  final SNode lt = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
+                  typeCheckingContext.whenConcrete(lt, new Runnable() {
+
+                    public void run() {
+                      {
+                        SNode _nodeToCheck_1029348928467 = expr;
+                        BaseIntentionProvider intentionProvider = null;
+                        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275785", true), (SNode)new _Quotations.QuotationClass_31().createNode(SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(lt), "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206060275783", intentionProvider);
+                      }
+                    }
+                  }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "2930785965020102451", false, false);
                 }
               }
             } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.lang.smodel.structure.SearchScopeType")) {
@@ -82,7 +90,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
               }
             }
           }
-        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061035207", false, false);
+        }, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186061035207", true, false);
       }
     }
   }
