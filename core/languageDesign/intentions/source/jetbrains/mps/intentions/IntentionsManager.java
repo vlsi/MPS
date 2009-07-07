@@ -116,8 +116,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context) {
     try {
-      long start = System.currentTimeMillis();
-      //TypeChecker.getInstance().enableGlobalSubtypingCache();
+      TypeChecker.getInstance().enableGlobalSubtypingCache();
       Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
         public Set<Pair<Intention, SNode>> compute() {
           Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
@@ -136,7 +135,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           return result;
         }
       });
-      System.out.printf("" + (System.currentTimeMillis() - start) + "\n");
       return intentions;
     } finally {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
