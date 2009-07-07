@@ -174,6 +174,46 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2925366645633602033">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2925366645633602034">
+            <property name="name" value="paramList" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="2925366645633602035">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2925366645633602036">
+                <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="2925366645633602037">
+                  <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="2925366645633602038">
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2925366645633602039">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2925366645633602040">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2925366645633602041">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2925366645633602042">
+                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="2925366645633602043">
+                              <link role="concept" targetNodeId="1.1240395258925" resolveInfo="ParameterizedIntentionDeclaration" />
+                              <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="2925366645633602044" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2925366645633602045">
+                              <link role="link" targetNodeId="1.1240395532443" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2925366645633602046">
+                            <link role="link" targetNodeId="1.1240393479918" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="2925366645633602047">
+              <link role="baseMethodDeclaration" targetNodeId="4945049520561168123" resolveInfo="parameter" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2925366645633602048">
+                <link role="variableDeclaration" targetNodeId="4945049520561168216" resolveInfo="node" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2925366645633602049">
+                <link role="variableDeclaration" targetNodeId="4945049520561168218" resolveInfo="editorContext" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4945049520561168152">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4945049520561168153">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="4945049520561168154">
@@ -275,27 +315,15 @@
                   </node>
                 </node>
               </node>
-              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="4945049520561168283">
-                <link role="baseMethodDeclaration" targetNodeId="4945049520561168123" resolveInfo="parameter" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4945049520561168287">
-                  <link role="variableDeclaration" targetNodeId="4945049520561168216" resolveInfo="node" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4945049520561168295">
-                  <link role="variableDeclaration" targetNodeId="4945049520561168218" resolveInfo="editorContext" />
-                </node>
+              <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2925366645633602054">
+                <link role="variableDeclaration" targetNodeId="2925366645633602034" resolveInfo="paramList" />
               </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="4945049520561168273">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4945049520561168276" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="4945049520561168269">
-              <link role="baseMethodDeclaration" targetNodeId="4945049520561168123" resolveInfo="parameter" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4945049520561168270">
-                <link role="variableDeclaration" targetNodeId="4945049520561168216" resolveInfo="node" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4945049520561168272">
-                <link role="variableDeclaration" targetNodeId="4945049520561168218" resolveInfo="editorContext" />
-              </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2925366645633602050">
+              <link role="variableDeclaration" targetNodeId="2925366645633602034" resolveInfo="paramList" />
             </node>
           </node>
         </node>
