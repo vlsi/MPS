@@ -1173,5 +1173,46 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="7055725856389047980">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="GetRidOfConceptsInInlineEditors" />
+    <property name="category" value="editor" />
+    <property name="title" value="get rid of concepts in inline editors" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="7055725856389047981">
+      <property name="description" value="remove concepts" />
+      <property name="showAsIntention" value="true" />
+      <link role="affectedInstanceConcept" targetNodeId="1.1088185857835" resolveInfo="InlineEditorComponent" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="7055725856389047982">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7055725856389047983">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7055725856389068445">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7055725856389068452">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7055725856389068455" />
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856389068447">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="7055725856389068446" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7055725856389068451">
+                  <link role="link" targetNodeId="1.1166049300910" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="7055725856389054427">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7055725856389054428">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7055725856389068426">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856389068440">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7055725856389068428">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="7055725856389068427" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7055725856389068439">
+                  <link role="link" targetNodeId="1.1166049300910" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="7055725856389068444" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
