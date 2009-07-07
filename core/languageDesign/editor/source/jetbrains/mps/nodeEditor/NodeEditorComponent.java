@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -62,7 +64,7 @@ public class NodeEditorComponent extends EditorComponent {
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            if (isDisplayable()) {
+            if (isDisplayable() || IdeMain.getTestMode() != TestMode.NO_TEST) {
               inspect(toSelect[0]);
             }
           }
