@@ -20,9 +20,9 @@ public class BracesTest_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("4103657465893840397", "4103657465893840410");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN", " ENTER"));
-      BaseEditorTestBody.typeString(editor, "stub");
+      IEditor editor = this.initEditor("8497577741385040369", "3167392541572926816");
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+
       this.finishTest();
     }
 

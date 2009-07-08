@@ -50,6 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590571(jetbrains.mps.gtext.constraints)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
   <maxImportIndex value="22" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
@@ -1996,38 +1997,42 @@
     <property name="package" value="bugTest" />
     <property name="name" value="BracesTest" />
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233333428757">
-      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1233333428758">
-        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333458858">
-          <property name="keycode" value="VK_DOWN" />
-        </node>
-        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4103657465893840417">
-          <property name="keycode" value="VK_ENTER" />
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="3167392541572726587">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="3167392541572726588">
+          <property name="keycode" value="VK_BACK_SPACE" />
         </node>
       </node>
-      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4103657465893907876">
-        <property name="keys" value="stub" />
-      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5152201093378696005" />
     </node>
-    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestStatenetList" id="4103657465893840397">
-      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840400" />
-      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStatement" id="4103657465893840401">
-        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840404">
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4103657465893840409">
-            <property name="caretPosition" value="0" />
-            <property name="cellId" value="Constant_8155_0" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="8497577741385040369">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572726572">
+        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572726573">
+          <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList" id="3167392541572726574">
+            <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock" id="3167392541572726575" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926811">
+        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="3167392541572926814">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3167392541572926815">
+            <property name="isLastPosition" value="true" />
+            <property name="cellId" value="Constant_9987_0" />
           </node>
         </node>
       </node>
     </node>
-    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestStatenetList" id="4103657465893840410">
-      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840411" />
-      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStatement" id="4103657465893840412">
-        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840413" />
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926816">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926817">
+        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926818">
+          <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList" id="3167392541572926819">
+            <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock" id="3167392541572926820" />
+          </node>
+        </node>
       </node>
-      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840416">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4103657465893916506">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926821">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3167392541572936182">
           <property name="isLastPosition" value="true" />
-          <property name="cellId" value="Constant_8155_0" />
+          <property name="cellId" value="3167392541572926821_statement" />
         </node>
       </node>
     </node>
