@@ -48,10 +48,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3702466984434609609">
-    <link role="conceptDeclaration" targetNodeId="1.3702466984434609594" resolveInfo="TestStatement" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3702466984434609611" />
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3702466984434806354">
     <link role="conceptDeclaration" targetNodeId="1.3702466984434723497" resolveInfo="TestStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3702466984434806356" />
