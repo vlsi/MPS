@@ -183,15 +183,18 @@ public class MPSEditorOpener implements ProjectComponent {
     SNode containingRoot = node.getContainingRoot();
     final IEditor nodeEditor = openEditor(containingRoot, context);
 
+    //restore inspector state for opened editor (if exists)
+    restorePrevSelectionInInspector(nodeEditor, context, getInspector());
+
     //open inspector (if no cell is selected in editor, inspector won't be opened)
     DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getCurrentEditorComponent());
     FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
     getInspector().inspect(node, context, fileEditor);
 
-    //select node if needed - in editor or in inspector - and its parents in editor and inspector(if exist) 
+    //select and its parents in editor and inspector(if exist)
     if (select) {
       selectNodeParentInEditor(nodeEditor, node);
-      selectNodeParentInInspector(nodeEditor, node, context);
+      selectNodeParentInInspector(node, context);
     }
 
     //move focus if needed - to editor or to inspector
@@ -238,18 +241,11 @@ public class MPSEditorOpener implements ProjectComponent {
     return IdeFocusManager.getInstance(myProject);
   }
 
-  private void selectNodeParentInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context) {
-    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) return;
-    final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if (nec == null) return;
-    final InspectorTool inspectorTool = nec.getInspectorTool();
+  private void selectNodeParentInInspector(final SNode node, IOperationContext context) {
+    final InspectorTool inspectorTool = getInspector();
     if (inspectorTool == null) return;
-    if (nec.getLastInspectedNode() == null) return;
-
-    FileEditor fileEditor = (FileEditor) DataManager.getInstance().getDataContext(nodeEditor.getComponent()).getData(MPSDataKeys.FILE_EDITOR.getName());
-
     final EditorComponent inspector = inspectorTool.getInspector();
-    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
+
     SNode currentTargetNode = node;
     while (currentTargetNode != null) {
       EditorCell cellInInspector = inspector.findNodeCell(currentTargetNode);
@@ -259,6 +255,17 @@ public class MPSEditorOpener implements ProjectComponent {
       }
       currentTargetNode = currentTargetNode.getParent();
     }
+  }
+
+  private boolean restorePrevSelectionInInspector(IEditor nodeEditor, IOperationContext context, InspectorTool inspectorTool) {
+    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) return false;
+    NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
+    if (nec == null || nec.getLastInspectedNode() == null) return false;
+
+    DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getComponent());
+    FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
+    inspectorTool.inspect(nec.getLastInspectedNode(), context, fileEditor);
+    return true;
   }
 
   //select parent node, which is in editor, or the whole root node if the node given is not visible at all
