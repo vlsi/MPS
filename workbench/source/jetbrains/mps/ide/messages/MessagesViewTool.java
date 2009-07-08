@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
@@ -67,22 +67,22 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
-  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON){
+  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON) {
     protected boolean isEnabled() {
       return hasErrors();
     }
   };
-  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON){
+  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON) {
     protected boolean isEnabled() {
       return hasWarnings();
     }
   };
-  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON){
+  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON) {
     protected boolean isEnabled() {
       return hasInfo();
     }
   };
-  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON){
+  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON) {
     protected boolean isEnabled() {
       return hasHintObjects();
     }
@@ -148,11 +148,18 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         openCurrentMessageNodeIfPossible();
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         openCurrentMessageNodeIfPossible();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    myList.registerKeyboardAction(new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        showHelpForCurrentMessage();
+      }
+    }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
@@ -164,6 +171,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       }
 
       public void mousePressed(MouseEvent e) {
+        //todo select element under mouse
         if (e.isPopupTrigger()) {
           showPopupMenu(e);
         }
@@ -247,6 +255,18 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     return myHintObjects > 0;
   }
 
+  private void showHelpForCurrentMessage() {
+    String helpURL = getHelpUrlForCurrentMessage();
+    if (helpURL == null) return;
+    BrowserUtil.launchBrowser(helpURL);
+  }
+
+  private String getHelpUrlForCurrentMessage() {
+    if (myList.getSelectedValues().length!=1) return null;
+
+    Message message = (Message) (myList.getSelectedValue());
+    return message.getHelpUrl();
+  }
 
   private void showPopupMenu(MouseEvent evt) {
     if (myList.getSelectedValue() == null) return;
@@ -293,7 +313,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       final Message message = (Message) myList.getSelectedValue();
       if (message.getKind() == MessageKind.ERROR) {
         group.addSeparator();
-        group.add(new BaseAction("Submit to Issue tracker") {
+        group.add(new BaseAction("Submit to Issue Tracker") {
           {
             setExecuteOutsideCommand(true);
           }
@@ -304,6 +324,20 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         });
       }
     }
+
+    group.add(new BaseAction("Show Help for This Message") {
+      @Override
+      protected void doUpdate(AnActionEvent e) {
+        boolean enabled = getHelpUrlForCurrentMessage() != null;
+        setEnabledState(e.getPresentation(), enabled);
+      }
+
+      @Override
+      protected void doExecute(AnActionEvent e) {
+        showHelpForCurrentMessage();
+      }
+    });
+
     return group;
   }
 

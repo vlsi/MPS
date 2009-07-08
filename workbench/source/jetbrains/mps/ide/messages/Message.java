@@ -29,6 +29,7 @@ public class Message {
   private String myText;
   private Object myHintObject;
   private Throwable myException;
+  private String myHelpUrl;
   private long myCreationTime = System.currentTimeMillis();
 
   public Message(MessageKind kind, @Nullable String sender, String text) {
@@ -43,6 +44,14 @@ public class Message {
 
   public Message(MessageKind kind, String text) {
     this(kind, (String) null, text);
+  }
+
+  public String getHelpUrl() {
+    return myHelpUrl;
+  }
+
+  public void setHelpUrl(String helpUrl) {
+    myHelpUrl = helpUrl;
   }
 
   public void setHintObject(Object hintObject) {

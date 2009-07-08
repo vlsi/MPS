@@ -20,6 +20,7 @@ import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -125,34 +126,36 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     }
 
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-      super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+      JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
-      Message message = (Message) value;
+      final Message message = (Message) value;
       myIndex = index;
 
-      setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-      setBorder(new EmptyBorder(0, 0, 0, 0));
+      component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
+      component.setBorder(new EmptyBorder(0, 0, 0, 0));
 
       if (message.getHintObject() != null) {
-        setText(message.getCreationTimeString() + "\t: " + message);
-        setForeground(Color.BLUE);
+        component.setText(message.getCreationTimeString() + "\t: " + message);
+        component.setForeground(Color.BLUE);
       } else {
-        setText(message.getCreationTimeString() + "\t: " + message);
-        setForeground(Color.BLACK);
+        component.setText(message.getCreationTimeString() + "\t: " + message);
+        component.setForeground(Color.BLACK);
       }
 
       switch (message.getKind()) {
         case INFORMATION:
-          setIcon(Icons.INFORMATION_ICON);
+          component.setIcon(Icons.INFORMATION_ICON);
           break;
         case WARNING:
-          setIcon(Icons.WARNING_ICON);
+          component.setIcon(Icons.WARNING_ICON);
           break;
         case ERROR:
-          setIcon(Icons.ERROR_ICON);
+          component.setIcon(Icons.ERROR_ICON);
           break;
       }
-      return this;
+
+
+      return component;
     }
 
     public void paint(Graphics g) {
