@@ -53,7 +53,7 @@ public class SModel implements Iterable<SNode> {
 
   private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
 
-  private List<SNode> myRoots = new ArrayList<SNode>();
+  private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
 
   private boolean myDisposed;
@@ -149,7 +149,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SNode> getRoots() {
-    return Collections.unmodifiableList(myRoots);
+    return new ArrayList<SNode>(myRoots);
   }
 
   public boolean isRoot(@Nullable SNode node) {

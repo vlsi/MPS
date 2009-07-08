@@ -121,7 +121,7 @@ public final class SNode {
   }
 
   public boolean isRoot() {
-    return getModel().isRoot(this);
+    return myModel.isRoot(this);
   }
 
   public void addNextSibling(SNode newSibling) {
@@ -245,7 +245,7 @@ public final class SNode {
     while (true) {
       current.fireNodeReadAccess();
       if (current.myParent == null) {
-        if (getModel().getRoots().contains(current)) {
+        if (getModel().isRoot(current)) {
           return current;
         } else {
           return null;
