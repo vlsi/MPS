@@ -15,17 +15,18 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.editor.structure._ImageAlignment_Enum;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.vfs.FileSystem;
 
-import java.awt.Image;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.ImageObserver;
 import java.util.Set;
 
 /**
@@ -39,6 +40,16 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   private _ImageAlignment_Enum myAlignment = _ImageAlignment_Enum.alignmentJustify;
   private Image myImage;
+  private ImageObserver mySizeObserver = new ImageObserver() {
+    public boolean imageUpdate(Image img, int infoflags, int x, int y, int width, int height) {
+      int mask = ImageObserver.HEIGHT | ImageObserver.WIDTH;
+      boolean done = (infoflags & mask) == mask;
+      if (done) {
+        getEditor().relayout();
+      }
+      return done;
+    }
+  };
 
   private int myDescent = -1;
 
@@ -80,8 +91,8 @@ public class EditorCell_Image extends EditorCell_Basic {
   protected void relayoutImpl() {
     if (myImage == null) return;
     if (myAlignment == _ImageAlignment_Enum.alignmentJustify) {
-      myWidth = myImage.getWidth(getEditor());
-      myHeight = myImage.getHeight(getEditor());
+      myWidth = myImage.getWidth(mySizeObserver);
+      myHeight = myImage.getHeight(mySizeObserver);
     }
   }
 
