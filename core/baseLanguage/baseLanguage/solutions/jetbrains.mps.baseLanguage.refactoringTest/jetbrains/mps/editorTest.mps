@@ -10,10 +10,10 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
-  <language namespace="a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
+  <language namespace="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -315,11 +315,11 @@
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230058635743">
-        <property name="name" value="a" />
+        <property name="name" value="aa" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230058635744" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230058635745">
-        <property name="name" value="b" />
+        <property name="name" value="zz" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230058635746" />
       </node>
     </node>
@@ -328,34 +328,34 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1230058635748" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1230058635749" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635750">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1230058635751">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1230058635752">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230058635753">
-              <link role="variableDeclaration" targetNodeId="1230058635759" resolveInfo="b" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1230058635754">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6859592652550732225">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="6859592652550809506">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6859592652550809509">
+              <link role="variableDeclaration" targetNodeId="1230058635759" resolveInfo="zz" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6859592652550809510">
                 <property name="isLastPosition" value="true" />
                 <property name="cellId" value="property_name" />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1230058635755">
-              <link role="variableDeclaration" targetNodeId="1230058635757" resolveInfo="a" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6859592652550732228">
+              <link role="variableDeclaration" targetNodeId="1230058635757" resolveInfo="aa" />
             </node>
           </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635756" />
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6859592652550732227" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230058635757">
-        <property name="name" value="a" />
+        <property name="name" value="aa" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230058635758" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1230058635759">
-        <property name="name" value="b" />
+        <property name="name" value="zz" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1230058635760" />
       </node>
     </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635761">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1230058635762">
-        <property name="keys" value="ifa==b " />
+        <property name="keys" value="ifaa==zz" />
       </node>
     </node>
   </node>
@@ -1995,48 +1995,39 @@
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1233333241782">
     <property name="package" value="bugTest" />
     <property name="name" value="BracesTest" />
-    <node role="nodeToEdit" type="jetbrains.mps.gtext.structure.GDocument" id="1233333313960">
-      <property name="documentName" value="a" />
-      <property name="extension" value="b" />
-      <node role="item" type="jetbrains.mps.gtext.structure.GItemList" id="1233333327056">
-        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333333183">
-          <property name="text" value="text" />
-          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233333362831">
-            <property name="isLastPosition" value="true" />
-            <property name="cellId" value="property_text" />
-          </node>
-        </node>
-        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333350422">
-          <property name="text" value="r" />
-        </node>
-      </node>
-    </node>
-    <node role="result" type="jetbrains.mps.gtext.structure.GDocument" id="1233333372707">
-      <property name="documentName" value="a" />
-      <property name="extension" value="b" />
-      <node role="item" type="jetbrains.mps.gtext.structure.GItemList" id="1233333372708">
-        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333372709">
-          <property name="text" value="text" />
-        </node>
-        <node role="item" type="jetbrains.mps.gtext.structure.GText" id="1233333372711">
-          <property name="text" value="r" />
-        </node>
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1233333383368">
-          <property name="caretPosition" value="0" />
-          <property name="cellId" value="Collection_9588_0" />
-        </node>
-      </node>
-    </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233333428757">
       <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="1233333428758">
-        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333428759">
-          <property name="keycode" value="VK_RIGHT" />
-        </node>
-        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333455029">
-          <property name="keycode" value="VK_RIGHT" />
-        </node>
         <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1233333458858">
-          <property name="keycode" value="VK_RIGHT" />
+          <property name="keycode" value="VK_DOWN" />
+        </node>
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4103657465893840417">
+          <property name="keycode" value="VK_ENTER" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4103657465893907876">
+        <property name="keys" value="stub" />
+      </node>
+    </node>
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestStatenetList" id="4103657465893840397">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840400" />
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStatement" id="4103657465893840401">
+        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840404">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4103657465893840409">
+            <property name="caretPosition" value="0" />
+            <property name="cellId" value="Constant_8155_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestStatenetList" id="4103657465893840410">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840411" />
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.BracesStatement" id="4103657465893840412">
+        <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840413" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubStatement" id="4103657465893840416">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4103657465893916506">
+          <property name="isLastPosition" value="true" />
+          <property name="cellId" value="Constant_8155_0" />
         </node>
       </node>
     </node>

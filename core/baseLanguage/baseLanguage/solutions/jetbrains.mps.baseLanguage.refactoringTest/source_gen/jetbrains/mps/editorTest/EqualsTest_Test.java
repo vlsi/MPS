@@ -19,7 +19,7 @@ public class EqualsTest_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635738", "1230058635747");
-      BaseEditorTestBody.typeString(editor, "ifa==b ");
+      BaseEditorTestBody.typeString(editor, "ifaa==zz");
       this.finishTest();
     }
 
