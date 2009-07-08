@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.editors;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -35,7 +36,9 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -176,28 +179,31 @@ public class MPSEditorOpener implements ProjectComponent {
   private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.isRegistered() : "You can't edit unregistered node";
 
+    //open editor
     SNode containingRoot = node.getContainingRoot();
     final IEditor nodeEditor = openEditor(containingRoot, context);
 
+    //open inspector (if no cell is selected in editor, inspector won't be opened)
+    DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getCurrentEditorComponent());
+    FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
+    getInspector().inspect(node, context, fileEditor);
+
+    //select node if needed - in editor or in inspector - and its parents in editor and inspector(if exist) 
     if (select) {
       selectNodeParentInEditor(nodeEditor, node);
-
-      if (nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent) {
-        selectNodeParentInInspector(nodeEditor, node, context);
-      }
+      selectNodeParentInInspector(nodeEditor, node, context);
     }
 
+    //move focus if needed - to editor or to inspector
     if (focus) {
-      focus(nodeEditor, focusNeededInInspector(nodeEditor, node));
+      focus(nodeEditor, focusNeededInInspector(node));
     }
 
     return nodeEditor;
   }
 
-  private boolean focusNeededInInspector(IEditor nodeEditor, SNode node) {
-    final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
-    if (nec == null) return false;
-    final InspectorTool inspectorTool = nec.getInspectorTool();
+  private boolean focusNeededInInspector(SNode node) {
+    final InspectorTool inspectorTool = getInspector();
     if (inspectorTool == null) return false;
     EditorComponent inspector = inspectorTool.getInspector();
     while (node != null) {
@@ -216,15 +222,24 @@ public class MPSEditorOpener implements ProjectComponent {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
       manager.activateEditorComponent();
-      IdeFocusManager.getInstance(myProject).requestFocus(nodeEditor.getCurrentEditorComponent(), false);
+      getFocusManager().requestFocus(nodeEditor.getCurrentEditorComponent(), false);
     } else {
-      final InspectorTool inspectorTool = myProject.getComponent(InspectorTool.class);
+      final InspectorTool inspectorTool = getInspector();
       inspectorTool.getToolWindow().activate(null);
-      IdeFocusManager.getInstance(myProject).requestFocus(inspectorTool.getInspector(), false);
+      getFocusManager().requestFocus(inspectorTool.getInspector(), false);
     }
   }
 
+  private InspectorTool getInspector() {
+    return myProject.getComponent(InspectorTool.class);
+  }
+
+  private IdeFocusManager getFocusManager() {
+    return IdeFocusManager.getInstance(myProject);
+  }
+
   private void selectNodeParentInInspector(final IEditor nodeEditor, final SNode node, IOperationContext context) {
+    if (!(nodeEditor.getCurrentEditorComponent() instanceof NodeEditorComponent)) return;
     final NodeEditorComponent nec = (NodeEditorComponent) nodeEditor.getCurrentEditorComponent();
     if (nec == null) return;
     final InspectorTool inspectorTool = nec.getInspectorTool();
@@ -261,8 +276,6 @@ public class MPSEditorOpener implements ProjectComponent {
     }
 
     component.changeSelection(component.getRootCell());
-
-    return;
   }
 
   private IEditor openEditor(final SNode root, IOperationContext context) {
