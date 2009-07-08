@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class TypesystemGenUtil {
 
@@ -37,6 +39,16 @@ public class TypesystemGenUtil {
       }
     }
     return false;
+  }
+
+  public static boolean returnsNode(SNode subtypingRule) {
+    List<SNode> returnStatements = SNodeOperations.getDescendants(subtypingRule, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.AnonymousClass","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"});
+    for(SNode retSt : returnStatements) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(retSt, "expression", true)), new _Quotations.QuotationClass_2().createNode()))) {
+        return false;
+      }
+    }
+    return true;
   }
 
 }

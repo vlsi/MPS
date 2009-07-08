@@ -30,6 +30,20 @@ public class QueriesUtil {
     return result;
   }
 
+  public static List<SNode> getNodeOperation_StopList_concepts(SNode operation) {
+    SNode parm_StopList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList");
+    List<SNode> result = new ArrayList<SNode>();
+    if ((parm_StopList == null)) {
+      return result;
+    }
+    for(SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_StopList, "concept", true))) {
+      if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));
+      }
+    }
+    return result;
+  }
+
   public static boolean operationHasParm_Inclusion(SNode inputNode) {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion")) != null;
   }

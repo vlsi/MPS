@@ -2814,5 +2814,31 @@
       <link role="styleClass" targetNodeId="5.1198596388230" resolveInfo="StaticMethod" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1803469493727536401">
+    <property name="package" value="operation.parameter" />
+    <link role="conceptDeclaration" targetNodeId="1.1803469493727536395" resolveInfo="OperationParm_StopConceptList" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1803469493727536403">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1803469493727536404">
+        <property name="text" value="stop concepts are:[" />
+        <link role="styleClass" targetNodeId="1227114096626" resolveInfo="operationParameter" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1803469493727536405">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1803469493727536406">
+        <property name="separatorText" value="," />
+        <link role="relationDeclaration" targetNodeId="1.1803469493727536396" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1803469493727536407" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1803469493727536408">
+        <property name="text" value="]" />
+        <link role="styleClass" targetNodeId="1227114096626" resolveInfo="operationParameter" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1803469493727536409">
+          <property name="value" value="0.0" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1803469493727536410" />
+    </node>
+  </node>
 </model>
 

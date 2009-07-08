@@ -1859,6 +1859,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
       <link role="target" targetNodeId="1154546920561" resolveInfo="OperationParm_ConceptList" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1803469493727566475">
+      <link role="conceptLinkDeclaration" targetNodeId="1144102537873" resolveInfo="applicableParameter" />
+      <link role="target" targetNodeId="1803469493727536395" resolveInfo="OperationParm_StopConceptList" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1171305333426">
       <property name="value" value="descendants" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -3091,6 +3095,24 @@
     <property name="name" value="SEnumMemberOperation" />
     <node role="extends" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1241015195408">
       <link role="intfc" targetNodeId="2.1197027803184" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1803469493727536395">
+    <property name="package" value="operation.parameter" />
+    <property name="name" value="OperationParm_StopConceptList" />
+    <link role="extends" targetNodeId="1144100743722" resolveInfo="AbstractOperationParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1803469493727536398">
+      <property name="value" value="stop concepts are" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1803469493727536400">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1803469493727536396">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1..n" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="1154546950173" resolveInfo="ConceptReference" />
     </node>
   </node>
 </model>

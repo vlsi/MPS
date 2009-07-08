@@ -176,7 +176,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1207344880832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false)).first();
+    SNode opParm = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first();
     return opParm != null;
   }
 
@@ -646,6 +646,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1241008498035(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3769812235505815523(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3769812235505816478(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1219,7 +1227,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1207344929972(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false)).first(), "conceptArgument", true);
+    return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.smodel.structure.OperationParm_Concept", false, new String[]{})).first(), "conceptArgument", true);
   }
 
   public static SNode sourceNodeQuery_1212009901000(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1394,6 +1402,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1206021463571(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
+  }
+
+  public static Iterable sourceNodesQuery_3769812235505815517(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return QueriesUtil.getNodeOperation_StopList_concepts(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_3769812235505816472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return QueriesUtil.getNodeOperation_StopList_concepts(_context.getNode());
   }
 
   public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {

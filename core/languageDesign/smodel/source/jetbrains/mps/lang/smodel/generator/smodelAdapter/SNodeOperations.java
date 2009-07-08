@@ -167,6 +167,10 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
+    return getDescendants(node, childConceptFqName, inclusion, new String[0]);
+  }
+
+  public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
     List<SNode> result = new ArrayList<SNode>();
     if (node == null) {
       return result;
@@ -186,15 +190,24 @@ public class SNodeOperations {
       }
     }
 
+    Condition<SNode> stopCondition = stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return _isInstanceOf(node, stopConceptFqNames);
+      }
+    };
     _populateListOfDescendants(result, node, new Condition<SNode>() {
       public boolean met(SNode node) {
         return node.isInstanceOfConcept(childConceptFqName);
       }
-    });
+    }, stopCondition);
     return result;
   }
 
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion) {
+    return getDescendantsWhereConceptInList(node, descendantConceptFqNames, inclusion, new String[0]);
+  }
+
+  public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
     List<SNode> result = new ArrayList<SNode>();
     if (node == null || descendantConceptFqNames.length == 0) {
       return result;
@@ -206,21 +219,34 @@ public class SNodeOperations {
       }
     }
 
+    Condition<SNode> stopCondition = stopConceptFqNames.length == 0 ? Condition.FALSE_CONDITION : new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return _isInstanceOf(node, stopConceptFqNames);
+      }
+    };
     _populateListOfDescendants(result, node, new Condition<SNode>() {
       public boolean met(SNode node) {
         return _isInstanceOf(node, descendantConceptFqNames);
       }
-    });
+    }, stopCondition);
     return result;
   }
 
-  private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition) {
+
+
+  private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition, Condition<SNode> stopCondition) {
     for (SNode child : node.getChildrenArray()) {
       if (condition.met(child)) {
         list.add(child);
       }
-      _populateListOfDescendants(list, child, condition);
+      if (stopCondition == null || !stopCondition.met(child)) {
+        _populateListOfDescendants(list, child, condition);
+      }
     }
+  }
+
+  private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition) {
+    _populateListOfDescendants(list, node, condition, Condition.FALSE_CONDITION);
   }
 
 
@@ -513,7 +539,7 @@ public class SNodeOperations {
 
   public static SNode cast(SNode node, String castTo) {
     if (node == null) return null;
-    
+
     if (!isInstanceOf(node, castTo)) {
       if (ourCastsEnabled) {
         throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);

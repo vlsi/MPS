@@ -4492,7 +4492,7 @@
     <link role="applicableConcept" targetNodeId="6.1171305280644" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171307696665">
       <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getDescendants(jetbrains.mps.smodel.SNode,java.lang.String,boolean):java.util.List" resolveInfo="getDescendants" />
+      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getDescendants(jetbrains.mps.smodel.SNode,java.lang.String,boolean,java.lang.String[]):java.util.List" resolveInfo="getDescendants" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1171307696666">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1171307696667">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1171307696668">
@@ -4527,6 +4527,42 @@
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176946951450" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176946951451" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3769812235505816467">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="3769812235505816468">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3769812235505816469">
+            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+          </node>
+          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3769812235505816470">
+            <property name="value" value="_concept_name_" />
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="3769812235505816471">
+              <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="3769812235505816472">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3769812235505816473">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3769812235505816474">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3769812235505816475">
+                      <link role="baseMethodDeclaration" targetNodeId="15.3769812235505815451" resolveInfo="getNodeOperation_StopList_concepts" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3769812235505816476" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3769812235505816477">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3769812235505816478">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3769812235505816479">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3769812235505816480">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3769812235505816481">
+                      <link role="baseMethodDeclaration" targetNodeId="14.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+                      <link role="classConcept" targetNodeId="14.~NameUtil" resolveInfo="NameUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3769812235505816482" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -5420,7 +5456,7 @@
     <link role="applicableConcept" targetNodeId="6.1171305280644" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1173119356572">
       <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
-      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getDescendantsWhereConceptInList(jetbrains.mps.smodel.SNode,java.lang.String[],boolean):java.util.List" resolveInfo="getDescendantsWhereConceptInList" />
+      <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getDescendantsWhereConceptInList(jetbrains.mps.smodel.SNode,java.lang.String[],boolean,java.lang.String[]):java.util.List" resolveInfo="getDescendantsWhereConceptInList" />
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1173119356573">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1173119356574">
           <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1173119356575">
@@ -5485,6 +5521,42 @@
                     <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176946990354" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176946990355" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3769812235505815512">
+        <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="3769812235505815513">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3769812235505815514">
+            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+          </node>
+          <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3769812235505815515">
+            <property name="value" value="_concept_name_" />
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="3769812235505815516">
+              <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="3769812235505815517">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3769812235505815518">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3769812235505815519">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3769812235505816463">
+                      <link role="baseMethodDeclaration" targetNodeId="15.3769812235505815451" resolveInfo="getNodeOperation_StopList_concepts" />
+                      <link role="classConcept" targetNodeId="15.1168968323635" resolveInfo="QueriesUtil" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3769812235505816464" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3769812235505815522">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3769812235505815523">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3769812235505815524">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3769812235505815525">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3769812235505815526">
+                      <link role="classConcept" targetNodeId="14.~NameUtil" resolveInfo="NameUtil" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+                      <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3769812235505815527" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
