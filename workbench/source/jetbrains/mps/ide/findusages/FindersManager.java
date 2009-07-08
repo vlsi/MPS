@@ -136,9 +136,7 @@ public class FindersManager implements ApplicationComponent {
                   finders.add((GeneratedFinder) finder);
                   myFinders.put(conceptName, finders);
                   myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
-                } else {
-                  LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);
-                }
+                } 
               } catch (Exception e) {
                 LOG.error(e, finderDeclaration);
               }
