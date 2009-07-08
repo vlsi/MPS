@@ -15,34 +15,24 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.fileEditor.FileEditor;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.IdeMain;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 import java.awt.BorderLayout;
-import java.awt.KeyboardFocusManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.util.List;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
-
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.fileEditor.FileEditor;
-import com.intellij.ide.DataManager;
 
 public class NodeEditorComponent extends EditorComponent {
   private JPanel myExternalComponent;
@@ -101,7 +91,7 @@ public class NodeEditorComponent extends EditorComponent {
   protected boolean isValidEditor() {
     if (getEditedNode() == null) return false;
     SNode root = getEditedNode().getContainingRoot();
-         
+
     return root != null;
   }
 
@@ -140,7 +130,9 @@ public class NodeEditorComponent extends EditorComponent {
   public void dispose() {
     InspectorTool inspectorTool = getInspectorTool();
     if (inspectorTool != null) {
-      inspectorTool.inspect(null, null, null);
+      if (inspectorTool.getInspector().getEditedNode() == this.getLastInspectedNode()) {
+        inspectorTool.inspect(null, null, null);
+      }
     }
     super.dispose();
   }
