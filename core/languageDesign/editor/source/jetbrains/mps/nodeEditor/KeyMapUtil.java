@@ -49,22 +49,17 @@ public class KeyMapUtil {
   static List<Pair<EditorCellKeyMapAction, EditorCell>> getKeyMapActionsForEvent(final EditorCell selectedCell, final KeyEvent keyEvent, final EditorContext editorContext) {
     return ModelAccess.instance().runReadAction(new Computable<List<Pair<EditorCellKeyMapAction, EditorCell>>>() {
       public List<Pair<EditorCellKeyMapAction, EditorCell>> compute() {
-        // need to process key event?
-        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED)
-          return Collections.emptyList();
+        if (keyEvent.getID() != KeyEvent.KEY_PRESSED && keyEvent.getID() != KeyEvent.KEY_TYPED) return Collections.emptyList();
+
         int keyCode = keyEvent.getKeyCode();
         if (keyCode == KeyEvent.VK_CONTROL || keyCode == KeyEvent.VK_ALT || keyCode == KeyEvent.VK_SHIFT ||
-          /*keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN || keyCode == KeyEvent.VK_LEFT || keyCode == KeyEvent.VK_RIGHT || */ //TODO why?!
-          keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN
-          /* || keyCode == KeyEvent.VK_BACK_SPACE*/) {
+          keyCode == KeyEvent.VK_PAGE_UP || keyCode == KeyEvent.VK_PAGE_DOWN) {
           return Collections.emptyList();
         }
+
         if ((keyEvent.getModifiers() & (KeyEvent.CTRL_MASK | KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK)) == 0) {
-          // no modifiers - ignore letters/digits etc.
           char keyChar = keyEvent.getKeyChar();
-          if (Character.isLetterOrDigit(keyChar) || keyChar == '\n'
-            /* || Character.isSpaceChar(keyChar) || Character.isWhitespace(keyChar)
-   Sorry, I need to handle space manually in textLanguage */) {
+          if (Character.isLetterOrDigit(keyChar) || keyChar == '\n') {
             return Collections.emptyList(); //TODO why?!
           }
         }
