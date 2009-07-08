@@ -139,29 +139,35 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   private void addSearchedNode(DataNode root, Object node) {
     List<PathItem> path = PathProvider.getPathForSearchResult(new SearchResult(node, SearchedNodesNodeData.CATEGORY_NAME));
-    createPath(path, 0, root, null, false);
+    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
+    createPath(pathCopy, 0, root, null, false);
   }
 
   private void addResultWithPresentation(DataNode root, SearchResult result, INodeRepresentator nodeRepresentator) {
     List<PathItem> path = PathProvider.getPathForSearchResult(result);
-    createPath(path, 0, root, nodeRepresentator, true);
+    ArrayList<PathItem> pathCopy = new ArrayList<PathItem>(path);
+    createPath(pathCopy, 0, root, nodeRepresentator, true);
   }
 
-  private DataNode createPath(List<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator, boolean results) {
+  //the first argument's type is exact for performance reasons
+  private DataNode createPath(ArrayList<PathItem> path, int index, DataNode root, INodeRepresentator nodeRepresentator, boolean results) {
     DataNode next = null;
+    PathItem currentPathItem = path.get(index);
+    Object currentIdObject = currentPathItem.getIdObject();
+
     for (DataNode child : root.getChildren()) {
-      if (path.get(index).getIdObject() instanceof String) {
-        if (child.getData().getIdObject().equals(path.get(index).getIdObject())) {
+      if (currentIdObject instanceof String) {
+        if (child.getData().getIdObject().equals(currentIdObject)) {
           next = child;
         }
       } else {
-        if (child.getData().getIdObject() == path.get(index).getIdObject()) {
+        if (child.getData().getIdObject() == currentIdObject) {
           next = child;
         }
       }
     }
     if (next == null) {
-      Object o = path.get(index).getIdObject();
+      Object o = currentIdObject;
       PathItemRole creator = path.get(index).getRole();
       BaseNodeData data = null;
 
@@ -173,17 +179,23 @@ public class DataTree implements IExternalizeable, IChangeListener {
       } else if (o instanceof SNode) {
         data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
       } else {
-        String caption = (String) path.get(index).getIdObject();
+        String caption = (String) currentIdObject;
         data = new CategoryNodeData(creator, caption, results);
       }
       next = new DataNode(data);
       root.add(next);
+    } else {
+      adjustNode(next,path,index);
     }
     if (index == path.size() - 1) {
       return next;
     } else {
       return createPath(path, index + 1, next, nodeRepresentator, results);
     }
+  }
+
+  private void adjustNode(DataNode next, ArrayList<PathItem> path, int index) {
+    next.getData().setIsResultNode_internal(index==path.size()-1);
   }
 
   //----READ/WRITE STUFF----

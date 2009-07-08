@@ -557,6 +557,9 @@ public abstract class UsagesTree extends MPSTree {
         if (lastResult != null) return lastResult;
         prevIndex--;
       }
+
+      if (isAliveResultNode(parent.getUserObject())) return parent;
+
       current = parent;
     }
   }

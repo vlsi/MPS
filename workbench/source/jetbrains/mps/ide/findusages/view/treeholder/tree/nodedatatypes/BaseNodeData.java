@@ -109,6 +109,10 @@ public abstract class BaseNodeData implements IExternalizeable {
     return myIsResultNode;
   }
 
+  public void setIsResultNode_internal(boolean isResult){
+    myIsResultNode = isResult;
+  }
+
   //----SAVE/LOAD STUFF----
 
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
