@@ -89,6 +89,11 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   });
 
   private Queue<Message> myMessages = new LinkedList<Message>();
+  private int myInfos;
+  private int myWarnings;
+  private int myErrors;
+  private int myHintObjects;
+
   private FastListModel myModel = new FastListModel(MAX_MESSAGES_SIZE);
   private JPanel myComponent = new JPanel();
   private JList myList = new JList(myModel);
@@ -227,35 +232,19 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   //------------MESSAGES STUFF---------------
 
   public boolean hasErrors() {
-    for (Message m : myMessages) {
-      if (m.getKind() == MessageKind.ERROR) return true;
-    }
-
-    return false;
+    return myErrors > 0;
   }
 
   public boolean hasWarnings() {
-    for (Message m : myMessages) {
-      if (m.getKind() == MessageKind.WARNING) return true;
-    }
-
-    return false;
+    return myWarnings > 0;
   }
 
   public boolean hasInfo() {
-    for (Message m : myMessages) {
-      if (m.getKind() == MessageKind.INFORMATION) return true;
-    }
-
-    return false;
+    return myInfos > 0;
   }
 
   public boolean hasHintObjects() {
-    for (Message m : myMessages) {
-      if (m.getHintObject() != null) return true;
-    }
-
-    return false;
+    return myHintObjects > 0;
   }
 
 
@@ -382,6 +371,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       public void run() {
         myModel.clear();
         myMessages.clear();
+        myErrors = 0;
+        myWarnings = 0;
+        myInfos = 0;
+        myHintObjects = 0;
         myList.setFixedCellWidth(myList.getWidth());
         updateActions();
       }
@@ -401,6 +394,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
         if (myMessages.size() >= MAX_MESSAGES_SIZE) {
           Message toRemove = myMessages.remove();
+          updateMessageCounters(message, -1);
           if (isVisible(toRemove)) {
             myModel.removeFirst();
           }
@@ -414,7 +408,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
             myList.ensureIndexIsVisible(index);
           }
         }
+
         myMessages.add(message);
+        updateMessageCounters(message, 1);
 
         int width = getMessageWidth(message);
         if (width > myList.getFixedCellWidth()) {
@@ -422,6 +418,21 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         }
 
         updateActions();
+      }
+
+      private void updateMessageCounters(Message m, int delta) {
+        if (m.getKind() == MessageKind.ERROR) {
+          myErrors += delta;
+        }
+        if (m.getKind() == MessageKind.WARNING) {
+          myWarnings += delta;
+        }
+        if (m.getKind() == MessageKind.INFORMATION) {
+          myInfos += delta;
+        }
+        if (m.getHintObject() != null) {
+          myHintObjects += delta;
+        }
       }
     });
   }
