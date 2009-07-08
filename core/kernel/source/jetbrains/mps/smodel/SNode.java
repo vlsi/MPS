@@ -121,7 +121,7 @@ public final class SNode {
   }
 
   public boolean isRoot() {
-    return myModel.isRoot(this);
+    return myRegisteredInModelFlag && myModel.isRoot(this);
   }
 
   public void addNextSibling(SNode newSibling) {
