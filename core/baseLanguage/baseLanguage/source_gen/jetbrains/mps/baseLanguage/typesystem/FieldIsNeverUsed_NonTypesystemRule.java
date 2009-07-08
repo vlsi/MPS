@@ -25,7 +25,7 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
-        List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false);
+        List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
         if (ListSequence.fromList(memberOperations).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
@@ -40,7 +40,7 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
         }
       } else
       {
-        List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false);
+        List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
         if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter <SNode>() {
 
           public boolean accept(SNode it) {
