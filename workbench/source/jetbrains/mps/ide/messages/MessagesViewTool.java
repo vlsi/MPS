@@ -67,26 +67,26 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
-  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON, new Computable<Boolean>() {
-    public Boolean compute() {
+  private MyToggleAction myErrorsAction = new MyToggleAction("Show Error Messages", jetbrains.mps.ide.messages.Icons.ERROR_ICON){
+    protected boolean isEnabled() {
       return hasErrors();
     }
-  });
-  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON, new Computable<Boolean>() {
-    public Boolean compute() {
+  };
+  private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", jetbrains.mps.ide.messages.Icons.WARNING_ICON){
+    protected boolean isEnabled() {
       return hasWarnings();
     }
-  });
-  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON, new Computable<Boolean>() {
-    public Boolean compute() {
+  };
+  private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", jetbrains.mps.ide.messages.Icons.INFORMATION_ICON){
+    protected boolean isEnabled() {
       return hasInfo();
     }
-  });
-  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON, new Computable<Boolean>() {
-    public Boolean compute() {
+  };
+  private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", jetbrains.mps.ide.messages.Icons.AUTOSCROLLS_ICON){
+    protected boolean isEnabled() {
       return hasHintObjects();
     }
-  });
+  };
 
   private Queue<Message> myMessages = new LinkedList<Message>();
   private int myInfos;
@@ -510,12 +510,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private class MyToggleAction extends ToggleAction {
     private boolean mySelected;
     private Icon myIcon;
-    private final Computable<Boolean> myEnabled;
 
-    public MyToggleAction(String tooltip, Icon icon, Computable<Boolean> enabled) {
+    public MyToggleAction(String tooltip, Icon icon) {
       super("", tooltip, icon);
       myIcon = icon;
-      myEnabled = enabled;
       mySelected = true;
     }
 
@@ -530,11 +528,14 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     public void update(AnActionEvent e) {
       super.update(e);
-      if (myEnabled != null) {
-        boolean enabled = myEnabled.compute();
-        Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
-        e.getPresentation().setIcon(icon);
-      }
+
+      boolean enabled = isEnabled();
+      Icon icon = enabled ? myIcon : UIManager.getLookAndFeel().getDisabledIcon(null, myIcon);
+      e.getPresentation().setIcon(icon);
+    }
+
+    protected boolean isEnabled() {
+      return true;
     }
   }
 
@@ -562,7 +563,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       if (mySize == myItems.length) throw new RuntimeException("Buffer overflow");
       myItems[myEnd] = item;
       myEnd = (myEnd + 1) % myItems.length;
-      mySize++;      
+      mySize++;
       fireIntervalAdded(this, mySize - 1, mySize - 1);
     }
 
