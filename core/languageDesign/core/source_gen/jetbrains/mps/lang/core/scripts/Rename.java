@@ -64,7 +64,13 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    return refactoringContext.getSelectedNode() != null && SNodeOperations.isInstanceOf(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept");
+    if (refactoringContext.getSelectedNode() == null) {
+      return false;
+    }
+    if (!(SNodeOperations.isInstanceOf(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      return false;
+    }
+    return RenameUtil.canBeRenamed(refactoringContext.getSelectedNode());
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {

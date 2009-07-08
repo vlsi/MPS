@@ -87,7 +87,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         if (module instanceof Language) {
           processLanguageRemoved((Language) module);
         }
-      }                           
+      }
 
       public void moduleInitialized(IModule module) {
       }
@@ -227,9 +227,13 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodeDefaultSearchScopeProvidersMap.remove(conceptFqName);
   }
 
+  public boolean isComplexNodeProperty(SNode node, String propertyName) {
+    return getNodePropertyGetter(node, propertyName) != null || getNodePropertySetter(node, propertyName) != null;
+  }
+
   public INodePropertyGetter getNodePropertyGetter(SNode node, String propertyName) {
     return (INodePropertyGetter) getNodePropertyGetterOrSetter(node, propertyName, false);
-  }                           
+  }
 
   public INodePropertySetter getNodePropertySetter(SNode node, String propertyName) {
     return (INodePropertySetter) getNodePropertyGetterOrSetter(node, propertyName, true);
@@ -240,7 +244,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final SNode node, @NotNull final String propertyName, final boolean isSetter) {
-    return getNodePropertyGetterOrSetter(node.getConceptFqName(), propertyName, isSetter);    
+    return getNodePropertyGetterOrSetter(node.getConceptFqName(), propertyName, isSetter);
   }
 
   public IModelConstraints getNodePropertyGetterOrSetter(@NotNull final String conceptFqName, @NotNull final String propertyName, final boolean isSetter) {
