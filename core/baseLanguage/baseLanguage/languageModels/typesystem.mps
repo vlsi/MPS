@@ -3387,6 +3387,7 @@
                   </node>
                 </node>
               </node>
+              <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7329992809283278128" />
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1204070115217">
