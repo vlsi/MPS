@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -32,6 +33,8 @@ class Memento {
   private Integer myCaretX;
   private Integer mySelectionStart;
   private Integer mySelectionEnd;
+  private SNode myFirstRangeSelectionNode;
+  private SNode myLastRangeSelectionNode;
 
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
@@ -57,6 +60,11 @@ class Memento {
       for (EditorCell bracesEnabledCell : nodeEditor.getBracesEnabledCells()) {
         myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
       }
+    }
+
+    if (nodeEditor.getNodeRangeSelection().isActive()) {
+      myFirstRangeSelectionNode = nodeEditor.getNodeRangeSelection().getFirstNode();
+      myLastRangeSelectionNode = nodeEditor.getNodeRangeSelection().getLastNode();
     }
 
     if (full) {
@@ -111,6 +119,10 @@ class Memento {
         ((EditorCell_Label)deepestSelectedCell).setSelectionEnd(mySelectionEnd);
       }
     }
+    if (myFirstRangeSelectionNode != null) {
+      editor.getNodeRangeSelection().setRange(myFirstRangeSelectionNode, myLastRangeSelectionNode);
+    }
+
   }
 
   private void restoreErrors(EditorComponent editor) {    
@@ -144,6 +156,8 @@ class Memento {
         EqualUtil.equals(myCaretX, m.myCaretX) &&
         EqualUtil.equals(mySelectionStart, m.mySelectionStart) &&
         EqualUtil.equals(mySelectionEnd, m.mySelectionEnd) &&
+        EqualUtil.equals(myFirstRangeSelectionNode, m.myFirstRangeSelectionNode) &&
+        EqualUtil.equals(myLastRangeSelectionNode, m.myLastRangeSelectionNode) &&
         EqualUtil.equals(mySelectedStack, m.mySelectedStack) &&
         EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
         EqualUtil.equals(myFolded, m.myFolded)) {
@@ -158,7 +172,9 @@ class Memento {
     return (mySelectedCellInfo != null ? mySelectedCellInfo.hashCode() : 0) +
            (myCaretX != null ? myCaretX.hashCode() : 0) +
            (mySelectionStart != null ? mySelectionStart.hashCode() : 0) +
-           (mySelectionEnd != null ? mySelectionEnd.hashCode() : 0);
+           (mySelectionEnd != null ? mySelectionEnd.hashCode() : 0) +
+           (myFirstRangeSelectionNode != null ? myFirstRangeSelectionNode.hashCode() : 0) +
+           (myLastRangeSelectionNode != null ? myLastRangeSelectionNode.hashCode() : 0);
   }
 
   public String toString() {

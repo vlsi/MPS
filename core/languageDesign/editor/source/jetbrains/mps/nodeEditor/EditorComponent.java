@@ -1571,6 +1571,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scroll) {
     clearSelectionStack();
+    if (myNodeRangeSelection.isActive()) {
+      myNodeRangeSelection.deactivate();
+    }
     Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
     if (newSelectedCell != null) {
       for (EditorCell_Collection collection : CollectionUtil.asIterable(newSelectedCell.parents())) {
@@ -2335,10 +2338,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private void updateSelection(List<SModelEvent> events, SNode lastSelectedNode) {
     SModelEvent lastAdd = null;
     SModelEvent lastRemove = null;
-
-    if (myNodeRangeSelection.isActive()) {
-      myNodeRangeSelection.deactivate();
-    }
 
     List<SNode> childAddedEventNodes = new ArrayList<SNode>();
 

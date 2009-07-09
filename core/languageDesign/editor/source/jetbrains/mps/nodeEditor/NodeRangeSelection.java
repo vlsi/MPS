@@ -72,6 +72,14 @@ public class NodeRangeSelection implements KeyboardHandler {
     return myActive;
   }
 
+  public SNode getFirstNode() {
+    return myFirstNode;
+  }
+
+  public SNode getLastNode() {
+    return myLastNode;
+  }
+
   public void deactivate() {
     if (myActive) {
       myActive = false;
