@@ -30,13 +30,22 @@ class Memento {
   private Map<CellInfo, String> myErrorTexts = new HashMap<CellInfo, String>();
 
   private Integer myCaretX;
+  private Integer mySelectionStart;
+  private Integer mySelectionEnd;
 
   Memento(EditorContext context, boolean full) {
     EditorComponent nodeEditor = context.getNodeEditorComponent();
     EditorCell selectedCell = nodeEditor.getSelectedCell();
     EditorCell deepestSelectedCell = nodeEditor.getDeepestSelectedCell();
     if (selectedCell != null) {
-      if (deepestSelectedCell != null) myCaretX = deepestSelectedCell.getCaretX();
+      if (deepestSelectedCell != null) {
+        myCaretX = deepestSelectedCell.getCaretX();
+        if (deepestSelectedCell instanceof EditorCell_Label) {
+          mySelectionStart = ((EditorCell_Label)deepestSelectedCell).getSelectionStart();
+          mySelectionEnd = ((EditorCell_Label)deepestSelectedCell).getSelectionEnd();
+        }
+      }
+
       if (deepestSelectedCell instanceof EditorCell_Label && deepestSelectedCell.isErrorState()) {
       }
       mySelectedCellInfo = selectedCell.getCellInfo();
@@ -97,6 +106,10 @@ class Memento {
     EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
     if (deepestSelectedCell != null && myCaretX != null) {
       deepestSelectedCell.setCaretX(myCaretX);
+      if (mySelectionStart != null) {
+        ((EditorCell_Label)deepestSelectedCell).setSelectionStart(mySelectionStart);
+        ((EditorCell_Label)deepestSelectedCell).setSelectionEnd(mySelectionEnd);
+      }
     }
   }
 
@@ -129,6 +142,8 @@ class Memento {
       Memento m = (Memento) object;
       if (EqualUtil.equals(mySelectedCellInfo, m.mySelectedCellInfo) &&
         EqualUtil.equals(myCaretX, m.myCaretX) &&
+        EqualUtil.equals(mySelectionStart, m.mySelectionStart) &&
+        EqualUtil.equals(mySelectionEnd, m.mySelectionEnd) &&
         EqualUtil.equals(mySelectedStack, m.mySelectedStack) &&
         EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
         EqualUtil.equals(myFolded, m.myFolded)) {
@@ -141,12 +156,16 @@ class Memento {
 
   public int hashCode() {
     return (mySelectedCellInfo != null ? mySelectedCellInfo.hashCode() : 0) +
-            (myCaretX != null ? myCaretX.hashCode() : 0);
+           (myCaretX != null ? myCaretX.hashCode() : 0) +
+           (mySelectionStart != null ? mySelectionStart.hashCode() : 0) +
+           (mySelectionEnd != null ? mySelectionEnd.hashCode() : 0);
   }
 
   public String toString() {
     return "Editor Memento[\n" +
       "  caretX = " + myCaretX + "\n" +
+      "  selectionStart = " + mySelectionStart + "\n" +
+      "  selectionEnd = " + mySelectionEnd + "\n" +
       "  cellInfo = " + mySelectedCellInfo + "\n" +
       "  selectedStack = " + mySelectedStack + "\n" +
       "  collectionsWithBraces = " + myCollectionsWithEnabledBraces + "\n" +

@@ -691,8 +691,16 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return myTextLine.getStartTextSelectionPosition();
   }
 
+  public void setSelectionStart(int position) {
+    myTextLine.setStartTextSelectionPosition(position);
+  }
+
   public int getSelectionEnd() {
     return myTextLine.getEndTextSelectionPosition();
+  }
+
+  public void setSelectionEnd(int position) {
+    myTextLine.setEndTextSelectionPosition(position);
   }
 
   private boolean isNotApplicableKeyEvent(KeyEvent keyEvent) {
