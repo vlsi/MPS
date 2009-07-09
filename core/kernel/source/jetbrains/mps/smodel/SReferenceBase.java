@@ -27,24 +27,6 @@ import org.jetbrains.annotations.Nullable;
  */
 /*package*/ abstract class SReferenceBase extends SReference {
 
-  private static final WeakSet<SReferenceBase> ourImmatureReferences = new WeakSet<SReferenceBase>();
-
-  static {
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        synchronized (ourImmatureReferences) {
-          for (SReferenceBase sr : ourImmatureReferences) {
-            if (sr != null) {
-              sr.mature();
-            }
-          }
-          ourImmatureReferences.clear();
-        }
-      }
-    });
-  }
-
-
   private boolean myMature;
   private SModelReference myTargetModelReference;
 
@@ -57,9 +39,7 @@ import org.jetbrains.annotations.Nullable;
 
     // 'young' reference
     if (!mature) {
-      synchronized (ourImmatureReferences) {
-        ourImmatureReferences.add(this);
-      }
+      ImmatureReferences.getInstance().add(this);
     }
   }
 
