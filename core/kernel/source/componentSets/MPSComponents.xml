@@ -316,6 +316,10 @@
         <component>
             <implementation-class>jetbrains.mps.smodel.MPSFileSynchronizer</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.smodel.ImmatureReferences</implementation-class>
+        </component>
     </application-components>
 
     <project-components>
