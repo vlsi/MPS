@@ -50,7 +50,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
 
 
     IOperationContext context = editorContext.getOperationContext();
-    ConceptDeclaration childNodeConcept = (ConceptDeclaration) BaseAdapter.fromNode(getConceptOfChild(parentNode, currentChild, defaultConceptOfChild.getNode(), context.getScope(), context));
+    AbstractConceptDeclaration childNodeConcept = (AbstractConceptDeclaration) BaseAdapter.fromNode(getConceptOfChild(parentNode, currentChild, defaultConceptOfChild.getNode(), context.getScope(), context));
     if (childNodeConcept == null) {
       return new LinkedList<INodeSubstituteAction>();  // no actions
     }

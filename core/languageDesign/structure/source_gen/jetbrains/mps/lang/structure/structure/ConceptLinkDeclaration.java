@@ -53,11 +53,11 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
     this.setProperty(ConceptLinkDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public ConceptDeclaration getTargetType() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptLinkDeclaration.TARGET_TYPE);
+  public AbstractConceptDeclaration getTargetType() {
+    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptLinkDeclaration.TARGET_TYPE);
   }
 
-  public void setTargetType(ConceptDeclaration node) {
+  public void setTargetType(AbstractConceptDeclaration node) {
     super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
   }
 

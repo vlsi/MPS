@@ -25,6 +25,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.lang.structure.structure.ReferenceConceptLink;
 import jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 import java.util.List;
 import java.util.Collections;
@@ -56,7 +57,7 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
   private List<SNode> createOwnNodesList() {
     ReferenceConceptLinkDeclaration linkDeclaration = myReferenceConceptLink.getReferenceConceptLinkDeclaration();
     if (linkDeclaration != null) {
-      final ConceptDeclaration targetConcept = linkDeclaration.getTargetType();
+      final AbstractConceptDeclaration targetConcept = linkDeclaration.getTargetType();
       if (targetConcept != null) {
         ISearchScope allNodesScope = SModelSearchUtil.createModelAndImportedModelsScope(myReferenceConceptLink.getModel(), myScope);
         return allNodesScope.getNodes(new Condition<SNode>() {

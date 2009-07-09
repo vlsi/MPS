@@ -441,7 +441,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1105736621938">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="targetType" />
-      <link role="target" targetNodeId="1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="target" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1105736674127">
