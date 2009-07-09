@@ -37,6 +37,7 @@ import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -119,6 +120,7 @@ public class Resolver {
       return false;
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
+    final String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
     if (typeCheckingContext == null) return false;
@@ -131,9 +133,10 @@ public class Resolver {
         return false;
       }
       ISearchScope searchScope = status.getSearchScope();
+
       List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
-          return node.isInstanceOfConcept(referentConcept);
+          return node.isInstanceOfConcept(referentConceptFqName);
         }
       });
 

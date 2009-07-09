@@ -96,7 +96,7 @@ public class SModelUtil_new implements ApplicationComponent {
     if (toConceptFqName == null || fromConceptFqName == null) return false;
     if (toConceptFqName.equals("jetbrains.mps.lang.core.structure.BaseConcept")) return true;
 
-    return LanguageHierarchyCache.getInstance().getAncestorsNames(fromConceptFqName).contains(toConceptFqName);
+    return LanguageHierarchyCache.getInstance().isAssignable(fromConceptFqName, toConceptFqName);
   }
 
   public static LinkDeclaration getGenuineLinkDeclaration(LinkDeclaration linkDeclaration) {

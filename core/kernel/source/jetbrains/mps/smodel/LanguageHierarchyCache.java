@@ -114,9 +114,18 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     }
   }
 
+  public boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
+    return getAncestorsNames_internal(fromConceptFqName).contains(toConceptFqName);
+  }
+
   public Set<String> getAncestorsNames(final String conceptFqName) {
-    if (myAncestorsNamesMap.containsKey(conceptFqName)) {
-      return Collections.unmodifiableSet(myAncestorsNamesMap.get(conceptFqName));
+    return Collections.unmodifiableSet(getAncestorsNames_internal(conceptFqName));
+  }
+
+  private Set<String> getAncestorsNames_internal(final String conceptFqName) {
+    Set<String> result = myAncestorsNamesMap.get(conceptFqName);
+    if (result != null) {
+      return result;
     } else {
       return NodeReadAccessCaster.runReadTransparentAction(new Computable<Set<String>>() {
         public Set<String> compute() {
@@ -160,7 +169,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             }
           }
           myAncestorsNamesMap.put(conceptFqName, result);
-          return Collections.unmodifiableSet(result);
+          return result;
         }
       });
     }
