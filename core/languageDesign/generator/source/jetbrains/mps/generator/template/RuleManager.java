@@ -167,7 +167,16 @@ public class RuleManager {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       myGenerator.setChanged(wasChanged);
-      myGenerator.showInformationMessage(reductionRule.getNode(), "-- dismissed reduction rule: " + reductionRule.getDebugText());
+      if (ex.isLoggingNeeded()) {
+        String messageText = "-- dismissed reduction rule: " + reductionRule.getDebugText();
+        if (ex.isInfo()) {
+          myGenerator.showInformationMessage(reductionRule.getNode(), messageText);
+        } else if (ex.isWarning()) {
+          myGenerator.showWarningMessage(reductionRule.getNode(), messageText);
+        } else {
+          myGenerator.showErrorMessage(reductionRule.getNode(), messageText);
+        }
+      }
     } finally {
       if (needStopReductionBlocking) {
         stopReductionBlockingForInput(inputNode);

@@ -15,5 +15,28 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.lang.generator.structure.GeneratorMessageType;
+
 public class DismissTopMappingRuleException extends Exception {
+  private GeneratorMessageType myMessageType;
+
+  public DismissTopMappingRuleException(GeneratorMessageType messageType) {
+    myMessageType = messageType;
+  }
+
+  public boolean isLoggingNeeded() {
+    return myMessageType != null;
+  }
+
+  public boolean isInfo() {
+    return myMessageType != null && myMessageType == GeneratorMessageType.info;
+  }
+
+  public boolean isWarning() {
+    return myMessageType != null && myMessageType == GeneratorMessageType.warning;
+  }
+
+  public boolean isError() {
+    return myMessageType != null && myMessageType == GeneratorMessageType.error;
+  }
 }
