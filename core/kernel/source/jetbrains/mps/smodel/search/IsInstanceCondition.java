@@ -19,9 +19,11 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 
 public class IsInstanceCondition implements Condition<SNode> {
   private AbstractConceptDeclaration myConceptDeclaration;
+  private String myConceptFqName;
 
   public IsInstanceCondition(SNode node) {
     this((AbstractConceptDeclaration)node.getAdapter());
@@ -29,13 +31,14 @@ public class IsInstanceCondition implements Condition<SNode> {
 
   public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {
     myConceptDeclaration = conceptDeclaration;
+    myConceptFqName = NameUtil.nodeFQName(myConceptDeclaration);
   }
 
-  public AbstractConceptDeclaration getConceptDeclaration() {
-    return myConceptDeclaration;
+  public String getConceptFqName() {
+    return myConceptFqName;
   }
 
   public boolean met(SNode node) {
-    return node.isInstanceOfConcept(myConceptDeclaration);
+    return node.isInstanceOfConcept(myConceptFqName);
   }
 }

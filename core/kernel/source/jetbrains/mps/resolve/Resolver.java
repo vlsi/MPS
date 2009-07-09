@@ -120,7 +120,6 @@ public class Resolver {
       return false;
     }
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
-    final String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
     if (typeCheckingContext == null) return false;
@@ -134,11 +133,7 @@ public class Resolver {
       }
       ISearchScope searchScope = status.getSearchScope();
 
-      List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
-        public boolean met(SNode node) {
-          return node.isInstanceOfConcept(referentConceptFqName);
-        }
-      });
+      List<SNode> nodes = searchScope.getNodes(new IsInstanceCondition(referentConcept));
 
       Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
         public boolean met(SNode object) {

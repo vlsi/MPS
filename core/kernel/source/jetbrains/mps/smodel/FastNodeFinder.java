@@ -51,8 +51,10 @@ public class FastNodeFinder {
   }
 
   public List<SNode> getNodes(AbstractConceptDeclaration concept, boolean includeInherited) {
-    String conceptFqName = NameUtil.nodeFQName(concept);
+    return getNodes(NameUtil.nodeFQName(concept), includeInherited);
+  }
 
+  public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     synchronized (myLock) {
       if (!myInitialized) {
         initCache();

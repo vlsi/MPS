@@ -1308,7 +1308,7 @@ public class SModel implements Iterable<SNode> {
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
-      return getModelDescriptor().getFastNodeFinder().getNodes(c.getConceptDeclaration(), true);
+      return getModelDescriptor().getFastNodeFinder().getNodes(c.getConceptFqName(), true);
     }
 
     List<SNode> resultNodes = new ArrayList<SNode>();
