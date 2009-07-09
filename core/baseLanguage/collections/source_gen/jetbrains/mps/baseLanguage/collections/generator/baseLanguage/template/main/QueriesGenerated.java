@@ -148,7 +148,7 @@ public class QueriesGenerated {
     if (cl == null) {
       return false;
     }
-    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement")) {
           return true;
@@ -164,7 +164,7 @@ public class QueriesGenerated {
     if (cl == null) {
       return false;
     }
-    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.StopStatement")) {
           return true;
@@ -512,7 +512,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1240860548412(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     try {
-      return _context.getSessionObject(Keys.WRAPPED_WITH_MAP_SEQUENCE.compose(_context.getNode().getId())) == null && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) != null);
+      return _context.getSessionObject(Keys.WRAPPED_WITH_MAP_SEQUENCE.compose(_context.getNode().getId())) == null && (TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true) != null) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), _context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), true) == null);
     } catch (RuntimeException e) {
       _context.showErrorMessage(_context.getNode(), "Error while processing node");
       throw e;
