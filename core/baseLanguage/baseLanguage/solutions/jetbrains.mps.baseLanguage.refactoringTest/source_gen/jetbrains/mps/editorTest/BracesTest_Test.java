@@ -22,6 +22,7 @@ public class BracesTest_Test extends BaseTransformationTest {
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("8497577741385040369", "3167392541572926816");
       BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
 
       this.finishTest();
     }

@@ -2002,6 +2002,11 @@
           <property name="keycode" value="VK_BACK_SPACE" />
         </node>
       </node>
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="5293915241398230541">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="5293915241398230542">
+          <property name="keycode" value="VK_UP" />
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="5152201093378696005" />
     </node>
     <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="8497577741385040369">
@@ -2030,9 +2035,9 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="3167392541572926821">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="3167392541572936182">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="5293915241398230539">
           <property name="isLastPosition" value="true" />
-          <property name="cellId" value="3167392541572926821_statement" />
+          <property name="cellId" value="Constant_2941_0" />
         </node>
       </node>
     </node>
