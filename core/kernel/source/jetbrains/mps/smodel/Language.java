@@ -601,11 +601,10 @@ public class Language extends AbstractModule {
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-      final String structureLangNamespace = Structure_Language.get().getNamespace();
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
-          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;   //what is this check for?!
+          //do not use IsInstanceOf Condition here and isInstanceOf(String). They will lead to stack overflow
           if (node.getAdapter() instanceof AbstractConceptDeclaration) {
             myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
           }

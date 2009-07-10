@@ -18,6 +18,7 @@ package jetbrains.mps.lang.structure.constraints;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Condition;
