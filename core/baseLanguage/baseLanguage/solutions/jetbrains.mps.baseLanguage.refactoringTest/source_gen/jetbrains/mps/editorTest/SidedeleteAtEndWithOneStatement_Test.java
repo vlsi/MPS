@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -17,11 +17,11 @@ public class SidedeleteAtEndWithOneStatement_Test extends BaseTransformationTest
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEditorTestBody {
+  public static class TestBody extends BaseEdmitorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1232626665971", "1232626681069");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
+      BaseEdmitorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       this.finishTest();
     }
 

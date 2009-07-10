@@ -34,7 +34,7 @@ public class TestNodeReference_declaration_ReferentConstraint extends BaseNodeRe
     SNode test = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.test.structure.NodesTestCase", true, false);
     List<SNode> result = new ArrayList<SNode>();
     if (test != null) {
-      for(SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true))) {
+      for(SNode node : ListSequence.fromList(SNodeOperations.getDescendants(test, "jetbrains.mps.lang.test.structure.TestNodeAnnotation", true, new String[]{}))) {
         ListSequence.fromList(result).addElement(node);
       }
     }

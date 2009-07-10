@@ -218,12 +218,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1221567884870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false);
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1221567898689(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Set<SNode> set = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for(SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false))) {
+    for(SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "body", true), "jetbrains.mps.lang.test.structure.TestNodeReference", false, new String[]{}))) {
       SetSequence.fromSet(set).addElement(SLinkOperations.getTarget(ref, "declaration", false));
     }
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), set);

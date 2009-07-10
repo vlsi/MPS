@@ -19,8 +19,8 @@ public class BaseTestBody {
 
   public SModelDescriptor myModel;
   public MPSProject myProject;
-  public Map<SNode, SNode> myMap;
-  public List<SNode> myCopyes;
+  protected Map<SNode, SNode> myMap;
+  private List<SNode> myCopyes;
 
   public BaseTestBody() {
     this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -32,7 +32,7 @@ public class BaseTestBody {
 
       public void run() {
         SNode node = BaseTestBody.this.myModel.getSModel().getNodeById(id);
-        SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);
+        SNode copy = CopyUtil.copy(node, ((Map<SNode, SNode>)BaseTestBody.this.myMap), true);
         for(SNode a : ListSequence.fromList(SNodeOperations.getDescendants(copy, "jetbrains.mps.lang.test.structure.INodeAnnotattion", false, new String[]{}))) {
           SNodeOperations.deleteNode(a);
         }

@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
 import jetbrains.mps.ide.IEditor;
 import java.awt.event.ActionListener;
 import javax.swing.KeyStroke;
@@ -17,7 +17,7 @@ public class MovingNode_Test extends BaseTransformationTest {
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEditorTestBody {
+  public static class TestBody extends BaseEdmitorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1452412866770394613", "1452412866770394617");

@@ -3412,12 +3412,14 @@
     <property name="name" value="RestoreRangeSeletion" />
     <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="1932269937152125077">
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="1932269937152125078">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1932269937152823614">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2209739309055576872">
           <property name="caretPosition" value="0" />
           <property name="useLabelSelection" value="true" />
           <property name="selectionStart" value="0" />
           <property name="selectionEnd" value="0" />
           <property name="cellId" value="Constant_9987_0" />
+          <link role="nodeRangeSelectionStart" targetNodeId="1932269937152125078" />
+          <link role="nodeRangeSelectionEnd" targetNodeId="1932269937152125082" />
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="1932269937152125080" />
@@ -3425,12 +3427,14 @@
     </node>
     <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="1932269937152125086">
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="1932269937152125087">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1932269937152823613">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2209739309055599696">
           <property name="caretPosition" value="0" />
           <property name="useLabelSelection" value="true" />
           <property name="selectionStart" value="0" />
           <property name="selectionEnd" value="0" />
           <property name="cellId" value="Constant_9987_0" />
+          <link role="nodeRangeSelectionStart" targetNodeId="1932269937152125087" />
+          <link role="nodeRangeSelectionEnd" targetNodeId="1932269937152125090" />
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="1932269937152125089" />

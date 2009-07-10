@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -19,12 +19,12 @@ public class MoveNodeRange_Test extends BaseTransformationTest {
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEditorTestBody {
+  public static class TestBody extends BaseEdmitorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("7247887419163198992", "7247887419163198996");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
+      BaseEdmitorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
+      BaseEdmitorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
       ActionListener actionListener = editor.getCurrentEditorComponent().getActionForKeyStroke(KeyStroke.getKeyStroke("alt UP"));
       actionListener.actionPerformed(null);
       this.finishTest();
