@@ -22,7 +22,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 
 public class IsInstanceCondition implements Condition<SNode> {
-  private AbstractConceptDeclaration myConceptDeclaration;
   private String myConceptFqName;
 
   public IsInstanceCondition(SNode node) {
@@ -30,8 +29,11 @@ public class IsInstanceCondition implements Condition<SNode> {
   }
 
   public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {
-    myConceptDeclaration = conceptDeclaration;
-    myConceptFqName = NameUtil.nodeFQName(myConceptDeclaration);
+    this(NameUtil.nodeFQName(conceptDeclaration));
+  }
+
+  public IsInstanceCondition(String fqName) {
+    myConceptFqName = fqName;
   }
 
   public String getConceptFqName() {

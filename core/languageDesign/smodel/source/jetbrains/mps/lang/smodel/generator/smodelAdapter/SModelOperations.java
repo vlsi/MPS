@@ -94,11 +94,7 @@ public class SModelOperations {
       return (List<SNode>) model.allNodes();
     }
 
-    return model.allNodes(new Condition<SNode>() {
-      public boolean met(SNode node) {
-        return node.isInstanceOfConcept(conceptFqName);
-      }
-    });
+    return model.allNodes(new IsInstanceCondition(conceptFqName));
   }
 
 
