@@ -119,7 +119,9 @@ class Memento {
         ((EditorCell_Label)deepestSelectedCell).setSelectionEnd(mySelectionEnd);
       }
     }
-    if (myFirstRangeSelectionNode != null) {
+    if (myFirstRangeSelectionNode != null &&
+        editor.findNodeCell(myFirstRangeSelectionNode) != null &&
+        editor.findNodeCell(myLastRangeSelectionNode) != null) {
       editor.getNodeRangeSelection().setRange(myFirstRangeSelectionNode, myLastRangeSelectionNode);
     }
 
