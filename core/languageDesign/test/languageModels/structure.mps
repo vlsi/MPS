@@ -579,6 +579,17 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1229194968594">
     <property name="name" value="AnonymousCellAnnotation" />
     <property name="package" value="editor" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1932269937152203468">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="nodeRangeSelectionStart" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1932269937152203469">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="nodeRangeSelectionEnd" />
+      <link role="target" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229194968595">
       <property name="name" value="cellId" />
       <link role="dataType" targetNodeId="5.1082983041843" resolveInfo="string" />
@@ -589,6 +600,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1229432188737">
       <property name="name" value="isLastPosition" />
+      <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1932269937152561478">
+      <property name="name" value="useLabelSelection" />
       <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="6268941039745498163">

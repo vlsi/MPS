@@ -17,9 +17,12 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_LAST_POSITION = "isLastPosition";
+  public static final String USE_LABEL_SELECTION = "useLabelSelection";
   public static final String CARET_POSITION = "caretPosition";
   public static final String SELECTION_START = "selectionStart";
   public static final String SELECTION_END = "selectionEnd";
+  public static final String NODE_RANGE_SELECTION_START = "nodeRangeSelectionStart";
+  public static final String NODE_RANGE_SELECTION_END = "nodeRangeSelectionEnd";
 
   public AnonymousCellAnnotation(SNode node) {
     super(node);
@@ -73,6 +76,14 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
     this.setBooleanProperty(AnonymousCellAnnotation.IS_LAST_POSITION, value);
   }
 
+  public boolean getUseLabelSelection() {
+    return this.getBooleanProperty(AnonymousCellAnnotation.USE_LABEL_SELECTION);
+  }
+
+  public void setUseLabelSelection(boolean value) {
+    this.setBooleanProperty(AnonymousCellAnnotation.USE_LABEL_SELECTION, value);
+  }
+
   public int getCaretPosition() {
     return this.getIntegerProperty(AnonymousCellAnnotation.CARET_POSITION);
   }
@@ -95,6 +106,22 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setSelectionEnd(int value) {
     this.setIntegerProperty(AnonymousCellAnnotation.SELECTION_END, value);
+  }
+
+  public BaseConcept getNodeRangeSelectionStart() {
+    return (BaseConcept)this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_START);
+  }
+
+  public void setNodeRangeSelectionStart(BaseConcept node) {
+    super.setReferent(AnonymousCellAnnotation.NODE_RANGE_SELECTION_START, node);
+  }
+
+  public BaseConcept getNodeRangeSelectionEnd() {
+    return (BaseConcept)this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_END);
+  }
+
+  public void setNodeRangeSelectionEnd(BaseConcept node) {
+    super.setReferent(AnonymousCellAnnotation.NODE_RANGE_SELECTION_END, node);
   }
 
 

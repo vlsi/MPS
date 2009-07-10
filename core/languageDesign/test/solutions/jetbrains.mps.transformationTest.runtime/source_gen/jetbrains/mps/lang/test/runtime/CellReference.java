@@ -10,7 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior;
+import java.util.Map;
 import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class CellReference {
 
@@ -42,9 +44,9 @@ public class CellReference {
     AnonymousCellAnnotation_Behavior.call_setupSelection_6268941039745707957(this.myAnnotation, editorComponent, this.myNode);
   }
 
-  public void assertEditor(IEditor editorComponent, SNode node) {
-    Assert.assertSame(this.getNode(), node);
-    AnonymousCellAnnotation_Behavior.call_assertEditor_6268941039745719581(this.myAnnotation, editorComponent);
+  public void assertEditor(IEditor editorComponent, Map<SNode, SNode> map) {
+    Assert.assertSame(this.getNode(), MapSequence.fromMap(map).get(editorComponent.getSelectedCell().getSNode()));
+    AnonymousCellAnnotation_Behavior.call_assertEditor_6268941039745719581(this.myAnnotation, editorComponent, map);
   }
 
 }

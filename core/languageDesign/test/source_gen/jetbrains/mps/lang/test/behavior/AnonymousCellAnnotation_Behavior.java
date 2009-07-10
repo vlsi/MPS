@@ -9,8 +9,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.IEditor;
+import java.util.Map;
 import junit.framework.Assert;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class AnonymousCellAnnotation_Behavior {
 
@@ -29,6 +32,9 @@ public class AnonymousCellAnnotation_Behavior {
           label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
           label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
         }
+        if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
+          editorComponent.getNodeRangeSelection().setRange(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false), SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
+        }
         if (cellWithId.value == null) {
           throw new RuntimeException("No cell " + thisNode);
         }
@@ -46,13 +52,17 @@ public class AnonymousCellAnnotation_Behavior {
     }
   }
 
-  public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor) {
+  public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor, Map<SNode, SNode> map) {
     EditorCell selectedCell = editor.getSelectedCell();
     Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(thisNode, "cellId"));
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label)selectedCell;
       Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionStart"), label.getSelectionStart());
       Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionEnd"), label.getSelectionEnd());
+    }
+    if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
+      Assert.assertEquals(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false), MapSequence.fromMap(map).get(editor.getCurrentEditorComponent().getNodeRangeSelection().getFirstNode()));
+      Assert.assertEquals(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false), MapSequence.fromMap(map).get(editor.getCurrentEditorComponent().getNodeRangeSelection().getLastNode()));
     }
   }
 

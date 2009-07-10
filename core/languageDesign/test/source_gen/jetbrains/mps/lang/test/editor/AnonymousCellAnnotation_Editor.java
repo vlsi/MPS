@@ -63,8 +63,9 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_7250_2(context, node));
     editorCell.addEditorCell(this.createCollection_7250_3(context, node));
-    editorCell.addEditorCell(this.createCollection_7250_4(context, node));
-    editorCell.addEditorCell(this.createCollection_7250_5(context, node));
+    if (renderingCondition7250_1(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_7250_4(context, node));
+    }
     return editorCell;
   }
 
@@ -91,8 +92,19 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_7250_4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_7250_4(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createCollection_7250_5(context, node));
+    editorCell.addEditorCell(this.createCollection_7250_6(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_7250_5(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    setupBasic_Collection_7250_5(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -101,9 +113,9 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7250_5(EditorContext context, SNode node) {
+  public EditorCell createCollection_7250_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_7250_5(editorCell, node, context);
+    setupBasic_Collection_7250_6(editorCell, node, context);
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
@@ -408,10 +420,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_7250_6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7250_6");
-  }
-
   private static void setupBasic_Collection_7250_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7250_5");
     {
@@ -424,12 +432,28 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Constant_7250_7(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7250_7");
+  private static void setupBasic_Constant_7250_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7250_6");
   }
 
   private static void setupBasic_Property_7250_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_selectionStart");
+  }
+
+  private static void setupBasic_Collection_7250_6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_7250_6");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_7250_7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_7250_7");
   }
 
   private static void setupBasic_Property_7250_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -463,10 +487,10 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private static void setupLabel_Constant_7250_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_7250_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Property_7250_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Property_7250_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Constant_7250_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Property_7250_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -474,6 +498,10 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
 
   public static boolean renderingCondition7250_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isLastPosition");
+  }
+
+  public static boolean renderingCondition7250_1(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "useLabelSelection");
   }
 
 }

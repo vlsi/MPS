@@ -34,7 +34,7 @@ public class NodesTestCase_Behavior {
   }
 
   public static boolean isIntentionApplicable_1217250498008(SNode node) {
-    SNode test = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.test.structure.TestNode", true, false);
+    SNode test = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.test.structure.TestNode","jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     return test != null;
   }
 
