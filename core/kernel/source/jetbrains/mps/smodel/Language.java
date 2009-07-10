@@ -601,12 +601,11 @@ public class Language extends AbstractModule {
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
-      final String structureLangNamespace = Structure_Language.get().getNamespace();
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
-          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;   //what is this check for?!
-          if (node.getAdapter() instanceof AbstractConceptDeclaration) {
+          //we can't use FastNodeFinder here since it might haven't initialized
+          if (node.isInstanceOfConcept(AbstractConceptDeclaration.concept)) {
             myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
           }
           return false;
