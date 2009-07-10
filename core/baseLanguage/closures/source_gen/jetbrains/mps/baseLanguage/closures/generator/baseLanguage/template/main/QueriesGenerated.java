@@ -382,7 +382,7 @@ public class QueriesGenerated {
     if (true) {
       return false;
     }
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == _context.getNode();
       }
@@ -851,7 +851,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1231855264919(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return "_tmp_" + SNodeOperations.getParent(desc).getId();
       }
@@ -2073,7 +2073,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1231853311130(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "resultType", true);
       }
@@ -2082,7 +2082,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1232015134453(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "resultType", true);
       }
@@ -2095,7 +2095,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1232032957267(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         return SNodeOperations.getParent(desc);
       }
@@ -3527,14 +3527,14 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1231854134654(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression")), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         Flags.INVOKE_FUNCTION_OPERATION.flag(desc);
         break;
       }
     }
     SNode copy = CopyUtil.copyAndPreserveId(_context.getNode());
-    for(SNode desc : SNodeOperations.getDescendants(copy, null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(copy, null, false, new String[]{})) {
       if (Flags.INVOKE_FUNCTION_OPERATION.isFlagged(desc)) {
         SNode de = SNodeOperations.getParent(desc);
         SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
@@ -3680,7 +3680,6 @@ public class QueriesGenerated {
             SNode arg = ListSequence.fromList(args).getElement(idx);
             SNode operandType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             if ((operandType == null)) {
-              _context.showWarningMessage(de, "Operand of InstanceMethodCallOperations is not classifier");
               operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
             }
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), operandType);
@@ -3698,7 +3697,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
           Flags.WRAPPING_LOCAL_VARIABLE.flag(vd);
           SNode sl = SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-          for(SNode desc : SNodeOperations.getDescendants(sl, null, false)) {
+          for(SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
             if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false) == vd) {
               Flags.WRAPPING_LOCAL_VARIABLE.flag(desc);
             }
@@ -3790,8 +3789,8 @@ public class QueriesGenerated {
       List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true);
       List<SNode> allYas = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> allYs = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(allYas).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false)));
-      ListSequence.fromList(allYs).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false)));
+      ListSequence.fromList(allYas).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{})));
+      ListSequence.fromList(allYs).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})));
       for(Iterator<SNode> it = ListSequence.fromList(allYas).iterator() ; it.hasNext() ; ) {
         if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
           it.remove();
@@ -3841,7 +3840,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1232360229647(final IOperationContext operationContext, final MappingScriptContext _context) {
     for(SNode stmt : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      for(SNode desc : SNodeOperations.getDescendants(stmt, null, false)) {
+      for(SNode desc : SNodeOperations.getDescendants(stmt, null, false, new String[]{})) {
         if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
           if (SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == stmt && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(desc)), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
             SNode de = SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression");

@@ -14959,19 +14959,6 @@
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238702354437">
                           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238702354438">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238702795939">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238702797293">
-                                <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1238702795940" />
-                                <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" id="1238702800146">
-                                  <node role="messageText" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238702804521">
-                                    <property name="value" value="Operand of InstanceMethodCallOperations is not classifier" />
-                                  </node>
-                                  <node role="referenceNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238702805999">
-                                    <link role="variableDeclaration" targetNodeId="1204637560741" resolveInfo="de" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1238702810430">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1238702812989">
                                 <node role="rValue" type="jetbrains.mps.lang.typesystem.structure.CoerceExpression" id="1238702827673">
