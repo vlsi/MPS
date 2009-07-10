@@ -15,7 +15,7 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(typeCheckingContext), "descriptor", false);
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(typeCheckingContext), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {

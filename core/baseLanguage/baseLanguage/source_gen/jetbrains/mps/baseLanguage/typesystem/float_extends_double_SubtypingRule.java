@@ -14,7 +14,7 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
   }
 
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_50().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_38().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

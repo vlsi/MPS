@@ -15,7 +15,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public SNode getSubOrSuperType(SNode integerType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_64().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_52().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

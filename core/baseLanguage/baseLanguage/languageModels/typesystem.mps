@@ -16228,48 +16228,21 @@
         </node>
       </node>
     </node>
-    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1236620468510">
-      <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236620493994">
-        <link role="concept" targetNodeId="1.1068581242875" resolveInfo="PlusExpression" />
+    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified" id="1533154877881631948">
+      <node role="operandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7447106258752476409">
+        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="7447106258752476411" />
       </node>
-      <node role="leftOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620505407">
-        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236620508447" />
-      </node>
-      <node role="rightOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620531598">
-        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236620539634">
-          <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
-        </node>
-      </node>
-      <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="1236620468514">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236620468515">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236620541786">
-            <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620544102">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236620552356" />
+      <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="1533154877881631951">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1533154877881631952">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7447106258752476412">
+            <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7447106258752476413">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="7447106258752476414" />
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1236620555573">
-      <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="1236620555574">
+      <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="7447106258752476408">
         <link role="concept" targetNodeId="1.1068581242875" resolveInfo="PlusExpression" />
-      </node>
-      <node role="leftOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620555575">
-        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236620587355">
-          <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
-        </node>
-      </node>
-      <node role="rightOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620555577">
-        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236622879475" />
-      </node>
-      <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="1236620555579">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236620555580">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1236620555581">
-            <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1236620555582">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1236620555583" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="1239449442584">

@@ -14,7 +14,7 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_49().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_37().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

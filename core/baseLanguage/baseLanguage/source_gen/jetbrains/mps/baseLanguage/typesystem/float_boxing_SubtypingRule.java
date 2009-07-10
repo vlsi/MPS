@@ -14,7 +14,7 @@ public class float_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_57().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_45().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -22,7 +22,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext) {
     // see JLS 3.0
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      return CollectionUtil.list(new _Quotations.QuotationClass_82().createNode(typeCheckingContext), new _Quotations.QuotationClass_83().createNode(typeCheckingContext), new _Quotations.QuotationClass_84().createNode(typeCheckingContext));
+      return CollectionUtil.list(new _Quotations.QuotationClass_99().createNode(typeCheckingContext), new _Quotations.QuotationClass_100().createNode(typeCheckingContext), new _Quotations.QuotationClass_101().createNode(typeCheckingContext));
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }

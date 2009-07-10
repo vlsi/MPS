@@ -15,7 +15,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode stringClassType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_96().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_85().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

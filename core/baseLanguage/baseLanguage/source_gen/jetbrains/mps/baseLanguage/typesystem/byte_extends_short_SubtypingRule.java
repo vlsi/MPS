@@ -14,7 +14,7 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_44().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_32().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

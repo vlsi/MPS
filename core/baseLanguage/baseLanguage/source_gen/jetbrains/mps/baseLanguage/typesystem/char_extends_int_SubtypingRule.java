@@ -14,7 +14,7 @@ public class char_extends_int_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_47().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_35().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

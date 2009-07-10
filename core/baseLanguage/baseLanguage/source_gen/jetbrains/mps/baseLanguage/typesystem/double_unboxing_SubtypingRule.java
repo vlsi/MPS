@@ -15,7 +15,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   }
 
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_61().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_49().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

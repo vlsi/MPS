@@ -14,7 +14,7 @@ public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_45().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_33().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

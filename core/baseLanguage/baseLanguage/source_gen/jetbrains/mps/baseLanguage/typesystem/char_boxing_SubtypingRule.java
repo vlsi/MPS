@@ -14,7 +14,7 @@ public class char_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   }
 
   public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_53().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_41().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
