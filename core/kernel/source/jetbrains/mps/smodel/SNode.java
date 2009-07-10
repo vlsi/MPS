@@ -1520,7 +1520,7 @@ public final class SNode {
   }
 
   public boolean isInstanceOfConcept(String conceptFqName) {
-    return SModelUtil_new.isAssignableConcept(this.getConceptFqName(), conceptFqName);
+    return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
   public AbstractConceptDeclaration getConceptDeclarationAdapter() {
