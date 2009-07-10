@@ -36,7 +36,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<InequationReplacementRule_Runtime> myInequationReplacementRules = new HashSet<InequationReplacementRule_Runtime>();
   protected Set<IDependency_Runtime> myDependencies = new HashSet<IDependency_Runtime>();
   protected Set<IVariableConverter_Runtime> myVariableConverters = new HashSet<IVariableConverter_Runtime>();
-  protected Set<OverloadedOperationsTypesProvider> myOverloadedOperationsTypesProviders = new HashSet<OverloadedOperationsTypesProvider>();
+  protected Set<IOverloadedOpsTypesProvider> myOverloadedOperationsTypesProviders = new HashSet<IOverloadedOpsTypesProvider>();
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return new HashSet<InferenceRule_Runtime>(this.myInferenceRules);
@@ -66,7 +66,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
     return new HashSet<IVariableConverter_Runtime>(this.myVariableConverters);
   }
 
-  public Set<OverloadedOperationsTypesProvider> getOverloadedOperationsTypesProviders() {
-    return new HashSet<OverloadedOperationsTypesProvider>(this.myOverloadedOperationsTypesProviders);
+  public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders() {
+    return new HashSet<IOverloadedOpsTypesProvider>(this.myOverloadedOperationsTypesProviders);
   }
 }

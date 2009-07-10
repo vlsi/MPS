@@ -37,5 +37,5 @@ public interface IHelginsDescriptor {
   public Set<InequationReplacementRule_Runtime> getEliminationRules();
   public Set<IDependency_Runtime> getDependencies();
   public Set<IVariableConverter_Runtime> getVariableConverters();
-  public Set<OverloadedOperationsTypesProvider> getOverloadedOperationsTypesProviders();
+  public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders();
 }

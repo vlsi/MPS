@@ -33,8 +33,8 @@ import java.util.*;
 public class OverloadedOperationsManager {
   private static Logger LOG = Logger.getLogger(OverloadedOperationsManager.class);
 
-  private RuleSet<OverloadedOperationsTypesProvider> myOperationsToTypeProviders =
-    new RuleSet<OverloadedOperationsTypesProvider>();
+  private RuleSet<IOverloadedOpsTypesProvider> myOperationsToTypeProviders =
+    new RuleSet<IOverloadedOpsTypesProvider>();
 
   private TypeChecker myTypeChecker;
 
@@ -42,33 +42,31 @@ public class OverloadedOperationsManager {
     myTypeChecker = typeChecker;
   }
 
-  public void addOverloadedOperationsTypeProvider(OverloadedOperationsTypesProvider provider) {
-    Set<OverloadedOperationsTypesProvider> providers = CollectionUtil.set(provider);
+  public void addOverloadedOperationsTypeProvider(IOverloadedOpsTypesProvider provider) {
+    Set<IOverloadedOpsTypesProvider> providers = CollectionUtil.set(provider);
     addOverloadedOperationsTypeProviders(providers);
   }
 
-  public void addOverloadedOperationsTypeProviders(Set<OverloadedOperationsTypesProvider> providers) {
+  public void addOverloadedOperationsTypeProviders(Set<IOverloadedOpsTypesProvider> providers) {
     myOperationsToTypeProviders.addRuleSetItem(providers);
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    Set<OverloadedOperationsTypesProvider> operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
+    Set<IOverloadedOpsTypesProvider> operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
     if (operationsTypesProviderSet.isEmpty()) {
       return null;
     }
     SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
-    List<OverloadedOperationsTypesProvider> filteredProviders = new ArrayList<OverloadedOperationsTypesProvider>();
-    for (OverloadedOperationsTypesProvider provider : operationsTypesProviderSet) {
+    List<IOverloadedOpsTypesProvider> filteredProviders = new ArrayList<IOverloadedOpsTypesProvider>();
+    for (IOverloadedOpsTypesProvider provider : operationsTypesProviderSet) {
       if (provider.isApplicable(subtypingManager, leftOperandType, rightOperandType)) {
         filteredProviders.add(provider);
       }
     }
     final boolean[] severalRules = new boolean[]{false};
-    Collections.sort(filteredProviders, new Comparator<OverloadedOperationsTypesProvider>() {
-      public int compare(OverloadedOperationsTypesProvider o1, OverloadedOperationsTypesProvider o2) {
-        int i1 = (o1.myLeftTypeIsExact ? 1 : 0) + (o1.myRightTypeIsExact ? 1 : 0);
-        int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
-        int i = i2 - i1;
+    Collections.sort(filteredProviders, new Comparator<IOverloadedOpsTypesProvider>() {
+      public int compare(IOverloadedOpsTypesProvider o1, IOverloadedOpsTypesProvider o2) {
+        int i = o1.compareTo(o2);
         if (i == 0) {
           severalRules[0] = true;
         }
@@ -78,7 +76,7 @@ public class OverloadedOperationsManager {
     if (severalRules[0]) {
       LOG.warning("several overloaded rules found for operation", operation);
     }
-    for (OverloadedOperationsTypesProvider provider : filteredProviders) {
+    for (IOverloadedOpsTypesProvider provider : filteredProviders) {
       SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
       if (result != null) {
         return result;
@@ -88,7 +86,7 @@ public class OverloadedOperationsManager {
   }
 
   public void clear() {
-    myOperationsToTypeProviders = new RuleSet<OverloadedOperationsTypesProvider>();
+    myOperationsToTypeProviders = new RuleSet<IOverloadedOpsTypesProvider>();
   }
 
   public void makeConsistent() {

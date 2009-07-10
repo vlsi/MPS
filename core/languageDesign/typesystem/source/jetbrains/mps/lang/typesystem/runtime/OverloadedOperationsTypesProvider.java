@@ -26,7 +26,7 @@ import jetbrains.mps.typesystem.inference.SubtypingManager;
  * Time: 16:28:58
  * To change this template use File | Settings | File Templates.
  */
-public abstract class OverloadedOperationsTypesProvider implements IApplicableToConcept {
+public abstract class OverloadedOperationsTypesProvider implements IOverloadedOpsTypesProvider {
   protected SNode myLeftOperandType;
   protected SNode myRightOperandType;
   protected String myOperationConceptFQName;
@@ -37,16 +37,6 @@ public abstract class OverloadedOperationsTypesProvider implements IApplicableTo
 
   public String getApplicableConceptFQName() {
     return myOperationConceptFQName;
-  }
-  
-  public abstract SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
-
-  public SNode getRightOperandType() {
-    return myRightOperandType;
-  }
-
-  public SNode getLeftOperandType() {
-    return myLeftOperandType;
   }
 
   public boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType) {
@@ -69,5 +59,18 @@ public abstract class OverloadedOperationsTypesProvider implements IApplicableTo
       }
     }
     return true;
+  }
+
+  public int compareTo(IOverloadedOpsTypesProvider o) {
+    if (o instanceof OverloadedOperationsTypesProvider) {
+      OverloadedOperationsTypesProvider o2 = (OverloadedOperationsTypesProvider) o;
+       int i1 = (this.myLeftTypeIsExact ? 1 : 0) + (this.myRightTypeIsExact ? 1 : 0);
+       int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
+       return i2 - i1;
+    }
+    if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
+      return -1;
+    }
+    return 0;
   }
 }
