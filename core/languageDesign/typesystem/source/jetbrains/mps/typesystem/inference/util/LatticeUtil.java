@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.typesystem.inference.*;
 import jetbrains.mps.lang.typesystem.structure.*;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
@@ -79,29 +80,29 @@ public class LatticeUtil {
     if (BaseAdapter.isInstance(wrapper1.getNode(), JoinType.class)) {
       JoinType joinWrapper1 = (JoinType) wrapper1.getNode().getAdapter();
       for (BaseConcept bc : joinWrapper1.getArguments()) {
-        joinType.addArgument(bc);
+        joinType.addArgument(HUtil.copyIfNecessary(bc));
       }
 
       if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
         JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
         for (BaseConcept bc : joinWrapper2.getArguments()) {
-          joinType.addArgument(bc);
+          joinType.addArgument(HUtil.copyIfNecessary(bc));
         }
       } else {
-        joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
+        joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
       }
     } else
 
     if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
       JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
-      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : joinWrapper2.getArguments()) {
-        joinType.addArgument(bc);
+        joinType.addArgument(HUtil.copyIfNecessary(bc));
       }
 
     } else {
-      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
-      joinType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
     }
     return NodeWrapper.createWrapperFromNode(joinType.getNode(), null);
   }
@@ -126,26 +127,26 @@ public class LatticeUtil {
     if (BaseAdapter.isInstance(wrapper1.getNode(), MeetType.class)) {
       MeetType meetWrapper1 = (MeetType) wrapper1.getNode().getAdapter();
       for (BaseConcept bc : meetWrapper1.getArguments()) {
-        meetType.addArgument(bc);
+        meetType.addArgument(HUtil.copyIfNecessary(bc));
       }
       if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
         MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
         for (BaseConcept bc : meetWrapper2.getArguments()) {
-          meetType.addArgument(bc);
+          meetType.addArgument(HUtil.copyIfNecessary(bc));
         }
       } else {
-        meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
+        meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
       }
     } else
     if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
       MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
-      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : meetWrapper2.getArguments()) {
-        meetType.addArgument(bc);
+        meetType.addArgument(HUtil.copyIfNecessary(bc));
       }
     } else {
-      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode())));
-      meetType.addArgument((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode())));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
     }
     return NodeWrapper.createWrapperFromNode(meetType.getNode(), null);
   }
@@ -171,7 +172,7 @@ public class LatticeUtil {
     MeetContainer meetContainer = MeetContainer.newInstance(auxModel);
     meetContainer.setMeetType(meetType);
     for (SNode argument : arguments) {
-      meetType.addArgument((BaseConcept) argument.getAdapter());
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) argument.getAdapter()));
     }
     SNode result = SConceptOperations.createNewNode(conceptFQName, null);
     MeetAnnotation_AnnotationLink.setMeetAnnotation((BaseConcept) result.getAdapter(), meetContainer);
@@ -184,7 +185,7 @@ public class LatticeUtil {
     JoinContainer joinContainer = JoinContainer.newInstance(auxModel);
     joinContainer.setJoinType(joinType);
     for (SNode argument : arguments) {
-      joinType.addArgument((BaseConcept) argument.getAdapter());
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) argument.getAdapter()));
     }
     SNode result = SConceptOperations.createNewNode(conceptFQName, null);
     JoinAnnotation_AnnotationLink.setJoinAnnotation((BaseConcept) result.getAdapter(), joinContainer);

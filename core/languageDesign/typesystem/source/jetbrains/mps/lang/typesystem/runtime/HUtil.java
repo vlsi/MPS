@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
@@ -44,6 +41,12 @@ public class HUtil {
      } else {
         return node ;
      }
+  }
+
+  public static <T extends INodeAdapter> T copyIfNecessary (T adapter) {
+    if (adapter == null) return adapter;
+    SNode node = adapter.getNode();
+    return (T) BaseAdapter.fromNode(copyIfNecessary(node));
   }
 
   public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
