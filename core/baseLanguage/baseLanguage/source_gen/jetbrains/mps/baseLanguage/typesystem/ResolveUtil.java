@@ -12,6 +12,9 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Iterator;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class ResolveUtil {
 
@@ -132,6 +135,80 @@ outer:
       }
     }
     return result;
+  }
+
+  public static boolean goodArguments(Iterable<SNode> parameterTypes, List<SNode> arguments) {
+    if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      if (Sequence.fromIterable(parameterTypes).count() - 1 > ListSequence.fromList(arguments).count()) {
+        return false;
+      }
+
+      SNode lastArgument = ListSequence.fromList(arguments).last();
+      SNode varArgType = SNodeOperations.cast(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+      Iterator<SNode> pTypesItr = Sequence.fromIterable(parameterTypes).iterator();
+      Iterator<SNode> argumentsItr = ListSequence.fromList(arguments).iterator();
+
+      while (pTypesItr.hasNext()) {
+        SNode parameterType = pTypesItr.next();
+        SNode argument = (argumentsItr.hasNext() ?
+          argumentsItr.next() :
+          null
+        );
+
+        if (parameterType == varArgType) {
+          // vararg reached
+          if (argument == null) {
+            // zero varargs
+            return true;
+          }
+          SNode mayBeLastArgumentType = TypeChecker.getInstance().getTypeOf(argument);
+          SNode varArgComponentType = SLinkOperations.getTarget(varArgType, "componentType", true);
+          if ((lastArgument == argument) && SNodeOperations.isInstanceOf(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SNodeOperations.cast(mayBeLastArgumentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), varArgComponentType)) {
+            // array type as vararg
+            return true;
+          } else
+          {
+            while (argument != null) {
+              if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), varArgComponentType))) {
+                return false;
+              }
+              argument = (argumentsItr.hasNext() ?
+                argumentsItr.next() :
+                null
+              );
+            }
+            return true;
+          }
+        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), parameterType))) {
+          return false;
+        }
+      }
+      return true;
+    } else if (Sequence.fromIterable(parameterTypes).count() == ListSequence.fromList(arguments).count()) {
+      {
+        SNode parameterType;
+        SNode argument;
+        Iterator<SNode> parameterType_iterator = Sequence.fromIterable(parameterTypes).iterator();
+        Iterator<SNode> argument_iterator = ListSequence.fromList(arguments).iterator();
+        while (true) {
+          if (!(parameterType_iterator.hasNext())) {
+            break;
+          }
+          if (!(argument_iterator.hasNext())) {
+            break;
+          }
+          parameterType = parameterType_iterator.next();
+          argument = argument_iterator.next();
+          if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(argument), parameterType))) {
+            return false;
+          }
+        }
+      }
+      return true;
+    } else
+    {
+      return false;
+    }
   }
 
 }

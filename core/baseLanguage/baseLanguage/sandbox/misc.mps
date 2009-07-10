@@ -178,9 +178,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3769812235505814124">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3769812235505814127">
             <link role="classConcept" targetNodeId="8417933508988540532" resolveInfo="MyClass" />
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540542" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="8417933508988540548" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3769812235505814128">
               <property name="value" value="2" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1362672784645955858">
+              <property name="value" value="" />
             </node>
           </node>
         </node>
