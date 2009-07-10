@@ -39,6 +39,7 @@ import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -603,15 +604,7 @@ public class Language extends AbstractModule {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
       final String structureLangNamespace = Structure_Language.get().getNamespace();
       SModel structureModel = structureModelDescriptor.getSModel();
-      structureModel.allNodes(new Condition<SNode>() {
-        public boolean met(SNode node) {
-          if (!node.getLanguageNamespace().equals(structureLangNamespace)) return false;   //what is this check for?!
-          if (node.getAdapter() instanceof AbstractConceptDeclaration) {
-            myNameToConceptCache.put(node.getName(), (AbstractConceptDeclaration) node.getAdapter());
-          }
-          return false;
-        }
-      });
+      structureModel.allNodes(new IsInstanceCondition(AbstractConceptDeclaration.concept));
     }
     return myNameToConceptCache.get(conceptName);
   }
