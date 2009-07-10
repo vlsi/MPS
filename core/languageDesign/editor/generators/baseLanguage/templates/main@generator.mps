@@ -11799,7 +11799,7 @@
                           <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setSubstituteInfo(jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo):void" resolveInfo="setSubstituteInfo" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213036598203">
                             <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213036598205">
-                              <link role="baseMethodDeclaration" targetNodeId="37.~DefaultChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration,jetbrains.mps.nodeEditor.EditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
+                              <link role="baseMethodDeclaration" targetNodeId="37.~DefaultChildSubstituteInfo.&lt;init&gt;(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.lang.structure.structure.LinkDeclaration,jetbrains.mps.nodeEditor.EditorContext)" resolveInfo="DefaultChildSubstituteInfo" />
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1184142273557">
                                 <link role="variableDeclaration" targetNodeId="1184142273576" resolveInfo="listOwner" />
                               </node>
