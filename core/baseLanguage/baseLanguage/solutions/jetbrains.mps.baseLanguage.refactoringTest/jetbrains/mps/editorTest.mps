@@ -51,7 +51,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
@@ -68,6 +68,7 @@
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="23" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -3267,6 +3268,41 @@
       <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2021112907082550523">
         <property name="isLastPosition" value="true" />
         <property name="cellId" value="ReadOnlyModelAccessor_4575_0" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="7301049412170069060">
+    <property name="name" value="RestoreCellSelection" />
+    <property name="package" value="Memento" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="7301049412170117859">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117861">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6268941039746272696">
+          <property name="caretPosition" value="3" />
+          <property name="selectionStart" value="1" />
+          <property name="selectionEnd" value="3" />
+          <property name="cellId" value="Constant_9987_0" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117865" />
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117871" />
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="7301049412170117862">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117863">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6265842125156547385">
+          <property name="caretPosition" value="3" />
+          <property name="selectionStart" value="1" />
+          <property name="selectionEnd" value="3" />
+          <property name="cellId" value="Constant_9987_0" />
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117867" />
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="7301049412170117869" />
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7301049412170265087">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="7301049412170285938">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="7301049412170285939">
+          <property name="keycode" value="VK_F5" />
+        </node>
       </node>
     </node>
   </node>

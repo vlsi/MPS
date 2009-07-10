@@ -35,6 +35,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3702466984434609598">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6951814850419519043">
         <property name="text" value="{" />
+        <link role="styleClass" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="6951814850419519044">
           <property name="flag" value="true" />
         </node>
@@ -55,6 +56,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6951814850419519046">
         <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="7301049412170117873" resolveInfo="baseStyle" />
       </node>
     </node>
   </node>
@@ -107,6 +109,15 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="8497577741385080318" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="8497577741385120965">
         <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="7301049412170117872">
+    <property name="name" value="TestLanguage_StyleSheet" />
+    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="7301049412170117873">
+      <property name="name" value="baseStyle" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="7301049412170117874">
+        <property name="style" value="PLAIN" />
       </node>
     </node>
   </node>

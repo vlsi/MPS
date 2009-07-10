@@ -90,6 +90,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2941_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2941_0");
+    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
     {
       Style inlineStyle = new Style(editorCell) {
         {
@@ -102,6 +103,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_2941_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2941_1");
+    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
   }
 
   private static void setupLabel_RefNodeList_2941_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

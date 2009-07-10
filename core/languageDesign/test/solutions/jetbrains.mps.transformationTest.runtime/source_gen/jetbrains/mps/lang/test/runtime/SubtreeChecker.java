@@ -34,7 +34,7 @@ public class SubtreeChecker {
   public static void checkNodeForErrors(SNode node, boolean allowErrors, boolean allowWarnings) {
     TypeChecker checker = TypeChecker.getInstance();
     checker.checkIfNotChecked(node);
-    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false)) {
+    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       boolean isError = false;
       if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
         SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
@@ -93,7 +93,7 @@ public class SubtreeChecker {
     Set<Instruction> unreachable = program.getUnreachableInstructions();
     AnalysisResult<Set<Object>> initialized = program.analyze(new InitializedVariablesAnalyzer());
     AnalysisResult<Set<Object>> live = program.analyze(new LivenessAnalyzer());
-    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false)) {
+    for(SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true) != null) {
         SNode container = SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("nodePropertiesMarker"), true);
         for(SNode property : SLinkOperations.getTargets(container, "properties", true)) {
@@ -130,7 +130,7 @@ public class SubtreeChecker {
   }
 
   public static void performOperations(SNode node) {
-    for(SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false)) {
+    for(SNode nodeToCheck : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (nodeToCheck != null) {
         if (SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true) != null) {
           for(SNode operation : SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, AttributesRolesUtil.childRoleFromAttributeRole("nodeOpraretionsMark"), true), "operations", true)) {

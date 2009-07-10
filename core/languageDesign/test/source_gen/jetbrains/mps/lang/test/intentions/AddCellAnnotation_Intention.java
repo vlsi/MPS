@@ -47,19 +47,22 @@ public class AddCellAnnotation_Intention extends BaseIntention {
     while (ancessor != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ancessor), "jetbrains.mps.lang.test.structure.EditorTestCase"))) {
       ancessor = SNodeOperations.getParent(ancessor);
     }
-    for(SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false)) {
+    for(SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{})) {
       SNodeOperations.deleteNode(oldAnnotation);
     }
     SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
     if (contextCell instanceof EditorCell_Label) {
-      int caretPosition = ((EditorCell_Label)contextCell).getCaretPosition();
-      if (caretPosition == ((EditorCell_Label)contextCell).getText().length()) {
+      EditorCell_Label label = (EditorCell_Label)contextCell;
+      int caretPosition = label.getCaretPosition();
+      if (caretPosition == label.getText().length()) {
         SPropertyOperations.set(newAnnotation, "isLastPosition", "" + true);
       } else
       {
         SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
       }
+      SPropertyOperations.set(newAnnotation, "selectionStart", "" + label.getSelectionStart());
+      SPropertyOperations.set(newAnnotation, "selectionEnd", "" + label.getSelectionEnd());
     } else
     {
       SPropertyOperations.set(newAnnotation, "caretPosition", "" + 0);

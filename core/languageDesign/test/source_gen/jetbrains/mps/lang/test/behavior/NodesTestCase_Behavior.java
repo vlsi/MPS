@@ -23,7 +23,7 @@ public class NodesTestCase_Behavior {
     for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
       ListSequence.fromList(result).addElement(method);
     }
-    for(SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false))) {
+    for(SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
       ListSequence.fromList(result).addElement(operation);
     }
     return result;

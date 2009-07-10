@@ -18,6 +18,8 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_LAST_POSITION = "isLastPosition";
   public static final String CARET_POSITION = "caretPosition";
+  public static final String SELECTION_START = "selectionStart";
+  public static final String SELECTION_END = "selectionEnd";
 
   public AnonymousCellAnnotation(SNode node) {
     super(node);
@@ -77,6 +79,22 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setCaretPosition(int value) {
     this.setIntegerProperty(AnonymousCellAnnotation.CARET_POSITION, value);
+  }
+
+  public int getSelectionStart() {
+    return this.getIntegerProperty(AnonymousCellAnnotation.SELECTION_START);
+  }
+
+  public void setSelectionStart(int value) {
+    this.setIntegerProperty(AnonymousCellAnnotation.SELECTION_START, value);
+  }
+
+  public int getSelectionEnd() {
+    return this.getIntegerProperty(AnonymousCellAnnotation.SELECTION_END);
+  }
+
+  public void setSelectionEnd(int value) {
+    this.setIntegerProperty(AnonymousCellAnnotation.SELECTION_END, value);
   }
 
 
