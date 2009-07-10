@@ -131,11 +131,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     if (checkForErrors() && myModelDescriptor != null && myModelDescriptor.isInitialized()) {
       final IScope scope = getOperationContext().getScope();
-      boolean isValid = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return getSModelDescriptor().isValid(scope);
-        }
-      });
+      boolean isValid = getSModelDescriptor().isValid(scope);
       setErrorState(isValid ? ErrorState.NONE : ErrorState.ERROR);
       List<String> errors = getSModelDescriptor().validate(scope);
       if (errors.isEmpty()) {
