@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -76,7 +77,7 @@ public class FastNodeFinder {
 
         Collections.sort(result, new Comparator<SNode>() {
           public int compare(SNode o1, SNode o2) {
-            return o1.getId().compareTo(o2.getId());
+            return o1.getSNodeId().compareTo(o2.getSNodeId());
           }
         });
 

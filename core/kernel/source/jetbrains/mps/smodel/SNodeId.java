@@ -23,7 +23,7 @@ import jetbrains.mps.util.annotation.ImmutableObject;
  * Date: Apr 4, 2007
  */
 @ImmutableObject
-public abstract class SNodeId {
+public abstract class SNodeId implements Comparable<SNodeId> {
 
   public static SNodeId fromString(String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {
@@ -38,6 +38,28 @@ public abstract class SNodeId {
     }
   }
 
+  public int compareTo(SNodeId id) {
+    if (id instanceof Regular && this instanceof Regular) {
+      Regular r1 = (Regular) this;
+      Regular r2 = (Regular) id;
+      long delta = r1.myId - r2.myId;
+      if (delta == 0) return 0;
+      if (delta > 0) return 1;
+      return -1;
+    }
+
+    if (id instanceof Foreign && this instanceof Foreign) {
+      Foreign f1 = (Foreign) this;
+      Foreign f2 = (Foreign) this;
+      return f1.myId.compareTo(f2.myId);
+    }
+
+    if (id instanceof Foreign && this instanceof Regular) {
+      return 1;
+    }
+
+    return -1;
+  }
 
   /**
    * regular id
