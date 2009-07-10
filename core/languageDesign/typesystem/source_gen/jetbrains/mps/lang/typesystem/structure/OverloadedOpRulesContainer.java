@@ -59,19 +59,19 @@ public class OverloadedOpRulesContainer extends BaseConcept implements INamedCon
     return this.getChildCount(OverloadedOpRulesContainer.RULE);
   }
 
-  public Iterator<OverloadedOperatorTypeRule> rules() {
-    return this.children(OverloadedOperatorTypeRule.class, OverloadedOpRulesContainer.RULE);
+  public Iterator<AbstractOverloadedOpsTypeRule> rules() {
+    return this.children(AbstractOverloadedOpsTypeRule.class, OverloadedOpRulesContainer.RULE);
   }
 
-  public List<OverloadedOperatorTypeRule> getRules() {
-    return this.getChildren(OverloadedOperatorTypeRule.class, OverloadedOpRulesContainer.RULE);
+  public List<AbstractOverloadedOpsTypeRule> getRules() {
+    return this.getChildren(AbstractOverloadedOpsTypeRule.class, OverloadedOpRulesContainer.RULE);
   }
 
-  public void addRule(OverloadedOperatorTypeRule node) {
+  public void addRule(AbstractOverloadedOpsTypeRule node) {
     this.addChild(OverloadedOpRulesContainer.RULE, node);
   }
 
-  public void insertRule(OverloadedOperatorTypeRule prev, OverloadedOperatorTypeRule node) {
+  public void insertRule(AbstractOverloadedOpsTypeRule prev, AbstractOverloadedOpsTypeRule node) {
     this.insertChild(prev, OverloadedOpRulesContainer.RULE, node);
   }
 

@@ -22,7 +22,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule extends AbstractInfer
       {
         SNode _nodeToCheck_1029348928467 = findSourceBlockParameter;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1193734407573", true), (SNode)new _Quotations.QuotationClass_19().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1193734407570", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1193734407573", true), (SNode)new _Quotations.QuotationClass_21().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1193734407570", intentionProvider);
       }
     }
   }

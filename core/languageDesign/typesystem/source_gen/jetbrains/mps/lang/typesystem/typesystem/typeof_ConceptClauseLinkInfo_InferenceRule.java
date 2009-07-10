@@ -20,7 +20,7 @@ public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(info, "targetNode", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode)new _Quotations.QuotationClass_50().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103445", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode)new _Quotations.QuotationClass_49().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103445", false, 0, intentionProvider);
     }
     SNode link = SLinkOperations.getTarget(info, "linkDeclaration", false);
     if ((link != null) && (SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1"))) {

@@ -2257,13 +2257,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1236083041311">
     <property name="name" value="OverloadedOperatorTypeRule" />
     <property name="rootable" value="false" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083095395">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="operationConcept" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="5.1154546950173" resolveInfo="ConceptReference" />
-    </node>
+    <link role="extends" targetNodeId="8124453027370845339" resolveInfo="AbstractOverloadedOpsTypeRule" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083115043">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="leftOperandType" />
@@ -2275,12 +2269,6 @@
       <property name="role" value="rightOperandType" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1236083171742">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="function" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1236083146670" resolveInfo="OverloadedOperatorTypeFunction" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1236771579180">
       <property name="name" value="leftIsExact" />
@@ -2382,7 +2370,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="rule" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1236083041311" resolveInfo="OverloadedOperatorTypeRule" />
+      <link role="target" targetNodeId="8124453027370845339" resolveInfo="AbstractOverloadedOpsTypeRule" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1236165807726">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
@@ -2513,6 +2501,39 @@
       <property name="role" value="copiedTypeSource" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8124453027370766044">
+    <property name="name" value="OverloadedOpTypeRule_OneTypeSpecified" />
+    <link role="extends" targetNodeId="8124453027370845339" resolveInfo="AbstractOverloadedOpsTypeRule" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8124453027370845366">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="operandType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8124453027370766045">
+      <property name="name" value="isExact" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8124453027370845339">
+    <property name="name" value="AbstractOverloadedOpsTypeRule" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8124453027370845341">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="operationConcept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5.1154546950173" resolveInfo="ConceptReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="8124453027370845343">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="function" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1236083146670" resolveInfo="OverloadedOperatorTypeFunction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="8124453027370845340">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>

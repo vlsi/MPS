@@ -25,7 +25,7 @@ public class DependenciesCollector {
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false)) {
+    for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
@@ -67,7 +67,7 @@ public class DependenciesCollector {
             }
             if (matches_1) {
               if (SLinkOperations.getTarget(matchedNode_0, "rValue", true) == node) {
-                MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_0().createNode()));
+                MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_2().createNode()));
               }
               break;
             }
@@ -98,9 +98,9 @@ public class DependenciesCollector {
                 }
               }
               if (matches_3) {
-                for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
+                for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                   if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
-                    MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_2().createNode()));
+                    MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
                   }
                 }
                 break;
@@ -117,7 +117,7 @@ public class DependenciesCollector {
               if (matches_4) {
                 {
                   SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false);
-                  for(SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
+                  for(SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                     if (SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false) == variableDeclaration) {
                       SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -131,7 +131,7 @@ public class DependenciesCollector {
                         }
                       });
                       if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {
-                        MapSequence.fromMap(dependencies).put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
+                        MapSequence.fromMap(dependencies).put(reference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_0().createNode()));
                       }
                     }
                   }

@@ -17,12 +17,12 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
   }
 
   public void applyRule(final SNode concept_parameter, final TypeCheckingContext typeCheckingContext) {
-    SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", false, false);
+    SNode typeRule = SNodeOperations.getAncestor(concept_parameter, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, false);
     if ((typeRule != null)) {
       {
         SNode _nodeToCheck_1029348928467 = concept_parameter;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449688", true), (SNode)new _Quotations.QuotationClass_39().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "operationConcept", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449677", intentionProvider);
+        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449688", true), (SNode)new _Quotations.QuotationClass_38().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(typeRule, "operationConcept", true), "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1236083449677", intentionProvider);
       }
     }
   }
