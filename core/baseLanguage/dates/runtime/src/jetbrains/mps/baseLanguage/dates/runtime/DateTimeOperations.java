@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.baseLanguage.dates.runtime;
 
+import org.apache.log4j.Logger;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.*;
 import org.joda.time.field.FieldUtils;
@@ -23,10 +24,15 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.Locale;
 
+import javax.swing.text.DateFormatter;
+
 /**
  * @author Maxim.Mazin at date: 21.02.2007 time: 17:25:49
  */
 public class DateTimeOperations {
+    
+  private static final Logger LOG = Logger.getLogger(DateTimeOperations.class);
+  
   private DateTimeOperations() {
   }
 
@@ -77,6 +83,40 @@ public class DateTimeOperations {
       * ((long) DateTimeConstants.MILLIS_PER_WEEK));
     return seconds;
   }
+  
+  public static Long parse (String datetimeString, DateTimeFormatter formatter, Locale locale, DateTimeZone zone, Long defValues) {
+      if (locale != null) {
+          formatter = formatter.withLocale(locale);
+      }
+      if (zone != null) {
+          formatter = formatter.withZone(zone);
+      }
+      try {
+          if (defValues != null) {
+              MutableDateTime mdt = new MutableDateTime (defValues != null ? defValues : 0L);
+              int res = formatter.parseInto(mdt, datetimeString, 0);
+              if (res <= 0) {
+                  // parsing error
+                  LOG.debug("Error parsing the string \""+datetimeString+"\"");
+                  return null;
+              }
+              return convert (mdt.toDateTime());
+          }
+          else {
+              DateTime dt = formatter.parseDateTime(datetimeString);
+              return convert (dt);
+          }
+      }
+      catch (UnsupportedOperationException uoe) {
+          // parsing is not supported with this formatter
+          LOG.debug("Error parsing date/time ("+uoe.getMessage()+")");
+      }
+      catch (IllegalArgumentException iae) {
+          // the string is not a datetime
+          LOG.debug("Error parsing date/time ("+iae.getMessage()+")");
+      }
+      return null;
+  }   
 
   public static boolean compare(Long op1, CompareType cmp, Long op2, DateTimeFieldType type) {
     op1 = roundFloor(op1, type);

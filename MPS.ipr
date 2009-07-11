@@ -1328,11 +1328,11 @@
     </library>
     <library name="joda-time">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.6.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.4-src-ide.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/joda-time/joda-time-1.6-src.zip!/" />
       </SOURCES>
     </library>
     <library name="httpclient">
