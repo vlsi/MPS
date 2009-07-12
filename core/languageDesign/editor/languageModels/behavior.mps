@@ -1380,20 +1380,6 @@
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877386047">
     <property name="package" value="CellModel" />
     <link role="concept" targetNodeId="1.1073389214265" resolveInfo="EditorCellModel" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877386048">
-      <property name="name" value="useHorizontalInspector" />
-      <property name="isPrivate" value="false" />
-      <link role="overriddenMethod" targetNodeId="20.1213877396707" resolveInfo="useHorizontalInspector" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877386049">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877386050">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877386051">
-            <property name="value" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1213877386052" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155723791" />
-    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216811674575">
       <property name="name" value="getCellModelKind" />
       <property name="isPrivate" value="false" />

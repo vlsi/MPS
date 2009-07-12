@@ -48,7 +48,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -57,6 +57,7 @@
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="9" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="12" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1230052406553">
     <property name="name" value="ChangeMethodParametersForStatement" />
     <property name="package" value="extractMethod" />
@@ -7842,7 +7843,7 @@
                     <link role="variableDeclaration" targetNodeId="1230053040724" resolveInfo="bla" />
                   </node>
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230053040732">
-                    <link role="baseMethodDeclaration" targetNodeId="7.1213877396707" resolveInfo="useHorizontalInspector" />
+                    <link role="baseMethodDeclaration" targetNodeId="7.1213877396627" resolveInfo="isInTemplates" />
                     <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.TestNodeAnnotation" id="1230053040733">
                       <property name="name" value="call" />
                     </node>
@@ -7877,8 +7878,15 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230053040746">
                 <property name="name" value="b" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1230053040747" />
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1230053040748">
-                  <property name="value" value="false" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="659956999486354780">
+                  <link role="classConcept" targetNodeId="12.~SModelStereotype" resolveInfo="SModelStereotype" />
+                  <link role="baseMethodDeclaration" targetNodeId="12.~SModelStereotype.isGeneratorModel(jetbrains.mps.smodel.SModel):boolean" resolveInfo="isGeneratorModel" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="659956999486354781">
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="659956999486354783" />
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1091034129700450775">
+                      <link role="variableDeclaration" targetNodeId="1230053040742" resolveInfo="bla" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

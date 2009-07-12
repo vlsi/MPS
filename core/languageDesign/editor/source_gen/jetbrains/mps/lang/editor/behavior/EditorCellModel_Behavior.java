@@ -25,10 +25,6 @@ public class EditorCellModel_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_useHorizontalInspector_1213877396707(SNode thisNode) {
-    return true;
-  }
-
   public static String call_getCellModelKind_1216811674575(SNode thisNode) {
     String result = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
     if (result.startsWith("CellModel_")) {
