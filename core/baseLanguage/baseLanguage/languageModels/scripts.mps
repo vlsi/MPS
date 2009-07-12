@@ -718,7 +718,9 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1225189943624">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1225189951818">
                 <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1225189945564">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225209313016" />
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8079881182669638772">
+                    <link role="classifier" targetNodeId="8.~String" resolveInfo="String" />
+                  </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1225189952289">
                   <link role="link" targetNodeId="1.1107535924139" />
