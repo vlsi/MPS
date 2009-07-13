@@ -87,7 +87,7 @@ public class ClassConcept_Behavior {
     SNode parent = SNodeOperations.getParent(expr);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
       for(SNode param : SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)) {
-        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true)).contains(expr)) {
+        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(expr)) {
           contextNode = parent;
           break;
         }

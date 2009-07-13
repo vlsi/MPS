@@ -7967,6 +7967,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="8064396509828214712">
+    <link role="conceptDeclaration" targetNodeId="1.8064396509828172209" resolveInfo="UnaryMinus" />
+    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="8064396509828214713">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8064396509828214714">
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8064396509828214715">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8064396509828214717">
+            <property name="value" value="-" />
+          </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="8064396509828214719">
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8064396509828214722">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="8064396509828214721" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="358937142749530230">
+                <link role="link" targetNodeId="1.1239714902950" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="764900287025024925">
     <link role="conceptDeclaration" targetNodeId="1.5279705229678483897" resolveInfo="FloatingPointFloatConstant" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="764900287025024926">

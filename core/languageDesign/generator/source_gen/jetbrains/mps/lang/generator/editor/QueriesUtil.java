@@ -149,7 +149,7 @@ public class QueriesUtil {
       }
     });
     for(SNode child : Sequence.fromIterable(children)) {
-      ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false)).visitAll(new IVisitor <SNode>() {
+      ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).visitAll(new IVisitor <SNode>() {
 
         public void visit(SNode it) {
           SNodeOperations.deleteNode(it);

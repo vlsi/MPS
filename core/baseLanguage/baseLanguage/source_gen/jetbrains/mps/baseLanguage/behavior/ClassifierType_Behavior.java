@@ -56,7 +56,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_8().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
+    return new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
@@ -80,7 +80,7 @@ public class ClassifierType_Behavior {
         SNode matchedNode_0 = thisNode;
         {
           boolean matches_0 = false;
-          _Patterns.Pattern_0 matchingPattern = new _Patterns.Pattern_0();
+          _Patterns.Pattern_1 matchingPattern = new _Patterns.Pattern_1();
           matches_0 = matchingPattern.match(matchedNode_0);
           if (matches_0) {
             return true;
@@ -90,7 +90,7 @@ public class ClassifierType_Behavior {
       } while(false);
     }
     {
-      _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1(SLinkOperations.getTarget(thisNode, "classifier", false));
+      _Patterns.Pattern_2 pattern_0 = new _Patterns.Pattern_2(SLinkOperations.getTarget(thisNode, "classifier", false));
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_0);
       if (coercedNode_0 != null) {
         {

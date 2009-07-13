@@ -73,7 +73,7 @@ public class Type_Behavior {
       IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
       if (coercedNode_1 != null) {
-        return new _Quotations.QuotationClass_13().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
+        return new _Quotations.QuotationClass_22().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
       } else
       {
         throw new UnsupportedOperationException();
@@ -83,7 +83,7 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      _Patterns.Pattern_2 pattern_2 = new _Patterns.Pattern_2(thisNode);
+      _Patterns.Pattern_0 pattern_2 = new _Patterns.Pattern_0(thisNode);
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
       if (coercedNode_2 != null) {
         return true;

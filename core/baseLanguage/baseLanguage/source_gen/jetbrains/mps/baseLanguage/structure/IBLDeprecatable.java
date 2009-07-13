@@ -9,7 +9,5 @@ public interface IBLDeprecatable extends IDeprecatable {
   public static final String IS_DEPRECATED = "isDeprecated";
 
   public boolean getIsDeprecated();
-
   public void setIsDeprecated(boolean value);
-
 }

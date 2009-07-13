@@ -3368,6 +3368,18 @@
     <property name="name" value="_FloatNumberValue" />
     <property name="constraint" value="-?[0-9]+\\.[0-9]*f" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8064396509828172209">
+    <property name="name" value="UnaryMinus" />
+    <link role="extends" targetNodeId="1239714755177" resolveInfo="AbstractUnaryNumberOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8064396509828200184">
+      <property name="value" value="-" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8064396509828200186">
+      <property name="value" value="unary minus" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4898614932449915862">
     <property name="name" value="PlaceholderMethodDeclaration" />
     <link role="extends" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />

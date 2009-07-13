@@ -16900,6 +16900,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8064396509828172211">
+    <link role="conceptDeclaration" targetNodeId="17.8064396509828172209" resolveInfo="UnaryMinus" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8064396509828198987">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8064396509828198990">
+        <property name="text" value="-" />
+        <property name="attractsFocus" value="1" />
+        <link role="actionMap" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="8064396509828641871">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="8064396509828943546">
+        <link role="relationDeclaration" targetNodeId="17.1239714902950" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="8064396509828198989" />
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4898614932449915863">
     <link role="conceptDeclaration" targetNodeId="17.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4898614932449980389">

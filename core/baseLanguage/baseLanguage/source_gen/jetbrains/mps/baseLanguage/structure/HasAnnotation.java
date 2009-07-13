@@ -11,13 +11,8 @@ public interface HasAnnotation extends INodeAdapter {
   public static final String ANNOTATION = "annotation";
 
   public int getAnnotationsCount();
-
   public Iterator<AnnotationInstance> annotations();
-
   public List<AnnotationInstance> getAnnotations();
-
   public void addAnnotation(AnnotationInstance node);
-
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node);
-
 }

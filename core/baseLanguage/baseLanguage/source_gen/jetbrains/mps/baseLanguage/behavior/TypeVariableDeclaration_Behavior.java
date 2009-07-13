@@ -23,14 +23,14 @@ public class TypeVariableDeclaration_Behavior {
 
   public static SNode call_getConcreteUpperBound_4346214032091504647(SNode thisNode, Set<SNode> visitedVars) {
     if (SetSequence.fromSet(visitedVars).contains(thisNode)) {
-      return new _Quotations.QuotationClass_25().createNode();
+      return new _Quotations.QuotationClass_21().createNode();
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
       return TypeVariableDeclaration_Behavior.getTypeWithConcreteUpperBounds_4346214032091504651(SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
     } else
     {
-      return new _Quotations.QuotationClass_26().createNode();
+      return new _Quotations.QuotationClass_20().createNode();
     }
   }
 
@@ -39,7 +39,7 @@ public class TypeVariableDeclaration_Behavior {
     if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
     }
-    List<SNode> variableReferences = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
+    List<SNode> variableReferences = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
     List<SNode> list = new ArrayList<SNode>();
     ListSequence.fromList(list).addSequence(ListSequence.fromList(variableReferences));
     for(SNode typeVariableReference : list) {

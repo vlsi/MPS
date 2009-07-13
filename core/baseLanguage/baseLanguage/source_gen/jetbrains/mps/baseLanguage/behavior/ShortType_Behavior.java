@@ -10,11 +10,11 @@ public class ShortType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new _Quotations.QuotationClass_6().createNode();
+    return new _Quotations.QuotationClass_5().createNode();
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_7().createNode();
+    return new _Quotations.QuotationClass_6().createNode();
   }
 
 }

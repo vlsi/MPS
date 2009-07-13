@@ -9,7 +9,5 @@ public interface IVisible extends INodeAdapter {
   public static final String VISIBILITY = "visibility";
 
   public Visibility getVisibility();
-
   public void setVisibility(Visibility node);
-
 }

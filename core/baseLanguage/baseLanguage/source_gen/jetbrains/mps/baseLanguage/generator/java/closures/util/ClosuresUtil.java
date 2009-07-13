@@ -87,7 +87,7 @@ public class ClosuresUtil {
     if (SLinkOperations.getTarget(method, "body", true) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false)).isEmpty()) {
+    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(method, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
       return false;
     }
     Set<SNode> varDecl = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "parameter", true));
@@ -98,7 +98,7 @@ public class ClosuresUtil {
     if (SLinkOperations.getTarget(concFunc, "body", true) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(concFunc, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false)).isEmpty()) {
+    if (ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(concFunc, "body", true), "jetbrains.mps.baseLanguage.structure.Closure", false, new String[]{})).isEmpty()) {
       return false;
     }
     return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.fromSet(new HashSet<SNode>()), generator);

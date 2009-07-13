@@ -10,11 +10,11 @@ public class DoubleType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new _Quotations.QuotationClass_18().createNode();
+    return new _Quotations.QuotationClass_14().createNode();
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_19().createNode();
+    return new _Quotations.QuotationClass_15().createNode();
   }
 
 }

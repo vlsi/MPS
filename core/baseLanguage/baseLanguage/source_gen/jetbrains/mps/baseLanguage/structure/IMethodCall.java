@@ -11,17 +11,10 @@ public interface IMethodCall extends TypeDerivable, TypeAnnotable {
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
 
   public int getActualArgumentsCount();
-
   public Iterator<Expression> actualArguments();
-
   public List<Expression> getActualArguments();
-
   public void addActualArgument(Expression node);
-
   public void insertActualArgument(Expression prev, Expression node);
-
   public BaseMethodDeclaration getBaseMethodDeclaration();
-
   public void setBaseMethodDeclaration(BaseMethodDeclaration node);
-
 }
