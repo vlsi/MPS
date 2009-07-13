@@ -16,9 +16,10 @@
 package jetbrains.mps.textGen;
 
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
 
 public class DefaultTextGen extends SNodeTextGen {
-  protected void doGenerateText(INodeAdapter node) {
+  protected void doGenerateText(SNode node) {
     append(getDeafultNoTextGenErrorText(node));
   }
 }
