@@ -12,12 +12,6 @@ public class RemarkStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
-      public void run() {
-        _context.getBuilder().emitNop();
-      }
-    });
   }
 
 }

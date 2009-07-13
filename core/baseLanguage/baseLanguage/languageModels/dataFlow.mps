@@ -1688,11 +1688,7 @@
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1210954246889">
     <link role="conceptDeclaration" targetNodeId="1.1168622733562" resolveInfo="RemarkStatement" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1210954246890">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210954246891">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable" id="1210954428565">
-          <node role="emitStatement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="1210954428566" />
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210954246891" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1214499184018">
