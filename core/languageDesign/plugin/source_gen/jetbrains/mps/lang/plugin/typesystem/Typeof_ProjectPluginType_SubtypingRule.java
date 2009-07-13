@@ -14,7 +14,7 @@ public class Typeof_ProjectPluginType_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode pluginType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_3().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_2().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

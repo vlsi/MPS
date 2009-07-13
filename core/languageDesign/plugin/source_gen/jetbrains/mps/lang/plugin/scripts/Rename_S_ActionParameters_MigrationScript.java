@@ -27,11 +27,11 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SLinkOperations.getTarget(node, "key", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "variableDeclaration", false);
+        return SLinkOperations.getTarget(node, "key", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "variableDeclaration", false);
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "variableDeclaration", false), false);
+        SLinkOperations.setTarget(node, "key", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "variableDeclaration", false), false);
       }
 
       public boolean isShowAsIntention() {

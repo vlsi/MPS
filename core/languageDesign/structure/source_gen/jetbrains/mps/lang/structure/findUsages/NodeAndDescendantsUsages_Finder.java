@@ -34,7 +34,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(nodes).addElement(node);
-    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false))) {
+    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
       SetSequence.fromSet(nodes).addElement(child);
     }
     // 
@@ -47,7 +47,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false))) {
+    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
       ListSequence.fromList(_results).addElement(child);
     }
   }

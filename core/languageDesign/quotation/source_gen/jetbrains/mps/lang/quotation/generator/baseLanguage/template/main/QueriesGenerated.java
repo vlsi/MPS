@@ -279,7 +279,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         SNode antiqExpression = SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true);
         ListSequence.fromList(result).addElement(antiqExpression);
@@ -413,7 +413,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
       }

@@ -11,13 +11,8 @@ public interface IStyleContainer extends INodeAdapter {
   public static final String STYLE_ITEM = "styleItem";
 
   public int getStyleItemsCount();
-
   public Iterator<StyleClassItem> styleItems();
-
   public List<StyleClassItem> getStyleItems();
-
   public void addStyleItem(StyleClassItem node);
-
   public void insertStyleItem(StyleClassItem prev, StyleClassItem node);
-
 }

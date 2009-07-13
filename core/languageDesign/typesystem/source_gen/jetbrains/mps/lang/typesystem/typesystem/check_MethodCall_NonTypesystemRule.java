@@ -19,7 +19,7 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext) {
     for(SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_22().createNode(typeCheckingContext), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();

@@ -136,12 +136,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Component_6715_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_6715_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupBasic_Collection_6715_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6715_0");
   }
@@ -155,6 +149,12 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ReadOnlyModelAccessor_6715_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_6715_0");
+  }
+
+  private static void setupBasic_Component_6715_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Component_6715_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupBasic_Component_6715_2(EditorCell editorCell, SNode node, EditorContext context) {

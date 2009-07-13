@@ -543,11 +543,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1177330914926(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.actions.structure.ConceptSubstitutePart","jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, false);
+    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.actions.structure.ConceptSubstitutePart","jetbrains.mps.lang.actions.structure.SubstituteMenuPart"}, false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1177441873770(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart","jetbrains.mps.lang.actions.structure.ConceptRightTransformPart","jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, false);
+    return SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart","jetbrains.mps.lang.actions.structure.ConceptRightTransformPart","jetbrains.mps.lang.actions.structure.SideTransformMenuPart"}, false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1178541065624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

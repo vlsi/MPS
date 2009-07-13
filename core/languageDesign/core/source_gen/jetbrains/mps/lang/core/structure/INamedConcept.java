@@ -9,7 +9,5 @@ public interface INamedConcept extends INodeAdapter {
   public static final String NAME = "name";
 
   public String getName();
-
   public void setName(String value);
-
 }

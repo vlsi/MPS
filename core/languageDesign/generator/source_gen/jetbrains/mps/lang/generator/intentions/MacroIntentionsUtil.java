@@ -40,10 +40,10 @@ public class MacroIntentionsUtil {
     // ======
     if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery")) {
       {
-        _Patterns.Pattern_0 pattern_0 = new _Patterns.Pattern_0();
+        _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1();
         SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_0);
         if (coercedNode_0 != null) {
-          return pattern_0.PatternVar0;
+          return pattern_0.PatternVar1;
         } else
         {
           return null;
@@ -51,10 +51,10 @@ public class MacroIntentionsUtil {
       }
     } else if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery")) {
       {
-        _Patterns.Pattern_1 pattern_1 = new _Patterns.Pattern_1();
+        _Patterns.Pattern_0 pattern_1 = new _Patterns.Pattern_0();
         SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_1);
         if (coercedNode_1 != null) {
-          return pattern_1.PatternVar1;
+          return pattern_1.PatternVar0;
         } else
         {
           return null;

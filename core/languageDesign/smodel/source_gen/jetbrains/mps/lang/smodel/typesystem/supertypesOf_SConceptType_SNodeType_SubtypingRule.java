@@ -19,7 +19,7 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if (concept != null) {
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-        return new _Quotations.QuotationClass_40().createNode(typeCheckingContext);
+        return new _Quotations.QuotationClass_29().createNode(typeCheckingContext);
       }
       // commented out because:
       // in a node of type concept<SomeInterfaceConcept> could be stored a value node<SomeConcreteConcept>
@@ -27,11 +27,11 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
       // (see rule supertypesOf_SConceptTypeType_SConceptTypeType)
       /*
         if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
-          return new _Quotations.QuotationClass_41().createNode(typeCheckingContext);
+          return new _Quotations.QuotationClass_30().createNode(typeCheckingContext);
         }
       */
     }
-    return new _Quotations.QuotationClass_42().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_31().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

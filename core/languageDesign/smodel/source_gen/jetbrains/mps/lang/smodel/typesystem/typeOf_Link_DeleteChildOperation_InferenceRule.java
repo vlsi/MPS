@@ -20,7 +20,7 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931094", true), (SNode)new _Quotations.QuotationClass_55().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931092", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931094", true), (SNode)new _Quotations.QuotationClass_62().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099630117), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205528931092", intentionProvider);
     }
   }
 

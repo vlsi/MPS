@@ -21,7 +21,7 @@ public class typeof_Node_InsertPrevSiblingOperation_InferenceRule extends Abstra
       {
         SNode _nodeToCheck_1029348928467 = parameter;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode)new _Quotations.QuotationClass_21().createNode(typeCheckingContext), _nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(parameter, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110415", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), _nodeToCheck_1029348928467, "incompatible type: snode expected", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186057110413", false, 0, intentionProvider);
       }
     }
     // op returns node passed in parameter

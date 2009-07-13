@@ -17,7 +17,7 @@ public class RequiredAdditionalArgument_Behavior {
     if (refactoring == null) {
       return true;
     }
-    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelClause", true), "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", false);
+    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelClause", true), "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", false, new String[]{});
     for(SNode reference : references) {
       if (SLinkOperations.getTarget(reference, "argument", false) == thisNode) {
         return false;

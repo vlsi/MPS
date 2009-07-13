@@ -14,7 +14,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_7().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_6().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

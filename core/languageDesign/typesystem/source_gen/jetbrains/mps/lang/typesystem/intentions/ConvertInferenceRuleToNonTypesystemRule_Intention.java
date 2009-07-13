@@ -40,7 +40,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement","jetbrains.mps.lang.typesystem.structure.GivetypeStatement","jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration","jetbrains.mps.lang.typesystem.structure.TypeVarReference","jetbrains.mps.lang.typesystem.structure.TypeOfExpression","jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false);
+    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement","jetbrains.mps.lang.typesystem.structure.GivetypeStatement","jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration","jetbrains.mps.lang.typesystem.structure.TypeVarReference","jetbrains.mps.lang.typesystem.structure.TypeOfExpression","jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false, new String[]{});
     return ListSequence.fromList(descendants).isEmpty();
   }
 
@@ -50,7 +50,7 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     SPropertyOperations.set(nonTypesystemRule, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(nonTypesystemRule, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true)), true);
     SLinkOperations.setTarget(nonTypesystemRule, "applicableNode", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "applicableNode", true)), true);
-    for(SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, "body", true), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false)) {
+    for(SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, "body", true), "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(node, "applicableNode", true)) {
         SLinkOperations.setTarget(applicableNodeReference, "applicableNode", SLinkOperations.getTarget(nonTypesystemRule, "applicableNode", true), false);
       }

@@ -14,7 +14,7 @@ public class Typeof_ApplicationPluginType_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode customApplicationPluginType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_11().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_10().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

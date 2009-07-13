@@ -15,7 +15,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_70().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_47().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -139,16 +139,6 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  private static void setupBasic_Component_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_ReadOnlyModelAccessor_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_6987_0");
-  }
-
-  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupBasic_Collection_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6987_0");
   }
@@ -169,16 +159,26 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupBasic_Component_6987_2(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Component_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ReadOnlyModelAccessor_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ReadOnlyModelAccessor_6987_0(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("ReadOnlyModelAccessor_6987_0");
+  }
+
+  private static void setupBasic_Component_6987_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Component_6987_2(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_RefNode_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_Constant_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ReadOnlyModelAccessor_6987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

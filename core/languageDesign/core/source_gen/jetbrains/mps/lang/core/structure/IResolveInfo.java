@@ -9,7 +9,5 @@ public interface IResolveInfo extends INodeAdapter {
   public static final String RESOLVE_INFO = "resolveInfo";
 
   public String getResolveInfo();
-
   public void setResolveInfo(String value);
-
 }

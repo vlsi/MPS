@@ -19,7 +19,7 @@ public class RulesUtil {
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);
     for(SNode annotation : annotations) {
-      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_19().createNode(), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "classifier", false)) {
         return true;
       }
     }

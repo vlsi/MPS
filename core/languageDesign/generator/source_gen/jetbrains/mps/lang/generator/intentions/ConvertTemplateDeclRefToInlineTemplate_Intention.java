@@ -42,7 +42,7 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "template", false), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", true);
+    List<SNode> TFs = SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "template", false), "contentNode", true), "jetbrains.mps.lang.generator.structure.TemplateFragment", true, new String[]{});
     if (ListSequence.fromList(TFs).count() == 0) {
       JOptionPane.showMessageDialog(null, "No fragments found");
       return;

@@ -33,7 +33,7 @@ public class TypesystemGenUtil {
     if ((baseMethodDeclaration != null)) {
       for(SNode annotationInstance : SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true)) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false) || annotation == SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)) {
           return true;
         }
       }
