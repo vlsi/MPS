@@ -27,7 +27,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new IValidIdentifier_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClosureParameterReference_closureParameter_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new StaticMethodCall_staticMethodDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClassCreator_constructorDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ThisExpression_classConcept_ReferentConstraint());
@@ -43,8 +42,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyReference_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FieldReferenceOperation_fieldDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new TupleMemberAccessOperation_member_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalVariableReference_localVariableDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new VarVariableReference_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TupleMemberAccessOperation_member_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Annotation_DefaultSearchScope());
     ListSequence.fromList(this.myConstraints).addElement(new Classifier_DefaultSearchScope());
     ListSequence.fromList(this.myConstraints).addElement(new Interface_DefaultSearchScope());

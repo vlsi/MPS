@@ -16900,5 +16900,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4898614932449915863">
+    <link role="conceptDeclaration" targetNodeId="17.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4898614932449980389">
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="4898614932449980390">
+        <property name="flag" value="true" />
+      </node>
+    </node>
+  </node>
 </model>
 

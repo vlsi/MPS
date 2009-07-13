@@ -62,7 +62,7 @@ public class ExpandBoolean_Intention extends BaseIntention {
     // 
     final SNode fake_node = node;
     Iterable<SNode> refs;
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
@@ -75,7 +75,7 @@ public class ExpandBoolean_Intention extends BaseIntention {
         SPropertyOperations.set(booleanConstant, "value", "" + (true));
       }
     });
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false)).where(new IWhereFilter <SNode>() {
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);

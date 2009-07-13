@@ -76,7 +76,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention {
     SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(iterationExpr, "rValue", true), "jetbrains.mps.baseLanguage.structure.PlusExpression"), "rightExpression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (1));
     // 
     final SNode fake_node = node;
-    ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false)).where(new IWhereFilter <SNode>() {
+    ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.LocalVariableReference");

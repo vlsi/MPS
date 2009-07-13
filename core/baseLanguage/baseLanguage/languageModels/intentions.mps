@@ -8082,5 +8082,53 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="6227066020986359514">
+    <property name="name" value="AddNewLine" />
+    <link role="forConcept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="6227066020986359515">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6227066020986359516">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6227066020986473526">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6227066020986473527">
+            <property name="value" value="Add Empty Line After the Method" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="6227066020986359517">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6227066020986359518">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6227066020986475663">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227066020986475665">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6227066020986475664" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" id="6227066020986475669">
+              <node role="insertedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6227066020986475673">
+                <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="6227066020986516369">
+                  <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6227066020986516370">
+                    <link role="concept" targetNodeId="1.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="6227066020986473528">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6227066020986473529">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6227066020986473530">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227066020986475656">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227066020986473532">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6227066020986473531" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6227066020986475655" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6227066020986475660">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6227066020986475662">
+                <link role="conceptDeclaration" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

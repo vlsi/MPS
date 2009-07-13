@@ -2300,5 +2300,22 @@
     <property name="package" value="tuples" />
     <link role="concept" targetNodeId="1.1233824771431" resolveInfo="TupleMember" />
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="4898614932449980391">
+    <link role="concept" targetNodeId="1.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="4898614932449980392">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4898614932449996452">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4898614932449996453">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4898614932449996455">
+            <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="4898614932449996454" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4898614932449996459">
+              <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4898614932449996461">
+                <link role="conceptDeclaration" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

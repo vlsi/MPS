@@ -29,7 +29,7 @@ public class VarVariableReference_declaration_ReferentConstraint extends BaseNod
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     SNode methodDeclaration = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(methodDeclaration, "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", false)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(methodDeclaration, "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", false, new String[]{})));
     return result;
   }
 

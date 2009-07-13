@@ -6,9 +6,9 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
 
@@ -19,7 +19,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isFinal")) {
       this.append("final ");
     }
-    if (SPropertyOperations.getBoolean(node, "isAbstract")) {
+    if (SPropertyOperations.getBoolean(node, "isAbstract") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       this.append("abstract ");
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
@@ -64,8 +64,8 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       this.decreaseDepth();
       this.appendNewLine();
       this.appendWithIndent("}");
+      this.appendNewLine();
     }
-    this.appendNewLine();
   }
 
 }

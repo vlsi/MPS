@@ -54,7 +54,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check it's instance of RuntimeException
-    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false)))) {
+    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)))) {
       return false;
     }
     // check if it's not thrown by a method yet

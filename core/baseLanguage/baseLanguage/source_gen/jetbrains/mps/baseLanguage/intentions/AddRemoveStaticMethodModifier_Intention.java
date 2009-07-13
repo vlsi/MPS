@@ -46,7 +46,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
-    for(SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false)).where(new IWhereFilter <SNode>() {
+    for(SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");

@@ -41,7 +41,7 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     // produce throw statement
     SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
-    SNode newExpr = new _Quotations.QuotationClass_1().createNode();
+    SNode newExpr = new _Quotations.QuotationClass_3().createNode();
     SLinkOperations.setTarget(throwStatement, "throwable", newExpr, true);
     // produce if statement
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);

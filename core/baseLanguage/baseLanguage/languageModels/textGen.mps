@@ -3237,10 +3237,25 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235068171813">
-            <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235068171218" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235068176114">
-              <link role="property" targetNodeId="1.1178608670077" resolveInfo="isAbstract" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6227066020986694413">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6227066020986695250">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227066020986695258">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6227066020986695253">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="6227066020986695252" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6227066020986695257" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6227066020986695262">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6227066020986695264">
+                    <link role="conceptDeclaration" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235068171813">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1235068171218" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235068176114">
+                <link role="property" targetNodeId="1.1178608670077" resolveInfo="isAbstract" />
+              </node>
             </node>
           </node>
         </node>
@@ -3403,11 +3418,11 @@
                   <property name="withIndent" value="true" />
                 </node>
               </node>
+              <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237561365184">
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237561366545" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237561365184">
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1237561366545" />
         </node>
       </node>
     </node>
@@ -7993,6 +8008,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="6227066020986630956">
+    <link role="conceptDeclaration" targetNodeId="1.4898614932449915862" resolveInfo="PlaceholderMethodDeclaration" />
+    <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="6227066020986630957">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6227066020986630958">
+        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="6227066020986645916">
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="6227066020986645918" />
         </node>
       </node>
     </node>
