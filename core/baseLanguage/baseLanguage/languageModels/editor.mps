@@ -1294,17 +1294,27 @@
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1208703059009">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208703059010">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208703059011">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1208703059012">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208703059013" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208703059014">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1208703059015" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1208703059016">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1208703059017">
-                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1208703059018">
-                        <link role="conceptDeclaration" targetNodeId="17.1170345865475" resolveInfo="AnonymousClass" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="764900287024762183">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="764900287024764311">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="764900287024764312">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="764900287024764313" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="764900287024764314">
+                      <link role="property" targetNodeId="17.1178608670077" resolveInfo="isAbstract" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1208703059012">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208703059014">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1208703059015" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1208703059016">
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1208703059017">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1208703059018">
+                          <link role="conceptDeclaration" targetNodeId="17.1170345865475" resolveInfo="AnonymousClass" />
+                        </node>
                       </node>
                     </node>
                   </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1208703059013" />
                 </node>
               </node>
             </node>

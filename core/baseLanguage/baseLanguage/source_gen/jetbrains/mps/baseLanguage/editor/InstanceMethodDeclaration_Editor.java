@@ -755,7 +755,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static boolean renderingCondition5704_7(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null;
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false) == null && !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
 
   public static boolean renderingCondition5704_8(SNode node, EditorContext editorContext, IScope scope) {
