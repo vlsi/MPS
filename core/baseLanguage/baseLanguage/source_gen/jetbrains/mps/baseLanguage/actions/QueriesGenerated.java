@@ -1870,7 +1870,7 @@ __switch__:
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
             if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result));
+              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
             } else
             {
               ParenthesisUtil.checkOperationWRTPriority(result);
@@ -2736,7 +2736,7 @@ __switch__:
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
               if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-                ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.getParent(result));
+                ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
               } else
               {
                 ParenthesisUtil.checkOperationWRTPriority(result);

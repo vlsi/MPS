@@ -3448,5 +3448,47 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="707974323667242142">
+    <property name="name" value="AssociativityProblem" />
+    <property name="package" value="parenthesisUtil" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.StatementList" id="707974323667245243">
+      <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="707974323667246376">
+        <property name="isLastPosition" value="true" />
+        <property name="useLabelSelection" value="true" />
+        <property name="selectionStart" value="0" />
+        <property name="selectionEnd" value="0" />
+        <property name="cellId" value="Constant_6577_0" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.StatementList" id="707974323667246377">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="707974323667246390">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="707974323667246392">
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="707974323667246396">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="707974323667246399">
+              <property name="value" value="1" />
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="707974323667246395">
+              <property name="value" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="707974323667246391">
+            <property name="value" value="3" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="707974323667246400">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="1" />
+              <property name="selectionEnd" value="1" />
+              <property name="cellId" value="property_value" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="707974323667246388">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="707974323667246389">
+        <property name="keys" value="1-2+3" />
+      </node>
+    </node>
+  </node>
 </model>
 
