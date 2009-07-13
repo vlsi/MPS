@@ -638,7 +638,6 @@
         <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1143224155413">
-        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1143224066849" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487228726">
@@ -660,7 +659,7 @@
         <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1143224196793">
-        <property name="attractsFocus" value="1" />
+        <property name="attractsFocus" value="0" />
         <link role="relationDeclaration" targetNodeId="1.1143224127716" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1206487245463">

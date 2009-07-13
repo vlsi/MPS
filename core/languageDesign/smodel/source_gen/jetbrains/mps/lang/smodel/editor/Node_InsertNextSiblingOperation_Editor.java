@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
@@ -98,9 +97,6 @@ public class Node_InsertNextSiblingOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_1266_0(EditorCell editorCell, SNode node, EditorContext context) {
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
-    }
   }
 
   private static void setupBasic_Component_1266_0(EditorCell editorCell, SNode node, EditorContext context) {
