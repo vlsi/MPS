@@ -479,11 +479,11 @@ public class TextLine {
   }
 
   public void setStartTextSelectionPosition(int i) {
-    this.myStartTextSelectionPosition = i;
+    this.myStartTextSelectionPosition = Math.min(i, myText.length());
   }
 
   public void setEndTextSelectionPosition(int i) {
-    this.myEndTextSelectionPosition = i;
+    this.myEndTextSelectionPosition = Math.min(i, myText.length());
   }
 
   public void selectAll() {
