@@ -1294,12 +1294,17 @@
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1208703059009">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208703059010">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1208703059011">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="764900287024762183">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="764900287024764311">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="764900287024764312">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="764900287024764313" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="764900287024764314">
-                      <link role="property" targetNodeId="17.1178608670077" resolveInfo="isAbstract" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4898614932449671025">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="4898614932449671031">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4898614932449672034">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4898614932449671034">
+                      <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="4898614932449671033" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="4898614932449672033" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4898614932449672038">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4898614932449672040">
+                        <link role="conceptDeclaration" targetNodeId="17.1107796713796" resolveInfo="Interface" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -7404,8 +7409,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166102291295">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166102291296">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237727841198">
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.moveParenthesisToTheRightOrLeft(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):void" resolveInfo="moveParenthesisToTheRightOrLeft" />
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+              <link role="classConcept" targetNodeId="1237567185891" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1237571193432" resolveInfo="moveParenthesisToTheRightOrLeft" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1237727841200" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1237727841202" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237727919607">
@@ -7426,8 +7431,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166113551772">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166113551773">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237727473825">
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.moveParenthesisToTheLeftOrRightInside(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):void" resolveInfo="moveParenthesisToTheLeftOrRightInside" />
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+              <link role="classConcept" targetNodeId="1237567185891" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1237574809350" resolveInfo="moveParenthesisToTheLeftOrRightInside" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1237727473827" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1237727473829" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237727978456">
@@ -7452,8 +7457,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166110801460">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166110801461">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237728043934">
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.moveParenthesisToTheRightOrLeft(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):void" resolveInfo="moveParenthesisToTheRightOrLeft" />
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+              <link role="classConcept" targetNodeId="1237567185891" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1237571193432" resolveInfo="moveParenthesisToTheRightOrLeft" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1237728043936" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1237728043938" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237728056145">
@@ -7474,8 +7479,8 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1166114419156">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1166114419157">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1237728077616">
-              <link role="baseMethodDeclaration" targetNodeId="48.~ParenthesisUtil.moveParenthesisToTheLeftOrRightInside(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,boolean):void" resolveInfo="moveParenthesisToTheLeftOrRightInside" />
-              <link role="classConcept" targetNodeId="48.~ParenthesisUtil" resolveInfo="ParenthesisUtil" />
+              <link role="classConcept" targetNodeId="1237567185891" resolveInfo="ParenthesisUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="1237574809350" resolveInfo="moveParenthesisToTheLeftOrRightInside" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="1237728077618" />
               <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1237728077620" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1237728092718">
