@@ -94,6 +94,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   public void reloadFromDisk() {
     ModelAccess.instance().checkWriteAccess();
     if (isInitialized()) {
+      mySModel.fireBeforeModelReloaded();
+
       synchronized (myListenersLock) {
         myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
         myModelListeners.addAll(mySModel.getModelListeners());

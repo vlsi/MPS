@@ -390,6 +390,17 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireBeforeModelReloaded() {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.beforeModelReloaded(getModelDescriptor());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   void firePropertyChangedEvent(@NotNull SNode node,
                                 @NotNull String property,
                                 @Nullable String oldValue,

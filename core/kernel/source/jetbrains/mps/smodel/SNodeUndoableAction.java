@@ -63,7 +63,6 @@ public abstract class SNodeUndoableAction implements UndoableAction {
 
   public DocumentReference[] getAffectedDocuments() {
     return myAffectedDocuments;
-
   }
 
   public boolean isComplex() {

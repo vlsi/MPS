@@ -70,5 +70,7 @@ public interface SModelListener {
 
   void modelInitialized(SModelDescriptor sm);
 
+  void beforeModelReloaded(SModelDescriptor sm);
+
   void modelReloaded(SModelDescriptor sm);
 }
