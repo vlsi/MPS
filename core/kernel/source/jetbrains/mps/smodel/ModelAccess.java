@@ -21,10 +21,12 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.internal.CursorWithContinuation;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.SwingUtilities;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.Set;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -35,9 +37,11 @@ public class ModelAccess {
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
   private EDTExecutor myEDTExecutor = new EDTExecutor();
+  private Set<Thread> myIndexingThreads = new HashSet<Thread>();
+
 
   public static ModelAccess instance() {
-    return ourInstance;
+    return ourInstance;    
   }
 
   private ModelAccess() {
@@ -266,13 +270,22 @@ public class ModelAccess {
     });
   }
 
-  static void assertLegalRead(SNode node) {
-    if (!ModelAccess.instance().canRead()) {
-      if (Thread.currentThread() instanceof CursorWithContinuation) {
-        return;
+  public void runIndexing(Runnable r) {    
+    boolean needToRemove = myIndexingThreads.add(Thread.currentThread());
+    try {
+      r.run();
+    } finally {
+      if (needToRemove) {
+        myIndexingThreads.remove(Thread.currentThread());
       }
+    }
+  }
 
+  static void assertLegalRead(SNode node) {
+    ModelAccess modelAccess = ModelAccess.instance();
+    if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
+
 }

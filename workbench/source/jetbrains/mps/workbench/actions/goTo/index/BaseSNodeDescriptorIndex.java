@@ -78,7 +78,7 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
     @NotNull
     public Map<SNodeDescriptor, Void> map(final FileContent inputData) {
       final Map<SNodeDescriptor, Void> result = new HashMap<SNodeDescriptor, Void>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
             SModel model = ModelPersistence.readModel(inputData.getContent());
