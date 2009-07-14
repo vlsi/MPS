@@ -15,33 +15,36 @@
  */
 package jetbrains.mps.lang.script.plugin.migrationtool;
 
+import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.command.UndoConfirmationPolicy;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.HashSet;
-import java.util.ArrayList;
 
 /**
  * Igor Alshannikov
@@ -61,6 +64,8 @@ public class MigrationScriptsView {
 
 
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, MPSProject project) {
+    LOG.checkEDT();
+
     myFinder = finder;
     myQuery = query;
     finder.setMigrationScriptsView(this);
@@ -101,21 +106,21 @@ public class MigrationScriptsView {
         List<SNodePointer> includedNodes = myUsagesView.getIncludedResultNodes();
         Set<SNode> aliveIncludedNodes = new HashSet<SNode>();
         for (SNodePointer includedNode : includedNodes) {
-          if(includedNode.getNode() != null) {
+          if (includedNode.getNode() != null) {
             aliveIncludedNodes.add(includedNode.getNode());
           }
         }
         List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();
         for (SearchResult<SNode> aliveResult : aliveResults) {
-          if(aliveIncludedNodes.contains(aliveResult.getObject())) {
+          if (aliveIncludedNodes.contains(aliveResult.getObject())) {
             aliveIncludedResults.add(aliveResult);
           }
         }
       }
     });
 
-    if(aliveIncludedResults.size() == 0) {
-      JOptionPane.showMessageDialog(myTool.getComponent(),"No job");
+    if (aliveIncludedResults.size() == 0) {
+      JOptionPane.showMessageDialog(myTool.getComponent(), "No job");
       return;
     }
 

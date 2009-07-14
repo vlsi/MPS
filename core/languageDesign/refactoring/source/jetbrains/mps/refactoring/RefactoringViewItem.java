@@ -141,19 +141,14 @@ public class RefactoringViewItem {
   }
 
   /*package*/ void initUsagesView() {
-    Thread thread = new Thread() {
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()),
-              new SearchQuery(new ConstantHolder(mySearchResults), GlobalScope.getInstance()),
-              new ButtonConfiguration(false, false, true),
-              mySearchResults);
-          }
-        });
+        myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()),
+          new SearchQuery(new ConstantHolder(mySearchResults), GlobalScope.getInstance()),
+          new ButtonConfiguration(false, false, true),
+          mySearchResults);
       }
-    };
-    thread.start();
+    });
   }
 
   private void cancel() {

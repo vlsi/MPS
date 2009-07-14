@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -101,6 +102,7 @@ public abstract class UsagesView implements IExternalizeable {
   //----RUN STUFF----
 
   public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, ButtonConfiguration buttonConfiguration) {
+    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT";
     assert !myIsInitialized;
     myIsInitialized = true;
     myResultProvider = resultProvider;

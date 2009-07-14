@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -33,7 +34,6 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -67,6 +67,8 @@ public class TodoViewer extends JPanel {
   }
 
   private void refresh() {
+    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
+
     removeAll();
 
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
@@ -78,29 +80,21 @@ public class TodoViewer extends JPanel {
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
-    final MPSProject project = myProject;
+    myUsagesView.setRunOptions(
+      FindUtils.makeProvider(new TodoFinder()),
+      new SearchQuery(myProject.getScope()),
+      new ButtonConfiguration(true),
+      new SearchResults()
+    );
+
+    myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
 
     ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
       public void run(@NotNull final ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-
-        if (project == null) return;
-
-        myUsagesView.setRunOptions(
-          FindUtils.makeProvider(new TodoFinder()),
-          new SearchQuery(project.getScope()),
-          new ButtonConfiguration(true),
-          new SearchResults()
-        );
-
-        myUsagesView.setCustomNodeRepresentator(MyNodeRepresentator.class);
         myUsagesView.run(indicator);
 
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            getTool().openTool(true);
-          }
-        });
+        getTool().openToolLater(true);
       }
     });
   }
