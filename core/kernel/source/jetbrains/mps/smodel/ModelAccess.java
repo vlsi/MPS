@@ -69,14 +69,6 @@ public class ModelAccess {
   }
 
   public void runWriteAction(final Runnable r) {
-//    ApplicationEx application = (ApplicationEx) ApplicationManager.getApplication();
-//
-//    if (application.holdsReadLock() &&
-//      !application.isWriteAccessAllowed()) {
-//      throw new IllegalStateException("Write actions inside of read action");
-//    }
-
-
     runWriteAction(new Computable<Object>() {
       public Object compute() {
         r.run();
