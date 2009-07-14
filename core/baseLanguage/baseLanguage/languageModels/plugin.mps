@@ -527,6 +527,9 @@
         <link role="action" targetNodeId="1205836731341" resolveInfo="RunClassConcept" />
       </node>
     </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="7208327248081771434">
+      <link role="modifiedGroup" targetNodeId="3.1204991215587" resolveInfo="NodeActions" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1205860902244">
     <property name="name" value="RunComponent" />
