@@ -16368,6 +16368,33 @@
         </node>
       </node>
     </node>
+    <node role="rule" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule" id="3860149536565525570">
+      <node role="operationConcept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3860149536565525576">
+        <link role="concept" targetNodeId="1.8064396509828172209" resolveInfo="UnaryMinus" />
+      </node>
+      <node role="function" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction" id="3860149536565525574">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3860149536565525575">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3860149536565525602">
+            <node role="expression" type="jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter" id="3860149536565525604" />
+          </node>
+        </node>
+      </node>
+      <node role="leftOperandType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3860149536565525580">
+        <node role="operand" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3860149536565525581">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" id="3860149536565525582">
+            <link role="descriptor" targetNodeId="28.1196683729865" resolveInfo="Numeric" />
+          </node>
+        </node>
+        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3860149536565525583">
+          <link role="link" targetNodeId="6.1159268661479" />
+        </node>
+      </node>
+      <node role="rightOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3860149536565525587">
+        <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3860149536565525592">
+          <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1236695950918">
     <property name="name" value="typeof_VarVariableReference" />
@@ -16825,6 +16852,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1239715048280">
     <property name="name" value="typeof_AbstractUnaryNumberOperation" />
     <property name="package" value="prefix/postfix" />
+    <property name="overrides" value="false" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1239715048281">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="5885703495931979621">
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5885703495931979622">
@@ -17290,6 +17318,104 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5279705229678487851">
       <property name="name" value="floatConstant" />
       <link role="concept" targetNodeId="1.5279705229678483897" resolveInfo="FloatingPointFloatConstant" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="3860149536565525475">
+    <property name="name" value="typeof_UnaryMinus" />
+    <property name="overrides" value="true" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3860149536565525476">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" id="7602524515424797598">
+        <property name="name" value="expressionType" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="7602524515424797603">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7602524515424797607">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7602524515424797608">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7602524515424797610">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7602524515424797611">
+                <link role="applicableNode" targetNodeId="3860149536565525477" resolveInfo="minus" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7602524515424797612">
+                <link role="link" targetNodeId="1.1239714902950" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7602524515424797606">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="7602524515424797602">
+            <link role="typeVarDeclaration" targetNodeId="7602524515424797598" resolveInfo="expressionType" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" id="3860149536565525509">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3860149536565525510">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3860149536565525517">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3860149536565525518">
+              <property name="name" value="type" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3860149536565525519" />
+              <node role="initializer" type="jetbrains.mps.lang.typesystem.structure.GetOperationType" id="3860149536565525520">
+                <node role="operation" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3860149536565525521">
+                  <link role="applicableNode" targetNodeId="3860149536565525477" resolveInfo="minus" />
+                </node>
+                <node role="rightOperandType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3860149536565865212">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3860149536565865215">
+                    <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+                  </node>
+                </node>
+                <node role="leftOperandType" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" id="7602524515424823293">
+                  <link role="whenConcreteVar" targetNodeId="7602524515424797616" resolveInfo="type" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3860149536565525529">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3860149536565525530">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="3860149536565525538">
+                <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3860149536565525543">
+                  <node role="normalType" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3860149536565525544">
+                    <link role="variableDeclaration" targetNodeId="3860149536565525518" resolveInfo="type" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3860149536565525540">
+                  <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3860149536565525541">
+                    <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3860149536565525545">
+                      <link role="applicableNode" targetNodeId="3860149536565525477" resolveInfo="minus" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="3860149536565525534">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3860149536565525537" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3860149536565525533">
+                <link role="variableDeclaration" targetNodeId="3860149536565525518" resolveInfo="type" />
+              </node>
+            </node>
+            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="3860149536565525546">
+              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3860149536565525547">
+                <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="3860149536565525553">
+                  <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3860149536565525556">
+                    <property name="value" value="- can't be applied to these operands." />
+                  </node>
+                  <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3860149536565525561">
+                    <link role="applicableNode" targetNodeId="3860149536565525477" resolveInfo="minus" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="argument" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="7602524515424797613">
+          <link role="typeVarDeclaration" targetNodeId="7602524515424797598" resolveInfo="expressionType" />
+        </node>
+        <node role="argumentRepresentator" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" id="7602524515424797616">
+          <property name="name" value="exType" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="7602524515424797617" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3860149536565525477">
+      <property name="name" value="minus" />
+      <link role="concept" targetNodeId="1.8064396509828172209" resolveInfo="UnaryMinus" />
     </node>
   </node>
 </model>

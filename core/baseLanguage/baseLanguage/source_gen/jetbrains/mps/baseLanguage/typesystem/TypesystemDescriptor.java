@@ -358,6 +358,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_UnaryMinus_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_ClassifierType_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -761,16 +765,33 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myOverloadedOperationsTypesProviders.add(provider);
     }
     {
+      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
+        {
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_121().createNode(), "descriptor", false);
+          this.myRightOperandType = new _Quotations.QuotationClass_122().createNode();
+          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
+          this.myLeftTypeIsExact = false;
+          this.myRightTypeIsExact = false;
+        }
+
+
+        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+          return leftOperandType;
+        }
+      };
+      this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+    {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new _Quotations.QuotationClass_124().createNode();
+          this.myOperandType = new _Quotations.QuotationClass_127().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
         }
 
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_125().createNode();
+          return new _Quotations.QuotationClass_128().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
