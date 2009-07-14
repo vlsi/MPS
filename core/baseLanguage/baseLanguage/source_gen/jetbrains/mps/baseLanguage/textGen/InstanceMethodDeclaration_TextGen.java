@@ -49,6 +49,9 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(node, "isAbstract")) {
       this.append(";");
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
+        this.appendNewLine();
+      }
     } else
     {
       this.append(" {");

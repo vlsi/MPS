@@ -57,5 +57,27 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6227066020986672469" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="186788241848729168">
+    <property name="name" value="ABC" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="186788241848729169" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="186788241848729170">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="186788241848729171" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="186788241848729172" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="186788241848729173" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="186788241848729178">
+      <property name="name" value="cde" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="186788241848729179" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="186788241848729180" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="186788241848729181" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="186788241848729174">
+      <property name="name" value="abc" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="186788241848729175" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="186788241848729176" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="186788241848729177" />
+    </node>
+  </node>
 </model>
 

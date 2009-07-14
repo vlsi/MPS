@@ -3335,6 +3335,26 @@
                 <property name="value" value=";" />
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="186788241848735159">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="186788241848735160">
+                <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="186788241848737297">
+                  <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="186788241848737299" />
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="186788241848735163">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="186788241848737290">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="186788241848735166">
+                    <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="186788241848735165" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="186788241848737289" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="186788241848737294">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="186788241848737296">
+                      <link role="conceptDeclaration" targetNodeId="1.1107796713796" resolveInfo="Interface" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1235068450592">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235068454299">
