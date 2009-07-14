@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-class AddOrRemoveRootUndoableAction extends SNodeUndoableAction {
+class RemoveRootUndoableAction extends SNodeUndoableAction {
   private SNode myRoot;
-  private boolean myDelete;
 
-  AddOrRemoveRootUndoableAction(SNode root, boolean delete) {
+  RemoveRootUndoableAction(SNode root) {
     super(root);
     myRoot = root;
-    myDelete = delete;
   }
 
   public boolean isComplex() {
@@ -30,18 +28,10 @@ class AddOrRemoveRootUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doUndo() {
-    if (myDelete) {
-      myRoot.getModel().addRoot(myRoot);
-    } else {
-      myRoot.getModel().removeRoot(myRoot);
-    }
+    myRoot.getModel().addRoot(myRoot);
   }
 
   protected void doRedo() {
-    if (myDelete) {
-      myRoot.getModel().removeRoot(myRoot);
-    } else {
-      myRoot.getModel().addRoot(myRoot);
-    }
+    myRoot.getModel().removeRoot(myRoot);
   }
 }
