@@ -108,10 +108,13 @@ public class OptimizeImportsHelper {
 
     for (Dependency m : descriptor.getDependencies()) {
       IModule module = MPSModuleRepository.getInstance().getModule(m.getModuleRef());
+      if (module==null) continue;
+
       boolean used = false;
 
       for (SModelReference mr : result.myUsedModels) {
         SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(mr);
+        if (md == null) continue;
         if (md.getModules().contains(module)) {
           used = true;
           break;
