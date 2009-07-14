@@ -262,7 +262,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private String getHelpUrlForCurrentMessage() {
-    if (myList.getSelectedValues().length!=1) return null;
+    if (myList.getSelectedValues().length != 1) return null;
 
     Message message = (Message) (myList.getSelectedValue());
     return message.getHelpUrl();
@@ -299,15 +299,20 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     group.addSeparator();
 
-    group.add(new BaseAction("Clear") {
-      {
-        setExecuteOutsideCommand(true);
+    group.add(new BaseAction("Show Help for This Message") {
+      @Override
+      protected void doUpdate(AnActionEvent e) {
+        boolean enabled = getHelpUrlForCurrentMessage() != null;
+        setEnabledState(e.getPresentation(), enabled);
       }
 
+      @Override
       protected void doExecute(AnActionEvent e) {
-        clear();
+        showHelpForCurrentMessage();
       }
     });
+
+    group.addSeparator();
 
     if (myList.getSelectedIndices().length == 1) {
       final Message message = (Message) myList.getSelectedValue();
@@ -324,17 +329,15 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         });
       }
     }
+    group.addSeparator();
 
-    group.add(new BaseAction("Show Help for This Message") {
-      @Override
-      protected void doUpdate(AnActionEvent e) {
-        boolean enabled = getHelpUrlForCurrentMessage() != null;
-        setEnabledState(e.getPresentation(), enabled);
+    group.add(new BaseAction("Clear") {
+      {
+        setExecuteOutsideCommand(true);
       }
 
-      @Override
       protected void doExecute(AnActionEvent e) {
-        showHelpForCurrentMessage();
+        clear();
       }
     });
 
