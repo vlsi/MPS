@@ -23,6 +23,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.*;
+import jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.GlobalScope;
@@ -264,6 +265,10 @@ public class SModelUtil_new implements ApplicationComponent {
 
   public static DataFlowBuilderDeclaration findDataFlowDeclaration(SModel dataFlowModel, AbstractConceptDeclaration conceptDeclaration) {
     return (DataFlowBuilderDeclaration) BaseAdapter.fromNode(SModelUtil.findDataFlowDeclaration(dataFlowModel, BaseAdapter.fromAdapter(conceptDeclaration)));
+  }
+
+  public static INodeAdapter findTextgenDeclaration(SModel textgenModel, AbstractConceptDeclaration conceptDeclaration) {
+    return (ConceptTextGenDeclaration) BaseAdapter.fromNode(SModelUtil.findTextgenDeclaration(textgenModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static boolean isEmptyPropertyValue(String s) {

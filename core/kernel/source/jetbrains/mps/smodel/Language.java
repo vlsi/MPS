@@ -574,6 +574,10 @@ public class Language extends AbstractModule {
     return LanguageAspect.EDITOR.get(this);
   }
 
+  public SModelDescriptor getTextgenModelDescriptor() {
+    return LanguageAspect.TEXT_GEN.get(this);
+  }
+
   public Set<SModelDescriptor> getEditorDescriptors() {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     result.add(getEditorModelDescriptor());
