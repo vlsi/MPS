@@ -122,12 +122,12 @@ public class EditorCellModel_Behavior {
 
   public static int call_getFontStyle_1221053923273(SNode thisNode) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem"))).first(), "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem");
-    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", null) == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", null)) {
+    if ((firstItem == null) || SPropertyOperations.getString_def(firstItem, "style", "PLAIN") == null || SPropertyOperations.hasValue(firstItem, "style", "QUERY", "PLAIN")) {
       return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
     try {
-      return (Integer)classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", null)).get(null);
+      return (Integer)classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", "PLAIN")).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
       return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);

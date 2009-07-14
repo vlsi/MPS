@@ -27,11 +27,11 @@ public class RemoveQueryEnumItem_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SPropertyOperations.hasValue(node, "style", "QUERY", null);
+        return SPropertyOperations.hasValue(node, "style", "QUERY", "PLAIN");
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, "style", null);
+        SPropertyOperations.set(node, "style", "PLAIN");
       }
 
       public boolean isShowAsIntention() {

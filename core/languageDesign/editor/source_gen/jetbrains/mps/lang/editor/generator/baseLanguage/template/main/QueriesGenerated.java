@@ -1015,7 +1015,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1223902312621(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "style", null);
+    return SPropertyOperations.getString_def(_context.getNode(), "style", "PLAIN");
   }
 
   public static Object referenceMacro_GetReferent_1223904434220(final IOperationContext operationContext, final ReferenceMacroContext _context) {

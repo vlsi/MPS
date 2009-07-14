@@ -136,7 +136,7 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="1221477059106">
                 <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1221477062045">
-                  <link role="enumMember" targetNodeId="1.1101211506174" />
+                  <link role="enumMember" targetNodeId="1.1134577855137" resolveInfo="plain" />
                 </node>
               </node>
             </node>

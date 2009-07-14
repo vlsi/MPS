@@ -1228,10 +1228,7 @@
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1101211480448">
     <property name="name" value="_FontStyle_Enum" />
     <link role="memberDataType" targetNodeId="3.1082983041843" />
-    <link role="defaultMember" targetNodeId="1101211506174" resolveInfo="none" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1101211506174">
-      <property name="externalValue" value="none" />
-    </node>
+    <link role="defaultMember" targetNodeId="1134577855137" resolveInfo="plain" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1101211523070">
       <property name="name" value="bold" />
       <property name="externalValue" value="bold" />
