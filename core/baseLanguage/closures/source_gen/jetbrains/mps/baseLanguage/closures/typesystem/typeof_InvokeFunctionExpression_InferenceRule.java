@@ -32,7 +32,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225470167013", true), (SNode)new _Quotations.QuotationClass_0().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225470166995), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225470167002", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225470167013", true), (SNode)new _Quotations.QuotationClass_2().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1225470166995), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225470167002", false, 0, intentionProvider);
     }
   }
 

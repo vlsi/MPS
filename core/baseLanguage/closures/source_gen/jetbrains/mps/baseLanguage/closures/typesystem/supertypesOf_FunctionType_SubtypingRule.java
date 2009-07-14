@@ -26,7 +26,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     String rtSig = FunctionType_Behavior.call_getRuntimeClassName_1230472987259(ft) + "." + FunctionType_Behavior.call_getRuntimeSignature_1213877404927(ft);
     SNode ice = MapSequence.fromMap(RuntimeUtils.getRuntimeClassifiersMap()).get(rtSig);
     if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SNode ct = new _Quotations.QuotationClass_4().createNode(ice, typeCheckingContext);
+      SNode ct = new _Quotations.QuotationClass_12().createNode(ice, typeCheckingContext);
       if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
         SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
       }

@@ -32,7 +32,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1235747354818", true), (SNode)new _Quotations.QuotationClass_16().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1235747337257), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1235747354816", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1235747354818", true), (SNode)new _Quotations.QuotationClass_13().createNode(ptypes, typeCheckingContext.getEquationManager().getRepresentator(ret_typevar_1235747337257), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1235747354816", false, 0, intentionProvider);
     }
   }
 

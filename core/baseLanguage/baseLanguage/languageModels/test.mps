@@ -91,11 +91,6 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1216231171304" />
       </node>
     </node>
-    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="1225979302075">
-      <property name="name" value="OnlyStatementsCanbeUnReachable" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1225979302076" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216231062377" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1217271585523">
     <property name="name" value="ForLoop" />
@@ -433,15 +428,11 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1215444268410">
                 <property name="name" value="strList" />
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1215444268411">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215444268412">
-                    <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                  </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="81108310548976504" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1215444268413">
                   <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1215444268414">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215444268415">
-                      <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                    </node>
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="81108310548976508" />
                   </node>
                 </node>
               </node>
@@ -1364,11 +1355,14 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239288457694">
                 <property name="name" value="a" />
                 <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1239288457695" />
+                <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="2736903840391132361">
+                  <node role="properties" type="jetbrains.mps.lang.test.structure.NodeWarningProperty" id="2736903840391132362" />
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1226936086674">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1226936088239">
-                <property name="value" value="0" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2736903840391167421">
+                <property name="value" value="3" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="1226936098446">

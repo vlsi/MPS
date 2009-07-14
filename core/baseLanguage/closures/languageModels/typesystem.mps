@@ -3658,5 +3658,43 @@
       <link role="concept" targetNodeId="1.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="81108310549037922">
+    <property name="name" value="check_ClosureLiteralDataFlow" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="81108310549037923">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="81108310549155632">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="81108310549155633">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="81108310549155644">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="81108310549155645">
+              <link role="classConcept" targetNodeId="2v.1223640197349" resolveInfo="DataFlowUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="2v.1223640221746" resolveInfo="checkDataFlow" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="81108310549155646">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="81108310549155647">
+                  <link role="applicableNode" targetNodeId="81108310549037925" resolveInfo="closureLiteral" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="81108310549155648">
+                  <link role="link" targetNodeId="1.1199569916463" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="81108310549155642">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="81108310549155637">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="81108310549155636">
+              <link role="applicableNode" targetNodeId="81108310549037925" resolveInfo="closureLiteral" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="81108310549155641">
+              <link role="baseMethodDeclaration" targetNodeId="30.1230212745736" resolveInfo="isExecuteSynchronous" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="81108310549037925">
+      <property name="name" value="closureLiteral" />
+      <link role="concept" targetNodeId="1.1199569711397" resolveInfo="ClosureLiteral" />
+    </node>
+  </node>
 </model>
 

@@ -42,7 +42,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)new _Quotations.QuotationClass_16().createNode(SLinkOperations.getTarget(subtype, "resultType", true), typeCheckingContext), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4160512568111333309", false, 0, intentionProvider);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
       {
@@ -106,7 +106,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         result_14532009 = false;
         return result_14532009;
       }
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(subtype, "resultType", true)), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)new _Quotations.QuotationClass_16().createNode(SLinkOperations.getTarget(subtype, "resultType", true)), (SNode)SLinkOperations.getTarget(supertype, "resultType", true), true);
       if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         {
           final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
