@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
+import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.baseLanguage.collections.internal.CursorWithContinuation;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -37,7 +38,7 @@ public class ModelAccess {
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
   private EDTExecutor myEDTExecutor = new EDTExecutor();
-  private Set<Thread> myIndexingThreads = new HashSet<Thread>();
+  private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
 
   public static ModelAccess instance() {
