@@ -93,14 +93,27 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5536944308931836348">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="5536944308931836350">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5536944308931836353">
-              <property name="value" value="3" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5762995656111879790">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5762995656111879791">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5762995656111879792">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="5762995656111879793">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5762995656111879794">
+                  <property name="value" value="3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5762995656111879795">
+                  <property name="value" value="2" />
+                </node>
+              </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5536944308931836349">
-              <property name="value" value="2" />
-            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="5762995656111879796" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5762995656111879801">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5762995656111879802">
+            <property name="value" value="true" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5762995656111879803">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5762995656111879804" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5536944308931836355">
@@ -129,24 +142,61 @@
             <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3769812235505738594" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3769812235505738596">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3769812235505738598">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3769812235505738597">
-              <link role="variableDeclaration" targetNodeId="3769812235505738593" resolveInfo="node1" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="3769812235505738602">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3769812235505738606">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3769812235505738609">
-                  <link role="conceptDeclaration" targetNodeId="138.1068581242878" resolveInfo="ReturnStatement" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="512283921270380561">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="512283921270380562">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1138672459276936027">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1138672459276936028">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1138672459276936034">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1138672459276936035">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1850067011869505650">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1850067011869505651">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1850067011869505652">
+                          <property name="value" value="false" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1850067011869505653">
+                          <property name="value" value="true" />
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1850067011869505654">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1850067011869505655">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5762995656111879786">
+                            <property name="value" value="5" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1138672459276936040" />
                 </node>
               </node>
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" id="3769812235505738611">
-                <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3769812235505738613">
-                  <link role="concept" targetNodeId="138.1152728232947" resolveInfo="Closure" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="1138672459276936033" />
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="512283921270380567" />
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="512283921270380543">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="512283921270380544">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="512283921270380545">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="512283921270380546">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="512283921270380547">
+                  <link role="variableDeclaration" targetNodeId="3769812235505738593" resolveInfo="node1" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="512283921270380548">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="512283921270380549">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="512283921270380550">
+                      <link role="conceptDeclaration" targetNodeId="138.1068581242878" resolveInfo="ReturnStatement" />
+                    </node>
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList" id="512283921270380551">
+                    <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="512283921270380552">
+                      <link role="concept" targetNodeId="138.1152728232947" resolveInfo="Closure" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.Expression" id="512283921270380553" />
         </node>
       </node>
     </node>
