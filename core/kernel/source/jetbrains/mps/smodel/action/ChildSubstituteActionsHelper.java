@@ -43,6 +43,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import java.util.*;
 import java.awt.Font;
+import java.awt.event.KeyEvent;
 
 /**
  * Igor Alshannikov
@@ -159,6 +160,8 @@ public class ChildSubstituteActionsHelper {
         }
       }
     }
+
+        
 
     if (!containsRemoveDefaults(allBuilders)) {
       resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
