@@ -11632,5 +11632,62 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="5530861840380022902">
+    <property name="name" value="finalForVariables" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="5530861840380030784">
+      <link role="applicableConcept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="5530861840380091088">
+        <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart" id="5530861840380091090">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler" id="5530861840380091091">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5530861840380091092">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5530861840380094459">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5530861840380094460">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5530861840380094461">
+                    <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5530861840380094462">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="5530861840380094463" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="5530861840380094464">
+                      <link role="concept" targetNodeId="1.1068581242863" resolveInfo="LocalVariableDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5530861840380094466">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5530861840380094473">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5530861840380094468">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5530861840380094467">
+                      <link role="variableDeclaration" targetNodeId="5530861840380094460" resolveInfo="result" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5530861840380094472">
+                      <link role="property" targetNodeId="1.1176718929932" resolveInfo="isFinal" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="5530861840380094477">
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5530861840380094479">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5530861840380094481">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5530861840380094483">
+                  <link role="variableDeclaration" targetNodeId="5530861840380094460" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="5530861840380091096">
+            <property name="text" value="final" />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString" id="5530861840380091098">
+            <property name="text" value="final local variable" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
