@@ -89,7 +89,7 @@ public class DeleteLine_Action extends GeneratedAction {
       }
       if (current.isBigCell()) {
         SNode nodeToDelete = current.getSNode();
-        if ((nodeToDelete != null)) {
+        if ((nodeToDelete != null) && SNodeOperations.getParent(nodeToDelete) != null) {
           SNodeOperations.deleteNode(nodeToDelete);
         }
       }

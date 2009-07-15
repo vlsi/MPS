@@ -890,11 +890,22 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2969742747086894773">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2969742747086894772">
-                  <link role="variableDeclaration" targetNodeId="2969742747086894757" resolveInfo="nodeToDelete" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="2200397248853598370">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="2200397248853600711">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2200397248853600714" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2200397248853600706">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2200397248853600705">
+                      <link role="variableDeclaration" targetNodeId="2969742747086894757" resolveInfo="nodeToDelete" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="2200397248853600710" />
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="2969742747086894777" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2969742747086894773">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2969742747086894772">
+                    <link role="variableDeclaration" targetNodeId="2969742747086894757" resolveInfo="nodeToDelete" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="2969742747086894777" />
+                </node>
               </node>
             </node>
           </node>

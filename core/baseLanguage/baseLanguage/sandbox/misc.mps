@@ -284,6 +284,36 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7595624734444987012">
     <property name="name" value="B" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="2200397248853442147">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2200397248853442148" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2200397248853442149" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2200397248853442150">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2200397248853442151">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2200397248853442152">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2200397248853442153" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2200397248853442155">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2200397248853442156">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2200397248853442157" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2200397248853442159">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2200397248853442161">
+            <link role="baseMethodDeclaration" targetNodeId="150.~Math.min(double,double):double" resolveInfo="min" />
+            <link role="classConcept" targetNodeId="150.~Math" resolveInfo="Math" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2200397248853447345">
+              <link role="variableDeclaration" targetNodeId="2200397248853442152" resolveInfo="a" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2200397248853517665">
+              <link role="variableDeclaration" targetNodeId="2200397248853442156" resolveInfo="b" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987013" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7595624734444987014">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7595624734444987015" />
