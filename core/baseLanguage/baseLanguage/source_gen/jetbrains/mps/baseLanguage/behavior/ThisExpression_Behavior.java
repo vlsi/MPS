@@ -18,7 +18,11 @@ public class ThisExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false))) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
+        SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
+        if ((classifier == null)) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(classifier);
       } else
       {
         ListSequence.fromList(result).addElement(current);
