@@ -195,7 +195,7 @@ public class GeneratorUtil {
         resultList = CollectionUtil.asList((Iterable<SNode>) result);
       }
 
-      checkForNulls(resultList);
+      CollectionUtil.checkForNulls(resultList);
 
       return resultList;
     } catch (NoSuchMethodException e) {
@@ -205,14 +205,6 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);
       return new LinkedList<SNode>();
-    }
-  }
-
-  private static void checkForNulls(List<SNode> resultList) {
-    for (SNode node : resultList) {
-      if (node == null) {
-        throw new RuntimeException("null are not allowed in lists returned by sourceNodeQueries");
-      }
     }
   }
 

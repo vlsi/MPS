@@ -222,4 +222,17 @@ public class CollectionUtil {
     }
     return false;
   }
+
+  public static<T> void checkForNulls(Iterable<T> resultList) {
+    checkForNulls(resultList, "");
+  }
+
+
+  public static<T> void checkForNulls(Iterable<T> resultList, String message) {
+    for (T node : resultList) {
+      if (node == null) {
+        throw new RuntimeException("nulls are not allowed here. " + message);
+      }
+    }
+  }
 }
