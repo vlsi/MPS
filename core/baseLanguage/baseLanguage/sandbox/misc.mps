@@ -275,7 +275,16 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7595624734444987008">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7595624734444987009" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987010" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7595624734444987011" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7595624734444987011">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4768171343556943481">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4768171343556943482">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="4768171343556943484">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="463475614763849030" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7595624734444987021">
         <property name="name" value="i" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7595624734444987022" />

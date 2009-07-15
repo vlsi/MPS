@@ -17688,5 +17688,41 @@
       <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="4646069078285986155">
+    <property name="name" value="voidArraysAreIllegal" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4646069078285986156">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4768171343556951286">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4768171343556951287">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4646069078286000769">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4646069078286000772">
+              <property name="value" value="void array is illegal" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4768171343556952427">
+              <link role="applicableNode" targetNodeId="4768171343556943487" resolveInfo="arrayType" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4768171343556952420">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4768171343556951291">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4768171343556951290">
+              <link role="applicableNode" targetNodeId="4768171343556943487" resolveInfo="arrayType" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4768171343556952419">
+              <link role="link" targetNodeId="1.1070534760952" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4768171343556952424">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4768171343556952426">
+              <link role="conceptDeclaration" targetNodeId="1.1068581517677" resolveInfo="VoidType" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4768171343556943487">
+      <property name="name" value="arrayType" />
+      <link role="concept" targetNodeId="1.1070534760951" resolveInfo="ArrayType" />
+    </node>
+  </node>
 </model>
 
