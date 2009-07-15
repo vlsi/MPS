@@ -6,6 +6,11 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MakeMethodAbstarct_Intention extends BaseIntention {
 
@@ -25,15 +30,33 @@ public class MakeMethodAbstarct_Intention extends BaseIntention {
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Make Method Abstract";
+    return (SPropertyOperations.getBoolean(node, "isAbstract") ?
+      "Make Method Not Abstract" :
+      "Make Method Abstract"
+    );
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    SNode contextNode = editorContext.getSelectedNode();
+    if (contextNode == null) {
+      return true;
+    }
+    List<SNode> includingStatementLists = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.StatementList", true);
+    Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter <SNode>() {
+
+      public boolean accept(SNode it) {
+        return SNodeOperations.hasRole(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "body");
+      }
+    });
+    return Sequence.fromIterable(includingBodies).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isAbstract", "" + true);
+    SPropertyOperations.set(node, "isAbstract", "" + !(SPropertyOperations.getBoolean(node, "isAbstract")));
   }
 
   public String getLocationString() {
