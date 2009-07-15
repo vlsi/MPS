@@ -111,8 +111,8 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     return true;
   }
 
-  private void disposeTabs(){
-    for (UsageViewData data:myUsageViewsData){
+  private void disposeTabs() {
+    for (UsageViewData data : myUsageViewsData) {
       data.myUsagesView.dispose();
     }
   }

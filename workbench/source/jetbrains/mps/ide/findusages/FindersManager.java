@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -136,7 +135,7 @@ public class FindersManager implements ApplicationComponent {
                   finders.add((GeneratedFinder) finder);
                   myFinders.put(conceptName, finders);
                   myNodesByFinder.put((GeneratedFinder) finder, finderDeclaration.getNode());
-                } 
+                }
               } catch (Exception e) {
                 LOG.error(e, finderDeclaration);
               }
