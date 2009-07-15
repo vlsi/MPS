@@ -39,7 +39,7 @@ public class ReplaceDialog extends BaseDialog {
   public ReplaceDialog(final IOperationContext context, final Language language) {
     super(context.getMainFrame(), "Modify Instances by condition");
     this.myContext = context;
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
         ReplaceDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", null);
