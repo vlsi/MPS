@@ -17,7 +17,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");
 
   public String getDescription() {
-    return "Exact Method Usages ";
+    return "Exact Method Usages";
   }
 
   public String getLongDescription() {
@@ -29,7 +29,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null)) {
       return false;
     }
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");

@@ -193,9 +193,13 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8653018021044982319">
       <property name="isAbstract" value="true" />
       <property name="name" value="superMethod" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8653018021044982320" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8653018021044982321" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8653018021044982322" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6256052658994541223" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6256052658994541219" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7845762544775467736">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6256052658994541220" />
+      </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8653018021044982318" />
   </node>

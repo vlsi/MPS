@@ -3546,7 +3546,7 @@
   </node>
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration" id="1227527031007">
     <property name="name" value="ExactMethodUsages" />
-    <property name="description" value="Exact Method Usages " />
+    <property name="description" value="Exact Method Usages" />
     <property name="longDescription" value="Usages of exactly this method, not including usages of overriding methods" />
     <link role="forConcept" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     <node role="findFunction" type="jetbrains.mps.lang.findUsages.structure.FindBlock" id="1227527031008">
@@ -3615,8 +3615,8 @@
               <node role="operand" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node" id="1228129663224" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1228129669629">
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1228131252727">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1228131256836">
-                    <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7671991532061310279">
+                    <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
                   </node>
                 </node>
               </node>
