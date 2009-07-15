@@ -17418,5 +17418,57 @@
       <link role="concept" targetNodeId="1.8064396509828172209" resolveInfo="UnaryMinus" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="5091709661843944852">
+    <property name="name" value="checkAbstractClassCreators" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5091709661843944853">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5091709661844002992">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5091709661844002993">
+          <property name="name" value="classConcept" />
+          <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5091709661844002994">
+            <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5091709661844002995">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5091709661844002996">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5091709661844002997">
+                <link role="applicableNode" targetNodeId="5091709661843994415" resolveInfo="classCreator" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5091709661844002998">
+                <link role="link" targetNodeId="1.1212686240295" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5091709661844002999">
+              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5091709661844003000">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5091709661844003001">
+                  <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="5091709661844003008">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5091709661844003022">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5091709661844003023">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5091709661844003024">
+              <link role="variableDeclaration" targetNodeId="5091709661844002993" resolveInfo="classConcept" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5091709661844003025">
+              <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
+            </node>
+          </node>
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5091709661844003026">
+          <property name="value" value="can't instantiate abstract class" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5091709661844003027">
+          <link role="applicableNode" targetNodeId="5091709661843994415" resolveInfo="classCreator" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5091709661843994415">
+      <property name="name" value="classCreator" />
+      <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
+    </node>
+  </node>
 </model>
 
