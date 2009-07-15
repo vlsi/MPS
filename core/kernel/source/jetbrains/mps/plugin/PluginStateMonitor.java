@@ -42,6 +42,8 @@ public class PluginStateMonitor implements ProjectComponent {
   private MyTimer myTimer;
   private JLabel myLabel;
   private State myState = State.TRYING_TO_CONNECT;
+  private StatusBar myStatusBar;
+  private MouseAdapter myListener;
 
   public PluginStateMonitor(Project project) {
     myProject = project;
@@ -60,34 +62,46 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   public void projectOpened() {
-    StatusBar bar = getStatusBar();
-    if (bar != null) {
-      myLabel = new JLabel();
-      myLabel.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-          if (myState == State.DISCONNECTED) {
-            setNewState(State.TRYING_TO_CONNECT);
-            myTimer.setNewDelay(INITIAL_DELAY);
-          }
-        }
-      });
-      bar.addCustomIndicationComponent(myLabel);
+    myStatusBar = getStatusBar();
+    if (myStatusBar == null) return;
 
-      myTimer = new MyTimer(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-          tick();
+    myLabel = new JLabel();
+    myListener = new MouseAdapter() {
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        if (myState == State.DISCONNECTED) {
+          setNewState(State.TRYING_TO_CONNECT);
+          myTimer.setNewDelay(INITIAL_DELAY);
         }
-      });
-      myTimer.start();
+      }
+    };
+    myLabel.addMouseListener(myListener);
+    myStatusBar.addCustomIndicationComponent(myLabel);
+
+    myTimer = new MyTimer(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        tick();
+      }
+    });
+    myTimer.start();
+  }
+
+  public void projectClosed() {
+    if (myStatusBar == null) return;
+
+    if (myTimer.isRunning()) {
+      myTimer.stop();
     }
+
+    myLabel.removeMouseListener(myListener);
+    myStatusBar.removeCustomIndicationComponent(myLabel);
   }
 
   private void tick() {
     if (myState == State.CONNECTED && isConnected()) return;
 
-    if (myState == State.DISCONNECTED){
-      if (MPSPlugin.getInstance().checkIsConnected()){
+    if (myState == State.DISCONNECTED) {
+      if (MPSPlugin.getInstance().checkIsConnected()) {
         setNewState(State.CONNECTED);
         myTimer.setNewDelay(INITIAL_DELAY);
       }
@@ -112,16 +126,6 @@ public class PluginStateMonitor implements ProjectComponent {
           myTimer.setNewDelay(INITIAL_DELAY);
         }
       }
-    }
-  }
-
-  public void projectClosed() {
-    StatusBar bar = getStatusBar();
-    if (bar != null) {
-      if (myTimer.isRunning()) {
-        myTimer.stop();
-      }
-      bar.removeCustomIndicationComponent(myLabel);
     }
   }
 
