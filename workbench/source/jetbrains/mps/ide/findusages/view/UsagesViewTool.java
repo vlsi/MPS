@@ -111,6 +111,12 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
     return true;
   }
 
+  private void disposeTabs(){
+    for (UsageViewData data:myUsageViewsData){
+      data.myUsagesView.dispose();
+    }
+  }
+
   public void closeTab(int index) {
     LOG.checkEDT();
 
@@ -147,6 +153,9 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   public void doUnregister() {
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);
+
+    disposeTabs();
+
     UsagesViewTracker.unregister(this);
   }
 
