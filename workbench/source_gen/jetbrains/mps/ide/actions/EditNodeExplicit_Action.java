@@ -16,15 +16,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-public class EditNode_Action extends GeneratedAction {
+public class EditNodeExplicit_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(EditNode_Action.class);
+  protected static Log log = LogFactory.getLog(EditNodeExplicit_Action.class);
 
   private List<SNode> nodes;
   private IOperationContext context;
 
-  public EditNode_Action() {
-    super("Edit", "", ICON);
+  public EditNodeExplicit_Action() {
+    super("Edit (No Tabs)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -39,7 +39,7 @@ public class EditNode_Action extends GeneratedAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "EditNode", t);
+        log.error("User's action doUpdate method failed. Action:" + "EditNodeExplicit", t);
       }
       this.disable(event.getPresentation());
     }
@@ -74,15 +74,15 @@ public class EditNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      MPSEditorOpener opener = EditNode_Action.this.context.getComponent(MPSEditorOpener.class);
-      for(SNode node : EditNode_Action.this.nodes) {
+      MPSEditorOpener opener = EditNodeExplicit_Action.this.context.getComponent(MPSEditorOpener.class);
+      for(SNode node : EditNodeExplicit_Action.this.nodes) {
         if (node != null) {
-          opener.editNode(node, EditNode_Action.this.context);
+          opener.editNodeExplicit(node, EditNodeExplicit_Action.this.context);
         }
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "EditNode", t);
+        log.error("User's action execute method failed. Action:" + "EditNodeExplicit", t);
       }
     }
   }

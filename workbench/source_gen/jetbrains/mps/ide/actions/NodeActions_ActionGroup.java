@@ -17,6 +17,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       this.addAction("jetbrains.mps.ide.actions.EditNode_Action", "jetbrains.mps.ide");
+      this.addAction("jetbrains.mps.ide.actions.EditNodeExplicit_Action", "jetbrains.mps.ide");
       this.addSeparator();
       this.addAction("jetbrains.mps.ide.actions.SetNodePackage_Action", "jetbrains.mps.ide");
       this.addSeparator();

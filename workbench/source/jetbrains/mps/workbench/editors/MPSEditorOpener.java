@@ -157,31 +157,48 @@ public class MPSEditorOpener implements ProjectComponent {
     });
   }
 
+
   public IEditor editNode(final SNode node, final IOperationContext context) {
+    return editNode(node, context, true);
+  }
+
+  public IEditor editNodeExplicit(final SNode node, final IOperationContext context) {
+    return editNode(node, context, false);
+  }
+
+  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+    return openNode(node, context, focus, select, true);
+  }
+
+  public IEditor openNodeExplicit(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+    return openNode(node, context, focus, select, false);
+  }
+
+  private IEditor editNode(final SNode node, final IOperationContext context, boolean openBaseNode) {
     boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !node.isRoot();
       }
     });
-    return openNode(node, context, true, select);
+    return openNode(node, context, true, select, openBaseNode);
   }
 
-  public IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+  private IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
     final Project ideaProject = context.getComponent(Project.class);
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
       public IEditor compute() {
-        return doOpenNode(node, context, focus, select);
+        return doOpenNode(node, context, focus, select, openBaseNode);
       }
     });
   }
 
-  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
+  private IEditor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select, boolean openBaseNode) {
     assert node.isRegistered() : "You can't edit unregistered node";
 
     //open editor
     SNode containingRoot = node.getContainingRoot();
-    final IEditor nodeEditor = openEditor(containingRoot, context);
+    final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
 
     //restore inspector state for opened editor (if exists)
     restorePrevSelectionInInspector(nodeEditor, context, getInspector());
@@ -285,8 +302,13 @@ public class MPSEditorOpener implements ProjectComponent {
     component.changeSelection(component.getRootCell());
   }
 
-  private IEditor openEditor(final SNode root, IOperationContext context) {
-    SNode baseNode = getBaseNode(context, root);
+  private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
+    SNode baseNode = null;
+
+    if (openBaseNode) {
+      baseNode = getBaseNode(context, root);
+    }
+
     if (baseNode == null) {
       baseNode = root;
     }
