@@ -269,5 +269,37 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7595624734444987006">
+    <property name="name" value="A" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987007" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7595624734444987008">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7595624734444987009" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987010" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7595624734444987011" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7595624734444987021">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7595624734444987022" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7595624734444987012">
+    <property name="name" value="B" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987013" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="7595624734444987014">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7595624734444987015" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7595624734444987016" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7595624734444987017">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="7595624734444987023">
+          <link role="baseMethodDeclaration" targetNodeId="7595624734444987008" resolveInfo="A" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7595624734444987024">
+            <property name="value" value="2" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="7595624734444987020">
+      <link role="classifier" targetNodeId="7595624734444987006" resolveInfo="A" />
+    </node>
+  </node>
 </model>
 
