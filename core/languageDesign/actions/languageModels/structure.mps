@@ -2200,6 +2200,10 @@
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}/icons/pasteWrapper.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4975090607137492731">
+      <property name="value" value="paste wrappers" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1221135307644">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -2292,6 +2296,10 @@
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}/icons/smartActions.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4975090607137506366">
+      <property name="value" value="smart editor actions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1235051364953">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="surroundWith" />
