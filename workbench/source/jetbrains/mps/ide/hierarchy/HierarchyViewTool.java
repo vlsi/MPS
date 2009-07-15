@@ -22,11 +22,16 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.findusages.INavigateableTool;
+import jetbrains.mps.ide.findusages.INavigator;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
 
+import javax.swing.tree.TreePath;
+import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> {
+public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> implements INavigateableTool {
   private LanguageHierarchyCache myCache;
 
   public HierarchyViewTool(Project project, LanguageHierarchyCache cache) {
@@ -36,6 +41,42 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
     return new ConceptHierarchyTree(this, isParentHierarchy);
+  }
+
+  protected void doRegister() {
+    UsagesViewTracker.register(this);
+  }
+
+  protected void doUnregister() {
+    UsagesViewTracker.unregister(this);
+  }
+
+  public int getPriority() {
+    return 2;
+  }
+
+  public INavigator getCurrentNavigateableView() {
+    return new INavigator() {
+      public void goToNext() {
+        TreePath path = myHierarchyTree.getSelectionPath();
+        HierarchyTreeNode selectedNode = (HierarchyTreeNode) path.getLastPathComponent();
+        HierarchyTreeNode<AbstractConceptDeclaration> nextNode = ((HierarchyTreeNode<AbstractConceptDeclaration>) selectedNode.getNextNode());
+        if (nextNode!=null){
+          myHierarchyTree.selectNode(nextNode);
+          nextNode.doubleClick();
+        }
+      }
+
+      public void goToPrevious() {
+        TreePath path = myHierarchyTree.getSelectionPath();
+        HierarchyTreeNode selectedNode = (HierarchyTreeNode) path.getLastPathComponent();
+        HierarchyTreeNode<AbstractConceptDeclaration> nextNode = ((HierarchyTreeNode<AbstractConceptDeclaration>) selectedNode.getPreviousNode());
+        if (nextNode!=null){
+          myHierarchyTree.selectNode(nextNode);
+          nextNode.doubleClick();
+        }
+      }
+    };
   }
 
   private class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {

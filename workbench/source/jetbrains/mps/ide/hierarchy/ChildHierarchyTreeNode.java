@@ -67,6 +67,11 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
     });
   }
 
+  @Override
+  public boolean isLeaf() {
+    return getChildCount() == 0;
+  }
+
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
