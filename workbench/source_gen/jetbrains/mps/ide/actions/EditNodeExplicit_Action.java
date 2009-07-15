@@ -77,7 +77,7 @@ public class EditNodeExplicit_Action extends GeneratedAction {
       MPSEditorOpener opener = EditNodeExplicit_Action.this.context.getComponent(MPSEditorOpener.class);
       for(SNode node : EditNodeExplicit_Action.this.nodes) {
         if (node != null) {
-          opener.editNodeExplicit(node, EditNodeExplicit_Action.this.context);
+          opener.editNodeExplicitly(node, EditNodeExplicit_Action.this.context);
         }
       }
     } catch (Throwable t) {

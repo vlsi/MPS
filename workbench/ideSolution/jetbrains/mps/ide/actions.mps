@@ -22937,7 +22937,7 @@
                       <link role="variableDeclaration" targetNodeId="2268726300190619265" resolveInfo="opener" />
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2268726300190619288">
-                      <link role="baseMethodDeclaration" targetNodeId="62.~MPSEditorOpener.editNodeExplicit(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.ide.IEditor" resolveInfo="editNodeExplicit" />
+                      <link role="baseMethodDeclaration" targetNodeId="62.~MPSEditorOpener.editNodeExplicitly(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):jetbrains.mps.ide.IEditor" resolveInfo="editNodeExplicitly" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2268726300190619289">
                         <link role="variableDeclaration" targetNodeId="2268726300190619277" resolveInfo="node" />
                       </node>
