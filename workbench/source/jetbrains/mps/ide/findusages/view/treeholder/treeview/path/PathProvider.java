@@ -16,12 +16,12 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -68,9 +68,9 @@ public class PathProvider {
 
   private static void appendNodePathThroughNamedConcepts(List<PathItem> path, SNode node) {
     String name;
-    try{
+    try {
       name = node.getName();
-    }catch (Throwable t){
+    } catch (Throwable t) {
       LOG.error(t);
       name = "<getName() caused an exception on this node>";
     }

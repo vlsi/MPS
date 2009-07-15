@@ -185,7 +185,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
       next = new DataNode(data);
       root.add(next);
     } else {
-      adjustNode(next,path,index);
+      adjustNode(next, path, index);
     }
     if (index == path.size() - 1) {
       return next;
@@ -195,7 +195,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   }
 
   private void adjustNode(DataNode next, ArrayList<PathItem> path, int index) {
-    next.getData().setIsResultNode_internal(index==path.size()-1);
+    next.getData().setIsResultNode_internal(index == path.size() - 1);
   }
 
   //----READ/WRITE STUFF----
