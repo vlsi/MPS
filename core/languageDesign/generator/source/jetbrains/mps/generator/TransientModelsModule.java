@@ -40,7 +40,10 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   private Set<String> myModelsToKeep = new HashSet<String>();
   private int myNumber = ourModuleCounter.getAndIncrement();
 
-  public TransientModelsModule(Project project) {
+  //the second parameter is needed because there is a time dependency -
+  //MPSProjectHolder must be disposed after TransientModelsModule for
+  //the module's models to be disposed
+  public TransientModelsModule(Project project,MPSProjectHolder mpsProject) {
     myProject = project;
     ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
     setModulePointer(reference);
@@ -68,7 +71,12 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   }
 
   public void disposeComponent() {
-
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        clearAll();
+        MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
+      }
+    });
   }
 
   private MPSProject getMPSProject() {
@@ -109,7 +117,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public void dispose() {
     super.dispose();
-    SModelRepository.getInstance().unRegisterModelDescriptors(this);
+    clearAll();
   }
 
   public void clearAll() {
