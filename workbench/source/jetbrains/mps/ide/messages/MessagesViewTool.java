@@ -30,6 +30,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.ide.findusages.INavigateableTool;
+import jetbrains.mps.ide.findusages.INavigator;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
@@ -63,7 +66,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     )
   }
 )
-public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState> {
+public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState>, INavigateableTool {
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
@@ -493,6 +496,47 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myWarningsAction.setSelected(null, state.isWarnings());
     myInfoAction.setSelected(null, state.isInfo());
     myAutoscrollToSourceAction.setSelected(null, state.isAutoscrollToSource());
+  }
+
+  protected void doRegister() {
+    UsagesViewTracker.register(this);
+  }
+
+  protected void doUnregister() {
+    UsagesViewTracker.unregister(this);
+  }
+
+  public int getPriority() {
+    return 1;
+  }
+
+  public INavigator getCurrentNavigateableView() {
+    return new INavigator() {
+      public void goToNext() {
+        int i = Math.max(0, myList.getSelectedIndex()+1);
+
+        for (; i < myModel.getSize(); i++) {
+          if (tryNavigate(i)) return;
+        }
+      }
+
+      public void goToPrevious() {
+        int i = Math.min(myModel.getSize() - 1, myList.getSelectedIndex()-1);
+
+        for (; i >= 0; i--) {
+          if (tryNavigate(i)) return;
+        }
+      }
+
+      public boolean tryNavigate(int index) {
+        Message msg = ((Message) myModel.getElementAt(index));
+        if (msg.getHintObject() == null) return false;
+        myList.setSelectedIndex(index);
+        myList.ensureIndexIsVisible(index);
+        openCurrentMessageNodeIfPossible();
+        return true;
+      }
+    };
   }
 
   public static class MyState {

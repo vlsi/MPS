@@ -34,13 +34,13 @@ import java.util.List;
 public class UsagesViewTracker implements ApplicationComponent {
   private static final String PREV_COMMAND = "FindUsages.Previous";
   private static final String NEXT_COMMAND = "FindUsages.Next";
-  private static List<INavigateableUsagesTool> myTools = new ArrayList<INavigateableUsagesTool>();
+  private static List<INavigateableTool> myTools = new ArrayList<INavigateableTool>();
 
-  public static void register(INavigateableUsagesTool tool) {
+  public static void register(INavigateableTool tool) {
     myTools.add(tool);
   }
 
-  public static void unregister(INavigateableUsagesTool tool) {
+  public static void unregister(INavigateableTool tool) {
     myTools.remove(tool);
   }
 
@@ -52,15 +52,28 @@ public class UsagesViewTracker implements ApplicationComponent {
     return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
   }
 
-  public static UsagesView getOperatingView() {
-    Collections.sort(myTools, new Comparator<INavigateableUsagesTool>() {
-      public int compare(INavigateableUsagesTool t1, INavigateableUsagesTool t2) {
+  public static INavigator getNavigator() {
+    Collections.sort(myTools, new Comparator<INavigateableTool>() {
+      public int compare(INavigateableTool t1, INavigateableTool t2) {
+        boolean v1 = t1.getToolWindow().isVisible();
+        boolean v2 = t2.getToolWindow().isVisible();
+        
+        if (v1 && !v2) return -1;
+        if (!v1 && v2) return 1;
+
+        boolean a1 = t1.getToolWindow().isAvailable();
+        boolean a2 = t2.getToolWindow().isAvailable();
+
+        if (a1 && !a2) return -1;
+        if (!a1 && a2) return 1;
+
         return t1.getPriority() - t2.getPriority();
       }
     });
 
-    for (INavigateableUsagesTool tool : myTools) {
-      if (tool.getCurrentView() != null) return tool.getCurrentView();
+    for (INavigateableTool tool : myTools) {
+      INavigator navigator = tool.getCurrentNavigateableView();
+      if (navigator != null) return navigator;
     }
 
     return null;
@@ -78,16 +91,16 @@ public class UsagesViewTracker implements ApplicationComponent {
 
     am.registerAction(PREV_COMMAND, new AnAction() {
       public void actionPerformed(AnActionEvent e) {
-        UsagesView usagesView = getOperatingView();
-        if (usagesView != null) usagesView.goToPrevious();
+        INavigator navigator = getNavigator();
+        if (navigator != null) navigator.goToPrevious();
       }
     });
     keymap.addShortcut(PREV_COMMAND, getPrevShortcut());
 
     am.registerAction(NEXT_COMMAND, new AnAction() {
       public void actionPerformed(AnActionEvent e) {
-        UsagesView usagesView = getOperatingView();
-        if (usagesView != null) usagesView.goToNext();
+        INavigator navigator = getNavigator();
+        if (navigator != null) navigator.goToNext();
       }
     });
     keymap.addShortcut(NEXT_COMMAND, getNextShortcut());

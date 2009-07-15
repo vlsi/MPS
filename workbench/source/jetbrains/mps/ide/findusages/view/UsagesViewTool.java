@@ -30,10 +30,7 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.*;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -66,7 +63,7 @@ import java.util.List;
     )
   }
 )
-public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element>, INavigateableUsagesTool {
+public class UsagesViewTool extends BaseProjectTool implements PersistentStateComponent<Element>, INavigateableTool {
   private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
 
   private static final String VERSION_NUMBER = "0.9997";
@@ -95,7 +92,7 @@ public class UsagesViewTool extends BaseProjectTool implements PersistentStateCo
   }
 
   @Nullable
-  public UsagesView getCurrentView() {
+  public INavigator getCurrentNavigateableView() {
     LOG.checkEDT();
 
     int index = getCurrentTabIndex();

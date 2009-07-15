@@ -18,24 +18,21 @@ package jetbrains.mps.refactoring;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.ContentManager;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
+import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
-import javax.swing.JRootPane;
 import java.util.List;
 import java.util.ArrayList;
 
-public class RefactoringView extends BaseProjectTool implements INavigateableUsagesTool {
+public class RefactoringView extends BaseProjectTool implements INavigateableTool {
   private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
 
   protected RefactoringView(Project project) {
@@ -89,7 +86,7 @@ public class RefactoringView extends BaseProjectTool implements INavigateableUsa
     return -1;
   }
 
-  public UsagesView getCurrentView() {
+  public INavigator getCurrentNavigateableView() {
     int currentTabIndex = getCurrentTabIndex();
     if (currentTabIndex >= 0 && currentTabIndex < myRefactoringViewItems.size()) {
       return myRefactoringViewItems.get(currentTabIndex).getUsagesView();

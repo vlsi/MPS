@@ -26,6 +26,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -52,7 +53,7 @@ import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UsagesView implements IExternalizeable {
+public abstract class UsagesView implements IExternalizeable, INavigator {
   //read/write constants
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";

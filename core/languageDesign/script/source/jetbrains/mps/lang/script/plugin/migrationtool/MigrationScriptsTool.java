@@ -24,8 +24,9 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.ide.findusages.INavigateableUsagesTool;
+import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -48,7 +49,7 @@ import java.util.List;
  * Igor Alshannikov
  * Jun 19, 2008
  */
-public class MigrationScriptsTool extends BaseProjectTool implements INavigateableUsagesTool{
+public class MigrationScriptsTool extends BaseProjectTool implements INavigateableTool {
   private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;
@@ -157,7 +158,7 @@ public class MigrationScriptsTool extends BaseProjectTool implements INavigateab
     return -1;
   }
 
-  public UsagesView getCurrentView() {
+  public INavigator getCurrentNavigateableView() {
     int currentTabIndex = getCurrentTabIndex();
     if (currentTabIndex >= 0 && currentTabIndex < myViews.size()) {
       return myViews.get(currentTabIndex).getUsagesView();
