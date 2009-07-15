@@ -44,7 +44,7 @@ public class FindInstancesDialog extends BaseDialog {
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
       public void run() {
         FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
