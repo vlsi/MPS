@@ -3490,5 +3490,62 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="6778605776625957377">
+    <property name="package" value="parenthesisUtil" />
+    <property name="name" value="PriorityProblem" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6778605776625982935">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6778605776625982936" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6778605776625982937" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776625982938">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6778605776625985222">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
+          <property name="cellId" value="Constant_6577_0" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6778605776625982939">
+      <property name="name" value="method" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6778605776625982940" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6778605776625982941" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776625982942">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6778605776625985213">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6778605776625985214">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="6778605776625985215">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985216">
+                <property name="value" value="2" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6778605776625985217">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985218">
+                  <property name="value" value="4" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985219">
+                  <property name="value" value="5" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6778605776625985220">
+              <property name="value" value="true" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6778605776625985221">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="4" />
+                <property name="selectionEnd" value="4" />
+                <property name="cellId" value="property_value" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776625985223">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="6778605776625985226">
+        <property name="keys" value="2&gt;4+5&amp;&amp;true" />
+      </node>
+    </node>
+  </node>
 </model>
 

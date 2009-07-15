@@ -1913,12 +1913,7 @@ __switch__:
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
             SLinkOperations.setTarget(result, "leftExpression", _context.getSourceNode(), true);
-            if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-              ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
-            } else
-            {
-              ParenthesisUtil.checkOperationWRTPriority(result);
-            }
+            ParenthesisUtil.checkOperationWRTPriority(result);
             return result;
           }
         });
@@ -2779,12 +2774,7 @@ __switch__:
               SNode nodeToProcess = _context.getSourceNode();
               SNodeOperations.replaceWithAnother(nodeToProcess, result);
               SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-                ParenthesisUtil.checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
-              } else
-              {
-                ParenthesisUtil.checkOperationWRTPriority(result);
-              }
+              ParenthesisUtil.checkOperationWRTPriority(result);
               return result;
             }
           }

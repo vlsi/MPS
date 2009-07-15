@@ -101,43 +101,11 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1182804849705">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182804849706">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6466156010038565068">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6466156010038565070">
-                    <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
-                    <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="6466156010038566199">
-                      <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6466156010038565071">
-                        <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="6466156010038565072" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6466156010038566198" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967537">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977952131">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1182804856949" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1182804860140" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1182804863424">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1182804866355">
-                    <link role="conceptDeclaration" targetNodeId="1.1081773326031" />
-                  </node>
-                </node>
-              </node>
-              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1182804899437">
-                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182804899438">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6466156010038557679">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6466156010038557681">
-                      <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
-                      <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="6466156010038557682" />
-                    </node>
-                  </node>
-                </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5391504215793252219">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5391504215793252220">
+                <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
+                <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="5391504215793252221" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182804912272">
@@ -189,43 +157,11 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215608453591">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608453592">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6466156010038566207">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6466156010038566209">
-                    <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
-                    <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="6466156010038566213">
-                      <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6466156010038566210">
-                        <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="6466156010038566211" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6466156010038566212" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215608453598">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215608453599">
-                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="1215608453600" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1215608453601" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1215608453602">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1215608453603">
-                    <link role="conceptDeclaration" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-                  </node>
-                </node>
-              </node>
-              <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1215608453604">
-                <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215608453605">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6466156010038566202">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6466156010038566204">
-                      <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
-                      <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="6466156010038566205" />
-                    </node>
-                  </node>
-                </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5391504215793252223">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5391504215793252224">
+                <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
+                <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="5391504215793252225" />
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215608453609">
