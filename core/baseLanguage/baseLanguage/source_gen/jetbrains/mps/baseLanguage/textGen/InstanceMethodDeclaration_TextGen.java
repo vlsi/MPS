@@ -60,7 +60,6 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
       } else
       {
-        assert (SLinkOperations.getTarget(node, "body", true) != null);
         this.appendNewLine();
         this.appendWithIndent("throw new RuntimeException(\"NOT IMPLEMENTED\");");
       }
