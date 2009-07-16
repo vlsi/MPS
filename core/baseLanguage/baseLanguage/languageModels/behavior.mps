@@ -7111,6 +7111,24 @@
       <property name="name" value="isVariableDefinedInThisMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1225456285974" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225456272520">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7171826798968964856">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7171826798968964857">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7171826798968964871">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7171826798968964873">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7171826798968964866">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7171826798968964861">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7171826798968964860" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7171826798968964865">
+                <link role="link" targetNodeId="1.1070568296581" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="7171826798968964870" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225456338788">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225456338789">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1225456361167">
