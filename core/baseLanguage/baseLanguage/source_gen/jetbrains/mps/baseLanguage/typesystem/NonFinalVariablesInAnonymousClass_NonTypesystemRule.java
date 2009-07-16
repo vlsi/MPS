@@ -6,8 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -20,6 +20,9 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
   }
 
   public void applyRule(final SNode localVariableReference, final TypeCheckingContext typeCheckingContext) {
+    if ((SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false) == null)) {
+      return;
+    }
     if (!(SPropertyOperations.getBoolean(SLinkOperations.getTarget(localVariableReference, "variableDeclaration", false), "isFinal"))) {
       if (!(LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(localVariableReference))) {
         {
