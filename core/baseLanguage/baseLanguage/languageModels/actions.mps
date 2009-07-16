@@ -42,7 +42,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
-  <maxImportIndex value="69" />
+  <maxImportIndex value="70" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -70,6 +70,7 @@
   <import index="67" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="68" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="69" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="70" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="sideTransforms" />
@@ -103,8 +104,8 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5391504215793252219">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5391504215793252220">
-                <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
+                <link role="classConcept" targetNodeId="70.155142699038773182" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="70.155142699038773694" resolveInfo="checkOperationWRTPriority" />
                 <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="5391504215793252221" />
               </node>
             </node>
@@ -159,8 +160,8 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5391504215793252223">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5391504215793252224">
-                <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
-                <link role="baseMethodDeclaration" targetNodeId="64.1237573986784" resolveInfo="checkOperationWRTPriority" />
+                <link role="classConcept" targetNodeId="70.155142699038773182" resolveInfo="ParenthesisUtil" />
+                <link role="baseMethodDeclaration" targetNodeId="70.155142699038773694" resolveInfo="checkOperationWRTPriority" />
                 <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result" id="5391504215793252225" />
               </node>
             </node>
@@ -11110,8 +11111,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235993978261">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235993987445">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240230390793">
-                  <link role="baseMethodDeclaration" targetNodeId="64.1237567358423" resolveInfo="createParenthesis" />
-                  <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                  <link role="classConcept" targetNodeId="70.155142699038773182" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="70.155142699038773206" resolveInfo="createParenthesis" />
                   <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1240230390794" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240230390795">
                     <property name="value" value="false" />
@@ -11139,8 +11140,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235991384134">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1235991785447">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240230399361">
-                  <link role="baseMethodDeclaration" targetNodeId="64.1237567358423" resolveInfo="createParenthesis" />
-                  <link role="classConcept" targetNodeId="64.1237567185891" resolveInfo="ParenthesisUtil" />
+                  <link role="classConcept" targetNodeId="70.155142699038773182" resolveInfo="ParenthesisUtil" />
+                  <link role="baseMethodDeclaration" targetNodeId="70.155142699038773206" resolveInfo="createParenthesis" />
                   <node role="actualArgument" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1240230399362" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240230399363">
                     <property name="value" value="true" />

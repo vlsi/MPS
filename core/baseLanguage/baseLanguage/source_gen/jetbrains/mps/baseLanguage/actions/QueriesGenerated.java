@@ -61,7 +61,7 @@ import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
