@@ -775,5 +775,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7204977815415971302" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="919572754501605640">
+    <link role="concept" targetNodeId="1.1227096774658" resolveInfo="MessageStatement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="919572754501605641">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="919572754501605642" />
+    </node>
+  </node>
 </model>
 

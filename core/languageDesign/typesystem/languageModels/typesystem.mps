@@ -999,6 +999,7 @@
                     <link role="conceptDeclaration" targetNodeId="1.1175147569072" resolveInfo="AbstractSubtypingRule" />
                   </node>
                 </node>
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="4894962301389218656" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="5239146621999643628" />
@@ -1023,6 +1024,7 @@
                     <link role="conceptDeclaration" targetNodeId="1.1195213580585" resolveInfo="AbstractCheckingRule" />
                   </node>
                 </node>
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="4894962301389218658" />
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="2386296566107170473" />
@@ -1045,6 +1047,7 @@
                       <link role="conceptDeclaration" targetNodeId="9.1068580123132" resolveInfo="BaseMethodDeclaration" />
                     </node>
                   </node>
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="4894962301389218660" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="5239146621999643518">

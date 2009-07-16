@@ -36,7 +36,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
-  <maxImportIndex value="22" />
+  <maxImportIndex value="23" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
@@ -47,6 +47,7 @@
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="21" modelUID="f:java_stub#jetbrains.mps.lang.typesystem.search(jetbrains.mps.lang.typesystem.search@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="23" modelUID="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104837334">
     <link role="concept" targetNodeId="1.1212763614690" resolveInfo="ChildTypeRestrictionReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104837335">
@@ -2676,6 +2677,20 @@
                 <link role="link" targetNodeId="18.1071489727083" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="919572754501607735">
+    <link role="concept" targetNodeId="1.1227096774658" resolveInfo="MessageStatement" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="919572754501607736">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="919572754501607737">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="919572754501607738">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="919572754501607739">
+            <link role="classConcept" targetNodeId="23.1186407270695" resolveInfo="RulesUtil" />
+            <link role="baseMethodDeclaration" targetNodeId="23.5239146621999643483" resolveInfo="withinCheckingItem" />
+            <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="4578011703812840966" />
           </node>
         </node>
       </node>
