@@ -126,6 +126,12 @@ public enum LanguageAspect {
       return Typesystem_Language.MODULE_REFERENCE;
     }
 
+    public List<ModuleReference> getAllLanguagesToImport(Language l) {
+      List<ModuleReference> result = new ArrayList<ModuleReference>(super.getAllLanguagesToImport(l));
+      result.add(l.getModuleReference());
+      return result;
+    }
+
     public Icon getIcon() {
       return Icons.TYPESYSTEM_MODEL_ICON;
     }
@@ -290,8 +296,8 @@ public enum LanguageAspect {
       public void run() {
         model.getSModel().addDevKit(LanguageDesign_DevKit.get());
 
-        if (getMainLanguage() != null) {
-          model.getSModel().addLanguage(getMainLanguage());
+        for (ModuleReference impLang:getAllLanguagesToImport(l)){
+          model.getSModel().addLanguage(impLang);
         }
 
         for (String modelUID : getModelsToImport(l)) {
