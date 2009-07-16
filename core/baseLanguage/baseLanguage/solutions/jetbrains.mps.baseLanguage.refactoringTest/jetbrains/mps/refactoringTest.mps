@@ -12647,5 +12647,16 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="6256052658994643093">
+    <property name="package" value="changeMethodSignature" />
+    <property name="name" value="ChangeInterfaceSignature" />
+    <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="6256052658994643094" />
+    <node role="testMethods" type="jetbrains.mps.lang.test.structure.SimpleNodeTest" id="8935197720643531791">
+      <property name="name" value="mmmmmm" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8935197720643531792" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8935197720643531793" />
+      <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8935197720643531794" />
+    </node>
+  </node>
 </model>
 
