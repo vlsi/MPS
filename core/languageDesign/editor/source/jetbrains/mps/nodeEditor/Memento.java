@@ -114,7 +114,7 @@ class Memento {
     EditorCell deepestSelectedCell = editor.getDeepestSelectedCell();
     if (deepestSelectedCell != null && myCaretX != null) {
       deepestSelectedCell.setCaretX(myCaretX);
-      if (mySelectionStart != null) {
+      if (mySelectionStart != null && deepestSelectedCell instanceof EditorCell_Label) {
         ((EditorCell_Label)deepestSelectedCell).setSelectionStart(mySelectionStart);
         ((EditorCell_Label)deepestSelectedCell).setSelectionEnd(mySelectionEnd);
       }
