@@ -13,9 +13,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
-import jetbrains.mps.baseLanguage.plugin.uiActions.BehaviorScope;
-import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class ConceptBehavior_Behavior {
 
@@ -98,14 +99,26 @@ public class ConceptBehavior_Behavior {
 
   public static List<SNode> call_getMethodsToImplement_5167929551696729662(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
-    BehaviorScope scope = new BehaviorScope(((ConceptBehavior)SNodeOperations.getAdapter(thisNode)));
-    for(SNode method : scope.getNodes()) {
+    for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
       SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
       if (container == thisNode || container == null) {
         continue;
       }
       if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
         ListSequence.fromList(methods).addElement(method);
+      }
+    }
+    return methods;
+  }
+
+  public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
+    List<SNode> methods = new ArrayList<SNode>();
+    for(SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
+      SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
+      if (behaviour != null) {
+        for(SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
+          ListSequence.fromList(methods).addElement(method);
+        }
       }
     }
     return methods;
