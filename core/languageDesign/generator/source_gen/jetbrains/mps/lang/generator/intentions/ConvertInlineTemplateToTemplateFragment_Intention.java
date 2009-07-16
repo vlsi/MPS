@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseIntention {
 
@@ -49,6 +50,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     SLinkOperations.setTarget(templateNode, "applicableConcept", SLinkOperations.getTarget(ruleNode, "applicableConcept", false), false);
     SPropertyOperations.set(templateNode, "name", "template1");
     SLinkOperations.setTarget(templateNode, "contentNode", SLinkOperations.getTarget(node, "templateNode", true), true);
+    templateNode.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
     if (SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule")) {
       SLinkOperations.setTarget(SNodeOperations.cast(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), "template", templateNode, false);
     } else

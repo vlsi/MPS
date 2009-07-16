@@ -87,13 +87,12 @@ public class NewCreateRootRule_Intention extends BaseIntention {
     if (ListSequence.fromList(configs).count() > 1) {
       // TODO: let user to choose mapping config?
     }
-    SNode config = ListSequence.fromList(configs).first();
     //  add new rule
-    SNode rule = SLinkOperations.addNewChild(config, "createRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule");
+    SNode rule = SLinkOperations.addNewChild(ListSequence.fromList(configs).first(), "createRootRule", "jetbrains.mps.lang.generator.structure.CreateRootRule");
     SLinkOperations.setTarget(rule, "templateNode", node, false);
     //  open in editor
     MPSEditorOpener opener = editorContext.getOperationContext().getComponent(MPSEditorOpener.class);
-    opener.openNode(rule);
+    opener.editNode(rule, editorContext.getOperationContext());
   }
 
   public String getLocationString() {
