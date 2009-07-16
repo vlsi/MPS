@@ -30,3 +30,4 @@ public class MPSColors extends Color {
 
   public static final Color DARK_MAGENTA = new Color(102, 14, 122);
 }
+
