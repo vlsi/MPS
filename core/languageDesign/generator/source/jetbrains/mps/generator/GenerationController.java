@@ -426,6 +426,7 @@ public class GenerationController {
     private long myStartTime;
     private long myStartJobTime;
     private long myTotalJob;
+    private volatile boolean myIsDisposed;
 
     public TaskProgressHelper(GenerationController generationController) {
       myGenerationController = generationController;
@@ -441,6 +442,7 @@ public class GenerationController {
     }
 
     private void clear() {
+      myIsDisposed = true;
       myTimer = null;
       myTaskName = null;
       myProgress = null;
@@ -454,6 +456,7 @@ public class GenerationController {
       myProgress = progressIndicator;
       myTotalJob = totalJob;
       myStartJobTime = startJobTime;
+      myIsDisposed = false;
 
       final long estimatedTime = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
       myStartTime = System.currentTimeMillis();
@@ -463,6 +466,8 @@ public class GenerationController {
         boolean myIndeterminate = false;
 
         public void actionPerformed(ActionEvent e) {
+          if (myIsDisposed) return;
+
           myMillis += TIMER_DELAY;
           if (myMillis > estimatedTime) {
             myMillis = estimatedTime;
