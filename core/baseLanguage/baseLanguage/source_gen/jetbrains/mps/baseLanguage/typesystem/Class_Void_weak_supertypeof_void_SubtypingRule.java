@@ -14,7 +14,7 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
   }
 
   public SNode getSubOrSuperType(SNode voidType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_102().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_101().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

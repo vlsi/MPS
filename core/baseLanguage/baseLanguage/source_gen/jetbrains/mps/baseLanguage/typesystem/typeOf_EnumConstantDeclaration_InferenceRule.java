@@ -21,7 +21,7 @@ public class typeOf_EnumConstantDeclaration_InferenceRule extends AbstractInfere
 
   public void applyRule(final SNode enumConstantDeclaration, final TypeCheckingContext typeCheckingContext) {
     final SNode methodClassifier = SNodeOperations.getAncestor(enumConstantDeclaration, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
-    SNode constructedType = new _Quotations.QuotationClass_118().createNode(methodClassifier, typeCheckingContext);
+    SNode constructedType = new _Quotations.QuotationClass_117().createNode(methodClassifier, typeCheckingContext);
     // ---
     {
       SNode _nodeToCheck_1029348928467 = enumConstantDeclaration;

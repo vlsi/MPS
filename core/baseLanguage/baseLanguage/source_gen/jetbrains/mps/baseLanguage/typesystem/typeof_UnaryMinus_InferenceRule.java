@@ -29,7 +29,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       typeCheckingContext.whenConcrete(exType, new Runnable() {
 
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new _Quotations.QuotationClass_123().createNode(typeCheckingContext));
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new _Quotations.QuotationClass_122().createNode(typeCheckingContext));
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;

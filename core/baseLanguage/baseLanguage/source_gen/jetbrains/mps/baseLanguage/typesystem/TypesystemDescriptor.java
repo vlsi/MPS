@@ -274,14 +274,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeOf_TypeVariableDeclaration_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_TypeVariableReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_IOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -656,8 +648,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_104().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_105().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_103().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_104().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -678,8 +670,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_107().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_108().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_106().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_107().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -700,8 +692,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_109().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_110().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_108().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_109().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -722,8 +714,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_111().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_112().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_110().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_111().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -744,8 +736,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_113().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_114().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_112().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_113().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -753,7 +745,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_115().createNode();
+          return new _Quotations.QuotationClass_114().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -761,8 +753,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_116().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_117().createNode(), "descriptor", false);
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_115().createNode(), "descriptor", false);
+          this.myRightOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_116().createNode(), "descriptor", false);
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.RemExpression";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -783,8 +775,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_121().createNode(), "descriptor", false);
-          this.myRightOperandType = new _Quotations.QuotationClass_122().createNode();
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_120().createNode(), "descriptor", false);
+          this.myRightOperandType = new _Quotations.QuotationClass_121().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
