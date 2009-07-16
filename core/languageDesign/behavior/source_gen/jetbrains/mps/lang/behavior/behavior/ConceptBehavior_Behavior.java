@@ -111,6 +111,24 @@ public class ConceptBehavior_Behavior {
     return methods;
   }
 
+  public static List<SNode> call_getMethodsToOverride_6603209858471710849(SNode thisNode) {
+    List<SNode> methods = new ArrayList<SNode>();
+    for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
+      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
+      if (container == thisNode || container == null) {
+        continue;
+      }
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
+        continue;
+      }
+      if (SPropertyOperations.getBoolean(method, "isAbstract")) {
+        continue;
+      }
+      ListSequence.fromList(methods).addElement(method);
+    }
+    return methods;
+  }
+
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
     for(SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {

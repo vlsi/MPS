@@ -15,6 +15,8 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ClassConcept_Behavior {
@@ -66,6 +68,29 @@ public class ClassConcept_Behavior {
       if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
         ListSequence.fromList(methods).addElement(method);
       }
+    }
+    return methods;
+  }
+
+  public static List<SNode> call_getMethodsToOverride_6603209858471717101(SNode thisNode) {
+    List<SNode> methods = new ArrayList<SNode>();
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
+    for(SNode method : BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class))) {
+      SNode cls = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      if (cls == thisNode) {
+        continue;
+      }
+      if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+        continue;
+      }
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
+        continue;
+      }
+      if (SPropertyOperations.getBoolean(method, "isAbstract")) {
+        continue;
+      }
+
+      ListSequence.fromList(methods).addElement(method);
     }
     return methods;
   }
