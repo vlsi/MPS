@@ -66,14 +66,17 @@ public class EditorCellModel_Behavior {
     if ((firstItem == null)) {
       return null;
     }
-    if (SPropertyOperations.getString_def(firstItem, "color", null) == null) {
-      if ((SLinkOperations.getTarget(firstItem, "query", true) != null) && !(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(firstItem, "query", true)))) {
+    if ((SLinkOperations.getTarget(firstItem, "query", true) != null)) {
+      if (!(IQueryFunction_Color_Behavior.call_isFunction_1225463329531(SLinkOperations.getTarget(firstItem, "query", true)))) {
         try {
           return new Color(Integer.parseInt(IQueryFunction_Color_Behavior.call_getRGBValue_1225468086082(SLinkOperations.getTarget(firstItem, "query", true)), 16));
         } catch (NumberFormatException nfe) {
           return null;
         }
       }
+      return null;
+    }
+    if (SPropertyOperations.getString_def(firstItem, "color", null) == null) {
       return null;
     }
     Class<MPSColors> classColors = MPSColors.class;
