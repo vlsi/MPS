@@ -392,13 +392,13 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" id="5658301841655062800">
-    <property name="name" value="MethodHierarchy_KeyMap" />
+    <property name="name" value="ConceptMethodHierarchy_KeyMap" />
     <property name="everyModel" value="true" />
     <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="5658301841655062885">
       <property name="description" value="Override Method..." />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="5658301841655062886">
-        <property name="modifiers" value="ctrl" />
+        <property name="modifiers" value="ctrl+alt+shift" />
         <property name="keycode" value="VK_O" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="5658301841655062887">
@@ -460,8 +460,8 @@
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="5658301841655062916" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5658301841655062917">
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5658301841655062918">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5658301841655062919">
-                      <link role="conceptDeclaration" targetNodeId="4.1068390468198" resolveInfo="ClassConcept" />
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2937492998428662916">
+                      <link role="conceptDeclaration" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
                     </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5658301841655062920" />
@@ -477,7 +477,7 @@
       <property name="description" value="Implement Method..." />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="5658301841655062923">
-        <property name="modifiers" value="ctrl" />
+        <property name="modifiers" value="ctrl+alt+shift" />
         <property name="keycode" value="VK_I" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="5658301841655062924">
@@ -539,8 +539,8 @@
                 <node role="operand" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" id="5658301841655062953" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="5658301841655062954">
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="5658301841655062955">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="5658301841655062956">
-                      <link role="conceptDeclaration" targetNodeId="4.1068390468198" resolveInfo="ClassConcept" />
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2937492998428662917">
+                      <link role="conceptDeclaration" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
                     </node>
                   </node>
                   <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="5658301841655062957" />
