@@ -49,6 +49,9 @@
         <property name="separatorText" value="," />
         <link role="relationDeclaration" targetNodeId="1.1199542501692" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1199542707267">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="3013813967663672302">
+            <property name="flag" value="true" />
+          </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1219244021431">
             <property name="value" value="0.0" />
           </node>

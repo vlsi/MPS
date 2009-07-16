@@ -320,6 +320,7 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       {
         Style inlineStyle = new Style(editorCell) {
           {
+            this.set(StyleAttributes.EDITABLE, true);
             this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
           }
         };
