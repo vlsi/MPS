@@ -13,6 +13,9 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.plugin.IExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractExtractMethodRefactoringProcessor;
 import jetbrains.mps.baseLanguage.plugin.AbstractStaticContainerProcessor;
+import jetbrains.mps.baseLanguage.plugin.uiActions.BehaviorScope;
+import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptBehavior_Behavior {
 
@@ -93,9 +96,19 @@ public class ConceptBehavior_Behavior {
     };
   }
 
-  public static void abc_1225194243290(int i, int j) {
-    if (i == j) {
+  public static List<SNode> call_getMethodsToImplement_5167929551696729662(SNode thisNode) {
+    List<SNode> methods = new ArrayList<SNode>();
+    BehaviorScope scope = new BehaviorScope(((ConceptBehavior)SNodeOperations.getAdapter(thisNode)));
+    for(SNode method : scope.getNodes()) {
+      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
+      if (container == thisNode || container == null) {
+        continue;
+      }
+      if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
+        ListSequence.fromList(methods).addElement(method);
+      }
     }
+    return methods;
   }
 
 }

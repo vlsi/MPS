@@ -6787,24 +6787,14 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="1221638410611">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1221638410612">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221638412863">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1221638418293">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638423004">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638419235">
-                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1221638419109" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221638420706">
-                  <link role="baseMethodDeclaration" targetNodeId="29.1221637841398" resolveInfo="getMethodsToImplement" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1221638428601" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1221638412864">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638414445">
-                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1221638413944" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1221638417276">
-                  <link role="property" targetNodeId="1.1075300953594" resolveInfo="abstractClass" />
-                </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638423004">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221638419235">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1221638419109" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221638420706">
+                <link role="baseMethodDeclaration" targetNodeId="29.1221637841398" resolveInfo="getMethodsToImplement" />
               </node>
             </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1221638428601" />
           </node>
         </node>
       </node>
