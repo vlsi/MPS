@@ -69,6 +69,9 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
 
   @Override
   public boolean isLeaf() {
+    if (!isInitialized()) {
+      return false;
+    }
     return getChildCount() == 0;
   }
 
