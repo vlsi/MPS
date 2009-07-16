@@ -3816,7 +3816,7 @@ public class QueriesGenerated {
           for(SNode yas : allYas) {
             SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(yas, "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
             SNode fes = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
-            //  now fes.body.statement contains a copy of yas. WTF?
+            //  now fes.body.statement contains a copy of yas.
             SLinkOperations.removeAllChildren(SLinkOperations.getTarget(fes, "body", true), "statement");
             SLinkOperations.setTarget(fes, "iterable", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
             SNode var = SLinkOperations.setNewChild(fes, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");

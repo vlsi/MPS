@@ -18162,7 +18162,7 @@
                       </node>
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1229017609589">
-                      <property name="value" value=" now fes.body.statement contains a copy of yas. WTF?" />
+                      <property name="value" value=" now fes.body.statement contains a copy of yas." />
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229017653380">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229017662247">
