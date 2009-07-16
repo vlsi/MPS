@@ -35,22 +35,16 @@ public class IntentionDeclaration_Behavior {
       return null;
     }
     SNode stmt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "body", true), "statement", true)).first();
+    SNode expr = null;
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
-      SNode expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true);
-      if (!(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
-        return null;
-      }
-      return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
+      expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true);
     } else if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SNode expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
-      if (!(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
-        return null;
-      }
-      return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
-    } else
-    {
+      expr = SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true);
+    }
+    if (!(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
       return null;
     }
+    return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
   }
 
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {
