@@ -39,7 +39,7 @@ public class FunctionType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_2().createNode();
+    return new _Quotations.QuotationClass_0().createNode();
   }
 
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
@@ -135,7 +135,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new _Quotations.QuotationClass_3().createNode();
+      return new _Quotations.QuotationClass_9().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -181,7 +181,7 @@ with_meet:
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_5().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_2().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -203,7 +203,7 @@ with_meet:
     if (ice == null) {
       return null;
     }
-    SNode ct = new _Quotations.QuotationClass_6().createNode(ice);
+    SNode ct = new _Quotations.QuotationClass_3().createNode(ice);
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode))));
     }
@@ -222,14 +222,14 @@ with_meet:
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
     return ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getResultType_1230475757059(thisNode)) :
-      new _Quotations.QuotationClass_7().createNode()
+      new _Quotations.QuotationClass_5().createNode()
     );
   }
 
   public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
     return ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null) ?
       ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode)) :
-      new _Quotations.QuotationClass_8().createNode()
+      new _Quotations.QuotationClass_7().createNode()
     );
   }
 

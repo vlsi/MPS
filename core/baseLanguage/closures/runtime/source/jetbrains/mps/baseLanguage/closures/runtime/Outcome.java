@@ -20,5 +20,6 @@ public enum Outcome {
 	RETURN_VALUE,
 	TERMINATE_VOID,
 	TERMINATE_VALUE,
-	BREAK
+	BREAK,
+	NONE
 }

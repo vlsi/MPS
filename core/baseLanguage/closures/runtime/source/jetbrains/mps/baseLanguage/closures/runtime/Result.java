@@ -30,7 +30,9 @@ public class Result<T,R> {
 
 	public static Result<Object, Object> BREAK = new Result<Object, Object>(Outcome.BREAK);
 
-	@SuppressWarnings("unchecked")
+        public static Result<Object, Object> NONE = new Result<Object, Object>(Outcome.NONE);
+
+        @SuppressWarnings("unchecked")
 	public static <U, S> Result<U, S> RETURN (S val) {
 		return (Result<U, S>) new Result<Object, S>(Outcome.RETURN_VALUE, null, val);
 	}
@@ -55,7 +57,12 @@ public class Result<T,R> {
 		return (Result<U,V>) BREAK;
 	}
 
-	public Outcome getOutcome() {
+        @SuppressWarnings("unchecked")
+        public static <U,V> Result<U,V> NONE () {
+                return (Result<U,V>) NONE;
+        }
+
+        public Outcome getOutcome() {
 		return outcome;
 	}
 

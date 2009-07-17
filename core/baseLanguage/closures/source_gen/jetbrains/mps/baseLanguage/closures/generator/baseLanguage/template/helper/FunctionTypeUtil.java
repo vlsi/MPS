@@ -98,7 +98,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new _Quotations.QuotationClass_0().createNode();
+      return new _Quotations.QuotationClass_2().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -113,7 +113,7 @@ with_meet:
   }
 
   public static SNode unmeetRecursively(SNode nodeWithMeetDescendants) {
-    for(SNode dsc : SNodeOperations.getDescendants(nodeWithMeetDescendants, null, false)) {
+    for(SNode dsc : SNodeOperations.getDescendants(nodeWithMeetDescendants, null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
         SNodeOperations.replaceWithAnother(dsc, SNodeOperations.copyNode(unmeet(dsc)));
       }

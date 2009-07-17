@@ -30,7 +30,7 @@ public class ClosureLiteral_Behavior {
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return new _Quotations.QuotationClass_0().createNode(paramTypes, resultType, throwsTypes);
+    return new _Quotations.QuotationClass_1().createNode(paramTypes, resultType, throwsTypes);
   }
 
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
@@ -44,7 +44,7 @@ public class ClosureLiteral_Behavior {
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     // everything which is not void and null is good,
     // look at ExpressionStatement.canServeAsReturn
-    return new _Quotations.QuotationClass_1().createNode();
+    return new _Quotations.QuotationClass_10().createNode();
   }
 
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {

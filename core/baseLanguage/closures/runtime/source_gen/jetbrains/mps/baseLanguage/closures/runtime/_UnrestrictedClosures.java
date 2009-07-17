@@ -6,7 +6,7 @@ package jetbrains.mps.baseLanguage.closures.runtime;
 public class _UnrestrictedClosures {
   /* package */static class _base <T, R> {
 
-    private Result<? extends T, ? extends R> result;
+    private Result<? extends T, ? extends R> result = Result.NONE();
 
     protected _base() {
     }
@@ -14,10 +14,10 @@ public class _UnrestrictedClosures {
     @SuppressWarnings(value = "unchecked")
     public Result<T, R> getAndClearLastResult() {
       if (this.result == null) {
-        throw new IllegalStateException("No last result: closure was never invoked");
+        throw new IllegalStateException("No last result");
       }
       Result<T, R> tmp = ((Result<T, R>)this.result);
-      this.result = null;
+      this.result = Result.NONE();
       return tmp;
     }
 

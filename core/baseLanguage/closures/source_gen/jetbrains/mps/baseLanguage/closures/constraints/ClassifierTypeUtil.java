@@ -56,7 +56,7 @@ public class ClassifierTypeUtil {
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider"), "copiedTypeSource", false));
     } else
     {
-      for(SNode descendant : SNodeOperations.getDescendants(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider", false)) {
+      for(SNode descendant : SNodeOperations.getDescendants(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider", false, new String[]{})) {
         SNodeOperations.replaceWithAnother(descendant, SNodeOperations.copyNode(SLinkOperations.getTarget(descendant, "copiedTypeSource", false)));
       }
       return result;
@@ -122,9 +122,9 @@ public class ClassifierTypeUtil {
 
   public static SNode getClassifierType(SNode ft) {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (rtSig.equals(SPropertyOperations.getString(SNodeOperations.cast(ice, "jetbrains.mps.baseLanguage.structure.Interface"), "name"))) {
-        SNode ct = new _Quotations.QuotationClass_2().createNode(ice);
+        SNode ct = new _Quotations.QuotationClass_8().createNode(ice);
         if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           SLinkOperations.addChild(ct, "parameter", ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
         }
@@ -142,9 +142,9 @@ public class ClassifierTypeUtil {
 
   public static SNode getClassifierType(SNode ft, List<SNode> parameterType) {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
-    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    for(SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_11().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
       if (rtSig.equals(SPropertyOperations.getString(SNodeOperations.cast(ice, "jetbrains.mps.baseLanguage.structure.Interface"), "name"))) {
-        SNode ct = new _Quotations.QuotationClass_4().createNode(ice);
+        SNode ct = new _Quotations.QuotationClass_10().createNode(ice);
         if ((SLinkOperations.getTarget(ft, "resultType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ft, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
           SLinkOperations.addChild(ct, "parameter", copyTypeRecursively(getTypeCoercedToClassifierType(SLinkOperations.getTarget(ft, "resultType", true))));
         }
@@ -207,7 +207,7 @@ public class ClassifierTypeUtil {
         }
       }
       resType = resolveType(resType, ct);
-      if (ListSequence.fromList(SNodeOperations.getDescendants(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false)).isEmpty()) {
+      if (ListSequence.fromList(SNodeOperations.getDescendants(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).isEmpty()) {
         break;
       }
     }
@@ -254,14 +254,14 @@ public class ClassifierTypeUtil {
         covariantParam = false;
       }
       return (covariant || isFunctionTypeClassifier(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) ?
-        new _Quotations.QuotationClass_8().createNode(copy) :
-        new _Quotations.QuotationClass_9().createNode(copy)
+        new _Quotations.QuotationClass_2().createNode(copy) :
+        new _Quotations.QuotationClass_3().createNode(copy)
       );
     } else
     {
       return (covariant ?
-        new _Quotations.QuotationClass_10().createNode(SNodeOperations.copyNode(type)) :
-        new _Quotations.QuotationClass_11().createNode(SNodeOperations.copyNode(type))
+        new _Quotations.QuotationClass_4().createNode(SNodeOperations.copyNode(type)) :
+        new _Quotations.QuotationClass_5().createNode(SNodeOperations.copyNode(type))
       );
     }
   }

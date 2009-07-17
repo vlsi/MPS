@@ -59,7 +59,7 @@ public class QueriesGenerated {
         return ControlMethodUtil.isControlMethod(smd);
       }
     });
-    return false && !(ListSequence.fromList(nodes).isEmpty());
+    return !(ListSequence.fromList(nodes).isEmpty());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1232456372775(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {

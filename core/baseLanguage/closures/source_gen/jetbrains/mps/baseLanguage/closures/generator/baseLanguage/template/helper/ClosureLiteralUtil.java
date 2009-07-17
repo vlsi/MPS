@@ -26,7 +26,7 @@ import java.util.HashMap;
 public class ClosureLiteralUtil {
 
   public static boolean hasYieldStatement(SNode cl) {
-    for(SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false)) {
+    for(SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})) {
       if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
         return true;
       }
@@ -36,7 +36,7 @@ public class ClosureLiteralUtil {
 
   public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
     List<SNode> vrefs = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode desc : SNodeOperations.getDescendants(cl, null, false)) {
+    for(SNode desc : SNodeOperations.getDescendants(cl, null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (cl != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
@@ -90,7 +90,7 @@ public class ClosureLiteralUtil {
     if ((absRetCT != null)) {
       SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       /*
-        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false)) {
+        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)) {
           SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), false);
         }
       */

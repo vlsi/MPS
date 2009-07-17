@@ -5,6 +5,8 @@ package closures.sandbox.control;
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Result;
 import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedClosures;
 
 public class ControlStatementDemo {
@@ -18,9 +20,9 @@ public class ControlStatementDemo {
     for(Result<? extends Integer, ?> __result__ = cls.invokeUnrestricted() ;  ; ) {
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
-          //            fall through
+          //  fall through
         case RETURN_VOID:
-          //            fall through
+          //  fall through
         case BREAK:
           return;
         case TERMINATE_VALUE:
@@ -38,7 +40,24 @@ public class ControlStatementDemo {
   public static void withLock(Object lock, _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
   }
 
-  public static void eachEntry(Map<String, Integer> map, _UnrestrictedFunctionTypes._void_void_P2_E0<? super String, ? super Integer> block) {
+  public static void forEachEntry(Map<String, Integer> map, _UnrestrictedFunctionTypes._void_void_P2_E0<? super String, ? super Integer> block) {
+    for(IMapping<String, Integer> e : MapSequence.fromMap(map)) {
+      for(Result<?, ?> __result__ = block.invokeUnrestricted(e.key(), e.value()) ;  ; ) {
+        switch (__result__.getOutcome()) {
+          case RETURN_VALUE:
+            //  fall through
+          case RETURN_VOID:
+            //  fall through
+          case BREAK:
+            return;
+          case TERMINATE_VOID:
+            break;
+          default:
+            break;
+        }
+        break;
+      }
+    }
   }
 
   public static int foo() {
@@ -67,6 +86,9 @@ public class ControlStatementDemo {
     for(_UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
 
       public Result<Integer, Integer> invokeUnrestricted() {
+        if (false) {
+          return Result.RETURN(2);
+        }
         return Result.TERMINATE(2);
       }
     }) ;  ; ) {
@@ -82,14 +104,15 @@ public class ControlStatementDemo {
       }
       break;
     }
-    Map<String, Integer> map = null;
+    Map<String, Integer> map = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
     for(_UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0 <String, Integer>() {
 
-      public Result<Object, Object> invokeUnrestricted(String bar, Integer foo) {
+      public Result<Object, Object> invokeUnrestricted(String k, Integer v) {
+        System.out.println(k + "=>" + v);
         return Result.TERMINATE_VOID();
       }
     }) ;  ; ) {
-      eachEntry(map, __closure__);
+      forEachEntry(map, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
         case BREAK:

@@ -21,7 +21,7 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_10().createNode(), "classifier", false));
+    return SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "classifier", false));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
