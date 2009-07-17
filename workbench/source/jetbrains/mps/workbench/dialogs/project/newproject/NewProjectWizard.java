@@ -160,7 +160,9 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     }
 
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
-    projectManager.openProject(myCreatedProject);
+    boolean opened = projectManager.openProject(myCreatedProject);
+
+    if (!opened) return;
 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
