@@ -239,6 +239,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void putError(SNode node, IErrorReporter errorReporter) {
+    if (MetaLevelUtil.getMetaLevel(node) != 0) {
+      return;
+    }
 
     if (myIsNonTypesystemCheckingInProgress) {
       Stack<IErrorReporter> iErrorReporters = myNodesToNonTypesystemErrorsMap.get(node);
