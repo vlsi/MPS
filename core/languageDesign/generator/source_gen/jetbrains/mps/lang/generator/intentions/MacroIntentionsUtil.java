@@ -12,18 +12,7 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class MacroIntentionsUtil {
 
-  public static SNode getContextNodeConcept_fast(SNode contextNode) {
-    SNode enclosingMacro = findOuterMacro(contextNode);
-    if ((enclosingMacro == null)) {
-      return QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
-    }
-    if (SNodeOperations.isInstanceOf(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro")) {
-      return getConceptFrom(SNodeOperations.cast(enclosingMacro, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro"));
-    }
-    return null;
-  }
-
-  public static SNode getContextNodeConcept_slow(SNode contextNode) {
+  public static SNode getContextNodeConcept(SNode contextNode) {
     SNode enclosingMacro = findOuterMacro(contextNode);
     if ((enclosingMacro == null)) {
       return QueriesUtil.getApplicableConcept_fromEnvironment(contextNode);
@@ -62,7 +51,8 @@ public class MacroIntentionsUtil {
       }
     } else
     {
-      return null;
+      SNode macroOuterNode = SNodeOperations.getParent(SNodeOperations.getParent(macro));
+      return getContextNodeConcept(macroOuterNode);
     }
   }
 
