@@ -2604,6 +2604,7 @@
     <property name="name" value="Statement_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123157" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2619109493058710584">
+      <property name="nullText" value="  " />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="2619109493058902432">
         <property name="flag" value="true" />
       </node>

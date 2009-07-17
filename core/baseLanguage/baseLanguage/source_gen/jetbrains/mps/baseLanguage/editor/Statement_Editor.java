@@ -21,7 +21,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3869_0(editorCell, node, context);
     setupLabel_Constant_3869_0(editorCell, node, context);
-    editorCell.setDefaultText("");
+    editorCell.setDefaultText("  ");
     return editorCell;
   }
 
