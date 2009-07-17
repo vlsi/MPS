@@ -2,6 +2,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.nodeEditor.*;
@@ -66,6 +67,11 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       }
     });
   }
+
+  public Dimension getPreferredSize() {
+    return new Dimension(500,400);
+  }
+
 
   public void init(final IOperationContext context, final SNode node, String newRevisionName, String oldRevisionName) {
     final SNode[] oldNode = new SNode[1];
