@@ -504,7 +504,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="5167929551696755285">
     <property name="name" value="ImplementMethods" />
-    <property name="isErrorIntention" value="true" />
+    <property name="isErrorIntention" value="false" />
     <link role="forConcept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="5167929551696755286">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5167929551696755287">

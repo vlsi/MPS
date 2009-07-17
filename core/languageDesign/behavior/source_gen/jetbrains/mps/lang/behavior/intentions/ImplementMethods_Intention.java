@@ -24,7 +24,7 @@ public class ImplementMethods_Intention extends BaseIntention {
   }
 
   public boolean isErrorIntention() {
-    return true;
+    return false;
   }
 
   public boolean isAvailableInChildNodes() {

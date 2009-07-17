@@ -20,9 +20,9 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
     action = new ConceptMethodHierarchy_KeyMap.ConceptMethodHierarchy_KeyMap_Action0();
-    this.putAction("ctrl+alt+shift", "VK_O", action);
+    this.putAction("ctrl", "VK_O", action);
     action = new ConceptMethodHierarchy_KeyMap.ConceptMethodHierarchy_KeyMap_Action1();
-    this.putAction("ctrl+alt+shift", "VK_I", action);
+    this.putAction("ctrl", "VK_I", action);
   }
   public static class ConceptMethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
 
@@ -31,7 +31,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     }
 
     public String getDescriptionText() {
-      return "Override Method...";
+      return "Override Behavior Method...";
     }
 
     public boolean isMenuAlwaysShown() {
@@ -69,7 +69,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     }
 
     public String getKeyStroke() {
-      return "ctrl alt shift O";
+      return "ctrl O";
     }
 
 }
@@ -80,7 +80,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     }
 
     public String getDescriptionText() {
-      return "Implement Method...";
+      return "Implement Behavior Method...";
     }
 
     public boolean isMenuAlwaysShown() {
@@ -118,7 +118,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     }
 
     public String getKeyStroke() {
-      return "ctrl alt shift I";
+      return "ctrl I";
     }
 
 }

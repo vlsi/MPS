@@ -1267,10 +1267,10 @@
     <property name="name" value="ConceptMethodHierarchy_KeyMap" />
     <property name="everyModel" value="true" />
     <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="6603209858471610544">
-      <property name="description" value="Override Method..." />
+      <property name="description" value="Override Behavior Method..." />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="6603209858471610545">
-        <property name="modifiers" value="ctrl+alt+shift" />
+        <property name="modifiers" value="ctrl" />
         <property name="keycode" value="VK_O" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="6603209858471610546">
@@ -1346,10 +1346,10 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem" id="6603209858471610581">
-      <property name="description" value="Implement Method..." />
+      <property name="description" value="Implement Behavior Method..." />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" id="6603209858471610582">
-        <property name="modifiers" value="ctrl+alt+shift" />
+        <property name="modifiers" value="ctrl" />
         <property name="keycode" value="VK_I" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" id="6603209858471610583">

@@ -99,14 +99,29 @@ public class ConceptBehavior_Behavior {
 
   public static List<SNode> call_getMethodsToImplement_5167929551696729662(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
+method:
     for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
+        continue;
+      }
+      if (!(SPropertyOperations.getBoolean(method, "isVirtual"))) {
+        continue;
+      }
+      if (!(SPropertyOperations.getBoolean(method, "isAbstract"))) {
+        continue;
+      }
+
       SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
       if (container == thisNode || container == null) {
         continue;
       }
-      if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(method, "isAbstract")) {
-        ListSequence.fromList(methods).addElement(method);
+      for(SNode mymethod : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true))) {
+        if ((SLinkOperations.getTarget(mymethod, "overriddenMethod", false) != null) && SLinkOperations.getTarget(mymethod, "overriddenMethod", false) == method) {
+          continue method;
+        }
       }
+
+      ListSequence.fromList(methods).addElement(method);
     }
     return methods;
   }
@@ -114,16 +129,20 @@ public class ConceptBehavior_Behavior {
   public static List<SNode> call_getMethodsToOverride_6603209858471710849(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
-      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
-      if (container == thisNode || container == null) {
+      if (SPropertyOperations.getBoolean(method, "isFinal")) {
         continue;
       }
-      if (SPropertyOperations.getBoolean(method, "isFinal")) {
+      if (!(SPropertyOperations.getBoolean(method, "isVirtual"))) {
         continue;
       }
       if (SPropertyOperations.getBoolean(method, "isAbstract")) {
         continue;
       }
+      SNode container = SNodeOperations.getAncestor(method, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false);
+      if (container == thisNode || container == null) {
+        continue;
+      }
+
       ListSequence.fromList(methods).addElement(method);
     }
     return methods;
