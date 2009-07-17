@@ -42,6 +42,8 @@ import jetbrains.mps.cleanup.CleanupManager;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Graphics2D;
+import java.awt.Graphics;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
