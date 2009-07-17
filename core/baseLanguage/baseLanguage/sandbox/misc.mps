@@ -194,8 +194,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4768171343556943481">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4768171343556943482">
             <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="4768171343556943484">
-              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="463475614763849030" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="2960475743706632355">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2960475743706632354" />
             </node>
           </node>
         </node>
