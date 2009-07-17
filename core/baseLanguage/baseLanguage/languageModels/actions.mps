@@ -11741,5 +11741,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="9072722389861457598">
+    <property name="package" value="sideTransforms.expression" />
+    <property name="name" value="expressionRTAfterAnonymous" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="9072722389861457599">
+      <property name="transformTag" value="ext_1_RTransform" />
+      <link role="applicableConcept" targetNodeId="1.1170345865475" resolveInfo="AnonymousClass" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart" id="9072722389861458093">
+        <node role="nodeBlock" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" id="9072722389861458094">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9072722389861458095">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9072722389861458096">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9072722389861458098">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="9072722389861458097" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="9072722389861458102">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="9072722389861458103">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9072722389861458106">
+                      <link role="conceptDeclaration" targetNodeId="1.1145552977093" resolveInfo="GenericNewExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

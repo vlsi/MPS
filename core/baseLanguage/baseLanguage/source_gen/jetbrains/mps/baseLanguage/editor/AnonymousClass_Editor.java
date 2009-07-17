@@ -415,6 +415,14 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1871_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_RefCell_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
