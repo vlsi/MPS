@@ -33,7 +33,9 @@ public class AddMainMethod_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SLinkOperations.addChild(node, "staticMethod", new _Quotations.QuotationClass_4().createNode());
+    SNode methodNode = new _Quotations.QuotationClass_4().createNode();
+    SLinkOperations.addChild(node, "staticMethod", methodNode);
+    editorContext.select(methodNode);
   }
 
   public String getLocationString() {
