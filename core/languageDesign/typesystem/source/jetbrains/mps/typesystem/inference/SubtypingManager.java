@@ -617,7 +617,7 @@ System.out.println("alltypes = " + allTypes);*/
     return null;
   }
 
-  private synchronized Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+  public synchronized Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     Set<SNode> residualNodes = new HashSet<SNode>(nodes);
     while(residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);

@@ -210,7 +210,6 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="534621188390786368">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="534621188390786369">
                       <property name="name" value="i" />
-                      <property name="right_transfrom_hint" value="true" />
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="534621188390786370" />
                     </node>
                   </node>
