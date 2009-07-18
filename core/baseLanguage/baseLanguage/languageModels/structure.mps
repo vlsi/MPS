@@ -3337,6 +3337,9 @@
       <property name="name" value="value" />
       <link role="dataType" targetNodeId="4269842503726207818" resolveInfo="_LongType" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5614028927319466249">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="4269842503726207818">
     <property name="name" value="_LongType_String" />

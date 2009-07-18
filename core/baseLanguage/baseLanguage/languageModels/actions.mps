@@ -1647,8 +1647,8 @@
                           </node>
                         </node>
                         <node role="right" type="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" id="4269842503727430338">
-                          <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" id="4269842503727218195">
-                            <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="4269842503727218196">
+                          <node role="left" type="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" id="2522342100559424631">
+                            <node role="regexp" type="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" id="2522342100559424630">
                               <link role="symbolClass" targetNodeId="22.1174554674770" resolveInfo="\d" />
                             </node>
                           </node>
