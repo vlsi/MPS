@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -37,7 +37,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstant_6834_15(context, node, "["));
     editorCell.addEditorCell(this.createRefNode_6834_1(context, node));
+    editorCell.addEditorCell(this.createConstant_6834_16(context, node, "]"));
     if (renderingCondition6834_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6834_13(context, node, "CASE_INSENSITIVE"));
     }
@@ -194,6 +196,22 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstant_6834_15(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_6834_15(editorCell, node, context);
+    setupLabel_Constant_6834_15(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstant_6834_16(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_6834_16(editorCell, node, context);
+    setupLabel_Constant_6834_16(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createRefNode_6834_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -316,15 +334,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_6834_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
-          this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_MAGENTA);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
   }
 
   private static void setupBasic_Collection_6834_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -526,6 +535,32 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static void setupBasic_Constant_6834_15(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6834_15");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_6834_16(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_6834_16");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_RefNode_6834_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -581,6 +616,12 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_6834_14(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_6834_15(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_6834_16(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition6834_0(SNode node, EditorContext editorContext, IScope scope) {
