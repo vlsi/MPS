@@ -8389,6 +8389,39 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724553" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4555537781928374706">
+      <property name="name" value="deriveType" />
+      <property name="isVirtual" value="true" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4555537781928387820">
+        <property name="name" value="expression" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4555537781928387822">
+          <link role="concept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4555537781928387823">
+        <property name="name" value="link" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4555537781928387825">
+          <link role="concept" targetNodeId="13.1071489288298" resolveInfo="LinkDeclaration" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4555537781928374707" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4555537781928387819">
+        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4555537781928374709">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4555537781928387826">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4555537781928387918">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="4555537781928387917" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4555537781928387922">
+              <link role="baseMethodDeclaration" targetNodeId="1213877435747" resolveInfo="deriveType" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4555537781928387923">
+                <link role="variableDeclaration" targetNodeId="4555537781928387820" resolveInfo="expression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877436332">
     <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
