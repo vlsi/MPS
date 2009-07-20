@@ -144,5 +144,19 @@
       <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3582597462265868788">
+    <property name="name" value="InspectorBlock" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3582597462266222479">
+      <property name="value" value="inspector" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3582597462265868798">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="block" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
 </model>
 

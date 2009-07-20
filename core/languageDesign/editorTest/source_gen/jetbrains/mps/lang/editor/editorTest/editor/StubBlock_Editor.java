@@ -7,6 +7,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class StubBlock_Editor extends DefaultNodeEditor {
@@ -26,6 +29,14 @@ public class StubBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_9987_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9987_0");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_9987_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

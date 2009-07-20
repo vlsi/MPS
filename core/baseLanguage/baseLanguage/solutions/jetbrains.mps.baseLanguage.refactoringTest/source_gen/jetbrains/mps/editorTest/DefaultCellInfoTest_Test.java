@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -23,7 +23,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEdmitorTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("5560058483159205760", "5560058483159208304");
@@ -36,7 +36,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
         }
       });
       inspector.setSelectionDontClearStack(editorCell, false);
-      BaseEdmitorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
+      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
       this.finishTest();
     }
 

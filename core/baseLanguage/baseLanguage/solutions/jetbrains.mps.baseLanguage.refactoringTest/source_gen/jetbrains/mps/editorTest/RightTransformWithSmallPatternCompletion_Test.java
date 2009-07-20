@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 
 public class RightTransformWithSmallPatternCompletion_Test extends BaseTransformationTest {
@@ -15,11 +15,11 @@ public class RightTransformWithSmallPatternCompletion_Test extends BaseTransform
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEdmitorTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1231856205436", "1231856215769");
-      BaseEdmitorTestBody.typeString(editor, "inta");
+      BaseEditorTestBody.typeString(editor, "inta");
       this.finishTest();
     }
 

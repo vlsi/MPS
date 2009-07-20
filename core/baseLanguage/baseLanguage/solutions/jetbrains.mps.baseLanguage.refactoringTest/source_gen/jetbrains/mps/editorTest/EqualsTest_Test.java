@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 
 public class EqualsTest_Test extends BaseTransformationTest {
@@ -15,11 +15,11 @@ public class EqualsTest_Test extends BaseTransformationTest {
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEdmitorTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635738", "1230058635747");
-      BaseEdmitorTestBody.typeString(editor, "ifaa==zz");
+      BaseEditorTestBody.typeString(editor, "ifaa==zz");
       this.finishTest();
     }
 

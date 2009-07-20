@@ -9,9 +9,9 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.ide.IEditor;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
@@ -27,15 +27,10 @@ public class AnonymousCellAnnotation_Behavior {
 
       public void run() {
         cellWithId.value = editorComponent.findCellWithId(node, SPropertyOperations.getString(thisNode, "cellId"));
-        if (cellWithId.value instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label)cellWithId.value;
-          label.setCaretPosition(AnonymousCellAnnotation_Behavior.call_getCaretPosition_6268941039745717986(thisNode, label));
-          label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
-          label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
-        }
         if (cellWithId.value == null) {
           throw new RuntimeException("No cell " + thisNode);
         }
+        AnonymousCellAnnotation_Behavior.call_setupCaretAndSelection_9114978211826243747(thisNode, cellWithId.value);
       }
     });
     editorComponent.changeSelection(cellWithId.value);
@@ -72,6 +67,15 @@ public class AnonymousCellAnnotation_Behavior {
       NodeRangeSelection rangeSelection = editor.getCurrentEditorComponent().getNodeRangeSelection();
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
+    }
+  }
+
+  public static void call_setupCaretAndSelection_9114978211826243747(SNode thisNode, EditorCell cellWithId) {
+    if (cellWithId instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label)cellWithId;
+      label.setCaretPosition(AnonymousCellAnnotation_Behavior.call_getCaretPosition_6268941039745717986(thisNode, label));
+      label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
+      label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
     }
   }
 

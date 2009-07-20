@@ -4,7 +4,7 @@ package jetbrains.mps.editorTest;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
 import junit.framework.Assert;
 
@@ -16,11 +16,11 @@ public class ForTest_Test extends BaseTransformationTest {
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEdmitorTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635796", "");
-      BaseEdmitorTestBody.typeString(editor, "for ");
+      BaseEditorTestBody.typeString(editor, "for ");
       Assert.assertTrue(editor.getCurrentEditorComponent().getNodeSubstituteChooser().isVisible());
       this.finishTest();
     }

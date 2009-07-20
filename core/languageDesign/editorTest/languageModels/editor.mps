@@ -83,6 +83,7 @@
     <link role="conceptDeclaration" targetNodeId="1.3702466984434811404" resolveInfo="StubStatement" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3702466984434811408">
       <property name="text" value="stub" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3582597462266521347" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6859592652550843067">
@@ -118,6 +119,22 @@
       <property name="name" value="baseStyle" />
       <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="7301049412170117874">
         <property name="style" value="PLAIN" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3582597462265868789">
+    <link role="conceptDeclaration" targetNodeId="1.3582597462265868788" resolveInfo="InspectorBlock" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3582597462265868791">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3582597462265868793" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="3582597462266260257">
+        <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="3582597462266514492" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3582597462265868796">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="3582597462265868797" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3582597462265868799">
+        <link role="relationDeclaration" targetNodeId="1.3582597462265868798" />
       </node>
     </node>
   </node>
