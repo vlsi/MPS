@@ -21,6 +21,7 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept, 
   public static final String IS_AVAILABLE_IN_CHILD_NODES = "isAvailableInChildNodes";
   public static final String FOR_CONCEPT = "forConcept";
   public static final String DESCRIPTION_FUNCTION = "descriptionFunction";
+  public static final String CHILD_FILTER_FUNCTION = "childFilterFunction";
   public static final String IS_APPLICABLE_FUNCTION = "isApplicableFunction";
   public static final String EXECUTE_FUNCTION = "executeFunction";
 
@@ -90,6 +91,14 @@ public class IntentionDeclaration extends BaseConcept implements INamedConcept, 
 
   public void setDescriptionFunction(DescriptionBlock node) {
     super.setChild(IntentionDeclaration.DESCRIPTION_FUNCTION, node);
+  }
+
+  public ChildFilterBlock getChildFilterFunction() {
+    return (ChildFilterBlock)this.getChild(ChildFilterBlock.class, IntentionDeclaration.CHILD_FILTER_FUNCTION);
+  }
+
+  public void setChildFilterFunction(ChildFilterBlock node) {
+    super.setChild(IntentionDeclaration.CHILD_FILTER_FUNCTION, node);
   }
 
   public IsApplicableBlock getIsApplicableFunction() {

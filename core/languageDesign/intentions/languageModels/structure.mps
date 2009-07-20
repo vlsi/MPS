@@ -82,6 +82,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1192794782375" resolveInfo="DescriptionBlock" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3618415754251190681">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="childFilterFunction" />
+      <link role="target" targetNodeId="3618415754251190680" resolveInfo="ChildFilterBlock" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1192795688242">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="isApplicableFunction" />
@@ -241,6 +246,53 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="queryBlock" />
       <link role="target" targetNodeId="1240316299033" resolveInfo="QueryBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="3618415754251190680">
+    <property name="name" value="ChildFilterBlock" />
+    <property name="package" value="childfilter" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3618415754251190715">
+    <property name="name" value="ChildFilterFunction" />
+    <property name="package" value="childfilter" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3618415754251190718">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3618415754251190719" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3618415754251190720">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="2.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3618415754251192287">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="3618415754251192144" resolveInfo="ConceptFunctionParameter_childNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3618415754251190721">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192796902958" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3618415754251190716">
+      <link role="intfc" targetNodeId="3618415754251190680" resolveInfo="ChildFilterBlock" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3618415754251190717">
+      <property name="value" value="child filter function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3618415754251192144">
+    <property name="name" value="ConceptFunctionParameter_childNode" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3618415754251192145">
+      <property name="value" value="childNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3618415754251192146">
+      <property name="value" value="function parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3618415754251192147">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

@@ -219,5 +219,28 @@
       <link role="concept" targetNodeId="1.1240322627579" resolveInfo="ConceptFunctionParameter_parameter" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="3618415754251192148">
+    <property name="name" value="typeof_ConceptFunctionParameter_childNode" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3618415754251192149">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="3618415754251192278">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3618415754251192282">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3618415754251192283">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3618415754251192285" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3618415754251192281">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="3618415754251192275">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3618415754251192277">
+              <link role="applicableNode" targetNodeId="3618415754251192150" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3618415754251192150">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.3618415754251192144" resolveInfo="ConceptFunctionParameter_childNode" />
+    </node>
+  </node>
 </model>
 

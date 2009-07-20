@@ -52,6 +52,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
 
+  public static boolean ifMacro_Condition_3618415754251192082(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes") && (SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3618415754251195574(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_3618415754251195625(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes") && (SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3618415754251195639(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes") && (SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true) != null)) || SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
+  }
+
   public static boolean ifMacro_Condition_4945049520561168333(final IOperationContext operationContext, final IfMacroContext _context) {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
@@ -82,6 +98,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_2925366645633602038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
+  }
+
+  public static SNode sourceNodeQuery_3618415754251192111(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true);
+  }
+
+  public static SNode sourceNodeQuery_3618415754251192135(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
   public static SNode sourceNodeQuery_4945049520561168189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

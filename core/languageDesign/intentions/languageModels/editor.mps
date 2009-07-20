@@ -58,19 +58,46 @@
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313744" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225199670502">
-          <property name="vertical" value="false" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225199670503">
-            <property name="flag" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3618415754251190693">
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="3618415754251190694" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1225199670502">
+            <property name="vertical" value="false" />
+            <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1225199670503">
+              <property name="flag" value="false" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225199674348">
+              <property name="text" value="available in child nodes :" />
+              <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225199785681">
+              <link role="relationDeclaration" targetNodeId="1.1225199239732" resolveInfo="isAvailableInChildNodes" />
+            </node>
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313746" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1225199674348">
-            <property name="text" value="available in child nodes :" />
-            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3618415754251190703">
+            <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="3618415754251190704" />
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3618415754251190708">
+              <property name="text" value="child filter :" />
+              <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3618415754251190696">
+              <property name="emptyNoTargetText" value="false" />
+              <property name="noTargetText" value="&lt;all child nodes&gt;" />
+              <link role="relationDeclaration" targetNodeId="1.3618415754251190681" />
+            </node>
+            <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="3618415754251190709">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3618415754251190710">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3618415754251190711">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3618415754251190712">
+                    <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3618415754251190713" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3618415754251190714">
+                      <link role="property" targetNodeId="1.1225199239732" resolveInfo="isAvailableInChildNodes" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1225199785681">
-            <link role="relationDeclaration" targetNodeId="1.1225199239732" resolveInfo="isAvailableInChildNodes" />
-          </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239880313746" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240316707554">
           <property name="text" value="" />
