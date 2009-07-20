@@ -51,7 +51,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
-  <maxImportIndex value="23" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
@@ -69,6 +69,9 @@
   <import index="21" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="24" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="26" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />

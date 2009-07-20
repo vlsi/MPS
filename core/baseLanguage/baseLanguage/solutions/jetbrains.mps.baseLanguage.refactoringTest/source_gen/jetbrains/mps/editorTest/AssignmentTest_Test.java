@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class AssignmentTest_Test extends BaseTransformationTest {
 
@@ -19,7 +20,8 @@ public class AssignmentTest_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230058635670", "1230058635678");
-      BaseEditorTestBody.typeString(editor, "=0");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "=0");
       this.finishTest();
     }
 

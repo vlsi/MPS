@@ -18,6 +18,7 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_LAST_POSITION = "isLastPosition";
   public static final String USE_LABEL_SELECTION = "useLabelSelection";
+  public static final String IS_IN_INSPECTOR = "isInInspector";
   public static final String CARET_POSITION = "caretPosition";
   public static final String SELECTION_START = "selectionStart";
   public static final String SELECTION_END = "selectionEnd";
@@ -82,6 +83,14 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
 
   public void setUseLabelSelection(boolean value) {
     this.setBooleanProperty(AnonymousCellAnnotation.USE_LABEL_SELECTION, value);
+  }
+
+  public boolean getIsInInspector() {
+    return this.getBooleanProperty(AnonymousCellAnnotation.IS_IN_INSPECTOR);
+  }
+
+  public void setIsInInspector(boolean value) {
+    this.setBooleanProperty(AnonymousCellAnnotation.IS_IN_INSPECTOR, value);
   }
 
   public int getCaretPosition() {

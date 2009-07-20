@@ -35,13 +35,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="7" />
+  <maxImportIndex value="8" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
+  <import index="8" modelUID="f:java_stub#jetbrains.mps.nodeEditor.inspector(jetbrains.mps.nodeEditor.inspector@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="1210673906861">
     <property name="name" value="AddTestAnnotation" />
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
@@ -379,6 +380,38 @@
               <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="1228588344669" />
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1228588344670">
                 <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getContextCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getContextCell" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1977980803835380461">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1977980803835380462">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1977980803835380527">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1977980803835380534">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1977980803835380537">
+                  <property name="value" value="true" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1977980803835380529">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1977980803835380528">
+                    <link role="variableDeclaration" targetNodeId="1226066626901" resolveInfo="newAnnotation" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1977980803835380533">
+                    <link role="property" targetNodeId="1.1977980803835239937" resolveInfo="isInInspector" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1977980803835380468">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1977980803835380526">
+              <link role="classifier" targetNodeId="8.~InspectorEditorComponent" resolveInfo="InspectorEditorComponent" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1977980803835380465">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1977980803835380466">
+                <link role="variableDeclaration" targetNodeId="1228588344666" resolveInfo="contextCell" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1977980803835380467">
+                <link role="baseMethodDeclaration" targetNodeId="7.~EditorCell.getEditor():jetbrains.mps.nodeEditor.EditorComponent" resolveInfo="getEditor" />
               </node>
             </node>
           </node>

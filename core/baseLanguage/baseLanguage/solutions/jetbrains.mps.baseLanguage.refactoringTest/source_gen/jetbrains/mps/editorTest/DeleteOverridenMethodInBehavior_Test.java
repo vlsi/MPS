@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -21,9 +22,10 @@ public class DeleteOverridenMethodInBehavior_Test extends BaseTransformationTest
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1232554649248", "1232555746044");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT"));
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT"));
       for(int i = 0 ; i < 5 ; i++ ) {
-        BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
+        BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       }
       this.finishTest();
     }

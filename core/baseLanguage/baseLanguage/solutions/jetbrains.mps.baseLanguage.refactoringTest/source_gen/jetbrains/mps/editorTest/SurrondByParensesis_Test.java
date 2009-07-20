@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
@@ -21,8 +22,9 @@ public class SurrondByParensesis_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1241100704753", "1241100756809");
-      BaseEditorTestBody.typeString(editor, "(");
-      BaseEditorTestBody.pressKeys(editor, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "(");
+      BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
       editor.getCurrentEditorComponent().getNodeSubstituteChooser().doSubstituteSelection("(", 0);
       this.finishTest();
     }

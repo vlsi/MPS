@@ -614,6 +614,10 @@
       <property name="name" value="selectionEnd" />
       <link role="dataType" targetNodeId="5.1082983657062" resolveInfo="integer" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1977980803835239937">
+      <property name="name" value="isInInspector" />
+      <link role="dataType" targetNodeId="5.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1229194968597">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
@@ -663,6 +667,24 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2685915532175065958">
       <property name="value" value="expression container (used inside test nodes)" />
       <link role="conceptPropertyDeclaration" targetNodeId="5.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5773579205429617809">
+    <property name="package" value="editor" />
+    <property name="name" value="SwitchToInspector" />
+    <link role="extends" targetNodeId="7.1068580123157" resolveInfo="Statement" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5773579205429617810">
+      <property name="value" value="switch to inspector" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5773579205429866751">
+    <property name="package" value="expression" />
+    <property name="name" value="EditorComponentExpression" />
+    <link role="extends" targetNodeId="7.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5773579205429866755">
+      <property name="value" value="editor component" />
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

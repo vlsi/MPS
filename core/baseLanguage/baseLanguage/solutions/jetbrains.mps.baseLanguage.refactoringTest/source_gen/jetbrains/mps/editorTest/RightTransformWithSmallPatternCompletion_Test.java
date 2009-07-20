@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class RightTransformWithSmallPatternCompletion_Test extends BaseTransformationTest {
 
@@ -19,7 +20,8 @@ public class RightTransformWithSmallPatternCompletion_Test extends BaseTransform
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1231856205436", "1231856215769");
-      BaseEditorTestBody.typeString(editor, "inta");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "inta");
       this.finishTest();
     }
 

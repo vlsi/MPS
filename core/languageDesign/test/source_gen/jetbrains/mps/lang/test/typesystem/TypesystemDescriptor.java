@@ -30,6 +30,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_EditorComponentExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new CheckTestMethodDataflow_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

@@ -8,8 +8,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -53,6 +54,9 @@ public class AddCellAnnotation_Intention extends BaseIntention {
     }
     SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
+    if (contextCell.getEditor() instanceof InspectorEditorComponent) {
+      SPropertyOperations.set(newAnnotation, "isInInspector", "" + true);
+    }
     if (contextCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label)contextCell;
       int caretPosition = label.getCaretPosition();

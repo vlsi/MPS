@@ -9,7 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_Behavior;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -42,7 +42,7 @@ public class CellReference {
   }
 
   public void setupSelection(IEditor editor) {
-    EditorComponent editorComponent = editor.getCurrentEditorComponent();
+    NodeEditorComponent editorComponent = ((NodeEditorComponent)editor.getCurrentEditorComponent());
     AnonymousCellAnnotation_Behavior.call_setupSelection_6268941039745707957(this.myAnnotation, editorComponent, this.myNode, this.myMap);
   }
 

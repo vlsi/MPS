@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
@@ -46,6 +46,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1210676511811">
     <property name="name" value="typeof_TestNodeReference" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210676511812">
@@ -313,6 +314,32 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1228148844377">
       <property name="name" value="expression" />
       <link role="concept" targetNodeId="1.1225467090849" resolveInfo="ProjectExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5773579205430173663">
+    <property name="name" value="typeof_EditorComponentExpression" />
+    <property name="package" value="expression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5773579205430173664">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5773579205430190112">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5773579205430190113">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5773579205430190114">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5773579205430193252">
+              <link role="classifier" targetNodeId="11.~EditorComponent" resolveInfo="EditorComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5773579205430190116">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5773579205430190117">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5773579205430190118">
+              <link role="applicableNode" targetNodeId="5773579205430173665" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5773579205430173665">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.5773579205429866751" resolveInfo="EditorComponentExpression" />
     </node>
   </node>
 </model>

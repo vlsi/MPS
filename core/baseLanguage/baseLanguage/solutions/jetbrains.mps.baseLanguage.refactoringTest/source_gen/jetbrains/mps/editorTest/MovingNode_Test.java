@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.ActionListener;
 import javax.swing.KeyStroke;
 
@@ -21,6 +22,7 @@ public class MovingNode_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1452412866770394613", "1452412866770394617");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
       ActionListener actionListener = editor.getCurrentEditorComponent().getActionForKeyStroke(KeyStroke.getKeyStroke("alt DOWN"));
       actionListener.actionPerformed(null);
       this.finishTest();

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class LeftTransformOfDotOperation_Test extends BaseTransformationTest {
 
@@ -19,7 +20,8 @@ public class LeftTransformOfDotOperation_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1240561528709", "1240561563431");
-      BaseEditorTestBody.typeString(editor, "&&");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "&&");
       this.finishTest();
     }
 

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class PriorityProblem_Test extends BaseTransformationTest {
 
@@ -19,7 +20,8 @@ public class PriorityProblem_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("6778605776625982935", "6778605776625982939");
-      BaseEditorTestBody.typeString(editor, "2>4+5&&true");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "2>4+5&&true");
       this.finishTest();
     }
 

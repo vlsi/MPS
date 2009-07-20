@@ -114,14 +114,20 @@ public class BaseEditorTestBody extends BaseTestBody {
   }
 
   public static void typeString(IEditor editor, String text) {
-    EditorComponent editorComponent = editor.getCurrentEditorComponent();
+    typeString(editor.getCurrentEditorComponent(), text);
+  }
+
+  public static void typeString(EditorComponent editorComponent, String text) {
     for(char ch : text.toCharArray()) {
       editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
     }
   }
 
   public static void pressKeys(IEditor editor, List<String> keyStrokes) {
-    EditorComponent editorComponent = editor.getCurrentEditorComponent();
+    BaseEditorTestBody.pressKeys(editor.getCurrentEditorComponent(), keyStrokes);
+  }
+
+  public static void pressKeys(EditorComponent editorComponent, List<String> keyStrokes) {
     for(String code : ListSequence.fromList(keyStrokes)) {
       KeyStroke stroke = KeyStroke.getKeyStroke(code);
       editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));

@@ -261,12 +261,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "body", true), "statement", true);
   }
 
-  public static Iterable sourceNodesQuery_1228936386481(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "keyStrokes", true);
-  }
-
   public static Iterable sourceNodesQuery_1229268854954(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "code", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_5898974437025187003(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "keyStrokes", true);
   }
 
 }

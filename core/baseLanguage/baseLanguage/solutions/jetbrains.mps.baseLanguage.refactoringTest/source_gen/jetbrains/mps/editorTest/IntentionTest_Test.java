@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class IntentionTest_Test extends BaseTransformationTest {
 
@@ -19,6 +20,7 @@ public class IntentionTest_Test extends BaseTransformationTest {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1230132506154", "1230132540710");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention", editor, this.myStart.getNode());
       this.finishTest();
     }
