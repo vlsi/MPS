@@ -6,17 +6,20 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_1227714048980 = {SNode.class};
+  private static Class[] PARAMETERS_4025276038182319417 = {SNode.class};
   private static Class[] PARAMETERS_1234359555698 = {SNode.class};
   private static Class[] PARAMETERS_1232982539764 = {SNode.class};
 
@@ -42,6 +45,12 @@ public class BaseMethodDeclaration_Behavior {
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "body", true);
+  }
+
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "returnType", true));
+    return result;
   }
 
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
@@ -133,6 +142,10 @@ public class BaseMethodDeclaration_Behavior {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
 
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319417);
+  }
+
   public static boolean call_isReturnsVoid_1234359555698(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isReturnsVoid_1234359555698", PARAMETERS_1234359555698);
   }
@@ -143,6 +156,10 @@ public class BaseMethodDeclaration_Behavior {
 
   public static boolean callSuper_isDataFlowChecked_1227714048980(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
+  }
+
+  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319417);
   }
 
   public static boolean callSuper_isReturnsVoid_1234359555698(SNode thisNode, String callerConceptFqName) {

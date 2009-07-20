@@ -4,8 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InstanceMethodDeclaration_Behavior {
+  private static Class[] PARAMETERS_4025276038182459792 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -16,6 +22,20 @@ public class InstanceMethodDeclaration_Behavior {
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
+  }
+
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
+    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    return result;
+  }
+
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459792);
+  }
+
+  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459792(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182459792);
   }
 
 }

@@ -7,10 +7,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FieldDeclaration_Behavior {
+  private static Class[] PARAMETERS_4025276038182459890 = {SNode.class};
 
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
@@ -22,6 +26,12 @@ public class FieldDeclaration_Behavior {
       prefix = "is";
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
+  }
+
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182325660(SNode thisNode) {
+    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    return result;
   }
 
   public static boolean call_hasGetter_1213877243808(SNode thisNode, SNode classConcept) {
@@ -58,6 +68,14 @@ public class FieldDeclaration_Behavior {
 
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
+  }
+
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
+  }
+
+  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
   }
 
 }

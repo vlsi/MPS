@@ -5,11 +5,15 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConstructorDeclaration_Behavior {
+  private static Class[] PARAMETERS_4025276038182459842 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -24,6 +28,12 @@ public class ConstructorDeclaration_Behavior {
 
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return true;
+  }
+
+  public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319417(SNode thisNode) {
+    List<SNode> result = HasAnnotation_Behavior.callSuper_getChildrenToDisplayIntention_4025276038182319200(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
+    return result;
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -45,6 +55,14 @@ public class ConstructorDeclaration_Behavior {
     }
     result.append(")");
     return result.toString();
+  }
+
+  public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode) {
+    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "virtual_getChildrenToDisplayIntention_4025276038182319417", PARAMETERS_4025276038182459842);
+  }
+
+  public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319417", PARAMETERS_4025276038182459842);
   }
 
 }
