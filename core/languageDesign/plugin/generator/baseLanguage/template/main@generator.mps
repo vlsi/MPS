@@ -2948,7 +2948,7 @@
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3618415754251518859">
                               <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3618415754251518863" />
                               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3618415754251518867">
-                                <link role="property" targetNodeId="1.3618415754251500495" resolveInfo="shortcutChar" />
+                                <link role="property" targetNodeId="1.7669625834619276534" resolveInfo="shortcutChar" />
                               </node>
                             </node>
                           </node>
@@ -2964,7 +2964,7 @@
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3618415754251518909">
                                   <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3618415754251518910" />
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3618415754251518911">
-                                    <link role="property" targetNodeId="1.3618415754251500495" resolveInfo="shortcutChar" />
+                                    <link role="property" targetNodeId="1.7669625834619276534" resolveInfo="shortcutChar" />
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" id="3618415754251518912" />

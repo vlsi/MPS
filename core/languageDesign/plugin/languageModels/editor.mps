@@ -4304,7 +4304,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="3618415754251518825">
         <property name="noTargetText" value="&lt;no shortcut&gt;" />
         <property name="allowEmptyText" value="true" />
-        <link role="relationDeclaration" targetNodeId="1.3618415754251500495" resolveInfo="shortcutChar" />
+        <link role="relationDeclaration" targetNodeId="1.7669625834619276534" resolveInfo="shortcutChar" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="3618415754251518826">
         <link role="styleClass" targetNodeId="17.1198594875276" resolveInfo="Comment" />
@@ -4324,7 +4324,7 @@
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3618415754251518836">
                         <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="3618415754251518837" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3618415754251518838">
-                          <link role="property" targetNodeId="1.3618415754251500495" resolveInfo="shortcutChar" />
+                          <link role="property" targetNodeId="1.7669625834619276534" resolveInfo="shortcutChar" />
                         </node>
                       </node>
                       <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3618415754251518839">
@@ -4344,7 +4344,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8859288484512506803">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="8859288484512506802" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8859288484512506807">
-                    <link role="property" targetNodeId="1.3618415754251500495" resolveInfo="shortcutChar" />
+                    <link role="property" targetNodeId="1.7669625834619276534" resolveInfo="shortcutChar" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" id="8859288484512507171" />

@@ -835,6 +835,10 @@
       <property name="name" value="emptyCaption" />
       <link role="dataType" targetNodeId="6.1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="7669625834619276534">
+      <property name="name" value="shortcutChar" />
+      <link role="dataType" targetNodeId="1205676676847" resolveInfo="mnemonic" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1203851903990">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
     </node>
@@ -1005,7 +1009,7 @@
     <property name="name" value="ConceptFunctionParameter_OperationContext" />
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204041809545">
-      <property name="value" value="operationContext" />
+      <property name="value" value="context" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1204041809546">
