@@ -5,12 +5,14 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
+import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
+import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 
 import java.util.*;
 
@@ -102,15 +104,57 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myParametersToCheckedMethodCalls.clear();
   }
 
-  private void testAndFixMethodCall(SNode methodCall) {
-    BaseMethodCall baseMethodCall = (BaseMethodCall) BaseAdapter.fromNode(methodCall);
-    BaseMethodDeclaration baseMethodDeclaration = baseMethodCall.getBaseMethodDeclaration();
+  private void testAndFixMethodCall(SNode methodCallNode) {
+    IMethodCall methodCall = (IMethodCall) BaseAdapter.fromNode(methodCallNode);
+    BaseMethodDeclaration baseMethodDeclaration = methodCall.getBaseMethodDeclaration();
     if (baseMethodDeclaration == null) {
       return;
     }
     String methodName = baseMethodDeclaration.getName();
+    List<Expression> actualArgs = methodCall.getActualArguments();
+    Classifier classifier = getClassifier(methodCall);
 
-    //todo
+
+    List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName, classifier);
+    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
+
+    List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = MethodResolveUtil.selectByParmCount(candidates, actualArgs);
+    BaseMethodDeclaration newTarget = null;
+    if (methodDeclarationsGoodParams.size() == 1) {
+      newTarget = methodDeclarationsGoodParams.get(0);
+    } else {
+      newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+    }
+    if (newTarget != null) {
+      //todo may be in command
+      methodCall.setBaseMethodDeclaration(newTarget);
+    }
+  }
+
+  private Classifier getClassifier(IMethodCall methodCall) {
+    if (methodCall instanceof InstanceMethodCallOperation) {
+      InstanceMethodCallOperation imco = (InstanceMethodCallOperation) methodCall;
+      Expression operand = ((DotExpression)imco.getParent()).getOperand();
+      SNode operandType = TypeChecker.getInstance().getTypeOf(operand.getNode());
+      SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, new ConceptMatchingPattern(ClassifierType.concept));
+      if (coercedType != null) {
+        return (Classifier) BaseAdapter.fromNode(coercedType.getReferent(ClassifierType.CLASSIFIER));
+      }
+    }
+    return null;
+  }
+
+  private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall) {
+    return new HashMap<TypeVariableDeclaration, Type>();
+  }
+
+  public List<? extends BaseMethodDeclaration> getCandidates(IMethodCall methodCall, String methodName, Classifier classifier) {
+    List<? extends BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
+    if (methodCall instanceof InstanceMethodCallOperation) {
+      return new ClassifierAndSuperClassifiersScope(classifier).getMethodsByName(methodName);
+    }
+
+    return new ArrayList<BaseMethodDeclaration>();
   }
 
   private void methodDeclarationChanged(SNode method) {
