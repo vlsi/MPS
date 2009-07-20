@@ -20,6 +20,7 @@ import com.intellij.openapi.extensions.PluginId;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -216,33 +217,49 @@ public class ActionFactory {
   private void unregisterGroups() {
     ActionManager manager = ActionManager.getInstance();
 
-    List<BaseGroup> groups = new ArrayList<BaseGroup>(1000);
+    List<BaseGroup> mpsGroups = new ArrayList<BaseGroup>(1000);
     for (String actionId : myActions) {
       AnAction action = ActionManager.getInstance().getAction(actionId);
       if (action instanceof BaseGroup) {
-        groups.add((BaseGroup) action);
+        mpsGroups.add((BaseGroup) action);
       }
     }
 
+    //remove mps groups from IDEA groups
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);
-      if (action instanceof ActionGroup) {
-        unregisterAllGroupOccurencesInGroup((ActionGroup) action, groups);
+      if (action instanceof ActionGroup && (!(action instanceof BaseGroup))) {
+        ActionGroup staticGroup = (ActionGroup) action;
+        removeGroupsFromGroup(staticGroup, mpsGroups);
       }
     }
   }
 
-  private static void unregisterAllGroupOccurencesInGroup(ActionGroup group, List<BaseGroup> groups) {
+  private static void removeGroupsFromGroup(ActionGroup group, List<BaseGroup> groups) {
     AnAction[] children = group.getChildren(null);
     for (AnAction child : children) {
       if (child instanceof ActionGroup) {
-        unregisterAllGroupOccurencesInGroup((ActionGroup) child, groups);
+        removeGroupsFromGroup((ActionGroup) child, groups);
       }
     }
 
-    if (group instanceof DefaultActionGroup) {
-      for (ActionGroup g : groups) {
+    boolean groupIsDefaultActionGroup = group instanceof DefaultActionGroup;
+
+    for (ActionGroup g : groups) {
+      if (groupIsDefaultActionGroup) {
         ((DefaultActionGroup) group).remove(g);
+      } else {
+        boolean gInGroup = ActionUtils.contains(group, g);
+
+        if (gInGroup){
+          String errorMessage =
+            "Memory leaks detected: MPS action group " +
+              g.getClass().getName() +
+              " was added to group " +
+              group.getClass().getName() +
+              " from which it can't be removed.";
+          LOG.error(errorMessage);
+        }
       }
     }
   }

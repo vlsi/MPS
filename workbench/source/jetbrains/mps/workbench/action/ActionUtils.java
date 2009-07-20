@@ -59,4 +59,14 @@ public class ActionUtils {
     AnActionEvent res = new AnActionEvent(null, context, place, new Presentation(), ActionManager.getInstance(), 0);
     return res;
   }
+
+  public static boolean contains(ActionGroup container, ActionGroup what) {
+    if (container == what) return true;
+    for (AnAction child : container.getChildren(null)) {
+      if (child instanceof ActionGroup) {
+        if (contains((ActionGroup) child, what)) return true;
+      }
+    }
+    return false;
+  }  
 }
