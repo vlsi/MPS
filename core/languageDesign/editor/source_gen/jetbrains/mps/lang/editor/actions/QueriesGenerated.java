@@ -307,7 +307,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String pattern) {
-            return "indent collection";
+            return "child node cell (indent)";
           }
 
           public String getMatchingText(String pattern) {

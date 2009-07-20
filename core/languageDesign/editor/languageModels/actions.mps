@@ -1086,7 +1086,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2810973186484218447">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2810973186484218448">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2810973186484218449">
-                  <property name="value" value="indent collection" />
+                  <property name="value" value="child node cell (indent)" />
                 </node>
               </node>
             </node>
