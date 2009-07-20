@@ -17668,7 +17668,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" id="6778605776626487870">
-    <property name="name" value="BianryExpressionPriority" />
+    <property name="name" value="BinaryExpressionPriority" />
     <node role="descriptionBlock" type="jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock" id="8694802888006426216">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8694802888006426217">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8694802888006426218">
