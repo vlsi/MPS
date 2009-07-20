@@ -24,6 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -238,7 +239,12 @@ public class TabbedEditor implements IEditor {
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     if (getEditorContext() != null) {
-      result.myMemento = getEditorContext().createMemento(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL);
+      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
+      result.myMemento = getEditorContext().createMemento(full);
+      EditorComponent editorComponent = getCurrentEditorComponent();
+      if (editorComponent != null) {
+        result.myInspectorMemento = ((NodeEditorComponent)editorComponent).getInspector().getEditorContext().createMemento(full);
+      }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
     for (ILazyTab tab : myTabbedPane.getTabs()) {
@@ -273,6 +279,12 @@ public class TabbedEditor implements IEditor {
       EditorContext editorContext = getEditorContext();
       if (editorContext != null) {
         editorContext.setMemento(s.myMemento);
+      }
+    }
+    if (s.myInspectorMemento != null) {
+      EditorComponent component = getCurrentEditorComponent();
+      if (component != null) {
+        ((NodeEditorComponent)component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
   }
@@ -319,6 +331,7 @@ public class TabbedEditor implements IEditor {
     private static final String INDEX = "index";
 
     private Object myMemento;
+    private Object myInspectorMemento;
     private List<Integer> myInnerCurrentTabs = new ArrayList<Integer>();
     private int myCurrentTab;
 
@@ -350,7 +363,7 @@ public class TabbedEditor implements IEditor {
     }
 
     public int hashCode() {
-      return myMemento.hashCode();
+      return myMemento.hashCode() + myInspectorMemento.hashCode();
     }
 
     public boolean equals(Object obj) {
@@ -359,7 +372,7 @@ public class TabbedEditor implements IEditor {
       }
 
       MyFileEditorState state = (MyFileEditorState) obj;
-      return EqualUtil.equals(state.myMemento, myMemento);
+      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 

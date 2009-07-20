@@ -138,7 +138,13 @@ public class NodeEditor implements IEditor {
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
     if (getEditorContext() != null) {
-      result.myMemento = getEditorContext().createMemento(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL);
+      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
+      result.myMemento = getEditorContext().createMemento(full);
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        EditorComponent inspector = editorComponent.getInspector();
+        result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
+      }
     }
     return result;
   }
@@ -152,10 +158,17 @@ public class NodeEditor implements IEditor {
     if (s.myMemento != null) {
       getEditorContext().setMemento(s.myMemento);
     }
+    if (s.myInspectorMemento != null) {
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+      }
+    }
   }
 
   public static class MyFileEditorState implements MPSEditorState {
     private Object myMemento;
+    private Object myInspectorMemento;
 
     public void save(Element e) {
     }
@@ -164,7 +177,7 @@ public class NodeEditor implements IEditor {
     }
 
     public int hashCode() {
-      return myMemento.hashCode();
+      return myMemento.hashCode() + myInspectorMemento.hashCode();
     }
 
     public boolean equals(Object obj) {
@@ -173,7 +186,7 @@ public class NodeEditor implements IEditor {
       }
 
       MyFileEditorState state = (MyFileEditorState) obj;
-      return EqualUtil.equals(state.myMemento, myMemento);
+      return EqualUtil.equals(state.myMemento, myMemento) && EqualUtil.equals(state.myInspectorMemento, myInspectorMemento);
     }
   }
 
