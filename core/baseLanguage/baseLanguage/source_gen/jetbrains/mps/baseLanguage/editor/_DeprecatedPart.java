@@ -120,6 +120,7 @@ public class _DeprecatedPart extends AbstractCellProvider {
     {
       Style inlineStyle = new Style(editorCell) {
         {
+          this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
         }
       };

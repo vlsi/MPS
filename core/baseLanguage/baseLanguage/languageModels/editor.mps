@@ -1583,9 +1583,6 @@
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="1223639195172">
         <link role="editorComponent" targetNodeId="1223637210494" resolveInfo="_DeprecatedPart" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237647672801">
-          <property name="flag" value="true" />
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188210594841">
         <property name="vertical" value="true" />
@@ -14229,6 +14226,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" id="6910100143679116888">
+            <property name="flag" value="true" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1237719194296">
             <property name="flag" value="true" />
