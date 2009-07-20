@@ -19,6 +19,8 @@ package jetbrains.mps.baseLanguage.closures.runtime;
 public class Result<T,R> {
 
 	private Outcome outcome;
+	
+	private String breakLabel;
 
 	private R retVal;
 	
@@ -56,6 +58,11 @@ public class Result<T,R> {
 	public static <U,V> Result<U,V> BREAK () {
 		return (Result<U,V>) BREAK;
 	}
+
+        @SuppressWarnings("unchecked")
+        public static <U,V> Result<U,V> BREAK (String label) {
+                return new Result <U,V> (label);
+        }
 
         @SuppressWarnings("unchecked")
         public static <U,V> Result<U,V> NONE () {
@@ -137,6 +144,10 @@ public class Result<T,R> {
 	public short terminateShort () {
 		return ((Short) getTermVal()).shortValue();
 	}
+	
+	public String getBreakLabel () {
+	    return breakLabel;
+	}
 
 	private Result(Outcome outcome, T termVal, R retVal) {
 		this.outcome = outcome;
@@ -147,6 +158,11 @@ public class Result<T,R> {
 	private Result(Outcome outcome) {
 		this.outcome = outcome;
 	}
+        
+	private Result(String label) {
+            this.outcome = Outcome.BREAK;
+            this.breakLabel = label;
+        }
 	
 	private R getRetVal() {
 		switch (outcome) {

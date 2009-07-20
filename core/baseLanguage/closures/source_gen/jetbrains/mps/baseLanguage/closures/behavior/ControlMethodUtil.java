@@ -77,7 +77,10 @@ public class ControlMethodUtil {
           return null;
         }
       }
-      return inf;
+      return (inf.isInitialized() ?
+        inf :
+        null
+      );
     }
     return null;
   }
@@ -90,6 +93,10 @@ public class ControlMethodUtil {
     private boolean initialized = false;
 
     public Info() {
+    }
+
+    public boolean isInitialized() {
+      return this.initialized;
     }
 
     public void addControlClosureType(SNode cct) {

@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedClosures;
 
 public class ControlStatementDemo {
+  private static boolean[] LOCK = {false};
 
   public ControlStatementDemo() {
   }
@@ -38,6 +39,46 @@ public class ControlStatementDemo {
   }
 
   public static void withLock(Object lock, _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
+    synchronized(lock) {
+      for(Result<?, ?> __result__ = block.invokeUnrestricted() ;  ; ) {
+        switch (__result__.getOutcome()) {
+          case RETURN_VALUE:
+            //  fall through
+          case RETURN_VOID:
+            //  fall through
+          case BREAK:
+            return;
+          case TERMINATE_VOID:
+            break;
+          default:
+            break;
+        }
+        break;
+      }
+    }
+  }
+
+  public static void async(final _UnrestrictedFunctionTypes._void_void_P0_E0 block) {
+    new Thread() {
+
+      public void run() {
+        for(Result<?, ?> __result__ = block.invokeUnrestricted() ;  ; ) {
+          switch (__result__.getOutcome()) {
+            case RETURN_VALUE:
+              //  fall through
+            case RETURN_VOID:
+              //  fall through
+            case BREAK:
+              return;
+            case TERMINATE_VOID:
+              break;
+            default:
+              break;
+          }
+          break;
+        }
+      }
+    }.start();
   }
 
   public static void forEachEntry(Map<String, Integer> map, _UnrestrictedFunctionTypes._void_void_P2_E0<? super String, ? super Integer> block) {
@@ -62,65 +103,137 @@ public class ControlStatementDemo {
 
   public static int foo() {
     System.out.println("foo> entering");
-    for(_UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+    {
+      _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
 
-      public Result<Integer, Integer> invokeUnrestricted() {
-        if (false) {
-          return Result.RETURN(1);
+        public Result<Object, Object> invokeUnrestricted() {
+          {
+            _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
+
+              public Result<Object, Object> invokeUnrestricted() {
+                {
+                  _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
+
+                    public Result<Object, Object> invokeUnrestricted() {
+                      System.out.println("async> Owning the monitor");
+                      LOCK[0] = true;
+                      try {
+                        LOCK.wait();
+                      } catch (InterruptedException ie) {
+                        //  ignore
+                      }
+                      System.out.println("async> Woken up");
+                      return Result.TERMINATE_VOID();
+                    }
+                  });
+                  withLock(LOCK, __closure__);
+                  Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+                  switch (__result__.getOutcome()) {
+                    default:
+                      break;
+                  }
+                }
+                return Result.TERMINATE_VOID();
+              }
+            });
+            async(__closure__);
+            Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+            switch (__result__.getOutcome()) {
+              default:
+                break;
+            }
+          }
+          return Result.TERMINATE_VOID();
         }
-        return Result.TERMINATE(42);
-      }
-    }) ;  ; ) {
-      bar(1, __closure__);
+      });
+      withLock(LOCK, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
-        case RETURN_VALUE:
-          return __result__.returnInt();
-        case BREAK:
-          break;
         default:
           break;
       }
-      break;
     }
-    for(_UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+label3691_0:
+    while (true) {
+      {
+        _UnrestrictedClosures._void_void_P0_E0 __closure__ = new _UnrestrictedClosures._void_void_P0_E0(new _UnrestrictedFunctionTypes._void_void_P0_E0() {
 
-      public Result<Integer, Integer> invokeUnrestricted() {
-        if (false) {
-          return Result.RETURN(2);
+          public Result<Object, Object> invokeUnrestricted() {
+            if (LOCK[0]) {
+              System.out.println("sync> Notifying");
+              LOCK.notifyAll();
+              System.out.println("sync> Done");
+              return Result.BREAK("label3691_0");
+            }
+            return Result.TERMINATE_VOID();
+          }
+        });
+        withLock(LOCK, __closure__);
+        Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+        switch (__result__.getOutcome()) {
+          case BREAK:
+            if ("label3691_0".equals(__result__.getBreakLabel())) {
+              break label3691_0;
+            }
+            break;
+          default:
+            break;
         }
-        return Result.TERMINATE(2);
       }
-    }) ;  ; ) {
+    }
+    {
+      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+
+        public Result<Integer, Integer> invokeUnrestricted() {
+          if (false) {
+            return Result.RETURN(1);
+          }
+          return Result.TERMINATE(42);
+        }
+      });
       bar(1, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
         case RETURN_VALUE:
           return __result__.returnInt();
-        case BREAK:
-          break;
         default:
           break;
       }
-      break;
+    }
+    {
+      _UnrestrictedClosures._void_terminate_P0_E0<Integer> __closure__ = new _UnrestrictedClosures._void_terminate_P0_E0<Integer>(new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+
+        public Result<Integer, Integer> invokeUnrestricted() {
+          if (false) {
+            return Result.RETURN(2);
+          }
+          return Result.TERMINATE(2);
+        }
+      });
+      bar(1, __closure__);
+      Result<?, Object> __result__ = __closure__.getAndClearLastResult();
+      switch (__result__.getOutcome()) {
+        case RETURN_VALUE:
+          return __result__.returnInt();
+        default:
+          break;
+      }
     }
     Map<String, Integer> map = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
-    for(_UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0 <String, Integer>() {
+    {
+      _UnrestrictedClosures._void_void_P2_E0 __closure__ = new _UnrestrictedClosures._void_void_P2_E0(new _UnrestrictedFunctionTypes._void_void_P2_E0 <String, Integer>() {
 
-      public Result<Object, Object> invokeUnrestricted(String k, Integer v) {
-        System.out.println(k + "=>" + v);
-        return Result.TERMINATE_VOID();
-      }
-    }) ;  ; ) {
+        public Result<Object, Object> invokeUnrestricted(String k, Integer v) {
+          System.out.println(k + "=>" + v);
+          return Result.TERMINATE_VOID();
+        }
+      });
       forEachEntry(map, __closure__);
       Result<?, Object> __result__ = __closure__.getAndClearLastResult();
       switch (__result__.getOutcome()) {
-        case BREAK:
-          break;
         default:
           break;
       }
-      break;
     }
     System.out.println("foo> leaving");
     return -1;
