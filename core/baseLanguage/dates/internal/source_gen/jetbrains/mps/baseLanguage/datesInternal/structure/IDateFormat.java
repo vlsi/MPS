@@ -9,7 +9,5 @@ public interface IDateFormat extends INamedConcept {
   public static final String IS_PUBLIC = "isPublic";
 
   public boolean getIsPublic();
-
   public void setIsPublic(boolean value);
-
 }

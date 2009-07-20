@@ -17,11 +17,11 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new SchedulePeriod_alias_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PredefinedDateFormat_isPublic_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new PredefinedDateFormat_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Month_alias_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyConfiguration_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimeIntPropertyFormatConfiguration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyFormatType_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PredefinedDateFormat_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimeProperty_jodaPeriodType_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new DateTimeProperty_jodaDateTimeFieldType_ReferentConstraint());
   }
