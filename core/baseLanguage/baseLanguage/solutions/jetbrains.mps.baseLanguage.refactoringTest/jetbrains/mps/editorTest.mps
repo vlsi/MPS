@@ -3525,8 +3525,10 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6778605776625985213">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6778605776625985214">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="6778605776625985215">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985216">
-                <property name="value" value="2" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.UnaryMinus" id="8630667313531176445">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985216">
+                  <property name="value" value="2" />
+                </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6778605776625985217">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625985218">
