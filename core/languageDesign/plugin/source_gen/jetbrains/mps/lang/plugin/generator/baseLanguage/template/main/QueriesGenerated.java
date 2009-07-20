@@ -40,6 +40,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
@@ -474,6 +475,10 @@ public class QueriesGenerated {
     return _context.getOriginalInputModel().getModelDescriptor().getModule().getModuleFqName();
   }
 
+  public static Object propertyMacro_GetPropertyValue_3618415754251518855(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "shortcutChar");
+  }
+
   public static Object propertyMacro_GetPropertyValue_3734045384532260929(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ActionGroupDeclaration_Behavior.call_getID_1213877494306(SLinkOperations.getTarget(_context.getNode(), "group", false));
   }
@@ -509,11 +514,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1204045280150(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab"), "map_SingleTabConstructor");
-  }
-
-  public static Object referenceMacro_GetReferent_1204737334162(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), "map_MultiTabConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_TabConstructor");
   }
 
   public static Object referenceMacro_GetReferent_1206183366453(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -654,14 +655,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1204052047347(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "getInnerTabNameBlock", true) != null;
-  }
-
-  public static boolean ifMacro_Condition_1204737283075(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab");
-  }
-
-  public static boolean ifMacro_Condition_1204737334178(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab");
   }
 
   public static boolean ifMacro_Condition_1205588393902(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -871,6 +864,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1239982496140(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "constructionParameter", true)).isNotEmpty();
+  }
+
+  public static boolean ifMacro_Condition_3618415754251518870(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "shortcutChar")));
   }
 
   public static boolean ifMacro_Condition_4042687513231504065(final IOperationContext operationContext, final IfMacroContext _context) {

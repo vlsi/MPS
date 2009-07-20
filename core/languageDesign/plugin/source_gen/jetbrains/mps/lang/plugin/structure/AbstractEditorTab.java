@@ -12,6 +12,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractEditorTab extends BaseConcept implements INamedConcept, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.AbstractEditorTab";
   public static final String EMPTY_CAPTION = "emptyCaption";
+  public static final String SHORTCUT_CHAR = "shortcutChar";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -28,6 +29,14 @@ public class AbstractEditorTab extends BaseConcept implements INamedConcept, ICh
 
   public void setEmptyCaption(String value) {
     this.setProperty(AbstractEditorTab.EMPTY_CAPTION, value);
+  }
+
+  public String getShortcutChar() {
+    return this.getProperty(AbstractEditorTab.SHORTCUT_CHAR);
+  }
+
+  public void setShortcutChar(String value) {
+    this.setProperty(AbstractEditorTab.SHORTCUT_CHAR, value);
   }
 
   public String getName() {

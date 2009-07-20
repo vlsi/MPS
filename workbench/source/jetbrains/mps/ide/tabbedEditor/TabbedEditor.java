@@ -93,6 +93,20 @@ public class TabbedEditor implements IEditor {
     myTabbedPane.registerKeyboardAction(anAction, aKeyStroke, aCondition);
   }
 
+  protected void addTab(ILazyTab tab, Character shortcut) {
+    final int tabNum = addTab(tab);
+
+    if (shortcut != null) {
+      registerKeyboardAction(new AbstractAction() {
+        public void actionPerformed(ActionEvent e) {
+          selectTab(tabNum);
+        }
+      }, KeyStroke.getKeyStroke("alt shift " + shortcut), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    }
+  }
+
+  @Deprecated
+  //now this is actually private
   protected int addTab(ILazyTab tab) {
     myTabbedPane.add(tab);
     return myTabbedPane.getTabs().size() - 1;
@@ -243,7 +257,7 @@ public class TabbedEditor implements IEditor {
       result.myMemento = getEditorContext().createMemento(full);
       EditorComponent editorComponent = getCurrentEditorComponent();
       if (editorComponent != null) {
-        result.myInspectorMemento = ((NodeEditorComponent)editorComponent).getInspector().getEditorContext().createMemento(full);
+        result.myInspectorMemento = ((NodeEditorComponent) editorComponent).getInspector().getEditorContext().createMemento(full);
       }
     }
     result.myCurrentTab = myTabbedPane.getCurrentTabIndex();
@@ -284,7 +298,7 @@ public class TabbedEditor implements IEditor {
     if (s.myInspectorMemento != null) {
       EditorComponent component = getCurrentEditorComponent();
       if (component != null) {
-        ((NodeEditorComponent)component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
+        ((NodeEditorComponent) component).getInspector().getEditorContext().setMemento(s.myInspectorMemento);
       }
     }
   }

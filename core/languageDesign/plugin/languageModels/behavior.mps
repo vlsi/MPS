@@ -1442,27 +1442,27 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192526052" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877534660">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877534661">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877534662">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877534663">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877534664">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877534665" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877534666">
-                  <link role="baseMethodDeclaration" targetNodeId="1213877534648" resolveInfo="getGeneratedName" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877534667">
-                <property name="value" value="." />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877534663">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877534664">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877534665" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1213877534666">
+                <link role="baseMethodDeclaration" targetNodeId="1213877534648" resolveInfo="getGeneratedName" />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877534668">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877534675">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
-              </node>
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6193305307616734411">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6193305307616734412">
-                  <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6193305307616734413" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="6193305307616734414" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877534662">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877534668">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213877534675">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getLongName():java.lang.String" resolveInfo="getLongName" />
                 </node>
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6193305307616734411">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6193305307616734412">
+                    <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6193305307616734413" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="6193305307616734414" />
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877534667">
+                <property name="value" value="." />
               </node>
             </node>
           </node>
