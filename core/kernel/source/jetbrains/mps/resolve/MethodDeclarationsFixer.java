@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -15,6 +16,8 @@ import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 
 import java.util.*;
+
+import com.intellij.openapi.util.Pair;
 
 
 /**
@@ -112,11 +115,13 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     String methodName = baseMethodDeclaration.getName();
     List<Expression> actualArgs = methodCall.getActualArguments();
-    Classifier classifier = getClassifier(methodCall);
+    Pair<Classifier, List<Type>> pair = getClassifierAndTypeParams(methodCall);
+    Classifier classifier = pair.first;
+    List<Type> typeParameters = pair.second;
 
 
     List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName, classifier);
-    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
+    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall, classifier, typeParameters);
 
     List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = MethodResolveUtil.selectByParmCount(candidates, actualArgs);
     BaseMethodDeclaration newTarget = null;
@@ -131,27 +136,36 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
 
-  private Classifier getClassifier(IMethodCall methodCall) {
+  private Pair<Classifier, List<Type>> getClassifierAndTypeParams(IMethodCall methodCall) {
     if (methodCall instanceof InstanceMethodCallOperation) {
       InstanceMethodCallOperation imco = (InstanceMethodCallOperation) methodCall;
       Expression operand = ((DotExpression)imco.getParent()).getOperand();
       SNode operandType = TypeChecker.getInstance().getTypeOf(operand.getNode());
       SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, new ConceptMatchingPattern(ClassifierType.concept));
       if (coercedType != null) {
-        return (Classifier) BaseAdapter.fromNode(coercedType.getReferent(ClassifierType.CLASSIFIER));
+        ClassifierType classifierType = (ClassifierType) BaseAdapter.fromNode(coercedType);
+        return new Pair<Classifier, List<Type>>(classifierType.getClassifier(), classifierType.getParameters());
       }
     }
     return null;
   }
 
-  private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall) {
+  private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall, Classifier classifier, List<Type> typeParameters) {
+    if (methodCall instanceof InstanceMethodCallOperation) {
+      MethodResolveUtil.getTypesByTypeVars(classifier, typeParameters); 
+    }
+    //todo
+
     return new HashMap<TypeVariableDeclaration, Type>();
   }
 
   public List<? extends BaseMethodDeclaration> getCandidates(IMethodCall methodCall, String methodName, Classifier classifier) {
     List<? extends BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
     if (methodCall instanceof InstanceMethodCallOperation) {
-      return new ClassifierAndSuperClassifiersScope(classifier).getMethodsByName(methodName);
+      return new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
+    }
+    if (methodCall instanceof StaticMethodCall) {
+      return new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
     }
 
     return new ArrayList<BaseMethodDeclaration>();
