@@ -65,22 +65,14 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6778605776625712686">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6778605776625956724">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6778605776625956727">
-              <property name="value" value="true" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="897083746163162097">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="897083746163162101">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="897083746163162104">
+              <property name="value" value="1" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="6778605776625712688">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625712687">
-                <property name="value" value="2" />
-              </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6778605776625712692">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625712691">
-                  <property name="value" value="1" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6778605776625712695">
-                  <property name="value" value="3" />
-                </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.UnaryMinus" id="897083746163162098">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="897083746163162100">
+                <link role="variableDeclaration" targetNodeId="5879348890583865718" resolveInfo="abbbbb" />
               </node>
             </node>
           </node>

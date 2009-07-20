@@ -3501,12 +3501,19 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6778605776625982936" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6778605776625982937" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776625982938">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="6778605776625985222">
-          <property name="isLastPosition" value="true" />
-          <property name="useLabelSelection" value="true" />
-          <property name="selectionStart" value="0" />
-          <property name="selectionEnd" value="0" />
-          <property name="cellId" value="Constant_6577_0" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="897083746163186399">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.UnaryMinus" id="897083746163186401">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="897083746163186400">
+              <property name="value" value="2" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="897083746163186403">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="1" />
+                <property name="selectionEnd" value="1" />
+                <property name="cellId" value="property_value" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -3546,7 +3553,7 @@
     </node>
     <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776625985223">
       <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="6778605776625985226">
-        <property name="keys" value="2&gt;4+5&amp;&amp;true" />
+        <property name="keys" value="&gt;4+5&amp;&amp;true" />
       </node>
     </node>
   </node>

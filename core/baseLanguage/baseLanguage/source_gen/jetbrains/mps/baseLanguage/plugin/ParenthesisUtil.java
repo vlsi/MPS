@@ -172,19 +172,27 @@ public class ParenthesisUtil {
   }
 
   private static void checkOpeartionParentWRTPriority(SNode node) {
-    if (SNodeOperations.getParent(node) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
+    if (SNodeOperations.getParent(node) == null) {
       return;
     }
-    SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-    boolean isRight = false;
-    if (SLinkOperations.getTarget(parent, "rightExpression", true) == node) {
-      isRight = true;
-    } else if (SLinkOperations.getTarget(parent, "leftExpression", true) == node) {
-      isRight = false;
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      boolean isRight = false;
+      if (SLinkOperations.getTarget(parent, "rightExpression", true) == node) {
+        isRight = true;
+      } else if (SLinkOperations.getTarget(parent, "leftExpression", true) == node) {
+        isRight = false;
+      }
+      if (ParenthesisUtil.isBadPriority(node, parent, isRight)) {
+        ParenthesisUtil.rotateTree(node, parent, isRight);
+        checkOpeartionParentWRTPriority(node);
+      }
     }
-    if (ParenthesisUtil.isBadPriority(node, parent, isRight)) {
-      ParenthesisUtil.rotateTree(node, parent, isRight);
-      checkOpeartionParentWRTPriority(node);
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) {
+      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation");
+      SLinkOperations.setTarget(parent, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+      SNodeOperations.replaceWithAnother(parent, node);
+      SLinkOperations.setTarget(node, "leftExpression", parent, true);
     }
   }
 
