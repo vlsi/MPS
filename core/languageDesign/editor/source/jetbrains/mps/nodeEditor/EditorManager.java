@@ -152,18 +152,16 @@ public class EditorManager {
     SNode node = refContext.getNode();
 
     if (areAttributesShown()) {
-      for (SNode attribute : node.getNodeAttributes()) {
-        //if the whole node has attribute
-        if (attribute != null) {
-          //if creating this cell for this attribute for the first time
-          if (!myAttributesStack.contains(attribute)) {
-            myAttributesStack.push(attribute);
-            EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
+      for (SNode attribute : node.getNodeAttributes()) {        
+        assert attribute != null;
+        //if creating this cell for this attribute for the first time
+        if (!myAttributesStack.contains(attribute)) {
+          myAttributesStack.push(attribute);
+          EditorCell nodeCell = createEditorCell(context, events, refContext.contextWithOneMoreAttribute(attribute));
 
-            SNode poppedAttribute = myAttributesStack.pop();
-            LOG.assertLog(poppedAttribute == attribute);
-            return createNodeAttributeCell(context, attribute, nodeCell);
-          }
+          SNode poppedAttribute = myAttributesStack.pop();
+          LOG.assertLog(poppedAttribute == attribute);
+          return createNodeAttributeCell(context, attribute, nodeCell);
         }
       }
     }
@@ -171,21 +169,7 @@ public class EditorManager {
     EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
     EditorCell oldCell = nodeEditorComponent.getBigCellForRefContext(refContext.contextWihtNoAttributes());
     if (events != null) {
-      boolean nodeChanged = false;
-      for (SModelEvent event : events) {
-        SNode eventNode;
-        if (event instanceof SModelChildEvent) {
-          eventNode = ((SModelChildEvent) event).getParent();
-        } else if (event instanceof SModelReferenceEvent) {
-          eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
-        } else if (event instanceof SModelPropertyEvent) {
-          eventNode = ((SModelPropertyEvent) event).getNode();
-        } else continue;
-        if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
-          nodeChanged = true;
-          break;
-        }
-      }
+      boolean nodeChanged = isNodeChanged(events, nodeEditorComponent, oldCell);
 
       if (!nodeChanged) {
         if (myMap.containsKey(refContext)) {
@@ -214,6 +198,25 @@ public class EditorManager {
     nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
 
     return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
+  }
+
+  private boolean isNodeChanged(List<SModelEvent> events, EditorComponent nodeEditorComponent, EditorCell oldCell) {
+    boolean nodeChanged = false;
+    for (SModelEvent event : events) {
+      SNode eventNode;
+      if (event instanceof SModelChildEvent) {
+        eventNode = ((SModelChildEvent) event).getParent();
+      } else if (event instanceof SModelReferenceEvent) {
+        eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
+      } else if (event instanceof SModelPropertyEvent) {
+        eventNode = ((SModelPropertyEvent) event).getNode();
+      } else continue;
+      if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
+        nodeChanged = true;
+        break;
+      }
+    }
+    return nodeChanged;
   }
 
 
@@ -251,7 +254,7 @@ public class EditorManager {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
     } finally {
-      if (nodeCell != null) {        
+      if (nodeCell != null) {
         ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
         editorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
@@ -316,7 +319,7 @@ public class EditorManager {
             }
 
             public String toString() {
-              return "RTWrapper for " + action; 
+              return "RTWrapper for " + action;
             }
           });
         }
@@ -420,7 +423,7 @@ public class EditorManager {
       return myAnchorCell;
     }
 
-    private void setAnchor(EditorCell anchorCell) {      
+    private void setAnchor(EditorCell anchorCell) {
       myAnchorCell = anchorCell;
     }
 
