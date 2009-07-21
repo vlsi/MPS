@@ -11758,26 +11758,26 @@
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1227259028675">
-                    <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227259028676">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227259028677">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227259028678">
-                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227259028679">
-                            <link role="applicableNode" targetNodeId="1220523330092" resolveInfo="classifierType" />
+                    <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227259028677">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227259028678">
+                        <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227259028679">
+                          <link role="applicableNode" targetNodeId="1220523330092" resolveInfo="classifierType" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227259028680">
+                          <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1227259028676">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227259028682">
+                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227259028683">
+                            <link role="applicableNode" targetNodeId="1220523314502" resolveInfo="type" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227259028680">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227259028684">
                             <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
                           </node>
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227259028681">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227259028681">
                           <property name="value" value=" is not a subtype of " />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1227259028682">
-                        <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1227259028683">
-                          <link role="applicableNode" targetNodeId="1220523314502" resolveInfo="type" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1227259028684">
-                          <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
                         </node>
                       </node>
                     </node>
@@ -11811,26 +11811,26 @@
                 <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1233155413753">
                   <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233155413754">
                     <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1220523357915">
-                      <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220523357916">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220523357917">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220523357918">
-                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1220523359105">
-                              <link role="applicableNode" targetNodeId="1220523330092" resolveInfo="classifierType" />
+                      <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220523357917">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220523357918">
+                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1220523359105">
+                            <link role="applicableNode" targetNodeId="1220523330092" resolveInfo="classifierType" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220523357920">
+                            <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1220523357916">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220523357922">
+                            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1220523359073">
+                              <link role="applicableNode" targetNodeId="1220523314502" resolveInfo="type" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220523357920">
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220523357924">
                               <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
                             </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220523357921">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1220523357921">
                             <property name="value" value=" is not a subtype of " />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220523357922">
-                          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1220523359073">
-                            <link role="applicableNode" targetNodeId="1220523314502" resolveInfo="type" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1220523357924">
-                            <link role="baseMethodDeclaration" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
                           </node>
                         </node>
                       </node>
