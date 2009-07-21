@@ -36,7 +36,7 @@ import java.util.*;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  protected SModelListener myListener;
+  public SModelListener myListener = new MySModelAdapter();
   private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
@@ -49,85 +49,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
-    myListener = new SModelAdapter() {
-      @Override
-      public void rootRemoved(SModelRootEvent event) {
-        if (myBaseNode.getNode() == null) return;
-        if (myBaseNode.getNode() == event.getRoot()) return;
-
-        if (getLoadableNodes().contains(event.getRoot())) {
-          SNodePointer nodePointer = new SNodePointer(event.getRoot());
-          int index = getIndexOfTabFor(nodePointer);
-          closeTab(nodePointer, index);
-        }
-      }
-
-      @Override
-      public void rootAdded(SModelRootEvent event) {
-        SNode root = event.getRoot();
-        if (!getLoadableNodes().contains(root)) {
-          IOperationContext context = null;
-          for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-            if (p.o1 == root) {
-              context = p.o2;
-              break;
-            }
-          }
-          if (context != null) {
-            addInnerTabChecked(event.getRoot(), context);
-          }
-        }
-      }
-
-      @Override
-      public void referenceAdded(SModelReferenceEvent event) {
-        SReference reference = event.getReference();
-        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-        if (!myClass.isInstance(referentNode)) return;
-
-        Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
-        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-          nodesMap.put(p.o1, p.o2);
-        }
-
-        List<SNode> nodes = new ArrayList<SNode>(nodesMap.keySet());
-        nodes.removeAll(getLoadableNodes());
-        if (nodes.size() > 0) {
-          SNode node = nodes.get(0);
-          addInnerTabChecked(node, nodesMap.get(node));
-        }
-      }
-
-      @Override
-      public void referenceRemoved(SModelReferenceEvent event) {
-        SReference reference = event.getReference();
-        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-        if (!myClass.isInstance(referentNode)) return;
-
-        Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
-        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-          nodesMap.put(p.o1, p.o2);
-        }
-
-        List<SNode> nodes = getLoadableNodes();
-        nodes.removeAll(nodesMap.keySet());
-
-        if (nodes.size() > 0) {
-          SNodePointer nodePointer = new SNodePointer(nodes.get(0));
-          closeTab(nodePointer, getIndexOfTabFor(nodePointer));
-        }
-      }
-
-      @Override
-      public void propertyChanged(SModelPropertyEvent event) {
-        SNodePointer pointer = new SNodePointer(event.getNode());
-        if (event.getPropertyName().equals(INamedConcept.NAME) && myLoadableNodes.contains(pointer)) {
-          int index = getIndexOfTabFor(pointer);
-          assert index >= 0 : "tab for node not found";
-          myInnerTabbedPane.setTitleAt(index, event.getNewPropertyValue());
-        }
-      }
-    };
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -163,7 +84,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return result;
   }
 
-  protected SNode getBaseNode() {
+  public SNode getBaseNode() {
     return myBaseNode.getNode();
   }
 
@@ -286,6 +207,86 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
       }
     } catch (ArrayIndexOutOfBoundsException e) {
+    }
+  }
+
+  private class MySModelAdapter extends SModelAdapter {
+    @Override
+    public void rootRemoved(SModelRootEvent event) {
+      if (myBaseNode.getNode() == null) return;
+      if (myBaseNode.getNode() == event.getRoot()) return;
+
+      if (getLoadableNodes().contains(event.getRoot())) {
+        SNodePointer nodePointer = new SNodePointer(event.getRoot());
+        int index = getIndexOfTabFor(nodePointer);
+        closeTab(nodePointer, index);
+      }
+    }
+
+    @Override
+    public void rootAdded(SModelRootEvent event) {
+      SNode root = event.getRoot();
+      if (!getLoadableNodes().contains(root)) {
+        IOperationContext context = null;
+        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+          if (p.o1 == root) {
+            context = p.o2;
+            break;
+          }
+        }
+        if (context != null) {
+          addInnerTabChecked(event.getRoot(), context);
+        }
+      }
+    }
+
+    @Override
+    public void referenceAdded(SModelReferenceEvent event) {
+      SReference reference = event.getReference();
+      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+      if (!myClass.isInstance(referentNode)) return;
+
+      Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
+      for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+        nodesMap.put(p.o1, p.o2);
+      }
+
+      List<SNode> nodes = new ArrayList<SNode>(nodesMap.keySet());
+      nodes.removeAll(getLoadableNodes());
+      if (nodes.size() > 0) {
+        SNode node = nodes.get(0);
+        addInnerTabChecked(node, nodesMap.get(node));
+      }
+    }
+
+    @Override
+    public void referenceRemoved(SModelReferenceEvent event) {
+      SReference reference = event.getReference();
+      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+      if (!myClass.isInstance(referentNode)) return;
+
+      Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
+      for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+        nodesMap.put(p.o1, p.o2);
+      }
+
+      List<SNode> nodes = getLoadableNodes();
+      nodes.removeAll(nodesMap.keySet());
+
+      if (nodes.size() > 0) {
+        SNodePointer nodePointer = new SNodePointer(nodes.get(0));
+        closeTab(nodePointer, getIndexOfTabFor(nodePointer));
+      }
+    }
+
+    @Override
+    public void propertyChanged(SModelPropertyEvent event) {
+      SNodePointer pointer = new SNodePointer(event.getNode());
+      if (event.getPropertyName().equals(INamedConcept.NAME) && myLoadableNodes.contains(pointer)) {
+        int index = getIndexOfTabFor(pointer);
+        assert index >= 0 : "tab for node not found";
+        myInnerTabbedPane.setTitleAt(index, event.getNewPropertyValue());
+      }
     }
   }
 }

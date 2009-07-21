@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -34,65 +37,25 @@ import javax.swing.SwingUtilities;
 import java.util.Collections;
 import java.util.List;
 
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.ide.DataManager;
-
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
   private SModelRepositoryAdapter myWeakSModelRepositoryListener;
-  private SModelListener myListener;
+  private SModelListener myListener = new MySModelAdapter();
   private EditorComponent myComponent;
   private SNodePointer myBaseNode;
   private SNodePointer myLoadableNode;
   private Class<? extends BaseAdapter> myClass = BaseConcept.class;
   private TabbedEditor myTabbedEditor;
 
-  protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass, final Condition<SModelDescriptor> listenCondition) {
+  protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
-    myListener = new SModelAdapter() {
-      @Override
-      public void rootRemoved(SModelRootEvent event) {
-        if (myBaseNode.getNode() == null) return;
-        if (myBaseNode.getNode() == event.getRoot()) return;
+  }
 
-        if (getLoadableNode() == event.getRoot()) {
-          reinit();
-        }
-      }
-
-      @Override
-      public void rootAdded(SModelRootEvent event) {
-        if (getLoadableNode() == null && tryToLoadNode() != null) {
-          reinit();
-        }
-      }
-
-      @Override
-      public void referenceAdded(SModelReferenceEvent event) {
-        SReference reference = event.getReference();
-        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-        if (!myClass.isInstance(referentNode)) return;
-        if (getLoadableNode() == null && tryToLoadNode() != null) {
-          reinit();
-        }
-      }
-
-      @Override
-      public void referenceRemoved(SModelReferenceEvent event) {
-        SReference reference = event.getReference();
-        INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-        if (!myClass.isInstance(referentNode)) return;
-        if (getLoadableNode() != null && tryToLoadNode() == null) {
-          reinit();
-        }
-      }
-    };
-
-    final SModelDescriptor nodeModelDescriptor = baseNode.getModel().getModelDescriptor();
+  public void addListener(final Condition<SModelDescriptor> listenCondition) {
+    final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
     if (nodeModelDescriptor != null) {
       nodeModelDescriptor.addWeakModelListener(myListener);
     } else {
@@ -133,7 +96,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   public final void selectTab(int index) {
   }
 
-  protected SNode getBaseNode() {
+  public SNode getBaseNode() {
     return myBaseNode.getNode();
   }
 
@@ -153,7 +116,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         }
       });
 
-      if (myComponent!=null){
+      if (myComponent != null) {
         Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
         ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
       }
@@ -215,5 +178,44 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
+  }
+
+  private class MySModelAdapter extends SModelAdapter {
+    @Override
+    public void rootRemoved(SModelRootEvent event) {
+      if (myBaseNode.getNode() == null) return;
+      if (myBaseNode.getNode() == event.getRoot()) return;
+
+      if (getLoadableNode() == event.getRoot()) {
+        reinit();
+      }
+    }
+
+    @Override
+    public void rootAdded(SModelRootEvent event) {
+      if (getLoadableNode() == null && tryToLoadNode() != null) {
+        reinit();
+      }
+    }
+
+    @Override
+    public void referenceAdded(SModelReferenceEvent event) {
+      SReference reference = event.getReference();
+      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+      if (!myClass.isInstance(referentNode)) return;
+      if (getLoadableNode() == null && tryToLoadNode() != null) {
+        reinit();
+      }
+    }
+
+    @Override
+    public void referenceRemoved(SModelReferenceEvent event) {
+      SReference reference = event.getReference();
+      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
+      if (!myClass.isInstance(referentNode)) return;
+      if (getLoadableNode() != null && tryToLoadNode() == null) {
+        reinit();
+      }
+    }
   }
 }
