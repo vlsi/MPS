@@ -62,10 +62,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
 
       public void visitChildEvent(SModelChildEvent event) {
+        SNode child = event.getChild();
         if (event.isAdded()) {
-          nodeAdded(event.getChild());
+          nodeAdded(child);
         } else {
-          nodeRemoved(event.getChild(), event.getParent());
+          nodeRemoved(child, event.getParent());
         }
       }
 
@@ -202,15 +203,23 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeAdded(SNode expression) {
-    SNode parent = expression.getParent();
-    if (myCheckedMethodCalls.contains(parent)) {
-      testAndFixMethodCall(parent);
+    if (BaseAdapter.isInstance(expression, IMethodCall.class)) {
+      testAndFixMethodCall(expression);
+    } else {
+      SNode parent = expression.getParent();
+      if (myCheckedMethodCalls.contains(parent)) {
+        testAndFixMethodCall(parent);
+      }
     }
   }
 
   private void nodeRemoved(SNode expression, SNode formerParent) {
-    if (myCheckedMethodCalls.contains(formerParent)) {
-      testAndFixMethodCall(formerParent);
+    if (BaseAdapter.isInstance(expression, IMethodCall.class)) {
+
+    } else {
+      if (myCheckedMethodCalls.contains(formerParent)) {
+        testAndFixMethodCall(formerParent);
+      }
     }
   }
 }
