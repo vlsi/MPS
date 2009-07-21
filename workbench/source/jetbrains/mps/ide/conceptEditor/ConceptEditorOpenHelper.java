@@ -29,6 +29,8 @@ import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.behavior.structure.ConceptBehavior;
 import jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration;
 import jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration;
+import jetbrains.mps.lang.typesystem.structure.AbstractRule;
+import jetbrains.mps.lang.typesystem.structure.ConceptReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.IEditor;
 
@@ -58,6 +60,12 @@ public class ConceptEditorOpenHelper{
       baseNode = ((FinderDeclaration) node.getAdapter()).getForConcept();
     } else if (node.getAdapter() instanceof TemplateDeclaration) {
       baseNode = ((TemplateDeclaration) node.getAdapter()).getApplicableConcept();
+    } else if (node.getAdapter() instanceof AbstractRule){
+      AbstractRule rule = (AbstractRule) node.getAdapter();
+      if (rule.getApplicableNode() instanceof ConceptReference){
+        ConceptReference conceptReference = (ConceptReference) rule.getApplicableNode();
+        baseNode = conceptReference.getConcept();
+      }
     }
 
     //for root templates in generator model

@@ -66,11 +66,10 @@ public class GoToRulesHelper {
         rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
           public boolean met(SNode n) {
             INodeAdapter object = BaseAdapter.fromNode(n);
-            if (object instanceof AbstractRule) {
-              AbstractRule rule = (AbstractRule) object;
-              return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
-            }
-            return false;
+            if (!(object instanceof AbstractRule)) return false;
+
+            AbstractRule rule = (AbstractRule) object;
+            return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
           }
         }));
       }
