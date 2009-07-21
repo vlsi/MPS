@@ -12,7 +12,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
   private static Logger LOG = Logger.getLogger(BaseLanguageCustomPlugin_CustomProjectPlugin.class);
 
   private ToDoHighlighter myToDoHighlighter = new ToDoHighlighter();
-  private MethodDeclarationsFixer myMethodDeclarationsFixer = new MethodDeclarationsFixer();
+//  private MethodDeclarationsFixer myMethodDeclarationsFixer = new MethodDeclarationsFixer();
 
   public BaseLanguageCustomPlugin_CustomProjectPlugin() {
   }
@@ -21,7 +21,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.addChecker(this.myToDoHighlighter);
-      highlighter.addChecker(myMethodDeclarationsFixer);
+   //   highlighter.addChecker(myMethodDeclarationsFixer);
     }
   }
 
@@ -29,7 +29,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.removeChecker(this.myToDoHighlighter);
-      highlighter.removeChecker(this.myMethodDeclarationsFixer);
+  //    highlighter.removeChecker(this.myMethodDeclarationsFixer);
     }
   }
 
