@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class EmbeddableEditor {
@@ -77,6 +78,15 @@ public class EmbeddableEditor {
 
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addLanguage(language);
+      }
+    });
+  }
+
+  public void addModel(final SModelReference model) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+
+      public void run() {
+        EmbeddableEditor.this.myModel.getSModel().addImportedModel(model);
       }
     });
   }

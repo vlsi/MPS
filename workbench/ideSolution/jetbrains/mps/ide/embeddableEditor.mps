@@ -291,6 +291,46 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8119021187637935031">
+      <property name="name" value="addModel" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8119021187637935032" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8119021187637935033" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8119021187637935034">
+        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement" id="8119021187637935508">
+          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="8119021187637935509">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8119021187637935510">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8119021187637935511">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8119021187637936936">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8119021187637935521">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8119021187637935514">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8119021187637935512" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8119021187637935519">
+                        <link role="fieldDeclaration" targetNodeId="1219408476932" resolveInfo="myModel" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8119021187637936934">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8119021187637938176">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~SModel.addImportedModel(jetbrains.mps.smodel.SModelReference):void" resolveInfo="addImportedModel" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8119021187637938180">
+                      <link role="variableDeclaration" targetNodeId="8119021187637938178" resolveInfo="model" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8119021187637938178">
+        <property name="name" value="model" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8119021187637938179">
+          <link role="classifier" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1219672383771">
       <property name="name" value="disposeEditor" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1219672383772" />
