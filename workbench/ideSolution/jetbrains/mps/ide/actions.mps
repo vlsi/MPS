@@ -33,7 +33,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="204" />
+  <maxImportIndex value="205" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.ide.modelchecker(jetbrains.mps.ide.modelchecker@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
@@ -153,6 +153,7 @@
   <import index="202" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <import index="203" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <import index="204" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="8" />
+  <import index="205" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="id" value="ProjectPaneNodeActions" />
@@ -23222,25 +23223,71 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3322169133325972085" />
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3322169133325972084">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977258">
-              <link role="baseMethodDeclaration" targetNodeId="40.~BaseAdapter.fromAdapter(jetbrains.mps.smodel.INodeAdapter):jetbrains.mps.smodel.SNode" resolveInfo="fromAdapter" />
-              <link role="classConcept" targetNodeId="40.~BaseAdapter" resolveInfo="BaseAdapter" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977259">
-                <link role="classConcept" targetNodeId="1.~GoToEditorDeclarationHelper" resolveInfo="GoToEditorDeclarationHelper" />
-                <link role="baseMethodDeclaration" targetNodeId="1.~GoToEditorDeclarationHelper.createEditorDeclaration(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.smodel.IScope):jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" resolveInfo="createEditorDeclaration" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3322169133325977260">
-                  <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3322169133325977261" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="3322169133325977262" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3322169133325977263">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4436041099111123231">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4436041099111123232">
+              <property name="name" value="sm" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123233">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123234">
                   <link role="variableDeclaration" targetNodeId="3322169133325972023" resolveInfo="editorModel" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977264">
-                  <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
-                  <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4436041099111123235">
+                  <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
                 </node>
               </node>
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SModelType" id="4436041099111123236" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4436041099111123237">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4436041099111123238">
+              <property name="name" value="behaviorNode" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4436041099111123239">
+                <link role="concept" targetNodeId="205.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123240">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123241">
+                  <link role="variableDeclaration" targetNodeId="4436041099111123232" resolveInfo="sm" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123242">
+                  <link role="concept" targetNodeId="205.1071666914219" resolveInfo="ConceptEditorDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123243">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123244">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123245">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123246">
+                  <link role="variableDeclaration" targetNodeId="4436041099111123238" resolveInfo="behaviorNode" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4436041099111123266">
+                  <link role="link" targetNodeId="205.1166049300910" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="4436041099111123248">
+                <node role="linkTarget" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="4436041099111123249" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123250" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123251">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123252">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123253">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123254">
+                <link role="variableDeclaration" targetNodeId="4436041099111123232" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123255">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123256">
+                  <link role="variableDeclaration" targetNodeId="4436041099111123238" resolveInfo="behaviorNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123257" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4436041099111123258">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123259">
+              <link role="variableDeclaration" targetNodeId="4436041099111123238" resolveInfo="behaviorNode" />
             </node>
           </node>
         </node>
@@ -23500,11 +23547,11 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3322169133325977425">
                 <link role="concept" targetNodeId="198.1213093968558" resolveInfo="ConceptConstraints" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3322169133325977426">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123134">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3322169133325977427">
                   <link role="variableDeclaration" targetNodeId="3322169133325977393" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="3322169133325977428">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123138">
                   <link role="concept" targetNodeId="198.1213093968558" resolveInfo="ConceptConstraints" />
                 </node>
               </node>
@@ -23522,6 +23569,22 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="3322169133325977447">
                 <node role="linkTarget" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3322169133325977451" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123149" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123151">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123140">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123142">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123141">
+                <link role="variableDeclaration" targetNodeId="3322169133325977393" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123146">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123148">
+                  <link role="variableDeclaration" targetNodeId="3322169133325977424" resolveInfo="constraintsNode" />
+                </node>
               </node>
             </node>
           </node>
@@ -23792,7 +23855,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3322169133325977577">
                   <link role="variableDeclaration" targetNodeId="3322169133325977568" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="3322169133325977578">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123160">
                   <link role="concept" targetNodeId="199.1225194240794" resolveInfo="ConceptBehavior" />
                 </node>
               </node>
@@ -23814,6 +23877,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3322169133325977586" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123153">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123154">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123155">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123156">
+                <link role="variableDeclaration" targetNodeId="3322169133325977568" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123157">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123158">
+                  <link role="variableDeclaration" targetNodeId="3322169133325977574" resolveInfo="behaviorNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123227" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3322169133325977587">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3322169133325977588">
               <link role="variableDeclaration" targetNodeId="3322169133325977574" resolveInfo="constrintsNode" />
@@ -24247,11 +24326,11 @@
               <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7669625834619274621">
                 <link role="concept" targetNodeId="200.1174643105530" resolveInfo="InferenceRule" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7669625834619274622">
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123169">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619274623">
                   <link role="variableDeclaration" targetNodeId="7669625834619274614" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="7669625834619274624">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123173">
                   <link role="concept" targetNodeId="200.1174643105530" resolveInfo="InferenceRule" />
                 </node>
               </node>
@@ -24379,6 +24458,22 @@
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation" id="7669625834619276337">
                 <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619276339">
                   <link role="variableDeclaration" targetNodeId="7669625834619276294" resolveInfo="nodeName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123161" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123163">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123164">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123165">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123166">
+                <link role="variableDeclaration" targetNodeId="7669625834619274614" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123167">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123168">
+                  <link role="variableDeclaration" targetNodeId="7669625834619274620" resolveInfo="ruleNode" />
                 </node>
               </node>
             </node>
@@ -24592,7 +24687,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619276448">
                   <link role="variableDeclaration" targetNodeId="7669625834619276439" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="7669625834619276449">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123183">
                   <link role="concept" targetNodeId="201.1192794744107" resolveInfo="IntentionDeclaration" />
                 </node>
               </node>
@@ -24614,6 +24709,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619276504" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123176">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123177">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123178">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123179">
+                <link role="variableDeclaration" targetNodeId="7669625834619276439" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123180">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123181">
+                  <link role="variableDeclaration" targetNodeId="7669625834619276445" resolveInfo="intentionNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123175" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7669625834619276505">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619276506">
               <link role="variableDeclaration" targetNodeId="7669625834619276445" resolveInfo="ruleNode" />
@@ -24728,8 +24839,8 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619423911">
                   <link role="variableDeclaration" targetNodeId="7669625834619423894" resolveInfo="language" />
                 </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7669625834619423912">
-                  <link role="baseMethodDeclaration" targetNodeId="40.~Language.getIntentionsModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getIntentionsModelDescriptor" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6691309923962965301">
+                  <link role="baseMethodDeclaration" targetNodeId="40.~Language.getFindUsagesModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getFindUsagesModelDescriptor" />
                 </node>
               </node>
             </node>
@@ -24822,7 +24933,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619423950">
                   <link role="variableDeclaration" targetNodeId="7669625834619423941" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="7669625834619423951">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123194">
                   <link role="concept" targetNodeId="202.1197044488845" resolveInfo="FinderDeclaration" />
                 </node>
               </node>
@@ -24844,6 +24955,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619423959" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123186">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123187">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123188">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123189">
+                <link role="variableDeclaration" targetNodeId="7669625834619423941" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123190">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123191">
+                  <link role="variableDeclaration" targetNodeId="7669625834619423947" resolveInfo="finderNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123192" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7669625834619423960">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619423961">
               <link role="variableDeclaration" targetNodeId="7669625834619423947" resolveInfo="intentionNode" />
@@ -25110,7 +25237,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619424115">
                   <link role="variableDeclaration" targetNodeId="7669625834619424106" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="7669625834619424116">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123204">
                   <link role="concept" targetNodeId="203.1206442055221" resolveInfo="DataFlowBuilderDeclaration" />
                 </node>
               </node>
@@ -25132,6 +25259,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619424124" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123197">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123198">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123199">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123200">
+                <link role="variableDeclaration" targetNodeId="7669625834619424106" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123201">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123202">
+                  <link role="variableDeclaration" targetNodeId="7669625834619424112" resolveInfo="dataflowNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123196" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7669625834619424125">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619424126">
               <link role="variableDeclaration" targetNodeId="7669625834619424112" resolveInfo="behaviorNode" />
@@ -25358,7 +25501,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8418256647045330165">
                   <link role="variableDeclaration" targetNodeId="8418256647045330160" resolveInfo="model" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="8418256647045330115">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123215">
                   <link role="concept" targetNodeId="194.1092059087312" resolveInfo="TemplateDeclaration" />
                 </node>
               </node>
@@ -25474,6 +25617,22 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="8418256647045330194">
                 <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8418256647045330197">
+                  <link role="variableDeclaration" targetNodeId="8418256647045330109" resolveInfo="templateNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123205" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123207">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123208">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123209">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123210">
+                <link role="variableDeclaration" targetNodeId="8418256647045330160" resolveInfo="model" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123211">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123212">
                   <link role="variableDeclaration" targetNodeId="8418256647045330109" resolveInfo="templateNode" />
                 </node>
               </node>
@@ -25730,7 +25889,7 @@
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619524959">
                   <link role="variableDeclaration" targetNodeId="7669625834619524950" resolveInfo="sm" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" id="7669625834619524960">
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" id="4436041099111123226">
                   <link role="concept" targetNodeId="204.1233670071145" resolveInfo="ConceptTextGenDeclaration" />
                 </node>
               </node>
@@ -25752,6 +25911,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7669625834619524968" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="4436041099111123220">
+            <property name="value" value="when added, must be already initialized for tabbed editor to work" />
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4436041099111123221">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4436041099111123222">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123223">
+                <link role="variableDeclaration" targetNodeId="7669625834619524950" resolveInfo="sm" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" id="4436041099111123224">
+                <node role="nodeArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4436041099111123225">
+                  <link role="variableDeclaration" targetNodeId="7669625834619524956" resolveInfo="textgenNode" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4436041099111123219" />
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7669625834619524969">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619524970">
               <link role="variableDeclaration" targetNodeId="7669625834619524956" resolveInfo="dataflowNode" />
