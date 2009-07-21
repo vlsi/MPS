@@ -138,5 +138,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7658393498702771297">
+    <link role="conceptDeclaration" targetNodeId="1.7658393498702771296" resolveInfo="ReferenceAnnotataion" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7658393498702771299">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7658393498702771300" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7658393498702771304">
+        <property name="text" value="&lt;ref" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell" id="7658393498702861284" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7658393498702771306">
+        <property name="text" value="&gt;" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7658393498703098515">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

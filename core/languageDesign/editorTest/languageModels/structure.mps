@@ -158,5 +158,15 @@
       <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7658393498702771296">
+    <property name="name" value="ReferenceAnnotataion" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" id="7658393498702861285">
+    <property name="role" value="referenceAnnotation" />
+    <property name="stereotype" value="link" />
+    <link role="source" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="7658393498702771296" resolveInfo="ReferenceAnnotataion" />
+  </node>
 </model>
 
