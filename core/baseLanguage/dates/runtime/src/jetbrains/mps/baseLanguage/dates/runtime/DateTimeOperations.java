@@ -33,12 +33,18 @@ public class DateTimeOperations {
     
   private static final Logger LOG = Logger.getLogger(DateTimeOperations.class);
   
+  private static InheritableThreadLocal<DateTimeZone> currentZone = new InheritableThreadLocal<DateTimeZone> () {
+      protected DateTimeZone initialValue() {
+          return DateTimeZone.getDefault();
+      };
+  };
+  
   private DateTimeOperations() {
   }
 
   @Deprecated
   public static String print(Long datetime, DateTimeFormatter formatter) {
-    return formatter.print(datetime != null ? new DateTime(datetime) : Constants.NULL_DATE_TIME);
+    return formatter.print(datetime != null ? new DateTime(datetime, currentZone.get()) : Constants.NULL_DATE_TIME);
   }
 
   @Deprecated
@@ -48,7 +54,7 @@ public class DateTimeOperations {
 
   public static String print(Long value, DateTimeFormatter formatter, Locale locale, DateTimeZone zone) {
     DateTime dateTime = (value != null)?
-      ((zone != null)? new DateTime(value, zone) : new DateTime(value)) : Constants.NULL_DATE_TIME;
+      ((zone != null)? new DateTime(value, zone) : new DateTime(value, currentZone.get())) : Constants.NULL_DATE_TIME;
     DateTimeFormatter dateTimeFormatter = (locale == null)? formatter : formatter.withLocale(locale);
     return dateTimeFormatter.print(dateTime);
   }
@@ -85,6 +91,9 @@ public class DateTimeOperations {
   }
   
   public static Long parse (String datetimeString, DateTimeFormatter formatter, Locale locale, DateTimeZone zone, Long defValues) {
+      if (zone == null) {
+          zone = currentZone.get();
+      }
       if (locale != null) {
           formatter = formatter.withLocale(locale);
       }
@@ -144,23 +153,23 @@ public class DateTimeOperations {
   }
 
   public static Long roundFloor(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? new DateTime(datetime).property(type).roundFloorCopy().getMillis() : null;
+    return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundFloorCopy().getMillis() : null;
   }
 
   public static Long roundCeiling(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? new DateTime(datetime).property(type).roundCeilingCopy().getMillis() : null;
+    return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundCeilingCopy().getMillis() : null;
   }
 
   public static Long round(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? new DateTime(datetime).property(type).roundHalfCeilingCopy().getMillis() : null;
+    return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).roundHalfCeilingCopy().getMillis() : null;
   }
 
   public static Integer get(Long datetime, DateTimeFieldType type) {
-    return datetime != null ? new DateTime(datetime).property(type).get() : null;
+    return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).get() : null;
   }
 
   public static Long with(Long datetime, DateTimeFieldType type, int value) {
-    return datetime != null ? new DateTime(datetime).property(type).setCopy(value).getMillis() : null;
+    return datetime != null ? new DateTime(datetime, currentZone.get()).property(type).setCopy(value).getMillis() : null;
   }
 
   public static Period plus(Period leftExpression, Period rightExpression) {
@@ -204,7 +213,7 @@ public class DateTimeOperations {
     if (leftExpression == null) {
       result = null;
     } else {
-      result = new DateTime(leftExpression).plus(rightExpression).getMillis();
+      result = new DateTime(leftExpression, currentZone.get()).plus(rightExpression).getMillis();
     }
     return result;
   }
@@ -226,7 +235,7 @@ public class DateTimeOperations {
     if (leftExpression == null) {
       result = null;
     } else {
-      result = new DateTime(leftExpression).minus(rightExpression).getMillis();
+      result = new DateTime(leftExpression, currentZone.get()).minus(rightExpression).getMillis();
     }
     return result;
   }
@@ -262,7 +271,7 @@ public class DateTimeOperations {
     if (leftExpression == null || rightExpression == null) {
       result = leftExpression == rightExpression;
     } else {
-      DateTime now = new DateTime();
+      DateTime now = new DateTime(currentZone.get());
       result = leftExpression.toDurationFrom(now).equals(rightExpression.toDurationFrom(now));
     }
     return result;
@@ -273,7 +282,7 @@ public class DateTimeOperations {
     if (leftExpression == null || rightExpression == null) {
       throw new NullPointerException("Operands shouldn't be null");
     } else {
-      DateTime now = new DateTime();
+      DateTime now = new DateTime(currentZone.get());
       result = leftExpression.toDurationFrom(now).compareTo(rightExpression.toDurationFrom(now)) < 0;
     }
     return result;
@@ -293,6 +302,14 @@ public class DateTimeOperations {
 
   public static boolean isNotNull(long datetime) {
     return true;
+  }
+  
+  public static void withTimeZone (DateTimeZone tz) {
+    currentZone.set(tz);
+  }
+  
+  public static DateTimeZone getCurrentTimeZone () {
+      return currentZone.get();
   }
 
 }
