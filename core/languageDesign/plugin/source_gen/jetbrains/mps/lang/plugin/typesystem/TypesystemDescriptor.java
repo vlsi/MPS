@@ -146,5 +146,13 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       SubtypingRule_Runtime subtypingRule = new typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
+    {
+      SubtypingRule_Runtime subtypingRule = new Typeof_SingletabbedEditorTabType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new typeof_MultitabbedEditorTabType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
   }
 }

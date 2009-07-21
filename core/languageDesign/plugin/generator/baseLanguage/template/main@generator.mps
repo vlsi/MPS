@@ -5525,6 +5525,20 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="144706109457490154">
+      <property name="package" value="EditorTab" />
+      <link role="applicableConcept" targetNodeId="1.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="144706109457490155">
+        <link role="template" targetNodeId="144706109457480155" resolveInfo="reduce_SingletabbedEditorTabType" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="144706109457490156">
+      <property name="package" value="EditorTab" />
+      <link role="applicableConcept" targetNodeId="1.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="144706109457490157">
+        <link role="template" targetNodeId="144706109457489901" resolveInfo="reduce_MultitabbedEditorTabType" />
+      </node>
+    </node>
     <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1204736970385">
       <property name="name" value="map_EditorConstructor" />
       <link role="sourceConcept" targetNodeId="1.1203866019489" resolveInfo="TabbedEditorDeclaration" />
@@ -11255,6 +11269,22 @@
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="954487605981576793">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="954487605981576796" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="144706109457480155">
+    <property name="name" value="reduce_SingletabbedEditorTabType" />
+    <link role="applicableConcept" targetNodeId="1.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="144706109457489880">
+      <link role="classifier" targetNodeId="19.~BaseSingleTab" resolveInfo="BaseSingleTab" />
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="144706109457489881" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="144706109457489901">
+    <property name="name" value="reduce_MultitabbedEditorTabType" />
+    <link role="applicableConcept" targetNodeId="1.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="144706109457489904">
+      <link role="classifier" targetNodeId="19.~BaseMultiTab" resolveInfo="BaseMultiTab" />
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="144706109457489905" />
     </node>
   </node>
 </model>

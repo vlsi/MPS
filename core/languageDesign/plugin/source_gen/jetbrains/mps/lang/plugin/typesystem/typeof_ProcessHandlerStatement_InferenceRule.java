@@ -19,7 +19,7 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(statement, "processHandler", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "processHandler", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564322", true), (SNode)new _Quotations.QuotationClass_14().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564330", true, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "processHandler", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564322", true), (SNode)new _Quotations.QuotationClass_16().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564330", true, 0, intentionProvider);
     }
   }
 

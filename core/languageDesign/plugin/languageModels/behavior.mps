@@ -2744,5 +2744,53 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="144706109457730959">
+    <property name="package" value="EditorTab" />
+    <link role="concept" targetNodeId="1.1203071663527" resolveInfo="SingletabbedEditorTab" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="144706109457730960">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457730961" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="144706109457730962">
+      <property name="name" value="createType" />
+      <property name="isVirtual" value="true" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="17.1213877527970" resolveInfo="createType" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="144706109457730963" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457730964">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="144706109457735801">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="144706109457735802">
+            <node role="quotedNode" type="jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType" id="144706109457735804" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="144706109457730965">
+        <link role="concept" targetNodeId="18.1205752813637" resolveInfo="BaseClassifierType" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="144706109457735805">
+    <property name="package" value="EditorTab" />
+    <link role="concept" targetNodeId="1.1203780151140" resolveInfo="MultitabbedEditorTab" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="144706109457735808">
+      <property name="name" value="createType" />
+      <property name="isVirtual" value="true" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="17.1213877527970" resolveInfo="createType" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="144706109457735809" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457735810">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="144706109457735811">
+          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="144706109457735812">
+            <node role="quotedNode" type="jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType" id="144706109457735817" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="144706109457735814">
+        <link role="concept" targetNodeId="18.1205752813637" resolveInfo="BaseClassifierType" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="144706109457735806">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457735807" />
+    </node>
+  </node>
 </model>
 

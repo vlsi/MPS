@@ -4366,5 +4366,19 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="3618415754251518840" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="144706109457474504">
+    <property name="package" value="EditorTab" />
+    <link role="conceptDeclaration" targetNodeId="1.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="144706109457478878">
+      <property name="text" value="tab-single" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="144706109457489895">
+    <property name="package" value="EditorTab" />
+    <link role="conceptDeclaration" targetNodeId="1.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="144706109457489897">
+      <property name="text" value="tab-multi" />
+    </node>
+  </node>
 </model>
 

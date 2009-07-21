@@ -8,17 +8,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
-  public typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule() {
+  public typeof_MultitabbedEditorTabType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_19().createNode(typeCheckingContext);
+  public SNode getSubOrSuperType(SNode tabType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_14().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.plugin.structure.PropertyRefType";
+    return "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType";
   }
 
   public boolean isApplicable(SNode argument) {

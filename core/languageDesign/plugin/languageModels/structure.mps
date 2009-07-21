@@ -3038,5 +3038,23 @@
       <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="144706109457474501">
+    <property name="package" value="EditorTab" />
+    <property name="name" value="SingletabbedEditorTabType" />
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="144706109457474503">
+      <property name="value" value="tab-single" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="144706109457489882">
+    <property name="package" value="EditorTab" />
+    <property name="name" value="MultitabbedEditorTabType" />
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="144706109457489883">
+      <property name="value" value="tab-multi" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

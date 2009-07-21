@@ -1110,6 +1110,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3452826078639226163">
     <property name="name" value="check_executeBlock_returns" />
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3452826078639226164">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3452826078639227291">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078639227308">
@@ -1687,6 +1688,40 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1628770029971140825">
       <property name="name" value="refType" />
       <link role="concept" targetNodeId="4.1628770029971140539" resolveInfo="PropertyRefType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="144706109457490158">
+    <property name="package" value="EditorTab" />
+    <property name="name" value="Typeof_SingletabbedEditorTabType" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457490159">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="144706109457490160">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="144706109457490161">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="144706109457490162">
+            <link role="classifier" targetNodeId="35.~BaseSingleTab" resolveInfo="BaseSingleTab" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="144706109457490163">
+      <property name="name" value="tabType" />
+      <link role="concept" targetNodeId="4.144706109457474501" resolveInfo="SingletabbedEditorTabType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="144706109457490164">
+    <property name="package" value="EditorTab" />
+    <property name="name" value="typeof_MultitabbedEditorTabType" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="144706109457490165">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="144706109457490167">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="144706109457490168">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="144706109457490169">
+            <link role="classifier" targetNodeId="35.~BaseMultiTab" resolveInfo="BaseMultiTab" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="144706109457490170">
+      <property name="name" value="tabType" />
+      <link role="concept" targetNodeId="4.144706109457489882" resolveInfo="MultitabbedEditorTabType" />
     </node>
   </node>
 </model>
