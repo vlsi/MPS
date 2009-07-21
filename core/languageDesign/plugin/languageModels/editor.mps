@@ -754,6 +754,11 @@
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="3618415754251518842">
           <link role="editorComponent" targetNodeId="3618415754251518818" resolveInfo="AbstractEditorTabShortcut" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="929556153838355356" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="929556153838355357">
+          <property name="noTargetText" value="&lt;no init block&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.929556153838351527" />
+        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218985001304" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1218985001305">
           <link role="relationDeclaration" targetNodeId="1.1203852126300" />
@@ -826,6 +831,11 @@
           <link role="editorComponent" targetNodeId="3618415754251518818" resolveInfo="AbstractEditorTabShortcut" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1218984978352" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="929556153838355354">
+          <property name="noTargetText" value="&lt;no init block&gt;" />
+          <link role="relationDeclaration" targetNodeId="1.929556153838351527" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="929556153838351536" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1218984978353">
           <link role="relationDeclaration" targetNodeId="1.1203852083094" />
         </node>

@@ -826,6 +826,11 @@
     <property name="name" value="AbstractEditorTab" />
     <property name="rootable" value="false" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="929556153838351527">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initBlock" />
+      <link role="target" targetNodeId="929556153838351528" resolveInfo="InitTabBlock" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1203851845428">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="createBlock" />
@@ -842,8 +847,8 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1203851903990">
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473854053" resolveInfo="abstract" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203852222501">
-      <link role="intfc" targetNodeId="6.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="929556153838364332">
+      <link role="intfc" targetNodeId="14.1205751982837" resolveInfo="IClassifier" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5003188907305272346">
       <link role="intfc" targetNodeId="1628770029971140533" resolveInfo="ICheckedNamePolicy" />
@@ -3019,6 +3024,18 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="394857668357342106">
       <property name="value" value="everywhere" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="929556153838351528">
+    <property name="package" value="EditorTab.Methods" />
+    <property name="name" value="InitTabBlock" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="929556153838351530">
+      <property name="value" value="init" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="929556153838351532">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1216468774225" resolveInfo="showName" />
     </node>
   </node>
 </model>
