@@ -171,46 +171,32 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4419421310517966200" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4419421310517966201" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4419421310517966202">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4419421310517966203">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4419421310517966204">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4419421310517966205">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7514337757019854989">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7514337757019854990">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7514337757019854991">
               <link role="baseMethodDeclaration" targetNodeId="4419421310517966183" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4419421310517966207">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019854992">
                 <property name="value" value="2" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4419421310517966209">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019854993">
                 <property name="value" value="3" />
               </node>
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4419421310517966206" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7514337757019854994" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4419421310517966210">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4419421310517966211">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4419421310517966212">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7514337757019855010">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7514337757019855012">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7514337757019855013">
               <link role="baseMethodDeclaration" targetNodeId="4419421310517966183" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4419421310517966213">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019855014">
                 <property name="value" value="2" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4419421310517966214">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019855015">
                 <property name="value" value="3" />
               </node>
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4419421310517966215" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5525452472152485729">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5525452472152485730">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5525452472152485731">
-              <link role="baseMethodDeclaration" targetNodeId="4419421310517966183" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5525452472152485732">
-                <property name="value" value="2" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="5525452472152485733">
-                <property name="value" value="3" />
-              </node>
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5525452472152485734" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7514337757019855016" />
           </node>
         </node>
       </node>
