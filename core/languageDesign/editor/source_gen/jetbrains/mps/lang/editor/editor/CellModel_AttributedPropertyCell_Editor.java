@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
@@ -32,9 +32,9 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_0981_1(context, node, "/>"));
+    editorCell.addEditorCell(this.createConstant_0981_1(context, node, "[/>"));
     editorCell.addEditorCell(this.createConstant_0981_0(context, node, "attributed property"));
-    editorCell.addEditorCell(this.createConstant_0981_2(context, node, "</"));
+    editorCell.addEditorCell(this.createConstant_0981_2(context, node, "</]"));
     return editorCell;
   }
 
@@ -89,42 +89,7 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0981_0");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.blue);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_0981_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0981_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_0981_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0981_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_0981_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -140,6 +105,34 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Constant_0981_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0981_1");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_0981_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_0981_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupLabel_Constant_0981_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

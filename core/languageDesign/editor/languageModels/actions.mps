@@ -1830,20 +1830,20 @@
           <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" id="1199450938568">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199450938569">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199450939976">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199450941478">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199450965018">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199450966442">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199450965018">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199450966442">
+                    <property name="value" value="#" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199450941478">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199450939977">
                       <property name="value" value="#" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845000">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227845000">
                       <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" id="1199450944122" />
                       <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1199450962954">
                         <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
                       </node>
                     </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199450939977">
-                    <property name="value" value="#" />
                   </node>
                 </node>
               </node>

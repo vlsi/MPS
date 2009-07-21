@@ -131,6 +131,28 @@ public class Styles_StyleSheet {
     };
   }
 
+  public static Style getAttributedCellLabel(final EditorCell cell) {
+    return new Style(cell) {
+      {
+        this.set(StyleAttributes.DRAW_BORDER, true);
+        this.set(StyleAttributes.EDITABLE, false);
+        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+
+          public Boolean calculate(EditorCell cell) {
+            return Styles_StyleSheet._StyleParameter_QueryFunction_4411513707977385303((cell == null ?
+              null :
+              cell.getSNode()
+            ), (cell == null ?
+              null :
+              cell.getEditorContext()
+            ));
+          }
+        });
+      }
+    };
+  }
+
   public static boolean _StyleParameter_QueryFunction_1237383984781(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
@@ -156,6 +178,10 @@ public class Styles_StyleSheet {
       return false;
     }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
+  }
+
+  public static boolean _StyleParameter_QueryFunction_4411513707977385303(SNode node, EditorContext editorContext) {
+    return true;
   }
 
 }

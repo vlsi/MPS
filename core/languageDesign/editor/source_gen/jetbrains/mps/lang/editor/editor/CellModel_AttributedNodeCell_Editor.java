@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
@@ -42,9 +42,9 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5832_0(context, node, "|>"));
+    editorCell.addEditorCell(this.createConstant_5832_0(context, node, "[>"));
     editorCell.addEditorCell(this.createConstant_5832_1(context, node, "attributed node"));
-    editorCell.addEditorCell(this.createConstant_5832_2(context, node, "<|"));
+    editorCell.addEditorCell(this.createConstant_5832_2(context, node, "<]"));
     return editorCell;
   }
 
@@ -106,6 +106,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
       };
       inlineStyle.apply(editorCell);
@@ -114,16 +115,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5832_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5832_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_5832_2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -133,6 +125,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.SELECTABLE, false);
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
         }
       };
       inlineStyle.apply(editorCell);

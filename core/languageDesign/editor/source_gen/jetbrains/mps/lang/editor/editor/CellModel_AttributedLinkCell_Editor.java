@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
@@ -32,9 +32,10 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstant_5840_0(context, node, "//>"));
+    editorCell.addEditorCell(this.createConstant_5840_0(context, node, ">"));
+    editorCell.addEditorCell(this.createConstant_5840_2(context, node, "[//"));
     editorCell.addEditorCell(this.createConstant_5840_1(context, node, "attributed link"));
-    editorCell.addEditorCell(this.createConstant_5840_2(context, node, "<//"));
+    editorCell.addEditorCell(this.createConstant_5840_3(context, node, "//]"));
     return editorCell;
   }
 
@@ -81,6 +82,14 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstant_5840_3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    setupBasic_Constant_5840_3(editorCell, node, context);
+    setupLabel_Constant_5840_3(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
 
   private static void setupBasic_Collection_5840_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_5840_0");
@@ -102,29 +111,7 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_5840_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5840_1");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BORDER, true);
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.green);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
-  }
-
-  private static void setupBasic_Constant_5840_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5840_2");
-    {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BORDER, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
-    }
+    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Collection_5840_1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -142,6 +129,34 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   private static void setupBasic_Component_5840_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupBasic_Constant_5840_2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5840_2");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
+  private static void setupBasic_Constant_5840_3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Constant_5840_3");
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.SELECTABLE, false);
+          this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
+  }
+
   private static void setupLabel_Constant_5840_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
@@ -149,6 +164,9 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_Constant_5840_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_Constant_5840_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
