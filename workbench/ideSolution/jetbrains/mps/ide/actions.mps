@@ -24078,8 +24078,8 @@
                       <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="3322169133326080414" />
                     </node>
                   </node>
-                  <node role="ascending" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection" id="3322169133326080415">
-                    <property name="value" value="true" />
+                  <node role="ascending" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection" id="1325608660603663220">
+                    <property name="value" value="false" />
                   </node>
                 </node>
               </node>
