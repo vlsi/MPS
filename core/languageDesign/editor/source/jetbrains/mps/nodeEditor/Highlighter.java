@@ -40,10 +40,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static final Logger LOG = Logger.getLogger(Highlighter.class);
@@ -307,6 +304,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (checkersToRecheck.isEmpty()) {
             return false;
           }
+          List<IEditorChecker> checkersToRecheckList = new ArrayList<IEditorChecker>(checkersToRecheck);
+          Collections.sort(checkersToRecheckList, new PriorityComparator());
 
           boolean hackCheckedOnce = wasCheckedOnce;
           if (component instanceof InspectorEditorComponent) {
@@ -317,7 +316,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           }
 
 
-          if (updateEditor(component, events, hackCheckedOnce, checkersToRecheck, checkersToRemove)) {
+          if (updateEditor(component, events, hackCheckedOnce, checkersToRecheckList, checkersToRemove)) {
             return true;
           }
         }
@@ -345,7 +344,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     });
   }
 
-  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, Set<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
+  private boolean updateEditor(final EditorComponent editor, final List<SModelEvent> events, final boolean wasCheckedOnce, List<IEditorChecker> checkersToRecheck, Set<IEditorChecker> checkersToRemove) {
     if (editor == null || editor.getRootCell() == null) {
       return false;
     }

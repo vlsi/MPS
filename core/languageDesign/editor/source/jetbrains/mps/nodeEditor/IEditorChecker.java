@@ -40,4 +40,8 @@ public interface IEditorChecker {
   public boolean hasDramaticalEvent(List<SModelEvent> events);
 
   public void checkingIterationFinished();
+
+  boolean isLaterThan(IEditorChecker editorChecker);
+
+  boolean isEarlierThan(IEditorChecker editorChecker);
 }

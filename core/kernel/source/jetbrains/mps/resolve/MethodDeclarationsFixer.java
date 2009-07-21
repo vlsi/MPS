@@ -29,7 +29,7 @@ import com.intellij.openapi.util.Pair;
  */
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
-  private Map<SNode, SNode> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, SNode>();
+  private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, SNode> myParametersToCheckedMethodCalls = new HashMap<SNode, SNode>();
 
   private Set<SNode> myCurrentExpressionsWithChangedTypes = new HashSet<SNode>();
@@ -37,12 +37,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private final Object myRecalculatedTypesLock = new Object();
 
   private TypeRecalculatedListener myTypeRecalculatedListener = new TypeRecalculatedListener() {
-   public void typeWillBeRecalculatedForTerm(SNode term) {
-     synchronized (myRecalculatedTypesLock) {
-       myCurrentExpressionsWithChangedTypes.add(term);
-     }
-   }
- };
+    public void typeWillBeRecalculatedForTerm(SNode term) {
+      synchronized (myRecalculatedTypesLock) {
+        myCurrentExpressionsWithChangedTypes.add(term);
+      }
+    }
+  };
 
   public void init() {
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);
@@ -133,6 +133,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (newTarget != null) {
       //todo may be in command
       methodCall.setBaseMethodDeclaration(newTarget);
+      myCheckedMethodCalls.add(methodCallNode);
+      Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTarget.getNode());
+      if (nodeSet == null) {
+        nodeSet = new HashSet<SNode>();
+      }
+      nodeSet.add(methodCallNode);
     }
   }
 
@@ -152,7 +158,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall, Classifier classifier, List<Type> typeParameters) {
     if (methodCall instanceof InstanceMethodCallOperation) {
-      MethodResolveUtil.getTypesByTypeVars(classifier, typeParameters); 
+      MethodResolveUtil.getTypesByTypeVars(classifier, typeParameters);
     }
     //todo
 
@@ -172,9 +178,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationChanged(SNode method) {
-    SNode methodCall = myMethodDeclsToCheckedMethodCalls.get(method);
-    if (methodCall != null) {
-      testAndFixMethodCall(methodCall);
+    Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
+    for (SNode methodCall : methodCalls) {
+      if (methodCall != null) {
+        testAndFixMethodCall(methodCall);
+      }
     }
   }
 

@@ -18,11 +18,13 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.IEditorChecker;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
 import java.util.*;
 
@@ -95,5 +97,10 @@ public class AutoResolver extends EditorCheckerAdapter {
       }
     }
     return result;
+  }
+
+  @Override
+  public boolean isLaterThan(IEditorChecker editorChecker) {
+    return editorChecker instanceof TypesEditorChecker;
   }
 }

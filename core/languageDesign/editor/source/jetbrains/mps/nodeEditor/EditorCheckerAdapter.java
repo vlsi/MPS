@@ -23,6 +23,7 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 import java.awt.Color;
 import java.util.List;
+import java.util.Comparator;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
   public static final Object ERROR_INFO = new Object();
@@ -83,4 +84,13 @@ public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMess
   public void checkingIterationFinished() {
     
   }
+
+  public boolean isLaterThan(IEditorChecker editorChecker) {
+    return false;
+  }
+
+  public boolean isEarlierThan(IEditorChecker editorChecker) {
+    return false;
+  }
+
 }
