@@ -25826,13 +25826,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3322169133325856924" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3322169133325856925">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3322169133325856927">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="662625476596702880">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="662625476596702879">
-              <link role="baseMethodDeclaration" targetNodeId="3322169133326078227" resolveInfo="getOperationContext" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="662625476596702884">
-              <link role="baseMethodDeclaration" targetNodeId="40.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
-            </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4436041099111114440">
+            <link role="baseMethodDeclaration" targetNodeId="63.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+            <link role="classConcept" targetNodeId="63.~GlobalScope" resolveInfo="GlobalScope" />
           </node>
         </node>
       </node>
