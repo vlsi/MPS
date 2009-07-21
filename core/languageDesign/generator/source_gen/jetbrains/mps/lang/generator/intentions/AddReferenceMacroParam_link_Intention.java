@@ -45,6 +45,13 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.getModel(node).getModelDescriptor().getModule() instanceof Generator)) {
       return false;
     }

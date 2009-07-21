@@ -33,6 +33,13 @@ public class add_init_values_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getCount(node, "initValue") == 0 && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
   }
 

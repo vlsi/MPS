@@ -37,6 +37,13 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
     if (!(SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"))) {
       return false;

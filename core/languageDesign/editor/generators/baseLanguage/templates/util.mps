@@ -403,21 +403,21 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189585967515">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1189585968515">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1189585968516">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189585968517">
-                <link role="variableDeclaration" targetNodeId="1189585806716" resolveInfo="index" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1189585968518">
-                <property name="value" value="_Action" />
-              </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1189585968516">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189585968517">
+              <link role="variableDeclaration" targetNodeId="1189585806716" resolveInfo="index" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227895558">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189585968521">
-                <link role="variableDeclaration" targetNodeId="1189585802293" resolveInfo="keyMapDeclaration" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1189585968515">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227895558">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1189585968521">
+                  <link role="variableDeclaration" targetNodeId="1189585802293" resolveInfo="keyMapDeclaration" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1189585974237">
+                  <link role="property" targetNodeId="6.1169194664001" />
+                </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1189585974237">
-                <link role="property" targetNodeId="6.1169194664001" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1189585968518">
+                <property name="value" value="_Action" />
               </node>
             </node>
           </node>
@@ -531,17 +531,17 @@
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1233321319038">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1233321330106">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1233321330107">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233321330108">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233321330109">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233321330110">
-                      <link role="variableDeclaration" targetNodeId="1233319014889" resolveInfo="index" />
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233321330109">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233321330110">
+                    <link role="variableDeclaration" targetNodeId="1233319014889" resolveInfo="index" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1233321330108">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233321330112">
+                      <link role="variableDeclaration" targetNodeId="1233319014911" resolveInfo="name" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233321330111">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1233321330111">
                       <property name="value" value="_" />
                     </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233321330112">
-                    <link role="variableDeclaration" targetNodeId="1233319014911" resolveInfo="name" />
                   </node>
                 </node>
                 <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1233321330113">

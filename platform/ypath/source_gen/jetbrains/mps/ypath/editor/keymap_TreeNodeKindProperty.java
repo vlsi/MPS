@@ -56,7 +56,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
-      for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {
+      for(SNode desc : SNodeOperations.getDescendants(treepath, null, false, new String[]{})) {
         if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
           SPropertyOperations.set(SNodeOperations.cast(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default", "" + (false));
         }

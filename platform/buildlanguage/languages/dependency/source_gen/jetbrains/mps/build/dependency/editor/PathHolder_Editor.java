@@ -25,7 +25,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createRefCell_4245_3(context, node);
+    return this.createCollection_4245_1(context, node);
   }
 
   public EditorCell createCollection_4245_0(EditorContext context, SNode node) {
@@ -41,6 +41,16 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_4245_0(context, node, "/"));
     }
     editorCell.addEditorCell(this.createProperty_4245_3(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createCollection_4245_1(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+    setupBasic_Collection_4245_1(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createRefCell_4245_3(context, node));
     return editorCell;
   }
 
@@ -156,6 +166,10 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_4245_1(EditorCell editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupBasic_Collection_4245_1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.setCellId("Collection_4245_1");
   }
 
   private static void setupLabel_RefCell_4245_0(EditorCell_Label editorCell, SNode node, EditorContext context) {

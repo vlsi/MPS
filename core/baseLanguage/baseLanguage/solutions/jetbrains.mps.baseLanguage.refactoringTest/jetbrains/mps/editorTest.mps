@@ -3559,5 +3559,69 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="8630667313531347630">
+    <property name="name" value="EditorCellSomeProblem" />
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="652894790649965371">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="652894790649965401">
+        <property name="keys" value="." />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="652894790649965374">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="652894790649965375">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="652894790649965378">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="652894790649965379">
+            <property name="name" value="variable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="652894790649965380" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="652894790649965381">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="652894790649965382">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="652894790649965396">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="652894790649965383">
+              <link role="variableDeclaration" targetNodeId="652894790649965379" resolveInfo="variable" />
+              <node role="referenceAnnotation$link_attribute$variableDeclaration" type="jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion" id="652894790649965384" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.AbstractOperation" id="652894790649965399">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="652894790649965400">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="0" />
+                <property name="selectionEnd" value="0" />
+                <property name="cellId" value="Custom_3927_0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="652894790649965386">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="652894790649965387">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="652894790649965388">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="652894790649965389">
+            <property name="name" value="variable" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="652894790649965390" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="652894790649965391">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="652894790649965392">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="652894790649965393">
+            <link role="variableDeclaration" targetNodeId="652894790649965389" resolveInfo="variable" />
+            <node role="referenceAnnotation$link_attribute$variableDeclaration" type="jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion" id="652894790649965394" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="652894790649965395">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="8" />
+              <property name="selectionEnd" value="8" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -37,6 +37,13 @@ public class CreateListPattern_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
     return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(currentNode) != null;
   }

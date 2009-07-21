@@ -36,6 +36,13 @@ public class MigrateString_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ObjectUtils.equals(SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name"), "String");
   }
 
