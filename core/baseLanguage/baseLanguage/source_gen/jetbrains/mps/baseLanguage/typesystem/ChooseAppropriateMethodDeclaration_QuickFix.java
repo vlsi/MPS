@@ -5,10 +5,10 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope;
 import jetbrains.mps.baseLanguage.search.ClassifierVisibleStaticMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import java.util.List;
 import jetbrains.mps.util.Condition;
@@ -31,8 +31,12 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
   }
 
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
-      ClassifierVisibleMembersScope scope = new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(SNodeOperations.cast(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false))), ((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), IClassifiersSearchScope.STATIC_METHOD);
+    if (SNodeOperations.isInstanceOf(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") || SNodeOperations.isInstanceOf(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall")) {
+      SNode classConcept = (SNodeOperations.isInstanceOf(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") ?
+        SLinkOperations.getTarget(SNodeOperations.cast(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false) :
+        SNodeOperations.getAncestor(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)
+      );
+      ClassifierVisibleMembersScope scope = new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(classConcept)), ((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), IClassifiersSearchScope.STATIC_METHOD);
       List<SNode> mDecls = ((List<SNode>)scope.getNodes(new Condition <SNode>() {
 
         public boolean met(SNode n) {

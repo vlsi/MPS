@@ -76,10 +76,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
             {
               SNode nodeWithError = equationInfo.getNodeWithError();
               SNode methodCall = null;
-              if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-                methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-              } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+              if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
                 methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+              } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+                methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
               }
               if (methodCall != null) {
                 SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -144,10 +144,10 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         {
           SNode nodeWithError = equationInfo.getNodeWithError();
           SNode methodCall = null;
-          if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-          } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
             methodCall = SNodeOperations.cast(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+          } else if (SNodeOperations.isInstanceOf(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+            methodCall = SNodeOperations.cast(nodeWithError, "jetbrains.mps.baseLanguage.structure.IMethodCall");
           }
           if (methodCall != null) {
             SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

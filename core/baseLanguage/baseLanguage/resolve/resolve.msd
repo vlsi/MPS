@@ -9,6 +9,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="true">ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)</dependency>
+    <dependency reexport="false">1d6e05d7-9de9-40a7-9dad-7b8444280942(jetbrains.mps.lang.plugin#1203080439937)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguages>ac2f1963-1b72-479d-bbf6-e8da39fb6f41(jetbrains.mps.lang.annotations)</usedLanguages>
