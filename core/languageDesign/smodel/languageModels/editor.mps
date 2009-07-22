@@ -2840,7 +2840,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2648652578096473310">
-    <property name="package" value="operation.property" />
+    <property name="package" value="operation.concept" />
     <link role="conceptDeclaration" targetNodeId="1.2648652578096473304" resolveInfo="ConceptProperty_SetOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2648652578096473312">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="2648652578096473313">

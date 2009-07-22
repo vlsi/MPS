@@ -1727,6 +1727,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1178552681649">
       <link role="conceptPropertyDeclaration" targetNodeId="1172326539502" resolveInfo="applicable_to_concept" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4726561250374487608">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1197029536315" resolveInfo="lvalue" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1145994841055">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptProperty" />
@@ -3116,7 +3119,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2648652578096473304">
-    <property name="package" value="operation.property" />
+    <property name="package" value="operation.concept" />
     <property name="name" value="ConceptProperty_SetOperation" />
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2648652578096473306">

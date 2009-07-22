@@ -2263,6 +2263,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4726561250374487644">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4726561250374487651">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4726561250374487646">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4726561250374487647">
+                <link role="variableDeclaration" targetNodeId="1146073487612" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="4726561250374487648">
+                <link role="conceptProperty" targetNodeId="6.1137473891462" resolveInfo="alias" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4726561250374487650">
+              <property name="value" value="bar" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1146073487612">
         <property name="name" value="node" />
@@ -2333,6 +2348,21 @@
               <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2648652578096734569">
                 <property name="value" value="true" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4726561250374487653">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4726561250374487660">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4726561250374487655">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4726561250374487656">
+                <link role="variableDeclaration" targetNodeId="1146073487636" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="4726561250374487657">
+                <link role="conceptProperty" targetNodeId="6.1137473854053" resolveInfo="abstract" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4726561250374487659">
+              <property name="value" value="false" />
             </node>
           </node>
         </node>
