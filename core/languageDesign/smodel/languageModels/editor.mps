@@ -2839,5 +2839,27 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1803469493727536410" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2648652578096473310">
+    <property name="package" value="operation.property" />
+    <link role="conceptDeclaration" targetNodeId="1.2648652578096473304" resolveInfo="ConceptProperty_SetOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2648652578096473312">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="2648652578096473313">
+        <link role="editorComponent" targetNodeId="1206480334645" resolveInfo="ReplaceableAlias_Comp" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2648652578096473314">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="2648652578096473315">
+        <property name="noTargetText" value="&lt;no value&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1138662048170" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2648652578096473316">
+        <property name="text" value=")" />
+        <link role="styleClass" targetNodeId="5.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="2648652578096473317" />
+    </node>
+  </node>
 </model>
 

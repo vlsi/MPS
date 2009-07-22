@@ -16,9 +16,8 @@
 package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.StringConceptProperty;
-import jetbrains.mps.lang.structure.structure.ConceptProperty;
-import jetbrains.mps.lang.structure.structure.IntegerConceptProperty;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.lang.structure.structure.*;
 
 /**
@@ -56,4 +55,43 @@ public class SConceptPropertyOperations {
     return conceptProperty instanceof BooleanConceptProperty;
   }
 
+  public static void setString (SNode node, String propertyName, String value) {
+      if (node != null) {
+        ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+        if (conceptProperty instanceof StringConceptProperty) {
+            ((StringConceptProperty) conceptProperty).setValue(value);
+        }
+      }      
+  }
+
+  public static void setInteger (SNode node, String propertyName, int value) {
+      if (node != null) {
+        ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+        if (conceptProperty instanceof IntegerConceptProperty) {
+            ((IntegerConceptProperty) conceptProperty).setValue(value);
+        }
+      }      
+  }
+
+  public static void setBoolean (SNode node, String propertyName, boolean value) {
+      if (node != null) {
+        ConceptProperty conceptProperty = node.findConceptProperty(propertyName);
+        if (conceptProperty instanceof BooleanConceptProperty && !value) {
+            node.removeChild(conceptProperty.getNode());
+        }
+        else if (conceptProperty == null && value) {
+            AbstractConceptDeclaration acd = (AbstractConceptDeclaration)node.getAdapter();
+            for (ConceptPropertyDeclaration cpd: SModelSearchUtil.getConceptPropertyDeclarations(acd)) {
+                if (cpd.getName().equals(propertyName)) {
+                    if (cpd instanceof BooleanConceptPropertyDeclaration) {
+                        BooleanConceptProperty bcp = BooleanConceptProperty.newInstance(node.getModel());
+                        bcp.setBooleanConceptPropertyDeclaration((BooleanConceptPropertyDeclaration) cpd);
+                        acd.addConceptProperty(bcp);
+                        break;
+                    }
+                }
+            }
+        }
+      }      
+  }
 }

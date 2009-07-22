@@ -75,6 +75,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2648652578096452312">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734446">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096458102">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2648652578096452313">
+                <link role="variableDeclaration" targetNodeId="1203538214436" resolveInfo="clazz" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="2648652578096458106">
+                <link role="conceptProperty" targetNodeId="3.1137473891462" resolveInfo="alias" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" id="2648652578096734450">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2648652578096734452" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1203538214436">
         <property name="name" value="clazz" />

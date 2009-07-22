@@ -13,6 +13,7 @@ public class ConceptProperties {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     String text = "alias is " + SConceptPropertyOperations.getString(node, "alias");
     int length = SConceptPropertyOperations.getString(node, "alias").length();
+    SConceptPropertyOperations.setString(node, "alias", "foo");
   }
 
   public void booleanConceptProperty(SNode node) {
@@ -21,6 +22,7 @@ public class ConceptProperties {
       isAbstract = true;
     }
     boolean isAbstract2 = SConceptPropertyOperations.getBoolean(node, "abstract");
+    SConceptPropertyOperations.setBoolean(node, "abstract", true);
   }
 
   public void m1(SNode node) {

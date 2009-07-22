@@ -68,6 +68,22 @@ public class QueriesUtil {
     return null;
   }
 
+  public static SNode get_SConceptPropertyAccess_SetMethod(SNode operation, IScope scope) {
+    String methodName = "setString";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
+      methodName = "setInteger";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operation, "conceptProperty", false), "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
+      methodName = "setBoolean";
+    }
+    SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+      if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
+        return method;
+      }
+    }
+    return null;
+  }
+
   public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation, IScope scope) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     String methodName = "getString";

@@ -34,6 +34,13 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
 

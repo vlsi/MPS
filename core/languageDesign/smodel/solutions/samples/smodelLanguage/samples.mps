@@ -2246,10 +2246,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2648652578096734541">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734548">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734543">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2648652578096734542">
+                <link role="variableDeclaration" targetNodeId="1146073487612" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="2648652578096734547">
+                <link role="conceptProperty" targetNodeId="6.1137473891462" resolveInfo="alias" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" id="2648652578096734552">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2648652578096734554">
+                <property name="value" value="foo" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1146073487612">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1146073487613" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1146073487613">
+          <link role="concept" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679250" />
     </node>
@@ -2300,10 +2319,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2648652578096734556">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734563">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734558">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2648652578096734557">
+                <link role="variableDeclaration" targetNodeId="1146073487636" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="2648652578096734562">
+                <link role="conceptProperty" targetNodeId="6.1137473854053" resolveInfo="abstract" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" id="2648652578096734567">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2648652578096734569">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1146073487636">
         <property name="name" value="node" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1146073487637" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1146073487637">
+          <link role="concept" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1206472679281" />
     </node>

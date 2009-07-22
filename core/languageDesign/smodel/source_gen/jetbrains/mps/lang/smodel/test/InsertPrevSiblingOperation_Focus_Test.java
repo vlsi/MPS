@@ -4,23 +4,25 @@ package jetbrains.mps.lang.smodel.test;
 
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseEdmitorTestBody;
+import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
 
   @Test()
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
+    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
-  public static class TestBody extends BaseEdmitorTestBody {
+  public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
       IEditor editor = this.initEditor("1835794636205189194", "1835794636205189199");
-      BaseEdmitorTestBody.typeString(editor, "node.add next-sibling");
-      BaseEdmitorTestBody.typeString(editor, "new");
+      EditorComponent editorComponent = editor.getCurrentEditorComponent();
+      BaseEditorTestBody.typeString(editorComponent, "node.add next-sibling");
+      BaseEditorTestBody.typeString(editorComponent, "new");
       this.finishTest();
     }
 

@@ -2576,6 +2576,23 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2648652578096734487">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734518">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2648652578096734489">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2648652578096734488">
+                <link role="variableDeclaration" targetNodeId="1173394001302" resolveInfo="node" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="2648652578096734517">
+                <link role="conceptProperty" targetNodeId="7.1137473891462" resolveInfo="alias" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation" id="2648652578096734522">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2648652578096734524">
+                <property name="value" value="foobar" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1173394001302">
         <property name="name" value="node" />

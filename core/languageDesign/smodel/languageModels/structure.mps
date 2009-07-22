@@ -3115,5 +3115,23 @@
       <link role="target" targetNodeId="1154546950173" resolveInfo="ConceptReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2648652578096473304">
+    <property name="package" value="operation.property" />
+    <property name="name" value="ConceptProperty_SetOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2648652578096473306">
+      <property name="value" value="set" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="2648652578096508239">
+      <link role="conceptPropertyDeclaration" targetNodeId="1145994733391" resolveInfo="applicableToConceptProperty" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2648652578096473305">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 

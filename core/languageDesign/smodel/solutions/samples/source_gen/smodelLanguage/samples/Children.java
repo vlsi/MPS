@@ -43,28 +43,28 @@ public class Children {
   }
 
   public void accessToChildren_3(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false);
-    List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false);
-    List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true);
-    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false)).where(new IWhereFilter <SNode>() {
+    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false, new String[]{});
+    List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
+    List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true, new String[]{});
+    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "value") == true;
       }
     });
     SNode abcdef;
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);
-    SNodeOperations.getDescendants(statement, null, false);
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false);
-    SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false);
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false);
+    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false, new String[]{});
+    SNodeOperations.getDescendants(statement, null, false, new String[]{});
+    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(statement)), false, new String[]{});
+    SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
+    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant")), false, new String[]{});
     SNode aConcept = null;
-    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(aConcept), false);
+    SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(aConcept), false, new String[]{});
   }
 
   public void accessToChildren_4(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false);
-    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true);
+    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
+    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
   }
 
 }
