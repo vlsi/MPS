@@ -12,10 +12,12 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.util.*;
 
 import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.command.CommandProcessor;
 
 
 /**
@@ -65,14 +67,16 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       myCurrentExpressionsWithChangedTypes.clear();
     }
 
+    final Map<SNode, SNode> resolveTargets = new HashMap<SNode, SNode>();
+
     SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
 
       public void visitChildEvent(SModelChildEvent event) {
         SNode child = event.getChild();
         if (event.isAdded()) {
-          nodeAdded(child);
+          nodeAdded(child, resolveTargets);
         } else {
-          nodeRemoved(child, event.getParent());
+          nodeRemoved(child, event.getParent(), resolveTargets);
         }
       }
 
@@ -81,7 +85,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         SNode sourceNode = reference.getSourceNode();
         if (BaseAdapter.isInstance(sourceNode, BaseMethodCall.class) &&
           BaseMethodCall.BASE_METHOD_DECLARATION.equals(reference.getRole())) {
-          methodCallDeclarationChanged(sourceNode);
+          methodCallDeclarationChanged(sourceNode, resolveTargets);
         }
       }
 
@@ -89,7 +93,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         SNode node = event.getNode();
         if (BaseAdapter.isInstance(node, BaseMethodDeclaration.class)) {
           if (BaseMethodDeclaration.NAME.equals(event.getPropertyName())) {
-            methodDeclarationChanged(node);
+            methodDeclarationChanged(node, resolveTargets);
           }
         }
       }
@@ -103,8 +107,30 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       event.accept(visitor);
     }
     for (SNode expressionWithChangedType : expressionsWithChangedTypes) {
-      expressionTypeChanged(expressionWithChangedType);
+      expressionTypeChanged(expressionWithChangedType, resolveTargets);
     }
+
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        if (resolveTargets.isEmpty()) return;
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
+              public void run() {
+                for (SNode methodCall : resolveTargets.keySet()) {
+                  SNode referent = resolveTargets.get(methodCall);
+                  if (referent != null) {
+                    methodCall.setReferent(IMethodCall.BASE_METHOD_DECLARATION, referent);
+                  }
+                }
+              }
+            });
+          }
+        });
+      }
+    });
+
     return new HashSet<EditorMessage>();
   }
 
@@ -115,7 +141,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodCallsToSetDecls.clear();
   }
 
-  private void testAndFixMethodCall(SNode methodCallNode) {
+  private void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> resolveTargets) {
     IMethodCall methodCall = (IMethodCall) BaseAdapter.fromNode(methodCallNode);
     BaseMethodDeclaration baseMethodDeclaration = methodCall.getBaseMethodDeclaration();
     if (baseMethodDeclaration == null) {
@@ -139,20 +165,14 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
     }
     if (newTarget != null) {
-      final IMethodCall methodCall_final = methodCall;
-      final BaseMethodDeclaration target_final = newTarget;
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          methodCall_final.setBaseMethodDeclaration(target_final);
-        }
-      });
+      resolveTargets.put(methodCall.getNode(), newTarget.getNode());
+      myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());
       myCheckedMethodCalls.add(methodCallNode);
       Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTarget.getNode());
       if (nodeSet == null) {
         nodeSet = new HashSet<SNode>();
       }
       nodeSet.add(methodCallNode);
-      myMethodCallsToSetDecls.put(methodCall_final.getNode(), target_final.getNode());
     }
   }
 
@@ -191,52 +211,52 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     return new ArrayList<BaseMethodDeclaration>();
   }
 
-  private void methodDeclarationChanged(SNode method) {
+  private void methodDeclarationChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
     for (SNode methodCall : methodCalls) {
       if (methodCall != null) {
-        testAndFixMethodCall(methodCall);
+        testAndFixMethodCall(methodCall, resolveTargets);
       }
     }
   }
 
-  private void methodCallDeclarationChanged(SNode methodCall) {
+  private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     if (myCheckedMethodCalls.contains(methodCall) &&
       methodCall.getReferent(IMethodCall.BASE_METHOD_DECLARATION) == myMethodCallsToSetDecls.get(methodCall)) {
       return;
     }
-    testAndFixMethodCall(methodCall);
+    testAndFixMethodCall(methodCall, resolveTargets);
   }
 
-  private void methodCallCreated(SNode methodCall) {
-    testAndFixMethodCall(methodCall);
+  private void methodCallCreated(SNode methodCall, Map<SNode, SNode> resolveTargets) {
+    testAndFixMethodCall(methodCall, resolveTargets);
   }
 
-  private void expressionTypeChanged(SNode expression) {
+  private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNode methodCall = myParametersToCheckedMethodCalls.get(expression);
     if (methodCall != null) {
-      testAndFixMethodCall(methodCall);
+      testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
 
-  private void nodeAdded(SNode expression) {
+  private void nodeAdded(SNode expression, Map<SNode, SNode> resolveTargets) {
     //added methods
     for (SNode methodCall : expression.getDescendants(new IsInstanceCondition(IMethodCall.concept))) {
-      testAndFixMethodCall(methodCall);
+      testAndFixMethodCall(methodCall, resolveTargets);
     }
     //actual argument
     SNode parent = expression.getParent();
     if (myCheckedMethodCalls.contains(parent)) {
-      testAndFixMethodCall(parent);
+      testAndFixMethodCall(parent, resolveTargets);
     }
   }
 
-  private void nodeRemoved(SNode expression, SNode formerParent) {
+  private void nodeRemoved(SNode expression, SNode formerParent, Map<SNode, SNode> resolveTargets) {
     if (BaseAdapter.isInstance(expression, IMethodCall.class)) {
 
     } else {
       if (myCheckedMethodCalls.contains(formerParent)) {
-        testAndFixMethodCall(formerParent);
+        testAndFixMethodCall(formerParent, resolveTargets);
       }
     }
   }
