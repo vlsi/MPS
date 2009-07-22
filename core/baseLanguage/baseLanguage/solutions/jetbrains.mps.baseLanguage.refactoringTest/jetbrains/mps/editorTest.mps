@@ -3623,5 +3623,72 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="4497978391706421674">
+    <property name="name" value="CaretInStaticMethodCall" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4497978391706445231">
+      <property name="name" value="clazz" />
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4497978391706445237">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4497978391706445238" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445239" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4497978391706445240" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4497978391706461581">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4497978391706461582" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445232" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4497978391706445233">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4497978391706445234" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445235" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4497978391706445236">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4497978391706581958">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="0" />
+            <property name="selectionEnd" value="0" />
+            <property name="cellId" value="Constant_6577_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4497978391706445241">
+      <property name="name" value="clazz" />
+      <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="4497978391706445242">
+        <property name="name" value="method" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4497978391706445243" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445244" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4497978391706445245" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4497978391706461579">
+          <property name="name" value="a" />
+          <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4497978391706461580" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445246" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4497978391706445247">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4497978391706445248" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4497978391706445249" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4497978391706445250">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4497978391706577504">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="4497978391706577505">
+              <link role="baseMethodDeclaration" targetNodeId="4497978391706445242" resolveInfo="method" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4497978391706577506">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="0" />
+                <property name="selectionEnd" value="0" />
+                <property name="cellId" value="Constant_4497_1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4497978391706461587">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4497978391706573052">
+        <property name="keys" value="method" />
+      </node>
+    </node>
+  </node>
 </model>
 
