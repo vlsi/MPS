@@ -35,6 +35,8 @@ import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import java.util.*;
 
 import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.application.impl.LaterInvocator;
+import com.intellij.openapi.application.ModalityState;
 
 /**
  * Created by IntelliJ IDEA.
@@ -87,8 +89,8 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           if (intention != null) {
             if (!myOnceExecutedQuickFixes.contains(intention)) {
               myOnceExecutedQuickFixes.add(intention);
-              ThreadUtils.runInUIThreadNoWait(new Runnable() {
-                public void run() {
+              LaterInvocator.invokeLater(new Runnable() {
+                public void run() {                  
                   ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                     public void run() {
                       CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
@@ -99,7 +101,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
                     }
                   });
                 }
-              });
+              }, ModalityState.NON_MODAL);
             }
           }
         } else {
