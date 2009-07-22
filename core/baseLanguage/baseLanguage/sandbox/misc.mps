@@ -185,18 +185,18 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7514337757019854994" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7514337757019855010">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7514337757019855012">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7514337757019855013">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2345890179797525337">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2345890179797525338">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2345890179797525339">
               <link role="baseMethodDeclaration" targetNodeId="4419421310517966183" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019855014">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2345890179797525340">
                 <property name="value" value="2" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7514337757019855015">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2345890179797525341">
                 <property name="value" value="3" />
               </node>
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7514337757019855016" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2345890179797525342" />
           </node>
         </node>
       </node>

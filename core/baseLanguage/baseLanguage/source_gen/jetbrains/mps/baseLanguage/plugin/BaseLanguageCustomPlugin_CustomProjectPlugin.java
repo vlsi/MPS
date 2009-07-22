@@ -4,15 +4,15 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.resolve.MethodDeclarationsFixer;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.resolve.MethodDeclarationsFixer;
 
 public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private static Logger LOG = Logger.getLogger(BaseLanguageCustomPlugin_CustomProjectPlugin.class);
 
   private ToDoHighlighter myToDoHighlighter = new ToDoHighlighter();
-//  private MethodDeclarationsFixer myMethodDeclarationsFixer = new MethodDeclarationsFixer();
+  private MethodDeclarationsFixer myMethodDeclFixer = new MethodDeclarationsFixer();
 
   public BaseLanguageCustomPlugin_CustomProjectPlugin() {
   }
@@ -21,15 +21,15 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.addChecker(this.myToDoHighlighter);
-   //   highlighter.addChecker(myMethodDeclarationsFixer);
+      highlighter.addChecker(this.myMethodDeclFixer);
     }
   }
 
   public void doDispose(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
+      highlighter.removeChecker(this.myMethodDeclFixer);
       highlighter.removeChecker(this.myToDoHighlighter);
-  //    highlighter.removeChecker(this.myMethodDeclarationsFixer);
     }
   }
 

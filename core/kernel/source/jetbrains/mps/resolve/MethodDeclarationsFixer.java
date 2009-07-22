@@ -1,9 +1,7 @@
 package jetbrains.mps.resolve;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
@@ -28,9 +26,12 @@ import com.intellij.openapi.util.Pair;
  * To change this template use File | Settings | File Templates.
  */
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
+  private static boolean DISABLED = true;
+
   private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
   private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
   private Map<SNode, SNode> myParametersToCheckedMethodCalls = new HashMap<SNode, SNode>();
+  private Map<SNode, SNode> myMethodCallsToSetDecls = new HashMap<SNode, SNode>();
 
   private Set<SNode> myCurrentExpressionsWithChangedTypes = new HashSet<SNode>();
 
@@ -53,6 +54,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
+    
+    if (DISABLED) {
+      return new HashSet<EditorMessage>();
+    }
+
     Set<SNode> expressionsWithChangedTypes;
     synchronized (myRecalculatedTypesLock) {
       expressionsWithChangedTypes = new HashSet<SNode>(myCurrentExpressionsWithChangedTypes);
@@ -106,6 +112,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myCheckedMethodCalls.clear();
     myMethodDeclsToCheckedMethodCalls.clear();
     myParametersToCheckedMethodCalls.clear();
+    myMethodCallsToSetDecls.clear();
   }
 
   private void testAndFixMethodCall(SNode methodCallNode) {
@@ -132,14 +139,20 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
     }
     if (newTarget != null) {
-      //todo may be in command
-      methodCall.setBaseMethodDeclaration(newTarget);
+      final IMethodCall methodCall_final = methodCall;
+      final BaseMethodDeclaration target_final = newTarget;
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          methodCall_final.setBaseMethodDeclaration(target_final);
+        }
+      });
       myCheckedMethodCalls.add(methodCallNode);
       Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTarget.getNode());
       if (nodeSet == null) {
         nodeSet = new HashSet<SNode>();
       }
       nodeSet.add(methodCallNode);
+      myMethodCallsToSetDecls.put(methodCall_final.getNode(), target_final.getNode());
     }
   }
 
@@ -188,6 +201,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodCallDeclarationChanged(SNode methodCall) {
+    if (myCheckedMethodCalls.contains(methodCall) &&
+      methodCall.getReferent(IMethodCall.BASE_METHOD_DECLARATION) == myMethodCallsToSetDecls.get(methodCall)) {
+      return;
+    }
     testAndFixMethodCall(methodCall);
   }
 
@@ -203,13 +220,14 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeAdded(SNode expression) {
-    if (BaseAdapter.isInstance(expression, IMethodCall.class)) {
-      testAndFixMethodCall(expression);
-    } else {
-      SNode parent = expression.getParent();
-      if (myCheckedMethodCalls.contains(parent)) {
-        testAndFixMethodCall(parent);
-      }
+    //added methods
+    for (SNode methodCall : expression.getDescendants(new IsInstanceCondition(IMethodCall.concept))) {
+      testAndFixMethodCall(methodCall);
+    }
+    //actual argument
+    SNode parent = expression.getParent();
+    if (myCheckedMethodCalls.contains(parent)) {
+      testAndFixMethodCall(parent);
     }
   }
 
