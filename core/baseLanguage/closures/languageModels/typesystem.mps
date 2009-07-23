@@ -3254,6 +3254,12 @@
             </node>
           </node>
         </node>
+        <node role="nodeToCheck" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6656588995619628654">
+          <link role="applicableNode" targetNodeId="1225797528201" resolveInfo="invoke" />
+        </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8829749091878836180">
+          <property name="value" value="either return type or parameter types don't match" />
+        </node>
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1225797528201">
