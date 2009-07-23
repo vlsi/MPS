@@ -129,10 +129,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"), "map_ConfigClass");
   }
 
-  public static boolean ifMacro_Condition_2637335201204785421(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "disposeBlock", true) != null;
-  }
-
   public static boolean ifMacro_Condition_3452826078638188030(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true) != null);
   }
@@ -159,6 +155,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8821770403474041673(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "checkBlock", true) != null;
+  }
+
+  public static SNode sourceNodeQuery_90909550749889565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "disposeBlock", true);
   }
 
   public static SNode sourceNodeQuery_3452826078638191782(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -191,10 +191,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7840798570675189708(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "consoleComponent", true);
-  }
-
-  public static SNode sourceNodeQuery_7840798570675189719(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "disposeBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_8294332872984074416(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

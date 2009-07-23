@@ -4380,5 +4380,20 @@
       <property name="text" value="tab-multi" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="90909550749456582">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.678887849223472895" resolveInfo="DisposeConsoleBlock" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Block" id="90909550749889385">
+      <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="90909550749889390">
+        <property name="text" value="dispose:" />
+      </node>
+      <node role="body" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="90909550749889391">
+        <link role="relationDeclaration" targetNodeId="31.1199569916463" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="90909550749889392">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
