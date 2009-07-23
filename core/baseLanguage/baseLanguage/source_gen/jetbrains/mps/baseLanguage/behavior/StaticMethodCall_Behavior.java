@@ -7,6 +7,14 @@ import jetbrains.mps.project.IModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
+import java.util.List;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StaticMethodCall_Behavior {
 
@@ -17,6 +25,16 @@ public class StaticMethodCall_Behavior {
     Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), module);
     Object[] actualArguments = BaseMethodCall_Behavior.call_getActualArguments_1213877339153(thisNode, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);
+  }
+
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(thisNode, "classConcept", false))), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
+    List<SNode> result = new ArrayList<SNode>();
+    for(BaseMethodDeclaration bmd : methods) {
+      SNode node = bmd.getNode();
+      ListSequence.fromList(result).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+    }
+    return result;
   }
 
 }

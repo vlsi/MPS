@@ -7,6 +7,7 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -149,13 +150,16 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     String methodName = baseMethodDeclaration.getName();
     List<Expression> actualArgs = methodCall.getActualArguments();
-    Pair<Classifier, List<Type>> pair = getClassifierAndTypeParams(methodCall);
-    Classifier classifier = pair.first;
-    List<Type> typeParameters = pair.second;
+  /*  ClassifierType classifierType= getClassifierAndTypeParams(methodCall);
+    Classifier classifier = classifierType == null ? null : classifierType.getClassifier();
+    List<Type> typeParameters = classifierType == null ? null : classifierType.getParameters();*/
 
 
-    List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName, classifier);
-    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall, classifier, typeParameters);
+    List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName);
+    if (candidates.isEmpty()) {
+      return;
+    }
+    Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
 
     List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = MethodResolveUtil.selectByParmCount(candidates, actualArgs);
     BaseMethodDeclaration newTarget = null;
@@ -176,47 +180,32 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
 
-  private Pair<Classifier, List<Type>> getClassifierAndTypeParams(IMethodCall methodCall) {
-    if (methodCall instanceof InstanceMethodCallOperation) {
-      InstanceMethodCallOperation imco = (InstanceMethodCallOperation) methodCall;
-      Expression operand = ((DotExpression)imco.getParent()).getOperand();
-      SNode operandType = TypeChecker.getInstance().getTypeOf(operand.getNode());
-      SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, new ConceptMatchingPattern(ClassifierType.concept));
-      if (coercedType != null) {
-        ClassifierType classifierType = (ClassifierType) BaseAdapter.fromNode(coercedType);
-        return new Pair<Classifier, List<Type>>(classifierType.getClassifier(), classifierType.getParameters());
-      }
-    }
-    return null;
+  private ClassifierType getClassifierAndTypeParams(IMethodCall methodCall) {
+    return (ClassifierType)
+      BaseAdapter.fromNode(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(methodCall.getNode()));
   }
 
-  private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall, Classifier classifier, List<Type> typeParameters) {
-    if (methodCall instanceof InstanceMethodCallOperation) {
-      MethodResolveUtil.getTypesByTypeVars(classifier, typeParameters);
-    }
-    //todo
-
-    return new HashMap<TypeVariableDeclaration, Type>();
+  private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall) {
+    return IMethodCall_Behavior.call_getTypesByTypeVars_851115533308208851(methodCall.getNode());
   }
 
-  public List<? extends BaseMethodDeclaration> getCandidates(IMethodCall methodCall, String methodName, Classifier classifier) {
-    List<? extends BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
-    if (methodCall instanceof InstanceMethodCallOperation) {
-      return new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
+  public List<? extends BaseMethodDeclaration> getCandidates(IMethodCall methodCall, String methodName) {
+    List<SNode> nodes = IMethodCall_Behavior.call_getAvailableMethodDeclarations_5776618742611315379(methodCall.getNode(), methodName);
+    ArrayList<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
+    for (SNode node : nodes) {
+      result.add((BaseMethodDeclaration) BaseAdapter.fromNode(node));
     }
-    if (methodCall instanceof StaticMethodCall) {
-      return new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
-    }
-
-    return new ArrayList<BaseMethodDeclaration>();
+    return result;
   }
 
   private void methodDeclarationChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
+    if (methodCalls != null) {
     for (SNode methodCall : methodCalls) {
       if (methodCall != null) {
         testAndFixMethodCall(methodCall, resolveTargets);
       }
+    }
     }
   }
 

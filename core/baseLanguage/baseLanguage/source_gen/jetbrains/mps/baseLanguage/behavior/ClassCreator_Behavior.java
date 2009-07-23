@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
 
 public class ClassCreator_Behavior {
 
@@ -20,6 +21,11 @@ public class ClassCreator_Behavior {
       SLinkOperations.addChild(classifierType, "parameter", SNodeOperations.copyNode(typeParameter));
     }
     return classifierType;
+  }
+
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    return SLinkOperations.getTargets(classConcept, "constructor", true);
   }
 
 }

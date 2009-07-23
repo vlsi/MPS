@@ -10,6 +10,19 @@ import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.dataFlow.runtime.NullableUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
+import jetbrains.mps.baseLanguage.structure.Type;
+import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import java.util.List;
+import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InstanceMethodCallOperation_Behavior {
 
@@ -39,6 +52,21 @@ public class InstanceMethodCallOperation_Behavior {
 
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+  }
+
+  public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+    return MethodResolveUtil.getTypesByTypeVars(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), ((ClassifierType)SNodeOperations.getAdapter(instanceType)).getParameters());
+  }
+
+  public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
+    List<SNode> result = new ArrayList<SNode>();
+    for(BaseMethodDeclaration bmd : methods) {
+      SNode node = bmd.getNode();
+      ListSequence.fromList(result).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
+    }
+    return result;
   }
 
 }
