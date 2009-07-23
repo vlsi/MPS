@@ -6524,13 +6524,12 @@
         <property name="methodName" value="mps5316" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="876385242039333146" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="876385242039333147">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="876385242039333148">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="876385242039333150">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="876385242039333149" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="876385242039431926">
-                <link role="baseMethodDeclaration" targetNodeId="1202929413117" resolveInfo="acceptWorker" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="876385242039440019">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="876385242039440020" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="8829749091878915295">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="876385242039333148">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="876385242039333150">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="876385242039333149" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="876385242039431926">
+                  <link role="baseMethodDeclaration" targetNodeId="1202929413117" resolveInfo="acceptWorker" />
                 </node>
               </node>
             </node>

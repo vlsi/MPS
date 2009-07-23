@@ -6,5 +6,4 @@ package jetbrains.mps.closures.test;
 public interface NumberGenerator {
 
   public Iterable<Integer> generate();
-
 }

@@ -270,6 +270,25 @@ __switch__:
     }
   }
 
+  @Test()
+  public void test_mps5315() throws Exception {
+    /*
+      _FunctionTypes._void_P2_E0<? super Integer, ? super String> cls = new _FunctionTypes._void_P2_E0 <Integer, String>() {
+
+        public void invoke(Integer foo, String bar) {
+        }
+      };
+      cls.invoke();
+    */
+  }
+
+  @Test()
+  public void test_mps5316() throws Exception {
+    /*
+      this.acceptWorker();
+    */
+  }
+
   public void acceptWorker(Worker one, Worker two) {
   }
 
