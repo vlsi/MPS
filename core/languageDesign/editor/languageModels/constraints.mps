@@ -1066,5 +1066,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5780708853134071949">
+    <property name="package" value="Stylesheet" />
+    <link role="concept" targetNodeId="1.3237906437982246683" resolveInfo="GetParentSubstitudeInfo" />
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="5780708853134071950">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5780708853134071951">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5780708853134168403">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5780708853134168404">
+            <link role="classConcept" targetNodeId="3.~SModelStereotype" resolveInfo="SModelStereotype" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~SModelStereotype.isGeneratorModel(jetbrains.mps.smodel.SModel):boolean" resolveInfo="isGeneratorModel" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5780708853134168405">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="5780708853134168406" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="5780708853134168407" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
