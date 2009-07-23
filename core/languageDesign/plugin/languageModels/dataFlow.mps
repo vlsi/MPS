@@ -219,5 +219,61 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4434783588132677143">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.678887849223472895" resolveInfo="DisposeConsoleBlock" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4434783588132677144">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4434783588132677145">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="4434783588132677146">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4434783588132677149">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4434783588132677148" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4434783588132677153">
+              <link role="link" targetNodeId="6.1199569916463" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4434783588132759534">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.678887849223472893" resolveInfo="ProcessHandlerStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4434783588132759535">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4434783588132759536">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="4434783588132759537">
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4434783588132759540">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4434783588132759539" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4434783588132759544">
+              <link role="link" targetNodeId="1.678887849223564268" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4434783588132759545">
+    <property name="package" value="RunConfigs.Configuration.Execute.Statements" />
+    <link role="conceptDeclaration" targetNodeId="1.678887849223472894" resolveInfo="ExecutionConsoleStatement" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4434783588132759546">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4434783588132759547">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement" id="4434783588132759548">
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4434783588132759551">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4434783588132759550" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4434783588132759555">
+              <link role="link" targetNodeId="1.678887849223524739" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="4434783588132759557">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4434783588132759560">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4434783588132759559" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4434783588132759564">
+              <link role="link" targetNodeId="1.678887849223527748" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

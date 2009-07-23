@@ -18,6 +18,9 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", new ActionConstructionParameterDeclaration_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", new ActionConstructorParameterReferenceOperation_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.AddElementStatement", new AddElementStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.DisposeConsoleBlock", new DisposeConsoleBlock_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", new ProcessHandlerStatement_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", new ExecutionConsoleStatement_DataFlow());
   }
 
 }
