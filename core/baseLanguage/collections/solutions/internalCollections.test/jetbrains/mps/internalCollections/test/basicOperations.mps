@@ -7398,6 +7398,66 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="6656588995619578627">
+        <property name="methodName" value="eq" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6656588995619578628" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6656588995619578629">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6656588995619578630">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6656588995619578631">
+              <property name="name" value="seta" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="6656588995619578632">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6656588995619578634" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6656588995619578636">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="6656588995619578638">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6656588995619578640" />
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578642">
+                    <property name="value" value="111" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578644">
+                    <property name="value" value="222" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578646">
+                    <property name="value" value="333" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6656588995619578648">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6656588995619578649">
+              <property name="name" value="setb" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="6656588995619578650">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6656588995619578652" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6656588995619578654">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="6656588995619578656">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6656588995619578658" />
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578663">
+                    <property name="value" value="333" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578664">
+                    <property name="value" value="222" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6656588995619578666">
+                    <property name="value" value="111" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="6656588995619578675">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" id="6656588995619578677">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6656588995619578678">
+                <link role="variableDeclaration" targetNodeId="6656588995619578649" resolveInfo="setb" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6656588995619578679">
+                <link role="variableDeclaration" targetNodeId="6656588995619578631" resolveInfo="seta" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1226597083379">
       <link role="classifier" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import java.util.LinkedHashSet;
 import java.util.Arrays;
+import org.apache.commons.lang.ObjectUtils;
 
 public class Set_Test extends Util_Test {
 
@@ -122,6 +123,13 @@ public class Set_Test extends Util_Test {
     String[] arr = new String[]{"A","B","C"};
     Set<String> test = SetSequence.fromSetAndArray(new LinkedHashSet<String>(), arr);
     this.assertIterableEquals(this.inputABC(), test);
+  }
+
+  @Test()
+  public void test_eq() throws Exception {
+    Set<Integer> seta = SetSequence.fromSetAndArray(new HashSet<Integer>(), 111, 222, 333);
+    Set<Integer> setb = SetSequence.fromSetAndArray(new HashSet<Integer>(), 333, 222, 111);
+    Assert.assertTrue(ObjectUtils.equals(seta, setb));
   }
 
 }

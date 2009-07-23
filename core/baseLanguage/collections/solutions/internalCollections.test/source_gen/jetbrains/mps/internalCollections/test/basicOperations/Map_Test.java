@@ -117,7 +117,7 @@ public class Map_Test extends Util_Test {
     /*
       Map<Foo, List<Bar>> mmap = MapSequence.fromMap(new HashMap<Foo, List<Bar>>());
       for(List<Bar> lst : Sequence.fromIterable(mmap.values())) {
-        lst.;
+        lst.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
       }
     */
   }
