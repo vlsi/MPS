@@ -74,6 +74,7 @@ public class _Component_Visibility extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
         }
       };
       inlineStyle.apply(editorCell);

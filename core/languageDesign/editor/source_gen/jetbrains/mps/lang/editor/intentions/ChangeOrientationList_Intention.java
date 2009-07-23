@@ -39,6 +39,13 @@ public class ChangeOrientationList_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical");
   }
 

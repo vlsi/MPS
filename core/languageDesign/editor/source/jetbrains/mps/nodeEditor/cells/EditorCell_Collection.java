@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.cellLayout.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
@@ -762,6 +763,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
   }
 
+  @Override
+  public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
+    super.setSubstituteInfo(substitueInfo);
+    for (EditorCell child: myEditorCells) {
+      if (child.getStyle().get(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO)) {
+        child.setSubstituteInfo(substitueInfo);
+      }
+    }
+  }
 
   class EditorCell_Brace extends EditorCell_Constant {
     public static final String OPENING_TEXT = "(";

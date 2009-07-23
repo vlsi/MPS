@@ -33,6 +33,13 @@ public class TrimConstantCell_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     String text = SPropertyOperations.getString(node, "text");
     if (text == null || text.length() == 0) {
       return false;

@@ -75,6 +75,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.DRAW_BORDER, true);
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
         }
       };
       inlineStyle.apply(editorCell);

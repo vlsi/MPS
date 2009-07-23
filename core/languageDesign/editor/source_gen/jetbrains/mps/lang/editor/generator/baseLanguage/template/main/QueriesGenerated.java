@@ -1725,7 +1725,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1229342979273(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return _context.getNode();
+    SNode result = SNodeOperations.copyNode(_context.getNode());
+    SNode style = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.GetParentSubstitudeInfo", null);
+    SPropertyOperations.set(style, "flag", "" + true);
+    SLinkOperations.addChild(result, "styleItem", style);
+    return result;
   }
 
   public static SNode sourceNodeQuery_1236426340690(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

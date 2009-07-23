@@ -823,6 +823,14 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
 
 
     private static void setupBasic_RefCell_8529_3(EditorCell editorCell, SNode node, EditorContext context) {
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupBasic_Collection_8529_7(EditorCell editorCell, SNode node, EditorContext context) {
