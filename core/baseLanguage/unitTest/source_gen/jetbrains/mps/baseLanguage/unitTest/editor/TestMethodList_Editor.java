@@ -59,6 +59,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
         }
       };
       inlineStyle.apply(editorCell);

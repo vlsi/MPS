@@ -70,6 +70,7 @@ public class PropertyRefQualifier_Editor extends DefaultNodeEditor {
       Style inlineStyle = new Style(editorCell) {
         {
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
         }
       };
       inlineStyle.apply(editorCell);

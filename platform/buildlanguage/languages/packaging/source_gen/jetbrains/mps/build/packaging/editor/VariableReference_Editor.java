@@ -71,6 +71,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
         {
           this.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
           this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
         }
       };
       inlineStyle.apply(editorCell);

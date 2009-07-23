@@ -424,6 +424,14 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_RefNodeList_6372_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("refNodeList_component");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupBasic_Collection_6372_4(EditorCell editorCell, SNode node, EditorContext context) {

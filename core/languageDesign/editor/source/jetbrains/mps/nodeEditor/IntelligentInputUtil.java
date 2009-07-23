@@ -257,8 +257,7 @@ public class IntelligentInputUtil {
         EditorCell errorOrEditableCell = yetNewNodeCell.findChild(CellFinders.or(CellFinders.FIRST_ERROR, CellFinders.LAST_EDITABLE), true);
         editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
       }
-    } else {
-      assert false;
+    } else {     
       editorContext.flushEvents();
       EditorCell_Label rtCell = prepareRTCell(editorContext, newNode, tail);
       if (rtCell != null) {

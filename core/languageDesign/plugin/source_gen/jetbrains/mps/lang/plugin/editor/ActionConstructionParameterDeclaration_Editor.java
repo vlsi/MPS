@@ -178,6 +178,14 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   }
 
   private static void setupBasic_RefNode_4196_1(EditorCell editorCell, SNode node, EditorContext context) {
+    {
+      Style inlineStyle = new Style(editorCell) {
+        {
+          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+        }
+      };
+      inlineStyle.apply(editorCell);
+    }
   }
 
   private static void setupBasic_Collection_4196_1(EditorCell editorCell, SNode node, EditorContext context) {

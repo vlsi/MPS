@@ -474,6 +474,14 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_RefNodeList_3967_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("refNodeList_parameter");
+      {
+        Style inlineStyle = new Style(editorCell) {
+          {
+            this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+          }
+        };
+        inlineStyle.apply(editorCell);
+      }
     }
 
     private static void setupBasic_Collection_3967_3(EditorCell editorCell, SNode node, EditorContext context) {
