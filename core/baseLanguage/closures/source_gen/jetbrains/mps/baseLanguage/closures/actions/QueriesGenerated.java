@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -80,6 +80,30 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_UnrestrictedFunctionType_1232132222405(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setNewChild(_context.getNewNode(), "resultType", "jetbrains.mps.baseLanguage.structure.VoidType");
+  }
+
+  public static void nodeFactory_NodeSetup_ClosureLiteral_876385242039333160(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      int idx = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).indexOf(_context.getNewNode());
+      if (idx >= 0) {
+        List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true);
+        if (idx < ListSequence.fromList(params).count()) {
+          SNode pdtype = SLinkOperations.getTarget(ListSequence.fromList(params).getElement(idx), "type", true);
+          if (SNodeOperations.isInstanceOf(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+            List<SNode> methods = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(pdtype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "method", true);
+            if (ListSequence.fromList(methods).count() == 1) {
+              SNode adaptTo = ListSequence.fromList(methods).getElement(0);
+              // TODO: generic parameters
+              for(SNode adaptToPD : SLinkOperations.getTargets(adaptTo, "parameter", true)) {
+                SNode pd = SLinkOperations.addChild(_context.getNewNode(), "parameter", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null));
+                SPropertyOperations.set(pd, "name", SPropertyOperations.getString(adaptToPD, "name"));
+                SLinkOperations.setTarget(pd, "type", SLinkOperations.getTarget(adaptToPD, "type", true), true);
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ThisExpression_1199651306154(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
