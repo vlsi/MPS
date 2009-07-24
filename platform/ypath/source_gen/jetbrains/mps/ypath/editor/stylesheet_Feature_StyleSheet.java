@@ -11,12 +11,10 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class stylesheet_Feature_StyleSheet {
 
   public static Style getOPPOSITE(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
 }

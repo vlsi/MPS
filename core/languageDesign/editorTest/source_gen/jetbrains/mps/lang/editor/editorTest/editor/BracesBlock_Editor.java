@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,9 +28,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4321_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4321_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_4321_0(context, node));
     return editorCell;
   }
@@ -42,9 +39,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_4321_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_RefNodeList_4321_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_4321_0.getElementRole());
     return editorCell;
   }
@@ -56,9 +50,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Collection_4321_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4321_0");
-  }
-
-  private static void setupLabel_RefNodeList_4321_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class statementListHandler_4321_0 extends RefNodeListHandler {
@@ -110,7 +101,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_4321_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_4321_0(editorCell, node, context);
-      setupLabel_Constant_4321_0(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -118,9 +108,6 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_4321_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4321_0");
-    }
-
-    private static void setupLabel_Constant_4321_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

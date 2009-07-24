@@ -12,30 +12,24 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 public class StyleSheet_StyleSheet {
 
   public static Style getInternalKeyword(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getInternalName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getSquareBracket(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.SELECTABLE, false);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.SELECTABLE, false);
+    return style;
   }
 
 }

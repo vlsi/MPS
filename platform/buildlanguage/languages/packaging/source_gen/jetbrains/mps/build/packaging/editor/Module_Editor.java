@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -40,9 +39,6 @@ public class Module_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6816_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_6816_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_6816_1(context, node));
     editorCell.addEditorCell(this.createProperty_6816_1(context, node));
     editorCell.addEditorCell(this.createComponent_6816_1(context, node));
@@ -72,9 +68,6 @@ public class Module_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_6816_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_6816_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -83,8 +76,6 @@ public class Module_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_6816_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -101,9 +92,6 @@ public class Module_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6816_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6816_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new Module_Editor.Module_generic_cellMenu0()}));
     return editorCell;
@@ -114,7 +102,6 @@ public class Module_Editor extends DefaultNodeEditor {
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(true);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_6816_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -145,12 +132,6 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_6816_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConceptProperty_6816_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_6816_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class Module_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

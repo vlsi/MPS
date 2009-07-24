@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,9 +30,6 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2941_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2941_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2941_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_2941_0(context, node));
     editorCell.addEditorCell(this.createConstant_2941_1(context, node, "}"));
@@ -43,7 +39,6 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2941_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2941_0(editorCell, node, context);
-    setupLabel_Constant_2941_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,7 +46,6 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2941_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2941_1(editorCell, node, context);
-    setupLabel_Constant_2941_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,9 +56,6 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_2941_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_2941_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_2941_0.getElementRole());
     return editorCell;
   }
@@ -77,14 +68,10 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNodeList_2941_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -92,27 +79,14 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2941_0");
     TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
   private static void setupBasic_Constant_2941_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2941_1");
     TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_RefNodeList_2941_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2941_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2941_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class statementListHandler_2941_0 extends RefNodeListHandler {

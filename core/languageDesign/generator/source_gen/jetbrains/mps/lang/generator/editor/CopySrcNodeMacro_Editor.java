@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
@@ -34,9 +33,6 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2079_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2079_0(context, node, "$COPY_SRC$"));
     editorCell.addEditorCell(this.createComponent_2079_1(context, node));
     return editorCell;
@@ -63,7 +59,6 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2079_0(editorCell, node, context);
-    setupLabel_Constant_2079_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
     return editorCell;
@@ -84,20 +79,13 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_Constant_2079_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

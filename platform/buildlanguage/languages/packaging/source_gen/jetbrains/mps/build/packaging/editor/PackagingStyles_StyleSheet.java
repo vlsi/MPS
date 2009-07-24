@@ -13,67 +13,53 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class PackagingStyles_StyleSheet {
 
   public static Style getHint(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    return style;
   }
 
   public static Style getKeyword(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    return style;
   }
 
   public static Style getProjectComponent(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getConfiguration(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
-        this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.gray);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
+    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
+    return style;
   }
 
   public static Style getSlash(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        this.set(StyleAttributes.PADDING_LEFT, new Padding(0.3, Measure.SPACES));
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0.3, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
+    return style;
   }
 
   public static Style getVariable(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getString(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
 }

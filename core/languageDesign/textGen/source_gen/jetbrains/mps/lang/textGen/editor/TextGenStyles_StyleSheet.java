@@ -11,20 +11,16 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class TextGenStyles_StyleSheet {
 
   public static Style getTextGenOperation(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getAppendPart(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
   }
 
 }

@@ -13,23 +13,21 @@ import jetbrains.mps.nodeEditor.EditorContext;
 public class CustomMpsStyles_StyleSheet {
 
   public static Style getUndeclaredVaribale(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(PackagingStyles_StyleSheet.getVariable(null));
-        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+    Style style = new Style(cell);
+    style.putAll(PackagingStyles_StyleSheet.getVariable(null));
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
-          public Boolean calculate(EditorCell cell) {
-            return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_1233937956200((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
+      public Boolean calculate(EditorCell cell) {
+        return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_1233937956200((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
       }
-    };
+    });
+    return style;
   }
 
   public static boolean _StyleParameter_QueryFunction_1233937956200(SNode node, EditorContext editorContext) {

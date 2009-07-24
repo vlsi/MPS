@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -43,9 +42,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6862_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6862_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_0(context, node));
     editorCell.addEditorCell(this.createRefNode_6862_1(context, node));
     editorCell.addEditorCell(this.createConstant_6862_0(context, node, ","));
@@ -57,9 +53,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6862_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6862_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6862_1(context, node, "start incuded:"));
     editorCell.addEditorCell(this.createProperty_6862_1(context, node));
     editorCell.addEditorCell(this.createConstant_6862_2(context, node, "end included:"));
@@ -70,7 +63,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6862_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6862_0(editorCell, node, context);
-    setupLabel_Constant_6862_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +70,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6862_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6862_1(editorCell, node, context);
-    setupLabel_Constant_6862_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,7 +77,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6862_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6862_2(editorCell, node, context);
-    setupLabel_Constant_6862_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,7 +103,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu0(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu1()}));
     setupBasic_ReadOnlyModelAccessor_6862_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_6862_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -139,7 +128,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu2(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu3()}));
     setupBasic_ReadOnlyModelAccessor_6862_1(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_6862_1(editorCell, node, context);
     return editorCell;
   }
 
@@ -148,9 +136,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6862_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6862_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -159,8 +144,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("start");
     provider.setNoTargetText("-\u221e");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_6862_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -177,9 +160,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6862_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6862_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -188,8 +168,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("end");
     provider.setNoTargetText("+\u221e");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_6862_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -206,9 +184,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6862_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6862_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -217,8 +192,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("startIncluded");
     provider.setNoTargetText("<no startIncluded>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_6862_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -235,9 +208,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6862_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6862_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -246,8 +216,6 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("endIncluded");
     provider.setNoTargetText("<no endIncluded>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_6862_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -270,35 +238,23 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_6862_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
     }
   }
 
   private static void setupBasic_Constant_6862_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6862_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
   private static void setupBasic_RefNode_6862_1(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.NULL_TEXT_COLOR, new Color(0));
     }
   }
 
@@ -317,12 +273,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_6862_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_startIncluded");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -333,40 +285,9 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_6862_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_endIncluded");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_6862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_6862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_6862_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_6862_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6862_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_6862_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6862_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_6862_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class IntervalLiteral_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {

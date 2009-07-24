@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,9 +28,6 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6819_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_6819_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6819_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_6819_0(context, node));
     editorCell.addEditorCell(this.createConstant_6819_1(context, node, "}"));
@@ -41,7 +37,6 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6819_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6819_0(editorCell, node, context);
-    setupLabel_Constant_6819_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,7 +44,6 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6819_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6819_1(editorCell, node, context);
-    setupLabel_Constant_6819_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -60,9 +54,6 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_6819_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_6819_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_6819_0.getElementRole());
     return editorCell;
   }
@@ -82,15 +73,6 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_6819_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6819_1");
-  }
-
-  private static void setupLabel_Constant_6819_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_6819_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6819_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class bodyListHandler_6819_0 extends RefNodeListHandler {

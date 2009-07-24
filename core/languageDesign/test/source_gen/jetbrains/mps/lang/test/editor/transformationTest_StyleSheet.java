@@ -10,36 +10,28 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class transformationTest_StyleSheet {
 
   public static Style getAssertStyle(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    return style;
   }
 
   public static Style getNodeAnnotation(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.UNDERLINED, true);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getNodeProperty(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getEditorOperation(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    return style;
   }
 
 }

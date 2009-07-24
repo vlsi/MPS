@@ -14,7 +14,6 @@ import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorCompone
 import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -44,9 +43,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2334_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2334_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2334_1(context, node));
     editorCell.addEditorCell(this.createComponent_2334_4(context, node));
     return editorCell;
@@ -55,9 +51,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2334_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2334_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_2334_1(context, node));
     editorCell.addEditorCell(this.createComponent_2334_0(context, node));
     editorCell.addEditorCell(this.createComponent_2334_3(context, node));
@@ -67,9 +60,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2334_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2334_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition2334_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2334_3(context, node));
     }
@@ -82,9 +72,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2334_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2334_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2334_0(context, node, "path to mps build tools"));
     editorCell.addEditorCell(this.createRefNode_2334_1(context, node));
     return editorCell;
@@ -93,9 +80,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2334_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2334_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2334_1(context, node, "path to license"));
     editorCell.addEditorCell(this.createRefNode_2334_3(context, node));
     return editorCell;
@@ -149,7 +133,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2334_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2334_0(editorCell, node, context);
-    setupLabel_Constant_2334_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -157,7 +140,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2334_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2334_1(editorCell, node, context);
-    setupLabel_Constant_2334_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -167,9 +149,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_2334_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_2334_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -178,8 +157,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_2334_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -196,9 +173,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_2334_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_2334_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -207,8 +181,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pathToBuildToolsZip");
     provider.setNoTargetText("<no pathToBuildToolsZip>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2334_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -225,9 +197,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_2334_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_2334_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -236,8 +205,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("licencePath");
     provider.setNoTargetText("<no licencePath>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2334_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -257,13 +224,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2334_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -294,13 +257,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2334_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2334_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -315,13 +274,9 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2334_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2334_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -331,21 +286,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConceptProperty_2334_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2334_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_2334_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2334_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_2334_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition2334_0(SNode node, EditorContext editorContext, IScope scope) {

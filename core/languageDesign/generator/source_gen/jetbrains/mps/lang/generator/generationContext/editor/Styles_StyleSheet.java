@@ -11,13 +11,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class Styles_StyleSheet {
 
   public static Style getGenContext_operation(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.EDITABLE, true);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    return style;
   }
 
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -34,9 +33,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0628_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0628_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0628_0(context, node, "executeFinders"));
     editorCell.addEditorCell(this.createConstant_0628_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_0628_0(context, node));
@@ -51,7 +47,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0628_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0628_0(editorCell, node, context);
-    setupLabel_Constant_0628_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,7 +54,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0628_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0628_1(editorCell, node, context);
-    setupLabel_Constant_0628_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -67,7 +61,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0628_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0628_2(editorCell, node, context);
-    setupLabel_Constant_0628_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -75,7 +68,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0628_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0628_3(editorCell, node, context);
-    setupLabel_Constant_0628_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -83,7 +75,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0628_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0628_4(editorCell, node, context);
-    setupLabel_Constant_0628_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -94,9 +85,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_0628_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_0628_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_0628_0.getElementRole());
     return editorCell;
   }
@@ -106,9 +94,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_0628_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_0628_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -117,8 +102,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchNode");
     provider.setNoTargetText("<context node>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_0628_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -135,9 +118,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_0628_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_0628_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -146,8 +126,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchScope");
     provider.setNoTargetText("<global scope>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_0628_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -194,30 +172,6 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0628_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_4");
-  }
-
-  private static void setupLabel_Constant_0628_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0628_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0628_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_0628_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_0628_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_0628_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0628_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0628_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class findersListHandler_0628_0 extends RefNodeListHandler {

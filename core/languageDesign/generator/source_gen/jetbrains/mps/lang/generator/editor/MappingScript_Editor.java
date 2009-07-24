@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,9 +27,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3053_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_3053_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_3053_1(context, node));
     editorCell.addEditorCell(this.createConstant_3053_1(context, node, ""));
     editorCell.addEditorCell(this.createCollection_3053_2(context, node));
@@ -42,9 +38,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3053_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_3053_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3053_0(context, node, "mapping script"));
     editorCell.addEditorCell(this.createProperty_3053_1(context, node));
     return editorCell;
@@ -54,8 +47,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_3053_2(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_3053_3(context, node));
     if (renderingCondition3053_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_3053_4(context, node));
@@ -66,9 +57,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3053_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_3053_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3053_2(context, node, "script kind"));
     editorCell.addEditorCell(this.createConstant_3053_3(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_3053_3(context, node));
@@ -78,9 +66,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3053_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_3053_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3053_4(context, node, "modifies model"));
     editorCell.addEditorCell(this.createConstant_3053_5(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_3053_5(context, node));
@@ -90,7 +75,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_0(editorCell, node, context);
-    setupLabel_Constant_3053_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -98,7 +82,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_1(editorCell, node, context);
-    setupLabel_Constant_3053_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -106,7 +89,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_2(editorCell, node, context);
-    setupLabel_Constant_3053_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -114,7 +96,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_3(editorCell, node, context);
-    setupLabel_Constant_3053_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -122,7 +103,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_4(editorCell, node, context);
-    setupLabel_Constant_3053_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -130,7 +110,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_5(editorCell, node, context);
-    setupLabel_Constant_3053_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -138,7 +117,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3053_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3053_6(editorCell, node, context);
-    setupLabel_Constant_3053_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -148,9 +126,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_3053_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_3053_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -159,8 +134,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_3053_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -177,9 +150,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_3053_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_3053_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -188,8 +158,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("codeBlock");
     provider.setNoTargetText("<no codeBlock>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_3053_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -206,9 +174,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_3053_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_3053_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -217,8 +182,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("scriptKind");
     provider.setNoTargetText("<no scriptKind>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_3053_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -235,9 +198,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_3053_2(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_3053_2((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -246,8 +206,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("modifiesModel");
     provider.setNoTargetText("<no modifiesModel>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_3053_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -267,12 +225,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_3053_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3053_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -287,12 +241,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3053_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3053_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -302,24 +252,16 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_3053_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3053_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_3053_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3053_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -330,12 +272,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3053_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3053_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -347,12 +285,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_3053_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_3053_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -363,12 +297,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3053_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3053_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -380,46 +310,9 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3053_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3053_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
-  }
-
-  private static void setupLabel_Constant_3053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_3053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_3053_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_3053_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_3053_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3053_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition3053_0(SNode node, EditorContext editorContext, IScope scope) {

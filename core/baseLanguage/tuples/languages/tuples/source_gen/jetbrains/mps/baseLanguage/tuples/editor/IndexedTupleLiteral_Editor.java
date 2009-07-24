@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -38,9 +37,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2140_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2140_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_2140_1(context, node));
     editorCell.addEditorCell(this.createRefNodeList_2140_0(context, node));
     editorCell.addEditorCell(this.createConceptProperty_2140_3(context, node));
@@ -53,9 +49,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_2140_0.createCells(context, new CellLayout_Horizontal(), false);
     setupBasic_RefNodeList_2140_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_2140_0.getElementRole());
     return editorCell;
   }
@@ -65,9 +58,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_2140_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_2140_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -76,8 +66,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("leftBracket");
     provider.setNoTargetText("<no leftBracket>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_2140_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -94,9 +82,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_2140_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_2140_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -105,8 +90,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("rightBracket");
     provider.setNoTargetText("<no rightBracket>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_2140_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -127,12 +110,8 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_leftBracket");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
   }
 
@@ -144,22 +123,9 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_rightBracket");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
-  }
-
-  private static void setupLabel_ConceptProperty_2140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_2140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConceptProperty_2140_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class componentListHandler_2140_0 extends RefNodeListHandler {
@@ -218,7 +184,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_2140_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_2140_0(editorCell, node, context);
-      setupLabel_Constant_2140_0(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -226,9 +191,6 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_2140_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_2140_0");
-    }
-
-    private static void setupLabel_Constant_2140_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

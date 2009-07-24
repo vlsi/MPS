@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,9 +30,6 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0824_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0824_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_0824_0(context, node));
     return editorCell;
   }
@@ -44,9 +40,6 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_0824_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_0824_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_0824_0.getElementRole());
     return editorCell;
   }
@@ -55,22 +48,15 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNodeList_0824_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_entry");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
-          this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.darkGray);
-          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.darkGray);
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
   }
 
   private static void setupBasic_Collection_0824_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_0824_0");
-  }
-
-  private static void setupLabel_RefNodeList_0824_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class entryListHandler_0824_0 extends RefNodeListHandler {

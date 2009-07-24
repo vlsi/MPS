@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -29,9 +28,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   public EditorCell createCollection_6100_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6100_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6100_0(context, node, "get output"));
     editorCell.addEditorCell(this.createRefCell_6100_1(context, node));
     editorCell.addEditorCell(this.createConstant_6100_1(context, node, "for"));
@@ -44,7 +40,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   public EditorCell createConstant_6100_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6100_0(editorCell, node, context);
-    setupLabel_Constant_6100_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,7 +47,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   public EditorCell createConstant_6100_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6100_1(editorCell, node, context);
-    setupLabel_Constant_6100_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -60,7 +54,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   public EditorCell createConstant_6100_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6100_2(editorCell, node, context);
-    setupLabel_Constant_6100_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +61,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   public EditorCell createConstant_6100_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6100_3(editorCell, node, context);
-    setupLabel_Constant_6100_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,9 +70,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline6100_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6100_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_6100_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -89,8 +78,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_6100_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -107,9 +94,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6100_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6100_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -118,8 +102,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("inputNode");
     provider.setNoTargetText("<no input node>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_6100_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -149,12 +131,8 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     editorCell.setCellId("Constant_6100_1");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -169,24 +147,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   private static void setupBasic_Constant_6100_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6100_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_6100_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_6100_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6100_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_6100_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6100_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6100_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline6100_0 extends AbstractCellProvider {
@@ -208,9 +168,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6100_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_6100_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -220,7 +177,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_6100_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -235,9 +191,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
 
     private static void setupBasic_Property_6100_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_6100_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

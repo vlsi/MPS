@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -40,9 +39,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_9190_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9190_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_9190_1(context, node));
     if (renderingCondition9190_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9190_1(context, node));
@@ -53,9 +49,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_9190_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9190_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9190_0(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_9190_0(context, node));
     editorCell.addEditorCell(this.createConstant_9190_1(context, node, ")"));
@@ -65,7 +58,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9190_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9190_0(editorCell, node, context);
-    setupLabel_Constant_9190_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -73,7 +65,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9190_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9190_1(editorCell, node, context);
-    setupLabel_Constant_9190_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,9 +75,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_9190_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9190_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_9190_0.getElementRole());
     return editorCell;
   }
@@ -96,9 +84,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_9190_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_9190_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -107,8 +92,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_9190_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -128,13 +111,9 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConceptProperty_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
   }
 
@@ -152,18 +131,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_actualArgument");
-  }
-
-  private static void setupLabel_ConceptProperty_9190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9190_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_9190_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -226,7 +193,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_9190_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_9190_2(editorCell, node, context);
-      setupLabel_Constant_9190_2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -235,16 +201,9 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_9190_2(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_9190_2");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
-    }
-
-    private static void setupLabel_Constant_9190_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

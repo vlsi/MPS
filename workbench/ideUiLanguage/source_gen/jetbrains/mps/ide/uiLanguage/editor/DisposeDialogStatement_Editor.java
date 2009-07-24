@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
 
@@ -20,9 +19,6 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0836_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_0836_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0836_0(context, node, "disposeDialog"));
     editorCell.addEditorCell(this.createConstant_0836_1(context, node, ";"));
     return editorCell;
@@ -31,7 +27,6 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0836_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0836_0(editorCell, node, context);
-    setupLabel_Constant_0836_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -39,7 +34,6 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0836_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0836_1(editorCell, node, context);
-    setupLabel_Constant_0836_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,12 +51,6 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0836_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0836_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_0836_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0836_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

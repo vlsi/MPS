@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
 
@@ -31,9 +30,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2342_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_0(context, node, "search scope provider"));
     editorCell.addEditorCell(this.createConstant_2342_1(context, node, ""));
     editorCell.addEditorCell(this.createConstant_2342_2(context, node, "creates search scope (jetbrains.mps.smodel.search.ISearchScope)"));
@@ -47,8 +43,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2342_1(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2342_2(context, node));
     editorCell.addEditorCell(this.createCollection_2342_3(context, node));
     editorCell.addEditorCell(this.createCollection_2342_4(context, node));
@@ -59,9 +53,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2342_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_5(context, node, "model"));
     editorCell.addEditorCell(this.createConstant_2342_6(context, node, "context"));
     return editorCell;
@@ -70,9 +61,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2342_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_7(context, node, "enclosingNode"));
     editorCell.addEditorCell(this.createConstant_2342_8(context, node, "context"));
     return editorCell;
@@ -81,9 +69,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2342_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_9(context, node, "referenceNode"));
     editorCell.addEditorCell(this.createCollection_2342_5(context, node));
     return editorCell;
@@ -92,9 +77,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2342_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_10(context, node, "source of the reference link"));
     editorCell.addEditorCell(this.createConstant_2342_11(context, node, "(optional - may not exist yet)"));
     return editorCell;
@@ -103,9 +85,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createCollection_2342_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2342_6(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2342_12(context, node, "scope"));
     editorCell.addEditorCell(this.createConstant_2342_13(context, node, "context (jetbrains.mps.smodel.IScope)"));
     return editorCell;
@@ -123,7 +102,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_0(editorCell, node, context);
-    setupLabel_Constant_2342_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -131,7 +109,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_1(editorCell, node, context);
-    setupLabel_Constant_2342_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -139,7 +116,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_2(editorCell, node, context);
-    setupLabel_Constant_2342_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -147,7 +123,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_3(editorCell, node, context);
-    setupLabel_Constant_2342_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -155,7 +130,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_4(editorCell, node, context);
-    setupLabel_Constant_2342_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -163,7 +137,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_5(editorCell, node, context);
-    setupLabel_Constant_2342_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -171,7 +144,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_6(editorCell, node, context);
-    setupLabel_Constant_2342_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -179,7 +151,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_7(editorCell, node, context);
-    setupLabel_Constant_2342_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -187,7 +158,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_8(editorCell, node, context);
-    setupLabel_Constant_2342_8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -195,7 +165,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_9(editorCell, node, context);
-    setupLabel_Constant_2342_9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -203,7 +172,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_10(editorCell, node, context);
-    setupLabel_Constant_2342_10(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -211,7 +179,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_11(editorCell, node, context);
-    setupLabel_Constant_2342_11(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -219,7 +186,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_12(editorCell, node, context);
-    setupLabel_Constant_2342_12(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -227,7 +193,6 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   public EditorCell createConstant_2342_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2342_13(editorCell, node, context);
-    setupLabel_Constant_2342_13(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -236,97 +201,65 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_Collection_2342_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2342_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
     }
   }
 
   private static void setupBasic_Constant_2342_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2342_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Constant_2342_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2342_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Collection_2342_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_2342_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -337,24 +270,16 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_Constant_2342_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Collection_2342_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -365,24 +290,16 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_Constant_2342_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_8");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Collection_2342_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -393,49 +310,33 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_Collection_2342_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2342_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_10");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Constant_2342_11(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_11");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
     }
   }
 
   private static void setupBasic_Collection_2342_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2342_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -446,58 +347,12 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
   private static void setupBasic_Constant_2342_13(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2342_13");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Component_2342_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_10(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_11(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_12(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2342_13(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class NewLineAppendPart_Editor extends DefaultNodeEditor {
 
@@ -22,9 +21,6 @@ public class NewLineAppendPart_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1349_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1349_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1349_0(context, node, "\\n"));
     return editorCell;
   }
@@ -32,7 +28,6 @@ public class NewLineAppendPart_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1349_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1349_0(editorCell, node, context);
-    setupLabel_Constant_1349_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,16 +41,9 @@ public class NewLineAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1349_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, false);
     }
-  }
-
-  private static void setupLabel_Constant_1349_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

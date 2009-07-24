@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,9 +32,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8438_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8438_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8438_0(context, node, "print"));
     editorCell.addEditorCell(this.createConstant_8438_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_8438_0(context, node));
@@ -47,7 +43,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8438_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8438_0(editorCell, node, context);
-    setupLabel_Constant_8438_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,7 +50,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8438_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8438_1(editorCell, node, context);
-    setupLabel_Constant_8438_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,7 +57,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8438_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8438_2(editorCell, node, context);
-    setupLabel_Constant_8438_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,7 +64,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8438_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8438_3(editorCell, node, context);
-    setupLabel_Constant_8438_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,9 +74,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8438_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8438_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8438_0.getElementRole());
     return editorCell;
   }
@@ -115,28 +104,9 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNodeList_8438_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_textExpression");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
-  }
-
-  private static void setupLabel_Constant_8438_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8438_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8438_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8438_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_8438_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class textExpressionListHandler_8438_0 extends RefNodeListHandler {
@@ -195,7 +165,6 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_8438_4(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_8438_4(editorCell, node, context);
-      setupLabel_Constant_8438_4(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -204,16 +173,9 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_8438_4(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_8438_4");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
       }
-    }
-
-    private static void setupLabel_Constant_8438_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

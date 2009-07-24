@@ -15,50 +15,42 @@ import jetbrains.mps.nodeEditor.EditorContext;
 public class DistribConfiguration_Styles_StyleSheet {
 
   public static Style getKeyword(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(PackagingStyles_StyleSheet.getProjectComponent(null));
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(PackagingStyles_StyleSheet.getProjectComponent(null));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
   }
 
   public static Style getReallyImportantKeyword(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(DistribConfiguration_Styles_StyleSheet.getKeyword(null));
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+    Style style = new Style(cell);
+    style.putAll(DistribConfiguration_Styles_StyleSheet.getKeyword(null));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
-          public Boolean calculate(EditorCell cell) {
-            return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_1230640044409((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
+      public Boolean calculate(EditorCell cell) {
+        return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_1230640044409((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
       }
-    };
+    });
+    return style;
   }
 
   public static Style getHint(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    return style;
   }
 
   public static Style getPathString(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static boolean _StyleParameter_QueryFunction_1230640044409(SNode node, EditorContext editorContext) {

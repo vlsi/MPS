@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,9 +32,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_9939_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9939_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9939_0(context, node, "assert"));
     editorCell.addEditorCell(this.createConstant_9939_3(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_9939_0(context, node));
@@ -51,7 +47,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_0(editorCell, node, context);
-    setupLabel_Constant_9939_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,7 +54,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_1(editorCell, node, context);
-    setupLabel_Constant_9939_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -67,7 +61,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_2(editorCell, node, context);
-    setupLabel_Constant_9939_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -75,7 +68,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_3(editorCell, node, context);
-    setupLabel_Constant_9939_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -83,7 +75,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_4(editorCell, node, context);
-    setupLabel_Constant_9939_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -91,7 +82,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_5(editorCell, node, context);
-    setupLabel_Constant_9939_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -99,7 +89,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9939_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9939_6(editorCell, node, context);
-    setupLabel_Constant_9939_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -110,9 +99,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_9939_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9939_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_9939_0.getElementRole());
     return editorCell;
   }
@@ -123,9 +109,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_9939_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_9939_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_9939_1.getElementRole());
     return editorCell;
   }
@@ -175,33 +158,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9939_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9939_6");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_9939_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_9939_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_9939_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9939_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class beforeListHandler_9939_0 extends RefNodeListHandler {

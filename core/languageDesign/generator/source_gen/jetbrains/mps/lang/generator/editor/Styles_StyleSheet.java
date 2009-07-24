@@ -12,75 +12,59 @@ import java.awt.Color;
 public class Styles_StyleSheet {
 
   public static Style getGeneratorKeyWord(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getReference(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
   }
 
   public static Style getConstant(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getLiteral(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getMacroStart(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.EDITABLE, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.EDITABLE, true);
+    return style;
   }
 
   public static Style getNodeUnderMacro(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.DRAW_BRACKETS, true);
-        this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.LIGHT_BLUE);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.DRAW_BRACKETS, true);
+    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.LIGHT_BLUE);
+    return style;
   }
 
   public static Style getMappingLabelReference(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+    return style;
   }
 
   public static Style getMacroDescriptionText(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(13497546));
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(13497546));
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    return style;
   }
 
 }

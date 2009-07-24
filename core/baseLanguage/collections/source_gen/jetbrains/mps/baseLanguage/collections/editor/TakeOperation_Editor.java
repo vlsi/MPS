@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,9 +27,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7796_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7796_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7796_0(context, node, "take"));
     editorCell.addEditorCell(this.createConstant_7796_2(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_7796_1(context, node));
@@ -41,7 +37,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7796_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7796_0(editorCell, node, context);
-    setupLabel_Constant_7796_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new TakeOperation_Editor.TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     return editorCell;
@@ -50,7 +45,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7796_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7796_1(editorCell, node, context);
-    setupLabel_Constant_7796_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,7 +52,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7796_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7796_2(editorCell, node, context);
-    setupLabel_Constant_7796_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,9 +61,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_7796_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_7796_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -79,8 +69,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementsToTake");
     provider.setNoTargetText("<no elementsToTake>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_7796_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -113,18 +101,6 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7796_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7796_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_7796_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_7796_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7796_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7796_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

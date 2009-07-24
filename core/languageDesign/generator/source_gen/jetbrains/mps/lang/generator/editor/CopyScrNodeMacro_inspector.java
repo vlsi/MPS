@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,9 +36,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createCollection_9547_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_9547_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9547_0(context, node, "copy/reduce node macro"));
     editorCell.addEditorCell(this.createConstant_9547_1(context, node, ""));
     editorCell.addEditorCell(this.createCollection_9547_1(context, node));
@@ -50,8 +46,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_9547_1(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_9547_4(context, node));
     editorCell.addEditorCell(this.createCollection_9547_3(context, node));
     editorCell.addEditorCell(this.createCollection_9547_2(context, node));
@@ -61,9 +55,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createCollection_9547_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_9547_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9547_2(context, node, "mapped node"));
     editorCell.addEditorCell(this.createConstant_9547_3(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode_9547_1(context, node));
@@ -73,9 +64,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createCollection_9547_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_9547_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9547_4(context, node, "mapping label"));
     editorCell.addEditorCell(this.createConstant_9547_5(context, node, ":"));
     editorCell.addEditorCell(this.createRefCell_9547_1(context, node));
@@ -85,9 +73,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createCollection_9547_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_9547_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9547_6(context, node, "comment"));
     editorCell.addEditorCell(this.createConstant_9547_7(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_9547_3(context, node));
@@ -97,7 +82,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_0(editorCell, node, context);
-    setupLabel_Constant_9547_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -105,7 +89,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_1(editorCell, node, context);
-    setupLabel_Constant_9547_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -113,7 +96,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_2(editorCell, node, context);
-    setupLabel_Constant_9547_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -121,7 +103,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_3(editorCell, node, context);
-    setupLabel_Constant_9547_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -129,7 +110,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_4(editorCell, node, context);
-    setupLabel_Constant_9547_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -137,7 +117,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_5(editorCell, node, context);
-    setupLabel_Constant_9547_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -145,7 +124,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_6(editorCell, node, context);
-    setupLabel_Constant_9547_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -153,7 +131,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   public EditorCell createConstant_9547_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9547_7(editorCell, node, context);
-    setupLabel_Constant_9547_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -163,9 +140,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_9547_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_9547_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -174,8 +148,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourceNodeQuery");
     provider.setNoTargetText("<none>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_9547_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -192,9 +164,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(new CopyScrNodeMacro_inspector._Inline9547_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_9547_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_9547_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -203,8 +172,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_9547_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -221,9 +188,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_9547_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_9547_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -232,7 +196,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
-    provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_9547_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
@@ -249,86 +212,58 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   private static void setupBasic_Collection_9547_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9547_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_9547_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-          this.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
     }
   }
 
   private static void setupBasic_Constant_9547_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_9547_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9547_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_9547_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9547_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_9547_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_9547_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -341,12 +276,8 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   private static void setupBasic_Collection_9547_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9547_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -357,12 +288,8 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   private static void setupBasic_Constant_9547_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -372,12 +299,8 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   private static void setupBasic_Collection_9547_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9547_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -388,50 +311,13 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   private static void setupBasic_Constant_9547_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9547_7");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Property_9547_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_comment");
-  }
-
-  private static void setupLabel_Constant_9547_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_9547_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_9547_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9547_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_9547_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline9547_0 extends AbstractCellProvider {
@@ -453,9 +339,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_9547_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_9547_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -465,7 +348,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_9547_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -481,9 +363,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     private static void setupBasic_Property_9547_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
-    }
-
-    private static void setupLabel_Property_9547_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

@@ -12,13 +12,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class structure_StyleSheet {
 
   public static Style getAnnotationNode(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        this.set(StyleAttributes.UNDERLINED, true);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
 }

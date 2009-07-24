@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -38,8 +37,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_4181_0(editorCell, node, context);
     editorCell.setGridLayout(true);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_4181_1(context, node));
     editorCell.addEditorCell(this.createCollection_4181_2(context, node));
     editorCell.addEditorCell(this.createCollection_4181_3(context, node));
@@ -49,9 +46,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createCollection_4181_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4181_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4181_0(context, node, "concept"));
     editorCell.addEditorCell(this.createRefCell_4181_1(context, node));
     return editorCell;
@@ -60,9 +54,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createCollection_4181_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4181_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4181_1(context, node, "inheritors"));
     editorCell.addEditorCell(this.createProperty_4181_3(context, node));
     return editorCell;
@@ -71,9 +62,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createCollection_4181_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4181_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4181_2(context, node, "condition"));
     editorCell.addEditorCell(this.createRefNode_4181_1(context, node));
     return editorCell;
@@ -82,7 +70,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createConstant_4181_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4181_0(editorCell, node, context);
-    setupLabel_Constant_4181_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -90,7 +77,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createConstant_4181_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4181_1(editorCell, node, context);
-    setupLabel_Constant_4181_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -98,7 +84,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   public EditorCell createConstant_4181_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4181_2(editorCell, node, context);
-    setupLabel_Constant_4181_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -108,9 +93,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(new BaseMappingRule_premise._Inline4181_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4181_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_4181_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -119,8 +101,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_4181_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -137,9 +117,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4181_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4181_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -148,8 +125,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("applyToConceptInheritors");
     provider.setNoTargetText("<no applyToConceptInheritors>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_4181_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -166,9 +141,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4181_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4181_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -177,8 +149,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<always>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_4181_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -194,26 +164,18 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   private static void setupBasic_Collection_4181_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4181_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.DRAW_BRACKETS, true);
-          this.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
     }
   }
 
   private static void setupBasic_Collection_4181_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4181_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -221,12 +183,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     editorCell.setCellId("Constant_4181_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -239,12 +197,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   private static void setupBasic_Collection_4181_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4181_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -252,12 +206,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     editorCell.setCellId("Constant_4181_1");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -268,12 +218,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   private static void setupBasic_Collection_4181_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4181_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -281,34 +227,12 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     editorCell.setCellId("Constant_4181_2");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_RefNode_4181_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4181_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_4181_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4181_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_4181_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4181_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_4181_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline4181_0 extends AbstractCellProvider {
@@ -330,9 +254,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4181_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_4181_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -342,7 +263,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_4181_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -358,16 +278,9 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     private static void setupBasic_Property_4181_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-    }
-
-    private static void setupLabel_Property_4181_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

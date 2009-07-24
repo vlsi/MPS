@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -23,9 +22,6 @@ public class Role_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_2742_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_2742_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -35,7 +31,6 @@ public class Role_Editor extends DefaultNodeEditor {
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     provider.setReadOnly(true);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_2742_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -50,9 +45,6 @@ public class Role_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_2742_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
-  }
-
-  private static void setupLabel_Property_2742_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }
