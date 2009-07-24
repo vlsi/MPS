@@ -3472,9 +3472,28 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1139533204020">
+        <property name="readOnly" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1139535298778" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678241">
           <property name="color" value="DARK_MAGENTA" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="5506941143089251378">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues" id="5506941143089251380">
+            <node role="valuesFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues" id="5506941143089251381">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5506941143089251382">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5506941143089301956">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5506941143089301958">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="5506941143089339611">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5506941143089339614" />
+                      <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5506941143089339618">
+                        <property name="value" value="DELETE" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1139533175439">

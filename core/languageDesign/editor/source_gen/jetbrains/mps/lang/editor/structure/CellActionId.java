@@ -39,7 +39,7 @@ public enum CellActionId {
   }
 
   public static CellActionId getDefault() {
-    return CellActionId.RIGHT_TRANSFORM;
+    return CellActionId.DELETE;
   }
 
   public static CellActionId parseValue(String value) {

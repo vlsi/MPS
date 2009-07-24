@@ -274,6 +274,7 @@
     <property name="name" value="FunctionType_addThrows" />
     <link role="applicableConcept" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
     <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="1214832180703">
+      <property name="actionId" value="right_transform_action_id" />
       <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="1214832180704">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214832180705">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1214832219709">
