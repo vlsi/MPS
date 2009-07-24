@@ -73,6 +73,20 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="556308271456245339" />
       </node>
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="7000563142704382113">
+      <property name="name" value="myMethod" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7000563142704382114" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7000563142704382115" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7000563142704382116" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7000563142704382117">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7000563142704382118" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="7000563142704382121">
+        <property name="name" value="b" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="7000563142704382122" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="5776618742611309702">
       <property name="name" value="bar" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5776618742611309703" />
@@ -80,7 +94,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5776618742611309705">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1045906655266679915">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1045906655266679916">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1045906655266679917">
               <property name="value" value="2" />
             </node>
@@ -91,7 +105,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621606967">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621606968">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621606969">
               <property name="value" value="2" />
             </node>
@@ -102,7 +116,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677313">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677314">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677315">
               <property name="value" value="2" />
             </node>
@@ -113,7 +127,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677317">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677318">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677319">
               <property name="value" value="2" />
             </node>
@@ -124,7 +138,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677321">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677322">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677323">
               <property name="value" value="2" />
             </node>
@@ -135,7 +149,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="702405528185087527">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="702405528185087528">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="702405528185087529">
               <property name="value" value="2" />
             </node>
@@ -146,7 +160,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677326">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677327">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677328">
               <property name="value" value="2" />
             </node>
@@ -157,7 +171,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677335">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677336">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677337">
               <property name="value" value="2" />
             </node>
@@ -168,7 +182,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677339">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677340">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677341">
               <property name="value" value="2" />
             </node>
@@ -179,7 +193,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677343">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677344">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677345">
               <property name="value" value="2" />
             </node>
@@ -190,7 +204,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621677331">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621677332">
-            <link role="baseMethodDeclaration" targetNodeId="8417933508988540538" resolveInfo="myMethod" />
+            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7991141904621677333">
               <property name="value" value="2" />
             </node>

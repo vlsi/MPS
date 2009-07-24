@@ -57,70 +57,78 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
-    
+
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }
 
-    Set<SNode> expressionsWithChangedTypes;
-    synchronized (myRecalculatedTypesLock) {
-      expressionsWithChangedTypes = new HashSet<SNode>(myCurrentExpressionsWithChangedTypes);
-      myCurrentExpressionsWithChangedTypes.clear();
-    }
+    final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
 
-    final Map<SNode, SNode> resolveTargets = new HashMap<SNode, SNode>();
+    if (!wasCheckedOnce) {
+      for (SNode methodCall : rootNode.getDescendants(new IsInstanceCondition(IMethodCall.concept))) {
+        testAndFixMethodCall(methodCall, reResolvedTargets);
+      }
+    } else {
 
-    SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
-
-      public void visitChildEvent(SModelChildEvent event) {
-        SNode child = event.getChild();
-        if (event.isAdded()) {
-          nodeAdded(child, resolveTargets);
-        } else {
-          nodeRemoved(child, event.getParent(), resolveTargets);
-        }
+      Set<SNode> expressionsWithChangedTypes;
+      synchronized (myRecalculatedTypesLock) {
+        expressionsWithChangedTypes = new HashSet<SNode>(myCurrentExpressionsWithChangedTypes);
+        myCurrentExpressionsWithChangedTypes.clear();
       }
 
-      public void visitReferenceEvent(SModelReferenceEvent event) {
-        SReference reference = event.getReference();
-        SNode sourceNode = reference.getSourceNode();
-        if (BaseAdapter.isInstance(sourceNode, BaseMethodCall.class) &&
-          BaseMethodCall.BASE_METHOD_DECLARATION.equals(reference.getRole())) {
-          methodCallDeclarationChanged(sourceNode, resolveTargets);
-        }
-      }
 
-      public void visitPropertyEvent(SModelPropertyEvent event) {
-        SNode node = event.getNode();
-        if (BaseAdapter.isInstance(node, BaseMethodDeclaration.class)) {
-          if (BaseMethodDeclaration.NAME.equals(event.getPropertyName())) {
-            methodDeclarationChanged(node, resolveTargets);
+      SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
+
+        public void visitChildEvent(SModelChildEvent event) {
+          SNode child = event.getChild();
+          if (event.isAdded()) {
+            nodeAdded(child, reResolvedTargets);
+          } else {
+            nodeRemoved(child, event.getParent(), reResolvedTargets);
           }
         }
-      }
 
-      //todo
-    };
-    for (SModelEvent event : events) {
-      if (event.getAffectedRoot() != rootNode) {
-        continue;
+        public void visitReferenceEvent(SModelReferenceEvent event) {
+          SReference reference = event.getReference();
+          SNode sourceNode = reference.getSourceNode();
+          if (BaseAdapter.isInstance(sourceNode, BaseMethodCall.class) &&
+            BaseMethodCall.BASE_METHOD_DECLARATION.equals(reference.getRole())) {
+            methodCallDeclarationChanged(sourceNode, reResolvedTargets);
+          }
+        }
+
+        public void visitPropertyEvent(SModelPropertyEvent event) {
+          SNode node = event.getNode();
+          if (BaseAdapter.isInstance(node, BaseMethodDeclaration.class)) {
+            if (BaseMethodDeclaration.NAME.equals(event.getPropertyName())) {
+              methodDeclarationChanged(node, reResolvedTargets);
+            }
+          }
+        }
+
+        //todo
+      };
+      for (SModelEvent event : events) {
+        if (event.getAffectedRoot() != rootNode) {
+          continue;
+        }
+        event.accept(visitor);
       }
-      event.accept(visitor);
-    }
-    for (SNode expressionWithChangedType : expressionsWithChangedTypes) {
-      expressionTypeChanged(expressionWithChangedType, resolveTargets);
+      for (SNode expressionWithChangedType : expressionsWithChangedTypes) {
+        expressionTypeChanged(expressionWithChangedType, reResolvedTargets);
+      }
     }
 
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        if (resolveTargets.isEmpty()) return;
+        if (reResolvedTargets.isEmpty()) return;
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {
               public void run() {
-                for (SNode methodCall : resolveTargets.keySet()) {
-                  SNode referent = resolveTargets.get(methodCall);
+                for (SNode methodCall : reResolvedTargets.keySet()) {
+                  SNode referent = reResolvedTargets.get(methodCall);
                   if (referent != null) {
                     methodCall.setReferent(IMethodCall.BASE_METHOD_DECLARATION, referent);
                   }
@@ -142,7 +150,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodCallsToSetDecls.clear();
   }
 
-  private void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> resolveTargets) {
+  private void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     IMethodCall methodCall = (IMethodCall) BaseAdapter.fromNode(methodCallNode);
     BaseMethodDeclaration baseMethodDeclaration = methodCall.getBaseMethodDeclaration();
     if (baseMethodDeclaration == null) {
@@ -150,9 +158,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     String methodName = baseMethodDeclaration.getName();
     List<Expression> actualArgs = methodCall.getActualArguments();
-  /*  ClassifierType classifierType= getClassifierAndTypeParams(methodCall);
-    Classifier classifier = classifierType == null ? null : classifierType.getClassifier();
-    List<Type> typeParameters = classifierType == null ? null : classifierType.getParameters();*/
+    /*  ClassifierType classifierType= getClassifierAndTypeParams(methodCall);
+Classifier classifier = classifierType == null ? null : classifierType.getClassifier();
+List<Type> typeParameters = classifierType == null ? null : classifierType.getParameters();*/
 
 
     List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName);
@@ -169,7 +177,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       newTarget = MethodResolveUtil.chooseByParameterType(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
     }
     if (newTarget != null) {
-      resolveTargets.put(methodCall.getNode(), newTarget.getNode());
+      if (newTarget.getNode() != baseMethodDeclaration.getNode()) {
+        reResolvedTargets.put(methodCall.getNode(), newTarget.getNode());
+      }
       myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());
       myCheckedMethodCalls.add(methodCallNode);
       Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTarget.getNode());
@@ -196,11 +206,11 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private void methodDeclarationChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
     if (methodCalls != null) {
-    for (SNode methodCall : methodCalls) {
-      if (methodCall != null) {
-        testAndFixMethodCall(methodCall, resolveTargets);
+      for (SNode methodCall : methodCalls) {
+        if (methodCall != null) {
+          testAndFixMethodCall(methodCall, resolveTargets);
+        }
       }
-    }
     }
   }
 
