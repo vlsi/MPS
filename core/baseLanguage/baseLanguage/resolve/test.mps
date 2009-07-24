@@ -4,6 +4,7 @@
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
@@ -18,9 +19,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="237" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
+  <maxImportIndex value="240" />
   <import index="236" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="237" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
+  <import index="238" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="239" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="240" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="4898614932450204120">
     <property name="name" value="ABCV" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4898614932450204121" />
@@ -115,6 +123,33 @@
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6958036945086198289" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="556308271456242932">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="556308271456242933">
+            <property name="name" value="ifStatement" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="556308271456242934">
+              <link role="concept" targetNodeId="238.1068580123159" resolveInfo="IfStatement" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="556308271456242936" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="556308271456242946">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="556308271456242947">
+            <property name="name" value="plusExpression" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="556308271456242948">
+              <link role="concept" targetNodeId="238.1068581242875" resolveInfo="PlusExpression" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="556308271456242938">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="556308271456242940">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="556308271456244623">
+              <link role="variableDeclaration" targetNodeId="556308271456242933" resolveInfo="ifStatement" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="556308271456242944">
+              <link role="link" targetNodeId="238.1068580123160" />
             </node>
           </node>
         </node>

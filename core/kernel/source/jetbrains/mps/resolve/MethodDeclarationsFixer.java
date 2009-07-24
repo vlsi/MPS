@@ -29,7 +29,7 @@ import com.intellij.openapi.command.CommandProcessor;
  * To change this template use File | Settings | File Templates.
  */
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
-  private static boolean DISABLED = true;
+  private static boolean DISABLED = false;
 
   private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
   private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
