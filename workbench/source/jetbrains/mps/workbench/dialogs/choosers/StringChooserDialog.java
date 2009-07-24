@@ -94,7 +94,7 @@ class StringChooserDialog extends BaseDialog {
           onOk();
         }
       }
-    }, ModalityState.NON_MODAL, false);
+    }, ModalityState.current(), false);
   }
 
   public boolean stretchMainComponent() {
