@@ -179,14 +179,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "noTargetText");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1183066561573(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "readOnly");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1183066596226(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "allowEmptyText");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1184071848719(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "description");
   }
@@ -1410,6 +1402,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_7533883740976421332(final IOperationContext operationContext, final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding");
+  }
+
+  public static boolean ifMacro_Condition_7533883740977276466(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "readOnly");
+  }
+
+  public static boolean ifMacro_Condition_7533883740977278584(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "allowEmptyText");
   }
 
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
