@@ -32,9 +32,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7459_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7459_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7459_0(context, node, "assert"));
     editorCell.addEditorCell(this.createRefNode_7459_1(context, node));
     if (renderingCondition7459_0(node, context, context.getOperationContext().getScope())) {
@@ -47,9 +44,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7459_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7459_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7459_1(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode_7459_3(context, node));
     return editorCell;
@@ -58,9 +52,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7459_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7459_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7459_2(context, node, "Error message : "));
     editorCell.addEditorCell(this.createRefNode_7459_5(context, node));
     return editorCell;

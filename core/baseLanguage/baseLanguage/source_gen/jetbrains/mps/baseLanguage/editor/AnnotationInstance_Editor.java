@@ -42,9 +42,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4312_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4312_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4312_0(context, node, "@"));
     editorCell.addEditorCell(this.createRefCell_4312_1(context, node));
     if (renderingCondition4312_0(node, context, context.getOperationContext().getScope())) {
@@ -56,9 +53,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4312_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4312_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4312_3(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_4312_0(context, node));
     editorCell.addEditorCell(this.createConstant_4312_2(context, node, ")"));

@@ -25,9 +25,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7565_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7565_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7565_1(context, node, "return"));
     if (renderingCondition7565_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_7565_1(context, node));

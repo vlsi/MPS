@@ -26,9 +26,6 @@ public class ArrayType_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1065_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1065_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1065_1(context, node));
     editorCell.addEditorCell(this.createConstant_1065_0(context, node, "[]"));
     return editorCell;

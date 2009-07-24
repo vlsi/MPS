@@ -25,9 +25,6 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2984_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2984_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_2984_1(context, node));
     editorCell.addEditorCell(this.createConstant_2984_0(context, node, "instanceof"));
     editorCell.addEditorCell(this.createRefNode_2984_3(context, node));

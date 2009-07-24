@@ -59,9 +59,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_8372_2(context, node));
     if (renderingCondition8372_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8372_2(context, node));
@@ -107,9 +104,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8372_14(context, node, "abstract"));
     editorCell.addEditorCell(this.createProperty_8372_3(context, node));
     editorCell.addEditorCell(this.createConstant_8372_24(context, node, "final"));
@@ -126,9 +120,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_8372_7(context, node));
     return editorCell;
   }
@@ -136,9 +127,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_8372_4(context, node));
     return editorCell;
   }
@@ -146,9 +134,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8372_25(context, node, "deprecated"));
     editorCell.addEditorCell(this.createConstant_8372_18(context, node, "static"));
     editorCell.addEditorCell(this.createConstant_8372_19(context, node, "{"));
@@ -161,9 +146,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8372_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8372_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8372_26(context, node, "static"));
     editorCell.addEditorCell(this.createConstant_8372_27(context, node, "{"));
     editorCell.addEditorCell(this.createRefNode_8372_9(context, node));

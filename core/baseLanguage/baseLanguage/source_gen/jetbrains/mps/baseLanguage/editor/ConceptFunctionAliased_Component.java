@@ -44,9 +44,6 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   public EditorCell createCollection_7219_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7219_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_7219_1(context, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_7219_0(context, node));
     editorCell.addEditorCell(this.createConstant_7219_0(context, node, "{"));

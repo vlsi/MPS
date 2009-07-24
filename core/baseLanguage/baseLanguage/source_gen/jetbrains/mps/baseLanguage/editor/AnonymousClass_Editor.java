@@ -51,9 +51,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_1871_1(context, node));
     if (renderingCondition1871_6(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1871_6(context, node));
@@ -80,9 +77,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_1871_1(context, node));
     if (renderingCondition1871_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1871_4(context, node));
@@ -97,9 +91,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_1871_0(context, node));
     return editorCell;
   }
@@ -107,9 +98,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_1871_1(context, node));
     return editorCell;
   }
@@ -117,9 +105,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1871_6(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_1871_3(context, node));
     editorCell.addEditorCell(this.createConstant_1871_7(context, node, ">"));
@@ -129,9 +114,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1871_11(context, node, ""));
     return editorCell;
   }
@@ -139,9 +121,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1871_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1871_6(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1871_1(context, node));
     return editorCell;
   }

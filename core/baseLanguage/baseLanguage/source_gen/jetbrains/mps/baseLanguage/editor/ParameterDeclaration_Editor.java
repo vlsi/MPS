@@ -46,9 +46,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4085_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4085_0(context, node, "final :"));
     editorCell.addEditorCell(this.createProperty_4085_1(context, node));
     editorCell.addEditorCell(this.createConstant_4085_2(context, node, "annotations:"));
@@ -59,9 +56,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4085_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_4085_2(context, node));
     return editorCell;
   }
@@ -69,9 +63,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4085_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition4085_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_4085_3(context, node));
     }
@@ -86,9 +77,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4085_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4085_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_4085_1(context, node));
     return editorCell;
   }

@@ -23,9 +23,6 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0678_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0678_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0678_0(context, node, "?"));
     editorCell.addEditorCell(this.createConstant_0678_1(context, node, "extends"));
     editorCell.addEditorCell(this.createRefNode_0678_1(context, node));

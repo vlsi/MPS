@@ -26,9 +26,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3810_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_3810_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3810_0(context, node, "~"));
     editorCell.addEditorCell(this.createConstant_3810_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_3810_1(context, node));

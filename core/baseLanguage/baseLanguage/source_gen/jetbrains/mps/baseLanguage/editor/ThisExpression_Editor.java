@@ -48,9 +48,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6954_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6954_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_6954_1(context, node));
     editorCell.addEditorCell(this.createConstant_6954_2(context, node, "."));
     editorCell.addEditorCell(this.createConstant_6954_1(context, node, "this"));
@@ -60,9 +57,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6954_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6954_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6954_3(context, node, "classifier"));
     editorCell.addEditorCell(this.createRefCell_6954_3(context, node));
     return editorCell;

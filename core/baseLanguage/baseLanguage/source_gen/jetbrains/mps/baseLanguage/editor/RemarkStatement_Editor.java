@@ -43,9 +43,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6285_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6285_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6285_0(context, node, "//"));
     editorCell.addEditorCell(this.createAlternation_6285_0(context, node));
     return editorCell;

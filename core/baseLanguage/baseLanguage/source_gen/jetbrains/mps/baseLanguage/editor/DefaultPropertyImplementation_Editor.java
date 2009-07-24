@@ -22,9 +22,6 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4340_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_4340_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_4340_1(context, node));
     editorCell.addEditorCell(this.createRefNode_4340_3(context, node));
     return editorCell;

@@ -23,9 +23,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5565_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5565_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_5565_1(context, node));
     editorCell.addEditorCell(this.createConstant_5565_0(context, node, "["));
     editorCell.addEditorCell(this.createRefNode_5565_3(context, node));

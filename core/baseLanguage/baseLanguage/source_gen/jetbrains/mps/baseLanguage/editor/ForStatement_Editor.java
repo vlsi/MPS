@@ -32,9 +32,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0938_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0938_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition0938_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0938_1(context, node));
     }
@@ -55,9 +52,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0938_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0938_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_0938_1(context, node));
     editorCell.addEditorCell(this.createConstant_0938_7(context, node, ":"));
     return editorCell;
@@ -66,9 +60,6 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0938_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0938_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_0938_8(context, node, "label"));
     editorCell.addEditorCell(this.createConstant_0938_9(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_0938_3(context, node));

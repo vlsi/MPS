@@ -38,9 +38,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5980_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5980_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5980_0(context, node, "continue"));
     if (renderingCondition5980_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_5980_1(context, node));
@@ -52,9 +49,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5980_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5980_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_5980_1(context, node));
     return editorCell;
   }

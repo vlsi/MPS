@@ -25,9 +25,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3016_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_3016_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3016_2(context, node, "static"));
     editorCell.addEditorCell(this.createConstant_3016_3(context, node, "{"));
     editorCell.addEditorCell(this.createRefNode_3016_1(context, node));

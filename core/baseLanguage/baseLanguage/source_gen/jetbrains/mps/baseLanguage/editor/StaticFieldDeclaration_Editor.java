@@ -48,9 +48,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6130_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6130_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6130_0(context, node, "isFinal"));
     editorCell.addEditorCell(this.createProperty_6130_1(context, node));
     editorCell.addEditorCell(this.createConstant_6130_5(context, node, "annotations:"));
@@ -61,9 +58,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6130_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6130_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_6130_2(context, node));
     if (renderingCondition6130_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_6130_3(context, node));
@@ -85,9 +79,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6130_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6130_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6130_3(context, node, "="));
     editorCell.addEditorCell(this.createRefNode_6130_3(context, node));
     return editorCell;
@@ -96,9 +87,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6130_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6130_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_6130_0(context, node));
     return editorCell;
   }

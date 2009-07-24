@@ -55,9 +55,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_5704_3(context, node));
     if (renderingCondition5704_5(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_5704_4(context, node));
@@ -97,9 +94,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_5704_1(context, node));
     return editorCell;
   }
@@ -107,9 +101,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5704_5(context, node, "throws"));
     editorCell.addEditorCell(this.createRefNodeList_5704_1(context, node));
     return editorCell;
@@ -118,9 +109,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5704_7(context, node, "annotations:"));
     editorCell.addEditorCell(this.createRefNodeList_5704_2(context, node));
     editorCell.addEditorCell(this.createConstant_5704_11(context, node, "final"));
@@ -131,9 +119,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_5704_3(context, node));
     return editorCell;
   }
@@ -141,9 +126,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5704_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5704_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_5704_2(context, node));
     if (renderingCondition5704_10(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_5704_10(context, node, "final"));

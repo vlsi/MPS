@@ -31,9 +31,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createCollection_0235_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0235_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition0235_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0235_1(context, node));
     }
@@ -43,9 +40,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createCollection_0235_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0235_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition0235_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0235_0(context, node, "/**"));
     }

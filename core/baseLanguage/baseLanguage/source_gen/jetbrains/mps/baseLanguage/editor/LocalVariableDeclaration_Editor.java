@@ -46,9 +46,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2231_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2231_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2231_0(context, node, "final"));
     editorCell.addEditorCell(this.createProperty_2231_1(context, node));
     editorCell.addEditorCell(this.createConstant_2231_3(context, node, "annotations:"));
@@ -59,9 +56,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2231_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2231_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition2231_2(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2231_3(context, node));
     }
@@ -79,9 +73,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2231_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2231_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2231_2(context, node, "="));
     editorCell.addEditorCell(this.createRefNode_2231_3(context, node));
     return editorCell;
@@ -90,9 +81,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2231_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_2231_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_2231_1(context, node));
     return editorCell;
   }

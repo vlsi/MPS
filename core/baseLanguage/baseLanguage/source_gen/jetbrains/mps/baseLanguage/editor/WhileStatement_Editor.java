@@ -32,9 +32,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8658_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8658_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition8658_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8658_1(context, node));
     }
@@ -51,9 +48,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8658_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8658_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_8658_1(context, node));
     editorCell.addEditorCell(this.createConstant_8658_4(context, node, ":"));
     return editorCell;
@@ -62,9 +56,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8658_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8658_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8658_5(context, node, "label"));
     editorCell.addEditorCell(this.createConstant_8658_6(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_8658_3(context, node));

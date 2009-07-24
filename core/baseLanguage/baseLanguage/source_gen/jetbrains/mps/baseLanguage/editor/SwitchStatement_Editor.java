@@ -42,9 +42,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6015_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6015_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition6015_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_6015_2(context, node));
     }
@@ -62,9 +59,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6015_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6015_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6015_5(context, node, "default"));
     editorCell.addEditorCell(this.createConstant_6015_6(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode_6015_3(context, node));
@@ -74,9 +68,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6015_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6015_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_6015_1(context, node));
     editorCell.addEditorCell(this.createConstant_6015_7(context, node, ":"));
     return editorCell;
@@ -85,9 +76,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6015_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_6015_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_6015_8(context, node, "label"));
     editorCell.addEditorCell(this.createConstant_6015_9(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_6015_3(context, node));

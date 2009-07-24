@@ -66,9 +66,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5695_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5695_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_5695_3(context, node));
     if (renderingCondition5695_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_5695_3(context, node));
@@ -93,9 +90,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5695_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5695_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5695_7(context, node, "throws"));
     editorCell.addEditorCell(this.createRefNodeList_5695_1(context, node));
     editorCell.addEditorCell(this.createConstant_5695_6(context, node, "{"));
@@ -105,9 +99,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5695_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5695_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5695_8(context, node, "annotations:"));
     editorCell.addEditorCell(this.createRefNodeList_5695_3(context, node));
     return editorCell;
@@ -116,9 +107,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5695_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5695_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNodeList_5695_2(context, node));
     return editorCell;
   }

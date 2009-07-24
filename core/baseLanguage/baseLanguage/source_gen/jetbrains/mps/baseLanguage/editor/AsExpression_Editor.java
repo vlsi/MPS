@@ -23,9 +23,6 @@ public class AsExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1550_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1550_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_1550_1(context, node));
     editorCell.addEditorCell(this.createCollection_1550_1(context, node));
     return editorCell;
@@ -34,9 +31,6 @@ public class AsExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1550_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1550_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1550_0(context, node, "as"));
     editorCell.addEditorCell(this.createRefNode_1550_3(context, node));
     return editorCell;

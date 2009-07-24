@@ -40,9 +40,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1944_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1944_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_1944_1(context, node));
     if (renderingCondition1944_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1944_1(context, node));
@@ -53,9 +50,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1944_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1944_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1944_0(context, node, "extends"));
     editorCell.addEditorCell(this.createRefNode_1944_1(context, node));
     if (renderingCondition1944_1(node, context, context.getOperationContext().getScope())) {
@@ -67,9 +61,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1944_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1944_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1944_1(context, node, "&"));
     editorCell.addEditorCell(this.createRefNodeList_1944_0(context, node));
     return editorCell;

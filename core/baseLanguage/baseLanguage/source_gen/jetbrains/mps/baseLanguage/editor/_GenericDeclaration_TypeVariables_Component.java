@@ -40,9 +40,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   public EditorCell createCollection_9618_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9618_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_9618_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_9618_0(context, node));
     editorCell.addEditorCell(this.createConstant_9618_1(context, node, ">"));
