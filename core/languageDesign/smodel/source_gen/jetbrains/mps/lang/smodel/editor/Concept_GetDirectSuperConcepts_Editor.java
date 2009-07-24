@@ -20,9 +20,6 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3010_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_3010_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponent_3010_0(context, node));
     return editorCell;
   }

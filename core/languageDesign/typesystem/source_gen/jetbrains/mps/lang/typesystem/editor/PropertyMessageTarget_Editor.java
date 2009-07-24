@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -26,9 +25,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3593_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_3593_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_3593_0(context, node, "property"));
     editorCell.addEditorCell(this.createRefCell_3593_1(context, node));
     return editorCell;
@@ -37,7 +33,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3593_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3593_0(editorCell, node, context);
-    setupLabel_Constant_3593_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -47,9 +42,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new PropertyMessageTarget_Editor._Inline3593_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_3593_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_3593_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -58,8 +50,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no propertyDeclaration>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_3593_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -84,12 +74,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_3593_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_3593_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_3593_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline3593_0 extends AbstractCellProvider {
 
     public _Inline3593_0() {
@@ -109,9 +93,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_3593_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_3593_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -121,7 +102,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_3593_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -136,9 +116,6 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_3593_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_3593_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

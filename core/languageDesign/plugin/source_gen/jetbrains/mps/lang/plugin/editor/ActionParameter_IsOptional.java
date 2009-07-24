@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
@@ -58,7 +57,6 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu0(),new ActionParameter_IsOptional.ActionParameter_generic_cellMenu1()}));
     setupBasic_ReadOnlyModelAccessor_3654_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_3654_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -67,16 +65,9 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     editorCell.setCellId("ReadOnlyModelAccessor_3654_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, false);
     }
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_3654_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class ActionParameter_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {

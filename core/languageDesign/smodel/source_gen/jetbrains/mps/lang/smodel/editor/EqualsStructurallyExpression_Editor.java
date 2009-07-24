@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -32,9 +31,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0523_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_0523_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_0523_1(context, node));
     editorCell.addEditorCell(this.createConceptProperty_0523_1(context, node));
     editorCell.addEditorCell(this.createRefNode_0523_3(context, node));
@@ -46,9 +42,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_0523_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_0523_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -57,8 +50,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_0523_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -75,9 +66,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_0523_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_0523_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EqualsStructurallyExpression_Editor.EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));
     return editorCell;
@@ -87,8 +75,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no operator>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_0523_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -105,9 +91,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_0523_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_0523_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -116,8 +99,6 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_0523_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -142,28 +123,15 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.addKeyMap(new CastExpression_KeyMap());
   }
 
   private static void setupBasic_RefNode_0523_1(EditorCell editorCell, SNode node, EditorContext context) {
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_RefNode_0523_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConceptProperty_0523_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_0523_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -26,9 +25,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1602_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1602_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createProperty_1602_1(context, node));
     editorCell.addEditorCell(this.createConstant_1602_0(context, node, "-"));
     editorCell.addEditorCell(this.createProperty_1602_3(context, node));
@@ -38,7 +34,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1602_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1602_0(editorCell, node, context);
-    setupLabel_Constant_1602_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -48,9 +43,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_1602_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1602_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -59,8 +51,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("start");
     provider.setNoTargetText("<no start>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_1602_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -77,9 +67,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_1602_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1602_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -88,8 +75,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("end");
     provider.setNoTargetText("<no end>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_1602_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -113,28 +98,15 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1602_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
   private static void setupBasic_Property_1602_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_end");
-  }
-
-  private static void setupLabel_Property_1602_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1602_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_1602_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

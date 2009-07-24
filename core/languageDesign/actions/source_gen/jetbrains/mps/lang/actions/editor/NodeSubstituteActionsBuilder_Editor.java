@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -42,9 +41,7 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2014_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
     editorCell.setUsesBraces(true);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2014_1(context, node));
     editorCell.addEditorCell(this.createCollection_2014_2(context, node));
     return editorCell;
@@ -53,9 +50,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2014_0(context, node, "substituted node:"));
     editorCell.addEditorCell(this.createRefCell_2014_1(context, node));
     editorCell.addEditorCell(this.createConstant_2014_5(context, node, " //"));
@@ -66,9 +60,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2014_4(context, node));
     editorCell.addEditorCell(this.createCollection_2014_3(context, node));
     return editorCell;
@@ -77,9 +68,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_2014_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_2014_9(context, node));
     editorCell.addEditorCell(this.createCollection_2014_10(context, node));
     editorCell.addEditorCell(this.createConstant_2014_9(context, node, ""));
@@ -96,9 +84,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2014_1(context, node, "actions :"));
     return editorCell;
   }
@@ -106,9 +91,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2014_2(context, node));
     editorCell.addEditorCell(this.createRefNodeList_2014_0(context, node));
     return editorCell;
@@ -117,9 +99,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_6(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2014_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList_2014_1(context, node));
     return editorCell;
@@ -128,9 +107,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_7(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2014_2(context, node, "common initializer :"));
     return editorCell;
   }
@@ -138,9 +114,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_8(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2014_3(context, node, "  "));
     editorCell.addEditorCell(this.createRefNode_2014_1(context, node));
     return editorCell;
@@ -149,9 +122,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_9(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_2014_4(context, node, "condition :"));
     return editorCell;
   }
@@ -159,9 +129,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_10(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_10(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2014_3(context, node));
     editorCell.addEditorCell(this.createRefNode_2014_3(context, node));
     return editorCell;
@@ -170,9 +137,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_2014_11(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2014_11(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndentCell2014_1(context, node));
     editorCell.addEditorCell(this.createConstant_2014_6(context, node, "...................................."));
     return editorCell;
@@ -181,7 +145,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_0(editorCell, node, context);
-    setupLabel_Constant_2014_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -189,7 +152,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_1(editorCell, node, context);
-    setupLabel_Constant_2014_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -197,7 +159,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_2(editorCell, node, context);
-    setupLabel_Constant_2014_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -205,7 +166,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_3(editorCell, node, context);
-    setupLabel_Constant_2014_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -213,7 +173,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_4(editorCell, node, context);
-    setupLabel_Constant_2014_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -221,7 +180,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_5(editorCell, node, context);
-    setupLabel_Constant_2014_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -229,7 +187,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_6(editorCell, node, context);
-    setupLabel_Constant_2014_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -237,7 +194,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_8(editorCell, node, context);
-    setupLabel_Constant_2014_8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -245,7 +201,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2014_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2014_9(editorCell, node, context);
-    setupLabel_Constant_2014_9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -256,9 +211,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_2014_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_2014_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_2014_0.getElementRole());
     return editorCell;
   }
@@ -269,9 +221,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_2014_1.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_2014_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_2014_1.getElementRole());
     return editorCell;
   }
@@ -306,9 +255,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new NodeSubstituteActionsBuilder_Editor._Inline2014_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_2014_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_2014_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -317,8 +263,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_2014_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -335,9 +279,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_2014_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_2014_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -346,8 +287,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("commonInitializer");
     provider.setNoTargetText("<no supplemental initializer>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2014_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -364,9 +303,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_2014_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_2014_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -375,8 +311,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("precondition");
     provider.setNoTargetText("<none>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2014_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -393,9 +327,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_2014_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_2014_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -404,7 +335,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
-    provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_2014_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
@@ -425,12 +355,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -444,36 +370,24 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_2014_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_2014_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -484,12 +398,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -500,12 +410,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -516,12 +422,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_7");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -532,24 +434,16 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_8");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2014_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2014_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -559,12 +453,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_9");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -575,12 +465,8 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_2014_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_10");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -590,74 +476,50 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2014_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2014_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
   }
 
   private static void setupBasic_Property_2014_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_description");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
   }
 
   private static void setupBasic_Collection_2014_11(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_2014_11");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2014_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2014_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
   }
 
   private static void setupBasic_Constant_2014_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2014_8");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_2014_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2014_9");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -681,51 +543,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Indent_2014_4");
   }
 
-  private static void setupLabel_Constant_2014_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_2014_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_2014_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_2014_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_2014_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_2014_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_2014_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2014_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline2014_0 extends AbstractCellProvider {
 
     public _Inline2014_0() {
@@ -745,9 +562,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_2014_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_2014_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -757,7 +571,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_2014_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -773,16 +586,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_2014_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-    }
-
-    private static void setupLabel_Property_2014_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }
@@ -885,7 +691,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_2014_7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_2014_7(editorCell, node, context);
-      setupLabel_Constant_2014_7(editorCell, node, context);
       editorCell.setDefaultText("<no common variables>");
       return editorCell;
     }
@@ -894,16 +699,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_2014_7(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_2014_7");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
       }
-    }
-
-    private static void setupLabel_Constant_2014_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

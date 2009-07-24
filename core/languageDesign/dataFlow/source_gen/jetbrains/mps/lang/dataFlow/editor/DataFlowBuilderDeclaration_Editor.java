@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -29,9 +28,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_7509_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_7509_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7509_0(context, node, "data"));
     editorCell.addEditorCell(this.createConstant_7509_1(context, node, "flow"));
     editorCell.addEditorCell(this.createConstant_7509_2(context, node, "builder"));
@@ -46,7 +42,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_0(editorCell, node, context);
-    setupLabel_Constant_7509_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +49,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_1(editorCell, node, context);
-    setupLabel_Constant_7509_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,7 +56,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_2(editorCell, node, context);
-    setupLabel_Constant_7509_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,7 +63,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_3(editorCell, node, context);
-    setupLabel_Constant_7509_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +70,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_4(editorCell, node, context);
-    setupLabel_Constant_7509_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,7 +77,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_7509_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7509_5(editorCell, node, context);
-    setupLabel_Constant_7509_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -96,9 +86,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new DataFlowBuilderDeclaration_Editor._Inline7509_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_7509_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_7509_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -107,8 +94,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_7509_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -125,9 +110,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_7509_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_7509_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -136,8 +118,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("builderBlock");
     provider.setNoTargetText("<no builderBlock>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_7509_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -179,13 +159,9 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_7509_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -193,12 +169,8 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7509_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -206,37 +178,9 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7509_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-  }
-
-  private static void setupLabel_Constant_7509_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7509_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7509_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7509_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_7509_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_7509_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7509_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_7509_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline7509_0 extends AbstractCellProvider {
@@ -258,9 +202,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_7509_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_7509_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -270,7 +211,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_7509_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -285,9 +225,6 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_7509_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_7509_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

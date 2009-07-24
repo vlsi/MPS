@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -32,9 +31,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8169_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8169_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_8169_0(context, node, "enum"));
     editorCell.addEditorCell(this.createConstant_8169_1(context, node, "/"));
     editorCell.addEditorCell(this.createRefCell_8169_1(context, node));
@@ -47,7 +43,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8169_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8169_0(editorCell, node, context);
-    setupLabel_Constant_8169_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,7 +50,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8169_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8169_1(editorCell, node, context);
-    setupLabel_Constant_8169_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,7 +57,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8169_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8169_2(editorCell, node, context);
-    setupLabel_Constant_8169_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,7 +64,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8169_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8169_3(editorCell, node, context);
-    setupLabel_Constant_8169_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -81,9 +73,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline8169_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_8169_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_8169_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -92,8 +81,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumDeclaration");
     provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_8169_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -110,9 +97,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_8169_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_8169_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -121,8 +105,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operation");
     provider.setNoTargetText("<no operation>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_8169_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -143,12 +125,8 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_8169_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
   }
 
@@ -159,12 +137,8 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_8169_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
   }
 
@@ -179,24 +153,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8169_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8169_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8169_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_8169_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8169_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8169_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_8169_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline8169_0 extends AbstractCellProvider {
@@ -218,9 +174,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_8169_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_8169_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -230,7 +183,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<null>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_8169_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -246,9 +198,6 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_8169_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       SharedStyles_StyleSheet.getReferenceDecorated(editorCell).apply(editorCell);
-    }
-
-    private static void setupLabel_Property_8169_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

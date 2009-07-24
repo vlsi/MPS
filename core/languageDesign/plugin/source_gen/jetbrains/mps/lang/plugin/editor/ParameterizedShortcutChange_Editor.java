@@ -17,7 +17,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,9 +36,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1789_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_1789_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_1789_1(context, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_1789_0(context, node));
     editorCell.addEditorCell(this.createConstant_1789_0(context, node, "NOT IMPLEMENTED YET"));
@@ -49,7 +45,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1789_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1789_0(editorCell, node, context);
-    setupLabel_Constant_1789_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +71,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_1789_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_1789_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -85,9 +79,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline1789_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1789_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_1789_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -96,8 +87,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_1789_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -116,12 +105,8 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_1789_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
     }
   }
 
@@ -131,15 +116,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1789_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1789_0");
-  }
-
-  private static void setupLabel_RefCell_1789_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_1789_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1789_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline1789_0 extends AbstractCellProvider {
@@ -161,9 +137,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1789_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_1789_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -173,7 +146,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_1789_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -188,9 +160,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_1789_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_1789_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

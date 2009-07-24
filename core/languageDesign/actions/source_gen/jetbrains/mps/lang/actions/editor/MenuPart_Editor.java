@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class MenuPart_Editor extends DefaultNodeEditor {
 
@@ -18,16 +17,12 @@ public class MenuPart_Editor extends DefaultNodeEditor {
   public EditorCell createError_1562_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "menuPart");
     setupBasic_Error_1562_0(editorCell, node, context);
-    setupLabel_Error_1562_0(editorCell, node, context);
     return editorCell;
   }
 
 
   private static void setupBasic_Error_1562_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_1562_0");
-  }
-
-  private static void setupLabel_Error_1562_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

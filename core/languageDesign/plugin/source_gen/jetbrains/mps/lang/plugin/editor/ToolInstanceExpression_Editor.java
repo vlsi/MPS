@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
 
@@ -21,7 +20,6 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6263_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6263_0(editorCell, node, context);
-    setupLabel_Constant_6263_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -30,16 +28,9 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_6263_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6263_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
-  }
-
-  private static void setupLabel_Constant_6263_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

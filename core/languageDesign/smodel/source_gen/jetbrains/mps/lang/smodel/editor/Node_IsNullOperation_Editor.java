@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
 
@@ -23,7 +22,6 @@ public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8163_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8163_0(editorCell, node, context);
-    setupLabel_Constant_8163_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -32,20 +30,13 @@ public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8163_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8163_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.EDITABLE, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
-  }
-
-  private static void setupLabel_Constant_8163_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

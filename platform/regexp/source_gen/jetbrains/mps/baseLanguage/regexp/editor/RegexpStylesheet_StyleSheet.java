@@ -10,30 +10,24 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class RegexpStylesheet_StyleSheet {
 
   public static Style getRegexpBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.MATCHING_LABEL, "regexpBrace");
+    return style;
   }
 
   public static Style getLeftRegexpBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    return style;
   }
 
   public static Style getRightRegexpBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(RegexpStylesheet_StyleSheet.getRegexpBrace(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
   }
 
 }

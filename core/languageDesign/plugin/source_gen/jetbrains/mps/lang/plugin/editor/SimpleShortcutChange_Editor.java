@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -38,9 +37,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0068_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_0068_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_0068_1(context, node));
     editorCell.addEditorCell(this.createRefNodeList_0068_0(context, node));
     return editorCell;
@@ -52,9 +48,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_0068_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_0068_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_0068_0.getElementRole());
     return editorCell;
   }
@@ -64,9 +57,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new SimpleShortcutChange_Editor._Inline0068_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0068_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_0068_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -75,8 +65,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_0068_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -95,23 +83,13 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_0068_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(3, Measure.SPACES));
     }
   }
 
   private static void setupBasic_RefNodeList_0068_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_keystroke");
-  }
-
-  private static void setupLabel_RefCell_0068_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_0068_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline0068_0 extends AbstractCellProvider {
@@ -133,9 +111,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0068_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_0068_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -145,7 +120,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_0068_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -160,9 +134,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_0068_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_0068_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -41,9 +40,6 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_9788_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_9788_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu0()}));
     return editorCell;
@@ -53,8 +49,6 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_9788_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -69,9 +63,6 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
 
   private static void setupBasic_Property_9788_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
-  }
-
-  private static void setupLabel_Property_9788_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class ActionParameter_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

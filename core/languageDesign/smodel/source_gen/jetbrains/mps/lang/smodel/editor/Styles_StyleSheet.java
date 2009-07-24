@@ -13,21 +13,17 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class Styles_StyleSheet {
 
   public static Style getRef_link_role(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-        this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    return style;
   }
 
   public static Style getOperationParameter(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    return style;
   }
 
 }

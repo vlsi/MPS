@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,9 +27,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1993_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_1993_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_1993_1(context, node));
     return editorCell;
   }
@@ -40,9 +36,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline1993_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1993_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_1993_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -51,8 +44,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_1993_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -70,9 +61,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_1993_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_1993_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline1993_0 extends AbstractCellProvider {
@@ -94,9 +82,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1993_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_1993_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -106,7 +91,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_1993_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -122,17 +106,10 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_1993_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
-    }
-
-    private static void setupLabel_Property_1993_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

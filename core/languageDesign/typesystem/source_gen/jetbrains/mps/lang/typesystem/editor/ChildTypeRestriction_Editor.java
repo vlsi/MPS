@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -31,9 +30,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4762_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4762_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4762_0(context, node, "typeof"));
     editorCell.addEditorCell(this.createConstant_4762_1(context, node, "("));
     editorCell.addEditorCell(this.createConstant_4762_4(context, node, "this"));
@@ -50,7 +46,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_0(editorCell, node, context);
-    setupLabel_Constant_4762_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,7 +53,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_1(editorCell, node, context);
-    setupLabel_Constant_4762_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -66,7 +60,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_2(editorCell, node, context);
-    setupLabel_Constant_4762_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +67,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_3(editorCell, node, context);
-    setupLabel_Constant_4762_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,7 +74,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_4(editorCell, node, context);
-    setupLabel_Constant_4762_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -90,7 +81,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4762_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4762_5(editorCell, node, context);
-    setupLabel_Constant_4762_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -100,9 +90,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4762_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4762_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -111,8 +98,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("restrictionKind");
     provider.setNoTargetText("<no restrictionKind>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_4762_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -129,9 +114,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4762_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4762_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -140,8 +122,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_4762_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -158,9 +138,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ChildTypeRestriction_Editor._Inline4762_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4762_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_4762_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -169,8 +146,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("childLinkDeclaration");
     provider.setNoTargetText("<no childLinkDeclaration>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_4762_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -187,9 +162,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4762_2(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4762_2((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -198,8 +170,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_4762_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -244,12 +214,8 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_4762_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_restrictionKind");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
   }
 
@@ -267,36 +233,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_4762_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_4762_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4762_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4762_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4762_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4762_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_4762_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_4762_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_4762_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4762_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_4762_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline4762_0 extends AbstractCellProvider {
@@ -318,9 +254,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4762_1(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_4762_1((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -330,7 +263,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_4762_2_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -346,9 +278,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_4762_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_role");
       Styles_StyleSheet.getRef_link_role(editorCell).apply(editorCell);
-    }
-
-    private static void setupLabel_Property_4762_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

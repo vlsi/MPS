@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -25,9 +24,6 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_5321_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_5321_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_5321_0(context, node, "\\u"));
     editorCell.addEditorCell(this.createProperty_5321_1(context, node));
     return editorCell;
@@ -36,7 +32,6 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_5321_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5321_0(editorCell, node, context);
-    setupLabel_Constant_5321_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,9 +41,6 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_5321_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_5321_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -57,8 +49,6 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("code");
     provider.setNoTargetText("<no code>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_5321_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,19 +72,9 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_5321_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_code");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
     }
-  }
-
-  private static void setupLabel_Constant_5321_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_5321_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

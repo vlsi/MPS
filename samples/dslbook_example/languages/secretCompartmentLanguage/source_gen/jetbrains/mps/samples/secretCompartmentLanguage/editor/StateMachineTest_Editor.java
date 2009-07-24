@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,9 +36,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1076_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_1076_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createCollection_1076_1(context, node));
     editorCell.addEditorCell(this.createConstant_1076_1(context, node, ""));
     editorCell.addEditorCell(this.createRefNodeList_1076_0(context, node));
@@ -49,9 +45,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1076_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_1076_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_1076_1(context, node));
     editorCell.addEditorCell(this.createConstant_1076_0(context, node, "State Machine Test"));
     return editorCell;
@@ -60,7 +53,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1076_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1076_0(editorCell, node, context);
-    setupLabel_Constant_1076_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +60,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1076_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1076_1(editorCell, node, context);
-    setupLabel_Constant_1076_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -79,9 +70,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1076_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_1076_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1076_0.getElementRole());
     return editorCell;
   }
@@ -91,9 +79,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new StateMachineTest_Editor._Inline1076_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1076_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_1076_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -102,8 +87,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("stateMachine");
     provider.setNoTargetText("<no stateMachine>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_1076_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -123,12 +106,8 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1076_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1076_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -145,18 +124,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_1076_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_testMethod");
-  }
-
-  private static void setupLabel_Constant_1076_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_1076_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1076_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_1076_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline1076_0 extends AbstractCellProvider {
@@ -178,9 +145,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1076_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_1076_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -190,7 +154,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
       provider.setRole("stateMachineName");
       provider.setNoTargetText("<no stateMachineName>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_1076_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -205,9 +168,6 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_1076_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_stateMachineName");
-    }
-
-    private static void setupLabel_Property_1076_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

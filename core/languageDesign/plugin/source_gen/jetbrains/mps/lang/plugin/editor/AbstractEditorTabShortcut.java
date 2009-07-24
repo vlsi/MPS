@@ -15,7 +15,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -42,9 +41,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   public EditorCell createCollection_7612_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_7612_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7612_0(context, node, "shortcut char:"));
     editorCell.addEditorCell(this.createProperty_7612_1(context, node));
     if (renderingCondition7612_0(node, context, context.getOperationContext().getScope())) {
@@ -56,7 +52,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   public EditorCell createConstant_7612_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7612_0(editorCell, node, context);
-    setupLabel_Constant_7612_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -77,7 +72,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_7612_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_7612_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -86,9 +80,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_7612_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_7612_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -97,7 +88,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("shortcutChar");
     provider.setNoTargetText("<no shortcut>");
-    provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(true);
     EditorCell cellWithRole = this.createProperty_7612_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
@@ -114,12 +104,8 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   private static void setupBasic_Collection_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7612_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -134,15 +120,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   private static void setupBasic_ReadOnlyModelAccessor_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_7612_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_7612_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_7612_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_7612_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {

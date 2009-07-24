@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -28,9 +27,6 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8048_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8048_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefCell_8048_1(context, node));
     return editorCell;
   }
@@ -40,9 +36,6 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new NodeAttributeAccessQualifier_Editor._Inline8048_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_8048_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_8048_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -51,8 +44,6 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("annotationLink");
     provider.setNoTargetText("<no annotationLink>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_8048_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -67,20 +58,13 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_8048_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
   }
 
   private static void setupBasic_Collection_8048_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_8048_0");
-  }
-
-  private static void setupLabel_RefCell_8048_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class _Inline8048_0 extends AbstractCellProvider {
@@ -102,9 +86,6 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_8048_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_8048_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -114,7 +95,6 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       provider.setRole("role");
       provider.setNoTargetText("<no annotation link>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_8048_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -130,16 +110,9 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_8048_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_role");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       }
-    }
-
-    private static void setupLabel_Property_8048_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

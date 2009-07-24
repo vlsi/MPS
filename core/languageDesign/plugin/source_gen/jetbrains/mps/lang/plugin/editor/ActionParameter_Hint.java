@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 
 public class ActionParameter_Hint extends AbstractCellProvider {
@@ -41,9 +40,6 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   public EditorCell createCollection_8189_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_8189_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(context, node));
     editorCell.addEditorCell(this.createConstant_8189_0(context, node, ""));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_1(context, node));
@@ -53,9 +49,6 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   public EditorCell createCollection_8189_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_8189_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition8189_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8189_0(context, node));
     }
@@ -65,7 +58,6 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   public EditorCell createConstant_8189_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8189_0(editorCell, node, context);
-    setupLabel_Constant_8189_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -105,7 +97,6 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_8189_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_8189_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -144,7 +135,6 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_8189_1(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_8189_1(editorCell, node, context);
     return editorCell;
   }
 
@@ -156,58 +146,33 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   private static void setupBasic_ReadOnlyModelAccessor_8189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_8189_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Constant_8189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8189_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_ReadOnlyModelAccessor_8189_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_8189_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_8189_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_8189_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_8189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8189_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_8189_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition8189_0(SNode node, EditorContext editorContext, IScope scope) {

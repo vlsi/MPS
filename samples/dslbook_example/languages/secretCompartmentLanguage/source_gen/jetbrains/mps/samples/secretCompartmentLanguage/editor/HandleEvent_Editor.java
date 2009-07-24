@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -25,9 +24,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4330_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_4330_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_4330_0(context, node, "handle"));
     editorCell.addEditorCell(this.createRefCell_4330_1(context, node));
     return editorCell;
@@ -36,7 +32,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4330_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4330_0(editorCell, node, context);
-    setupLabel_Constant_4330_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,9 +41,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new HandleEvent_Editor._Inline4330_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4330_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_4330_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -57,8 +49,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("event");
     provider.setNoTargetText("<no event>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_4330_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -82,12 +72,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_4330_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_4330_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_4330_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline4330_0 extends AbstractCellProvider {
 
     public _Inline4330_0() {
@@ -107,9 +91,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4330_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_4330_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -119,7 +100,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
       provider.setRole("eventName");
       provider.setNoTargetText("<no eventName>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_4330_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
@@ -134,9 +114,6 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_4330_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_eventName");
-    }
-
-    private static void setupLabel_Property_4330_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

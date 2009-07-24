@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
@@ -34,7 +33,6 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4604_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4604_0(editorCell, node, context);
-    setupLabel_Constant_4604_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -45,9 +43,6 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_Component_4604_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4604_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

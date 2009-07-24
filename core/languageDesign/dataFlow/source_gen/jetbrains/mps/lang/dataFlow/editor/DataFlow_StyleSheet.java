@@ -10,36 +10,28 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class DataFlow_StyleSheet {
 
   public static Style getInstruction(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    return style;
   }
 
   public static Style getPosition(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    return style;
   }
 
   public static Style getMayBeUnreachable(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.MATCHING_LABEL, "MayBeUnreachable");
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.MATCHING_LABEL, "MayBeUnreachable");
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    return style;
   }
 
   public static Style getLabel(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
 }

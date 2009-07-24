@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -53,7 +52,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   public EditorCell createError_3900_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose operaion>");
     setupBasic_Error_3900_0(editorCell, node, context);
-    setupLabel_Error_3900_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -62,9 +60,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_3900_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_3900_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ReplaceableAlias_Comp.ReplaceableAlias_Comp_replaceWith_SNodeOperation_cellMenu0()}));
     return editorCell;
@@ -74,8 +69,6 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_3900_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -94,23 +87,13 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   private static void setupBasic_ConceptProperty_3900_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
   }
 
   private static void setupBasic_Error_3900_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_3900_0");
-  }
-
-  private static void setupLabel_ConceptProperty_3900_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Error_3900_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition3900_0(SNode node, EditorContext editorContext, IScope scope) {
