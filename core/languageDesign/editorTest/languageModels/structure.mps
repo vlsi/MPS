@@ -168,5 +168,67 @@
     <link role="source" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
     <link role="target" targetNodeId="7658393498702771296" resolveInfo="ReferenceAnnotataion" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5110219550149792114">
+    <property name="name" value="SideTranformWrapper" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5110219550150577779">
+      <property name="value" value="side-transform-wrapper" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5110219550149792118">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="child" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5110219550149792121">
+      <property name="name" value="rightOpen" />
+      <link role="dataType" targetNodeId="2v.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5110219550150263050">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5110219550150263047">
+    <property name="name" value="IntegerLiteral" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="5110219550150263048">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="2v.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5110219550150263049">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5110219550150320602">
+    <property name="name" value="BinaryExpression" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5110219550150320604">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="left" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5110219550150320605">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="right" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5110219550150320603">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5110219550150400726">
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5110219550150492628">
+    <property name="name" value="PlusExpression" />
+    <link role="extends" targetNodeId="5110219550150320602" resolveInfo="BinaryExpression" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5110219550150492629">
+      <property name="value" value="+" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

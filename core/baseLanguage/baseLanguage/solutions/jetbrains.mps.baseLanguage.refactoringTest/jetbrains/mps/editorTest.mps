@@ -3690,5 +3690,43 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="5110219550150557757">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="ConflictingRigthTransform" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="5110219550150577774">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper" id="5110219550150577780">
+        <node role="child" type="jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral" id="5110219550150610466">
+          <property name="value" value="12" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="5110219550150610470">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="2" />
+            <property name="selectionEnd" value="2" />
+            <property name="cellId" value="property_value" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="5110219550150610467">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper" id="5110219550150610468">
+        <property name="rightOpen" value="true" />
+        <node role="child" type="jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral" id="5110219550150610469">
+          <property name="value" value="12" />
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="5110219550150610471">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="2" />
+            <property name="selectionEnd" value="2" />
+            <property name="cellId" value="property_value" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5110219550150653363">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="5110219550150653364">
+        <property name="keys" value="+" />
+      </node>
+    </node>
+  </node>
 </model>
 
