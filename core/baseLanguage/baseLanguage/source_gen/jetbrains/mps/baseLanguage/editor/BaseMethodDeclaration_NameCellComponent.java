@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -53,9 +52,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_4313_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_4313_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu0()}));
     return editorCell;
@@ -113,9 +109,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Property_4313_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean _StyleParameter_QueryFunction_1223655957671(SNode node, EditorContext editorContext) {

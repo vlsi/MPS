@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -23,9 +22,6 @@ public class ValueParameter_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_0612_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_0612_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -50,9 +46,6 @@ public class ValueParameter_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptProperty_0612_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
-  }
-
-  private static void setupLabel_ConceptProperty_0612_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

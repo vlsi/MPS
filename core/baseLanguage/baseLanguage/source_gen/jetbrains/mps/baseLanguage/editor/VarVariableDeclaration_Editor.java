@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -35,7 +34,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2869_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2869_2(editorCell, node, context);
-    setupLabel_Constant_2869_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -43,7 +41,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2869_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2869_3(editorCell, node, context);
-    setupLabel_Constant_2869_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,7 +48,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_2869_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2869_4(editorCell, node, context);
-    setupLabel_Constant_2869_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -61,9 +57,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_2869_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_2869_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -90,9 +83,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_2869_3(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_2869_3((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -138,21 +128,6 @@ public class VarVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_2869_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2869_4");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_2869_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_2869_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2869_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_2869_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2869_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -68,7 +67,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_0(editorCell, node, context);
-    setupLabel_Constant_1261_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +74,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_1(editorCell, node, context);
-    setupLabel_Constant_1261_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,7 +81,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_2(editorCell, node, context);
-    setupLabel_Constant_1261_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -92,7 +88,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_3(editorCell, node, context);
-    setupLabel_Constant_1261_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -100,7 +95,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_4(editorCell, node, context);
-    setupLabel_Constant_1261_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -108,7 +102,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_5(editorCell, node, context);
-    setupLabel_Constant_1261_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -116,7 +109,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_6(editorCell, node, context);
-    setupLabel_Constant_1261_6(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -124,7 +116,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_7(editorCell, node, context);
-    setupLabel_Constant_1261_7(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -132,7 +123,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_8(editorCell, node, context);
-    setupLabel_Constant_1261_8(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -140,7 +130,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1261_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1261_9(editorCell, node, context);
-    setupLabel_Constant_1261_9(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -150,9 +139,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_1261_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_1261_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -179,9 +165,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_1261_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_1261_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -208,9 +191,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_1261_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1261_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -237,9 +217,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_1261_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_1261_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -409,48 +386,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1261_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1261_9");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_1261_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_1261_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_1261_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_1261_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_6(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_7(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_8(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_1261_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1261_9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition1261_0(SNode node, EditorContext editorContext, IScope scope) {

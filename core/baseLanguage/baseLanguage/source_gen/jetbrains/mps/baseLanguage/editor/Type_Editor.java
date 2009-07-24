@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -38,7 +37,6 @@ public class Type_Editor extends DefaultNodeEditor {
   public EditorCell createError_9010_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
     setupBasic_Error_9010_0(editorCell, node, context);
-    setupLabel_Error_9010_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -47,9 +45,6 @@ public class Type_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_9010_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_9010_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -82,12 +77,6 @@ public class Type_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConceptProperty_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Error_9010_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ConceptProperty_9010_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {

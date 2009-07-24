@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -70,7 +69,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9368_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9368_0(editorCell, node, context);
-    setupLabel_Constant_9368_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +76,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9368_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9368_1(editorCell, node, context);
-    setupLabel_Constant_9368_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -98,9 +95,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline9368_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_9368_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_9368_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -186,18 +180,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_RefCell_9368_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9368_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_9368_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9368_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
@@ -221,9 +203,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_9368_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_9368_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -257,9 +236,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Property_9368_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

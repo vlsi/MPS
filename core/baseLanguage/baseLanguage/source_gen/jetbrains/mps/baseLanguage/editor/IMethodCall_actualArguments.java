@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -54,7 +53,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   public EditorCell createConstant_4497_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4497_0(editorCell, node, context);
-    setupLabel_Constant_4497_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,7 +60,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   public EditorCell createConstant_4497_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4497_2(editorCell, node, context);
-    setupLabel_Constant_4497_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -126,15 +123,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     if (renderingCondition4497_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
-  }
-
-  private static void setupLabel_Constant_4497_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_4497_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4497_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition4497_0(SNode node, EditorContext editorContext, IScope scope) {
@@ -204,7 +192,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     public EditorCell createConstant_4497_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_4497_1(editorCell, node, context);
-      setupLabel_Constant_4497_1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -221,9 +208,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Constant_4497_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

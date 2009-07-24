@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -49,7 +48,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1596_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1596_0(editorCell, node, context);
-    setupLabel_Constant_1596_0(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
     return editorCell;
@@ -58,7 +56,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1596_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1596_1(editorCell, node, context);
-    setupLabel_Constant_1596_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -66,7 +63,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1596_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1596_2(editorCell, node, context);
-    setupLabel_Constant_1596_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +70,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1596_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1596_3(editorCell, node, context);
-    setupLabel_Constant_1596_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -82,7 +77,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1596_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1596_4(editorCell, node, context);
-    setupLabel_Constant_1596_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -92,9 +86,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_1596_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_1596_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -121,9 +112,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_1596_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_1596_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -221,27 +209,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       inlineStyle.apply(editorCell);
     }
     IfStatement_LastBrace.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_Constant_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1596_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1596_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1596_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_1596_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_1596_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_1596_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

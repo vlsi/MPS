@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -35,9 +34,6 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new PropertyReference_Editor._Inline1318_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1318_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_1318_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -75,9 +71,6 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1318_0");
   }
 
-  private static void setupLabel_RefCell_1318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline1318_0 extends AbstractCellProvider {
 
     public _Inline1318_0() {
@@ -97,9 +90,6 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1318_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_1318_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -125,9 +115,6 @@ public class PropertyReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_1318_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_propertyName");
       BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
-    }
-
-    private static void setupLabel_Property_1318_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

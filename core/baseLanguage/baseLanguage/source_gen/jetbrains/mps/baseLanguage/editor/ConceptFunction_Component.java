@@ -18,7 +18,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -53,7 +52,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   public EditorCell createConstant_8338_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8338_0(editorCell, node, context);
-    setupLabel_Constant_8338_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -61,7 +59,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   public EditorCell createConstant_8338_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8338_1(editorCell, node, context);
-    setupLabel_Constant_8338_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,7 +104,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_8338_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_8338_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -116,9 +112,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_8338_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_8338_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -195,18 +188,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Constant_8338_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_8338_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8338_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_8338_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

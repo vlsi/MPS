@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -37,9 +36,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline8575_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_8575_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_8575_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -77,9 +73,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8575_0");
   }
 
-  private static void setupLabel_RefCell_8575_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline8575_0 extends AbstractCellProvider {
 
     public _Inline8575_0() {
@@ -99,9 +92,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_8575_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_8575_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -135,9 +125,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Property_8575_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

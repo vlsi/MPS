@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -43,7 +42,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8960_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8960_0(editorCell, node, context);
-    setupLabel_Constant_8960_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -51,7 +49,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8960_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8960_2(editorCell, node, context);
-    setupLabel_Constant_8960_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -59,7 +56,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8960_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8960_3(editorCell, node, context);
-    setupLabel_Constant_8960_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -67,7 +63,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8960_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8960_4(editorCell, node, context);
-    setupLabel_Constant_8960_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -109,21 +104,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_8960_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8960_4");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupLabel_Constant_8960_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_8960_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8960_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8960_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8960_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
@@ -182,7 +162,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_8960_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_8960_1(editorCell, node, context);
-      setupLabel_Constant_8960_1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -199,9 +178,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Constant_8960_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

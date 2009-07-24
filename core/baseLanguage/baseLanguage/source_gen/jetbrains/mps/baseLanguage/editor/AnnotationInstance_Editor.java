@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -62,7 +61,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4312_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4312_0(editorCell, node, context);
-    setupLabel_Constant_4312_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -70,7 +68,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4312_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4312_2(editorCell, node, context);
-    setupLabel_Constant_4312_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,7 +75,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4312_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4312_3(editorCell, node, context);
-    setupLabel_Constant_4312_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -98,9 +94,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new AnnotationInstance_Editor._Inline4312_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4312_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_4312_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -185,21 +178,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_Constant_4312_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_4312_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_4312_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4312_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4312_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static boolean renderingCondition4312_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }
@@ -223,9 +201,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4312_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_4312_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -251,9 +226,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_4312_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
-    }
-
-    private static void setupLabel_Property_4312_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }
@@ -313,7 +285,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_4312_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_4312_1(editorCell, node, context);
-      setupLabel_Constant_4312_1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -321,9 +292,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_4312_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4312_1");
-    }
-
-    private static void setupLabel_Constant_4312_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

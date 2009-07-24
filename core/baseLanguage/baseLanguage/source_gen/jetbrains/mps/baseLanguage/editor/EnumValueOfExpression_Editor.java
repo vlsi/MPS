@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -46,7 +45,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4685_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4685_0(editorCell, node, context);
-    setupLabel_Constant_4685_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +52,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4685_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4685_1(editorCell, node, context);
-    setupLabel_Constant_4685_1(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu0()}));
     return editorCell;
@@ -63,7 +60,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4685_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4685_2(editorCell, node, context);
-    setupLabel_Constant_4685_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,7 +67,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_4685_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_4685_3(editorCell, node, context);
-    setupLabel_Constant_4685_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -81,9 +76,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline4685_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4685_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_4685_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -110,9 +102,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_4685_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_4685_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -165,24 +154,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNode_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_RefCell_4685_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4685_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4685_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4685_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_4685_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_4685_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline4685_0 extends AbstractCellProvider {
 
     public _Inline4685_0() {
@@ -202,9 +173,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4685_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_4685_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -229,9 +197,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_4685_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -123,7 +122,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_0(editorCell, node, context);
-    setupLabel_Constant_6732_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -131,7 +129,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_1(editorCell, node, context);
-    setupLabel_Constant_6732_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -139,7 +136,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_2(editorCell, node, context);
-    setupLabel_Constant_6732_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -147,7 +143,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_3(editorCell, node, context);
-    setupLabel_Constant_6732_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -155,7 +150,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_4(editorCell, node, context);
-    setupLabel_Constant_6732_4(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -163,7 +157,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_6732_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_6732_5(editorCell, node, context);
-    setupLabel_Constant_6732_5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -193,9 +186,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6732_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6732_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -222,9 +212,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6732_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_6732_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -251,9 +238,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6732_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_6732_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -403,39 +387,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Property_6732_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_isVolatile");
-  }
-
-  private static void setupLabel_RefNode_6732_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_6732_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_6732_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_6732_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_4(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_6732_5(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_6732_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition6732_0(SNode node, EditorContext editorContext, IScope scope) {

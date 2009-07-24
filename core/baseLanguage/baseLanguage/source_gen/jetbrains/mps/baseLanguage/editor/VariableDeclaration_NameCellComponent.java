@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -43,9 +42,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_7633_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_7633_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu0()}));
     return editorCell;
@@ -80,9 +76,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Property_7633_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class VariableDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

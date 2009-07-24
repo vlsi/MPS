@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -41,7 +40,6 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8106_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8106_0(editorCell, node, context);
-    setupLabel_Constant_8106_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,7 +47,6 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_8106_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_8106_1(editorCell, node, context);
-    setupLabel_Constant_8106_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -97,15 +94,6 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_8106_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_item");
-  }
-
-  private static void setupLabel_Constant_8106_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_8106_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_8106_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class itemListHandler_8106_0 extends RefNodeListHandler {

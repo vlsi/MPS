@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -46,7 +45,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0362_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0362_0(editorCell, node, context);
-    setupLabel_Constant_0362_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -56,9 +54,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0362_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_0362_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu0()}));
     return editorCell;
@@ -86,9 +81,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0362_1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_0362_1((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -129,15 +121,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_0362_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Constant_0362_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_0362_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefCell_0362_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0362_0 extends AbstractCellProvider {
 
     public _Inline0362_0() {
@@ -157,9 +140,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0362_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_0362_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -195,9 +175,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       }
     }
 
-    private static void setupLabel_Property_0362_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    }
-
 }
   public static class _Inline0362_1 extends AbstractCellProvider {
 
@@ -218,9 +195,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0362_1(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_0362_1((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -245,9 +219,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_0362_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name_1");
-    }
-
-    private static void setupLabel_Property_0362_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

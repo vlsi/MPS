@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -36,7 +35,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3810_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3810_0(editorCell, node, context);
-    setupLabel_Constant_3810_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -44,7 +42,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3810_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3810_1(editorCell, node, context);
-    setupLabel_Constant_3810_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,7 +49,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_3810_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_3810_2(editorCell, node, context);
-    setupLabel_Constant_3810_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,9 +58,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_3810_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_3810_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -125,18 +118,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
       inlineStyle.apply(editorCell);
     }
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_Constant_3810_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3810_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_3810_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_3810_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class Number_Editor extends DefaultNodeEditor {
 
@@ -21,7 +20,6 @@ public class Number_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_0029_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0029_0(editorCell, node, context);
-    setupLabel_Constant_0029_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -37,9 +35,6 @@ public class Number_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Constant_0029_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 }

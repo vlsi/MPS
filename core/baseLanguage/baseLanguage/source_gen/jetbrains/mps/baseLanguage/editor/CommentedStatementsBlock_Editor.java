@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -41,7 +40,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9553_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9553_0(editorCell, node, context);
-    setupLabel_Constant_9553_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,7 +47,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_9553_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_9553_1(editorCell, node, context);
-    setupLabel_Constant_9553_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -107,15 +104,6 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Constant_9553_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_9553_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_9553_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class statementListHandler_9553_0 extends RefNodeListHandler {

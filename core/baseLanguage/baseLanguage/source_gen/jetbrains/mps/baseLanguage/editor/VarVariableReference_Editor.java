@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -33,9 +32,6 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new VarVariableReference_Editor._Inline6452_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6452_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefCell_6452_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -65,9 +61,6 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefCell_6452_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_RefCell_6452_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline6452_0 extends AbstractCellProvider {
 
     public _Inline6452_0() {
@@ -87,9 +80,6 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6452_0(editorCell, node, context);
-      if (editorCell instanceof EditorCell_Label) {
-        setupLabel_Property_6452_0((EditorCell_Label)editorCell, node, context);
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -114,9 +104,6 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_6452_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
-    }
-
-    private static void setupLabel_Property_6452_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

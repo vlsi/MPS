@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -52,7 +51,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createConstant_0235_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0235_0(editorCell, node, context);
-    setupLabel_Constant_0235_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -60,7 +58,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createConstant_0235_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0235_1(editorCell, node, context);
-    setupLabel_Constant_0235_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -68,7 +65,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createConstant_0235_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0235_2(editorCell, node, context);
-    setupLabel_Constant_0235_2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -76,7 +72,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createConstant_0235_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_0235_3(editorCell, node, context);
-    setupLabel_Constant_0235_3(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -151,18 +146,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
       };
       inlineStyle.apply(editorCell);
     }
-  }
-
-  private static void setupLabel_Constant_0235_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0235_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0235_2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_0235_3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition0235_0(SNode node, EditorContext editorContext, IScope scope) {

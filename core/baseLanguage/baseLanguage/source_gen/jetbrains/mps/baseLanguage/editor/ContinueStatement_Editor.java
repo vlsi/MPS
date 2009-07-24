@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -56,7 +55,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_5980_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5980_0(editorCell, node, context);
-    setupLabel_Constant_5980_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,7 +62,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_5980_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_5980_1(editorCell, node, context);
-    setupLabel_Constant_5980_1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,9 +71,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_5980_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_5980_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ContinueStatement_Editor.ContinueStatement_generic_cellMenu0()}));
     return editorCell;
@@ -147,15 +141,6 @@ public class ContinueStatement_Editor extends DefaultNodeEditor {
       inlineStyle.apply(editorCell);
     }
     ContinueStatement_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupLabel_Constant_5980_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_5980_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_5980_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition5980_0(SNode node, EditorContext editorContext, IScope scope) {

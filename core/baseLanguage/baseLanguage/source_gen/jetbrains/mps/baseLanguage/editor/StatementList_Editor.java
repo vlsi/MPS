@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -105,12 +104,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static void setupLabel_RefNodeList_6577_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_6577_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   public static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
@@ -168,7 +161,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_6577_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_6577_0(editorCell, node, context);
-      setupLabel_Constant_6577_0(editorCell, node, context);
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }
@@ -187,9 +179,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Constant_6577_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }
@@ -242,7 +231,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_6577_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_6577_1(editorCell, node, context);
-      setupLabel_Constant_6577_1(editorCell, node, context);
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }
@@ -261,9 +249,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
         };
         inlineStyle.apply(editorCell);
       }
-    }
-
-    private static void setupLabel_Constant_6577_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }
