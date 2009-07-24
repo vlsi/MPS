@@ -47,8 +47,6 @@ public class LocalVariableDeclarationStatement_Editor extends DefaultNodeEditor 
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("localVariableDeclaration");
     provider.setNoTargetText("<no localVariableDeclaration>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_2192_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

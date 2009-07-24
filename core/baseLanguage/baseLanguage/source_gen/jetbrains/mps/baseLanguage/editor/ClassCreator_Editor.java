@@ -103,8 +103,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("constructorDeclaration");
     provider.setNoTargetText("<no constructor declaration>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefCell_9368_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -212,7 +210,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       provider.setRole("resolveInfo");
       provider.setNoTargetText("<no resolveInfo>");
       provider.setReadOnly(true);
-      provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createProperty_9368_0_internal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

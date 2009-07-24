@@ -246,8 +246,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_5292_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -273,7 +271,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     provider.setRole("name");
     provider.setNoTargetText("<constructor>");
     provider.setReadOnly(true);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_5292_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
