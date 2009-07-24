@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -31,8 +33,6 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.execution.configurations.RunConfiguration;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.ide.DataManager;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -79,7 +79,11 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             };
 
             ClassRunner classRunner = new ClassRunner(runComponent);
-            classRunner.run(DefaultJavaApplication_Configuration.this.getStateObject().myNode.getNode());
+            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
+
+            if (node != null) {
+              classRunner.run(node);
+            }
           }
         });
         final JComponent finalConsoleComponent = consoleComponent.value;
@@ -141,10 +145,14 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
       protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {
         final SNode node = this.myComponent.getNode();
+        if (node == null) {
+          return;
+        }
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
-            c.getStateObject().myNode = new SNodePointer(node);
+            c.getStateObject().myNodeId = node.getId();
+            c.getStateObject().myModelId = node.getModel().getModelDescriptor().getSModelReference().toString();
           }
         });
       }
@@ -179,7 +187,8 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
   public static class MyState {
 
-    public SNodePointer myNode;
+    public String myNodeId;
+    public String myModelId;
 
     public MyState() {
     }
