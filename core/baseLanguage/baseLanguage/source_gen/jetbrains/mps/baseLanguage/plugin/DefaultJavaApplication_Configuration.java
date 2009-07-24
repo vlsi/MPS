@@ -7,6 +7,8 @@ import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -24,8 +26,8 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import com.intellij.execution.process.DefaultJavaProcessHandler;
+import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -50,6 +52,12 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     StringBuilder error = new StringBuilder();
+    {
+      SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
+      if (node == null) {
+        error.append("node does not exist anymore").append("\n");
+      }
+    }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
     }
@@ -63,7 +71,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         final Wrappers._T<JComponent> consoleComponent = new Wrappers._T<JComponent>();
         final Wrappers._T<Runnable> consoleDispose = new Wrappers._T<Runnable>(null);
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
-        ProcessHandler handler = null;
+        final Wrappers._T<ProcessHandler> handler = new Wrappers._T<ProcessHandler>(null);
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
@@ -81,14 +89,14 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             ClassRunner classRunner = new ClassRunner(runComponent);
             SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
 
-            if (node != null) {
-              classRunner.run(node);
-            }
+            assert node != null : "configuration is executed for null node";
+            Process process = classRunner.run(node);
+            handler.value = new DefaultJavaProcessHandler(process, "", Charset.defaultCharset());
           }
         });
         final JComponent finalConsoleComponent = consoleComponent.value;
         final Runnable finalConsoleDispose = consoleDispose.value;
-        final ProcessHandler finalHandler = handler;
+        final ProcessHandler finalHandler = handler.value;
         return new ExecutionResult() {
 
           public ExecutionConsole getExecutionConsole() {
