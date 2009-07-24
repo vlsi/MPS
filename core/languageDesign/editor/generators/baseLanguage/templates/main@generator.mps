@@ -3391,19 +3391,19 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995333893">
                 <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.setGridLayout(boolean):void" resolveInfo="setGridLayout" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1097661732041">
-                  <property name="value" value="false" />
-                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1097661732042">
-                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1183061679407">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183061679408">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183061683097">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227906914">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183061683098" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1239876117563">
-                              <link role="baseMethodDeclaration" targetNodeId="62.1239873867713" resolveInfo="isVerticalGrid" />
-                            </node>
-                          </node>
-                        </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7533883740976421320">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="7533883740976384391">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="7533883740976384392">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7533883740976384393">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7533883740976384394">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7533883740976384395">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7533883740976384396" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7533883740976384397">
+                        <link role="baseMethodDeclaration" targetNodeId="62.1239873867713" resolveInfo="isVerticalGrid" />
                       </node>
                     </node>
                   </node>
@@ -3418,18 +3418,19 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995318918">
                 <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.setUsesBraces(boolean):void" resolveInfo="setUsesBraces" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1139418591958">
-                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1139418632116">
-                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1183061696816">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183061696817">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183061700304">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227887706">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183061700305" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1183061705290">
-                              <link role="property" targetNodeId="38.1140524450556" />
-                            </node>
-                          </node>
-                        </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7533883740976421329">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="7533883740976421322">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="7533883740976421323">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7533883740976421324">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7533883740976421325">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7533883740976421326">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7533883740976421327" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7533883740976421328">
+                        <link role="property" targetNodeId="38.1140524450556" resolveInfo="usesBraces" />
                       </node>
                     </node>
                   </node>
@@ -3444,18 +3445,19 @@
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995329545">
                 <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Collection.setCanBeFolded(boolean):void" resolveInfo="setCanBeFolded" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1160596108363">
-                  <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1160596112521">
-                    <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1183061718971">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183061718972">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183061718973">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227926541">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1183061718976" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1183061721642">
-                              <link role="property" targetNodeId="38.1160590307797" />
-                            </node>
-                          </node>
-                        </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7533883740976421334">
+                  <property name="value" value="true" />
+                </node>
+              </node>
+            </node>
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="7533883740976421331">
+              <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="7533883740976421332">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7533883740976421333">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7533883740976421335">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7533883740976421336">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7533883740976421337" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7533883740976421338">
+                        <link role="property" targetNodeId="38.1160590307797" resolveInfo="usesFolding" />
                       </node>
                     </node>
                   </node>
