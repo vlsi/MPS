@@ -159,10 +159,6 @@ public class QueriesGenerated {
     return QueriesUtil.getUnicName(EditorCellModel_Behavior.call_createCellId_1216737839993(_context.getNode(), _context), SNodeOperations.getContainingRoot(_context.getNode()), _context);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1182981045553(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("setupLabel_" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(_context.getNode()) + "_", _context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1182981596975(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "nullText");
   }
@@ -708,10 +704,6 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_1182981282622(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-  }
-
   public static Object referenceMacro_GetReferent_1182994006521(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode condition = SLinkOperations.getTarget(_context.getNode(), "alternationCondition", true);
     return _context.getOutputNodeByInputNodeAndMappingLabel(condition, "query_method");
@@ -748,10 +740,6 @@ public class QueriesGenerated {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_1182996179538(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-  }
-
   public static Object referenceMacro_GetReferent_1182996256834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
@@ -768,10 +756,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1183057724880(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic");
-  }
-
-  public static Object referenceMacro_GetReferent_1183057724900(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
   }
 
   public static Object referenceMacro_GetReferent_1183058085351(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -797,10 +781,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1183065912914(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-  }
-
-  public static Object referenceMacro_GetReferent_1183066184834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1183066468825(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -969,10 +949,6 @@ public class QueriesGenerated {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_Basic"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_1216382671578(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-  }
-
   public static Object referenceMacro_GetReferent_1216382671655(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
@@ -1061,10 +1037,6 @@ public class QueriesGenerated {
     }
     // default
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_16().createNode(), "baseMethodDeclaration", false);
-  }
-
-  public static Object referenceMacro_GetReferent_1229564403929(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "cellSetupMethod_AbstractLabel");
   }
 
   public static Object referenceMacro_GetReferent_1229564403944(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1907,10 +1879,6 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186775237955(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
-  }
-
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186775459704(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
   }
 
