@@ -78,12 +78,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   private static void setupBasic_Collection_4497_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4497_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -91,12 +87,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     editorCell.setCellId("Constant_4497_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
@@ -111,14 +103,10 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     editorCell.setCellId("Constant_4497_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.EDITABLE, false);
     }
     if (renderingCondition4497_0(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -200,13 +188,9 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     private static void setupBasic_Constant_4497_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4497_1");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
     }
 

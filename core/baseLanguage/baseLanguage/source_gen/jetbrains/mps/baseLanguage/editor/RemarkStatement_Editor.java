@@ -111,13 +111,9 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_6285_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6285_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
@@ -128,26 +124,18 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_6285_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
   }
 
   private static void setupBasic_Property_6285_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
   }
 

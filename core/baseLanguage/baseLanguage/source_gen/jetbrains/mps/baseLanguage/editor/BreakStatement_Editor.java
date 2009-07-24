@@ -99,12 +99,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0420_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
   }
 
@@ -116,25 +112,17 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_0420_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_0420_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Property_0420_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_label");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.EDITABLE, true);
     }
     BreakStatement_Actions.setCellActions(editorCell, node, context);
   }

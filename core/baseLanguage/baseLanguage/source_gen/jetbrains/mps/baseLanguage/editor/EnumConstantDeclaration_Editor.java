@@ -100,13 +100,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_4713_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_name");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
   }
 
@@ -188,13 +184,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_4713_2(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4713_2");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
     }
 

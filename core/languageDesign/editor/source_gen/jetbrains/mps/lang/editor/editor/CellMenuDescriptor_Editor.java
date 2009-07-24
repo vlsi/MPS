@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -33,9 +32,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_1820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_1820_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_1820_0(context, node, "menu parts:"));
     editorCell.addEditorCell(this.createRefNodeList_1820_0(context, node));
     return editorCell;
@@ -44,7 +40,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_1820_0(editorCell, node, context);
-    setupLabel_Constant_1820_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,9 +50,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1820_0.createCells(context, new CellLayout_Vertical(), false);
     setupBasic_RefNodeList_1820_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1820_0.getElementRole());
     return editorCell;
   }
@@ -73,12 +65,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNodeList_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_cellMenuPart");
-  }
-
-  private static void setupLabel_Constant_1820_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNodeList_1820_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
@@ -130,7 +116,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     public EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       setupBasic_Constant_1820_1(editorCell, node, context);
-      setupLabel_Constant_1820_1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -139,18 +124,11 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_1820_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1820_1");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
-    }
-
-    private static void setupLabel_Constant_1820_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 }

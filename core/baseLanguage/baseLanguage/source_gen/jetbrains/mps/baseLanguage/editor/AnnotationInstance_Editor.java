@@ -121,36 +121,24 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4312_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4312_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
   private static void setupBasic_RefCell_4312_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
     }
   }
 
   private static void setupBasic_Collection_4312_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4312_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -167,12 +155,8 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4312_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 

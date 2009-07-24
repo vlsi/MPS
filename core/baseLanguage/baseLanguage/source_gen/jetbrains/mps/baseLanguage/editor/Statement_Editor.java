@@ -27,12 +27,8 @@ public class Statement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3869_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3869_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
     }
   }
 

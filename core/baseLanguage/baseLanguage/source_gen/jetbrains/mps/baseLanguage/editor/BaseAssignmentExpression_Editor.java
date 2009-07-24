@@ -110,35 +110,23 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1878_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1878_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
   }
 
   private static void setupBasic_RefNode_1878_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     AssignmentExpression_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RefNode_1878_1(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     AssignmentExpression_RightArgument_Actions.setCellActions(editorCell, node, context);
   }

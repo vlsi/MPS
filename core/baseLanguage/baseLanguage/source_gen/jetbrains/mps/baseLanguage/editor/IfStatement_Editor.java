@@ -215,12 +215,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1754_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1754_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -250,23 +246,19 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1754_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
-            public Boolean calculate(EditorCell cell) {
-              return IfStatement_Editor._StyleParameter_QueryFunction_1237573132288((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-          });
+        public Boolean calculate(EditorCell cell) {
+          return IfStatement_Editor._StyleParameter_QueryFunction_1237573132288((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
         }
-      };
-      inlineStyle.apply(editorCell);
+      });
     }
   }
 
@@ -274,13 +266,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1754_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
     IfStatement_LastBrace.setCellActions(editorCell, node, context);
   }
@@ -289,12 +277,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1754_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
     }
     IfStatement_elseDelete_action.setCellActions(editorCell, node, context);
   }
@@ -305,36 +289,32 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1754_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1754_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
-            public Boolean calculate(EditorCell cell) {
-              return IfStatement_Editor._StyleParameter_QueryFunction_1237575954793((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-          });
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
-
-            public Boolean calculate(EditorCell cell) {
-              return IfStatement_Editor._StyleParameter_QueryFunction_1237575954801((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-          });
+        public Boolean calculate(EditorCell cell) {
+          return IfStatement_Editor._StyleParameter_QueryFunction_1237575954793((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
         }
-      };
-      inlineStyle.apply(editorCell);
+      });
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
+
+        public Boolean calculate(EditorCell cell) {
+          return IfStatement_Editor._StyleParameter_QueryFunction_1237575954801((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
     }
   }
 
@@ -344,13 +324,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1754_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1754_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 

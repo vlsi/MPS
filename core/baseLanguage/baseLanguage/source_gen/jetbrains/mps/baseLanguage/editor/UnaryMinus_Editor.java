@@ -69,12 +69,8 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1189_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1189_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);

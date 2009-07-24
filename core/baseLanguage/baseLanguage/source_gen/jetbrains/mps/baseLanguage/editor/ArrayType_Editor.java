@@ -73,12 +73,8 @@ public class ArrayType_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1065_0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);

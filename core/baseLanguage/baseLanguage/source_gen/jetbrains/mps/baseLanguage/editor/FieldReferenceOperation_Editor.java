@@ -56,12 +56,8 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_0858_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
   }
 

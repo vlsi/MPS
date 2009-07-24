@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class _OpenTag extends AbstractCellProvider {
 
@@ -48,7 +47,6 @@ public class _OpenTag extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     setupBasic_ReadOnlyModelAccessor_4575_0(editorCell, node, context);
-    setupLabel_ReadOnlyModelAccessor_4575_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -57,28 +55,21 @@ public class _OpenTag extends AbstractCellProvider {
     editorCell.setCellId("ReadOnlyModelAccessor_4575_0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
-            public Color calculate(EditorCell cell) {
-              return _OpenTag._StyleParameter_QueryFunction_1226320982079((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-          });
-          this.set(StyleAttributes.EDITABLE, false);
+        public Color calculate(EditorCell cell) {
+          return _OpenTag._StyleParameter_QueryFunction_1226320982079((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
         }
-      };
-      inlineStyle.apply(editorCell);
+      });
+      style.set(StyleAttributes.EDITABLE, false);
     }
-  }
-
-  private static void setupLabel_ReadOnlyModelAccessor_4575_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static Color _StyleParameter_QueryFunction_1226320982079(SNode node, EditorContext editorContext) {

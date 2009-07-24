@@ -302,12 +302,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0938_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -320,24 +316,16 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0938_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
   private static void setupBasic_RefNode_0938_1(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -345,12 +333,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0938_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -361,12 +345,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0938_6");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -376,12 +356,8 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_0938_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_0938_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -393,13 +369,9 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0938_7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0938_7");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.EDITABLE, false);
     }
   }
 
@@ -410,37 +382,25 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0938_8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0938_8");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, false);
     }
   }
 
   private static void setupBasic_Constant_0938_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0938_9");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.EDITABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.EDITABLE, false);
     }
   }
 
   private static void setupBasic_Property_0938_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_label_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 

@@ -62,13 +62,9 @@ public class _Component_Visibility extends AbstractCellProvider {
 
   private static void setupBasic_RefNode_6659_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
   }
 

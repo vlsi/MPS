@@ -92,12 +92,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_2984_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
   }
 
@@ -108,12 +104,8 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_2984_1(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
   }
 

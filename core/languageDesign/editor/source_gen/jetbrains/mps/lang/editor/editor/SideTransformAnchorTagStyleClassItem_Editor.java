@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
@@ -27,9 +26,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   public EditorCell createCollection_2322_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_2322_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConceptProperty_2322_1(context, node));
     editorCell.addEditorCell(this.createConstant_2322_0(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_2322_1(context, node));
@@ -39,7 +35,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   public EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_2322_0(editorCell, node, context);
-    setupLabel_Constant_2322_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,9 +44,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_2322_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_ConceptProperty_2322_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -61,8 +53,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptProperty_2322_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -79,9 +69,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_2322_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_Property_2322_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -90,8 +77,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("tag");
     provider.setNoTargetText("<no tag>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createProperty_2322_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -119,15 +104,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
 
   private static void setupBasic_Property_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_tag");
-  }
-
-  private static void setupLabel_ConceptProperty_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Constant_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_Property_2322_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static class SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

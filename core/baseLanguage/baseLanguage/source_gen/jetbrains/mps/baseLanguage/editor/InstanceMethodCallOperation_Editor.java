@@ -75,12 +75,8 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Component_2215_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 

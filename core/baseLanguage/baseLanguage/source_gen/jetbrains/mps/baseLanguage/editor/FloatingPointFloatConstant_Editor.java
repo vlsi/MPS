@@ -48,12 +48,8 @@ public class FloatingPointFloatConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_Property_0986_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
   }
 

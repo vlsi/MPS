@@ -85,13 +85,9 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_3810_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3810_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     BitwiseNotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }
@@ -108,12 +104,8 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_3810_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }

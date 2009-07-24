@@ -125,12 +125,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_9368_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9368_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -138,14 +134,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9368_0");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -157,24 +149,16 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_9368_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
   private static void setupBasic_Component_9368_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -226,12 +210,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_resolveInfo");
       BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
       }
     }
 

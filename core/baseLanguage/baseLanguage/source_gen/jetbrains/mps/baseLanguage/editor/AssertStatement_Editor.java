@@ -164,12 +164,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7459_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7459_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
   }
 
@@ -197,12 +193,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_7459_2(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 

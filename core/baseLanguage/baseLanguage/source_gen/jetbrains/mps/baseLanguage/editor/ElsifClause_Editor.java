@@ -133,12 +133,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1596_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1596_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.POSITION, "next-line");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.POSITION, "next-line");
     }
   }
 
@@ -146,12 +142,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1596_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.EDITABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
     }
   }
 
@@ -169,12 +161,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1596_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -183,13 +171,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefNode_1596_1(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -197,12 +181,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1596_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     IfStatement_LastBrace.setCellActions(editorCell, node, context);
   }

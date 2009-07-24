@@ -170,13 +170,9 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_6429_2(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6429_2");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
     }
 

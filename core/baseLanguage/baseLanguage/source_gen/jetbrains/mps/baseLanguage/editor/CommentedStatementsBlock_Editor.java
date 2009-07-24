@@ -69,13 +69,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9553_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9553_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, context);
   }
@@ -83,12 +79,8 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9553_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9553_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
     CommentedStatementsBlock_Actions.setCellActions(editorCell, node, context);
   }
@@ -96,13 +88,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   private static void setupBasic_RefNodeList_9553_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
-          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
   }
 

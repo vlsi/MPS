@@ -114,12 +114,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0557_0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -127,25 +123,17 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0557_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
   private static void setupBasic_RefNodeList_0557_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_initValue");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -153,12 +141,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_0557_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -226,13 +210,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_0557_3(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_0557_3");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.EDITABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
     }
 

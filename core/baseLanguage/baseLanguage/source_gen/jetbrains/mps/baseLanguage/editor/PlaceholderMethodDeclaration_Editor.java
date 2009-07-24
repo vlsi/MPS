@@ -27,12 +27,8 @@ public class PlaceholderMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_5610_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5610_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 

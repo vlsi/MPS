@@ -125,12 +125,8 @@ public class CharConstant_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Alternation_2322_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
     }
   }
 

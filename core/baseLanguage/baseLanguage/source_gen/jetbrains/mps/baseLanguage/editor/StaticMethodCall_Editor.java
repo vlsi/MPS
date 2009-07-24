@@ -134,25 +134,17 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Component_7119_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
   private static void setupBasic_Collection_7119_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7119_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -200,12 +192,8 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell.setCellId("property_name");
       BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       }
     }
 

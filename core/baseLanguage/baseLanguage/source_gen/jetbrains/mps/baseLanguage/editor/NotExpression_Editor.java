@@ -85,13 +85,9 @@ public class NotExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_5487_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5487_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }
@@ -103,12 +99,8 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5487_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     NotExpression_Parens_Actions.setCellActions(editorCell, node, context);
   }

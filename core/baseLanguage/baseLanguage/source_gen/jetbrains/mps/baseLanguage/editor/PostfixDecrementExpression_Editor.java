@@ -72,12 +72,8 @@ public class PostfixDecrementExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_9386_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9386_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);

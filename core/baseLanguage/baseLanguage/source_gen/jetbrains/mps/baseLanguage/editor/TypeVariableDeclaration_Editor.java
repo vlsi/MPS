@@ -150,13 +150,9 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1944_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1944_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -172,13 +168,9 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1944_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1944_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 

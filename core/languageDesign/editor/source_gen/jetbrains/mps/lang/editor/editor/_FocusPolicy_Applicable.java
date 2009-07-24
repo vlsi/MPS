@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -35,9 +34,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   public EditorCell createCollection_7117_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     setupBasic_Collection_7117_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstant_7117_0(context, node, "focus policy applicable:"));
     editorCell.addEditorCell(this.createCollection_7117_1(context, node));
     return editorCell;
@@ -46,9 +42,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   public EditorCell createCollection_7117_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_7117_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRefNode_7117_1(context, node));
     return editorCell;
   }
@@ -56,9 +49,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   public EditorCell createCollection_7117_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     setupBasic_Collection_7117_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     if (renderingCondition7117_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7117_0(context, node));
     }
@@ -68,7 +58,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   public EditorCell createConstant_7117_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     setupBasic_Constant_7117_0(editorCell, node, context);
-    setupLabel_Constant_7117_0(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -78,9 +67,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_7117_0(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      setupLabel_RefNode_7117_0((EditorCell_Label)editorCell, node, context);
-    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -89,8 +75,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("focusPolicyApplicable");
     provider.setNoTargetText("<no focus policy condition>");
-    provider.setReadOnly(false);
-    provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createRefNode_7117_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -106,12 +90,8 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupBasic_Collection_7117_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7117_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -122,12 +102,8 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupBasic_Collection_7117_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7117_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -137,19 +113,9 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private static void setupBasic_Collection_7117_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_7117_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
-  }
-
-  private static void setupLabel_Constant_7117_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_RefNode_7117_0(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public static boolean renderingCondition7117_0(SNode node, EditorContext editorContext, IScope scope) {

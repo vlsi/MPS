@@ -280,25 +280,17 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_1871_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
@@ -310,52 +302,36 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1871_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_2");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
   private static void setupBasic_RefNodeList_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_field");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_Collection_1871_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
   private static void setupBasic_RefNodeList_1871_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_method");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -363,23 +339,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1871_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
   }
 
   private static void setupBasic_RefCell_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
     if (renderingCondition1871_7(node, context, context.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
@@ -403,12 +371,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1871_4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_4");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -416,13 +380,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1871_6");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -430,12 +390,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_1871_7");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
   }
 
@@ -446,40 +402,28 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1871_9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_9");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
   private static void setupBasic_Constant_1871_10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1871_10");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
   private static void setupBasic_Collection_1871_5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_5");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
@@ -490,14 +434,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_1871_6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_1871_6");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
   }
 
@@ -579,12 +519,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_1871_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
       }
     }
 
@@ -647,12 +583,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_1871_1");
       BaseLanguageStyle_StyleSheet.getEmptyCell(editorCell).apply(editorCell);
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
       }
     }
 
@@ -722,12 +654,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_1871_2");
       BaseLanguageStyle_StyleSheet.getEmptyCell(editorCell).apply(editorCell);
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
       }
     }
 

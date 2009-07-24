@@ -70,37 +70,25 @@ public class StatementList_Editor extends DefaultNodeEditor {
   private static void setupBasic_Collection_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_6577_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
   private static void setupBasic_RefNodeList_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-          this.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
   }
 
   private static void setupBasic_RefNodeList_6577_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -169,15 +157,11 @@ public class StatementList_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6577_0");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
     }
 
@@ -239,15 +223,11 @@ public class StatementList_Editor extends DefaultNodeEditor {
     private static void setupBasic_Constant_6577_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6577_1");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.SELECTABLE, true);
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.EDITABLE, true);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        style.set(StyleAttributes.EDITABLE, true);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
     }
 

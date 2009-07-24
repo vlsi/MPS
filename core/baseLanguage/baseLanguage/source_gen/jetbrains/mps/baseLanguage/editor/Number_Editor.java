@@ -28,12 +28,8 @@ public class Number_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_0029_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0029_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
   }
 

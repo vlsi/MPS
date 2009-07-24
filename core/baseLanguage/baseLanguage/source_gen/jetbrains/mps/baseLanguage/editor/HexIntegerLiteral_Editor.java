@@ -69,24 +69,16 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_7888_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7888_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
   }
 
   private static void setupBasic_Property_7888_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("property_value");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
     }
   }
 

@@ -67,12 +67,8 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getVariableName(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
   }
 

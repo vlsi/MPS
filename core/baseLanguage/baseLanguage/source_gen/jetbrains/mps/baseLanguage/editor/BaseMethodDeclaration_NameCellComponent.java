@@ -76,12 +76,8 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   private static void setupBasic_Collection_4313_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_4313_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -89,23 +85,19 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     editorCell.setCellId("property_name");
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
-            public Boolean calculate(EditorCell cell) {
-              return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
-                null :
-                cell.getSNode()
-              ), (cell == null ?
-                null :
-                cell.getEditorContext()
-              ));
-            }
-          });
+        public Boolean calculate(EditorCell cell) {
+          return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
         }
-      };
-      inlineStyle.apply(editorCell);
+      });
     }
   }
 

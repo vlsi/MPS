@@ -70,24 +70,16 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_6389_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     CommentedStatement_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RefNode_6389_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
     }
   }
 

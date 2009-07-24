@@ -130,12 +130,8 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2869_0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -146,12 +142,8 @@ public class TernaryOperatorExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2869_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 

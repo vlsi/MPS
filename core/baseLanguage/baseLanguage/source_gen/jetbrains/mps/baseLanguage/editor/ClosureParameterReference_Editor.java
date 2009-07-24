@@ -58,12 +58,8 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RefCell_8575_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
   }
 
@@ -114,13 +110,9 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_Property_8575_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
       {
-        Style inlineStyle = new Style(editorCell) {
-          {
-            this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-            this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-          }
-        };
-        inlineStyle.apply(editorCell);
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
       }
     }
 

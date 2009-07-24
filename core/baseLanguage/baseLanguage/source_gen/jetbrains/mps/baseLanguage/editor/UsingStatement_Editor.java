@@ -123,24 +123,16 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
   }
 
   private static void setupBasic_Constant_4975_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_1");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "parensesis");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
     }
   }
 
@@ -151,12 +143,8 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_4975_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4975_3");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.MATCHING_LABEL, "parensesis");
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
     }
   }
 
@@ -164,24 +152,16 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4975_4");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 
   private static void setupBasic_RefNode_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-          this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
   }
 

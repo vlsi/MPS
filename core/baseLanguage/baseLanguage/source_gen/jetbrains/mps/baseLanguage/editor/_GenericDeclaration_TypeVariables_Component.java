@@ -73,12 +73,8 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   private static void setupBasic_Collection_9618_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Collection_9618_0");
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
@@ -86,13 +82,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setCellId("Constant_9618_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 
@@ -104,13 +96,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.setCellId("Constant_9618_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
-      Style inlineStyle = new Style(editorCell) {
-        {
-          this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-          this.set(StyleAttributes.SELECTABLE, false);
-        }
-      };
-      inlineStyle.apply(editorCell);
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
   }
 
