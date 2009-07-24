@@ -129,9 +129,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_0.getElementRole());
     return editorCell;
   }
@@ -142,9 +139,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_1.getElementRole());
     return editorCell;
   }
@@ -155,9 +149,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_2.getElementRole());
     return editorCell;
   }
@@ -168,9 +159,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_3.getElementRole());
     return editorCell;
   }
@@ -181,9 +169,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_4.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_4.getElementRole());
     return editorCell;
   }
@@ -194,9 +179,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_3195_5.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_3195_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_3195_5.getElementRole());
     return editorCell;
   }

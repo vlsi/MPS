@@ -73,9 +73,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     }
     EditorCell_Collection editorCell = this.myListHandler_4497_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4497_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_4497_0.getElementRole());
     return editorCell;
   }

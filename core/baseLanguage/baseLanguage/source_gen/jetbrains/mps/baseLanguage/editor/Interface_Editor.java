@@ -166,9 +166,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8963_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8963_0.getElementRole());
     return editorCell;
   }
@@ -179,9 +176,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8963_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8963_1.getElementRole());
     return editorCell;
   }
@@ -192,9 +186,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8963_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8963_2.getElementRole());
     return editorCell;
   }
@@ -205,9 +196,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8963_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8963_3.getElementRole());
     return editorCell;
   }
@@ -218,9 +206,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8963_4.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8963_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8963_4.getElementRole());
     return editorCell;
   }

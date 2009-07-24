@@ -67,9 +67,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_4713_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4713_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_4713_0.getElementRole());
     return editorCell;
   }

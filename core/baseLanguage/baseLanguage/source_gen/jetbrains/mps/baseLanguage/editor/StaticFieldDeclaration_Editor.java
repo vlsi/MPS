@@ -172,9 +172,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_6130_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6130_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_6130_0.getElementRole());
     return editorCell;
   }
@@ -185,9 +182,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_6130_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6130_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_6130_1.getElementRole());
     return editorCell;
   }

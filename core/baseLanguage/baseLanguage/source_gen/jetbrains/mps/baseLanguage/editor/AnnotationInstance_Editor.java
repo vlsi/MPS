@@ -89,9 +89,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_4312_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_4312_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_4312_0.getElementRole());
     return editorCell;
   }

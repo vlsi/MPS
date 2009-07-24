@@ -51,8 +51,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_6577_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6577_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
     editorCell.setRole(this.myListHandler_6577_0.getElementRole());
     return editorCell;
@@ -64,8 +62,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_6577_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_6577_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(true);
     editorCell.setRole(this.myListHandler_6577_1.getElementRole());
     return editorCell;

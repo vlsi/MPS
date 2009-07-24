@@ -73,9 +73,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_2643_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_2643_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_2643_0.getElementRole());
     return editorCell;
   }

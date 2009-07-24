@@ -362,9 +362,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_0.getElementRole());
     return editorCell;
   }
@@ -375,9 +372,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_1.getElementRole());
     return editorCell;
   }
@@ -388,9 +382,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_2.getElementRole());
     return editorCell;
   }
@@ -401,9 +392,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_3.getElementRole());
     return editorCell;
   }
@@ -414,9 +402,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_4.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_4(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_4.getElementRole());
     return editorCell;
   }
@@ -427,9 +412,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_5.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_5(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_5.getElementRole());
     return editorCell;
   }
@@ -440,9 +422,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_6.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_6(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_6.getElementRole());
     return editorCell;
   }
@@ -453,9 +432,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_7.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_7(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_7.getElementRole());
     return editorCell;
   }
@@ -466,9 +442,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_8.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_8(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_8.getElementRole());
     return editorCell;
   }
@@ -479,9 +452,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_8372_9.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_8372_9(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_8372_9.getElementRole());
     return editorCell;
   }

@@ -204,9 +204,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1871_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1871_0(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1871_0.getElementRole());
     return editorCell;
   }
@@ -217,9 +214,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1871_1.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1871_1(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1871_1.getElementRole());
     return editorCell;
   }
@@ -230,9 +224,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1871_2.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1871_2(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1871_2.getElementRole());
     return editorCell;
   }
@@ -243,9 +234,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     EditorCell_Collection editorCell = this.myListHandler_1871_3.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_1871_3(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
     editorCell.setRole(this.myListHandler_1871_3.getElementRole());
     return editorCell;
   }
