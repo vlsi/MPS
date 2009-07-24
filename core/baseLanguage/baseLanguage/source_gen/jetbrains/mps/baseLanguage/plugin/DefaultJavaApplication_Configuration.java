@@ -137,7 +137,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
       private ConfigEditor myComponent = null;
 
       protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
-        System.out.printf("asd");
       }
 
       protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {

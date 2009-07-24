@@ -20,7 +20,7 @@ public class typeof_NodeFunctionParam_InferenceRule extends AbstractInferenceRul
     {
       SNode _nodeToCheck_1029348928467 = param;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(param, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208184296", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(param, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208184294", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208184296", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(param, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223208184294", intentionProvider);
     }
   }
 

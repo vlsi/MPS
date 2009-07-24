@@ -15,29 +15,16 @@ public interface TreePath extends INodeAdapter {
   public static final String DEFAULT_FEATURE = "defaultFeature";
 
   public TreePathType getTreePathType();
-
   public void setTreePathType(TreePathType node);
-
   public ParentBlock getParentBlock();
-
   public void setParentBlock(ParentBlock node);
-
   public ChildrenBlock getChildrenBlock();
-
   public void setChildrenBlock(ChildrenBlock node);
-
   public int getFeaturesesCount();
-
   public Iterator<IFeature> featureses();
-
   public List<IFeature> getFeatureses();
-
   public void addFeatures(IFeature node);
-
   public void insertFeatures(IFeature prev, IFeature node);
-
   public IFeature getDefaultFeature();
-
   public void setDefaultFeature(IFeature node);
-
 }

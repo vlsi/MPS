@@ -296,7 +296,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty");
@@ -553,7 +553,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKind");
@@ -598,7 +598,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
-          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false)).where(new IWhereFilter <SNode>() {
+          return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.cast(ITreePathExpression_Behavior.call_getTreePath_1213877496973(tpoe), "jetbrains.mps.ypath.structure.TreePathAspect"), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty") && SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.ypath.structure.TreeNodeKindProperty"), "default");

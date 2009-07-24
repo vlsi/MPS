@@ -108,17 +108,13 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
 
 public static   interface RunnerActions {
 
-    public abstract void kill();
-
-    public abstract void pause();
-
-    public abstract void play();
-
+    public void kill();
+    public void pause();
+    public void play();
 }
 public static   interface ToolCloseAction {
 
-    public abstract void close();
-
+    public void close();
 }
   public static   enum BuildState {
     RUNNING(),

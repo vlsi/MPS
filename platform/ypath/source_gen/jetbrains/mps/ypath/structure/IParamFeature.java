@@ -13,23 +13,13 @@ public interface IParamFeature extends IFeature {
   public static final String CARDINAL = "cardinal";
 
   public Type getParameterType();
-
   public void setParameterType(Type node);
-
   public ParameterQueryFun getParameterQueryFunction();
-
   public void setParameterQueryFunction(ParameterQueryFun node);
-
   public TargetTypeFun getTargetTypeFunction();
-
   public void setTargetTypeFunction(TargetTypeFun node);
-
   public ToStringFun getToStringFunction();
-
   public void setToStringFunction(ToStringFun node);
-
   public GFCardinalParamFun getCardinal();
-
   public void setCardinal(GFCardinalParamFun node);
-
 }

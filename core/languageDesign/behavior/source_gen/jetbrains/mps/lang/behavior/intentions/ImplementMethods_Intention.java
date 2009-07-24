@@ -36,6 +36,13 @@ public class ImplementMethods_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(ConceptBehavior_Behavior.call_getMethodsToImplement_5167929551696729662(node)).isNotEmpty();
   }
 

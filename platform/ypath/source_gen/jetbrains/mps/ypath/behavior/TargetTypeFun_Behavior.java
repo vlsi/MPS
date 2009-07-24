@@ -10,7 +10,7 @@ public class TargetTypeFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new _Quotations.QuotationClass_5().createNode();
+    return new _Quotations.QuotationClass_4().createNode();
   }
 
 }

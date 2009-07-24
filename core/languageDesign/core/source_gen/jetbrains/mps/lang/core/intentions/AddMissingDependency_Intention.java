@@ -45,6 +45,13 @@ public class AddMissingDependency_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     IScope scope = editorContext.getScope();
     for(SReference ref : node.getReferences()) {
       SModelReference uid = ref.getTargetSModelReference();

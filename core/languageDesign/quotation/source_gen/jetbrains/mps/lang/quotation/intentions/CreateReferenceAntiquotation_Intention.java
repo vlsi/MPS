@@ -38,6 +38,13 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
     SNode linkNode = BaseAdapter.fromAdapter(selectedCell.getLinkDeclaration());

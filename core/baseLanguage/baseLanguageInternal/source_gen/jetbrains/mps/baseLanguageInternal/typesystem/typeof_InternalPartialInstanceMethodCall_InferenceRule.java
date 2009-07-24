@@ -19,7 +19,7 @@ public class typeof_InternalPartialInstanceMethodCall_InferenceRule extends Abst
     {
       SNode _nodeToCheck_1029348928467 = mc;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(mc, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1204072569922", true), (SNode)SLinkOperations.getTarget(mc, "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1204072569920", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1204072569922", true), (SNode)SLinkOperations.getTarget(mc, "returnType", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1204072569920", intentionProvider);
     }
   }
 

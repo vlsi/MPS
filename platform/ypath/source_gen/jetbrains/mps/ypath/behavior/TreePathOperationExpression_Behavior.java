@@ -13,7 +13,7 @@ public class TreePathOperationExpression_Behavior {
   }
 
   public static boolean call_isGeneric_1213877409257(SNode thisNode) {
-    SNode tpae = ListSequence.fromList(SNodeOperations.getDescendants(thisNode, null, false)).where(new IWhereFilter <SNode>() {
+    SNode tpae = ListSequence.fromList(SNodeOperations.getDescendants(thisNode, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");

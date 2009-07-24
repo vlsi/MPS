@@ -19,8 +19,8 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
 
   public ComponentEditor_TabbedEditor(IOperationContext operationContext, SNode node) {
     super(operationContext, node);
-    this.addTab(new ComponentEditor_TabbedEditor.Component_Tab(this, node, node.getAdapter().getClass()));
-    this.addTab(new ComponentEditor_TabbedEditor.Controller_Tab(this, node, node.getAdapter().getClass()));
+    this.addTab(new ComponentEditor_TabbedEditor.Component_Tab(this, node, node.getAdapter().getClass()), null);
+    this.addTab(new ComponentEditor_TabbedEditor.Controller_Tab(this, node, node.getAdapter().getClass()), null);
   }
   public static class Component_Tab extends BaseSingleTab {
 

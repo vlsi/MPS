@@ -10,13 +10,8 @@ public interface IComponentInstance extends IComponentPart {
   public static final String CONTENT = "content";
 
   public int getContentsCount();
-
   public Iterator<IComponentPart> contents();
-
   public List<IComponentPart> getContents();
-
   public void addContent(IComponentPart node);
-
   public void insertContent(IComponentPart prev, IComponentPart node);
-
 }

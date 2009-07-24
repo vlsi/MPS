@@ -275,7 +275,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1172658935860(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode tpCreator = SLinkOperations.getTarget(_context.getNode(), "creator", true);
     SNode klass = _context.getOutputNodeByInputNodeAndMappingLabel(tpCreator, "treePathCreator_class");
-    return ListSequence.fromList(SNodeOperations.getDescendants(klass, null, false)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(klass, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -664,7 +664,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1179334580327(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode tpoe = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = ListSequence.fromList(SNodeOperations.getDescendants(tpoe, null, false)).where(new IWhereFilter <SNode>() {
+    SNode tpae = ListSequence.fromList(SNodeOperations.getDescendants(tpoe, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
