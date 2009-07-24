@@ -29,7 +29,7 @@ import com.intellij.openapi.command.CommandProcessor;
  * To change this template use File | Settings | File Templates.
  */
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
-  private static boolean DISABLED = false;
+  private static boolean DISABLED = true;
 
   private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
   private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
@@ -178,11 +178,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
       nodeSet.add(methodCallNode);
     }
-  }
-
-  private ClassifierType getClassifierAndTypeParams(IMethodCall methodCall) {
-    return (ClassifierType)
-      BaseAdapter.fromNode(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(methodCall.getNode()));
   }
 
   private Map<TypeVariableDeclaration, Type> getTypeByTypeVar(IMethodCall methodCall) {
