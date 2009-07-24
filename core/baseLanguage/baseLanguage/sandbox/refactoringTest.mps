@@ -80,11 +80,21 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5110219550152562121">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5110219550152562122">
-            <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType" id="5110219550152562123">
-              <node role="resultType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5110219550152562124" />
-              <node role="terminateType" type="jetbrains.mps.baseLanguage.structure.Type" id="5110219550152562125" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6645605205846471635">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6645605205846471636">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6645605205846471637">
+              <link role="classifier" targetNodeId="31.~ArrayList" resolveInfo="ArrayList" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="177666737174422998">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="177666737174422999">
+            <property name="name" value="name" />
+            <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType" id="177666737174423000">
+              <node role="resultType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="177666737174423001" />
+              <node role="terminateType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6645605205846475540">
+                <link role="classifier" targetNodeId="31.~ArrayList" resolveInfo="ArrayList" />
+              </node>
             </node>
           </node>
         </node>

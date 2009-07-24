@@ -13,18 +13,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
@@ -157,7 +150,6 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
       setupLabel_Property_7515_0((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new CellActionMapItem_Editor.CellActionMapItem_actionId_cellMenu0()}));
     return editorCell;
   }
 
@@ -343,16 +335,5 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_Property_7515_1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
-
-  public static class CellActionMapItem_actionId_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
-    public CellActionMapItem_actionId_cellMenu0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "DELETE");
-    }
-
-}
 
 }

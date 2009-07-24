@@ -1588,7 +1588,7 @@
   <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1139535328871">
     <property name="name" value="CellActionId" />
     <link role="memberDataType" targetNodeId="3.1082983041843" />
-    <link role="defaultMember" targetNodeId="1139535387060" />
+    <link role="defaultMember" targetNodeId="1139535329028" resolveInfo="right_transform" />
     <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1139535329028">
       <property name="externalValue" value="RIGHT_TRANSFORM" />
       <property name="internalValue" value="right_transform_action_id" />
