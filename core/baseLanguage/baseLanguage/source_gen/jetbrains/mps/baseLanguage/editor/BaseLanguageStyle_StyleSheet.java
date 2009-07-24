@@ -11,273 +11,209 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class BaseLanguageStyle_StyleSheet {
 
   public static Style getKeyWord(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getCompactKeyWord(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getKeyWord(null));
+    return style;
   }
 
   public static Style getComment(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getJavaDoc(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-        this.set(StyleAttributes.UNDERLINED, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    style.set(StyleAttributes.UNDERLINED, true);
+    return style;
   }
 
   public static Style getField(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getLocalVariable(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getParameter(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getStaticField(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    return style;
   }
 
   public static Style getStringLiteral(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    return style;
   }
 
   public static Style getNumericLiteral(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    return style;
   }
 
   public static Style getEmptyCell(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    return style;
   }
 
   public static Style getInstanceMethod(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getStaticMethod(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
   }
 
   public static Style getAnnotation(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getOperator(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
   }
 
   public static Style getParenthesis(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-        this.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
   }
 
   public static Style getLeftParen(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    return style;
   }
 
   public static Style getLeftParenAfterName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getLeftParen(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getLeftParen(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
   }
 
   public static Style getRightParen(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getParenthesis(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
   }
 
   public static Style getBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.MATCHING_LABEL, "brace");
-        this.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.MATCHING_LABEL, "brace");
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    return style;
   }
 
   public static Style getLeftBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+    return style;
   }
 
   public static Style getRightBrace(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBrace(null));
+    return style;
   }
 
   public static Style getBracket(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.MATCHING_LABEL, "bracket");
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.MATCHING_LABEL, "bracket");
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    return style;
   }
 
   public static Style getLeftBracket(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    return style;
   }
 
   public static Style getRightBracket(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.putAll(BaseLanguageStyle_StyleSheet.getBracket(null));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
   }
 
   public static Style getMethodName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getVariableName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getClassName(final EditorCell cell) {
-    return new Style(cell) {
-      {
-      }
-    };
+    Style style = new Style(cell);
+    return style;
   }
 
   public static Style getSemicolon(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.EDITABLE, false);
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    return style;
   }
 
   public static Style getDot(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.PUNCTUATION_LEFT, true);
-        this.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-        this.set(StyleAttributes.SELECTABLE, false);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    return style;
   }
 
   public static Style getBaseAngleBracket(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
+    return style;
   }
 
   public static Style getMatching(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.MATCHING_LABEL, "matching");
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.MATCHING_LABEL, "matching");
+    return style;
   }
 
 }

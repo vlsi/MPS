@@ -16,141 +16,121 @@ import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 public class Styles_StyleSheet {
 
   public static Style getRootCellModelStyle(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
 
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet._StyleParameter_QueryFunction_1237383984781((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
-        this.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet._StyleParameter_QueryFunction_1237384018255((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
-        this.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
-
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet._StyleParameter_QueryFunction_1237385537795((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
-        this.set(StyleAttributes.DRAW_BORDER, true);
+      public Boolean calculate(EditorCell cell) {
+        return Styles_StyleSheet._StyleParameter_QueryFunction_1237383984781((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
       }
-    };
+    });
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+      public Boolean calculate(EditorCell cell) {
+        return Styles_StyleSheet._StyleParameter_QueryFunction_1237384018255((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
+      }
+    });
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
+
+      public Boolean calculate(EditorCell cell) {
+        return Styles_StyleSheet._StyleParameter_QueryFunction_1237385537795((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
+      }
+    });
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    return style;
   }
 
   public static Style getStyle(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getReference(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
   }
 
   public static Style getItem(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getHeader(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        this.set(StyleAttributes.SELECTABLE, false);
-        this.set(StyleAttributes.UNDERLINED, true);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
   }
 
   public static Style getProperty(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.SELECTABLE, false);
-        this.set(StyleAttributes.DRAW_BORDER, true);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    return style;
   }
 
   public static Style getBordered(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.DRAW_BORDER, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    return style;
   }
 
   public static Style getBorderedCollection(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.DRAW_BORDER, true);
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    return style;
   }
 
   public static Style getTag(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.MATCHING_LABEL, "tag");
-      }
-    };
+    Style style = new Style(cell);
+    style.set(StyleAttributes.MATCHING_LABEL, "tag");
+    return style;
   }
 
   public static Style getAttributedCellLabel(final EditorCell cell) {
-    return new Style(cell) {
-      {
-        this.set(StyleAttributes.DRAW_BORDER, true);
-        this.set(StyleAttributes.EDITABLE, false);
-        this.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-        this.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    style.set(StyleAttributes.EDITABLE, false);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
-          public Boolean calculate(EditorCell cell) {
-            return Styles_StyleSheet._StyleParameter_QueryFunction_4411513707977385303((cell == null ?
-              null :
-              cell.getSNode()
-            ), (cell == null ?
-              null :
-              cell.getEditorContext()
-            ));
-          }
-        });
+      public Boolean calculate(EditorCell cell) {
+        return Styles_StyleSheet._StyleParameter_QueryFunction_4411513707977385303((cell == null ?
+          null :
+          cell.getSNode()
+        ), (cell == null ?
+          null :
+          cell.getEditorContext()
+        ));
       }
-    };
+    });
+    return style;
   }
 
   public static boolean _StyleParameter_QueryFunction_1237383984781(SNode node, EditorContext editorContext) {

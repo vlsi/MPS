@@ -641,14 +641,6 @@ public class QueriesGenerated {
     return StyleSheetClass_Behavior.call_getGetterMethodName_1221829967694(SLinkOperations.getTarget(_context.getNode(), "styleClass", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1221836901435(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StyleSheet_Behavior.call_getClassFqName_1213877515585(StyleSheetClass_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extendedClass", true), "styleSheetClass", false)));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1221836922144(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StyleSheetClass_Behavior.call_getGetterMethodName_1221829967694(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extendedClass", true), "styleSheetClass", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1225901389825(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
   }
@@ -695,6 +687,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238054639017(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "labelName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3219221556189742958(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheet_Behavior.call_getClassFqName_1213877515585(StyleSheetClass_Behavior.call_getStyleSheet_1213877260644(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extendedClass", true), "styleSheetClass", false)));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3219221556189742972(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return StyleSheetClass_Behavior.call_getGetterMethodName_1221829967694(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extendedClass", true), "styleSheetClass", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_7533883740977706413(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1348,10 +1348,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1221820888417(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "extendedClass", true) != null);
-  }
-
   public static boolean ifMacro_Condition_1221823290316(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "styleClass", false) != null);
   }
@@ -1370,6 +1366,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1235665716111(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "menuDescriptor", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_3219221556189742984(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "extendedClass", true) != null);
   }
 
   public static boolean ifMacro_Condition_6577030305815218822(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1810,11 +1810,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
 
-  public static Iterable sourceNodesQuery_3219221556189284228(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3219221556189286990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
 
-  public static Iterable sourceNodesQuery_3219221556189286990(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3219221556189743016(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "styleItem", true);
   }
 
