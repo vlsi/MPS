@@ -166,7 +166,6 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
-    FunctionType_addThrows.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RefNodeList_1642_0(EditorCell editorCell, SNode node, EditorContext context) {

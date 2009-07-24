@@ -78,6 +78,17 @@ public class QueriesGenerated {
     return SLinkOperations.getCount(_context.getSourceNode(), "actualParameter") == 0 && SLinkOperations.getCount(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter") > 0;
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2324090868901293319(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    SNode parent = SNodeOperations.getParent(_context.getSourceNode());
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true) == _context.getSourceNode() && (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "throwsType", true)).isEmpty());
+    }
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true) == _context.getSourceNode() && (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", true)).isEmpty());
+    }
+    return false;
+  }
+
   public static void nodeFactory_NodeSetup_UnrestrictedFunctionType_1232132222405(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setNewChild(_context.getNewNode(), "resultType", "jetbrains.mps.baseLanguage.structure.VoidType");
   }
@@ -287,6 +298,29 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "add parameter";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_2324090868901292790(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+          return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "throwsType", true)).first();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "throws";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
         }
       });
     }

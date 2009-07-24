@@ -60,7 +60,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_8986_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_8986_1(editorCell, node, context);
-    editorCell.addEditorCell(this.createConstant_8986_3(context, node, " throws"));
+    editorCell.addEditorCell(this.createConstant_8986_3(context, node, "throws"));
     editorCell.addEditorCell(this.createRefNodeList_8986_1(context, node));
     return editorCell;
   }
@@ -200,7 +200,6 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefNode_8986_0(EditorCell editorCell, SNode node, EditorContext context) {
-    FunctionType_addThrows.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_Collection_8986_1(EditorCell editorCell, SNode node, EditorContext context) {
