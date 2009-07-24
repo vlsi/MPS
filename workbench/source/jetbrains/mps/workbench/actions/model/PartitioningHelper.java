@@ -83,7 +83,7 @@ public class PartitioningHelper {
 
     // show partitioning
     String text = "";
-    int count = 0;
+    int count = 1;
     for (List<MappingConfiguration> mappingSet : mappingSets) {
       text = text + " [ " + (count++) + " ]\n";
       List<String> strings = GenerationPartitioningUtil.toStrings(mappingSet);
