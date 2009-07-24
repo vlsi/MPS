@@ -13,7 +13,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -31,6 +30,7 @@ import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
@@ -153,18 +153,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1182907991433(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.createUniqueName("setupBasic_" + EditorCellModel_Behavior.call_getCellModelKind_1216811674575(_context.getNode()) + "_", _context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1182971164193(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "usesBraces");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1182971324502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CellModel_Collection_Behavior.call_isVerticalGrid_1239872947848(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1182971356740(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding");
   }
 
   public static Object propertyMacro_GetPropertyValue_1182974244862(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1438,6 +1426,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1238055822055(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "query", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_6577030305815218822(final IOperationContext operationContext, final IfMacroContext _context) {
+    return CellModel_Collection_Behavior.call_isVerticalGrid_1239872947848(_context.getNode());
+  }
+
+  public static boolean ifMacro_Condition_6577030305815220957(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "usesBraces");
+  }
+
+  public static boolean ifMacro_Condition_6577030305815220969(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "usesFolding");
   }
 
   public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
