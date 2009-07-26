@@ -16,6 +16,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime.Result;
 
 public class ClassifierAdapters_Test extends TestCase {
 
@@ -287,6 +289,71 @@ __switch__:
     /*
       this.acceptWorker();
     */
+  }
+
+  @Test()
+  public void test_compactInvoke() throws Exception {
+    final Wrappers._int count = new Wrappers._int(0);
+    _FunctionTypes._return_P0_E0<? extends Integer> cl = new _FunctionTypes._return_P0_E0 <Integer>() {
+
+      public Integer invoke() {
+        return count.value++ ;
+      }
+    };
+    cl.invoke();
+    Assert.assertSame(1, count.value);
+    new _FunctionTypes._return_P0_E0 <Integer>() {
+
+      public Integer invoke() {
+        return count.value++ ;
+      }
+    }.invoke();
+    Assert.assertSame(2, count.value);
+    _UnrestrictedFunctionTypes._return_terminate_P0_E0<? extends Integer, ? extends Integer> ucl = new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+
+      public Result<Integer, Integer> invokeUnrestricted() {
+        return Result.TERMINATE(count.value++ );
+      }
+    };
+    
+    {
+      Result<? extends Integer, ?> __result__ = ucl.invokeUnrestricted();
+      switch (__result__.getOutcome()) {
+        case RETURN_VALUE:
+          //  fall through
+        case RETURN_VOID:
+          return;
+        case BREAK:
+          break;
+        case TERMINATE_VALUE:
+          break;
+        default:
+          break;
+      }
+    };
+    Assert.assertSame(3, count.value);
+    
+    {
+      Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
+
+        public Result<Integer, Integer> invokeUnrestricted() {
+          return Result.TERMINATE(count.value++ );
+        }
+      }.invokeUnrestricted();
+      switch (__result__.getOutcome()) {
+        case RETURN_VALUE:
+          //  fall through
+        case RETURN_VOID:
+          return;
+        case BREAK:
+          break;
+        case TERMINATE_VALUE:
+          break;
+        default:
+          break;
+      }
+    };
+    Assert.assertSame(4, count.value);
   }
 
   public void acceptWorker(Worker one, Worker two) {

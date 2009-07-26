@@ -90,6 +90,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1235746970280" resolveInfo="CompactInvokeFunctionExpression" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1235748287119">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235748287120">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="7246115176735395462">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7246115176735395465">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="7246115176735395464" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7246115176735396581">
+              <link role="link" targetNodeId="1.1235746996653" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1235748288785">
           <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235748288786">
             <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1235748288787" />

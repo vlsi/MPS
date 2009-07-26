@@ -6536,6 +6536,136 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4073449185570421959">
+        <property name="methodName" value="compactInvoke" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4073449185570421960" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4073449185570421961">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4073449185570422577">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4073449185570422578">
+              <property name="name" value="count" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4073449185570422579" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4073449185570422582">
+                <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4073449185570422612">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4073449185570422613">
+              <property name="name" value="cl" />
+              <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType" id="4073449185570422614">
+                <node role="resultType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4073449185570422615" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="4073449185570422616">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4073449185570422617">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422618">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="4073449185570422619">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422620">
+                        <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422624">
+            <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="4073449185570422630">
+              <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422631">
+                <link role="variableDeclaration" targetNodeId="4073449185570422613" resolveInfo="cl" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4073449185570422634">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4073449185570422637">
+              <property name="value" value="1" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422638">
+              <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422640">
+            <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="4073449185570422651">
+              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="4073449185570422652">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4073449185570422653">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422654">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="4073449185570422655">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422656">
+                        <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4073449185570422662">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4073449185570422663">
+              <property name="value" value="2" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422664">
+              <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4073449185570422678">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4073449185570422679">
+              <property name="name" value="ucl" />
+              <node role="type" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType" id="4073449185570422680">
+                <node role="terminateType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4073449185570422681" />
+                <node role="resultType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4073449185570422682" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral" id="4073449185570422683">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4073449185570422684">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422685">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="4073449185570422686">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422687">
+                        <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422692">
+            <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="4073449185570422727">
+              <node role="function" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422728">
+                <link role="variableDeclaration" targetNodeId="4073449185570422679" resolveInfo="ucl" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4073449185570422731">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4073449185570422734">
+              <property name="value" value="3" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422735">
+              <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422737">
+            <node role="expression" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" id="4073449185570422766">
+              <node role="function" type="jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral" id="4073449185570422767">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4073449185570422768">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4073449185570422769">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" id="4073449185570422770">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422771">
+                        <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4073449185570422776">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4073449185570422777">
+              <property name="value" value="4" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4073449185570422778">
+              <link role="variableDeclaration" targetNodeId="4073449185570422578" resolveInfo="count" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.Interface" id="1202741884865">

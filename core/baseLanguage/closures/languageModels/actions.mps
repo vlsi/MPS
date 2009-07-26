@@ -635,16 +635,18 @@
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="1235747455803">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235747455804">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235747461622">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1235748757181">
-              <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1235748761703">
-                <link role="conceptDeclaration" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235748755385">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7246115176735544018">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235748755385">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235747461970">
                   <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="1235747461623" />
                   <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1235747464255" />
                 </node>
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1235748756401" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" id="7246115176735544025">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7246115176735546479">
+                  <link role="conceptDeclaration" targetNodeId="1.1199542442495" resolveInfo="FunctionType" />
+                </node>
               </node>
             </node>
           </node>

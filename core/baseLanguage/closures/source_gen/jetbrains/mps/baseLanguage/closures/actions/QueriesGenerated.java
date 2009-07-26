@@ -14,8 +14,8 @@ import jetbrains.mps.baseLanguage.closures.behavior.ControlMethodUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235747455803(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getTypeOf(_context.getSourceNode())) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
+    return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getTypeOf(_context.getSourceNode())), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1236794030042(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
