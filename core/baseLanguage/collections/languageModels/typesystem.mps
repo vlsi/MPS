@@ -2949,10 +2949,10 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1201874414202">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1201874422865">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1201874422866">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType" id="1201874447837">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="1201874447838">
-                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1201874452121">
-                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="1201874454127">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="7246115176735871083">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.Type" id="7246115176735871084">
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="7246115176735871085">
+                  <node role="expression" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference" id="7246115176735872199">
                     <link role="typeVarDeclaration" targetNodeId="1201874360962" resolveInfo="KEY" />
                   </node>
                 </node>

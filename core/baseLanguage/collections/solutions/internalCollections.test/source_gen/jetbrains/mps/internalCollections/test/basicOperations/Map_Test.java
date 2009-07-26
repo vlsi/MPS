@@ -11,12 +11,12 @@ import junit.framework.Assert;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
@@ -73,10 +73,10 @@ public class Map_Test extends Util_Test {
   @Test()
   public void test_clear() throws Exception {
     Map<Integer, String> map1 = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
-    Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
+    Assert.assertFalse(SetSequence.fromSet(MapSequence.fromMap(map1).keySet()).isEmpty());
     Assert.assertFalse(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
     MapSequence.fromMap(map1).clear();
-    Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).keySet()).isEmpty());
+    Assert.assertTrue(SetSequence.fromSet(MapSequence.fromMap(map1).keySet()).isEmpty());
     Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
   }
 
@@ -147,7 +147,7 @@ public class Map_Test extends Util_Test {
       Assert.assertFalse(MapSequence.fromMap(test).containsKey(key));
       Assert.assertFalse(MapSequence.fromMap(test).containsValue(val));
     }
-    Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(test).keySet()).isEmpty());
+    Assert.assertTrue(SetSequence.fromSet(MapSequence.fromMap(test).keySet()).isEmpty());
     Assert.assertTrue(ListSequence.fromList(nums).isEmpty());
   }
 
