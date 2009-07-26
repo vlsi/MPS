@@ -32,7 +32,7 @@ public class IteratorType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_8().createNode();
+    return new _Quotations.QuotationClass_14().createNode();
   }
 
 }

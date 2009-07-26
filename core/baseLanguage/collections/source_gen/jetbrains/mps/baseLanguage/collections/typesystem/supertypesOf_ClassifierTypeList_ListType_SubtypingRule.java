@@ -15,7 +15,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_30().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
+    return new _Quotations.QuotationClass_29().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

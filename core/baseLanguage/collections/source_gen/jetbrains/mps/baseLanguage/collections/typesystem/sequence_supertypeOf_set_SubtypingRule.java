@@ -15,7 +15,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_97().createNode(this.myMatchingPattern.PatternVar5, typeCheckingContext);
+    return new _Quotations.QuotationClass_92().createNode(this.myMatchingPattern.PatternVar5, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

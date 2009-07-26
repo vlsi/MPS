@@ -15,7 +15,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_98().createNode(this.myMatchingPattern.PatternVar6, typeCheckingContext);
+    return new _Quotations.QuotationClass_93().createNode(this.myMatchingPattern.PatternVar6, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

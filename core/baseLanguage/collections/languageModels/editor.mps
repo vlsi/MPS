@@ -7,6 +7,8 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -32,6 +34,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <maxImportIndex value="17" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
@@ -65,12 +68,17 @@
     <property name="package" value="list" />
     <link role="conceptDeclaration" targetNodeId="1.1151688443754" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1151690792786">
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1151690796146">
-        <property name="text" value="list" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="7246115176735619134">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032222" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215764920171">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="7246115176735619135" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="7246115176735619136">
           <property name="value" value="0.0" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7246115176735619137">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" id="7246115176735619138">
+            <link role="cellMenuComponent" targetNodeId="7246115176735615080" resolveInfo="replace_withAnotherSequenceType" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215706741568">
@@ -96,14 +104,19 @@
     <property name="package" value="sequence" />
     <link role="conceptDeclaration" targetNodeId="1.1151689724996" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1151690938950">
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1151690938951">
-        <property name="text" value="sequence" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="7246115176735619128">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
         <link role="styleClass" targetNodeId="15.1186415544875" resolveInfo="KeyWord" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032049">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="7246115176735619129">
           <property name="flag" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215764890507">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="7246115176735619130">
           <property name="value" value="0.0" />
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7246115176735619131">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" id="7246115176735619132">
+            <link role="cellMenuComponent" targetNodeId="7246115176735615080" resolveInfo="replace_withAnotherSequenceType" />
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1215708402639">
@@ -1448,6 +1461,11 @@
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1240250757536">
           <property name="value" value="0.0" />
         </node>
+        <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7246115176735619139">
+          <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" id="7246115176735619140">
+            <link role="cellMenuComponent" targetNodeId="7246115176735615080" resolveInfo="replace_withAnotherSequenceType" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1226511792984">
         <property name="text" value="&lt;" />
@@ -2523,6 +2541,50 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240906913018">
         <property name="text" value=")" />
         <link role="styleClass" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellMenuComponent" id="7246115176735615080">
+    <property name="name" value="replace_withAnotherSequenceType" />
+    <link role="conceptDeclaration" targetNodeId="3.1068431790189" resolveInfo="Type" />
+    <node role="menuDescriptor" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" id="7246115176735615081">
+      <node role="cellMenuPart" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group" id="7246115176735615083">
+        <node role="parametersFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" id="7246115176735615084">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7246115176735615085">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7246115176735615091">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7246115176735615092">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="7246115176735615094">
+                  <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="7246115176735615096" />
+                  <node role="initValue" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="7246115176735615099">
+                    <link role="conceptDeclaration" targetNodeId="1.1151689724996" resolveInfo="SequenceType" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="7246115176735615101">
+                    <link role="conceptDeclaration" targetNodeId="1.1151688443754" resolveInfo="ListType" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="7246115176735615103">
+                    <link role="conceptDeclaration" targetNodeId="1.1226511727824" resolveInfo="SetType" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="7246115176735615105">
+                    <link role="conceptDeclaration" targetNodeId="1.1240247491866" resolveInfo="SortedSetType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="createFunction" type="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create" id="7246115176735615086">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7246115176735615087">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7246115176735615110">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7246115176735615112">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" id="7246115176735615111" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" id="7246115176735615116">
+                  <node role="prototypeNode" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="7246115176735615120" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="parameterObjectType" type="jetbrains.mps.lang.smodel.structure.SConceptType" id="7246115176735615090" />
       </node>
     </node>
   </node>

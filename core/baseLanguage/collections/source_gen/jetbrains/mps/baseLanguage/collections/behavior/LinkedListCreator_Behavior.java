@@ -11,7 +11,7 @@ public class LinkedListCreator_Behavior {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return new _Quotations.QuotationClass_11().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
   }
 
 }

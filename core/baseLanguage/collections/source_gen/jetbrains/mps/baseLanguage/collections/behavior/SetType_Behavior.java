@@ -43,7 +43,7 @@ public class SetType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_7().createNode();
+    return new _Quotations.QuotationClass_10().createNode();
   }
 
 }

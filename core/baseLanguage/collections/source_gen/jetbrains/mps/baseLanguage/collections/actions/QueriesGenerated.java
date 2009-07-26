@@ -259,6 +259,42 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_SequenceType_7246115176735615124(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+      SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
+      if (SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", "elementType"), "role").equals(maybeElementType.getRole_())) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_ListType_7246115176735618986(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+      SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
+      if (SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", "elementType"), "role").equals(maybeElementType.getRole_())) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_SetType_7246115176735619033(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+      SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
+      if (SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", "elementType"), "role").equals(maybeElementType.getRole_())) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
+      }
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_SortedSetType_7246115176735619080(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).count() == 1) {
+      SNode maybeElementType = ListSequence.fromList(SNodeOperations.getChildren(_context.getSampleNode())).first();
+      if (SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", "elementType"), "role").equals(maybeElementType.getRole_())) {
+        SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(maybeElementType), true);
+      }
+    }
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1160663024951(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     final ApplicableTypesInfo applicableTypesInfo;
