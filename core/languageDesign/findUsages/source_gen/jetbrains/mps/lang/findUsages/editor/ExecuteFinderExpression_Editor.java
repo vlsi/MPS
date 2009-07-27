@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -149,16 +148,12 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_RefCell_8327_0(EditorCell editorCell, SNode node, EditorContext context) {
+    BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_8327_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8327_1");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNode_8327_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -169,7 +164,6 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
   }
 
@@ -178,12 +172,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_8327_3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8327_3");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
   }
 
   public static class _Inline8327_0 extends AbstractCellProvider {
