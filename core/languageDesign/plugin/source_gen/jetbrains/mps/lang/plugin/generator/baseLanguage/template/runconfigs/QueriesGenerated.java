@@ -105,7 +105,11 @@ public class QueriesGenerated {
     return originalModel.getModelDescriptor().getModule().getModuleFqName();
   }
 
-  public static Object referenceMacro_GetReferent_3452826078638209619(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6707043251018967862(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", false, false), "map_SettingsEditor");
+  }
+
+  public static Object referenceMacro_GetReferent_6707043251019108496(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "editor", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
   }
 
@@ -129,20 +133,16 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"), "map_ConfigClass");
   }
 
-  public static boolean ifMacro_Condition_3452826078638188030(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6707043251019108517(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3452826078638191797(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6707043251019108547(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "applyBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_3452826078638191824(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6707043251019108600(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "disposeBlock", true) != null);
-  }
-
-  public static boolean ifMacro_Condition_3452826078638209685(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "editor", true) != null);
   }
 
   public static boolean ifMacro_Condition_7840798570674908544(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -161,20 +161,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "disposeBlock", true);
   }
 
-  public static SNode sourceNodeQuery_3452826078638191782(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6707043251019108530(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "resetBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_3452826078638191810(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6707043251019108560(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "applyBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_3452826078638191837(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "disposeBlock", true), "body", true);
+  public static SNode sourceNodeQuery_6707043251019108583(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "editor", true);
   }
 
-  public static SNode sourceNodeQuery_3452826078638209669(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "editor", true);
+  public static SNode sourceNodeQuery_6707043251019108613(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "disposeBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_7382861867148540655(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

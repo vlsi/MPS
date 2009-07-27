@@ -2672,6 +2672,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="162872405267681133">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="editor" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="162872405267681132" resolveInfo="ConfigurationEditorDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="678887849223472878">
