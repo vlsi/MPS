@@ -650,15 +650,16 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void selectNode(final SNode node) {
+  public void selectNode(@NotNull final SNode node) {
     LOG.checkEDT();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-
-        DefaultTreeModel model = (DefaultTreeModel) getTree().getModel();
-        MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        MPSTreeNode rootNode = (MPSTreeNode) treeModel.getRoot();
+        SModel model = node.getModel();
+        assert model != null : "trying to select node which is not registered";
+        SModelDescriptor modelDescriptor = model.getModelDescriptor();
         assert modelDescriptor != null;
         SModelTreeNode modelTreeNode = findSModelTreeNode(rootNode, modelDescriptor);
         if (modelTreeNode == null) {

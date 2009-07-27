@@ -138,6 +138,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public SModel getSModel() {
+    LOG.assertCanRead();
     if (mySModel == null) {
       mySModel = new SModel(getSModelReference());
       mySModel = loadModel();

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -26,6 +27,7 @@ import java.util.Map;
  * Sep 21, 2007
  */
 public class SNodePointer {
+  private static final Logger LOG = Logger.getLogger(SNodePointer.class);
   private static final SModelRepository SMODEL_REPOSITORY = SModelRepository.getInstance();
 
   private SModelReference myModelReference;
@@ -54,7 +56,10 @@ public class SNodePointer {
   }
 
   public SNode getNode() {
+    LOG.assertCanRead();
+
     if (myNodeId == null) return null;
+
     SModelDescriptor model = getModel();
     if (model != null) {
       SNode node = model.getSModel().getNodeById(myNodeId);
