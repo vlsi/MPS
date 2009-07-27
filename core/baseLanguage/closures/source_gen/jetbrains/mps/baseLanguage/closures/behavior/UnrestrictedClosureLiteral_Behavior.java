@@ -14,4 +14,8 @@ public class UnrestrictedClosureLiteral_Behavior {
     return new _Quotations.QuotationClass_8().createNode(paramTypes, termType, returnType, throwsTypes);
   }
 
+  public static boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
+    return true;
+  }
+
 }

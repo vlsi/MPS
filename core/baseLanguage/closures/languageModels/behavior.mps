@@ -4011,6 +4011,19 @@
         <link role="concept" targetNodeId="8.1068431790189" resolveInfo="Type" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8137768496811746943">
+      <property name="name" value="isExecuteSynchronous" />
+      <link role="overriddenMethod" targetNodeId="9.1230212745736" resolveInfo="isExecuteSynchronous" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8137768496811746946">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8137768496811746950">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8137768496811746953">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8137768496811746948" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8137768496811746949" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1229718424143">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229718424144" />
     </node>
