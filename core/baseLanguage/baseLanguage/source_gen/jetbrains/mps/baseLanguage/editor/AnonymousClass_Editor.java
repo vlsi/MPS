@@ -723,6 +723,11 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Constant_1871_8(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1871_8");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
+      }
     }
 
 }
