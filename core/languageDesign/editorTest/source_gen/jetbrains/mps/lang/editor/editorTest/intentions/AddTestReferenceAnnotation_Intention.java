@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.editorTest.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -33,6 +34,17 @@ public class AddTestReferenceAnnotation_Intention extends BaseIntention {
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
     return "Add Test Refernce Annotation";
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return NodesTestCase_Behavior.isIntentionApplicable_1217250498008(node);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

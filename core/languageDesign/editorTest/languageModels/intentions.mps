@@ -30,11 +30,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
+  <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="7658393498702987309">
     <property name="name" value="AddTestReferenceAnnotation" />
@@ -114,6 +116,17 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="7658393498703024673" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="7846202737110257649">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7846202737110257650">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7846202737110270550">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="7846202737110270551">
+            <link role="concept" targetNodeId="5.1216913645126" resolveInfo="NodesTestCase" />
+            <link role="baseMethodDeclaration" targetNodeId="6.1217250498008" resolveInfo="isIntentionApplicable" />
+            <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="7846202737110270552" />
           </node>
         </node>
       </node>
