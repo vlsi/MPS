@@ -842,5 +842,144 @@
       <link role="concept" targetNodeId="3.1201270864927" resolveInfo="CaretPositionParameter" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="4575971948964591931">
+    <property name="name" value="IndentLayoutShouldntBeUsedWithBraces" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4575971948964591932">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4575971948964595315">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4575971948964595317">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4575971948964608897">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4575971948964608898">
+              <property name="name" value="collection" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4575971948964608899">
+                <link role="concept" targetNodeId="3.1073389446423" resolveInfo="CellModel_Collection" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="4575971948964608900">
+                <link role="concept" targetNodeId="3.1073389446423" resolveInfo="CellModel_Collection" />
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964608901">
+                  <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4575971948964608879">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4575971948964608909">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608913">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4575971948964608912">
+                  <link role="variableDeclaration" targetNodeId="4575971948964608898" resolveInfo="collection" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4575971948964608917">
+                  <link role="property" targetNodeId="3.1139416841293" resolveInfo="usesBraces" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608890">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608885">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4575971948964608902">
+                    <link role="variableDeclaration" targetNodeId="4575971948964608898" resolveInfo="collection" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4575971948964608889">
+                    <link role="link" targetNodeId="3.1106270802874" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4575971948964608894">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4575971948964608896">
+                    <link role="conceptDeclaration" targetNodeId="3.1237303669825" resolveInfo="CellLayout_Indent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4575971948964608881">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4575971948964608918">
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964608921">
+                  <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+                </node>
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4575971948964608922">
+                  <property name="value" value="Braces shouldn't be used with indent layout." />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964595323">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964595322">
+            <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4575971948964608876">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4575971948964608878">
+              <link role="conceptDeclaration" targetNodeId="3.1073389446423" resolveInfo="CellModel_Collection" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4575971948964608924">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4575971948964608925">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4575971948964608926">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4575971948964608927">
+              <property name="name" value="collection" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4575971948964608928">
+                <link role="concept" targetNodeId="3.1140524381322" resolveInfo="CellModel_ListWithRole" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="4575971948964608929">
+                <link role="concept" targetNodeId="3.1140524381322" resolveInfo="CellModel_ListWithRole" />
+                <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964608930">
+                  <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4575971948964608931">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4575971948964608932">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608933">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4575971948964608934">
+                  <link role="variableDeclaration" targetNodeId="4575971948964608927" resolveInfo="collection" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4575971948964615807">
+                  <link role="property" targetNodeId="3.1140524450556" resolveInfo="usesBraces" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608936">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608937">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4575971948964608938">
+                    <link role="variableDeclaration" targetNodeId="4575971948964608927" resolveInfo="collection" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4575971948964615806">
+                    <link role="link" targetNodeId="3.1140524464360" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4575971948964608940">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4575971948964608941">
+                    <link role="conceptDeclaration" targetNodeId="3.1237303669825" resolveInfo="CellLayout_Indent" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4575971948964608942">
+              <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4575971948964608943">
+                <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964608944">
+                  <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+                </node>
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4575971948964608945">
+                  <property name="value" value="Braces shouldn't be used with indent layout." />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4575971948964608946">
+          <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4575971948964608947">
+            <link role="applicableNode" targetNodeId="4575971948964595314" resolveInfo="editorCellModel" />
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="4575971948964608948">
+            <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4575971948964898279">
+              <link role="conceptDeclaration" targetNodeId="3.1140524381322" resolveInfo="CellModel_ListWithRole" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4575971948964595314">
+      <property name="name" value="editorCellModel" />
+      <link role="concept" targetNodeId="3.1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+  </node>
 </model>
 

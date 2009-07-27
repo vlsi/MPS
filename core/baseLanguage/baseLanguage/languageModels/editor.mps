@@ -1896,6 +1896,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1188212207014">
         <property name="name" value="initializerArea" />
         <property name="vertical" value="false" />
+        <property name="usesBraces" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1188212207015">
           <property name="text" value="=" />
           <link role="actionMap" targetNodeId="1144367099981" resolveInfo="LocalVariableDeclaration_Initializer_Actions" />
