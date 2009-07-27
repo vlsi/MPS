@@ -7,7 +7,9 @@ import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -17,14 +19,12 @@ import com.intellij.execution.ExecutionException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.execution.process.DefaultJavaProcessHandler;
 import java.nio.charset.Charset;
@@ -53,8 +53,14 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
   public void checkConfiguration() throws RuntimeConfigurationException {
     StringBuilder error = new StringBuilder();
     {
-      SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
-      if (node == null) {
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
+        }
+      });
+      if (node.value == null) {
         error.append("node does not exist anymore").append("\n");
       }
     }
@@ -171,12 +177,18 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     public MySettingsEditor() {
     }
 
-    protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
-      SNode node = new SNodePointer(c.getStateObject().myModelId, c.getStateObject().myNodeId).getNode();
-      if (node == null) {
+    protected void resetEditorFrom(final DefaultJavaApplication_Configuration c) {
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          node.value = new SNodePointer(c.getStateObject().myModelId, c.getStateObject().myNodeId).getNode();
+        }
+      });
+      if (node.value == null) {
         return;
       }
-      MySettingsEditor.this.myComponent.setNode(node);
+      MySettingsEditor.this.myComponent.setNode(node.value);
     }
 
     protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {
