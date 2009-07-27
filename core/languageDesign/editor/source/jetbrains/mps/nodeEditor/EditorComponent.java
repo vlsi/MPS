@@ -116,7 +116,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
 
   private boolean myRelayoutRequested = false;
-  private booleanmyIsEditable = true;
+  private boolean myIsEditable = true;
 
   private boolean myDisposed = false;
 
