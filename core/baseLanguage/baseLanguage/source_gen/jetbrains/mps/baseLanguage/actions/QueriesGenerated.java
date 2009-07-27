@@ -742,7 +742,16 @@ __switch__:
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
                 SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", (item), false);
-                SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", SNodeOperations.getAncestor((item), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), false);
+                SNode thisExpression = SLinkOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
+
+                SNode anonymousClass = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnonymousClass", false, false);
+                List<SNode> outerClassifiers = SNodeOperations.getAncestors(anonymousClass, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+                for(SNode outerClassifier : ListSequence.fromList(outerClassifiers)) {
+                  if (ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(outerClassifier, _context.getParentNode(), IClassifiersSearchScope.INSTANCE_METHOD)).contains((item))) {
+                    SLinkOperations.setTarget(thisExpression, "classConcept", outerClassifier, false);
+                    break;
+                  }
+                }
                 return operationExpression;
               }
             });
