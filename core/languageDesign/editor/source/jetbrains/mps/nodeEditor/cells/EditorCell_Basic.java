@@ -326,7 +326,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isWithinSelection() {
-    return mySelected || getEditor().getDeepestSelectedCell() == this;
+    return mySelected && getEditor().getDeepestSelectedCell() == this;
   }
 
   public boolean isSelectable() {
