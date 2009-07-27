@@ -35,11 +35,11 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.execution.configurations.RunConfiguration;
-import com.intellij.ide.DataManager;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.ide.DataManager;
 
 public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
@@ -144,36 +144,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
   }
 
   public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-    return new SettingsEditor <DefaultJavaApplication_Configuration>() {
-
-      private ConfigEditor myComponent = null;
-
-      protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
-      }
-
-      protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {
-        final SNode node = this.myComponent.getNode();
-        if (node == null) {
-          return;
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
-
-          public void run() {
-            c.getStateObject().myNodeId = node.getId();
-            c.getStateObject().myModelId = node.getModel().getModelDescriptor().getSModelReference().toString();
-          }
-        });
-      }
-
-      @NotNull()
-      protected JComponent createEditor() {
-        this.myComponent = new ConfigEditor(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
-        return this.myComponent;
-      }
-
-      protected void disposeEditor() {
-      }
-    };
+    return new DefaultJavaApplication_Configuration.MySettingsEditor();
   }
 
   @Nullable()
@@ -193,6 +164,46 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     return this.myState;
   }
 
+  private static class MySettingsEditor extends SettingsEditor<DefaultJavaApplication_Configuration> {
+
+    private ConfigEditor myComponent = null;
+
+    public MySettingsEditor() {
+    }
+
+    protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
+      SNode node = new SNodePointer(c.getStateObject().myModelId, c.getStateObject().myNodeId).getNode();
+      if (node == null) {
+        return;
+      }
+      MySettingsEditor.this.myComponent.setNode(node);
+    }
+
+    protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {
+      final SNode node = MySettingsEditor.this.myComponent.getNode();
+      if (node == null) {
+        return;
+      }
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+
+        public void run() {
+          c.getStateObject().myNodeId = node.getId();
+          c.getStateObject().myModelId = node.getModel().getModelDescriptor().getSModelReference().toString();
+        }
+      });
+    }
+
+    @NotNull()
+    protected JComponent createEditor() {
+      this.myComponent = new ConfigEditor(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
+      return this.myComponent;
+    }
+
+    protected void disposeEditor() {
+    }
+
+}
   public static class MyState {
 
     public String myNodeId;
