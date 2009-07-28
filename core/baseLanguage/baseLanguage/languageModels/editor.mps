@@ -6844,9 +6844,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232383354646">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1232383354647">
                     <property name="name" value="role" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1232383354648">
-                      <link role="classifier" targetNodeId="24.~String" resolveInfo="String" />
-                    </node>
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577819726850" />
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1232383369468">
                       <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1232383368138">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232383361618">

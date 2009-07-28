@@ -54,9 +54,7 @@
       <property name="isVirtual" value="true" />
       <property name="name" value="getPresentation" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877396641">
-        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577819369244" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877396642">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213877396643">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877396644">
@@ -129,9 +127,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877396674">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877396675">
             <property name="name" value="smartRefPresentation" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877396676">
-              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577819369245" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1213877396677">
               <link role="baseMethodDeclaration" targetNodeId="5.~ReferenceConceptUtil.getPresentation(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="getPresentation" />
               <link role="classConcept" targetNodeId="5.~ReferenceConceptUtil" resolveInfo="ReferenceConceptUtil" />
@@ -160,9 +156,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877396687">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877396688">
             <property name="name" value="conceptAlias" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877396689">
-              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577819369246" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877396690">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877396691" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess" id="1213877396692">
@@ -372,9 +366,7 @@
       <property name="name" value="getMessage" />
       <property name="isVirtual" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225207468593" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225207473455">
-        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577819566689" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225207468595">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1225207483003">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1225207490085" />

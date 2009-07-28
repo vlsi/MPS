@@ -20,16 +20,16 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
   public void doInit(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.addChecker(this.myToDoHighlighter);
-      highlighter.addChecker(this.myMethodDeclFixer);
+      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
+      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
     }
   }
 
   public void doDispose(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.removeChecker(this.myMethodDeclFixer);
-      highlighter.removeChecker(this.myToDoHighlighter);
+      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
+      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
     }
   }
 

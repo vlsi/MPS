@@ -9,7 +9,5 @@ public interface IMemberOperation extends IOperation {
   public static final String MEMBER = "member";
 
   public IMember getMember();
-
   public void setMember(IMember node);
-
 }

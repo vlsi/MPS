@@ -84,7 +84,7 @@ public class IMethodCall_Behavior {
       concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
     } else
     {
-      concreteType = new _Quotations.QuotationClass_23().createNode();
+      concreteType = new _Quotations.QuotationClass_25().createNode();
     }
     return concreteType;
   }

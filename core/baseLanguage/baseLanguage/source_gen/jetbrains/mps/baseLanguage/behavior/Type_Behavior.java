@@ -73,7 +73,7 @@ public class Type_Behavior {
       IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
       if (coercedNode_1 != null) {
-        return new _Quotations.QuotationClass_22().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
+        return new _Quotations.QuotationClass_24().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
       } else
       {
         throw new UnsupportedOperationException();

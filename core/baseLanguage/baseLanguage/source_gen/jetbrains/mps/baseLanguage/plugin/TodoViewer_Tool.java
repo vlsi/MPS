@@ -18,11 +18,11 @@ public class TodoViewer_Tool extends GeneratedTool {
   }
 
   public JComponent getComponent() {
-    return this.myComponent;
+    return TodoViewer_Tool.this.myComponent;
   }
 
   public void init(Project project) {
-    this.myComponent = new TodoViewer(this.getMPSProject());
+    TodoViewer_Tool.this.myComponent = new TodoViewer(TodoViewer_Tool.this.getMPSProject());
   }
 
 }
