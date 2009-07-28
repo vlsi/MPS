@@ -12358,18 +12358,14 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230634921046">
                     <property name="name" value="adaptersMultiMap" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238585540833">
-                      <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540834">
-                        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                      </node>
+                      <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413785" />
                       <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453071">
                         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453072" />
                       </node>
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1230634921051">
                       <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238585540930">
-                        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585540931">
-                          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                        </node>
+                        <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413789" />
                         <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453093">
                           <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453094" />
                         </node>
@@ -12430,17 +12426,17 @@
                     <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634921080">
                       <link role="variableDeclaration" targetNodeId="1230634921040" resolveInfo="adapterName" />
                     </node>
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634921081">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634921082">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634921083">
-                          <link role="variableDeclaration" targetNodeId="1230634921069" resolveInfo="idx" />
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634921082">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634921083">
+                        <link role="variableDeclaration" targetNodeId="1230634921069" resolveInfo="idx" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634921081">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634921085">
+                          <link role="variableDeclaration" targetNodeId="1230634921040" resolveInfo="adapterName" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230634921084">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230634921084">
                           <property name="value" value="_" />
                         </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634921085">
-                        <link role="variableDeclaration" targetNodeId="1230634921040" resolveInfo="adapterName" />
                       </node>
                     </node>
                   </node>
@@ -13224,18 +13220,14 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1230634816579">
                   <property name="name" value="adaptersMultiMap" />
                   <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238585541146">
-                    <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541147">
-                      <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                    </node>
+                    <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413793" />
                     <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453121">
                       <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453122" />
                     </node>
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1230634816584">
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1238585541090">
-                      <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238585541091">
-                        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                      </node>
+                      <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413797" />
                       <node role="valueType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669453035">
                         <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238669453036" />
                       </node>
@@ -13296,17 +13288,17 @@
                   <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634909155">
                     <link role="variableDeclaration" targetNodeId="1230634800165" resolveInfo="adapterName" />
                   </node>
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634904142">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634904143">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634904144">
-                        <link role="variableDeclaration" targetNodeId="1230634893384" resolveInfo="idx" />
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634904143">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634904144">
+                      <link role="variableDeclaration" targetNodeId="1230634893384" resolveInfo="idx" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230634904142">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634904146">
+                        <link role="variableDeclaration" targetNodeId="1230634800165" resolveInfo="adapterName" />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230634904145">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230634904145">
                         <property name="value" value="_" />
                       </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230634904146">
-                      <link role="variableDeclaration" targetNodeId="1230634800165" resolveInfo="adapterName" />
                     </node>
                   </node>
                 </node>

@@ -54,15 +54,11 @@
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227886714754">
                 <property name="name" value="strList" />
                 <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1227886714755">
-                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227886714756">
-                    <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                  </node>
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413713" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1227886714757">
                   <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1227886714758">
-                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227886714759">
-                      <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                    </node>
+                    <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413719" />
                   </node>
                 </node>
               </node>
@@ -70,9 +66,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1227886714760">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227886714761">
                 <property name="name" value="abc" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227886714762">
-                  <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4887793210800413707" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1227886714763">
                   <property name="value" value="abc" />
                 </node>
