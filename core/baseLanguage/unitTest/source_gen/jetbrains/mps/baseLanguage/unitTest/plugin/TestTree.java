@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestTree extends MPSTree {
@@ -29,7 +29,7 @@ public class TestTree extends MPSTree {
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.map.clear();
-    for(SNode testCase : Sequence.fromIterable(MapSequence.fromMap(this.tests).keySet())) {
+    for(SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       root.add(testCaseTreeNode);
       this.map.put(testCase, testCaseTreeNode);

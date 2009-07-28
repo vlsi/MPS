@@ -15,8 +15,8 @@ public class ProjectPaneProjectAddition_ActionGroup extends GeneratedActionGroup
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addSeparator();
-      this.addAction("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action", "jetbrains.mps.build.packaging");
+      ProjectPaneProjectAddition_ActionGroup.this.addSeparator();
+      ProjectPaneProjectAddition_ActionGroup.this.addAction("jetbrains.mps.build.packaging.plugin.GenerateBuildForProjectAction_Action", "jetbrains.mps.build.packaging");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

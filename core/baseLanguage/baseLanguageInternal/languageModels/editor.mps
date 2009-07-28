@@ -394,9 +394,7 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1224155888026">
                     <property name="name" value="result" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1224155888027">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224155888028">
-                        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-                      </node>
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037705288899" />
                     </node>
                   </node>
                 </node>
@@ -444,9 +442,7 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1224155888049">
                           <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1224155888050">
                             <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="1224155888051">
-                              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1224155888052">
-                                <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-                              </node>
+                              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037705288901" />
                             </node>
                           </node>
                           <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224155888053">

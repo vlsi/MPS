@@ -45,9 +45,7 @@
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1235556489932">
                 <property name="name" value="second" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235556492200">
-                  <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704648612" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TupleExpression" id="1235556511596">
@@ -162,9 +160,7 @@
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1235556918201">
                 <property name="name" value="s" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235556919328">
-                  <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704648615" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TupleExpression" id="1235556923784">
@@ -187,9 +183,7 @@
               </node>
               <node role="member" type="jetbrains.mps.baseLanguage.structure.TupleMember" id="1235556934504">
                 <property name="name" value="second" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235556936507">
-                  <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704648618" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235556939618">

@@ -4487,9 +4487,7 @@
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1233749866806">
                         <property name="name" value="path" />
                         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1233749866807">
-                          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233749866808">
-                            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                          </node>
+                          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1968833676317451782" />
                         </node>
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233749866809">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233749866810">
@@ -4597,9 +4595,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1233750983747">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1233750983748">
                   <property name="name" value="artifactNormalizedPath" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233750983749">
-                    <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                  </node>
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1968833676317451784" />
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233750983750">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1233750983751">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1233750983752" />

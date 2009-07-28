@@ -505,9 +505,7 @@
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241263972198">
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241263972199">
                           <property name="name" value="rnd" />
-                          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241263972200">
-                            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                          </node>
+                          <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704721225" />
                           <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241263972201">
                             <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1241263972202" />
                             <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1241263972203">
@@ -623,9 +621,7 @@
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241263972249">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241263972250">
                             <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1241263972251">
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241263972252">
-                                <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                              </node>
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704721226" />
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241263972253">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1241263972254">
                                   <link role="enumClass" targetNodeId="15.1241092045116" resolveInfo="Values" />

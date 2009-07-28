@@ -139,9 +139,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1240033962916">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240033962917">
             <property name="name" value="relativePath" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240033962918">
-              <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1968833676317598363" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240033962919">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1240033962920">
                 <link role="baseMethodDeclaration" targetNodeId="7.~Macros.mpsHomeMacros():jetbrains.mps.util.Macros" resolveInfo="mpsHomeMacros" />

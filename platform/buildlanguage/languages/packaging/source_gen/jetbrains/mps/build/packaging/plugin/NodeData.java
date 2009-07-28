@@ -7,18 +7,11 @@ import javax.swing.Icon;
 
 public interface NodeData {
 
-  public abstract List<NodeData> getChildren();
-
-  public abstract String getText();
-
-  public abstract Icon getIcon(boolean expanded);
-
-  public abstract boolean canHaveChildren();
-
-  public abstract void addChildren(NodeData nodeData);
-
-  public abstract NodeData getParent();
-
-  public abstract void setParent(NodeData parent);
-
+  public List<NodeData> getChildren();
+  public String getText();
+  public Icon getIcon(boolean expanded);
+  public boolean canHaveChildren();
+  public void addChildren(NodeData nodeData);
+  public NodeData getParent();
+  public void setParent(NodeData parent);
 }

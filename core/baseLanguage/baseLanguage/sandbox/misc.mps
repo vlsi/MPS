@@ -384,9 +384,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227257059349" />
     <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="5527906908239634196">
       <property name="name" value="T" />
-      <node role="bound" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5527906908239634212">
-        <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
-      </node>
+      <node role="bound" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037704648619" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7595624734444987006">

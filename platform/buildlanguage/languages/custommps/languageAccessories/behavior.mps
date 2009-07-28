@@ -608,9 +608,7 @@
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238504189354">
                     <property name="name" value="runtimeCP" />
                     <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="1238669911998">
-                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238669911999">
-                        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                      </node>
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1188338037705467214" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238504189357">
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1238504189358">

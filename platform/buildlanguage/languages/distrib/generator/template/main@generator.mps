@@ -6736,15 +6736,15 @@
                             <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234511712397">
                               <link role="variableDeclaration" targetNodeId="1234511687627" resolveInfo="pathString" />
                             </node>
-                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234511745438">
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234511791970">
-                                <link role="variableDeclaration" targetNodeId="1234511795933" resolveInfo="parefix" />
+                            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234511745440">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234511745441">
+                                <property name="value" value=":" />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234511745440">
-                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234511745441">
-                                  <property name="value" value=":" />
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234511745438">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234511791970">
+                                  <link role="variableDeclaration" targetNodeId="1234511795933" resolveInfo="parefix" />
                                 </node>
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234511745442">
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234511745442">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234511745443">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1234511824533">
                                       <link role="variable" targetNodeId="1234511702297" resolveInfo="cpItem" />
