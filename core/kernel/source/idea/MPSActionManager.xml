@@ -142,6 +142,8 @@
 
         <group>
             <separator/>
+            <action id="ShowInLogicalView" class="jetbrains.mps.vcs.actions.ShowInLogicalView"
+                    text="Show In Logical View"/>
             <action id="ShowInFileView" class="jetbrains.mps.vcs.actions.ShowInFileView"
                     text="Show In File System View"/>
             <action id="ShowInVcsRootsView" class="jetbrains.mps.vcs.actions.ShowInVcsRootsView"
