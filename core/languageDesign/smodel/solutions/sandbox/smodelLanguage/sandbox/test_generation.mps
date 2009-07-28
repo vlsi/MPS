@@ -840,9 +840,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1206040050212">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1206040050213">
                 <property name="name" value="string" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1206040050214">
-                  <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577818926936" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206040050215">
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1206040050216">
                     <link role="property" targetNodeId="1.1156235010670" resolveInfo="alias" />

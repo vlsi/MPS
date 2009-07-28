@@ -377,9 +377,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1204836194166">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1204836194167">
             <property name="name" value="aaa" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1204836194168">
-              <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577818926899" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1204836199780">
               <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
             </node>

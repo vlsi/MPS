@@ -15,7 +15,7 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action", "jetbrains.mps.baseLanguage.dates");
+      DateLangGroup_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.dates.plugin.ConvertDateTimeOperations_Action", "jetbrains.mps.baseLanguage.dates");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

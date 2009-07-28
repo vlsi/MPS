@@ -41,7 +41,7 @@ __switch__:
                       return false;
                     case 2:
                       this.__CP__ = 1;
-                      this.yield(String.valueOf(it));
+                      this.yield(((String)String.valueOf(it)));
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -92,7 +92,7 @@ __switch__:
                       return false;
                     case 2:
                       this.__CP__ = 1;
-                      this.yield(String.valueOf(it));
+                      this.yield(((String)String.valueOf(it)));
                       return true;
                     case 0:
                       this.__CP__ = 2;

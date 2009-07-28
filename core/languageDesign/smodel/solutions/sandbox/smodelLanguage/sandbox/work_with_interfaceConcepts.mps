@@ -115,9 +115,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1173137395959">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1173137395960">
                 <property name="name" value="name" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173137395961">
-                  <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4859441577818926940" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227959727">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1173137406823">
                     <link role="variableDeclaration" targetNodeId="1173137322951" resolveInfo="parent" />
