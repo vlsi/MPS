@@ -16,7 +16,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.samples.agreementLanguage.generator.baseLanguage._Quotations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -26,7 +25,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1197658386740(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    //     apply rule if at least one Plan exists in input model
+    // apply rule if at least one Plan exists in input model
     List<SNode> plans = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
     return ListSequence.fromList(plans).isNotEmpty();
   }
@@ -190,7 +189,7 @@ public class QueriesGenerated {
     if ("tax".equals(SPropertyOperations.getString(accountType, "name"))) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "enumConstantDeclaration", false);
     }
-    //     error
+    // error
     return null;
   }
 
@@ -284,7 +283,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_postingRule);
+                      this.yield(_2_postingRule);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -347,7 +346,7 @@ __switch__:
                       break;
                     case 5:
                       this.__CP__ = 3;
-                      this.yield(this._2_quantity);
+                      this.yield(_2_quantity);
                       return true;
                     case 0:
                       this.__CP__ = 2;

@@ -35,12 +35,12 @@ public class RunReplacement_Tool extends GeneratedTool {
   }
 
   public void closeTab(ReplacementView view) {
-    int index = ListSequence.fromList(this.myViews).indexOf(view);
-    this.closeTab(index);
+    int index = ListSequence.fromList(RunReplacement_Tool.this.myViews).indexOf(view);
+    RunReplacement_Tool.this.closeTab(index);
   }
 
   private void closeTab(int index) {
-    ContentManager manager = this.getContentManager();
+    ContentManager manager = RunReplacement_Tool.this.getContentManager();
     Content content = manager.getContent(index);
     assert content != null;
     manager.removeContent(content, true);

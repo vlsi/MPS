@@ -93,9 +93,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1234264217402">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1234264217403">
               <property name="name" value="name" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234264524522">
-                <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398892" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234264225126">
                 <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1234264224047" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234264518287">

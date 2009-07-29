@@ -488,9 +488,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1218047638035">
       <link role="conceptLinkDeclaration" targetNodeId="3.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218047754239">
-        <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398850" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1221156564099">

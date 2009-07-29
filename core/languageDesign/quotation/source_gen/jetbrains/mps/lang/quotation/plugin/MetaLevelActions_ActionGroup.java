@@ -15,7 +15,7 @@ public class MetaLevelActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action", "jetbrains.mps.lang.quotation");
+      MetaLevelActions_ActionGroup.this.addAction("jetbrains.mps.lang.quotation.plugin.ShowMetaLevel_Action", "jetbrains.mps.lang.quotation");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

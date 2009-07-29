@@ -19,18 +19,18 @@ public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
   }
 
   public void doInit(MPSProject project) {
-    this.myChecker = new TypesEditorChecker();
+    TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker();
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.addChecker(this.myChecker);
+      highlighter.addChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
     }
   }
 
   public void doDispose(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
-      highlighter.removeChecker(this.myChecker);
-      this.myChecker.dispose();
+      highlighter.removeChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
+      TypesystemPlugin_CustomProjectPlugin.this.myChecker.dispose();
     }
   }
 

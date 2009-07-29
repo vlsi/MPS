@@ -487,9 +487,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234790509321">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234790509322">
-          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398852" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1234790593536">
           <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1234790593537">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234790593538">
@@ -545,9 +543,7 @@
       <property name="name" value="functionName" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1234804302267">
         <property name="name" value="s" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1234804328044">
-          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398909" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="1234804362277">
           <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="1234804362278">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234804362279">

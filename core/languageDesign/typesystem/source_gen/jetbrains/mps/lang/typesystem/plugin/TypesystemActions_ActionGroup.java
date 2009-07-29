@@ -16,9 +16,9 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     this.setMnemonic("T".charAt(0));
     this.setPopup(true);
     try {
-      this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action", "jetbrains.mps.lang.typesystem");
-      this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
-      this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowNodeType_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.ShowRulesWhichAffectNodeType_Action", "jetbrains.mps.lang.typesystem");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

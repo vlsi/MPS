@@ -2460,9 +2460,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1216388444260">
         <property name="name" value="argv" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1216388444261">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216388444262">
-            <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398853" />
         </node>
       </node>
     </node>

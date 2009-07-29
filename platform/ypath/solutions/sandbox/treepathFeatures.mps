@@ -2018,9 +2018,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1240330009626">
         <property name="name" value="cardinality" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1240573073910">
-          <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933722473" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240329957162" />

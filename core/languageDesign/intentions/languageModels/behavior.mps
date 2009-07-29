@@ -51,9 +51,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877237628">
       <property name="name" value="getGeneratedName" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877237629">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269599" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877237630">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877237631">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877237632">
@@ -78,9 +76,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877237638">
       <property name="name" value="getConceptName" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877237639">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269570" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877237640">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877237641">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877237642">

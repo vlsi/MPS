@@ -510,9 +510,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1233319014875">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1233319014876">
             <property name="name" value="result" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1233319014877">
-              <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398857" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1233319014878">
               <link role="variableDeclaration" targetNodeId="1233319014911" resolveInfo="name" />
             </node>

@@ -15,8 +15,8 @@ public class FindInstancesByConditionGroup_ActionGroup extends GeneratedActionGr
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action", "jetbrains.mps.quickQueryLanguage");
-      this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action", "jetbrains.mps.quickQueryLanguage");
+      FindInstancesByConditionGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByCondition_Action", "jetbrains.mps.quickQueryLanguage");
+      FindInstancesByConditionGroup_ActionGroup.this.addAction("jetbrains.mps.quickQueryLanguage.plugin.ReplacementQueryAction_Action", "jetbrains.mps.quickQueryLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

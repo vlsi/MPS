@@ -128,9 +128,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1241363668554">
         <property name="name" value="args" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1241363671009">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1241363668555">
-            <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398847" />
         </node>
       </node>
     </node>

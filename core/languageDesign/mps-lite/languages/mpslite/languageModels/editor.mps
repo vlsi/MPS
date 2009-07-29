@@ -714,9 +714,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237320871387">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237320871388">
                       <property name="name" value="textBC" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237320871389">
-                        <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
-                      </node>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933722469" />
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237320871390">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237320871391">
                           <link role="variableDeclaration" targetNodeId="1237320871382" resolveInfo="label" />
@@ -730,9 +728,7 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1237320871393">
                     <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1237320871394">
                       <property name="name" value="textAC" />
-                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1237320871395">
-                        <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
-                      </node>
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933722468" />
                       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237320871396">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237320871397">
                           <link role="variableDeclaration" targetNodeId="1237320871382" resolveInfo="label" />

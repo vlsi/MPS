@@ -314,9 +314,7 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1225195370330">
       <property name="name" value="getDefaultConcreteConceptFqName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225195370331">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398908" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225195370332" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225195370333">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225195370334">
@@ -1011,9 +1009,7 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225195370655">
         <property name="name" value="callerConceptFqName" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1225195370656">
-          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398911" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1225195370657">
         <property name="name" value="object" />

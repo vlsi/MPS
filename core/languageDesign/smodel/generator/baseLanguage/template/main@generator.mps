@@ -4633,9 +4633,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3769812235505816467">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="3769812235505816468">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3769812235505816469">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398893" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3769812235505816470">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="3769812235505816471">
@@ -5009,9 +5007,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1171415960005">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1171415960006">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171415960007">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398917" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171415960008">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203118690609">
@@ -5573,9 +5569,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1173119412076">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1173119412077">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173119412078">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398861" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173119412079">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203457991460">
@@ -5627,9 +5621,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3769812235505815512">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="3769812235505815513">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3769812235505815514">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398904" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3769812235505815515">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="3769812235505815516">
@@ -5737,9 +5729,7 @@
       </node>
       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1173123284737">
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" id="1173123284738">
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1173123284739">
-            <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-          </node>
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398914" />
           <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1173123284740">
             <property name="value" value="_concept_name_" />
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="1203119702929">

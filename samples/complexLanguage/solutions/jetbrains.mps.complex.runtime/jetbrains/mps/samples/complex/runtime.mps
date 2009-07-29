@@ -650,9 +650,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1196425808448">
       <property name="name" value="toString" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196425821405">
-        <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933722454" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196425808450" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196425808451">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206621555765">
@@ -686,12 +684,33 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1206621580132">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206621580133">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206621610725">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206621761566">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206621770559">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621773874">
-                    <property name="value" value="i" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206621770559">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621773874">
+                  <property name="value" value="i" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1206621761566">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206621757197">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206621758121">
+                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1206621758122">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621758123">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621758124" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621758125">
+                            <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621758126">
+                          <property name="value" value="0" />
+                        </node>
+                      </node>
+                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621758127">
+                        <property name="value" value="" />
+                      </node>
+                      <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621758128">
+                        <property name="value" value="-" />
+                      </node>
+                    </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206621766242">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206621766242">
                     <link role="baseMethodDeclaration" targetNodeId="1.~Math.abs(double):double" resolveInfo="abs" />
                     <link role="classConcept" targetNodeId="1.~Math" resolveInfo="Math" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621769087">
@@ -699,27 +718,6 @@
                         <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
                       </node>
                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621769089" />
-                    </node>
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206621757197">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206621758121">
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1206621758122">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621758123">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621758124" />
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621758125">
-                          <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
-                        </node>
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621758126">
-                        <property name="value" value="0" />
-                      </node>
-                    </node>
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621758127">
-                      <property name="value" value="" />
-                    </node>
-                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621758128">
-                      <property name="value" value="-" />
                     </node>
                   </node>
                 </node>
@@ -739,49 +737,49 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196425827750">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425832176">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425842930">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425850966">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196425857125">
-                  <property name="value" value="i" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206621855975">
-                  <link role="classConcept" targetNodeId="1.~Math" resolveInfo="Math" />
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Math.abs(double):double" resolveInfo="abs" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621855976">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621855977">
-                      <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621855978" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425850966">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196425857125">
+              <property name="value" value="i" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425842930">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196425832176">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621790875">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1196425830878" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621790876">
+                    <link role="fieldDeclaration" targetNodeId="1196259679368" resolveInfo="myReal" />
                   </node>
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206621837154">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206621837155">
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1206621837156">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621837157">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621837158" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621837159">
-                        <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1206621837154">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1206621837155">
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1206621837156">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621837157">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621837158" />
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621837159">
+                          <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
+                        </node>
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621837160">
+                        <property name="value" value="0" />
                       </node>
                     </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1206621837160">
-                      <property name="value" value="0" />
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621837161">
+                      <property name="value" value=" + " />
                     </node>
-                  </node>
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621837161">
-                    <property name="value" value=" + " />
-                  </node>
-                  <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621837162">
-                    <property name="value" value=" - " />
+                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1206621837162">
+                      <property name="value" value=" - " />
+                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621790875">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1196425830878" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621790876">
-                <link role="fieldDeclaration" targetNodeId="1196259679368" resolveInfo="myReal" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1206621855975">
+                <link role="classConcept" targetNodeId="1.~Math" resolveInfo="Math" />
+                <link role="baseMethodDeclaration" targetNodeId="1.~Math.abs(double):double" resolveInfo="abs" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206621855976">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1206621855977">
+                    <link role="fieldDeclaration" targetNodeId="1196259698235" resolveInfo="myImaginary" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1206621855978" />
+                </node>
               </node>
             </node>
           </node>

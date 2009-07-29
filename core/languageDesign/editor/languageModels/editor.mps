@@ -8626,9 +8626,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239461639763">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239461639764">
             <property name="name" value="filename" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239461639765">
-              <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269558" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239461664739">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239461662770">
                 <link role="baseMethodDeclaration" targetNodeId="38.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />
@@ -8821,9 +8819,7 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239462341507">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239462341508">
                                 <property name="name" value="selectedPath" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239462341509">
-                                  <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-                                </node>
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269559" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239462371828">
                                   <link role="baseMethodDeclaration" targetNodeId="38.~FileUtil.getCanonicalPath(java.io.File):java.lang.String" resolveInfo="getCanonicalPath" />
                                   <link role="classConcept" targetNodeId="38.~FileUtil" resolveInfo="FileUtil" />
@@ -8841,9 +8837,7 @@
                             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239462388370">
                               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239462388371">
                                 <property name="name" value="pathToShow" />
-                                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239462388372">
-                                  <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
-                                </node>
+                                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269579" />
                                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239462414508">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239462407036">
                                     <link role="baseMethodDeclaration" targetNodeId="38.~Macros.languageDescriptor():jetbrains.mps.util.Macros" resolveInfo="languageDescriptor" />

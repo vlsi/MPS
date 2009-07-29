@@ -393,15 +393,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1236788118700">
             <property name="name" value="roles" />
             <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="1238662721766">
-              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1238662721767">
-                <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-              </node>
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269611" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1236788243811">
               <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" id="1238662722118">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1236788433933">
-                  <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269625" />
               </node>
             </node>
           </node>

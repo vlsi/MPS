@@ -2131,9 +2131,7 @@
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1228487511504">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1228487515222">
-        <link role="classifier" targetNodeId="8.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398905" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1228487433614">
       <property name="value" value="role" />

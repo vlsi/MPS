@@ -148,20 +148,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "handler", true);
   }
 
-  public static SNode sourceNodeQuery_1203600929409(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1203600954272(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "type", true);
-  }
-
   public static SNode sourceNodeQuery_1203607719721(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "errorText", true);
   }
 
   public static SNode sourceNodeQuery_1216903906306(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(ComponentDeclaration_Behavior.call_getBeforeConstruction_1216902155145(_context.getNode()), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1303564268278398869(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1303564268278398883(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
 
   public static SNode sourceNodeQuery_3734045384532546786(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

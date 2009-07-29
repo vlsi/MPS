@@ -46,9 +46,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213100929839">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213100929840">
               <property name="name" value="conceptName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213100929841">
-                <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160932866520" />
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213100934016">

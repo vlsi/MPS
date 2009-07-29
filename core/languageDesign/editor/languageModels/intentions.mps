@@ -1582,9 +1582,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235496126724">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235496126725">
                 <property name="name" value="role" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235496126726">
-                  <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269551" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235496126727">
                   <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235496126728">
                     <link role="variable" targetNodeId="1235493645190" resolveInfo="child" />
@@ -1803,9 +1801,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1235497836443">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1235497836444">
                 <property name="name" value="role" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1235497836445">
-                  <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-                </node>
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269582" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235497836446">
                   <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1235497836447">
                     <link role="variable" targetNodeId="1235497836437" resolveInfo="child" />

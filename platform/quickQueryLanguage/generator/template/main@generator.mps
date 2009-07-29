@@ -98,9 +98,7 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1218800408514">
       <property name="name" value="getConcept" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218800418768">
-        <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398856" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218800408516">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218800459697">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218801178375">

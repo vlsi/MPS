@@ -2450,9 +2450,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1227019098434">
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1227019102561">
-        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269565" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="1227019107766">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />

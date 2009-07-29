@@ -2747,9 +2747,7 @@
     <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1212009559902">
       <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1212009597217">
-        <link role="classifier" targetNodeId="7.~String" resolveInfo="String" />
-      </node>
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269572" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1212008780883">
       <property name="value" value="name" />

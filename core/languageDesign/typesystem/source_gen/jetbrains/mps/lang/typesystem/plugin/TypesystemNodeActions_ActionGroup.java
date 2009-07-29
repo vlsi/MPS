@@ -15,7 +15,7 @@ public class TypesystemNodeActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
+      TypesystemNodeActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRule_Action", "jetbrains.mps.lang.typesystem");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

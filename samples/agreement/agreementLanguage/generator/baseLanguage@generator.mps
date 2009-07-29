@@ -858,9 +858,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197662895388">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197662895389">
               <property name="name" value="prefix" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197662895390">
-                <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
-              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1303564268278398915" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197662818880">
                 <link role="baseMethodDeclaration" targetNodeId="15.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
                 <link role="classConcept" targetNodeId="15.~NameUtil" resolveInfo="NameUtil" />

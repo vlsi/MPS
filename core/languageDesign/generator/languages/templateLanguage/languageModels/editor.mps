@@ -5956,9 +5956,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1231694235264">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1231694235265">
               <property name="name" value="propertyName" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1231694235266">
-                <link role="classifier" targetNodeId="65.~String" resolveInfo="String" />
-              </node>
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4853609160933269560" />
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1231694235267">
                 <link role="baseMethodDeclaration" targetNodeId="10.~AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(java.lang.String):java.lang.String" resolveInfo="getPropertyNameFromPropertyAttributeRole" />
                 <link role="classConcept" targetNodeId="10.~AttributesRolesUtil" resolveInfo="AttributesRolesUtil" />
