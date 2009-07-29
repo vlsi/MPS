@@ -25,6 +25,8 @@ public interface ILazyTab {
 
   String getNullText();
 
+  TabbedEditor getTabbedEditor();
+
   List<EditorComponent> getEditorComponents();
 
   EditorComponent getCurrentEditorComponent();

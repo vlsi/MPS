@@ -23001,6 +23001,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325856932">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744730" />
                 </node>
               </node>
             </node>
@@ -23102,6 +23103,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325972011">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744721" />
                 </node>
               </node>
             </node>
@@ -23305,6 +23307,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977279">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744729" />
                 </node>
               </node>
             </node>
@@ -23406,6 +23409,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977385">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744720" />
                 </node>
               </node>
             </node>
@@ -23609,6 +23613,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977480">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744727" />
                 </node>
               </node>
             </node>
@@ -23710,6 +23715,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133325977525">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744728" />
                 </node>
               </node>
             </node>
@@ -23916,6 +23922,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3322169133326078236">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133326078227" resolveInfo="getOperationContext" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744698" />
                 </node>
               </node>
             </node>
@@ -24185,6 +24192,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619274571">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744718" />
                 </node>
               </node>
             </node>
@@ -24497,6 +24505,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1849012472219313282">
                 <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                 <link role="baseMethodDeclaration" targetNodeId="3322169133326078227" resolveInfo="getOperationContext" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744709" />
               </node>
             </node>
           </node>
@@ -24542,6 +24551,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619276396">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744722" />
                 </node>
               </node>
             </node>
@@ -24743,6 +24753,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1849012472219313289">
                 <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                 <link role="baseMethodDeclaration" targetNodeId="3322169133326078227" resolveInfo="getOperationContext" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744713" />
               </node>
             </node>
           </node>
@@ -24788,6 +24799,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619423898">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744715" />
                 </node>
               </node>
             </node>
@@ -24991,6 +25003,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619424018">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744716" />
                 </node>
               </node>
             </node>
@@ -25092,6 +25105,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619424063">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744719" />
                 </node>
               </node>
             </node>
@@ -25293,6 +25307,7 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8418256647045321168">
                 <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                 <link role="baseMethodDeclaration" targetNodeId="3322169133326078227" resolveInfo="getOperationContext" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744711" />
               </node>
             </node>
           </node>
@@ -25338,6 +25353,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619524698">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744724" />
                 </node>
               </node>
             </node>
@@ -25643,6 +25659,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619524862">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744717" />
                 </node>
               </node>
             </node>
@@ -25744,6 +25761,7 @@
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7669625834619524907">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8746847784200744723" />
                 </node>
               </node>
             </node>
@@ -25979,42 +25997,58 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3322169133325856924" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3322169133325856925">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3322169133325856927">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4436041099111114440">
-            <link role="baseMethodDeclaration" targetNodeId="63.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
-            <link role="classConcept" targetNodeId="63.~GlobalScope" resolveInfo="GlobalScope" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8746847784200744670">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8746847784200744665">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8746847784200744660">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8746847784200744659">
+                  <link role="variableDeclaration" targetNodeId="8746847784200744656" resolveInfo="tab" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8746847784200744664">
+                  <link role="baseMethodDeclaration" targetNodeId="196.~ILazyTab.getTabbedEditor():jetbrains.mps.ide.tabbedEditor.TabbedEditor" resolveInfo="getTabbedEditor" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8746847784200744669">
+                <link role="baseMethodDeclaration" targetNodeId="196.~TabbedEditor.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8746847784200744674">
+              <link role="baseMethodDeclaration" targetNodeId="40.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+            </node>
           </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8746847784200744656">
+        <property name="name" value="tab" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8746847784200744657">
+          <link role="classifier" targetNodeId="196.~ILazyTab" resolveInfo="ILazyTab" />
         </node>
       </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="3322169133326078227">
       <property name="name" value="getOperationContext" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8746847784200744675">
+        <property name="name" value="tab" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8746847784200744676">
+          <link role="classifier" targetNodeId="196.~ILazyTab" resolveInfo="ILazyTab" />
+        </node>
+      </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3322169133326078233">
         <link role="classifier" targetNodeId="40.~IOperationContext" resolveInfo="IOperationContext" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3322169133326078229" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3322169133326078230">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3322169133326078231">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8418256647045330292">
-            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8418256647045396307">
-              <link role="baseMethodDeclaration" targetNodeId="63.~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolveInfo="ProjectOperationContext" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8418256647045396309">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="8418256647045396308">
-                  <link role="classifier" targetNodeId="107.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                  <link role="variableDeclaration" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8418256647045396313">
-                  <link role="baseMethodDeclaration" targetNodeId="100.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8418256647045396320">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8418256647045396319">
-                      <link role="baseMethodDeclaration" targetNodeId="118.~DataManager.getInstance():com.intellij.ide.DataManager" resolveInfo="getInstance" />
-                      <link role="classConcept" targetNodeId="118.~DataManager" resolveInfo="DataManager" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8418256647045396325">
-                      <link role="baseMethodDeclaration" targetNodeId="118.~DataManager.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolveInfo="getDataContext" />
-                    </node>
-                  </node>
-                </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8746847784200744678">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8746847784200744679">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8746847784200744680">
+                <link role="variableDeclaration" targetNodeId="8746847784200744675" resolveInfo="tab" />
               </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8746847784200744681">
+                <link role="baseMethodDeclaration" targetNodeId="196.~ILazyTab.getTabbedEditor():jetbrains.mps.ide.tabbedEditor.TabbedEditor" resolveInfo="getTabbedEditor" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8746847784200744682">
+              <link role="baseMethodDeclaration" targetNodeId="196.~TabbedEditor.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
             </node>
           </node>
         </node>
