@@ -15,10 +15,10 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action", "jetbrains.mps.lang.structure");
-      this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action", "jetbrains.mps.lang.structure");
-      this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action", "jetbrains.mps.lang.structure");
-      this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action", "jetbrains.mps.lang.structure");
+      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowDefaultHelp_Action", "jetbrains.mps.lang.structure");
+      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForNode_Action", "jetbrains.mps.lang.structure");
+      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForRoot_Action", "jetbrains.mps.lang.structure");
+      ShowHelp_ActionGroup.this.addAction("jetbrains.mps.lang.structure.plugin.ShowHelpForAspect_Action", "jetbrains.mps.lang.structure");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

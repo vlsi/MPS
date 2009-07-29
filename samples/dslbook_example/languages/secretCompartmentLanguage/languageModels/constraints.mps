@@ -54,9 +54,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1197251245696">
       <property name="name" value="getStateMachineName" />
       <property name="isPrivate" value="false" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197251283309">
-        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424294" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197251245698">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197251292013">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1217625358599">

@@ -326,9 +326,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877253693">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877253694">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877253695">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877253696">
-              <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-            </node>
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424289" />
           </node>
         </node>
       </node>

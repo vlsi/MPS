@@ -12582,9 +12582,7 @@
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877536691">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1213877536692">
-                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877536693">
-                    <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                  </node>
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200324810" />
                 </node>
               </node>
             </node>

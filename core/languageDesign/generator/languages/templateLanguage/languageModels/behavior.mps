@@ -213,9 +213,7 @@
                       </node>
                     </node>
                   </node>
-                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877219606">
-                    <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-                  </node>
+                  <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424288" />
                 </node>
               </node>
             </node>
@@ -1394,9 +1392,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877473062">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1213877473063">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213877473064">
-              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-            </node>
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424291" />
           </node>
         </node>
       </node>

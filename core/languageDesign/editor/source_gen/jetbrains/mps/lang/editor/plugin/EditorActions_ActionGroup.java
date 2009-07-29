@@ -16,8 +16,8 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action", "jetbrains.mps.lang.editor");
-      this.addAction("jetbrains.mps.lang.editor.plugin.DeleteLine_Action", "jetbrains.mps.lang.editor");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.CopyThisDown_Action", "jetbrains.mps.lang.editor");
+      EditorActions_ActionGroup.this.addAction("jetbrains.mps.lang.editor.plugin.DeleteLine_Action", "jetbrains.mps.lang.editor");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

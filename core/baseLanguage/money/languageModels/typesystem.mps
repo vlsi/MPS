@@ -49,9 +49,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1187360113611">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379728947">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197379728948">
-              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-            </node>
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424293" />
           </node>
         </node>
       </node>
@@ -74,9 +72,7 @@
         </node>
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1187360333782">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1197379728949">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197379728950">
-              <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
-            </node>
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424290" />
           </node>
         </node>
       </node>

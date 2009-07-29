@@ -55,7 +55,7 @@ import jetbrains.mps.smodel.Generator;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1221758915287(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false)).isNotEmpty();
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false, new String[]{})).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_1224770908054(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -330,7 +330,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1220026621744(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
-      List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false);
+      List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
       SNode macro = ListSequence.fromList(descendants).findFirst(new IWhereFilter <SNode>() {
 
         public boolean accept(SNode it) {
@@ -358,7 +358,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1220983242941(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
-      List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false);
+      List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
       for(SNode m : ListSequence.fromList(descendants)) {
         if (SPropertyOperations.getString(m, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"))) {
           return m;
@@ -533,7 +533,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1220361608323(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false);
+    List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false, new String[]{});
     for(SNode ref : ListSequence.fromList(references)) {
       if (SLinkOperations.getTarget(ref, "variable", false) == _context.getNode()) {
         return true;
@@ -742,7 +742,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234271765511(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false)).where(new IWhereFilter <SNode>() {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter <SNode>() {
 
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
@@ -780,7 +780,7 @@ public class QueriesGenerated {
       if (!(SPropertyOperations.getBoolean(layout, "compile"))) {
         continue;
       }
-      List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false);
+      List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new HashMap<IModule, List<SNode>>());
       // fill map
       for(SNode module : ListSequence.fromList(modules)) {

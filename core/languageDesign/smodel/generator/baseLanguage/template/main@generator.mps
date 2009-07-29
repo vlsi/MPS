@@ -820,9 +820,7 @@
                 <link role="variableDeclaration" targetNodeId="1178819328015" resolveInfo="typeOfArgument" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196952392404">
-                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952392405">
-                  <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                </node>
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424295" />
               </node>
             </node>
           </node>
@@ -955,9 +953,7 @@
                   <link role="variableDeclaration" targetNodeId="1178820483382" resolveInfo="typeOfArgument" />
                 </node>
                 <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1196952392406">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196952392407">
-                    <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                  </node>
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424287" />
                 </node>
               </node>
             </node>
@@ -7164,9 +7160,7 @@
                     <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="1229466221510" />
                   </node>
                   <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1229466221511">
-                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1229466221512">
-                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
-                    </node>
+                    <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="8227296800200424286" />
                   </node>
                 </node>
               </node>

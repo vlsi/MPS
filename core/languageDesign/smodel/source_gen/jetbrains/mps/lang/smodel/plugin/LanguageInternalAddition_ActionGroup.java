@@ -16,7 +16,7 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(true);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action", "jetbrains.mps.lang.smodel");
+      LanguageInternalAddition_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.plugin.CheckLangForJavaStubModels_Action", "jetbrains.mps.lang.smodel");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -17,15 +17,15 @@ public class StructureView_Tool extends GeneratedTool {
   }
 
   public JComponent getComponent() {
-    return this.myComponent.getComponent();
+    return StructureView_Tool.this.myComponent.getComponent();
   }
 
   public void init(Project project) {
-    this.myComponent = new StructureViewComponent();
+    StructureView_Tool.this.myComponent = new StructureViewComponent();
   }
 
   public StructureViewComponent getStructureView() {
-    return this.myComponent;
+    return StructureView_Tool.this.myComponent;
   }
 
 }

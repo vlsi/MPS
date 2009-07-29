@@ -391,7 +391,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1239641603408(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode winConf = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false)).first();
+    SNode winConf = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false, new String[]{})).first();
     return WindowsConfig_Behavior.call_getStartupFileName_1230208021944(winConf) + "." + WindowsConfig_Behavior.call_getStartupFileExtension_1230208056584(winConf);
   }
 

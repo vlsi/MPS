@@ -35,7 +35,7 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 12:
-                      if (this._11_n > max) {
+                      if (_11_n > max) {
                         this.__CP__ = 13;
                         break;
                       }
@@ -61,7 +61,7 @@ __switch__:
                       return true;
                     case 14:
                       this.__CP__ = 16;
-                      this.yield(this._11_n);
+                      this.yield(_11_n);
                       return true;
                     case 2:
                       this.__CP__ = 4;
@@ -72,12 +72,12 @@ __switch__:
                       this.__CP__ = 8;
                       break;
                     case 9:
-                      this._11_n = this._6_n_ + this._7_n__;
+                      this._11_n = _6_n_ + _7_n__;
                       this.__CP__ = 12;
                       break;
                     case 16:
-                      this._7_n__ = this._6_n_;
-                      this._6_n_ = this._11_n;
+                      _7_n__ = _6_n_;
+                      _6_n_ = _11_n;
                       this.__CP__ = 8;
                       break;
                     case 13:
