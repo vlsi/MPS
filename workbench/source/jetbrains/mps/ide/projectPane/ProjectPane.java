@@ -59,10 +59,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -277,7 +274,8 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
 
   public SelectInTarget createSelectInTarget() {
     return new SelectInTarget() {
-      public SNode myNode;
+      private SNode myNode;
+      private IOperationContext myContext;
 
       public boolean canSelect(SelectInContext context) {
         VirtualFile virtualFile = context.getVirtualFile();
@@ -291,8 +289,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
           EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return false;
           myNode = editorComponent.getEditedNode();
+          myContext = editorComponent.getOperationContext();
         } else {
           myNode = file.getNode();
+          myContext = new ProjectOperationContext(myProject.getComponent(MPSProjectHolder.class).getMPSProject());
         }
         return true;
       }
@@ -300,10 +300,10 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
       public void selectIn(final SelectInContext context, boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            selectNode(myNode);
+            selectNode(myNode, myContext);
           }
         });
-        activate();
+        activate(requestFocus);
       }
 
       public String getToolWindowId() {
@@ -679,12 +679,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     });
   }
 
-  public void activate() {
+  public void activate(final boolean focus) {
     myProjectView.changeView(getId());
     final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
     manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
       public void run() {
-        manager.getFocusManager().requestFocus(myTree, false);
+        if (focus){
+          manager.getFocusManager().requestFocus(myTree, false);
+        }
       }
     }, false);
   }
@@ -731,6 +733,9 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     }
 
     if (descendCondition.met(root)) {
+      if (!root.isInitialized()) {
+        root.init();
+      }
       for (MPSTreeNode node : root) {
         MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
         if (result != null) {

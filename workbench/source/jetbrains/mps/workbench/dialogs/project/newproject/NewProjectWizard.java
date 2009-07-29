@@ -168,7 +168,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
       public void run() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
-            myCreatedProject.getComponent(ProjectPane.class).activate();
+            myCreatedProject.getComponent(ProjectPane.class).activate(true);
           }
         }, ModalityState.NON_MODAL);
       }

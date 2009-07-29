@@ -629,7 +629,7 @@ public abstract class UsagesTree extends MPSTree {
       throw new IllegalArgumentException();
     }
 
-    if (focus) projectPane.activate();
+    projectPane.activate(focus);
   }
 
   public abstract MPSProject getProject();
