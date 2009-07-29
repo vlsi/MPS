@@ -35,7 +35,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -146,6 +145,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public Set<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized) {
+    assert node != null : "node == null - inconsistent editor state";
     Set<Intention> result = new HashSet<Intention>();
 
     for (String conceptFQName : myIntentions.keySet()) {
@@ -353,7 +353,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
             addIntention(intention);
             myNodesByIntentions.put((Intention) intention, intentionDeclaration.getNode());
             myIntentionsLanguages.put(cls, l);
-          } 
+          }
         } catch (Throwable throwable) {
           LOG.error(throwable, intentionDeclaration);
         }
