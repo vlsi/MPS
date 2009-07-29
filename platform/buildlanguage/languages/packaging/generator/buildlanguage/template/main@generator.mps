@@ -2778,9 +2778,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1239195391488">
                       <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1239195391489">
                         <property name="name" value="absoluteDescriptorPath" />
-                        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1239195391490">
-                          <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-                        </node>
+                        <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="8477036312981302882" />
                         <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239195391491">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239195391492">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1239195391493">

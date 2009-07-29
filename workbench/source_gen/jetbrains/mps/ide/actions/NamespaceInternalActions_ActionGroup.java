@@ -49,12 +49,12 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       NamespaceTextNode node = (NamespaceTextNode)selectedNode;
       DefaultActionGroup newGroup = node.createNewGroup();
       if (newGroup != null) {
-        this.add(newGroup);
-        this.addSeparator();
+        NamespaceInternalActions_ActionGroup.this.add(newGroup);
+        NamespaceInternalActions_ActionGroup.this.addSeparator();
       }
-      this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
+      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action", "jetbrains.mps.ide");
+      NamespaceInternalActions_ActionGroup.this.addSeparator();
+      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

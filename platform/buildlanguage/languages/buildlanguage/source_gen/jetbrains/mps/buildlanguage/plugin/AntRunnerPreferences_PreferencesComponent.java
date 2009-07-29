@@ -55,8 +55,8 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
   }
 
   public void afterRead(MPSProject project) {
-    if (this.getStateObject().data == null) {
-      this.getStateObject().data = MapSequence.fromMap(new HashMap<String, String>());
+    if (AntRunnerPreferences_PreferencesComponent.this.getStateObject().data == null) {
+      AntRunnerPreferences_PreferencesComponent.this.getStateObject().data = MapSequence.fromMap(new HashMap<String, String>());
     }
     if (IdeMain.getTestMode() == IdeMain.TestMode.CORE_TEST) {
       return;

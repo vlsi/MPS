@@ -26,17 +26,17 @@ public class ModelRepository_Tool extends GeneratedTool {
   }
 
   public JComponent getComponent() {
-    return this.myPanel;
+    return ModelRepository_Tool.this.myPanel;
   }
 
   public void init(Project project) {
-    this.myComponent = new ModelRepositoryComponent();
-    this.myPanel = new JPanel(new BorderLayout());
-    this.myPanel.add(this.myComponent.getComponent(), BorderLayout.CENTER);
+    ModelRepository_Tool.this.myComponent = new ModelRepositoryComponent();
+    ModelRepository_Tool.this.myPanel = new JPanel(new BorderLayout());
+    ModelRepository_Tool.this.myPanel.add(ModelRepository_Tool.this.myComponent.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(this));
+    group.add(new CloseAction(ModelRepository_Tool.this));
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    this.myPanel.add(toolbar, BorderLayout.WEST);
+    ModelRepository_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
   public void dispose() {
@@ -44,13 +44,13 @@ public class ModelRepository_Tool extends GeneratedTool {
 
   public void makeAvailable() {
     super.makeAvailable();
-    this.myComponent.install();
+    ModelRepository_Tool.this.myComponent.install();
   }
 
   @Override()
   public void makeUnavailable() {
     super.makeUnavailable();
-    this.myComponent.uninstall();
+    ModelRepository_Tool.this.myComponent.uninstall();
   }
 
 }

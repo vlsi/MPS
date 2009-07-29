@@ -15,14 +15,14 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
+      Edit_ActionGroup.this.addSeparator();
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyNodeReference_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addSeparator();
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImport_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModelImportByRoot_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddLanguageImport_Action", "jetbrains.mps.ide");
+      Edit_ActionGroup.this.addSeparator();
+      Edit_ActionGroup.this.addAnchor(Edit_ActionGroup.LABEL_ID_custom);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

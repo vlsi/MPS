@@ -14,7 +14,6 @@ import java.util.Set;
 import javax.swing.event.TableModelListener;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.event.TableModelEvent;
@@ -41,7 +40,7 @@ public class BuildTableModel implements TableModel {
   private void updateStateInternal(Map<SNodePointer, String> pointersToMap) {
     ListSequence.fromList(this.mySNodes).clear();
     MapSequence.fromMap(this.myCommandLines).clear();
-    for(SNodePointer pointer : Sequence.fromIterable(MapSequence.fromMap(pointersToMap).keySet())) {
+    for(SNodePointer pointer : SetSequence.fromSet(MapSequence.fromMap(pointersToMap).keySet())) {
       ListSequence.fromList(this.mySNodes).addElement(pointer);
       MapSequence.fromMap(this.myCommandLines).put(pointer, MapSequence.fromMap(pointersToMap).get(pointer));
     }
@@ -124,7 +123,7 @@ public class BuildTableModel implements TableModel {
     if (state == null) {
       return result;
     }
-    for(String name : Sequence.fromIterable(MapSequence.fromMap(state).keySet())) {
+    for(String name : SetSequence.fromSet(MapSequence.fromMap(state).keySet())) {
       final SNodePointer pointer = stringToPointer(name);
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {

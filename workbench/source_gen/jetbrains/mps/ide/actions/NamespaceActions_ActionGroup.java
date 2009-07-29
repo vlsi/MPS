@@ -15,7 +15,7 @@ public class NamespaceActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
+      NamespaceActions_ActionGroup.this.addAnchor(NamespaceActions_ActionGroup.LABEL_ID_namespaceInternal);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

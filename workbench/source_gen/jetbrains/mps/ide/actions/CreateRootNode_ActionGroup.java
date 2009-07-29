@@ -15,7 +15,7 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.add(new CreateRootNodeGroup());
+      CreateRootNode_ActionGroup.this.add(new CreateRootNodeGroup());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

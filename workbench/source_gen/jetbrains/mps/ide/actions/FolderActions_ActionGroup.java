@@ -15,7 +15,7 @@ public class FolderActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
+      FolderActions_ActionGroup.this.addAnchor(FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

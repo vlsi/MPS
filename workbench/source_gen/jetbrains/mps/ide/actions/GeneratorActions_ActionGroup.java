@@ -15,18 +15,18 @@ public class GeneratorActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
-      this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", true);
-      this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", false);
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.DeleteGenerator_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.CheckGenerator_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.GeneratorProperties_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addAnchor(GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", true);
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTemplateQueries_Action", "jetbrains.mps.ide", false);
+      GeneratorActions_ActionGroup.this.addSeparator();
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowModuleDependencies_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addSeparator();
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteGenerator_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addSeparator();
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckGenerator_Action", "jetbrains.mps.ide");
+      GeneratorActions_ActionGroup.this.addSeparator();
+      GeneratorActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GeneratorProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

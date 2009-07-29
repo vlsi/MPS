@@ -19,12 +19,12 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.ide.actions.FileCut_Action", "jetbrains.mps.ide", new CutAction());
-      this.addAction("jetbrains.mps.ide.actions.FileCopy_Action", "jetbrains.mps.ide", new CopyAction());
-      this.addAction("jetbrains.mps.ide.actions.FilePaste_Action", "jetbrains.mps.ide", new PasteAction());
-      this.addAction("jetbrains.mps.ide.actions.FileDelete_Action", "jetbrains.mps.ide", new FileDeleteActionFixed());
-      this.addSeparator();
-      this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileCut_Action", "jetbrains.mps.ide", new CutAction());
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileCopy_Action", "jetbrains.mps.ide", new CopyAction());
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FilePaste_Action", "jetbrains.mps.ide", new PasteAction());
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileDelete_Action", "jetbrains.mps.ide", new FileDeleteActionFixed());
+      AbstractFileActions_ActionGroup.this.addSeparator();
+      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

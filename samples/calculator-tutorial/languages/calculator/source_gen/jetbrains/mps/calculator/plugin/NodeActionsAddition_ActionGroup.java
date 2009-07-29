@@ -15,7 +15,7 @@ public class NodeActionsAddition_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.calculator.plugin.ExecuteCalculator_Action", "jetbrains.mps.calculator");
+      NodeActionsAddition_ActionGroup.this.addAction("jetbrains.mps.calculator.plugin.ExecuteCalculator_Action", "jetbrains.mps.calculator");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

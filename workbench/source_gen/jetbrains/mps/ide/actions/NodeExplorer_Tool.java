@@ -27,15 +27,15 @@ public class NodeExplorer_Tool extends GeneratedTool {
   }
 
   public JComponent getComponent() {
-    return this.myPanel;
+    return NodeExplorer_Tool.this.myPanel;
   }
 
   public void init(Project project) {
-    this.myNodeExplorer = new NodeExplorerComponent();
-    this.myPanel = new JPanel(new BorderLayout());
-    this.myPanel.add(this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
+    NodeExplorer_Tool.this.myNodeExplorer = new NodeExplorerComponent();
+    NodeExplorer_Tool.this.myPanel = new JPanel(new BorderLayout());
+    NodeExplorer_Tool.this.myPanel.add(NodeExplorer_Tool.this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
-    group.add(new CloseAction(this) {
+    group.add(new CloseAction(NodeExplorer_Tool.this) {
 
       public void doExecute(AnActionEvent e) {
         super.doExecute(e);
@@ -43,11 +43,11 @@ public class NodeExplorer_Tool extends GeneratedTool {
       }
     });
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
-    this.myPanel.add(toolbar, BorderLayout.WEST);
+    NodeExplorer_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
 
   public NodeExplorerComponent getNodeExplorer() {
-    return this.myNodeExplorer;
+    return NodeExplorer_Tool.this.myNodeExplorer;
   }
 
 }

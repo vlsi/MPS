@@ -14,7 +14,7 @@ public class ReferenceNodeActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.ide.actions.DeleteReferenceAction_Action", "jetbrains.mps.ide");
+      ReferenceNodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteReferenceAction_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

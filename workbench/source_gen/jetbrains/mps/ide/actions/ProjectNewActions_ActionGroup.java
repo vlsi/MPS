@@ -14,9 +14,9 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.addAction("jetbrains.mps.ide.actions.NewSolution_Action", "jetbrains.mps.ide", "");
-      this.addAction("jetbrains.mps.ide.actions.NewLanguage_Action", "jetbrains.mps.ide", "");
-      this.addAction("jetbrains.mps.ide.actions.NewDevKit_Action", "jetbrains.mps.ide");
+      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewSolution_Action", "jetbrains.mps.ide", "");
+      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewLanguage_Action", "jetbrains.mps.ide", "");
+      ProjectNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewDevKit_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

@@ -14,10 +14,10 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
-      this.addSeparator();
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action", "jetbrains.mps.ide");
+      LanguageNewActions_ActionGroup.this.addSeparator();
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
+      LanguageNewActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

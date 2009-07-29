@@ -15,11 +15,11 @@ public class PackageActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(PackageActions_ActionGroup.LABEL_ID_createRootNode);
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action", "jetbrains.mps.ide");
+      PackageActions_ActionGroup.this.addAnchor(PackageActions_ActionGroup.LABEL_ID_createRootNode);
+      PackageActions_ActionGroup.this.addSeparator();
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.PasteNode_Action", "jetbrains.mps.ide");
+      PackageActions_ActionGroup.this.addSeparator();
+      PackageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenamePackage_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

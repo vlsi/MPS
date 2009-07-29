@@ -17,11 +17,11 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
-      this.addSeparator();
-      this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
-      this.addSeparator();
-      this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModel);
+      Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_saveTransientModels);
+      Generate_ActionGroup.this.addSeparator();
+      Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModule);
+      Generate_ActionGroup.this.addSeparator();
+      Generate_ActionGroup.this.addAnchor(Generate_ActionGroup.LABEL_ID_generateModel);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

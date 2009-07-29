@@ -15,7 +15,7 @@ public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.add(new SaveTransientModelsAction());
+      SaveTransientModels_ActionGroup.this.add(new SaveTransientModelsAction());
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

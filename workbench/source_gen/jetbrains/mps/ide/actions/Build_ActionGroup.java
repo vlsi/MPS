@@ -14,9 +14,9 @@ public class Build_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.ide.actions.MakeAllModules_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.CleanAllModules_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.RebuildAllModules_Action", "jetbrains.mps.ide");
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeAllModules_Action", "jetbrains.mps.ide");
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanAllModules_Action", "jetbrains.mps.ide");
+      Build_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildAllModules_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

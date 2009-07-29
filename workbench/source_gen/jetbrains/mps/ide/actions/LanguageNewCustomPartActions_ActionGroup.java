@@ -16,7 +16,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setPopup(false);
     try {
       for(LanguageAspect aspect : LanguageAspect.values()) {
-        this.addAction("jetbrains.mps.ide.actions.NewAspectModel_Action", "jetbrains.mps.ide", aspect);
+        LanguageNewCustomPartActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAspectModel_Action", "jetbrains.mps.ide", aspect);
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

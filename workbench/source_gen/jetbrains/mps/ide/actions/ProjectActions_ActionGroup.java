@@ -15,14 +15,14 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
-      this.addSeparator();
-      this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action", "jetbrains.mps.ide");
-      this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
+      ProjectActions_ActionGroup.this.addSeparator();
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addSeparator();
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action", "jetbrains.mps.ide");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
