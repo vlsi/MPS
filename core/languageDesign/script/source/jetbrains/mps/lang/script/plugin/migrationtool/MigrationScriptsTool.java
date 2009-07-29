@@ -29,6 +29,7 @@ import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.lang.script.structure.MigrationScript;
@@ -110,10 +111,11 @@ public class MigrationScriptsTool extends BaseProjectTool implements INavigateab
             final IResultProvider provider = FindUtils.makeProvider(finder);
             final SearchQuery query = new SearchQuery(scope);
 
-            FindUtils.getSearchResults(indicator, query, provider);  // perform search, keep results in our finder
+            final SearchResults results = FindUtils.getSearchResults(indicator, query, provider);
+
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                if (finder.getLastSearchResults().getSearchResults().isEmpty()) {
+                if (results.getSearchResults().isEmpty()) {
                   JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
                 } else {
                   // clear current tool view

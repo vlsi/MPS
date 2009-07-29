@@ -23,6 +23,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
@@ -168,8 +169,8 @@ public class MigrationScriptsView {
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             IResultProvider provider = FindUtils.makeProvider(newFinder);
-            FindUtils.getSearchResults(indicator, myQuery, provider);  // perform search, keep results in our finder
-            int newCount = newFinder.getLastSearchResults().getSearchResults().size();
+            SearchResults results = FindUtils.getSearchResults(indicator, myQuery, provider);
+            int newCount = results.getSearchResults().size();
             if (newCount > 0) {
               updateControls(false, new JLabel("done, but there " + (newCount == 1 ? "is 1" : "are " + newCount) + " applicable node" + (newCount > 1 ? "s" : "") + " left"), createShowInNewTabButton(newFinder, provider, myQuery));
             } else {
