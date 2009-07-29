@@ -58,22 +58,10 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
     SPropertyOperations.set(templateNode, "name", "template1");
     SLinkOperations.setTarget(templateNode, "contentNode", SLinkOperations.getTarget(node, "templateNode", true), true);
     templateNode.setProperty(SModelTreeNode.PACK, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
-    if (SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule")) {
-      SLinkOperations.setTarget(SNodeOperations.cast(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule"), "template", templateNode, false);
-    } else
-    if (SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule")) {
-      SNode templateRefNode = SLinkOperations.setNewChild(SNodeOperations.cast(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
-      SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
-      // context function creation
-      SNode contextFunction = SLinkOperations.setNewChild(SNodeOperations.cast(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "contextNodeQuery", "jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery");
-      SLinkOperations.setNewChild(contextFunction, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNode exprStmt = SLinkOperations.addNewChild(SLinkOperations.getTarget(contextFunction, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-      SLinkOperations.setNewChild(exprStmt, "expression", "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
-    } else
-    {
-      SNode templateRefNode = SLinkOperations.setNewChild(SNodeOperations.cast(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"), "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
-      SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
-    }
+
+    SNode templateRefNode = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
+    SLinkOperations.setTarget(templateRefNode, "template", templateNode, false);
+
     editorContext.select(templateNode);
   }
 
