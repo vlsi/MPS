@@ -13,6 +13,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -85,11 +89,20 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
   private static void setupBasic_Constant_1923_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1923_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    }
   }
 
   private static void setupBasic_Constant_1923_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1923_1");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
   }
 
   private static void setupBasic_RefCell_1923_0(EditorCell editorCell, SNode node, EditorContext context) {
@@ -97,7 +110,11 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_1923_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1923_2");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
   }
 
   public static class _Inline1923_0 extends AbstractCellProvider {
@@ -142,6 +159,10 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_Property_1923_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("property_name");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      }
     }
 
 }

@@ -1203,7 +1203,7 @@
     <property name="name" value="ActionType" />
     <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1205852364250">
-      <property name="value" value="action&lt;&gt;" />
+      <property name="value" value="action&lt;&lt;{action}&gt;&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1205852349655">
@@ -1420,7 +1420,7 @@
     <property name="name" value="GroupType" />
     <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1207490810217">
-      <property name="value" value="actiongroup&lt;&gt;" />
+      <property name="value" value="actiongroup&lt;&lt;{actionGroup}&gt;&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1207490810218">
@@ -3056,6 +3056,21 @@
     <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="144706109457489883">
       <property name="value" value="tab-multi" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7974234327424524992">
+    <property name="package" value="RunConfigs" />
+    <property name="name" value="RunConfigType" />
+    <link role="extends" targetNodeId="14.1205752813637" resolveInfo="BaseClassifierType" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7974234327424528831">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="runConfig" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7035278950562851062" resolveInfo="RunConfigurationDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7974234327425250722">
+      <property name="value" value="runconfig&lt;&lt;{runConfig}&gt;&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>
