@@ -157,6 +157,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4937962197548800603">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7658393498702771296">
     <property name="name" value="ReferenceAnnotataion" />

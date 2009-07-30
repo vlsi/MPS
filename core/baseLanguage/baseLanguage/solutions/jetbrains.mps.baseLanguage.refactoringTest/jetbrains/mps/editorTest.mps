@@ -3724,5 +3724,45 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="4937962197548685243">
+    <property name="package" value="Memento" />
+    <property name="name" value="RecvertInspectorState" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="4937962197548800601">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock" id="4937962197549051308">
+        <node role="block" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="4937962197549051312">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4937962197549051314">
+            <property name="isInInspector" value="true" />
+            <property name="caretPosition" value="3" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="1" />
+            <property name="selectionEnd" value="3" />
+            <property name="cellId" value="Constant_9987_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="4937962197548800602">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock" id="4937962197549051310">
+        <node role="block" type="jetbrains.mps.lang.editor.editorTest.structure.StubBlock" id="4937962197549051313">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4937962197549139101">
+            <property name="isInInspector" value="true" />
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="4" />
+            <property name="selectionEnd" value="4" />
+            <property name="cellId" value="Constant_9987_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4937962197549139098">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.SwitchToInspector" id="4937962197549139099" />
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="4937962197549139102">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="4937962197549139103">
+          <property name="keycode" value="VK_RIGHT" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

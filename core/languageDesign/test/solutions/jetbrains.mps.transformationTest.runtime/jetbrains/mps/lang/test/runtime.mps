@@ -4036,32 +4036,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6268941039745719502" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6268941039745719503" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6268941039745719504">
-        <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="6268941039745719516">
-          <node role="expected" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6268941039745719517">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6268941039745719521">
-              <link role="baseMethodDeclaration" targetNodeId="1227009788555" resolveInfo="getNode" />
-            </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6268941039745719554" />
-          </node>
-          <node role="actual" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1932269937152492157">
-            <node role="key" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1932269937152492174">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1932269937152492165">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1932269937152492162">
-                  <link role="variableDeclaration" targetNodeId="6268941039745719506" resolveInfo="editorComponent" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1932269937152492171">
-                  <link role="baseMethodDeclaration" targetNodeId="13.~IEditor.getSelectedCell():jetbrains.mps.nodeEditor.cells.EditorCell" resolveInfo="getSelectedCell" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1932269937152493858">
-                <link role="baseMethodDeclaration" targetNodeId="35.~EditorCell.getSNode():jetbrains.mps.smodel.SNode" resolveInfo="getSNode" />
-              </node>
-            </node>
-            <node role="map" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1932269937152492156">
-              <link role="variableDeclaration" targetNodeId="1932269937152492149" resolveInfo="map" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6268941039745719569">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6268941039745719573">
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6268941039745719570">
@@ -4074,6 +4048,12 @@
               <link role="baseMethodDeclaration" targetNodeId="3.6268941039745719581" resolveInfo="assertEditor" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6268941039745719590">
                 <link role="variableDeclaration" targetNodeId="6268941039745719506" resolveInfo="editorComponent" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4937962197549300533">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4937962197549300532" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4937962197549300537">
+                  <link role="baseMethodDeclaration" targetNodeId="1227009788555" resolveInfo="getNode" />
+                </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1932269937152493862">
                 <link role="variableDeclaration" targetNodeId="1932269937152492149" resolveInfo="map" />

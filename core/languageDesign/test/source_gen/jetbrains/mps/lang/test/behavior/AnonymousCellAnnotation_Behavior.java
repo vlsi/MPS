@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.ide.IEditor;
 import junit.framework.Assert;
 import jetbrains.mps.nodeEditor.NodeRangeSelection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AnonymousCellAnnotation_Behavior {
 
@@ -29,8 +30,7 @@ public class AnonymousCellAnnotation_Behavior {
 
       public void run() {
         if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
-          nodeEditorComponent.selectNode(node);
-          editorComponent.value = nodeEditorComponent.getInspector();
+          editorComponent.value = AnonymousCellAnnotation_Behavior.call_setupInspector_5681471431307922086(thisNode, node, nodeEditorComponent);
         }
         cellWithId.value = editorComponent.value.findCellWithId(node, SPropertyOperations.getString(thisNode, "cellId"));
         if (cellWithId.value == null) {
@@ -61,8 +61,13 @@ public class AnonymousCellAnnotation_Behavior {
     }
   }
 
-  public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
-    EditorCell selectedCell = editor.getSelectedCell();
+  public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor, SNode node, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
+    EditorComponent component = editor.getCurrentEditorComponent();
+    if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
+      component = ((NodeEditorComponent)component).getInspector();
+    }
+    Assert.assertSame(node, MapSequence.fromMap(map).get(component.getSelectedCell().getSNode()));
+    EditorCell selectedCell = component.getSelectedCell();
     Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(thisNode, "cellId"));
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label)selectedCell;
@@ -70,7 +75,7 @@ public class AnonymousCellAnnotation_Behavior {
       Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionEnd"), label.getSelectionEnd());
     }
     if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
-      NodeRangeSelection rangeSelection = editor.getCurrentEditorComponent().getNodeRangeSelection();
+      NodeRangeSelection rangeSelection = component.getNodeRangeSelection();
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false)), MapSequence.fromMap(map).get(rangeSelection.getFirstNode()));
       Assert.assertEquals(MapSequence.fromMap(nodeToCopy).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false)), MapSequence.fromMap(map).get(rangeSelection.getLastNode()));
     }
@@ -83,6 +88,15 @@ public class AnonymousCellAnnotation_Behavior {
       label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
       label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
     }
+  }
+
+  public static EditorComponent call_setupInspector_5681471431307922086(SNode thisNode, SNode node, NodeEditorComponent nodeEditorComponent) {
+    SNode nodeToSelect = node;
+    while (nodeToSelect != null && nodeEditorComponent.findNodeCell(nodeToSelect) == null) {
+      nodeToSelect = SNodeOperations.getParent(nodeToSelect);
+    }
+    nodeEditorComponent.selectNode(nodeToSelect);
+    return nodeEditorComponent.getInspector();
   }
 
 }
