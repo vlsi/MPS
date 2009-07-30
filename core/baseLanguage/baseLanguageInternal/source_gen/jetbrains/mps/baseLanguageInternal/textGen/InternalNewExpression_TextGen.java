@@ -14,7 +14,13 @@ public class InternalNewExpression_TextGen extends SNodeTextGen {
 
   public void doGenerateText(SNode node) {
     this.append("new ");
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    if (SPropertyOperations.getString(node, "fqClassName") == null) {
+      this.foundError();
+      this.append("???");
+    } else
+    {
+      BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
