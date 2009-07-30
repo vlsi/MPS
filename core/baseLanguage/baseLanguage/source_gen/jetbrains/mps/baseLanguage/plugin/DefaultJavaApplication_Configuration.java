@@ -6,6 +6,7 @@ import com.intellij.execution.configurations.RunConfigurationBase;
 import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
+import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
@@ -39,7 +40,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import com.intellij.openapi.options.SettingsEditor;
-import com.intellij.execution.configurations.RunConfiguration;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -53,6 +53,16 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
   public DefaultJavaApplication_Configuration(Project p, ConfigurationFactory f, String name) {
     super(p, f, name);
+  }
+
+  public RunConfiguration clone() {
+    try {
+      DefaultJavaApplication_Configuration result = ((DefaultJavaApplication_Configuration)super.clone());
+      result.myState = ((DefaultJavaApplication_Configuration.MyState)this.myState.clone());
+      return result;
+    } catch (CloneNotSupportedException e) {
+      return null;
+    }
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
@@ -211,7 +221,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     }
 
 }
-  public static class MyState {
+  public static class MyState extends Object implements Cloneable {
 
     public String nodeId;
     public String modelId;
@@ -222,6 +232,11 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
     public MyState() {
     }
+
+    public Object clone() throws CloneNotSupportedException {
+      return super.clone();
+    }
+
 }
 
 }
