@@ -26,7 +26,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.execution.process.DefaultJavaProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -97,7 +96,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
             assert node != null : "configuration is executed for null node";
             Process process = classRunner.run(node);
-            handler.value = new DefaultJavaProcessHandler(process, "", Charset.defaultCharset());
+            handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
           }
         });
         final JComponent finalConsoleComponent = consoleComponent.value;
