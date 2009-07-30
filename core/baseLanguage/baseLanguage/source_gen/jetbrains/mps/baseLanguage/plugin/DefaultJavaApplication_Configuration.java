@@ -52,13 +52,15 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
   public void checkConfiguration() throws RuntimeConfigurationException {
     StringBuilder error = new StringBuilder();
     {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>(null);
+      if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
+        ModelAccess.instance().runReadAction(new Runnable() {
 
-        public void run() {
-          node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-        }
-      });
+          public void run() {
+            node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+          }
+        });
+      }
       if (node.value == null) {
         error.append("node does not exist anymore").append("\n");
       }
