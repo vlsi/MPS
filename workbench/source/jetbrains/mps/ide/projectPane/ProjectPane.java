@@ -713,7 +713,14 @@ public class ProjectPane extends AbstractProjectViewPane implements PersistentSt
     return findTreeNode(rootTreeNode,
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode object) {
-          return !(object instanceof ProjectModuleTreeNode) || object instanceof ProjectLanguageTreeNode;
+          //need to go into language to find generator modules
+          if (object instanceof ProjectLanguageTreeNode) return true;
+          //do not go into other modules
+          if (object instanceof ProjectModuleTreeNode) return false;
+          //not to load models
+          if (object instanceof SModelTreeNode) return false;
+          
+          return true;
         }
       },
       new Condition<MPSTreeNode>() {
