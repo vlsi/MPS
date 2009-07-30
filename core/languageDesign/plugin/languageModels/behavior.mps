@@ -2405,7 +2405,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7974234327424532521">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7974234327424532524">
           <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7974234327424532526">
-            <node role="quotedNode" type="jetbrains.mps.lang.plugin.structure.RunConfigType" id="7974234327424532528" />
+            <node role="quotedNode" type="jetbrains.mps.lang.plugin.structure.RunConfigType" id="7974234327424532528">
+              <node role="referenceAntiquotation$link_attribute$runConfig" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="335465233322016536">
+                <node role="expression" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="335465233322016538" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
