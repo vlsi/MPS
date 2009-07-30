@@ -96,7 +96,10 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "superclass", true);
+    return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
+      SLinkOperations.getTarget(thisNode, "superclass", true) :
+      new _Quotations.QuotationClass_28().createNode()
+    );
   }
 
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
