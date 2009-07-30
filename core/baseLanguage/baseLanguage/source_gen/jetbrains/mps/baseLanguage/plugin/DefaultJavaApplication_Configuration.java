@@ -26,6 +26,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.IGenerationType;
 import java.nio.charset.Charset;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -82,8 +88,21 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
+            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+            assert node != null : "configuration is executed for null node";
+
             Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+            MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+
+            if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
+              GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
+
+              List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node).getModelDescriptor());
+              genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), modelDescriptors, IGenerationType.FILES);
+            }
+
             final RunComponent runComponent = new RunComponent(project);
+            ClassRunner classRunner = new ClassRunner(runComponent);
 
             consoleComponent.value = runComponent;
             consoleDispose.value = new Runnable() {
@@ -93,11 +112,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
               }
             };
 
-            ClassRunner classRunner = new ClassRunner(runComponent);
-            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-
-            assert node != null : "configuration is executed for null node";
-            Process process = classRunner.run(node);
+            Process process = classRunner.run(node, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
             handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
           }
         });
@@ -203,6 +218,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     public String programParams;
     public String vmParams;
     public String workingDir;
+    public boolean makeBeforeRun;
 
     public MyState() {
     }
