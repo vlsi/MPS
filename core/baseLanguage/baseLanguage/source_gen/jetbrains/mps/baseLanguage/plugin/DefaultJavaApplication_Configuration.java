@@ -56,7 +56,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
       ModelAccess.instance().runReadAction(new Runnable() {
 
         public void run() {
-          node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
+          node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
         }
       });
       if (node.value == null) {
@@ -92,7 +92,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             };
 
             ClassRunner classRunner = new ClassRunner(runComponent);
-            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().myModelId, DefaultJavaApplication_Configuration.this.getStateObject().myNodeId).getNode();
+            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
 
             assert node != null : "configuration is executed for null node";
             Process process = classRunner.run(node);
@@ -176,33 +176,12 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     public MySettingsEditor() {
     }
 
-    protected void resetEditorFrom(final DefaultJavaApplication_Configuration c) {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-
-        public void run() {
-          node.value = new SNodePointer(c.getStateObject().myModelId, c.getStateObject().myNodeId).getNode();
-        }
-      });
-      if (node.value == null) {
-        return;
-      }
-      MySettingsEditor.this.myComponent.setNode(node.value);
+    protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
+      MySettingsEditor.this.myComponent.reset(c);
     }
 
-    protected void applyEditorTo(final DefaultJavaApplication_Configuration c) {
-      final SNode node = MySettingsEditor.this.myComponent.getNode();
-      if (node == null) {
-        return;
-      }
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-
-        public void run() {
-          c.getStateObject().myNodeId = node.getId();
-          c.getStateObject().myModelId = node.getModel().getModelDescriptor().getSModelReference().toString();
-        }
-      });
+    protected void applyEditorTo(DefaultJavaApplication_Configuration c) {
+      MySettingsEditor.this.myComponent.apply(c);
     }
 
     @NotNull()
@@ -217,8 +196,11 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 }
   public static class MyState {
 
-    public String myNodeId;
-    public String myModelId;
+    public String nodeId;
+    public String modelId;
+    public String programParams;
+    public String vmParams;
+    public String workingDir;
 
     public MyState() {
     }
