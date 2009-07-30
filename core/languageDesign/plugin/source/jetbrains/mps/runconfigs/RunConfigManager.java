@@ -146,10 +146,7 @@ public class RunConfigManager implements ProjectComponent {
       mySortedConfigs.clear();
     }
 
-    getRunManager().setSelectedConfiguration(null);
-
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    getRunManager().initializeConfigurationTypes(configurationTypes);
+    getRunManager().cleanup();
 
     myLoaded = false;
   }

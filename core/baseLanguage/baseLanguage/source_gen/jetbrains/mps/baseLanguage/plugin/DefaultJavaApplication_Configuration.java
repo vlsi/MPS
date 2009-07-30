@@ -221,7 +221,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     }
 
 }
-  public static class MyState extends Object implements Cloneable {
+  public static class MyState implements Cloneable {
 
     public String nodeId;
     public String modelId;
