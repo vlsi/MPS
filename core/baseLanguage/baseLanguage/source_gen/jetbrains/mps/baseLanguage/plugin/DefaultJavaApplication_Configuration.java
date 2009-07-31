@@ -94,21 +94,30 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         final Wrappers._T<Runnable> consoleDispose = new Wrappers._T<Runnable>(null);
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         final Wrappers._T<ProcessHandler> handler = new Wrappers._T<ProcessHandler>(null);
-        if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
-          throw new ExecutionException("Class node is not defined");
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
+        {
+          if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
+            throw new ExecutionException("Class node is not defined");
+          }
+          final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+          ModelAccess.instance().runReadAction(new Runnable() {
 
-          public void run() {
-            SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-            if (node != null) {
+            public void run() {
+              node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+            }
+          });
+          if (node.value == null) {
+            throw new ExecutionException("Class node does not exist");
+          }
+          ModelAccess.instance().runReadAction(new Runnable() {
+
+            public void run() {
               Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
               MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
               if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
                 GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
 
-                List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node).getModelDescriptor());
+                List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node.value).getModelDescriptor());
                 genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), modelDescriptors, IGenerationType.FILES);
               }
 
@@ -123,11 +132,11 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
                 }
               };
 
-              Process process = classRunner.run(node, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
+              Process process = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
               handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
             }
-          }
-        });
+          });
+        }
         final JComponent finalConsoleComponent = consoleComponent.value;
         final Runnable finalConsoleDispose = consoleDispose.value;
         final ProcessHandler finalHandler = handler.value;
