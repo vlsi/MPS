@@ -28,19 +28,22 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
+import jetbrains.mps.project.tester.TestComparator;
+import jetbrains.mps.project.tester.DiffReport;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.FileUtil;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.io.File;
+import java.io.FilenameFilter;
 
 public class ProjectTester {
   private MPSProject myProject;
@@ -66,6 +69,101 @@ public class ProjectTester {
     return res;
   }
 
+  private String getDiffReportTitle(String nodeName, String modelName, boolean added, boolean deleted) {
+    return "Class " + nodeName + ", Model " + modelName + ((added)? " (new class)" : ((deleted)? " (class deleted)" : "" ));
+  }
+
+  private String getDirectoryFromModel(SModel m) {
+    return m.getModelDescriptor().getModule().getGeneratorOutputPath() + File.separator + m.getLongName().replace(".", File.separator);
+  }
+
+  private String[] getContentAsArray(String content, String separator) {
+    return (content != null)? content.split(separator) : new String[0];
+  }
+
+  private void addDiffReport(TestComparator comparator, List<String> reports, String title) {
+    DiffReport diffReport = comparator.compare();
+    if (diffReport.hasDifference()) {
+      reports.add(title);
+      reports.addAll(diffReport.getReportsAsList());
+      reports.add("");
+    }
+  }
+
+  private List<String> createDiffReports(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
+    List<String> result = new ArrayList<String>();
+    final String fileType = ".java";
+    for (SModel model : genParams.getSModels()) {
+      File dir = new File(getDirectoryFromModel(model));
+      if (!dir.exists()) {
+        continue;
+      }
+      List<String> javaFiles = new ArrayList<String>();
+      javaFiles.addAll(Arrays.asList(dir.list(new FilenameFilter() {
+        public boolean accept(File dir, String name) {
+          return name.endsWith(fileType);
+        }
+      })));
+      for (SNode root : model.getRoots()) {
+        final String fileName = root.getName() + fileType;
+        final String filePath = getDirectoryFromModel(model) + File.separator + fileName;
+        final File testFile = new File(filePath);
+        String oldContent = null;
+        String newContent = genType.getSourceByNode(root, model);
+        if (testFile.exists() && testFile.canRead()) {
+          oldContent = FileUtil.read(testFile);
+          javaFiles.remove(fileName);
+        }
+        final boolean created = oldContent == null && newContent != null;
+        final String title = getDiffReportTitle(root.getName(), model.getShortName(), created, false);
+        String[] oldTest = getContentAsArray(oldContent, "\n");
+        String[] newTest = getContentAsArray(newContent, "\r\n");
+        addDiffReport(new TestComparator(oldTest, newTest), result, title);
+      }
+      for (String fileName : javaFiles) {
+        String nodeName = fileName.substring(0, fileName.length() - fileType.length());
+        String title = getDiffReportTitle(nodeName, model.getShortName(), false, true);
+        File file = new File(getDirectoryFromModel(model) + File.separator + fileName);
+        String[] test = FileUtil.read(file).split("\n");
+        addDiffReport(new TestComparator(test, new String[0]), result, title);
+      }
+    }
+    return result;
+  }
+
+  private List<TestFailure> createTestFailures(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
+    List<TestFailure> result = new ArrayList<TestFailure>();
+    for (SModel model : genParams.getSModels()) {
+      for (SNode root : model.getRoots()) {
+        try {
+          ClassLoader classLoader = genType.getCompiler().getClassLoader(getClass().getClassLoader());
+          String className = JavaNameUtil.packageNameForModelUID(model.getSModelReference()) + "." + root.getName();
+          Class instanceClass = Class.forName(className, true, classLoader);
+          Object instance = instanceClass.newInstance();
+          Method setName = TestCase.class.getMethod("setName", String.class);
+          for (Method method : instanceClass.getMethods()) {
+            if (method.getAnnotation(org.junit.Test.class) == null) {
+              continue;
+            }
+            setName.invoke(instance, method.getName());
+            if (instance instanceof TestCase) {
+              junit.framework.TestResult testResult = new junit.framework.TestResult();
+              ((TestCase) instance).run(testResult);
+              for (TestFailure testError : Collections.list(testResult.errors())) {
+                result.add(testError);
+              }
+              for (TestFailure testFailure : Collections.list(testResult.failures())) {
+                result.add(testFailure);
+              }
+            }
+          }
+        } catch (Throwable ignored) {
+        }
+      }
+    }
+    return result;
+  }
+
   public TestResult testProject() {
     return testProject(new String[0]);
   }
@@ -77,6 +175,7 @@ public class ProjectTester {
     final List<String> warnings = new ArrayList<String>();
     final List<String> compilationResults = new ArrayList<String>();
     final List<TestFailure> failedTests = new ArrayList<TestFailure>();
+    final List<String> diffReports = new ArrayList<String>();
 
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
@@ -182,38 +281,15 @@ public class ProjectTester {
               handler
             );
 
+            if (t.getIsRunnable()) {
+              diffReports.addAll(createDiffReports(generationType, parms));
+            }
+
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
             compilationResults.addAll(createCompilationProblemsList(compilationResultList));
 
             if (t.getIsRunnable()) {
-              for (SModel model : parms.getSModels()) {
-                for (SNode root : model.getRoots()) {
-                  try {
-                    ClassLoader classLoader = generationType.getCompiler().getClassLoader(getClass().getClassLoader());
-                    String className = JavaNameUtil.packageNameForModelUID(model.getSModelReference()) + "." + root.getName();
-                    Class instanceClass = Class.forName(className, true, classLoader);
-                    Object instance = instanceClass.newInstance();
-                    Method setName = TestCase.class.getMethod("setName", String.class);
-                    for (Method method : instanceClass.getMethods()) {
-                      if (method.getAnnotation(org.junit.Test.class) == null) {
-                        continue;
-                      }
-                      setName.invoke(instance, method.getName());
-                      if (instance instanceof TestCase) {
-                        junit.framework.TestResult testResult = new junit.framework.TestResult();
-                        ((TestCase) instance).run(testResult);
-                        for (TestFailure testError : Collections.list(testResult.errors())) {
-                          failedTests.add(testError);
-                        }
-                        for (TestFailure testFailure : Collections.list(testResult.failures())) {
-                          failedTests.add(testFailure);
-                        }
-                      }
-                    }
-                  } catch (Throwable ignored) {
-                  }
-                }
-              }
+              failedTests.addAll(createTestFailures(generationType, parms));
             }
 
             System.out.println("");
@@ -226,6 +302,6 @@ public class ProjectTester {
       Logger.removeLoggingHandler(loggingHandler);
     }
 
-    return new TestResult(errors, warnings, compilationResults, failedTests);
+    return new TestResult(errors, warnings, compilationResults, failedTests, diffReports);
   }
 }

@@ -2303,6 +2303,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1234891178357">
+    <property name="extention" value="java" />
     <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1234891178358">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234891178359">

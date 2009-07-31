@@ -31,6 +31,9 @@
   <import index="8" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220367719401">
     <property name="name" value="MySequence" />
+    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.Annotation" id="6249138306853355652">
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6249138306853355653" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220541864956">
       <property name="name" value="debugForStatement" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220541864957" />

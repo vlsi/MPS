@@ -26,17 +26,19 @@ public class TestResult {
   public List<String> myGenerationWarnings;
   public List<String> myCompilationProblems;
   public List<TestFailure> myFailedTestReports;
+  public List<String> myDiffReports;
 
   public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems,
-                    List<TestFailure> testResults) {
+                    List<TestFailure> testResults, List<String> diff) {
     this.myGenerationErrors = generationErrors;
     this.myGenerationWarnings = generationWarnings;
     this.myCompilationProblems = compilationProblems;
     this.myFailedTestReports = testResults;
+    this.myDiffReports = diff;
   }
 
   public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems) {
-    this(generationErrors, generationWarnings, compilationProblems, new ArrayList<TestFailure>());
+    this(generationErrors, generationWarnings, compilationProblems, new ArrayList<TestFailure>(), new ArrayList<String>());
   }
 
   public boolean isOk() {
@@ -68,6 +70,10 @@ public class TestResult {
 
   public boolean hasCompilationProblems() {
     return myCompilationProblems.size() != 0;
+  }
+
+  public boolean hasDiffReports() {
+    return myDiffReports.size() != 0;
   }
 
   public void dump(PrintStream out) {
@@ -102,6 +108,15 @@ public class TestResult {
       out.println("No compilation problems.");
     }
     out.println("");
+
+    if (hasDiffReports()) {
+      out.println("Difference:");
+      for (String d : myDiffReports) {
+        out.println("  " + d);
+      }
+    } else {
+      out.println("No difference reports.");
+    }
 
     if (hasFailedTestReports()) {
       out.println("Test problems:");
