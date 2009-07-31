@@ -74,7 +74,9 @@ public class VFileSystem {
 
   public static VirtualFile getJarFileRoot(File file) {
     JarFileSystem jfs = JarFileSystem.getInstance();
-    return jfs.getJarRootForLocalFile(getFile(file));
+    VirtualFile vfile = getFile(file);
+    if (vfile == null) return null;
+    return jfs.getJarRootForLocalFile(vfile);
   }
 
   public static VirtualFile getDefaultDirectory() {
