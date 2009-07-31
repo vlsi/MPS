@@ -13,6 +13,7 @@ import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
 
 public class GenerateTaskFilesCreationTest extends TestCase {
+  private static final String CONCEPT_NAME = "SomeConcept";
 
   public void testOneFileForOneConcept() throws IOException {
     String projectName = "FileTestProject";
@@ -20,39 +21,50 @@ public class GenerateTaskFilesCreationTest extends TestCase {
 
     File destdir = generateProjectFromZipFile(projectName);
 
-    File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + "SomeConcept.java");
-    TestCase.assertTrue(someConceptFile.exists());
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
 
     FileUtil.delete(destdir);
   }
 
   public void testSeveralFilesForOneConcept() throws IOException {
     String projectName = "TestProjectWithOneConcept";
-    String languageName =  projectName + "Language";
+    String languageName = projectName + "Language";
 
     File destdir = generateProjectFromZipFile(projectName);
 
-    File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + "SomeConcept.java");
-    File someConceptEditorFile = new File(getEditorPath(destdir, projectName, languageName) + "SomeConcept_Editor.java");
-    File someConceptBehaviorFile = new File(getBehaviorPath(destdir, projectName, languageName) + "SomeConcept_Behavior.java");
-
-    TestCase.assertTrue(someConceptFile.exists());
-    TestCase.assertTrue(someConceptEditorFile.exists());
-    TestCase.assertTrue(someConceptBehaviorFile.exists());
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
 
     FileUtil.delete(destdir);
   }
 
   public void testLanguageAndSolution() throws IOException {
     String projectName = "TestProjectWithLanguageAndSolution";
-    String languageName =  projectName + "Language";
+    String languageName = projectName + "Language";
 
     File destdir = generateProjectFromZipFile(projectName);
 
-    File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + "SomeConcept.java");
-    TestCase.assertTrue(someConceptFile.exists());
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
 
     FileUtil.delete(destdir);
+  }
+
+  private void assertBehaviorGenerated(String projectName, String languageName, File destdir, String conceptName) {
+    File someConceptBehaviorFile = new File(getBehaviorPath(destdir, projectName, languageName) + conceptName + "_Behavior.java");
+    TestCase.assertTrue(someConceptBehaviorFile.exists());
+  }
+
+  private void assertEditorGenerated(String projectName, String languageName, File destdir, String conceptName) {
+    File someConceptEditorFile = new File(getEditorPath(destdir, projectName, languageName) + conceptName + "_Editor.java");
+    TestCase.assertTrue(someConceptEditorFile.exists());
+  }
+
+  private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) {
+    File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + conceptName + ".java");
+    TestCase.assertTrue(someConceptFile.exists());
   }
 
   private File generateProjectFromZipFile(String projectName) throws IOException {
@@ -97,7 +109,7 @@ public class GenerateTaskFilesCreationTest extends TestCase {
       }
     });
     generator.generate();
-    
+
     return destdir;
   }
 
