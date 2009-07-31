@@ -16,6 +16,7 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.plugins.projectplugins.FileGeneratorManager;
 import jetbrains.mps.library.*;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
@@ -23,6 +24,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.smodel.*;
@@ -31,14 +33,18 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.generationTypes.BaseGenerationType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.IdeMain.TestMode;
 
 import java.io.File;
@@ -58,8 +64,10 @@ import com.intellij.openapi.application.PathMacros;
 import com.intellij.util.Processor;
 import com.intellij.util.PathUtil;
 
+import javax.swing.JTabbedPane;
+
 public class Generator {
-  private final GenerateFilesAndClassesGenerationType myGenerationType = getGenerationType();
+  private final BaseGenerationType myGenerationType = getGenerationType();
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final WhatToGenerate myWhatToGenerate;
   private final ProjectComponent myProjectComponent;
@@ -84,7 +92,10 @@ public class Generator {
     loadLibraries();
 
     File projectFile = FileUtil.createTmpFile();
-    MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ProjectManager.getInstance().getDefaultProject());
+    com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+    MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+    ideaProject.getComponent(FileGeneratorManager.class).reloadFileGenerators();
+
     generateModels(project, collectModelsToGenerate());
 
     showStatistic();
@@ -235,11 +246,46 @@ public class Generator {
     }
     info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
-    gm.generateModels(models,
-      new ProjectOperationContext(project),
-      myGenerationType,
-      new EmptyProgressIndicator(),
-      myMessageHandler);
+
+    ProjectOperationContext operationContext = new ProjectOperationContext(project);
+
+    Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
+    for (final SModelDescriptor model : models) {
+      assert model != null;
+
+      Set<IModule> owningModules = ModelAccess.instance().runReadAction(new Computable<Set<IModule>>() {
+        public Set<IModule> compute() {
+          return SModelRepository.getInstance().getOwners(model, IModule.class);
+        }
+      });
+
+      IModule module = null;
+      if (owningModules.size() > 0) {
+        module = owningModules.iterator().next();
+      }
+
+      if (module == null) {
+        warning("Model " + model.getLongName() + " won't be generated");
+      } else {
+        List<SModelDescriptor> modelsList = moduleToModels.get(module);
+        if (modelsList == null) {
+          modelsList = new ArrayList<SModelDescriptor>();
+          moduleToModels.put(module, modelsList);
+        }
+        modelsList.add(model);
+      }
+    }
+
+    EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
+    for (IModule module : moduleToModels.keySet()) {
+      List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
+      gm.generateModels(modelsToGenerateNow,
+        new ModuleContext(module, project),
+        myGenerationType,
+        emptyProgressIndicator,
+        myMessageHandler);
+
+    }
   }
 
   private void log(String text, int level) {
@@ -316,23 +362,7 @@ public class Generator {
     }
   }
 
-  private static GenerateFilesAndClassesGenerationType getGenerationType() {
-    return new GenerateFilesAndClassesGenerationType(true) {
-      public boolean requiresReloading() {
-        return false;
-      }
-
-      public boolean requiresCompilationBeforeGeneration() {
-        return false;
-      }
-
-      public boolean requiresCompilationAfterGeneration() {
-        return false;
-      }
-
-      protected boolean isPutClassesOnTheDisk() {
-        return false;
-      }
-    };
+  private static BaseGenerationType getGenerationType() {
+    return new GenerateFilesGenerationType();
   }
 }

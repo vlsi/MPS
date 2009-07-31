@@ -28,6 +28,10 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testNormalWork");
   }
 
+  public void testSuccess() {
+    executeTarget("testSuccess");
+  }
+
   public void testNormalWorkWithModels() {
     executeTarget("testNormalWorkWithModels");
   }
