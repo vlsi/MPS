@@ -569,5 +569,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" id="9101790344583086385">
+    <property name="name" value="RemoveReturnInsideRunConfigExecute" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" id="9101790344583086386">
+      <link role="applicableConcept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="9101790344583086387">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9101790344583086388">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9101790344583086389">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="9101790344583086404">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="9101790344583086407" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9101790344583086391">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="9101790344583086390" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="9101790344583086395">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="9101790344583086401" />
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="9101790344583086396">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9101790344583086403">
+                      <link role="conceptDeclaration" targetNodeId="1.678887849223472884" resolveInfo="ExecuteConfigBlock" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.RemovePart" id="9101790344583086408">
+        <link role="conceptToRemove" targetNodeId="2.1068581242878" resolveInfo="ReturnStatement" />
+      </node>
+    </node>
+  </node>
 </model>
 
