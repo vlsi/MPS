@@ -108,19 +108,25 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
           if (node.value == null) {
             throw new ExecutionException("Class node does not exist");
           }
+
+          final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+          MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+
+          if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
+            GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
+            final Wrappers._T<SModelDescriptor> md = new Wrappers._T<SModelDescriptor>();
+            ModelAccess.instance().runReadAction(new Runnable() {
+
+              public void run() {
+                md.value = SNodeOperations.getModel(node.value).getModelDescriptor();
+              }
+            });
+            genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), md.value), IGenerationType.FILES);
+          }
+
           ModelAccess.instance().runReadAction(new Runnable() {
 
             public void run() {
-              Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-              MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-
-              if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
-                GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
-
-                List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node.value).getModelDescriptor());
-                genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), modelDescriptors, IGenerationType.FILES);
-              }
-
               final RunComponent runComponent = new RunComponent(project);
               ClassRunner classRunner = new ClassRunner(runComponent);
 
