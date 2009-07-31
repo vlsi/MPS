@@ -12,5 +12,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_Query_node_Parameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_AbstractQueryFunction_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }
