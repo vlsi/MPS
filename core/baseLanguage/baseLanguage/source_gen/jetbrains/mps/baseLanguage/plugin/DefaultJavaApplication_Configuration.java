@@ -101,32 +101,31 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
           public void run() {
             SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-            if (node == null) {
-              throw new ExecutionException("Class node does not exist");
-            }
-            Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-            MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+            if (node != null) {
+              Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+              MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
-            if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
-              GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
+              if (DefaultJavaApplication_Configuration.this.getStateObject().makeBeforeRun) {
+                GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
 
-              List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node).getModelDescriptor());
-              genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), modelDescriptors, IGenerationType.FILES);
-            }
-
-            final RunComponent runComponent = new RunComponent(project);
-            ClassRunner classRunner = new ClassRunner(runComponent);
-
-            consoleComponent.value = runComponent;
-            consoleDispose.value = new Runnable() {
-
-              public void run() {
-                runComponent.dispose();
+                List<SModelDescriptor> modelDescriptors = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), SNodeOperations.getModel(node).getModelDescriptor());
+                genManager.generateModelsFromDifferentModules(mpsProject.createOperationContext(), modelDescriptors, IGenerationType.FILES);
               }
-            };
 
-            Process process = classRunner.run(node, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
-            handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
+              final RunComponent runComponent = new RunComponent(project);
+              ClassRunner classRunner = new ClassRunner(runComponent);
+
+              consoleComponent.value = runComponent;
+              consoleDispose.value = new Runnable() {
+
+                public void run() {
+                  runComponent.dispose();
+                }
+              };
+
+              Process process = classRunner.run(node, DefaultJavaApplication_Configuration.this.getStateObject().programParams, DefaultJavaApplication_Configuration.this.getStateObject().vmParams, DefaultJavaApplication_Configuration.this.getStateObject().workingDir);
+              handler.value = new BLProcessHandler(runComponent, process, "", Charset.defaultCharset());
+            }
           }
         });
         final JComponent finalConsoleComponent = consoleComponent.value;
