@@ -48,6 +48,7 @@ public class GenerateTaskFilesCreationTest extends TestCase {
     assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertGeneratorGenerated(projectName, languageName, destdir);
 
     File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, languageName) + "SomeConceptInstance.java");
     TestCase.assertTrue(someConceptInstanceFile.exists());
@@ -68,6 +69,15 @@ public class GenerateTaskFilesCreationTest extends TestCase {
   private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) {
     File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + conceptName + ".java");
     TestCase.assertTrue(someConceptFile.exists());
+  }
+
+  private void assertGeneratorGenerated(String projectName, String languageName, File destdir) {
+    File queriesGeneratedFile = new File(getLanguageSourceFolderPath(destdir, projectName, languageName)
+      + "generator" + File.separator
+      + "template" + File.separator
+      + "main" + File.separator
+      + "QueriesGenerated.java");
+    TestCase.assertTrue(queriesGeneratedFile.exists());
   }
 
   private File generateProjectFromZipFile(String projectName) throws IOException {

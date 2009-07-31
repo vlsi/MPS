@@ -166,6 +166,11 @@ public class Generator {
       info("Loaded project " + project);
 
       List<SModelDescriptor> models = project.getProjectModels();
+      for (Language language : project.getProjectLanguages()) {
+        for (jetbrains.mps.smodel.Generator gen : language.getGenerators()){
+          models.addAll(gen.getOwnModelDescriptors());
+        }
+      }
       for (SModelDescriptor modelDescriptor : models) {
         if (SModelStereotype.isUserModel(modelDescriptor)) {
           modelDescriptors.add(modelDescriptor);
