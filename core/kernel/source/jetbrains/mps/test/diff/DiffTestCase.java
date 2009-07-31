@@ -41,15 +41,15 @@ public class DiffTestCase extends BaseDiffTestCase {
   }
 
   public void testLineAdded() {
-    assertDiff(Arrays.copyOf(myContent, myContent.length - 1), myContent);
+    assertDiff(copyOf(myContent, myContent.length - 1), myContent);
   }
 
   public void testLineDeleted() {
-    assertDiff(myContent, Arrays.copyOf(myContent, myContent.length - 2));
+    assertDiff(myContent, copyOf(myContent, myContent.length - 2));
   }
 
   public void testLineSwapped() {
-    String[] reversed = Arrays.copyOf(myContent, myContent.length);
+    String[] reversed = copyOf(myContent, myContent.length);
     String temp = reversed[0];
     reversed[0] = reversed[1];
     reversed[1] = temp;

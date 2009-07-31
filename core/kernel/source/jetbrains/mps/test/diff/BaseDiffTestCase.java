@@ -72,4 +72,10 @@ public abstract class BaseDiffTestCase extends TestCase {
     List<String> strings = new TestComparator(s1, s2).compare().getReportsAsList();
     return strings.toArray(new String[strings.size()]);
   }
+
+  String[] copyOf(String[] src, int length) {
+    String[] result = new String[length];
+    System.arraycopy(src, 0, result, 0, length);
+    return result;
+  }
 }
