@@ -21,6 +21,9 @@ import javax.swing.SwingUtilities;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import com.intellij.openapi.application.impl.LaterInvocator;
+import com.intellij.openapi.application.ModalityState;
+
 class EDTExecutor {
   private static final long MAX_TIME = 100;
 
@@ -100,7 +103,7 @@ class EDTExecutor {
       }
 
       if (r != null) {
-        SwingUtilities.invokeLater(r);
+        LaterInvocator.invokeLater(r, ModalityState.NON_MODAL);        
       }
     }
 
