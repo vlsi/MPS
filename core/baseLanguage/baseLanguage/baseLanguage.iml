@@ -31,6 +31,8 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="test" />
+    <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" />
   </component>
 </module>
 

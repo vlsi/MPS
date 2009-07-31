@@ -44,7 +44,6 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import com.intellij.ide.DataManager;
 
 public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
@@ -95,12 +94,16 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         final Wrappers._T<Runnable> consoleDispose = new Wrappers._T<Runnable>(null);
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         final Wrappers._T<ProcessHandler> handler = new Wrappers._T<ProcessHandler>(null);
+        if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
+          throw new ExecutionException("Class node is not defined");
+        }
         ModelAccess.instance().runReadAction(new Runnable() {
 
           public void run() {
             SNode node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-            assert node != null : "configuration is executed for null node";
-
+            if (node == null) {
+              throw new ExecutionException("Class node does not exist");
+            }
             Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
             MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
@@ -213,7 +216,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
     @NotNull()
     protected JComponent createEditor() {
-      this.myComponent = new ConfigEditor(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
+      this.myComponent = new ConfigEditor();
       return this.myComponent;
     }
 
