@@ -1,0 +1,7 @@
+0c0
+> content
+> case
+---
+< diff
+2d3
+< case

@@ -1,0 +1,5 @@
+0d0
+< diff
+< test
+< case
+< content
