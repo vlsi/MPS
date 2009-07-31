@@ -49,6 +49,9 @@ public class GenerateTaskFilesCreationTest extends TestCase {
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
 
+    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, languageName) + "SomeConceptInstance.java");
+    TestCase.assertTrue(someConceptInstanceFile.exists());
+
     FileUtil.delete(destdir);
   }
 
@@ -114,24 +117,30 @@ public class GenerateTaskFilesCreationTest extends TestCase {
   }
 
   private String getStructurePath(File destdir, String projectName, String languageName) {
-    return getSourceFolderPath(destdir, projectName, languageName)
+    return getLanguageSourceFolderPath(destdir, projectName, languageName)
       + "structure" + File.separator;
   }
 
   private String getEditorPath(File destdir, String projectName, String languageName) {
-    return getSourceFolderPath(destdir, projectName, languageName)
+    return getLanguageSourceFolderPath(destdir, projectName, languageName)
       + "editor" + File.separator;
   }
 
   private String getBehaviorPath(File destdir, String projectName, String languageName) {
-    return getSourceFolderPath(destdir, projectName, languageName)
+    return getLanguageSourceFolderPath(destdir, projectName, languageName)
       + "behavior" + File.separator;
   }
 
-  private String getSourceFolderPath(File destdir, String projectName, String languageName) {
+  private String getLanguageSourceFolderPath(File destdir, String projectName, String languageName) {
     return destdir + File.separator + projectName + File.separator
       + "languages" + File.separator + languageName + File.separator
       + "source_gen" + File.separator + languageName + File.separator;
+  }
+
+  private String getSolutionSourceFolderPath(File destdir, String projectName, String solutionName) {
+    return destdir + File.separator + projectName + File.separator
+      + "solutions" + File.separator + solutionName + File.separator
+      + "source_gen" + File.separator + "sandbox" + File.separator;
   }
 
 }
