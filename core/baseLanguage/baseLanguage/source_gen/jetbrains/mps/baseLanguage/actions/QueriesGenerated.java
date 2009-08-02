@@ -2631,7 +2631,7 @@ __switch__:
         }
 
         public String getDescriptionText(String pattern) {
-          return "postfix dec";
+          return "postfix increment";
         }
       });
     }

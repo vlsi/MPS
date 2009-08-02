@@ -117,7 +117,7 @@ public class ProjectTester {
         final boolean created = oldContent == null && newContent != null;
         final String title = getDiffReportTitle(root.getName(), model.getShortName(), created, false);
         String[] oldTest = getContentAsArray(oldContent, "\n");
-        String[] newTest = getContentAsArray(newContent, "\r\n");
+        String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
         addDiffReport(new TestComparator(oldTest, newTest), result, title);
       }
       for (String fileName : javaFiles) {
