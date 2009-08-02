@@ -981,5 +981,41 @@
       <link role="concept" targetNodeId="3.1073389214265" resolveInfo="EditorCellModel" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1901504820902746966">
+    <property name="name" value="RightTransformActionDeprecated" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1901504820902746967">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1901504820902748917">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1901504820902798698">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1901504820902748921">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1901504820902748920">
+              <link role="applicableNode" targetNodeId="1901504820902746970" resolveInfo="cellActionMapItem" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1901504820902748925">
+              <link role="property" targetNodeId="3.1139535298778" resolveInfo="actionId" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1901504820902798702">
+            <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1901504820902798703">
+              <link role="enumMember" targetNodeId="3.1139535329028" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1901504820902748919">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1901504820902798704">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1901504820902798707">
+              <property name="value" value="Right transform in action map is deprecated." />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1901504820902816537">
+              <link role="applicableNode" targetNodeId="1901504820902746970" resolveInfo="cellActionMapItem" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1901504820902746970">
+      <property name="name" value="cellActionMapItem" />
+      <link role="concept" targetNodeId="3.1139535280617" resolveInfo="CellActionMapItem" />
+    </node>
+  </node>
 </model>
 
