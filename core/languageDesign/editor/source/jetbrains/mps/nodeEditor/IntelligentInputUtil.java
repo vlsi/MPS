@@ -168,7 +168,7 @@ public class IntelligentInputUtil {
 
       if (newNode == null) return true;
       
-      cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+      cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
       EditorCell errorCell = cellForNewNode.findChild(CellFinders.FIRST_ERROR, true);
 
       if (errorCell != null && errorCell instanceof EditorCell_Label) {
@@ -221,7 +221,7 @@ public class IntelligentInputUtil {
 
     rtAction.execute(editorContext);
 
-    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    EditorCell newCellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
     EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
@@ -287,7 +287,7 @@ public class IntelligentInputUtil {
       newNode = info.getMatchingActions(smallPattern, true).get(0).substitute(editorContext, smallPattern);
       if (newNode == null) return true;
 
-      cellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+      cellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
       List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
@@ -319,7 +319,7 @@ public class IntelligentInputUtil {
 
     ltAction.execute(editorContext);
 
-    EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
+    EditorCell newCellForNewNode = editorContext.getNodeEditorComponent().findNodeCell(newNode);
     prepareSTCell(editorContext, newCellForNewNode, head);
     return true;
   }

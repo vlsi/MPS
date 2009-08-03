@@ -7382,21 +7382,21 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1212797933134">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212797943625">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212797952504">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212798092879">
-                    <link role="variableDeclaration" targetNodeId="1212798092869" resolveInfo="actionItemSuffix" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212797944831">
-                    <property name="value" value="_" />
-                  </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212797952504">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212798092879">
+                  <link role="variableDeclaration" targetNodeId="1212798092869" resolveInfo="actionItemSuffix" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212797940090">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212797936308">
-                    <link role="variableDeclaration" targetNodeId="1212797890174" resolveInfo="actionMap" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1212797943625">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1212797940090">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1212797936308">
+                      <link role="variableDeclaration" targetNodeId="1212797890174" resolveInfo="actionMap" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212797940452">
+                      <link role="property" targetNodeId="46.1169194664001" resolveInfo="name" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1212797940452">
-                    <link role="property" targetNodeId="46.1169194664001" resolveInfo="name" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1212797944831">
+                    <property name="value" value="_" />
                   </node>
                 </node>
               </node>
