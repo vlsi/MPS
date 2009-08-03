@@ -19,8 +19,10 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 import javax.swing.JOptionPane;
 
@@ -31,7 +33,7 @@ public class GoToEditorDeclarationHelper {
   public static SNode getOrCreateEditorForConcept(final SModelDescriptor languageEditor, final ConceptDeclaration concept, final SNode node, final IScope scope) {
     ConceptEditorDeclaration editorDeclaration = ModelAccess.instance().runReadAction(new Computable<ConceptEditorDeclaration>() {
       public ConceptEditorDeclaration compute() {
-        return SModelUtil_new.findEditorDeclaration(languageEditor.getSModel(), concept);
+        return findEditorDeclaration(languageEditor.getSModel(), concept);
       }
     });
     if (editorDeclaration != null) return editorDeclaration.getNode();
@@ -78,6 +80,10 @@ public class GoToEditorDeclarationHelper {
     });
 
     return language.getEditorModelDescriptor();
+  }
+
+  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, AbstractConceptDeclaration conceptDeclaration) {
+    return (ConceptEditorDeclaration) BaseAdapter.fromNode(RefUtil.findEditorDeclaration(editorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
   }
 
   public static ConceptEditorDeclaration createEditorDeclaration(AbstractConceptDeclaration conceptDeclaration, SModelDescriptor editorModelDescriptor, IScope scope) {

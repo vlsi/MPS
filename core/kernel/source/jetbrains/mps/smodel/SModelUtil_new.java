@@ -251,26 +251,6 @@ public class SModelUtil_new implements ApplicationComponent {
     }
   }
 
-  public static ConceptEditorDeclaration findEditorDeclaration(SModel editorModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptEditorDeclaration) BaseAdapter.fromNode(SModelUtil.findEditorDeclaration(editorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
-  }
-
-  public static ConceptBehavior findBehaviorDeclaration(SModel behaviorModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptBehavior) BaseAdapter.fromNode(SModelUtil.findBehaviorDeclaration(behaviorModel, BaseAdapter.fromAdapter(conceptDeclaration)));
-  }
-
-  public static ConceptConstraints findConstraintsDeclaration(SModel constaintsModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptConstraints) BaseAdapter.fromNode(SModelUtil.findConstraintsDeclaration(constaintsModel, BaseAdapter.fromAdapter(conceptDeclaration)));
-  }
-
-  public static DataFlowBuilderDeclaration findDataFlowDeclaration(SModel dataFlowModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (DataFlowBuilderDeclaration) BaseAdapter.fromNode(SModelUtil.findDataFlowDeclaration(dataFlowModel, BaseAdapter.fromAdapter(conceptDeclaration)));
-  }
-
-  public static INodeAdapter findTextgenDeclaration(SModel textgenModel, AbstractConceptDeclaration conceptDeclaration) {
-    return (ConceptTextGenDeclaration) BaseAdapter.fromNode(SModelUtil.findTextgenDeclaration(textgenModel, BaseAdapter.fromAdapter(conceptDeclaration)));
-  }
-
   public static boolean isEmptyPropertyValue(String s) {
     return s == null || s.equals("");
   }

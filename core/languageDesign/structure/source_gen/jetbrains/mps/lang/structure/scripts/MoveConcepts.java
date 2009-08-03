@@ -21,7 +21,6 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.Map;
@@ -33,6 +32,7 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Condition;
 
@@ -129,11 +129,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
       if (editorModelDescriptor != null) {
         for(SNode node : nodes) {
-          if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-            SNode editor = SModelUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
-            if (editor != null) {
-              ListSequence.fromList(editors).addElement(editor);
-            }
+          SNode editor = RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
+          if (editor != null) {
+            ListSequence.fromList(editors).addElement(editor);
           }
         }
       }
@@ -141,7 +139,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
       if (behaviorModelDescriptor != null) {
         for(SNode node : nodes) {
-          SNode behavior = SModelUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
+          SNode behavior = RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
           if (behavior != null) {
             ListSequence.fromList(behaviors).addElement(behavior);
           }
@@ -151,7 +149,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
       if (constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
-          SNode constraint = SModelUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
+          SNode constraint = RefUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
           if (constraint != null) {
             ListSequence.fromList(constraints).addElement(constraint);
           }
@@ -161,7 +159,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
       if (dataflowModelDescriptor != null) {
         for(SNode node : nodes) {
-          SNode dataFlow = SModelUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
+          SNode dataFlow = RefUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
           if (dataFlow != null) {
             ListSequence.fromList(dataFlows).addElement(dataFlow);
           }

@@ -223,49 +223,4 @@ public class SModelUtil {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
   }
 
-  public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
-      if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
-        return root;
-      }
-    }
-    return null;
-  }
-
-  public static SNode findBehaviorDeclaration(SModel behaviorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
-      if (concept == SLinkOperations.getTarget(root, "concept", false)) {
-        return root;
-      }
-    }
-    return null;
-  }
-
-  public static SNode findConstraintsDeclaration(SModel constraintsModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
-      if (concept == SLinkOperations.getTarget(root, "concept", false)) {
-        return root;
-      }
-    }
-    return null;
-  }
-
-  public static SNode findDataFlowDeclaration(SModel dataFlowModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
-      if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
-        return root;
-      }
-    }
-    return null;
-  }
-
-  public static SNode findTextgenDeclaration(SModel textgenModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(textgenModel, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"))) {
-      if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
-        return root;
-      }
-    }
-    return null;
-  }
-
 }

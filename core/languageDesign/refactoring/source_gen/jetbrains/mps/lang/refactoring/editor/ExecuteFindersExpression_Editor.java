@@ -144,16 +144,17 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_Constant_0628_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_0");
+    BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_0628_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_1");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_Constant_0628_2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0628_2");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
   private static void setupBasic_RefNodeList_0628_0(EditorCell editorCell, SNode node, EditorContext context) {

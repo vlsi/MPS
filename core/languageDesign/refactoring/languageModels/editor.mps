@@ -689,10 +689,11 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242763349">
         <property name="text" value="executeFinders" />
+        <link role="styleClass" targetNodeId="4.1215090647074" resolveInfo="MethodName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242776289">
         <property name="text" value="(" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
+        <link role="styleClass" targetNodeId="4.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1212242818597">
         <property name="vertical" value="true" />
@@ -715,7 +716,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1212242780620">
         <property name="text" value=")" />
-        <link role="styleClass" targetNodeId="4.1238143818889" resolveInfo="Matching" />
+        <link role="styleClass" targetNodeId="4.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237813123529" />
     </node>
