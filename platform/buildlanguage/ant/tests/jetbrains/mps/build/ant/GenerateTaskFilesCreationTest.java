@@ -56,6 +56,24 @@ public class GenerateTaskFilesCreationTest extends TestCase {
     FileUtil.delete(destdir);
   }
 
+  public void testLanguageOnly() throws IOException {
+    String projectName = "TestProjectWithLanguageAndSolution";
+    String languageName = projectName + "Language";
+
+    File destdir = extractProject(projectName);
+
+    WhatToGenerate whatToGenerate = new WhatToGenerate();
+    whatToGenerate.addModuleDirectory(new File(getLanguagePath(destdir, projectName, languageName)));
+    doGenerate(whatToGenerate);
+
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+    assertGeneratorGenerated(projectName, languageName, destdir);
+
+    FileUtil.delete(destdir);
+  }
+
   private void assertBehaviorGenerated(String projectName, String languageName, File destdir, String conceptName) {
     File someConceptBehaviorFile = new File(getBehaviorPath(destdir, projectName, languageName) + conceptName + "_Behavior.java");
     TestCase.assertTrue(someConceptBehaviorFile.exists());
@@ -81,6 +99,16 @@ public class GenerateTaskFilesCreationTest extends TestCase {
   }
 
   private File generateProjectFromZipFile(String projectName) throws IOException {
+    File destdir = extractProject(projectName);
+
+    WhatToGenerate whatToGenerate = new WhatToGenerate();
+    whatToGenerate.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
+    doGenerate(whatToGenerate);
+
+    return destdir;
+  }
+
+  private File extractProject(String projectName) throws IOException {
     URL resource = GenerateTaskFilesCreationTest.class.getResource(projectName + ".zip");
     File destdir = FileUtil.createTempDirectory(projectName, "");
     ZipUtil.extract(new File(resource.getFile()), destdir, new FilenameFilter() {
@@ -88,9 +116,10 @@ public class GenerateTaskFilesCreationTest extends TestCase {
         return true;
       }
     });
+    return destdir;
+  }
 
-    WhatToGenerate whatToGenerate = new WhatToGenerate();
-    whatToGenerate.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
+  private void doGenerate(WhatToGenerate whatToGenerate) {
     Generator generator = new Generator(whatToGenerate, new ProjectComponent() {
       public void log(String msg) {
         System.out.println(msg);
@@ -122,8 +151,6 @@ public class GenerateTaskFilesCreationTest extends TestCase {
       }
     });
     generator.generate();
-
-    return destdir;
   }
 
   private String getStructurePath(File destdir, String projectName, String languageName) {
@@ -142,9 +169,13 @@ public class GenerateTaskFilesCreationTest extends TestCase {
   }
 
   private String getLanguageSourceFolderPath(File destdir, String projectName, String languageName) {
-    return destdir + File.separator + projectName + File.separator
-      + "languages" + File.separator + languageName + File.separator
+    return getLanguagePath(destdir, projectName, languageName) + File.separator
       + "source_gen" + File.separator + languageName + File.separator;
+  }
+
+  private String getLanguagePath(File destdir, String projectName, String languageName) {
+    return destdir + File.separator + projectName + File.separator
+      + "languages" + File.separator + languageName;
   }
 
   private String getSolutionSourceFolderPath(File destdir, String projectName, String solutionName) {

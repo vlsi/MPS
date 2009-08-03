@@ -91,9 +91,11 @@ public class Generator {
     setMacro();
     loadLibraries();
 
-    File projectFile = FileUtil.createTmpFile();
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
+
+    File projectFile = FileUtil.createTmpFile();
     MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+
     ideaProject.getComponent(FileGeneratorManager.class).reloadFileGenerators();
 
     generateModels(project, collectModelsToGenerate());
@@ -167,7 +169,7 @@ public class Generator {
 
       List<SModelDescriptor> models = project.getProjectModels();
       for (Language language : project.getProjectLanguages()) {
-        for (jetbrains.mps.smodel.Generator gen : language.getGenerators()){
+        for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
           models.addAll(gen.getOwnModelDescriptors());
         }
       }
@@ -190,8 +192,14 @@ public class Generator {
 
       for (IModule module : modules) {
         info("Loaded module " + module);
-        List<SModelDescriptor> models = module.getOwnModelDescriptors();
-        modelDescriptors.addAll(models);
+        modelDescriptors.addAll(module.getOwnModelDescriptors());
+
+        if (module instanceof Language) {
+          Language language = (Language) module;
+          for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
+            modelDescriptors.addAll(gen.getOwnModelDescriptors());
+          }
+        }
       }
     }
   }
@@ -251,8 +259,6 @@ public class Generator {
     }
     info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
-
-    ProjectOperationContext operationContext = new ProjectOperationContext(project);
 
     Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
     for (final SModelDescriptor model : models) {
