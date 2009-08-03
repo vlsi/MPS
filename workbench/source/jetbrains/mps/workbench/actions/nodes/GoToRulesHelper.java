@@ -39,7 +39,7 @@ import java.util.List;
 
 public class GoToRulesHelper {
   public static void go(Frame frame, EditorCell cell, IOperationContext context, AbstractConceptDeclaration concept) {
-    List<SNode> rules = getHelginsRules(concept, context);
+    List<SNode> rules = getHelginsRules(concept, context.getScope());
 
     if (rules.size() == 1) {// single rule
       context.getComponent(MPSEditorOpener.class).openNode(rules.get(0));
@@ -57,8 +57,8 @@ public class GoToRulesHelper {
     m.show(frame, x, y);
   }
 
-  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
-    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
+  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IScope scope) {
+    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
     List<SNode> rules = new ArrayList<SNode>();
     if (language != null && language.getTypesystemModelDescriptor() != null) {
       SModelDescriptor helginsDescriptor = language.getTypesystemModelDescriptor();
@@ -69,7 +69,7 @@ public class GoToRulesHelper {
             if (!(object instanceof AbstractRule)) return false;
 
             AbstractRule rule = (AbstractRule) object;
-            return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
+            return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), scope));
           }
         }));
       }

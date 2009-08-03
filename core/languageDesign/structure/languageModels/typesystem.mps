@@ -555,47 +555,47 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1235136478708">
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235136478709">
               <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1235136520823">
-                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136561472">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136589377">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136689992">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136696482">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136692891">
-                          <link role="variableDeclaration" targetNodeId="1235136293836" resolveInfo="language" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235136698135">
-                          <link role="baseMethodDeclaration" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136596039">
-                        <property name="value" value=" is not extended by " />
-                      </node>
+                <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136689992">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136696482">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136692891">
+                      <link role="variableDeclaration" targetNodeId="1235136293836" resolveInfo="language" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136774029">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136791680">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136795812">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136794055">
-                            <link role="variableDeclaration" targetNodeId="1235136403647" resolveInfo="superConcept" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235136698135">
+                      <link role="baseMethodDeclaration" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136589377">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136791680">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136795812">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136794055">
+                          <link role="variableDeclaration" targetNodeId="1235136403647" resolveInfo="superConcept" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235136797016">
+                          <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136774029">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1235136561472">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136522495">
+                            <property name="value" value="language " />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1235136797016">
-                            <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136568026">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136567050">
+                              <link role="variableDeclaration" targetNodeId="1235136450724" resolveInfo="conceptLanguage" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235136578647">
+                              <link role="baseMethodDeclaration" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
+                            </node>
                           </node>
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136775009">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136775009">
                           <property name="value" value=" of concept " />
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235136568026">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1235136567050">
-                          <link role="variableDeclaration" targetNodeId="1235136450724" resolveInfo="conceptLanguage" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235136578647">
-                          <link role="baseMethodDeclaration" targetNodeId="12.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
-                        </node>
-                      </node>
                     </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136522495">
-                    <property name="value" value="language " />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1235136596039">
+                      <property name="value" value=" is not extended by " />
+                    </node>
                   </node>
                 </node>
                 <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1235136701008">

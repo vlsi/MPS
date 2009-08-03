@@ -11,8 +11,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.workbench.actions.nodes.GoToIntentionsHelper;
+import jetbrains.mps.workbench.actions.nodes.GoToFindersHelper;
+import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
@@ -20,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
@@ -36,6 +40,42 @@ public class AbstractConceptDeclaration_Behavior {
   private static Class[] PARAMETERS_1222430305282 = {SNode.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static SNode call_findEditor_6409339300305624772(SNode thisNode, IScope scope) {
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
+    if (language == null) {
+      return null;
+    }
+    SModelDescriptor editor = language.getEditorModelDescriptor();
+    if (editor == null) {
+      return null;
+    }
+    SModel model = editor.getSModel();
+    for(SNode editorNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
+      if (SLinkOperations.getTarget(editorNode, "conceptDeclaration", false) == thisNode) {
+        return editorNode;
+      }
+    }
+    return null;
+  }
+
+  public static SNode call_findConstraints_6409339300305625141(SNode thisNode, IScope scope) {
+    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
+    if (language == null) {
+      return null;
+    }
+    SModelDescriptor constraints = language.getConstraintsModelDescriptor();
+    if (constraints == null) {
+      return null;
+    }
+    SModel model = constraints.getSModel();
+    for(SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
+      if (SLinkOperations.getTarget(constraintsRoot, "concept", false) == thisNode) {
+        return constraintsRoot;
+      }
+    }
+    return null;
   }
 
   public static SNode call_findBehaviour_1213877394029(SNode thisNode, IScope scope) {
@@ -56,25 +96,41 @@ public class AbstractConceptDeclaration_Behavior {
     return null;
   }
 
-  public static SNode call_findConstraints_1213877394086(SNode thisNode, IScope scope) {
+  public static List<SNode> call_findTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
+    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static List<SNode> call_findIntentions_6409339300305625231(SNode thisNode, IScope scope) {
+    return GoToIntentionsHelper.getIntentions(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static List<SNode> call_findFinders_6409339300305625307(SNode thisNode, IScope scope) {
+    return GoToFindersHelper.getFinders(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
+    return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static SNode call_findTextgen_6409339300305625442(SNode thisNode, IScope scope) {
     Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     if (language == null) {
       return null;
     }
-    SModelDescriptor constraints = language.getConstraintsModelDescriptor();
-    if (constraints == null) {
+    SModelDescriptor textgen = language.getTextgenModelDescriptor();
+    if (textgen == null) {
       return null;
     }
-    SModel model = constraints.getSModel();
-    for(SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
-      if (SLinkOperations.getTarget(constraintsRoot, "concept", false) == thisNode) {
-        return constraintsRoot;
+    SModel model = textgen.getSModel();
+    for(SNode textgenNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration")) {
+      if (SLinkOperations.getTarget(textgenNode, "conceptDeclaration", false) == thisNode) {
+        return textgenNode;
       }
     }
     return null;
   }
 
-  public static SNode call_findDataFlowBuilder_1213877394143(SNode thisNode, IScope scope) {
+  public static SNode call_findDataFlow_1213877394143(SNode thisNode, IScope scope) {
     Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
     if (language == null) {
       return null;
@@ -84,9 +140,9 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = dataFlow.getSModel();
-    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")) {
-      if (SLinkOperations.getTarget(behaviour, "conceptDeclaration", false) == thisNode) {
-        return behaviour;
+    for(SNode dataFlowNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")) {
+      if (SLinkOperations.getTarget(dataFlowNode, "conceptDeclaration", false) == thisNode) {
+        return dataFlowNode;
       }
     }
     return null;

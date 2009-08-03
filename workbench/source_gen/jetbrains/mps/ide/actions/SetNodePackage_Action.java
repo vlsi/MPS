@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.behavior.ConceptDeclaration_Behavior;
 import java.util.Set;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -129,11 +128,9 @@ public class SetNodePackage_Action extends GeneratedAction {
                 behavior.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
             }
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-              SNode editor = ConceptDeclaration_Behavior.call_findEditor_1213877216527(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), SetNodePackage_Action.this.scope);
-              if (editor != null) {
-                editor.setProperty(SModelTreeNode.PACK, dialog.getPackage());
-              }
+            SNode editor = AbstractConceptDeclaration_Behavior.call_findEditor_6409339300305624772(node, SetNodePackage_Action.this.scope);
+            if (editor != null) {
+              editor.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             }
           }
         }
