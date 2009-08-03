@@ -42,6 +42,7 @@ public class GenerateTaskFilesCreationTest extends TestCase {
   public void testLanguageAndSolution() throws IOException {
     String projectName = "TestProjectWithLanguageAndSolution";
     String languageName = projectName + "Language";
+    String solutionName = projectName + "Solution";
 
     File destdir = generateProjectFromZipFile(projectName);
 
@@ -50,7 +51,7 @@ public class GenerateTaskFilesCreationTest extends TestCase {
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
 
-    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, languageName) + "SomeConceptInstance.java");
+    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeConceptInstance.java");
     TestCase.assertTrue(someConceptInstanceFile.exists());
 
     FileUtil.delete(destdir);

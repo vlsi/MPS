@@ -300,7 +300,7 @@ public class GeneratorManager {
   /**
    * @return false if canceled
    */
-  private boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
+  public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
                                  final IGenerationType generationType,
                                  final ProgressIndicator progress,
                                  final IMessageHandler messages,

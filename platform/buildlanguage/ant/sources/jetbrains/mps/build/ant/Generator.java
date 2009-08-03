@@ -16,6 +16,7 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.plugins.projectplugins.FileGeneratorManager;
 import jetbrains.mps.library.*;
 import jetbrains.mps.library.Library;
@@ -260,7 +261,7 @@ public class Generator {
     info(s.toString());
     GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
 
-    Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
+    final Map<IModule, List<SModelDescriptor>> moduleToModels = new HashMap<IModule, List<SModelDescriptor>>();
     for (final SModelDescriptor model : models) {
       assert model != null;
 
@@ -287,15 +288,28 @@ public class Generator {
       }
     }
 
+    List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
+      public List<Set<IModule>> compute() {
+        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet());
+      }
+    });
+
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
-    for (IModule module : moduleToModels.keySet()) {
-      List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
-      gm.generateModels(modelsToGenerateNow,
-        new ModuleContext(module, project),
+    for (Set<IModule> modulesSet : modulesOrder) {
+      List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      for (IModule module : modulesSet) {
+        ModuleContext moduleContext = new ModuleContext(module, project);
+        List<SModelDescriptor> modelsToGenerateNow = moduleToModels.get(module);
+        for (SModelDescriptor model : modelsToGenerateNow) {
+          modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
+        }
+
+      }
+      gm.generateModels(modelsToContext,
         myGenerationType,
         emptyProgressIndicator,
-        myMessageHandler);
-
+        myMessageHandler,
+        false);
     }
   }
 
