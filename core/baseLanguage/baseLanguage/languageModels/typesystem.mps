@@ -10068,7 +10068,7 @@
                                   </node>
                                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2504554539198933308">
                                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2504554539198933309">
-                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2504554539198933317">
+                                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2504554539199088514">
                                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2504554539198933318">
                                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2504554539198933319">
                                             <link role="variableDeclaration" targetNodeId="2504554539198932809" resolveInfo="name" />

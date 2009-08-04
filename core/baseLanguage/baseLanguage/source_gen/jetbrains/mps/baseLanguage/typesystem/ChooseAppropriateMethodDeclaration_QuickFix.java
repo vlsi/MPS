@@ -42,7 +42,7 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
         public boolean met(SNode n) {
           String name = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name");
           if (name != null) {
-            name.equals(n.getName());
+            return name.equals(n.getName());
           }
           return false;
         }
