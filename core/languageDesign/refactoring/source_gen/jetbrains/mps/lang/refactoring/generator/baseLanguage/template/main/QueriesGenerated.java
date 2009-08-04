@@ -173,7 +173,7 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first();
   }
 
-  public static Object referenceMacro_GetReferent_1238252323266(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6630638345814607149(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
   }
 
