@@ -11,15 +11,9 @@ public interface IMPSLiteConcept extends INamedConcept {
   public static final String EXTENDS = "extends";
 
   public boolean getRoot();
-
   public void setRoot(boolean value);
-
   public boolean getAbstract();
-
   public void setAbstract(boolean value);
-
   public AbstractConceptReference getExtends();
-
   public void setExtends(AbstractConceptReference node);
-
 }

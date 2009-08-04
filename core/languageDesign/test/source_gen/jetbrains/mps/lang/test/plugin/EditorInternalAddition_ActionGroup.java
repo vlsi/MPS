@@ -15,7 +15,7 @@ public class EditorInternalAddition_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.test.plugin.RunTestInMPS_Action", "jetbrains.mps.lang.test");
+      EditorInternalAddition_ActionGroup.this.addAction("jetbrains.mps.lang.test.plugin.RunTestInMPS_Action", "jetbrains.mps.lang.test");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
