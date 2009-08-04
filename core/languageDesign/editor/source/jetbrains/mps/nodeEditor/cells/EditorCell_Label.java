@@ -475,8 +475,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     final CellSide side;
     if (wasPosition == 0) {
       side = CellSide.LEFT;
-    } else {
+    } else if (wasPosition == getRenderedText().length()) {
       side = CellSide.RIGHT;
+    } else {
+      side = null;
     }
 
     myCaretIsVisible = true;
@@ -491,7 +493,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
             getEditor().requestRelayout();
 
-            if (isErrorState()) {
+            if (isErrorState() && side != null) {
               if (allowsIntelligentInputKeyStroke(keyEvent)) {
                 String pattern = getRenderedText();
                 IntelligentInputUtil.processCell(EditorCell_Label.this, getEditorContext(), pattern, side);
@@ -514,7 +516,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
           return getRenderedTextOn(keyEvent);
         }
       });
-      if (!pattern.equals(getRenderedText())) {
+      if (!pattern.equals(getRenderedText()) && side != null) {
         return IntelligentInputUtil.processCell(this, getEditorContext(), pattern, side);
       }
     }
