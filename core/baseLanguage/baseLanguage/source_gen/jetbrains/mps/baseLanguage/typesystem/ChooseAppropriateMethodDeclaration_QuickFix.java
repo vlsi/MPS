@@ -40,7 +40,11 @@ public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtim
       List<SNode> mDecls = ((List<SNode>)scope.getNodes(new Condition <SNode>() {
 
         public boolean met(SNode n) {
-          return SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name").equals(n.getName());
+          String name = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode)ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "baseMethodDeclaration", false), "name");
+          if (name != null) {
+            name.equals(n.getName());
+          }
+          return false;
         }
       }));
       for(SNode methodDecl : mDecls) {
