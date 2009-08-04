@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.lang.reflect.InvocationTargetException;
+import javax.swing.SwingUtilities;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -67,35 +69,45 @@ public class BaseEditorTestBody extends BaseTestBody {
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getId()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
-  public void finishTest() {
-    if (this.myResult != null) {
-      final SNode editedNode = this.myEditor.getEditedNode();
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+  public void finishTest() throws InvocationTargetException, InterruptedException {
+    SwingUtilities.invokeAndWait(new Runnable() {
 
-        public void run() {
-          Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
-          Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map)map));
-          if (BaseEditorTestBody.this.myFinish != null) {
-            BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
-          }
+      public void run() {
+        if (BaseEditorTestBody.this.myResult != null) {
+          final SNode editedNode = BaseEditorTestBody.this.myEditor.getEditedNode();
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+            public void run() {
+              Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
+              Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), editedNode), ListSequence.fromListAndArray(new ArrayList<SNode>(), BaseEditorTestBody.this.myResult), (Map)map));
+              if (BaseEditorTestBody.this.myFinish != null) {
+                BaseEditorTestBody.this.myFinish.assertEditor(BaseEditorTestBody.this.myEditor, map);
+              }
+            }
+          });
         }
-      });
-    }
-    BaseEditorTestBody.closeEditor(this.myProject, this.myBefore);
+        BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
+      }
+    });
   }
 
 
   public static void invokeIntention(final String name, final IEditor editor, final SNode node) throws Exception {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    SwingUtilities.invokeAndWait(new Runnable() {
 
       public void run() {
-        editor.selectNode(node);
-        Set<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true);
-        for(Intention intention : SetSequence.fromSet(availableIntentions)) {
-          if (intention.getClass().getCanonicalName().equals(name)) {
-            intention.execute(node, editor.getEditorContext());
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+
+          public void run() {
+            editor.selectNode(node);
+            Set<Intention> availableIntentions = IntentionsManager.getInstance().getAvailableIntentionsForExactNode(node, editor.getEditorContext(), false, true);
+            for(Intention intention : SetSequence.fromSet(availableIntentions)) {
+              if (intention.getClass().getCanonicalName().equals(name)) {
+                intention.execute(node, editor.getEditorContext());
+              }
+            }
           }
-        }
+        });
       }
     });
   }
@@ -113,26 +125,36 @@ public class BaseEditorTestBody extends BaseTestBody {
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 
-  public static void typeString(IEditor editor, String text) {
+  public static void typeString(IEditor editor, String text) throws InterruptedException, InvocationTargetException {
     typeString(editor.getCurrentEditorComponent(), text);
   }
 
-  public static void typeString(EditorComponent editorComponent, String text) {
-    for(char ch : text.toCharArray()) {
-      editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
-    }
+  public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
+    SwingUtilities.invokeAndWait(new Runnable() {
+
+      public void run() {
+        for(char ch : text.toCharArray()) {
+          editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
+        }
+      }
+    });
   }
 
-  public static void pressKeys(IEditor editor, List<String> keyStrokes) {
+  public static void pressKeys(IEditor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     BaseEditorTestBody.pressKeys(editor.getCurrentEditorComponent(), keyStrokes);
   }
 
-  public static void pressKeys(EditorComponent editorComponent, List<String> keyStrokes) {
-    for(String code : ListSequence.fromList(keyStrokes)) {
-      KeyStroke stroke = KeyStroke.getKeyStroke(code);
-      editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
-      editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
-    }
+  public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
+    SwingUtilities.invokeAndWait(new Runnable() {
+
+      public void run() {
+        for(String code : ListSequence.fromList(keyStrokes)) {
+          KeyStroke stroke = KeyStroke.getKeyStroke(code);
+          editorComponent.processKeyPressed(new KeyEvent(editorComponent, KeyEvent.KEY_PRESSED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
+          editorComponent.processKeyReleased(new KeyEvent(editorComponent, KeyEvent.KEY_RELEASED, 0, stroke.getModifiers(), stroke.getKeyCode(), stroke.getKeyChar()));
+        }
+      }
+    });
   }
 
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class RightTransformInAnnotation_Test extends BaseTransformationTest {
@@ -19,10 +20,21 @@ public class RightTransformInAnnotation_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1230224846076", "1230225066152");
+      final IEditor[] editorWrap = new IEditor[1];
+      SwingUtilities.invokeAndWait(new Runnable() {
+
+        public void run() {
+          try {
+            editorWrap[0] = TestBody.this.initEditor("1230224846076", "1230225066152");
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+      });
+      final IEditor editor = editorWrap[0];
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "+1");
-      this.finishTest();
+      TestBody.this.finishTest();
     }
 
 }

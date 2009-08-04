@@ -75,31 +75,31 @@ public class BaseTransformationTest extends TestCase {
     final Object obj = clazz.value.newInstance();
     clazz.value.getField("myModel").set(obj, this.myTransidentModel);
     clazz.value.getField("myProject").set(obj, this.myProject);
-    final Wrappers._T<Throwable> exception = new Wrappers._T<Throwable>(null);
-    SwingUtilities.invokeAndWait(new Runnable() {
+    final Throwable[] exception = new Throwable[1];
+    if (runInCommand) {
+      SwingUtilities.invokeAndWait(new Runnable() {
 
-      public void run() {
-        if (runInCommand) {
+        public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
 
             public void run() {
-              exception.value = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
+              exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
             }
           });
-        } else
-        {
-          exception.value = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
         }
-      }
-    });
+      });
+    } else
+    {
+      exception[0] = BaseTransformationTest.this.tryToRunTest(clazz.value, methodName, obj);
+    }
     ModelAccess.instance().runWriteAction(new Runnable() {
 
       public void run() {
         SModelRepository.getInstance().removeModelDescriptor(BaseTransformationTest.this.myTransidentModel);
       }
     });
-    if (exception.value != null) {
-      throw exception.value;
+    if (exception[0] != null) {
+      throw exception[0];
     }
   }
 

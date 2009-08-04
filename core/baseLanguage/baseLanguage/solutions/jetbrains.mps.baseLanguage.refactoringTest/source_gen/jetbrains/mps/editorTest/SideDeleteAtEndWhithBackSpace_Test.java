@@ -6,6 +6,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,7 +22,18 @@ public class SideDeleteAtEndWhithBackSpace_Test extends BaseTransformationTest {
   public static class TestBody extends BaseEditorTestBody {
 
     public void testMethod() throws Exception {
-      IEditor editor = this.initEditor("1236090550299", "1236090557432");
+      final IEditor[] editorWrap = new IEditor[1];
+      SwingUtilities.invokeAndWait(new Runnable() {
+
+        public void run() {
+          try {
+            editorWrap[0] = TestBody.this.initEditor("1236090550299", "1236090557432");
+          } catch (Exception e) {
+            e.printStackTrace();
+          }
+        }
+      });
+      final IEditor editor = editorWrap[0];
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
@@ -30,7 +42,7 @@ public class SideDeleteAtEndWhithBackSpace_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      this.finishTest();
+      TestBody.this.finishTest();
     }
 
 }
