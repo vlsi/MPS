@@ -317,7 +317,6 @@ public class Generator {
         emptyProgressIndicator,
         myMessageHandler,
         false);
-      ClassLoaderManager.getInstance().reloadAll(emptyProgressIndicator);
     }
   }
 
