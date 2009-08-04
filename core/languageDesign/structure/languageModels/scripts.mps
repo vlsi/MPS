@@ -2716,12 +2716,6 @@
     <property name="refactorImmediatelyIfNoUsages" value="true" />
     <link role="overrides" targetNodeId="7.1200665013408" resolveInfo="SafeDelete" />
     <link role="applicableConcept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="1201265952539">
-      <property name="name" value="sourceLanguage" />
-      <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1201265961541">
-        <link role="classifier" targetNodeId="5.~Language" resolveInfo="Language" />
-      </node>
-    </node>
     <node role="internalArguments" type="jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument" id="7754459869734029548">
       <property name="name" value="nodeAspects" />
       <node role="argumentType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="7754459869734029550" />

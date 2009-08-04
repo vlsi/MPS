@@ -34,13 +34,11 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
-  public static final String sourceLanguage = "sourceLanguage";
   public static final String nodeAspects = "nodeAspects";
 
   private Set<String> myTransientParameters = SetSequence.fromSet(new HashSet<String>());
 
   public SafeDeleteConcept() {
-    SetSequence.fromSet(this.myTransientParameters).addElement("sourceLanguage");
     SetSequence.fromSet(this.myTransientParameters).addElement("nodeAspects");
   }
 

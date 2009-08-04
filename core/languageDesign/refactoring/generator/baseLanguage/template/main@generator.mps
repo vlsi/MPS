@@ -272,7 +272,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1189697446192">
-    <property name="name" value="refactoring_class" />
+    <property name="name" value="RefactoringClass" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1201177769902">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201177769903" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201177769904" />
