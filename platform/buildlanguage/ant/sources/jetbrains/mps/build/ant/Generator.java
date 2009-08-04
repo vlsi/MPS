@@ -44,6 +44,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -66,6 +67,7 @@ import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.util.Processor;
 import com.intellij.util.PathUtil;
+import com.intellij.ide.IdeEventQueue;
 
 import javax.swing.JTabbedPane;
 
@@ -76,6 +78,8 @@ public class Generator {
   private final ProjectComponent myProjectComponent;
   private final List<String> myErrors = new ArrayList<String>();
   private final List<String> myWarnings = new ArrayList<String>();
+
+  private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
 
   public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
@@ -103,7 +107,21 @@ public class Generator {
 
     generateModels(project, collectModelsToGenerate());
 
+    unloadLoadedStuff();
     showStatistic();
+  }
+
+  private void unloadLoadedStuff() {
+    for (final MPSProject project : myLoadedProjects) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          project.dispose();
+
+          IdeEventQueue.getInstance().flushQueue();
+          System.gc();
+        }
+      });
+    }
   }
 
   private Level getLog4jLevel() {
@@ -169,6 +187,7 @@ public class Generator {
     for (File projectFile : myWhatToGenerate.getMPSProjectFiles()) {
       final MPSProject project = TestMain.loadProject(projectFile);
       info("Loaded project " + project);
+      myLoadedProjects.add(project);
 
       List<SModelDescriptor> models = project.getProjectModels();
       for (Language language : project.getProjectLanguages()) {
@@ -411,7 +430,7 @@ public class Generator {
     }
 
     public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
-      for (IModule m : myModule.getExplicitlyDependOnModules(true)){
+      for (IModule m : myModule.getExplicitlyDependOnModules(true)) {
         ModuleDecorator next = (ModuleDecorator) map.get(m);
         if (next != null) myNext.add(next);
       }
@@ -433,7 +452,7 @@ public class Generator {
     }
 
     public int compareTo(IModuleDecorator<IModule> o) {
-      return hashCode() - ((ModuleDecorator)o).hashCode();
+      return hashCode() - ((ModuleDecorator) o).hashCode();
     }
   }
 }
