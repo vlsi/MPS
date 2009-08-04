@@ -11,8 +11,9 @@ import java.net.URL;
 
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
+import jetbrains.mps.BaseMPSTest;
 
-public class GenerateTaskFilesCreationTest extends TestCase {
+public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private static final String CONCEPT_NAME = "SomeConcept";
 
   public void testOneFileForOneConcept() throws IOException {

@@ -16,7 +16,11 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
+import jetbrains.mps.build.buildgeneration.graph.IVertex;
+import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecorator;
+import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecoratorBuilder;
 import jetbrains.mps.plugins.projectplugins.FileGeneratorManager;
 import jetbrains.mps.library.*;
 import jetbrains.mps.library.Library;
@@ -36,11 +40,9 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -290,12 +292,17 @@ public class Generator {
 
     List<Set<IModule>> modulesOrder = ModelAccess.instance().runReadAction(new Computable<List<Set<IModule>>>() {
       public List<Set<IModule>> compute() {
-        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet());
+        return StronglyConnectedModules.getInstance().getStronglyConnectedComponents(moduleToModels.keySet(), new IModuleDecoratorBuilder<IModule, IModuleDecorator<IModule>>() {
+          public IModuleDecorator<IModule> decorate(IModule module) {
+            return new ModuleDecorator(module);
+          }
+        });
       }
     });
 
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (Set<IModule> modulesSet : modulesOrder) {
+      info("Generating scc " + modulesSet);
       List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : modulesSet) {
         ModuleContext moduleContext = new ModuleContext(module, project);
@@ -310,6 +317,7 @@ public class Generator {
         emptyProgressIndicator,
         myMessageHandler,
         false);
+      ClassLoaderManager.getInstance().reloadAll(emptyProgressIndicator);
     }
   }
 
@@ -389,5 +397,48 @@ public class Generator {
 
   private static BaseGenerationType getGenerationType() {
     return new GenerateFilesGenerationType();
+  }
+
+  private static class ModuleDecorator implements IModuleDecorator<IModule> {
+    private final IModule myModule;
+    private final Set<ModuleDecorator> myNext = new HashSet<ModuleDecorator>();
+
+    public ModuleDecorator(IModule module) {
+      myModule = module;
+    }
+
+    public IModule getModule() {
+      return myModule;
+    }
+
+    public void fill(Map<IModule, IModuleDecorator<IModule>> map) {
+      for (IModule m : myModule.getExplicitlyDependOnModules(true)){
+        ModuleDecorator next = (ModuleDecorator) map.get(m);
+        if (next != null) myNext.add(next);
+      }
+
+      for (ModuleReference ref : ((AbstractModule)myModule).getUsedLanguagesReferences()) {
+                
+      }
+
+      if (myModule instanceof Language) {
+        Language language = (Language) myModule;
+        for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
+          ModuleDecorator generatorDecorator = (ModuleDecorator) map.get(gen);
+          if (generatorDecorator != null) {
+            generatorDecorator.myNext.add(this);
+            myNext.add(generatorDecorator);
+          }
+        }
+      }
+    }
+
+    public Set<? extends IVertex> getNexts() {
+      return Collections.unmodifiableSet(myNext);
+    }
+
+    public int compareTo(IModuleDecorator<IModule> o) {
+      return hashCode() - ((ModuleDecorator)o).hashCode();
+    }
   }
 }

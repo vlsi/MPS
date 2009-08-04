@@ -33,28 +33,32 @@ public class StronglyConnectedModules {
     return INSTANCE;
   }
 
-  public <M extends IModule> List<Set<M>>   getStronglyConnectedComponents(Set<M> modules){
+  public <M extends IModule> List<Set<M>>  getStronglyConnectedComponents(Set<M> modules){
+    return getStronglyConnectedComponents(modules, new DefaultModuleDecoratorBuilder<M>());
+  }
+
+  public <M extends IModule, D extends IModuleDecorator<M>> List<Set<M>>  getStronglyConnectedComponents(Set<M> modules, IModuleDecoratorBuilder<M, D> decoratorBuilder){
     List<Set<M>> result = new LinkedList<Set<M>>();
 
-    Graph<ModuleDecorator<M>> g = new Graph<ModuleDecorator<M>>();
+    Graph<IModuleDecorator<M>> g = new Graph<IModuleDecorator<M>>();
 
-    Map<IModule, ModuleDecorator<M>> map = new LinkedHashMap<IModule, ModuleDecorator<M>>();
+    Map<IModule, IModuleDecorator<M>> map = new LinkedHashMap<IModule, IModuleDecorator<M>>();
     for (M m : modules){
-      ModuleDecorator<M> dec = new ModuleDecorator<M>(m);
+      IModuleDecorator<M> dec = decoratorBuilder.decorate(m);
       map.put(m, dec);
       g.add(dec);
     }
 
-    for (ModuleDecorator<M> m : g.getData()){
+    for (IModuleDecorator<M> m : g.getData()){
       m.fill(map);
     }
 
-    List<Set<ModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(g);
+    List<Set<IModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(g);
 
-    for (Set<ModuleDecorator<M>> set : sets){
+    for (Set<IModuleDecorator<M>> set : sets){
       Set<M> mset = new LinkedHashSet<M>();
       result.add(mset);
-      for (ModuleDecorator<M> md : set){
+      for (IModuleDecorator<M> md : set){
         mset.add(md.getModule());
       }
     }
@@ -64,18 +68,34 @@ public class StronglyConnectedModules {
     return result;
   }
 
-  private static class ModuleDecorator<M extends IModule> implements IVertex, Comparable<ModuleDecorator<M>> {
+  public static interface IModuleDecorator<M extends IModule> extends IVertex, Comparable<IModuleDecorator<M>> {
+    public M getModule();
+    public void fill(Map<IModule, IModuleDecorator<M>> map);
+  }
+
+  public static interface IModuleDecoratorBuilder<M extends IModule, D extends IModuleDecorator<M>> {
+    public D decorate(M module);
+  }
+
+  private static class DefaultModuleDecoratorBuilder<M extends IModule> implements IModuleDecoratorBuilder<M, DefaultModuleDecorator<M>> {
+
+    public DefaultModuleDecorator<M> decorate(M module) {
+      return new DefaultModuleDecorator<M>(module);
+    }
+  }
+
+  private static class DefaultModuleDecorator<M extends IModule> implements IModuleDecorator<M> {
 
     private final M myModule;
-    private final Set<ModuleDecorator> myNext = new LinkedHashSet<ModuleDecorator>();
+    private final Set<DefaultModuleDecorator> myNext = new LinkedHashSet<DefaultModuleDecorator>();
 
-    public ModuleDecorator(M module) {
+    public DefaultModuleDecorator(M module) {
       myModule = module;
     }
 
-    private void fill(Map<IModule, ModuleDecorator<M>> map) {
+    public void fill(Map<IModule, IModuleDecorator<M>> map) {
       for (IModule m : myModule.getExplicitlyDependOnModules(true)){
-        ModuleDecorator<M> next = map.get(m);
+        DefaultModuleDecorator<M> next = (DefaultModuleDecorator<M>) map.get(m);
         if (next != null) myNext.add(next);
       }
     }
@@ -88,8 +108,8 @@ public class StronglyConnectedModules {
       return Collections.unmodifiableSet(myNext);
     }
 
-    public int compareTo(ModuleDecorator<M> o) {
-      return hashCode() - ((ModuleDecorator<M>)o).hashCode();
+    public int compareTo(IModuleDecorator<M> o) {
+      return hashCode() - ((DefaultModuleDecorator<M>)o).hashCode();
     }
   }
 
