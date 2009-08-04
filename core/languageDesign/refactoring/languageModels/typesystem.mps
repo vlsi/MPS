@@ -631,7 +631,27 @@
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215000098427">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215000101681">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1215000101682">
-            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215000110278" />
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1215000110278">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="7754459869734029570">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7754459869734029860">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7754459869734029573">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7754459869734029572">
+                      <link role="applicableNode" targetNodeId="1215000091797" resolveInfo="nodeToCheck" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="7754459869734029577">
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="7754459869734029578">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7754459869734029859">
+                          <link role="conceptDeclaration" targetNodeId="1.1189693812263" resolveInfo="Refactoring" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7754459869734029864">
+                    <link role="link" targetNodeId="1.1199455371376" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215000098430">
