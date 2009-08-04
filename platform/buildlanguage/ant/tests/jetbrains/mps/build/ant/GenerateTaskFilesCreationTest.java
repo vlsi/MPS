@@ -43,7 +43,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   public void testLanguageAndSolution() throws IOException {
     String projectName = "TestProjectWithLanguageAndSolution";
     String languageName = projectName + "Language";
-    String solutionName = projectName + "Solution";
+    String solutionName = projectName + "LanguageSolution";
 
     File destdir = generateProjectFromZipFile(projectName);
 
@@ -183,7 +183,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
   private String getSolutionSourceFolderPath(File destdir, String projectName, String solutionName) {
     return destdir + File.separator + projectName + File.separator
       + "solutions" + File.separator + solutionName + File.separator
-      + "source_gen" + File.separator + "sandbox" + File.separator;
+      + "source_gen" + File.separator + solutionName + File.separator + "sandbox" + File.separator;
   }
 
 }
