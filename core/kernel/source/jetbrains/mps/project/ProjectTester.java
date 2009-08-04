@@ -16,9 +16,14 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.fileGenerator.DefaultFileGenerator;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -34,7 +39,9 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
@@ -73,10 +80,6 @@ public class ProjectTester {
     return "Class " + nodeName + ", Model " + modelName + ((added)? " (new class)" : ((deleted)? " (class deleted)" : "" ));
   }
 
-  private String getDirectoryFromModel(SModel m) {
-    return m.getModelDescriptor().getModule().getGeneratorOutputPath() + File.separator + m.getLongName().replace(".", File.separator);
-  }
-
   private String[] getContentAsArray(String content, String separator) {
     return (content != null)? content.split(separator) : new String[0];
   }
@@ -90,40 +93,43 @@ public class ProjectTester {
     }
   }
 
-  private List<String> createDiffReports(GenerateFilesAndClassesGenerationType genType, GenParameters genParams) {
+  private List<String> createDiffReports(EditorGenerateType genType) {
     List<String> result = new ArrayList<String>();
-    final String fileType = ".java";
-    for (SModel model : genParams.getSModels()) {
-      File dir = new File(getDirectoryFromModel(model));
-      if (!dir.exists()) {
+    for (SModel outputModel : genType.getOutputModels()) {
+      List<String> files = new ArrayList<String>();
+      File dir = genType.getOutputDir(outputModel);
+      if (dir == null || !dir.exists() || !dir.canRead()) {
         continue;
       }
-      List<String> javaFiles = new ArrayList<String>();
-      javaFiles.addAll(Arrays.asList(dir.list(new FilenameFilter() {
-        public boolean accept(File dir, String name) {
-          return name.endsWith(fileType);
-        }
-      })));
-      for (SNode root : model.getRoots()) {
-        final String fileName = root.getName() + fileType;
-        final String filePath = getDirectoryFromModel(model) + File.separator + fileName;
+      files.addAll(Arrays.asList(dir.list()));
+      for (SNode outputRoot : outputModel) {
+        final String fileType = "." + genType.getExtension(outputRoot);
+        final String fileName = outputRoot + fileType;
+        final String filePath = genType.getOutputDir(outputModel) + File.separator + fileName;
         final File testFile = new File(filePath);
         String oldContent = null;
-        String newContent = genType.getSourceByNode(root, model);
+        String newContent = genType.getSourceByNode(outputRoot, outputModel);
         if (testFile.exists() && testFile.canRead()) {
           oldContent = FileUtil.read(testFile);
-          javaFiles.remove(fileName);
+          files.remove(fileName);
         }
         final boolean created = oldContent == null && newContent != null;
-        final String title = getDiffReportTitle(root.getName(), model.getShortName(), created, false);
+        final String title = getDiffReportTitle(outputRoot.getName(), outputModel.getShortName(), created, false);
         String[] oldTest = getContentAsArray(oldContent, "\n");
         String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
         addDiffReport(new TestComparator(oldTest, newTest), result, title);
       }
-      for (String fileName : javaFiles) {
-        String nodeName = fileName.substring(0, fileName.length() - fileType.length());
-        String title = getDiffReportTitle(nodeName, model.getShortName(), false, true);
-        File file = new File(getDirectoryFromModel(model) + File.separator + fileName);
+      for (String fileName : files) {
+        int dotPosition = fileName.lastIndexOf(".");
+        if (dotPosition == -1) {
+          continue;
+        }
+        String nodeName = fileName.substring(0, dotPosition);
+        String title = getDiffReportTitle(nodeName, outputModel.getShortName(), false, true);
+        File file = new File(genType.getOutputDir(outputModel) + File.separator + fileName);
+        if (!file.exists() || !file.canRead() || !file.isFile()) {
+          continue;
+        }
         String[] test = FileUtil.read(file).split("\n");
         addDiffReport(new TestComparator(test, new String[0]), result, title);
       }
@@ -222,23 +228,7 @@ public class ProjectTester {
     try {
       Logger.addLoggingHandler(loggingHandler);
 
-      final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(true) {
-        public boolean requiresReloading() {
-          return false;
-        }
-
-        public boolean requiresCompilationBeforeGeneration() {
-          return false;
-        }
-
-        public boolean requiresCompilationAfterGeneration() {
-          return false;
-        }
-
-        protected boolean isPutClassesOnTheDisk() {
-          return false;
-        }
-      };
+      final EditorGenerateType generationType = new EditorGenerateType(true);
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
@@ -282,7 +272,7 @@ public class ProjectTester {
             );
 
             if (t.getIsRunnable()) {
-              diffReports.addAll(createDiffReports(generationType, parms));
+              diffReports.addAll(createDiffReports(generationType));
             }
 
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
@@ -303,5 +293,69 @@ public class ProjectTester {
     }
 
     return new TestResult(errors, warnings, compilationResults, failedTests, diffReports);
+  }
+
+  private class EditorGenerateType extends GenerateFilesAndClassesGenerationType {
+    private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
+    private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
+
+    public EditorGenerateType(boolean reloadClasses) {
+      super(reloadClasses);
+    }
+
+    public boolean requiresReloading() {
+      return false;
+    }
+
+    public boolean requiresCompilationBeforeGeneration() {
+      return false;
+    }
+
+    public boolean requiresCompilationAfterGeneration() {
+      return false;
+    }
+
+    protected boolean isPutClassesOnTheDisk() {
+      return false;
+    }
+
+    @Override
+    public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
+      SModel outputModel = status.getOutputModel();
+      myOutputModelToPath.put(outputModel, outputDir);
+      GeneratorManager gm = context.getComponent(GeneratorManager.class);
+      for (SNode outputRoot : outputModel.getRoots()) {
+        IFileGenerator fileGenerator = gm.chooseFileGenerator(outputRoot, null);
+        String extension = ((DefaultFileGenerator) fileGenerator).getExtension(outputRoot);
+        myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
+      }
+      return super.handleOutput(status, outputDir, context, monitor, messages);
+    }
+
+    Collection<SModel> getOutputModels() {
+      return myOutputModelToPath.keySet();
+    }
+
+    String getExtension(SNode outputNode) {
+      if (myNodeExtensionMap.isEmpty()) {
+        return null;
+      }
+      return myNodeExtensionMap.get(NameUtil.nodeFQName(outputNode));
+    }
+
+    File getOutputDir(SModel outputModel) {
+      if (myOutputModelToPath.isEmpty()) {
+        return null;
+      }
+      File outputDir = new File(myOutputModelToPath.get(outputModel));
+      return FileGenerationUtil.getDefaultOutputDir(outputModel, outputDir);
+    }
+
+    String getSourceByNode(SNode outputRoot, SModel outputModel) {
+      if (getSources().isEmpty()) {
+        return null;
+      }
+      return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + outputRoot.getName());
+    }
   }
 }

@@ -33,7 +33,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     return false;
   }
 
-  protected abstract String getExtension(SNode node);
+  public abstract String getExtension(SNode node);
 
   public final File generateFile(SNode outputRootNode, SNode originalInputNode, SModel inputModel, String content, File outputRootDir) throws IOException {
     if (!isDefault(outputRootNode)) {
