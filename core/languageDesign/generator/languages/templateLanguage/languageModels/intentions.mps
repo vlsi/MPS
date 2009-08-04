@@ -5627,20 +5627,20 @@
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1240595522622">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240595522623">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240595522624">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240595522625">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240595522626">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240595522627">
-                <property name="value" value=" (property)" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240595522626">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240595522627">
+              <property name="value" value=" (property)" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240595522625">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240595522629">
+                <property name="value" value="Add Property Macro: node." />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240833329283">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240833329283">
                 <node role="operand" type="jetbrains.mps.lang.intentions.structure.IntentionParameter" id="1240595522628" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240833331553">
                   <link role="baseMethodDeclaration" targetNodeId="23.1213877396640" resolveInfo="getPresentation" />
                 </node>
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240595522629">
-              <property name="value" value="Add Property Macro: node." />
             </node>
           </node>
         </node>

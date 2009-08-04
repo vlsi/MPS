@@ -1175,33 +1175,33 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1234209362029" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234209362030">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234209424112">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209429255">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209440644">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209459226">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209471090">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234209469635">
-                    <link role="variableDeclaration" targetNodeId="1234209401923" resolveInfo="enumType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234209471594">
-                    <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234209440803">
-                  <property name="value" value="]" />
-                </node>
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209459226">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209471090">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234209469635">
+                <link role="variableDeclaration" targetNodeId="1234209401923" resolveInfo="enumType" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209436186">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209433728">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234209432305">
-                    <link role="variableDeclaration" targetNodeId="1234209401923" resolveInfo="enumType" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1234209434857" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="1234209437596" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234209471594">
+                <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234209424113">
-              <property name="value" value="[" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209440644">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234209429255">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234209424113">
+                  <property name="value" value="[" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209436186">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234209433728">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1234209432305">
+                      <link role="variableDeclaration" targetNodeId="1234209401923" resolveInfo="enumType" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1234209434857" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" id="1234209437596" />
+                </node>
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234209440803">
+                <property name="value" value="]" />
+              </node>
             </node>
           </node>
         </node>

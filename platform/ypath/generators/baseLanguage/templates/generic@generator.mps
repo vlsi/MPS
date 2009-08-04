@@ -144,9 +144,23 @@
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199882955496">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199882955497">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199883103281">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1199883115988">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1199883148766">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902727">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1199883148766">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1199883115988">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1199883112707">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934013961">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932662">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199883103282" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1199883105968">
+                        <link role="link" targetNodeId="4.1068581517665" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1225096838583" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199883114131">
+                    <property name="value" value="1" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227902727">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934006842">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227914959">
                       <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199883117894" />
@@ -162,44 +176,30 @@
                     </node>
                   </node>
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933999858">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199883155690">
-                    <property name="value" value="void" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933999859">
-                    <link role="baseMethodDeclaration" targetNodeId="9.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227933108">
-                      <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1199883169814">
-                        <link role="concept" targetNodeId="4.1076505808687" resolveInfo="WhileStatement" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934018739">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227888670">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199883166903" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1199883166902">
-                              <link role="link" targetNodeId="4.1068581517665" />
-                            </node>
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1199883166904" />
-                        </node>
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1199883175466">
-                        <link role="property" targetNodeId="4.1199465379613" resolveInfo="label" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1199883112707">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934013961">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932662">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199883103282" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1199883105968">
-                      <link role="link" targetNodeId="4.1068581517665" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933999858">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1199883155690">
+                  <property name="value" value="void" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933999859">
+                  <link role="baseMethodDeclaration" targetNodeId="9.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227933108">
+                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1199883169814">
+                      <link role="concept" targetNodeId="4.1076505808687" resolveInfo="WhileStatement" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216934018739">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227888670">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199883166903" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1199883166902">
+                            <link role="link" targetNodeId="4.1068581517665" />
+                          </node>
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="1199883166904" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1199883175466">
+                      <link role="property" targetNodeId="4.1199465379613" resolveInfo="label" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="1225096838583" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199883114131">
-                  <property name="value" value="1" />
                 </node>
               </node>
             </node>

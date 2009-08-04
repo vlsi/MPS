@@ -404,17 +404,17 @@
                                   <link role="baseMethodDeclaration" targetNodeId="5.~EditorCell_Constant.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,java.lang.String)" resolveInfo="EditorCell_Constant" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" id="1240319640402" />
                                   <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1240319640403" />
-                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240319640404">
-                                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240319640405">
-                                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240319640406">
-                                        <link role="variableDeclaration" targetNodeId="1240319640383" resolveInfo="description" />
+                                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240319640405">
+                                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240319640406">
+                                      <link role="variableDeclaration" targetNodeId="1240319640383" resolveInfo="description" />
+                                    </node>
+                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240319640404">
+                                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240319640408">
+                                        <link role="variableDeclaration" targetNodeId="1240319640377" resolveInfo="alias" />
                                       </node>
-                                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240319640407">
+                                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240319640407">
                                         <property name="value" value=" : " />
                                       </node>
-                                    </node>
-                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240319640408">
-                                      <link role="variableDeclaration" targetNodeId="1240319640377" resolveInfo="alias" />
                                     </node>
                                   </node>
                                 </node>

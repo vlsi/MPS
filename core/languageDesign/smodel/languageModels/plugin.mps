@@ -342,51 +342,51 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1240668546952">
             <property name="name" value="message" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1240668546953" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668632111">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668641287">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668632208">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668641287">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668632111">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240668622047">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240668622048">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668622049">
+                      <property name="value" value="No language stub models" />
+                    </node>
+                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668906424">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668908443">
+                        <property name="value" value="Language stub models: \n" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240670050931">
+                        <link role="variableDeclaration" targetNodeId="1240669985025" resolveInfo="langStubsMsg" />
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240669953135">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669951947">
+                        <link role="variableDeclaration" targetNodeId="1240669806600" resolveInfo="langStubModels" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1240670371882" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668632208">
                   <property name="value" value="\n" />
                 </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240668641853">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240668641854">
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668641855">
-                      <property name="value" value="No other stub models" />
-                    </node>
-                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668946530">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668947033">
-                        <property name="value" value="Other stub models: \n" />
-                      </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240668662264">
-                        <link role="variableDeclaration" targetNodeId="1240670030362" resolveInfo="otherStubsMsg" />
-                      </node>
-                    </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240669964002">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669963407">
-                        <link role="variableDeclaration" targetNodeId="1240669827313" resolveInfo="otherStubModels" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1240670376102" />
-                    </node>
-                  </node>
-                </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240668622047">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240668622048">
-                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668622049">
-                    <property name="value" value="No language stub models" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1240668641853">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1240668641854">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668641855">
+                    <property name="value" value="No other stub models" />
                   </node>
-                  <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668906424">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668908443">
-                      <property name="value" value="Language stub models: \n" />
+                  <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240668946530">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240668947033">
+                      <property name="value" value="Other stub models: \n" />
                     </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240670050931">
-                      <link role="variableDeclaration" targetNodeId="1240669985025" resolveInfo="langStubsMsg" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240668662264">
+                      <link role="variableDeclaration" targetNodeId="1240670030362" resolveInfo="otherStubsMsg" />
                     </node>
                   </node>
-                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240669953135">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669951947">
-                      <link role="variableDeclaration" targetNodeId="1240669806600" resolveInfo="langStubModels" />
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240669964002">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1240669963407">
+                      <link role="variableDeclaration" targetNodeId="1240669827313" resolveInfo="otherStubModels" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1240670371882" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="1240670376102" />
                   </node>
                 </node>
               </node>

@@ -257,17 +257,17 @@
                 <node role="replaceBlock" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock" id="1174939860207">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174939860208">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1174939889769">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174939892116">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174939894104">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939895154">
-                            <property name="value" value="&gt;" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174939894104">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939895154">
+                          <property name="value" value="&gt;" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174939892116">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939890615">
+                            <property name="value" value="&lt;" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174939893087">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174939893087">
                             <link role="match" targetNodeId="1174939872511" resolveInfo="content" />
                           </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174939890615">
-                          <property name="value" value="&lt;" />
                         </node>
                       </node>
                     </node>
@@ -410,17 +410,17 @@
                 <node role="replaceBlock" type="jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock" id="1174940022270">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174940022271">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1174940031417">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174940033795">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174940038127">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174940039177">
-                            <link role="match" targetNodeId="1174939935088" resolveInfo="domain" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174940038127">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174940039177">
+                          <link role="match" targetNodeId="1174939935088" resolveInfo="domain" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1174940033795">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174940032857">
+                            <link role="match" targetNodeId="1174939914064" resolveInfo="user" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174940035017">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174940035017">
                             <property name="value" value=" at " />
                           </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" id="1174940032857">
-                          <link role="match" targetNodeId="1174939914064" resolveInfo="user" />
                         </node>
                       </node>
                     </node>

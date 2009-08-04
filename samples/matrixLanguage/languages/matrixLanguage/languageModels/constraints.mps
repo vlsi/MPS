@@ -42,12 +42,15 @@
       <link role="overriddenMethod" targetNodeId="6.1213877396640" resolveInfo="getPresentation" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210172211789">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1210172221167">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210172224817">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210172241400">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210172241839">
-                <property name="value" value="&gt;" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210172241400">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210172241839">
+              <property name="value" value="&gt;" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210172224817">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210172221668">
+                <property name="value" value="matrix&lt;" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210172229563">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210172229563">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210172225912">
                   <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1210172225724" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1210172228549">
@@ -58,9 +61,6 @@
                   <link role="baseMethodDeclaration" targetNodeId="6.1213877396640" resolveInfo="getPresentation" />
                 </node>
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1210172221668">
-              <property name="value" value="matrix&lt;" />
             </node>
           </node>
         </node>

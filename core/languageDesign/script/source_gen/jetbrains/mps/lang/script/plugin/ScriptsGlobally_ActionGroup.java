@@ -49,11 +49,11 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
       event.getPresentation().setEnabled(true);
       // 
       ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(false);
-      this.add(menuBuilder.create_ByCategoryPopup());
-      this.add(menuBuilder.create_ByBuildPopup());
-      this.add(menuBuilder.create_ByLanguagePopup());
+      ScriptsGlobally_ActionGroup.this.add(menuBuilder.create_ByCategoryPopup());
+      ScriptsGlobally_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
+      ScriptsGlobally_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), false);
+      ScriptsGlobally_ActionGroup.this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), false);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

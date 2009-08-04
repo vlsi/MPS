@@ -6567,12 +6567,13 @@
                 </node>
               </node>
             </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237723049581">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237723049582">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237723049583">
-                  <property name="value" value=" is expected" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237723049584">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237723049582">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237723049583">
+                <property name="value" value=" is expected" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237723049581">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237723049587" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237723049584">
                   <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1237723049585">
                     <link role="applicableNode" targetNodeId="1237723040303" resolveInfo="creator" />
                   </node>
@@ -6581,7 +6582,6 @@
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237723049587" />
             </node>
           </node>
         </node>

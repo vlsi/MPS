@@ -2269,20 +2269,20 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234891066971">
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992302">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992304">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234891120368">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234891128642">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234891129630">
+            <node role="value" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234891128642">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234891129630">
+                <property name="value" value="'" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234891120368">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234891117460">
                   <property name="value" value="'" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891122700">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891122700">
                   <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1234891122214" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234891124798">
                     <link role="property" targetNodeId="1.1200397540847" resolveInfo="charConstant" />
                   </node>
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234891117460">
-                <property name="value" value="'" />
               </node>
             </node>
           </node>

@@ -6321,35 +6321,35 @@
                           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1238430472236">
                             <property name="name" value="errorText" />
                             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1238430472237" />
-                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472238">
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472239">
-                                <property name="value" value="Required module " />
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472245">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472246">
+                                <property name="value" value="." />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472240">
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238430472241">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1238430472242">
-                                    <link role="variable" targetNodeId="1238427068633" resolveInfo="dependent" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238430472243">
-                                    <link role="baseMethodDeclaration" targetNodeId="16.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
-                                  </node>
-                                </node>
-                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472244">
-                                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472245">
-                                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472246">
-                                      <property name="value" value="." />
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472244">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472240">
+                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238430472238">
+                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472239">
+                                      <property name="value" value="Required module " />
                                     </node>
-                                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238430472247">
-                                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1238430472248">
-                                        <link role="variable" targetNodeId="1238426996049" resolveInfo="module" />
+                                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238430472241">
+                                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1238430472242">
+                                        <link role="variable" targetNodeId="1238427068633" resolveInfo="dependent" />
                                       </node>
-                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238430472249">
+                                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238430472243">
                                         <link role="baseMethodDeclaration" targetNodeId="16.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472250">
+                                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238430472250">
                                     <property name="value" value=" is absent. Used by module " />
+                                  </node>
+                                </node>
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1238430472247">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1238430472248">
+                                    <link role="variable" targetNodeId="1238426996049" resolveInfo="module" />
+                                  </node>
+                                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1238430472249">
+                                    <link role="baseMethodDeclaration" targetNodeId="16.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
                                   </node>
                                 </node>
                               </node>

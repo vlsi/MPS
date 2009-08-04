@@ -400,26 +400,26 @@
       <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1230221270619">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230221270620">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230221290628">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221294728">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221297746">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230221294782">
-                  <property name="value" value="@" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221304539">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221301395">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1230221301325" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230221303536">
-                      <link role="baseMethodDeclaration" targetNodeId="18.1213877261819" resolveInfo="getLayout" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230221306483">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221297746">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230221294728">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221291727">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1230221290629" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230221292789">
                     <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230221294782">
+                  <property name="value" value="@" />
+                </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221291727">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1230221290629" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230221292789">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221304539">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230221301395">
+                  <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1230221301325" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230221303536">
+                    <link role="baseMethodDeclaration" targetNodeId="18.1213877261819" resolveInfo="getLayout" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1230221306483">
                   <link role="property" targetNodeId="5.1169194664001" resolveInfo="name" />
                 </node>
               </node>

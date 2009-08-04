@@ -226,18 +226,18 @@
               <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1217888370708">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1217888370710">
                   <link role="baseMethodDeclaration" targetNodeId="3.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877352988">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877352989">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877352990">
-                        <property name="value" value=" concept" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877352989">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877352990">
+                      <property name="value" value=" concept" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213877352988">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877352994">
+                        <property name="value" value="Please set operationConcept in " />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877352991">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877352991">
                         <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877352992" />
                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" id="1213877352993" />
                       </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213877352994">
-                      <property name="value" value="Please set operationConcept in " />
                     </node>
                   </node>
                 </node>

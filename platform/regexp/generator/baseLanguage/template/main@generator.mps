@@ -164,22 +164,22 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1222428713513">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428722406">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428726551">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428735836">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428739183">
-                    <link role="variableDeclaration" targetNodeId="1222428690219" resolveInfo="isFindMatch" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428730210">
-                    <link role="variableDeclaration" targetNodeId="1222428636501" resolveInfo="isForEach" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428725128">
-                  <link role="variableDeclaration" targetNodeId="1222428593941" resolveInfo="isMatchOperation" />
-                </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428735836">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428739183">
+                <link role="variableDeclaration" targetNodeId="1222428690219" resolveInfo="isFindMatch" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428719655">
-                <link role="variableDeclaration" targetNodeId="1222428531380" resolveInfo="isMatchStatement" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428726551">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1222428722406">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428719655">
+                    <link role="variableDeclaration" targetNodeId="1222428531380" resolveInfo="isMatchStatement" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428725128">
+                    <link role="variableDeclaration" targetNodeId="1222428593941" resolveInfo="isMatchOperation" />
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222428730210">
+                  <link role="variableDeclaration" targetNodeId="1222428636501" resolveInfo="isForEach" />
+                </node>
               </node>
             </node>
           </node>

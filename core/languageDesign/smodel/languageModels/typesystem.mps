@@ -6000,22 +6000,22 @@
             <link role="variableDeclaration" targetNodeId="1179410720745" resolveInfo="actCount" />
           </node>
         </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410947277">
-          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410950149">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410956989">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179410959645">
-                <link role="variableDeclaration" targetNodeId="1179410720745" resolveInfo="actCount" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179410951270">
-                <property name="value" value=", actual " />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179410948515">
-              <link role="variableDeclaration" targetNodeId="1179410729510" resolveInfo="expCount" />
-            </node>
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410956989">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179410959645">
+            <link role="variableDeclaration" targetNodeId="1179410720745" resolveInfo="actCount" />
           </node>
-          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179410921990">
-            <property name="value" value="Wrong parameters number: expected " />
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410950149">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1179410947277">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179410921990">
+                <property name="value" value="Wrong parameters number: expected " />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1179410948515">
+                <link role="variableDeclaration" targetNodeId="1179410729510" resolveInfo="expCount" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1179410951270">
+              <property name="value" value=", actual " />
+            </node>
           </node>
         </node>
         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1179410917944">
@@ -8978,12 +8978,15 @@
                 </node>
               </node>
             </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226067188706">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226067188707">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226067188708">
-                  <property name="value" value="' is not expected here" />
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226067188707">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226067188708">
+                <property name="value" value="' is not expected here" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226067188706">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226067188712">
+                  <property name="value" value="access to property '" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226067188709">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226067188709">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226067188710">
                     <link role="variableDeclaration" targetNodeId="1226067538826" resolveInfo="property" />
                   </node>
@@ -8991,9 +8994,6 @@
                     <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
                   </node>
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226067188712">
-                <property name="value" value="access to property '" />
               </node>
             </node>
             <node role="nodeToReport" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226067188713">
@@ -9115,12 +9115,15 @@
                 </node>
               </node>
             </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226068688019">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226068688020">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226068688021">
-                  <property name="value" value="' is not expected here" />
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226068688020">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226068688021">
+                <property name="value" value="' is not expected here" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226068688019">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226068688025">
+                  <property name="value" value="access to link '" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226068688022">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226068688022">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226068688023">
                     <link role="variableDeclaration" targetNodeId="1226068687979" resolveInfo="linkDecl" />
                   </node>
@@ -9128,9 +9131,6 @@
                     <link role="property" targetNodeId="3.1071599776563" resolveInfo="role" />
                   </node>
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226068688025">
-                <property name="value" value="access to link '" />
               </node>
             </node>
             <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226068688026">
@@ -9232,27 +9232,27 @@
                 </node>
               </node>
             </node>
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952499">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952500">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952501">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226069952502">
-                    <link role="variableDeclaration" targetNodeId="1226069952489" resolveInfo="conceptName" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226069952503">
-                    <property name="value" value="' is not expected for an instance of " />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226069952504">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226069952505">
-                    <link role="variableDeclaration" targetNodeId="1226069952483" resolveInfo="property" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1226069952506">
-                    <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
-                  </node>
-                </node>
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952501">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226069952502">
+                <link role="variableDeclaration" targetNodeId="1226069952489" resolveInfo="conceptName" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226069952507">
-                <property name="value" value="access to property '" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952500">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226069952499">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226069952507">
+                    <property name="value" value="access to property '" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226069952504">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226069952505">
+                      <link role="variableDeclaration" targetNodeId="1226069952483" resolveInfo="property" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1226069952506">
+                      <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226069952503">
+                  <property name="value" value="' is not expected for an instance of " />
+                </node>
               </node>
             </node>
             <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226069952508">
@@ -9355,12 +9355,15 @@
             </node>
           </node>
         </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226070777626">
-          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226070777627">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070777628">
-              <property name="value" value="' is not expected here" />
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226070777627">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070777628">
+            <property name="value" value="' is not expected here" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226070777626">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070777632">
+              <property name="value" value="access to link '" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226070777629">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226070777629">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226070777630">
                 <link role="variableDeclaration" targetNodeId="1226070801980" resolveInfo="linkDecl" />
               </node>
@@ -9368,9 +9371,6 @@
                 <link role="property" targetNodeId="3.1071599776563" resolveInfo="role" />
               </node>
             </node>
-          </node>
-          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226070777632">
-            <property name="value" value="access to link '" />
           </node>
         </node>
         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226070777633">
@@ -9460,12 +9460,15 @@
             </node>
           </node>
         </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226071051980">
-          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226071051981">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226071051982">
-              <property name="value" value="' is not expected here" />
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226071051981">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226071051982">
+            <property name="value" value="' is not expected here" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226071051980">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226071051986">
+              <property name="value" value="access to link '" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226071051983">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226071051983">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226071051984">
                 <link role="variableDeclaration" targetNodeId="1226071021013" resolveInfo="linkDecl" />
               </node>
@@ -9473,9 +9476,6 @@
                 <link role="property" targetNodeId="3.1071599776563" resolveInfo="role" />
               </node>
             </node>
-          </node>
-          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226071051986">
-            <property name="value" value="access to link '" />
           </node>
         </node>
         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226071051987">
@@ -9812,12 +9812,15 @@
             </node>
           </node>
         </node>
-        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226360207691">
-          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226360207692">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226360207693">
-              <property name="value" value="' is not expected here" />
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226360207692">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226360207693">
+            <property name="value" value="' is not expected here" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1226360207691">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226360207697">
+              <property name="value" value="link '" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226360207694">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1226360207694">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1226360232764">
                 <link role="variableDeclaration" targetNodeId="1226359998890" resolveInfo="link" />
               </node>
@@ -9825,9 +9828,6 @@
                 <link role="property" targetNodeId="3.1071599776563" resolveInfo="role" />
               </node>
             </node>
-          </node>
-          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1226360207697">
-            <property name="value" value="link '" />
           </node>
         </node>
         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1226360245952">

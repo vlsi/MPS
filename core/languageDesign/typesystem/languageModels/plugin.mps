@@ -187,20 +187,26 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1206105173116">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1206105303541">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1206105316251">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1206105334747">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105341395">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105342398" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105338438">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206105336984">
-                      <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105339831">
-                      <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
-                    </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1206105334747">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105341395">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105342398" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105338438">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206105336984">
+                    <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1206105339831">
+                    <link role="baseMethodDeclaration" targetNodeId="10.~IErrorReporter.getRuleModel():java.lang.String" resolveInfo="getRuleModel" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105327712">
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1206105316251">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105309685">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206105306778">
+                    <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105314266" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105327712">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206105323599">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206105322270">
                       <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
@@ -211,12 +217,6 @@
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105332402" />
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1206105309685">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1206105306778">
-                  <link role="variableDeclaration" targetNodeId="1206105127536" resolveInfo="error" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1206105314266" />
               </node>
             </node>
           </node>
@@ -440,22 +440,22 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1206108441280">
             <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1237293338047">
               <property name="severity" value="error" />
-              <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340815">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340816">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340817">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293340818">
-                      <link role="variableDeclaration" targetNodeId="1206108441250" resolveInfo="modelDescriptor" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293340819">
-                      <property name="value" value=" in the model " />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293340820">
-                    <link role="variableDeclaration" targetNodeId="1206108441238" resolveInfo="ruleID" />
-                  </node>
+              <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340817">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293340818">
+                  <link role="variableDeclaration" targetNodeId="1206108441250" resolveInfo="modelDescriptor" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293340821">
-                  <property name="value" value="can't find rule with id " />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340816">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1237293340815">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293340821">
+                      <property name="value" value="can't find rule with id " />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1237293340820">
+                      <link role="variableDeclaration" targetNodeId="1206108441238" resolveInfo="ruleID" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1237293340819">
+                    <property name="value" value=" in the model " />
+                  </node>
                 </node>
               </node>
             </node>

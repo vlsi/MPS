@@ -3176,30 +3176,30 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4581582910845927370">
             <property name="name" value="treepathAspectName" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4581582910845927371" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927372">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927425">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4581582910845927428">
-                  <link role="variableDeclaration" targetNodeId="4581582910845927362" resolveInfo="suffix" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4581582910845927373">
-                  <property name="value" value="_" />
-                </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927425">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4581582910845927428">
+                <link role="variableDeclaration" targetNodeId="4581582910845927362" resolveInfo="suffix" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581582910845927374">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581582910845927375">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4581582910845927376">
-                    <link role="variableDeclaration" targetNodeId="4581582910845927359" resolveInfo="feature" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="4581582910845927377">
-                    <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="4581582910845927378">
-                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4581582910845927379">
-                        <link role="conceptDeclaration" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927372">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581582910845927374">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4581582910845927375">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4581582910845927376">
+                      <link role="variableDeclaration" targetNodeId="4581582910845927359" resolveInfo="feature" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="4581582910845927377">
+                      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="4581582910845927378">
+                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="4581582910845927379">
+                          <link role="conceptDeclaration" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
+                        </node>
                       </node>
                     </node>
                   </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4581582910845927380">
+                    <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4581582910845927380">
-                  <link role="property" targetNodeId="15.1169194664001" resolveInfo="name" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4581582910845927373">
+                  <property name="value" value="_" />
                 </node>
               </node>
             </node>
@@ -3242,17 +3242,17 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4581582910845927394">
                 <link role="variableDeclaration" targetNodeId="4581582910845927359" resolveInfo="feature" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927395">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927396">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581582910845927397">
-                    <link role="variableDeclaration" targetNodeId="4581582910845927382" resolveInfo="featureName" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927396">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581582910845927397">
+                  <link role="variableDeclaration" targetNodeId="4581582910845927382" resolveInfo="featureName" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4581582910845927395">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581582910845927399">
+                    <link role="variableDeclaration" targetNodeId="4581582910845927370" resolveInfo="treepathAspectName" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4581582910845927398">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4581582910845927398">
                     <property name="value" value="$" />
                   </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4581582910845927399">
-                  <link role="variableDeclaration" targetNodeId="4581582910845927370" resolveInfo="treepathAspectName" />
                 </node>
               </node>
             </node>

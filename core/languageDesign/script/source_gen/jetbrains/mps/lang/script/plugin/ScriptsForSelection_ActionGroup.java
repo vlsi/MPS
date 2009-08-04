@@ -51,11 +51,11 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       event.getPresentation().setEnabled(true);
       // 
       ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(true);
-      this.add(menuBuilder.create_ByCategoryPopup());
-      this.add(menuBuilder.create_ByBuildPopup());
-      this.add(menuBuilder.create_ByLanguagePopup());
+      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByCategoryPopup());
+      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByBuildPopup());
+      ScriptsForSelection_ActionGroup.this.add(menuBuilder.create_ByLanguagePopup());
       // 
-      this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), true);
+      ScriptsForSelection_ActionGroup.this.addAction("jetbrains.mps.lang.script.plugin.RunMigrationScripts_Action", "jetbrains.mps.lang.script", menuBuilder.getAllScripts(), true);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

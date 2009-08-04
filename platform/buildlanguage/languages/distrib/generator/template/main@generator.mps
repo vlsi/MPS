@@ -1850,15 +1850,15 @@
                 <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1230577742650">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230577742651">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234793672568">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793672569">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793672570">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793672571">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793672572">
                           <property name="value" value="$" />
                         </node>
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793672571">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793672572">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793672569">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793672570">
                             <property name="value" value="$" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793672573">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793672573">
                             <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234793672574" />
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234793672575">
                               <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
@@ -2445,23 +2445,23 @@
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1230568551733">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230568551734">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1230568551735">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230568551736">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230568551737">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230568551738">
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230568551740">
-                            <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
-                          </node>
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230568551739" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230568551737">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230568551738">
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230568551740">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230568551741">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230568551739" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230568551736">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230568551743">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230568551745">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                          </node>
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230568551744" />
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230568551741">
                           <property name="value" value="." />
                         </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230568551743">
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1230568551745">
-                          <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
-                        </node>
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1230568551744" />
                       </node>
                     </node>
                   </node>
@@ -2539,32 +2539,32 @@
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="8356548439143999082">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8356548439143999083">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8356548439143999108">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8356548439143999109">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8356548439143999110">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999111">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999112">
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999114">
-                              <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
-                            </node>
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8356548439144032716" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999115">
-                            <link role="baseMethodDeclaration" targetNodeId="8.1231692561653" resolveInfo="getVMOptionsExt" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8356548439143999116">
-                          <property name="value" value=".exe." />
-                        </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999117">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999118">
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999120">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8356548439143999110">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999111">
+                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999112">
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999114">
                             <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
                           </node>
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8356548439144032715" />
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8356548439144032716" />
                         </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999121">
-                          <link role="baseMethodDeclaration" targetNodeId="8.1231749012626" resolveInfo="getVMOptionsFileName" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999115">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1231692561653" resolveInfo="getVMOptionsExt" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8356548439143999109">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999117">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8356548439143999118">
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999120">
+                              <link role="baseMethodDeclaration" targetNodeId="8.1230207861621" resolveInfo="getDistribConfiguration" />
+                            </node>
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8356548439144032715" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="8356548439143999121">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1231749012626" resolveInfo="getVMOptionsFileName" />
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8356548439143999116">
+                          <property name="value" value=".exe." />
                         </node>
                       </node>
                     </node>
@@ -2679,22 +2679,22 @@
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1230570281835">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230570281836">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234793454206">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793461472">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793464455">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793465097">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234793465044" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234793468947">
-                            <link role="baseMethodDeclaration" targetNodeId="8.1234793014843" resolveInfo="getInstallerNsiScriptExtension" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793461548">
-                          <property name="value" value="." />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793464455">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793465097">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234793465044" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234793468947">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1234793014843" resolveInfo="getInstallerNsiScriptExtension" />
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793454317">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234793454207" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234793460111">
-                          <link role="baseMethodDeclaration" targetNodeId="8.1234792987224" resolveInfo="getInstallerScriptName" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234793461472">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234793454317">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234793454207" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234793460111">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1234792987224" resolveInfo="getInstallerScriptName" />
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234793461548">
+                          <property name="value" value="." />
                         </node>
                       </node>
                     </node>
@@ -4859,15 +4859,15 @@
                 <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1234519070650">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234519070651">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234519073235">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234519123539">
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234519115285">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234519124424">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234519124425">
                           <property name="value" value="$" />
                         </node>
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234519124424">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234519124425">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234519123539">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234519115285">
                             <property name="value" value="$" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234519124426">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234519124426">
                             <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234519124427" />
                             <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1234519124428">
                               <link role="property" targetNodeId="5v.1169194664001" resolveInfo="name" />
@@ -5433,22 +5433,22 @@
               <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1234520360607">
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234520360608">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234520370200">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234520376865">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234520388515">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234520389651">
-                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234520389536" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234520394214">
-                            <link role="baseMethodDeclaration" targetNodeId="8.1234518093983" resolveInfo="getStartupFileExtension" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234520377046">
-                          <property name="value" value="." />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234520388515">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234520389651">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234520389536" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234520394214">
+                          <link role="baseMethodDeclaration" targetNodeId="8.1234518093983" resolveInfo="getStartupFileExtension" />
                         </node>
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234520370319">
-                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234520370201" />
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234520375454">
-                          <link role="baseMethodDeclaration" targetNodeId="8.1234518093971" resolveInfo="getStartupFileName" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234520376865">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234520370319">
+                          <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234520370201" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234520375454">
+                            <link role="baseMethodDeclaration" targetNodeId="8.1234518093971" resolveInfo="getStartupFileName" />
+                          </node>
+                        </node>
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234520377046">
+                          <property name="value" value="." />
                         </node>
                       </node>
                     </node>
@@ -5559,26 +5559,26 @@
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234542227652">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234542235582">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234542239123">
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234542235760">
-                                <property name="value" value="." />
-                              </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234542245645">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234542242875">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234542239123">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234542235582">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234542230650">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234542229406">
                                   <link role="variableDeclaration" targetNodeId="1234542223929" resolveInfo="unixConfig" />
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234542247954">
-                                  <link role="baseMethodDeclaration" targetNodeId="8.1230292961412" resolveInfo="getStartupScriptExtension" />
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234542234002">
+                                  <link role="baseMethodDeclaration" targetNodeId="8.1230292766208" resolveInfo="getStartupScriptName" />
                                 </node>
                               </node>
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234542235760">
+                                <property name="value" value="." />
+                              </node>
                             </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234542230650">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234542229406">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234542245645">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1234542242875">
                                 <link role="variableDeclaration" targetNodeId="1234542223929" resolveInfo="unixConfig" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234542234002">
-                                <link role="baseMethodDeclaration" targetNodeId="8.1230292766208" resolveInfo="getStartupScriptName" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234542247954">
+                                <link role="baseMethodDeclaration" targetNodeId="8.1230292961412" resolveInfo="getStartupScriptExtension" />
                               </node>
                             </node>
                           </node>
@@ -7736,22 +7736,22 @@
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1234791338300">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1234791338301">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1234791348087">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234791354087">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234791357384">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234791360636">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234791359651" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234791363434">
-                        <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234791354183">
-                      <property name="value" value="." />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234791357384">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234791360636">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234791359651" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234791363434">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234791348134">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234791348088" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234791352599">
-                      <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1234791354087">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234791348134">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1234791348088" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1234791352599">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1234791354183">
+                      <property name="value" value="." />
                     </node>
                   </node>
                 </node>
@@ -7856,22 +7856,22 @@
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240998255061">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240998255062">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240998255063">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255064">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255065">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255066">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255067" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255068">
-                        <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998255069">
-                      <property name="value" value="." />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255065">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255066">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255067" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255068">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255070">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255071" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255072">
-                      <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998255064">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998255070">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998255071" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998255072">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998255069">
+                      <property name="value" value="." />
                     </node>
                   </node>
                 </node>
@@ -7908,22 +7908,22 @@
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1240998361005">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240998361006">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240998361007">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361008">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361009">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361010">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361011" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361012">
-                        <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
-                      </node>
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998361013">
-                      <property name="value" value="." />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361009">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361010">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361011" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361012">
+                      <link role="baseMethodDeclaration" targetNodeId="8.1230208056584" resolveInfo="getStartupFileExtension" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361014">
-                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361015" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361016">
-                      <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240998361008">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240998361014">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1240998361015" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240998361016">
+                        <link role="baseMethodDeclaration" targetNodeId="8.1230208021944" resolveInfo="getStartupFileName" />
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240998361013">
+                      <property name="value" value="." />
                     </node>
                   </node>
                 </node>
@@ -8795,22 +8795,22 @@
                   <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1241440614641">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241440614642">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241440614643">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241440614644">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241440614645">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440614646">
-                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241440614647" />
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440614648">
-                                <link role="baseMethodDeclaration" targetNodeId="8.1230292961412" resolveInfo="getStartupScriptExtension" />
-                              </node>
-                            </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241440614649">
-                              <property name="value" value="." />
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241440614645">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440614646">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241440614647" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440614648">
+                              <link role="baseMethodDeclaration" targetNodeId="8.1230292961412" resolveInfo="getStartupScriptExtension" />
                             </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440614650">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241440614651" />
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440614652">
-                              <link role="baseMethodDeclaration" targetNodeId="8.1230292766208" resolveInfo="getStartupScriptName" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241440614644">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241440614650">
+                              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1241440614651" />
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1241440614652">
+                                <link role="baseMethodDeclaration" targetNodeId="8.1230292766208" resolveInfo="getStartupScriptName" />
+                              </node>
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241440614649">
+                              <property name="value" value="." />
                             </node>
                           </node>
                         </node>

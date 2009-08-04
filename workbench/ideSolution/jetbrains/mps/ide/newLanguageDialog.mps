@@ -456,24 +456,24 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203685951551">
             <property name="name" value="prefix" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195955301" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685956664">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685969659">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685974976">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203685981166">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685974976">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203685981166">
+                <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
+                <link role="variableDeclaration" targetNodeId="4.~File.separator" resolveInfo="separator" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685969659">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203685956664">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203685956069">
+                    <link role="variableDeclaration" targetNodeId="1203685855621" resolveInfo="path" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203685967549">
                     <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
                     <link role="variableDeclaration" targetNodeId="4.~File.separator" resolveInfo="separator" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203685972381">
-                    <property name="value" value="languages" />
-                  </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203685967549">
-                  <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
-                  <link role="variableDeclaration" targetNodeId="4.~File.separator" resolveInfo="separator" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203685972381">
+                  <property name="value" value="languages" />
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203685956069">
-                <link role="variableDeclaration" targetNodeId="1203685855621" resolveInfo="path" />
               </node>
             </node>
           </node>

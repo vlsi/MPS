@@ -454,35 +454,35 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230546093654">
                       <link role="baseMethodDeclaration" targetNodeId="6.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546159775">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546164342">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1230546181093">
-                            <node role="key" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546186480">
-                              <link role="variable" targetNodeId="1230546012690" resolveInfo="key" />
-                            </node>
-                            <node role="map" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230546172577">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230546169804">
-                                <link role="variableDeclaration" targetNodeId="1230545803310" resolveInfo="result" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230546175242">
-                                <link role="baseMethodDeclaration" targetNodeId="21.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
-                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546177344">
-                                  <link role="variable" targetNodeId="1230545946583" resolveInfo="state" />
-                                </node>
-                              </node>
-                            </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546164342">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.collections.structure.MapElement" id="1230546181093">
+                          <node role="key" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546186480">
+                            <link role="variable" targetNodeId="1230546012690" resolveInfo="key" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546190928">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230546191634">
-                              <property name="value" value=" -&gt; " />
+                          <node role="map" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1230546172577">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1230546169804">
+                              <link role="variableDeclaration" targetNodeId="1230545803310" resolveInfo="result" />
                             </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546160794">
-                              <link role="variable" targetNodeId="1230546012690" resolveInfo="key" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1230546175242">
+                              <link role="baseMethodDeclaration" targetNodeId="21.~AnalysisResult.get(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction):java.lang.Object" resolveInfo="get" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546177344">
+                                <link role="variable" targetNodeId="1230545946583" resolveInfo="state" />
+                              </node>
                             </node>
                           </node>
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230546132610">
-                          <property name="value" value="\t" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546190928">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230546191634">
+                            <property name="value" value=" -&gt; " />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1230546159775">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1230546132610">
+                              <property name="value" value="\t" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1230546160794">
+                              <link role="variable" targetNodeId="1230546012690" resolveInfo="key" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>

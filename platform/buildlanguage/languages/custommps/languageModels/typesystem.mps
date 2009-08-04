@@ -77,18 +77,18 @@
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1238771106114">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1238771106115">
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1238771106116">
-            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238771106117">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238771106118">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238771106119">
-                  <property name="value" value=" is not set." />
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238771106118">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238771106119">
+                <property name="value" value=" is not set." />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238771106117">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238771106121">
+                  <property name="value" value="Path to " />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238771106120">
+                <node role="rightExpression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="1238771106120">
                   <link role="concept" targetNodeId="1.1233149592028" resolveInfo="MPSBuild" />
                   <link role="baseMethodDeclaration" targetNodeId="2v.1234294616845" resolveInfo="getMPSBuildToolsZipName" />
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238771106121">
-                <property name="value" value="Path to " />
               </node>
             </node>
             <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1238771106122">

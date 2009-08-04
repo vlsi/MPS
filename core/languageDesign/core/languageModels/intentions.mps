@@ -40,12 +40,15 @@
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="1209383918930">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209383918931">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209383934311">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383938673">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383953317">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383956430">
-                <property name="value" value=" to Current Module" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383953317">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383956430">
+              <property name="value" value=" to Current Module" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1209383938673">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383934312">
+                <property name="value" value="Add Language " />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209383946791">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209383946791">
                 <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1209383946445">
                   <node role="leftExpression" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="1209383940129" />
                 </node>
@@ -53,9 +56,6 @@
                   <link role="baseMethodDeclaration" targetNodeId="2.~SNode.getLanguageNamespace():java.lang.String" resolveInfo="getLanguageNamespace" />
                 </node>
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1209383934312">
-              <property name="value" value="Add Language " />
             </node>
           </node>
         </node>

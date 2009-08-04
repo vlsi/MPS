@@ -194,20 +194,20 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210250556679">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210250556680">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1210250556681">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210250556682">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210250556683">
-                        <node role="rightExpression" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference" id="1210251687738">
-                          <link role="variableDeclaration" targetNodeId="1210250556676" resolveInfo="element2" />
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210250556683">
+                      <node role="rightExpression" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference" id="1210251687738">
+                        <link role="variableDeclaration" targetNodeId="1210250556676" resolveInfo="element2" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1210250556682">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210250556688">
+                          <link role="variableDeclaration" targetNodeId="1210239674452" resolveInfo="sum" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210253045260">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1210253045260">
                           <node role="expression" type="jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableRefirence" id="1210253045261">
                             <link role="variableDeclaration" targetNodeId="1210250556672" resolveInfo="i2" />
                           </node>
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1210253046735" />
                         </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1210250556688">
-                        <link role="variableDeclaration" targetNodeId="1210239674452" resolveInfo="sum" />
                       </node>
                     </node>
                     <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1215190588937">

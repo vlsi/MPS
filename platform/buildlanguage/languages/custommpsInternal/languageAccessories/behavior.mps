@@ -273,20 +273,20 @@
       <link role="overriddenMethod" targetNodeId="2v.1213877173054" resolveInfo="getValue" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240033962981">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240033962982">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240033962983">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240033962984">
-              <property name="value" value="$" />
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240033962985">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240033962986">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240033962985">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240033962983">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240033962984">
+                <property name="value" value="$" />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240033962986">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1240033962987" />
                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240033962988">
                   <link role="property" targetNodeId="1.1240033962441" resolveInfo="antName" />
                 </node>
               </node>
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240033962989">
-                <property name="value" value="$" />
-              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240033962989">
+              <property name="value" value="$" />
             </node>
           </node>
         </node>

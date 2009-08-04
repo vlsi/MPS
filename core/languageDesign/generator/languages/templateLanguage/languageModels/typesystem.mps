@@ -145,9 +145,12 @@
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1183153521352">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183153521353">
                       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1183153521354">
-                        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153521355">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153620070">
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932839">
+                        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153620070">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153521355">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153521357">
+                              <property name="value" value="template is not applicable to the rule concept '" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227932839">
                               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1183153585039">
                                 <link role="variableDeclaration" targetNodeId="1178565280619" resolveInfo="ruleApplicableConcept" />
                               </node>
@@ -155,12 +158,9 @@
                                 <link role="property" targetNodeId="5.1169194664001" />
                               </node>
                             </node>
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153626414">
-                              <property name="value" value="'" />
-                            </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153521357">
-                            <property name="value" value="template is not applicable to the rule concept '" />
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153626414">
+                            <property name="value" value="'" />
                           </node>
                         </node>
                         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1183153590737">
@@ -284,12 +284,15 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1183153339133">
                 <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183153339134">
                   <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="1183153489205">
-                    <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153489206">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153701928">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153712857">
-                          <property name="value" value="'" />
+                    <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153701928">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153712857">
+                        <property name="value" value="'" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1183153489206">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153489208">
+                          <property name="value" value="template is not applicable to the rule concept '" />
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227833280">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227833280">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1183153495352">
                             <link role="variableDeclaration" targetNodeId="1178721808200" resolveInfo="ruleApplicableConcept" />
                           </node>
@@ -297,9 +300,6 @@
                             <link role="property" targetNodeId="5.1169194664001" />
                           </node>
                         </node>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1183153489208">
-                        <property name="value" value="template is not applicable to the rule concept '" />
                       </node>
                     </node>
                     <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1183153499531">

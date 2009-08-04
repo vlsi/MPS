@@ -224,30 +224,30 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203609752878">
             <property name="name" value="descriptorPath" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195950080" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203609766416">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203609771452">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214659155543">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214659155544">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1214659155545" />
-                    <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1214659155546">
-                      <link role="member" targetNodeId="1203602979314" resolveInfo="solutionName" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1214659155543">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203609771452">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203609766416">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203609764257">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1205754224309" />
+                    <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203609765915">
+                      <link role="member" targetNodeId="1203602985004" resolveInfo="solutionPath" />
                     </node>
                   </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214659158891">
-                    <link role="classifier" targetNodeId="8.~MPSExtentions" resolveInfo="MPSExtentions" />
-                    <link role="variableDeclaration" targetNodeId="8.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203609769185">
+                    <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
+                    <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
                   </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203609769185">
-                  <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
-                  <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1214659155544">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1214659155545" />
+                  <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1214659155546">
+                    <link role="member" targetNodeId="1203602979314" resolveInfo="solutionName" />
+                  </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203609764257">
-                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1205754224309" />
-                <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="1203609765915">
-                  <link role="member" targetNodeId="1203602985004" resolveInfo="solutionPath" />
-                </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1214659158891">
+                <link role="classifier" targetNodeId="8.~MPSExtentions" resolveInfo="MPSExtentions" />
+                <link role="variableDeclaration" targetNodeId="8.~MPSExtentions.DOT_SOLUTION" resolveInfo="DOT_SOLUTION" />
               </node>
             </node>
           </node>
@@ -828,24 +828,24 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1203676147983">
             <property name="name" value="prefix" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225195954434" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676151941">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676158179">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676163246">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203676166249">
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676163246">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203676166249">
+                <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
+                <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676158179">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1203676151941">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203676151471">
+                    <link role="variableDeclaration" targetNodeId="1203676097255" resolveInfo="path" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203676156522">
                     <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
                     <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203676159932">
-                    <property name="value" value="solutions" />
-                  </node>
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1203676156522">
-                  <link role="classifier" targetNodeId="2.~File" resolveInfo="File" />
-                  <link role="variableDeclaration" targetNodeId="2.~File.separator" resolveInfo="separator" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1203676159932">
+                  <property name="value" value="solutions" />
                 </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1203676151471">
-                <link role="variableDeclaration" targetNodeId="1203676097255" resolveInfo="path" />
               </node>
             </node>
           </node>

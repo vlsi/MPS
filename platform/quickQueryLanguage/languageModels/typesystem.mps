@@ -228,16 +228,16 @@
                             <link role="variableDeclaration" targetNodeId="5046156961652249758" resolveInfo="returnType" />
                           </node>
                         </node>
-                        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="5046156961652249769">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="5046156961652249770">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5046156961652249771">
-                              <property name="value" value=" is expected" />
-                            </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5046156961652249772">
+                        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="5046156961652249770">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5046156961652249771">
+                            <property name="value" value=" is expected" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="5046156961652249769">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5046156961652249773" />
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5046156961652249772">
                               <link role="variableDeclaration" targetNodeId="5046156961652249707" resolveInfo="expectedRetType" />
                             </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5046156961652249773" />
                         </node>
                         <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5046156961652249774">
                           <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="5046156961652249775">

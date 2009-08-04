@@ -3901,19 +3901,19 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238512665733">
                     <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1238512665734">
                       <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238512665735">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238512665736">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238512665737">
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238512665736">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238512665735">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238512665739">
+                            <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                            <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238512665737">
                             <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                             <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                           </node>
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238512665738">
-                            <property name="value" value="lib/mps.jar" />
-                          </node>
                         </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238512665739">
-                          <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
-                          <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238512665738">
+                          <property name="value" value="lib/mps.jar" />
                         </node>
                       </node>
                     </node>
@@ -5876,30 +5876,30 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239130486827">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239130486828">
                         <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486829">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486830">
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130486831">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486832">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130486833">
+                            <property name="value" value="mps.jar" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486834">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130486835">
                               <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                               <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                             </node>
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486832">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130486833">
-                                <property name="value" value="mps.jar" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486834">
-                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130486835">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486830">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130486829">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239130486837">
+                                  <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                                  <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                                </node>
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130486831">
                                   <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                                   <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                                 </node>
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130486836">
-                                  <property name="value" value="lib" />
-                                </node>
+                              </node>
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130486836">
+                                <property name="value" value="lib" />
                               </node>
                             </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239130486837">
-                            <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
-                            <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
                           </node>
                         </node>
                       </node>
@@ -6008,30 +6008,30 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1239130069244">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1239130069245">
                         <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069246">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069247">
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130069248">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069249">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130069250">
+                            <property name="value" value="mps.jar" />
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069251">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130069252">
                               <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                               <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                             </node>
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069249">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130069250">
-                                <property name="value" value="mps.jar" />
-                              </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069251">
-                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130069252">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069247">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1239130069246">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239130069254">
+                                  <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                                  <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                                </node>
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1239130069248">
                                   <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                                   <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                                 </node>
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130069253">
-                                  <property name="value" value="lib" />
-                                </node>
+                              </node>
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1239130069253">
+                                <property name="value" value="lib" />
                               </node>
                             </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1239130069254">
-                            <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
-                            <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
                           </node>
                         </node>
                       </node>
@@ -6345,19 +6345,19 @@
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1238589860448">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1238589860449">
                         <link role="baseMethodDeclaration" targetNodeId="6.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860450">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860451">
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238589860452">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860451">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1238589860450">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238589860454">
+                              <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                              <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1238589860452">
                               <link role="classifier" targetNodeId="6.~File" resolveInfo="File" />
                               <link role="variableDeclaration" targetNodeId="6.~File.separator" resolveInfo="separator" />
                             </node>
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238589860453">
-                              <property name="value" value="lib/mps.jar" />
-                            </node>
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1238589860454">
-                            <link role="baseMethodDeclaration" targetNodeId="11.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
-                            <link role="classConcept" targetNodeId="11.~PathManager" resolveInfo="PathManager" />
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1238589860453">
+                            <property name="value" value="lib/mps.jar" />
                           </node>
                         </node>
                       </node>

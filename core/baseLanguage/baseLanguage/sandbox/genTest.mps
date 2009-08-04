@@ -209,26 +209,26 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1237458909896" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237459575875">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1237634384554">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634395190">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634397461">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634398605">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634398606">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634397461">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634398605">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634398606">
+                <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634398607" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1237634395190">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634393796">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634393797">
                   <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
                 </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634398607" />
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634393798" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634396349">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634396349">
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634396350">
                   <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634396351" />
               </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237634393796">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1237634393797">
-                <link role="baseMethodDeclaration" targetNodeId="1237634370565" resolveInfo="methodWithVeryVeryVeryVeryVeryVeryLongName" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1237634393798" />
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237634384556" />

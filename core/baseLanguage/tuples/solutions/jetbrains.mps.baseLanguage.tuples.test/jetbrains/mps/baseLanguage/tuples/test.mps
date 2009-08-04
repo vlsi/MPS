@@ -624,26 +624,26 @@
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240941184663">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240941184664">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240941200798">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240941202588">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240941217031">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240941218717">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941218682">
-                              <link role="variableDeclaration" targetNodeId="1240941184665" resolveInfo="t" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903121">
-                              <link role="component" targetNodeId="2.1240933484206" resolveInfo="second" />
-                            </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240941202611">
-                            <property name="value" value="=" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240941200832">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941200799">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240941217031">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240941218717">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941218682">
                             <link role="variableDeclaration" targetNodeId="1240941184665" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="3862929002918344673">
-                            <link role="component" targetNodeId="2.1240933472056" resolveInfo="first" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903121">
+                            <link role="component" targetNodeId="2.1240933484206" resolveInfo="second" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240941202588">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240941200832">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240941200799">
+                              <link role="variableDeclaration" targetNodeId="1240941184665" resolveInfo="t" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="3862929002918344673">
+                              <link role="component" targetNodeId="2.1240933472056" resolveInfo="first" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240941202611">
+                            <property name="value" value="=" />
                           </node>
                         </node>
                       </node>
@@ -702,26 +702,26 @@
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241009587748">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241009587749">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1241009587750">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241009587751">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241009587752">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241009587753">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587754">
-                              <link role="variableDeclaration" targetNodeId="1241009587760" resolveInfo="t" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903159">
-                              <link role="component" targetNodeId="1239977055868" resolveInfo="second" />
-                            </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009587756">
-                            <property name="value" value="=" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241009587757">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587758">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241009587752">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241009587753">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587754">
                             <link role="variableDeclaration" targetNodeId="1241009587760" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903140">
-                            <link role="component" targetNodeId="1239977053138" resolveInfo="first" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903159">
+                            <link role="component" targetNodeId="1239977055868" resolveInfo="second" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1241009587751">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241009587757">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1241009587758">
+                              <link role="variableDeclaration" targetNodeId="1241009587760" resolveInfo="t" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4499241871418903140">
+                              <link role="component" targetNodeId="1239977053138" resolveInfo="first" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1241009587756">
+                            <property name="value" value="=" />
                           </node>
                         </node>
                       </node>
@@ -771,26 +771,26 @@
                 <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1241009714386">
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241009714387">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="668576388509553871">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="668576388509553872">
-                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="668576388509553873">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="668576388509553874">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="668576388509553875">
-                              <link role="variableDeclaration" targetNodeId="1241009714398" resolveInfo="t" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="668576388509553924">
-                              <link role="component" targetNodeId="3.1241009497930" resolveInfo="second" />
-                            </node>
-                          </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="668576388509553877">
-                            <property name="value" value="=" />
-                          </node>
-                        </node>
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="668576388509553878">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="668576388509553879">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="668576388509553873">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="668576388509553874">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="668576388509553875">
                             <link role="variableDeclaration" targetNodeId="1241009714398" resolveInfo="t" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="668576388509553905">
-                            <link role="component" targetNodeId="3.1241009495081" resolveInfo="first" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="668576388509553924">
+                            <link role="component" targetNodeId="3.1241009497930" resolveInfo="second" />
+                          </node>
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="668576388509553872">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="668576388509553878">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="668576388509553879">
+                              <link role="variableDeclaration" targetNodeId="1241009714398" resolveInfo="t" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="668576388509553905">
+                              <link role="component" targetNodeId="3.1241009495081" resolveInfo="first" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="668576388509553877">
+                            <property name="value" value="=" />
                           </node>
                         </node>
                       </node>

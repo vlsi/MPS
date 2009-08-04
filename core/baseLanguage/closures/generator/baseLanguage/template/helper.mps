@@ -3290,35 +3290,35 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1201014509404">
             <property name="name" value="name" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225193803451" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014529313">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014573501">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014580570">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227847915">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201014582385">
-                      <link role="variableDeclaration" targetNodeId="1201013011392" resolveInfo="lvd" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1201014584025">
-                      <link role="property" targetNodeId="26.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201014575687">
-                    <property name="value" value="_" />
-                  </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014580570">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227847915">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1201014582385">
+                  <link role="variableDeclaration" targetNodeId="1201013011392" resolveInfo="lvd" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071984704">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071984771">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201265807234" />
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071984772">
-                      <link role="fieldDeclaration" targetNodeId="1201265333397" resolveInfo="ctx" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071984705">
-                    <link role="fieldDeclaration" targetNodeId="1201014543410" resolveInfo="label" />
-                  </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1201014584025">
+                  <link role="property" targetNodeId="26.1169194664001" resolveInfo="name" />
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201014526996">
-                <property name="value" value="_" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014573501">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1201014529313">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201014526996">
+                    <property name="value" value="_" />
+                  </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071984704">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1209071984771">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1201265807234" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071984772">
+                        <link role="fieldDeclaration" targetNodeId="1201265333397" resolveInfo="ctx" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1209071984705">
+                      <link role="fieldDeclaration" targetNodeId="1201014543410" resolveInfo="label" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1201014575687">
+                  <property name="value" value="_" />
+                </node>
               </node>
             </node>
           </node>

@@ -97,17 +97,17 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218630305876">
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1218630310659">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1218630315584">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1218630320073">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630322857">
-                      <link role="variableDeclaration" targetNodeId="1218630224193" resolveInfo="isModel" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1218630320073">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630322857">
+                    <link role="variableDeclaration" targetNodeId="1218630224193" resolveInfo="isModel" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1218630315584">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630314443">
+                      <link role="variableDeclaration" targetNodeId="1218629864332" resolveInfo="isNode" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630318837">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630318837">
                       <link role="variableDeclaration" targetNodeId="1218630221014" resolveInfo="isNList" />
                     </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218630314443">
-                    <link role="variableDeclaration" targetNodeId="1218629864332" resolveInfo="isNode" />
                   </node>
                 </node>
               </node>
