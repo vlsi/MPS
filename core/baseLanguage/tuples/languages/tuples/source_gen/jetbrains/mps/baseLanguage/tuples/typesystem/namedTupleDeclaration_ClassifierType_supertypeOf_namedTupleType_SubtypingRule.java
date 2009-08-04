@@ -16,7 +16,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_4().createNode(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false), typeCheckingContext);
+    return new _Quotations.QuotationClass_3().createNode(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

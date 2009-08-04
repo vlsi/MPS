@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -47,7 +47,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     if (this.myListHandler_2140_0 == null) {
       this.myListHandler_2140_0 = new IndexedTupleLiteral_Editor.componentListHandler_2140_0(node, "component", context);
     }
-    EditorCell_Collection editorCell = this.myListHandler_2140_0.createCells(context, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = this.myListHandler_2140_0.createCells(context, new CellLayout_Indent(), false);
     setupBasic_RefNodeList_2140_0(editorCell, node, context);
     editorCell.setRole(this.myListHandler_2140_0.getElementRole());
     return editorCell;

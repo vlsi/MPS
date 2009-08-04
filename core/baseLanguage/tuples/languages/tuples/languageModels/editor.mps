@@ -59,7 +59,7 @@
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1238853742805">
           <property name="text" value="" />
         </node>
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879936980" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889420660" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238852528444">
         <link role="relationDeclaration" targetNodeId="1.1238852467039" resolveInfo="rightBracket" />
@@ -91,7 +91,7 @@
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1238853909939">
           <property name="text" value="" />
         </node>
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879936977" />
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889405825" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1238853934116">
         <link role="relationDeclaration" targetNodeId="1.1238853826944" resolveInfo="rightBracket" />
@@ -121,7 +121,7 @@
         <property name="text" value="]" />
         <link role="styleClass" targetNodeId="2.1233923584313" resolveInfo="RightBracket" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879936970" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889418405" />
     </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -720,7 +720,7 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1239881184397" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879936969" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889521995" />
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1239547239689">
       <property name="vertical" value="true" />
@@ -784,7 +784,10 @@
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1239551118147">
               <property name="vertical" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1239529553065" />
-              <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879936974" />
+              <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889521996" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="880375768889521997">
+                <property name="flag" value="true" />
+              </node>
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1239551599438">
@@ -816,7 +819,7 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239560894208">
         <link role="relationDeclaration" targetNodeId="1.1239560837729" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239879936972" />
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889509872" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1239560928631">
@@ -875,7 +878,10 @@
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1239567806108">
               <property name="vertical" value="true" />
               <link role="relationDeclaration" targetNodeId="1.1239529553065" />
-              <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239879936975" />
+              <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="880375768889511622" />
+              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="880375768889511896">
+                <property name="flag" value="true" />
+              </node>
             </node>
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1239567806109">
@@ -954,31 +960,31 @@
                       <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="1240691504105">
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240691504106">
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1240691521182">
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240691527701">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240691531017">
-                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691531413">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240691531042">
-                                    <link role="variableDeclaration" targetNodeId="1240691504107" resolveInfo="p" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1240691532027">
-                                    <link role="component" targetNodeId="7.1240488571077" resolveInfo="name" />
-                                  </node>
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240691531017">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691531413">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240691531042">
+                                  <link role="variableDeclaration" targetNodeId="1240691504107" resolveInfo="p" />
                                 </node>
-                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240691527729">
-                                  <property name="value" value=" " />
+                                <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1240691532027">
+                                  <link role="component" targetNodeId="7.1240488571077" resolveInfo="name" />
                                 </node>
                               </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691523512">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691521215">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240691521183">
-                                    <link role="variableDeclaration" targetNodeId="1240691504107" resolveInfo="p" />
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1240691527701">
+                                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691523512">
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240691521215">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1240691521183">
+                                      <link role="variableDeclaration" targetNodeId="1240691504107" resolveInfo="p" />
+                                    </node>
+                                    <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1240691522889">
+                                      <link role="component" targetNodeId="7.1240488581873" resolveInfo="type" />
+                                    </node>
                                   </node>
-                                  <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="1240691522889">
-                                    <link role="component" targetNodeId="7.1240488581873" resolveInfo="type" />
+                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240691525217">
+                                    <link role="baseMethodDeclaration" targetNodeId="6.1213877396640" resolveInfo="getPresentation" />
                                   </node>
                                 </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1240691525217">
-                                  <link role="baseMethodDeclaration" targetNodeId="6.1213877396640" resolveInfo="getPresentation" />
+                                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240691527729">
+                                  <property name="value" value=" " />
                                 </node>
                               </node>
                             </node>

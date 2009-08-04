@@ -30,7 +30,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
           ListSequence.fromList(paramTypes).addElement(pt);
         }
       }
-      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_6().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
+      ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_5().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
     }
     return result;
   }

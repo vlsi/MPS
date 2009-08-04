@@ -30,7 +30,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode)new _Quotations.QuotationClass_3().createNode(tupleDecl, PTYPES, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414716", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode)new _Quotations.QuotationClass_6().createNode(tupleDecl, PTYPES, typeCheckingContext), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414716", false, 0, intentionProvider);
     }
     SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true));
     if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -38,7 +38,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
       opType = ListSequence.fromList(PTYPES).getElement(idx);
     } else
     {
-      List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false);
+      List<SNode> variableReferences = SNodeOperations.getDescendants(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
       List<SNode> tvrs = new ArrayList<SNode>();
       ListSequence.fromList(tvrs).addSequence(ListSequence.fromList(variableReferences));
       for(SNode tvr : tvrs) {

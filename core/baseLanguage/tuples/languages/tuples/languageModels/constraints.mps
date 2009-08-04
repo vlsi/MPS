@@ -520,24 +520,40 @@
                     </node>
                   </node>
                 </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261810">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261811">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261812">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261813">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261814">
-                          <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240573261815">
-                          <link role="link" targetNodeId="3v.1068580123133" />
-                        </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261811">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261812">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261813">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261814">
+                        <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240573261816">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240573261817">
-                          <link role="conceptDeclaration" targetNodeId="3v.1070534644030" resolveInfo="BooleanType" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240573261815">
+                        <link role="link" targetNodeId="3v.1068580123133" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240573261816">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240573261817">
+                        <link role="conceptDeclaration" targetNodeId="3v.1070534644030" resolveInfo="BooleanType" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261810">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261826">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240573261827">
+                        <property name="value" value="equals" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240573261828">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261829">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261830">
+                            <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240573261831">
+                            <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                          </node>
                         </node>
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240573261818">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240573261818">
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261819">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261820">
                           <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261821">
@@ -554,43 +570,43 @@
                       </node>
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261826">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240573261827">
-                      <property name="value" value="equals" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240573261828">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261829">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261830">
-                          <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240573261831">
-                          <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
               <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="1240573261832">
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261833">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261834">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261835">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261836">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261837">
-                          <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240573261838">
-                          <link role="link" targetNodeId="3v.1068580123133" />
-                        </node>
+                <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261834">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261835">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261836">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261837">
+                        <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240573261839">
-                        <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240573261840">
-                          <link role="conceptDeclaration" targetNodeId="3v.1070534370425" resolveInfo="IntegerType" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1240573261838">
+                        <link role="link" targetNodeId="3v.1068580123133" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1240573261839">
+                      <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1240573261840">
+                        <link role="conceptDeclaration" targetNodeId="3v.1070534370425" resolveInfo="IntegerType" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1240573261833">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261848">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240573261849">
+                        <property name="value" value="hashCode" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240573261850">
+                        <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261851">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261852">
+                            <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240573261853">
+                            <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
+                          </node>
                         </node>
                       </node>
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240573261841">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1240573261841">
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261842">
                         <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261843">
                           <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261844">
@@ -604,22 +620,6 @@
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1240573261847">
                         <property name="value" value="0" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261848">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1240573261849">
-                      <property name="value" value="hashCode" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240573261850">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1240573261851">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="1240573261852">
-                          <link role="variable" targetNodeId="1240573261735" resolveInfo="method" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1240573261853">
-                          <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
-                        </node>
                       </node>
                     </node>
                   </node>

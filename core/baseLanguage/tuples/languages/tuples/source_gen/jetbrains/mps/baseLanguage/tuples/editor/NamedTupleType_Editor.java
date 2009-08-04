@@ -28,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -50,7 +49,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createCollection_9635_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     setupBasic_Collection_9635_0(editorCell, node, context);
     editorCell.addEditorCell(this.createConceptProperty_9635_1(context, node));
     editorCell.addEditorCell(this.createRefCell_9635_3(context, node));
@@ -501,7 +500,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       if (this.myListHandler_9635_1 == null) {
         this.myListHandler_9635_1 = new NamedTupleType_Editor.componentListHandler_9635_0(node, "component", context);
       }
-      EditorCell_Collection editorCell = this.myListHandler_9635_1.createCells(context, new CellLayout_Vertical(), false);
+      EditorCell_Collection editorCell = this.myListHandler_9635_1.createCells(context, new CellLayout_Indent(), false);
       setupBasic_RefNodeList_9635_1(editorCell, node, context);
       editorCell.setRole(this.myListHandler_9635_1.getElementRole());
       return editorCell;
@@ -512,6 +511,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.setCellId("refNodeList_component");
       {
         Style style = editorCell.getStyle();
+        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
       }
     }

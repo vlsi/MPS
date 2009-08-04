@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -327,7 +327,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       if (this.myListHandler_6372_1 == null) {
         this.myListHandler_6372_1 = new NamedTupleLiteral_Editor.componentListHandler_6372_0(node, "component", context);
       }
-      EditorCell_Collection editorCell = this.myListHandler_6372_1.createCells(context, new CellLayout_Vertical(), false);
+      EditorCell_Collection editorCell = this.myListHandler_6372_1.createCells(context, new CellLayout_Indent(), false);
       setupBasic_RefNodeList_6372_1(editorCell, node, context);
       editorCell.setRole(this.myListHandler_6372_1.getElementRole());
       return editorCell;
@@ -338,6 +338,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       editorCell.setCellId("refNodeList_component");
       {
         Style style = editorCell.getStyle();
+        style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
         style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
       }
     }
