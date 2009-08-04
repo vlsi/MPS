@@ -2303,6 +2303,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             }
             requestRelayout();
           }
+          relayoutIfNeeded();
           return;
         }
         if (editorCells != null) {
