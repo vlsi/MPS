@@ -66,7 +66,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public Class getOverridenRefactoringClass() {
-    return MoveNodes.getClass_static();
+    return MoveNodes.class;
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
@@ -175,10 +175,6 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
 
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
-  }
-
-  public static Class getClass_static() {
-    return MoveLinkUp.class;
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {

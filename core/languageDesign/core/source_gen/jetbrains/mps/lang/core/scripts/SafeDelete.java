@@ -132,17 +132,8 @@ public class SafeDelete extends AbstractLoggableRefactoring {
     return "alt DELETE";
   }
 
-  public static Class getClass_static() {
-    return SafeDelete.class;
-  }
-
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
-      return true;
-    } else
-    {
-      return false;
-    }
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
 }

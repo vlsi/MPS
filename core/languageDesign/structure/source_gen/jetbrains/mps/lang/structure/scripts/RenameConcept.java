@@ -64,7 +64,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public Class getOverridenRefactoringClass() {
-    return Rename.getClass_static();
+    return Rename.class;
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
@@ -167,10 +167,6 @@ public class RenameConcept extends AbstractLoggableRefactoring {
 
   public static String getKeyStroke_static() {
     return Rename.getKeyStroke_static();
-  }
-
-  public static Class getClass_static() {
-    return RenameConcept.class;
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {

@@ -96,14 +96,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(conceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199468168869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
-    if (overriden == null) {
-      return null;
-    }
-    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1200921209509(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true) != null);
   }
@@ -148,6 +140,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238608564731(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6630638345814759932(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode overriden = SLinkOperations.getTarget(_context.getNode(), "overrides", false);
+    if (overriden == null) {
+      return null;
+    }
+    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object referenceMacro_GetReferent_1200935757745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -223,14 +223,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1199462382860(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_context.getNode(), "keystroke", true) == null);
-  }
-
-  public static boolean ifMacro_Condition_1199467946000(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) == null);
-  }
-
-  public static boolean ifMacro_Condition_1199468168888(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
   }
 
   public static boolean ifMacro_Condition_1200668711127(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -327,6 +319,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1215507182571(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "filterClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6630638345814759962(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
   }
 
   public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -61,7 +61,7 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public Class getOverridenRefactoringClass() {
-    return SafeDelete.getClass_static();
+    return SafeDelete.class;
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
@@ -138,10 +138,6 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
 
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
-  }
-
-  public static Class getClass_static() {
-    return SafeDeleteLink.class;
   }
 
   public static boolean isApplicableWRTConcept_static(SNode node) {

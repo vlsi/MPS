@@ -153,17 +153,8 @@ public class Rename extends AbstractLoggableRefactoring {
     return "shift F6";
   }
 
-  public static Class getClass_static() {
-    return Rename.class;
-  }
-
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"))) {
-      return true;
-    } else
-    {
-      return false;
-    }
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"));
   }
 
 }

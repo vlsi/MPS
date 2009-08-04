@@ -241,17 +241,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return " F6";
   }
 
-  public static Class getClass_static() {
-    return MoveNodes.class;
-  }
-
   public static boolean isApplicableWRTConcept_static(SNode node) {
-    if (SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"))) {
-      return true;
-    } else
-    {
-      return false;
-    }
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
 }
