@@ -47,7 +47,7 @@
           </node>
         </node>
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="1228522914198" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4981406984361225503" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1228522980200">
         <property name="name" value="adapter" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1238592580881" />
