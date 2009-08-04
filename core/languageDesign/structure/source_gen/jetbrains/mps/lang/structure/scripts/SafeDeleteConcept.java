@@ -15,17 +15,18 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
@@ -34,15 +35,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   public static final String sourceLanguage = "sourceLanguage";
-  public static final String behaviorNode = "behaviorNode";
-  public static final String editorNode = "editorNode";
+  public static final String nodeAspects = "nodeAspects";
 
   private Set<String> myTransientParameters = SetSequence.fromSet(new HashSet<String>());
 
   public SafeDeleteConcept() {
     SetSequence.fromSet(this.myTransientParameters).addElement("sourceLanguage");
-    SetSequence.fromSet(this.myTransientParameters).addElement("behaviorNode");
-    SetSequence.fromSet(this.myTransientParameters).addElement("editorNode");
+    SetSequence.fromSet(this.myTransientParameters).addElement("nodeAspects");
   }
 
   public String getUserFriendlyName() {
@@ -91,51 +90,30 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     {
-      SNode node = refactoringContext.getSelectedNode();
+      // all usages excluding concept's aspects
       SearchResults searchResults = FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
-      refactoringContext.setParameter("sourceLanguage", Language.getLanguageFor(SNodeOperations.getModel(node).getModelDescriptor()));
-      if (((Language)refactoringContext.getParameter("sourceLanguage")) == null) {
-        return searchResults;
+
+      refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode(), GlobalScope.getInstance()));
+
+      List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
+      List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
+
+      for(SearchResult<SNode> searchResult : searchResultsCopy) {
+        SNode containingRoot = searchResult.getObject().getContainingRoot();
+        if (((List)refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
+          searchResults.remove(searchResult);
+        }
       }
 
-      SModelDescriptor editorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getEditorModelDescriptor();
-      List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
-      if (editorModelDescriptor != null) {
-        refactoringContext.setParameter("editorNode", RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
-        if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
-          for(SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList)) {
-            if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("editorNode"))) {
-              searchResults.remove(searchResult);
-            }
-          }
-        }
-      }
-      SModelDescriptor behaviorModelDescriptor = ((Language)refactoringContext.getParameter("sourceLanguage")).getBehaviorModelDescriptor();
-      if (behaviorModelDescriptor != null) {
-        refactoringContext.setParameter("behaviorNode", RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")));
-        if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
-          for(SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList)) {
-            if (searchResult.getObject().getContainingRoot() == ((SNode)refactoringContext.getParameter("behaviorNode"))) {
-              searchResults.remove(searchResult);
-            }
-          }
-        }
-      }
       return searchResults;
     }
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      if (((SNode)refactoringContext.getParameter("behaviorNode")) != null) {
-        SNodeOperations.deleteNode(((SNode)refactoringContext.getParameter("behaviorNode")));
-      }
-      if (((SNode)refactoringContext.getParameter("editorNode")) != null) {
-        SNodeOperations.deleteNode(((SNode)refactoringContext.getParameter("editorNode")));
-      }
-      SNodeOperations.deleteNode(node);
+    for(SNode aspectNode : ((List<SNode>)((List)refactoringContext.getParameter("nodeAspects")))) {
+      SNodeOperations.deleteNode(aspectNode);
     }
+    SNodeOperations.deleteNode(refactoringContext.getSelectedNode());
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {

@@ -18,8 +18,8 @@ import jetbrains.mps.workbench.actions.nodes.GoToIntentionsHelper;
 import jetbrains.mps.workbench.actions.nodes.GoToFindersHelper;
 import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
@@ -146,6 +146,25 @@ public class AbstractConceptDeclaration_Behavior {
       }
     }
     return null;
+  }
+
+  public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findEditor_6409339300305624772(thisNode, scope));
+    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConstraints_6409339300305625141(thisNode, scope));
+    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(thisNode, scope));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findTypesystemRules_6409339300305625028(thisNode, scope)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findIntentions_6409339300305625231(thisNode, scope)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findFinders_6409339300305625307(thisNode, scope)));
+    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findDataFlow_1213877394143(thisNode, scope));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode, scope)));
+    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findTextgen_6409339300305625442(thisNode, scope));
+
+    while (ListSequence.fromList(result).contains(null)) {
+      ListSequence.fromList(result).removeElement(null);
+    }
+
+    return result;
   }
 
   public static List<SNode> call_getAvailableConceptMethods_1213877394200(SNode thisNode, SNode context, IScope scope) {
