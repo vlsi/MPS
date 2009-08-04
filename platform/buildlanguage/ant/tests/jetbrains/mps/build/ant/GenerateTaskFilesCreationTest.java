@@ -52,7 +52,7 @@ public class GenerateTaskFilesCreationTest extends BaseMPSTest {
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
 
-    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeConceptInstance.java");
+    File someConceptInstanceFile = new File(getSolutionSourceFolderPath(destdir, projectName, solutionName) + "SomeInstanceOfSomeConcept.java");
     TestCase.assertTrue(someConceptInstanceFile.exists());
 
     FileUtil.delete(destdir);

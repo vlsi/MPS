@@ -417,10 +417,6 @@ public class Generator {
         if (next != null) myNext.add(next);
       }
 
-      for (ModuleReference ref : ((AbstractModule)myModule).getUsedLanguagesReferences()) {
-                
-      }
-
       if (myModule instanceof Language) {
         Language language = (Language) myModule;
         for (jetbrains.mps.smodel.Generator gen : language.getGenerators()) {
