@@ -261,6 +261,7 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
+  @NotNull
   public SModelDescriptor getModelDescriptor(SModel model) {
     return getModelDescriptor(model.getSModelReference());
   }
