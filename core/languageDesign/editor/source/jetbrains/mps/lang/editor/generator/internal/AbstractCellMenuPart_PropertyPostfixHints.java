@@ -159,6 +159,11 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       myEditorContext = editorContext;
     }
 
+    @Override
+    public boolean canSubstituteStrictly(String pattern) {
+      return super.canSubstituteStrictly(pattern) && canSubstitute(pattern);
+    }
+
     public boolean canSubstitute(String pattern) {
       if (myPostfixGroup.canSubstitute(pattern, myPostfix)) {
         String text = myPostfixGroup.getMatchingText(pattern, myPostfix);
@@ -202,6 +207,11 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       myPropertyName = propertyName;
       myScope = scope;
       myEditorContext = editorContext;
+    }
+
+    @Override
+    public boolean canSubstituteStrictly(String pattern) {
+      return super.canSubstituteStrictly(pattern) && canSubstitute(pattern);
     }
 
     public boolean canSubstitute(String pattern) {

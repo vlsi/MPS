@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
 
@@ -85,11 +84,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       } else
       {
         result = ListSequence.fromList(new ArrayList<String>());
-      }
-      // we need this because of smart input
-      // DO NOT REMOVE IT
-      if (SPropertyOperations.getString(node, "name") != null) {
-        ListSequence.fromList(result).addElement(SPropertyOperations.getString(node, "name"));
       }
       return result;
     }

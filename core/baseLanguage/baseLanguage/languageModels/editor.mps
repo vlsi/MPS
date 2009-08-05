@@ -9458,40 +9458,6 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198583392210">
-                <property name="value" value="we need this because of smart input" />
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198583369896">
-                <property name="value" value="DO NOT REMOVE IT" />
-              </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198583170688">
-                <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198583170689">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198583196154">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1206572405891">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198583196155">
-                        <link role="variableDeclaration" targetNodeId="1181823199388" resolveInfo="result" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="1198583197845">
-                        <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977968078">
-                          <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1198583198862" />
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1198583214323">
-                            <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1198583193072">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198583193950" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977951702">
-                    <node role="operand" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" id="1198583189317" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1198583192040">
-                      <link role="property" targetNodeId="18.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1181823199459">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1181823199460">
                   <link role="variableDeclaration" targetNodeId="1181823199388" resolveInfo="result" />
