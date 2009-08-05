@@ -246,28 +246,26 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
-    {
-      boolean result = false;
-      final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+    boolean result = false;
+    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    ModelAccess.instance().runReadAction(new Runnable() {
 
-        public void run() {
-          {
-            IChooseComponent<SModelDescriptor> chooseComponent;
-            chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
-            chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(refactoringContext));
-            chooseComponent.setPropertyName("targetModel");
-            chooseComponent.setCaption("choose target model");
-            chooseComponent.initComponent();
-            ListSequence.fromList(components).addElement(chooseComponent);
-          }
+      public void run() {
+        {
+          IChooseComponent<SModelDescriptor> chooseComponent;
+          chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
+          chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(refactoringContext));
+          chooseComponent.setPropertyName("targetModel");
+          chooseComponent.setCaption("choose target model");
+          chooseComponent.initComponent();
+          ListSequence.fromList(components).addElement(chooseComponent);
         }
-      });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-      dialog.showDialog();
-      result = dialog.getResult();
-      return result;
-    }
+      }
+    });
+    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
+    dialog.showDialog();
+    result = dialog.getResult();
+    return result;
   }
 
 

@@ -140,28 +140,26 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
-    {
-      boolean result = false;
-      final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+    boolean result = false;
+    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    ModelAccess.instance().runReadAction(new Runnable() {
 
-        public void run() {
-          {
-            IChooseComponent<String> chooseComponent;
-            chooseComponent = new ChooseStringComponent();
-            chooseComponent.setPropertyName("newName");
-            chooseComponent.setCaption("new concept name");
-            chooseComponent.initComponent();
-            chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(refactoringContext));
-            ListSequence.fromList(components).addElement(chooseComponent);
-          }
+      public void run() {
+        {
+          IChooseComponent<String> chooseComponent;
+          chooseComponent = new ChooseStringComponent();
+          chooseComponent.setPropertyName("newName");
+          chooseComponent.setCaption("new concept name");
+          chooseComponent.initComponent();
+          chooseComponent.setInitialValue(RenameConcept.this.newName_initialValue(refactoringContext));
+          ListSequence.fromList(components).addElement(chooseComponent);
         }
-      });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-      dialog.showDialog();
-      result = dialog.getResult();
-      return result;
-    }
+      }
+    });
+    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
+    dialog.showDialog();
+    result = dialog.getResult();
+    return result;
   }
 
 

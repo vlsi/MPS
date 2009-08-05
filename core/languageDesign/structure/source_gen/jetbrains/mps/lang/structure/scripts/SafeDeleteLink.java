@@ -26,8 +26,6 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -121,18 +119,6 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
 
   public boolean doesUpdateModel() {
     return true;
-  }
-
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    {
-      Boolean result = ModelAccess.instance().runReadAction(new Computable <Boolean>() {
-
-        public Boolean compute() {
-          return SafeDeleteLink.this.isApplicable(refactoringContext);
-        }
-      });
-      return result;
-    }
   }
 
 

@@ -213,27 +213,25 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(final RefactoringContext refactoringContext) {
-    {
-      boolean result = false;
-      final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-      ModelAccess.instance().runReadAction(new Runnable() {
+    boolean result = false;
+    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    ModelAccess.instance().runReadAction(new Runnable() {
 
-        public void run() {
-          {
-            IChooseComponent<Object> chooseComponent;
-            chooseComponent = MoveNodes.this.target_componentCreator(refactoringContext);
-            chooseComponent.setPropertyName("target");
-            chooseComponent.setCaption("choose target");
-            chooseComponent.initComponent();
-            ListSequence.fromList(components).addElement(chooseComponent);
-          }
+      public void run() {
+        {
+          IChooseComponent<Object> chooseComponent;
+          chooseComponent = MoveNodes.this.target_componentCreator(refactoringContext);
+          chooseComponent.setPropertyName("target");
+          chooseComponent.setCaption("choose target");
+          chooseComponent.initComponent();
+          ListSequence.fromList(components).addElement(chooseComponent);
         }
-      });
-      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-      dialog.showDialog();
-      result = dialog.getResult();
-      return result;
-    }
+      }
+    });
+    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
+    dialog.showDialog();
+    result = dialog.getResult();
+    return result;
   }
 
 
