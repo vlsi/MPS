@@ -16,6 +16,7 @@
 package jetbrains.mps.refactoring;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder.ConstantHolder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -26,10 +27,13 @@ import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,12 +49,15 @@ public class RefactoringViewItem {
   private JPanel myButtonsPanel;
   private JButton myDoRefactorButton;
   private JButton myCancelButton;
+  @Nullable
+  private RefactoringContext myRefactoringContext;
   private RefactoringView myRefactoringView;
+  private JCheckBox myGenerateModelsCheckbox;
+  private JCheckBox myIsLocalCheckbox;
 
-  public RefactoringViewItem(
-    @NotNull RefactoringViewAction refactoringViewAction,
-    SearchResults searchResults,
-    RefactoringView refactoringView) {
+  //first parameter is null - no checkboxes will be shown
+  public RefactoringViewItem(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, RefactoringView refactoringView) {
+    myRefactoringContext = refactoringContext;
     myRefactoringView = refactoringView;
     myRefactoringViewAction = refactoringViewAction;
     mySearchResults = searchResults;
@@ -78,6 +85,7 @@ public class RefactoringViewItem {
       }
     };
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+
     myDoRefactorButton = new JButton(new AbstractAction("Do Refactor") {
       public void actionPerformed(ActionEvent e) {
         doRefactor();
@@ -91,14 +99,32 @@ public class RefactoringViewItem {
         }
       }
     });
+    myButtonsPanel.add(myDoRefactorButton);
 
     myCancelButton = new JButton(new AbstractAction("Cancel") {
       public void actionPerformed(ActionEvent e) {
         cancel();
       }
     });
-    myButtonsPanel.add(myDoRefactorButton);
     myButtonsPanel.add(myCancelButton);
+
+    if (myRefactoringContext!=null){
+      myGenerateModelsCheckbox = new JCheckBox("generate models");
+      myGenerateModelsCheckbox.setSelected(true);
+      myButtonsPanel.add(myGenerateModelsCheckbox);
+
+      if (refactoringContext.getRefactoring().doesUpdateModel()) {
+        boolean isLocal = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return RefactoringUtil.isLocalByDefault(myRefactoringContext);
+          }
+        });
+
+        myIsLocalCheckbox = new JCheckBox("is local");
+        myIsLocalCheckbox.setSelected(isLocal);
+        myButtonsPanel.add(myIsLocalCheckbox);
+      }
+    }
 
     myPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myPanel.add(myButtonsPanel, BorderLayout.SOUTH);
@@ -155,8 +181,16 @@ public class RefactoringViewItem {
     close();
   }
 
-
   private void doRefactor() {
+    if (myRefactoringContext!=null){
+      if (myRefactoringContext.getRefactoring().doesUpdateModel()) {
+        //noinspection ConstantConditions
+        myRefactoringContext.setLocal(myIsLocalCheckbox.isSelected());
+      }
+      //noinspection ConstantConditions
+      myRefactoringContext.setDoesGenerateModels(myGenerateModelsCheckbox.isSelected());
+    }
+
     myRefactoringViewAction.performAction(this);
   }
 

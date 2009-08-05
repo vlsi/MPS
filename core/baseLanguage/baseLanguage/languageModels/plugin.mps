@@ -22541,7 +22541,8 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224076826889">
-              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
+              <link role="baseMethodDeclaration" targetNodeId="84.~RefactoringView.showRefactoringView(jetbrains.mps.refactoring.framework.RefactoringContext,jetbrains.mps.refactoring.RefactoringViewAction,jetbrains.mps.ide.findusages.model.SearchResults):void" resolveInfo="showRefactoringView" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2621449412039966007" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224077049303">
                 <link role="variableDeclaration" targetNodeId="1224077049262" resolveInfo="refactoringViewAction" />
               </node>

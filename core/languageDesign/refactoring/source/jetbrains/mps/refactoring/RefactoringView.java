@@ -19,18 +19,19 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.ContentManager;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.INavigateableTool;
-import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.findusages.UsagesViewTracker;
+import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RefactoringView extends BaseProjectTool implements INavigateableTool {
   private List<RefactoringViewItem> myRefactoringViewItems = new ArrayList<RefactoringViewItem>();
@@ -60,11 +61,13 @@ public class RefactoringView extends BaseProjectTool implements INavigateableToo
     });
   }
 
-  public void showRefactoringView(@NotNull RefactoringViewAction refactoringViewAction,
+  //first parameter is null - no checkboxes will be shown
+  public void showRefactoringView(@Nullable RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction,
                                   SearchResults searchResults) {
-    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringViewAction, searchResults, this);
+    final RefactoringViewItem refactoringViewItem = new RefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, this);
     myRefactoringViewItems.add(refactoringViewItem);
-    addContent(refactoringViewItem.getComponent(), "refactoring", null, false);
+    String tabCaption = refactoringContext == null ? "refactoring" : refactoringContext.getRefactoring().getUserFriendlyName();
+    addContent(refactoringViewItem.getComponent(), tabCaption, null, false);
     refactoringViewItem.initUsagesView();
     openTool(true);
   }

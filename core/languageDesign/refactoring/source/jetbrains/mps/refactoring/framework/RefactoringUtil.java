@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
 public class RefactoringUtil {
+  private static Logger LOG = Logger.getLogger(RefactoringUtil.class);
+
   public static Map<Class, ILoggableRefactoring> getAllRefactorings() {
     Map<Class, ILoggableRefactoring> allRefactorings = new HashMap<Class, ILoggableRefactoring>();
     List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
@@ -44,10 +47,10 @@ public class RefactoringUtil {
     Map<Class, ILoggableRefactoring> result = new HashMap<Class, ILoggableRefactoring>();
 
     Map<Class, ILoggableRefactoring> refactorings = getAllRefactorings();
-    for (Class refClass:refactorings.keySet()){
+    for (Class refClass : refactorings.keySet()) {
       ILoggableRefactoring refactoring = refactorings.get(refClass);
-      if (refactoring.getRefactoringTarget()==target){
-        result.put(refClass,refactoring);
+      if (refactoring.getRefactoringTarget() == target) {
+        result.put(refClass, refactoring);
       }
     }
     return result;
@@ -87,7 +90,7 @@ public class RefactoringUtil {
     }
 
     return result;
-    
+
   }
 
   private static List<SModel> getLanguageModelsList(MPSProject project, Language l) {
@@ -100,5 +103,18 @@ public class RefactoringUtil {
     Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
     result.put(language, getLanguageModelsList(project, language));
     return result;
-  }  
+  }
+
+  public static boolean isLocalByDefault(RefactoringContext refactoringContext) {
+    LOG.assertCanRead();
+    
+    IModule module = refactoringContext.getSelectedModule();
+    if (module instanceof Language) {
+      Language l = (Language) module;
+      if (l.isBootstrap()) {
+        return false;
+      }
+    }
+    return true;
+  }
 }

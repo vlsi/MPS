@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -26,13 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.11.2007
- * Time: 16:46:26
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring {
   public boolean isApplicable(RefactoringContext refactoringContext) {
     return false;
@@ -44,8 +39,28 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public boolean askForInfo(RefactoringContext refactoringContext) {
-    return isApplicable(refactoringContext);
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    return new ArrayList<IChooseComponent>();
+  }
+
+  public boolean askForInfo(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ModelAccess.instance().runReadAction(new Computable<List<IChooseComponent>>() {
+      public List<IChooseComponent> compute() {
+        return getChooseComponents(refactoringContext);
+      }
+    });
+
+    if (components.isEmpty()) {
+      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return isApplicable(refactoringContext);
+        }
+      });
+    }else{
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
+      dialog.showDialog();
+      return dialog.getResult();
+    }
   }
 
   public String getUserFriendlyName() {
