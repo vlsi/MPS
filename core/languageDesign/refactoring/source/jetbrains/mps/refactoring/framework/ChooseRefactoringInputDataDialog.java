@@ -73,7 +73,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     checkBoxPanelConstraints.gridy = 0;
     checkBoxPanelConstraints.weightx = 0;
     checkBoxPanelConstraints.weighty = 0;
-
+                                                                          
     boolean isLocalByDefault = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         IModule module = refactoringContext.getSelectedModule();
@@ -184,6 +184,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
         JOptionPane.showMessageDialog(this, "refactoring is not applicable");
       }
     } catch (InvalidInputValueException ex) {
+      myResult = false;
       JOptionPane.showMessageDialog(this, ex.getMessage());
     }
   }
