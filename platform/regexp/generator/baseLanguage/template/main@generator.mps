@@ -399,6 +399,9 @@
     <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="1219962514136">
       <link role="applicableConcept" targetNodeId="1.1174662351725" resolveInfo="Regexps" />
     </node>
+    <node role="dropRootRule" type="jetbrains.mps.lang.generator.structure.DropRootRule" id="6154997466876788704">
+      <link role="applicableConcept" targetNodeId="1.1174554406855" resolveInfo="PredefinedSymbolClasses" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1174510782150">
     <property name="name" value="reduce_InlineRegexp" />
