@@ -143,7 +143,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       }
     }
 
-    URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]));
+    URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
     try {
 
       Class<?> whatToGenerateClass = classLoader.loadClass(WhatToGenerate.class.getCanonicalName());
@@ -151,6 +151,13 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       myWhatToGenerate.cloneTo(whatToGenerate);
 
       Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
+      Class<?> projectComponentClass = classLoader.loadClass(ProjectComponent.class.getCanonicalName());
+
+      log("this.getClass().getClassLoader() " + this.getClass().getClassLoader());
+      log("ProjectComponent.class.getClassLoader() " + ProjectComponent.class.getClassLoader());
+      log("whatToGenerateClass.getClassLoader() " + whatToGenerateClass.getClassLoader());
+      log("projectComponentClass.getClassLoader() " + projectComponentClass.getClassLoader());
+
       Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
       Object generator = constructor.newInstance(whatToGenerate, this);
 
@@ -180,7 +187,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
           gatherAllClassesAndJarsUnder(f, result);
         }
       } else {
-        if (f.getName().endsWith(".jar")) {
+        if (f.getName().endsWith(".jar") && !f.getName().contains("ant.jar")) {
           result.add(f);
         }
       }
