@@ -1662,6 +1662,7 @@ public final class SNode {
   }
 
   public synchronized BaseAdapter getAdapter() {
+    LOG.assertCanRead();
     if (myAdapter != null) return myAdapter;
     try {
       Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
