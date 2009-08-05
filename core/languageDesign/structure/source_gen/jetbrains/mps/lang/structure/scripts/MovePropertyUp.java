@@ -29,8 +29,6 @@ import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MovePropertyUp extends AbstractLoggableRefactoring {
@@ -145,26 +143,17 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return new HierarchicalChooseNodeComponent(refactoringContext.getCurrentOperationContext(), new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    boolean result = false;
-    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        {
-          IChooseComponent<SNode> chooseComponent;
-          chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(refactoringContext);
-          chooseComponent.setPropertyName("targetConcept");
-          chooseComponent.setCaption("chooseTargetConcept");
-          chooseComponent.initComponent();
-          ListSequence.fromList(components).addElement(chooseComponent);
-        }
-      }
-    });
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    {
+      IChooseComponent<SNode> chooseComponent;
+      chooseComponent = MovePropertyUp.this.targetConcept_componentCreator(refactoringContext);
+      chooseComponent.setPropertyName("targetConcept");
+      chooseComponent.setCaption("chooseTargetConcept");
+      chooseComponent.initComponent();
+      ListSequence.fromList(components).addElement(chooseComponent);
+    }
+    return components;
   }
 
 

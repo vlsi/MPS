@@ -25,9 +25,7 @@ import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -134,27 +132,18 @@ public class RenameProperty extends AbstractLoggableRefactoring {
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name");
   }
 
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    boolean result = false;
-    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        {
-          IChooseComponent<String> chooseComponent;
-          chooseComponent = new ChooseStringComponent();
-          chooseComponent.setPropertyName("newName");
-          chooseComponent.setCaption("enter new name");
-          chooseComponent.initComponent();
-          chooseComponent.setInitialValue(RenameProperty.this.newName_initialValue(refactoringContext));
-          ListSequence.fromList(components).addElement(chooseComponent);
-        }
-      }
-    });
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    {
+      IChooseComponent<String> chooseComponent;
+      chooseComponent = new ChooseStringComponent();
+      chooseComponent.setPropertyName("newName");
+      chooseComponent.setCaption("enter new name");
+      chooseComponent.initComponent();
+      chooseComponent.setInitialValue(RenameProperty.this.newName_initialValue(refactoringContext));
+      ListSequence.fromList(components).addElement(chooseComponent);
+    }
+    return components;
   }
 
 

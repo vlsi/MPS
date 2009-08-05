@@ -29,9 +29,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Condition;
@@ -245,27 +243,18 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return true;
   }
 
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    boolean result = false;
-    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        {
-          IChooseComponent<SModelDescriptor> chooseComponent;
-          chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
-          chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(refactoringContext));
-          chooseComponent.setPropertyName("targetModel");
-          chooseComponent.setCaption("choose target model");
-          chooseComponent.initComponent();
-          ListSequence.fromList(components).addElement(chooseComponent);
-        }
-      }
-    });
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    {
+      IChooseComponent<SModelDescriptor> chooseComponent;
+      chooseComponent = new ChooseModelDescriptorComponent(refactoringContext.getCurrentOperationContext());
+      chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(refactoringContext));
+      chooseComponent.setPropertyName("targetModel");
+      chooseComponent.setCaption("choose target model");
+      chooseComponent.initComponent();
+      ListSequence.fromList(components).addElement(chooseComponent);
+    }
+    return components;
   }
 
 
