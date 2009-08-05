@@ -151,13 +151,6 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       myWhatToGenerate.cloneTo(whatToGenerate);
 
       Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
-      Class<?> projectComponentClass = classLoader.loadClass(ProjectComponent.class.getCanonicalName());
-
-      log("this.getClass().getClassLoader() " + this.getClass().getClassLoader());
-      log("ProjectComponent.class.getClassLoader() " + ProjectComponent.class.getClassLoader());
-      log("whatToGenerateClass.getClassLoader() " + whatToGenerateClass.getClassLoader());
-      log("projectComponentClass.getClassLoader() " + projectComponentClass.getClassLoader());
-
       Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
       Object generator = constructor.newInstance(whatToGenerate, this);
 
