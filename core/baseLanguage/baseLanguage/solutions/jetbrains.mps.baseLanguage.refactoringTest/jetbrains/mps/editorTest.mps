@@ -4226,5 +4226,54 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1622243561473092614">
+    <property name="package" value="intelligentInputUtil" />
+    <property name="name" value="TypingIncorrectTextInFields" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1622243561473153891">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1622243561473153897">
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1622243561473153898" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1622243561473155030" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1622243561473155031">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="0" />
+          <property name="selectionEnd" value="0" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1622243561473153892" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1622243561473153893">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1622243561473153894" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1622243561473153895" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1622243561473153896" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1622243561473155032">
+      <property name="name" value="Clazz" />
+      <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1622243561473155033">
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1622243561473155034" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1622243561473155035" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1622243561473155042">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="4" />
+          <property name="selectionEnd" value="4" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1622243561473155037" />
+      <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1622243561473155038">
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1622243561473155039" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1622243561473155040" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1622243561473155041" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1622243561473155043">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="1622243561473155044">
+        <property name="keys" value="1234" />
+      </node>
+    </node>
+  </node>
 </model>
 
