@@ -41,6 +41,9 @@ public class AutoResolver extends EditorCheckerAdapter {
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
+    if (rootNode.getModel() == null) {
+      return messages;
+    }
     // disable for transient models
     if (rootNode.getModel().getModelDescriptor().isTransient()) {
       return messages;
