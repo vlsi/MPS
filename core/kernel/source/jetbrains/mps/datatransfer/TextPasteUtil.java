@@ -24,6 +24,9 @@ public class TextPasteUtil {
   public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();
     Transferable content = null;
+    if (! cb.isDataFlavorAvailable(DataFlavor.stringFlavor)) {
+      return null;
+    }
     try {
       content = cb.getContents(null);
     }

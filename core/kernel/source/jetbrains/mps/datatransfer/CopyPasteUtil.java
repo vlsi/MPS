@@ -269,6 +269,10 @@ public class CopyPasteUtil {
       return PasteNodeData.emptyPasteNodeData(module, model);
     }
 
+    if (!cb.isDataFlavorAvailable(SModelDataFlavor.sNode)) {
+      return PasteNodeData.emptyPasteNodeData(module, model);
+    }
+
     Transferable content = null;
     try {
       content = cb.getContents(null);
