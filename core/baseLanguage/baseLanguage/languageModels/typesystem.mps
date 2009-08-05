@@ -18076,5 +18076,33 @@
       <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6658278290515545914">
+    <property name="name" value="typeof_AsExpression" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6658278290515545915">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="6658278290515558277">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6658278290515558281">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1699921845557519054">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1699921845557519053">
+              <link role="applicableNode" targetNodeId="6658278290515545916" resolveInfo="expression" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1699921845557519058">
+              <link role="link" targetNodeId="1.1224071154657" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6658278290515558280">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6658278290515558274">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6658278290515558276">
+              <link role="applicableNode" targetNodeId="6658278290515545916" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6658278290515545916">
+      <property name="name" value="expression" />
+      <link role="concept" targetNodeId="1.1224071154655" resolveInfo="AsExpression" />
+    </node>
+  </node>
 </model>
 
