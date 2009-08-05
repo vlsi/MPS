@@ -214,6 +214,9 @@ public class Generator {
 
       for (IModule module : modules) {
         info("Loaded module " + module);
+
+        if (module.isPackaged()) continue;
+
         List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
         for (SModelDescriptor sm : modelDescriptorList) {
           if (SModelStereotype.isUserModel(sm)){
