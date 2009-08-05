@@ -135,6 +135,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="214376853586011699">
       <link role="intfc" targetNodeId="16.1628770029971140533" resolveInfo="ICheckedNamePolicy" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384724633">
+      <link role="intfc" targetNodeId="6.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197044488852">
     <property name="name" value="IsApplicableBlock" />

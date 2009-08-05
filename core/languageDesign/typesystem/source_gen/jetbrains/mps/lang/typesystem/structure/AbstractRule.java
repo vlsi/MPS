@@ -4,12 +4,13 @@ package jetbrains.mps.lang.typesystem.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractRule extends BaseConcept implements INamedConcept {
+public class AbstractRule extends BaseConcept implements INamedConcept, IConceptAspect {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractRule";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

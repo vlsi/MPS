@@ -4,12 +4,13 @@ package jetbrains.mps.lang.findUsages.structure;
 
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy;
+import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class FinderDeclaration extends AbstractFinderDeclaration implements INamedConcept, ICheckedNamePolicy {
+public class FinderDeclaration extends AbstractFinderDeclaration implements INamedConcept, ICheckedNamePolicy, IConceptAspect {
   public static final String concept = "jetbrains.mps.lang.findUsages.structure.FinderDeclaration";
   public static final String DESCRIPTION = "description";
   public static final String LONG_DESCRIPTION = "longDescription";

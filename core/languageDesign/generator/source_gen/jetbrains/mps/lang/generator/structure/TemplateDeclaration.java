@@ -4,13 +4,14 @@ package jetbrains.mps.lang.generator.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TemplateDeclaration extends BaseConcept implements INamedConcept {
+public class TemplateDeclaration extends BaseConcept implements INamedConcept, IConceptAspect {
   public static final String concept = "jetbrains.mps.lang.generator.structure.TemplateDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

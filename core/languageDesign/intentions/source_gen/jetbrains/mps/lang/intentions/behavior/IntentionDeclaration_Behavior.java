@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_1240406910049 = {SNode.class};
+  private static Class[] PARAMETERS_8952337903384724184 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -47,12 +48,24 @@ public class IntentionDeclaration_Behavior {
     return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
   }
 
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "forConcept", false);
+  }
+
   public static boolean call_isParameterized_1240406910049(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
   }
 
+  public static SNode call_getBaseConcept_8952337903384724184(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724184);
+  }
+
   public static boolean callSuper_isParameterized_1240406910049(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), callerConceptFqName, "virtual_isParameterized_1240406910049", PARAMETERS_1240406910049);
+  }
+
+  public static SNode callSuper_getBaseConcept_8952337903384724184(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724184);
   }
 
 }

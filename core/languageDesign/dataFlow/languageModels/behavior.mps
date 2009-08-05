@@ -27,10 +27,12 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
+  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877268329">
     <property name="package" value="Instructions" />
     <link role="concept" targetNodeId="1.1206443583064" resolveInfo="EmitStatement" />
@@ -76,6 +78,25 @@
     <link role="concept" targetNodeId="1.1206442055221" resolveInfo="DataFlowBuilderDeclaration" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877439995">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877439996" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8952337903384725404">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="4.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8952337903384725405" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8952337903384725406">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8952337903384725416">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8952337903384725417">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8952337903384725418" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8952337903384725419">
+              <link role="link" targetNodeId="1.1206442096288" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8952337903384725407">
+        <link role="concept" targetNodeId="5.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877480940">

@@ -713,5 +713,8 @@
       <link role="intfc" targetNodeId="1.1224608834445" resolveInfo="IDeprecatable" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="2621449412040133764">
+    <property name="name" value="IConceptAspect" />
+  </node>
 </model>
 

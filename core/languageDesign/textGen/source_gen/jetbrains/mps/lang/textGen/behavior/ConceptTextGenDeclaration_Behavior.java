@@ -9,8 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptTextGenDeclaration_Behavior {
+  private static Class[] PARAMETERS_8952337903384725606 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -26,6 +28,18 @@ public class ConceptTextGenDeclaration_Behavior {
 
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return "this";
+  }
+
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
+  }
+
+  public static SNode call_getBaseConcept_8952337903384725606(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
+  }
+
+  public static SNode callSuper_getBaseConcept_8952337903384725606(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
   }
 
 }

@@ -140,6 +140,9 @@
       <property name="role" value="conceptDeclaration" />
       <link role="target" targetNodeId="4.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384725596">
+      <link role="intfc" targetNodeId="4.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233748055915">

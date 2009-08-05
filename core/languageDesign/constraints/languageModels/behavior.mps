@@ -520,5 +520,30 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1227085027460" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8952337903384645665">
+    <link role="concept" targetNodeId="1.1213093968558" resolveInfo="ConceptConstraints" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8952337903384645666">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8952337903384645667" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8952337903384645670">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="13.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8952337903384645671" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8952337903384645672">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8952337903384645678">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8952337903384645680">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8952337903384645679" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8952337903384645684">
+              <link role="link" targetNodeId="1.1213093996982" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8952337903384645673">
+        <link role="concept" targetNodeId="10.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
 </model>
 

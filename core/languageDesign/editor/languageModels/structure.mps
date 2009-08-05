@@ -699,6 +699,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210369064378">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="2621449412040149672">
+      <link role="intfc" targetNodeId="1.2621449412040133764" resolveInfo="ConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1073389214265">
     <property name="name" value="EditorCellModel" />

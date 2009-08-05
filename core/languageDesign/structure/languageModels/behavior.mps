@@ -3992,5 +3992,21 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224848369617" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2621449412040133765">
+    <link role="concept" targetNodeId="1.2621449412040133764" resolveInfo="ConceptAspect" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2621449412040133766">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2621449412040133767" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2621449412040133768">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2621449412040133769" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2621449412040135661">
+        <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2621449412040133771" />
+    </node>
+  </node>
 </model>
 

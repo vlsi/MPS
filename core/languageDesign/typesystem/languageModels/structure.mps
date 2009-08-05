@@ -499,6 +499,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1219697389600">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384830486">
+      <link role="intfc" targetNodeId="3.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174650418652">
     <property name="name" value="ApplicableNodeReference" />

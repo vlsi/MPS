@@ -137,6 +137,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1206442081098">
       <link role="intfc" targetNodeId="5.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8952337903384725403">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206442659665">
     <property name="name" value="BuilderBlock" />
