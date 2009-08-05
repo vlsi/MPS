@@ -214,7 +214,12 @@ public class Generator {
 
       for (IModule module : modules) {
         info("Loaded module " + module);
-        modelDescriptors.addAll(module.getOwnModelDescriptors());
+        List<SModelDescriptor> modelDescriptorList = module.getOwnModelDescriptors();
+        for (SModelDescriptor sm : modelDescriptorList) {
+          if (SModelStereotype.isUserModel(sm)){
+            modelDescriptors.add(sm);
+          }
+        }
 
         if (module instanceof Language) {
           Language language = (Language) module;
