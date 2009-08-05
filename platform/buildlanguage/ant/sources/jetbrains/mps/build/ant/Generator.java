@@ -274,7 +274,15 @@ public class Generator {
 
   private void showStatistic() {
     if (!myErrors.isEmpty() && myWhatToGenerate.getFailOnError()) {
-      throw new BuildException(myErrors.size() + " errors during generation.");
+      StringBuffer sb = new StringBuffer();
+      sb.append(myErrors.size());
+      sb.append(" errors during generation:\n");
+      for (String error : myErrors) {
+        sb.append("    ");
+        sb.append(error);
+        sb.append("\n");
+      }
+      throw new BuildException(sb.toString());
     }
   }
 

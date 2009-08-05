@@ -28,19 +28,19 @@
         <generate/>
     </target>
 
-    <target name="testNormalWork">
+    <target name="testComplexLanguageProject">
         <generate mpshome="${module.home}/../../.." loglevel="info">
             <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
         </generate>
     </target>
 
-    <target name="testNormalWorkWithModels">
+    <target name="testComplexLanguageModels">
         <generate mpshome="${module.home}/../../..">
             <models dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
     </target>
 
-    <target name="testNormalWorkWithModules">
+    <target name="testComplexLanguageModules">
         <generate mpshome="${module.home}/../../..">
             <modules dir="${module.home}/../../../samples/complexLanguage"/>
         </generate>
@@ -68,9 +68,26 @@
         </generate>
     </target>
 
+    <target name="testSamplesProjects">
+        <generate mpshome="${module.home}/../../.." loglevel="info">
+            <project file="${module.home}/../../../samples/agreement/agreement.mpr"/>
+            <project file="${module.home}/../../../samples/calculator/calculator.mpr"/>
+            <project file="${module.home}/../../../samples/calculator-tutorial/calculator-tutorial.mpr"/>
+            <project file="${module.home}/../../../samples/dslbook_example/dslbook_example.mpr"/>
+            <project file="${module.home}/../../../samples/fixedLengthReader/fixedLengthReader.mpr"/>
+            <project file="${module.home}/../../../samples/formulaLanguage/formulaLanguage.mpr"/>
+            <project file="${module.home}/../../../samples/generator_demo/generator_demo.mpr"/>
+            <modules dir="${module.home}/../../../samples/genericLanguage/"/>
+            <project file="${module.home}/../../../samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
+            <project file="${module.home}/../../../samples/sampleXML/sampleXML.mpr"/>
+            <project file="${module.home}/../../../samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
+        </generate>
+    </target>
+
     <target name="testLibraries">
         <property name="mps.webr-dnq" value="${module.home}/../../../../webr-dnq"/>
-        <generate mpshome="${module.home}/../../../../MPS" usepropertiesasmacro="true" failonerror="true">
+        <property name="charisma" value="${module.home}/../../../../charisma"/>
+        <generate mpshome="${module.home}/../../.." usepropertiesasmacro="true" failonerror="true">
             <library name="webr-dnq" dir="${mps.webr-dnq}"/>
             <modules dir="${module.home}/../../../../charisma"/>
         </generate>

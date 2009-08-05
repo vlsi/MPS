@@ -24,20 +24,20 @@ public class GenerateTaskTest extends BuildFileTest {
     configureProject(GenerateTaskTest.class.getResource("test.generate.task.xml").getFile());
   }
 
-  public void testNormalWork() {
-    executeTarget("testNormalWork");
+  public void testComplexLanguageProject() {
+    executeTarget("testComplexLanguageProject");
   }
 
   public void testSuccess() {
     executeTarget("testSuccess");
   }
 
-  public void testNormalWorkWithModels() {
-    executeTarget("testNormalWorkWithModels");
+  public void testComplexLanguageModels() {
+    executeTarget("testComplexLanguageModels");
   }
 
-  public void testNormalWorkWithModules() {
-    executeTarget("testNormalWorkWithModules");
+  public void testComplexLanguageModules() {
+    executeTarget("testComplexLanguageModules");
   }
 
 //  public void testNormalWorkWithLibrary() {
