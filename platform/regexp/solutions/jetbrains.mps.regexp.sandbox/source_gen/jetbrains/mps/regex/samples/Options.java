@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 
   /* package */void test() {
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP11;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
       Matcher _matcher_0 = _pattern_0.matcher("abc");
       if (_matcher_0.matches()) {
       }

@@ -32,7 +32,7 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
     while (SNodeOperations.getParent(top) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(top), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
       top = SNodeOperations.getParent(top);
     }
-    ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true)));
+    ListSequence.fromList(matches).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", true, new String[]{})));
     if (SNodeOperations.isInstanceOf(top, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp")) {
       ListSequence.fromList(matches).addElement(top);
     }

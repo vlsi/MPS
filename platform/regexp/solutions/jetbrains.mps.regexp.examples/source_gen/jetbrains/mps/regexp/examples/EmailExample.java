@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
         System.out.println("Domain = " + _matcher_0.group(2));
       }
     }
-    if (_PrecompiledPatterns.REGEXP1.matcher(emailToAnalyse).matches()) {
+    if (_PrecompiledPatterns.REGEXP6.matcher(emailToAnalyse).matches()) {
       System.out.println("");
     }
   }

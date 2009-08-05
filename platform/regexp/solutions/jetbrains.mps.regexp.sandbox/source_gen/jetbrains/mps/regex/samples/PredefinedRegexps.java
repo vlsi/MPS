@@ -4,7 +4,7 @@ package jetbrains.mps.regex.samples;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import jetbrains.mps.regexp.runtime.RegexpOperations;
+import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
 /* package */class PredefinedRegexps {
 
@@ -15,7 +15,7 @@ import jetbrains.mps.regexp.runtime.RegexpOperations;
       Matcher _matcher_0 = _pattern_0.matcher(s);
       if (_matcher_0.matches()) {
         System.out.println("user = " + _matcher_0.group(1));
-        System.out.println("domain = " + _matcher_0.group(1));
+        System.out.println("domain = " + _matcher_0.group(2));
       }
     }
   }

@@ -24,7 +24,7 @@ import java.util.regex.Matcher;
       Matcher _matcher_0 = _pattern_0.matcher(email);
       if (_matcher_0.matches()) {
         System.out.println("user = " + _matcher_0.group(1));
-        System.out.println("domain = " + _matcher_0.group(1));
+        System.out.println("domain = " + _matcher_0.group(2));
       }
     }
   }

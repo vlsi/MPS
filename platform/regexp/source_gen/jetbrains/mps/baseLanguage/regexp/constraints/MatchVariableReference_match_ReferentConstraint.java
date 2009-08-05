@@ -30,14 +30,14 @@ public class MatchVariableReference_match_ReferentConstraint extends BaseNodeRef
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> matches = new ArrayList<SNode>();
     for(SNode ruc : SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false)) {
-      for(SNode ref : SNodeOperations.getDescendants(ruc, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false)) {
+      for(SNode ref : SNodeOperations.getDescendants(ruc, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
         if (SLinkOperations.getTarget(ref, "regexp", false) != null) {
-          for(SNode mpe : SNodeOperations.getDescendants(SLinkOperations.getTarget(ref, "regexp", false), "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false)) {
+          for(SNode mpe : SNodeOperations.getDescendants(SLinkOperations.getTarget(ref, "regexp", false), "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
             ListSequence.fromList(matches).addElement(mpe);
           }
         }
       }
-      for(SNode mpe : SNodeOperations.getDescendants(ruc, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false)) {
+      for(SNode mpe : SNodeOperations.getDescendants(ruc, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", false, new String[]{})) {
         ListSequence.fromList(matches).addElement(mpe);
       }
     }

@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP7;
       Matcher _matcher_0 = _pattern_0.matcher(test);
       while (_matcher_0.find()) {
-        System.out.println("number = " + _matcher_0.group(0));
+        System.out.println("number = " + _matcher_0.group(1));
       }
     }
   }

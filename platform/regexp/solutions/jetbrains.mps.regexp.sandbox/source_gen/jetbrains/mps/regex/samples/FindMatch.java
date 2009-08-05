@@ -10,10 +10,10 @@ import java.util.regex.Matcher;
   /* package */void main() {
     String s = "abcdef2323";
     {
-      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP10;
+      Pattern _pattern_0 = _PrecompiledPatterns.REGEXP9;
       Matcher _matcher_0 = _pattern_0.matcher(s);
       if (_matcher_0.find()) {
-        System.out.println(_matcher_0.group(0));
+        System.out.println(_matcher_0.group(1));
       }
     }
   }
