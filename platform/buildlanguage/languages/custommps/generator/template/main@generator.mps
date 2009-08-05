@@ -2158,6 +2158,37 @@
             <property name="id" value="d745e97c-8235-4470-b086-ba3da1f4c03c" />
             <property name="name" value="jetbrains.mps.quickQueryLanguage" />
           </node>
+          <node role="entry" type="jetbrains.mps.build.packaging.structure.Jar" id="5360511535677845836">
+            <property name="excludes" value="" />
+            <node role="delete" type="jetbrains.mps.build.packaging.structure.Delete" id="5360511535677845837" />
+            <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="5360511535677845838">
+              <property name="name" value="generate.ant.task.jar" />
+            </node>
+            <node role="entry" type="jetbrains.mps.build.packaging.structure.Copy" id="5360511535677845841">
+              <property name="name" value="" />
+              <property name="excludes" value="" />
+              <property name="includes" value="**/*.class, **/*.xml" />
+              <node role="sourcePath" type="jetbrains.mps.build.packaging.structure.Path" id="5360511535677845842">
+                <node role="macro" type="jetbrains.mps.build.packaging.structure.MacroReference" id="5360511535677845843">
+                  <property name="name" value="mps_home" />
+                </node>
+                <node role="compositePathComponent" type="jetbrains.mps.build.packaging.structure.CompositePathComponent" id="5360511535677845844">
+                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="5360511535677845847">
+                    <property name="path" value="platform" />
+                  </node>
+                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="5360511535677845849">
+                    <property name="path" value="buildlanguage" />
+                  </node>
+                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="5360511535677845851">
+                    <property name="path" value="ant" />
+                  </node>
+                  <node role="pathComponent" type="jetbrains.mps.build.packaging.structure.PathComponent" id="5360511535677845853">
+                    <property name="path" value="classes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="title" type="jetbrains.mps.build.packaging.structure.SimpleString" id="1234971270540">
             <property name="name" value="platform" />
           </node>
@@ -4878,7 +4909,7 @@
     <property name="name" value="MPS-autodist" />
     <property name="startupClass" value="jetbrains.mps.Launcher" />
     <property name="useVMOptionsFile" value="true" />
-    <property name="defaultVMOptions" value="-Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
+    <property name="defaultVMOptions" value="-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8" />
     <property name="additionalVMOptions" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
     <link role="buildScriptConfiguration" targetNodeId="1233857021519" resolveInfo="default" />
     <node role="systemSpecificConfig" type="jetbrains.mps.build.distrib.structure.UniversalConfig" id="1234780843439" />

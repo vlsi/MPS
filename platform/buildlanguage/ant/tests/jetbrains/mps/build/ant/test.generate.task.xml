@@ -70,7 +70,7 @@
 
     <target name="testLibraries">
         <property name="mps.webr-dnq" value="${module.home}/../../../../webr-dnq"/>
-        <generate mpshome="${module.home}/../../.." usepropertiesasmacro="true" failonerror="true">
+        <generate mpshome="${module.home}/../../../../MPS" usepropertiesasmacro="true" failonerror="true">
             <library name="webr-dnq" dir="${mps.webr-dnq}"/>
             <modules dir="${module.home}/../../../../charisma"/>
         </generate>

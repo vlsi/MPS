@@ -93,16 +93,26 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       myMpsHome = new File(mpsHomePath);
     }
 
-    File[] pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
-      new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-      new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
-      new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
-      new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
+    File[] pathsToLook;
+    if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
+      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
+    } else {
+      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
+    }
+
 
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
       if (!path.exists() || !path.isDirectory()) {
-        throw new BuildException("Invalid MPS home path.");
+        throw new BuildException(myMpsHome + " is invalid MPS home path.");
       }
 
       gatherAllClassesAndJarsUnder(path, classPaths);

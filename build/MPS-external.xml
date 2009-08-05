@@ -63,6 +63,7 @@
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <mkdir dir="${deploy.dir}/MPS/core/languageDesign" />
     <mkdir dir="${deploy.dir}/MPS/core" />
+    <mkdir dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <mkdir dir="${deploy.dir}/MPS/plugin" />
     <mkdir dir="${deploy.dir}/MPS/workbench" />
@@ -315,6 +316,13 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.xmlSchema0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.gtext.runtime0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.quickQueryLanguage0" />
+    <copy todir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp">
+      <fileset dir="${mps_home}/platform/buildlanguage/ant/classes" excludes="**/*.iml, **/*.iws" includes="**/*.class, **/*.xml, " />
+    </copy>
+    <jar destfile="${deploy.dir}/MPS/platform/generate.ant.task.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" excludes="**/*.iml, **/*.iws" />
+    </jar>
+    <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/platform" />
     <copy todir="${deploy.dir}/MPS/plugin">
       <fileset dir="${mps_home}/plugin" excludes="**/*.java, **/*.iml, **/*.iws" />
@@ -354,11 +362,12 @@
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
   </target>
   <target name="clean.after" depends="do.the.job">
+    <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
+    <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
   </target>
   <target name="replace0">
     <fail unless="mps_home" message="Property mps_home unspecified." />

@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1216910640246(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false);
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false, new String[]{});
   }
 
   public static Iterable sourceNodesQuery_1216911616611(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
