@@ -40,9 +40,9 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testNormalWorkWithModules");
   }
 
-  public void testNormalWorkWithLibrary() {
-    executeTarget("testLibraries");
-  }
+//  public void testNormalWorkWithLibrary() {
+//    executeTarget("testLibraries");
+//  }
 
   public void testFailOnGeneration() {
     runTestForBuildExceptionOnTarget("testFailOnGenerationError");
