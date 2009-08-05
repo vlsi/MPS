@@ -281,7 +281,6 @@ public class Generator {
       sb.append(myErrors.size());
       sb.append(" errors during generation:\n");
       for (String error : myErrors) {
-        sb.append("    ");
         sb.append(error);
         sb.append("\n");
       }
@@ -382,7 +381,14 @@ public class Generator {
   }
 
   public void log(Exception e) {
-    error(e.getMessage());
+    StringBuffer sb = new StringBuffer(e.getMessage());
+    sb.append("\n");
+    for (StackTraceElement el : e.getStackTrace()) {
+      sb.append("    ");
+      sb.append(el.toString());
+      sb.append("\n");      
+    }
+    error(sb.toString());
   }
 
   public class MyMessageHandlerAppender implements ILoggingHandler {
