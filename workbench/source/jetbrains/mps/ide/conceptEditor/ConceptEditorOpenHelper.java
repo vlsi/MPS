@@ -37,9 +37,7 @@ import jetbrains.mps.ide.IEditor;
 public class ConceptEditorOpenHelper{
   public static SNode getBaseNode(IOperationContext context, SNode node) {
     if (node == null) return null;
-    AbstractConceptDeclaration baseNode = findBaseNodeSingleTab(node);
-    if (baseNode == null) baseNode = findBaseNodeMultiTab(node);
-
+    AbstractConceptDeclaration baseNode = findBaseNodeMultiTab(node);
 
     if (baseNode == null ||
       SModelUtil_new.getDeclaringLanguage(baseNode, context.getScope()) == null ||
@@ -53,20 +51,6 @@ public class ConceptEditorOpenHelper{
 
   private static AbstractConceptDeclaration findBaseNodeMultiTab(SNode node) {
     AbstractConceptDeclaration baseNode = null;
-
-    if (node.getAdapter() instanceof IntentionDeclaration) {
-      baseNode = ((IntentionDeclaration) node.getAdapter()).getForConcept();
-    } else if (node.getAdapter() instanceof FinderDeclaration) {
-      baseNode = ((FinderDeclaration) node.getAdapter()).getForConcept();
-    } else if (node.getAdapter() instanceof TemplateDeclaration) {
-      baseNode = ((TemplateDeclaration) node.getAdapter()).getApplicableConcept();
-    } else if (node.getAdapter() instanceof AbstractRule){
-      AbstractRule rule = (AbstractRule) node.getAdapter();
-      if (rule.getApplicableNode() instanceof ConceptReference){
-        ConceptReference conceptReference = (ConceptReference) rule.getApplicableNode();
-        baseNode = conceptReference.getConcept();
-      }
-    }
 
     //for root templates in generator model
     //can't be inserted into else-if sequence
@@ -89,21 +73,6 @@ public class ConceptEditorOpenHelper{
     if (baseNodeModule != nodeModule) return null;
 
     return baseNode;
-  }
-
-  private static AbstractConceptDeclaration findBaseNodeSingleTab(SNode node) {
-    if (node.getAdapter() instanceof ConceptEditorDeclaration) {
-      return ((ConceptEditorDeclaration) node.getAdapter()).getConceptDeclaration();
-    } else if (node.getAdapter() instanceof ConceptConstraints) {
-      return ((ConceptConstraints) node.getAdapter()).getConcept();
-    } else if (node.getAdapter() instanceof ConceptBehavior) {
-      return ((ConceptBehavior) node.getAdapter()).getConcept();
-    } else if (node.getAdapter() instanceof DataFlowBuilderDeclaration) {
-      return ((DataFlowBuilderDeclaration) node.getAdapter()).getConceptDeclaration();
-    } else if (node.getAdapter() instanceof ConceptTextGenDeclaration) {
-      return ((ConceptTextGenDeclaration) node.getAdapter()).getConceptDeclaration();
-    }
-    return null;
   }
 
   public static boolean canOpen(IOperationContext context, SNode node) {

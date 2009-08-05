@@ -8,6 +8,8 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.editors.MPSEditorOpenHandler;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.ide.conceptEditor.ConceptEditorOpenHelper;
 import jetbrains.mps.ide.IEditor;
 import java.util.List;
@@ -23,7 +25,16 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
 
       public SNode getBaseNode(IOperationContext context, SNode node) {
-        SNode baseNode = ConceptEditorOpenHelper.getBaseNode(context, node);
+        SNode baseNode = null;
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
+          baseNode = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.IConceptAspect"));
+        }
+        if (baseNode == null) {
+          baseNode = ConceptEditorOpenHelper.getBaseNode(context, node);
+        }
+        if (baseNode == null) {
+          return null;
+        }
         if (!(ConceptEditorOpenHelper.canOpen(context, baseNode))) {
           return null;
         }
