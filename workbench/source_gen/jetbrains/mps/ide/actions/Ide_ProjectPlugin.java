@@ -11,6 +11,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.ide.conceptEditor.ConceptEditorOpenHelper;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.IEditor;
 import java.util.List;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
@@ -35,6 +38,33 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
         if (baseNode == null) {
           return null;
         }
+
+
+        // We should be sure that node and base node are inside the same module. 
+        // Otherwise, tabbed editor for base node will be opened, but there will be no tab for "node"
+        // So, the user will not be able to open node by a double-click
+        SModelDescriptor baseModelDescriptor = baseNode.getModel().getModelDescriptor();
+        SModelDescriptor mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
+
+        if (mainModelDescriptor == null) {
+          return null;
+        }
+        if (mainModelDescriptor.getModules().size() != 1) {
+          return null;
+        }
+
+        IModule baseModule = baseModelDescriptor.getModule();
+        IModule mainModule = mainModelDescriptor.getModule();
+
+        if (mainModule instanceof Generator) {
+          mainModule = ((Generator)mainModule).getSourceLanguage();
+        }
+
+        if (baseModule != mainModule) {
+          return null;
+        }
+
+
         if (!(ConceptEditorOpenHelper.canOpen(context, baseNode))) {
           return null;
         }
