@@ -711,6 +711,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     String modelName = NameUtil.namespaceFromLongName(fqName);
     String rootName = NameUtil.shortNameFromLongName(fqName);
     Language language = context.getScope().getLanguage(NameUtil.namespaceFromLongName(modelName));
+    if (language == null) {
+      return null;
+    }
     SModelDescriptor sm = language.getConstraintsModelDescriptor();
     if (sm == null) return null;
     SNode root = sm.getSModel().getRootByName(rootName);
