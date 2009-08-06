@@ -159,9 +159,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
-    return result;
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode)refactoringContext.getParameter("nodeToOpen")));
   }
 
   public boolean doesUpdateModel() {
