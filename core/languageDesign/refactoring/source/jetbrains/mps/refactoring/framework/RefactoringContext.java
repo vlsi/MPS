@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -81,6 +80,8 @@ public class RefactoringContext {
   private IScope myCurrentScope;
   private MPSProject mySelectedMPSProject;
   private IModule mySelectedModule;
+  private List<SModelDescriptor> mySelectedModels;
+  private List<IModule> mySelectedModules;
 
   //-----------------
 
@@ -639,20 +640,52 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  public void setSelectedModel(SModelDescriptor selectedModel) {
-    mySelectedModel = selectedModel;
+  public SNode getSelectedNode() {
+    return mySelectedNode;
   }
 
   public void setSelectedNode(SNode selectedNode) {
     mySelectedNode = selectedNode;
   }
 
+  public List<SNode> getSelectedNodes() {
+    return new ArrayList<SNode>(mySelectedNodes);
+  }
+
   public void setSelectedNodes(List<SNode> selectedNodes) {
     mySelectedNodes = selectedNodes;
   }
 
+  public SModelDescriptor getSelectedModel() {
+    return mySelectedModel;
+  }
+
+  public void setSelectedModel(SModelDescriptor selectedModel) {
+    mySelectedModel = selectedModel;
+  }
+
+  public List<SModelDescriptor> getSelectedModels() {
+    return mySelectedModels;
+  }
+
+  public void setSelectedModels(List<SModelDescriptor> selectedModels) {
+    mySelectedModels = selectedModels;
+  }
+
+  public IModule getSelectedModule() {
+    return mySelectedModule;
+  }
+
   public void setSelectedModule(IModule selectedModule) {
     mySelectedModule = selectedModule;
+  }
+
+  public List<IModule> getSelectedModules() {
+    return mySelectedModules;
+  }
+
+  public void setSelectedModules(List<IModule> modules) {
+    mySelectedModules = modules;
   }
 
   public void setSelectedMPSProject(MPSProject selectedMPSProject) {
@@ -665,22 +698,6 @@ public class RefactoringContext {
 
   public void setCurrentOperationContext(IOperationContext currentOperationContext) {
     myCurrentOperationContext = currentOperationContext;
-  }
-
-  public SModelDescriptor getSelectedModel() {
-    return mySelectedModel;
-  }
-
-  public SNode getSelectedNode() {
-    return mySelectedNode;
-  }
-
-  public List<SNode> getSelectedNodes() {
-    return new ArrayList<SNode>(mySelectedNodes);
-  }
-
-  public IModule getSelectedModule() {
-    return mySelectedModule;
   }
 
   public MPSProject getSelectedMPSProject() {
