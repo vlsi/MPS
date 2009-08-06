@@ -21,13 +21,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
   public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext) {
     List<SNode> memberTypes = ListSequence.fromList(new ArrayList<SNode>());
     for(SNode mbr : SLinkOperations.getTargets(tuple, "component", true)) {
-      final SNode mt_typevar_1238854189111 = typeCheckingContext.createNewRuntimeTypesVariable();
-      {
-        SNode _nodeToCheck_1029348928467 = mbr;
-        BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(mt_typevar_1238854189111), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854201099", true), _nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854196373", intentionProvider);
-      }
-      ListSequence.fromList(memberTypes).addElement(typeCheckingContext.getEquationManager().getRepresentator(mt_typevar_1238854189111));
+      ListSequence.fromList(memberTypes).addElement(typeCheckingContext.typeOf(mbr, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "974579920306587589", true));
     }
     {
       SNode _nodeToCheck_1029348928467 = tuple;
