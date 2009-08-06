@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -27,8 +29,6 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.Condition;
 
 public class MoveConcepts extends BaseGeneratedRefactoring {
@@ -73,11 +73,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
@@ -231,10 +227,6 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
 
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {

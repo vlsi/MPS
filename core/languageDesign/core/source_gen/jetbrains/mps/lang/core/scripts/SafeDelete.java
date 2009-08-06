@@ -6,13 +6,13 @@ import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDelete extends BaseGeneratedRefactoring {
 
@@ -40,11 +40,7 @@ public class SafeDelete extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.core.structure.BaseConcept";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
@@ -64,17 +60,9 @@ public class SafeDelete extends BaseGeneratedRefactoring {
     SNodeOperations.deleteNode(node);
   }
 
-  public boolean doesUpdateModel() {
-    return false;
-  }
-
 
   public static String getKeyStroke_static() {
     return "alt DELETE";
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
 }

@@ -6,10 +6,12 @@ import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
@@ -20,8 +22,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDeleteLink extends BaseGeneratedRefactoring {
   public static final String sourceLanguage = "sourceLanguage";
@@ -47,11 +47,7 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
@@ -92,10 +88,6 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
 
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
 
 }

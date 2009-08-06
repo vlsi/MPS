@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -24,7 +25,6 @@ import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MovePropertyUp extends BaseGeneratedRefactoring {
   public static final String targetConcept = "targetConcept";
@@ -62,18 +62,10 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
-  public boolean showsAffectedNodes() {
     return false;
   }
 
@@ -126,10 +118,6 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
 
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
 
 }

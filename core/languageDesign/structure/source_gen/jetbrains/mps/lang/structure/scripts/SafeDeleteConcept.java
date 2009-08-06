@@ -6,6 +6,9 @@ import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -16,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
@@ -24,8 +26,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SafeDeleteConcept extends BaseGeneratedRefactoring {
   public static final String nodeAspects = "nodeAspects";
@@ -51,11 +51,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
@@ -105,17 +101,9 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
     return result;
   }
 
-  public boolean doesUpdateModel() {
-    return false;
-  }
-
 
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
 }

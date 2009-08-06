@@ -7,6 +7,8 @@ import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
@@ -16,8 +18,6 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Rename extends BaseGeneratedRefactoring {
   public static final String newName = "newName";
@@ -49,11 +49,7 @@ public class Rename extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
-    return isApplicableWRTConcept_static(node);
-  }
-
-  public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.core.structure.INamedConcept";
+    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"));
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
@@ -71,10 +67,6 @@ public class Rename extends BaseGeneratedRefactoring {
   public void doRefactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     node.setName(((String)refactoringContext.getParameter("newName")));
-  }
-
-  public boolean doesUpdateModel() {
-    return false;
   }
 
   public String newName_initialValue(final RefactoringContext refactoringContext) {
@@ -98,10 +90,6 @@ public class Rename extends BaseGeneratedRefactoring {
 
   public static String getKeyStroke_static() {
     return "shift F6";
-  }
-
-  public static boolean isApplicableWRTConcept_static(SNode node) {
-    return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"));
   }
 
 }
