@@ -7,6 +7,9 @@ import org.junit.Test;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import junit.framework.Assert;
+import jetbrains.mps.baseLanguage.tuples.util.A;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IndexedTuples_Test extends TestCase {
 
@@ -84,6 +87,17 @@ public class IndexedTuples_Test extends TestCase {
     tpl1._1('b');
     Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
     Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
+  }
+
+  @Test()
+  public void test_mps5466() throws Exception {
+    Iterable<Tuples._2<String, String>> seq = A.foo();
+    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter <Tuples._2<String, String>>() {
+
+      public boolean accept(Tuples._2<String, String> it) {
+        return it._1() != null;
+      }
+    }).count());
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {

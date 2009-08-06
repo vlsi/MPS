@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.tuples.test;
 
 public interface TupleIface <T> {
 
-  public abstract int value();
-
-  public abstract T anotherValue();
-
+  public int value();
+  public T anotherValue();
 }
