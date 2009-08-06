@@ -123,14 +123,9 @@ public class SetNodePackage_Action extends GeneratedAction {
           for(SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
             node.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SetNodePackage_Action.this.scope);
-              if (behavior != null) {
-                behavior.setProperty(SModelTreeNode.PACK, dialog.getPackage());
+              for(SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SetNodePackage_Action.this.scope))) {
+                aspect.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
-            }
-            SNode editor = AbstractConceptDeclaration_Behavior.call_findEditor_6409339300305624772(node, SetNodePackage_Action.this.scope);
-            if (editor != null) {
-              editor.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             }
           }
         }
