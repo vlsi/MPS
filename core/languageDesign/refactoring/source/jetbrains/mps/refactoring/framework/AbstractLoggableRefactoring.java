@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//do not merge this class with BaseGeneratedRefactoring - this is for compatibility
 public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring {
   public String getUserFriendlyName() {
     return null;
@@ -82,7 +83,7 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   }
 
   public boolean isApplicableToModel(SModelDescriptor model) {
-    return false;
+    return true;
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
