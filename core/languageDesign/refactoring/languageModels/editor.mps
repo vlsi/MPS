@@ -242,11 +242,8 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1209560508655">
         <property name="vertical" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1209560443977">
-          <property name="text" value="is applicable to model:" />
-        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1209560466542">
-          <property name="noTargetText" value="always" />
+          <property name="noTargetText" value="&lt;applicable to model: always&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1209559230153" />
         </node>
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1209560516485">
@@ -304,12 +301,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1189695260306">
-        <property name="text" value="is applicable:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1189695272854">
-        <property name="noTargetText" value="always" />
+        <property name="noTargetText" value="&lt;applicability: always&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1189695159409" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200932710805">
@@ -317,12 +310,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1200932713651">
-        <property name="text" value="affected nodes:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1200932722934">
-        <property name="noTargetText" value="none" />
+        <property name="noTargetText" value="&lt;affected nodes: none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1200932683928" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1189695284621">
@@ -349,12 +338,7 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1189695293685">
-        <property name="text" value="do refactor:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1189695303186">
-        <property name="noTargetText" value="none" />
         <link role="relationDeclaration" targetNodeId="1.1189695170518" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213091827443">
@@ -363,12 +347,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1213091817425">
-        <property name="text" value="nodes to open:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1213091841992">
-        <property name="noTargetText" value="none" />
+        <property name="noTargetText" value="&lt;nodes to open: none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1213091780734" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1191591986713">
@@ -376,12 +356,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1191592020355">
-        <property name="text" value="get models to generate:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1191592037295">
-        <property name="noTargetText" value="none" />
+        <property name="noTargetText" value="&lt;models to generate: none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1191591935289" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210941502640">
@@ -389,12 +365,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1210941505002">
-        <property name="text" value="get additional models to update:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1210941805989">
-        <property name="noTargetText" value="none" />
+        <property name="noTargetText" value="&lt;additional models to update: none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1210941681117" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1189695305376">
@@ -402,12 +374,8 @@
           <property name="flag" value="false" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1189695311659">
-        <property name="text" value="update model:" />
-        <link role="styleClass" targetNodeId="4.1186415544875" resolveInfo="KeyWord" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1189695320894">
-        <property name="noTargetText" value="none" />
+        <property name="noTargetText" value="&lt;update model&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1189695176456" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239880386954" />
