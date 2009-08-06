@@ -70,21 +70,19 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    {
-      if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
+    if (ListSequence.fromList(refactoringContext.getSelectedNodes()).isEmpty()) {
+      return false;
+    }
+    SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
+    for(SNode node : refactoringContext.getSelectedNodes()) {
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         return false;
       }
-      SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
-      for(SNode node : refactoringContext.getSelectedNodes()) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-          return false;
-        }
-        if (SNodeOperations.getModel(node) != model) {
-          return false;
-        }
+      if (SNodeOperations.getModel(node) != model) {
+        return false;
       }
-      return true;
     }
+    return true;
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -104,139 +102,125 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    {
-      SearchResults searchResults = new SearchResults();
-      for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
-        searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-      }
-      return searchResults;
+    SearchResults searchResults = new SearchResults();
+    for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
+    return searchResults;
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
-      refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
-      Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
-      Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      List<SNode> editors = new ArrayList<SNode>();
-      List<SNode> behaviors = new ArrayList<SNode>();
-      List<SNode> constraints = new ArrayList<SNode>();
-      List<SNode> dataFlows = new ArrayList<SNode>();
-      // collecting editors:
-      SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
-      if (editorModelDescriptor != null) {
-        for(SNode node : nodes) {
-          SNode editor = RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
-          if (editor != null) {
-            ListSequence.fromList(editors).addElement(editor);
-          }
-        }
-      }
-      // collecting behaviors:
-      SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
-      if (behaviorModelDescriptor != null) {
-        for(SNode node : nodes) {
-          SNode behavior = RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
-          if (behavior != null) {
-            ListSequence.fromList(behaviors).addElement(behavior);
-          }
-        }
-      }
-      // collecting constraints:
-      SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
-      if (constraintsModelDescriptor != null) {
-        for(SNode node : nodes) {
-          SNode constraint = RefUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
-          if (constraint != null) {
-            ListSequence.fromList(constraints).addElement(constraint);
-          }
-        }
-      }
-      // collecting data flow:
-      SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
-      if (dataflowModelDescriptor != null) {
-        for(SNode node : nodes) {
-          SNode dataFlow = RefUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
-          if (dataFlow != null) {
-            ListSequence.fromList(dataFlows).addElement(dataFlow);
-          }
-        }
-      }
-      // refactoring itself
+    List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
+    refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
+    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
+    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
+    List<SNode> editors = new ArrayList<SNode>();
+    List<SNode> behaviors = new ArrayList<SNode>();
+    List<SNode> constraints = new ArrayList<SNode>();
+    List<SNode> dataFlows = new ArrayList<SNode>();
+    // collecting editors:
+    SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
+    if (editorModelDescriptor != null) {
       for(SNode node : nodes) {
-        refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
-      }
-      refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
-      if (ListSequence.fromList(editors).isNotEmpty()) {
-        SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
-        if (targetEditorModelDescriptor == null) {
-          targetEditorModelDescriptor = LanguageAspect.EDITOR.createNew(targetLanguage);
+        SNode editor = RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
+        if (editor != null) {
+          ListSequence.fromList(editors).addElement(editor);
         }
-        SModel editorModel = targetEditorModelDescriptor.getSModel();
-        refactoringContext.moveNodesToModel(editors, editorModel);
-        refactoringContext.computeCaches();
-        refactoringContext.updateModelWithMaps(editorModel);
       }
-      if (ListSequence.fromList(behaviors).isNotEmpty()) {
-        SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
-        if (targetBehaviorModelDescriptor == null) {
-          targetBehaviorModelDescriptor = LanguageAspect.BEHAVIOR.createNew(targetLanguage);
-        }
-        SModel behaviorModel = targetBehaviorModelDescriptor.getSModel();
-        refactoringContext.moveNodesToModel(behaviors, behaviorModel);
-        refactoringContext.computeCaches();
-        refactoringContext.updateModelWithMaps(behaviorModel);
-      }
-      if (ListSequence.fromList(constraints).isNotEmpty()) {
-        SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
-        if (targetConstraintsModelDescriptor == null) {
-          targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
-        }
-        SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
-        refactoringContext.moveNodesToModel(constraints, constraintsModel);
-        refactoringContext.computeCaches();
-        refactoringContext.updateModelWithMaps(constraintsModel);
-      }
-      if (ListSequence.fromList(dataFlows).isNotEmpty()) {
-        SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
-        if (targetDataFlowModelDescriptor == null) {
-          targetDataFlowModelDescriptor = LanguageAspect.DATA_FLOW.createNew(targetLanguage);
-        }
-        SModel dataFlowModel = targetDataFlowModelDescriptor.getSModel();
-        refactoringContext.moveNodesToModel(dataFlows, dataFlowModel);
-        refactoringContext.computeCaches();
-        refactoringContext.updateModelWithMaps(dataFlowModel);
-      }
-      // todo: move other concept-related aspect stuff
     }
+    // collecting behaviors:
+    SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
+    if (behaviorModelDescriptor != null) {
+      for(SNode node : nodes) {
+        SNode behavior = RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
+        if (behavior != null) {
+          ListSequence.fromList(behaviors).addElement(behavior);
+        }
+      }
+    }
+    // collecting constraints:
+    SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
+    if (constraintsModelDescriptor != null) {
+      for(SNode node : nodes) {
+        SNode constraint = RefUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
+        if (constraint != null) {
+          ListSequence.fromList(constraints).addElement(constraint);
+        }
+      }
+    }
+    // collecting data flow:
+    SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
+    if (dataflowModelDescriptor != null) {
+      for(SNode node : nodes) {
+        SNode dataFlow = RefUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
+        if (dataFlow != null) {
+          ListSequence.fromList(dataFlows).addElement(dataFlow);
+        }
+      }
+    }
+    // refactoring itself
+    for(SNode node : nodes) {
+      refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
+    }
+    refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
+    if (ListSequence.fromList(editors).isNotEmpty()) {
+      SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
+      if (targetEditorModelDescriptor == null) {
+        targetEditorModelDescriptor = LanguageAspect.EDITOR.createNew(targetLanguage);
+      }
+      SModel editorModel = targetEditorModelDescriptor.getSModel();
+      refactoringContext.moveNodesToModel(editors, editorModel);
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(editorModel);
+    }
+    if (ListSequence.fromList(behaviors).isNotEmpty()) {
+      SModelDescriptor targetBehaviorModelDescriptor = targetLanguage.getBehaviorModelDescriptor();
+      if (targetBehaviorModelDescriptor == null) {
+        targetBehaviorModelDescriptor = LanguageAspect.BEHAVIOR.createNew(targetLanguage);
+      }
+      SModel behaviorModel = targetBehaviorModelDescriptor.getSModel();
+      refactoringContext.moveNodesToModel(behaviors, behaviorModel);
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(behaviorModel);
+    }
+    if (ListSequence.fromList(constraints).isNotEmpty()) {
+      SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
+      if (targetConstraintsModelDescriptor == null) {
+        targetConstraintsModelDescriptor = LanguageAspect.CONSTRAINTS.createNew(targetLanguage);
+      }
+      SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
+      refactoringContext.moveNodesToModel(constraints, constraintsModel);
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(constraintsModel);
+    }
+    if (ListSequence.fromList(dataFlows).isNotEmpty()) {
+      SModelDescriptor targetDataFlowModelDescriptor = targetLanguage.getDataFlowModelDescriptor();
+      if (targetDataFlowModelDescriptor == null) {
+        targetDataFlowModelDescriptor = LanguageAspect.DATA_FLOW.createNew(targetLanguage);
+      }
+      SModel dataFlowModel = targetDataFlowModelDescriptor.getSModel();
+      refactoringContext.moveNodesToModel(dataFlows, dataFlowModel);
+      refactoringContext.computeCaches();
+      refactoringContext.updateModelWithMaps(dataFlowModel);
+    }
+    // todo: move other concept-related aspect stuff
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    {
-      Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-      Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
-      if (sourceLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
-      }
-      Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
-      if (targetLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
-      }
-      return result;
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
+    if (sourceLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
+    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
+    if (targetLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
+    }
+    return result;
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

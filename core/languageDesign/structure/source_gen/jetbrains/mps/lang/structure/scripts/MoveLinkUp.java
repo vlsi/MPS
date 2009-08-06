@@ -27,11 +27,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MoveLinkUp extends AbstractLoggableRefactoring {
@@ -68,17 +68,15 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
-        return false;
-      }
-      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-      if (concept == null) {
-        return false;
-      }
-      return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
+    SNode node = refactoringContext.getSelectedNode();
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))) {
+      return false;
     }
+    SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    if (concept == null) {
+      return false;
+    }
+    return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -102,38 +100,26 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      SNode linkDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-      refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
-      refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
-    }
+    SNode linkDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
+    refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    {
-      Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-      if (sourceLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
-      }
-      Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
-      if (targetLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
-      }
-      return result;
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    if (sourceLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
+    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
+    if (targetLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
+    }
+    return result;
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

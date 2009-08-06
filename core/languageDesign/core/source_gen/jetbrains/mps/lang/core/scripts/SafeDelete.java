@@ -15,14 +15,6 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Map;
-import jetbrains.mps.project.IModule;
-import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -58,13 +50,11 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      if (node == null) {
-        return false;
-      }
-      return true;
+    SNode node = refactoringContext.getSelectedNode();
+    if (node == null) {
+      return false;
     }
+    return true;
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -88,25 +78,8 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      SNodeOperations.deleteNode(node);
-    }
-  }
-
-  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
-  }
-
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    SNode node = refactoringContext.getSelectedNode();
+    SNodeOperations.deleteNode(node);
   }
 
   public boolean doesUpdateModel() {

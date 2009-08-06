@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -24,11 +23,11 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MovePropertyUp extends AbstractLoggableRefactoring {
@@ -65,17 +64,15 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
-        return false;
-      }
-      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-      if (concept == null) {
-        return false;
-      }
-      return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
+    SNode node = refactoringContext.getSelectedNode();
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"))) {
+      return false;
     }
+    SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
+    if (concept == null) {
+      return false;
+    }
+    return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
   }
 
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
@@ -94,43 +91,27 @@ public class MovePropertyUp extends AbstractLoggableRefactoring {
     return false;
   }
 
-  public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    return null;
-  }
-
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
-      SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
-      refactoringContext.changeFeatureName(propertyDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(propertyDeclaration, "name"));
-    }
+    refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
+    SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    refactoringContext.changeFeatureName(propertyDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(propertyDeclaration, "name"));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    {
-      Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-      if (sourceLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
-      }
-      Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
-      if (targetLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
-      }
-      return result;
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    if (sourceLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
+    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
+    if (targetLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
+    }
+    return result;
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

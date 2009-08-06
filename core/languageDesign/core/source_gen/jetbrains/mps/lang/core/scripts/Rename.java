@@ -15,18 +15,11 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Map;
-import jetbrains.mps.project.IModule;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
+import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -94,25 +87,8 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      node.setName(((String)refactoringContext.getParameter("newName")));
-    }
-  }
-
-  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
-  }
-
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    SNode node = refactoringContext.getSelectedNode();
+    node.setName(((String)refactoringContext.getParameter("newName")));
   }
 
   public boolean doesUpdateModel() {
@@ -123,27 +99,18 @@ public class Rename extends AbstractLoggableRefactoring {
     return refactoringContext.getSelectedNode().getName();
   }
 
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    boolean result = false;
-    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        {
-          IChooseComponent<String> chooseComponent;
-          chooseComponent = new ChooseStringComponent();
-          chooseComponent.setPropertyName("newName");
-          chooseComponent.setCaption("new name:");
-          chooseComponent.initComponent();
-          chooseComponent.setInitialValue(Rename.this.newName_initialValue(refactoringContext));
-          ListSequence.fromList(components).addElement(chooseComponent);
-        }
-      }
-    });
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    {
+      IChooseComponent<String> chooseComponent;
+      chooseComponent = new ChooseStringComponent();
+      chooseComponent.setPropertyName("newName");
+      chooseComponent.setCaption("new name:");
+      chooseComponent.initComponent();
+      chooseComponent.setInitialValue(Rename.this.newName_initialValue(refactoringContext));
+      ListSequence.fromList(components).addElement(chooseComponent);
+    }
+    return components;
   }
 
 

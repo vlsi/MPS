@@ -8,10 +8,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -24,8 +24,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -62,10 +60,6 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
     return SafeDelete.class;
   }
 
-  public boolean isApplicable(RefactoringContext refactoringContext) {
-    return true;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
   }
@@ -88,33 +82,21 @@ public class SafeDeleteLink extends AbstractLoggableRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      SNode node = refactoringContext.getSelectedNode();
-      refactoringContext.deleteFeature(node);
-    }
+    SNode node = refactoringContext.getSelectedNode();
+    refactoringContext.deleteFeature(node);
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    {
-      Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-      if (sourceLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
-      }
-      return result;
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    if (sourceLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
+    return result;
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateModelWithMaps(model);
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
   }
 
   public boolean doesUpdateModel() {

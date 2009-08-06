@@ -8,10 +8,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -64,10 +64,6 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
     return SafeDelete.class;
   }
 
-  public boolean isApplicable(RefactoringContext refactoringContext) {
-    return true;
-  }
-
   public boolean isApplicableToModel(SModelDescriptor modelDescriptor) {
     return true;
   }
@@ -85,28 +81,26 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    {
-      // all usages excluding concept's aspects
-      refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode(), GlobalScope.getInstance()));
+    // all usages excluding concept's aspects
+    refactoringContext.setParameter("nodeAspects", AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(refactoringContext.getSelectedNode(), GlobalScope.getInstance()));
 
-      SearchResults searchResults = new SearchResults();
-      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-      for(SNode aspect : ListSequence.fromList(((List<SNode>)((List)refactoringContext.getParameter("nodeAspects"))))) {
-        searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-      }
-
-      List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
-      List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
-
-      for(SearchResult<SNode> searchResult : searchResultsCopy) {
-        SNode containingRoot = searchResult.getObject().getContainingRoot();
-        if (((List)refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
-          searchResults.remove(searchResult);
-        }
-      }
-
-      return searchResults;
+    SearchResults searchResults = new SearchResults();
+    searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
+    for(SNode aspect : ListSequence.fromList(((List<SNode>)((List)refactoringContext.getParameter("nodeAspects"))))) {
+      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
+
+    List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
+    List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
+
+    for(SearchResult<SNode> searchResult : searchResultsCopy) {
+      SNode containingRoot = searchResult.getObject().getContainingRoot();
+      if (((List)refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
+        searchResults.remove(searchResult);
+      }
+    }
+
+    return searchResults;
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
@@ -117,25 +111,12 @@ public class SafeDeleteConcept extends AbstractLoggableRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    {
-      Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-      Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
-      if (sourceLanguage != null) {
-        MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
-      }
-      return result;
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
+    if (sourceLanguage != null) {
+      MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
-  }
-
-  public void updateModel(SModel model, final RefactoringContext refactoringContext) {
-  }
-
-  public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return new ArrayList<SNode>();
+    return result;
   }
 
   public boolean doesUpdateModel() {

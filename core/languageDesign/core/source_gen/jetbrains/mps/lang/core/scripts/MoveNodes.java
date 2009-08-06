@@ -33,14 +33,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
 import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
@@ -148,48 +143,36 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    {
-      SearchResults searchResults = new SearchResults();
-      for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
-        searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-      }
-      return searchResults;
+    SearchResults searchResults = new SearchResults();
+    for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+      searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
+    return searchResults;
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    {
-      List<SNode> nodes = refactoringContext.getSelectedNodes();
-      SModel targetModel = null;
-      List<SNode> movedNodes = null;
-      if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-        targetModel = ((SModelDescriptor)((Object)refactoringContext.getParameter("target"))).getSModel();
-        movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
-      }
-      if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
-        SNode targetNode = (SNode)((Object)refactoringContext.getParameter("target"));
-        movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
-        targetModel = SNodeOperations.getModel(targetNode);
-      }
-      if (targetModel != null) {
-        IModule module = targetModel.getModelDescriptor().getModule();
-        MPSProject project = refactoringContext.getSelectedMPSProject();
-        if (project != null) {
-          final IOperationContext operationContext = new ModuleContext(module, project);
-          if (operationContext != null) {
-            refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
-          }
+    List<SNode> nodes = refactoringContext.getSelectedNodes();
+    SModel targetModel = null;
+    List<SNode> movedNodes = null;
+    if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+      targetModel = ((SModelDescriptor)((Object)refactoringContext.getParameter("target"))).getSModel();
+      movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
+    }
+    if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
+      SNode targetNode = (SNode)((Object)refactoringContext.getParameter("target"));
+      movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
+      targetModel = SNodeOperations.getModel(targetNode);
+    }
+    if (targetModel != null) {
+      IModule module = targetModel.getModelDescriptor().getModule();
+      MPSProject project = refactoringContext.getSelectedMPSProject();
+      if (project != null) {
+        final IOperationContext operationContext = new ModuleContext(module, project);
+        if (operationContext != null) {
+          refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
         }
       }
     }
-  }
-
-  public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    return MapSequence.fromMap(new HashMap<IModule, List<SModel>>());
-  }
-
-  public List<SModel> getModelsToUpdate(final RefactoringContext refactoringContext) {
-    return ListSequence.fromList(new ArrayList<SModel>());
   }
 
   public void updateModel(SModel model, final RefactoringContext refactoringContext) {
@@ -197,11 +180,9 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    {
-      List<SNode> result = new ArrayList<SNode>();
-      ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
-      return result;
-    }
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addElement(((SNode)refactoringContext.getParameter("nodeToOpen")));
+    return result;
   }
 
   public boolean doesUpdateModel() {
@@ -212,26 +193,17 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     return new ChooseNodeOrModelComponent(refactoringContext.getCurrentOperationContext(), null, true, true);
   }
 
-  public boolean askForInfo(final RefactoringContext refactoringContext) {
-    boolean result = false;
-    final List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-
-      public void run() {
-        {
-          IChooseComponent<Object> chooseComponent;
-          chooseComponent = MoveNodes.this.target_componentCreator(refactoringContext);
-          chooseComponent.setPropertyName("target");
-          chooseComponent.setCaption("choose target");
-          chooseComponent.initComponent();
-          ListSequence.fromList(components).addElement(chooseComponent);
-        }
-      }
-    });
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+  public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
+    List<IChooseComponent> components = ListSequence.fromList(new ArrayList<IChooseComponent>());
+    {
+      IChooseComponent<Object> chooseComponent;
+      chooseComponent = MoveNodes.this.target_componentCreator(refactoringContext);
+      chooseComponent.setPropertyName("target");
+      chooseComponent.setCaption("choose target");
+      chooseComponent.initComponent();
+      ListSequence.fromList(components).addElement(chooseComponent);
+    }
+    return components;
   }
 
 
