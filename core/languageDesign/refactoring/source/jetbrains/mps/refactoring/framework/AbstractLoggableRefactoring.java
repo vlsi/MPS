@@ -78,10 +78,6 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return false;
   }
 
-  public String getApplicableConceptFQName() {
-    return "";
-  }
-
   public boolean isApplicableToModel(SModelDescriptor model) {
     return true;
   }
@@ -95,7 +91,7 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   }
 
   public boolean doesUpdateModel() {
-    return true;
+    return false;
   }
 
   public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {

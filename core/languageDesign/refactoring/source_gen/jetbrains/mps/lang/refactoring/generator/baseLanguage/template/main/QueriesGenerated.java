@@ -88,22 +88,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199466527696(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode conceptDeclaration = SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
-    if (conceptDeclaration == null) {
-      return null;
-    }
-    return SNodeOperations.getModel(conceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1200921209509(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true) != null);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1200932997723(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1210941980901(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }
@@ -155,7 +139,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(classifierType, "classifier", false);
   }
 
-  public static Object referenceMacro_GetReferent_6630638345814607149(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6528618226609334501(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false);
   }
 
@@ -257,6 +241,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1789893890062507458(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "overrides", false) != null);
+  }
+
+  public static boolean ifMacro_Condition_6528618226609334511(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false) != null);
+  }
+
+  public static boolean ifMacro_Condition_6528618226609334567(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_6528618226609334578(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "updateModelClause", true) != null);
   }
 
   public static boolean ifMacro_Condition_7110754463748604074(final IOperationContext operationContext, final IfMacroContext _context) {
