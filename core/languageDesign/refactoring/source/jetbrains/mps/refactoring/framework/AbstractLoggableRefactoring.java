@@ -29,14 +29,20 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring {
-  public boolean isApplicable(RefactoringContext refactoringContext) {
-    return false;
+  public String getUserFriendlyName() {
+    return null;
   }
 
-  public void doRefactor(RefactoringContext refactoringContext) {
+  public String getKeyStroke() {
+    return "";
   }
 
-  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+  public Class getOverridenRefactoringClass() {
+    return null;
+  }
+
+  public RefactoringTarget getRefactoringTarget() {
+    return RefactoringTarget.NODE;
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {
@@ -56,19 +62,15 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
           return isApplicable(refactoringContext);
         }
       });
-    }else{
+    } else {
       ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, refactoringContext, components);
       dialog.showDialog();
       return dialog.getResult();
     }
   }
 
-  public String getUserFriendlyName() {
-    return null;
-  }
-
-  public String getKeyStroke() {
-    return "";
+  public boolean isApplicable(RefactoringContext refactoringContext) {
+    return true;
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
@@ -83,32 +85,20 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return false;
   }
 
-  public boolean isApplicableToModel() {
+  public boolean refactorImmediatelyIfNoUsages() {
     return false;
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
-    return new HashMap<IModule, List<SModel>>();
-  }
+  public void doRefactor(RefactoringContext refactoringContext) {
 
-  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
-    return new ArrayList<SModel>();
-  }
-
-  public Class getOverridenRefactoringClass() {
-    return null;
-  }
-
-  public RefactoringTarget getRefactoringTarget() {
-    return RefactoringTarget.NODE;
   }
 
   public boolean doesUpdateModel() {
     return true;
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
+  public List<SModel> getModelsToUpdate(RefactoringContext refactoringContext) {
+    return new ArrayList<SModel>();
   }
 
   public boolean showsAffectedNodes() {
@@ -117,6 +107,14 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
 
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return null;
+  }
+
+  public void updateModel(SModel model, RefactoringContext refactoringContext) {
+
+  }
+
+  public Map<IModule, List<SModel>> getModelsToGenerate(RefactoringContext refactoringContext) {
+    return new HashMap<IModule, List<SModel>>();
   }
 
   public List<SNode> getNodesToOpen(RefactoringContext refactoringContext) {
