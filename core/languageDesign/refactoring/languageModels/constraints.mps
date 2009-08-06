@@ -38,6 +38,7 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104844506">
+    <property name="package" value="RefDecl" />
     <link role="concept" targetNodeId="1.1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1214839023468">
       <link role="applicableLink" targetNodeId="1.1189694099406" />
@@ -122,6 +123,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213107436097">
+    <property name="package" value="FinderCall" />
     <link role="concept" targetNodeId="1.1212242396240" resolveInfo="ExecuteFindersExpression" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1213107436098">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213107436099">
@@ -183,6 +185,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1216118084966">
+    <property name="package" value="RefParams" />
     <link role="concept" targetNodeId="1.1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1216118089593">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216118089594">

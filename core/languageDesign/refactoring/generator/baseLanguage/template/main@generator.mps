@@ -274,6 +274,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1189697446192">
     <property name="name" value="RefactoringClass" />
+    <property name="package" value="RefDecl" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1201177769902">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1201177769903" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1201177769904" />
@@ -2844,6 +2845,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1189764622534">
     <property name="name" value="ArgumentReference_to_get" />
+    <property name="package" value="RefDecl" />
     <link role="applicableConcept" targetNodeId="1.1189694084608" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1189764645508">
       <property name="name" value="class" />
@@ -2952,6 +2954,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1192803360232">
     <property name="name" value="FilterCondition" />
+    <property name="package" value="RefDecl.UserArgs" />
     <link role="applicableConcept" targetNodeId="1.1192792808079" resolveInfo="RequiredUserEnteredArgument" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1192803582426">
       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1192803584069">
@@ -3104,6 +3107,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1197382724363">
     <property name="name" value="reduce_UpdateModelByDefaultOperation" />
+    <property name="package" value="RefDecl" />
     <link role="applicableConcept" targetNodeId="1.1197382578687" resolveInfo="UpdateModelByDefaultOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197382741521">
       <property name="name" value="updateModel" />
@@ -3139,6 +3143,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1197387189893">
     <property name="name" value="reduce_ChangeFeatureNameOperation" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197387189894">
       <property name="name" value="doRefactor" />
@@ -3215,6 +3220,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1198577610202">
     <property name="name" value="reduce_UpdateModelProcedure" />
+    <property name="package" value="RefDecl" />
     <link role="applicableConcept" targetNodeId="1.1198577376375" resolveInfo="UpdateModelProcedure" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198577765521">
       <property name="name" value="doRefactor" />
@@ -3273,6 +3279,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1199623366003">
     <property name="name" value="reduce_MoveNodeToModelExpression" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1199620319099" resolveInfo="MoveNodeToModelExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1199623458870">
       <property name="name" value="doRefactor" />
@@ -3333,6 +3340,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1199623568254">
     <property name="name" value="reduce_MoveNodeToNodeExpression" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1199620589385" resolveInfo="MoveNodeToNodeExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1199623584600">
       <property name="name" value="doRefactor" />
@@ -3409,6 +3417,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1199623668589">
     <property name="name" value="reduce_MoveNodesToModelExpression" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1199620728600" resolveInfo="MoveNodesToModelExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1199623713513">
       <property name="name" value="doRefactor" />
@@ -3469,6 +3478,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1199623815553">
     <property name="name" value="reduce_MoveNodesToNodeExpression" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1199620920737" resolveInfo="MoveNodesToNodeExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1199623848243">
       <property name="name" value="doRefactor" />
@@ -3545,6 +3555,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1204723894457">
     <property name="name" value="reduce_DeleteFeatureOperation" />
+    <property name="package" value="RefActions" />
     <link role="applicableConcept" targetNodeId="1.1204722970897" resolveInfo="DeleteFeatureOperation" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1204723894458">
       <property name="name" value="doRefactor" />
@@ -3747,6 +3758,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215000374022">
     <property name="name" value="reduce_NodeExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215000036307" resolveInfo="NodeExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215000443866">
       <property name="name" value="doRefactor" />
@@ -3775,6 +3787,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215000489595">
     <property name="name" value="reduce_NodesExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1214999715318" resolveInfo="NodesExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215000489596">
       <property name="name" value="doRefactor" />
@@ -3803,6 +3816,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215000631383">
     <property name="name" value="reduce_ModelDescriptorExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215000134655" resolveInfo="ModelDescriptorExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215000631384">
       <property name="name" value="doRefactor" />
@@ -3831,6 +3845,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215084894629">
     <property name="name" value="reduce_ModuleExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215084399714" resolveInfo="ModuleExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215084894630">
       <property name="name" value="doRefactor" />
@@ -3859,6 +3874,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215084972891">
     <property name="name" value="reduce_ProjectExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215084496797" resolveInfo="ProjectExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215084972892">
       <property name="name" value="doRefactor" />
@@ -3887,6 +3903,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215085031312">
     <property name="name" value="reduce_ScopeExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215084545440" resolveInfo="ScopeExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215085031313">
       <property name="name" value="doRefactor" />
@@ -3915,6 +3932,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1215085289689">
     <property name="name" value="reduce_OperationContextExpression" />
+    <property name="package" value="RefParams" />
     <link role="applicableConcept" targetNodeId="1.1215084612287" resolveInfo="OperationContextExpression" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1215085289690">
       <property name="name" value="doRefactor" />

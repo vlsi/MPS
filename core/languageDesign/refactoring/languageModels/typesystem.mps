@@ -47,6 +47,7 @@
   <import index="9" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1190728555341">
     <property name="name" value="typeof_RequiredAdditionalArgument" />
+    <property name="package" value="RefDecl.UserArgs" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190728555342">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1190728908074">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1190728915530">
@@ -75,6 +76,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1190728582079">
     <property name="name" value="typeof_RequiredAdditionalArgumentReference" />
+    <property name="package" value="RefDecl" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190728582080">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1190728604337">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1190728606543">
@@ -106,6 +108,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1192794377384">
     <property name="name" value="typeof_ConceptFunctionParameter_UserArgument" />
     <property name="overrides" value="true" />
+    <property name="package" value="RefDecl" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1192794377385">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1192794963353">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1192794963354">
@@ -174,6 +177,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1197387004436">
     <property name="name" value="typeof_ChangeFeatureNameOperation" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197387004437">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1197387014932">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1197387017357">
@@ -240,6 +244,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1198577527397">
     <property name="name" value="typeof_UpdateModelProcedure" />
+    <property name="package" value="RefDecl" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198577527398">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1198577561806">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1198577564202">
@@ -268,6 +273,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199620226785">
     <property name="name" value="typeof_AbstractMoveNodeExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199620226786">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199620247213">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199620247214">
@@ -310,6 +316,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199620289346">
     <property name="name" value="typeof_AbstractMoveNodesExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199620289347">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199620292740">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199620292741">
@@ -356,6 +363,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199620550073">
     <property name="name" value="typeof_MoveNodeToModelExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199620550074">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199620552358">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199620552359">
@@ -384,6 +392,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199620685904">
     <property name="name" value="typeof_MoveNodeToNodeExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199620685905">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199620700407">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199620700408">
@@ -431,6 +440,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199620847921">
     <property name="name" value="typeof_MoveNodesToModelExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199620847922">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199620849752">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199620849753">
@@ -459,6 +469,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1199621029855">
     <property name="name" value="typeof_MoveNodesToNodeExpression" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199621029856">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1199621033921">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1199621033922">
@@ -506,6 +517,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1204723222377">
     <property name="name" value="typeof_DeleteFeatureOperation" />
+    <property name="package" value="RefActions" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1204723222378">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1204723224489">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1204723224490">
@@ -604,6 +616,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1214999926893">
     <property name="name" value="typeof_NodesExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214999926894">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1214999948266">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1214999951832">
@@ -627,6 +640,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215000091795">
     <property name="name" value="typeof_NodeExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215000091796">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215000098427">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215000101681">
@@ -670,6 +684,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215000177674">
     <property name="name" value="typeof_ModelDescriptorExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215000177675">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215000188931">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215000203029">
@@ -695,6 +710,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215084433134">
     <property name="name" value="typeof_ModuleExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215084433135">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215084454335">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215084458058">
@@ -720,6 +736,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215084517581">
     <property name="name" value="typeof_ProjectExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215084517582">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215084525369">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215084529748">
@@ -745,6 +762,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215084570490">
     <property name="name" value="typeof_ScopeExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215084570491">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215084584419">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215084596658">
@@ -770,6 +788,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1215084643134">
     <property name="name" value="typeof_OperationContextExpression" />
+    <property name="package" value="RefParams" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215084643135">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1215084649734">
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1215084653660">

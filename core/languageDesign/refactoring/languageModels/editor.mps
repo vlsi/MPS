@@ -38,6 +38,7 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" version="2" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1189693958814">
+    <property name="package" value="RefDecl" />
     <link role="conceptDeclaration" targetNodeId="1.1189693830529" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1189768590115">
       <property name="vertical" value="false" />
@@ -57,6 +58,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1189694115688">
+    <property name="package" value="RefDecl" />
     <link role="conceptDeclaration" targetNodeId="1.1189694084608" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="1189694123409">
       <link role="relationDeclaration" targetNodeId="1.1189694099406" />
@@ -72,6 +74,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1189695208374">
+    <property name="package" value="RefDecl" />
     <link role="conceptDeclaration" targetNodeId="1.1189693812263" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1189695216204">
       <property name="vertical" value="true" />
@@ -395,6 +398,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1192793556170">
+    <property name="package" value="RefDecl.UserArgs" />
     <link role="conceptDeclaration" targetNodeId="1.1192792808079" resolveInfo="RequiredUserEnteredArgument" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1197985313784">
       <property name="vertical" value="true" />
@@ -482,6 +486,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1197382614940">
+    <property name="package" value="RefDecl" />
     <link role="conceptDeclaration" targetNodeId="1.1197382578687" resolveInfo="UpdateModelByDefaultOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1197382618067">
       <property name="vertical" value="false" />
@@ -495,6 +500,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1197386917368">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1197386920073">
       <property name="vertical" value="false" />
@@ -526,6 +532,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1198577497375">
+    <property name="package" value="RefDecl" />
     <link role="conceptDeclaration" targetNodeId="1.1198577376375" resolveInfo="UpdateModelProcedure" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1198577501490">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1198577506528">
@@ -541,6 +548,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1199620100625">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1199619425400" resolveInfo="AbsatractMoveExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199620102346">
       <property name="vertical" value="false" />
@@ -562,6 +570,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1199620640156">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1199620589385" resolveInfo="MoveNodeToNodeExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199620641534">
       <property name="vertical" value="false" />
@@ -590,6 +599,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1199620996107">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1199620920737" resolveInfo="MoveNodesToNodeExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1199620997875">
       <property name="vertical" value="false" />
@@ -618,6 +628,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1204723172772">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1204722970897" resolveInfo="DeleteFeatureOperation" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1204723177118">
       <property name="vertical" value="false" />
@@ -690,6 +701,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1214999768401">
+    <property name="package" value="RefParams" />
     <link role="conceptDeclaration" targetNodeId="1.1214999734945" resolveInfo="AbstractUIArgumentExpression" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="1214999790482">
       <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />

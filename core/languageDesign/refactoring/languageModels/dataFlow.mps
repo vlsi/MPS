@@ -32,6 +32,7 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="0" />
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1210945623184">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1204722970897" resolveInfo="DeleteFeatureOperation" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1210945623185">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210945623186">
@@ -47,6 +48,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1210946712795">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1199619425400" resolveInfo="AbstractMoveExpression" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1210946712796">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210946712797">
@@ -70,6 +72,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1240302183947">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1240302183948">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240302183949">
@@ -101,6 +104,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="6528618226609613337">
+    <property name="package" value="RefActions" />
     <link role="conceptDeclaration" targetNodeId="1.1199620589385" resolveInfo="MoveNodeToNodeExpression" />
     <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="6528618226609613338">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6528618226609613339">
