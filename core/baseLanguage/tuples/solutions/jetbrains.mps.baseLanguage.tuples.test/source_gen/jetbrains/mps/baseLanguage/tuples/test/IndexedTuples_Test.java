@@ -91,11 +91,11 @@ public class IndexedTuples_Test extends TestCase {
 
   @Test()
   public void test_mps5466() throws Exception {
-    Iterable<Tuples._2<String, String>> seq = A.foo();
-    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter <Tuples._2<String, String>>() {
+    Iterable<Tuples._2<String, Boolean>> seq = A.foo();
+    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter <Tuples._2<String, Boolean>>() {
 
-      public boolean accept(Tuples._2<String, String> it) {
-        return it._1() != null;
+      public boolean accept(Tuples._2<String, Boolean> it) {
+        return it._1() != true;
       }
     }).count());
   }

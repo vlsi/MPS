@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -31,12 +31,8 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
         SNode supertype = new _Quotations.QuotationClass_8().createNode(ct, typeCheckingContext);
         ListSequence.fromList(result).addElement(supertype);
         for(SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
-          SNode javatype = null;
-          try {
-            javatype = Type_Behavior.call_getJavaType_1213877337345(comptype);
-          } catch (RuntimeException ignored) {
-          }
-          SLinkOperations.addChild(supertype, "parameter", javatype);
+          SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
+          SLinkOperations.addChild(supertype, "parameter", SNodeOperations.copyNode(javatype));
         }
       }
     }

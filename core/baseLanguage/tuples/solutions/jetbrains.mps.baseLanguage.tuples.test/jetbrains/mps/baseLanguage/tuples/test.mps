@@ -614,8 +614,8 @@
                   <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306753706">
                     <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                   </node>
-                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306757404">
-                    <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="751918362894380664">
+                    <link role="classifier" targetNodeId="1.~Boolean" resolveInfo="Boolean" />
                   </node>
                 </node>
               </node>
@@ -639,7 +639,9 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="974579920306757553">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="974579920306757554">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="974579920306757555">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="974579920306757556" />
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="751918362894380666">
+                            <property name="value" value="true" />
+                          </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" id="974579920306757557">
                             <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="974579920306757558">
                               <property name="value" value="1" />

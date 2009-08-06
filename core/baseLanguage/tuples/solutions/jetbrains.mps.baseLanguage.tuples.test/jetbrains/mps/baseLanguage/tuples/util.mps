@@ -54,16 +54,16 @@
                 <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="974579920306757395">
                   <property name="value" value="true" />
                 </node>
-                <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="974579920306757396">
-                  <property name="value" value="string" />
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="751918362894380634">
+                  <property name="value" value="false" />
                 </node>
               </node>
               <node role="elementType" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="974579920306757399">
                 <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306757400">
                   <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                 </node>
-                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306757401">
-                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="751918362894380627">
+                  <link role="classifier" targetNodeId="1.~Boolean" resolveInfo="Boolean" />
                 </node>
               </node>
             </node>
@@ -75,8 +75,8 @@
           <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306753660">
             <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
           </node>
-          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="974579920306753759">
-            <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="751918362894380624">
+            <link role="classifier" targetNodeId="1.~Boolean" resolveInfo="Boolean" />
           </node>
         </node>
       </node>
