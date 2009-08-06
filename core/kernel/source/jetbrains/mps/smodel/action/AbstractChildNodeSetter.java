@@ -18,13 +18,6 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.02.2007
- * Time: 14:41:19
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractChildNodeSetter implements IChildNodeSetter {
 
   public final SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {

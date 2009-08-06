@@ -24,20 +24,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 23.09.2005
- * Time: 19:17:53
- * To change this template use File | Settings | File Templates.
- */
 public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCreationListener {
 
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
   protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
-  protected HashSet<Pair<SNodePointer,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
-  protected HashSet<Pair<SNodePointer,String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
+  protected HashSet<Pair<SNodePointer, String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+  protected HashSet<Pair<SNodePointer, String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(EditorComponent editor) {
@@ -49,7 +42,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     for (Pair<SNodePointer, String> pair : myDirtilyReadAccessedProperties) {
       myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
     }
-     for (Pair<SNodePointer, String> pair : myExistenceReadAccessProperties) {
+    for (Pair<SNodePointer, String> pair : myExistenceReadAccessProperties) {
       myEditor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
     }
   }

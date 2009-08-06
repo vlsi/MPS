@@ -17,13 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime.incremental;
 
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.04.2007
- * Time: 16:47:36
- * To change this template use File | Settings | File Templates.
- */
 public class SNodeReferentReadEvent extends SNodeReadEvent {
 
   protected String myReferentRole;
@@ -37,7 +30,7 @@ public class SNodeReferentReadEvent extends SNodeReadEvent {
     return myReferentRole;
   }
 
-   public String toString() {
+  public String toString() {
     return "read referent in role " + myReferentRole;
   }
 
@@ -46,6 +39,6 @@ public class SNodeReferentReadEvent extends SNodeReadEvent {
   }
 
   public boolean equals(Object obj) {
-    return super.equals(obj) && (((SNodeReferentReadEvent)obj).myReferentRole.equals(myReferentRole));
+    return super.equals(obj) && (((SNodeReferentReadEvent) obj).myReferentRole.equals(myReferentRole));
   }
 }

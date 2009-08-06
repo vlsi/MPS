@@ -23,28 +23,21 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.06.2006
- * Time: 18:16:04
- * To change this template use File | Settings | File Templates.
- */
 public class PresentationManager {
   public static String toString(Object type) {
     if (type == null) return null;
     INodeAdapter typeAdapter = null;
     if (type instanceof NodeWrapper) {
-      typeAdapter = BaseAdapter.fromNode(((NodeWrapper)type).getNode());
+      typeAdapter = BaseAdapter.fromNode(((NodeWrapper) type).getNode());
     }
     if (type instanceof INodeAdapter) {
       typeAdapter = (INodeAdapter) type;
     }
     if (type instanceof SNode) {
-      typeAdapter = ((SNode)type).getAdapter();
+      typeAdapter = ((SNode) type).getAdapter();
     }
     if (typeAdapter instanceof RuntimeTypeVariable && !(typeAdapter instanceof RuntimeErrorType)) {
-      return ((RuntimeTypeVariable)typeAdapter).getName();
+      return ((RuntimeTypeVariable) typeAdapter).getName();
     }
     if (type instanceof String) {
       return (String) type;
@@ -56,7 +49,7 @@ public class PresentationManager {
   public static String toString_1(SNode type) {
     INodeAdapter typeAdapter = BaseAdapter.fromNode(type);
     if (typeAdapter instanceof RuntimeErrorType) {
-      return "ERROR(" + ((RuntimeErrorType)typeAdapter).getErrorText() + ")";
+      return "ERROR(" + ((RuntimeErrorType) typeAdapter).getErrorText() + ")";
     }
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);

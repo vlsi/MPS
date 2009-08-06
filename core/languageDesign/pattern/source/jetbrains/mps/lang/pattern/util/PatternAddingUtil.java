@@ -24,13 +24,6 @@ import jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.11.2006
- * Time: 17:27:11
- * To change this template use File | Settings | File Templates.
- */
 public class PatternAddingUtil {
   public static boolean isPatternApplicable(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();

@@ -25,13 +25,6 @@ import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.02.2008
- * Time: 18:14:51
- * To change this template use File | Settings | File Templates.
- */
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
   private static Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);
 

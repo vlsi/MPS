@@ -21,13 +21,6 @@ import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Apr 14, 2005
- * Time: 1:38:45 PM
- * To change this template use File | Settings | File Templates.
- */
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();
 

@@ -19,13 +19,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 03.03.2009
- * Time: 16:28:58
- * To change this template use File | Settings | File Templates.
- */
 public abstract class OverloadedOperationsTypesProvider implements IOverloadedOpsTypesProvider {
   protected SNode myLeftOperandType;
   protected SNode myRightOperandType;
@@ -64,9 +57,9 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
   public int compareTo(IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOperationsTypesProvider) {
       OverloadedOperationsTypesProvider o2 = (OverloadedOperationsTypesProvider) o;
-       int i1 = (this.myLeftTypeIsExact ? 1 : 0) + (this.myRightTypeIsExact ? 1 : 0);
-       int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
-       return i2 - i1;
+      int i1 = (this.myLeftTypeIsExact ? 1 : 0) + (this.myRightTypeIsExact ? 1 : 0);
+      int i2 = (o2.myLeftTypeIsExact ? 1 : 0) + (o2.myRightTypeIsExact ? 1 : 0);
+      return i2 - i1;
     }
     if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
       return -1;

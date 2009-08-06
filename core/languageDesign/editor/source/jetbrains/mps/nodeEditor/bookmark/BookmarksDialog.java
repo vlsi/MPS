@@ -25,13 +25,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.MPSProjectHolder;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 06.03.2009
- * Time: 16:45:06
- * To change this template use File | Settings | File Templates.
- */
 public class BookmarksDialog extends BaseDialog {
   private BookmarkManager myBookmarkManager;
   private JPanel myMainComponent = new JPanel();

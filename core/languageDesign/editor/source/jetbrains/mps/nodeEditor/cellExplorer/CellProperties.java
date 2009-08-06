@@ -20,13 +20,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.09.2005
- * Time: 17:48:50
- * To change this template use File | Settings | File Templates.
- */
 public class CellProperties {
 
   private EditorCell myCell;
@@ -53,7 +46,7 @@ public class CellProperties {
     myCellWidth = myCell.getWidth() + "";
     myCellHeight = myCell.getHeight() + "";
     myCellEffectiveWidth = myCell.getEffectiveWidth() + "";
-    myRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell)?"Yes":"No";
+    myRootCell = (myCell.getEditorContext().getNodeEditorComponent().getRootCell() == myCell) ? "Yes" : "No";
     myCellID = (String) (myCell.getCellId());
     myCellRole = "" + (myCell.getCellRole());
 

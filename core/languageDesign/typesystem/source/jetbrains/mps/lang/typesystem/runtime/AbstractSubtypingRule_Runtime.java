@@ -25,13 +25,6 @@ import java.util.ArrayList;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.03.2007
- * Time: 10:15:53
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
 
   public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {

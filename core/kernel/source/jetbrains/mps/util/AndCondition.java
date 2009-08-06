@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.util;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Mar 1, 2006
- * Time: 7:14:24 PM
- * To change this template use File | Settings | File Templates.
- */
 public class AndCondition<T> implements Condition<T> {
   private Condition<T> myC1;
   private Condition<T> myC2;

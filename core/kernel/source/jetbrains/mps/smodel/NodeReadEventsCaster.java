@@ -19,13 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 
 import java.util.Stack;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.04.2007
- * Time: 17:42:37
- * To change this template use File | Settings | File Templates.
- */
 public class NodeReadEventsCaster {
   private static volatile INodesReadListener ourNodesReadListener;
   private static Stack<INodesReadListener> ourNodesReadListenersStack = new Stack<INodesReadListener>();

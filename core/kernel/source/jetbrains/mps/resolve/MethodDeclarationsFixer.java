@@ -21,13 +21,6 @@ import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.command.CommandProcessor;
 
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 16.07.2009
- * Time: 11:48:05
- * To change this template use File | Settings | File Templates.
- */
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = true;
 

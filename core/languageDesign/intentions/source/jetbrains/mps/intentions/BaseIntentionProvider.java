@@ -27,13 +27,6 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 15.05.2008
- * Time: 12:14:28
- * To change this template use File | Settings | File Templates.
- */
 public class BaseIntentionProvider implements IntentionProvider {
   private static Logger LOG = Logger.getLogger(IntentionProvider.class);
 

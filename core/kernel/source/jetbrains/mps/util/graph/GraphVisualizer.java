@@ -20,13 +20,6 @@ import jetbrains.mps.util.Pair;
 import java.awt.Color;
 import java.awt.Graphics;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.07.2006
- * Time: 20:07:25
- * To change this template use File | Settings | File Templates.
- */
 public class GraphVisualizer implements IGraphVisualizer {
   public static final int VERTEX_RADIUS = 8;
 

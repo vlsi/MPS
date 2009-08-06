@@ -29,13 +29,6 @@ import java.awt.Toolkit;
 import java.awt.image.ImageObserver;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 12.02.2006
- * Time: 3:01:11
- * To change this template use File | Settings | File Templates.
- */
 public class EditorCell_Image extends EditorCell_Basic {
 
   private _ImageAlignment_Enum myAlignment = _ImageAlignment_Enum.alignmentJustify;

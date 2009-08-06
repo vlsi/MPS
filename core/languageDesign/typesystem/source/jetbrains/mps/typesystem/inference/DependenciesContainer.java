@@ -27,13 +27,6 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.10.2007
- * Time: 13:12:16
- * To change this template use File | Settings | File Templates.
- */
 public class DependenciesContainer {
 
   Map<AbstractConceptDeclaration, Set<IDependency_Runtime>> myDependencies = new HashMap<AbstractConceptDeclaration, Set<IDependency_Runtime>>();
@@ -94,8 +87,8 @@ public class DependenciesContainer {
       }
       Set<IDependency_Runtime> rules = myDependencies.get(conceptDeclaration);
       if (rules == null) continue;
-      if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
-      ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
+      if (!(conceptDeclaration instanceof ConceptDeclaration)) continue;
+      ConceptDeclaration parent = ((ConceptDeclaration) conceptDeclaration).getExtends();
       while (parent != null) {
         Set<IDependency_Runtime> parentRules = myDependencies.get(parent);
         if (parentRules != null) {

@@ -18,14 +18,7 @@ package formulaAdapter;
 import jetbrains.mps.samples.formulaLanguage.api.Function;
 import mf.Quantity;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Apr 4, 2005
- * Time: 8:45:17 PM
- * To change this template use File | Settings | File Templates.
- */
-public class QuantityGreaterThanOperation <T extends Quantity> implements Function <Boolean> {
+public class QuantityGreaterThanOperation<T extends Quantity> implements Function<Boolean> {
   private Function<T> myLeftOperand;
   private Function<T> myRightOperand;
 

@@ -41,13 +41,6 @@ import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.06.2005
- * Time: 20:17:58
- * To change this template use File | Settings | File Templates.
- */
 public class Resolver {
 
   private static Logger LOG = Logger.getLogger(Resolver.class);

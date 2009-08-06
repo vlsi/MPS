@@ -40,13 +40,6 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Iterator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 20.02.2006
- * Time: 19:12:07
- * To change this template use File | Settings | File Templates.
- */
 public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   //it is important for descendants to have a unique constructor and with the same parameters as this one
@@ -74,7 +67,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
           {
             this.set(StyleAttributes.STRIKE_OUT,
               IDeprecatable_Behavior.call_isDeprecated_1224609060727(effectiveNode)
-               || IDeprecatable_Behavior.call_isDeprecated_1224609060727(conceptDeclaration)
+                || IDeprecatable_Behavior.call_isDeprecated_1224609060727(conceptDeclaration)
             );
           }
 

@@ -24,47 +24,40 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 import java.util.HashMap;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.04.2007
- * Time: 13:26:18
- * To change this template use File | Settings | File Templates.
- */
 public class HUtil {
 
-  public static SNode copyIfNecessary (SNode node) {
-     if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
-       // this copies all the atributes, because can be used in migration scripts
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
-       return copy;
-     } else {
-        return node ;
-     }
+  public static SNode copyIfNecessary(SNode node) {
+    if (node != null && (node.getParent() != null || node.isRoot())) {
+      // this copies all the atributes, because can be used in migration scripts
+      SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), true);
+      return copy;
+    } else {
+      return node;
+    }
   }
 
-  public static <T extends INodeAdapter> T copyIfNecessary (T adapter) {
+  public static <T extends INodeAdapter> T copyIfNecessary(T adapter) {
     if (adapter == null) return adapter;
     SNode node = adapter.getNode();
     return (T) BaseAdapter.fromNode(copyIfNecessary(node));
   }
 
-  public static SNode copyIfNecessary ( SNode node, TypeCheckingContext typeCheckingContext) {
-     if ( node != null && (node . getParent (  ) != null || node.isRoot())) {
+  public static SNode copyIfNecessary(SNode node, TypeCheckingContext typeCheckingContext) {
+    if (node != null && (node.getParent() != null || node.isRoot())) {
 
-       // this method is used only when quotations create a type
-       // so it should not copy attributes, for instance generator macros of a certain type
-       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false); 
+      // this method is used only when quotations create a type
+      // so it should not copy attributes, for instance generator macros of a certain type
+      SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
 
-       if (typeCheckingContext != null) {
-         if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
-           typeCheckingContext.registerTypeVariable(copy);
-         }
-       }
-       return copy;
-     } else {
-        return node ;
-     }
+      if (typeCheckingContext != null) {
+        if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
+          typeCheckingContext.registerTypeVariable(copy);
+        }
+      }
+      return copy;
+    } else {
+      return node;
+    }
   }
 
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {

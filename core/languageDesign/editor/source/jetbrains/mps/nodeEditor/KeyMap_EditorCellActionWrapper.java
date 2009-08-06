@@ -21,13 +21,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 
 import java.awt.event.KeyEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.11.2005
- * Time: 15:48:27
- * To change this template use File | Settings | File Templates.
- */
 public class KeyMap_EditorCellActionWrapper extends EditorCellKeyMapAction {
   private EditorCellAction myCellAction;
 

@@ -20,16 +20,9 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.05.2007
- * Time: 17:06:41
- * To change this template use File | Settings | File Templates.
- */
 public class StructuralNodeMap<T> implements Map<SNode, T> {
   private HashMap<SNode, SNode> myRepresentatorsMap = new HashMap<SNode, SNode>();
-  private HashMap<SNode, T> myMap = new HashMap<SNode,T>();
+  private HashMap<SNode, T> myMap = new HashMap<SNode, T>();
   private HashSet<SNode> myAbsentNodes = new HashSet<SNode>();
 
   public SNode getKeyRepresentator(SNode node) {

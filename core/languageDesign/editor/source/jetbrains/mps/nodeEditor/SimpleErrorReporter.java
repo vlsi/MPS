@@ -22,13 +22,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.03.2007
- * Time: 13:41:43
- * To change this template use File | Settings | File Templates.
- */
 public class SimpleErrorReporter implements IErrorReporter {
   private String myErrorString;
   private String myRuleModel;

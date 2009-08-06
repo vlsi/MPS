@@ -27,13 +27,6 @@ import java.util.List;
 import com.intellij.util.containers.HashMap;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 21.04.2009
- * Time: 17:20:27
- * To change this template use File | Settings | File Templates.
- */
 public class ConceptWrapper extends DefaultAbstractWrapper {
   private String myConceptFQName;
   private Map<String, SNode> myChildRolesToNodes = new HashMap<String, SNode>();
@@ -83,7 +76,7 @@ public class ConceptWrapper extends DefaultAbstractWrapper {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
 
-      if (matchParameter instanceof Pair && ((Pair)matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
+      if (matchParameter instanceof Pair && ((Pair) matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
         return false; //todo
       }
 

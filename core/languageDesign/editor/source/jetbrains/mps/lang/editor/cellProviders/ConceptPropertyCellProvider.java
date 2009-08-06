@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptProperty;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorManager.NoAttribute;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -26,13 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.02.2006
- * Time: 20:55:25
- * To change this template use File | Settings | File Templates.
- */
 public class ConceptPropertyCellProvider extends CellProviderWithRole {
   public static final int DEFAULT_FONT_STYLE = MPSFonts.BOLD;
 
@@ -77,7 +71,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
   public Class getRoleAttributeClass() {
-    return EditorManager.NoAttribute.class;
+    return NoAttribute.class;
   }
 
 

@@ -19,13 +19,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.07.2006
- * Time: 17:37:37
- * To change this template use File | Settings | File Templates.
- */
 public class PhysicalGraphLayouter {
   public static final double BIG_TENSION_CONSTANT = 1;
 

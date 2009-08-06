@@ -21,16 +21,9 @@ import jetbrains.mps.typesystem.inference.IWrapper;
 import java.util.*;
 
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.08.2007
- * Time: 16:50:09
- * To change this template use File | Settings | File Templates.
- */
 public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
   private Map<IWrapperWrapper, IWrapperWrapper> myMap = new HashMap<IWrapperWrapper, IWrapperWrapper>();
-  private Map<IWrapper, T> myWrapperMap = new HashMap<IWrapper,T>();
+  private Map<IWrapper, T> myWrapperMap = new HashMap<IWrapper, T>();
   private Map<IWrapper, IWrapper> myRepresentatorMap = new HashMap<IWrapper, IWrapper>();
   private Set<IWrapper> myAbsent = new HashSet<IWrapper>();
 
@@ -92,11 +85,11 @@ public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
   public T put(IWrapper keyWrapper, T value) {
     IWrapperWrapper wrapper = new IWrapperWrapper(keyWrapper);
     myMap.put(wrapper, wrapper);
-    myRepresentatorMap.put(keyWrapper,  keyWrapper);
+    myRepresentatorMap.put(keyWrapper, keyWrapper);
     T result = myWrapperMap.put(keyWrapper, value);
     invalidateCache();
     return result;
-   }
+  }
 
   public T remove(Object key) {
     if (!(key instanceof IWrapper)) return null;

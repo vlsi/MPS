@@ -25,13 +25,6 @@ import java.util.Stack;
 
 import com.intellij.openapi.util.Computable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 23.09.2005
- * Time: 21:22:56
- * To change this template use File | Settings | File Templates.
- */
 public class NodeReadAccessCaster {
   private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
   private static CellBuildNodeAccessListener ourReadAccessListener;
@@ -84,7 +77,7 @@ public class NodeReadAccessCaster {
     ourPropertyAccessor = accessor;
     String propertyName = accessor.getPropertyName();
     SNode node = accessor.getNode();
-    try {      
+    try {
       if (node == null) return null;
       return node.getProperty(propertyName);
     } finally {
@@ -92,7 +85,7 @@ public class NodeReadAccessCaster {
     }
   }
 
-  public static void fireNodeReadAccessed(SNode node) {    
+  public static void fireNodeReadAccessed(SNode node) {
     if (ourEventsBlocked) return;
     if (!node.isRegistered()) return;
     if (node.isModelLoading()) return;
@@ -127,7 +120,7 @@ public class NodeReadAccessCaster {
     if (propertyExistenceCheck && ourReadAccessListener != null) {
       ourReadAccessListener.propertyExistenceAccess(node, propertyName);
       ourReadAccessListener.readAccess(node);
-    } else  if (ourReadAccessListener != null) {
+    } else if (ourReadAccessListener != null) {
       ourReadAccessListener.propertyDirtyReadAccess(node, propertyName);
       ourReadAccessListener.readAccess(node);
     }
@@ -176,7 +169,7 @@ public class NodeReadAccessCaster {
     final Object[] result = new Object[1];
     runReadTransparentAction(new Runnable() {
       public void run() {
-        result[0] = c.compute();        
+        result[0] = c.compute();
       }
     });
     return (T) result[0];

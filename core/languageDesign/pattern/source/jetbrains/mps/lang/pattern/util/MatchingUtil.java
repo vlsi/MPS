@@ -27,13 +27,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.01.2006
- * Time: 16:46:12
- * To change this template use File | Settings | File Templates.
- */
 public class MatchingUtil {
   private static Logger LOG = Logger.getLogger(MatchingUtil.class);
 
@@ -58,7 +51,7 @@ public class MatchingUtil {
       if (propertyDeclaration == null) {
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration);
         LOG.warning("try to compare just properties' internal values");
-        if (!EqualUtil.equals(propertyValue1, propertyValue2))                 {
+        if (!EqualUtil.equals(propertyValue1, propertyValue2)) {
           return false;
         }
       } else {

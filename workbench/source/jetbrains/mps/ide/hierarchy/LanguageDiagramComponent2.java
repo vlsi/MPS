@@ -29,13 +29,6 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.07.2008
- * Time: 19:49:31
- * To change this template use File | Settings | File Templates.
- */
 public class LanguageDiagramComponent2 extends JComponent implements Scrollable {
 
   private static final int PADDING_X = 50;

@@ -29,13 +29,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.06.2008
- * Time: 15:30:54
- * To change this template use File | Settings | File Templates.
- */
 public class MPSLanguageVirtualFile extends DeprecatedVirtualFile {
   private Language myLanguage;
   private String myPath;

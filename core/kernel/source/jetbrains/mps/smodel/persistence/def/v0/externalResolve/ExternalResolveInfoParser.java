@@ -24,13 +24,6 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 11.10.2005
- * Time: 16:00:55
- * To change this template use File | Settings | File Templates.
- */
 public class ExternalResolveInfoParser {
   private static final Logger LOG = Logger.getLogger(ExternalResolveInfoParser.class);
 

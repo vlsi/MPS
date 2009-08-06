@@ -22,13 +22,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.03.2008
- * Time: 18:12:57
- * To change this template use File | Settings | File Templates.
- */
 public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
   public boolean testRefactoring(final MPSProject project,
                                  final SModelDescriptor sandbox1,

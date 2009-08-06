@@ -20,13 +20,6 @@ import org.jdom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.12.2007
- * Time: 15:50:22
- * To change this template use File | Settings | File Templates.
- */
 public class RefactoringHistory {
   public static final String REFACTORING_HISTORY = "refactoringHistory";
 

@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 20.07.2007
- * Time: 14:19:18
- * To change this template use File | Settings | File Templates.
- */
 public class WhenConcreteEntity {
   private Runnable myRunnable;
   private String myNodeModel;
@@ -60,6 +53,6 @@ public class WhenConcreteEntity {
   }
 
   public boolean skipsError() {
-    return mySkipError; 
+    return mySkipError;
   }
 }

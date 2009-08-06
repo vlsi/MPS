@@ -21,13 +21,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.HeadlessException;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.07.2006
- * Time: 20:16:38
- * To change this template use File | Settings | File Templates.
- */
 public class Main extends JFrame {
   public static final int CENTER = 300;
 

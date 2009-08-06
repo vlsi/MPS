@@ -32,13 +32,6 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 11.01.2008
- * Time: 19:03:10
- * To change this template use File | Settings | File Templates.
- */
 public abstract class ChooseItemComponent<Item> extends JPanel {
   private JTextField myTextField;
   private Map<String, Set<Item>> myItemsMap = new HashMap<String, Set<Item>>();

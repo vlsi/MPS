@@ -21,13 +21,6 @@ import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.10.2007
- * Time: 15:42:36
- * To change this template use File | Settings | File Templates.
- */
 public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<InferenceRule_Runtime> myInferenceRules = new HashSet<InferenceRule_Runtime>();
   protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new HashSet<NonTypesystemRule_Runtime>();

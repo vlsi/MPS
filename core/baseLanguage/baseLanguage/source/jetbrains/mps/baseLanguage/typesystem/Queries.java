@@ -23,13 +23,6 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.09.2006
- * Time: 15:21:17
- * To change this template use File | Settings | File Templates.
- */
 public class Queries {
 
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
@@ -47,7 +40,7 @@ public class Queries {
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       INodeAdapter stringClass = javaLang.getRootAdapterByName("String");
       if (BaseAdapter.isInstance(leftType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(leftType)).getClassifier() == stringClass
-              || BaseAdapter.isInstance(rightType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(rightType)).getClassifier() == stringClass) {
+        || BaseAdapter.isInstance(rightType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(rightType)).getClassifier() == stringClass) {
         ClassifierType classifierType = ClassifierType.newInstance(runtimeTypesModel);
         classifierType.setClassifier((Classifier) stringClass);
         return classifierType.getNode();

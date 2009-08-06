@@ -29,13 +29,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 5:20:32 PM
- * To change this template use File | Settings | File Templates.
- */
 class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
   private MPSProject myProject;

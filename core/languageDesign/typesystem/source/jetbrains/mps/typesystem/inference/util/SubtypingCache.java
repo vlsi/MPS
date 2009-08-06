@@ -28,13 +28,6 @@ import jetbrains.mps.lang.smodel.structure.SNodeType;
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- * Created by IntelliJ IDEA.
- * User: test
- * Date: Aug 30, 2008
- * Time: 12:04:05 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SubtypingCache {
   private Map<CacheNodeHandler, Map<CacheNodeHandler, Boolean>> myCache = new HashMap<CacheNodeHandler, Map<CacheNodeHandler, Boolean>>();
   private Map<CacheNodeHandler, Map<String, SNode>> myCoerceToConceptsCache = new HashMap<CacheNodeHandler, Map<String, SNode>>();
@@ -140,7 +133,7 @@ public class SubtypingCache {
         map2 = new HashMap<String, SNode>();
         cache2.put(subtypeHandler2, map2);
       }
-   /*   if (map2.get(conceptFQName) == null) {
+      /*   if (map2.get(conceptFQName) == null) {
         map2.put(conceptFQName, result);
       }*/
     }
@@ -154,7 +147,7 @@ public class SubtypingCache {
     boolean answer = result != null;
     boolean bothMaps = answer != isWeak;
     Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache1 = isWeak ? myCoerceToPatternsCacheWeak : myCoerceToPatternsCache;
-    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache2 = isWeak ? myCoerceToPatternsCache: myCoerceToPatternsCacheWeak;
+    Map<CacheNodeHandler, Map<Class, Pair<SNode, GeneratedMatchingPattern>>> cache2 = isWeak ? myCoerceToPatternsCache : myCoerceToPatternsCacheWeak;
 
     CacheNodeHandler subtypeHandler = new CacheNodeHandler(subtype);
     Map<Class, Pair<SNode, GeneratedMatchingPattern>> map = cache1.get(subtypeHandler);
@@ -171,7 +164,7 @@ public class SubtypingCache {
         map2 = new HashMap<Class, Pair<SNode, GeneratedMatchingPattern>>();
         cache2.put(subtypeHandler2, map2);
       }
-     /* if (map2.get(c) == null) {
+      /* if (map2.get(c) == null) {
         map2.put(c, new Pair<SNode, GeneratedMatchingPattern>(result, pattern));
       }*/
     }
@@ -179,11 +172,11 @@ public class SubtypingCache {
 
   public void addCacheEntry(SNode subtype, IMatchingPattern pattern, SNode result, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      addCacheEntry(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName(), result, isWeak);
+      addCacheEntry(subtype, ((ConceptMatchingPattern) pattern).getConceptFQName(), result, isWeak);
       return;
     }
     if (pattern instanceof GeneratedMatchingPattern) {
-      if (!((GeneratedMatchingPattern)pattern).hasAntiquotations()) {
+      if (!((GeneratedMatchingPattern) pattern).hasAntiquotations()) {
         addCacheEntry(subtype, pattern.getClass(), result, (GeneratedMatchingPattern) pattern, isWeak);
         return;
       }
@@ -192,10 +185,10 @@ public class SubtypingCache {
 
   public Pair<Boolean, SNode> getCoerced(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
     if (pattern instanceof ConceptMatchingPattern) {
-      return getCoerced(subtype, ((ConceptMatchingPattern)pattern).getConceptFQName(), isWeak);
+      return getCoerced(subtype, ((ConceptMatchingPattern) pattern).getConceptFQName(), isWeak);
     }
     if (pattern instanceof GeneratedMatchingPattern) {
-      if (!((GeneratedMatchingPattern)pattern).hasAntiquotations()) {
+      if (!((GeneratedMatchingPattern) pattern).hasAntiquotations()) {
         return getCoerced(subtype, pattern.getClass(), (GeneratedMatchingPattern) pattern, isWeak);
       }
     }

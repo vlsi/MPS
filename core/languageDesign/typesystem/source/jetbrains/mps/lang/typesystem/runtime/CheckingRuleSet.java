@@ -20,12 +20,5 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.04.2007
- * Time: 15:33:37
- * To change this template use File | Settings | File Templates.
- */
 public class CheckingRuleSet<T extends ICheckingRule_Runtime> extends RuleSet<T> {
 }

@@ -20,13 +20,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.11.2006
- * Time: 14:05:23
- * To change this template use File | Settings | File Templates.
- */
 public class CellAction_UnfoldCell extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {

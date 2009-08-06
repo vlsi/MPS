@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.util;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 04.08.2006
- * Time: 19:26:31
- * To change this template use File | Settings | File Templates.
- */
 public class Wrapper<T> {
 
   private T myTarget;

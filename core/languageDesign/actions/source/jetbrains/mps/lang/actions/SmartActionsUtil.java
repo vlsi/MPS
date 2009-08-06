@@ -38,13 +38,6 @@ import java.awt.event.ActionEvent;
 import java.awt.Rectangle;
 import java.lang.reflect.Method;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 26.02.2009
- * Time: 15:52:31
- * To change this template use File | Settings | File Templates.
- */
 public class SmartActionsUtil {
   private static Logger LOG = Logger.getLogger(SmartActionsUtil.class);
 
@@ -80,7 +73,7 @@ public class SmartActionsUtil {
         }
       }
     }
-    
+
     if (actions.isEmpty()) {
       return;
     }

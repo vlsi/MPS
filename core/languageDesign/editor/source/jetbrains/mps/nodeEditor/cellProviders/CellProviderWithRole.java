@@ -21,13 +21,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.02.2006
- * Time: 19:50:36
- * To change this template use File | Settings | File Templates.
- */
 public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected String myNoTargetText;
   protected EditorContext myEditorContext;

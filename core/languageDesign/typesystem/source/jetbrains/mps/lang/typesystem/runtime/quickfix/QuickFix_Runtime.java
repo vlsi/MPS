@@ -20,13 +20,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.HashMap;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.07.2008
- * Time: 15:51:23
- * To change this template use File | Settings | File Templates.
- */
 public abstract class QuickFix_Runtime {
   private Map<String, Object[]> myMap = new HashMap<String, Object[]>();
 

@@ -20,13 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Condition;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.11.2006
- * Time: 14:04:57
- * To change this template use File | Settings | File Templates.
- */
 public class CellAction_FoldCell extends EditorCellAction {
 
   public boolean canExecute(EditorContext context) {

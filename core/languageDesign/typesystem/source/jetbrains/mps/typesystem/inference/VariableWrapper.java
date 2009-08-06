@@ -21,13 +21,6 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 25.01.2008
- * Time: 21:29:47
- * To change this template use File | Settings | File Templates.
- */
 public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   private static Logger LOG = Logger.getLogger(VariableWrapper.class);
 
@@ -77,7 +70,7 @@ public class VariableWrapper extends NodeWrapper implements IWrapperListener {
   }
 
   public void representatorSet(IWrapper wrapper, IWrapper representator, EquationManager equationManager) {
-  /*  if ("n".equals(getNode().getProperty("name"))) {
+    /*  if ("n".equals(getNode().getProperty("name"))) {
       System.err.println("BINGO!");
     }*/
 

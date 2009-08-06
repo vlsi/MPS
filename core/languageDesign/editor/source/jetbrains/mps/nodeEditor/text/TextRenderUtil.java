@@ -23,13 +23,6 @@ import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.11.2005
- * Time: 15:46:21
- * To change this template use File | Settings | File Templates.
- */
 public class TextRenderUtil {
 
   private static Logger LOG = Logger.getLogger(TextRenderUtil.class);

@@ -21,13 +21,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.11.2006
- * Time: 14:30:36
- * To change this template use File | Settings | File Templates.
- */
 public class CellAction_FoldAll extends EditorCellAction {
    public boolean canExecute(EditorContext context) {
     return context.getNodeEditorComponent().getRootCell() instanceof EditorCell_Collection;

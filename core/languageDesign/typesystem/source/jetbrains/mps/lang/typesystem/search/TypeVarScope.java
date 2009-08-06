@@ -27,13 +27,6 @@ import java.util.ArrayList;
 
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 23.03.2007
- * Time: 19:26:19
- * To change this template use File | Settings | File Templates.
- */
 public class TypeVarScope extends SearchScopeWithNode {
 
   private SNode myCurrentNode = null;

@@ -25,13 +25,6 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 01.04.2007
- * Time: 20:04:47
- * To change this template use File | Settings | File Templates.
- */
 public class RulesManager {
   private TypeChecker myTypeChecker;
   private Set<String> myLoadedLanguages = new HashSet<String>();
@@ -127,7 +120,7 @@ public class RulesManager {
       } else {
         return false;
       }
-    } catch(Throwable t) {
+    } catch (Throwable t) {
       //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
       return false;
     } finally {

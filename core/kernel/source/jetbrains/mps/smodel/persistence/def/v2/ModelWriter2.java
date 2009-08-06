@@ -26,13 +26,6 @@ import org.jdom.Element;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 10.09.2008
- * Time: 15:51:17
- * To change this template use File | Settings | File Templates.
- */
 public class ModelWriter2 implements IModelWriter {
   protected IReferencePersister getReferencePersister() {
     return new ReferencePersister1();

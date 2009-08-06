@@ -23,13 +23,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.awt.event.KeyEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Feb 23, 2006
- * Time: 7:25:34 PM
- * To change this template use File | Settings | File Templates.
- */
 public class RefNodeListHandlerElementKeyMap extends EditorCellKeyMap {
   private AbstractCellListHandler myListHandler;
 

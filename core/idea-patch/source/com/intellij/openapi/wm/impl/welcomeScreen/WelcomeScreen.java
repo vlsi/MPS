@@ -46,13 +46,6 @@ import java.awt.image.PixelGrabber;
 import java.util.Arrays;
 import java.util.Comparator;
 
-/**
- * Created by IntelliJ IDEA.
- * User: pti
- * Date: Mar 18, 2005
- * Time: 7:32:41 PM
- * To change this template use File | Settings | File Templates.
- */
 public class WelcomeScreen {
   private JPanel myWelcomePanel;
   private JPanel myMainPanel;
@@ -484,7 +477,7 @@ public class WelcomeScreen {
    * Returns the resulting or original string surrounded by <b>&lt;html&gt;</b> tags.
    *
    * @param string        not <code>null</code> {@link String String} value, otherwise the "Not specified." string is returned.
-   * @param font          not <code>null</code> {@link Font Font} object.
+   * @param font          not <code>null</code> {@link java.awt.Font Font} object.
    * @param isAntiAliased <code>boolean</code> value to denote whether the font is antialiased or not.
    * @param maxWidth      <code>int</code> value specifying maximum width of the resulting string in pixels.
    * @param maxRows       <code>int</code> value spesifying the number of rows. If the value is positive, the string is modified to not exceed

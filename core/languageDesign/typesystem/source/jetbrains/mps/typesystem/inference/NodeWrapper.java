@@ -30,13 +30,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 20.07.2007
- * Time: 14:15:19
- * To change this template use File | Settings | File Templates.
- */
 public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
@@ -56,7 +49,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     } else if (CopiedTypeProvider.concept.equals(conceptFqName)) {
       SNode copied = node;
       SNode source = copied.getReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE);
-      while(CopiedTypeProvider.concept.equals(source.getConceptFqName())) {
+      while (CopiedTypeProvider.concept.equals(source.getConceptFqName())) {
         copied = source;
         source = copied.getReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE);
       }
@@ -100,7 +93,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
 
-      if (matchParameter instanceof Pair && ((Pair)matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
+      if (matchParameter instanceof Pair && ((Pair) matchParameter).o1 instanceof SubtypingManager) { //special case: there's a "secret" map inside!
         Pair<SubtypingManager, Map<SNode, Set<SNode>>> pair = (Pair<SubtypingManager, Map<SNode, Set<SNode>>>) matchParameter;
         Map<SNode, Set<SNode>> mapWithVars = pair.o2;
         final Map<SNode, Set<SNode>> candidate = new HashMap<SNode, Set<SNode>>();
@@ -248,12 +241,12 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
   }
 
   public static NodeWrapper fromNode(SNode node, EquationManager equationManager) {
-    NodeWrapper  wrapper = NodeWrapper.createWrapperFromNode(node, equationManager);
+    NodeWrapper wrapper = NodeWrapper.createWrapperFromNode(node, equationManager);
     return wrapper;
   }
 
   public static NodeWrapper fromNode(SNode node, EquationManager equationManager, boolean equationManagerNullable) {
-    NodeWrapper  wrapper = NodeWrapper.createWrapperFromNode(node, equationManager, equationManagerNullable);
+    NodeWrapper wrapper = NodeWrapper.createWrapperFromNode(node, equationManager, equationManagerNullable);
     return wrapper;
   }
 

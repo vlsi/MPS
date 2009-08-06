@@ -43,13 +43,6 @@ import java.awt.event.MouseListener;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 20.11.2006
- * Time: 15:56:56
- * To change this template use File | Settings | File Templates.
- */
 public class LanguageHierarchiesComponent extends JComponent implements Scrollable, DataProvider {
   private static final int SPACING = 10;
   private static final int PADDING_X = 5;
@@ -189,8 +182,8 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 
-  public java.util.List<ConceptContainer> createHierarchyForest() {
-    java.util.List<ConceptContainer> result = new ArrayList<ConceptContainer>();
+  public List<ConceptContainer> createHierarchyForest() {
+    List<ConceptContainer> result = new ArrayList<ConceptContainer>();
     Map<ConceptDeclaration, ConceptContainer> processed = new HashMap<ConceptDeclaration, ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor().getSModel();
     ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
@@ -333,11 +326,11 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     private Color myColor = ColorAndGraphicsUtil.saturateColor(Color.BLUE, 0.2f);
     private boolean myRootable = false;
     private int mySubtreeWidth = 0;
-    private java.util.List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
+    private List<ConceptContainer> myChildren = new ArrayList<ConceptContainer>();
     private ConceptContainer myParent;
     private Font myFont = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(Font.PLAIN, 12f);
     private LanguageHierarchiesComponent myComponent;
-    private java.util.List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
+    private List<MouseListener> myMouseListeners = new ArrayList<MouseListener>();
     private IOperationContext myOperationContext;
     private boolean myIsAbstract = false;
     private String myNamespace;
@@ -418,7 +411,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       return name != null ? name : "";
     }
 
-    public java.util.List<ConceptContainer> getChildren() {
+    public List<ConceptContainer> getChildren() {
       return new ArrayList<ConceptContainer>(myChildren);
     }
 

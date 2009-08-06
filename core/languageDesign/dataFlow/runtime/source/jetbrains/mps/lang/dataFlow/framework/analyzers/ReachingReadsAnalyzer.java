@@ -26,13 +26,6 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 21.10.2008
- * Time: 14:38:57
- * To change this template use File | Settings | File Templates.
- */
 public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstruction>> {
   public Set<ReadInstruction> initial(Program p) {
     return new HashSet<ReadInstruction>();
@@ -61,7 +54,7 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
     }
 
     if (instruction instanceof ReadInstruction) {
-      result.add((ReadInstruction)instruction);
+      result.add((ReadInstruction) instruction);
     }
 
     return result;

@@ -30,13 +30,6 @@ import java.util.*;
 
 import com.intellij.openapi.command.CommandProcessor;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 06.03.2007
- * Time: 15:11:31
- * To change this template use File | Settings | File Templates.
- */
 public class AutoResolver extends EditorCheckerAdapter {
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {

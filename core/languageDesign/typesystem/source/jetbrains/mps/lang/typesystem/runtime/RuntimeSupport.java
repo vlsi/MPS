@@ -27,13 +27,6 @@ import jetbrains.mps.intentions.IntentionProvider;
 import java.util.Map;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 23.03.2007
- * Time: 16:23:31
- * To change this template use File | Settings | File Templates.
- */
 public class RuntimeSupport {
 
   private TypeChecker myTypeChecker;

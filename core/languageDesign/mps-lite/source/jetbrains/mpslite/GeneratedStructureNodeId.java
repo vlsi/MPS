@@ -22,13 +22,6 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 19.03.2009
- * Time: 19:54:42
- * To change this template use File | Settings | File Templates.
- */
 public class GeneratedStructureNodeId {
 
   public static SNodeId createConceptNodeId(AbstractConceptDeclaration conceptDeclaration) {
@@ -36,7 +29,7 @@ public class GeneratedStructureNodeId {
     sb.append("[C]");
     sb.append(conceptDeclaration.getModel().getLongName());
     sb.append(conceptDeclaration.getName());
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + sb.toString());
+    return new Foreign(Foreign.ID_PREFIX + sb.toString());
   }
 
   public static SNodeId createChildLinkNodeId(AbstractConceptDeclaration conceptDeclaration, LinkDeclaration linkDeclaration) {

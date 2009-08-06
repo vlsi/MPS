@@ -28,13 +28,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.awt.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 26.12.2007
- * Time: 19:37:42
- * To change this template use File | Settings | File Templates.
- */
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
   private IOperationContext myOperationContext;

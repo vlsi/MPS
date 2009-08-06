@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.util;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 11.11.2005
- * Time: 18:53:19
- * To change this template use File | Settings | File Templates.
- */
 public class HtmlCharsUtil {
   public static String asHtml(String s, boolean xml) {
     StringBuilder builder = new StringBuilder(s);

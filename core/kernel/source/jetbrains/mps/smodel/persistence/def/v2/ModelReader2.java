@@ -28,13 +28,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 10.09.2008
- * Time: 17:12:40
- * To change this template use File | Settings | File Templates.
- */
 public class ModelReader2 implements IModelReader {
   private static Logger LOG = Logger.getLogger(ModelReader2.class);
 

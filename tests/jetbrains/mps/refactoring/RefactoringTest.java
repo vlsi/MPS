@@ -22,13 +22,6 @@ import jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester;
 
 import java.io.File;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.01.2008
- * Time: 16:12:33
- * To change this template use File | Settings | File Templates.
- */
 public class RefactoringTest extends BaseMPSTest {
   private static final String TEST_REFACTORING_PATH = "testMaterial/testRefactoring";
 
@@ -56,7 +49,7 @@ public class RefactoringTest extends BaseMPSTest {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenamePropertyRefactoringTester_Simple"));
   }
 
-   public void testDeleteLinkRefactoring_Simple() {
+  public void testDeleteLinkRefactoring_Simple() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.DeleteLinkRefactoringTester_Simple"));
   }
 }

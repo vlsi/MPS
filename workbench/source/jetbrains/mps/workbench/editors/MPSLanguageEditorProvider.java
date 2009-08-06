@@ -24,13 +24,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.06.2008
- * Time: 16:50:10
- * To change this template use File | Settings | File Templates.
- */
 public class MPSLanguageEditorProvider implements FileEditorProvider {
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {
     return file instanceof MPSLanguageVirtualFile;

@@ -21,13 +21,6 @@ import jetbrains.mps.util.EqualUtil;
 
 import java.util.Stack;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.03.2006
- * Time: 20:33:59
- * To change this template use File | Settings | File Templates.
- */
 public class ReferencedNodeContext {
   private Stack<SNode> myContextRefererNodes = new Stack<SNode>();
   private SNode myNodePointer = null;
@@ -78,9 +71,9 @@ public class ReferencedNodeContext {
 
   public int hashCode() {
     return EqualUtil.hashCode(myContextRefererNodes)
-            + EqualUtil.hashCode(myNodePointer)
-            + EqualUtil.hashCode(myContextRoles)
-            + EqualUtil.hashCode(myAttributesStack);
+      + EqualUtil.hashCode(myNodePointer)
+      + EqualUtil.hashCode(myContextRoles)
+      + EqualUtil.hashCode(myAttributesStack);
   }
 
 
@@ -89,9 +82,9 @@ public class ReferencedNodeContext {
     if (obj instanceof ReferencedNodeContext) {
       ReferencedNodeContext o = (ReferencedNodeContext) obj;
       return EqualUtil.equals(myContextRoles, o.myContextRoles)
-              && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
-              && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
-              && EqualUtil.equals(myNodePointer, o.myNodePointer);
+        && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
+        && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
+        && EqualUtil.equals(myNodePointer, o.myNodePointer);
     } else {
       return false;
     }

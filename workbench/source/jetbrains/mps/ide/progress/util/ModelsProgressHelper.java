@@ -21,13 +21,6 @@ import jetbrains.mps.smodel.SModelReference;
 
 import java.util.Collection;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 31.12.2005
- * Time: 18:39:58
- * To change this template use File | Settings | File Templates.
- */
 public class ModelsProgressHelper {
   private String myTaskKind;
 

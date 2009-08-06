@@ -37,13 +37,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.02.2007
- * Time: 18:49:18
- * To change this template use File | Settings | File Templates.
- */
 class ModelDifferenceViewWithEditor extends JPanel implements EditorMessageOwner {
   private IOperationContext myOperationContext;
   private UIEditorComponent myModelEditorComponent;

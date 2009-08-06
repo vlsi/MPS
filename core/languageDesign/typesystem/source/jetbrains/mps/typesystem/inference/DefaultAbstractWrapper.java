@@ -21,13 +21,6 @@ import java.util.HashSet;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.01.2008
- * Time: 15:15:38
- * To change this template use File | Settings | File Templates.
- */
 public abstract class DefaultAbstractWrapper implements IWrapper {
 
   private Set<IWrapperListener> getWrapperListeners(EquationManager equationManager) {

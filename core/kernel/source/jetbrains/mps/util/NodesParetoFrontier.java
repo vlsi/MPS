@@ -19,13 +19,6 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.02.2006
- * Time: 12:09:26
- * To change this template use File | Settings | File Templates.
- */
 public class NodesParetoFrontier {
 
   public static class NodeBox implements Iterable<NodeBox> {

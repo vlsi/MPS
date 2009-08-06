@@ -29,13 +29,6 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import java.util.*;
 import java.awt.event.KeyEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 21.02.2006
- * Time: 14:29:05
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractCellListHandler implements KeyboardHandler {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 

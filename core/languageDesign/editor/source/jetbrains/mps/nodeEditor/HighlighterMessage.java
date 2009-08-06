@@ -26,13 +26,6 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import java.awt.Color;
 import java.awt.Graphics;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.04.2008
- * Time: 15:05:40
- * To change this template use File | Settings | File Templates.
- */
 public class HighlighterMessage extends DefaultEditorMessage {
   private IErrorTarget myErrorTarget;
   private IErrorReporter myErrorReporter;
@@ -58,7 +51,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     if (!super.sameAs(message)) {
       return false;
     }
-    return myErrorTarget.sameAs(((HighlighterMessage)message).myErrorTarget);
+    return myErrorTarget.sameAs(((HighlighterMessage) message).myErrorTarget);
   }
 
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
@@ -103,7 +96,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
       if (!(cell instanceof EditorCell_Property)) return false;
       EditorCell_Property propertyCell = (EditorCell_Property) cell;
-      return myErrorTarget.getRole().equals(((PropertyAccessor)propertyCell.getModelAccessor()).getPropertyName());
+      return myErrorTarget.getRole().equals(((PropertyAccessor) propertyCell.getModelAccessor()).getPropertyName());
     }
 
     return false;
@@ -168,7 +161,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
     if (isWarning()) {
-      cell.paintSelection(g, new Color(250, 247, 158), false);      
+      cell.paintSelection(g, new Color(250, 247, 158), false);
     } else {
       ColorAndGraphicsUtil.drawWaveUnderCell(g, getColor(), cell);
     }

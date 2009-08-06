@@ -22,13 +22,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.01.2008
- * Time: 15:13:28
- * To change this template use File | Settings | File Templates.
- */
 public class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCellRenderer {
   private JLabel myTextLabel;
   private JLabel myDescriptionLabel;

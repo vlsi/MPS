@@ -24,13 +24,6 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.12.2007
- * Time: 15:48:54
- * To change this template use File | Settings | File Templates.
- */
 public class ConceptAncestorsProvider implements IDescendantsProvider {
   public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter) {
     Set<INodeAdapter> result = new HashSet<INodeAdapter>();

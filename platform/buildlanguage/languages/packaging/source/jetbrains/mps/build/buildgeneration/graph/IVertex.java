@@ -17,13 +17,6 @@ package jetbrains.mps.build.buildgeneration.graph;
 
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Julia.Beliaeva
- * Date: 12.01.2008
- * Time: 17:50:26
- * To change this template use File | Settings | File Templates.
- */
 public interface IVertex {
 
   Set<? extends IVertex> getNexts();

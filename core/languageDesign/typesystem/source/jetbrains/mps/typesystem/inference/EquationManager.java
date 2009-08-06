@@ -35,13 +35,6 @@ import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 03.02.2006
- * Time: 22:27:59
- * To change this template use File | Settings | File Templates.
- */
 public class EquationManager {
 
   private static Logger LOG = Logger.getLogger(EquationManager.class);
@@ -311,7 +304,7 @@ public class EquationManager {
 
   private static void processInequationWithReplacementRule(InequationReplacementRule_Runtime rule, SNode node1, SNode node2, EquationInfo equationInfo, TypeCheckingContext typeCheckingContext) {
     if (rule instanceof AbstractInequationReplacementRule_Runtime) {
-      ((AbstractInequationReplacementRule_Runtime)rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
+      ((AbstractInequationReplacementRule_Runtime) rule).processInequation(node1, node2, equationInfo, typeCheckingContext);
     } else {
       rule.processInequation(node1, node2, equationInfo);
     }
@@ -588,11 +581,11 @@ public class EquationManager {
 
     //holes
     if (rhsRepresentator instanceof HoleWrapper) {
-      ((HoleWrapper)rhsRepresentator).getInequationSystem().addEquation(lhsRepresentator);
+      ((HoleWrapper) rhsRepresentator).getInequationSystem().addEquation(lhsRepresentator);
       return;
     }
     if (lhsRepresentator instanceof HoleWrapper) {
-      ((HoleWrapper)lhsRepresentator).getInequationSystem().addEquation(rhsRepresentator);
+      ((HoleWrapper) lhsRepresentator).getInequationSystem().addEquation(rhsRepresentator);
       return;
     }
 
@@ -1057,7 +1050,7 @@ public class EquationManager {
           typeLessThanVar(type, false, priority, minPriority, shallow);
           varLessThanType(type, true, priority, minPriority, shallow);
           varLessThanType(type, false, priority, minPriority, shallow);
-        } else if ( (shallow && type.isConcrete()) || (!shallow && isConcrete(type)) ) {
+        } else if ((shallow && type.isConcrete()) || (!shallow && isConcrete(type))) {
           if (shallow) {
             hasConcreteTypes = true;
           }
@@ -1292,10 +1285,10 @@ public class EquationManager {
     }
     while (wrapper instanceof CopiedTypeWrapper) {
       if (isEquatedWithSource((CopiedTypeWrapper) wrapper)) {
-        wrapper = ((CopiedTypeWrapper)wrapper).getRawSourceWrapper();
+        wrapper = ((CopiedTypeWrapper) wrapper).getRawSourceWrapper();
         break;
       }
-      wrapper = ((CopiedTypeWrapper)wrapper).getSourceWrapper();
+      wrapper = ((CopiedTypeWrapper) wrapper).getSourceWrapper();
     }
     if (wrapper.getNode().isRegistered() && expandChild) {
       wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));

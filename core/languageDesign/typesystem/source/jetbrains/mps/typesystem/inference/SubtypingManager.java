@@ -33,13 +33,6 @@ import java.util.*;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.04.2006
- * Time: 9:42:22
- * To change this template use File | Settings | File Templates.
- */
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
@@ -158,7 +151,8 @@ public class SubtypingManager {
       }
 
       //supertypes
-      if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak)) return true;
+      if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak))
+        return true;
     }
 
     return false;
@@ -273,14 +267,14 @@ public class SubtypingManager {
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
       if (superRepresentator instanceof NodeWrapper) {
-        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
+        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), answer, isWeak);
       }
     }
 
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
       if (superRepresentator instanceof NodeWrapper) {
-        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper)superRepresentator).getNode(), answer, isWeak);
+        cache.addCacheEntry(subRepresentator.getNode(), ((NodeWrapper) superRepresentator).getNode(), answer, isWeak);
       }
     }
     // }
@@ -533,14 +527,14 @@ System.out.println("alltypes = " + allTypes);*/
     //asking the cache
     SubtypingCache cache = myTypeChecker.getSubtypingCache();
     if (cache != null) {
-      Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+      Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
       if (nodePair.o1) {
         return nodePair.o2;
       }
     }
     cache = myTypeChecker.getGlobalSubtypingCache();
     if (cache != null) {
-      Pair<Boolean,SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
+      Pair<Boolean, SNode> nodePair = cache.getCoerced(subtype, pattern, isWeak);
       if (nodePair.o1) {
         return nodePair.o2;
       }
@@ -619,12 +613,12 @@ System.out.println("alltypes = " + allTypes);*/
 
   public synchronized Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     Set<SNode> residualNodes = new HashSet<SNode>(nodes);
-    while(residualNodes.size() > 1) {
+    while (residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
       boolean wasChange = false;
       int size = nodesToIterate.size();
       for (int i = 0; i < size; i++) {
-        for (int j = i+1; j < size; j++) {
+        for (int j = i + 1; j < size; j++) {
           SNode node1 = nodesToIterate.get(i);
           SNode node2 = nodesToIterate.get(j);
           if (isSubtype(node1, node2)) {
@@ -656,7 +650,7 @@ System.out.println("alltypes = " + allTypes);*/
       return matchesWith(wrapper, equationManager, errorInfo);
     }
 
-    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo)  {
+    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo) {
       if (!(wrapper instanceof NodeWrapper)) {
         return false;
       }

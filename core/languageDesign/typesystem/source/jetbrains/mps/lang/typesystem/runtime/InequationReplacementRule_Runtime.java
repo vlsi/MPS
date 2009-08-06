@@ -18,13 +18,6 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.01.2008
- * Time: 15:22:08
- * To change this template use File | Settings | File Templates.
- */
 public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoApplicableNodes {
   public abstract void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo);
 
@@ -33,9 +26,11 @@ public abstract class InequationReplacementRule_Runtime implements IRuleWithTwoA
   }
 
   public abstract boolean isApplicableSubtype(SNode node);
+
   public abstract boolean isApplicableSupertype(SNode node);
 
   public abstract String getApplicableSubtypeConceptFQName();
+
   public abstract String getApplicableSupertypeConceptFQName();
 
   public boolean isApplicable1(SNode node) {

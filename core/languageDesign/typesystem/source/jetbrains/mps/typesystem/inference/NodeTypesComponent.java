@@ -35,13 +35,6 @@ import jetbrains.mps.typesystem.debug.NullSlicer;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.05.2007
- * Time: 13:50:13
- * To change this template use File | Settings | File Templates.
- */
 public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private static final char A_CHAR = 'a';
@@ -79,7 +72,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
 
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
   private Set<SNode> myCurrentNodesToInvalidateNonTypesystem = new HashSet<SNode>();
-  private Set<Pair<SNode,String>> myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
+  private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidateNonTypesystem = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidateNonTypesystem = new HashSet<SNode>();
 
   // nodes to rules which depend on this nodes
@@ -252,6 +245,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       iErrorReporters.push(errorReporter);
 
       Collections.sort(iErrorReporters, new Comparator<IErrorReporter>() { //todo: right order?
+
         public int compare(IErrorReporter o1, IErrorReporter o2) {
           return o1.getMessageStatus().compareTo(o2.getMessageStatus());
         }
@@ -446,7 +440,7 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
-          (type.getAdapter() instanceof RuntimeHoleType  && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
+          (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
             computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
@@ -543,8 +537,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   }
 
   private void addDepedentPropertiesNonTypesystem(SNode sNode, NonTypesystemRule_Runtime rule, Set<Pair<SNode, String>> propertiesToDependOn) {
-     Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules
-       = myPropertiesToDependentNodesWithNTRules;
+    Map<Pair<SNode, String>, WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>>> mapToNodesWithNTRules
+      = myPropertiesToDependentNodesWithNTRules;
     for (Pair<SNode, String> propertyToDependOn : propertiesToDependOn) {
       if (propertyToDependOn == null) continue;
       WeakHashMap<SNode, Set<NonTypesystemRule_Runtime>> dependentNodes = mapToNodesWithNTRules.get(propertyToDependOn);
@@ -678,9 +672,9 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
     try {
       //todo get rid of ifs when refactoring is complete
       if (rule instanceof AbstractInferenceRule_Runtime) {
-        ((AbstractInferenceRule_Runtime)rule).applyRule(node, getTypeCheckingContext());
+        ((AbstractInferenceRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
       } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
-        ((AbstractNonTypesystemRule_Runtime)rule).applyRule(node, getTypeCheckingContext());
+        ((AbstractNonTypesystemRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
       } else {
         rule.applyRule(node);
       }
@@ -747,7 +741,6 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
   private SNode expandType(SNode term, SNode type, SModel typesModel) {
     return myEquationManager.expandType(term, type, typesModel, true, this);
   }
-
 
 
   public EquationManager getEquationManager() {
@@ -965,8 +958,8 @@ public class NodeTypesComponent implements EditorMessageOwner, Cloneable {
       }
     }
 
-     private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
-        myCurrentPropertiesToInvalidateNonTypesystem.add(new Pair<SNode, String>(eventNode, propertyName));
+    private void markDependentOnPropertyNodesForInvalidation(SNode eventNode, String propertyName) {
+      myCurrentPropertiesToInvalidateNonTypesystem.add(new Pair<SNode, String>(eventNode, propertyName));
     }
   }
 

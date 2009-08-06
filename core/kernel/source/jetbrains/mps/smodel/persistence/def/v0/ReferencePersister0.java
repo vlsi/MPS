@@ -23,13 +23,6 @@ import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import org.jdom.Element;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.11.2005
- * Time: 20:54:31
- * To change this template use File | Settings | File Templates.
- */
 /*package*/ class ReferencePersister0 implements IReferencePersister {
 
   private static Logger LOG = Logger.getLogger(ReferencePersister0.class);

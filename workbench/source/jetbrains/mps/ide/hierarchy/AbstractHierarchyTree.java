@@ -32,13 +32,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.06.2007
- * Time: 15:45:41
- * To change this template use File | Settings | File Templates.
- */
 public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPSTree {
   protected IOperationContext myOperationContext;
   protected FindUsagesManager myUsagesManager;

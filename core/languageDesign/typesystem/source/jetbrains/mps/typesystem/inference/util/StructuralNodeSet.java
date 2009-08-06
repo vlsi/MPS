@@ -24,13 +24,6 @@ import jetbrains.mps.typesystem.inference.NodeWrapper;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.04.2007
- * Time: 19:35:25
- * To change this template use File | Settings | File Templates.
- */
 public class StructuralNodeSet<T> implements Set<SNode> {
   private Set<SNodeWrapper> myWrappers = new HashSet<SNodeWrapper>();
 

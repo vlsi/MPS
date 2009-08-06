@@ -19,13 +19,6 @@ import jetbrains.mps.samples.formulaLanguage.api.Function;
 import mf.Quantity;
 import postingrules.AccountingEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Apr 5, 2005
- * Time: 12:39:58 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ValueDouble implements Function<Double> {
   private String myValueName;
 

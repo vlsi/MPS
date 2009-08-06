@@ -27,13 +27,6 @@ import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.05.2008
- * Time: 21:01:42
- * To change this template use File | Settings | File Templates.
- */
 public class EditorsProvider {
   private Project myProject;
 

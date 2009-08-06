@@ -27,17 +27,13 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 19.02.2009
- * Time: 17:05:20
- * To change this template use File | Settings | File Templates.
- */
 public abstract class SmartAction_Runtime {
   public abstract void execute(EditorCell selectedCell);
+
   public abstract SmartActionUIPanel getUI();
+
   public abstract boolean isApplicable(EditorCell selectedCell);
+
   public abstract String getDescriptionText();
 
   private SmartActionContext mySmartActionContext;
@@ -88,10 +84,10 @@ public abstract class SmartAction_Runtime {
 
     dialog.add(mainPanel, BorderLayout.CENTER);
     dialog.add(buttonPanel, BorderLayout.SOUTH);
-    dialog.setSize(200,400);
+    dialog.setSize(200, 400);
     EditorComponent editorComponent = selectedCell.getEditor();
-    dialog.setLocation((editorComponent.getWidth() - dialog.getWidth())/2,
-      (editorComponent.getHeight() - dialog.getHeight())/2 );
+    dialog.setLocation((editorComponent.getWidth() - dialog.getWidth()) / 2,
+      (editorComponent.getHeight() - dialog.getHeight()) / 2);
     dialog.setVisible(true);
   }
 

@@ -17,30 +17,23 @@ package jetbrains.mps.build.buildgeneration.graph;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Julia.Beliaeva
- * Date: 05.01.2008
- * Time: 15:58:26
- * To change this template use File | Settings | File Templates.
- */
 public class Graph<V extends IVertex> {
 
   private final Set<V> myData = new LinkedHashSet<V>();
 
-  public Graph(){
+  public Graph() {
   }
 
-  public void add(V vertex){
+  public void add(V vertex) {
     myData.add(vertex);
-    for (IVertex next : vertex.getNexts()){
-      if (!myData.contains(next)){
+    for (IVertex next : vertex.getNexts()) {
+      if (!myData.contains(next)) {
         add((V) next);
       }
     }
   }
 
-  public int getNVertexes(){
+  public int getNVertexes() {
     return myData.size();
   }
 
@@ -50,13 +43,14 @@ public class Graph<V extends IVertex> {
 
   /**
    * This dfs works slow - O( (V+E)*logV )
+   *
    * @param walker - walker handling search events.
    */
-  public void dfsValk(IDFSWalker<V> walker){
+  public void dfsValk(IDFSWalker<V> walker) {
     TreeSet<V> vertexes = new TreeSet<V>(walker.getVertexComparator());
     vertexes.addAll(myData);
 
-    while (!vertexes.isEmpty()){
+    while (!vertexes.isEmpty()) {
       V v = vertexes.first();
       walker.enterTree(v);
 
@@ -68,71 +62,85 @@ public class Graph<V extends IVertex> {
 
   private void dfs(V v, TreeSet<V> vertexes, IDFSWalker<V> walker) {
     vertexes.remove(v);
-    
+
     walker.enter(v);
 
-    for (IVertex next : v.getNexts()){
-      if (vertexes.contains(next)){
+    for (IVertex next : v.getNexts()) {
+      if (vertexes.contains(next)) {
         dfs((V) next, vertexes, walker);
       }
     }
-    
+
     walker.leave(v);
   }
 
   public static interface IDFSWalker<V extends IVertex> {
     /**
      * Create comparator defining order in which to take new vertex.
+     *
      * @return comparator defining order in which to take new vertex.
      */
     Comparator<V> getVertexComparator();
 
     /**
      * Entering new DFS-tree.
+     *
      * @param v - root vertex of the tree.
      */
     void enterTree(V v);
+
     /**
      * Leaving DFS-tree.
+     *
      * @param v - root vertex of the tree.
      */
     void leaveTree(V v);
 
     /**
      * Entering vertex.
+     *
      * @param v - vertex.
      */
     void enter(V v);
 
     /**
      * Leaving vertex.
+     *
      * @param v - vertex.
      */
     void leave(V v);
   }
 
-  public static class EmptyDFSWalker<V extends IVertex> implements IDFSWalker<V>{
+  public static class EmptyDFSWalker<V extends IVertex> implements IDFSWalker<V> {
     public Comparator<V> getVertexComparator() {
       return null;
     }
-    public void enterTree(V v) {}
-    public void leaveTree(V v) {}
-    public void enter(V v) {}
-    public void leave(V v) {}
+
+    public void enterTree(V v) {
+    }
+
+    public void leaveTree(V v) {
+    }
+
+    public void enter(V v) {
+    }
+
+    public void leave(V v) {
+    }
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     StringBuffer sb = new StringBuffer();
 
-    for (V vertex : myData){
+    for (V vertex : myData) {
       sb.append(vertex);
       sb.append(" -> ");
-      int j  = 0;
+      int j = 0;
       Set<? extends IVertex> nexts = vertex.getNexts();
-      for (IVertex next : nexts){
+      for (IVertex next : nexts) {
         sb.append(next);
-        if (j < nexts.size()-1){
+        if (j < nexts.size() - 1) {
           sb.append(", ");
         }
         j++;

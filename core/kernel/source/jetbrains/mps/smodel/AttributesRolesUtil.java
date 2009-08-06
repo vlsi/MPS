@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.06.2006
- * Time: 14:55:52
- * To change this template use File | Settings | File Templates.
- */
 public class AttributesRolesUtil {
   public static final String DEFAULT_ATTRIBUTE_ROLE = "_attr_";
   public static final String STEREOTYPE_DELIM = "$";

@@ -19,13 +19,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.02.2009
- * Time: 20:32:30
- * To change this template use File | Settings | File Templates.
- */
 public class SimpleSNodeTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
 

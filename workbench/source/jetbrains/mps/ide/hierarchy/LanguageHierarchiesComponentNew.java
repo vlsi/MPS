@@ -46,13 +46,6 @@ import java.awt.event.MouseListener;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 20.11.2006
- * Time: 15:56:56
- * To change this template use File | Settings | File Templates.
- */
 public class LanguageHierarchiesComponentNew extends JComponent implements Scrollable, DataProvider {
   private static final int SPACING = 15;
   private static final int PADDING_X = 5;
@@ -272,8 +265,8 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       newContFrontier = new HashSet<ConceptContainer>();
     }
 
-    myLevels = new List[maxRank+1];
-    
+    myLevels = new List[maxRank + 1];
+
 
     myNodes = new ArrayList<ConceptContainer>(processed.values());
 
@@ -295,12 +288,12 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
           }
         });
         List<ConceptContainer> newList = new ArrayList<ConceptContainer>();
-        for (int j = 0; j < list.size(); j+=2) {
+        for (int j = 0; j < list.size(); j += 2) {
           newList.add(list.get(j));
         }
         int last = list.size() - 1;
         last = last - (list.size() % 2);
-        for (int j = last; j >= 0; j-=2) {
+        for (int j = last; j >= 0; j -= 2) {
           newList.add(list.get(j));
         }
         myLevels[i] = newList;
@@ -312,16 +305,16 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
             float sum1 = 0;
             float n1 = 0;
             for (ConceptContainer parent1 : o1.getParents()) {
-              sum1+= prevList.indexOf(parent1);
+              sum1 += prevList.indexOf(parent1);
               n1++;
             }
             float sum2 = 0;
             float n2 = 0;
-             for (ConceptContainer parent2 : o2.getParents()) {
-              sum2+= prevList.indexOf(parent2);
+            for (ConceptContainer parent2 : o2.getParents()) {
+              sum2 += prevList.indexOf(parent2);
               n2++;
             }
-            return Math.round((sum1/n1) - (sum2/n2));
+            return Math.round((sum1 / n1) - (sum2 / n2));
           }
         });
       }
@@ -346,7 +339,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
             conceptContainer.updateSize();
 
             if (!conceptContainer.getChildren().isEmpty()) {
-              nextLevelsCount ++;
+              nextLevelsCount++;
               curLevel++;
             }
             conceptContainer.setLevel(curLevel);
@@ -384,7 +377,8 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
         }
         myWidth = maxWidth;
         myHeight = y;
-      }});
+      }
+    });
   }
 
 
@@ -490,7 +484,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
         myColor = ColorAndGraphicsUtil.saturateColor(Color.ORANGE, 0.5f);
       }
       myOperationContext = myComponent.myOperationContext;
-      myRootable = conceptDeclaration instanceof ConceptDeclaration ? ((ConceptDeclaration)conceptDeclaration).getRootable() : false;
+      myRootable = conceptDeclaration instanceof ConceptDeclaration ? ((ConceptDeclaration) conceptDeclaration).getRootable() : false;
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract") != null;
       myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
       myNodePointer = new SNodePointer(conceptDeclaration);
@@ -745,7 +739,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
       int y1_ = Math.min(myY1, myY2);
       int y2_ = Math.max(myY1, myY2);
       g.setColor(Color.WHITE);
-      g.fillRect(myX-1, y1_+1, 3, (y2_ - y1_) - 2);
+      g.fillRect(myX - 1, y1_ + 1, 3, (y2_ - y1_) - 2);
       g.setColor(Color.BLACK);
       g.drawLine(myX, y1_, myX, y2_);
     }

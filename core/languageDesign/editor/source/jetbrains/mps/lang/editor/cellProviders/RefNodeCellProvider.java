@@ -24,13 +24,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.02.2006
- * Time: 20:20:27
- * To change this template use File | Settings | File Templates.
- */
 public class RefNodeCellProvider extends AbstractReferentCellProvider {
 
 

@@ -30,13 +30,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.WeakHashMap;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.06.2008
- * Time: 15:07:16
- * To change this template use File | Settings | File Templates.
- */
 public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem implements ApplicationComponent {
 
   public static MPSLanguagesVirtualFileSystem getInstance() {

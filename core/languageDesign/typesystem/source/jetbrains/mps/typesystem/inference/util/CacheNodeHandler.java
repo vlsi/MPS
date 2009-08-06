@@ -21,13 +21,6 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: test
- * Date: Aug 30, 2008
- * Time: 11:27:48 AM
- * To change this template use File | Settings | File Templates.
- */
 public class CacheNodeHandler {
   private SNode myNode;
 

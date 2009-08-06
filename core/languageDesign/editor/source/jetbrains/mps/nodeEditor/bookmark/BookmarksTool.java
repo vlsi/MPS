@@ -30,13 +30,6 @@ import com.intellij.openapi.components.Storage;
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 09.02.2009
- * Time: 16:47:57
- * To change this template use File | Settings | File Templates.
- */
 @State(
   name = "BookmarksTool",
   storages = {

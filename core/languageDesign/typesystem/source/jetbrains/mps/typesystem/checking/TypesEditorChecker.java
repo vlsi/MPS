@@ -38,13 +38,6 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.application.ModalityState;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.04.2008
- * Time: 15:04:28
- * To change this template use File | Settings | File Templates.
- */
 public class TypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(TypesEditorChecker.class);
 
@@ -67,7 +60,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
 
     NodeTypesComponent typesComponent = getNodeTypesComponent(node);
-    if (typesComponent != null)  {
+    if (typesComponent != null) {
       //non-typesystem checks
       if (!wasCheckedOnce || hasDramaticalEvent(events)) {
         try {
@@ -90,7 +83,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
             if (!myOnceExecutedQuickFixes.contains(intention)) {
               myOnceExecutedQuickFixes.add(intention);
               LaterInvocator.invokeLater(new Runnable() {
-                public void run() {                  
+                public void run() {
                   ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                     public void run() {
                       CommandProcessor.getInstance().runUndoTransparentAction(new Runnable() {

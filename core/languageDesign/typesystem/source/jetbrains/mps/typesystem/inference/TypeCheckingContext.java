@@ -34,13 +34,6 @@ import java.util.Map;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 23.09.2008
- * Time: 16:40:49
- * To change this template use File | Settings | File Templates.
- */
 public class TypeCheckingContext {
   private NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
@@ -200,7 +193,7 @@ public class TypeCheckingContext {
     } else {
       if (GREY_TYPEOF_ENABLED) {
         return createCopiedTypeProviderNode(representator);
-      }   else {
+      } else {
         return representator;
       }
     }

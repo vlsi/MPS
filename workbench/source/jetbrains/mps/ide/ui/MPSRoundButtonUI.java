@@ -21,13 +21,6 @@ import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.Color;
 import java.awt.Graphics;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 20.09.2005
- * Time: 13:26:18
- * To change this template use File | Settings | File Templates.
- */
 public class MPSRoundButtonUI extends BasicButtonUI {
   public void paint(Graphics g, JComponent c) {
 

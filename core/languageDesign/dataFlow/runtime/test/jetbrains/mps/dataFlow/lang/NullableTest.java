@@ -26,13 +26,6 @@ import jetbrains.mps.dataFlow.runtime.NullableAnalyzer;
 import java.util.Set;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Evgeny.Kurbatsky
- * Date: 29.12.2008
- * Time: 12:19:46
- * To change this template use File | Settings | File Templates.
- */
 public class NullableTest {
   @Test
   public void simple() {

@@ -25,13 +25,6 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.01.2006
- * Time: 16:28:02
- * To change this template use File | Settings | File Templates.
- */
 public class Substitution {
 
   private static Logger LOG = Logger.getLogger(Substitution.class);
@@ -64,9 +57,9 @@ public class Substitution {
   private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
     for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.getDescendants(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return BaseAdapter.isInstance(object,PatternVariableDeclaration.class) ||
-                BaseAdapter.isInstance(object, LinkPatternVariableDeclaration.class) ||
-                BaseAdapter.isInstance(object, PropertyPatternVariableDeclaration.class);
+        return BaseAdapter.isInstance(object, PatternVariableDeclaration.class) ||
+          BaseAdapter.isInstance(object, LinkPatternVariableDeclaration.class) ||
+          BaseAdapter.isInstance(object, PropertyPatternVariableDeclaration.class);
       }
     })) {
       loopVarSet.add(patternVar);
@@ -136,7 +129,7 @@ public class Substitution {
   }
 
 
-   public void bindPropertyWithVar(PropertyPatternVariableDeclaration var, LazyPropertyValue propertyValue) {
+  public void bindPropertyWithVar(PropertyPatternVariableDeclaration var, LazyPropertyValue propertyValue) {
     LazyPropertyValue oldPropertyValue = myPropVarsToProperties.get(var);
     if (oldPropertyValue != null) {
       LOG.warning("a property value binded with this pattern var exists already: " + oldPropertyValue);
@@ -181,9 +174,9 @@ public class Substitution {
     return result;
   }
 
-   //--------- links
+  //--------- links
 
-   public void bindLinkTargetWithVar(LinkPatternVariableDeclaration var, SNode linkTarget) {
+  public void bindLinkTargetWithVar(LinkPatternVariableDeclaration var, SNode linkTarget) {
     SNode oldLinkTarget = myLinkVarsToNodes.get(var);
     if (oldLinkTarget != null) {
       LOG.warning("a link target value binded with this pattern var exists already: " + oldLinkTarget);
@@ -225,7 +218,7 @@ public class Substitution {
       return new ArrayList<SNode>(linkTargets);
     }
   }
-  
+
 
   public void add(Substitution substitution) {
     this.myLinkVarsToNodes.putAll(substitution.myLinkVarsToNodes);

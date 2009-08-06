@@ -41,13 +41,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import org.jdom.Text;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 08.12.2008
- * Time: 16:52:35
- * To change this template use File | Settings | File Templates.
- */
 public class TypecheckerStateViewComponent extends JPanel {
   private static Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
 
@@ -117,7 +110,8 @@ public class TypecheckerStateViewComponent extends JPanel {
     if (myNodeToSliceWith != null) {
       //initial node type
 
-      innerConstraints.gridy = y; y++;
+      innerConstraints.gridy = y;
+      y++;
       innerConstraints.weighty = 0;
       innerConstraints.weightx = 0;
       innerConstraints.fill = GridBagConstraints.NONE;
@@ -128,7 +122,7 @@ public class TypecheckerStateViewComponent extends JPanel {
 
       innerConstraints.gridx = 1;
       innerConstraints.gridwidth = GridBagConstraints.REMAINDER;
-      TypecheckerStateViewComponent.SNodeTree initialTypeTree = new SNodeTree(mySlicer.getInitialNodeType(myNodeToSliceWith));
+      SNodeTree initialTypeTree = new SNodeTree(mySlicer.getInitialNodeType(myNodeToSliceWith));
       innerPanel.add(initialTypeTree, innerConstraints);
       initialTypeTree.rebuildNow();
 
@@ -335,6 +329,7 @@ public class TypecheckerStateViewComponent extends JPanel {
 
 
   }
+
   class CausesTree extends MPSTree {
     private List<Pair<String, String>> myCauses;
 

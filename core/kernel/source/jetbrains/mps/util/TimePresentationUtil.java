@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.util;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 03.01.2006
- * Time: 21:24:25
- * To change this template use File | Settings | File Templates.
- */
 public class TimePresentationUtil {
   public static String timeIntervalStringPresentation(long timeMillis) {
     long allSeconds = timeMillis / 1000;

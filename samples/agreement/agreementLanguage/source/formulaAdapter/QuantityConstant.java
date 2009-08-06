@@ -19,13 +19,6 @@ import jetbrains.mps.samples.formulaLanguage.api.Function;
 import mf.Quantity;
 import mf.Unit;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Apr 4, 2005
- * Time: 8:53:41 PM
- * To change this template use File | Settings | File Templates.
- */
 public class QuantityConstant implements Function<Quantity> {
   private Quantity myQuantity;
 

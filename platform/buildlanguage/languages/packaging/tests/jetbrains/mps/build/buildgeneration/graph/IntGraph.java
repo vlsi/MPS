@@ -17,33 +17,26 @@ package jetbrains.mps.build.buildgeneration.graph;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Julia.Beliaeva
- * Date: 12.01.2008
- * Time: 18:06:21
- * To change this template use File | Settings | File Templates.
- */
 public class IntGraph {
 
   private final Graph myGraph = new Graph();
-  private final IntVertex [] myVertexes;
+  private final IntVertex[] myVertexes;
 
   public IntGraph(int n) {
     myVertexes = new IntVertex[n];
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
       myVertexes[i] = new IntVertex(i);
       myGraph.add(myVertexes[i]);
     }
   }
 
-  public void addEdges(int from, int ... to) {
-    for (int i = 0; i < to.length; i++){
+  public void addEdges(int from, int... to) {
+    for (int i = 0; i < to.length; i++) {
       myVertexes[from].myNext.add(myVertexes[to[i]]);
     }
   }
 
-  public static class IntVertex implements IVertex, Comparable<IntVertex>{
+  public static class IntVertex implements IVertex, Comparable<IntVertex> {
 
     private final Set<IntVertex> myNext = new TreeSet<IntVertex>();
     private final Integer myID;
@@ -65,8 +58,8 @@ public class IntGraph {
     }
 
     public boolean equals(Object obj) {
-      if (obj instanceof IntVertex){
-        return ((IntVertex)obj).myID.equals(myID);
+      if (obj instanceof IntVertex) {
+        return ((IntVertex) obj).myID.equals(myID);
       }
       return super.equals(obj);    //To change body of overridden methods use File | Settings | File Templates.
     }
@@ -77,7 +70,7 @@ public class IntGraph {
 
     @Override
     public String toString() {
-      return ""+myID;    //To change body of overridden methods use File | Settings | File Templates.
+      return "" + myID;    //To change body of overridden methods use File | Settings | File Templates.
     }
   }
 

@@ -41,13 +41,6 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 06.02.2009
- * Time: 20:18:52
- * To change this template use File | Settings | File Templates.
- */
 
 @State(
   name = "BookmarkManager",

@@ -36,13 +36,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.beans.PropertyChangeListener;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 16.06.2008
- * Time: 16:53:58
- * To change this template use File | Settings | File Templates.
- */
 public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor {
   public MPSLanguageEditor(final Project project, final MPSLanguageVirtualFile file) {
     ModelAccess.instance().runReadAction(new Runnable() {

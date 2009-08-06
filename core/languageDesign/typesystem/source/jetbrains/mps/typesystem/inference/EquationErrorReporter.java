@@ -22,13 +22,6 @@ import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.03.2007
- * Time: 13:42:42
- * To change this template use File | Settings | File Templates.
- */
 public class EquationErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;
   private String myBefore;
@@ -69,7 +62,7 @@ public class EquationErrorReporter implements IErrorReporter {
       representator2 = myEquationManager.getRepresentatorWrapper(myWrapper2);
     }
     return myBefore + PresentationManager.toString(representator1) +
-            myBetween + PresentationManager.toString(representator2) + myAfter;
+      myBetween + PresentationManager.toString(representator2) + myAfter;
   }
 
   public String getRuleId() {

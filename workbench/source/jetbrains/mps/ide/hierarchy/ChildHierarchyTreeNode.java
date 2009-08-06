@@ -26,13 +26,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 05.06.2007
- * Time: 16:59:46
- * To change this template use File | Settings | File Templates.
- */
 public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTreeNode<T> {
 
   private boolean myInitialized = false;

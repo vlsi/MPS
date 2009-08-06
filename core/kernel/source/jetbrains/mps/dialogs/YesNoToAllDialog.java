@@ -23,13 +23,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 17.11.2006
- * Time: 17:42:46
- * To change this template use File | Settings | File Templates.
- */
 public class YesNoToAllDialog extends JDialog {
   private ResponseValue myResponse;
 

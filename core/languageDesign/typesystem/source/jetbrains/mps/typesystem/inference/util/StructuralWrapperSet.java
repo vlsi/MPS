@@ -20,13 +20,6 @@ import jetbrains.mps.typesystem.inference.IWrapper;
 import java.util.*;
 
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.08.2007
- * Time: 14:16:17
- * To change this template use File | Settings | File Templates.
- */
 public class StructuralWrapperSet<T> implements Set<IWrapper> {
   private Map<IWrapperWrapper, IWrapperWrapper> myMWrapperToMWrapper = new HashMap<IWrapperWrapper, IWrapperWrapper>();
   private Set<IWrapper> myWrappers = new LinkedHashSet<IWrapper>();

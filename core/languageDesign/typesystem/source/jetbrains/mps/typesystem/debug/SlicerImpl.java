@@ -20,13 +20,6 @@ import jetbrains.mps.typesystem.inference.*;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.12.2008
- * Time: 19:16:55
- * To change this template use File | Settings | File Templates.
- */
 public class SlicerImpl implements ISlicer {
   private List<EquationLogItem> myEquationLogItems = new ArrayList<EquationLogItem>();
   private Map<SNode, SNode> myNodesToTypes = new HashMap<SNode, SNode>();
@@ -88,27 +81,27 @@ public class SlicerImpl implements ISlicer {
     List<EquationLogItem> slice = new ArrayList<EquationLogItem>();
     List<EquationLogItem> residual = new ArrayList<EquationLogItem>(myEquationLogItems);
     while (!varsAffectingType.isEmpty()) {
-       for (SNode var : varsAffectingType) {
-         IWrapper varWrapper = NodeWrapper.fromNode(var, equationManager);
-         for (EquationLogItem logItem : new ArrayList<EquationLogItem>(residual)) {
-           IWrapper leftWrapper = NodeWrapper.fromNode(logItem.getLeftRepresentator(), equationManager);
-           IWrapper rightWrapper = NodeWrapper.fromNode(logItem.getRightRepresentator(), equationManager);
-           if (varWrapper.equals(leftWrapper)) {
-             residual.remove(logItem);
-             slice.add(logItem);
-             if (rightWrapper != null) {
-               varsAffectingType_collected.add(rightWrapper.getNode());
-             }
-           }
-           if (varWrapper.equals(rightWrapper)) {
-             residual.remove(logItem);
-             slice.add(logItem);
-             if (leftWrapper != null) {
-               varsAffectingType_collected.add(leftWrapper.getNode());
-             }
-           }
-         }
-       }
+      for (SNode var : varsAffectingType) {
+        IWrapper varWrapper = NodeWrapper.fromNode(var, equationManager);
+        for (EquationLogItem logItem : new ArrayList<EquationLogItem>(residual)) {
+          IWrapper leftWrapper = NodeWrapper.fromNode(logItem.getLeftRepresentator(), equationManager);
+          IWrapper rightWrapper = NodeWrapper.fromNode(logItem.getRightRepresentator(), equationManager);
+          if (varWrapper.equals(leftWrapper)) {
+            residual.remove(logItem);
+            slice.add(logItem);
+            if (rightWrapper != null) {
+              varsAffectingType_collected.add(rightWrapper.getNode());
+            }
+          }
+          if (varWrapper.equals(rightWrapper)) {
+            residual.remove(logItem);
+            slice.add(logItem);
+            if (leftWrapper != null) {
+              varsAffectingType_collected.add(leftWrapper.getNode());
+            }
+          }
+        }
+      }
       varsAffectingType = varsAffectingType_collected;
       varsAffectingType_collected = new ArrayList<SNode>();
     }

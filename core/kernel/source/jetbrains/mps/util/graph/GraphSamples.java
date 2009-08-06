@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.util.graph;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.07.2006
- * Time: 20:01:47
- * To change this template use File | Settings | File Templates.
- */
 public class GraphSamples {
 
   public static IGraph getMetan() {

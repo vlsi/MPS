@@ -28,13 +28,6 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 28.02.2008
- * Time: 18:46:21
- * To change this template use File | Settings | File Templates.
- */
 public class MPSErrorDialog extends JDialog {
   private static final int MIN_SIDE_PADDING = 30;
 

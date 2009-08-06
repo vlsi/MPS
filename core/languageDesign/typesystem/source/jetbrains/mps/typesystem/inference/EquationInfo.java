@@ -21,13 +21,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.intentions.IntentionProvider;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 29.01.2008
- * Time: 17:28:56
- * To change this template use File | Settings | File Templates.
- */
 public class EquationInfo {
   private String myErrorString;
   private SNode myNodeWithError;

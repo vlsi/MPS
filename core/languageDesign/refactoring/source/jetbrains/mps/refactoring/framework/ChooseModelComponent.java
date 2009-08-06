@@ -26,13 +26,6 @@ import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.12.2007
- * Time: 20:04:41
- * To change this template use File | Settings | File Templates.
- */
 public class ChooseModelComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 

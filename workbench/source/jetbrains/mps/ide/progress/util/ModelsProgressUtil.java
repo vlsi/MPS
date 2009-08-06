@@ -23,13 +23,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 31.12.2005
- * Time: 18:35:41
- * To change this template use File | Settings | File Templates.
- */
 public class ModelsProgressUtil {
 
   private static ModelsProgressUtil ourInstance = new ModelsProgressUtil();

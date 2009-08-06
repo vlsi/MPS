@@ -23,13 +23,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 09.12.2008
- * Time: 19:19:31
- * To change this template use File | Settings | File Templates.
- */
 public class NullSlicer implements ISlicer {
 
   public void beforeUserEquationAdded(SNode type1, SNode type2, EquationInfo equationInfo) {

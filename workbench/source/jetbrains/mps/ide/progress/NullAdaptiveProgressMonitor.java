@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.ide.progress;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 31.12.2005
- * Time: 18:24:47
- * To change this template use File | Settings | File Templates.
- */
 public class NullAdaptiveProgressMonitor implements IAdaptiveProgressMonitor {
   public void addText(String text) {
 

@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
+import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
@@ -35,13 +36,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 14.02.2006
- * Time: 15:23:47
- * To change this template use File | Settings | File Templates.
- */
 public class LeftEditorHighlighter {
 
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
@@ -71,7 +65,7 @@ public class LeftEditorHighlighter {
     myEditorComponent = editorComponent;
     editorComponent.addMouseListener(new MyMouseListener());
     editorComponent.addMouseMotionListener(new MyMouseEnterListener());
-    editorComponent.addRebuildListener(new EditorComponent.RebuildListener() {
+    editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         myBookmarks.clear();
         myUnresolvedBookmarks.clear();
@@ -182,7 +176,7 @@ public class LeftEditorHighlighter {
     }
     EditorCell nodeCell = myEditorComponent.findNodeCell(node);
     if (nodeCell == null) {
-   //   LOG.error("can't find a cell for node " + node);
+      //   LOG.error("can't find a cell for node " + node);
       return;
     }
     myBookmarks.put(nodeCell.getCellInfo(), new Bookmark(nodeCell, number));
@@ -200,7 +194,7 @@ public class LeftEditorHighlighter {
   public void removeUnnumberedBookmark(SNode node) {
     EditorCell nodeCell = myEditorComponent.findNodeCell(node);
     if (nodeCell == null) {
-   //   LOG.error("can't find a cell for node " + node);
+      //   LOG.error("can't find a cell for node " + node);
       return;
     }
     for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
@@ -276,7 +270,7 @@ public class LeftEditorHighlighter {
         }
       }
 
-      myCurrentBracketsWidth = (myWidth - maxDepth)/(2 + maxDepth);
+      myCurrentBracketsWidth = (myWidth - maxDepth) / (2 + maxDepth);
       for (HighlighterBracket bracket : myBrackets.values()) {
         int inverseDepth = maxDepth - bracket.myDepth;
         bracket.myCurrentWidth = getCurrentBracketsWidth() * 2 + inverseDepth * (getCurrentBracketsWidth() + 1);
@@ -462,7 +456,7 @@ public class LeftEditorHighlighter {
       EditorCell cell = getCell();
       if (cell instanceof EditorCell_Collection) {
         myIsHidden = cell.isUnderFolded();
-        myIsFolded = ((EditorCell_Collection)cell).isFolded();
+        myIsFolded = ((EditorCell_Collection) cell).isFolded();
         if (myIsHidden) return;
         myY1 = cell.getY();
         myY2 = cell.getY() + cell.getHeight();
@@ -479,8 +473,8 @@ public class LeftEditorHighlighter {
       if (myIsHidden) return;
       Color borderColor = getBorderColor();
       if (!myIsFolded) {
-        int xs[] = { myX,  myX - WIDTH / 2,  myX - WIDTH / 2,   myX - WIDTH *  3 / 8,  myX         , myX + WIDTH *  3 / 8,  myX + WIDTH / 2, myX + WIDTH / 2     };
-        int ys[] = { myY1, myY1,            myY1 + WIDTH / 2,   myY1 + WIDTH * 7 / 8,  myY1 + WIDTH, myY1 + WIDTH * 7 / 8,  myY1 + WIDTH / 2, myY1            };
+        int xs[] = {myX, myX - WIDTH / 2, myX - WIDTH / 2, myX - WIDTH * 3 / 8, myX, myX + WIDTH * 3 / 8, myX + WIDTH / 2, myX + WIDTH / 2};
+        int ys[] = {myY1, myY1, myY1 + WIDTH / 2, myY1 + WIDTH * 7 / 8, myY1 + WIDTH, myY1 + WIDTH * 7 / 8, myY1 + WIDTH / 2, myY1};
 
         g.setColor(Color.WHITE);
         g.fillPolygon(xs, ys, xs.length);
@@ -503,12 +497,12 @@ public class LeftEditorHighlighter {
       } else {
         g.setColor(Color.LIGHT_GRAY);
         //noinspection SuspiciousNameCombination
-        g.fillOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
+        g.fillOval(myX - WIDTH / 2 - 1, (myY1 + myY2 - WIDTH - 1) / 2, WIDTH + 1, WIDTH + 1);
         g.setColor(borderColor);
-        g.drawOval(myX - WIDTH/2 - 1, (myY1 + myY2 - WIDTH - 1)/2, WIDTH + 1, WIDTH + 1);
+        g.drawOval(myX - WIDTH / 2 - 1, (myY1 + myY2 - WIDTH - 1) / 2, WIDTH + 1, WIDTH + 1);
         g.setColor(Color.WHITE);
-        g.drawLine(myX - (WIDTH+1) / 4, (myY1 + myY2)/2, myX + (WIDTH+1) / 4, (myY1 + myY2)/2);
-        g.drawLine(myX, (myY1 + myY2 - WIDTH - 1)/2 + WIDTH / 4, myX, (myY1 + myY2 + WIDTH + 1)/2 - WIDTH /4);
+        g.drawLine(myX - (WIDTH + 1) / 4, (myY1 + myY2) / 2, myX + (WIDTH + 1) / 4, (myY1 + myY2) / 2);
+        g.drawLine(myX, (myY1 + myY2 - WIDTH - 1) / 2 + WIDTH / 4, myX, (myY1 + myY2 + WIDTH + 1) / 2 - WIDTH / 4);
       }
     }
 
@@ -537,22 +531,22 @@ public class LeftEditorHighlighter {
 
     public void mouseEntered() {
       myMouseOver = true;
-      myEditor.repaint(myX - 1 - WIDTH/2, myY1, WIDTH + 2, myY2 - myY1);
+      myEditor.repaint(myX - 1 - WIDTH / 2, myY1, WIDTH + 2, myY2 - myY1);
     }
 
     public void mouseExited() {
       myMouseOver = false;
-      myEditor.repaint(myX - 1 - WIDTH/2, myY1, WIDTH + 2, myY2 - myY1);
+      myEditor.repaint(myX - 1 - WIDTH / 2, myY1, WIDTH + 2, myY2 - myY1);
     }
 
     public boolean isInside(MouseEvent e) {
-      if (e.getX() > myX + FoldingButton.WIDTH/2 || e.getX() < myX - FoldingButton.WIDTH/2) return false;
+      if (e.getX() > myX + FoldingButton.WIDTH / 2 || e.getX() < myX - FoldingButton.WIDTH / 2) return false;
       if (!myIsFolded && ((e.getY() >= myY1 && e.getY() <= myY1 + FoldingButton.WIDTH)
         || (e.getY() <= myY2 && e.getY() >= myY2 - FoldingButton.WIDTH))) {
         return true;
       }
-      if (myIsFolded && e.getY() >= (myY1 + myY2 - FoldingButton.WIDTH)/2 &&
-        e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH)/2) {
+      if (myIsFolded && e.getY() >= (myY1 + myY2 - FoldingButton.WIDTH) / 2 &&
+        e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH) / 2) {
         return true;
       }
       return false;
@@ -574,7 +568,7 @@ public class LeftEditorHighlighter {
 
     public void paint(Graphics g) {
       Icon icon = BookmarkManager.getIcon(myNumber);
-      g.drawImage(((ImageIcon)icon).getImage(), /*myX - 12*/1, myY - 6, null);
+      g.drawImage(((ImageIcon) icon).getImage(), /*myX - 12*/1, myY - 6, null);
     }
 
     public void relayout() {
@@ -607,7 +601,7 @@ public class LeftEditorHighlighter {
   private class MyMouseListener extends MouseAdapter {
 
     public void mouseClicked(MouseEvent e) {
-      if (e.getX() > myWidth + FoldingButton.WIDTH/2 || e.getX() < myWidth - FoldingButton.WIDTH/2) return;
+      if (e.getX() > myWidth + FoldingButton.WIDTH / 2 || e.getX() < myWidth - FoldingButton.WIDTH / 2) return;
       for (FoldingButton button : myFoldingButtons.values()) {
         if (button.isInside(e)) {
           button.activate();

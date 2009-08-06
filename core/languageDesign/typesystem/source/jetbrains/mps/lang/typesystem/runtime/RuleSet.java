@@ -29,13 +29,6 @@ import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.03.2007
- * Time: 18:55:53
- * To change this template use File | Settings | File Templates.
- */
 public class RuleSet<T extends IApplicableToConcept> {
   Map<AbstractConceptDeclaration, Set<T>> myRules = new HashMap<AbstractConceptDeclaration, Set<T>>();
   Map<AbstractConceptDeclaration, Set<T>> myRulesCache = new HashMap<AbstractConceptDeclaration, Set<T>>();
@@ -83,7 +76,7 @@ public class RuleSet<T extends IApplicableToConcept> {
         if (rules != null) {
           result.addAll(rules);
           for (T rule : rules) {
-            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime)rule).overrides()) {
+            if (rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides()) {
               overrides = true;
             }
           }

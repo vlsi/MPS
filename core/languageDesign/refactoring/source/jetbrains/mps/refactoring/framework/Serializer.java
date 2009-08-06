@@ -26,13 +26,6 @@ import org.jdom.Element;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.12.2007
- * Time: 18:57:52
- * To change this template use File | Settings | File Templates.
- */
 public class Serializer {
   private static final Logger LOG = Logger.getLogger(Serializer.class);
 
@@ -63,30 +56,30 @@ public class Serializer {
     }
     if (value instanceof SNode) {
       element.setAttribute(OBJECT_TYPE, SNODE);
-      FullNodeId fullNodeId = new FullNodeId((SNode)value);
+      FullNodeId fullNodeId = new FullNodeId((SNode) value);
       fullNodeId.toElement(element);
       return;
     }
     if (value instanceof SModel) {
       element.setAttribute(OBJECT_TYPE, SMODEL);
-      element.setAttribute(MODEL_UID, ((SModel)value).toString());
+      element.setAttribute(MODEL_UID, ((SModel) value).toString());
       return;
     }
     if (value instanceof SModelDescriptor) {
       element.setAttribute(OBJECT_TYPE, SMODEL_DESCRIPTOR);
-      element.setAttribute(MODEL_UID, ((SModelDescriptor)value).toString());
+      element.setAttribute(MODEL_UID, ((SModelDescriptor) value).toString());
       return;
     }
     if (value instanceof ISerializable) {
       element.setAttribute(OBJECT_TYPE, ISERIALIZABLE);
       element.setAttribute(CLASS_NAME, value.getClass().getName());
-      ((ISerializable)value).toElement(element);
+      ((ISerializable) value).toElement(element);
       return;
     }
     if (value instanceof Collection) {
       element.setAttribute(OBJECT_TYPE, COLLECTION);
       element.setAttribute(CLASS_NAME, value.getClass().getName());
-      for (Object o : (Collection)value) {
+      for (Object o : (Collection) value) {
         Element childElement = new Element(ITEM);
         serialize(childElement, o);
         element.addContent(childElement);
@@ -116,7 +109,7 @@ public class Serializer {
     }
     if (SMODEL.equals(OBJECT_TYPE)) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().
-              getModelDescriptor(SModelReference.fromString(element.getAttributeValue(MODEL_UID)));
+        getModelDescriptor(SModelReference.fromString(element.getAttributeValue(MODEL_UID)));
       if (modelDescriptor == null) {
         return null;
       }
@@ -141,7 +134,7 @@ public class Serializer {
         LOG.error(t);
       }
       if (collection != null) {
-        for (Element childElement : (List<Element>)element.getChildren(ITEM)) {
+        for (Element childElement : (List<Element>) element.getChildren(ITEM)) {
           collection.add(deserialize(childElement));
         }
       }

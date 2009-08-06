@@ -17,13 +17,6 @@ package jetbrains.mps.ide.ui;
 
 import org.apache.commons.lang.StringUtils;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 19.08.2005
- * Time: 17:01:01
- * To change this template use File | Settings | File Templates.
- */
 public class TreeTextUtil {
 
   private final static String[] _charsToEntities;

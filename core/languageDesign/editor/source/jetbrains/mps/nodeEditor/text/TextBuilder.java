@@ -20,13 +20,6 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.11.2005
- * Time: 18:29:43
- * To change this template use File | Settings | File Templates.
- */
 public class TextBuilder {
   private static final Logger LOG = Logger.getLogger(TextBuilder.class);
 
@@ -75,15 +68,15 @@ public class TextBuilder {
     result.myWidth = this.myWidth + builder.myWidth + delimWidth;
     result.myFirstLine = new StringBuffer(this.myFirstLine + delim + builder.myFirstLine);
     int height = Math.max(this.getHeight(), builder.getHeight());
-    for (int i=0; i < height-1; i++) {
-       if (i >= this.myLines.size()) {
-         result.myLines.add(makeWhitespaceStringBuffer(this.myWidth + delimWidth));
-       } else {
-         result.myLines.add(new StringBuffer(this.myLines.get(i)));
-       }
-       if (i < builder.myLines.size()) {
-         result.myLines.get(i).append(builder.myLines.get(i));
-       }
+    for (int i = 0; i < height - 1; i++) {
+      if (i >= this.myLines.size()) {
+        result.myLines.add(makeWhitespaceStringBuffer(this.myWidth + delimWidth));
+      } else {
+        result.myLines.add(new StringBuffer(this.myLines.get(i)));
+      }
+      if (i < builder.myLines.size()) {
+        result.myLines.get(i).append(builder.myLines.get(i));
+      }
     }
     result.normalizeWidth();
     return result;
@@ -120,11 +113,11 @@ public class TextBuilder {
     StringBuffer wsIndent = makeWhitespaceStringBuffer(indent);
     if (rightmost == this) {
       result.myFirstLine.insert(0, wsIndent);
-      for (int i=1; i<this.getHeight()-1; i++) {
+      for (int i = 1; i < this.getHeight() - 1; i++) {
         result.myLines.get(i).insert(0, wsIndent);
       }
     } else {
-      for (int i = this.getHeight()-1; i<result.myLines.size(); i++) {
+      for (int i = this.getHeight() - 1; i < result.myLines.size(); i++) {
         result.myLines.get(i).insert(0, wsIndent);
       }
     }
@@ -142,7 +135,7 @@ public class TextBuilder {
 
   private static StringBuffer makeWhitespaceStringBuffer(int size) {
     StringBuffer result = new StringBuffer();
-    for (int i=1; i<=size; i++) {
+    for (int i = 1; i <= size; i++) {
       result.append(' ');
     }
     return result;
@@ -161,9 +154,9 @@ public class TextBuilder {
 
   public static void main(String[] args) {
     TextBuilder textBuilder1 = fromString("was").appendToTheRight(fromString("it"))
-            .appendToTheRight(fromString("a"))
-            .appendToTheRight(fromString("cat"))
-            .appendToTheRight(fromString("?"));
+      .appendToTheRight(fromString("a"))
+      .appendToTheRight(fromString("cat"))
+      .appendToTheRight(fromString("?"));
     String testString1 = textBuilder1.getText();
     System.err.println(testString1);
 

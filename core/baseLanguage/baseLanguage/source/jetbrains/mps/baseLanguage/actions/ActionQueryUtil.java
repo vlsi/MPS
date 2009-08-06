@@ -18,13 +18,6 @@ package jetbrains.mps.baseLanguage.actions;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Oct 18, 2005
- * Time: 7:38:17 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ActionQueryUtil {
   static <T extends BaseAdapter> T getQueryContextElement(INodeAdapter sourceNode, Class<T> clazz) {
     if (sourceNode == null) {

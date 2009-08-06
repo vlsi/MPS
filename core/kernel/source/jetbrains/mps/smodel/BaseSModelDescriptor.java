@@ -32,13 +32,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 12.03.2008
- * Time: 14:44:14
- * To change this template use File | Settings | File Templates.
- */
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
   protected static volatile long ourStructuralState = 0;

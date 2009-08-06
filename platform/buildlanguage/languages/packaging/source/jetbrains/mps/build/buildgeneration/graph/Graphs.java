@@ -19,21 +19,14 @@ import jetbrains.mps.build.buildgeneration.graph.Graph.EmptyDFSWalker;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Julia.Beliaeva
- * Date: 05.01.2008
- * Time: 17:22:23
- * To change this template use File | Settings | File Templates.
- */
 public class Graphs {
 
   private static final Graphs INSTANCE = new Graphs();
 
-  private Graphs(){
+  private Graphs() {
   }
 
-  public static Graphs getInstance(){
+  public static Graphs getInstance() {
     return INSTANCE;
   }
 
@@ -53,8 +46,8 @@ public class Graphs {
     Graph<VertexDecorator<V>> gt = new Graph<VertexDecorator<V>>();
 
     Map<V, VertexDecorator> map = new LinkedHashMap<V, VertexDecorator>();
-    
-    for (V v : g.getData()){
+
+    for (V v : g.getData()) {
       VertexDecorator<V> vertexDecorator = new VertexDecorator<V>(v);
       gt.add(vertexDecorator);
       map.put(v, vertexDecorator);
@@ -70,7 +63,7 @@ public class Graphs {
     return gt;
   }
 
-  public static class VertexDecorator<V extends IVertex> implements IVertex, Comparable<VertexDecorator<V>>{
+  public static class VertexDecorator<V extends IVertex> implements IVertex, Comparable<VertexDecorator<V>> {
     private final V myVertex;
     private final Set<VertexDecorator<V>> myNext = new LinkedHashSet<VertexDecorator<V>>();
 
@@ -78,7 +71,7 @@ public class Graphs {
       myVertex = vertex;
     }
 
-    private void addNext(VertexDecorator v){
+    private void addNext(VertexDecorator v) {
       myNext.add(v);
     }
 
@@ -86,7 +79,7 @@ public class Graphs {
       return Collections.unmodifiableSet(myNext);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    public V getVertex(){
+    public V getVertex() {
       return myVertex;
     }
 
@@ -96,8 +89,8 @@ public class Graphs {
     }
 
     public boolean equals(Object obj) {
-      if (obj instanceof VertexDecorator){
-        return myVertex.equals(((VertexDecorator)obj).getVertex());
+      if (obj instanceof VertexDecorator) {
+        return myVertex.equals(((VertexDecorator) obj).getVertex());
       }
       return false;
     }
@@ -107,7 +100,7 @@ public class Graphs {
     }
 
     public int compareTo(VertexDecorator<V> o) {
-      return ((Comparable<V>)myVertex).compareTo(o.getVertex());
+      return ((Comparable<V>) myVertex).compareTo(o.getVertex());
     }
   }
 
@@ -126,7 +119,7 @@ public class Graphs {
     }
   }
 
-  private static class SCCSecondStageWalker<V extends IVertex> extends EmptyDFSWalker<VertexDecorator<V>>{
+  private static class SCCSecondStageWalker<V extends IVertex> extends EmptyDFSWalker<VertexDecorator<V>> {
     private final List<Set<V>> myComponents = new LinkedList<Set<V>>();
     private LinkedHashSet<V> myCurrentComponent;
     private final Map<V, Integer> myExitTimes;
@@ -136,10 +129,10 @@ public class Graphs {
     }
 
     public Comparator<VertexDecorator<V>> getVertexComparator() {
-      return new Comparator<VertexDecorator<V>>(){
+      return new Comparator<VertexDecorator<V>>() {
         public int compare(VertexDecorator<V> o1, VertexDecorator<V> o2) {
           // minus, since we need to walk through vertexes in exit time descending order
-          return - myExitTimes.get(o1.getVertex()).compareTo(myExitTimes.get(o2.getVertex()));
+          return -myExitTimes.get(o1.getVertex()).compareTo(myExitTimes.get(o2.getVertex()));
         }
       };
     }

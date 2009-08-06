@@ -25,13 +25,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Aug 25, 2005
- * Time: 7:24:13 PM
- * To change this template use File | Settings | File Templates.
- */
 public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);

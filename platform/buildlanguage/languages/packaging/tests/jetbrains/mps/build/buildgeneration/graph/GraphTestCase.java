@@ -24,19 +24,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Julia.Beliaeva
- * Date: 05.01.2008
- * Time: 16:30:45
- * To change this template use File | Settings | File Templates.
- */
 public class GraphTestCase extends TestCase {
   private IntGraph myGraph;
   private static final int N = 6;
 
   @Override
-  public void setUp(){
+  public void setUp() {
     myGraph = new IntGraph(N);
     myGraph.addEdges(0, 1, 2);
     myGraph.addEdges(1, 3);
@@ -44,33 +37,33 @@ public class GraphTestCase extends TestCase {
     myGraph.addEdges(4, 5);
   }
 
-  public void testCreation1(){
+  public void testCreation1() {
     assertEquals("0 -> 1, 2\n" +
-                 "1 -> 3\n" +
-                 "2 -> \n" +
-                 "3 -> 2\n" +
-                 "4 -> 5\n" +
-                 "5 -> \n", myGraph.getGraph().toString());
+      "1 -> 3\n" +
+      "2 -> \n" +
+      "3 -> 2\n" +
+      "4 -> 5\n" +
+      "5 -> \n", myGraph.getGraph().toString());
   }
 
-  public void testDfs1(){
-    GraphTestCase.TestWalker testWalker = new TestWalker();
+  public void testDfs1() {
+    TestWalker testWalker = new TestWalker();
     myGraph.getGraph().dfsValk(testWalker);
-    assertEquals("Should visit all vertexes 1 time.", N *(N - 1)/2, testWalker.getSum());
+    assertEquals("Should visit all vertexes 1 time.", N * (N - 1) / 2, testWalker.getSum());
   }
 
-  public void testTranspose1(){
+  public void testTranspose1() {
     Graph transposed = Graphs.getInstance().getTransposed(myGraph.getGraph());
     assertEquals("0 -> \n" +
-                 "1 -> 0\n" +
-                 "2 -> 0, 3\n" +
-                 "3 -> 1\n" +
-                 "4 -> \n" +
-                 "5 -> 4\n", transposed.toString());
+      "1 -> 0\n" +
+      "2 -> 0, 3\n" +
+      "3 -> 1\n" +
+      "4 -> \n" +
+      "5 -> 4\n", transposed.toString());
   }
 
-  public void testStronglyConnectedComponents1(){
-    myGraph.addEdges(5,0);
+  public void testStronglyConnectedComponents1() {
+    myGraph.addEdges(5, 0);
     List<Set<IntVertex>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(N, components.size());
@@ -94,16 +87,16 @@ public class GraphTestCase extends TestCase {
     assertTrue(components.get(5).contains(new IntVertex(2)));
   }
 
-  public void testStronglyConnectedComponents2(){
-    myGraph.addEdges(5,4);
-    myGraph.addEdges(4,0);
-    myGraph.addEdges(2,0);
+  public void testStronglyConnectedComponents2() {
+    myGraph.addEdges(5, 4);
+    myGraph.addEdges(4, 0);
+    myGraph.addEdges(2, 0);
     List<Set<Integer>> components = Graphs.getInstance().findStronglyConnectedComponents(myGraph.getGraph());
 
     assertEquals(2, components.size());
 
     assertEquals(2, components.get(0).size());
-    assertEquals(N-2, components.get(1).size());
+    assertEquals(N - 2, components.get(1).size());
 
     assertTrue(components.get(0).contains(new IntVertex(5)));
     assertTrue(components.get(0).contains(new IntVertex(4)));
@@ -139,11 +132,11 @@ public class GraphTestCase extends TestCase {
     }
 
     public void leave(IntVertex v) {
-      assertEquals("Is not valid bracket sequence.", myStack.get(myStack.size()-1), v.getID());
-      myStack.remove(myStack.size()-1);
+      assertEquals("Is not valid bracket sequence.", myStack.get(myStack.size() - 1), v.getID());
+      myStack.remove(myStack.size() - 1);
     }
 
-    public int getSum(){
+    public int getSum() {
       return mySum;
     }
   }

@@ -30,13 +30,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 27.08.2007
- * Time: 15:27:37
- * To change this template use File | Settings | File Templates.
- */
 public class LatticeUtil {
   public static void processMeetsAndJoins(IWrapper type) {
     if (type instanceof NodeWrapper) {
@@ -50,29 +43,29 @@ public class LatticeUtil {
 
   private static void processMeetsAndJoins(SNode node) {
     String conceptFqName = node.getConceptFqName();
-      if (JoinType.concept.equals(conceptFqName)) {
-        for (SNode child : node.getChildren(JoinType.ARGUMENT)) {
-          processMeetsAndJoins(child);
-          if (JoinType.concept.equals(child.getConceptFqName())) {
-            for (SNode grandChild : child.getChildren(JoinType.ARGUMENT)) {
-              child.removeChild(grandChild);
-              node.insertChild(child, JoinType.ARGUMENT, grandChild);
-            }
-            node.removeChild(child);
+    if (JoinType.concept.equals(conceptFqName)) {
+      for (SNode child : node.getChildren(JoinType.ARGUMENT)) {
+        processMeetsAndJoins(child);
+        if (JoinType.concept.equals(child.getConceptFqName())) {
+          for (SNode grandChild : child.getChildren(JoinType.ARGUMENT)) {
+            child.removeChild(grandChild);
+            node.insertChild(child, JoinType.ARGUMENT, grandChild);
           }
-        }
-      } else if (MeetType.concept.equals(conceptFqName)) {
-        for (SNode child : node.getChildren(MeetType.ARGUMENT)) {
-          processMeetsAndJoins(child);
-          if (MeetType.concept.equals(child.getConceptFqName())) {
-            for (SNode grandChild : child.getChildren(MeetType.ARGUMENT)) {
-              child.removeChild(grandChild);
-              node.insertChild(child, MeetType.ARGUMENT, grandChild);
-            }
-            node.removeChild(child);
-          }
+          node.removeChild(child);
         }
       }
+    } else if (MeetType.concept.equals(conceptFqName)) {
+      for (SNode child : node.getChildren(MeetType.ARGUMENT)) {
+        processMeetsAndJoins(child);
+        if (MeetType.concept.equals(child.getConceptFqName())) {
+          for (SNode grandChild : child.getChildren(MeetType.ARGUMENT)) {
+            child.removeChild(grandChild);
+            node.insertChild(child, MeetType.ARGUMENT, grandChild);
+          }
+          node.removeChild(child);
+        }
+      }
+    }
   }
 
   public static IWrapper join(IWrapper wrapper1, IWrapper wrapper2) {
@@ -89,20 +82,18 @@ public class LatticeUtil {
           joinType.addArgument(HUtil.copyIfNecessary(bc));
         }
       } else {
-        joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
+        joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
       }
-    } else
-
-    if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
+    } else if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
       JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
-      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : joinWrapper2.getArguments()) {
         joinType.addArgument(HUtil.copyIfNecessary(bc));
       }
 
     } else {
-      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
-      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
+      joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
     }
     return NodeWrapper.createWrapperFromNode(joinType.getNode(), null);
   }
@@ -135,18 +126,17 @@ public class LatticeUtil {
           meetType.addArgument(HUtil.copyIfNecessary(bc));
         }
       } else {
-        meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
+        meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
       }
-    } else
-    if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
+    } else if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
       MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
-      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : meetWrapper2.getArguments()) {
         meetType.addArgument(HUtil.copyIfNecessary(bc));
       }
     } else {
-      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper1.getNode()))));
-      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept)(BaseAdapter.fromNode(wrapper2.getNode()))));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
+      meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
     }
     return NodeWrapper.createWrapperFromNode(meetType.getNode(), null);
   }
@@ -179,7 +169,7 @@ public class LatticeUtil {
     return result;
   }
 
-   public static SNode createJoin(String conceptFQName, SNode... arguments) {
+  public static SNode createJoin(String conceptFQName, SNode... arguments) {
     SModel auxModel = AuxilaryRuntimeModel.getDescriptor().getSModel();
     JoinType joinType = JoinType.newInstance(auxModel);
     JoinContainer joinContainer = JoinContainer.newInstance(auxModel);
@@ -197,7 +187,7 @@ public class LatticeUtil {
       MeetAnnotation_AnnotationLink.getMeetAnnotation((BaseConcept) node.getAdapter()) != null;
   }
 
-   public static boolean isJoin(SNode node) {
+  public static boolean isJoin(SNode node) {
     return BaseAdapter.isInstance(node, JoinType.class) ||
       JoinAnnotation_AnnotationLink.getJoinAnnotation((BaseConcept) node.getAdapter()) != null;
   }

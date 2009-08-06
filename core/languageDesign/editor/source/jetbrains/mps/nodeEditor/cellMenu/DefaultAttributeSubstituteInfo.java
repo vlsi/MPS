@@ -22,17 +22,10 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.06.2006
- * Time: 14:27:00
- * To change this template use File | Settings | File Templates.
- */
 public class DefaultAttributeSubstituteInfo extends DefaultChildSubstituteInfo {
 
   public DefaultAttributeSubstituteInfo(SNode parentNode, SNode currChildNode, LinkDeclaration linkDeclaration, EditorContext editorContext) {
-    super(parentNode, currChildNode, linkDeclaration, editorContext);    
+    super(parentNode, currChildNode, linkDeclaration, editorContext);
   }
 
   protected DefaultChildNodeSetter createDefaultNodeSetter() {

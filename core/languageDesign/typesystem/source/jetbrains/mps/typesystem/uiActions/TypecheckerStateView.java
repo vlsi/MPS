@@ -27,13 +27,6 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 08.12.2008
- * Time: 16:49:19
- * To change this template use File | Settings | File Templates.
- */
 public class TypecheckerStateView extends BaseProjectTool {
   private TypecheckerStateViewComponent myComponent;
 

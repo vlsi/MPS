@@ -17,13 +17,6 @@ package jetbrains.mps.lang.typesystem.runtime.incremental;
 
 import jetbrains.mps.smodel.SNode;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 13.04.2007
- * Time: 16:41:15
- * To change this template use File | Settings | File Templates.
- */
 public abstract class SNodeReadEvent {
   protected SNode myNode;
 
@@ -42,6 +35,6 @@ public abstract class SNodeReadEvent {
 
   public boolean equals(Object obj) {
     if (obj.getClass() != this.getClass()) return false;
-    return myNode.equals(((SNodeReadEvent)obj).myNode);
+    return myNode.equals(((SNodeReadEvent) obj).myNode);
   }
 }

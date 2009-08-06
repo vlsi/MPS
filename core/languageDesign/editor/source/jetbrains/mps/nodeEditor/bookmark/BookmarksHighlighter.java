@@ -30,13 +30,6 @@ import java.util.List;
 import java.util.HashSet;
 import java.awt.Color;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 09.02.2009
- * Time: 19:05:53
- * To change this template use File | Settings | File Templates.
- */
 public class BookmarksHighlighter extends EditorCheckerAdapter implements EditorMessageOwner {
 
   private BookmarkManager myBookmarkManager;

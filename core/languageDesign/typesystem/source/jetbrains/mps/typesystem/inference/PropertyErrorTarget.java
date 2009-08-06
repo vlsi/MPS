@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-/**
- * Created by IntelliJ IDEA.
- * User: User
- * Date: 19.11.2008
- * Time: 14:24:01
- * To change this template use File | Settings | File Templates.
- */
 public class PropertyErrorTarget implements IErrorTarget {
   private String myPropertyName;
 
@@ -39,6 +32,6 @@ public class PropertyErrorTarget implements IErrorTarget {
 
   public boolean sameAs(IErrorTarget errorTarget) {
     return errorTarget instanceof PropertyErrorTarget &&
-      ((PropertyErrorTarget)errorTarget).myPropertyName.equals(myPropertyName);
+      ((PropertyErrorTarget) errorTarget).myPropertyName.equals(myPropertyName);
   }
 }

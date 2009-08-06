@@ -24,13 +24,6 @@ import jetbrains.mps.typesystem.inference.InequationSystem;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 31.05.2006
- * Time: 17:07:51
- * To change this template use File | Settings | File Templates.
- */
 public class NullSubstituteInfo implements NodeSubstituteInfo {
   public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     return new ArrayList<INodeSubstituteAction>();

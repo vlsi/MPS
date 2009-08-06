@@ -35,13 +35,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 import java.util.List;
 
-/**
- * Created by IntelliJ IDEA.
-* User: User
-* Date: 06.03.2009
-* Time: 16:48:56
-* To change this template use File | Settings | File Templates.
-*/
 public class BookmarksTree extends MPSTree {
 
   private BookmarkManager myBookmarkManager;

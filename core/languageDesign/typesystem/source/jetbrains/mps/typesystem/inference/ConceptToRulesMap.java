@@ -20,13 +20,6 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 import java.util.*;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 30.01.2007
- * Time: 16:02:54
- * To change this template use File | Settings | File Templates.
- */
 public class ConceptToRulesMap<T> {
   private Map<AbstractConceptDeclaration, Set<T>> myMap = new HashMap<AbstractConceptDeclaration, Set<T>>();
 

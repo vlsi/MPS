@@ -34,14 +34,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 import java.util.Map.Entry;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 07.12.2007
- * Time: 17:29:39
- * To change this template use File | Settings | File Templates.
- */
-public class RefactoringContext {  
+public class RefactoringContext {
   private static final String OLD_STRUCTURE_LANGUAGE_NAMESPACE = "jetbrains.mps.bootstrap.structureLanguage";
 
   private static final Logger LOG = Logger.getLogger(RefactoringContext.class);

@@ -15,13 +15,6 @@
  */
 package jetbrains.mps.gtext.runtime;
 
-/**
- * Created by IntelliJ IDEA.
- * User: vadim
- * Date: May 28, 2008
- * Time: 12:55:43 AM
- * To change this template use File | Settings | File Templates.
- */
 public class TContent {
 
   private String name;
