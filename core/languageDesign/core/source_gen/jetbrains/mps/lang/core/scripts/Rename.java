@@ -5,15 +5,14 @@ package jetbrains.mps.lang.core.scripts;
 import jetbrains.mps.refactoring.framework.BaseGeneratedRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -43,6 +42,9 @@ public class Rename extends BaseGeneratedRefactoring {
     if (refactoringContext.getSelectedNode() == null) {
       return false;
     }
+    if (!(SNodeOperations.isInstanceOf(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.core.structure.INamedConcept"))) {
+      return false;
+    }
     return RenameUtil.canBeRenamed(refactoringContext.getSelectedNode());
   }
 
@@ -63,11 +65,12 @@ public class Rename extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String)refactoringContext.getParameter("newName")));
+    SNode node = refactoringContext.getSelectedNode();
+    node.setName(((String)refactoringContext.getParameter("newName")));
   }
 
   public String newName_initialValue(final RefactoringContext refactoringContext) {
-    return SPropertyOperations.getString(refactoringContext.getSelectedNode(), "name");
+    return refactoringContext.getSelectedNode().getName();
   }
 
   public List<IChooseComponent> getChooseComponents(final RefactoringContext refactoringContext) {

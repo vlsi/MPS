@@ -64,7 +64,8 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    refactoringContext.deleteFeature(refactoringContext.getSelectedNode());
+    SNode node = refactoringContext.getSelectedNode();
+    refactoringContext.deleteFeature(node);
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {

@@ -32,7 +32,11 @@ public class SafeDelete extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    return refactoringContext.getSelectedNode() != null;
+    SNode node = refactoringContext.getSelectedNode();
+    if (node == null) {
+      return false;
+    }
+    return true;
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
@@ -52,7 +56,8 @@ public class SafeDelete extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    SNodeOperations.deleteNode(refactoringContext.getSelectedNode());
+    SNode node = refactoringContext.getSelectedNode();
+    SNodeOperations.deleteNode(node);
   }
 
 
