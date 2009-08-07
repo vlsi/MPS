@@ -88,10 +88,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1210941980901(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1212245181527(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finderDeclaration", false));
   }
@@ -185,6 +181,18 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1212243800827(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchScope", true) == null;
+  }
+
+  public static boolean ifMacro_Condition_700745782152520300(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "oneTargetOnly");
+  }
+
+  public static boolean ifMacro_Condition_700745782152520311(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null && SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages") && SPropertyOperations.getBoolean(_context.getNode(), "nonLocalByDefault");
+  }
+
+  public static boolean ifMacro_Condition_700745782152800956(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "affectedNodesClause", true) != null && SPropertyOperations.getBoolean(_context.getNode(), "refactorImmediatelyIfNoUsages");
   }
 
   public static boolean ifMacro_Condition_1789893890062301483(final IOperationContext operationContext, final IfMacroContext _context) {

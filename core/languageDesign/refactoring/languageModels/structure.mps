@@ -230,8 +230,16 @@
       <property name="name" value="refactoringTargetKind" />
       <link role="dataType" targetNodeId="1209559274358" resolveInfo="RefactoringTargetKind" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="700745782152514628">
+      <property name="name" value="oneTargetOnly" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1210941394948">
       <property name="name" value="refactorImmediatelyIfNoUsages" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="700745782152479280">
+      <property name="name" value="nonLocalByDefault" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1199455308722">
@@ -269,7 +277,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1189695170518">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="doRefactorClause" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1189694053795" resolveInfo="DoRefactorClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1191591935289">

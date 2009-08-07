@@ -74,6 +74,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return true;
   }
 
+  public boolean isOneTargetOnly(){
+    return false;
+  }
+
   public boolean isApplicableWRTConcept(SNode node) {
     return false;
   }
@@ -83,6 +87,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
   }
 
   public boolean refactorImmediatelyIfNoUsages() {
+    return false;
+  }
+
+  public boolean isNonLocalByDefault(){
     return false;
   }
 
