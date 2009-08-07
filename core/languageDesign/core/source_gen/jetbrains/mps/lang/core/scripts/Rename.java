@@ -52,10 +52,6 @@ public class Rename extends BaseGeneratedRefactoring {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"));
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
   public boolean showsAffectedNodes() {
     return true;
   }

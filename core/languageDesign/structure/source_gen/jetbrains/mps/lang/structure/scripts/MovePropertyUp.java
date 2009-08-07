@@ -65,10 +65,6 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
   public void doRefactor(final RefactoringContext refactoringContext) {
     refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
     SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");

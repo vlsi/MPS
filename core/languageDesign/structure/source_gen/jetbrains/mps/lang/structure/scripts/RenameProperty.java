@@ -56,10 +56,6 @@ public class RenameProperty extends BaseGeneratedRefactoring {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
   public void doRefactor(final RefactoringContext refactoringContext) {
     SNode propertyDeclaration = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     SNode concept = SNodeOperations.getAncestor(propertyDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);

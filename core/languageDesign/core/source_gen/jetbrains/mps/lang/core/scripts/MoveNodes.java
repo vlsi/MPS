@@ -27,7 +27,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import java.util.ArrayList;
@@ -113,10 +112,6 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
   public boolean showsAffectedNodes() {
     return true;
   }
@@ -144,9 +139,8 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     }
     if (targetModel != null) {
       IModule module = targetModel.getModelDescriptor().getModule();
-      MPSProject project = refactoringContext.getSelectedMPSProject();
-      if (project != null) {
-        final IOperationContext operationContext = new ModuleContext(module, project);
+      if (refactoringContext.getSelectedMPSProject() != null) {
+        final IOperationContext operationContext = new ModuleContext(module, refactoringContext.getSelectedMPSProject());
         if (operationContext != null) {
           refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
         }

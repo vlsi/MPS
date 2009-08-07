@@ -619,15 +619,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213704059805">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213704059806">
-                <property name="name" value="project" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213704059807">
-                  <link role="classifier" targetNodeId="18.~MPSProject" resolveInfo="MPSProject" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.lang.refactoring.structure.ProjectExpression" id="1215086410339" />
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213704091027">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213704091028">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199555293199">
@@ -643,9 +634,7 @@
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199556427404">
                           <link role="variableDeclaration" targetNodeId="1199556389522" resolveInfo="module" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213704059813">
-                          <link role="variableDeclaration" targetNodeId="1213704059806" resolveInfo="project" />
-                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.lang.refactoring.structure.ProjectExpression" id="700745782152479251" />
                       </node>
                     </node>
                   </node>
@@ -676,9 +665,7 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213704092735">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213704093520" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213704091969">
-                  <link role="variableDeclaration" targetNodeId="1213704059806" resolveInfo="project" />
-                </node>
+                <node role="leftExpression" type="jetbrains.mps.lang.refactoring.structure.ProjectExpression" id="700745782152479250" />
               </node>
             </node>
           </node>

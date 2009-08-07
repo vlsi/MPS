@@ -76,10 +76,6 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     return SModelUtil.isAssignableConcept(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
 
-  public boolean refactorImmediatelyIfNoUsages() {
-    return false;
-  }
-
   public boolean showsAffectedNodes() {
     return true;
   }
