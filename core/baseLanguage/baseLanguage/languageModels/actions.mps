@@ -2072,20 +2072,30 @@
       <node role="precondition" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" id="1198761649460">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198761649461">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198761665622">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1198761747569">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963644">
-                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1198761749664" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1198761752771">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1198761757597">
-                    <link role="conceptDeclaration" targetNodeId="1.1188220165133" resolveInfo="ArrayLiteral" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="273979148757350893">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="273979148757374435">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="273979148757374434" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="273979148757374439">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="273979148757374441">
+                    <link role="conceptDeclaration" targetNodeId="1.1188214545140" resolveInfo="AnnotationInstanceValue" />
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967045">
-                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1198761665623" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1198761669417">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1198761717369">
-                    <link role="conceptDeclaration" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1198761747569">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977967045">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1198761665623" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1198761669417">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1198761717369">
+                      <link role="conceptDeclaration" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963644">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" id="1198761749664" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1198761752771">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1198761757597">
+                      <link role="conceptDeclaration" targetNodeId="1.1188220165133" resolveInfo="ArrayLiteral" />
+                    </node>
                   </node>
                 </node>
               </node>
