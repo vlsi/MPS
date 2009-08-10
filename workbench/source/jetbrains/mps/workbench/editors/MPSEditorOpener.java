@@ -198,7 +198,7 @@ public class MPSEditorOpener implements ProjectComponent {
     final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
 
     //restore inspector state for opened editor (if exists)
-    restorePrevSelectionInInspector(nodeEditor, context, getInspector());
+    restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector());
 
     //open inspector (if no cell is selected in editor, inspector won't be opened)
     DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getCurrentEditorComponent());
@@ -208,7 +208,7 @@ public class MPSEditorOpener implements ProjectComponent {
     //select and its parents in editor and inspector(if exist)
     if (select) {
       selectNodeParentInEditor(nodeEditor, node);
-      selectNodeParentInInspector(node, context);
+      selectNodeParentInInspector(node, nodeEditor.getOperationContext());
     }
 
     //move focus if needed - to editor or to inspector
