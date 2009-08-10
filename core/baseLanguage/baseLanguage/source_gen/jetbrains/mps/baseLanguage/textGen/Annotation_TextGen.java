@@ -21,6 +21,7 @@ public class Annotation_TextGen extends SNodeTextGen {
     this.appendWithIndent("@interface ");
     this.append(JavaNameUtil.shortName(SPropertyOperations.getString(node, "name")));
     this.append(" {");
+    this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
@@ -29,6 +30,7 @@ public class Annotation_TextGen extends SNodeTextGen {
         }
       }
     }
+    this.decreaseDepth();
     this.decreaseDepth();
     this.appendNewLine();
     this.append("}");

@@ -17,6 +17,7 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));
     this.append("()");
+    this.append(";");
   }
 
 }
