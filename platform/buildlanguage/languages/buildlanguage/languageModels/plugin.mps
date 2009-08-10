@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="53" />
+  <maxImportIndex value="54" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.buildlanguage.tasksfromjar(jetbrains.mps.buildlanguage.tasksfromjar@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -64,6 +64,7 @@
   <import index="51" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="53" modelUID="f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
+  <import index="54" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1207488318996">
     <property name="name" value="ProjectPaneLanguageAddition" />
     <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1207488351966">

@@ -28,9 +28,13 @@ public class GenerateTaskTest extends BuildFileTest {
     executeTarget("testComplexLanguageProject");
   }
 
-  public void testSuccess() {
-    executeTarget("testSuccess");
+  public void testSamplesProjects() {
+    executeTarget("testSamplesProjects");
   }
+
+//  public void testSuccess() {
+//    executeTarget("testSuccess");
+//  }
 
   public void testComplexLanguageModels() {
     executeTarget("testComplexLanguageModels");
@@ -39,10 +43,6 @@ public class GenerateTaskTest extends BuildFileTest {
   public void testComplexLanguageModules() {
     executeTarget("testComplexLanguageModules");
   }
-
-//  public void testNormalWorkWithLibrary() {
-//    executeTarget("testLibraries");
-//  }
 
   public void testFailOnGeneration() {
     runTestForBuildExceptionOnTarget("testFailOnGenerationError");
