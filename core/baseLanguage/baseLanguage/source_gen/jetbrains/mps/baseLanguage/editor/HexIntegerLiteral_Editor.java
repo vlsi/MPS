@@ -71,6 +71,7 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
   }
 

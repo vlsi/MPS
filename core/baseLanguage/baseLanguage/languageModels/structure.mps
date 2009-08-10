@@ -2166,7 +2166,7 @@
     <link role="extends" targetNodeId="1179362310214" resolveInfo="IntegerLiteral" />
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1179360856892">
       <property name="name" value="value" />
-      <link role="dataType" targetNodeId="4.1082983041843" />
+      <link role="dataType" targetNodeId="6734604082923916973" resolveInfo="_HexNumberValue" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1179360836875">
       <property name="value" value="hexademical integer literal" />
@@ -3390,6 +3390,10 @@
       <property name="value" value="empty line" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="6734604082923916973">
+    <property name="name" value="_HexNumberValue" />
+    <property name="constraint" value="[0-9a-fA-F]+" />
   </node>
 </model>
 
