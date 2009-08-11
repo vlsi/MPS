@@ -471,8 +471,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
       String className = packageName + "." + "ConstraintsDescriptor";
       Class constraintsClass = l.getClass(className);
       if (constraintsClass == null) {
-//        LOG.error("Can't find " + className);
-        // it is ok: constraints model can be empty 
+        // it is ok: constraints model can be empty
         return;
       }
 

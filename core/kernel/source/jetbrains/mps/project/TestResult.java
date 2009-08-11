@@ -42,7 +42,7 @@ public class TestResult {
   }
 
   public boolean isOk() {
-    return !hasGenerationErrors() && !hasCompilationProblems() && !hasFailedTestReports();
+    return !hasGenerationErrors() && !hasCompilationProblems() && !hasFailedTestReports() && !hasDiffReports();
   }
 
   public int warningsStartsWith(String warn) {
