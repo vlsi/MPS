@@ -140,12 +140,12 @@ public class SModelUtil_new implements ApplicationComponent {
     return instantiateConceptDeclaration(conceptDeclaration, model, true);
   }
 
-  public static INodeAdapter instantiateConceptDeclaration(AbstractConceptDeclaration conceptDeclaration, @Nullable SModel model, boolean fullNodeStructure) {
+  public static INodeAdapter instantiateConceptDeclaration(@NotNull AbstractConceptDeclaration conceptDeclaration, @Nullable SModel model, boolean fullNodeStructure) {
     SNode node = instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance(), fullNodeStructure);
     return BaseAdapter.fromNode(node);
   }
 
-  public static SNode instantiateConceptDeclaration(String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
+  public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }

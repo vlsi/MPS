@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +67,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     return result;
   }
 
-  public static SNode createNode(AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
+  public static SNode createNode(@NotNull AbstractConceptDeclaration nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
