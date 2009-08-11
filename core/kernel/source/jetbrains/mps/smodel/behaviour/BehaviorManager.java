@@ -116,6 +116,7 @@ public final class BehaviorManager implements ApplicationComponent {
       concepts.add(concept);
       while (!concepts.isEmpty()) {
         for (AbstractConceptDeclaration currentConcept : concepts) {
+          assert currentConcept != null;
           if (processed.contains(currentConcept)) {
             continue;
           }
@@ -137,7 +138,9 @@ public final class BehaviorManager implements ApplicationComponent {
             ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
             List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
             for (InterfaceConceptReference reference : references) {
-              newFrontier.add(reference.getIntfc());
+              InterfaceConceptDeclaration intfc = reference.getIntfc();
+              assert intfc != null;
+              newFrontier.add(intfc);
             }
             ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
             if (parentConcept != null) {
@@ -147,7 +150,9 @@ public final class BehaviorManager implements ApplicationComponent {
             InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
             List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
             for (InterfaceConceptReference reference : references) {
-              newFrontier.add(reference.getIntfc());
+              InterfaceConceptDeclaration intfc = reference.getIntfc();
+              assert intfc != null;
+              newFrontier.add(intfc);              
             }
           }
           processed.add(currentConcept);
@@ -188,7 +193,7 @@ public final class BehaviorManager implements ApplicationComponent {
     }
   }
 
-  private String behaviorClassByConceptFqName(String fqName) {
+  private String behaviorClassByConceptFqName(@NotNull String fqName) {
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
     if (m.matches()) {
       return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
