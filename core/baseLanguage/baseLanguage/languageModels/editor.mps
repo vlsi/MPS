@@ -14996,7 +14996,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8064396509828198987">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8064396509828198990">
         <property name="text" value="-" />
-        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1236610315254" resolveInfo="AbstractUnariOperationActions" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="8064396509828641871">
           <property name="flag" value="true" />

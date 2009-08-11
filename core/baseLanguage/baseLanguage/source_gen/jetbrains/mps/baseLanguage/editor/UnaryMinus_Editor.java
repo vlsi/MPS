@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class UnaryMinus_Editor extends DefaultNodeEditor {
 
@@ -71,9 +70,6 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     AbstractUnariOperationActions.setCellActions(editorCell, node, context);
   }
