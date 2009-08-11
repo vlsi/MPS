@@ -332,6 +332,13 @@ public class ProjectTester {
       return super.handleOutput(status, outputDir, context, monitor, messages);
     }
 
+    @Override
+    public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
+      myNodeExtensionMap.clear();
+      myOutputModelToPath.clear();
+      return super.compile(progress);
+    }
+
     Collection<SModel> getOutputModels() {
       return myOutputModelToPath.keySet();
     }
