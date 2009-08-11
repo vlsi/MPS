@@ -17,12 +17,14 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.lang.editor.structure._ImageAlignment_Enum;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 
+import javax.swing.SwingUtilities;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -38,7 +40,16 @@ public class EditorCell_Image extends EditorCell_Basic {
       int mask = ImageObserver.HEIGHT | ImageObserver.WIDTH;
       boolean done = (infoflags & mask) == mask;
       if (done) {
-        getEditor().relayout();
+        SwingUtilities.invokeLater(new Runnable() {
+
+          public void run() {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                getEditor().rebuildEditorContent();
+              }
+            });
+          }
+        });
       }
       return done;
     }
@@ -48,6 +59,8 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   protected EditorCell_Image(EditorContext editorContext, SNode node) {
     super(editorContext, node);
+    getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+    getStyle().set(StyleAttributes.PUNCTUATION_RIGHT, true);
   }
 
   public static EditorCell_Image createImageCell(EditorContext editorContext, SNode node, String imageFileName) {
@@ -84,8 +97,14 @@ public class EditorCell_Image extends EditorCell_Basic {
   protected void relayoutImpl() {
     if (myImage == null) return;
     if (myAlignment == _ImageAlignment_Enum.alignmentJustify) {
-      myWidth = myImage.getWidth(mySizeObserver);
-      myHeight = myImage.getHeight(mySizeObserver);
+      int width = myImage.getWidth(mySizeObserver);
+      if (width != -1) {
+        myWidth = width;
+      }
+      int height = myImage.getHeight(mySizeObserver);
+      if (height != -1) {
+        myHeight = height;
+      }
     }
   }
 
@@ -135,10 +154,6 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   protected void setImage(Image image) {
     myImage = image;
-  }
-
-  public enum ImageAlignment {
-    alignmentJustify, alignmentCenter, alignmentTile
   }
 
 }
