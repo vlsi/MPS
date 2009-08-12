@@ -60,7 +60,7 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_0582_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0582_2");
-    editorCell.addEditorCell(this.createRefNode_0582_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_0582_0(context, node));
     return editorCell;
   }
 
@@ -174,25 +174,21 @@ public class CellModel_ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0582_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_0582_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_0582_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("modelAccessor");
     provider.setNoTargetText("<no modelAccessor>");
-    EditorCell cellWithRole = this.createRefNode_0582_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

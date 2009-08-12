@@ -26,7 +26,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2949_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.addEditorCell(this.createConstant_2949_0(context, node, "->"));
-    editorCell.addEditorCell(this.createRefNode_2949_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_2949_0(context, node));
     return editorCell;
   }
 
@@ -42,26 +42,22 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2949_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.addKeyMap(new EditorCellModel_KeyMap());
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_2949_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2949_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cellModel");
     provider.setNoTargetText("<no cellModel>");
-    EditorCell cellWithRole = this.createRefNode_2949_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.addKeyMap(new EditorCellModel_KeyMap());
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }
