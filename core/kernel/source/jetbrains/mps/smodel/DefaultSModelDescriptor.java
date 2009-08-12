@@ -214,7 +214,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getSModelReference(), currentVersion);
-      SModelRepository.getInstance().markChanged(mySModel);
+      IFile modelFile = modelDescriptor.getModelFile();
+      if (modelFile != null && !modelFile.isReadOnly()) {
+        SModelRepository.getInstance().markChanged(mySModel);
+      }
     }
 
     // broken model fixing code
