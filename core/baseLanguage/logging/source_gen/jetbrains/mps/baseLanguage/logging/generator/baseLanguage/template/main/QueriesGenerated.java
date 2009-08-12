@@ -17,7 +17,7 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1169464530672(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false)).isNotEmpty() && !(LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel()));
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && !(LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel()));
   }
 
   public static boolean baseMappingRule_Condition_1210168710480(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -45,7 +45,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1232620727244(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false)).isNotEmpty() && LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel());
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{})).isNotEmpty() && LoggingGenerationUtil.isDesignTimeModel(_context.getOriginalInputModel());
   }
 
   public static boolean baseMappingRule_Condition_1232620749768(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

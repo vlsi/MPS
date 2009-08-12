@@ -38,7 +38,14 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "superclass", true), new _Quotations.QuotationClass_2().createNode());
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "superclass", true), new _Quotations.QuotationClass_1().createNode());
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -50,7 +57,7 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
     }
     for(SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
       if (SPropertyOperations.getString(m, "name").startsWith("test")) {
-        SLinkOperations.addChild(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", new _Quotations.QuotationClass_1().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
+        SLinkOperations.addChild(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", new _Quotations.QuotationClass_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
       } else
       {
         SLinkOperations.addChild(testCase, "method", SNodeOperations.detachNode(m));
