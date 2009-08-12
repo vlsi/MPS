@@ -15825,8 +15825,8 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3710678335995670683">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3710678335995670684">
                   <property name="name" value="modelAccessor" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3710678335995670685">
-                    <link role="classifier" targetNodeId="1176732033965" resolveInfo="ModelAccessor" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4322628721828777574">
+                    <link role="classifier" targetNodeId="67.~ModelAccessor" resolveInfo="ModelAccessor" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3710678335995670686">
                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3710678335995670687" />

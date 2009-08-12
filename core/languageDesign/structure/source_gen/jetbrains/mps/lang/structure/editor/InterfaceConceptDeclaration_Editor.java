@@ -11,13 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
@@ -75,7 +74,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_8145_0(context, node, "interface concept"));
-    editorCell.addEditorCell(this.createTransactionalProperty_8145_1(context, node));
+    editorCell.addEditorCell(this.createTransactionalProperty_8145_0(context, node));
     editorCell.addEditorCell(this.createCollection_8145_4(context, node));
     return editorCell;
   }
@@ -144,7 +143,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_8145_20(context, node, "help URL:"));
-    editorCell.addEditorCell(this.createProperty_8145_1(context, node));
+    editorCell.addEditorCell(this.createProperty_8145_0(context, node));
     return editorCell;
   }
 
@@ -352,28 +351,26 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createTransactionalProperty_8145_0_internal(EditorContext context, SNode node, AbstractCellProvider provider) {
-    ModelAccessor modelAccessor = this._modelAcessorFactory_1216387630008(context, node);
-    EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
-    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("TransactionalProperty_8145_0");
-    editorCell.setDefaultText("<no name>");
-    editorCell.setCommitInCommand(false);
-    return editorCell;
-  }
-
-  public EditorCell createTransactionalProperty_8145_1(EditorContext context, SNode node) {
+  public EditorCell createTransactionalProperty_8145_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    EditorCell cellWithRole = this.createTransactionalProperty_8145_0_internal(context, node, provider);
+    EditorCell_Property editorCell = null;
+    {
+      ModelAccessor modelAccessor = this._modelAcessorFactory_1216387630008(context, node);
+      editorCell = EditorCell_Property.create(context, modelAccessor, node);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setCellId("TransactionalProperty_8145_0");
+      editorCell.setDefaultText("<no name>");
+      editorCell.setCommitInCommand(false);
+    }
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public ModelAccessor _modelAcessorFactory_1216387630008(final EditorContext editorContext, final SNode node) {
@@ -492,27 +489,23 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8145_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setCellId("property_helpURL");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_8145_1(EditorContext context, SNode node) {
+  public EditorCell createProperty_8145_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("helpURL");
     provider.setNoTargetText("<no URL>");
     provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty_8145_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setCellId("property_helpURL");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class propertyDeclarationListHandler_8145_0 extends RefNodeListHandler {

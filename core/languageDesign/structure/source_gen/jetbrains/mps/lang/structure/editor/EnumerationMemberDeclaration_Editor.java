@@ -34,9 +34,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_9117_1(context, node));
     }
     editorCell.addEditorCell(this.createConstant_9117_1(context, node, "value"));
-    editorCell.addEditorCell(this.createProperty_9117_3(context, node));
-    editorCell.addEditorCell(this.createConstant_9117_2(context, node, "  presentation"));
     editorCell.addEditorCell(this.createProperty_9117_1(context, node));
+    editorCell.addEditorCell(this.createConstant_9117_2(context, node, "  presentation"));
+    editorCell.addEditorCell(this.createProperty_9117_0(context, node));
     if (renderingCondition9117_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_9117_0(context, node, "    (default)"));
     }
@@ -51,7 +51,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_9117_3(context, node, "identifier"));
-    editorCell.addEditorCell(this.createProperty_9117_5(context, node));
+    editorCell.addEditorCell(this.createProperty_9117_2(context, node));
     editorCell.addEditorCell(this.createConstant_9117_4(context, node, "  "));
     return editorCell;
   }
@@ -114,8 +114,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9117_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_9117_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("externalValue");
+    provider.setNoTargetText("<no external value>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_externalValue");
     {
       Style style = editorCell.getStyle();
@@ -123,26 +127,23 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_9117_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("externalValue");
-    provider.setNoTargetText("<no external value>");
-    EditorCell cellWithRole = this.createProperty_9117_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_9117_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_9117_1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("internalValue");
+    provider.setNoTargetText("<NULL>");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_internalValue");
     {
       Style style = editorCell.getStyle();
@@ -150,27 +151,22 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_9117_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("internalValue");
-    provider.setNoTargetText("<NULL>");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty_9117_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_9117_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_9117_2(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("javaIdentifier");
+    provider.setNoTargetText("<no identifier>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_javaIdentifier");
     {
       Style style = editorCell.getStyle();
@@ -179,22 +175,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_9117_5(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("javaIdentifier");
-    provider.setNoTargetText("<no identifier>");
-    EditorCell cellWithRole = this.createProperty_9117_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 
