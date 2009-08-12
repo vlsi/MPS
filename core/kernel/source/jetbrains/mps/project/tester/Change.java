@@ -5,9 +5,9 @@ public class Change {
   int myIndexNew;
   int myDeleted;
   int myAdded;
-  static final char ADDED = 'a';
-  static final char DELETED = 'd';
-  static final char CHANGED = 'c';
+  static final char ADDED = '+';
+  static final char DELETED = '-';
+  static final char CHANGED = '!';
 
   public Change(int indexOld, int indexNew, int deleted, int added) {
     myIndexOld = indexOld;

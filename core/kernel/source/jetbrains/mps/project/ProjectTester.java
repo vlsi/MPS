@@ -76,8 +76,9 @@ public class ProjectTester {
     return res;
   }
 
-  private String getDiffReportTitle(String nodeName, String modelName, boolean added, boolean deleted) {
-    return "Class " + nodeName + ", Model " + modelName + ((added)? " (new class)" : ((deleted)? " (class deleted)" : "" ));
+  private String getDiffReportTitle(SNode node, String fileName, boolean added, boolean deleted) {
+    return NameUtil.nodeFQName(node) + ((added)? " (created)" : ((deleted)? " (deleted)" : "" )) + "\n"
+      + "  (file: " + fileName + ")";
   }
 
   private String[] getContentAsArray(String content, String separator) {
@@ -114,7 +115,7 @@ public class ProjectTester {
           files.remove(fileName);
         }
         final boolean created = oldContent == null && newContent != null;
-        final String title = getDiffReportTitle(outputRoot.getName(), outputModel.getShortName(), created, false);
+        final String title = getDiffReportTitle(outputRoot, filePath, created, false);
         String[] oldTest = getContentAsArray(oldContent, "\n");
         String[] newTest = getContentAsArray(newContent, System.getProperty("line.separator"));
         addDiffReport(new TestComparator(oldTest, newTest), result, title);
@@ -124,8 +125,7 @@ public class ProjectTester {
         if (dotPosition == -1) {
           continue;
         }
-        String nodeName = fileName.substring(0, dotPosition);
-        String title = getDiffReportTitle(nodeName, outputModel.getShortName(), false, true);
+        String title = getDiffReportTitle(null, fileName, false, true);
         File file = new File(genType.getOutputDir(outputModel) + File.separator + fileName);
         if (!file.exists() || !file.canRead() || !file.isFile()) {
           continue;
