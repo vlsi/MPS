@@ -74,8 +74,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1076_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_1076_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new StateMachineTest_Editor._Inline1076_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1076_0(editorCell, node, context);
@@ -140,9 +139,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
       return this.createProperty_1076_1(context, node);
     }
 
-    public EditorCell createProperty_1076_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_1076_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1076_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

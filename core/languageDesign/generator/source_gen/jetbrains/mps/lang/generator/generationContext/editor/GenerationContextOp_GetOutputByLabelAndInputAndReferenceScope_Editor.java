@@ -65,8 +65,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     return editorCell;
   }
 
-  public EditorCell createRefCell_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor._Inline3900_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_3900_0(editorCell, node, context);
@@ -89,9 +88,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_3900_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -163,9 +160,7 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
       return this.createProperty_3900_1(context, node);
     }
 
-    public EditorCell createProperty_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_3900_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_3900_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

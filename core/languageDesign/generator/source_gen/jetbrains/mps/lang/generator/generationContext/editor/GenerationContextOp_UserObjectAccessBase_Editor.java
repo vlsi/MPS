@@ -49,9 +49,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_5398_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_5398_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_5398_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -74,9 +72,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_5398_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_5398_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_5398_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

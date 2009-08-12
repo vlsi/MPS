@@ -55,8 +55,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2742_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_2742_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ProjectPluginType_Editor._Inline2742_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_2742_0(editorCell, node, context);
@@ -130,9 +129,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
       return this.createProperty_2742_1(context, node);
     }
 
-    public EditorCell createProperty_2742_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_2742_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_2742_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

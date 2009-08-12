@@ -36,8 +36,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline8023_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_8023_0(editorCell, node, context);
@@ -87,9 +86,7 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       return this.createProperty_8023_1(context, node);
     }
 
-    public EditorCell createProperty_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_8023_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_8023_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

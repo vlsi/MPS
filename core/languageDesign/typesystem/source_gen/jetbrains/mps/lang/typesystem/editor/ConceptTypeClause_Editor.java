@@ -92,8 +92,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2811_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_2811_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ConceptTypeClause_Editor._Inline2811_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_2811_0(editorCell, node, context);
@@ -167,9 +166,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
       return this.createProperty_2811_1(context, node);
     }
 
-    public EditorCell createProperty_2811_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_2811_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_2811_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

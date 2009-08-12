@@ -30,8 +30,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3163_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_3163_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new RefConcept_Reference_Editor._Inline3163_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_3163_0(editorCell, node, context);
@@ -80,9 +79,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
       return this.createProperty_3163_1(context, node);
     }
 
-    public EditorCell createProperty_3163_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_3163_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_3163_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

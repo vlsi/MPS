@@ -101,8 +101,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline9824_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_9824_0(editorCell, node, context);
@@ -125,9 +124,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return cellWithRole;
   }
 
-  public EditorCell createProperty_9824_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createProperty_9824_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_9824_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -216,9 +213,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       return this.createProperty_9824_1(context, node);
     }
 
-    public EditorCell createProperty_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_9824_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

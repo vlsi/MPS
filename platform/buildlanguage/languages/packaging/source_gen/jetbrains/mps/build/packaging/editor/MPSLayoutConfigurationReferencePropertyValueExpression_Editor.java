@@ -29,8 +29,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
     return editorCell;
   }
 
-  public EditorCell createRefCell_2583_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_2583_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new MPSLayoutConfigurationReferencePropertyValueExpression_Editor._Inline2583_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_2583_0(editorCell, node, context);
@@ -79,9 +78,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
       return this.createProperty_2583_1(context, node);
     }
 
-    public EditorCell createProperty_2583_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_2583_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_2583_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

@@ -29,8 +29,7 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1583_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_1583_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new TemplateSwitchReference_Editor._Inline1583_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_1583_0(editorCell, node, context);
@@ -79,9 +78,7 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
       return this.createProperty_1583_1(context, node);
     }
 
-    public EditorCell createProperty_1583_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_1583_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_1583_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

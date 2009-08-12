@@ -17,9 +17,7 @@ public class BlockBodyPart_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_1866_1(context, node);
   }
 
-  public EditorCell createConceptProperty_1866_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_1866_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_1866_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

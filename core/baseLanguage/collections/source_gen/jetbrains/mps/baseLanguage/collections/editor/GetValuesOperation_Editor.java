@@ -17,9 +17,7 @@ public class GetValuesOperation_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_9901_1(context, node);
   }
 
-  public EditorCell createConceptProperty_9901_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_9901_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_9901_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

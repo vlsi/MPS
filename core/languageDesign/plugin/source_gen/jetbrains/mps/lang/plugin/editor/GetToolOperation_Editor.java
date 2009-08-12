@@ -57,8 +57,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8845_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_8845_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new GetToolOperation_Editor._Inline8845_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_8845_0(editorCell, node, context);
@@ -118,9 +117,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_8845_1(context, node);
     }
 
-    public EditorCell createProperty_8845_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_8845_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_8845_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

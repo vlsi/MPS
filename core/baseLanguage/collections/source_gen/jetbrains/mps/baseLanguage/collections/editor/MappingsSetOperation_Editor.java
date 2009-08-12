@@ -17,9 +17,7 @@ public class MappingsSetOperation_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_5090_1(context, node);
   }
 
-  public EditorCell createConceptProperty_5090_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_5090_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_5090_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

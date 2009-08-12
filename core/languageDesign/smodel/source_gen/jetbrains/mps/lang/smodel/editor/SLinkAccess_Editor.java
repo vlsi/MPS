@@ -29,8 +29,7 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6219_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_6219_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new SLinkAccess_Editor._Inline6219_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6219_0(editorCell, node, context);
@@ -79,9 +78,7 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
       return this.createProperty_6219_1(context, node);
     }
 
-    public EditorCell createProperty_6219_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_6219_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6219_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

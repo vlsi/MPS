@@ -185,9 +185,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return result;
   }
 
-  public EditorCell createProperty_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createProperty_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6165_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -209,8 +207,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createRefCell_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_Editor._Inline6165_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6165_0(editorCell, node, context);
@@ -233,9 +230,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createProperty_6165_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createProperty_6165_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6165_2(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -257,9 +252,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createProperty_6165_6_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createProperty_6165_6_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_Property_6165_3(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -281,9 +274,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_6165_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6165_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -305,9 +296,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_6165_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_6165_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6165_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -329,9 +318,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_6165_4_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_6165_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6165_2(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -353,9 +340,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_6165_6_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_6165_6_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6165_3(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -550,9 +535,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
       return this.createProperty_6165_3(context, node);
     }
 
-    public EditorCell createProperty_6165_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_6165_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6165_1(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

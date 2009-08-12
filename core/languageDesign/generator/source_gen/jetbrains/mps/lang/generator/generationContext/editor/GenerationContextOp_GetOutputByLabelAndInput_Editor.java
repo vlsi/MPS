@@ -65,8 +65,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createRefCell_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabelAndInput_Editor._Inline6100_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6100_0(editorCell, node, context);
@@ -89,9 +88,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_6100_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -163,9 +160,7 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
       return this.createProperty_6100_1(context, node);
     }
 
-    public EditorCell createProperty_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_6100_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6100_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

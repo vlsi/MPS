@@ -30,8 +30,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefCell_4050_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_4050_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline4050_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4050_0(editorCell, node, context);
@@ -80,9 +79,7 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
       return this.createProperty_4050_1(context, node);
     }
 
-    public EditorCell createProperty_4050_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_4050_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4050_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

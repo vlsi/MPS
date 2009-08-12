@@ -22,9 +22,7 @@ public class Node_GetIndexInParentOperation_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_7155_1(context, node);
   }
 
-  public EditorCell createConceptProperty_7155_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_7155_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_7155_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

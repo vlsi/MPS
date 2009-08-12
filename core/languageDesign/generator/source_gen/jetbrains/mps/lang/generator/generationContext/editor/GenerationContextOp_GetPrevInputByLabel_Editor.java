@@ -36,8 +36,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
     return editorCell;
   }
 
-  public EditorCell createRefCell_3465_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_3465_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline3465_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_3465_0(editorCell, node, context);
@@ -88,9 +87,7 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
       return this.createProperty_3465_1(context, node);
     }
 
-    public EditorCell createProperty_3465_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_3465_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_3465_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

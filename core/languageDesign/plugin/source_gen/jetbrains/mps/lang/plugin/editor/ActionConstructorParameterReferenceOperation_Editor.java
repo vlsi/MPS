@@ -29,8 +29,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createRefCell_7077_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_7077_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ActionConstructorParameterReferenceOperation_Editor._Inline7077_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_7077_0(editorCell, node, context);
@@ -79,9 +78,7 @@ public class ActionConstructorParameterReferenceOperation_Editor extends Default
       return this.createProperty_7077_1(context, node);
     }
 
-    public EditorCell createProperty_7077_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_7077_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_7077_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

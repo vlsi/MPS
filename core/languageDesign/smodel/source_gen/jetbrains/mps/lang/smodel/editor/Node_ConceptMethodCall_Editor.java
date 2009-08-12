@@ -44,8 +44,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6574_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_6574_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline6574_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6574_0(editorCell, node, context);
@@ -97,9 +96,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       return this.createProperty_6574_1(context, node);
     }
 
-    public EditorCell createProperty_6574_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_6574_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6574_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

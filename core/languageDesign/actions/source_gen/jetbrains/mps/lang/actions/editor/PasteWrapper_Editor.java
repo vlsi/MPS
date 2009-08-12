@@ -78,8 +78,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createRefCell_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0044_0(editorCell, node, context);
@@ -102,8 +101,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefCell_0044_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_0044_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_1());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0044_1(editorCell, node, context);
@@ -126,9 +124,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public EditorCell createRefNode_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_0044_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -212,9 +208,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
       return this.createProperty_0044_1(context, node);
     }
 
-    public EditorCell createProperty_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_0044_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0044_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -257,9 +251,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
       return this.createProperty_0044_3(context, node);
     }
 
-    public EditorCell createProperty_0044_2_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_0044_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0044_1(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

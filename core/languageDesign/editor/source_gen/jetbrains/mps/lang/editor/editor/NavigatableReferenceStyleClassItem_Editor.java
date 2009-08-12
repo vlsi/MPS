@@ -38,9 +38,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_0469_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -62,8 +60,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
     return cellWithRole;
   }
 
-  public EditorCell createRefCell_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new NavigatableReferenceStyleClassItem_Editor._Inline0469_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_0469_0(editorCell, node, context);
@@ -117,9 +114,7 @@ public class NavigatableReferenceStyleClassItem_Editor extends DefaultNodeEditor
       return this.createProperty_0469_1(context, node);
     }
 
-    public EditorCell createProperty_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_0469_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_0469_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

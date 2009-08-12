@@ -71,8 +71,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefCell_4982_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_4982_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new DefaultClassifierMethodCallOperation_Editor._Inline4982_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4982_0(editorCell, node, context);
@@ -135,9 +134,7 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       return this.createProperty_4982_1(context, node);
     }
 
-    public EditorCell createProperty_4982_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_4982_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4982_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

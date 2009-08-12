@@ -68,9 +68,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createRefNode_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefNode_3997_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -92,8 +90,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-  public EditorCell createRefCell_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline3997_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_3997_0(editorCell, node, context);
@@ -158,9 +155,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       return this.createProperty_3997_1(context, node);
     }
 
-    public EditorCell createProperty_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_3997_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_3997_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

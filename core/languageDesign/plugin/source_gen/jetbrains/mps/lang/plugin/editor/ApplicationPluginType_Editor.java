@@ -55,8 +55,7 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_5953_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_5953_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ApplicationPluginType_Editor._Inline5953_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_5953_0(editorCell, node, context);
@@ -130,9 +129,7 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
       return this.createProperty_5953_1(context, node);
     }
 
-    public EditorCell createProperty_5953_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_5953_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_5953_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

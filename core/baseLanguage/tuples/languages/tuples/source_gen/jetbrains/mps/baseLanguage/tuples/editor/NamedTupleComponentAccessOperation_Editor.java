@@ -30,8 +30,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  public EditorCell createRefCell_2041_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_2041_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline2041_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_2041_0(editorCell, node, context);
@@ -81,9 +80,7 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
       return this.createProperty_2041_1(context, node);
     }
 
-    public EditorCell createProperty_2041_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_2041_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_2041_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

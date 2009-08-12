@@ -17,9 +17,7 @@ public class ProjectExpression_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_5819_1(context, node);
   }
 
-  public EditorCell createConceptProperty_5819_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(null);
+  public EditorCell createConceptProperty_5819_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_ConceptProperty_5819_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
