@@ -124,6 +124,13 @@ public class QueriesGenerated {
     return _context.createUniqueName("SNODE_POINTER", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_3444116434173864874(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode mainNode = _context.getNode().getReferent("mainNode");
+    String uniqueName = _context.createUniqueName("childRole", mainNode);
+    mainNode.putUserObject("childRole_uniqueName", uniqueName);
+    return uniqueName;
+  }
+
   public static Object referenceMacro_GetReferent_1190931376965(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "matchMethodParameter");
   }
@@ -220,6 +227,19 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1224175601334(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast((_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "patternVarField")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_3444116434173865706(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode mainNode = _context.getNode().getReferent("mainNode");
+    return (String)mainNode.getUserObject("childRole_uniqueName");
+  }
+
+  public static Object referenceMacro_GetReferent_3444116434173865740(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (String)SNodeOperations.getParent(_context.getNode()).getUserObject("childRole_uniqueName");
+  }
+
+  public static Object referenceMacro_GetReferent_3444116434173865776(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (String)SNodeOperations.getParent(_context.getNode()).getUserObject("childRole_uniqueName");
   }
 
   public static boolean ifMacro_Condition_1190931376948(final IOperationContext operationContext, final IfMacroContext _context) {
