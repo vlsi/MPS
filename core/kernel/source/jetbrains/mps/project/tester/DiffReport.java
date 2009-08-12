@@ -22,11 +22,11 @@ public class DiffReport {
     char type = change.getType();
     int count = (isOld)? change.myDeleted : change.myAdded;
     int startIndex = (isOld)? change.myIndexOld : change.myIndexNew;
-    for (int i = -CONTEXT_LINE_COUNT; i <= count + CONTEXT_LINE_COUNT; i++) {
+    for (int i = -CONTEXT_LINE_COUNT; i < count + CONTEXT_LINE_COUNT; i++) {
       final int idx = startIndex + i;
       if (idx >= 0 && idx < content.length && count != 0) {
         String currentUserObject = content[idx];
-        stringBuilder.append((i < 0 || i > count)? "  " : type).append(currentUserObject).append("\n");
+        stringBuilder.append((i < 0 || i >= count)? "  " : type).append(currentUserObject).append("\n");
       }
     }
     return stringBuilder.toString();

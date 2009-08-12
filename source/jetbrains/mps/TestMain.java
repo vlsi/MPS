@@ -338,7 +338,11 @@ public class TestMain {
   }
 
   public static TestResult testProject(File projectFile) {
-    return testProject(projectFile, new String[0]);
+    return testProject(projectFile, false);
+  }
+
+  public static TestResult testProject(File projectFile, boolean isRunnable) {
+    return testProject(projectFile, isRunnable, new String[0]);
   }
 
   /**
@@ -347,7 +351,7 @@ public class TestMain {
    * @param projectFile
    * @return
    */
-  public static TestResult testProject(File projectFile, String[] configurations) {
+  public static TestResult testProject(File projectFile, boolean isRunnable, String[] configurations) {
     IdeMain.setTestMode(TestMode.CORE_TEST) ;
     long start = System.currentTimeMillis();
     configureMPS();
@@ -358,7 +362,7 @@ public class TestMain {
     }
 
     final MPSProject project = loadProject(projectFile);
-    TestResult result = new ProjectTester(project).testProject(configurations);
+    TestResult result = new ProjectTester(project, isRunnable).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {

@@ -117,6 +117,7 @@ public class TestResult {
     } else {
       out.println("No difference reports.");
     }
+    out.println("");
 
     if (hasFailedTestReports()) {
       out.println("Test problems:");

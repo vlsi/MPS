@@ -44,21 +44,29 @@ public class BaseMPSTest extends TestCase {
     }
   }
 
-   protected void assertGenerates(File project, String... configurations) {
-    TestResult res = testProject(project, configurations);
+  protected void assertGenerates(File project, boolean runnable, String... configurations) {
+    TestResult res = testProject(project, runnable, configurations);
     assertTrue(res.isOk());
   }
 
+  protected void assertGenerates(File project, boolean runnable) {
+    assertGenerates(project, runnable, new String[0]);
+  }
+
   protected void assertGenerates(File project) {
-    assertGenerates(project, new String[0]);
+    assertGenerates(project, false, new String[0]);
   }
 
   protected TestResult testProject(File project, String[] configurations) {
-    return TestMain.testProject(project, configurations);
+    return TestMain.testProject(project, false, configurations);
+  }
+
+  protected TestResult testProject(File project, boolean runnable, String[] configurations) {
+    return TestMain.testProject(project, runnable, configurations);
   }
 
   protected TestResult testProject(File project) {
-    return TestMain.testProject(project, new String[0]);
+    return TestMain.testProject(project, false, new String[0]);
   }
 
   protected boolean testProjectGenerationForLeaks(File project) {

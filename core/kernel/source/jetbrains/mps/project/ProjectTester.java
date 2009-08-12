@@ -54,9 +54,15 @@ import java.io.FilenameFilter;
 
 public class ProjectTester {
   private MPSProject myProject;
+  private boolean myIsRunnable;
+
+  public ProjectTester(MPSProject project, boolean isRunnable) {
+    myProject = project;
+    myIsRunnable = isRunnable;
+  }
 
   public ProjectTester(MPSProject project) {
-    myProject = project;
+    this(project, false);
   }
 
   private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {
@@ -271,16 +277,14 @@ public class ProjectTester {
               handler
             );
 
-            if (t.getIsRunnable()) {
+            if (myIsRunnable) {
               diffReports.addAll(createDiffReports(generationType));
             }
 
             List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
             compilationResults.addAll(createCompilationProblemsList(compilationResultList));
 
-            if (t.getIsRunnable()) {
-              failedTests.addAll(createTestFailures(generationType, parms));
-            }
+            failedTests.addAll(createTestFailures(generationType, parms));
 
             System.out.println("");
             System.out.println("");
@@ -336,7 +340,7 @@ public class ProjectTester {
     public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
       myNodeExtensionMap.clear();
       myOutputModelToPath.clear();
-      return super.compile(progress);
+      return new ArrayList<CompilationResult>();//super.compile(progress);
     }
 
     Collection<SModel> getOutputModels() {
