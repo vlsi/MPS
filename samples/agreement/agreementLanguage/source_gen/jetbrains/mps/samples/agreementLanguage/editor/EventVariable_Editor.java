@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -25,13 +25,17 @@ public class EventVariable_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6854_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6854_0");
+    editorCell.addEditorCell(this.createProperty_6854_0(context, node));
     editorCell.addEditorCell(this.createProperty_6854_1(context, node));
-    editorCell.addEditorCell(this.createProperty_6854_3(context, node));
     return editorCell;
   }
 
-  public EditorCell createProperty_6854_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6854_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_type");
     {
       Style style = editorCell.getStyle();
@@ -39,26 +43,22 @@ public class EventVariable_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6854_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("type");
-    provider.setNoTargetText("<no type>");
-    EditorCell cellWithRole = this.createProperty_6854_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_6854_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6854_1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_name");
     {
       Style style = editorCell.getStyle();
@@ -66,22 +66,14 @@ public class EventVariable_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6854_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_6854_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

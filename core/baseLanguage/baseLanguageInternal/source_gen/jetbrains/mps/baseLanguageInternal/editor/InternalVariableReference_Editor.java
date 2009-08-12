@@ -14,9 +14,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -36,9 +36,9 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8666_0");
     editorCell.addEditorCell(this.createConstant_8666_0(context, node, "["));
-    editorCell.addEditorCell(this.createRefNode_8666_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_8666_0(context, node));
     editorCell.addEditorCell(this.createConstant_8666_1(context, node, "]"));
-    editorCell.addEditorCell(this.createProperty_8666_1(context, node));
+    editorCell.addEditorCell(this.createProperty_8666_0(context, node));
     return editorCell;
   }
 
@@ -64,49 +64,41 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8666_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_8666_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_8666_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
-    EditorCell cellWithRole = this.createRefNode_8666_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_8666_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_8666_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_name");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu0()}));
-    return editorCell;
-  }
-
-  public EditorCell createProperty_8666_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_8666_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class InternalVariableReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

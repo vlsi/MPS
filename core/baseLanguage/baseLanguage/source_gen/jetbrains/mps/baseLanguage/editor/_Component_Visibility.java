@@ -8,9 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
@@ -31,34 +31,30 @@ public class _Component_Visibility extends AbstractCellProvider {
   public EditorCell createCollection_6659_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6659_0");
-    editorCell.addEditorCell(this.createRefNode_6659_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_6659_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode_6659_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_6659_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("visibility");
+    provider.setNoTargetText("/*package*/");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_6659_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("visibility");
-    provider.setNoTargetText("/*package*/");
-    EditorCell cellWithRole = this.createRefNode_6659_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

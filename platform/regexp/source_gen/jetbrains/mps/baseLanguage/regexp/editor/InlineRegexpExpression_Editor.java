@@ -34,7 +34,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6834_0");
     editorCell.addEditorCell(this.createConstant_6834_15(context, node, "["));
-    editorCell.addEditorCell(this.createRefNode_6834_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_6834_0(context, node));
     editorCell.addEditorCell(this.createConstant_6834_16(context, node, "]"));
     if (renderingCondition6834_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6834_13(context, node, "CASE_INSENSITIVE"));
@@ -53,15 +53,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6834_1");
     editorCell.addEditorCell(this.createConstant_6834_0(context, node, "Options:"));
     editorCell.addEditorCell(this.createConstant_6834_11(context, node, "Case insensitive :"));
-    editorCell.addEditorCell(this.createProperty_6834_5(context, node));
+    editorCell.addEditorCell(this.createProperty_6834_2(context, node));
     editorCell.addEditorCell(this.createConstant_6834_10(context, node, ""));
     editorCell.addEditorCell(this.createConstant_6834_1(context, node, "Dot all : "));
-    editorCell.addEditorCell(this.createProperty_6834_1(context, node));
+    editorCell.addEditorCell(this.createProperty_6834_0(context, node));
     editorCell.addEditorCell(this.createConstant_6834_2(context, node, "  "));
     editorCell.addEditorCell(this.createConstant_6834_3(context, node, "If dot all mode is enabled, the . symbol class will include new line characters"));
     editorCell.addEditorCell(this.createConstant_6834_4(context, node, ""));
     editorCell.addEditorCell(this.createConstant_6834_5(context, node, "Multiline mode : "));
-    editorCell.addEditorCell(this.createProperty_6834_3(context, node));
+    editorCell.addEditorCell(this.createProperty_6834_1(context, node));
     editorCell.addEditorCell(this.createConstant_6834_6(context, node, "  "));
     editorCell.addEditorCell(this.createConstant_6834_7(context, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and"));
     editorCell.addEditorCell(this.createConstant_6834_8(context, node, "  "));
@@ -249,103 +249,87 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6834_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_6834_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_6834_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
-    EditorCell cellWithRole = this.createRefNode_6834_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_6834_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6834_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("dotAll");
+    provider.setNoTargetText("<no dotAll>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_dotAll");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6834_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("dotAll");
-    provider.setNoTargetText("<no dotAll>");
-    EditorCell cellWithRole = this.createProperty_6834_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_6834_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6834_1(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("multiLine");
+    provider.setNoTargetText("<no multiLine>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_multiLine");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6834_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("multiLine");
-    provider.setNoTargetText("<no multiLine>");
-    EditorCell cellWithRole = this.createProperty_6834_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createProperty_6834_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6834_2(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("caseInsensitive");
+    provider.setNoTargetText("<no caseInsensitive>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_caseInsensitive");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6834_5(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("caseInsensitive");
-    provider.setNoTargetText("<no caseInsensitive>");
-    EditorCell cellWithRole = this.createProperty_6834_4_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

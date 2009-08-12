@@ -37,7 +37,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     alternationCondition = WindowsConfig_Editor.renderingCondition1449_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createRefNode_1449_3(context, node);
+      editorCell = this.createRefNode_1449_1(context, node);
     } else
     {
       editorCell = this.createConstant_1449_3(context, node, "do not digitally sign");
@@ -60,7 +60,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConceptProperty_1449_1(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_1449_0(context, node));
     editorCell.addEditorCell(this.createIndentCell1449_2(context, node));
     editorCell.addEditorCell(this.createConstant_1449_2(context, node, "-"));
     editorCell.addEditorCell(this.createIndentCell1449_0(context, node));
@@ -127,7 +127,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_1(context, node, "path to nsis zip file"));
-    editorCell.addEditorCell(this.createRefNode_1449_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_0(context, node));
     return editorCell;
   }
 
@@ -140,7 +140,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_4(context, node, "license"));
-    editorCell.addEditorCell(this.createRefNode_1449_5(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_2(context, node));
     return editorCell;
   }
 
@@ -153,7 +153,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_5(context, node, "application icon"));
-    editorCell.addEditorCell(this.createRefNode_1449_7(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_3(context, node));
     return editorCell;
   }
 
@@ -166,7 +166,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_6(context, node, "homepage icon"));
-    editorCell.addEditorCell(this.createRefNode_1449_9(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_4(context, node));
     return editorCell;
   }
 
@@ -179,7 +179,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_7(context, node, "path to embedded jre zip file"));
-    editorCell.addEditorCell(this.createRefNode_1449_11(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_5(context, node));
     return editorCell;
   }
 
@@ -192,7 +192,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_8(context, node, "installer icon"));
-    editorCell.addEditorCell(this.createRefNode_1449_13(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_6(context, node));
     return editorCell;
   }
 
@@ -205,7 +205,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_9(context, node, "uninstaller icon"));
-    editorCell.addEditorCell(this.createRefNode_1449_15(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_7(context, node));
     return editorCell;
   }
 
@@ -218,7 +218,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_10(context, node, "settings directory"));
-    editorCell.addEditorCell(this.createRefNode_1449_17(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_8(context, node));
     return editorCell;
   }
 
@@ -231,7 +231,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1449_11(context, node, "examples directory"));
-    editorCell.addEditorCell(this.createRefNode_1449_19(context, node));
+    editorCell.addEditorCell(this.createRefNode_1449_9(context, node));
     return editorCell;
   }
 
@@ -346,237 +346,193 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  public EditorCell createConceptProperty_1449_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setCellId("conceptProperty_alias");
-    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createConceptProperty_1449_1(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_1449_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
-    EditorCell cellWithRole = this.createConceptProperty_1449_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setCellId("conceptProperty_alias");
+    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_1449_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_1449_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("pathToNsisZipFile");
+    provider.setNoTargetText("<no pathToNsisZipFile>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_1449_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("pathToNsisZipFile");
-    provider.setNoTargetText("<no pathToNsisZipFile>");
-    EditorCell cellWithRole = this.createRefNode_1449_0_internal(context, node, provider);
+    provider.setRole("signatureConfiguration");
+    provider.setNoTargetText("<no signatureConfiguration>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_1449_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_1449_2(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("license");
+    provider.setNoTargetText("<no license>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_1449_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("signatureConfiguration");
-    provider.setNoTargetText("<no signatureConfiguration>");
-    EditorCell cellWithRole = this.createRefNode_1449_2_internal(context, node, provider);
+    provider.setRole("applicationIcon");
+    provider.setNoTargetText("<no applicationIcon>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_1449_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_1449_4(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("homepageIcon");
+    provider.setNoTargetText("<no homepageIcon>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_1449_5(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("license");
-    provider.setNoTargetText("<no license>");
-    EditorCell cellWithRole = this.createRefNode_1449_4_internal(context, node, provider);
+    provider.setRole("embeddedJrePath");
+    provider.setNoTargetText("<no embeddedJrePath>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_1449_6_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_1449_6(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("installerIcon");
+    provider.setNoTargetText("<no installerIcon>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_1449_7(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("applicationIcon");
-    provider.setNoTargetText("<no applicationIcon>");
-    EditorCell cellWithRole = this.createRefNode_1449_6_internal(context, node, provider);
+    provider.setRole("uninstallerIcon");
+    provider.setNoTargetText("<no uninstallerIcon>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_1449_8_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_1449_8(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("settingsDir");
+    provider.setNoTargetText("<no settingsDir>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_1449_9(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("homepageIcon");
-    provider.setNoTargetText("<no homepageIcon>");
-    EditorCell cellWithRole = this.createRefNode_1449_8_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_1449_10_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1449_11(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("embeddedJrePath");
-    provider.setNoTargetText("<no embeddedJrePath>");
-    EditorCell cellWithRole = this.createRefNode_1449_10_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_1449_12_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1449_13(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("installerIcon");
-    provider.setNoTargetText("<no installerIcon>");
-    EditorCell cellWithRole = this.createRefNode_1449_12_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_1449_14_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1449_15(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("uninstallerIcon");
-    provider.setNoTargetText("<no uninstallerIcon>");
-    EditorCell cellWithRole = this.createRefNode_1449_14_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_1449_16_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1449_17(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("settingsDir");
-    provider.setNoTargetText("<no settingsDir>");
-    EditorCell cellWithRole = this.createRefNode_1449_16_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_1449_18_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1449_19(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("examplesDir");
     provider.setNoTargetText("<no examplesDir>");
-    EditorCell cellWithRole = this.createRefNode_1449_18_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

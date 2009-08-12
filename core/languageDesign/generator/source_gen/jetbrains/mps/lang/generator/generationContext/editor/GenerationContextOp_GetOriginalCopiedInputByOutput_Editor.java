@@ -25,7 +25,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     editorCell.setCellId("Collection_1538_0");
     editorCell.addEditorCell(this.createConstant_1538_0(context, node, "get original copied input for"));
     editorCell.addEditorCell(this.createConstant_1538_1(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_1538_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_1538_0(context, node));
     editorCell.addEditorCell(this.createConstant_1538_2(context, node, ")"));
     return editorCell;
   }
@@ -54,25 +54,21 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     return editorCell;
   }
 
-  public EditorCell createRefNode_1538_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_1538_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_1538_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("outputNode");
     provider.setNoTargetText("<no input node>");
-    EditorCell cellWithRole = this.createRefNode_1538_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

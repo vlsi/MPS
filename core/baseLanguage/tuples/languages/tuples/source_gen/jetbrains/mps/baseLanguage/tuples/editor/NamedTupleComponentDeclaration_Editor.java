@@ -17,9 +17,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -52,8 +52,8 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition0912_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0912_1(context, node, "final"));
     }
-    editorCell.addEditorCell(this.createRefNode_0912_1(context, node));
-    editorCell.addEditorCell(this.createProperty_0912_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_0912_0(context, node));
+    editorCell.addEditorCell(this.createProperty_0912_0(context, node));
     editorCell.addEditorCell(this.createConstant_0912_0(context, node, ";"));
     return editorCell;
   }
@@ -101,52 +101,44 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0912_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_0912_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_0912_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("type");
-    provider.setNoTargetText("<no type>");
-    EditorCell cellWithRole = this.createRefNode_0912_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_0912_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new NamedTupleComponentDeclaration_Editor.NamedTupleComponentDeclaration_name_postfixCellMenu0()}));
     return editorCell;
   }
 
-  public EditorCell createProperty_0912_1(EditorContext context, SNode node) {
+  public EditorCell createProperty_0912_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_0912_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new NamedTupleComponentDeclaration_Editor.NamedTupleComponentDeclaration_name_postfixCellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

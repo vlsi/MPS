@@ -12,11 +12,11 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
 
@@ -28,7 +28,7 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1303_0");
     editorCell.addEditorCell(this.createConstant_1303_0(context, node, "<"));
-    editorCell.addEditorCell(this.createProperty_1303_1(context, node));
+    editorCell.addEditorCell(this.createProperty_1303_0(context, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_1303_0(context, node));
     editorCell.addEditorCell(this.createConstant_1303_1(context, node, ">"));
     return editorCell;
@@ -57,8 +57,12 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1303_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_1303_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_name");
     transformationTest_StyleSheet.getNodeAnnotation(editorCell).apply(editorCell);
     {
@@ -66,22 +70,14 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_1303_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_1303_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

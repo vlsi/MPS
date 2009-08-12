@@ -25,7 +25,7 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2875_0");
     editorCell.addEditorCell(this.createConstant_2875_0(context, node, "immediateSupertypes"));
     editorCell.addEditorCell(this.createConstant_2875_2(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_2875_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_2875_0(context, node));
     editorCell.addEditorCell(this.createConstant_2875_1(context, node, ")"));
     return editorCell;
   }
@@ -53,25 +53,21 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2875_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_2875_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2875_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("subtypeExpression");
     provider.setNoTargetText("<no subtypeExpression>");
-    EditorCell cellWithRole = this.createRefNode_2875_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

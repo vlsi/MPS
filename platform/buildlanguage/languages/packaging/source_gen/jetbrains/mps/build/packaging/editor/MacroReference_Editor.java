@@ -37,7 +37,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6371_0");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu2()}));
     if (renderingCondition6371_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_6371_1(context, node));
+      editorCell.addEditorCell(this.createProperty_6371_0(context, node));
     }
     if (renderingCondition6371_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6371_0(context, node, "no macro"));
@@ -58,8 +58,12 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6371_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6371_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_name");
     PackagingStyles_StyleSheet.getVariable(editorCell).apply(editorCell);
     {
@@ -68,22 +72,14 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu0()}));
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6371_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_6371_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

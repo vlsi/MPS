@@ -11,12 +11,12 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -38,14 +38,14 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_6309_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6309_0");
-    editorCell.addEditorCell(this.createConceptProperty_6309_1(context, node));
+    editorCell.addEditorCell(this.createConceptProperty_6309_0(context, node));
     editorCell.addEditorCell(this.createConstant_6309_0(context, node, "<"));
-    editorCell.addEditorCell(this.createRefNode_6309_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_6309_0(context, node));
     editorCell.addEditorCell(this.createConstant_6309_1(context, node, ","));
-    editorCell.addEditorCell(this.createRefNode_6309_3(context, node));
+    editorCell.addEditorCell(this.createRefNode_6309_1(context, node));
     editorCell.addEditorCell(this.createConstant_6309_2(context, node, ">"));
     if (renderingCondition6309_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_6309_5(context, node));
+      editorCell.addEditorCell(this.createRefNode_6309_2(context, node));
     }
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_6309_3(context, node, "iteration order:"));
-    editorCell.addEditorCell(this.createProperty_6309_1(context, node));
+    editorCell.addEditorCell(this.createProperty_6309_0(context, node));
     return editorCell;
   }
 
@@ -108,8 +108,12 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6309_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createConceptProperty_6309_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -118,108 +122,84 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new LinkedHashMapCreator_Editor.LinkedHashMapCreator_Editor_replaceWith_HashMapCreator_cellMenu0()}));
-    return editorCell;
-  }
-
-  public EditorCell createConceptProperty_6309_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell cellWithRole = this.createConceptProperty_6309_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
-  public EditorCell createRefNode_6309_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_6309_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("keyType");
+    provider.setNoTargetText("<no keyType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_6309_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("keyType");
-    provider.setNoTargetText("<no keyType>");
-    EditorCell cellWithRole = this.createRefNode_6309_0_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_6309_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_6309_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueType");
     provider.setNoTargetText("<no valueType>");
-    EditorCell cellWithRole = this.createRefNode_6309_2_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_6309_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode_6309_5(EditorContext context, SNode node) {
+  public EditorCell createRefNode_6309_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
     provider.setNoTargetText("<no initializer>");
-    EditorCell cellWithRole = this.createRefNode_6309_4_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_6309_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setCellId("property_order");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createProperty_6309_1(EditorContext context, SNode node) {
+  public EditorCell createProperty_6309_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("order");
     provider.setNoTargetText("<no order>");
-    EditorCell cellWithRole = this.createProperty_6309_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setCellId("property_order");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

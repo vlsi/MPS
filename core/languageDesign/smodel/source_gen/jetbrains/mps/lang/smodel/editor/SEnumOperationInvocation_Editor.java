@@ -19,8 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
 
@@ -33,10 +33,10 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8169_0");
     editorCell.addEditorCell(this.createConstant_8169_0(context, node, "enum"));
     editorCell.addEditorCell(this.createConstant_8169_1(context, node, "/"));
-    editorCell.addEditorCell(this.createRefCell_8169_1(context, node));
+    editorCell.addEditorCell(this.createRefCell_8169_0(context, node));
     editorCell.addEditorCell(this.createConstant_8169_2(context, node, "/"));
     editorCell.addEditorCell(this.createConstant_8169_3(context, node, "."));
-    editorCell.addEditorCell(this.createRefNode_8169_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_8169_0(context, node));
     return editorCell;
   }
 
@@ -76,51 +76,43 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8169_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
+  public EditorCell createRefCell_8169_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, context);
+    provider.setRole("enumDeclaration");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline8169_0());
-    EditorCell editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(context);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefCell_8169_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, context);
-    provider.setRole("enumDeclaration");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createRefCell_8169_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_8169_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
 
-  public EditorCell createRefNode_8169_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_8169_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operation");
     provider.setNoTargetText("<no operation>");
-    EditorCell cellWithRole = this.createRefNode_8169_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class _Inline8169_0 extends AbstractCellProvider {
@@ -134,31 +126,27 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext context, SNode node) {
-      return this.createProperty_8169_1(context, node);
+      return this.createProperty_8169_0(context, node);
     }
 
-    public EditorCell createProperty_8169_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-      EditorCell editorCell = provider.createEditorCell(context);
-      editorCell.setCellId("property_name");
-      SharedStyles_StyleSheet.getReferenceDecorated(editorCell).apply(editorCell);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      return editorCell;
-    }
-
-    public EditorCell createProperty_8169_1(EditorContext context, SNode node) {
+    public EditorCell createProperty_8169_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<null>");
       provider.setReadOnly(true);
-      EditorCell cellWithRole = this.createProperty_8169_0_internal(context, node, provider);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(context);
+      editorCell.setCellId("property_name");
+      SharedStyles_StyleSheet.getReferenceDecorated(editorCell).apply(editorCell);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
       if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+        return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
       } else
-      return cellWithRole;
+      return editorCell;
     }
 
 }

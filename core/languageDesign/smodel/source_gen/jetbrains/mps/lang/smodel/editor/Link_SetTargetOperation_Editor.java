@@ -28,7 +28,7 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4493_0");
     editorCell.addEditorCell(this.createComponent_4493_0(context, node));
     editorCell.addEditorCell(this.createConstant_4493_1(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_4493_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_4493_0(context, node));
     editorCell.addEditorCell(this.createConstant_4493_0(context, node, ")"));
     return editorCell;
   }
@@ -57,25 +57,21 @@ public class Link_SetTargetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4493_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_4493_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4493_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("linkTarget");
     provider.setNoTargetText("<no linkTarget>");
-    EditorCell cellWithRole = this.createRefNode_4493_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

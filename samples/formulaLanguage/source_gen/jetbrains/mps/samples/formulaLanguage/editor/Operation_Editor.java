@@ -26,7 +26,7 @@ public class Operation_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_4955_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4955_0");
-    editorCell.addEditorCell(this.createRefNode_4955_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_4955_0(context, node));
     editorCell.addEditorCell(this.createError_4955_0(context, node));
     return editorCell;
   }
@@ -39,26 +39,22 @@ public class Operation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4955_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_4955_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4955_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<expression>");
-    EditorCell cellWithRole = this.createRefNode_4955_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class Operation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

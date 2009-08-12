@@ -28,10 +28,10 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     alternationCondition = CharConstant_Editor.renderingCondition2322_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_2322_1(context, node);
+      editorCell = this.createProperty_2322_0(context, node);
     } else
     {
-      editorCell = this.createProperty_2322_3(context, node);
+      editorCell = this.createProperty_2322_1(context, node);
     }
     {
       Style style = editorCell.getStyle();
@@ -65,11 +65,22 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2322_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_2322_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("charConstant");
+    provider.setNoTargetText("<no charConstant>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_charConstant");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -77,38 +88,19 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("charConstant");
     provider.setNoTargetText("<no charConstant>");
-    EditorCell cellWithRole = this.createProperty_2322_0_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_2322_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_charConstant_1");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_2322_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("charConstant");
-    provider.setNoTargetText("<no charConstant>");
-    EditorCell cellWithRole = this.createProperty_2322_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

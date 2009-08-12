@@ -27,7 +27,7 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6819_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6819_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6819_0");
     editorCell.addEditorCell(this.createConstant_6819_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_6819_0(context, node));
     editorCell.addEditorCell(this.createConstant_6819_1(context, node, "}"));
@@ -36,14 +36,14 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_6819_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6819_0(editorCell, node, context);
+    editorCell.setCellId("Constant_6819_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6819_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6819_1(editorCell, node, context);
+    editorCell.setCellId("Constant_6819_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,26 +53,9 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
       this.myListHandler_6819_0 = new NanoStatementList_Editor.bodyListHandler_6819_0(node, "body", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6819_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_6819_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_body");
     editorCell.setRole(this.myListHandler_6819_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6819_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6819_0");
-  }
-
-  private static void setupBasic_Constant_6819_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6819_0");
-  }
-
-  private static void setupBasic_RefNodeList_6819_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_body");
-  }
-
-  private static void setupBasic_Constant_6819_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6819_1");
   }
 
   public static class bodyListHandler_6819_0 extends RefNodeListHandler {

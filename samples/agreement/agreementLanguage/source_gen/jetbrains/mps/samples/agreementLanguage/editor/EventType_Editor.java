@@ -13,9 +13,9 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -37,7 +37,7 @@ public class EventType_Editor extends DefaultNodeEditor {
   public EditorCell createCollection_3560_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3560_0");
-    editorCell.addEditorCell(this.createProperty_3560_1(context, node));
+    editorCell.addEditorCell(this.createProperty_3560_0(context, node));
     editorCell.addEditorCell(this.createConstant_3560_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_3560_0(context, node));
     editorCell.addEditorCell(this.createConstant_3560_2(context, node, "}"));
@@ -76,8 +76,12 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3560_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_3560_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_name");
     {
       Style style = editorCell.getStyle();
@@ -85,22 +89,14 @@ public class EventType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_3560_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell cellWithRole = this.createProperty_3560_0_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class variableListHandler_3560_0 extends RefNodeListHandler {

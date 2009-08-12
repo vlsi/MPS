@@ -25,7 +25,7 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_8053_1(context, node, "join<"));
     editorCell.addEditorCell(this.createAttributedNodeCell_8053_0(context, node));
     editorCell.addEditorCell(this.createConstant_8053_0(context, node, ">"));
-    editorCell.addEditorCell(this.createRefNode_8053_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_8053_0(context, node));
     return editorCell;
   }
 
@@ -50,25 +50,21 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8053_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_8053_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_8053_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("joinType");
     provider.setNoTargetText("<no joinType>");
-    EditorCell cellWithRole = this.createRefNode_8053_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

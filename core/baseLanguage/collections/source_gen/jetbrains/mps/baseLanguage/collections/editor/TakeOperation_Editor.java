@@ -29,7 +29,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_7796_0");
     editorCell.addEditorCell(this.createConstant_7796_0(context, node, "take"));
     editorCell.addEditorCell(this.createConstant_7796_2(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_7796_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_7796_0(context, node));
     editorCell.addEditorCell(this.createConstant_7796_1(context, node, ")"));
     return editorCell;
   }
@@ -59,25 +59,21 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7796_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_7796_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_7796_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementsToTake");
     provider.setNoTargetText("<no elementsToTake>");
-    EditorCell cellWithRole = this.createRefNode_7796_0_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
   public static class TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

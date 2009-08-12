@@ -12,8 +12,8 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
@@ -30,10 +30,10 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     alternationCondition = RemarkStatement_Editor.renderingCondition6285_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_6285_1(context, node);
+      editorCell = this.createProperty_6285_0(context, node);
     } else
     {
-      editorCell = this.createProperty_6285_3(context, node);
+      editorCell = this.createProperty_6285_1(context, node);
     }
     editorCell.addKeyMap(new RemarkStatement_KeyMap());
     return editorCell;
@@ -59,8 +59,13 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6285_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createProperty_6285_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+    provider.setRole("value");
+    provider.setNoTargetText("");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_value");
     {
       Style style = editorCell.getStyle();
@@ -68,27 +73,22 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createProperty_6285_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
-    provider.setNoTargetText("");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell cellWithRole = this.createProperty_6285_0_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createProperty_6285_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+    provider.setNoTargetText("<no value>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setCellId("property_value_1");
     {
       Style style = editorCell.getStyle();
@@ -96,22 +96,14 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createProperty_6285_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
-    provider.setRole("value");
-    provider.setNoTargetText("<no value>");
-    EditorCell cellWithRole = this.createProperty_6285_2_internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 

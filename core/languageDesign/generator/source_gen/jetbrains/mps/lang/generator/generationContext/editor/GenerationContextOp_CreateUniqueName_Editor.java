@@ -25,11 +25,11 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setCellId("Collection_5379_0");
     editorCell.addEditorCell(this.createConstant_5379_0(context, node, "unique name from"));
     editorCell.addEditorCell(this.createConstant_5379_2(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_5379_1(context, node));
+    editorCell.addEditorCell(this.createRefNode_5379_0(context, node));
     editorCell.addEditorCell(this.createConstant_5379_4(context, node, ")"));
     editorCell.addEditorCell(this.createConstant_5379_1(context, node, "in context"));
     editorCell.addEditorCell(this.createConstant_5379_3(context, node, "("));
-    editorCell.addEditorCell(this.createRefNode_5379_3(context, node));
+    editorCell.addEditorCell(this.createRefNode_5379_1(context, node));
     editorCell.addEditorCell(this.createConstant_5379_5(context, node, ")"));
     return editorCell;
   }
@@ -82,46 +82,38 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefNode_5379_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
+  public EditorCell createRefNode_5379_0(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("baseName");
+    provider.setNoTargetText("no base name");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
   public EditorCell createRefNode_5379_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
-    provider.setRole("baseName");
-    provider.setNoTargetText("no base name");
-    EditorCell cellWithRole = this.createRefNode_5379_0_internal(context, node, provider);
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
-    } else
-    return cellWithRole;
-  }
-
-  public EditorCell createRefNode_5379_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
-    EditorCell editorCell = provider.createEditorCell(context);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    return editorCell;
-  }
-
-  public EditorCell createRefNode_5379_3(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contextNode");
     provider.setNoTargetText("<no node>");
-    EditorCell cellWithRole = this.createRefNode_5379_2_internal(context, node, provider);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(context);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
     } else
-    return cellWithRole;
+    return editorCell;
   }
 
 }

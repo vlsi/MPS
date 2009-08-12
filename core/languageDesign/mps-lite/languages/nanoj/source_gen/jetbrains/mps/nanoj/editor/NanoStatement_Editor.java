@@ -16,13 +16,8 @@ public class NanoStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_4401_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<abstract statement>");
-    setupBasic_Error_4401_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_4401_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_4401_0");
+    return editorCell;
   }
 
 }
