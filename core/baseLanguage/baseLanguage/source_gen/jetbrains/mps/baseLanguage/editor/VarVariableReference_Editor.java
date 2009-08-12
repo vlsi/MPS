@@ -27,8 +27,7 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6452_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_6452_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new VarVariableReference_Editor._Inline6452_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_6452_0(editorCell, node, context);
@@ -73,9 +72,7 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
       return this.createProperty_6452_1(context, node);
     }
 
-    public EditorCell createProperty_6452_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_6452_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_6452_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

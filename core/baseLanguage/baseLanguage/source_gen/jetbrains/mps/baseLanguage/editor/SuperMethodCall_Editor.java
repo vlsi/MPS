@@ -89,8 +89,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4254_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_4254_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline4254_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_4254_0(editorCell, node, context);
@@ -173,9 +172,7 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       return this.createProperty_4254_1(context, node);
     }
 
-    public EditorCell createProperty_4254_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_4254_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_4254_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

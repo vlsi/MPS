@@ -90,8 +90,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9368_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-    CellProviderWithRole provider = aProvider;
+  public EditorCell createRefCell_9368_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline9368_0());
     EditorCell editorCell = provider.createEditorCell(context);
     setupBasic_RefCell_9368_0(editorCell, node, context);
@@ -180,9 +179,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       return this.createProperty_9368_1(context, node);
     }
 
-    public EditorCell createProperty_9368_0_internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
-      CellProviderWithRole provider = aProvider;
-      provider.setAuxiliaryCellProvider(null);
+    public EditorCell createProperty_9368_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
       setupBasic_Property_9368_0(editorCell, node, context);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
