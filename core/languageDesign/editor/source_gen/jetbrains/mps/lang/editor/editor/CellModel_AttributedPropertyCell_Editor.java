@@ -8,9 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
@@ -27,7 +27,8 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0981_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0981_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0981_0");
+    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.addEditorCell(this.createConstant_0981_1(context, node, "[/>"));
     editorCell.addEditorCell(this.createConstant_0981_0(context, node, "attributed property"));
     editorCell.addEditorCell(this.createConstant_0981_2(context, node, "</]"));
@@ -36,7 +37,11 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0981_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_0981_1(editorCell, node, context);
+    editorCell.setCellId("Collection_0981_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createComponent_0981_0(context, node));
     return editorCell;
   }
@@ -46,54 +51,19 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
       this.my_CellModel_Common0981_0 = new _CellModel_Common(node);
     }
     EditorCell editorCell = this.my_CellModel_Common0981_0.createEditorCell(context);
-    setupBasic_Component_0981_0(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstant_0981_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0981_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0981_0");
+    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0981_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0981_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_0981_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0981_2(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0981_0");
-    Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0981_0");
-    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Collection_0981_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0981_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Component_0981_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0981_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0981_1");
     {
       Style style = editorCell.getStyle();
@@ -101,9 +71,12 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
-  private static void setupBasic_Constant_0981_2(EditorCell editorCell, SNode node, EditorContext context) {
+  public EditorCell createConstant_0981_2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0981_2");
     {
       Style style = editorCell.getStyle();
@@ -111,6 +84,8 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

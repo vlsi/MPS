@@ -46,12 +46,6 @@ public class _CloseTag extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_6449_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_ReadOnlyModelAccessor_6449_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_6449_0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
@@ -70,7 +64,9 @@ public class _CloseTag extends AbstractCellProvider {
       });
       style.set(StyleAttributes.EDITABLE, false);
     }
+    return editorCell;
   }
+
 
   public static Color _StyleParameter_QueryFunction_1226320829979(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);

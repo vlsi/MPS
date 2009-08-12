@@ -31,7 +31,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_1820_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1820_0");
     editorCell.addEditorCell(this.createConstant_1820_0(context, node, "menu parts:"));
     editorCell.addEditorCell(this.createRefNodeList_1820_0(context, node));
     return editorCell;
@@ -39,7 +39,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1820_0(editorCell, node, context);
+    editorCell.setCellId("Constant_1820_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -49,22 +49,9 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       this.myListHandler_1820_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1820_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_1820_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_cellMenuPart");
     editorCell.setRole(this.myListHandler_1820_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1820_0");
-  }
-
-  private static void setupBasic_Constant_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1820_0");
-  }
-
-  private static void setupBasic_RefNodeList_1820_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_cellMenuPart");
   }
 
   public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
@@ -115,13 +102,6 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_1820_1(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_1820_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1820_1");
       {
         Style style = editorCell.getStyle();
@@ -129,6 +109,8 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

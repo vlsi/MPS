@@ -25,7 +25,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2253_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2253_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2253_0");
     editorCell.addEditorCell(this.createConceptProperty_2253_1(context, node));
     editorCell.addEditorCell(this.createConstant_2253_0(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_2253_1(context, node));
@@ -35,14 +35,15 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2253_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2253_0(editorCell, node, context);
+    editorCell.setCellId("Constant_2253_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConceptProperty_2253_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_2253_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractPaddingStyleClassItem_Editor.AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -65,7 +66,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_2253_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_2253_0(editorCell, node, context);
+    editorCell.setCellId("property_value");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,7 +88,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_2253_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_2253_1(editorCell, node, context);
+    editorCell.setCellId("property_measure");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -105,28 +106,6 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2253_0");
-  }
-
-  private static void setupBasic_ConceptProperty_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2253_0");
-  }
-
-  private static void setupBasic_Property_2253_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_value");
-  }
-
-  private static void setupBasic_Property_2253_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_measure");
   }
 
   public static class AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

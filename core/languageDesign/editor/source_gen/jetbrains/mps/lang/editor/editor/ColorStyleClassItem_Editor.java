@@ -35,7 +35,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4607_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4607_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4607_0");
     editorCell.addEditorCell(this.createConceptProperty_4607_1(context, node));
     editorCell.addEditorCell(this.createConstant_4607_0(context, node, ":"));
     if (renderingCondition4607_0(node, context, context.getOperationContext().getScope())) {
@@ -49,14 +49,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4607_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4607_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4607_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConceptProperty_4607_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_4607_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -79,7 +80,7 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_4607_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4607_0(editorCell, node, context);
+    editorCell.setCellId("property_color");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu0(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu2(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu3()}));
     return editorCell;
@@ -102,7 +103,6 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_4607_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4607_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu1(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu4(),new ColorStyleClassItem_Editor.ColorStyleClassItem_generic_cellMenu5()}));
     return editorCell;
@@ -123,26 +123,6 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4607_0");
-  }
-
-  private static void setupBasic_ConceptProperty_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4607_0");
-  }
-
-  private static void setupBasic_Property_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_color");
-  }
-
-  private static void setupBasic_RefNode_4607_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
 
   public static boolean renderingCondition4607_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;

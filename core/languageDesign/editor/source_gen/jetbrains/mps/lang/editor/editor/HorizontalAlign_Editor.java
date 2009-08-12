@@ -25,7 +25,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7861_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_7861_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7861_0");
     editorCell.addEditorCell(this.createConstant_7861_0(context, node, "horizontal-align"));
     editorCell.addEditorCell(this.createConstant_7861_1(context, node, ":"));
     editorCell.addEditorCell(this.createProperty_7861_1(context, node));
@@ -34,7 +34,8 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7861_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7861_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7861_0");
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlign_Editor.HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -42,14 +43,14 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7861_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7861_1(editorCell, node, context);
+    editorCell.setCellId("Constant_7861_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_7861_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7861_0(editorCell, node, context);
+    editorCell.setCellId("property_align");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -67,24 +68,6 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_7861_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7861_0");
-  }
-
-  private static void setupBasic_Constant_7861_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7861_0");
-    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_7861_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7861_1");
-  }
-
-  private static void setupBasic_Property_7861_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_align");
   }
 
   public static class HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

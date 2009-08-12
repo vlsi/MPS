@@ -8,15 +8,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,7 +35,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5999_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5999_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5999_0");
     editorCell.addEditorCell(this.createConstant_5999_0(context, node, "select"));
     editorCell.addEditorCell(this.createConstant_5999_1(context, node, "in"));
     editorCell.addEditorCell(this.createRefNode_5999_1(context, node));
@@ -45,7 +45,11 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5999_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5999_1(editorCell, node, context);
+    editorCell.setCellId("Collection_5999_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_5999_2(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_5999_0(context, node));
     editorCell.addEditorCell(this.createConstant_5999_3(context, node, ">"));
@@ -54,28 +58,30 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5999_0(editorCell, node, context);
+    editorCell.setCellId("Constant_5999_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5999_1(editorCell, node, context);
+    editorCell.setCellId("Constant_5999_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5999_2(editorCell, node, context);
+    editorCell.setCellId("Constant_5999_2");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5999_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5999_3(editorCell, node, context);
+    editorCell.setCellId("Constant_5999_3");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -85,14 +91,13 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
       this.myListHandler_5999_0 = new SelectOperation_Editor.selectLaterParameterListHandler_5999_0(node, "selectLaterParameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_5999_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_5999_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_selectLaterParameter");
     editorCell.setRole(this.myListHandler_5999_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNode_5999_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_5999_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -110,44 +115,6 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5999_0");
-  }
-
-  private static void setupBasic_Constant_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5999_0");
-  }
-
-  private static void setupBasic_RefNode_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5999_1");
-  }
-
-  private static void setupBasic_Collection_5999_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5999_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_5999_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5999_2");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_5999_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5999_3");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNodeList_5999_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_selectLaterParameter");
   }
 
   public static class selectLaterParameterListHandler_5999_0 extends RefNodeListHandler {

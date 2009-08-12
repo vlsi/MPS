@@ -19,17 +19,12 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_7903_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
-    setupBasic_Error_7903_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_7903_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_7903_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     }
+    return editorCell;
   }
 
 }

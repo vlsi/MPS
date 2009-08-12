@@ -19,19 +19,14 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8904_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8904_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_8904_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8904_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

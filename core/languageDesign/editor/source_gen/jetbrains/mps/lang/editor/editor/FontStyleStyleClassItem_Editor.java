@@ -36,7 +36,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0528_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0528_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0528_0");
     editorCell.addEditorCell(this.createConstant_0528_0(context, node, "font-style"));
     editorCell.addEditorCell(this.createConstant_0528_1(context, node, ":"));
     if (renderingCondition0528_0(node, context, context.getOperationContext().getScope())) {
@@ -50,7 +50,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0528_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0528_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0528_0");
+    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
@@ -58,14 +59,14 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0528_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0528_1(editorCell, node, context);
+    editorCell.setCellId("Constant_0528_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_0528_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_0528_0(editorCell, node, context);
+    editorCell.setCellId("property_style");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,7 +88,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0528_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0528_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1(),new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
     return editorCell;
@@ -108,26 +108,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0528_0");
-  }
-
-  private static void setupBasic_Constant_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0528_0");
-    Styles_StyleSheet.getItem(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_0528_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0528_1");
-  }
-
-  private static void setupBasic_Property_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_style");
-  }
-
-  private static void setupBasic_RefNode_0528_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
 
   public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))));
