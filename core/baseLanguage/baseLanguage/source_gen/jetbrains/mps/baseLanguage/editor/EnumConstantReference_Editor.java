@@ -9,18 +9,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -35,7 +35,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0362_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0362_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0362_0");
     editorCell.addEditorCell(this.createRefCell_0362_3(context, node));
     editorCell.addEditorCell(this.createConstant_0362_0(context, node, "."));
     editorCell.addEditorCell(this.createRefCell_0362_1(context, node));
@@ -44,7 +44,8 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0362_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0362_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0362_0");
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -52,7 +53,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0362_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0362_0(editorCell, node, context);
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu0()}));
     return editorCell;
@@ -76,7 +79,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0362_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline0362_1());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0362_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -96,25 +98,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0362_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0362_0");
-  }
-
-  private static void setupBasic_Constant_0362_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0362_0");
-    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefCell_0362_0(EditorCell editorCell, SNode node, EditorContext context) {
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
-    }
-  }
-
-  private static void setupBasic_RefCell_0362_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0362_0 extends AbstractCellProvider {
 
     public _Inline0362_0() {
@@ -131,7 +114,12 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0362_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0362_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -152,16 +140,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 
-
-    private static void setupBasic_Property_0362_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
-    }
-
 }
   public static class _Inline0362_1 extends AbstractCellProvider {
 
@@ -179,7 +157,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0362_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0362_1(editorCell, node, context);
+      editorCell.setCellId("property_name_1");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -198,11 +176,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0362_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name_1");
     }
 
 }

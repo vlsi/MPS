@@ -8,16 +8,16 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEditor {
 
@@ -27,7 +27,7 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
 
   public EditorCell createCollection_2689_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_2689_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2689_0");
     editorCell.addEditorCell(this.createRefCell_2689_1(context, node));
     return editorCell;
   }
@@ -35,7 +35,10 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
   public EditorCell createRefCell_2689_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new DefaultClassifierFieldAccessOperation_Editor._Inline2689_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_2689_0(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -55,18 +58,6 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
     return cellWithRole;
   }
 
-
-  private static void setupBasic_RefCell_2689_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
-  }
-
-  private static void setupBasic_Collection_2689_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2689_0");
-  }
-
   public static class _Inline2689_0 extends AbstractCellProvider {
 
     public _Inline2689_0() {
@@ -83,7 +74,12 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
 
     public EditorCell createProperty_2689_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_2689_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
+      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -102,16 +98,6 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_2689_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
-      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      }
     }
 
 }

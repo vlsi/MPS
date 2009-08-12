@@ -20,14 +20,13 @@ public class CommandClosureLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9773_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9773_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9773_0");
     editorCell.addEditorCell(this.createRefNode_9773_1(context, node));
     return editorCell;
   }
 
   public EditorCell createRefNode_9773_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_9773_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -45,14 +44,6 @@ public class CommandClosureLiteral_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_9773_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9773_0");
-  }
-
-  private static void setupBasic_RefNode_9773_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

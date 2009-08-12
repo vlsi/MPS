@@ -30,7 +30,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6133_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6133_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6133_0");
     editorCell.addEditorCell(this.createRefNodeList_6133_0(context, node));
     return editorCell;
   }
@@ -40,22 +40,13 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
       this.myListHandler_6133_0 = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6133_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_6133_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_6133_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_6133_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_pathComponent");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
-  }
-
-  private static void setupBasic_Collection_6133_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6133_0");
+    editorCell.setRole(this.myListHandler_6133_0.getElementRole());
+    return editorCell;
   }
 
   public static class pathComponentListHandler_6133_0 extends RefNodeListHandler {

@@ -21,12 +21,7 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
       this.myReplaceableAliasAndParms_Comp2830_0 = new ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp2830_0.createEditorCell(context);
-    setupBasic_Component_2830_0(editorCell, node, context);
     return editorCell;
-  }
-
-
-  private static void setupBasic_Component_2830_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

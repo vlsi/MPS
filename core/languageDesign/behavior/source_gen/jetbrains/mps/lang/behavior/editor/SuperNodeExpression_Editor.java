@@ -22,30 +22,21 @@ public class SuperNodeExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3177_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_3177_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3177_0");
     editorCell.addEditorCell(this.createConstant_3177_0(context, node, "super"));
     return editorCell;
   }
 
   public EditorCell createConstant_3177_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3177_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_3177_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3177_0");
-  }
-
-  private static void setupBasic_Constant_3177_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_3177_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

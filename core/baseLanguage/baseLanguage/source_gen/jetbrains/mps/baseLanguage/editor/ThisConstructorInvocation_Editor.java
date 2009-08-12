@@ -30,7 +30,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_8960_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_8960_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8960_0");
     editorCell.addEditorCell(this.createConstant_8960_0(context, node, "this"));
     editorCell.addEditorCell(this.createConstant_8960_3(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_8960_0(context, node));
@@ -41,28 +41,32 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8960_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8960_0(editorCell, node, context);
+    editorCell.setCellId("Constant_8960_0");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_8960_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8960_2(editorCell, node, context);
+    editorCell.setCellId("Constant_8960_2");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_8960_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8960_3(editorCell, node, context);
+    editorCell.setCellId("Constant_8960_3");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_8960_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8960_4(editorCell, node, context);
+    editorCell.setCellId("Constant_8960_4");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -72,38 +76,9 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
       this.myListHandler_8960_0 = new ThisConstructorInvocation_Editor.actualArgumentListHandler_8960_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_8960_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_8960_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_actualArgument");
     editorCell.setRole(this.myListHandler_8960_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_8960_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8960_0");
-  }
-
-  private static void setupBasic_Constant_8960_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8960_0");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNodeList_8960_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_actualArgument");
-  }
-
-  private static void setupBasic_Constant_8960_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8960_2");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_8960_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8960_3");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_8960_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8960_4");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
   }
 
   public static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
@@ -161,19 +136,14 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_8960_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_8960_1(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_8960_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_8960_1");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
         style.set(StyleAttributes.EDITABLE, true);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

@@ -8,12 +8,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -25,7 +25,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5207_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5207_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5207_0");
     editorCell.addEditorCell(this.createRefCell_5207_1(context, node));
     return editorCell;
   }
@@ -33,7 +33,13 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_5207_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new TreeNodeKindOccurrence_Editor._Inline5207_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_5207_0(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    }
+    if (true) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -53,21 +59,6 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_5207_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5207_0");
-  }
-
-  private static void setupBasic_RefCell_5207_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
-    }
-    if (true) {
-      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
-    }
-  }
-
   public static class _Inline5207_0 extends AbstractCellProvider {
 
     public _Inline5207_0() {
@@ -84,7 +75,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_5207_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_5207_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -103,11 +94,6 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_5207_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

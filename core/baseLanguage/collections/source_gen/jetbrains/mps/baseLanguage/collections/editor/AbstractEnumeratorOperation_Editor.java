@@ -20,14 +20,14 @@ public class AbstractEnumeratorOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0283_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0283_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0283_0");
     editorCell.addEditorCell(this.createConceptProperty_0283_1(context, node));
     return editorCell;
   }
 
   public EditorCell createConceptProperty_0283_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_0283_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -45,15 +45,6 @@ public class AbstractEnumeratorOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_0283_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0283_0");
-  }
-
-  private static void setupBasic_ConceptProperty_0283_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
   }
 
 }

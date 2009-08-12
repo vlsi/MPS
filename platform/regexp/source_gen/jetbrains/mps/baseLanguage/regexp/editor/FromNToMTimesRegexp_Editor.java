@@ -8,15 +8,15 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
@@ -26,7 +26,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7845_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7845_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7845_0");
     editorCell.addEditorCell(this.createRefNode_7845_1(context, node));
     editorCell.addEditorCell(this.createConstant_7845_0(context, node, "{"));
     editorCell.addEditorCell(this.createProperty_7845_1(context, node));
@@ -38,28 +38,39 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7845_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7845_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7845_0");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
+    UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7845_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7845_1(editorCell, node, context);
+    editorCell.setCellId("Constant_7845_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7845_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7845_2(editorCell, node, context);
+    editorCell.setCellId("Constant_7845_2");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
+    UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_7845_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_7845_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -81,7 +92,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_7845_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7845_0(editorCell, node, context);
+    editorCell.setCellId("property_n");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -103,7 +114,7 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_7845_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7845_1(editorCell, node, context);
+    editorCell.setCellId("property_m");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -121,46 +132,6 @@ public class FromNToMTimesRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_7845_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7845_0");
-  }
-
-  private static void setupBasic_RefNode_7845_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_7845_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7845_0");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-    UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_Property_7845_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_n");
-  }
-
-  private static void setupBasic_Constant_7845_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7845_1");
-  }
-
-  private static void setupBasic_Constant_7845_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7845_2");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-    UnaryRegexp_Regexp_actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_Property_7845_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_m");
   }
 
 }

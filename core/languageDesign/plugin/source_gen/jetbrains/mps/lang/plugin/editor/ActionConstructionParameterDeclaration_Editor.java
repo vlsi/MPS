@@ -7,15 +7,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -32,7 +32,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   public EditorCell createCollection_4196_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4196_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4196_0");
     editorCell.addEditorCell(this.createRefNode_4196_1(context, node));
     editorCell.addEditorCell(this.createProperty_4196_1(context, node));
     editorCell.addEditorCell(this.createConstant_4196_0(context, node, ";"));
@@ -41,14 +41,18 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   public EditorCell createCollection_4196_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4196_1(editorCell, node, context);
+    editorCell.setCellId("Collection_4196_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createCollection_4196_2(context, node));
     return editorCell;
   }
 
   public EditorCell createCollection_4196_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4196_2(editorCell, node, context);
+    editorCell.setCellId("Collection_4196_2");
     if (renderingCondition4196_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_4196_3(context, node));
     }
@@ -57,14 +61,14 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   public EditorCell createConstant_4196_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4196_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4196_0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_4196_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4196_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -86,7 +90,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   public EditorCell createProperty_4196_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4196_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -108,7 +112,10 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
 
   public EditorCell createRefNode_4196_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4196_1(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -128,41 +135,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4196_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4196_0");
-  }
-
-  private static void setupBasic_RefNode_4196_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Property_4196_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-  }
-
-  private static void setupBasic_Constant_4196_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4196_0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_4196_1(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
-    }
-  }
-
-  private static void setupBasic_Collection_4196_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4196_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Collection_4196_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4196_2");
-  }
 
   public static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));

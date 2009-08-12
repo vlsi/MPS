@@ -56,18 +56,13 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu0(),new ActionParameter_IsOptional.ActionParameter_generic_cellMenu1()}));
-    setupBasic_ReadOnlyModelAccessor_3654_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_ReadOnlyModelAccessor_3654_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("ReadOnlyModelAccessor_3654_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
     }
+    return editorCell;
   }
 
   public static class ActionParameter_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {

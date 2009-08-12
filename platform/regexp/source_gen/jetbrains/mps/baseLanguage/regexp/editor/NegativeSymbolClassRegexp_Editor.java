@@ -27,7 +27,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9912_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9912_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9912_0");
     editorCell.addEditorCell(this.createConstant_9912_0(context, node, "[^"));
     editorCell.addEditorCell(this.createRefNodeList_9912_0(context, node));
     editorCell.addEditorCell(this.createConstant_9912_1(context, node, "]"));
@@ -36,14 +36,16 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_9912_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9912_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9912_0");
+    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9912_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9912_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9912_1");
+    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,28 +55,9 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
       this.myListHandler_9912_0 = new NegativeSymbolClassRegexp_Editor.partListHandler_9912_0(node, "part", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_9912_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_9912_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_part");
     editorCell.setRole(this.myListHandler_9912_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_9912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9912_0");
-  }
-
-  private static void setupBasic_Constant_9912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9912_0");
-    RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNodeList_9912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_part");
-  }
-
-  private static void setupBasic_Constant_9912_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9912_1");
-    RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
   }
 
   public static class partListHandler_9912_0 extends RefNodeListHandler {

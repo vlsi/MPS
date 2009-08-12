@@ -19,7 +19,8 @@ public class SwitchToInspector_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_1300_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_1300_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -37,12 +38,6 @@ public class SwitchToInspector_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_ConceptProperty_1300_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
   }
 
 }

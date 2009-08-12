@@ -8,15 +8,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -34,7 +34,7 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5274_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_5274_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5274_0");
     editorCell.addEditorCell(this.createCollection_5274_1(context, node));
     editorCell.addEditorCell(this.createConstant_5274_1(context, node, ""));
     editorCell.addEditorCell(this.createCollection_5274_2(context, node));
@@ -43,7 +43,11 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5274_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5274_1(editorCell, node, context);
+    editorCell.setCellId("Collection_5274_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_5274_0(context, node, "node factories"));
     editorCell.addEditorCell(this.createProperty_5274_1(context, node));
     return editorCell;
@@ -51,21 +55,29 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5274_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_5274_2(editorCell, node, context);
+    editorCell.setCellId("Collection_5274_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createRefNodeList_5274_0(context, node));
     return editorCell;
   }
 
   public EditorCell createConstant_5274_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5274_0(editorCell, node, context);
+    editorCell.setCellId("Constant_5274_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5274_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5274_1(editorCell, node, context);
+    editorCell.setCellId("Constant_5274_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -75,7 +87,11 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       this.myListHandler_5274_0 = new NodeFactories_Editor.nodeFactoryListHandler_5274_0(node, "nodeFactory", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_5274_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_5274_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_nodeFactory");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setGridLayout(true);
     editorCell.setRole(this.myListHandler_5274_0.getElementRole());
     return editorCell;
@@ -83,7 +99,11 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_5274_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_5274_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -102,55 +122,6 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_5274_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5274_0");
-  }
-
-  private static void setupBasic_Collection_5274_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5274_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_5274_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5274_0");
-  }
-
-  private static void setupBasic_Property_5274_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    }
-  }
-
-  private static void setupBasic_Constant_5274_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5274_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Collection_5274_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5274_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_5274_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_nodeFactory");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
   }
 
   public static class nodeFactoryListHandler_5274_0 extends RefNodeListHandler {

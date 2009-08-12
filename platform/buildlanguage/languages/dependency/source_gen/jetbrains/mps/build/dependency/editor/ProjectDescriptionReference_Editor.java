@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.buildlanguage.editor.BuildLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.buildlanguage.editor.BuildLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -24,7 +24,7 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0500_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0500_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0500_0");
     editorCell.addEditorCell(this.createConceptProperty_0500_1(context, node));
     editorCell.addEditorCell(this.createRefCell_0500_1(context, node));
     return editorCell;
@@ -32,7 +32,8 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_0500_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_0500_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    BuildLanguageStyle_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -55,7 +56,6 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0500_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new ProjectDescriptionReference_Editor._Inline0500_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0500_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -75,19 +75,6 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0500_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0500_0");
-  }
-
-  private static void setupBasic_ConceptProperty_0500_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    BuildLanguageStyle_StyleSheet.getKeyword(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefCell_0500_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0500_0 extends AbstractCellProvider {
 
     public _Inline0500_0() {
@@ -104,7 +91,7 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0500_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0500_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -123,11 +110,6 @@ public class ProjectDescriptionReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0500_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

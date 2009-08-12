@@ -20,13 +20,6 @@ public class Date_Future_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4696_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4696_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_4696_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_4696_0");
     {
       Style style = editorCell.getStyle();
@@ -34,6 +27,8 @@ public class Date_Future_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

@@ -18,19 +18,14 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1502_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1502_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_1502_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1502_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

@@ -20,19 +20,14 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5352_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5352_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_5352_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5352_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.EDITABLE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

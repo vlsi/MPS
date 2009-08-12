@@ -26,23 +26,14 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
       this.my_NotInRules_Component4604_0 = new _NotInRules_Component(node);
     }
     EditorCell editorCell = this.my_NotInRules_Component4604_0.createEditorCell(context);
-    setupBasic_Component_4604_0(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstant_4604_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4604_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4604_0");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_4604_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4604_0");
-  }
-
-  private static void setupBasic_Component_4604_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

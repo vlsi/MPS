@@ -28,7 +28,7 @@ public class LineList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4682_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4682_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4682_0");
     editorCell.addEditorCell(this.createRefNodeList_4682_0(context, node));
     return editorCell;
   }
@@ -38,22 +38,13 @@ public class LineList_Editor extends DefaultNodeEditor {
       this.myListHandler_4682_0 = new LineList_Editor.lineListHandler_4682_0(node, "line", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_4682_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_4682_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_4682_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_4682_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_line");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
-  }
-
-  private static void setupBasic_Collection_4682_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4682_0");
+    editorCell.setRole(this.myListHandler_4682_0.getElementRole());
+    return editorCell;
   }
 
   public static class lineListHandler_4682_0 extends RefNodeListHandler {

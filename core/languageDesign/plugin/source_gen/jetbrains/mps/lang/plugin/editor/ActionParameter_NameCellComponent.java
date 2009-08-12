@@ -37,7 +37,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
 
   public EditorCell createProperty_9788_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9788_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu0()}));
     return editorCell;
@@ -56,11 +56,6 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Property_9788_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
   }
 
   public static class ActionParameter_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {

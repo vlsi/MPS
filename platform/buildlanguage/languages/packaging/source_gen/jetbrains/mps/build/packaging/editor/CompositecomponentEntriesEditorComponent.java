@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -38,7 +38,11 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
 
   public EditorCell createCollection_1434_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_1434_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1434_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createIndentCell1434_0(context, node));
     editorCell.addEditorCell(this.createRefNodeList_1434_0(context, node));
     return editorCell;
@@ -49,7 +53,11 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
       this.myListHandler_1434_0 = new CompositecomponentEntriesEditorComponent.entryListHandler_1434_0(node, "entry", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1434_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_1434_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_entry");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setCanBeFolded(true);
     editorCell.setRole(this.myListHandler_1434_0.getElementRole());
     return editorCell;
@@ -58,27 +66,6 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
   public EditorCell createIndentCell1434_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
-  }
-
-
-  private static void setupBasic_Collection_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1434_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Indent_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Indent_1434_0");
-  }
-
-  private static void setupBasic_RefNodeList_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_entry");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
   }
 
   public static class entryListHandler_1434_0 extends RefNodeListHandler {
@@ -129,15 +116,10 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
 
     public EditorCell createConstant_1434_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_1434_0(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_1434_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_1434_0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

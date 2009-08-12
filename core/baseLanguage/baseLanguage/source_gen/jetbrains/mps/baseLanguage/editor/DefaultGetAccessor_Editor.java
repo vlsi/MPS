@@ -17,7 +17,7 @@ public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2800_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_2800_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2800_0");
     editorCell.addEditorCell(this.createConstant_2800_0(context, node, "get"));
     editorCell.addEditorCell(this.createConstant_2800_1(context, node, ";"));
     return editorCell;
@@ -25,30 +25,17 @@ public class DefaultGetAccessor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2800_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2800_0(editorCell, node, context);
+    editorCell.setCellId("Constant_2800_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_2800_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2800_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_2800_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2800_0");
-  }
-
-  private static void setupBasic_Constant_2800_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2800_0");
-  }
-
-  private static void setupBasic_Constant_2800_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2800_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

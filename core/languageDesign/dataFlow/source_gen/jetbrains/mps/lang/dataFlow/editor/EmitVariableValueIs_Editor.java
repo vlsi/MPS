@@ -21,7 +21,7 @@ public class EmitVariableValueIs_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0576_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0576_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0576_0");
     editorCell.addEditorCell(this.createConstant_0576_0(context, node, "variable"));
     editorCell.addEditorCell(this.createRefNode_0576_1(context, node));
     editorCell.addEditorCell(this.createConstant_0576_1(context, node, "value is"));
@@ -31,21 +31,22 @@ public class EmitVariableValueIs_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0576_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0576_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0576_0");
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0576_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0576_1(editorCell, node, context);
+    editorCell.setCellId("Constant_0576_1");
+    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_0576_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0576_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -67,7 +68,6 @@ public class EmitVariableValueIs_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0576_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0576_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -85,27 +85,6 @@ public class EmitVariableValueIs_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_0576_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0576_0");
-  }
-
-  private static void setupBasic_Constant_0576_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0576_0");
-    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_0576_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0576_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0576_1");
-    DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_0576_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

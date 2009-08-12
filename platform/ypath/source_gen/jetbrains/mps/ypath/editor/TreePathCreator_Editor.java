@@ -24,7 +24,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6851_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6851_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6851_0");
     editorCell.addEditorCell(this.createComponent_6851_0(context, node));
     editorCell.addEditorCell(this.createConstant_6851_0(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_6851_1(context, node));
@@ -39,34 +39,32 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
       this.myTreePath_component6851_0 = new TreePath_component(node);
     }
     EditorCell editorCell = this.myTreePath_component6851_0.createEditorCell(context);
-    setupBasic_Component_6851_0(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstant_6851_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6851_0(editorCell, node, context);
+    editorCell.setCellId("Constant_6851_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6851_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6851_1(editorCell, node, context);
+    editorCell.setCellId("Constant_6851_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6851_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6851_2(editorCell, node, context);
+    editorCell.setCellId("Constant_6851_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_6851_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_6851_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -88,7 +86,6 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_6851_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_6851_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -106,32 +103,6 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_6851_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6851_0");
-  }
-
-  private static void setupBasic_Constant_6851_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6851_0");
-  }
-
-  private static void setupBasic_RefNode_6851_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_6851_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6851_1");
-  }
-
-  private static void setupBasic_RefNode_6851_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_6851_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6851_2");
-  }
-
-  private static void setupBasic_Component_6851_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

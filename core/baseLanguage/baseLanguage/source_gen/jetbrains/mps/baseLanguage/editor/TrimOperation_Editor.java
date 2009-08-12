@@ -21,7 +21,7 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9975_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9975_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9975_0");
     editorCell.addEditorCell(this.createConstant_9975_0(context, node, "trim"));
     editorCell.addEditorCell(this.createConstant_9975_1(context, node, "("));
     editorCell.addEditorCell(this.createProperty_9975_1(context, node));
@@ -31,28 +31,31 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_9975_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9975_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9975_0");
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9975_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9975_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9975_1");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9975_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9975_2(editorCell, node, context);
+    editorCell.setCellId("Constant_9975_2");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_9975_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9975_0(editorCell, node, context);
+    editorCell.setCellId("property_trimKind");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -70,30 +73,6 @@ public class TrimOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_9975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9975_0");
-  }
-
-  private static void setupBasic_Constant_9975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9975_0");
-    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_9975_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9975_1");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Property_9975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_trimKind");
-  }
-
-  private static void setupBasic_Constant_9975_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9975_2");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
 }

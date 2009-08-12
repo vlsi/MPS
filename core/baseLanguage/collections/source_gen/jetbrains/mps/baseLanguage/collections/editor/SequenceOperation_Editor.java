@@ -16,13 +16,8 @@ public class SequenceOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_6362_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<oper>");
-    setupBasic_Error_6362_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_6362_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_6362_0");
+    return editorCell;
   }
 
 }

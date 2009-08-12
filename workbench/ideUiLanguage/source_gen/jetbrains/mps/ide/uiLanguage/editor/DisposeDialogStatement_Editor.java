@@ -18,7 +18,7 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0836_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0836_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0836_0");
     editorCell.addEditorCell(this.createConstant_0836_0(context, node, "disposeDialog"));
     editorCell.addEditorCell(this.createConstant_0836_1(context, node, ";"));
     return editorCell;
@@ -26,31 +26,18 @@ public class DisposeDialogStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0836_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0836_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0836_0");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0836_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0836_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_0836_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0836_0");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Collection_0836_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0836_0");
-  }
-
-  private static void setupBasic_Constant_0836_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0836_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

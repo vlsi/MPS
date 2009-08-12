@@ -16,13 +16,8 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_7758_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<condition>");
-    setupBasic_Error_7758_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_7758_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_7758_0");
+    return editorCell;
   }
 
 }

@@ -27,7 +27,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_8761_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8761_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8761_0");
     editorCell.addEditorCell(this.createConstant_8761_0(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_8761_0(context, node));
     editorCell.addEditorCell(this.createConstant_8761_1(context, node, ")?"));
@@ -36,14 +36,16 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8761_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8761_0(editorCell, node, context);
+    editorCell.setCellId("Constant_8761_0");
+    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_8761_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8761_1(editorCell, node, context);
+    editorCell.setCellId("Constant_8761_1");
+    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,28 +55,9 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
       this.myListHandler_8761_0 = new OptionalPart_Editor.partListHandler_8761_0(node, "part", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_8761_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_8761_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_part");
     editorCell.setRole(this.myListHandler_8761_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_8761_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8761_0");
-  }
-
-  private static void setupBasic_Constant_8761_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8761_0");
-    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNodeList_8761_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_part");
-  }
-
-  private static void setupBasic_Constant_8761_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8761_1");
-    MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
   }
 
   public static class partListHandler_8761_0 extends RefNodeListHandler {

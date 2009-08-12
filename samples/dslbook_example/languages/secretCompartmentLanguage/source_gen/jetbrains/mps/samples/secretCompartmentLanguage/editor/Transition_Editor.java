@@ -23,7 +23,7 @@ public class Transition_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0647_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0647_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0647_0");
     editorCell.addEditorCell(this.createRefCell_0647_1(context, node));
     editorCell.addEditorCell(this.createConstant_0647_0(context, node, "=>"));
     editorCell.addEditorCell(this.createRefCell_0647_3(context, node));
@@ -32,7 +32,7 @@ public class Transition_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0647_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0647_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0647_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -40,7 +40,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0647_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new Transition_Editor._Inline0647_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0647_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -63,7 +62,6 @@ public class Transition_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0647_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new Transition_Editor._Inline0647_1());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0647_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -83,21 +81,6 @@ public class Transition_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0647_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0647_0");
-  }
-
-  private static void setupBasic_RefCell_0647_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0647_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0647_0");
-  }
-
-  private static void setupBasic_RefCell_0647_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0647_0 extends AbstractCellProvider {
 
     public _Inline0647_0() {
@@ -114,7 +97,7 @@ public class Transition_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0647_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0647_0(editorCell, node, context);
+      editorCell.setCellId("property_eventName");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -135,11 +118,6 @@ public class Transition_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 
-
-    private static void setupBasic_Property_0647_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_eventName");
-    }
-
 }
   public static class _Inline0647_1 extends AbstractCellProvider {
 
@@ -157,7 +135,7 @@ public class Transition_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0647_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0647_1(editorCell, node, context);
+      editorCell.setCellId("property_stateName");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -176,11 +154,6 @@ public class Transition_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0647_1(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_stateName");
     }
 
 }

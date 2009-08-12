@@ -8,19 +8,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent;
 import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
 import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
 import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -42,7 +42,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2334_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_2334_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2334_0");
     editorCell.addEditorCell(this.createCollection_2334_1(context, node));
     editorCell.addEditorCell(this.createComponent_2334_4(context, node));
     return editorCell;
@@ -50,7 +50,12 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2334_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2334_1(editorCell, node, context);
+    editorCell.setCellId("Collection_2334_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConceptProperty_2334_1(context, node));
     editorCell.addEditorCell(this.createComponent_2334_0(context, node));
     editorCell.addEditorCell(this.createComponent_2334_3(context, node));
@@ -59,7 +64,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2334_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_2334_2(editorCell, node, context);
+    editorCell.setCellId("Collection_2334_2");
     if (renderingCondition2334_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2334_3(context, node));
     }
@@ -71,7 +76,12 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2334_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2334_3(editorCell, node, context);
+    editorCell.setCellId("Collection_2334_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_2334_0(context, node, "path to mps build tools"));
     editorCell.addEditorCell(this.createRefNode_2334_1(context, node));
     return editorCell;
@@ -79,7 +89,12 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2334_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2334_4(editorCell, node, context);
+    editorCell.setCellId("Collection_2334_4");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_2334_1(context, node, "path to license"));
     editorCell.addEditorCell(this.createRefNode_2334_3(context, node));
     return editorCell;
@@ -90,7 +105,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       this.myIncludeExcludeEditorComponent2334_0 = new IncludeExcludeEditorComponent(node);
     }
     EditorCell editorCell = this.myIncludeExcludeEditorComponent2334_0.createEditorCell(context);
-    setupBasic_Component_2334_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -99,7 +113,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       this.myIncludeExcludeInInspector2334_0 = new IncludeExcludeInInspector(node);
     }
     EditorCell editorCell = this.myIncludeExcludeInInspector2334_0.createEditorCell(context);
-    setupBasic_Component_2334_1(editorCell, node, context);
     return editorCell;
   }
 
@@ -108,7 +121,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       this.myConfigurationReferencesEditorComponent2334_0 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent2334_0.createEditorCell(context);
-    setupBasic_Component_2334_2(editorCell, node, context);
     return editorCell;
   }
 
@@ -117,7 +129,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       this.myConfigurationReferencesEditorComponent2334_1 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent2334_1.createEditorCell(context);
-    setupBasic_Component_2334_3(editorCell, node, context);
     return editorCell;
   }
 
@@ -126,27 +137,29 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       this.myCompositecomponentEntriesEditorComponent2334_0 = new CompositecomponentEntriesEditorComponent(node);
     }
     EditorCell editorCell = this.myCompositecomponentEntriesEditorComponent2334_0.createEditorCell(context);
-    setupBasic_Component_2334_4(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstant_2334_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2334_0(editorCell, node, context);
+    editorCell.setCellId("Constant_2334_0");
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_2334_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2334_1(editorCell, node, context);
+    editorCell.setCellId("Constant_2334_1");
+    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConceptProperty_2334_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_2334_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -168,7 +181,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_2334_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_2334_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -190,7 +202,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_2334_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_2334_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -210,77 +221,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_2334_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2334_0");
-  }
-
-  private static void setupBasic_Collection_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2334_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_ConceptProperty_2334_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Component_2334_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_2334_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2334_2");
-  }
-
-  private static void setupBasic_Component_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_2334_2(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_2334_3(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_2334_4(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_2334_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2334_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_2334_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2334_0");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_2334_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_2334_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2334_4");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2334_1");
-    PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_2334_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
 
   public static boolean renderingCondition2334_0(SNode node, EditorContext editorContext, IScope scope) {
     return MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging").isPackaged();

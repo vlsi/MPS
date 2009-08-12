@@ -16,13 +16,8 @@ public class Reference_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_3521_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?reference?");
-    setupBasic_Error_3521_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_3521_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_3521_0");
+    return editorCell;
   }
 
 }

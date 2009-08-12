@@ -9,11 +9,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -32,7 +32,7 @@ public class OperationParm_StopConceptList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6596_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6596_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6596_0");
     editorCell.addEditorCell(this.createConstant_6596_0(context, node, "stop concepts are:["));
     editorCell.addEditorCell(this.createRefNodeList_6596_0(context, node));
     editorCell.addEditorCell(this.createConstant_6596_1(context, node, "]"));
@@ -41,14 +41,24 @@ public class OperationParm_StopConceptList_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_6596_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6596_0(editorCell, node, context);
+    editorCell.setCellId("Constant_6596_0");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6596_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6596_1(editorCell, node, context);
+    editorCell.setCellId("Constant_6596_1");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -58,36 +68,9 @@ public class OperationParm_StopConceptList_Editor extends DefaultNodeEditor {
       this.myListHandler_6596_0 = new OperationParm_StopConceptList_Editor.conceptListHandler_6596_0(node, "concept", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6596_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_6596_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_concept");
     editorCell.setRole(this.myListHandler_6596_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6596_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6596_0");
-  }
-
-  private static void setupBasic_Constant_6596_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6596_0");
-    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    }
-  }
-
-  private static void setupBasic_RefNodeList_6596_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_concept");
-  }
-
-  private static void setupBasic_Constant_6596_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6596_1");
-    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-    }
   }
 
   public static class conceptListHandler_6596_0 extends RefNodeListHandler {

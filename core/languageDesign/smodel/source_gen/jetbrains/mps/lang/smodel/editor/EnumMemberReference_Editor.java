@@ -8,10 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -19,6 +15,10 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -30,7 +30,7 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9300_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9300_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9300_0");
     editorCell.addEditorCell(this.createConstant_9300_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefCell_9300_1(context, node));
     editorCell.addEditorCell(this.createConstant_9300_1(context, node, ">"));
@@ -39,14 +39,30 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_9300_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9300_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9300_0");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9300_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9300_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9300_1");
+    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -54,7 +70,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_9300_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline9300_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_9300_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -74,38 +89,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_9300_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9300_0");
-  }
-
-  private static void setupBasic_RefCell_9300_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_9300_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9300_0");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-    }
-  }
-
-  private static void setupBasic_Constant_9300_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9300_1");
-    BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-    }
-  }
-
   public static class _Inline9300_0 extends AbstractCellProvider {
 
     public _Inline9300_0() {
@@ -122,7 +105,13 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_9300_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_9300_0(editorCell, node, context);
+      editorCell.setCellId("property_externalValue");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
+        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -141,17 +130,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_9300_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_externalValue");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-        style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-        style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      }
     }
 
 }

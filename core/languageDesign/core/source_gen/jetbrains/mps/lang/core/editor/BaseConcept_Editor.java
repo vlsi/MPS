@@ -20,13 +20,6 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0843_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0843_0(editorCell, node, context);
-    editorCell.setDefaultText("<abstract concept>");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_0843_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0843_0");
     {
       Style style = editorCell.getStyle();
@@ -34,6 +27,8 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
+    editorCell.setDefaultText("<abstract concept>");
+    return editorCell;
   }
 
 }

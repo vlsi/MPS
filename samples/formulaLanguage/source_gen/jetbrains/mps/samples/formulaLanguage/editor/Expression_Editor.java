@@ -16,13 +16,8 @@ public class Expression_Editor extends DefaultNodeEditor {
 
   public EditorCell createError_6116_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?expression?");
-    setupBasic_Error_6116_0(editorCell, node, context);
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Error_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Error_6116_0");
+    return editorCell;
   }
 
 }

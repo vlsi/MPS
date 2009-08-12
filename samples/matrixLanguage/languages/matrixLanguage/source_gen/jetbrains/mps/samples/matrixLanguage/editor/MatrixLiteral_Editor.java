@@ -9,14 +9,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -34,7 +34,7 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3502_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_3502_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3502_0");
     editorCell.addEditorCell(this.createConstant_3502_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefNode_3502_1(context, node));
     editorCell.addEditorCell(this.createConstant_3502_1(context, node, ">"));
@@ -44,14 +44,15 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_3502_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3502_0(editorCell, node, context);
+    editorCell.setCellId("Constant_3502_0");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3502_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3502_1(editorCell, node, context);
+    editorCell.setCellId("Constant_3502_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -61,7 +62,12 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
       this.myListHandler_3502_0 = new MatrixLiteral_Editor.rowListHandler_3502_0(node, "row", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_3502_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_3502_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_row");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
+    }
     editorCell.setGridLayout(true);
     editorCell.setRole(this.myListHandler_3502_0.getElementRole());
     return editorCell;
@@ -69,7 +75,6 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_3502_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_3502_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,32 +92,6 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_3502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3502_0");
-  }
-
-  private static void setupBasic_RefNodeList_3502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_row");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BRACKETS, true);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
-    }
-  }
-
-  private static void setupBasic_Constant_3502_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3502_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_3502_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3502_1");
-  }
-
-  private static void setupBasic_RefNode_3502_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   public static class rowListHandler_3502_0 extends RefNodeListHandler {

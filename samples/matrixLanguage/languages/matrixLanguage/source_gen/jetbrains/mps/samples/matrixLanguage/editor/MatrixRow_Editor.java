@@ -29,7 +29,7 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6019_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6019_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6019_0");
     editorCell.addEditorCell(this.createRefNodeList_6019_0(context, node));
     return editorCell;
   }
@@ -39,18 +39,9 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
       this.myListHandler_6019_0 = new MatrixRow_Editor.itemsListHandler_6019_0(node, "items", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6019_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_6019_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_items");
     editorCell.setRole(this.myListHandler_6019_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6019_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6019_0");
-  }
-
-  private static void setupBasic_RefNodeList_6019_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_items");
   }
 
   public static class itemsListHandler_6019_0 extends RefNodeListHandler {

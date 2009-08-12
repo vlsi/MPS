@@ -24,7 +24,8 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4338_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4338_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4338_0");
+    editorCell.addKeyMap(new LinePart_Actions());
     editorCell.addEditorCell(this.createConstant_4338_0(context, node, "["));
     editorCell.addEditorCell(this.createRefNode_4338_1(context, node));
     editorCell.addEditorCell(this.createProperty_4338_1(context, node));
@@ -40,35 +41,38 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4338_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4338_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4338_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4338_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4338_1(editorCell, node, context);
+    editorCell.setCellId("Constant_4338_1");
+    editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4338_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4338_2(editorCell, node, context);
+    editorCell.setCellId("Constant_4338_2");
+    editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4338_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4338_3(editorCell, node, context);
+    editorCell.setCellId("Constant_4338_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_4338_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4338_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    MPSLite_Style_StyleSheet.getMPSLiteChild(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -90,7 +94,6 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_4338_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4338_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -110,37 +113,6 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4338_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4338_0");
-    editorCell.addKeyMap(new LinePart_Actions());
-  }
-
-  private static void setupBasic_Constant_4338_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4338_0");
-  }
-
-  private static void setupBasic_Constant_4338_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4338_1");
-    editorCell.addKeyMap(new ChildPart_Actions());
-  }
-
-  private static void setupBasic_Constant_4338_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4338_2");
-    editorCell.addKeyMap(new ChildPart_Actions());
-  }
-
-  private static void setupBasic_Constant_4338_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4338_3");
-  }
-
-  private static void setupBasic_Property_4338_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    MPSLite_Style_StyleSheet.getMPSLiteChild(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_4338_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
 
   public static boolean renderingCondition4338_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiple");

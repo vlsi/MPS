@@ -17,7 +17,7 @@ public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6465_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6465_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6465_0");
     editorCell.addEditorCell(this.createConstant_6465_0(context, node, "updateModelByDefault"));
     editorCell.addEditorCell(this.createConstant_6465_1(context, node, ";"));
     return editorCell;
@@ -25,29 +25,16 @@ public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_6465_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6465_0(editorCell, node, context);
+    editorCell.setCellId("Constant_6465_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6465_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6465_1(editorCell, node, context);
+    editorCell.setCellId("Constant_6465_1");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6465_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6465_0");
-  }
-
-  private static void setupBasic_Constant_6465_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6465_0");
-  }
-
-  private static void setupBasic_Constant_6465_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6465_1");
   }
 
 }

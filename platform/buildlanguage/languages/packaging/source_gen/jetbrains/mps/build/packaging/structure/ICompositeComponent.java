@@ -13,21 +13,12 @@ public interface ICompositeComponent extends IAbstractCompositeComponent {
   public static final String ENTRY = "entry";
 
   public String getExcludes();
-
   public void setExcludes(String value);
-
   public String getIncludes();
-
   public void setIncludes(String value);
-
   public int getEntriesCount();
-
   public Iterator<AbstractProjectComponent> entries();
-
   public List<AbstractProjectComponent> getEntries();
-
   public void addEntry(AbstractProjectComponent node);
-
   public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node);
-
 }

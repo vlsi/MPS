@@ -9,11 +9,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
 
@@ -23,7 +23,7 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5321_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_5321_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5321_0");
     editorCell.addEditorCell(this.createConstant_5321_0(context, node, "\\u"));
     editorCell.addEditorCell(this.createProperty_5321_1(context, node));
     return editorCell;
@@ -31,14 +31,18 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5321_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5321_0(editorCell, node, context);
+    editorCell.setCellId("Constant_5321_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_5321_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_5321_0(editorCell, node, context);
+    editorCell.setCellId("property_code");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -56,23 +60,6 @@ public class UnicodeCharacterRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_5321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5321_0");
-  }
-
-  private static void setupBasic_Constant_5321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5321_0");
-  }
-
-  private static void setupBasic_Property_5321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_code");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
-    }
   }
 
 }

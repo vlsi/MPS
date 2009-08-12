@@ -29,7 +29,7 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0824_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0824_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0824_0");
     editorCell.addEditorCell(this.createRefNodeList_0824_0(context, node));
     return editorCell;
   }
@@ -39,13 +39,6 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
       this.myListHandler_0824_0 = new ComponentsList_Editor.entryListHandler_0824_0(node, "entry", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_0824_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_0824_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_0824_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_0824_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_entry");
     {
       Style style = editorCell.getStyle();
@@ -53,10 +46,8 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.darkGray);
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
-  }
-
-  private static void setupBasic_Collection_0824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0824_0");
+    editorCell.setRole(this.myListHandler_0824_0.getElementRole());
+    return editorCell;
   }
 
   public static class entryListHandler_0824_0 extends RefNodeListHandler {

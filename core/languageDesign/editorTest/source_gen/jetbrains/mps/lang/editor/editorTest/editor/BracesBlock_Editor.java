@@ -27,7 +27,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4321_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4321_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4321_0");
     editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createRefNodeList_4321_0(context, node));
     return editorCell;
@@ -38,18 +38,9 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
       this.myListHandler_4321_0 = new BracesBlock_Editor.statementListHandler_4321_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_4321_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_4321_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_statement");
     editorCell.setRole(this.myListHandler_4321_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_4321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_statement");
-  }
-
-  private static void setupBasic_Collection_4321_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4321_0");
   }
 
   public static class statementListHandler_4321_0 extends RefNodeListHandler {
@@ -100,14 +91,9 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_4321_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_4321_0(editorCell, node, context);
+      editorCell.setCellId("Constant_4321_0");
       editorCell.setDefaultText("");
       return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_4321_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("Constant_4321_0");
     }
 
 }

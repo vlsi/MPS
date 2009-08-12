@@ -20,29 +20,20 @@ public class LineEndRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9140_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9140_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9140_0");
     editorCell.addEditorCell(this.createConstant_9140_0(context, node, "$"));
     return editorCell;
   }
 
   public EditorCell createConstant_9140_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9140_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_9140_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9140_0");
-  }
-
-  private static void setupBasic_Constant_9140_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_9140_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

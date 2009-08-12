@@ -7,22 +7,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.Padding;
+import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink;
@@ -45,7 +45,12 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public EditorCell createCollection_9824_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9824_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9824_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
+    }
     if (renderingCondition9824_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9824_1(context, node));
     }
@@ -61,7 +66,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public EditorCell createCollection_9824_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9824_1(editorCell, node, context);
+    editorCell.setCellId("Collection_9824_1");
     editorCell.addEditorCell(this.createConstant_9824_0(context, node, "bad role:"));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_9824_0(context, node));
     return editorCell;
@@ -69,7 +74,7 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public EditorCell createConstant_9824_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9824_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9824_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -89,7 +94,11 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_9824_0(editorCell, node, context);
+    editorCell.setCellId("ReadOnlyModelAccessor_9824_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+    }
     return editorCell;
   }
 
@@ -97,14 +106,13 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
-    setupBasic_AttributedNodeCell_9824_0(editorCell, node, context);
+    Styles_StyleSheet.getNodeUnderMacro(editorCell).apply(editorCell);
     return editorCell;
   }
 
   public EditorCell createRefCell_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new NodeMacro_postfix._Inline9824_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_9824_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -126,7 +134,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   public EditorCell createProperty_9824_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9824_1(editorCell, node, context);
+    editorCell.setCellId("property_comment");
+    Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -147,43 +156,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9824_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
-    }
-  }
-
-  private static void setupBasic_Collection_9824_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9824_1");
-  }
-
-  private static void setupBasic_Constant_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9824_0");
-  }
-
-  private static void setupBasic_AttributedNodeCell_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    Styles_StyleSheet.getNodeUnderMacro(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefCell_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_ReadOnlyModelAccessor_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_9824_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-    }
-  }
-
-  private static void setupBasic_Property_9824_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_comment");
-    Styles_StyleSheet.getMacroDescriptionText(editorCell).apply(editorCell);
-  }
 
   public static boolean renderingCondition9824_0(SNode node, EditorContext editorContext, IScope scope) {
     String actualRole = node.getRole_();
@@ -215,7 +187,8 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
     public EditorCell createProperty_9824_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_9824_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
+      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -234,12 +207,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_9824_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
-      Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
     }
 
 }

@@ -18,13 +18,6 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8892_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8892_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_8892_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8892_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -32,6 +25,8 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.EDITABLE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

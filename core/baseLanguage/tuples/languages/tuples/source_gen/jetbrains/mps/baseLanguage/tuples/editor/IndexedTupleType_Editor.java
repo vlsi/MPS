@@ -10,14 +10,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -37,7 +37,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_8965_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_8965_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8965_0");
     editorCell.addEditorCell(this.createConceptProperty_8965_1(context, node));
     editorCell.addEditorCell(this.createRefNodeList_8965_0(context, node));
     editorCell.addEditorCell(this.createConceptProperty_8965_3(context, node));
@@ -49,14 +49,20 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
       this.myListHandler_8965_0 = new IndexedTupleType_Editor.componentTypeListHandler_8965_0(node, "componentType", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_8965_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_8965_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_componentType");
     editorCell.setRole(this.myListHandler_8965_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createConceptProperty_8965_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_8965_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_leftBracket");
+    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -78,7 +84,13 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_8965_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_8965_1(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_rightBracket");
+    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -96,35 +108,6 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_8965_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8965_0");
-  }
-
-  private static void setupBasic_ConceptProperty_8965_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_leftBracket");
-    BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_8965_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_componentType");
-  }
-
-  private static void setupBasic_ConceptProperty_8965_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_rightBracket");
-    BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
   }
 
   public static class componentTypeListHandler_8965_0 extends RefNodeListHandler {
@@ -182,14 +165,9 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_8965_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_8965_0(editorCell, node, context);
+      editorCell.setCellId("Constant_8965_0");
       editorCell.setDefaultText("");
       return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_8965_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("Constant_8965_0");
     }
 
 }

@@ -8,12 +8,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class UnaryMinus_Editor extends DefaultNodeEditor {
 
@@ -23,7 +23,7 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1189_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_1189_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1189_0");
     editorCell.addEditorCell(this.createConstant_1189_0(context, node, "-"));
     editorCell.addEditorCell(this.createRefNode_1189_1(context, node));
     return editorCell;
@@ -31,14 +31,18 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1189_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1189_0(editorCell, node, context);
+    editorCell.setCellId("Constant_1189_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    AbstractUnariOperationActions.setCellActions(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_1189_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_1189_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -56,23 +60,6 @@ public class UnaryMinus_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_1189_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1189_0");
-  }
-
-  private static void setupBasic_Constant_1189_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1189_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-    AbstractUnariOperationActions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RefNode_1189_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

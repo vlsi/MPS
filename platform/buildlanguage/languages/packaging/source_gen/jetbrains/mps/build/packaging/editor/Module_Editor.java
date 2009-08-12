@@ -38,7 +38,8 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6816_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6816_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6816_0");
+    editorCell.addKeyMap(new Module_KeyMap());
     editorCell.addEditorCell(this.createConceptProperty_6816_1(context, node));
     editorCell.addEditorCell(this.createProperty_6816_1(context, node));
     editorCell.addEditorCell(this.createComponent_6816_1(context, node));
@@ -50,7 +51,6 @@ public class Module_Editor extends DefaultNodeEditor {
       this.myConfigurationReferencesEditorComponent6816_0 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_0.createEditorCell(context);
-    setupBasic_Component_6816_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -59,13 +59,13 @@ public class Module_Editor extends DefaultNodeEditor {
       this.myConfigurationReferencesEditorComponent6816_1 = new ConfigurationReferencesEditorComponent(node);
     }
     EditorCell editorCell = this.myConfigurationReferencesEditorComponent6816_1.createEditorCell(context);
-    setupBasic_Component_6816_1(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConceptProperty_6816_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_6816_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,7 +87,7 @@ public class Module_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_6816_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_6816_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new Module_Editor.Module_generic_cellMenu0()}));
     return editorCell;
@@ -107,27 +107,6 @@ public class Module_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_6816_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6816_0");
-    editorCell.addKeyMap(new Module_KeyMap());
-  }
-
-  private static void setupBasic_ConceptProperty_6816_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Property_6816_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-  }
-
-  private static void setupBasic_Component_6816_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_6816_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   public static class Module_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {

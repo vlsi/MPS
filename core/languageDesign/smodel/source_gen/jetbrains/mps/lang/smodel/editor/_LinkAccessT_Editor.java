@@ -23,7 +23,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0901_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0901_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0901_0");
     editorCell.addEditorCell(this.createConstant_0901_0(context, node, "link acc<"));
     editorCell.addEditorCell(this.createRefCell_0901_1(context, node));
     editorCell.addEditorCell(this.createConstant_0901_2(context, node, ",singular:"));
@@ -36,28 +36,28 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0901_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0901_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0901_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0901_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0901_1(editorCell, node, context);
+    editorCell.setCellId("Constant_0901_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0901_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0901_2(editorCell, node, context);
+    editorCell.setCellId("Constant_0901_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0901_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0901_3(editorCell, node, context);
+    editorCell.setCellId("Constant_0901_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -65,7 +65,6 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0901_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new _LinkAccessT_Editor._Inline0901_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0901_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,7 +86,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_0901_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_0901_1(editorCell, node, context);
+    editorCell.setCellId("property_singularCradinality");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -109,7 +108,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_0901_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_0901_2(editorCell, node, context);
+    editorCell.setCellId("property_aggregation");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -129,38 +128,6 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0901_0");
-  }
-
-  private static void setupBasic_Constant_0901_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0901_0");
-  }
-
-  private static void setupBasic_Constant_0901_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0901_1");
-  }
-
-  private static void setupBasic_RefCell_0901_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0901_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0901_2");
-  }
-
-  private static void setupBasic_Property_0901_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_singularCradinality");
-  }
-
-  private static void setupBasic_Constant_0901_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0901_3");
-  }
-
-  private static void setupBasic_Property_0901_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_aggregation");
-  }
-
   public static class _Inline0901_0 extends AbstractCellProvider {
 
     public _Inline0901_0() {
@@ -177,7 +144,7 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0901_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0901_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -196,11 +163,6 @@ public class _LinkAccessT_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0901_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

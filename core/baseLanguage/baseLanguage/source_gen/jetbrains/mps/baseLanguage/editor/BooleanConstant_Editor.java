@@ -19,7 +19,8 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_9600_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9600_0(editorCell, node, context);
+    editorCell.setCellId("property_value");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -37,12 +38,6 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Property_9600_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_value");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
   }
 
 }

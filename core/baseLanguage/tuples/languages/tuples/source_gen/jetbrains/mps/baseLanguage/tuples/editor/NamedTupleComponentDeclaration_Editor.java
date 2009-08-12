@@ -8,7 +8,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -17,9 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -45,7 +45,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0912_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0912_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0912_0");
     if (renderingCondition0912_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0912_1(context, node));
     }
@@ -60,21 +60,29 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0912_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0912_1(editorCell, node, context);
+    editorCell.setCellId("Collection_0912_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.addEditorCell(this.createRefNodeList_0912_0(context, node));
     return editorCell;
   }
 
   public EditorCell createConstant_0912_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0912_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0912_0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_0912_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0912_1(editorCell, node, context);
+    editorCell.setCellId("Constant_0912_1");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    NTCD_delete_final.setCellActions(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -84,14 +92,21 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
       this.myListHandler_0912_0 = new NamedTupleComponentDeclaration_Editor.annotationListHandler_0912_0(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_0912_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_0912_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_annotation");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setRole(this.myListHandler_0912_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNode_0912_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0912_0(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -113,7 +128,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_0912_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_0912_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new NamedTupleComponentDeclaration_Editor.NamedTupleComponentDeclaration_name_postfixCellMenu0()}));
     return editorCell;
@@ -134,49 +149,6 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0912_0");
-  }
-
-  private static void setupBasic_Collection_0912_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0912_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_annotation");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_RefNode_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-    }
-  }
-
-  private static void setupBasic_Property_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-  }
-
-  private static void setupBasic_Constant_0912_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0912_0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_0912_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0912_1");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-    NTCD_delete_final.setCellActions(editorCell, node, context);
-  }
 
   public static boolean renderingCondition0912_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;

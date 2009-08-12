@@ -8,13 +8,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -30,7 +30,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7459_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7459_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7459_0");
     editorCell.addEditorCell(this.createConstant_7459_0(context, node, "assert"));
     editorCell.addEditorCell(this.createRefNode_7459_1(context, node));
     if (renderingCondition7459_0(node, context, context.getOperationContext().getScope())) {
@@ -42,7 +42,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7459_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7459_1(editorCell, node, context);
+    editorCell.setCellId("Collection_7459_1");
     editorCell.addEditorCell(this.createConstant_7459_1(context, node, ":"));
     editorCell.addEditorCell(this.createRefNode_7459_3(context, node));
     return editorCell;
@@ -50,7 +50,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7459_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7459_2(editorCell, node, context);
+    editorCell.setCellId("Collection_7459_2");
     editorCell.addEditorCell(this.createConstant_7459_2(context, node, "Error message : "));
     editorCell.addEditorCell(this.createRefNode_7459_5(context, node));
     return editorCell;
@@ -58,35 +58,39 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7459_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7459_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7459_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7459_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7459_1(editorCell, node, context);
+    editorCell.setCellId("Constant_7459_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7459_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7459_2(editorCell, node, context);
+    editorCell.setCellId("Constant_7459_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7459_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7459_3(editorCell, node, context);
+    editorCell.setCellId("Constant_7459_3");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_7459_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_7459_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -108,7 +112,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_7459_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_7459_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -130,7 +133,10 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_7459_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_7459_2(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -150,52 +156,6 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_7459_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7459_0");
-  }
-
-  private static void setupBasic_Constant_7459_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7459_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
-  }
-
-  private static void setupBasic_RefNode_7459_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_7459_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7459_1");
-  }
-
-  private static void setupBasic_Constant_7459_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7459_1");
-  }
-
-  private static void setupBasic_RefNode_7459_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Collection_7459_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7459_2");
-  }
-
-  private static void setupBasic_Constant_7459_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7459_2");
-  }
-
-  private static void setupBasic_RefNode_7459_2(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_7459_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7459_3");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
-  }
 
   public static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "message", true) != null;

@@ -11,13 +11,8 @@ public interface IMacroHolder extends INodeAdapter {
   public static final String MACRO = "macro";
 
   public int getMacrosCount();
-
   public Iterator<Macro> macros();
-
   public List<Macro> getMacros();
-
   public void addMacro(Macro node);
-
   public void insertMacro(Macro prev, Macro node);
-
 }

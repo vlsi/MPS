@@ -16,15 +16,10 @@ public class NodeReachable_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7119_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7119_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_7119_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_7119_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

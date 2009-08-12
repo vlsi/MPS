@@ -9,9 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,7 +29,7 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7098_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_7098_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7098_0");
     editorCell.addEditorCell(this.createConstant_7098_0(context, node, "Variable Converters:"));
     editorCell.addEditorCell(this.createConstant_7098_1(context, node, ""));
     editorCell.addEditorCell(this.createRefNodeList_7098_0(context, node));
@@ -38,14 +38,18 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7098_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7098_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7098_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7098_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7098_1(editorCell, node, context);
+    editorCell.setCellId("Constant_7098_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,30 +59,9 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
       this.myListHandler_7098_0 = new VariableConvertersContainer_Editor.converterItemListHandler_7098_0(node, "converterItem", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_7098_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_7098_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_converterItem");
     editorCell.setRole(this.myListHandler_7098_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7098_0");
-  }
-
-  private static void setupBasic_Constant_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7098_0");
-  }
-
-  private static void setupBasic_Constant_7098_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7098_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_7098_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_converterItem");
   }
 
   public static class converterItemListHandler_7098_0 extends RefNodeListHandler {

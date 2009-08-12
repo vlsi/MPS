@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -27,7 +27,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_8785_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_8785_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8785_0");
     if (renderingCondition8785_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_8785_3(context, node));
     }
@@ -40,7 +40,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_8785_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_8785_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -62,7 +61,12 @@ public class Quantity_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_8785_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_8785_0(editorCell, node, context);
+    editorCell.setCellId("property_unit");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -84,7 +88,12 @@ public class Quantity_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_8785_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_8785_1(editorCell, node, context);
+    editorCell.setCellId("property_unit_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -104,31 +113,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_8785_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8785_0");
-  }
-
-  private static void setupBasic_RefNode_8785_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Property_8785_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_unit");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-  }
-
-  private static void setupBasic_Property_8785_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_unit_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-  }
 
   public static boolean renderingCondition8785_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");

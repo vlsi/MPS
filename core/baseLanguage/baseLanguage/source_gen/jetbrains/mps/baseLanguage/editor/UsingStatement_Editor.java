@@ -9,14 +9,14 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,7 +35,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4975_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4975_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4975_0");
     editorCell.addEditorCell(this.createConstant_4975_0(context, node, "using"));
     editorCell.addEditorCell(this.createConstant_4975_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_4975_0(context, node));
@@ -48,35 +48,53 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4975_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4975_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4975_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4975_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4975_1(editorCell, node, context);
+    editorCell.setCellId("Constant_4975_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4975_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4975_3(editorCell, node, context);
+    editorCell.setCellId("Constant_4975_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4975_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4975_4(editorCell, node, context);
+    editorCell.setCellId("Constant_4975_4");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4975_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4975_5(editorCell, node, context);
+    editorCell.setCellId("Constant_4975_5");
+    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -86,14 +104,18 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
       this.myListHandler_4975_0 = new UsingStatement_Editor.resourceListHandler_4975_0(node, "resource", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_4975_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_4975_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_resource");
     editorCell.setRole(this.myListHandler_4975_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createRefNode_4975_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4975_0(editorCell, node, context);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -111,61 +133,6 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4975_0");
-  }
-
-  private static void setupBasic_Constant_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4975_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
-  }
-
-  private static void setupBasic_Constant_4975_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4975_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
-    }
-  }
-
-  private static void setupBasic_RefNodeList_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_resource");
-  }
-
-  private static void setupBasic_Constant_4975_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4975_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
-    }
-  }
-
-  private static void setupBasic_Constant_4975_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4975_4");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_RefNode_4975_0(EditorCell editorCell, SNode node, EditorContext context) {
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_4975_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4975_5");
-    BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
   }
 
   public static class resourceListHandler_4975_0 extends RefNodeListHandler {
@@ -223,14 +190,9 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_4975_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_4975_2(editorCell, node, context);
+      editorCell.setCellId("Constant_4975_2");
       editorCell.setDefaultText("");
       return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_4975_2(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("Constant_4975_2");
     }
 
 }

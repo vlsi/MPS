@@ -27,7 +27,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1615_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_1615_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1615_0");
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createRefNodeList_1615_0(context, node));
     return editorCell;
@@ -35,7 +35,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1615_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_1615_1(editorCell, node, context);
+    editorCell.setCellId("Collection_1615_1");
     editorCell.addEditorCell(this.createConstant_1615_0(context, node, "vertical layout"));
     editorCell.addEditorCell(this.createCollection_1615_0(context, node));
     return editorCell;
@@ -43,7 +43,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1615_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1615_0(editorCell, node, context);
+    editorCell.setCellId("Constant_1615_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -53,26 +53,9 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
       this.myListHandler_1615_0 = new VerticalLayoutBlockList_Editor.statementListHandler_1615_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_1615_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_1615_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_statement");
     editorCell.setRole(this.myListHandler_1615_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_1615_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1615_0");
-  }
-
-  private static void setupBasic_RefNodeList_1615_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_statement");
-  }
-
-  private static void setupBasic_Collection_1615_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1615_1");
-  }
-
-  private static void setupBasic_Constant_1615_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1615_0");
   }
 
   public static class statementListHandler_1615_0 extends RefNodeListHandler {

@@ -7,13 +7,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleString_Editor extends DefaultNodeEditor {
 
@@ -23,7 +23,14 @@ public class SimpleString_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_4553_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4553_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    PackagingStyles_StyleSheet.getString(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
+    }
+    CompositeString_RT.setCellActions(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -41,18 +48,6 @@ public class SimpleString_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Property_4553_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    PackagingStyles_StyleSheet.getString(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
-    }
-    CompositeString_RT.setCellActions(editorCell, node, context);
   }
 
 }

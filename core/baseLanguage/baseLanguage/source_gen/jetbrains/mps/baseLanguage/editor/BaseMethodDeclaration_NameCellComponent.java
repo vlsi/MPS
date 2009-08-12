@@ -7,15 +7,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
@@ -42,14 +42,34 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
 
   public EditorCell createCollection_4313_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4313_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4313_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createProperty_4313_1(context, node));
     return editorCell;
   }
 
   public EditorCell createProperty_4313_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4313_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
+
+        public Boolean calculate(EditorCell cell) {
+          return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu0()}));
     return editorCell;
@@ -70,34 +90,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4313_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4313_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Property_4313_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
-        public Boolean calculate(EditorCell cell) {
-          return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_1223655957671((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getEditorContext()
-          ));
-        }
-      });
-    }
-  }
 
   public static boolean _StyleParameter_QueryFunction_1223655957671(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);

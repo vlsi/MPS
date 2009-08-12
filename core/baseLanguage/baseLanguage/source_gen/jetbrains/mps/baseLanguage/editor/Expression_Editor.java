@@ -35,7 +35,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createConceptProperty_6116_1(context, node);
     }
-    setupBasic_Alternation_6116_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -44,7 +43,7 @@ public class Expression_Editor extends DefaultNodeEditor {
       this.myCellProvider6116_0 = this._cellProviderFactory_1209147315298(node, context);
     }
     EditorCell editorCell = this.myCellProvider6116_0.createEditorCell(context);
-    setupBasic_Custom_6116_0(editorCell, node, context);
+    editorCell.setCellId("Custom_6116_0");
     return editorCell;
   }
 
@@ -62,7 +61,7 @@ public class Expression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_6116_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_6116_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -82,17 +81,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Alternation_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Custom_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Custom_6116_0");
-  }
-
-  private static void setupBasic_ConceptProperty_6116_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-  }
 
   public static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;

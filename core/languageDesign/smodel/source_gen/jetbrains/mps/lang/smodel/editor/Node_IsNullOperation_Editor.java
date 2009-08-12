@@ -21,13 +21,6 @@ public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_8163_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8163_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_8163_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_8163_0");
     {
       Style style = editorCell.getStyle();
@@ -37,6 +30,8 @@ public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

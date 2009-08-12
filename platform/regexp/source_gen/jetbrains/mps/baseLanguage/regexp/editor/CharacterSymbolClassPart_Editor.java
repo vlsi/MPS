@@ -20,14 +20,14 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4050_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4050_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4050_0");
     editorCell.addEditorCell(this.createProperty_4050_1(context, node));
     return editorCell;
   }
 
   public EditorCell createProperty_4050_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_4050_0(editorCell, node, context);
+    editorCell.setCellId("property_character");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -45,15 +45,6 @@ public class CharacterSymbolClassPart_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_4050_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4050_0");
-  }
-
-  private static void setupBasic_Property_4050_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_character");
   }
 
 }

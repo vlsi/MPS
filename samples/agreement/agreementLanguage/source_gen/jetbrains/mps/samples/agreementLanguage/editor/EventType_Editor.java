@@ -9,15 +9,15 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -36,7 +36,7 @@ public class EventType_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3560_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_3560_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3560_0");
     editorCell.addEditorCell(this.createProperty_3560_1(context, node));
     editorCell.addEditorCell(this.createConstant_3560_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_3560_0(context, node));
@@ -46,14 +46,22 @@ public class EventType_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_3560_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3560_0(editorCell, node, context);
+    editorCell.setCellId("Constant_3560_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3560_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3560_2(editorCell, node, context);
+    editorCell.setCellId("Constant_3560_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -63,14 +71,19 @@ public class EventType_Editor extends DefaultNodeEditor {
       this.myListHandler_3560_0 = new EventType_Editor.variableListHandler_3560_0(node, "variable", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_3560_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_3560_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_variable");
     editorCell.setRole(this.myListHandler_3560_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createProperty_3560_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_3560_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -88,40 +101,6 @@ public class EventType_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_3560_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3560_0");
-  }
-
-  private static void setupBasic_Property_3560_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-    }
-  }
-
-  private static void setupBasic_Constant_3560_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3560_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_3560_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_variable");
-  }
-
-  private static void setupBasic_Constant_3560_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3560_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
   }
 
   public static class variableListHandler_3560_0 extends RefNodeListHandler {
@@ -179,19 +158,14 @@ public class EventType_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_3560_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_3560_1(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_3560_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_3560_1");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SmartActionParameter_Editor extends DefaultNodeEditor {
 
@@ -22,7 +22,7 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3006_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_3006_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3006_0");
     editorCell.addEditorCell(this.createRefNode_3006_1(context, node));
     editorCell.addEditorCell(this.createProperty_3006_1(context, node));
     return editorCell;
@@ -30,7 +30,6 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_3006_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_3006_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -52,7 +51,8 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_3006_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_3006_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -70,19 +70,6 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_3006_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3006_0");
-  }
-
-  private static void setupBasic_RefNode_3006_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Property_3006_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
   }
 
 }

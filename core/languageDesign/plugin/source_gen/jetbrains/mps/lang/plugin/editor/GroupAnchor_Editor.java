@@ -21,7 +21,7 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0296_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_0296_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0296_0");
     editorCell.addEditorCell(this.createConstant_0296_0(context, node, "->"));
     editorCell.addEditorCell(this.createProperty_0296_1(context, node));
     return editorCell;
@@ -29,14 +29,14 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0296_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0296_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0296_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_0296_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_0296_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -54,19 +54,6 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_0296_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0296_0");
-  }
-
-  private static void setupBasic_Constant_0296_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0296_0");
-  }
-
-  private static void setupBasic_Property_0296_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
   }
 
 }

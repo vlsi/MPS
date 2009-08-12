@@ -19,7 +19,9 @@ public class NamePropertyNamePart_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_3854_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_3854_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    MPSLite_Style_StyleSheet.getMPSLiteProperty(editorCell).apply(editorCell);
+    editorCell.addKeyMap(new LinePart_Actions());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -37,13 +39,6 @@ public class NamePropertyNamePart_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_ConceptProperty_3854_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    MPSLite_Style_StyleSheet.getMPSLiteProperty(editorCell).apply(editorCell);
-    editorCell.addKeyMap(new LinePart_Actions());
   }
 
 }

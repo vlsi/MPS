@@ -25,7 +25,7 @@ public class _NotInRules_Component extends AbstractCellProvider {
 
   public EditorCell createCollection_8756_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
-    setupBasic_Collection_8756_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8756_0");
     editorCell.addEditorCell(this.createConstant_8756_0(context, node, "do not use in rules"));
     editorCell.addEditorCell(this.createConstant_8756_1(context, node, "use in queries only"));
     return editorCell;
@@ -33,29 +33,16 @@ public class _NotInRules_Component extends AbstractCellProvider {
 
   public EditorCell createConstant_8756_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8756_0(editorCell, node, context);
+    editorCell.setCellId("Constant_8756_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_8756_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_8756_1(editorCell, node, context);
+    editorCell.setCellId("Constant_8756_1");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_8756_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8756_0");
-  }
-
-  private static void setupBasic_Constant_8756_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8756_0");
-  }
-
-  private static void setupBasic_Constant_8756_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_8756_1");
   }
 
 }

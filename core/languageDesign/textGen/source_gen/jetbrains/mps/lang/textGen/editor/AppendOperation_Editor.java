@@ -9,11 +9,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,7 +31,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7985_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7985_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7985_0");
     editorCell.addEditorCell(this.createConstant_7985_0(context, node, "append"));
     editorCell.addEditorCell(this.createRefNodeList_7985_0(context, node));
     editorCell.addEditorCell(this.createConstant_7985_1(context, node, ";"));
@@ -40,14 +40,19 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_7985_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7985_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7985_0");
+    TextGenStyles_StyleSheet.getTextGenOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_7985_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7985_1(editorCell, node, context);
+    editorCell.setCellId("Constant_7985_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,31 +62,9 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
       this.myListHandler_7985_0 = new AppendOperation_Editor.partListHandler_7985_0(node, "part", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_7985_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_7985_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_part");
     editorCell.setRole(this.myListHandler_7985_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_7985_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7985_0");
-  }
-
-  private static void setupBasic_Constant_7985_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7985_0");
-    TextGenStyles_StyleSheet.getTextGenOperation(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_7985_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7985_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
-    }
-  }
-
-  private static void setupBasic_RefNodeList_7985_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_part");
   }
 
   public static class partListHandler_7985_0 extends RefNodeListHandler {

@@ -19,18 +19,13 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_6263_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6263_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_6263_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_6263_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

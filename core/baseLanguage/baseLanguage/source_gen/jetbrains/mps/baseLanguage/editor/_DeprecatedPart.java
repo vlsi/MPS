@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -29,7 +29,11 @@ public class _DeprecatedPart extends AbstractCellProvider {
 
   public EditorCell createCollection_0235_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0235_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0235_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition0235_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0235_1(context, node));
     }
@@ -38,7 +42,13 @@ public class _DeprecatedPart extends AbstractCellProvider {
 
   public EditorCell createCollection_0235_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0235_1(editorCell, node, context);
+    editorCell.setCellId("Collection_0235_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     if (renderingCondition0235_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0235_0(context, node, "/**"));
     }
@@ -50,52 +60,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
 
   public EditorCell createConstant_0235_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0235_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_0235_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0235_1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_0235_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0235_2(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstant_0235_3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0235_3(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_0235_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0235_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Collection_0235_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0235_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_0235_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_0235_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -103,30 +67,42 @@ public class _DeprecatedPart extends AbstractCellProvider {
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
-  private static void setupBasic_Constant_0235_1(EditorCell editorCell, SNode node, EditorContext context) {
+  public EditorCell createConstant_0235_1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0235_1");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
-  private static void setupBasic_Constant_0235_2(EditorCell editorCell, SNode node, EditorContext context) {
+  public EditorCell createConstant_0235_2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0235_2");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
-  private static void setupBasic_Constant_0235_3(EditorCell editorCell, SNode node, EditorContext context) {
+  public EditorCell createConstant_0235_3(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0235_3");
     BaseLanguageStyle_StyleSheet.getJavaDoc(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
+
 
   public static boolean renderingCondition0235_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");

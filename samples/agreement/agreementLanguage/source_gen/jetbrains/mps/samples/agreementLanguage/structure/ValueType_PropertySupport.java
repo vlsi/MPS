@@ -4,6 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ValueType_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class ValueType_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<ValueType> constants = ValueType.getConstants().iterator();
+    Iterator<ValueType> constants = ListSequence.fromList(ValueType.getConstants()).iterator();
     while (constants.hasNext()) {
       ValueType constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class ValueType_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<ValueType> constants = ValueType.getConstants().iterator();
+    Iterator<ValueType> constants = ListSequence.fromList(ValueType.getConstants()).iterator();
     while (constants.hasNext()) {
       ValueType constant = constants.next();
       if (value.equals(constant.getName())) {

@@ -30,7 +30,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_8171_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_8171_0(editorCell, node, context);
+    editorCell.setCellId("Collection_8171_0");
     editorCell.addEditorCell(this.createRefNodeList_8171_0(context, node));
     return editorCell;
   }
@@ -40,23 +40,14 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       this.myListHandler_8171_0 = new TestMethodList_Editor.testMethodListHandler_8171_0(node, "testMethod", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_8171_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_8171_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_8171_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_8171_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_testMethod");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, false);
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
-  }
-
-  private static void setupBasic_Collection_8171_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_8171_0");
+    editorCell.setRole(this.myListHandler_8171_0.getElementRole());
+    return editorCell;
   }
 
   public static class testMethodListHandler_8171_0 extends RefNodeListHandler {
@@ -107,19 +98,14 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_8171_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_8171_0(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_8171_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_8171_0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, false);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

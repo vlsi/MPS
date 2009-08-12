@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -14,13 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.StringUtils;
 
@@ -40,7 +40,11 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
 
   public EditorCell createCollection_7612_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_7612_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7612_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_7612_0(context, node, "shortcut char:"));
     editorCell.addEditorCell(this.createProperty_7612_1(context, node));
     if (renderingCondition7612_0(node, context, context.getOperationContext().getScope())) {
@@ -51,7 +55,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
 
   public EditorCell createConstant_7612_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7612_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7612_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -71,13 +75,14 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_7612_0(editorCell, node, context);
+    editorCell.setCellId("ReadOnlyModelAccessor_7612_0");
+    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     return editorCell;
   }
 
   public EditorCell createProperty_7612_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7612_0(editorCell, node, context);
+    editorCell.setCellId("property_shortcutChar");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -98,27 +103,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7612_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7612_0");
-  }
-
-  private static void setupBasic_Property_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_shortcutChar");
-  }
-
-  private static void setupBasic_ReadOnlyModelAccessor_7612_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_7612_0");
-    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-  }
 
   public static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));

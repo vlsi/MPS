@@ -4,6 +4,7 @@ package jetbrains.mps.samples.agreementLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Taxable_PropertySupport extends PropertySupport {
 
@@ -11,7 +12,7 @@ public class Taxable_PropertySupport extends PropertySupport {
     if (value == null) {
       return true;
     }
-    Iterator<Taxable> constants = Taxable.getConstants().iterator();
+    Iterator<Taxable> constants = ListSequence.fromList(Taxable.getConstants()).iterator();
     while (constants.hasNext()) {
       Taxable constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +26,7 @@ public class Taxable_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<Taxable> constants = Taxable.getConstants().iterator();
+    Iterator<Taxable> constants = ListSequence.fromList(Taxable.getConstants()).iterator();
     while (constants.hasNext()) {
       Taxable constant = constants.next();
       if (value.equals(constant.getName())) {

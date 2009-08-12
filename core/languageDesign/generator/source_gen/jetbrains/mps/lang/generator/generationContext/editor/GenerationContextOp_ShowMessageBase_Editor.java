@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
@@ -15,8 +17,6 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEditor {
@@ -27,7 +27,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   public EditorCell createCollection_3544_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_3544_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3544_0");
     editorCell.addEditorCell(this.createConceptProperty_3544_1(context, node));
     editorCell.addEditorCell(this.createRefNode_3544_1(context, node));
     editorCell.addEditorCell(this.createConstant_3544_0(context, node, "->"));
@@ -37,14 +37,20 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   public EditorCell createConstant_3544_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3544_0(editorCell, node, context);
+    editorCell.setCellId("Constant_3544_0");
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConceptProperty_3544_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_3544_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new GenerationContextOp_ShowMessageBase_Editor.GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu0()}));
     return editorCell;
@@ -67,7 +73,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   public EditorCell createRefNode_3544_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_3544_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -89,7 +94,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
 
   public EditorCell createRefNode_3544_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_3544_1(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -107,31 +111,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_3544_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3544_0");
-  }
-
-  private static void setupBasic_ConceptProperty_3544_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_3544_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_3544_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3544_0");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_RefNode_3544_1(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
   public static class GenerationContextOp_ShowMessageBase_Editor_replaceWith_GenerationContextOp_ShowMessageBase_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

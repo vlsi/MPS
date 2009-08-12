@@ -8,9 +8,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -34,7 +34,11 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6577_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6577_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6577_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition6577_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNodeList_6577_0(context, node));
     }
@@ -49,7 +53,12 @@ public class StatementList_Editor extends DefaultNodeEditor {
       this.myListHandler_6577_0 = new StatementList_Editor.statementListHandler_6577_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6577_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_6577_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_statement");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    }
     editorCell.setCanBeFolded(true);
     editorCell.setRole(this.myListHandler_6577_0.getElementRole());
     return editorCell;
@@ -60,37 +69,16 @@ public class StatementList_Editor extends DefaultNodeEditor {
       this.myListHandler_6577_1 = new StatementList_Editor.statementListHandler_6577_1(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6577_1.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_6577_1(editorCell, node, context);
-    editorCell.setCanBeFolded(true);
-    editorCell.setRole(this.myListHandler_6577_1.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6577_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_statement");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_6577_1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
+    editorCell.setCanBeFolded(true);
+    editorCell.setRole(this.myListHandler_6577_1.getElementRole());
+    return editorCell;
   }
+
 
   public static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
@@ -148,13 +136,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_6577_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_6577_0(editorCell, node, context);
-      editorCell.setDefaultText("<no statements>");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_6577_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6577_0");
       {
         Style style = editorCell.getStyle();
@@ -163,6 +144,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
+      editorCell.setDefaultText("<no statements>");
+      return editorCell;
     }
 
 }
@@ -214,13 +197,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_6577_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_6577_1(editorCell, node, context);
-      editorCell.setDefaultText("<no statements>");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_6577_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6577_1");
       {
         Style style = editorCell.getStyle();
@@ -229,6 +205,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
         style.set(StyleAttributes.EDITABLE, true);
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
       }
+      editorCell.setDefaultText("<no statements>");
+      return editorCell;
     }
 
 }

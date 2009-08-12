@@ -8,13 +8,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EventVariable_Editor extends DefaultNodeEditor {
 
@@ -24,7 +24,7 @@ public class EventVariable_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6854_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_6854_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6854_0");
     editorCell.addEditorCell(this.createProperty_6854_1(context, node));
     editorCell.addEditorCell(this.createProperty_6854_3(context, node));
     return editorCell;
@@ -32,7 +32,12 @@ public class EventVariable_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_6854_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_6854_0(editorCell, node, context);
+    editorCell.setCellId("property_type");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -54,7 +59,12 @@ public class EventVariable_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_6854_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_6854_1(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -72,29 +82,6 @@ public class EventVariable_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_6854_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6854_0");
-  }
-
-  private static void setupBasic_Property_6854_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_type");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-  }
-
-  private static void setupBasic_Property_6854_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-    }
   }
 
 }

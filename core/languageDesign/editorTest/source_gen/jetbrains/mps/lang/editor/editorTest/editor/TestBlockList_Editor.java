@@ -9,9 +9,9 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -29,7 +29,7 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2941_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_2941_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2941_0");
     editorCell.addEditorCell(this.createConstant_2941_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_2941_0(context, node));
     editorCell.addEditorCell(this.createConstant_2941_1(context, node, "}"));
@@ -38,14 +38,20 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2941_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2941_0(editorCell, node, context);
+    editorCell.setCellId("Constant_2941_0");
+    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_2941_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2941_1(editorCell, node, context);
+    editorCell.setCellId("Constant_2941_1");
+    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -55,17 +61,6 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
       this.myListHandler_2941_0 = new TestBlockList_Editor.statementListHandler_2941_0(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_2941_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_2941_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_2941_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_2941_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2941_0");
-  }
-
-  private static void setupBasic_RefNodeList_2941_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_statement");
     {
       Style style = editorCell.getStyle();
@@ -73,20 +68,8 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-  }
-
-  private static void setupBasic_Constant_2941_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2941_0");
-    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_2941_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2941_1");
-    TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
+    editorCell.setRole(this.myListHandler_2941_0.getElementRole());
+    return editorCell;
   }
 
   public static class statementListHandler_2941_0 extends RefNodeListHandler {

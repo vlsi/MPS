@@ -8,13 +8,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
@@ -24,7 +24,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_1602_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_1602_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1602_0");
     editorCell.addEditorCell(this.createProperty_1602_1(context, node));
     editorCell.addEditorCell(this.createConstant_1602_0(context, node, "-"));
     editorCell.addEditorCell(this.createProperty_1602_3(context, node));
@@ -33,14 +33,20 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1602_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1602_0(editorCell, node, context);
+    editorCell.setCellId("Constant_1602_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_1602_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_1602_0(editorCell, node, context);
+    editorCell.setCellId("property_start");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -62,7 +68,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_1602_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_1602_1(editorCell, node, context);
+    editorCell.setCellId("property_end");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -80,29 +86,6 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1602_0");
-  }
-
-  private static void setupBasic_Property_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_start");
-  }
-
-  private static void setupBasic_Constant_1602_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1602_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-  }
-
-  private static void setupBasic_Property_1602_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_end");
   }
 
 }

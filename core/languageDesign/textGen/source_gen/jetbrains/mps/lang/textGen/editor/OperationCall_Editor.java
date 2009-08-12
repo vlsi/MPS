@@ -9,11 +9,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -40,7 +40,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6903_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6903_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6903_0");
     editorCell.addEditorCell(this.createRefCell_6903_1(context, node));
     editorCell.addEditorCell(this.createRefNodeList_6903_0(context, node));
     return editorCell;
@@ -51,7 +51,10 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       this.myListHandler_6903_0 = new OperationCall_Editor.parameterListHandler_6903_0(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6903_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_6903_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_parameter");
+    if (renderingCondition6903_0(node, context, context.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
+    }
     editorCell.setRole(this.myListHandler_6903_0.getElementRole());
     return editorCell;
   }
@@ -59,7 +62,6 @@ public class OperationCall_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_6903_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new OperationCall_Editor._Inline6903_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_6903_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -79,20 +81,6 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_6903_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6903_0");
-  }
-
-  private static void setupBasic_RefNodeList_6903_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition6903_0(node, context, context.getScope())) {
-      editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
-    }
-  }
-
-  private static void setupBasic_RefCell_6903_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
 
   public static boolean renderingCondition6903_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
@@ -114,7 +102,8 @@ public class OperationCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_6903_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_6903_0(editorCell, node, context);
+      editorCell.setCellId("property_operationName");
+      TextGenStyles_StyleSheet.getTextGenOperation(editorCell).apply(editorCell);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -133,12 +122,6 @@ public class OperationCall_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_6903_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_operationName");
-      TextGenStyles_StyleSheet.getTextGenOperation(editorCell).apply(editorCell);
     }
 
 }
@@ -197,19 +180,14 @@ public class OperationCall_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_6903_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_6903_0(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_6903_0(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_6903_0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
         style.set(StyleAttributes.EDITABLE, true);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

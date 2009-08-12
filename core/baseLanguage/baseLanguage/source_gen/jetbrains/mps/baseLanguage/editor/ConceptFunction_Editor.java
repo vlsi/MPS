@@ -31,7 +31,6 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       this.myConceptFunction_Component3364_0 = new ConceptFunction_Component(node);
     }
     EditorCell editorCell = this.myConceptFunction_Component3364_0.createEditorCell(context);
-    setupBasic_Component_3364_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -40,7 +39,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       this.myCellProvider3364_0 = this._cellProviderFactory_1207577922324(node, context);
     }
     EditorCell editorCell = this.myCellProvider3364_0.createEditorCell(context);
-    setupBasic_Custom_3364_0(editorCell, node, context);
+    editorCell.setCellId("Custom_3364_0");
     return editorCell;
   }
 
@@ -67,14 +66,6 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
         return collection;
       }
     };
-  }
-
-
-  private static void setupBasic_Component_3364_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Custom_3364_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Custom_3364_0");
   }
 
 }

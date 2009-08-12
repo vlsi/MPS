@@ -21,12 +21,7 @@ public class SNodeOperation_Editor extends DefaultNodeEditor {
       this.myReplaceableAlias_Comp1722_0 = new ReplaceableAlias_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAlias_Comp1722_0.createEditorCell(context);
-    setupBasic_Component_1722_0(editorCell, node, context);
     return editorCell;
-  }
-
-
-  private static void setupBasic_Component_1722_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

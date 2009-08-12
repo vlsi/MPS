@@ -8,10 +8,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
 
@@ -21,7 +21,7 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6697_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6697_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6697_0");
     editorCell.addEditorCell(this.createConstant_6697_0(context, node, "<ref"));
     editorCell.addEditorCell(this.createAttributedLinkCell_6697_0(context, node));
     editorCell.addEditorCell(this.createConstant_6697_1(context, node, ">"));
@@ -30,14 +30,18 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_6697_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6697_0(editorCell, node, context);
+    editorCell.setCellId("Constant_6697_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_6697_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_6697_1(editorCell, node, context);
+    editorCell.setCellId("Constant_6697_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -46,28 +50,7 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedLinkCell();
-    setupBasic_AttributedLinkCell_6697_0(editorCell, node, context);
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_6697_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6697_0");
-  }
-
-  private static void setupBasic_Constant_6697_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6697_0");
-  }
-
-  private static void setupBasic_Constant_6697_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_6697_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-  }
-
-  private static void setupBasic_AttributedLinkCell_6697_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

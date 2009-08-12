@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -30,7 +30,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3192_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_3192_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3192_0");
     editorCell.addEditorCell(this.createConstant_3192_0(context, node, "join"));
     editorCell.addEditorCell(this.createConstant_3192_2(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_3192_0(context, node));
@@ -40,21 +40,24 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_3192_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3192_0(editorCell, node, context);
+    editorCell.setCellId("Constant_3192_0");
+    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3192_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3192_1(editorCell, node, context);
+    editorCell.setCellId("Constant_3192_1");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_3192_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_3192_2(editorCell, node, context);
+    editorCell.setCellId("Constant_3192_2");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,33 +67,9 @@ public class JoinType_Editor extends DefaultNodeEditor {
       this.myListHandler_3192_0 = new JoinType_Editor.argumentListHandler_3192_0(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_3192_0.createCells(context, new CellLayout_Horizontal(), false);
-    setupBasic_RefNodeList_3192_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_argument");
     editorCell.setRole(this.myListHandler_3192_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_3192_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3192_0");
-  }
-
-  private static void setupBasic_Constant_3192_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3192_0");
-    BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNodeList_3192_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_argument");
-  }
-
-  private static void setupBasic_Constant_3192_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3192_1");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_3192_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_3192_2");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
   public static class argumentListHandler_3192_0 extends RefNodeListHandler {

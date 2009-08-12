@@ -14,9 +14,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
 
@@ -26,7 +26,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0079_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0079_0");
     editorCell.addEditorCell(this.createRefCell_0079_1(context, node));
     editorCell.addEditorCell(this.createConstant_0079_0(context, node, "="));
     editorCell.addEditorCell(this.createRefNode_0079_1(context, node));
@@ -35,7 +35,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0079_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0079_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -43,7 +43,6 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0079_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline0079_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0079_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -65,7 +64,6 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0079_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0079_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -85,21 +83,6 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0079_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0079_0");
-  }
-
-  private static void setupBasic_RefCell_0079_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0079_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0079_0");
-  }
-
-  private static void setupBasic_RefNode_0079_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0079_0 extends AbstractCellProvider {
 
     public _Inline0079_0() {
@@ -116,7 +99,11 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0079_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0079_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, false);
+      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -135,15 +122,6 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0079_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.EDITABLE, false);
-      }
     }
 
 }

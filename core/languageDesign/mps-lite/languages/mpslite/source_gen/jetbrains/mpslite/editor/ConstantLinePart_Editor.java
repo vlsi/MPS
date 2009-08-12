@@ -20,14 +20,15 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_7743_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_7743_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7743_0");
     editorCell.addEditorCell(this.createProperty_7743_1(context, node));
     return editorCell;
   }
 
   public EditorCell createProperty_7743_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_7743_0(editorCell, node, context);
+    editorCell.setCellId("property_text");
+    editorCell.addKeyMap(new LinePart_Actions());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -45,16 +46,6 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_7743_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7743_0");
-  }
-
-  private static void setupBasic_Property_7743_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_text");
-    editorCell.addKeyMap(new LinePart_Actions());
   }
 
 }

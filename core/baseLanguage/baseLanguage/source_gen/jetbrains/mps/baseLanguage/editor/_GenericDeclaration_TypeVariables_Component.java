@@ -8,10 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -38,7 +38,11 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createCollection_9618_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9618_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9618_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_9618_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_9618_0(context, node));
     editorCell.addEditorCell(this.createConstant_9618_1(context, node, ">"));
@@ -47,14 +51,26 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
 
   public EditorCell createConstant_9618_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9618_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9618_0");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9618_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9618_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9618_1");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -64,42 +80,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
       this.myListHandler_9618_0 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_9618_0(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_9618_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_9618_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_typeVariableDeclaration");
     editorCell.setRole(this.myListHandler_9618_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_9618_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9618_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_9618_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9618_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_9618_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_typeVariableDeclaration");
-  }
-
-  private static void setupBasic_Constant_9618_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9618_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
   }
 
   public static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {

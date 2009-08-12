@@ -22,7 +22,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       this.myCellProvider3927_0 = this._cellProviderFactory_1208623526502(node, context);
     }
     EditorCell editorCell = this.myCellProvider3927_0.createEditorCell(context);
-    setupBasic_Custom_3927_0(editorCell, node, context);
+    editorCell.setCellId("Custom_3927_0");
     return editorCell;
   }
 
@@ -33,11 +33,6 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
         return new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
       }
     };
-  }
-
-
-  private static void setupBasic_Custom_3927_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Custom_3927_0");
   }
 
 }

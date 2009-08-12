@@ -11,12 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -35,7 +35,7 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5100_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_5100_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5100_0");
     editorCell.addEditorCell(this.createConstant_5100_0(context, node, "Primitive"));
     editorCell.addEditorCell(this.createProperty_5100_1(context, node));
     editorCell.addEditorCell(this.createConstant_5100_1(context, node, "extends"));
@@ -45,14 +45,14 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5100_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5100_0(editorCell, node, context);
+    editorCell.setCellId("Constant_5100_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5100_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5100_1(editorCell, node, context);
+    editorCell.setCellId("Constant_5100_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,14 +62,18 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
       this.myListHandler_5100_0 = new PrimitiveTypeDescriptor_Editor.extendsListHandler_5100_0(node, "extends", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_5100_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_5100_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_extends");
     editorCell.setRole(this.myListHandler_5100_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createProperty_5100_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_5100_0(editorCell, node, context);
+    editorCell.setCellId("property_name");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -87,31 +91,6 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_5100_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5100_0");
-  }
-
-  private static void setupBasic_Constant_5100_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5100_0");
-  }
-
-  private static void setupBasic_Property_5100_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_name");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    }
-  }
-
-  private static void setupBasic_Constant_5100_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5100_1");
-  }
-
-  private static void setupBasic_RefNodeList_5100_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_extends");
   }
 
   public static class extendsListHandler_5100_0 extends RefNodeListHandler {

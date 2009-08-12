@@ -16,15 +16,10 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_1061_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1061_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_1061_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_1061_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

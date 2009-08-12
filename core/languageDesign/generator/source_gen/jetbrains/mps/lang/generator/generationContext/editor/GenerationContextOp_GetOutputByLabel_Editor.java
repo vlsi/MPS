@@ -23,7 +23,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
   public EditorCell createCollection_7535_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_7535_0(editorCell, node, context);
+    editorCell.setCellId("Collection_7535_0");
     editorCell.addEditorCell(this.createConstant_7535_0(context, node, "get output"));
     editorCell.addEditorCell(this.createRefCell_7535_1(context, node));
     return editorCell;
@@ -31,7 +31,8 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
   public EditorCell createConstant_7535_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_7535_0(editorCell, node, context);
+    editorCell.setCellId("Constant_7535_0");
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -39,7 +40,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
   public EditorCell createRefCell_7535_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new GenerationContextOp_GetOutputByLabel_Editor._Inline7535_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_7535_0(editorCell, node, context);
+    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -59,20 +60,6 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_7535_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_7535_0");
-  }
-
-  private static void setupBasic_Constant_7535_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_7535_0");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefCell_7535_0(EditorCell editorCell, SNode node, EditorContext context) {
-    jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
-  }
-
   public static class _Inline7535_0 extends AbstractCellProvider {
 
     public _Inline7535_0() {
@@ -89,7 +76,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
 
     public EditorCell createProperty_7535_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_7535_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -108,11 +95,6 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_7535_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

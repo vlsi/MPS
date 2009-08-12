@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
 
@@ -22,7 +22,7 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2875_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_2875_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2875_0");
     editorCell.addEditorCell(this.createConstant_2875_0(context, node, "immediateSupertypes"));
     editorCell.addEditorCell(this.createConstant_2875_2(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_2875_1(context, node));
@@ -32,28 +32,29 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_2875_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2875_0(editorCell, node, context);
+    editorCell.setCellId("Constant_2875_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_2875_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2875_1(editorCell, node, context);
+    editorCell.setCellId("Constant_2875_1");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_2875_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2875_2(editorCell, node, context);
+    editorCell.setCellId("Constant_2875_2");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_2875_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_2875_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -71,28 +72,6 @@ public class ImmediateSupertypesExpression_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_2875_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2875_0");
-  }
-
-  private static void setupBasic_Constant_2875_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2875_0");
-  }
-
-  private static void setupBasic_RefNode_2875_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_2875_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2875_1");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_2875_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_2875_2");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
   }
 
 }

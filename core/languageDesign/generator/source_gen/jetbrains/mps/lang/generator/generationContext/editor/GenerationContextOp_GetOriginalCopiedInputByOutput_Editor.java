@@ -8,11 +8,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends DefaultNodeEditor {
 
@@ -22,7 +22,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
 
   public EditorCell createCollection_1538_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_1538_0(editorCell, node, context);
+    editorCell.setCellId("Collection_1538_0");
     editorCell.addEditorCell(this.createConstant_1538_0(context, node, "get original copied input for"));
     editorCell.addEditorCell(this.createConstant_1538_1(context, node, "("));
     editorCell.addEditorCell(this.createRefNode_1538_1(context, node));
@@ -32,28 +32,30 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
 
   public EditorCell createConstant_1538_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1538_0(editorCell, node, context);
+    editorCell.setCellId("Constant_1538_0");
+    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_1538_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1538_1(editorCell, node, context);
+    editorCell.setCellId("Constant_1538_1");
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_1538_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_1538_2(editorCell, node, context);
+    editorCell.setCellId("Constant_1538_2");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createRefNode_1538_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_1538_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -71,29 +73,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_1538_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_1538_0");
-  }
-
-  private static void setupBasic_Constant_1538_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1538_0");
-    Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_1538_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1538_1");
-    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_1538_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_1538_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_1538_2");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
   }
 
 }

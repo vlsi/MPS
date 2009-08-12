@@ -30,19 +30,19 @@ public class Type_Editor extends DefaultNodeEditor {
     {
       editorCell = this.createConceptProperty_9010_1(context, node);
     }
-    setupBasic_Alternation_9010_0(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createError_9010_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
-    setupBasic_Error_9010_0(editorCell, node, context);
+    editorCell.setCellId("Error_9010_0");
     return editorCell;
   }
 
   public EditorCell createConceptProperty_9010_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_9010_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -62,18 +62,6 @@ public class Type_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Alternation_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Error_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Error_9010_0");
-  }
-
-  private static void setupBasic_ConceptProperty_9010_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
 
   public static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");

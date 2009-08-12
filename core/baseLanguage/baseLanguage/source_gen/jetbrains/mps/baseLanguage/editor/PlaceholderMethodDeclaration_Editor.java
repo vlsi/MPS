@@ -18,18 +18,13 @@ public class PlaceholderMethodDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5610_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5610_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Constant_5610_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_5610_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
 }

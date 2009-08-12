@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
@@ -15,8 +17,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class MinusOperation_Editor extends DefaultNodeEditor {
@@ -27,7 +27,7 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4389_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_4389_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4389_0");
     editorCell.addEditorCell(this.createRefNode_4389_1(context, node));
     editorCell.addEditorCell(this.createConstant_4389_0(context, node, "-"));
     editorCell.addEditorCell(this.createRefNode_4389_3(context, node));
@@ -36,7 +36,12 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4389_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4389_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4389_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
+    }
+    Operation_symbol_Actions.setCellActions(editorCell, node, context);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new MinusOperation_Editor.MinusOperation_Editor_replaceWith_Operation_cellMenu0()}));
     return editorCell;
@@ -44,7 +49,7 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_4389_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4389_0(editorCell, node, context);
+    Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -66,7 +71,7 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_4389_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4389_1(editorCell, node, context);
+    Operation_rightOperand_Actions.setCellActions(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -84,28 +89,6 @@ public class MinusOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_4389_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4389_0");
-  }
-
-  private static void setupBasic_RefNode_4389_0(EditorCell editorCell, SNode node, EditorContext context) {
-    Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_Constant_4389_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4389_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, true);
-    }
-    Operation_symbol_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_RefNode_4389_1(EditorCell editorCell, SNode node, EditorContext context) {
-    Operation_rightOperand_Actions.setCellActions(editorCell, node, context);
   }
 
   public static class MinusOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

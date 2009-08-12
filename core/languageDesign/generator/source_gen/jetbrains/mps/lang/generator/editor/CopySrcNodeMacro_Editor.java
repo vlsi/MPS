@@ -9,12 +9,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.FocusPolicy;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
@@ -32,7 +32,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_2079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_2079_0(editorCell, node, context);
+    editorCell.setCellId("Collection_2079_0");
     editorCell.addEditorCell(this.createConstant_2079_0(context, node, "$COPY_SRC$"));
     editorCell.addEditorCell(this.createComponent_2079_1(context, node));
     return editorCell;
@@ -43,7 +43,6 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
       this.myCopyScrNodeMacro_inspector2079_0 = new CopyScrNodeMacro_inspector(node);
     }
     EditorCell editorCell = this.myCopyScrNodeMacro_inspector2079_0.createEditorCell(context);
-    setupBasic_Component_2079_0(editorCell, node, context);
     return editorCell;
   }
 
@@ -52,30 +51,11 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
       this.myNodeMacro_postfix2079_0 = new NodeMacro_postfix(node);
     }
     EditorCell editorCell = this.myNodeMacro_postfix2079_0.createEditorCell(context);
-    setupBasic_Component_2079_1(editorCell, node, context);
     return editorCell;
   }
 
   public EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_2079_0(editorCell, node, context);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
-    return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_2079_0");
-  }
-
-  private static void setupBasic_Component_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Component_2079_1(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_2079_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -86,6 +66,9 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, context);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
+    return editorCell;
   }
 
   public static class CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

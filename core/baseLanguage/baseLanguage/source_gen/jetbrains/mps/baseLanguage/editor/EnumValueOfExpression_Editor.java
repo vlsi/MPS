@@ -32,7 +32,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4685_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4685_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4685_0");
     editorCell.addEditorCell(this.createRefCell_4685_1(context, node));
     editorCell.addEditorCell(this.createConstant_4685_0(context, node, "."));
     editorCell.addEditorCell(this.createConstant_4685_1(context, node, "valueOf"));
@@ -44,14 +44,16 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4685_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4685_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4685_0");
+    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4685_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4685_1(editorCell, node, context);
+    editorCell.setCellId("Constant_4685_1");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu0()}));
     return editorCell;
@@ -59,14 +61,16 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4685_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4685_2(editorCell, node, context);
+    editorCell.setCellId("Constant_4685_2");
+    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4685_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4685_3(editorCell, node, context);
+    editorCell.setCellId("Constant_4685_3");
+    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,7 +78,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_4685_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline4685_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_4685_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -96,7 +99,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_4685_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_4685_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -116,37 +118,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4685_0");
-  }
-
-  private static void setupBasic_RefCell_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4685_0");
-    BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_4685_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4685_1");
-    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_4685_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4685_2");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_Constant_4685_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4685_3");
-    BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline4685_0 extends AbstractCellProvider {
 
     public _Inline4685_0() {
@@ -163,7 +134,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_4685_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_4685_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -182,11 +153,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_4685_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

@@ -7,15 +7,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +29,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9117_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9117_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9117_0");
     if (renderingCondition9117_1(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9117_1(context, node));
     }
@@ -45,7 +45,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9117_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    setupBasic_Collection_9117_1(editorCell, node, context);
+    editorCell.setCellId("Collection_9117_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_9117_3(context, node, "identifier"));
     editorCell.addEditorCell(this.createProperty_9117_5(context, node));
     editorCell.addEditorCell(this.createConstant_9117_4(context, node, "  "));
@@ -54,42 +58,70 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_9117_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9117_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9117_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9117_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9117_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9117_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9117_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9117_2(editorCell, node, context);
+    editorCell.setCellId("Constant_9117_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9117_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9117_3(editorCell, node, context);
+    editorCell.setCellId("Constant_9117_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9117_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9117_4(editorCell, node, context);
+    editorCell.setCellId("Constant_9117_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createProperty_9117_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9117_0(editorCell, node, context);
+    editorCell.setCellId("property_externalValue");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -111,7 +143,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_9117_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9117_1(editorCell, node, context);
+    editorCell.setCellId("property_internalValue");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -134,7 +171,13 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createProperty_9117_4_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_Property_9117_2(editorCell, node, context);
+    editorCell.setCellId("property_javaIdentifier");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -154,89 +197,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_9117_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9117_0");
-  }
-
-  private static void setupBasic_Property_9117_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_externalValue");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-    }
-  }
-
-  private static void setupBasic_Property_9117_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_internalValue");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-    }
-  }
-
-  private static void setupBasic_Constant_9117_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9117_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    }
-  }
-
-  private static void setupBasic_Constant_9117_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9117_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-    }
-  }
-
-  private static void setupBasic_Constant_9117_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9117_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-    }
-  }
-
-  private static void setupBasic_Collection_9117_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9117_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-  }
-
-  private static void setupBasic_Constant_9117_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9117_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
-    }
-  }
-
-  private static void setupBasic_Property_9117_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("property_javaIdentifier");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-    }
-  }
-
-  private static void setupBasic_Constant_9117_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9117_4");
-  }
 
   public static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
     return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));

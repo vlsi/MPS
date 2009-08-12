@@ -19,7 +19,7 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_3010_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_3010_0(editorCell, node, context);
+    editorCell.setCellId("Collection_3010_0");
     editorCell.addEditorCell(this.createComponent_3010_0(context, node));
     return editorCell;
   }
@@ -29,16 +29,7 @@ public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
       this.myReplaceableAliasAndParms_Comp3010_0 = new ReplaceableAliasAndParms_Comp(node);
     }
     EditorCell editorCell = this.myReplaceableAliasAndParms_Comp3010_0.createEditorCell(context);
-    setupBasic_Component_3010_0(editorCell, node, context);
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_3010_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_3010_0");
-  }
-
-  private static void setupBasic_Component_3010_0(EditorCell editorCell, SNode node, EditorContext context) {
   }
 
 }

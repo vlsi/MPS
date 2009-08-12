@@ -8,7 +8,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -16,9 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -51,7 +51,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public EditorCell createCollection_4484_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4484_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4484_0");
     editorCell.addEditorCell(this.createConceptProperty_4484_1(context, node));
     if (renderingCondition4484_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_4484_1(context, node));
@@ -61,7 +61,12 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public EditorCell createCollection_4484_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4484_1(editorCell, node, context);
+    editorCell.setCellId("Collection_4484_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     editorCell.addEditorCell(this.createConstant_4484_0(context, node, "<"));
     editorCell.addEditorCell(this.createRefNodeList_4484_0(context, node));
     editorCell.addEditorCell(this.createConstant_4484_2(context, node, ">"));
@@ -70,14 +75,30 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
   public EditorCell createConstant_4484_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4484_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4484_0");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4484_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4484_2(editorCell, node, context);
+    editorCell.setCellId("Constant_4484_2");
+    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -87,14 +108,18 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       this.myListHandler_4484_0 = new ReplaceableAliasAndParms_Comp.parameterListHandler_4484_0(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_4484_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_4484_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(this.myListHandler_4484_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createConceptProperty_4484_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_4484_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ReplaceableAliasAndParms_Comp.ReplaceableAliasAndParms_Comp_replaceWith_SNodeOperation_cellMenu0()}));
     return editorCell;
@@ -115,55 +140,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_4484_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4484_0");
-  }
-
-  private static void setupBasic_ConceptProperty_4484_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
-  }
-
-  private static void setupBasic_Collection_4484_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4484_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-  }
-
-  private static void setupBasic_Constant_4484_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4484_0");
-    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_4484_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_parameter");
-  }
-
-  private static void setupBasic_Constant_4484_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4484_2");
-    Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "AngleBracet");
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-  }
 
   public static boolean renderingCondition4484_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
@@ -224,13 +200,6 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
 
     public EditorCell createConstant_4484_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_4484_1(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_4484_1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_4484_1");
       {
         Style style = editorCell.getStyle();
@@ -239,6 +208,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
         style.set(StyleAttributes.DEFAULT_CARET_POSITON, CaretPosition.FIRST);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

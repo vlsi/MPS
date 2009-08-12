@@ -9,10 +9,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,7 +31,7 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_4662_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_4662_0(editorCell, node, context);
+    editorCell.setCellId("Collection_4662_0");
     editorCell.addEditorCell(this.createConstant_4662_0(context, node, "{"));
     editorCell.addEditorCell(this.createRefNodeList_4662_0(context, node));
     editorCell.addEditorCell(this.createConstant_4662_1(context, node, "}"));
@@ -40,14 +40,24 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_4662_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4662_0(editorCell, node, context);
+    editorCell.setCellId("Constant_4662_0");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_4662_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_4662_1(editorCell, node, context);
+    editorCell.setCellId("Constant_4662_1");
+    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -57,36 +67,9 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
       this.myListHandler_4662_0 = new MapInitializer_Editor.entriesListHandler_4662_0(node, "entries", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_4662_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_4662_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_entries");
     editorCell.setRole(this.myListHandler_4662_0.getElementRole());
     return editorCell;
-  }
-
-
-  private static void setupBasic_Collection_4662_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_4662_0");
-  }
-
-  private static void setupBasic_Constant_4662_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4662_0");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-  }
-
-  private static void setupBasic_Constant_4662_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_4662_1");
-    BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-  }
-
-  private static void setupBasic_RefNodeList_4662_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_entries");
   }
 
   public static class entriesListHandler_4662_0 extends RefNodeListHandler {

@@ -8,6 +8,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,10 +24,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.AttributeCalculator;
-import java.awt.Color;
 
 public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
 
@@ -37,7 +37,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5335_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_5335_0(editorCell, node, context);
+    editorCell.setCellId("Collection_5335_0");
     editorCell.addEditorCell(this.createConstant_5335_0(context, node, "$("));
     editorCell.addEditorCell(this.createRefNode_5335_1(context, node));
     editorCell.addEditorCell(this.createConstant_5335_1(context, node, ")$"));
@@ -46,7 +46,7 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_5335_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_5335_1(editorCell, node, context);
+    editorCell.setCellId("Collection_5335_1");
     editorCell.addEditorCell(this.createConstant_5335_2(context, node, "property antiquotation"));
     editorCell.addEditorCell(this.createConstant_5335_3(context, node, ""));
     editorCell.addEditorCell(this.createConstant_5335_4(context, node, "propety name:"));
@@ -58,42 +58,81 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_5335_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_0(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+        public Color calculate(EditorCell cell) {
+          return PropertyAntiquotation_Editor._StyleParameter_QueryFunction_1214399678827((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5335_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_1(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
+
+        public Color calculate(EditorCell cell) {
+          return PropertyAntiquotation_Editor._StyleParameter_QueryFunction_1214399678938((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5335_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_2(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5335_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_3(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5335_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_4(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_5335_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_5335_5(editorCell, node, context);
+    editorCell.setCellId("Constant_5335_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -119,7 +158,11 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_5335_0(editorCell, node, context);
+    editorCell.setCellId("ReadOnlyModelAccessor_5335_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     return editorCell;
   }
 
@@ -138,13 +181,16 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    setupBasic_ReadOnlyModelAccessor_5335_1(editorCell, node, context);
+    editorCell.setCellId("ReadOnlyModelAccessor_5335_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     return editorCell;
   }
 
   public EditorCell createRefNode_5335_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_5335_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -164,96 +210,6 @@ public class PropertyAntiquotation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5335_0");
-  }
-
-  private static void setupBasic_Constant_5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-        public Color calculate(EditorCell cell) {
-          return PropertyAntiquotation_Editor._StyleParameter_QueryFunction_1214399678827((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getEditorContext()
-          ));
-        }
-      });
-    }
-  }
-
-  private static void setupBasic_RefNode_5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_5335_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
-        public Color calculate(EditorCell cell) {
-          return PropertyAntiquotation_Editor._StyleParameter_QueryFunction_1214399678938((cell == null ?
-            null :
-            cell.getSNode()
-          ), (cell == null ?
-            null :
-            cell.getEditorContext()
-          ));
-        }
-      });
-    }
-  }
-
-  private static void setupBasic_Collection_5335_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_5335_1");
-  }
-
-  private static void setupBasic_Constant_5335_2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_5335_3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_Constant_5335_4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_4");
-  }
-
-  private static void setupBasic_Constant_5335_5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_5335_5");
-  }
-
-  private static void setupBasic_ReadOnlyModelAccessor_5335_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_5335_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
-
-  private static void setupBasic_ReadOnlyModelAccessor_5335_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("ReadOnlyModelAccessor_5335_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-  }
 
   public static Color _StyleParameter_QueryFunction_1214399678827(SNode node, EditorContext editorContext) {
     return Colors.BROWN;

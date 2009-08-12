@@ -11,12 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
@@ -38,7 +38,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9190_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9190_0(editorCell, node, context);
+    editorCell.setCellId("Collection_9190_0");
     editorCell.addEditorCell(this.createConceptProperty_9190_1(context, node));
     if (renderingCondition9190_0(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9190_1(context, node));
@@ -48,7 +48,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_9190_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_9190_1(editorCell, node, context);
+    editorCell.setCellId("Collection_9190_1");
     editorCell.addEditorCell(this.createConstant_9190_0(context, node, "("));
     editorCell.addEditorCell(this.createRefNodeList_9190_0(context, node));
     editorCell.addEditorCell(this.createConstant_9190_1(context, node, ")"));
@@ -57,14 +57,14 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_9190_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9190_0(editorCell, node, context);
+    editorCell.setCellId("Constant_9190_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   public EditorCell createConstant_9190_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_9190_1(editorCell, node, context);
+    editorCell.setCellId("Constant_9190_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -74,14 +74,19 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
       this.myListHandler_9190_0 = new VisitChildrenExpression_Editor.actualArgumentListHandler_9190_0(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_9190_0.createCells(context, new CellLayout_Indent(), false);
-    setupBasic_RefNodeList_9190_0(editorCell, node, context);
+    editorCell.setCellId("refNodeList_actualArgument");
     editorCell.setRole(this.myListHandler_9190_0.getElementRole());
     return editorCell;
   }
 
   public EditorCell createConceptProperty_9190_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_9190_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -101,35 +106,6 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9190_0");
-  }
-
-  private static void setupBasic_ConceptProperty_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    }
-  }
-
-  private static void setupBasic_Collection_9190_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_9190_1");
-  }
-
-  private static void setupBasic_Constant_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9190_0");
-  }
-
-  private static void setupBasic_Constant_9190_1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_9190_1");
-  }
-
-  private static void setupBasic_RefNodeList_9190_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("refNodeList_actualArgument");
-  }
 
   public static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration") > 0;
@@ -190,18 +166,13 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstant_9190_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      setupBasic_Constant_9190_2(editorCell, node, context);
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-
-
-    private static void setupBasic_Constant_9190_2(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.setCellId("Constant_9190_2");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
       }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
 
 }

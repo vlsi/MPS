@@ -11,9 +11,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
@@ -23,7 +23,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0978_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0978_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0978_0");
     editorCell.addEditorCell(this.createRefNode_0978_1(context, node));
     editorCell.addEditorCell(this.createConceptProperty_0978_1(context, node));
     editorCell.addEditorCell(this.createRefNode_0978_3(context, node));
@@ -32,7 +32,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0978_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0978_0(editorCell, node, context);
+    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -54,7 +54,12 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createConceptProperty_0978_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_ConceptProperty_0978_0(editorCell, node, context);
+    editorCell.setCellId("conceptProperty_alias");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -76,7 +81,7 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0978_2_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0978_1(editorCell, node, context);
+    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -94,28 +99,6 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
     return cellWithRole;
-  }
-
-
-  private static void setupBasic_Collection_0978_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0978_0");
-  }
-
-  private static void setupBasic_RefNode_0978_0(EditorCell editorCell, SNode node, EditorContext context) {
-    BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
-  }
-
-  private static void setupBasic_ConceptProperty_0978_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("conceptProperty_alias");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-  }
-
-  private static void setupBasic_RefNode_0978_1(EditorCell editorCell, SNode node, EditorContext context) {
-    BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
   }
 
 }

@@ -24,7 +24,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_0127_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_0127_0(editorCell, node, context);
+    editorCell.setCellId("Collection_0127_0");
     editorCell.addEditorCell(this.createRefCell_0127_1(context, node));
     editorCell.addEditorCell(this.createConstant_0127_0(context, node, "="));
     editorCell.addEditorCell(this.createRefNode_0127_1(context, node));
@@ -33,7 +33,8 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createConstant_0127_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    setupBasic_Constant_0127_0(editorCell, node, context);
+    editorCell.setCellId("Constant_0127_0");
+    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -41,7 +42,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
   public EditorCell createRefCell_0127_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     provider.setAuxiliaryCellProvider(new AnnotationInstanceValue_Editor._Inline0127_0());
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefCell_0127_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -63,7 +63,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   public EditorCell createRefNode_0127_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
     EditorCell editorCell = provider.createEditorCell(context);
-    setupBasic_RefNode_0127_0(editorCell, node, context);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
@@ -83,22 +82,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-
-  private static void setupBasic_Collection_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_0127_0");
-  }
-
-  private static void setupBasic_RefCell_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupBasic_Constant_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Constant_0127_0");
-    BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
-  }
-
-  private static void setupBasic_RefNode_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
-  }
-
   public static class _Inline0127_0 extends AbstractCellProvider {
 
     public _Inline0127_0() {
@@ -115,7 +98,7 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
     public EditorCell createProperty_0127_0_internal(EditorContext context, SNode node, CellProviderWithRole provider) {
       EditorCell editorCell = provider.createEditorCell(context);
-      setupBasic_Property_0127_0(editorCell, node, context);
+      editorCell.setCellId("property_name");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
@@ -134,11 +117,6 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-
-    private static void setupBasic_Property_0127_0(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.setCellId("property_name");
     }
 
 }

@@ -28,7 +28,7 @@ public class ClassPath_Editor extends DefaultNodeEditor {
 
   public EditorCell createCollection_6545_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    setupBasic_Collection_6545_0(editorCell, node, context);
+    editorCell.setCellId("Collection_6545_0");
     editorCell.addEditorCell(this.createRefNodeList_6545_0(context, node));
     return editorCell;
   }
@@ -38,22 +38,13 @@ public class ClassPath_Editor extends DefaultNodeEditor {
       this.myListHandler_6545_0 = new ClassPath_Editor.classPathItemListHandler_6545_0(node, "classPathItem", context);
     }
     EditorCell_Collection editorCell = this.myListHandler_6545_0.createCells(context, new CellLayout_Vertical(), false);
-    setupBasic_RefNodeList_6545_0(editorCell, node, context);
-    editorCell.setRole(this.myListHandler_6545_0.getElementRole());
-    return editorCell;
-  }
-
-
-  private static void setupBasic_RefNodeList_6545_0(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setCellId("refNodeList_classPathItem");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.GET_PARENT_SUBSTITUDE_INFO, true);
     }
-  }
-
-  private static void setupBasic_Collection_6545_0(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setCellId("Collection_6545_0");
+    editorCell.setRole(this.myListHandler_6545_0.getElementRole());
+    return editorCell;
   }
 
   public static class classPathItemListHandler_6545_0 extends RefNodeListHandler {
