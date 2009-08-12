@@ -84,4 +84,8 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
 
     IListSequence<T> toListSequence ();
     
+    T[] toGenericArray();
+
+    T[] toGenericArray(Class<T> runtimeClass);
+    
 }

@@ -21,12 +21,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
 import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
-
 
 /**
  * Implementation of a sequence backed by <code>java.util.List</code>. 
@@ -34,14 +32,14 @@ import jetbrains.mps.internal.collections.runtime.impl.NullListSequence;
  * necessary synchronization if needed.
  * @author fyodor
  */
-public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, List<T>, Serializable {
+public class ListSequence<T> extends CollectionSequence<T> implements IListSequence<T>, List<T>, Serializable {
 
     /**
-	 * Auto-computed serialVersionUID
-	 */
-	private static final long serialVersionUID = 8593660517992105071L;
-	
-	List<T> list;
+     * Auto-computed serialVersionUID
+     */
+    private static final long serialVersionUID = 8593660517992105071L;
+
+    private List<T> list;
     
     public static <U> IListSequence<U> fromArray (U...array) {
         if (Sequence.USE_NULL_SEQUENCE) {
@@ -161,116 +159,56 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     // Delegated methods
     
     public void add(int index, T element) {
-        list.add(index, element);
-    }
-
-    public boolean add(T e) {
-        return list.add(e);
-    }
-
-    public boolean addAll(Collection<? extends T> c) {
-        return list.addAll(c);
+        getList().add(index, element);
     }
 
     public boolean addAll(int index, Collection<? extends T> c) {
-        return list.addAll(index, c);
+        return getList().addAll(index, c);
     }
 
-    public void clear() {
-        list.clear();
-    }
-
-    public boolean contains(Object o) {
-        return list.contains(o);
-    }
-
-    public boolean containsAll(Collection<?> c) {
-        return list.containsAll(c);
-    }
-
-    public boolean equals(Object o) {
-        return list.equals(o);
-    }
-
-    public int hashCode() {
-        return list.hashCode();
-    }
-
+    @Override
     public int indexOf(Object o) {
-        return list.indexOf(o);
+        return getList().indexOf(o);
     }
 
+    @Override
     public boolean isEmpty() {
-        return list.isEmpty();
+        return getList().isEmpty();
     }
 
     public T get (int index) {
-        return list.get(index);
+        return getList().get(index);
     }
     
     public int lastIndexOf(Object o) {
-        return list.lastIndexOf(o);
+        return getList().lastIndexOf(o);
     }
 
     public ListIterator<T> listIterator() {
-        return list.listIterator();
+        return getList().listIterator();
     }
 
     public ListIterator<T> listIterator(int index) {
-        return list.listIterator(index);
+        return getList().listIterator(index);
     }
 
     public T remove(int index) {
-        return list.remove(index);
-    }
-
-    public boolean remove(Object o) {
-        return list.remove(o);
-    }
-
-    public boolean removeAll(Collection<?> c) {
-        return list.removeAll(c);
-    }
-
-    public boolean retainAll(Collection<?> c) {
-        return list.retainAll(c);
+        return getList().remove(index);
     }
 
     public T set(int index, T element) {
-        return list.set(index, element);
-    }
-
-    public int size() {
-        return list.size();
+        return getList().set(index, element);
     }
 
     public List<T> subList(int fromIndex, int toIndex) {
-        return list.subList(fromIndex, toIndex);
-    }
-
-    public Object[] toArray() {
-        return list.toArray();
-    }
-
-    public <U> U[] toArray(U[] a) {
-        return list.toArray(a);
+        return getList().subList(fromIndex, toIndex);
     }
     
-    public Iterator<T> iterator() {
-        return list.iterator();
-    }
 
-    // ISequence
-    
-    @Override
-    public int count() {
-    	return list.size();
-    }
-    
     @Override
     public T first() {
-    	if (list.size() > 0) {
-    		return list.get(0);
+    	if (getList().size() > 0) {
+    		return getList().get(0);
     	}
         if (Sequence.NULL_WHEN_EMPTY) {
             return null;
@@ -280,8 +218,8 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     @Override
     public T last() {
-    	if (list.size() > 0) {
-    		return list.get(list.size()-1);
+    	if (getList().size() > 0) {
+    		return getList().get(getList().size()-1);
     	}
         if (Sequence.NULL_WHEN_EMPTY) {
             return null;
@@ -291,27 +229,10 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     @Override
     public boolean isNotEmpty() {
-    	return list.size() > 0;
+    	return getList().size() > 0;
     }
     
     // IListSequence
-    
-    public T addElement(T t) {
-        if (Sequence.IGNORE_NULL_VALUES) {
-            if (t == null) {
-                return null;
-            }
-        }
-        list.add(t);
-        return t;
-    }
-    
-    public T removeElement(T t) {
-        if (remove((Object)t)) {
-        	return t;
-        }
-        return null;
-    }
     
     public T removeElementAt(int idx) {
         if (Sequence.NULL_WHEN_EMPTY) {
@@ -364,38 +285,14 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     	return set (idx, t);
     }
     
-    public IListSequence<T> addSequence (ISequence<? extends T> seq) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (seq == null) {
-                return this;
-            }
-        }
-        if (seq.toIterable() instanceof Collection) {
-        	list.addAll((Collection<? extends T>) seq.toIterable());
-        }
-        else {
-        	for (T t : seq.toIterable()) {
-        		list.add(t);
-        	}
-        }
-        return this;
+    @Override
+    public IListSequence<T> addSequence(ISequence<? extends T> seq) {
+        return (IListSequence<T>) super.addSequence(seq);
     }
     
-    public IListSequence<T> removeSequence (ISequence<? extends T> seq) {
-        if (Sequence.USE_NULL_SEQUENCE) {
-            if (seq == null) {
-                return this;
-            }
-        }
-        if (seq.toIterable() instanceof Collection) {
-        	list.removeAll((Collection<? extends T>) seq.toIterable());
-        }
-        else {
-        	for (T t : seq.toIterable()) {
-        		list.remove(t);
-        	}
-        }
-        return this;
+    @Override
+    public IListSequence<T> removeSequence(ISequence<? extends T> seq) {
+        return (IListSequence<T>) super.removeSequence(seq);
     }
     
     public IListSequence<T> reversedList () {
@@ -411,13 +308,13 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     
     @SuppressWarnings("unchecked")
     public T[] toGenericArray() {
-        return (T[]) list.toArray();
+        return (T[]) getList().toArray();
     }
 
     @SuppressWarnings("unchecked")
     public T[] toGenericArray(Class<T> runtimeClass) {
-        T[] arr = (T[]) Array.newInstance(runtimeClass, list.size());
-        return list.toArray(arr);
+        T[] arr = (T[]) Array.newInstance(runtimeClass, getList().size());
+        return getList().toArray(arr);
     }
     
     public List<T> toList() {
@@ -428,9 +325,13 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
     public IListSequence<T> toListSequence() {
         return this;
     }
+    
+    /*package*/ void _reverse () {
+        Collections.reverse(getList());
+    }
 
     protected ListSequence (List<T> list) {
-        this.list = list;
+        setList(list);
     }
     
     /**
@@ -438,11 +339,20 @@ public class ListSequence<T> extends Sequence<T> implements IListSequence<T>, Li
      * @param other
      */
     protected ListSequence (ListSequence<T> other) {
-        this.list = new ArrayList<T> (other.list);
-    }
-    
-    /*package*/ void _reverse () {
-        Collections.reverse(list);
+        setList(new ArrayList<T> (other.getList()));
     }
 
+    @Override
+    protected List<T> getCollection() {
+        return list;
+    }
+    
+    protected List<T> getList() {
+        return list;
+    }
+
+    private void setList(List<T> list) {
+        this.list = list;
+    }
+    
 }

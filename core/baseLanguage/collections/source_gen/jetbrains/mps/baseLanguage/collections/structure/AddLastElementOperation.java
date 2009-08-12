@@ -8,12 +8,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AddLastElementOperation extends AbstractListOperation {
+public class AddLastElementOperation extends SequenceOperation implements IListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ARGUMENT = "argument";
 
   public AddLastElementOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AddLastElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AddLastElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AddLastElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AddLastElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AddLastElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AddLastElementOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getArgument() {

@@ -223,6 +223,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new ComparingSequence<T> (this, that, ComparingSequence.Kind.DISJUNCTION);
     }
 
+    // TODO: change to containsElement to avoid name clashing with Collection.contains()
     public boolean contains (T t) {
         return IterableUtils.contains(toIterable(), t);
     }
@@ -257,6 +258,14 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     
     public IListSequence<T> toListSequence() {
         return ListSequence.fromIterable(toIterable());
+    }
+    
+    public T[] toGenericArray() {
+        return toListSequence().toGenericArray();
+    }
+    
+    public T[] toGenericArray(Class<T> runtimeClass) {
+        return toListSequence().toGenericArray(runtimeClass);
     }
     
     public IEnumerator<T> enumerator() {

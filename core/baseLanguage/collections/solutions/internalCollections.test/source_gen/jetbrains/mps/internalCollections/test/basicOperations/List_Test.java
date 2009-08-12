@@ -8,7 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.Arrays;
 import junit.framework.Assert;
 import java.io.ByteArrayOutputStream;

@@ -16,12 +16,138 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 
 /**
  * @author fyodor
  */
-public abstract class CollectionSequence<T> extends Sequence<T> {
+public abstract class CollectionSequence<T> extends Sequence<T> implements ICollectionSequence<T>, Collection<T>{
+    
+    public T addElement(T t) {
+        if (Sequence.IGNORE_NULL_VALUES) {
+            if (t == null) { return null; }
+        }
+        getCollection().add(t);
+        return t;
+    }
+
+    public T removeElement(T t) {
+        if (remove((Object) t)) { return t; }
+        return null;
+    }
+
+    public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (seq == null) { return this; }
+        }
+        if (seq.toIterable() instanceof Collection) {
+            getCollection().addAll((Collection<? extends T>) seq.toIterable());
+        }
+        else {
+            for (T t : seq.toIterable()) {
+                getCollection().add(t);
+            }
+        }
+        return this;
+    }
+
+    public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
+        if (Sequence.USE_NULL_SEQUENCE) {
+            if (seq == null) { return this; }
+        }
+        if (seq.toIterable() instanceof Collection) {
+            getCollection().removeAll(
+                    (Collection<? extends T>) seq.toIterable());
+        }
+        else {
+            for (T t : seq.toIterable()) {
+                getCollection().remove(t);
+            }
+        }
+        return this;
+    }
+
+    // Delegated methods
+    
+    public boolean add(T e) {
+        return getCollection().add(e);
+    }
+
+    public boolean addAll(Collection<? extends T> c) {
+        return getCollection().addAll(c);
+    }
+
+    public void clear() {
+        getCollection().clear();
+    }
+
+    public boolean contains(Object o) {
+        return getCollection().contains(o);
+    }
+
+    public boolean containsAll(Collection<?> c) {
+        return getCollection().containsAll(c);
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return getCollection().isEmpty();
+    }
+    
+    public boolean remove(Object o) {
+        return getCollection().remove(o);
+    }
+
+    public boolean removeAll(Collection<?> c) {
+        return getCollection().removeAll(c);
+    }
+
+    public boolean retainAll(Collection<?> c) {
+        return getCollection().retainAll(c);
+    }
+
+    public int size() {
+        return getCollection().size();
+    }
+
+    public Object[] toArray() {
+        return getCollection().toArray();
+    }
+
+    public <U> U[] toArray(U[] a) {
+        return getCollection().toArray(a);
+    }
+
+    public Iterator<T> iterator() {
+        return getCollection().iterator();
+    }
+    
+    // ISequence
+    
+    @Override
+    public int count() {
+        return getCollection().size();
+    }
+    
+    // Object 
+    
+    @SuppressWarnings("unchecked")
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof CollectionSequence) {
+            Collection<T> thatColl = ((CollectionSequence<T>)o).getCollection();
+            Collection<T> thisColl = getCollection();
+            if (thisColl == thatColl) { return true; }
+            return thisColl != null ? thisColl.equals(thatColl) : false;
+        }
+        return super.equals(o);
+    }
+    
+    @Override
+    public int hashCode() {
+        return getCollection().hashCode();
+    }
 
     protected abstract Collection<T> getCollection ();
     

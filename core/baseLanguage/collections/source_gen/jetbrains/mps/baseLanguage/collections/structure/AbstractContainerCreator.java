@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AbstractContainerCreator extends AbstractCreator {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
+  public static final String CLNK_AvailableFor = "availableFor";
   public static final String ELEMENT_TYPE = "elementType";
   public static final String COPY_FROM = "copyFrom";
   public static final String INIT_VALUE = "initValue";

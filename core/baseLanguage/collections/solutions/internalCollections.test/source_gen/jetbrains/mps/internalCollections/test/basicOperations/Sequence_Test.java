@@ -13,8 +13,8 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Arrays;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.ArrayList;
@@ -309,7 +309,7 @@ __switch__:
   @Test()
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, ListSequence.fromIterable(input).toGenericArray(Integer.class)));
+    Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
     for(Iterator<Integer> it = input.iterator() ; it.hasNext() ; i++ ) {
@@ -377,7 +377,7 @@ __switch__:
     Iterable<Integer> TEST = test;
     test = TEST;
     int[] iarr = ArrayUtils.toIntArray(Sequence.fromIterable(test));
-    int foo = ListSequence.fromIterable(test).toGenericArray(Integer.class)[0];
+    int foo = Sequence.fromIterable(test).toGenericArray(Integer.class)[0];
     Iterable<Character> empty = Sequence.fromIterable(Collections.<Character>emptyList());
     char[] carr = ArrayUtils.toCharArray(Sequence.fromIterable(empty));
     Assert.assertEquals(0, carr.length);

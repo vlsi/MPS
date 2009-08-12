@@ -21,7 +21,7 @@ public class typeof_ValueAccessOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825522780", true), (SNode)new _Quotations.QuotationClass_162().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240825584221), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240825516045), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825542671", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825522780", true), (SNode)new _Quotations.QuotationClass_149().createNode(typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1240825584221), typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1240825516045), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240825542671", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;

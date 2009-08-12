@@ -345,6 +345,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_PopOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_PushOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_container_creator_not_primitive_array_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -465,6 +473,54 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_QueueType_QueueType_withWildcard_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new sequence_supertypeOf_queue_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_QueueType_ClassiType_Queue_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_DequeType_ClassiType_Deque_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new queue_supertypeOf_deque_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_StackType_ClassiType_Deque_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_StackType_StackType_withWildcard_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new sequence_supertypeOf_stack_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new stack_supertypeOf_deque_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_linkedlist_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       ComparisonRule_Runtime comparisonRule = new set_type_comparableWith_Set_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
@@ -478,6 +534,18 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       ComparisonRule_Runtime comparisonRule = new sequence_type_comparableWith_Iterable_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new queue_type_comparableWith_Queue_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new deque_type_comparableWith_Deque_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
+      ComparisonRule_Runtime comparisonRule = new stack_type_comparableWith_Deque_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
     {

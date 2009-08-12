@@ -8,12 +8,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveElementOperation extends AbstractListOperation {
+public class RemoveElementOperation extends SequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ARGUMENT = "argument";
 
   public RemoveElementOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RemoveElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RemoveElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RemoveElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RemoveElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RemoveElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RemoveElementOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getArgument() {

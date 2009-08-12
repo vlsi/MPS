@@ -19,7 +19,7 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = hashMapCreator;
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082325421", true), (SNode)new _Quotations.QuotationClass_39().createNode(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082330971", intentionProvider);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082325421", true), (SNode)new _Quotations.QuotationClass_35().createNode(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198082330971", intentionProvider);
     }
   }
 

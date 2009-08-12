@@ -7,12 +7,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveLastElementOperation extends AbstractListOperation {
+public class RemoveLastElementOperation extends SequenceOperation implements IListOperation, IDequeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public RemoveLastElementOperation(SNode node) {
     super(node);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(RemoveLastElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RemoveLastElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RemoveLastElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RemoveLastElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RemoveLastElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RemoveLastElementOperation.VIRTUAL_PACKAGE, value);
+  }
+
 
   public static RemoveLastElementOperation newInstance(SModel sm, boolean init) {
     return (RemoveLastElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();

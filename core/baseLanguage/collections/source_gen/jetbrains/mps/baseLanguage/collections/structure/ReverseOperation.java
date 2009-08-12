@@ -7,12 +7,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ReverseOperation extends AbstractListOperation {
+public class ReverseOperation extends SequenceOperation implements IListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ReverseOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public ReverseOperation(SNode node) {
     super(node);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(ReverseOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ReverseOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ReverseOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ReverseOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ReverseOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ReverseOperation.VIRTUAL_PACKAGE, value);
+  }
+
 
   public static ReverseOperation newInstance(SModel sm, boolean init) {
     return (ReverseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation", sm, GlobalScope.getInstance(), init).getAdapter();

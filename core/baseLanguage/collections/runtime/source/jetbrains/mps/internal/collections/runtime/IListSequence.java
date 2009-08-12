@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * @author fyodor
  */
-public interface IListSequence<T> extends ISequence<T>, List<T> {
+public interface IListSequence<T> extends ICollectionSequence<T>, ISequence<T>, List<T> {
 
     T addElement (T t);
     

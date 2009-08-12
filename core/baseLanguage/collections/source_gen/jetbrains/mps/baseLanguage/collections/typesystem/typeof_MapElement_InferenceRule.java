@@ -21,7 +21,7 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(mapElement, "map", true);
       BaseIntentionProvider intentionProvider = null;
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083507709", true), (SNode)new _Quotations.QuotationClass_40().createNode(typeCheckingContext.getEquationManager().getRepresentator(keyType_typevar_1198083488673), typeCheckingContext.getEquationManager().getRepresentator(valueType_typevar_1198083495346), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083568591", false, 0, intentionProvider);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083507709", true), (SNode)new _Quotations.QuotationClass_36().createNode(typeCheckingContext.getEquationManager().getRepresentator(keyType_typevar_1198083488673), typeCheckingContext.getEquationManager().getRepresentator(valueType_typevar_1198083495346), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1198083568591", false, 0, intentionProvider);
     }
     {
       SNode _nodeToCheck_1029348928467 = mapElement;

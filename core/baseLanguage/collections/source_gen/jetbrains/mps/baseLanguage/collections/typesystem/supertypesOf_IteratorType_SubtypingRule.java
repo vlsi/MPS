@@ -15,7 +15,7 @@ public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode iteratorType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_112().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_100().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

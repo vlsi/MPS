@@ -8,12 +8,39 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveAtElementOperation extends AbstractListOperation {
+public class RemoveAtElementOperation extends SequenceOperation implements IListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INDEX = "index";
 
   public RemoveAtElementOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RemoveAtElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RemoveAtElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RemoveAtElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RemoveAtElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RemoveAtElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RemoveAtElementOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getIndex() {

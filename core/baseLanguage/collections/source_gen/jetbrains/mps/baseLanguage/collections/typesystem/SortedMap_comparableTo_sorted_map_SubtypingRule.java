@@ -15,7 +15,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_155().createNode(this.myMatchingPattern.PatternVar10, this.myMatchingPattern.PatternVar9, typeCheckingContext);
+    return new _Quotations.QuotationClass_142().createNode(this.myMatchingPattern.PatternVar10, this.myMatchingPattern.PatternVar9, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

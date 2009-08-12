@@ -15,7 +15,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_34().createNode(SLinkOperations.getTarget(type, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_30().createNode(SLinkOperations.getTarget(type, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

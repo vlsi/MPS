@@ -7,12 +7,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveFirstElementOperation extends AbstractListOperation {
+public class RemoveFirstElementOperation extends SequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public RemoveFirstElementOperation(SNode node) {
     super(node);
   }
+
+  public String getShortDescription() {
+    return this.getProperty(RemoveFirstElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RemoveFirstElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RemoveFirstElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RemoveFirstElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RemoveFirstElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RemoveFirstElementOperation.VIRTUAL_PACKAGE, value);
+  }
+
 
   public static RemoveFirstElementOperation newInstance(SModel sm, boolean init) {
     return (RemoveFirstElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();

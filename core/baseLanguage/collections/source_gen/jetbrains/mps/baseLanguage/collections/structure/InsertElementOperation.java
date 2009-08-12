@@ -8,13 +8,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class InsertElementOperation extends AbstractListOperation {
+public class InsertElementOperation extends SequenceOperation implements IListOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INDEX = "index";
   public static final String ELEMENT = "element";
 
   public InsertElementOperation(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(InsertElementOperation.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(InsertElementOperation.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InsertElementOperation.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InsertElementOperation.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InsertElementOperation.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InsertElementOperation.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getIndex() {
