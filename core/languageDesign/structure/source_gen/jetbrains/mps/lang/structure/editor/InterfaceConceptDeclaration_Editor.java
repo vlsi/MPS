@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -342,12 +342,17 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createTransactionalProperty_8145_0(EditorContext editorContext, SNode node) {
+  private EditorCell createTransactionalProperty_8145_0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     EditorCell_Property editorCell = null;
     {
-      ModelAccessor modelAccessor = this._modelAcessorFactory_1216387630008(editorContext, node);
+      ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
+
+        public void doCommit(final String oldValue, final String newValue) {
+          AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
+        }
+      };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
       editorCell.setCellId("TransactionalProperty_8145_0");
@@ -362,15 +367,6 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public ModelAccessor _modelAcessorFactory_1216387630008(final EditorContext editorContext, final SNode node) {
-    return new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
-
-      public void doCommit(final String oldValue, final String newValue) {
-        AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
-      }
-    };
   }
 
   private EditorCell createRefNodeList_8145_0(EditorContext editorContext, SNode node) {
