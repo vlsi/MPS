@@ -148,10 +148,6 @@ public class QueriesGenerated {
     return "_" + _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1176724076895(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_modelAccessorFactory_" + _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1176794975313(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "_cellProviderFactory_" + _context.getNode().getId();
   }
@@ -1024,10 +1020,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "inspectedCellModel", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1176721900129(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true) != null;
-  }
-
   public static boolean ifMacro_Condition_1176900384370(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true) != null;
   }
@@ -1332,18 +1324,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1176722308095(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "getter", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1176722343777(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "setter", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1176722377888(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "validator", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1176795160403(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
   }
@@ -1590,6 +1570,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1236442846529(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3031123562487795361(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "getter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3031123562487795378(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "setter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3031123562487795395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "validator", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5170495790389308644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
