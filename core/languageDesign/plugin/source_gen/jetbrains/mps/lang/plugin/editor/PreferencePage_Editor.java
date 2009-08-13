@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -22,7 +24,6 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
@@ -99,7 +100,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6322_3(editorContext, node, "icon"));
     editorCell.addEditorCell(this.createConstant_6322_4(editorContext, node, ":"));
     editorCell.addEditorCell(this.createAlternation_6322_0(editorContext, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(editorContext, node, PreferencePage_Editor._QueryFunction_JComponent_3031123562489857222(node, editorContext), "_3031123562489857221"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(editorContext, node, PreferencePage_Editor._QueryFunction_JComponent_2487769997674660643(node, editorContext), "_2487769997674660642"));
     return editorCell;
   }
 
@@ -268,9 +269,14 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createImage_6322_0(EditorContext editorContext, SNode node) {
+  private EditorCell createImage_6322_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, _image_provider_3031123562489857211(node, editorContext));
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
+
+      public String invoke() {
+        return SPropertyOperations.getString(node, "icon");
+      }
+    }.invoke());
     editorCell.setCellId("Image_6322_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -390,10 +396,6 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   }
 
 
-  public static String _image_provider_3031123562489857211(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "icon");
-  }
-
   private static boolean renderingCondition6322_0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
     IModule module = EditorUtil.findAnchorModule(node);
@@ -411,7 +413,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_3031123562489857222(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_2487769997674660643(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 

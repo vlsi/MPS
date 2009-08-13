@@ -14,9 +14,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -143,7 +144,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_4170_6(editorContext, node, "icon:"));
     editorCell.addEditorCell(this.createAlternation_4170_0(editorContext, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(editorContext, node, ToolDeclaration_Editor._QueryFunction_JComponent_3031123562489857003(node, editorContext), "_3031123562489857002"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(editorContext, node, ToolDeclaration_Editor._QueryFunction_JComponent_2487769997674660424(node, editorContext), "_2487769997674660423"));
     return editorCell;
   }
 
@@ -335,9 +336,14 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createImage_4170_0(EditorContext editorContext, SNode node) {
+  private EditorCell createImage_4170_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, _image_provider_3031123562489856992(node, editorContext));
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
+
+      public String invoke() {
+        return SPropertyOperations.getString(node, "icon");
+      }
+    }.invoke());
     editorCell.setCellId("Image_4170_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -519,10 +525,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static String _image_provider_3031123562489856992(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "icon");
-  }
-
   private static boolean renderingCondition4170_0(SNode node, EditorContext editorContext, IScope scope) {
     return ToolDeclaration_Behavior.call_hasNumber_1213877425741(node);
   }
@@ -544,7 +546,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_3031123562489857003(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_2487769997674660424(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 

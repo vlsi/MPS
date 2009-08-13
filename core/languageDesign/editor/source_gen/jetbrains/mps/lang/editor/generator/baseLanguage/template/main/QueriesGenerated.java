@@ -187,10 +187,6 @@ public class QueriesGenerated {
     return QueryFunction_StyleParameter_Behavior.call_getQueryMethodName_1221482178305(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1176900378594(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_image_provider_" + _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1182981596975(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "nullText");
   }
@@ -1016,10 +1012,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "inspectedCellModel", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1176900384370(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true) != null;
-  }
-
   public static boolean ifMacro_Condition_1176900515091(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true) != null;
   }
@@ -1324,10 +1316,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1176900452901(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1182994459052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "ifTrueCellModel", true);
   }
@@ -1562,6 +1550,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1236442846529(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_2487769997674436898(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3031123562487795361(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

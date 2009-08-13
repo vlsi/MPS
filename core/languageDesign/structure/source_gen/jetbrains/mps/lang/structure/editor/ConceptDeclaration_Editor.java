@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -26,7 +28,6 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -447,9 +448,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createImage_0886_0(EditorContext editorContext, SNode node) {
+  private EditorCell createImage_0886_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, _image_provider_1161165534970(node, editorContext));
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
+
+      public String invoke() {
+        return SPropertyOperations.getString(node, "iconPath");
+      }
+    }.invoke());
     editorCell.setCellId("Image_0886_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -656,10 +662,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
-  public static String _image_provider_1161165534970(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "iconPath");
-  }
 
   private static boolean renderingCondition0886_0(SNode node, EditorContext editorContext, IScope scope) {
     Language l = SModelUtil.getDeclaringLanguage(node, scope);
