@@ -39,9 +39,9 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7061_3(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_7061_0(editorContext, node, "replace with"));
-    editorCell.addEditorCell(this.createConstant_7061_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7061_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7061_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7061_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7061_0(editorContext, node));
     return editorCell;
   }
@@ -53,12 +53,12 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7061_2(editorContext, node, "replace node (custom node concept)"));
+    editorCell.addEditorCell(this.createConstant_7061_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7061_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace with");
     editorCell.setCellId("Constant_7061_0");
     {
       Style style = editorCell.getStyle();
@@ -68,8 +68,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7061_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7061_1");
     {
       Style style = editorCell.getStyle();
@@ -79,8 +79,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7061_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace node (custom node concept)");
     editorCell.setCellId("Constant_7061_2");
     {
       Style style = editorCell.getStyle();
@@ -91,8 +91,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7061_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_7061_3");
     {
       Style style = editorCell.getStyle();

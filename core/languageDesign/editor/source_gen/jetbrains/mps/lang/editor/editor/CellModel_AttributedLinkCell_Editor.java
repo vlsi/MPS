@@ -27,10 +27,10 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5840_0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_5840_0(editorContext, node, ">"));
-    editorCell.addEditorCell(this.createConstant_5840_2(editorContext, node, "[//"));
-    editorCell.addEditorCell(this.createConstant_5840_1(editorContext, node, "attributed link"));
-    editorCell.addEditorCell(this.createConstant_5840_3(editorContext, node, "//]"));
+    editorCell.addEditorCell(this.createConstant_5840_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5840_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5840_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5840_3(editorContext, node));
     return editorCell;
   }
 
@@ -51,8 +51,8 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5840_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5840_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5840_0");
     {
       Style style = editorCell.getStyle();
@@ -63,16 +63,16 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5840_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5840_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed link");
     editorCell.setCellId("Constant_5840_1");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5840_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5840_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[//");
     editorCell.setCellId("Constant_5840_2");
     {
       Style style = editorCell.getStyle();
@@ -84,8 +84,8 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5840_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5840_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//]");
     editorCell.setCellId("Constant_5840_3");
     {
       Style style = editorCell.getStyle();

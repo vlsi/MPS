@@ -37,8 +37,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0528_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0528_0");
-    editorCell.addEditorCell(this.createConstant_0528_0(editorContext, node, "font-style"));
-    editorCell.addEditorCell(this.createConstant_0528_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_0528_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0528_1(editorContext, node));
     if (renderingCondition0528_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_0528_0(editorContext, node));
     }
@@ -48,8 +48,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0528_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0528_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "font-style");
     editorCell.setCellId("Constant_0528_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -57,8 +57,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0528_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0528_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_0528_1");
     editorCell.setDefaultText("");
     return editorCell;

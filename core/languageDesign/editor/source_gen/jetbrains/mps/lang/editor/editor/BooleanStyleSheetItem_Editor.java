@@ -31,7 +31,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2675_0");
     editorCell.addEditorCell(this.createConceptProperty_2675_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2675_0(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_2675_0(editorContext, node));
     if (renderingCondition2675_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_2675_0(editorContext, node));
     }
@@ -41,8 +41,8 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2675_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2675_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2675_0");
     editorCell.setDefaultText("");
     return editorCell;

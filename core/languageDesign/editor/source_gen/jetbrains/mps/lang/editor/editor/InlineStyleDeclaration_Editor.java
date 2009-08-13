@@ -38,7 +38,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_7686_0");
     editorCell.addEditorCell(this.createCollection_7686_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7686_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7686_0(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7686_0(editorContext, node));
     return editorCell;
   }
 
@@ -50,7 +50,7 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefCell_7686_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7686_1(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7686_1(editorContext, node));
     return editorCell;
   }
 
@@ -66,16 +66,16 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7686_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7686_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7686_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7686_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7686_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7686_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

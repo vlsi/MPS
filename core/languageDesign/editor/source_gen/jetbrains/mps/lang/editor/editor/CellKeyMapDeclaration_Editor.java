@@ -45,13 +45,13 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6671_0");
     editorCell.addEditorCell(this.createCollection_6671_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6671_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6671_6(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6671_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6671_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6671_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6671_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6671_5(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6671_2(editorContext, node, "keymap items:"));
-    editorCell.addEditorCell(this.createConstant_6671_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6671_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6671_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6671_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6671_0(editorContext, node));
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6671_0(editorContext, node, "keymap"));
+    editorCell.addEditorCell(this.createConstant_6671_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6671_0(editorContext, node));
     return editorCell;
   }
@@ -75,7 +75,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6671_4(editorContext, node, "applicable concept:"));
+    editorCell.addEditorCell(this.createConstant_6671_4(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6671_0(editorContext, node));
     return editorCell;
   }
@@ -87,20 +87,20 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6671_7(editorContext, node, "everyModel"));
+    editorCell.addEditorCell(this.createConstant_6671_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6671_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap");
     editorCell.setCellId("Constant_6671_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6671_1");
     {
       Style style = editorCell.getStyle();
@@ -110,8 +110,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap items:");
     editorCell.setCellId("Constant_6671_2");
     {
       Style style = editorCell.getStyle();
@@ -121,8 +121,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6671_3");
     {
       Style style = editorCell.getStyle();
@@ -132,8 +132,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable concept:");
     editorCell.setCellId("Constant_6671_4");
     {
       Style style = editorCell.getStyle();
@@ -143,8 +143,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6671_5");
     {
       Style style = editorCell.getStyle();
@@ -154,8 +154,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6671_6");
     {
       Style style = editorCell.getStyle();
@@ -165,8 +165,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6671_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6671_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "everyModel");
     editorCell.setCellId("Constant_6671_7");
     editorCell.setDefaultText("");
     return editorCell;

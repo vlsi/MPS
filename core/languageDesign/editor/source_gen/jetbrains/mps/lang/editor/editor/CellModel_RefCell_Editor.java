@@ -39,9 +39,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8529_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.addEditorCell(this.createComponent_8529_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8529_3(editorContext, node, "%"));
+    editorCell.addEditorCell(this.createConstant_8529_3(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8529_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8529_4(editorContext, node, "%"));
+    editorCell.addEditorCell(this.createConstant_8529_4(editorContext, node));
     if (renderingCondition8529_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_8529_0(editorContext, node));
     }
@@ -57,8 +57,8 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.addEditorCell(this.createComponent_8529_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8529_6(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8529_0(editorContext, node, "Referent node cell:"));
+    editorCell.addEditorCell(this.createConstant_8529_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8529_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8529_5(editorContext, node));
     return editorCell;
   }
@@ -71,7 +71,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_8529_1(editorContext, node, "link"));
+    editorCell.addEditorCell(this.createConstant_8529_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8529_1(editorContext, node));
     return editorCell;
   }
@@ -84,7 +84,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_8529_2(editorContext, node, "effective type (deprectated)"));
+    editorCell.addEditorCell(this.createConstant_8529_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8529_2(editorContext, node));
     return editorCell;
   }
@@ -97,7 +97,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_8529_5(editorContext, node, "text*"));
+    editorCell.addEditorCell(this.createConstant_8529_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8529_0(editorContext, node));
     return editorCell;
   }
@@ -125,7 +125,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_8529_7(editorContext, node, "empty text*"));
+    editorCell.addEditorCell(this.createConstant_8529_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8529_3(editorContext, node));
     return editorCell;
   }
@@ -148,24 +148,24 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Referent node cell:");
     editorCell.setCellId("Constant_8529_0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link");
     editorCell.setCellId("Constant_8529_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "effective type (deprectated)");
     editorCell.setCellId("Constant_8529_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     {
@@ -177,32 +177,32 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_8529_3");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_8529_4");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_8529_5");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8529_6");
     {
       Style style = editorCell.getStyle();
@@ -212,8 +212,8 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8529_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8529_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");
     editorCell.setCellId("Constant_8529_7");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

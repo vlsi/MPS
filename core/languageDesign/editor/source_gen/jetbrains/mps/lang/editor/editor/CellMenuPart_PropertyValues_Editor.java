@@ -37,9 +37,9 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0074_3(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_0074_0(editorContext, node, "values"));
-    editorCell.addEditorCell(this.createConstant_0074_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_0074_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0074_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0074_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0074_0(editorContext, node));
     return editorCell;
   }
@@ -51,12 +51,12 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0074_2(editorContext, node, "property values"));
+    editorCell.addEditorCell(this.createConstant_0074_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0074_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0074_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "values");
     editorCell.setCellId("Constant_0074_0");
     {
       Style style = editorCell.getStyle();
@@ -66,8 +66,8 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0074_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0074_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_0074_1");
     {
       Style style = editorCell.getStyle();
@@ -77,8 +77,8 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0074_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0074_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property values");
     editorCell.setCellId("Constant_0074_2");
     {
       Style style = editorCell.getStyle();
@@ -89,8 +89,8 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0074_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0074_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_0074_3");
     {
       Style style = editorCell.getStyle();

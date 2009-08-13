@@ -38,7 +38,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7117_0(editorContext, node, "focus policy applicable:"));
+    editorCell.addEditorCell(this.createConstant_7117_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7117_1(editorContext, node));
     return editorCell;
   }
@@ -67,8 +67,8 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7117_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7117_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy applicable:");
     editorCell.setCellId("Constant_7117_0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -45,11 +45,11 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9910_0");
     editorCell.addEditorCell(this.createCollection_9910_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9910_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_9910_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9910_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9910_3(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_9910_4(editorContext, node, "actions:"));
-    editorCell.addEditorCell(this.createConstant_9910_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_9910_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9910_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9910_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9910_0(editorContext, node));
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9910_0(editorContext, node, "action map"));
+    editorCell.addEditorCell(this.createConstant_9910_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9910_0(editorContext, node));
     return editorCell;
   }
@@ -73,20 +73,20 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9910_2(editorContext, node, "applicable concept:"));
+    editorCell.addEditorCell(this.createConstant_9910_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9910_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action map");
     editorCell.setCellId("Constant_9910_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_9910_1");
     {
       Style style = editorCell.getStyle();
@@ -96,8 +96,8 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable concept:");
     editorCell.setCellId("Constant_9910_2");
     {
       Style style = editorCell.getStyle();
@@ -107,8 +107,8 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_9910_3");
     {
       Style style = editorCell.getStyle();
@@ -118,8 +118,8 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "actions:");
     editorCell.setCellId("Constant_9910_4");
     {
       Style style = editorCell.getStyle();
@@ -129,8 +129,8 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9910_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9910_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_9910_5");
     {
       Style style = editorCell.getStyle();

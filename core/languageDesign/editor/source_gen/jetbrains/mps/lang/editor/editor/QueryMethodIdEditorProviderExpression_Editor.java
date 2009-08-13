@@ -39,9 +39,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   private EditorCell createCollection_9522_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9522_0");
-    editorCell.addEditorCell(this.createConstant_9522_0(editorContext, node, "<QUERY["));
+    editorCell.addEditorCell(this.createConstant_9522_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9522_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9522_4(editorContext, node, "]QUERY>"));
+    editorCell.addEditorCell(this.createConstant_9522_4(editorContext, node));
     return editorCell;
   }
 
@@ -64,9 +64,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
     editorCell.addEditorCell(this.createRefNode_9522_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9522_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9522_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_9522_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9522_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9522_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_9522_2(editorContext, node));
     return editorCell;
   }
 
@@ -77,7 +77,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9522_3(editorContext, node, "import also :"));
+    editorCell.addEditorCell(this.createConstant_9522_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9522_1(editorContext, node));
     return editorCell;
   }
@@ -89,7 +89,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9522_5(editorContext, node, "empty text:"));
+    editorCell.addEditorCell(this.createConstant_9522_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9522_1(editorContext, node));
     return editorCell;
   }
@@ -101,13 +101,13 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9522_6(editorContext, node, "query id property :"));
+    editorCell.addEditorCell(this.createConstant_9522_6(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9522_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<QUERY[");
     editorCell.setCellId("Constant_9522_0");
     {
       Style style = editorCell.getStyle();
@@ -117,31 +117,31 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9522_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9522_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import also :");
     editorCell.setCellId("Constant_9522_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]QUERY>");
     editorCell.setCellId("Constant_9522_4");
     {
       Style style = editorCell.getStyle();
@@ -151,15 +151,15 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text:");
     editorCell.setCellId("Constant_9522_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9522_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9522_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query id property :");
     editorCell.setCellId("Constant_9522_6");
     editorCell.setDefaultText("");
     return editorCell;

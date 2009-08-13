@@ -5,8 +5,8 @@ package jetbrains.mps.lang.editor.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.SelectOperation_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -46,10 +46,6 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1167271337341(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"));
-  }
-
-  public static boolean baseMappingRule_Condition_1176492098631(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "componentProvider", true) != null;
   }
 
   public static boolean baseMappingRule_Condition_1201269933731(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -564,10 +560,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString_def(_context.getNode(), "position", null);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1216382671770(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_modelAcessorFactory_" + _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1216560952382(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString_def(_context.getNode(), "position", null);
   }
@@ -618,6 +610,18 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238054639017(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "labelName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_996730828436724784(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.convertToMetaString(SPropertyOperations.getString(_context.getNode(), "text"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_996730828437272764(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return EditorCellModel_Behavior.call_getFactoryMethodName_1216812165609(_context.getNode(), _context);
+  }
+
+  public static Object propertyMacro_GetPropertyValue_996730828437274956(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "_" + _context.getNode().getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1767562947360483216(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -910,6 +914,15 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1235665716093(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
+  }
+
+  public static Object referenceMacro_GetReferent_996730828437274970(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method"), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_996730828437274981(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode queryMethod_output = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "componentProvider", true), "jcomponent_query_method");
+    return SNodeOperations.cast(SNodeOperations.getContainingRoot(queryMethod_output), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
   public static Object referenceMacro_GetReferent_1767562947360483792(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1300,14 +1313,6 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "position", "FIRST", "NONE");
   }
 
-  public static SNode sourceNodeQuery_1168383269962(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), "cellModel", true);
-  }
-
-  public static SNode sourceNodeQuery_1168383421191(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), "inspectedCellModel", true);
-  }
-
   public static SNode sourceNodeQuery_1176476266244(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1316,20 +1321,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1182994459052(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "ifTrueCellModel", true);
-  }
-
-  public static SNode sourceNodeQuery_1182994474085(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "ifFalseCellModel", true);
-  }
-
   public static SNode sourceNodeQuery_1184071848755(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184139503856(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
   }
 
   public static SNode sourceNodeQuery_1184142273387(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1346,10 +1339,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184145018780(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184177402615(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
   }
 
   public static SNode sourceNodeQuery_1186780312709(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1546,6 +1535,30 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1236442846529(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828436727092(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "ifTrueCellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828436727112(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "ifFalseCellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828436728652(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828436923520(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828436925654(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inspectedCellModel", true);
+  }
+
+  public static SNode sourceNodeQuery_996730828437097189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "cellModel", true);
   }
 
   public static SNode sourceNodeQuery_2487769997674436898(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1852,6 +1865,10 @@ public class QueriesGenerated {
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1236442926115(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return QueriesUtil.getGeneratedClassByAncestor(_context.getNode(), _context);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_996730828437274999(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
   }
 
 }

@@ -27,7 +27,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7515_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7515_0");
-    editorCell.addEditorCell(this.createConstant_7515_0(editorContext, node, "action"));
+    editorCell.addEditorCell(this.createConstant_7515_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7515_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7515_1(editorContext, node));
     return editorCell;
@@ -53,8 +53,8 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7515_1(editorContext, node, "execute"));
-    editorCell.addEditorCell(this.createConstant_7515_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7515_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7515_0(editorContext, node));
     return editorCell;
   }
@@ -66,14 +66,14 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7515_3(editorContext, node, "description"));
-    editorCell.addEditorCell(this.createConstant_7515_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7515_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7515_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7515_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action");
     editorCell.setCellId("Constant_7515_0");
     {
       Style style = editorCell.getStyle();
@@ -83,15 +83,15 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7515_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
     editorCell.setCellId("Constant_7515_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7515_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7515_2");
     {
       Style style = editorCell.getStyle();
@@ -101,15 +101,15 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7515_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description");
     editorCell.setCellId("Constant_7515_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7515_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7515_4");
     {
       Style style = editorCell.getStyle();

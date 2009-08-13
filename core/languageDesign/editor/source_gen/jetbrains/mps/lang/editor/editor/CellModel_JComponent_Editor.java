@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class CellModel_JComponent_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_3375_0(editorContext, node, "$swing component$");
+    return this.createConstant_3375_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
@@ -33,21 +33,21 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3375_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3375_1");
-    editorCell.addEditorCell(this.createConstant_3375_1(editorContext, node, "component provider:"));
+    editorCell.addEditorCell(this.createConstant_3375_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3375_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3375_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3375_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$swing component$");
     editorCell.setCellId("Constant_3375_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3375_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3375_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component provider:");
     editorCell.setCellId("Constant_3375_1");
     editorCell.setDefaultText("");
     return editorCell;

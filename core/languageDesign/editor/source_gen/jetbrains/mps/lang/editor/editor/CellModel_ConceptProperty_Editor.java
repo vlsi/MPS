@@ -52,8 +52,8 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createComponent_6697_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6697_3(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6697_0(editorContext, node, "\u0421oncept property cell:"));
+    editorCell.addEditorCell(this.createConstant_6697_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6697_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6697_2(editorContext, node));
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_6697_1(editorContext, node, "property"));
+    editorCell.addEditorCell(this.createConstant_6697_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6697_1(editorContext, node));
     return editorCell;
   }
@@ -96,7 +96,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_6697_2(editorContext, node, "text*"));
+    editorCell.addEditorCell(this.createConstant_6697_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6697_1(editorContext, node));
     return editorCell;
   }
@@ -109,7 +109,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_6697_4(editorContext, node, "empty text*"));
+    editorCell.addEditorCell(this.createConstant_6697_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6697_3(editorContext, node));
     return editorCell;
   }
@@ -136,32 +136,32 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u0421oncept property cell:");
     editorCell.setCellId("Constant_6697_0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_6697_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_6697_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6697_3");
     {
       Style style = editorCell.getStyle();
@@ -172,8 +172,8 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");
     editorCell.setCellId("Constant_6697_4");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

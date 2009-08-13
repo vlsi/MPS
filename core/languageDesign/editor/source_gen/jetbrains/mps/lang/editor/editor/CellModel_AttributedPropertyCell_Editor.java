@@ -27,9 +27,9 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0981_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_0981_1(editorContext, node, "[/>"));
-    editorCell.addEditorCell(this.createConstant_0981_0(editorContext, node, "attributed property"));
-    editorCell.addEditorCell(this.createConstant_0981_2(editorContext, node, "</]"));
+    editorCell.addEditorCell(this.createConstant_0981_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0981_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0981_2(editorContext, node));
     return editorCell;
   }
 
@@ -50,16 +50,16 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0981_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed property");
     editorCell.setCellId("Constant_0981_0");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0981_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[/>");
     editorCell.setCellId("Constant_0981_1");
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0981_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</]");
     editorCell.setCellId("Constant_0981_2");
     {
       Style style = editorCell.getStyle();

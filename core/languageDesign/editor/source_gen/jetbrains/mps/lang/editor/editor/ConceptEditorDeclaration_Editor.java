@@ -44,7 +44,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7895_0(editorContext, node, "editor for concept"));
+    editorCell.addEditorCell(this.createConstant_7895_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7895_0(editorContext, node));
     return editorCell;
   }
@@ -69,7 +69,7 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7895_1(editorContext, node, "node cell layout:"));
+    editorCell.addEditorCell(this.createConstant_7895_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7895_4(editorContext, node));
     return editorCell;
   }
@@ -107,8 +107,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7895_2(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_7895_3(editorContext, node, "inspected cell layout:"));
+    editorCell.addEditorCell(this.createConstant_7895_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7895_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7895_7(editorContext, node));
     return editorCell;
   }
@@ -126,8 +126,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7895_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7895_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editor for concept");
     editorCell.setCellId("Constant_7895_0");
     {
       Style style = editorCell.getStyle();
@@ -137,8 +137,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7895_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7895_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node cell layout:");
     editorCell.setCellId("Constant_7895_1");
     {
       Style style = editorCell.getStyle();
@@ -148,8 +148,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7895_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7895_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7895_2");
     {
       Style style = editorCell.getStyle();
@@ -159,8 +159,8 @@ public class ConceptEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7895_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7895_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inspected cell layout:");
     editorCell.setCellId("Constant_7895_3");
     {
       Style style = editorCell.getStyle();

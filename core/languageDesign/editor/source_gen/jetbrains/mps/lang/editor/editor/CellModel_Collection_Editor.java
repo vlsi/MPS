@@ -64,8 +64,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createComponent_2102_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2102_4(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_2102_0(editorContext, node, "Cell collection:"));
+    editorCell.addEditorCell(this.createConstant_2102_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2102_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2102_1(editorContext, node));
     return editorCell;
   }
@@ -93,7 +93,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_2102_1(editorContext, node, "cell layout"));
+    editorCell.addEditorCell(this.createConstant_2102_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2102_0(editorContext, node));
     return editorCell;
   }
@@ -106,7 +106,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConstant_2102_2(editorContext, node, "uses braces"));
+    editorCell.addEditorCell(this.createConstant_2102_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2102_0(editorContext, node));
     return editorCell;
   }
@@ -118,7 +118,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2102_3(editorContext, node, "uses folding"));
+    editorCell.addEditorCell(this.createConstant_2102_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2102_1(editorContext, node));
     return editorCell;
   }
@@ -162,7 +162,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2102_8");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_2102_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_2102_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2102_0(editorContext, node));
     return editorCell;
   }
@@ -306,40 +306,40 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cell collection:");
     editorCell.setCellId("Constant_2102_0");
     Styles_StyleSheet.getHeader(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell layout");
     editorCell.setCellId("Constant_2102_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uses braces");
     editorCell.setCellId("Constant_2102_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uses folding");
     editorCell.setCellId("Constant_2102_3");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2102_4");
     {
       Style style = editorCell.getStyle();
@@ -349,8 +349,8 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2102_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2102_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2102_5");
     {
       Style style = editorCell.getStyle();
