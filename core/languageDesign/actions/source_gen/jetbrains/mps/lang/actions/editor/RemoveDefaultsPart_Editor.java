@@ -18,14 +18,14 @@ public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
     return this.createCollection_4285_0(context, node);
   }
 
-  public EditorCell createCollection_4285_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4285_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4285_0");
     editorCell.addEditorCell(this.createConstant_4285_0(context, node, "remove defaults"));
     return editorCell;
   }
 
-  public EditorCell createConstant_4285_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4285_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4285_0");
     {

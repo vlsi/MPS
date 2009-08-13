@@ -20,7 +20,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_2512_0(context, node);
   }
 
-  public EditorCell createCollection_2512_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2512_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2512_0");
     editorCell.addEditorCell(this.createConstant_2512_0(context, node, "Money"));
@@ -32,14 +32,14 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2512_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2512_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2512_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2512_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2512_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2512_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2512_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2512_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2512_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -55,14 +55,14 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2512_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2512_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2512_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_2512_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2512_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
@@ -79,7 +79,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2512_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2512_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("currency");
     provider.setNoTargetText("<no currency>");

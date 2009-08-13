@@ -24,13 +24,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp6619_0;
+  private AbstractCellProvider myReplaceableAlias_Comp6619_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6619_0(context, node);
   }
 
-  public EditorCell createCollection_6619_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6619_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6619_0");
     editorCell.addEditorCell(this.createComponent_6619_0(context, node));
@@ -42,7 +42,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6619_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6619_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp6619_0 == null) {
       this.myReplaceableAlias_Comp6619_0 = new ReplaceableAlias_Comp(node);
     }
@@ -50,7 +50,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6619_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6619_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6619_0");
     {
@@ -62,7 +62,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6619_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6619_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6619_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -70,7 +70,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6619_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6619_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6619_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6619_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -100,7 +100,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6619_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6619_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("prototypeNode");
     provider.setNoTargetText("<no prototype>");
@@ -135,7 +135,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_6619_0(context, node);
     }
 
-    public EditorCell createProperty_6619_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6619_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -36,7 +36,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     return this.createProperty_7633_0(context, node);
   }
 
-  public EditorCell createProperty_7633_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7633_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

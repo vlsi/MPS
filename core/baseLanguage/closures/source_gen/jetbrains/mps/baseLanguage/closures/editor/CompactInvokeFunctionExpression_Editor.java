@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7313_0;
+  private AbstractCellListHandler myListHandler_7313_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7313_0(context, node);
   }
 
-  public EditorCell createCollection_7313_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7313_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7313_0");
     editorCell.addEditorCell(this.createRefNode_7313_0(context, node));
@@ -42,7 +42,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7313_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7313_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7313_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7313_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7313_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7313_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7313_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7313_0(EditorContext context, SNode node) {
     if (this.myListHandler_7313_0 == null) {
       this.myListHandler_7313_0 = new CompactInvokeFunctionExpression_Editor.parameterListHandler_7313_0(node, "parameter", context);
     }
@@ -70,7 +70,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7313_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7313_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -87,7 +87,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class parameterListHandler_7313_0 extends RefNodeListHandler {
+  private static class parameterListHandler_7313_0 extends RefNodeListHandler {
 
     public parameterListHandler_7313_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -140,7 +140,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_7313_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_7313_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_7313_2");
       editorCell.setDefaultText("");

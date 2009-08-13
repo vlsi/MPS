@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TreeNodeKind_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3256_0;
+  private AbstractCellListHandler myListHandler_3256_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3256_0(context, node);
   }
 
-  public EditorCell createCollection_3256_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3256_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3256_0");
     editorCell.addEditorCell(this.createCollection_3256_1(context, node));
@@ -43,7 +43,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3256_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3256_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3256_1");
     {
@@ -56,7 +56,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3256_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3256_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3256_2");
     {
@@ -68,7 +68,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3256_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3256_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3256_0");
     {
@@ -79,21 +79,21 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3256_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3256_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3256_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3256_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3256_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3256_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3256_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3256_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3256_4");
     {
@@ -104,7 +104,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3256_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3256_0(EditorContext context, SNode node) {
     if (this.myListHandler_3256_0 == null) {
       this.myListHandler_3256_0 = new TreeNodeKind_Editor.propertiesListHandler_3256_0(node, "properties", context);
     }
@@ -114,7 +114,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3256_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -132,7 +132,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3256_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("trigger");
     provider.setNoTargetText("<no trigger>");
@@ -149,7 +149,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class propertiesListHandler_3256_0 extends RefNodeListHandler {
+  private static class propertiesListHandler_3256_0 extends RefNodeListHandler {
 
     public propertiesListHandler_3256_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -202,7 +202,7 @@ public class TreeNodeKind_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_3256_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_3256_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_3256_1");
       editorCell.setDefaultText("");

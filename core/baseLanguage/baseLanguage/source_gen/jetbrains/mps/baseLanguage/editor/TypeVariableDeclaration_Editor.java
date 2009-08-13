@@ -30,13 +30,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1944_0;
+  private AbstractCellListHandler myListHandler_1944_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1944_0(context, node);
   }
 
-  public EditorCell createCollection_1944_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1944_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1944_0");
     editorCell.addEditorCell(this.createProperty_1944_0(context, node));
@@ -46,7 +46,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1944_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1944_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1944_1");
     {
@@ -62,7 +62,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1944_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1944_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1944_2");
     {
@@ -75,7 +75,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1944_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1944_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1944_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -83,14 +83,14 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1944_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1944_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1944_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1944_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1944_0(EditorContext context, SNode node) {
     if (this.myListHandler_1944_0 == null) {
       this.myListHandler_1944_0 = new TypeVariableDeclaration_Editor.auxBoundsListHandler_1944_0(node, "auxBounds", context);
     }
@@ -100,7 +100,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1944_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1944_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -119,7 +119,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1944_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1944_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("bound");
     provider.setNoTargetText("<no bound>");
@@ -138,15 +138,15 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1944_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1944_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }
 
-  public static boolean renderingCondition1944_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1944_1(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 
-  public static class auxBoundsListHandler_1944_0 extends RefNodeListHandler {
+  private static class auxBoundsListHandler_1944_0 extends RefNodeListHandler {
 
     public auxBoundsListHandler_1944_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

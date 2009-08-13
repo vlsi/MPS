@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2140_0;
+  private AbstractCellListHandler myListHandler_2140_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2140_0(context, node);
   }
 
-  public EditorCell createCollection_2140_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2140_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2140_0");
     editorCell.addEditorCell(this.createConceptProperty_2140_0(context, node));
@@ -43,7 +43,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2140_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2140_0(EditorContext context, SNode node) {
     if (this.myListHandler_2140_0 == null) {
       this.myListHandler_2140_0 = new IndexedTupleLiteral_Editor.componentListHandler_2140_0(node, "component", context);
     }
@@ -53,7 +53,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2140_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2140_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("leftBracket");
     provider.setNoTargetText("<no leftBracket>");
@@ -76,7 +76,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2140_1(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2140_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("rightBracket");
     provider.setNoTargetText("<no rightBracket>");
@@ -99,7 +99,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class componentListHandler_2140_0 extends RefNodeListHandler {
+  private static class componentListHandler_2140_0 extends RefNodeListHandler {
 
     public componentListHandler_2140_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -152,7 +152,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_2140_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_2140_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_2140_0");
       editorCell.setDefaultText("");

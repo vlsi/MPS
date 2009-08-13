@@ -30,7 +30,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_0674_0(context, node);
   }
 
-  public EditorCell createCollection_0674_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0674_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0674_0");
     editorCell.addEditorCell(this.createConceptProperty_0674_0(context, node));
@@ -45,7 +45,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0674_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0674_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0674_0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
@@ -53,7 +53,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0674_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0674_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0674_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
@@ -66,7 +66,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0674_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0674_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0674_2");
     {
@@ -77,7 +77,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0674_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0674_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("keyType");
     provider.setNoTargetText("<no keyType>");
@@ -94,7 +94,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0674_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0674_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueType");
     provider.setNoTargetText("<no valueType>");
@@ -111,7 +111,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_0674_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_0674_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -135,7 +135,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0674_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0674_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
     provider.setNoTargetText("<no initializer>");
@@ -153,7 +153,7 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition0674_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0674_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "initializer", true) != null);
   }
 

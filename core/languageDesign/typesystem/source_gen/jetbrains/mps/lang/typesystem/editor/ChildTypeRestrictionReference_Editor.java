@@ -23,14 +23,14 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
     return this.createCollection_1751_0(context, node);
   }
 
-  public EditorCell createCollection_1751_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1751_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1751_0");
     editorCell.addEditorCell(this.createRefCell_1751_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_1751_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1751_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("typeRestriction");
     provider.setNoTargetText("<no typeRestriction>");
@@ -66,7 +66,7 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
       return this.createProperty_1751_0(context, node);
     }
 
-    public EditorCell createProperty_1751_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1751_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

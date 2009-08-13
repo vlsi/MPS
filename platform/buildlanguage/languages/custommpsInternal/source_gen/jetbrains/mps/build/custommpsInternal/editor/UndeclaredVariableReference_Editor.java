@@ -25,14 +25,14 @@ public class UndeclaredVariableReference_Editor extends DefaultNodeEditor {
     return this.createCollection_8928_1(context, node);
   }
 
-  public EditorCell createCollection_8928_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8928_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8928_0");
     editorCell.addEditorCell(this.createProperty_8928_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_8928_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8928_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8928_1");
     editorCell.addEditorCell(this.createConstant_8928_0(context, node, "ant name"));
@@ -40,7 +40,7 @@ public class UndeclaredVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8928_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8928_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8928_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class UndeclaredVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8928_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_8928_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -67,7 +67,7 @@ public class UndeclaredVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8928_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_8928_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("antName");
     provider.setNoTargetText("<no antName>");

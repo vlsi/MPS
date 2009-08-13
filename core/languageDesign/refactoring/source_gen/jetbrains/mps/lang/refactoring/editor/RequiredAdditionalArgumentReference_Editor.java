@@ -23,14 +23,14 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     return this.createCollection_3524_0(context, node);
   }
 
-  public EditorCell createCollection_3524_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3524_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3524_0");
     editorCell.addEditorCell(this.createRefCell_3524_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_3524_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3524_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
@@ -66,7 +66,7 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
       return this.createProperty_3524_0(context, node);
     }
 
-    public EditorCell createProperty_3524_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3524_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

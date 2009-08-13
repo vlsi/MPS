@@ -15,7 +15,7 @@ public class DialogExpression_Editor extends DefaultNodeEditor {
     return this.createConstant_6324_0(context, node, "dialog");
   }
 
-  public EditorCell createConstant_6324_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6324_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6324_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);

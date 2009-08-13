@@ -25,13 +25,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class State_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2277_0;
+  private AbstractCellListHandler myListHandler_2277_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2277_0(context, node);
   }
 
-  public EditorCell createCollection_2277_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2277_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2277_0");
     editorCell.addEditorCell(this.createCollection_2277_1(context, node));
@@ -40,7 +40,7 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2277_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2277_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2277_1");
     {
@@ -52,7 +52,7 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2277_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2277_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2277_2");
     {
@@ -64,14 +64,14 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2277_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2277_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2277_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2277_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2277_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2277_1");
     {
@@ -82,14 +82,14 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2277_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2277_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2277_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2277_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2277_0(EditorContext context, SNode node) {
     if (this.myListHandler_2277_0 == null) {
       this.myListHandler_2277_0 = new State_Editor.transitionListHandler_2277_0(node, "transition", context);
     }
@@ -99,7 +99,7 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2277_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2277_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("stateName");
     provider.setNoTargetText("<no stateName>");
@@ -117,7 +117,7 @@ public class State_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class transitionListHandler_2277_0 extends RefNodeListHandler {
+  private static class transitionListHandler_2277_0 extends RefNodeListHandler {
 
     public transitionListHandler_2277_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

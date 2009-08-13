@@ -22,20 +22,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CompositePathComponent_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6133_0;
+  private AbstractCellListHandler myListHandler_6133_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6133_0(context, node);
   }
 
-  public EditorCell createCollection_6133_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6133_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6133_0");
     editorCell.addEditorCell(this.createRefNodeList_6133_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6133_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6133_0(EditorContext context, SNode node) {
     if (this.myListHandler_6133_0 == null) {
       this.myListHandler_6133_0 = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", context);
     }
@@ -49,7 +49,7 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class pathComponentListHandler_6133_0 extends RefNodeListHandler {
+  private static class pathComponentListHandler_6133_0 extends RefNodeListHandler {
 
     public pathComponentListHandler_6133_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

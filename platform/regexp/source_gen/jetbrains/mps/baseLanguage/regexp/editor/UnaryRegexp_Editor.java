@@ -21,7 +21,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_9804_0(context, node);
   }
 
-  public EditorCell createCollection_9804_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9804_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9804_0");
     editorCell.addEditorCell(this.createRefNode_9804_0(context, node));
@@ -29,7 +29,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9804_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9804_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -50,7 +50,7 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9804_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9804_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

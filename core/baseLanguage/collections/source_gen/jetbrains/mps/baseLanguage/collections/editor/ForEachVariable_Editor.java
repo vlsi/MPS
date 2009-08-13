@@ -30,7 +30,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     return this.createCollection_9802_0(context, node);
   }
 
-  public EditorCell createCollection_9802_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9802_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9802_0");
     {
@@ -41,7 +41,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9802_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9802_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

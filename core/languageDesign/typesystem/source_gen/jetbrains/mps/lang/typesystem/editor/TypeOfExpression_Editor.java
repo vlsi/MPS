@@ -31,7 +31,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_6237_1(context, node);
   }
 
-  public EditorCell createCollection_6237_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6237_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6237_0");
     editorCell.addEditorCell(this.createConstant_6237_0(context, node, "typeof"));
@@ -41,7 +41,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6237_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6237_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6237_1");
     editorCell.addEditorCell(this.createConstant_6237_3(context, node, "skip dependency on current:"));
@@ -49,7 +49,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6237_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6237_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6237_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6237_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6237_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6237_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -80,7 +80,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6237_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6237_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6237_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -88,7 +88,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6237_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6237_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6237_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -96,7 +96,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6237_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6237_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("term");
     provider.setNoTargetText("<no term>");
@@ -113,7 +113,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6237_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6237_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("skipDependencyOnCurrent");
     provider.setNoTargetText("<no skipDependencyOnCurrent>");
@@ -132,7 +132,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static Color _StyleParameter_QueryFunction_1214399678001(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_1214399678001(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else

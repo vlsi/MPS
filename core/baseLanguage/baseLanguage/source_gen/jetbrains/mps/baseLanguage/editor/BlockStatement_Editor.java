@@ -21,7 +21,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_6106_0(context, node);
   }
 
-  public EditorCell createCollection_6106_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6106_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6106_0");
     editorCell.addEditorCell(this.createConstant_6106_1(context, node, "{"));
@@ -30,7 +30,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6106_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6106_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6106_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6106_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6106_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6106_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6106_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6106_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statements");
     provider.setNoTargetText("<no statements>");

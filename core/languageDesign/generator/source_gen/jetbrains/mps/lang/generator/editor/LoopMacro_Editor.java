@@ -26,7 +26,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class LoopMacro_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myNodeMacro_postfix8828_0;
+  private AbstractCellProvider myNodeMacro_postfix8828_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8828_1(context, node);
@@ -36,7 +36,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_8828_0(context, node);
   }
 
-  public EditorCell createCollection_8828_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8828_0");
     {
@@ -49,7 +49,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8828_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8828_1");
     editorCell.addEditorCell(this.createConstant_8828_0(context, node, "$LOOP$"));
@@ -57,7 +57,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8828_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8828_2");
     {
@@ -71,7 +71,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8828_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8828_3");
     {
@@ -84,7 +84,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8828_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8828_4");
     {
@@ -97,7 +97,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8828_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_8828_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8828_5");
     {
@@ -110,7 +110,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8828_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_8828_0(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix8828_0 == null) {
       this.myNodeMacro_postfix8828_0 = new NodeMacro_postfix(node);
     }
@@ -118,7 +118,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -135,7 +135,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_1");
     {
@@ -148,7 +148,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_2");
     {
@@ -159,7 +159,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_3");
     {
@@ -170,7 +170,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_4");
     {
@@ -181,14 +181,14 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_6");
     {
@@ -199,14 +199,14 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8828_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8828_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8828_8");
     {
@@ -217,7 +217,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8828_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8828_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourceNodesQuery");
     provider.setNoTargetText("<none>");
@@ -237,7 +237,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8828_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8828_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
@@ -255,7 +255,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8828_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_8828_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -288,7 +288,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       return this.createProperty_8828_0(context, node);
     }
 
-    public EditorCell createProperty_8828_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8828_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -14,7 +14,7 @@ public class ConceptProperty_Editor extends DefaultNodeEditor {
     return this.createError_5599_0(context, node);
   }
 
-  public EditorCell createError_5599_0(EditorContext context, SNode node) {
+  private EditorCell createError_5599_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose property>");
     editorCell.setCellId("Error_5599_0");
     return editorCell;

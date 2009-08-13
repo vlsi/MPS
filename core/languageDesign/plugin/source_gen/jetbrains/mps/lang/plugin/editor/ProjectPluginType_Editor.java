@@ -24,7 +24,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return this.createCollection_2742_0(context, node);
   }
 
-  public EditorCell createCollection_2742_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2742_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2742_0");
     editorCell.addEditorCell(this.createConstant_2742_0(context, node, "project plugin"));
@@ -34,7 +34,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2742_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2742_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2742_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2742_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2742_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2742_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2742_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2742_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2742_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2742_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2742_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
@@ -104,7 +104,7 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
       return this.createProperty_2742_0(context, node);
     }
 
-    public EditorCell createProperty_2742_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2742_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

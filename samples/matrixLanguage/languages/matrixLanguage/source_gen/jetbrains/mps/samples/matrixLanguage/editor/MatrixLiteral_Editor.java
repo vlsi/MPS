@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MatrixLiteral_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3502_0;
+  private AbstractCellListHandler myListHandler_3502_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3502_0(context, node);
   }
 
-  public EditorCell createCollection_3502_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3502_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3502_0");
     editorCell.addEditorCell(this.createConstant_3502_0(context, node, "<"));
@@ -42,7 +42,7 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3502_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3502_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3502_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -50,14 +50,14 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3502_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3502_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3502_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3502_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3502_0(EditorContext context, SNode node) {
     if (this.myListHandler_3502_0 == null) {
       this.myListHandler_3502_0 = new MatrixLiteral_Editor.rowListHandler_3502_0(node, "row", context);
     }
@@ -73,7 +73,7 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3502_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3502_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scalarType");
     provider.setNoTargetText("<no scalarType>");
@@ -90,7 +90,7 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class rowListHandler_3502_0 extends RefNodeListHandler {
+  private static class rowListHandler_3502_0 extends RefNodeListHandler {
 
     public rowListHandler_3502_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

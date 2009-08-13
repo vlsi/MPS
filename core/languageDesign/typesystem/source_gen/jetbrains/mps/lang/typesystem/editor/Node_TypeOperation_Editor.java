@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_NotInRules_Component4604_0;
+  private AbstractCellProvider my_NotInRules_Component4604_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstant_4604_0(context, node, "type");
@@ -21,7 +21,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     return this.createComponent_4604_0(context, node);
   }
 
-  public EditorCell createComponent_4604_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_4604_0(EditorContext context, SNode node) {
     if (this.my_NotInRules_Component4604_0 == null) {
       this.my_NotInRules_Component4604_0 = new _NotInRules_Component(node);
     }
@@ -29,7 +29,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4604_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4604_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4604_0");
     editorCell.setDefaultText("");

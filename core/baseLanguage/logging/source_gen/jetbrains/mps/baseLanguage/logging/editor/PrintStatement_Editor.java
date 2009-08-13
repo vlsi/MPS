@@ -23,13 +23,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class PrintStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8438_0;
+  private AbstractCellListHandler myListHandler_8438_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8438_0(context, node);
   }
 
-  public EditorCell createCollection_8438_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8438_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8438_0");
     editorCell.addEditorCell(this.createConstant_8438_0(context, node, "print"));
@@ -40,14 +40,14 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8438_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8438_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8438_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8438_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8438_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8438_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8438_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8438_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8438_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -63,14 +63,14 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8438_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8438_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8438_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8438_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8438_0(EditorContext context, SNode node) {
     if (this.myListHandler_8438_0 == null) {
       this.myListHandler_8438_0 = new PrintStatement_Editor.textExpressionListHandler_8438_0(node, "textExpression", context);
     }
@@ -84,7 +84,7 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class textExpressionListHandler_8438_0 extends RefNodeListHandler {
+  private static class textExpressionListHandler_8438_0 extends RefNodeListHandler {
 
     public textExpressionListHandler_8438_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -137,7 +137,7 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_8438_4(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_8438_4(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_8438_4");
       {

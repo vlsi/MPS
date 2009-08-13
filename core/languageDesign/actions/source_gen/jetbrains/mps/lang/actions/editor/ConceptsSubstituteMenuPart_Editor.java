@@ -24,7 +24,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return this.createCollection_2981_0(context, node);
   }
 
-  public EditorCell createCollection_2981_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2981_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2981_0");
     editorCell.addEditorCell(this.createCollection_2981_1(context, node));
@@ -32,7 +32,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2981_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2981_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2981_1");
     {
@@ -43,7 +43,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2981_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2981_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2981_2");
     {
@@ -55,7 +55,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2981_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2981_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2981_3");
     {
@@ -67,7 +67,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2981_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2981_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2981_4");
     {
@@ -79,7 +79,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2981_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2981_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2981_0");
     {
@@ -90,17 +90,17 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell2981_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2981_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2981_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2981_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_2981_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -117,7 +117,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2981_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2981_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

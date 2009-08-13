@@ -37,7 +37,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return this.createCollection_8189_1(context, node);
   }
 
-  public EditorCell createCollection_8189_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8189_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8189_0");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(context, node));
@@ -46,7 +46,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_8189_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8189_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8189_1");
     {
@@ -59,7 +59,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_8189_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8189_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8189_0");
     {
@@ -70,7 +70,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_8189_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_8189_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -112,7 +112,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_8189_1(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_8189_1(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -155,7 +155,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition8189_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8189_0(SNode node, EditorContext editorContext, IScope scope) {
     return ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node) != null;
   }
 

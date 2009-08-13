@@ -20,20 +20,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ClassPath_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6545_0;
+  private AbstractCellListHandler myListHandler_6545_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6545_0(context, node);
   }
 
-  public EditorCell createCollection_6545_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6545_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6545_0");
     editorCell.addEditorCell(this.createRefNodeList_6545_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6545_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6545_0(EditorContext context, SNode node) {
     if (this.myListHandler_6545_0 == null) {
       this.myListHandler_6545_0 = new ClassPath_Editor.classPathItemListHandler_6545_0(node, "classPathItem", context);
     }
@@ -47,7 +47,7 @@ public class ClassPath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class classPathItemListHandler_6545_0 extends RefNodeListHandler {
+  private static class classPathItemListHandler_6545_0 extends RefNodeListHandler {
 
     public classPathItemListHandler_6545_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -32,14 +32,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9522_0;
-  /* package */AbstractCellListHandler myListHandler_9522_1;
+  private AbstractCellListHandler myListHandler_9522_0;
+  private AbstractCellListHandler myListHandler_9522_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9522_0(context, node);
   }
 
-  public EditorCell createCollection_9522_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9522_0");
     editorCell.addEditorCell(this.createConstant_9522_0(context, node, "<QUERY["));
@@ -48,7 +48,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_9522_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9522_1");
     editorCell.addEditorCell(this.createCollection_9522_2(context, node));
@@ -58,7 +58,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_9522_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9522_2");
     {
@@ -73,7 +73,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_9522_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9522_3");
     {
@@ -85,7 +85,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_9522_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9522_4");
     {
@@ -97,7 +97,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_9522_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_9522_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9522_5");
     {
@@ -109,7 +109,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_0");
     {
@@ -120,7 +120,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -128,7 +128,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -136,14 +136,14 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_4");
     {
@@ -154,21 +154,21 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9522_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9522_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9522_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9522_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9522_0(EditorContext context, SNode node) {
     if (this.myListHandler_9522_0 == null) {
       this.myListHandler_9522_0 = new QueryMethodIdEditorProviderExpression_Editor.parameterListHandler_9522_0(node, "parameter", context);
     }
@@ -178,7 +178,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9522_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9522_1(EditorContext context, SNode node) {
     if (this.myListHandler_9522_1 == null) {
       this.myListHandler_9522_1 = new QueryMethodIdEditorProviderExpression_Editor.additionalImportListHandler_9522_0(node, "additionalImport", context);
     }
@@ -188,7 +188,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_9522_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9522_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
     provider.setNoTargetText("<return type>");
@@ -205,7 +205,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createProperty_9522_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9522_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("prefix");
     provider.setNoTargetText("<prefix>");
@@ -223,7 +223,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createProperty_9522_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9522_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("notSetString");
     provider.setNoTargetText("<no notSetString>");
@@ -241,7 +241,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefCell_9522_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9522_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("queryIdProperty");
     provider.setNoTargetText("<no queryIdProperty>");
@@ -273,7 +273,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       return this.createProperty_9522_2(context, node);
     }
 
-    public EditorCell createProperty_9522_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_9522_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -293,7 +293,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class parameterListHandler_9522_0 extends RefNodeListHandler {
+  private static class parameterListHandler_9522_0 extends RefNodeListHandler {
 
     public parameterListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -343,7 +343,7 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     }
 
 }
-  public static class additionalImportListHandler_9522_0 extends RefNodeListHandler {
+  private static class additionalImportListHandler_9522_0 extends RefNodeListHandler {
 
     public additionalImportListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

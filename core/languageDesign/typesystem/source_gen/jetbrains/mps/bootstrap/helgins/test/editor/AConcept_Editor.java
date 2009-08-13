@@ -19,7 +19,7 @@ public class AConcept_Editor extends DefaultNodeEditor {
     return this.createCollection_8779_0(context, node);
   }
 
-  public EditorCell createCollection_8779_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8779_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8779_0");
     editorCell.addEditorCell(this.createConstant_8779_0(context, node, "ACONCEPT"));
@@ -27,14 +27,14 @@ public class AConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8779_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8779_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8779_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_8779_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8779_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

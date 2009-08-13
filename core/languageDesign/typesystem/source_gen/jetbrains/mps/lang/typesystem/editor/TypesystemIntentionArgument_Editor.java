@@ -23,7 +23,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     return this.createCollection_4548_0(context, node);
   }
 
-  public EditorCell createCollection_4548_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4548_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4548_0");
     editorCell.addEditorCell(this.createRefCell_4548_0(context, node));
@@ -32,14 +32,14 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4548_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4548_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4548_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_4548_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4548_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -56,7 +56,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4548_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4548_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
@@ -89,7 +89,7 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
       return this.createProperty_4548_0(context, node);
     }
 
-    public EditorCell createProperty_4548_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4548_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

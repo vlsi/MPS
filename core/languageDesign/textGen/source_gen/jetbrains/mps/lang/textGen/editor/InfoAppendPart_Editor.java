@@ -21,7 +21,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return this.createCollection_8223_0(context, node);
   }
 
-  public EditorCell createCollection_8223_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8223_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8223_0");
     editorCell.addEditorCell(this.createConstant_8223_0(context, node, "$info{"));
@@ -30,7 +30,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8223_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8223_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8223_0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8223_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8223_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8223_1");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8223_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8223_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

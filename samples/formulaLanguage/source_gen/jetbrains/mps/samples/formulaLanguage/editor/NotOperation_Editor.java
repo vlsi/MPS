@@ -19,7 +19,7 @@ public class NotOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_9256_0(context, node);
   }
 
-  public EditorCell createCollection_9256_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9256_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9256_0");
     editorCell.addEditorCell(this.createConstant_9256_0(context, node, "!"));
@@ -29,28 +29,28 @@ public class NotOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9256_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9256_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9256_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9256_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9256_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9256_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9256_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9256_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9256_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_9256_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");

@@ -15,8 +15,8 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConceptFunction_Component3364_0;
-  /* package */AbstractCellProvider myCellProvider3364_0;
+  private AbstractCellProvider myConceptFunction_Component3364_0;
+  private AbstractCellProvider myCellProvider3364_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent_3364_0(context, node);
@@ -26,7 +26,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     return this.createCustom_3364_0(context, node);
   }
 
-  public EditorCell createComponent_3364_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3364_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component3364_0 == null) {
       this.myConceptFunction_Component3364_0 = new ConceptFunction_Component(node);
     }
@@ -34,7 +34,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCustom_3364_0(EditorContext context, SNode node) {
+  private EditorCell createCustom_3364_0(EditorContext context, SNode node) {
     if (this.myCellProvider3364_0 == null) {
       this.myCellProvider3364_0 = this._cellProviderFactory_1207577922324(node, context);
     }

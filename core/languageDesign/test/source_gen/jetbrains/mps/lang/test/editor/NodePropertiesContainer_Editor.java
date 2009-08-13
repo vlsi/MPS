@@ -25,13 +25,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5968_0;
+  private AbstractCellListHandler myListHandler_5968_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5968_0(context, node);
   }
 
-  public EditorCell createCollection_5968_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5968_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5968_0");
     Annotation_Actions.setCellActions(editorCell, node, context);
@@ -42,7 +42,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5968_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5968_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5968_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5968_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5968_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5968_1");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
@@ -64,14 +64,14 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell_5968_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedNodeCell_5968_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5968_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5968_0(EditorContext context, SNode node) {
     if (this.myListHandler_5968_0 == null) {
       this.myListHandler_5968_0 = new NodePropertiesContainer_Editor.propertiesListHandler_5968_0(node, "properties", context);
     }
@@ -81,7 +81,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class propertiesListHandler_5968_0 extends RefNodeListHandler {
+  private static class propertiesListHandler_5968_0 extends RefNodeListHandler {
 
     public propertiesListHandler_5968_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -134,7 +134,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_5968_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_5968_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_5968_2");
       BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);

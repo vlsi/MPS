@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2322_0;
+  private AbstractCellListHandler myListHandler_2322_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2322_0(context, node);
   }
 
-  public EditorCell createCollection_2322_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2322_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2322_0");
     editorCell.addEditorCell(this.createConstant_2322_1(context, node, "("));
@@ -37,21 +37,21 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2322_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2322_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2322_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2322_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2322_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2322_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2322_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2322_0(EditorContext context, SNode node) {
     if (this.myListHandler_2322_0 == null) {
       this.myListHandler_2322_0 = new VisitParameterDeclarationList_Editor.visitParameterDeclarationListHandler_2322_0(node, "visitParameterDeclaration", context);
     }
@@ -61,7 +61,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class visitParameterDeclarationListHandler_2322_0 extends RefNodeListHandler {
+  private static class visitParameterDeclarationListHandler_2322_0 extends RefNodeListHandler {
 
     public visitParameterDeclarationListHandler_2322_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -107,7 +107,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_2322_0");
       {

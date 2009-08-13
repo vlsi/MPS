@@ -24,7 +24,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return this.createCollection_9629_0(context, node);
   }
 
-  public EditorCell createCollection_9629_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9629_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9629_0");
     editorCell.addEditorCell(this.createRefNode_9629_0(context, node));
@@ -34,7 +34,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createCollection_9629_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9629_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9629_1");
     editorCell.addEditorCell(this.createRefNode_9629_1(context, node));
@@ -42,14 +42,14 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createConstant_9629_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9629_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9629_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9629_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9629_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9629_1");
     {
@@ -60,7 +60,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createRefNode_9629_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -77,7 +77,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createProperty_9629_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -99,7 +99,7 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     return editorCell;
   }
 
-  public EditorCell createRefNode_9629_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9629_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializerBlock");
     provider.setNoTargetText("<no initializerBlock>");

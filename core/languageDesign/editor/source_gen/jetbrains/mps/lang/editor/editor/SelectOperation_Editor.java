@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SelectOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5999_0;
+  private AbstractCellListHandler myListHandler_5999_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5999_0(context, node);
   }
 
-  public EditorCell createCollection_5999_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5999_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5999_0");
     editorCell.addEditorCell(this.createConstant_5999_0(context, node, "select"));
@@ -43,7 +43,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5999_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5999_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5999_1");
     {
@@ -56,21 +56,21 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5999_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5999_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5999_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5999_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5999_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5999_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5999_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5999_2");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5999_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5999_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5999_3");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -86,7 +86,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5999_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5999_0(EditorContext context, SNode node) {
     if (this.myListHandler_5999_0 == null) {
       this.myListHandler_5999_0 = new SelectOperation_Editor.selectLaterParameterListHandler_5999_0(node, "selectLaterParameter", context);
     }
@@ -96,7 +96,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5999_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("editorContext");
     provider.setNoTargetText("<no editorContext>");
@@ -113,7 +113,7 @@ public class SelectOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class selectLaterParameterListHandler_5999_0 extends RefNodeListHandler {
+  private static class selectLaterParameterListHandler_5999_0 extends RefNodeListHandler {
 
     public selectLaterParameterListHandler_5999_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

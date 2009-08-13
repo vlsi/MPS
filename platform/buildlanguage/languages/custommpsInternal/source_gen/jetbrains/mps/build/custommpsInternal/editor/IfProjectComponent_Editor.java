@@ -23,7 +23,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return this.createCollection_6811_0(context, node);
   }
 
-  public EditorCell createCollection_6811_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6811_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6811_0");
     editorCell.addEditorCell(this.createConceptProperty_6811_0(context, node));
@@ -32,7 +32,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6811_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6811_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6811_1");
     {
@@ -45,7 +45,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6811_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6811_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6811_2");
     {
@@ -57,7 +57,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6811_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_6811_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6811_3");
     {
@@ -69,7 +69,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6811_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6811_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6811_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -77,7 +77,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6811_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6811_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6811_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -85,7 +85,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6811_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6811_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -104,7 +104,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6811_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6811_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -121,7 +121,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6811_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6811_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifTrue");
     provider.setNoTargetText("<no ifTrue>");
@@ -138,7 +138,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6811_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6811_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFaulse");
     provider.setNoTargetText("<no ifFaulse>");

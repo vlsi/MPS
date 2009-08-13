@@ -28,7 +28,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_7459_2(context, node);
   }
 
-  public EditorCell createCollection_7459_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7459_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7459_0");
     editorCell.addEditorCell(this.createConstant_7459_0(context, node, "assert"));
@@ -40,7 +40,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7459_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7459_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7459_1");
     editorCell.addEditorCell(this.createConstant_7459_1(context, node, ":"));
@@ -48,7 +48,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7459_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7459_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7459_2");
     editorCell.addEditorCell(this.createConstant_7459_2(context, node, "Error message : "));
@@ -56,7 +56,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7459_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7459_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7459_0");
     {
@@ -67,21 +67,21 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7459_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7459_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7459_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7459_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7459_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7459_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7459_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7459_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7459_3");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -89,7 +89,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7459_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7459_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -106,7 +106,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7459_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7459_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -123,7 +123,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7459_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7459_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -145,7 +145,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "message", true) != null;
   }
 

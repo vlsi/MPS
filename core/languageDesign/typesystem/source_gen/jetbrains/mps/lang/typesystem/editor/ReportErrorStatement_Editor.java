@@ -26,7 +26,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_9503_1(context, node);
   }
 
-  public EditorCell createCollection_9503_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9503_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9503_0");
     editorCell.addEditorCell(this.createConstant_9503_0(context, node, "error"));
@@ -37,7 +37,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9503_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9503_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9503_1");
     editorCell.addEditorCell(this.createConstant_9503_4(context, node, "node feature to highlight(optional)"));
@@ -48,7 +48,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -56,14 +56,14 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_2");
     {
@@ -74,7 +74,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_3");
     {
@@ -85,7 +85,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_4");
     {
@@ -96,7 +96,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9503_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9503_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9503_5");
     {
@@ -108,7 +108,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9503_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9503_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorString");
     provider.setNoTargetText("<error string>");
@@ -125,7 +125,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9503_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9503_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToReport");
     provider.setNoTargetText("<node to highlight>");
@@ -142,7 +142,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9503_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9503_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("helginsIntention");
     provider.setNoTargetText("<no intention>");
@@ -163,7 +163,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9503_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9503_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("messageTarget");
     provider.setNoTargetText("<no messageTarget>");

@@ -26,7 +26,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_8935_1(context, node);
   }
 
-  public EditorCell createCollection_8935_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8935_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8935_0");
     editorCell.addEditorCell(this.createConstant_8935_0(context, node, "warning"));
@@ -37,7 +37,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8935_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8935_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8935_1");
     editorCell.addEditorCell(this.createConstant_8935_4(context, node, "node feature to highlight(optional)"));
@@ -48,7 +48,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -56,7 +56,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -64,7 +64,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_3");
     {
@@ -83,7 +83,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_4");
     {
@@ -94,7 +94,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8935_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8935_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8935_5");
     {
@@ -106,7 +106,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8935_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8935_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("warningText");
     provider.setNoTargetText("<error string>");
@@ -123,7 +123,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8935_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8935_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToReport");
     provider.setNoTargetText("<node to highlight>");
@@ -140,7 +140,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8935_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8935_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("helginsIntention");
     provider.setNoTargetText("<no intention>");
@@ -161,7 +161,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8935_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8935_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("messageTarget");
     provider.setNoTargetText("<no messageTarget>");

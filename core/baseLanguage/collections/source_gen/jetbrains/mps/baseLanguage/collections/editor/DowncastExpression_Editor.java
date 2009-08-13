@@ -23,7 +23,7 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_1517_0(context, node);
   }
 
-  public EditorCell createCollection_1517_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1517_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1517_0");
     editorCell.addEditorCell(this.createRefNode_1517_0(context, node));
@@ -31,7 +31,7 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1517_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1517_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1517_0");
     {
@@ -48,7 +48,7 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1517_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1517_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

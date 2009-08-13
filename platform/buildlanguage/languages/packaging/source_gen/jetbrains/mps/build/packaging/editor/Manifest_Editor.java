@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Manifest_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9283_0;
+  private AbstractCellListHandler myListHandler_9283_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9283_0(context, node);
   }
 
-  public EditorCell createCollection_9283_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9283_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9283_0");
     editorCell.addEditorCell(this.createConstant_9283_0(context, node, "manifest:"));
@@ -36,7 +36,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9283_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9283_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9283_1");
     {
@@ -49,7 +49,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9283_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9283_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9283_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9283_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9283_0(EditorContext context, SNode node) {
     if (this.myListHandler_9283_0 == null) {
       this.myListHandler_9283_0 = new Manifest_Editor.manifestAttributeListHandler_9283_0(node, "manifestAttribute", context);
     }
@@ -71,12 +71,12 @@ public class Manifest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell9283_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell9283_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public static class manifestAttributeListHandler_9283_0 extends RefNodeListHandler {
+  private static class manifestAttributeListHandler_9283_0 extends RefNodeListHandler {
 
     public manifestAttributeListHandler_9283_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

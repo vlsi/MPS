@@ -24,7 +24,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_1013_0(context, node);
   }
 
-  public EditorCell createCollection_1013_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1013_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1013_0");
     editorCell.addEditorCell(this.createRefNode_1013_0(context, node));
@@ -35,7 +35,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1013_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1013_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1013_0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1013_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1013_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1013_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -61,14 +61,14 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1013_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1013_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1013_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_1013_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1013_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -85,7 +85,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1013_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1013_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("n");
     provider.setNoTargetText("<no n>");

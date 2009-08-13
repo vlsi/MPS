@@ -18,7 +18,7 @@ public class Date_Future_Editor extends DefaultNodeEditor {
     return this.createConstant_4696_0(context, node, "FUTURE");
   }
 
-  public EditorCell createConstant_4696_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4696_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4696_0");
     {

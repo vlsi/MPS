@@ -18,9 +18,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_Custom_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_OpenTag8637_0;
-  /* package */AbstractCellProvider my_CloseTag8637_0;
-  /* package */AbstractCellProvider myStyle_Component8637_0;
+  private AbstractCellProvider my_OpenTag8637_0;
+  private AbstractCellProvider my_CloseTag8637_0;
+  private AbstractCellProvider myStyle_Component8637_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8637_0(context, node);
@@ -30,7 +30,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return this.createCollection_8637_1(context, node);
   }
 
-  public EditorCell createCollection_8637_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8637_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8637_0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8637_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8637_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8637_1");
     {
@@ -54,7 +54,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8637_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8637_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8637_2");
     {
@@ -66,7 +66,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8637_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_8637_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8637_3");
     {
@@ -78,7 +78,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8637_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_8637_0(EditorContext context, SNode node) {
     if (this.my_OpenTag8637_0 == null) {
       this.my_OpenTag8637_0 = new _OpenTag(node);
     }
@@ -86,7 +86,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8637_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_8637_1(EditorContext context, SNode node) {
     if (this.my_CloseTag8637_0 == null) {
       this.my_CloseTag8637_0 = new _CloseTag(node);
     }
@@ -94,7 +94,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8637_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_8637_2(EditorContext context, SNode node) {
     if (this.myStyle_Component8637_0 == null) {
       this.myStyle_Component8637_0 = new Style_Component(node);
     }
@@ -102,14 +102,14 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8637_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8637_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8637_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8637_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8637_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8637_1");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
@@ -117,14 +117,14 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8637_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8637_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8637_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8637_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8637_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8637_3");
     {
@@ -135,7 +135,7 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8637_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8637_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cellProvider");
     provider.setNoTargetText("<no cellProvider>");

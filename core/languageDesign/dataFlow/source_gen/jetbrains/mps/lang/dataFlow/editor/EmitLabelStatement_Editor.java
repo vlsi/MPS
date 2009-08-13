@@ -19,7 +19,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_9838_0(context, node);
   }
 
-  public EditorCell createCollection_9838_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9838_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9838_0");
     editorCell.addEditorCell(this.createConstant_9838_0(context, node, "label"));
@@ -27,7 +27,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9838_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9838_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9838_0");
     DataFlow_StyleSheet.getLabel(editorCell).apply(editorCell);
@@ -35,7 +35,7 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9838_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9838_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

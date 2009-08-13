@@ -23,7 +23,7 @@ public class Operation_Editor extends DefaultNodeEditor {
     return this.createCollection_4955_0(context, node);
   }
 
-  public EditorCell createCollection_4955_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4955_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4955_0");
     editorCell.addEditorCell(this.createRefNode_4955_0(context, node));
@@ -31,7 +31,7 @@ public class Operation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createError_4955_0(EditorContext context, SNode node) {
+  private EditorCell createError_4955_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, " ");
     editorCell.setCellId("Error_4955_0");
     Operation_symbol_Actions.setCellActions(editorCell, node, context);
@@ -39,7 +39,7 @@ public class Operation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4955_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4955_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<expression>");

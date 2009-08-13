@@ -14,7 +14,7 @@ public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
     return this.createConstant_2171_0(context, node, "typechecker");
   }
 
-  public EditorCell createConstant_2171_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2171_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2171_0");
     editorCell.setDefaultText("");

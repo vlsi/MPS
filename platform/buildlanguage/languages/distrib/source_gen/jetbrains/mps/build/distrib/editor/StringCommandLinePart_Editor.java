@@ -17,7 +17,7 @@ public class StringCommandLinePart_Editor extends DefaultNodeEditor {
     return this.createProperty_4187_0(context, node);
   }
 
-  public EditorCell createProperty_4187_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4187_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

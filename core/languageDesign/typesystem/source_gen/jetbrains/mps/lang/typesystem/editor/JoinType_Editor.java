@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class JoinType_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3192_0;
+  private AbstractCellListHandler myListHandler_3192_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3192_0(context, node);
   }
 
-  public EditorCell createCollection_3192_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3192_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3192_0");
     editorCell.addEditorCell(this.createConstant_3192_0(context, node, "join"));
@@ -38,7 +38,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3192_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3192_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3192_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3192_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3192_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3192_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3192_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3192_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3192_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3192_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3192_0(EditorContext context, SNode node) {
     if (this.myListHandler_3192_0 == null) {
       this.myListHandler_3192_0 = new JoinType_Editor.argumentListHandler_3192_0(node, "argument", context);
     }
@@ -72,7 +72,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class argumentListHandler_3192_0 extends RefNodeListHandler {
+  private static class argumentListHandler_3192_0 extends RefNodeListHandler {
 
     public argumentListHandler_3192_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

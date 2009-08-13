@@ -25,7 +25,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_6820_0(context, node);
   }
 
-  public EditorCell createAlternation_6820_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_6820_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = WhereOperation_Editor.renderingCondition6820_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -38,14 +38,14 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6820_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6820_0");
     editorCell.addEditorCell(this.createAlternation_6820_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_6820_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6820_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6820_1");
     {
@@ -58,7 +58,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6820_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6820_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6820_2");
     {
@@ -72,21 +72,21 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6820_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6820_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6820_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6820_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6820_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6820_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6820_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6820_2");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
@@ -94,7 +94,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6820_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6820_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6820_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -102,7 +102,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6820_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6820_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6820_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -110,7 +110,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6820_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6820_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("whereBlock");
     provider.setNoTargetText("<no whereBlock>");
@@ -127,7 +127,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6820_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6820_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("filter");
     provider.setNoTargetText("<no filter>");
@@ -145,7 +145,7 @@ public class WhereOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6820_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6820_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "whereBlock", true) != null);
   }
 

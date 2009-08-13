@@ -27,13 +27,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestMethod_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_DeprecatedPart4471_0;
+  private AbstractCellProvider my_DeprecatedPart4471_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4471_0(context, node);
   }
 
-  public EditorCell createCollection_4471_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4471_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4471_0");
     editorCell.addEditorCell(this.createComponent_4471_0(context, node));
@@ -48,7 +48,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_4471_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_4471_0(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart4471_0 == null) {
       this.my_DeprecatedPart4471_0 = new _DeprecatedPart(node);
     }
@@ -60,7 +60,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4471_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4471_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4471_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4471_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4471_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4471_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -80,7 +80,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4471_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4471_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4471_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -92,7 +92,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4471_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4471_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4471_3");
     {
@@ -104,7 +104,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4471_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4471_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("methodName");
     provider.setNoTargetText("<no methodName>");
@@ -126,7 +126,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4471_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4471_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -149,7 +149,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4471_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4471_0(SNode node, EditorContext editorContext, IScope scope) {
     List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
     return ListSequence.fromList(nextSiblings).isNotEmpty();
   }

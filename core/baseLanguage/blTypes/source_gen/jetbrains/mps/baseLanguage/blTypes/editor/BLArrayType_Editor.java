@@ -24,7 +24,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     return this.createCollection_2925_0(context, node);
   }
 
-  public EditorCell createCollection_2925_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2925_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2925_0");
     editorCell.addEditorCell(this.createRefCell_2925_0(context, node));
@@ -32,7 +32,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2925_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2925_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2925_0");
     {
@@ -43,7 +43,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2925_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2925_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("componentType");
     provider.setNoTargetText("<no componentType>");
@@ -75,7 +75,7 @@ public class BLArrayType_Editor extends DefaultNodeEditor {
       return this.createProperty_2925_0(context, node);
     }
 
-    public EditorCell createProperty_2925_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2925_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -19,7 +19,7 @@ public class PropertyFileImport_Editor extends DefaultNodeEditor {
     return this.createCollection_5386_0(context, node);
   }
 
-  public EditorCell createCollection_5386_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5386_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5386_0");
     editorCell.addEditorCell(this.createConceptProperty_5386_0(context, node));
@@ -27,7 +27,7 @@ public class PropertyFileImport_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_5386_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_5386_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -46,7 +46,7 @@ public class PropertyFileImport_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5386_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5386_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("file");
     provider.setNoTargetText("<no file>");

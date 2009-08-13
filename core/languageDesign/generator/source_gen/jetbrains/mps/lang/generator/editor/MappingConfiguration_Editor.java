@@ -28,20 +28,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MappingConfiguration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2420_0;
-  /* package */AbstractCellListHandler myListHandler_2420_1;
-  /* package */AbstractCellListHandler myListHandler_2420_2;
-  /* package */AbstractCellListHandler myListHandler_2420_3;
-  /* package */AbstractCellListHandler myListHandler_2420_4;
-  /* package */AbstractCellListHandler myListHandler_2420_5;
-  /* package */AbstractCellListHandler myListHandler_2420_6;
-  /* package */AbstractCellListHandler myListHandler_2420_7;
+  private AbstractCellListHandler myListHandler_2420_0;
+  private AbstractCellListHandler myListHandler_2420_1;
+  private AbstractCellListHandler myListHandler_2420_2;
+  private AbstractCellListHandler myListHandler_2420_3;
+  private AbstractCellListHandler myListHandler_2420_4;
+  private AbstractCellListHandler myListHandler_2420_5;
+  private AbstractCellListHandler myListHandler_2420_6;
+  private AbstractCellListHandler myListHandler_2420_7;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2420_0(context, node);
   }
 
-  public EditorCell createCollection_2420_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_0");
     editorCell.addEditorCell(this.createCollection_2420_1(context, node));
@@ -64,7 +64,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_1");
     {
@@ -77,7 +77,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_2");
     {
@@ -89,7 +89,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_3");
     {
@@ -101,7 +101,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_4");
     {
@@ -113,7 +113,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_5");
     {
@@ -125,7 +125,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_6");
     {
@@ -137,7 +137,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_7");
     {
@@ -149,7 +149,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_8");
     {
@@ -161,7 +161,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_9");
     {
@@ -173,7 +173,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_10(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_10(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_10");
     {
@@ -185,7 +185,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_11(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_11(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_11");
     {
@@ -197,7 +197,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_12(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_12(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_12");
     {
@@ -209,7 +209,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_13(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_13(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_13");
     {
@@ -221,7 +221,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_14(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_14(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_14");
     {
@@ -233,7 +233,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_15(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_15(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_15");
     {
@@ -245,7 +245,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_16(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_16(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_16");
     {
@@ -257,7 +257,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_17(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_17(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2420_17");
     {
@@ -269,7 +269,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_18(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_18(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_18");
     {
@@ -281,7 +281,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2420_19(EditorContext context, SNode node) {
+  private EditorCell createCollection_2420_19(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2420_19");
     {
@@ -293,7 +293,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_0");
     {
@@ -304,7 +304,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_1");
     {
@@ -315,7 +315,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_2");
     {
@@ -326,7 +326,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_3");
     {
@@ -337,7 +337,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_4");
     {
@@ -348,7 +348,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_5");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -356,7 +356,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_6");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -364,7 +364,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_7");
     {
@@ -375,7 +375,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_8");
     {
@@ -389,7 +389,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_9");
     {
@@ -403,7 +403,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_10");
     {
@@ -417,7 +417,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_11");
     {
@@ -431,7 +431,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_12");
     {
@@ -445,7 +445,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_13(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_13");
     {
@@ -459,7 +459,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_14(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_14(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_14");
     {
@@ -470,7 +470,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_15(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_15(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_15");
     {
@@ -484,7 +484,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_16(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_16(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_16");
     {
@@ -495,7 +495,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2420_17(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2420_17(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2420_17");
     {
@@ -508,7 +508,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_0(EditorContext context, SNode node) {
     if (this.myListHandler_2420_0 == null) {
       this.myListHandler_2420_0 = new MappingConfiguration_Editor.createRootRuleListHandler_2420_0(node, "createRootRule", context);
     }
@@ -523,7 +523,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_1(EditorContext context, SNode node) {
     if (this.myListHandler_2420_1 == null) {
       this.myListHandler_2420_1 = new MappingConfiguration_Editor.rootMappingRuleListHandler_2420_0(node, "rootMappingRule", context);
     }
@@ -537,7 +537,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_2(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_2(EditorContext context, SNode node) {
     if (this.myListHandler_2420_2 == null) {
       this.myListHandler_2420_2 = new MappingConfiguration_Editor.weavingMappingRuleListHandler_2420_0(node, "weavingMappingRule", context);
     }
@@ -551,7 +551,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_3(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_3(EditorContext context, SNode node) {
     if (this.myListHandler_2420_3 == null) {
       this.myListHandler_2420_3 = new MappingConfiguration_Editor.reductionMappingRuleListHandler_2420_0(node, "reductionMappingRule", context);
     }
@@ -565,7 +565,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_4(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_4(EditorContext context, SNode node) {
     if (this.myListHandler_2420_4 == null) {
       this.myListHandler_2420_4 = new MappingConfiguration_Editor.preMappingScriptListHandler_2420_0(node, "preMappingScript", context);
     }
@@ -580,7 +580,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_5(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_5(EditorContext context, SNode node) {
     if (this.myListHandler_2420_5 == null) {
       this.myListHandler_2420_5 = new MappingConfiguration_Editor.postMappingScriptListHandler_2420_0(node, "postMappingScript", context);
     }
@@ -595,7 +595,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_6(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_6(EditorContext context, SNode node) {
     if (this.myListHandler_2420_6 == null) {
       this.myListHandler_2420_6 = new MappingConfiguration_Editor.mappingLabelListHandler_2420_0(node, "mappingLabel", context);
     }
@@ -606,7 +606,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2420_7(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2420_7(EditorContext context, SNode node) {
     if (this.myListHandler_2420_7 == null) {
       this.myListHandler_2420_7 = new MappingConfiguration_Editor.dropRootRuleListHandler_2420_0(node, "dropRootRule", context);
     }
@@ -621,47 +621,47 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell2420_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_3(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_3(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_4(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_4(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_5(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_5(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_6(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_6(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell2420_7(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2420_7(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_2420_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2420_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -679,7 +679,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2420_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2420_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("topPriorityGroup");
     provider.setNoTargetText("<no topPriorityGroup>");
@@ -697,7 +697,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class createRootRuleListHandler_2420_0 extends RefNodeListHandler {
+  private static class createRootRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public createRootRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -740,7 +740,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class rootMappingRuleListHandler_2420_0 extends RefNodeListHandler {
+  private static class rootMappingRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public rootMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -783,7 +783,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class weavingMappingRuleListHandler_2420_0 extends RefNodeListHandler {
+  private static class weavingMappingRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public weavingMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -826,7 +826,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class reductionMappingRuleListHandler_2420_0 extends RefNodeListHandler {
+  private static class reductionMappingRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public reductionMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -869,7 +869,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class preMappingScriptListHandler_2420_0 extends RefNodeListHandler {
+  private static class preMappingScriptListHandler_2420_0 extends RefNodeListHandler {
 
     public preMappingScriptListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -912,7 +912,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class postMappingScriptListHandler_2420_0 extends RefNodeListHandler {
+  private static class postMappingScriptListHandler_2420_0 extends RefNodeListHandler {
 
     public postMappingScriptListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -955,7 +955,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class mappingLabelListHandler_2420_0 extends RefNodeListHandler {
+  private static class mappingLabelListHandler_2420_0 extends RefNodeListHandler {
 
     public mappingLabelListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -998,7 +998,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class dropRootRuleListHandler_2420_0 extends RefNodeListHandler {
+  private static class dropRootRuleListHandler_2420_0 extends RefNodeListHandler {
 
     public dropRootRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

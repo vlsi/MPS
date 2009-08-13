@@ -22,7 +22,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_5487_0(context, node);
   }
 
-  public EditorCell createCollection_5487_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5487_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5487_0");
     editorCell.addEditorCell(this.createConstant_5487_0(context, node, "!"));
@@ -32,7 +32,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5487_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5487_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5487_0");
     {
@@ -45,7 +45,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5487_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5487_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5487_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -58,7 +58,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5487_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5487_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5487_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5487_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5487_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

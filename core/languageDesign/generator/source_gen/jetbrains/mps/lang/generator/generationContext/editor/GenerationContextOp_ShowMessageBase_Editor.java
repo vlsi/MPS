@@ -25,7 +25,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return this.createCollection_3544_0(context, node);
   }
 
-  public EditorCell createCollection_3544_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3544_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3544_0");
     editorCell.addEditorCell(this.createConceptProperty_3544_0(context, node));
@@ -35,7 +35,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createConstant_3544_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3544_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3544_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3544_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3544_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -67,7 +67,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createRefNode_3544_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3544_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("messageText");
     provider.setNoTargetText("<no text>");
@@ -84,7 +84,7 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public EditorCell createRefNode_3544_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3544_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referenceNode");
     provider.setNoTargetText("<node>");

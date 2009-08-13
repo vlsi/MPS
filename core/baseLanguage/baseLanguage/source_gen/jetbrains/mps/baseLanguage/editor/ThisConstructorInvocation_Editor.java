@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.style.Style;
 
 public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8960_0;
+  private AbstractCellListHandler myListHandler_8960_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8960_0(context, node);
   }
 
-  public EditorCell createCollection_8960_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8960_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8960_0");
     editorCell.addEditorCell(this.createConstant_8960_0(context, node, "this"));
@@ -39,7 +39,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8960_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8960_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8960_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8960_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8960_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8960_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8960_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8960_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8960_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8960_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8960_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8960_4");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -71,7 +71,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8960_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8960_0(EditorContext context, SNode node) {
     if (this.myListHandler_8960_0 == null) {
       this.myListHandler_8960_0 = new ThisConstructorInvocation_Editor.actualArgumentListHandler_8960_0(node, "actualArgument", context);
     }
@@ -81,7 +81,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
+  private static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_8960_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -134,7 +134,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_8960_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_8960_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_8960_1");
       {

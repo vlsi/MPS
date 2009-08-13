@@ -18,14 +18,14 @@ public class Configuration_Editor extends DefaultNodeEditor {
     return this.createCollection_0550_0(context, node);
   }
 
-  public EditorCell createCollection_0550_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0550_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0550_0");
     editorCell.addEditorCell(this.createProperty_0550_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createProperty_0550_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0550_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

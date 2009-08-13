@@ -14,7 +14,7 @@ public class AbstractAntiquotation_Editor extends DefaultNodeEditor {
     return this.createError_4068_0(context, node);
   }
 
-  public EditorCell createError_4068_0(EditorContext context, SNode node) {
+  private EditorCell createError_4068_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "abstract antiquotation");
     editorCell.setCellId("Error_4068_0");
     return editorCell;

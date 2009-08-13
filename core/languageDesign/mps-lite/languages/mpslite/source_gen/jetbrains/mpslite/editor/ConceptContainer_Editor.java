@@ -25,20 +25,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ConceptContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9715_0;
+  private AbstractCellListHandler myListHandler_9715_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9715_0(context, node);
   }
 
-  public EditorCell createCollection_9715_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9715_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9715_0");
     editorCell.addEditorCell(this.createCollection_9715_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_9715_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9715_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9715_1");
     {
@@ -55,14 +55,14 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9715_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9715_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9715_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9715_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9715_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9715_1");
     {
@@ -73,7 +73,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9715_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9715_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9715_2");
     {
@@ -84,7 +84,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9715_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9715_0(EditorContext context, SNode node) {
     if (this.myListHandler_9715_0 == null) {
       this.myListHandler_9715_0 = new ConceptContainer_Editor.mpsLiteConceptListHandler_9715_0(node, "mpsLiteConcept", context);
     }
@@ -94,7 +94,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9715_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9715_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expressionConcept");
     provider.setNoTargetText("<no expressionConcept>");
@@ -111,7 +111,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9715_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9715_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementConcept");
     provider.setNoTargetText("<no statementConcept>");
@@ -128,7 +128,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class mpsLiteConceptListHandler_9715_0 extends RefNodeListHandler {
+  private static class mpsLiteConceptListHandler_9715_0 extends RefNodeListHandler {
 
     public mpsLiteConceptListHandler_9715_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

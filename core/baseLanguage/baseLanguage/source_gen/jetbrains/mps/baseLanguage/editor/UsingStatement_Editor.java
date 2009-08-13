@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class UsingStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4975_0;
+  private AbstractCellListHandler myListHandler_4975_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4975_0(context, node);
   }
 
-  public EditorCell createCollection_4975_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4975_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4975_0");
     editorCell.addEditorCell(this.createConstant_4975_0(context, node, "using"));
@@ -46,7 +46,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4975_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4975_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4975_0");
     {
@@ -57,7 +57,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4975_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4975_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4975_1");
     {
@@ -68,7 +68,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4975_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4975_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4975_3");
     {
@@ -79,7 +79,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4975_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4975_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4975_4");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -91,7 +91,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4975_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4975_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4975_5");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -99,7 +99,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4975_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4975_0(EditorContext context, SNode node) {
     if (this.myListHandler_4975_0 == null) {
       this.myListHandler_4975_0 = new UsingStatement_Editor.resourceListHandler_4975_0(node, "resource", context);
     }
@@ -109,7 +109,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4975_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4975_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -131,7 +131,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class resourceListHandler_4975_0 extends RefNodeListHandler {
+  private static class resourceListHandler_4975_0 extends RefNodeListHandler {
 
     public resourceListHandler_4975_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -184,7 +184,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_4975_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4975_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4975_2");
       editorCell.setDefaultText("");

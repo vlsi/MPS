@@ -27,7 +27,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return this.createCollection_0883_0(context, node);
   }
 
-  public EditorCell createCollection_0883_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0883_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0883_0");
     editorCell.addEditorCell(this.createRefCell_0883_0(context, node));
@@ -37,7 +37,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0883_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0883_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0883_0");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0883_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0883_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0883_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0883_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0883_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("annotationLink");
     provider.setNoTargetText("<no annotationLink>");
@@ -85,7 +85,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0883_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0883_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertyQualifier");
     provider.setNoTargetText("<property>");
@@ -116,7 +116,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
       return this.createProperty_0883_0(context, node);
     }
 
-    public EditorCell createProperty_0883_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0883_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no annotation link>");

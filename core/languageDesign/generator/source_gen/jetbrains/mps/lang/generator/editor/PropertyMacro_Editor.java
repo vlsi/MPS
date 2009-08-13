@@ -30,7 +30,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_9323_0(context, node);
   }
 
-  public EditorCell createCollection_9323_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9323_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9323_0");
     editorCell.addEditorCell(this.createConstant_9323_0(context, node, "property macro"));
@@ -40,7 +40,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9323_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9323_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9323_1");
     editorCell.addEditorCell(this.createConstant_9323_1(context, node, "$"));
@@ -51,7 +51,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9323_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9323_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9323_2");
     {
@@ -63,7 +63,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9323_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9323_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9323_3");
     {
@@ -76,7 +76,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_0");
     {
@@ -89,7 +89,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_1");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -102,7 +102,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_2");
     {
@@ -113,7 +113,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_3");
     {
@@ -124,14 +124,14 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9323_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9323_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9323_5");
     {
@@ -142,7 +142,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedPropertyCell_9323_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedPropertyCell_9323_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedPropertyCell();
@@ -150,7 +150,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9323_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9323_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("propertyValueFunction");
     provider.setNoTargetText("<none>");
@@ -170,7 +170,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9323_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9323_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -189,7 +189,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9323_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9323_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -210,7 +210,7 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9323_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9323_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 

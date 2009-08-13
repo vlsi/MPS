@@ -31,7 +31,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return this.createCollection_7117_2(context, node);
   }
 
-  public EditorCell createCollection_7117_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7117_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7117_0");
     {
@@ -43,7 +43,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7117_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7117_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7117_1");
     {
@@ -54,7 +54,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7117_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7117_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7117_2");
     {
@@ -67,14 +67,14 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7117_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7117_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7117_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_7117_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7117_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("focusPolicyApplicable");
     provider.setNoTargetText("<no focus policy condition>");
@@ -92,7 +92,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition7117_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7117_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 

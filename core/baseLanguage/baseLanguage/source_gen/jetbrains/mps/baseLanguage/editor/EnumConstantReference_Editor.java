@@ -33,7 +33,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return this.createCollection_0362_0(context, node);
   }
 
-  public EditorCell createCollection_0362_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0362_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0362_0");
     editorCell.addEditorCell(this.createRefCell_0362_1(context, node));
@@ -42,7 +42,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0362_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0362_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0362_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0362_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0362_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumConstantDeclaration");
     provider.setNoTargetText("<no enumConstantDeclaration>");
@@ -72,7 +72,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0362_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0362_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enum>");
@@ -104,7 +104,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return this.createProperty_0362_0(context, node);
     }
 
-    public EditorCell createProperty_0362_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0362_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -143,7 +143,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return this.createProperty_0362_1(context, node);
     }
 
-    public EditorCell createProperty_0362_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_0362_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

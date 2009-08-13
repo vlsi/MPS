@@ -14,7 +14,7 @@ public class Separator_Editor extends DefaultNodeEditor {
     return this.createConstant_6969_0(context, node, "<--->");
   }
 
-  public EditorCell createConstant_6969_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6969_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6969_0");
     editorCell.setDefaultText("");

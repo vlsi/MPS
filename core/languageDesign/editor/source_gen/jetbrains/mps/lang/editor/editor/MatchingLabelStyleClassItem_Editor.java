@@ -23,7 +23,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_3813_0(context, node);
   }
 
-  public EditorCell createCollection_3813_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3813_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3813_0");
     editorCell.addEditorCell(this.createConceptProperty_3813_0(context, node));
@@ -37,14 +37,14 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3813_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3813_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3813_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3813_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3813_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -63,7 +63,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3813_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3813_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -80,7 +80,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3813_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3813_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("labelName");
     provider.setNoTargetText("<no labelName>");
@@ -99,11 +99,11 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3813_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3813_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
-  public static boolean renderingCondition3813_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3813_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 

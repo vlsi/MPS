@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ConceptTypeClause_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2811_0;
+  private AbstractCellListHandler myListHandler_2811_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2811_0(context, node);
   }
 
-  public EditorCell createCollection_2811_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2811_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2811_0");
     editorCell.addEditorCell(this.createConstant_2811_0(context, node, "typeInstanceOf"));
@@ -47,7 +47,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2811_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2811_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2811_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2811_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2811_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2811_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2811_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2811_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2811_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -71,7 +71,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2811_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2811_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2811_3");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
@@ -79,7 +79,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2811_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2811_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2811_4");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2811_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2811_0(EditorContext context, SNode node) {
     if (this.myListHandler_2811_0 == null) {
       this.myListHandler_2811_0 = new ConceptTypeClause_Editor.linkInfoListHandler_2811_0(node, "linkInfo", context);
     }
@@ -97,7 +97,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2811_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2811_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("matchingConcept");
     provider.setNoTargetText("<no matchingConcept>");
@@ -129,7 +129,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
       return this.createProperty_2811_0(context, node);
     }
 
-    public EditorCell createProperty_2811_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2811_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -149,7 +149,7 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class linkInfoListHandler_2811_0 extends RefNodeListHandler {
+  private static class linkInfoListHandler_2811_0 extends RefNodeListHandler {
 
     public linkInfoListHandler_2811_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

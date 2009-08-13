@@ -22,7 +22,7 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_2778_0(context, node);
   }
 
-  public EditorCell createCollection_2778_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2778_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2778_0");
     editorCell.addEditorCell(this.createConstant_2778_0(context, node, "[["));
@@ -31,14 +31,14 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2778_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2778_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2778_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2778_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2778_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2778_1");
     {
@@ -49,7 +49,7 @@ public class MatchDefaultPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2778_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2778_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matchExpression");
     provider.setNoTargetText("<no matchExpression>");

@@ -24,7 +24,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_4282_0(context, node);
   }
 
-  public EditorCell createCollection_4282_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4282_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4282_0");
     editorCell.addEditorCell(this.createRefNode_4282_0(context, node));
@@ -33,7 +33,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4282_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4282_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -51,7 +51,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4282_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4282_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -69,7 +69,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_4282_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_4282_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no operator>");

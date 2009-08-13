@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5815_0;
+  private AbstractCellListHandler myListHandler_5815_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5815_0(context, node);
   }
 
-  public EditorCell createCollection_5815_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5815_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5815_0");
     editorCell.addEditorCell(this.createConstant_5815_0(context, node, "digital signature configuration"));
@@ -40,7 +40,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createCollection_5815_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5815_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5815_1");
     {
@@ -53,7 +53,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createCollection_5815_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5815_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5815_2");
     {
@@ -66,7 +66,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createCollection_5815_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5815_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5815_3");
     {
@@ -78,7 +78,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createCollection_5815_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5815_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5815_4");
     {
@@ -91,7 +91,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5815_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5815_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5815_0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -99,7 +99,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5815_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5815_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5815_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -107,7 +107,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5815_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5815_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5815_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -115,7 +115,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5815_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5815_0(EditorContext context, SNode node) {
     if (this.myListHandler_5815_0 == null) {
       this.myListHandler_5815_0 = new DigitalSignatureWindowsConfiguration_Editor.commandLineListHandler_5815_0(node, "commandLine", context);
     }
@@ -125,12 +125,12 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createIndentCell5815_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5815_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_5815_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5815_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pathToExecutable");
     provider.setNoTargetText("<no pathToExecutable>");
@@ -147,7 +147,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public static class commandLineListHandler_5815_0 extends RefNodeListHandler {
+  private static class commandLineListHandler_5815_0 extends RefNodeListHandler {
 
     public commandLineListHandler_5815_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -26,7 +26,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_9973_1(context, node);
   }
 
-  public EditorCell createCollection_9973_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9973_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9973_0");
     editorCell.addEditorCell(this.createConstant_9973_0(context, node, "info"));
@@ -37,7 +37,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9973_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9973_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9973_1");
     editorCell.addEditorCell(this.createConstant_9973_4(context, node, "node feature to highlight(optional)"));
@@ -48,7 +48,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -56,7 +56,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -64,14 +64,14 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_3");
     {
@@ -82,7 +82,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_4");
     {
@@ -93,7 +93,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9973_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9973_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9973_5");
     {
@@ -105,7 +105,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9973_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9973_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("infoText");
     provider.setNoTargetText("<error string>");
@@ -122,7 +122,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9973_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9973_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToReport");
     provider.setNoTargetText("<node to highlight>");
@@ -139,7 +139,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9973_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9973_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("helginsIntention");
     provider.setNoTargetText("<no intention>");
@@ -160,7 +160,7 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9973_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9973_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("messageTarget");
     provider.setNoTargetText("<no messageTarget>");

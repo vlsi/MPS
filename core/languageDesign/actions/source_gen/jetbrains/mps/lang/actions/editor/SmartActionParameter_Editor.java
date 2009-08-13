@@ -20,7 +20,7 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
     return this.createCollection_3006_0(context, node);
   }
 
-  public EditorCell createCollection_3006_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3006_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3006_0");
     editorCell.addEditorCell(this.createRefNode_3006_0(context, node));
@@ -28,7 +28,7 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3006_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3006_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -45,7 +45,7 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3006_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3006_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

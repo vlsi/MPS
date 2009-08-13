@@ -18,7 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common3910_0;
+  private AbstractCellProvider my_CellModel_Common3910_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createProperty_3910_0(context, node);
@@ -28,7 +28,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     return this.createCollection_3910_0(context, node);
   }
 
-  public EditorCell createCollection_3910_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3910_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3910_0");
     {
@@ -39,7 +39,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_3910_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3910_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common3910_0 == null) {
       this.my_CellModel_Common3910_0 = new _CellModel_Common(node);
     }
@@ -47,7 +47,7 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3910_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3910_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("closeBrace");
     provider.setNoTargetText("}");

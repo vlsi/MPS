@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SNode;
 
 public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp2830_0;
+  private AbstractCellProvider myReplaceableAliasAndParms_Comp2830_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent_2830_0(context, node);
   }
 
-  public EditorCell createComponent_2830_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2830_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp2830_0 == null) {
       this.myReplaceableAliasAndParms_Comp2830_0 = new ReplaceableAliasAndParms_Comp(node);
     }

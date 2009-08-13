@@ -29,7 +29,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_1261_2(context, node);
   }
 
-  public EditorCell createCollection_1261_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1261_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1261_0");
     if (renderingCondition1261_0(node, context, context.getOperationContext().getScope())) {
@@ -47,7 +47,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1261_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1261_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1261_1");
     {
@@ -59,7 +59,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1261_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1261_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1261_2");
     editorCell.addEditorCell(this.createConstant_1261_7(context, node, "label"));
@@ -68,7 +68,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -80,7 +80,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -92,7 +92,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -112,7 +112,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_4");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -120,7 +120,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_5");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -128,7 +128,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_6");
     {
@@ -140,7 +140,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_7");
     {
@@ -151,7 +151,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_8");
     {
@@ -163,7 +163,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1261_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1261_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1261_9");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -171,7 +171,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1261_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1261_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -193,7 +193,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1261_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1261_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -210,7 +210,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1261_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1261_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -229,7 +229,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1261_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1261_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<none>");
@@ -253,7 +253,7 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1261_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1261_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 

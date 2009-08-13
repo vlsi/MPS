@@ -21,7 +21,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     return this.createCollection_2795_0(context, node);
   }
 
-  public EditorCell createCollection_2795_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2795_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2795_0");
     editorCell.addEditorCell(this.createConstant_2795_0(context, node, "is applicable:"));
@@ -33,14 +33,14 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2795_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2795_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2795_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2795_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2795_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2795_1");
     {
@@ -51,14 +51,14 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2795_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2795_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2795_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2795_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2795_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2795_3");
     {
@@ -69,7 +69,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2795_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2795_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableBlock");
     provider.setNoTargetText("<no applicableBlock>");
@@ -86,7 +86,7 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2795_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2795_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("convertBlock");
     provider.setNoTargetText("<no convertBlock>");

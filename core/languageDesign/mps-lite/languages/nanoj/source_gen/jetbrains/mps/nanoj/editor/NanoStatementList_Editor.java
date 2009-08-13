@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NanoStatementList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6819_0;
+  private AbstractCellListHandler myListHandler_6819_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6819_0(context, node);
   }
 
-  public EditorCell createCollection_6819_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6819_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6819_0");
     editorCell.addEditorCell(this.createConstant_6819_0(context, node, "{"));
@@ -34,21 +34,21 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6819_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6819_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6819_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6819_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6819_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6819_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6819_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6819_0(EditorContext context, SNode node) {
     if (this.myListHandler_6819_0 == null) {
       this.myListHandler_6819_0 = new NanoStatementList_Editor.bodyListHandler_6819_0(node, "body", context);
     }
@@ -58,7 +58,7 @@ public class NanoStatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class bodyListHandler_6819_0 extends RefNodeListHandler {
+  private static class bodyListHandler_6819_0 extends RefNodeListHandler {
 
     public bodyListHandler_6819_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

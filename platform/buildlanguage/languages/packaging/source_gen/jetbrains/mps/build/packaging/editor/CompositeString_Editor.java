@@ -22,7 +22,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
     return this.createCollection_4772_0(context, node);
   }
 
-  public EditorCell createCollection_4772_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4772_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4772_0");
     {
@@ -35,7 +35,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4772_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4772_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -53,7 +53,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4772_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4772_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");

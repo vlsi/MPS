@@ -32,13 +32,13 @@ import jetbrains.mps.nodeEditor.style.Style;
 
 public class OperationCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6903_0;
+  private AbstractCellListHandler myListHandler_6903_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6903_0(context, node);
   }
 
-  public EditorCell createCollection_6903_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6903_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6903_0");
     editorCell.addEditorCell(this.createRefCell_6903_0(context, node));
@@ -46,7 +46,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6903_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6903_0(EditorContext context, SNode node) {
     if (this.myListHandler_6903_0 == null) {
       this.myListHandler_6903_0 = new OperationCall_Editor.parameterListHandler_6903_0(node, "parameter", context);
     }
@@ -59,7 +59,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6903_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6903_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -78,7 +78,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6903_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6903_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isNotEmpty();
   }
 
@@ -96,7 +96,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       return this.createProperty_6903_0(context, node);
     }
 
-    public EditorCell createProperty_6903_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6903_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("operationName");
       provider.setNoTargetText("<no operationName>");
@@ -117,7 +117,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class parameterListHandler_6903_0 extends RefNodeListHandler {
+  private static class parameterListHandler_6903_0 extends RefNodeListHandler {
 
     public parameterListHandler_6903_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -170,7 +170,7 @@ public class OperationCall_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_6903_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_6903_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_6903_0");
       {

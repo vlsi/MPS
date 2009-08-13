@@ -21,7 +21,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return this.createCollection_7513_0(context, node);
   }
 
-  public EditorCell createCollection_7513_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7513_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7513_0");
     editorCell.addEditorCell(this.createRefNode_7513_0(context, node));
@@ -30,7 +30,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7513_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7513_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7513_0");
     {
@@ -41,7 +41,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7513_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7513_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("date");
     provider.setNoTargetText("<no date>");
@@ -58,7 +58,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7513_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7513_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("postingRule");
     provider.setNoTargetText("<no postingRule>");

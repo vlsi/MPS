@@ -23,7 +23,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_4603_0(context, node);
   }
 
-  public EditorCell createCollection_4603_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4603_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4603_0");
     editorCell.addEditorCell(this.createConceptProperty_4603_0(context, node));
@@ -32,14 +32,14 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4603_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4603_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4603_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_4603_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_4603_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -59,7 +59,7 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4603_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4603_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("layoutConstraint");
     provider.setNoTargetText("<no layoutConstraint>");

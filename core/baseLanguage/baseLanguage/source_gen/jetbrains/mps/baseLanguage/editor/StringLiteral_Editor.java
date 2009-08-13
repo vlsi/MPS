@@ -24,7 +24,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return this.createCollection_3246_0(context, node);
   }
 
-  public EditorCell createCollection_3246_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3246_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3246_0");
     editorCell.addEditorCell(this.createConstant_3246_0(context, node, "\""));
@@ -33,7 +33,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3246_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3246_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3246_0");
     {
@@ -46,7 +46,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3246_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3246_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3246_1");
     {
@@ -60,7 +60,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3246_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3246_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("");

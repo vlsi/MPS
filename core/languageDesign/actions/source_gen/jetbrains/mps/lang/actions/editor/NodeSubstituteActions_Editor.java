@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1835_0;
+  private AbstractCellListHandler myListHandler_1835_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1835_0(context, node);
   }
 
-  public EditorCell createCollection_1835_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1835_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1835_0");
     editorCell.addEditorCell(this.createCollection_1835_2(context, node));
@@ -42,7 +42,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1835_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1835_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1835_1");
     {
@@ -53,7 +53,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1835_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1835_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1835_2");
     {
@@ -65,7 +65,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1835_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1835_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1835_0");
     {
@@ -76,14 +76,14 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1835_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1835_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1835_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1835_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1835_0(EditorContext context, SNode node) {
     if (this.myListHandler_1835_0 == null) {
       this.myListHandler_1835_0 = new NodeSubstituteActions_Editor.actionsBuilderListHandler_1835_0(node, "actionsBuilder", context);
     }
@@ -98,7 +98,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1835_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1835_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -121,7 +121,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class actionsBuilderListHandler_1835_0 extends RefNodeListHandler {
+  private static class actionsBuilderListHandler_1835_0 extends RefNodeListHandler {
 
     public actionsBuilderListHandler_1835_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

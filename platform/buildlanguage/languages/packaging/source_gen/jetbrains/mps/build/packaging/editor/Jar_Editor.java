@@ -21,15 +21,15 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Jar_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent1697_0;
-  /* package */AbstractCellProvider myIncludeExcludeEditorComponent1697_0;
-  /* package */AbstractCellProvider myCompositecomponentEntriesEditorComponent1697_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent1697_0;
+  private AbstractCellProvider myIncludeExcludeEditorComponent1697_0;
+  private AbstractCellProvider myCompositecomponentEntriesEditorComponent1697_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1697_0(context, node);
   }
 
-  public EditorCell createCollection_1697_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1697_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1697_0");
     editorCell.addEditorCell(this.createCollection_1697_1(context, node));
@@ -38,7 +38,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1697_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1697_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1697_1");
     {
@@ -52,7 +52,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1697_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1697_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1697_2");
     {
@@ -65,7 +65,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1697_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1697_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1697_0 == null) {
       this.myConfigurationReferencesEditorComponent1697_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -73,7 +73,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1697_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_1697_1(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent1697_0 == null) {
       this.myIncludeExcludeEditorComponent1697_0 = new IncludeExcludeEditorComponent(node);
     }
@@ -81,7 +81,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1697_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_1697_2(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent1697_0 == null) {
       this.myCompositecomponentEntriesEditorComponent1697_0 = new CompositecomponentEntriesEditorComponent(node);
     }
@@ -89,12 +89,12 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1697_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1697_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createConceptProperty_1697_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_1697_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -113,7 +113,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1697_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1697_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -134,7 +134,7 @@ public class Jar_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1697_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1697_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("manifest");
     provider.setNoTargetText("<no manifest>");

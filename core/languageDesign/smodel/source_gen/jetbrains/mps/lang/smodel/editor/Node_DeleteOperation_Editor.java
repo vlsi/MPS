@@ -18,7 +18,7 @@ public class Node_DeleteOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_7901_0(context, node, "delete");
   }
 
-  public EditorCell createConstant_7901_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7901_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7901_0");
     {

@@ -34,7 +34,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_7497_2(context, node);
   }
 
-  public EditorCell createCollection_7497_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7497_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7497_0");
     if (renderingCondition7497_1(node, context, context.getOperationContext().getScope())) {
@@ -50,7 +50,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7497_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7497_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7497_1");
     {
@@ -62,7 +62,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7497_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7497_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7497_2");
     editorCell.addEditorCell(this.createConstant_7497_5(context, node, "label"));
@@ -71,7 +71,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -79,7 +79,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -99,7 +99,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -111,7 +111,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_4");
     {
@@ -123,7 +123,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_5");
     {
@@ -134,7 +134,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7497_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7497_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7497_6");
     {
@@ -146,7 +146,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7497_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7497_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -163,7 +163,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7497_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7497_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("inputSequence");
     provider.setNoTargetText("<no inputSequence>");
@@ -183,7 +183,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7497_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7497_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -205,7 +205,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7497_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7497_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -224,7 +224,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7497_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_7497_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<none>");
@@ -248,11 +248,11 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition7497_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7497_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  public static boolean renderingCondition7497_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7497_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 

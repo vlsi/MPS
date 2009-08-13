@@ -24,7 +24,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return this.createCollection_1462_0(context, node);
   }
 
-  public EditorCell createCollection_1462_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1462_0");
     editorCell.addEditorCell(this.createCollection_1462_1(context, node));
@@ -33,7 +33,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1462_1");
     {
@@ -48,7 +48,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1462_2");
     {
@@ -61,7 +61,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1462_3");
     {
@@ -75,7 +75,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1462_4");
     {
@@ -89,7 +89,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1462_5");
     {
@@ -103,7 +103,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1462_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_1462_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1462_6");
     {
@@ -116,7 +116,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -124,7 +124,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -132,7 +132,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -140,7 +140,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -148,7 +148,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -156,7 +156,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1462_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1462_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1462_5");
     {
@@ -167,12 +167,12 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1462_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1462_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_1462_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1462_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -190,7 +190,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1462_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1462_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("extends");
     provider.setNoTargetText("<no extends>");
@@ -207,7 +207,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1462_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1462_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftTarget");
     provider.setNoTargetText("<no leftTarget>");
@@ -224,7 +224,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1462_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1462_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("leftTargetRole");
     provider.setNoTargetText("<no leftTargetRole>");
@@ -242,7 +242,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1462_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1462_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightTarget");
     provider.setNoTargetText("<no rightTarget>");
@@ -259,7 +259,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1462_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_1462_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightTargetRole");
     provider.setNoTargetText("<no rightTargetRole>");
@@ -277,7 +277,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1462_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_1462_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("sign");
     provider.setNoTargetText("<no sign>");

@@ -19,7 +19,7 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
     return this.createCollection_3119_0(context, node);
   }
 
-  public EditorCell createCollection_3119_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3119_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3119_0");
     editorCell.addEditorCell(this.createConstant_3119_0(context, node, "caret position"));
@@ -28,21 +28,21 @@ public class CaretPositionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3119_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3119_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3119_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3119_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3119_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3119_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_3119_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3119_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");

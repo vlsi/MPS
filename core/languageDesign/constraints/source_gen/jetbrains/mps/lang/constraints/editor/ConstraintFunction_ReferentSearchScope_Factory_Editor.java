@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConceptFunction_Component2342_0;
+  private AbstractCellProvider myConceptFunction_Component2342_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent_2342_0(context, node);
@@ -27,7 +27,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return this.createCollection_2342_0(context, node);
   }
 
-  public EditorCell createCollection_2342_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2342_0");
     {
@@ -43,7 +43,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2342_1");
     {
@@ -58,7 +58,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2342_2");
     {
@@ -70,7 +70,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2342_3");
     {
@@ -82,7 +82,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2342_4");
     {
@@ -94,7 +94,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2342_5");
     {
@@ -106,7 +106,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createCollection_2342_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_2342_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2342_6");
     {
@@ -118,7 +118,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createComponent_2342_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2342_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component2342_0 == null) {
       this.myConceptFunction_Component2342_0 = new ConceptFunction_Component(node);
     }
@@ -126,7 +126,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_0");
     {
@@ -138,7 +138,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_1");
     {
@@ -149,7 +149,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_2");
     {
@@ -160,7 +160,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_3");
     {
@@ -171,7 +171,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_4");
     {
@@ -182,14 +182,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_6");
     {
@@ -200,14 +200,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_8");
     {
@@ -218,14 +218,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_9");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_10");
     {
@@ -236,7 +236,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_11");
     {
@@ -248,14 +248,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_12");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2342_13(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2342_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2342_13");
     {

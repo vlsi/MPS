@@ -14,7 +14,7 @@ public class ArtifactReferenceCommandLinePart_Editor extends DefaultNodeEditor {
     return this.createConstant_5917_0(context, node, "installer.exe");
   }
 
-  public EditorCell createConstant_5917_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5917_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5917_0");
     editorCell.setDefaultText("");

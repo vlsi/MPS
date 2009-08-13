@@ -26,7 +26,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_8845_0(context, node);
   }
 
-  public EditorCell createCollection_8845_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8845_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8845_0");
     editorCell.addEditorCell(this.createConstant_8845_0(context, node, "tool"));
@@ -36,7 +36,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8845_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8845_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8845_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -44,7 +44,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8845_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8845_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8845_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8845_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8845_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8845_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8845_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8845_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("tool");
     provider.setNoTargetText("<no tool>");
@@ -92,7 +92,7 @@ public class GetToolOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_8845_0(context, node);
     }
 
-    public EditorCell createProperty_8845_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8845_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

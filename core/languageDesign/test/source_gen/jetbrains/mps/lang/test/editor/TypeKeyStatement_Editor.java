@@ -23,7 +23,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_9854_0(context, node);
   }
 
-  public EditorCell createCollection_9854_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9854_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9854_0");
     editorCell.addEditorCell(this.createConceptProperty_9854_0(context, node));
@@ -33,7 +33,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9854_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9854_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9854_0");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
@@ -45,7 +45,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9854_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9854_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9854_1");
     BaseLanguageStyle_StyleSheet.getStringLiteral(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9854_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9854_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -76,7 +76,7 @@ public class TypeKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9854_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9854_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("keys");
     provider.setNoTargetText("<no keys>");

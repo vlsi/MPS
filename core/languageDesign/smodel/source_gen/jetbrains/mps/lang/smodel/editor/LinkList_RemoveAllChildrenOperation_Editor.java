@@ -18,7 +18,7 @@ public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEdito
     return this.createConstant_9398_0(context, node, "remove all");
   }
 
-  public EditorCell createConstant_9398_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9398_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9398_0");
     {

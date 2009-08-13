@@ -32,7 +32,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return this.createCollection_1730_1(context, node);
   }
 
-  public EditorCell createCollection_1730_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1730_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1730_0");
     editorCell.addEditorCell(this.createConstant_1730_0(context, node, "condition"));
@@ -44,7 +44,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1730_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1730_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1730_1");
     {
@@ -57,7 +57,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1730_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1730_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1730_2");
     {
@@ -70,7 +70,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1730_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1730_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1730_3");
     {
@@ -84,7 +84,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -96,7 +96,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_1");
     {
@@ -107,7 +107,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_2");
     {
@@ -120,7 +120,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_3");
     {
@@ -131,7 +131,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_4");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -139,7 +139,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_5");
     {
@@ -150,14 +150,14 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1730_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1730_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1730_7");
     {
@@ -168,7 +168,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1730_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("templateNode");
     provider.setNoTargetText("<no template>");
@@ -186,7 +186,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1730_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1730_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<always>");
@@ -203,7 +203,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1730_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1730_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -221,7 +221,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1730_2(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1730_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -240,7 +240,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1730_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1730_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "label", false) != null;
   }
 
@@ -258,7 +258,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1730_0(context, node);
     }
 
-    public EditorCell createProperty_1730_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1730_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -297,7 +297,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1730_1(context, node);
     }
 
-    public EditorCell createProperty_1730_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_1730_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -335,7 +335,7 @@ public class CreateRootRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1730_2(context, node);
     }
 
-    public EditorCell createProperty_1730_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_1730_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

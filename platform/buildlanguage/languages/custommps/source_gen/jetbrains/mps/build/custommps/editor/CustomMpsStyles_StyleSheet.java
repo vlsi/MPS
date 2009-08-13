@@ -30,7 +30,7 @@ public class CustomMpsStyles_StyleSheet {
     return style;
   }
 
-  public static boolean _StyleParameter_QueryFunction_1233937956200(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1233937956200(SNode node, EditorContext editorContext) {
     return true;
   }
 

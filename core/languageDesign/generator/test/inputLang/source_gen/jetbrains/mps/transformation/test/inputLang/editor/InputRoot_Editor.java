@@ -25,13 +25,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InputRoot_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2000_0;
+  private AbstractCellListHandler myListHandler_2000_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2000_0(context, node);
   }
 
-  public EditorCell createCollection_2000_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2000_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2000_0");
     editorCell.addEditorCell(this.createCollection_2000_1(context, node));
@@ -42,7 +42,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2000_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2000_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2000_1");
     {
@@ -55,7 +55,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2000_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2000_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2000_2");
     {
@@ -67,7 +67,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2000_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2000_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2000_3");
     {
@@ -80,56 +80,56 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2000_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2000_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2000_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2000_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2000_0(EditorContext context, SNode node) {
     if (this.myListHandler_2000_0 == null) {
       this.myListHandler_2000_0 = new InputRoot_Editor.inputChildListHandler_2000_0(node, "inputChild", context);
     }
@@ -139,7 +139,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2000_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2000_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -157,7 +157,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2000_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2000_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("useInTest");
     provider.setNoTargetText("<no useInTest>");
@@ -175,7 +175,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class inputChildListHandler_2000_0 extends RefNodeListHandler {
+  private static class inputChildListHandler_2000_0 extends RefNodeListHandler {
 
     public inputChildListHandler_2000_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

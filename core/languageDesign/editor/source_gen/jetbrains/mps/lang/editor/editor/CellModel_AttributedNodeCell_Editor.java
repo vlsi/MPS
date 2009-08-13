@@ -15,7 +15,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common5832_0;
+  private AbstractCellProvider my_CellModel_Common5832_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5832_1(context, node);
@@ -25,7 +25,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return this.createCollection_5832_0(context, node);
   }
 
-  public EditorCell createCollection_5832_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5832_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5832_0");
     {
@@ -36,7 +36,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5832_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5832_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5832_1");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5832_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_5832_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common5832_0 == null) {
       this.my_CellModel_Common5832_0 = new _CellModel_Common(node);
     }
@@ -54,7 +54,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5832_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5832_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5832_0");
     {
@@ -67,7 +67,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5832_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5832_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5832_1");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5832_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5832_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5832_2");
     {

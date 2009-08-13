@@ -19,7 +19,7 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_6528_0(context, node);
   }
 
-  public EditorCell createCollection_6528_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6528_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6528_0");
     editorCell.addEditorCell(this.createConstant_6528_0(context, node, "deleteFeature("));
@@ -29,28 +29,28 @@ public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6528_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6528_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6528_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6528_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6528_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6528_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6528_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6528_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6528_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_6528_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6528_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("feature");
     provider.setNoTargetText("<no feature>");

@@ -31,7 +31,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return this.createCollection_0446_0(context, node);
   }
 
-  public EditorCell createCollection_0446_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0446_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0446_0");
     {
@@ -48,7 +48,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_0446_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0446_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0446_1");
     editorCell.addEditorCell(this.createConstant_0446_0(context, node, "excludes"));
@@ -56,7 +56,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_0446_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0446_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0446_2");
     editorCell.addEditorCell(this.createConstant_0446_1(context, node, "includes"));
@@ -64,7 +64,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_0446_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0446_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0446_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_0446_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0446_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0446_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -80,7 +80,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_0446_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0446_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -99,7 +99,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_0446_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_0446_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");
@@ -119,11 +119,11 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition0446_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0446_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
 
-  public static boolean renderingCondition0446_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0446_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
 

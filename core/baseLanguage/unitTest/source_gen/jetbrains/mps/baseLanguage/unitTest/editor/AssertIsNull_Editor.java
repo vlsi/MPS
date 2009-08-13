@@ -22,7 +22,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     return this.createCollection_7317_0(context, node);
   }
 
-  public EditorCell createCollection_7317_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7317_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7317_0");
     editorCell.addEditorCell(this.createConstant_7317_0(context, node, "assert"));
@@ -32,7 +32,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7317_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7317_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7317_0");
     {
@@ -43,7 +43,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7317_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7317_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7317_1");
     {
@@ -54,7 +54,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7317_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7317_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7317_2");
     {
@@ -65,7 +65,7 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7317_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7317_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

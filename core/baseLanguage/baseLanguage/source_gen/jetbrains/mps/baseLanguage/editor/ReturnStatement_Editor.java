@@ -21,7 +21,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_7565_0(context, node);
   }
 
-  public EditorCell createCollection_7565_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7565_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7565_0");
     editorCell.addEditorCell(this.createConstant_7565_1(context, node, "return"));
@@ -32,7 +32,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7565_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7565_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7565_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7565_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7565_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7565_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -49,7 +49,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7565_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7565_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -67,7 +67,7 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
 

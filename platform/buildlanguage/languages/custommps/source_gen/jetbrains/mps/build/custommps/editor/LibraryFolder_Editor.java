@@ -24,11 +24,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class LibraryFolder_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIncludeExcludeEditorComponent6803_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent6803_0;
-  /* package */AbstractCellProvider myIncludeExcludeInInspector6803_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent6803_1;
-  /* package */AbstractCellProvider myCompositecomponentEntriesEditorComponent6803_0;
+  private AbstractCellProvider myIncludeExcludeEditorComponent6803_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent6803_0;
+  private AbstractCellProvider myIncludeExcludeInInspector6803_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent6803_1;
+  private AbstractCellProvider myCompositecomponentEntriesEditorComponent6803_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6803_0(context, node);
@@ -38,7 +38,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return this.createCollection_6803_2(context, node);
   }
 
-  public EditorCell createCollection_6803_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6803_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6803_0");
     editorCell.addEditorCell(this.createCollection_6803_1(context, node));
@@ -46,7 +46,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6803_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6803_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6803_1");
     {
@@ -64,7 +64,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6803_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6803_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6803_2");
     editorCell.addEditorCell(this.createComponent_6803_2(context, node));
@@ -72,7 +72,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6803_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6803_0(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent6803_0 == null) {
       this.myIncludeExcludeEditorComponent6803_0 = new IncludeExcludeEditorComponent(node);
     }
@@ -80,7 +80,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6803_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_6803_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6803_0 == null) {
       this.myConfigurationReferencesEditorComponent6803_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -88,7 +88,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6803_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_6803_2(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector6803_0 == null) {
       this.myIncludeExcludeInInspector6803_0 = new IncludeExcludeInInspector(node);
     }
@@ -96,7 +96,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6803_3(EditorContext context, SNode node) {
+  private EditorCell createComponent_6803_3(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6803_1 == null) {
       this.myConfigurationReferencesEditorComponent6803_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -104,7 +104,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6803_4(EditorContext context, SNode node) {
+  private EditorCell createComponent_6803_4(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent6803_0 == null) {
       this.myCompositecomponentEntriesEditorComponent6803_0 = new CompositecomponentEntriesEditorComponent(node);
     }
@@ -112,7 +112,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6803_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6803_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6803_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -120,7 +120,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6803_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6803_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6803_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -128,7 +128,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6803_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6803_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -147,7 +147,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6803_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6803_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -164,7 +164,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6803_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6803_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourcePath");
     provider.setNoTargetText("<no sourcePath>");
@@ -181,7 +181,7 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6803_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6803_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("libraryName");
     provider.setNoTargetText("<no libraryName>");

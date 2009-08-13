@@ -23,7 +23,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myBaseMappingRule_premise9102_0;
+  private AbstractCellProvider myBaseMappingRule_premise9102_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9102_1(context, node);
@@ -33,7 +33,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return this.createCollection_9102_0(context, node);
   }
 
-  public EditorCell createCollection_9102_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9102_0");
     {
@@ -46,7 +46,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9102_1");
     editorCell.addEditorCell(this.createCollection_9102_2(context, node));
@@ -55,7 +55,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9102_2");
     {
@@ -66,7 +66,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9102_3");
     {
@@ -81,7 +81,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9102_4");
     {
@@ -93,7 +93,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9102_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_9102_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9102_5");
     {
@@ -105,7 +105,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_9102_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_9102_0(EditorContext context, SNode node) {
     if (this.myBaseMappingRule_premise9102_0 == null) {
       this.myBaseMappingRule_premise9102_0 = new BaseMappingRule_premise(node);
     }
@@ -113,7 +113,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_0");
     {
@@ -126,7 +126,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_1");
     {
@@ -137,7 +137,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_2");
     {
@@ -148,7 +148,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_3");
     {
@@ -160,21 +160,21 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9102_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9102_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9102_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_9102_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9102_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ruleConsequence");
     provider.setNoTargetText("<no ruleConsequence>");
@@ -191,7 +191,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9102_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9102_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
@@ -209,7 +209,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9102_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9102_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
@@ -228,7 +228,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9102_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9102_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
@@ -246,7 +246,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_9102_0(context, node);
     }
 
-    public EditorCell createProperty_9102_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_9102_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -284,7 +284,7 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_9102_1(context, node);
     }
 
-    public EditorCell createProperty_9102_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_9102_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

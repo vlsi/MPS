@@ -33,13 +33,13 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ClosureLiteral_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2648_0;
+  private AbstractCellListHandler myListHandler_2648_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2648_0(context, node);
   }
 
-  public EditorCell createCollection_2648_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2648_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2648_0");
     editorCell.addEditorCell(this.createConstant_2648_0(context, node, "{"));
@@ -50,7 +50,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2648_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2648_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2648_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2648_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2648_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2648_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -70,7 +70,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2648_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2648_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2648_3");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -93,7 +93,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2648_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2648_0(EditorContext context, SNode node) {
     if (this.myListHandler_2648_0 == null) {
       this.myListHandler_2648_0 = new ClosureLiteral_Editor.parameterListHandler_2648_0(node, "parameter", context);
     }
@@ -103,7 +103,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2648_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2648_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -128,11 +128,11 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean _StyleParameter_QueryFunction_1237539509375(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1237539509375(SNode node, EditorContext editorContext) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 
-  public static class parameterListHandler_2648_0 extends RefNodeListHandler {
+  private static class parameterListHandler_2648_0 extends RefNodeListHandler {
 
     public parameterListHandler_2648_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -185,7 +185,7 @@ public class ClosureLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_2648_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_2648_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_2648_2");
       {

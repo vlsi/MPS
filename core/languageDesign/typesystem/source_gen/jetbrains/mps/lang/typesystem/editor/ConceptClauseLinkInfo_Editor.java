@@ -28,7 +28,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return this.createCollection_3933_0(context, node);
   }
 
-  public EditorCell createCollection_3933_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3933_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3933_0");
     editorCell.addEditorCell(this.createRefCell_3933_0(context, node));
@@ -40,7 +40,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3933_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3933_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3933_1");
     {
@@ -54,14 +54,14 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3933_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3933_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3933_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3933_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3933_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3933_1");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
@@ -69,7 +69,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3933_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3933_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3933_2");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
@@ -77,7 +77,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3933_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3933_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no linkDeclaration>");
@@ -95,7 +95,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3933_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3933_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("targetNode");
     provider.setNoTargetText("<no targetNode>");
@@ -112,7 +112,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3933_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3933_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("childIndex");
     provider.setNoTargetText("<no childIndex>");
@@ -130,7 +130,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3933_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3933_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 
@@ -148,7 +148,7 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
       return this.createProperty_3933_0(context, node);
     }
 
-    public EditorCell createProperty_3933_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3933_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

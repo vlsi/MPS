@@ -20,7 +20,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_5911_0(context, node);
   }
 
-  public EditorCell createCollection_5911_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5911_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5911_0");
     editorCell.addEditorCell(this.createConstant_5911_0(context, node, "addDependency"));
@@ -31,7 +31,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5911_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5911_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5911_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -39,7 +39,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5911_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5911_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5911_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5911_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5911_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5911_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5911_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5911_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5911_3");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5911_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5911_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("dependency");
     provider.setNoTargetText("<no dependency>");

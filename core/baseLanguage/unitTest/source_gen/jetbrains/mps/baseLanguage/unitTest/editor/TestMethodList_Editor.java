@@ -22,20 +22,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TestMethodList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8171_0;
+  private AbstractCellListHandler myListHandler_8171_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8171_0(context, node);
   }
 
-  public EditorCell createCollection_8171_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8171_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8171_0");
     editorCell.addEditorCell(this.createRefNodeList_8171_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8171_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8171_0(EditorContext context, SNode node) {
     if (this.myListHandler_8171_0 == null) {
       this.myListHandler_8171_0 = new TestMethodList_Editor.testMethodListHandler_8171_0(node, "testMethod", context);
     }
@@ -50,7 +50,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class testMethodListHandler_8171_0 extends RefNodeListHandler {
+  private static class testMethodListHandler_8171_0 extends RefNodeListHandler {
 
     public testMethodListHandler_8171_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -96,7 +96,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_8171_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_8171_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_8171_0");
       {

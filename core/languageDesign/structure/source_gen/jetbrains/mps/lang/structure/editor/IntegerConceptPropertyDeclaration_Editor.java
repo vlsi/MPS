@@ -23,7 +23,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return this.createCollection_4865_0(context, node);
   }
 
-  public EditorCell createCollection_4865_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4865_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4865_0");
     editorCell.addEditorCell(this.createConstant_4865_0(context, node, "integer"));
@@ -34,7 +34,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_4865_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4865_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4865_0");
     {
@@ -46,7 +46,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_4865_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4865_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4865_1");
     {
@@ -58,7 +58,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_4865_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4865_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4865_2");
     {
@@ -70,7 +70,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_4865_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4865_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -92,7 +92,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_4865_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_4865_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inheritable");
     provider.setNoTargetText("<no inheritable>");

@@ -25,7 +25,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return this.createCollection_0794_0(context, node);
   }
 
-  public EditorCell createCollection_0794_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0794_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0794_0");
     editorCell.addEditorCell(this.createConstant_0794_0(context, node, "get output list"));
@@ -37,7 +37,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createConstant_0794_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0794_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0794_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -45,7 +45,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createConstant_0794_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0794_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0794_1");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createConstant_0794_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0794_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0794_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -65,7 +65,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createConstant_0794_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0794_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0794_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -73,7 +73,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createRefCell_0794_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0794_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
@@ -92,7 +92,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
     return editorCell;
   }
 
-  public EditorCell createRefNode_0794_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0794_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("inputNode");
     provider.setNoTargetText("<no input node>");
@@ -123,7 +123,7 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
       return this.createProperty_0794_0(context, node);
     }
 
-    public EditorCell createProperty_0794_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0794_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

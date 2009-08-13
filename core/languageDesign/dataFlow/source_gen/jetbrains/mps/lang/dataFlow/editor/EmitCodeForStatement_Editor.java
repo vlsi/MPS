@@ -19,7 +19,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_4758_0(context, node);
   }
 
-  public EditorCell createCollection_4758_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4758_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4758_0");
     editorCell.addEditorCell(this.createConstant_4758_0(context, node, "code"));
@@ -28,7 +28,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4758_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4758_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4758_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
@@ -36,7 +36,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4758_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4758_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4758_1");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
@@ -44,7 +44,7 @@ public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4758_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4758_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("codeFor");
     provider.setNoTargetText("<no codeFor>");

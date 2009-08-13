@@ -17,7 +17,7 @@ public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
     return this.createConstant_6263_0(context, node, "instance");
   }
 
-  public EditorCell createConstant_6263_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6263_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6263_0");
     {

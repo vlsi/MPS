@@ -24,7 +24,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_9621_0(context, node);
   }
 
-  public EditorCell createCollection_9621_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9621_0");
     editorCell.addEditorCell(this.createCollection_9621_1(context, node));
@@ -33,7 +33,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_1");
     {
@@ -45,7 +45,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_2");
     {
@@ -57,7 +57,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9621_3");
     {
@@ -72,7 +72,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_4");
     {
@@ -84,7 +84,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_5");
     {
@@ -96,7 +96,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_6");
     {
@@ -108,7 +108,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9621_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_9621_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9621_7");
     {
@@ -120,7 +120,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_0");
     {
@@ -131,14 +131,14 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_2");
     {
@@ -149,35 +149,35 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9621_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9621_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9621_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_9621_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9621_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("role");
     provider.setNoTargetText("<no role>");
@@ -195,7 +195,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9621_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9621_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("stereotype");
     provider.setNoTargetText("<no stereotype>");
@@ -213,7 +213,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9621_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9621_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("source");
     provider.setNoTargetText("<no source>");
@@ -231,7 +231,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9621_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9621_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
@@ -249,7 +249,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9621_4(EditorContext context, SNode node) {
+  private EditorCell createProperty_9621_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("sourceCardinality");
     provider.setNoTargetText("<no sourceCardinality>");
@@ -281,7 +281,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_9621_2(context, node);
     }
 
-    public EditorCell createProperty_9621_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_9621_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no concept>");
@@ -319,7 +319,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_9621_3(context, node);
     }
 
-    public EditorCell createProperty_9621_3(EditorContext context, SNode node) {
+    private EditorCell createProperty_9621_3(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no concept>");

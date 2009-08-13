@@ -25,14 +25,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StatementList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6577_0;
-  /* package */AbstractCellListHandler myListHandler_6577_1;
+  private AbstractCellListHandler myListHandler_6577_0;
+  private AbstractCellListHandler myListHandler_6577_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6577_0(context, node);
   }
 
-  public EditorCell createCollection_6577_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6577_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6577_0");
     {
@@ -48,7 +48,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6577_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6577_0(EditorContext context, SNode node) {
     if (this.myListHandler_6577_0 == null) {
       this.myListHandler_6577_0 = new StatementList_Editor.statementListHandler_6577_0(node, "statement", context);
     }
@@ -64,7 +64,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6577_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6577_1(EditorContext context, SNode node) {
     if (this.myListHandler_6577_1 == null) {
       this.myListHandler_6577_1 = new StatementList_Editor.statementListHandler_6577_1(node, "statement", context);
     }
@@ -80,15 +80,15 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 
-  public static boolean renderingCondition6577_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6577_1(SNode node, EditorContext editorContext, IScope scope) {
     return StatementList_Behavior.call_isCompact_1237546596168(node);
   }
 
-  public static class statementListHandler_6577_0 extends RefNodeListHandler {
+  private static class statementListHandler_6577_0 extends RefNodeListHandler {
 
     public statementListHandler_6577_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -134,7 +134,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_6577_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_6577_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_6577_0");
       {
@@ -149,7 +149,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class statementListHandler_6577_1 extends RefNodeListHandler {
+  private static class statementListHandler_6577_1 extends RefNodeListHandler {
 
     public statementListHandler_6577_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -195,7 +195,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_6577_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_6577_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_6577_1");
       {

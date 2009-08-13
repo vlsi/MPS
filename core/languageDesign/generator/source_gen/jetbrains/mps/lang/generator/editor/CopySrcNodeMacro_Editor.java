@@ -19,8 +19,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCopyScrNodeMacro_inspector2079_0;
-  /* package */AbstractCellProvider myNodeMacro_postfix2079_0;
+  private AbstractCellProvider myCopyScrNodeMacro_inspector2079_0;
+  private AbstractCellProvider myNodeMacro_postfix2079_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2079_0(context, node);
@@ -30,7 +30,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     return this.createComponent_2079_0(context, node);
   }
 
-  public EditorCell createCollection_2079_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2079_0");
     editorCell.addEditorCell(this.createConstant_2079_0(context, node, "$COPY_SRC$"));
@@ -38,7 +38,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2079_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2079_0(EditorContext context, SNode node) {
     if (this.myCopyScrNodeMacro_inspector2079_0 == null) {
       this.myCopyScrNodeMacro_inspector2079_0 = new CopyScrNodeMacro_inspector(node);
     }
@@ -46,7 +46,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2079_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_2079_1(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix2079_0 == null) {
       this.myNodeMacro_postfix2079_0 = new NodeMacro_postfix(node);
     }
@@ -54,7 +54,7 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);

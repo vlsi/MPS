@@ -14,7 +14,7 @@ public class Pattern_Editor extends DefaultNodeEditor {
     return this.createError_3948_0(context, node);
   }
 
-  public EditorCell createError_3948_0(EditorContext context, SNode node) {
+  private EditorCell createError_3948_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<undefined pattern>");
     editorCell.setCellId("Error_3948_0");
     return editorCell;

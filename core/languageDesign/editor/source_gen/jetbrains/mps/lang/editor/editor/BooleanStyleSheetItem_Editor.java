@@ -27,7 +27,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return this.createCollection_2675_0(context, node);
   }
 
-  public EditorCell createCollection_2675_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2675_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2675_0");
     editorCell.addEditorCell(this.createConceptProperty_2675_0(context, node));
@@ -41,14 +41,14 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2675_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2675_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2675_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2675_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2675_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -68,7 +68,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2675_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2675_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("flag");
     provider.setNoTargetText("<no flag>");
@@ -86,7 +86,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2675_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2675_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -105,11 +105,11 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition2675_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2675_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) == null);
   }
 
-  public static boolean renderingCondition2675_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2675_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) != null) && BooleanStyleSheetItem_Behavior.call_useQuery_1223387362946(node);
   }
 

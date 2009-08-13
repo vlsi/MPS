@@ -14,7 +14,7 @@ public class NodeWarningProperty_Editor extends DefaultNodeEditor {
     return this.createConstant_7453_0(context, node, "has warning");
   }
 
-  public EditorCell createConstant_7453_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7453_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7453_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);

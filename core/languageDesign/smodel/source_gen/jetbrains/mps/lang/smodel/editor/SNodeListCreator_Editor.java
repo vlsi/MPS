@@ -20,14 +20,14 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_4493_1(context, node);
   }
 
-  public EditorCell createCollection_4493_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4493_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4493_1");
     editorCell.addEditorCell(this.createRefNode_4493_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode_4493_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4493_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("createdType");
     provider.setNoTargetText("<no createdType>");

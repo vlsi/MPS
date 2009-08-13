@@ -33,7 +33,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return this.createCollection_1377_1(context, node);
   }
 
-  public EditorCell createCollection_1377_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1377_0");
     editorCell.addEditorCell(this.createCollection_1377_2(context, node));
@@ -46,7 +46,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1377_1");
     {
@@ -59,7 +59,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1377_2");
     {
@@ -76,7 +76,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_3");
     {
@@ -88,7 +88,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_4");
     {
@@ -100,7 +100,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_5");
     {
@@ -112,7 +112,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_6");
     {
@@ -124,7 +124,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_7");
     {
@@ -136,7 +136,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1377_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_1377_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1377_8");
     {
@@ -148,7 +148,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_0");
     {
@@ -160,7 +160,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_1");
     {
@@ -171,7 +171,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_2");
     {
@@ -184,7 +184,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_3");
     {
@@ -195,7 +195,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_4");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -207,7 +207,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_5");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -219,7 +219,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_6");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -231,7 +231,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_7");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -243,21 +243,21 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1377_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1377_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1377_9");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_1377_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1377_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
@@ -275,7 +275,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1377_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1377_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
@@ -296,7 +296,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1377_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_1377_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("applyToConceptInheritors");
     provider.setNoTargetText("<no applyToConceptInheritors>");
@@ -314,7 +314,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1377_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1377_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<always>");
@@ -331,7 +331,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1377_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_1377_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("keepSourceRoot");
     provider.setNoTargetText("<no keepSourceRoot>");
@@ -349,7 +349,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1377_2(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1377_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
@@ -367,7 +367,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1377_3(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1377_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
@@ -386,7 +386,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1377_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1377_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
@@ -404,7 +404,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1377_0(context, node);
     }
 
-    public EditorCell createProperty_1377_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1377_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -443,7 +443,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1377_1(context, node);
     }
 
-    public EditorCell createProperty_1377_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_1377_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -481,7 +481,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1377_4(context, node);
     }
 
-    public EditorCell createProperty_1377_4(EditorContext context, SNode node) {
+    private EditorCell createProperty_1377_4(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -519,7 +519,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_1377_5(context, node);
     }
 
-    public EditorCell createProperty_1377_5(EditorContext context, SNode node) {
+    private EditorCell createProperty_1377_5(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

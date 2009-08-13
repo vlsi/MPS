@@ -42,13 +42,13 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIParamFeature_Properties1460_0;
+  private AbstractCellProvider myIParamFeature_Properties1460_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1460_0(context, node);
   }
 
-  public EditorCell createAlternation_1460_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_1460_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ParamSequenceFeature_Editor.renderingCondition1460_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -63,7 +63,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAlternation_1460_1(EditorContext context, SNode node) {
+  private EditorCell createAlternation_1460_1(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ParamSequenceFeature_Editor.renderingCondition1460_1(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -76,7 +76,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1460_0");
     {
@@ -89,7 +89,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_1");
     {
@@ -109,7 +109,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_2");
     {
@@ -121,7 +121,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1460_3");
     {
@@ -137,7 +137,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_4");
     {
@@ -149,7 +149,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_5");
     {
@@ -160,7 +160,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_6");
     {
@@ -172,7 +172,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1460_7");
     {
@@ -186,7 +186,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_8");
     {
@@ -197,7 +197,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_9");
     {
@@ -209,7 +209,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_10(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_10(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_10");
     {
@@ -220,7 +220,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_11(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_11(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_11");
     {
@@ -232,7 +232,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_12(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_12(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_12");
     {
@@ -243,7 +243,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_13(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_13(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_13");
     {
@@ -255,7 +255,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_14(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_14(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_14");
     {
@@ -267,7 +267,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_15(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_15(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_15");
     {
@@ -286,7 +286,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_16(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_16(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_16");
     {
@@ -297,7 +297,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_17(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_17(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1460_17");
     {
@@ -311,7 +311,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_18(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_18(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_18");
     {
@@ -322,7 +322,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_19(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_19(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_19");
     {
@@ -334,7 +334,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_20(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_20(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_20");
     {
@@ -345,7 +345,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1460_21(EditorContext context, SNode node) {
+  private EditorCell createCollection_1460_21(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1460_21");
     {
@@ -357,7 +357,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1460_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1460_0(EditorContext context, SNode node) {
     if (this.myIParamFeature_Properties1460_0 == null) {
       this.myIParamFeature_Properties1460_0 = new IParamFeature_Properties(node);
     }
@@ -365,7 +365,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_0");
     {
@@ -376,14 +376,14 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_2");
     {
@@ -394,14 +394,14 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -409,7 +409,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_5");
     {
@@ -420,7 +420,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_6");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -428,7 +428,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_7");
     {
@@ -439,14 +439,14 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_9");
     {
@@ -457,21 +457,21 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_12");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -483,7 +483,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_13(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_13");
     {
@@ -494,7 +494,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_14(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_14(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_14");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
@@ -503,7 +503,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_15(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_15(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_15");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
@@ -513,7 +513,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_16(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_16(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_16");
     stylesheet_Feature_StyleSheet.getOPPOSITE(editorCell).apply(editorCell);
@@ -523,7 +523,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_17(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_17(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_17");
     {
@@ -534,7 +534,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_18(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_18(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_18");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -542,7 +542,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_19(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_19(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_19");
     {
@@ -553,7 +553,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_20(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_20(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_20");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -561,7 +561,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1460_21(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1460_21(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1460_21");
     {
@@ -572,7 +572,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_1460_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_1460_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -601,7 +601,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1460_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1460_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("?name?");
@@ -620,7 +620,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1460_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1460_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameterQueryFunction");
     provider.setNoTargetText("<no parameterQueryFunction>");
@@ -637,7 +637,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1460_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1460_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("toStringFunction");
     provider.setNoTargetText("<no toStringFunction>");
@@ -654,7 +654,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1460_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1460_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameterType");
     provider.setNoTargetText("<no parameterType>");
@@ -671,7 +671,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1460_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1460_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("opposite");
     provider.setNoTargetText("<no opposite>");
@@ -690,7 +690,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1460_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1460_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSequenceFunction");
     provider.setNoTargetText("<no paramSequenceFunction>");
@@ -707,7 +707,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1460_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1460_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramSizeFunction");
     provider.setNoTargetText("<no paramSizeFunction>");
@@ -725,27 +725,27 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1460_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
 
-  public static boolean renderingCondition1460_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_1(SNode node, EditorContext editorContext, IScope scope) {
     return IFeature_Behavior.call_hasPartialOpposites_1213877499758(node);
   }
 
-  public static boolean renderingCondition1460_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_2(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "opposite", false) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != node;
   }
 
-  public static boolean renderingCondition1460_3(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_3(SNode node, EditorContext editorContext, IScope scope) {
     return IFeature_Behavior.call_hasMutualOpposite_1213877499741(node);
   }
 
-  public static boolean renderingCondition1460_4(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_4(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "opposite", false) != null);
   }
 
-  public static boolean renderingCondition1460_5(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1460_5(SNode node, EditorContext editorContext, IScope scope) {
     return false;
   }
 
@@ -763,7 +763,7 @@ public class ParamSequenceFeature_Editor extends DefaultNodeEditor {
       return this.createProperty_1460_1(context, node);
     }
 
-    public EditorCell createProperty_1460_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_1460_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

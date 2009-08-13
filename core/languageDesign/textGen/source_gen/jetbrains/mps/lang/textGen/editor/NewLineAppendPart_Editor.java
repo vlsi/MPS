@@ -18,14 +18,14 @@ public class NewLineAppendPart_Editor extends DefaultNodeEditor {
     return this.createCollection_1349_0(context, node);
   }
 
-  public EditorCell createCollection_1349_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1349_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1349_0");
     editorCell.addEditorCell(this.createConstant_1349_0(context, node, "\\n"));
     return editorCell;
   }
 
-  public EditorCell createConstant_1349_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1349_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1349_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);

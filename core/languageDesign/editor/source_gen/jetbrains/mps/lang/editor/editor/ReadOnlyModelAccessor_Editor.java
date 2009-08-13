@@ -20,14 +20,14 @@ public class ReadOnlyModelAccessor_Editor extends DefaultNodeEditor {
     return this.createCollection_4178_0(context, node);
   }
 
-  public EditorCell createCollection_4178_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4178_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4178_0");
     editorCell.addEditorCell(this.createRefNode_4178_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode_4178_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4178_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getter");
     provider.setNoTargetText("<no getter>");

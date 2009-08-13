@@ -23,7 +23,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return this.createCollection_5159_0(context, node);
   }
 
-  public EditorCell createCollection_5159_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5159_0");
     editorCell.addEditorCell(this.createCollection_5159_1(context, node));
@@ -31,7 +31,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_1");
     {
@@ -42,7 +42,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_2");
     {
@@ -54,7 +54,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5159_3");
     {
@@ -74,7 +74,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_4");
     {
@@ -86,7 +86,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_5");
     {
@@ -98,7 +98,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_6");
     {
@@ -110,7 +110,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_7");
     {
@@ -122,7 +122,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5159_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_5159_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5159_8");
     {
@@ -134,7 +134,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_0");
     {
@@ -145,7 +145,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_1");
     {
@@ -156,7 +156,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_2");
     {
@@ -167,7 +167,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_3");
     {
@@ -178,7 +178,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_4");
     {
@@ -189,7 +189,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5159_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5159_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5159_5");
     {
@@ -200,37 +200,37 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell5159_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5159_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5159_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5159_3(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_3(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5159_4(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_4(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell5159_5(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5159_5(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_5159_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5159_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matchingText");
     provider.setNoTargetText("<default>");
@@ -247,7 +247,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5159_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5159_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("descriptionText");
     provider.setNoTargetText("<default>");
@@ -264,7 +264,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5159_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5159_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("handler");
     provider.setNoTargetText("<none>");
@@ -281,7 +281,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5159_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5159_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("icon");
     provider.setNoTargetText("<default>");
@@ -298,7 +298,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5159_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5159_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("actionType");
     provider.setNoTargetText("<default>");

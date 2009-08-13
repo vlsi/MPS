@@ -14,7 +14,7 @@ public class Reference_Editor extends DefaultNodeEditor {
     return this.createError_3521_0(context, node);
   }
 
-  public EditorCell createError_3521_0(EditorContext context, SNode node) {
+  private EditorCell createError_3521_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?reference?");
     editorCell.setCellId("Error_3521_0");
     return editorCell;

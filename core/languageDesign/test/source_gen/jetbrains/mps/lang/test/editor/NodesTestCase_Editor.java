@@ -27,15 +27,15 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class NodesTestCase_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1929_0;
-  /* package */AbstractCellListHandler myListHandler_1929_1;
-  /* package */AbstractCellListHandler myListHandler_1929_2;
+  private AbstractCellListHandler myListHandler_1929_0;
+  private AbstractCellListHandler myListHandler_1929_1;
+  private AbstractCellListHandler myListHandler_1929_2;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1929_0(context, node);
   }
 
-  public EditorCell createCollection_1929_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1929_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1929_0");
     editorCell.addEditorCell(this.createCollection_1929_1(context, node));
@@ -50,7 +50,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1929_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1929_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1929_1");
     {
@@ -67,7 +67,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1929_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1929_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1929_2");
     {
@@ -84,7 +84,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1929_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1929_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1929_3");
     {
@@ -101,7 +101,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1929_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1929_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1929_4");
     {
@@ -118,14 +118,14 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1929_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1929_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1929_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1929_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1929_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1929_1");
     {
@@ -136,7 +136,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1929_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1929_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1929_2");
     {
@@ -147,7 +147,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1929_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1929_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1929_3");
     {
@@ -158,7 +158,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1929_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1929_0(EditorContext context, SNode node) {
     if (this.myListHandler_1929_0 == null) {
       this.myListHandler_1929_0 = new NodesTestCase_Editor.testMethodsListHandler_1929_0(node, "testMethods", context);
     }
@@ -168,7 +168,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1929_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1929_1(EditorContext context, SNode node) {
     if (this.myListHandler_1929_1 == null) {
       this.myListHandler_1929_1 = new NodesTestCase_Editor.methodsListHandler_1929_0(node, "methods", context);
     }
@@ -178,7 +178,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1929_2(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1929_2(EditorContext context, SNode node) {
     if (this.myListHandler_1929_2 == null) {
       this.myListHandler_1929_2 = new NodesTestCase_Editor.nodesToCheckListHandler_1929_0(node, "nodesToCheck", context);
     }
@@ -188,32 +188,32 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1929_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1929_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1929_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1929_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1929_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1929_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1929_3(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1929_3(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1929_4(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1929_4(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_1929_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1929_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -231,7 +231,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class testMethodsListHandler_1929_0 extends RefNodeListHandler {
+  private static class testMethodsListHandler_1929_0 extends RefNodeListHandler {
 
     public testMethodsListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -274,7 +274,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class methodsListHandler_1929_0 extends RefNodeListHandler {
+  private static class methodsListHandler_1929_0 extends RefNodeListHandler {
 
     public methodsListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -324,7 +324,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class nodesToCheckListHandler_1929_0 extends RefNodeListHandler {
+  private static class nodesToCheckListHandler_1929_0 extends RefNodeListHandler {
 
     public nodesToCheckListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -18,14 +18,14 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     return this.createCollection_7743_0(context, node);
   }
 
-  public EditorCell createCollection_7743_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7743_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7743_0");
     editorCell.addEditorCell(this.createProperty_7743_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createProperty_7743_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7743_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

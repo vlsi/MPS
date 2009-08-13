@@ -21,7 +21,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return this.createCollection_8841_0(context, node);
   }
 
-  public EditorCell createCollection_8841_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8841_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8841_0");
     editorCell.addEditorCell(this.createConstant_8841_0(context, node, "IF("));
@@ -34,14 +34,14 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8841_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8841_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8841_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8841_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8841_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8841_1");
     {
@@ -52,7 +52,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8841_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8841_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8841_2");
     {
@@ -63,14 +63,14 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8841_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8841_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8841_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_8841_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8841_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("logicalTest");
     provider.setNoTargetText("<no logicalTest>");
@@ -87,7 +87,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8841_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8841_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueIfTrue");
     provider.setNoTargetText("<no valueIfTrue>");
@@ -104,7 +104,7 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8841_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8841_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valueIfFalse");
     provider.setNoTargetText("<no valueIfFalse>");

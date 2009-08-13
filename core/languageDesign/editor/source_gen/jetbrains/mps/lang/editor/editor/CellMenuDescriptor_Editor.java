@@ -23,13 +23,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1820_0;
+  private AbstractCellListHandler myListHandler_1820_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1820_0(context, node);
   }
 
-  public EditorCell createCollection_1820_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1820_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1820_0");
     editorCell.addEditorCell(this.createConstant_1820_0(context, node, "menu parts:"));
@@ -37,14 +37,14 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1820_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1820_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1820_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1820_0(EditorContext context, SNode node) {
     if (this.myListHandler_1820_0 == null) {
       this.myListHandler_1820_0 = new CellMenuDescriptor_Editor.cellMenuPartListHandler_1820_0(node, "cellMenuPart", context);
     }
@@ -54,7 +54,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
+  private static class cellMenuPartListHandler_1820_0 extends RefNodeListHandler {
 
     public cellMenuPartListHandler_1820_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -100,7 +100,7 @@ public class CellMenuDescriptor_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_1820_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_1820_1");
       {

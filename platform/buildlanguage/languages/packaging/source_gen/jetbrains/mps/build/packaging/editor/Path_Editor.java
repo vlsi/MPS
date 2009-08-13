@@ -21,7 +21,7 @@ public class Path_Editor extends DefaultNodeEditor {
     return this.createCollection_0169_0(context, node);
   }
 
-  public EditorCell createCollection_0169_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0169_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0169_0");
     editorCell.addEditorCell(this.createCollection_0169_1(context, node));
@@ -30,7 +30,7 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0169_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0169_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0169_1");
     {
@@ -42,7 +42,7 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0169_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0169_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0169_0");
     PackagingStyles_StyleSheet.getSlash(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0169_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0169_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("compositePathComponent");
     provider.setNoTargetText("<no compositePathComponent>");
@@ -67,7 +67,7 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0169_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0169_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");

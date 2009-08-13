@@ -15,7 +15,7 @@ public class LinkAttributeConcept_Editor extends DefaultNodeEditor {
     return this.createCollection_2506_0(context, node);
   }
 
-  public EditorCell createCollection_2506_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2506_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2506_0");
     editorCell.addEditorCell(this.createConstant_2506_0(context, node, "$("));
@@ -24,21 +24,21 @@ public class LinkAttributeConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2506_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2506_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2506_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2506_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2506_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2506_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2506_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2506_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2506_2");
     editorCell.setDefaultText("");

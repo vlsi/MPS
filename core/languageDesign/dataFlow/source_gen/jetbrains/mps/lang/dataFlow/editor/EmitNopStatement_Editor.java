@@ -14,7 +14,7 @@ public class EmitNopStatement_Editor extends DefaultNodeEditor {
     return this.createConstant_4007_0(context, node, "nop");
   }
 
-  public EditorCell createConstant_4007_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4007_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4007_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);

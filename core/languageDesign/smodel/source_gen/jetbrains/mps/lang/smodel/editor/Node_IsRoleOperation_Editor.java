@@ -24,13 +24,13 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp8094_0;
+  private AbstractCellProvider myReplaceableAlias_Comp8094_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8094_0(context, node);
   }
 
-  public EditorCell createCollection_8094_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8094_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8094_0");
     editorCell.addEditorCell(this.createComponent_8094_0(context, node));
@@ -42,7 +42,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8094_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_8094_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp8094_0 == null) {
       this.myReplaceableAlias_Comp8094_0 = new ReplaceableAlias_Comp(node);
     }
@@ -50,7 +50,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8094_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8094_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8094_0");
     {
@@ -61,7 +61,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8094_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8094_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8094_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -69,7 +69,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8094_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8094_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8094_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -77,7 +77,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8094_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8094_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptOfParent");
     provider.setNoTargetText("<concept of parent>");
@@ -95,7 +95,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8094_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8094_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkInParent");
     provider.setNoTargetText("<role>");
@@ -131,7 +131,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_8094_0(context, node);
     }
 
-    public EditorCell createProperty_8094_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8094_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<concept has no name>");
@@ -169,7 +169,7 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_8094_1(context, node);
     }
 
-    public EditorCell createProperty_8094_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_8094_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<link has no role>");

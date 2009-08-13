@@ -21,7 +21,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     return this.createCollection_0575_0(context, node);
   }
 
-  public EditorCell createCollection_0575_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0575_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0575_0");
     editorCell.addEditorCell(this.createConstant_0575_1(context, node, "get"));
@@ -31,7 +31,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0575_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0575_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0575_0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0575_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0575_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0575_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0575_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0575_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0575_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class GetAccessor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0575_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0575_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
     provider.setNoTargetText("<no statementList>");

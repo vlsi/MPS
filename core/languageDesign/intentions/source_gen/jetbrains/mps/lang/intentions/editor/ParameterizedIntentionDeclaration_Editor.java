@@ -31,7 +31,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return this.createCollection_6165_4(context, node);
   }
 
-  public EditorCell createCollection_6165_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6165_0");
     {
@@ -46,7 +46,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6165_1");
     editorCell.addEditorCell(this.createCollection_6165_2(context, node));
@@ -62,7 +62,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6165_2");
     {
@@ -74,7 +74,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6165_3");
     {
@@ -86,7 +86,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6165_4");
     {
@@ -101,7 +101,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6165_5");
     {
@@ -115,7 +115,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createCollection_6165_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_6165_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6165_6");
     {
@@ -127,7 +127,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -135,7 +135,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -143,7 +143,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -151,7 +151,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -159,7 +159,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -167,7 +167,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_5");
     {
@@ -178,14 +178,14 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_7");
     {
@@ -196,7 +196,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_8");
     {
@@ -207,7 +207,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_9");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -215,7 +215,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_6165_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6165_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6165_10");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -223,12 +223,12 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createIndentCell6165_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell6165_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_6165_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6165_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -246,7 +246,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefCell_6165_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6165_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
@@ -268,7 +268,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_6165_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_6165_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isErrorIntention");
     provider.setNoTargetText("<no isErrorIntention>");
@@ -286,7 +286,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_6165_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_6165_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isAvailableInChildNodes");
     provider.setNoTargetText("<no isAvailableInChildNodes>");
@@ -304,7 +304,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_6165_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6165_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("queryBlock");
     provider.setNoTargetText("<add query>");
@@ -321,7 +321,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_6165_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6165_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("descriptionFunction");
     provider.setNoTargetText("<no descriptionFunction>");
@@ -338,7 +338,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_6165_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6165_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("isApplicableFunction");
     provider.setNoTargetText("<isApplicable = true>");
@@ -355,7 +355,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_6165_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6165_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("executeFunction");
     provider.setNoTargetText("<no executeFunction>");
@@ -373,11 +373,11 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
 
-  public static boolean renderingCondition6165_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6165_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
-  public static boolean renderingCondition6165_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6165_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
@@ -395,7 +395,7 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
       return this.createProperty_6165_1(context, node);
     }
 
-    public EditorCell createProperty_6165_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_6165_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -24,7 +24,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_8039_0(context, node);
   }
 
-  public EditorCell createCollection_8039_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8039_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8039_0");
     editorCell.addEditorCell(this.createConstant_8039_0(context, node, "contains"));
@@ -34,7 +34,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8039_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8039_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8039_0");
     {
@@ -45,7 +45,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8039_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8039_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8039_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -53,7 +53,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8039_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8039_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8039_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -61,7 +61,7 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8039_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8039_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");

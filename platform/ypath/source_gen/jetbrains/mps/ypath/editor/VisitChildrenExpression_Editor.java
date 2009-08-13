@@ -30,13 +30,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9190_0;
+  private AbstractCellListHandler myListHandler_9190_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9190_0(context, node);
   }
 
-  public EditorCell createCollection_9190_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9190_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9190_0");
     editorCell.addEditorCell(this.createConceptProperty_9190_0(context, node));
@@ -46,7 +46,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9190_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9190_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9190_1");
     editorCell.addEditorCell(this.createConstant_9190_0(context, node, "("));
@@ -55,21 +55,21 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9190_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9190_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9190_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9190_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9190_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9190_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9190_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9190_0(EditorContext context, SNode node) {
     if (this.myListHandler_9190_0 == null) {
       this.myListHandler_9190_0 = new VisitChildrenExpression_Editor.actualArgumentListHandler_9190_0(node, "actualArgument", context);
     }
@@ -79,7 +79,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9190_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9190_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -103,11 +103,11 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration") > 0;
   }
 
-  public static class actualArgumentListHandler_9190_0 extends RefNodeListHandler {
+  private static class actualArgumentListHandler_9190_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_9190_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -160,7 +160,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_9190_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_9190_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_9190_2");
       {

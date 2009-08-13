@@ -25,7 +25,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return this.createCollection_5374_0(context, node);
   }
 
-  public EditorCell createCollection_5374_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5374_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5374_0");
     editorCell.addEditorCell(this.createConstant_5374_0(context, node, "literal"));
@@ -35,7 +35,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5374_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5374_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5374_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5374_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5374_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5374_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5374_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5374_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -73,7 +73,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5374_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5374_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

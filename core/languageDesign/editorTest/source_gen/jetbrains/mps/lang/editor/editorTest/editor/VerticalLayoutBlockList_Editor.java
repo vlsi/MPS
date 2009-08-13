@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1615_0;
+  private AbstractCellListHandler myListHandler_1615_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1615_1(context, node);
   }
 
-  public EditorCell createCollection_1615_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1615_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1615_0");
     editorCell.setGridLayout(true);
@@ -33,7 +33,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1615_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1615_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1615_1");
     editorCell.addEditorCell(this.createConstant_1615_0(context, node, "vertical layout"));
@@ -41,14 +41,14 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1615_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1615_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1615_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1615_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1615_0(EditorContext context, SNode node) {
     if (this.myListHandler_1615_0 == null) {
       this.myListHandler_1615_0 = new VerticalLayoutBlockList_Editor.statementListHandler_1615_0(node, "statement", context);
     }
@@ -58,7 +58,7 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class statementListHandler_1615_0 extends RefNodeListHandler {
+  private static class statementListHandler_1615_0 extends RefNodeListHandler {
 
     public statementListHandler_1615_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

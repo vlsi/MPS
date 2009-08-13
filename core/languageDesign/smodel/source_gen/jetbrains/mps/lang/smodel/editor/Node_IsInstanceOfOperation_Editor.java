@@ -17,13 +17,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp8744_0;
+  private AbstractCellProvider myReplaceableAlias_Comp8744_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8744_0(context, node);
   }
 
-  public EditorCell createCollection_8744_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8744_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8744_0");
     editorCell.addEditorCell(this.createComponent_8744_0(context, node));
@@ -33,7 +33,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_8744_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_8744_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp8744_0 == null) {
       this.myReplaceableAlias_Comp8744_0 = new ReplaceableAlias_Comp(node);
     }
@@ -41,7 +41,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8744_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8744_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8744_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -49,7 +49,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8744_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8744_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8744_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class Node_IsInstanceOfOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8744_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8744_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conceptArgument");
     provider.setNoTargetText("<no concept>");

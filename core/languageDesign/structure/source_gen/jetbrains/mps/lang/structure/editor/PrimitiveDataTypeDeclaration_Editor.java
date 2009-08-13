@@ -22,14 +22,14 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_3949_0(context, node);
   }
 
-  public EditorCell createCollection_3949_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3949_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3949_0");
     editorCell.addEditorCell(this.createCollection_3949_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_3949_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3949_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3949_1");
     {
@@ -41,7 +41,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3949_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3949_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3949_0");
     {
@@ -53,7 +53,7 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3949_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3949_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

@@ -30,13 +30,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class InternalClassifierType_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7316_0;
+  private AbstractCellListHandler myListHandler_7316_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createAlternation_7316_0(context, node);
   }
 
-  public EditorCell createAlternation_7316_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_7316_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = InternalClassifierType_Editor.renderingCondition7316_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -49,7 +49,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7316_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7316_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7316_0");
     editorCell.addEditorCell(this.createConstant_7316_0(context, node, "["));
@@ -60,7 +60,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7316_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7316_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7316_1");
     editorCell.addEditorCell(this.createConstant_7316_3(context, node, "["));
@@ -74,7 +74,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_0");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
@@ -82,7 +82,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_1");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
@@ -90,7 +90,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_2");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
@@ -98,7 +98,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_3");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
@@ -106,7 +106,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_4");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
@@ -114,7 +114,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_5");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
@@ -122,7 +122,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_6");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -130,7 +130,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7316_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7316_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7316_7");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -138,7 +138,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7316_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7316_0(EditorContext context, SNode node) {
     if (this.myListHandler_7316_0 == null) {
       this.myListHandler_7316_0 = new InternalClassifierType_Editor.parameterListHandler_7316_0(node, "parameter", context);
     }
@@ -148,7 +148,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7316_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -166,7 +166,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7316_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7316_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
@@ -184,7 +184,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7316_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_7316_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -202,7 +202,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7316_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7316_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
@@ -221,7 +221,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition7316_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7316_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }
 
@@ -239,7 +239,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       return this.createProperty_7316_1(context, node);
     }
 
-    public EditorCell createProperty_7316_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_7316_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -273,7 +273,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       return this.createProperty_7316_3(context, node);
     }
 
-    public EditorCell createProperty_7316_3(EditorContext context, SNode node) {
+    private EditorCell createProperty_7316_3(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -293,7 +293,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class parameterListHandler_7316_0 extends RefNodeListHandler {
+  private static class parameterListHandler_7316_0 extends RefNodeListHandler {
 
     public parameterListHandler_7316_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -27,7 +27,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myAbstractEquationInspector9248_0;
+  private AbstractCellProvider myAbstractEquationInspector9248_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9248_0(context, node);
@@ -37,7 +37,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_9248_1(context, node);
   }
 
-  public EditorCell createCollection_9248_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9248_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9248_0");
     editorCell.addEditorCell(this.createRefNode_9248_0(context, node));
@@ -50,7 +50,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9248_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9248_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9248_1");
     editorCell.addEditorCell(this.createComponent_9248_0(context, node));
@@ -59,7 +59,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_9248_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_9248_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector9248_0 == null) {
       this.myAbstractEquationInspector9248_0 = new AbstractEquationInspector(node);
     }
@@ -71,7 +71,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9248_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9248_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9248_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -79,14 +79,14 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9248_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9248_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9248_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_9248_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9248_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -103,7 +103,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9248_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9248_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -137,7 +137,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9248_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9248_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -154,7 +154,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNonEmptyProperty_9248_0(EditorContext context, SNode node) {
+  private EditorCell createNonEmptyProperty_9248_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inequationPriority");
     provider.setNoTargetText("<no inequationPriority>");
@@ -176,7 +176,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9248_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9248_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inequationPriority");
     provider.setNoTargetText("<no inequationPriority>");
@@ -199,7 +199,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static Color _StyleParameter_QueryFunction_1214399678682(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_1214399678682(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else

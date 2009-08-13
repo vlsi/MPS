@@ -31,7 +31,7 @@ public class _CloseTag extends AbstractCellProvider {
     return this.createReadOnlyModelAccessor_6449_0(context, node);
   }
 
-  public EditorCell createReadOnlyModelAccessor_6449_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6449_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -68,7 +68,7 @@ public class _CloseTag extends AbstractCellProvider {
   }
 
 
-  public static Color _StyleParameter_QueryFunction_1226320829979(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_1226320829979(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

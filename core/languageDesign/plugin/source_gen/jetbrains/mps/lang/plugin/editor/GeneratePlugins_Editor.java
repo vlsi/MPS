@@ -25,7 +25,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return this.createCollection_1681_3(context, node);
   }
 
-  public EditorCell createCollection_1681_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1681_0");
     editorCell.setGridLayout(true);
@@ -34,7 +34,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1681_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1681_1");
     {
@@ -47,7 +47,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1681_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1681_2");
     {
@@ -60,7 +60,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1681_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1681_3");
     {
@@ -75,7 +75,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1681_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1681_4");
     {
@@ -89,7 +89,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1681_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1681_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1681_5");
     {
@@ -101,42 +101,42 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_5");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -144,7 +144,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1681_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1681_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1681_6");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -152,12 +152,12 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1681_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1681_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_1681_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1681_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("generateProjectPlugin");
     provider.setNoTargetText("<no generateProjectPlugin>");
@@ -175,7 +175,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1681_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1681_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("generateApplicationPlugin");
     provider.setNoTargetText("<no generateApplicationPlugin>");
@@ -194,11 +194,11 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1681_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1681_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
-  public static boolean renderingCondition1681_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1681_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 

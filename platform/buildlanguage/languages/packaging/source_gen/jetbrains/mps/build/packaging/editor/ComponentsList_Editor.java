@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ComponentsList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_0824_0;
+  private AbstractCellListHandler myListHandler_0824_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_0824_0(context, node);
   }
 
-  public EditorCell createCollection_0824_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0824_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0824_0");
     editorCell.addEditorCell(this.createRefNodeList_0824_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_0824_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_0824_0(EditorContext context, SNode node) {
     if (this.myListHandler_0824_0 == null) {
       this.myListHandler_0824_0 = new ComponentsList_Editor.entryListHandler_0824_0(node, "entry", context);
     }
@@ -50,7 +50,7 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class entryListHandler_0824_0 extends RefNodeListHandler {
+  private static class entryListHandler_0824_0 extends RefNodeListHandler {
 
     public entryListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

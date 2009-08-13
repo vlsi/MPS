@@ -22,7 +22,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return this.createCollection_9987_0(context, node);
   }
 
-  public EditorCell createCollection_9987_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9987_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9987_0");
     editorCell.addEditorCell(this.createCollection_9987_1(context, node));
@@ -30,7 +30,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createCollection_9987_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9987_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9987_1");
     {
@@ -41,7 +41,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createCollection_9987_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9987_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9987_2");
     {
@@ -55,7 +55,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createConstant_9987_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9987_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9987_0");
     {
@@ -67,7 +67,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createConstant_9987_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9987_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9987_1");
     {
@@ -78,7 +78,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createConstant_9987_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9987_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9987_2");
     {
@@ -89,7 +89,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createConstant_9987_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9987_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9987_3");
     {
@@ -100,7 +100,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
-  public EditorCell createRefNode_9987_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9987_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("childConceptFunction");
     provider.setNoTargetText("<no childConceptFunction>");

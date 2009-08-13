@@ -24,8 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Copy_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent2873_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent2873_1;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent2873_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent2873_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2873_0(context, node);
@@ -35,7 +35,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return this.createCollection_2873_1(context, node);
   }
 
-  public EditorCell createCollection_2873_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_0");
     editorCell.addEditorCell(this.createConceptProperty_2873_0(context, node));
@@ -46,7 +46,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2873_1");
     editorCell.addEditorCell(this.createCollection_2873_2(context, node));
@@ -55,7 +55,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_2");
     editorCell.addEditorCell(this.createConstant_2873_1(context, node, "excludes"));
@@ -63,7 +63,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_3");
     editorCell.addEditorCell(this.createConstant_2873_2(context, node, "includes"));
@@ -71,7 +71,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_4");
     {
@@ -88,7 +88,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_5");
     editorCell.addEditorCell(this.createConstant_2873_3(context, node, "excludes"));
@@ -96,7 +96,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2873_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_2873_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2873_6");
     editorCell.addEditorCell(this.createConstant_2873_4(context, node, "includes"));
@@ -104,7 +104,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2873_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2873_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent2873_0 == null) {
       this.myConfigurationReferencesEditorComponent2873_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -112,7 +112,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2873_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_2873_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent2873_1 == null) {
       this.myConfigurationReferencesEditorComponent2873_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -120,7 +120,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2873_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2873_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2873_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -128,7 +128,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2873_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2873_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2873_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -136,7 +136,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2873_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2873_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2873_2");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -144,7 +144,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2873_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2873_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2873_3");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -156,7 +156,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2873_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2873_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2873_4");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -164,7 +164,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2873_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2873_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -183,7 +183,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2873_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2873_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -202,7 +202,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2873_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2873_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");
@@ -221,7 +221,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2873_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2873_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourcePath");
     provider.setNoTargetText("<no sourcePath>");
@@ -238,7 +238,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2873_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_2873_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -257,7 +257,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2873_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_2873_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");
@@ -277,11 +277,11 @@ public class Copy_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition2873_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2873_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
 
-  public static boolean renderingCondition2873_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2873_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
 

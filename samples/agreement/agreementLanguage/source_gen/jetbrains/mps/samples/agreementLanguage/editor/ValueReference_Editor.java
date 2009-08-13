@@ -24,14 +24,14 @@ public class ValueReference_Editor extends DefaultNodeEditor {
     return this.createCollection_2542_0(context, node);
   }
 
-  public EditorCell createCollection_2542_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2542_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2542_0");
     editorCell.addEditorCell(this.createRefCell_2542_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_2542_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2542_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -67,7 +67,7 @@ public class ValueReference_Editor extends DefaultNodeEditor {
       return this.createProperty_2542_0(context, node);
     }
 
-    public EditorCell createProperty_2542_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2542_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

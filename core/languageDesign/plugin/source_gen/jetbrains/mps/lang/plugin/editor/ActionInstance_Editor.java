@@ -32,13 +32,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ActionInstance_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4799_0;
+  private AbstractCellListHandler myListHandler_4799_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4799_0(context, node);
   }
 
-  public EditorCell createCollection_4799_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4799_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4799_0");
     editorCell.addEditorCell(this.createRefCell_4799_0(context, node));
@@ -48,7 +48,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4799_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4799_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4799_1");
     {
@@ -61,7 +61,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4799_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4799_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4799_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -69,7 +69,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4799_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4799_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4799_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -77,7 +77,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4799_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4799_0(EditorContext context, SNode node) {
     if (this.myListHandler_4799_0 == null) {
       this.myListHandler_4799_0 = new ActionInstance_Editor.actualParameterListHandler_4799_0(node, "actualParameter", context);
     }
@@ -87,7 +87,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4799_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4799_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
@@ -106,7 +106,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4799_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4799_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "constructionParameter", true)).isNotEmpty();
   }
 
@@ -124,7 +124,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
       return this.createProperty_4799_0(context, node);
     }
 
-    public EditorCell createProperty_4799_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4799_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -144,7 +144,7 @@ public class ActionInstance_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class actualParameterListHandler_4799_0 extends RefNodeListHandler {
+  private static class actualParameterListHandler_4799_0 extends RefNodeListHandler {
 
     public actualParameterListHandler_4799_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

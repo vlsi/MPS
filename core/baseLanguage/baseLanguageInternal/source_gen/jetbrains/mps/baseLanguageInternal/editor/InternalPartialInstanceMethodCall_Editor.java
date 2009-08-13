@@ -30,13 +30,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1612_0;
+  private AbstractCellListHandler myListHandler_1612_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1612_0(context, node);
   }
 
-  public EditorCell createCollection_1612_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1612_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1612_0");
     editorCell.addEditorCell(this.createConstant_1612_1(context, node, "["));
@@ -51,7 +51,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_1612_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1612_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1612_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_1612_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1612_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1612_1");
     {
@@ -71,7 +71,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_1612_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1612_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1612_2");
     {
@@ -83,7 +83,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_1612_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1612_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1612_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -91,7 +91,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_1612_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1612_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1612_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -99,7 +99,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1612_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1612_0(EditorContext context, SNode node) {
     if (this.myListHandler_1612_0 == null) {
       this.myListHandler_1612_0 = new InternalPartialInstanceMethodCall_Editor.actualArgumentListHandler_1612_0(node, "actualArgument", context);
     }
@@ -109,7 +109,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_1612_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1612_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instance");
     provider.setNoTargetText("<no instance>");
@@ -130,7 +130,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_1612_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1612_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("methodName");
     provider.setNoTargetText("<no methodName>");
@@ -149,7 +149,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createRefNode_1612_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1612_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
     provider.setNoTargetText("<no returnType>");
@@ -166,7 +166,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public static class actualArgumentListHandler_1612_0 extends RefNodeListHandler {
+  private static class actualArgumentListHandler_1612_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_1612_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -219,7 +219,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
       }
     }
 
-    public EditorCell createConstant_1612_5(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_1612_5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_1612_5");
       editorCell.setDefaultText("");

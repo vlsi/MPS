@@ -21,7 +21,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_2495_0(context, node);
   }
 
-  public EditorCell createCollection_2495_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2495_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2495_0");
     editorCell.addEditorCell(this.createConceptProperty_2495_0(context, node));
@@ -31,7 +31,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2495_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2495_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2495_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -39,7 +39,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2495_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2495_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -58,7 +58,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2495_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2495_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("whatToMove");
     provider.setNoTargetText("<no whatToMove>");
@@ -75,7 +75,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2495_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2495_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("destination");
     provider.setNoTargetText("<no destination>");

@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ReaderConfiguration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2681_0;
+  private AbstractCellListHandler myListHandler_2681_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2681_0(context, node);
   }
 
-  public EditorCell createCollection_2681_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2681_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2681_0");
     editorCell.addEditorCell(this.createCollection_2681_1(context, node));
@@ -43,7 +43,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2681_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2681_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2681_1");
     {
@@ -55,7 +55,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2681_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2681_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2681_2");
     editorCell.addEditorCell(this.createConstant_2681_2(context, node, "    "));
@@ -63,14 +63,14 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2681_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2681_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2681_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2681_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2681_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2681_1");
     {
@@ -81,14 +81,14 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2681_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2681_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2681_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2681_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2681_0(EditorContext context, SNode node) {
     if (this.myListHandler_2681_0 == null) {
       this.myListHandler_2681_0 = new ReaderConfiguration_Editor.mappingListHandler_2681_0(node, "mapping", context);
     }
@@ -99,7 +99,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2681_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2681_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -117,7 +117,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class mappingListHandler_2681_0 extends RefNodeListHandler {
+  private static class mappingListHandler_2681_0 extends RefNodeListHandler {
 
     public mappingListHandler_2681_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -170,7 +170,7 @@ public class ReaderConfiguration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_2681_3(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_2681_3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_2681_3");
       {

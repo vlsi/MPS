@@ -14,7 +14,7 @@ public class EmitRetStatement_Editor extends DefaultNodeEditor {
     return this.createConstant_1061_0(context, node, "ret");
   }
 
-  public EditorCell createConstant_1061_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1061_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1061_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);

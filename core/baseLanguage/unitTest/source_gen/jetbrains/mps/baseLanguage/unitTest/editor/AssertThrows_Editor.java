@@ -22,7 +22,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return this.createCollection_1017_0(context, node);
   }
 
-  public EditorCell createCollection_1017_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1017_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1017_0");
     editorCell.addEditorCell(this.createConstant_1017_0(context, node, "assert"));
@@ -34,7 +34,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1017_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1017_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1017_0");
     {
@@ -45,7 +45,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1017_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1017_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1017_1");
     {
@@ -56,7 +56,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1017_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1017_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1017_2");
     {
@@ -67,7 +67,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1017_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1017_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statement");
     provider.setNoTargetText("<no statement>");
@@ -84,7 +84,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1017_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1017_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("exceptionType");
     provider.setNoTargetText("<no exceptionType>");
@@ -101,7 +101,7 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1017_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1017_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");

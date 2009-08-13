@@ -14,7 +14,7 @@ public class ConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createError_9148_0(context, node);
   }
 
-  public EditorCell createError_9148_0(EditorContext context, SNode node) {
+  private EditorCell createError_9148_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose link type>");
     editorCell.setCellId("Error_9148_0");
     return editorCell;

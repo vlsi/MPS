@@ -32,7 +32,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return this.createCollection_7104_0(context, node);
   }
 
-  public EditorCell createCollection_7104_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7104_0");
     {
@@ -44,7 +44,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_1");
     {
@@ -55,7 +55,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_2");
     {
@@ -67,7 +67,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_3");
     {
@@ -78,7 +78,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_4");
     {
@@ -90,7 +90,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7104_5");
     {
@@ -107,7 +107,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_6");
     {
@@ -118,7 +118,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_7");
     {
@@ -129,7 +129,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_8");
     {
@@ -141,7 +141,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7104_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_7104_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7104_9");
     {
@@ -153,7 +153,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -161,7 +161,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_1");
     {
@@ -172,7 +172,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -180,7 +180,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_3");
     {
@@ -191,7 +191,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_4");
     {
@@ -202,7 +202,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -210,7 +210,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_6");
     {
@@ -221,7 +221,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7104_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7104_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7104_7");
     {
@@ -232,7 +232,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7104_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7104_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("targetTypeFunction");
     provider.setNoTargetText("<no targetTypeFunction>");
@@ -249,7 +249,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7104_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7104_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cardinal");
     provider.setNoTargetText("<no cardinal>");
@@ -266,7 +266,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_7104_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7104_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("ascending");
     provider.setNoTargetText("<no ascending>");

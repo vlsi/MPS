@@ -28,7 +28,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return this.createCollection_8447_0(context, node);
   }
 
-  public EditorCell createCollection_8447_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8447_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8447_0");
     editorCell.addEditorCell(this.createRefCell_8447_0(context, node));
@@ -40,7 +40,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8447_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8447_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8447_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8447_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8447_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8447_1");
     {
@@ -59,7 +59,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8447_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8447_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
@@ -81,7 +81,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8447_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8447_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<none>");
@@ -99,7 +99,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8447_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8447_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "conditionFunction", true) == null;
   }
 
@@ -117,7 +117,7 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
       return this.createProperty_8447_0(context, node);
     }
 
-    public EditorCell createProperty_8447_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8447_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

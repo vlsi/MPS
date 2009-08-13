@@ -26,7 +26,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return this.createCollection_4002_0(context, node);
   }
 
-  public EditorCell createCollection_4002_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4002_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4002_0");
     editorCell.addEditorCell(this.createCollection_4002_1(context, node));
@@ -34,7 +34,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4002_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4002_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4002_1");
     {
@@ -46,7 +46,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4002_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4002_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4002_2");
     {
@@ -58,7 +58,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4002_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4002_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4002_0");
     {
@@ -69,7 +69,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4002_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4002_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4002_1");
     {
@@ -80,7 +80,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4002_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4002_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -97,7 +97,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4002_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4002_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("account");
     provider.setNoTargetText("<choose account type>");
@@ -129,7 +129,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
       return this.createProperty_4002_0(context, node);
     }
 
-    public EditorCell createProperty_4002_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4002_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

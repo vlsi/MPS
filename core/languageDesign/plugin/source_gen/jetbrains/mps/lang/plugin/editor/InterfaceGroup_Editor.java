@@ -20,13 +20,13 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class InterfaceGroup_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myModificationsEditor4570_0;
+  private AbstractCellProvider myModificationsEditor4570_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4570_0(context, node);
   }
 
-  public EditorCell createCollection_4570_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4570_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4570_0");
     editorCell.addEditorCell(this.createCollection_4570_1(context, node));
@@ -36,7 +36,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4570_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4570_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4570_1");
     {
@@ -51,7 +51,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_4570_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_4570_0(EditorContext context, SNode node) {
     if (this.myModificationsEditor4570_0 == null) {
       this.myModificationsEditor4570_0 = new ModificationsEditor(node);
     }
@@ -59,21 +59,21 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4570_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4570_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4570_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4570_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4570_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4570_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4570_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4570_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4570_2");
     {
@@ -84,7 +84,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4570_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4570_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4570_3");
     {
@@ -95,7 +95,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4570_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4570_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -113,7 +113,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4570_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4570_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("groupID");
     provider.setNoTargetText("<id>");
@@ -130,7 +130,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4570_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4570_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contents");
     provider.setNoTargetText("<contents>");

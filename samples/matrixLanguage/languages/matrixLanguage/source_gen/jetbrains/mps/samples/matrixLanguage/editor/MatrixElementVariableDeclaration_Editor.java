@@ -17,7 +17,7 @@ public class MatrixElementVariableDeclaration_Editor extends DefaultNodeEditor {
     return this.createProperty_1593_0(context, node);
   }
 
-  public EditorCell createProperty_1593_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1593_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

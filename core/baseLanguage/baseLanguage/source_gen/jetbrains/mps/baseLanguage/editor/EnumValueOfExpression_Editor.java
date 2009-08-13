@@ -30,7 +30,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_4685_0(context, node);
   }
 
-  public EditorCell createCollection_4685_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4685_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4685_0");
     editorCell.addEditorCell(this.createRefCell_4685_0(context, node));
@@ -42,7 +42,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4685_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4685_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4685_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4685_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4685_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4685_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4685_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4685_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4685_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4685_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4685_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4685_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4685_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4685_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enumClass>");
@@ -93,7 +93,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4685_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4685_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -124,7 +124,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_4685_0(context, node);
     }
 
-    public EditorCell createProperty_4685_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4685_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

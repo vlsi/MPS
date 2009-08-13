@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OptionalPart_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8761_0;
+  private AbstractCellListHandler myListHandler_8761_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8761_0(context, node);
   }
 
-  public EditorCell createCollection_8761_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8761_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8761_0");
     editorCell.addEditorCell(this.createConstant_8761_0(context, node, "("));
@@ -34,7 +34,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8761_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8761_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8761_0");
     MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8761_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8761_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8761_1");
     MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8761_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8761_0(EditorContext context, SNode node) {
     if (this.myListHandler_8761_0 == null) {
       this.myListHandler_8761_0 = new OptionalPart_Editor.partListHandler_8761_0(node, "part", context);
     }
@@ -60,7 +60,7 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class partListHandler_8761_0 extends RefNodeListHandler {
+  private static class partListHandler_8761_0 extends RefNodeListHandler {
 
     public partListHandler_8761_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

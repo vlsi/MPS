@@ -18,7 +18,7 @@ public class BracesStubBlock_Editor extends DefaultNodeEditor {
     return this.createCollection_7901_0(context, node);
   }
 
-  public EditorCell createCollection_7901_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7901_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7901_0");
     editorCell.setUsesBraces(true);
@@ -26,7 +26,7 @@ public class BracesStubBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_7901_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_7901_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

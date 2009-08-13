@@ -26,7 +26,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return this.createCollection_1071_0(context, node);
   }
 
-  public EditorCell createCollection_1071_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1071_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1071_0");
     editorCell.addEditorCell(this.createCollection_1071_1(context, node));
@@ -39,7 +39,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1071_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1071_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1071_1");
     editorCell.addEditorCell(this.createConstant_1071_0(context, node, "replacement rule"));
@@ -47,7 +47,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1071_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1071_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1071_2");
     editorCell.addEditorCell(this.createConstant_1071_2(context, node, "applicable for "));
@@ -57,7 +57,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1071_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1071_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(context, node);
     editorCell.setCellId("Collection_1071_3");
     editorCell.addEditorCell(this.createConstant_1071_5(context, node, "rule"));
@@ -65,7 +65,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1071_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1071_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1071_4");
     editorCell.addEditorCell(this.createIndentCell1071_0(context, node));
@@ -73,7 +73,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -85,7 +85,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_1");
     {
@@ -96,7 +96,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -108,14 +108,14 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_4");
     {
@@ -126,7 +126,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -139,7 +139,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_6");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -151,7 +151,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1071_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1071_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1071_7");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -163,12 +163,12 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1071_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1071_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_1071_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1071_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -186,7 +186,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1071_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1071_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
@@ -203,7 +203,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1071_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1071_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("supertypeNode");
     provider.setNoTargetText("<no supertypeNode>");
@@ -220,7 +220,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1071_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1071_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

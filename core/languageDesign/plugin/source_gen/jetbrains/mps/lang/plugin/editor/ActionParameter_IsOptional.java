@@ -37,7 +37,7 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     return this.createReadOnlyModelAccessor_3654_0(context, node);
   }
 
-  public EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {

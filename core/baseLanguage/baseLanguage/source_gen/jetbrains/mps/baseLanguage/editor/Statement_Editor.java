@@ -16,7 +16,7 @@ public class Statement_Editor extends DefaultNodeEditor {
     return this.createConstant_3869_0(context, node, "");
   }
 
-  public EditorCell createConstant_3869_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3869_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3869_0");
     {

@@ -20,7 +20,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_7419_0(context, node);
   }
 
-  public EditorCell createCollection_7419_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7419_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7419_0");
     editorCell.addEditorCell(this.createConstant_7419_0(context, node, "listVar"));
@@ -29,7 +29,7 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7419_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7419_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7419_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -37,14 +37,14 @@ public class ListVarDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7419_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7419_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7419_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_7419_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7419_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

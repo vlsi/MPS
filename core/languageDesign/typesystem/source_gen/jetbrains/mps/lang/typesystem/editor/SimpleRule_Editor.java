@@ -14,7 +14,7 @@ public class SimpleRule_Editor extends DefaultNodeEditor {
     return this.createError_0958_0(context, node);
   }
 
-  public EditorCell createError_0958_0(EditorContext context, SNode node) {
+  private EditorCell createError_0958_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<abstract simple rule>");
     editorCell.setCellId("Error_0958_0");
     return editorCell;

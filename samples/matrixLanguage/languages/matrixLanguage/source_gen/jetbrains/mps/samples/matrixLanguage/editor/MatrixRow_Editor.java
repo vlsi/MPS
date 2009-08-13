@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class MatrixRow_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6019_0;
+  private AbstractCellListHandler myListHandler_6019_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6019_0(context, node);
   }
 
-  public EditorCell createCollection_6019_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6019_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6019_0");
     editorCell.addEditorCell(this.createRefNodeList_6019_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6019_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6019_0(EditorContext context, SNode node) {
     if (this.myListHandler_6019_0 == null) {
       this.myListHandler_6019_0 = new MatrixRow_Editor.itemsListHandler_6019_0(node, "items", context);
     }
@@ -44,7 +44,7 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class itemsListHandler_6019_0 extends RefNodeListHandler {
+  private static class itemsListHandler_6019_0 extends RefNodeListHandler {
 
     public itemsListHandler_6019_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

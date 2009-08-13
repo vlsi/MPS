@@ -24,7 +24,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_7796_0(context, node);
   }
 
-  public EditorCell createCollection_7796_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7796_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7796_0");
     editorCell.addEditorCell(this.createConstant_7796_0(context, node, "take"));
@@ -34,7 +34,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7796_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7796_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7796_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7796_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7796_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7796_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7796_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7796_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7796_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7796_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7796_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementsToTake");
     provider.setNoTargetText("<no elementsToTake>");

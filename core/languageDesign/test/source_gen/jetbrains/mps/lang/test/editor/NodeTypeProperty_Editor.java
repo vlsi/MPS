@@ -20,7 +20,7 @@ public class NodeTypeProperty_Editor extends DefaultNodeEditor {
     return this.createCollection_5451_0(context, node);
   }
 
-  public EditorCell createCollection_5451_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5451_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5451_0");
     editorCell.addEditorCell(this.createConstant_5451_0(context, node, "has type"));
@@ -28,7 +28,7 @@ public class NodeTypeProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5451_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5451_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5451_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
@@ -36,7 +36,7 @@ public class NodeTypeProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5451_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5451_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

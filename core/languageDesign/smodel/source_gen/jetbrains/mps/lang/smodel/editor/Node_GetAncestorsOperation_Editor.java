@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SNode;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp1420_0;
+  private AbstractCellProvider myReplaceableAliasAndParms_Comp1420_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent_1420_0(context, node);
   }
 
-  public EditorCell createComponent_1420_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1420_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp1420_0 == null) {
       this.myReplaceableAliasAndParms_Comp1420_0 = new ReplaceableAliasAndParms_Comp(node);
     }

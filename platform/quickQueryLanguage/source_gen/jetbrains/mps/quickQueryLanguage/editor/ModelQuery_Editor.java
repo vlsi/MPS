@@ -26,7 +26,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return this.createCollection_5213_0(context, node);
   }
 
-  public EditorCell createCollection_5213_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5213_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5213_0");
     editorCell.addEditorCell(this.createCollection_5213_1(context, node));
@@ -35,7 +35,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5213_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5213_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5213_1");
     {
@@ -47,7 +47,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5213_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5213_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5213_2");
     {
@@ -60,7 +60,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5213_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5213_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5213_3");
     {
@@ -72,7 +72,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5213_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5213_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5213_4");
     {
@@ -84,7 +84,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5213_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5213_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5213_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -92,7 +92,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5213_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5213_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5213_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5213_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5213_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5213_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -108,7 +108,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_5213_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5213_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
@@ -126,7 +126,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5213_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5213_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -157,7 +157,7 @@ public class ModelQuery_Editor extends DefaultNodeEditor {
       return this.createProperty_5213_0(context, node);
     }
 
-    public EditorCell createProperty_5213_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_5213_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

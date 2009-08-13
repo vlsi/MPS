@@ -35,7 +35,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     return this.createAlternation_3900_0(context, node);
   }
 
-  public EditorCell createAlternation_3900_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_3900_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ReplaceableAlias_Comp.renderingCondition3900_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -48,13 +48,13 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createError_3900_0(EditorContext context, SNode node) {
+  private EditorCell createError_3900_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose operaion>");
     editorCell.setCellId("Error_3900_0");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3900_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3900_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -78,7 +78,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition3900_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3900_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
 

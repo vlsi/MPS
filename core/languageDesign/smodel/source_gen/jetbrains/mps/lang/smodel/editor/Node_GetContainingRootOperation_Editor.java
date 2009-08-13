@@ -18,7 +18,7 @@ public class Node_GetContainingRootOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_2190_0(context, node, "containing root");
   }
 
-  public EditorCell createConstant_2190_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2190_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2190_0");
     {

@@ -23,7 +23,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return this.createCollection_7701_0(context, node);
   }
 
-  public EditorCell createCollection_7701_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7701_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7701_0");
     editorCell.addEditorCell(this.createCollection_7701_1(context, node));
@@ -32,7 +32,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7701_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7701_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7701_1");
     editorCell.addEditorCell(this.createConstant_7701_0(context, node, "for"));
@@ -47,7 +47,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7701_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7701_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7701_2");
     {
@@ -59,7 +59,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7701_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_7701_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7701_3");
     {
@@ -70,7 +70,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -78,21 +78,21 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -108,7 +108,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7701_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7701_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7701_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -116,12 +116,12 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell7701_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell7701_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_7701_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7701_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("row");
     provider.setNoTargetText("<no row>");
@@ -139,7 +139,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7701_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7701_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("column");
     provider.setNoTargetText("<no column>");
@@ -157,7 +157,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7701_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7701_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("element");
     provider.setNoTargetText("<no element>");
@@ -175,7 +175,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7701_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7701_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matrix");
     provider.setNoTargetText("<no matrix>");
@@ -193,7 +193,7 @@ public class ForEachMatrixElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7701_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7701_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

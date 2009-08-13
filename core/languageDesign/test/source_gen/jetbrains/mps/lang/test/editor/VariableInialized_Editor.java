@@ -20,7 +20,7 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
     return this.createCollection_0887_0(context, node);
   }
 
-  public EditorCell createCollection_0887_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0887_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0887_0");
     editorCell.addEditorCell(this.createConstant_0887_0(context, node, "init"));
@@ -28,7 +28,7 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0887_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0887_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0887_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
@@ -36,7 +36,7 @@ public class VariableInialized_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0887_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0887_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("var");
     provider.setNoTargetText("<no var>");

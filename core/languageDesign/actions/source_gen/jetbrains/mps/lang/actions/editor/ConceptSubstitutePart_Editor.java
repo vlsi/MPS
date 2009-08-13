@@ -25,7 +25,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
     return this.createCollection_3943_0(context, node);
   }
 
-  public EditorCell createCollection_3943_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3943_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3943_0");
     editorCell.addEditorCell(this.createConceptProperty_3943_0(context, node));
@@ -33,7 +33,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3943_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -56,7 +56,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3943_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -88,7 +88,7 @@ public class ConceptSubstitutePart_Editor extends DefaultNodeEditor {
       return this.createProperty_3943_0(context, node);
     }
 
-    public EditorCell createProperty_3943_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3943_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

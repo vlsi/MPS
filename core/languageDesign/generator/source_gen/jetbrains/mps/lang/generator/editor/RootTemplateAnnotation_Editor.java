@@ -24,7 +24,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return this.createCollection_6257_0(context, node);
   }
 
-  public EditorCell createCollection_6257_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6257_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6257_0");
     {
@@ -36,7 +36,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6257_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6257_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6257_1");
     {
@@ -54,7 +54,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6257_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6257_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6257_2");
     {
@@ -66,7 +66,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6257_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_6257_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6257_3");
     {
@@ -79,7 +79,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -91,7 +91,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_1");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -103,7 +103,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_2");
     {
@@ -114,7 +114,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_3");
     {
@@ -125,7 +125,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_4");
     {
@@ -136,14 +136,14 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6257_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6257_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6257_6");
     {
@@ -154,14 +154,14 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell_6257_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedNodeCell_6257_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
   }
 
-  public EditorCell createRefCell_6257_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6257_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<unspecified>");
@@ -193,7 +193,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       return this.createProperty_6257_0(context, node);
     }
 
-    public EditorCell createProperty_6257_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6257_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

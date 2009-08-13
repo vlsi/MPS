@@ -32,14 +32,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3064_0;
-  /* package */AbstractCellListHandler myListHandler_3064_1;
+  private AbstractCellListHandler myListHandler_3064_0;
+  private AbstractCellListHandler myListHandler_3064_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3064_0(context, node);
   }
 
-  public EditorCell createCollection_3064_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3064_0");
     {
@@ -52,7 +52,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_1");
     {
@@ -69,7 +69,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_2");
     {
@@ -81,7 +81,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3064_3");
     {
@@ -101,7 +101,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_4");
     {
@@ -113,7 +113,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_5");
     {
@@ -124,7 +124,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_6");
     {
@@ -135,7 +135,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_7");
     {
@@ -147,7 +147,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_8");
     {
@@ -158,7 +158,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_9");
     {
@@ -170,7 +170,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_10(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_10(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_10");
     {
@@ -182,7 +182,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createCollection_3064_11(EditorContext context, SNode node) {
+  private EditorCell createCollection_3064_11(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3064_11");
     {
@@ -194,35 +194,35 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_4");
     {
@@ -233,7 +233,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_5");
     {
@@ -246,14 +246,14 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_8");
     {
@@ -265,7 +265,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createConstant_3064_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3064_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3064_9");
     {
@@ -276,7 +276,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3064_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3064_0(EditorContext context, SNode node) {
     if (this.myListHandler_3064_0 == null) {
       this.myListHandler_3064_0 = new SideTransformHintSubstituteActionsBuilder_Editor.partListHandler_3064_0(node, "part", context);
     }
@@ -286,7 +286,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3064_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3064_1(EditorContext context, SNode node) {
     if (this.myListHandler_3064_1 == null) {
       this.myListHandler_3064_1 = new SideTransformHintSubstituteActionsBuilder_Editor.variableListHandler_3064_0(node, "variable", context);
     }
@@ -296,37 +296,37 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createIndentCell3064_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell3064_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell3064_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell3064_3(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_3(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell3064_4(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_4(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell3064_5(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3064_5(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefCell_3064_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3064_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose concept>");
@@ -344,7 +344,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createProperty_3064_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_3064_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("transformTag");
     provider.setNoTargetText("<no transformTag>");
@@ -366,7 +366,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createRefNode_3064_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3064_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("precondition");
     provider.setNoTargetText("<none>");
@@ -383,7 +383,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createProperty_3064_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_3064_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -406,7 +406,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createRefNode_3064_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3064_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("commonInitializer");
     provider.setNoTargetText("<no common initializer>");
@@ -423,7 +423,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     return editorCell;
   }
 
-  public EditorCell createProperty_3064_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_3064_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("side");
     provider.setNoTargetText("<no side>");
@@ -459,7 +459,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       return this.createProperty_3064_0(context, node);
     }
 
-    public EditorCell createProperty_3064_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3064_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -483,7 +483,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     }
 
 }
-  public static class partListHandler_3064_0 extends RefNodeListHandler {
+  private static class partListHandler_3064_0 extends RefNodeListHandler {
 
     public partListHandler_3064_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -533,7 +533,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     }
 
 }
-  public static class variableListHandler_3064_0 extends RefNodeListHandler {
+  private static class variableListHandler_3064_0 extends RefNodeListHandler {
 
     public variableListHandler_3064_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -579,7 +579,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_3064_7(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_3064_7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_3064_7");
       {

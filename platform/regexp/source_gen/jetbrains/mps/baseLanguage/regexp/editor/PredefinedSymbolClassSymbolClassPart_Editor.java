@@ -24,14 +24,14 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     return this.createCollection_8173_0(context, node);
   }
 
-  public EditorCell createCollection_8173_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8173_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8173_0");
     editorCell.addEditorCell(this.createRefCell_8173_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_8173_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8173_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
@@ -63,7 +63,7 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       return this.createProperty_8173_0(context, node);
     }
 
-    public EditorCell createProperty_8173_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8173_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

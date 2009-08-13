@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EventType_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3560_0;
+  private AbstractCellListHandler myListHandler_3560_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3560_0(context, node);
   }
 
-  public EditorCell createCollection_3560_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3560_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3560_0");
     editorCell.addEditorCell(this.createProperty_3560_0(context, node));
@@ -44,7 +44,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3560_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3560_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3560_0");
     {
@@ -55,7 +55,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3560_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3560_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3560_2");
     {
@@ -66,7 +66,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3560_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3560_0(EditorContext context, SNode node) {
     if (this.myListHandler_3560_0 == null) {
       this.myListHandler_3560_0 = new EventType_Editor.variableListHandler_3560_0(node, "variable", context);
     }
@@ -76,7 +76,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3560_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3560_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -99,7 +99,7 @@ public class EventType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class variableListHandler_3560_0 extends RefNodeListHandler {
+  private static class variableListHandler_3560_0 extends RefNodeListHandler {
 
     public variableListHandler_3560_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -152,7 +152,7 @@ public class EventType_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_3560_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_3560_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_3560_1");
       {

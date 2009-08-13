@@ -20,7 +20,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_3324_0(context, node);
   }
 
-  public EditorCell createCollection_3324_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3324_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3324_0");
     editorCell.addEditorCell(this.createConstant_3324_0(context, node, "skip"));
@@ -28,7 +28,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3324_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3324_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3324_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class SkipStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3324_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3324_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3324_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);

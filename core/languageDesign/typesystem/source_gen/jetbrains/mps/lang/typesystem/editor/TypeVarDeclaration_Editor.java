@@ -24,7 +24,7 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_0927_0(context, node);
   }
 
-  public EditorCell createCollection_0927_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0927_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0927_0");
     editorCell.addEditorCell(this.createConstant_0927_0(context, node, "var"));
@@ -33,7 +33,7 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0927_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0927_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0927_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -41,14 +41,14 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0927_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0927_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0927_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_0927_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0927_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

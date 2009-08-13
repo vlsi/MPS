@@ -24,13 +24,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_0628_0;
+  private AbstractCellListHandler myListHandler_0628_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_0628_0(context, node);
   }
 
-  public EditorCell createCollection_0628_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0628_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0628_0");
     editorCell.addEditorCell(this.createConstant_0628_0(context, node, "executeFinders"));
@@ -44,7 +44,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0628_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0628_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0628_0");
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0628_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0628_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0628_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0628_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0628_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0628_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -68,21 +68,21 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0628_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0628_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0628_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_0628_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0628_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0628_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_0628_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_0628_0(EditorContext context, SNode node) {
     if (this.myListHandler_0628_0 == null) {
       this.myListHandler_0628_0 = new ExecuteFindersExpression_Editor.findersListHandler_0628_0(node, "finders", context);
     }
@@ -92,7 +92,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0628_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0628_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchNode");
     provider.setNoTargetText("<context node>");
@@ -109,7 +109,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0628_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0628_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchScope");
     provider.setNoTargetText("<global scope>");
@@ -126,7 +126,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class findersListHandler_0628_0 extends RefNodeListHandler {
+  private static class findersListHandler_0628_0 extends RefNodeListHandler {
 
     public findersListHandler_0628_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

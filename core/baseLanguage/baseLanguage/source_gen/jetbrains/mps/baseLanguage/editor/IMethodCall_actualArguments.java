@@ -27,7 +27,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class IMethodCall_actualArguments extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandler_4497_0;
+  private AbstractCellListHandler myListHandler_4497_0;
 
   public IMethodCall_actualArguments(SNode node) {
     super(node);
@@ -41,7 +41,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return this.createCollection_4497_0(context, node);
   }
 
-  public EditorCell createCollection_4497_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4497_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4497_0");
     {
@@ -54,7 +54,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4497_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4497_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4497_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -66,7 +66,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4497_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4497_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4497_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -83,7 +83,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4497_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4497_0(EditorContext context, SNode node) {
     if (this.myListHandler_4497_0 == null) {
       this.myListHandler_4497_0 = new IMethodCall_actualArguments.actualArgumentListHandler_4497_0(node, "actualArgument", context);
     }
@@ -97,18 +97,18 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition4497_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4497_0(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 
-  public static boolean renderingCondition4497_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4497_1(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
-  public static class actualArgumentListHandler_4497_0 extends RefNodeListHandler {
+  private static class actualArgumentListHandler_4497_0 extends RefNodeListHandler {
 
     public actualArgumentListHandler_4497_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -161,7 +161,7 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       }
     }
 
-    public EditorCell createConstant_4497_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4497_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4497_1");
       {

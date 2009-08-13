@@ -31,7 +31,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_8904_1(context, node);
   }
 
-  public EditorCell createCollection_8904_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8904_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8904_0");
     if (renderingCondition8904_0(node, context, context.getOperationContext().getScope())) {
@@ -41,7 +41,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8904_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8904_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8904_1");
     editorCell.addEditorCell(this.createConstant_8904_0(context, node, "treepath aspect:"));
@@ -49,14 +49,14 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8904_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8904_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8904_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8904_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8904_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8904_1");
     {
@@ -68,7 +68,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8904_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8904_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -85,7 +85,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8904_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8904_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("treepathAspect");
     provider.setNoTargetText("<no treepathAspect>");
@@ -108,7 +108,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8904_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8904_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null);
   }
 
@@ -126,7 +126,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_8904_0(context, node);
     }
 
-    public EditorCell createProperty_8904_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8904_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

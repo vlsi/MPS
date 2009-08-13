@@ -18,14 +18,14 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_8176_0(context, node);
   }
 
-  public EditorCell createCollection_8176_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8176_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8176_0");
     editorCell.addEditorCell(this.createRefNode_8176_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode_8176_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8176_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("annotationInstance");
     provider.setNoTargetText("<no annotationInstance>");

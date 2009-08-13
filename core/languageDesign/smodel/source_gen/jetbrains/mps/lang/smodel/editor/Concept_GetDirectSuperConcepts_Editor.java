@@ -11,20 +11,20 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 
 public class Concept_GetDirectSuperConcepts_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAliasAndParms_Comp3010_0;
+  private AbstractCellProvider myReplaceableAliasAndParms_Comp3010_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3010_0(context, node);
   }
 
-  public EditorCell createCollection_3010_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3010_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3010_0");
     editorCell.addEditorCell(this.createComponent_3010_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent_3010_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3010_0(EditorContext context, SNode node) {
     if (this.myReplaceableAliasAndParms_Comp3010_0 == null) {
       this.myReplaceableAliasAndParms_Comp3010_0 = new ReplaceableAliasAndParms_Comp(node);
     }

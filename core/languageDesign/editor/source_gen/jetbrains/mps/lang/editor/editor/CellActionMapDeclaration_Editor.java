@@ -37,13 +37,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9910_0;
+  private AbstractCellListHandler myListHandler_9910_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9910_0(context, node);
   }
 
-  public EditorCell createCollection_9910_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9910_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9910_0");
     editorCell.addEditorCell(this.createCollection_9910_1(context, node));
@@ -56,7 +56,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9910_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9910_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9910_1");
     {
@@ -68,7 +68,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9910_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9910_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9910_2");
     {
@@ -80,14 +80,14 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_1");
     {
@@ -98,7 +98,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_2");
     {
@@ -109,7 +109,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_3");
     {
@@ -120,7 +120,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_4");
     {
@@ -131,7 +131,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9910_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9910_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9910_5");
     {
@@ -142,7 +142,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9910_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9910_0(EditorContext context, SNode node) {
     if (this.myListHandler_9910_0 == null) {
       this.myListHandler_9910_0 = new CellActionMapDeclaration_Editor.itemListHandler_9910_0(node, "item", context);
     }
@@ -152,7 +152,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9910_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9910_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -171,7 +171,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9910_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9910_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any>");
@@ -203,7 +203,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_9910_1(context, node);
     }
 
-    public EditorCell createProperty_9910_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_9910_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -228,7 +228,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class itemListHandler_9910_0 extends RefNodeListHandler {
+  private static class itemListHandler_9910_0 extends RefNodeListHandler {
 
     public itemListHandler_9910_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

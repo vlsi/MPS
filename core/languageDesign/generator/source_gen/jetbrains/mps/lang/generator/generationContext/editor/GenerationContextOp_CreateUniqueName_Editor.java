@@ -20,7 +20,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return this.createCollection_5379_0(context, node);
   }
 
-  public EditorCell createCollection_5379_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5379_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5379_0");
     editorCell.addEditorCell(this.createConstant_5379_0(context, node, "unique name from"));
@@ -34,7 +34,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_1");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -58,7 +58,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_3");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -66,7 +66,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -74,7 +74,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_5379_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5379_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5379_5");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -82,7 +82,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefNode_5379_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5379_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("baseName");
     provider.setNoTargetText("no base name");
@@ -99,7 +99,7 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefNode_5379_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5379_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contextNode");
     provider.setNoTargetText("<no node>");

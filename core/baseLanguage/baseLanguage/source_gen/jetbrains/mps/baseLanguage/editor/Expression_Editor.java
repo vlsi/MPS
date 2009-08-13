@@ -19,13 +19,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class Expression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCellProvider6116_0;
+  private AbstractCellProvider myCellProvider6116_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createAlternation_6116_0(context, node);
   }
 
-  public EditorCell createAlternation_6116_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_6116_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Expression_Editor.renderingCondition6116_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -38,7 +38,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCustom_6116_0(EditorContext context, SNode node) {
+  private EditorCell createCustom_6116_0(EditorContext context, SNode node) {
     if (this.myCellProvider6116_0 == null) {
       this.myCellProvider6116_0 = this._cellProviderFactory_1209147315298(node, context);
     }
@@ -59,7 +59,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     };
   }
 
-  public EditorCell createConceptProperty_6116_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6116_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -78,7 +78,7 @@ public class Expression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;
   }
 

@@ -22,14 +22,14 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
     return this.createCollection_1307_0(context, node);
   }
 
-  public EditorCell createCollection_1307_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1307_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1307_0");
     editorCell.addEditorCell(this.createRefCell_1307_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_1307_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1307_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
@@ -65,7 +65,7 @@ public class LinkRefQualifier_Editor extends DefaultNodeEditor {
       return this.createProperty_1307_0(context, node);
     }
 
-    public EditorCell createProperty_1307_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1307_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

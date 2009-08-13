@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7233_0;
+  private AbstractCellListHandler myListHandler_7233_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7233_0(context, node);
   }
 
-  public EditorCell createCollection_7233_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7233_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7233_0");
     editorCell.addEditorCell(this.createConceptProperty_7233_0(context, node));
@@ -40,7 +40,7 @@ public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7233_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7233_0(EditorContext context, SNode node) {
     if (this.myListHandler_7233_0 == null) {
       this.myListHandler_7233_0 = new NodeTypeSetProperty_Editor.typeListHandler_7233_0(node, "type", context);
     }
@@ -50,7 +50,7 @@ public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_7233_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_7233_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -69,7 +69,7 @@ public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class typeListHandler_7233_0 extends RefNodeListHandler {
+  private static class typeListHandler_7233_0 extends RefNodeListHandler {
 
     public typeListHandler_7233_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

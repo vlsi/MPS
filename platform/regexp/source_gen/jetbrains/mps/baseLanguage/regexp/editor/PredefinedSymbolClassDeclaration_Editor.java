@@ -23,7 +23,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_9156_0(context, node);
   }
 
-  public EditorCell createCollection_9156_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9156_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9156_0");
     editorCell.addEditorCell(this.createConstant_9156_0(context, node, "symbol class"));
@@ -36,7 +36,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9156_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9156_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9156_0");
     {
@@ -47,14 +47,14 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9156_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9156_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9156_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9156_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9156_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9156_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -66,7 +66,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9156_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9156_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9156_3");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -78,14 +78,14 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9156_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9156_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9156_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_9156_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9156_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -103,7 +103,7 @@ public class PredefinedSymbolClassDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9156_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9156_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");

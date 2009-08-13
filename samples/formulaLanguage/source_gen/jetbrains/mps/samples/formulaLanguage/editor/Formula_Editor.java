@@ -14,7 +14,7 @@ public class Formula_Editor extends DefaultNodeEditor {
     return this.createError_1482_0(context, node);
   }
 
-  public EditorCell createError_1482_0(EditorContext context, SNode node) {
+  private EditorCell createError_1482_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?formula?");
     editorCell.setCellId("Error_1482_0");
     return editorCell;

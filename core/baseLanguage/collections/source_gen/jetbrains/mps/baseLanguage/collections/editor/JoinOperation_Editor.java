@@ -25,7 +25,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_2943_0(context, node);
   }
 
-  public EditorCell createCollection_2943_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2943_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2943_0");
     editorCell.addEditorCell(this.createConceptProperty_2943_0(context, node));
@@ -35,7 +35,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2943_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2943_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2943_1");
     {
@@ -49,7 +49,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2943_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2943_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2943_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2943_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2943_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2943_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -65,7 +65,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2943_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("delimiter");
     provider.setNoTargetText("<no delimiter>");
@@ -82,7 +82,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2943_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -106,7 +106,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition2943_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2943_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "delimiter", true) != null);
   }
 

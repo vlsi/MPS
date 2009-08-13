@@ -14,7 +14,7 @@ public class GammaConcept_Editor extends DefaultNodeEditor {
     return this.createConstant_1109_0(context, node, "gammaConcept");
   }
 
-  public EditorCell createConstant_1109_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1109_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1109_0");
     editorCell.setDefaultText("");

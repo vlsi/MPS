@@ -20,7 +20,7 @@ public class ReferenceRoleTarget_Editor extends DefaultNodeEditor {
     return this.createCollection_6346_0(context, node);
   }
 
-  public EditorCell createCollection_6346_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6346_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6346_0");
     editorCell.addEditorCell(this.createConstant_6346_0(context, node, "reference role"));
@@ -28,7 +28,7 @@ public class ReferenceRoleTarget_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6346_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6346_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6346_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -36,7 +36,7 @@ public class ReferenceRoleTarget_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6346_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6346_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referenceRole");
     provider.setNoTargetText("<no referenceRole>");

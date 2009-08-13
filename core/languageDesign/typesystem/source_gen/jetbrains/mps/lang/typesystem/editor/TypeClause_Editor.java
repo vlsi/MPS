@@ -14,7 +14,7 @@ public class TypeClause_Editor extends DefaultNodeEditor {
     return this.createError_8701_0(context, node);
   }
 
-  public EditorCell createError_8701_0(EditorContext context, SNode node) {
+  private EditorCell createError_8701_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "type clause");
     editorCell.setCellId("Error_8701_0");
     return editorCell;

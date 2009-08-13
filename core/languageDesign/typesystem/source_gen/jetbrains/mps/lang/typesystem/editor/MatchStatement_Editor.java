@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MatchStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5822_0;
+  private AbstractCellListHandler myListHandler_5822_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5822_0(context, node);
   }
 
-  public EditorCell createCollection_5822_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5822_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5822_0");
     editorCell.addEditorCell(this.createConstant_5822_0(context, node, "match"));
@@ -47,7 +47,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5822_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5822_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5822_1");
     {
@@ -63,7 +63,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -71,7 +71,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_1");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -84,7 +84,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_2");
     {
@@ -95,7 +95,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_3");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -103,14 +103,14 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -122,7 +122,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_6");
     {
@@ -133,7 +133,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5822_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5822_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5822_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -145,7 +145,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5822_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5822_0(EditorContext context, SNode node) {
     if (this.myListHandler_5822_0 == null) {
       this.myListHandler_5822_0 = new MatchStatement_Editor.itemListHandler_5822_0(node, "item", context);
     }
@@ -159,7 +159,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5822_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5822_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -176,7 +176,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5822_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5822_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseStatement");
     provider.setNoTargetText("<no ifFalseStatement>");
@@ -198,7 +198,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class itemListHandler_5822_0 extends RefNodeListHandler {
+  private static class itemListHandler_5822_0 extends RefNodeListHandler {
 
     public itemListHandler_5822_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -26,14 +26,14 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
     return this.createCollection_5555_0(context, node);
   }
 
-  public EditorCell createCollection_5555_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5555_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5555_0");
     editorCell.addEditorCell(this.createRefCell_5555_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_5555_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5555_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
@@ -69,7 +69,7 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       return this.createProperty_5555_0(context, node);
     }
 
-    public EditorCell createProperty_5555_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_5555_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

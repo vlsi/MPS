@@ -23,13 +23,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_0524_0;
+  private AbstractCellListHandler myListHandler_0524_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_0524_0(context, node);
   }
 
-  public EditorCell createCollection_0524_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0524_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0524_0");
     editorCell.addEditorCell(this.createConstant_0524_0(context, node, "predefined symbol classes"));
@@ -40,7 +40,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0524_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0524_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0524_0");
     {
@@ -51,7 +51,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0524_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0524_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0524_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0524_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0524_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0524_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0524_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0524_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0524_3");
     {
@@ -86,7 +86,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_0524_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_0524_0(EditorContext context, SNode node) {
     if (this.myListHandler_0524_0 == null) {
       this.myListHandler_0524_0 = new PredefinedSymbolClasses_Editor.symbolClassListHandler_0524_0(node, "symbolClass", context);
     }
@@ -100,7 +100,7 @@ public class PredefinedSymbolClasses_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class symbolClassListHandler_0524_0 extends RefNodeListHandler {
+  private static class symbolClassListHandler_0524_0 extends RefNodeListHandler {
 
     public symbolClassListHandler_0524_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

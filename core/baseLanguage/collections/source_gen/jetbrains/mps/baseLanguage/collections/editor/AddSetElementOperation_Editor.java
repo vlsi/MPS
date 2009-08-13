@@ -27,7 +27,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_1680_0(context, node);
   }
 
-  public EditorCell createCollection_1680_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1680_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1680_0");
     editorCell.addEditorCell(this.createConstant_1680_0(context, node, "add"));
@@ -37,7 +37,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1680_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1680_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1680_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1680_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1680_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1680_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -58,7 +58,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1680_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1680_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1680_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -66,7 +66,7 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1680_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1680_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");

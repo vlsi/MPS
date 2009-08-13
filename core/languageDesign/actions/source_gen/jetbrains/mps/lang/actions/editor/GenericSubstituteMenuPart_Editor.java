@@ -23,7 +23,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return this.createCollection_0295_0(context, node);
   }
 
-  public EditorCell createCollection_0295_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0295_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0295_0");
     editorCell.addEditorCell(this.createCollection_0295_1(context, node));
@@ -31,7 +31,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0295_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0295_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0295_1");
     {
@@ -42,7 +42,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0295_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0295_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0295_2");
     {
@@ -54,7 +54,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0295_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0295_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0295_0");
     {
@@ -65,12 +65,12 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell0295_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell0295_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_0295_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0295_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");

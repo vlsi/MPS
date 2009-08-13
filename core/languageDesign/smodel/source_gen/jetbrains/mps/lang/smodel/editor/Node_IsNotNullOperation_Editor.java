@@ -19,7 +19,7 @@ public class Node_IsNotNullOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_7816_0(context, node, "isNotNull");
   }
 
-  public EditorCell createConstant_7816_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7816_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7816_0");
     {

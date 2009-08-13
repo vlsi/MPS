@@ -14,7 +14,7 @@ public class MenuBuilderPart_Editor extends DefaultNodeEditor {
     return this.createError_8835_0(context, node);
   }
 
-  public EditorCell createError_8835_0(EditorContext context, SNode node) {
+  private EditorCell createError_8835_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "menu builder part");
     editorCell.setCellId("Error_8835_0");
     return editorCell;

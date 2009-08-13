@@ -19,7 +19,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return this.createCollection_2300_0(context, node);
   }
 
-  public EditorCell createCollection_2300_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2300_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2300_0");
     editorCell.addEditorCell(this.createConstant_2300_0(context, node, "assert"));
@@ -30,7 +30,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2300_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2300_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2300_0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2300_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2300_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2300_1");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
@@ -46,14 +46,14 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2300_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2300_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2300_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_2300_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2300_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");
@@ -70,7 +70,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2300_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2300_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("typeToCheck");
     provider.setNoTargetText("<no typeToCheck>");

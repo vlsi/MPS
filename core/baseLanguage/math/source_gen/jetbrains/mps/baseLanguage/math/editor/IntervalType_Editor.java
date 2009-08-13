@@ -22,7 +22,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return this.createCollection_1347_0(context, node);
   }
 
-  public EditorCell createCollection_1347_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1347_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1347_0");
     editorCell.addEditorCell(this.createConstant_1347_0(context, node, "interval"));
@@ -32,7 +32,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1347_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1347_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1347_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1347_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1347_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1347_1");
     {
@@ -52,7 +52,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1347_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1347_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1347_2");
     {
@@ -63,7 +63,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1347_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1347_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");

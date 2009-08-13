@@ -23,7 +23,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return this.createCollection_9401_0(context, node);
   }
 
-  public EditorCell createCollection_9401_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9401_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9401_0");
     editorCell.addEditorCell(this.createConstant_9401_0(context, node, "boolean"));
@@ -34,7 +34,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_9401_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9401_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9401_0");
     {
@@ -46,7 +46,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_9401_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9401_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9401_1");
     {
@@ -58,7 +58,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createConstant_9401_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9401_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9401_2");
     {
@@ -70,7 +70,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_9401_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9401_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -92,7 +92,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public EditorCell createProperty_9401_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9401_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("inheritable");
     provider.setNoTargetText("<no inheritable>");

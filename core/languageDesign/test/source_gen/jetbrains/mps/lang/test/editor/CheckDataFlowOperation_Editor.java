@@ -15,7 +15,7 @@ public class CheckDataFlowOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_5947_0(context, node, "check dataflow");
   }
 
-  public EditorCell createConstant_5947_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5947_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5947_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);

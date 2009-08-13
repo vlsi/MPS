@@ -26,7 +26,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return this.createCollection_7916_0(context, node);
   }
 
-  public EditorCell createCollection_7916_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7916_0");
     editorCell.setGridLayout(true);
@@ -35,7 +35,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7916_1");
     {
@@ -53,7 +53,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7916_2");
     {
@@ -66,7 +66,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7916_3");
     {
@@ -79,7 +79,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7916_4");
     {
@@ -92,7 +92,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7916_5");
     {
@@ -105,7 +105,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7916_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_7916_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7916_6");
     {
@@ -118,7 +118,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_0");
     {
@@ -130,7 +130,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -138,7 +138,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_2");
     {
@@ -150,7 +150,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -158,7 +158,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_4");
     {
@@ -170,7 +170,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -178,7 +178,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_6");
     {
@@ -190,7 +190,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_7");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -198,7 +198,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_8");
     {
@@ -210,7 +210,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_9");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -218,7 +218,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7916_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7916_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7916_10");
     {
@@ -230,7 +230,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7916_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7916_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -252,7 +252,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7916_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7916_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("affectedInstanceConcept");
     provider.setNoTargetText("<choose concept>");
@@ -270,7 +270,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7916_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7916_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("affectedInstancePredicate");
     provider.setNoTargetText("<no condition>");
@@ -287,7 +287,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7916_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7916_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("affectedInstanceUpdater");
     provider.setNoTargetText("<no affectedInstanceUpdater>");
@@ -304,7 +304,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7916_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_7916_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("showAsIntention");
     provider.setNoTargetText("<no showAsIntention>");
@@ -336,7 +336,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       return this.createProperty_7916_1(context, node);
     }
 
-    public EditorCell createProperty_7916_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_7916_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

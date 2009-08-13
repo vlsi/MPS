@@ -21,13 +21,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7098_0;
+  private AbstractCellListHandler myListHandler_7098_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7098_0(context, node);
   }
 
-  public EditorCell createCollection_7098_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7098_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7098_0");
     editorCell.addEditorCell(this.createConstant_7098_0(context, node, "Variable Converters:"));
@@ -36,14 +36,14 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7098_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7098_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7098_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7098_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7098_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7098_1");
     {
@@ -54,7 +54,7 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7098_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7098_0(EditorContext context, SNode node) {
     if (this.myListHandler_7098_0 == null) {
       this.myListHandler_7098_0 = new VariableConvertersContainer_Editor.converterItemListHandler_7098_0(node, "converterItem", context);
     }
@@ -64,7 +64,7 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class converterItemListHandler_7098_0 extends RefNodeListHandler {
+  private static class converterItemListHandler_7098_0 extends RefNodeListHandler {
 
     public converterItemListHandler_7098_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -30,7 +30,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return this.createCollection_8968_2(context, node);
   }
 
-  public EditorCell createCollection_8968_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8968_0");
     editorCell.addEditorCell(this.createCollection_8968_1(context, node));
@@ -38,7 +38,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8968_1");
     {
@@ -55,7 +55,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8968_2");
     editorCell.setGridLayout(true);
@@ -64,7 +64,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8968_3");
     {
@@ -77,7 +77,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8968_4");
     {
@@ -91,7 +91,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8968_5");
     {
@@ -104,7 +104,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8968_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_8968_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8968_6");
     editorCell.addEditorCell(this.createConstant_8968_5(context, node, "deprecated since build"));
@@ -112,7 +112,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_0");
     structure_StyleSheet.getAnnotationNode(editorCell).apply(editorCell);
@@ -125,7 +125,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_1");
     {
@@ -136,7 +136,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_2");
     {
@@ -149,7 +149,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_3");
     {
@@ -161,7 +161,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_4");
     {
@@ -174,7 +174,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8968_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8968_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8968_5");
     {
@@ -185,14 +185,14 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell_8968_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedNodeCell_8968_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
   }
 
-  public EditorCell createProperty_8968_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_8968_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -215,7 +215,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8968_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_8968_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("build");
     provider.setNoTargetText("<no build>");
@@ -238,7 +238,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8968_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_8968_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -263,7 +263,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8968_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_8968_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("build");
     provider.setNoTargetText("<no build>");
@@ -287,11 +287,11 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8968_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8968_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "build") != null;
   }
 
-  public static boolean renderingCondition8968_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8968_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 

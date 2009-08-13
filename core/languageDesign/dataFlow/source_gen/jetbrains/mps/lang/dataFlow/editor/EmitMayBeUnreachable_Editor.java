@@ -21,7 +21,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return this.createCollection_5949_0(context, node);
   }
 
-  public EditorCell createCollection_5949_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5949_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5949_0");
     editorCell.addEditorCell(this.createConstant_5949_0(context, node, "{"));
@@ -30,7 +30,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5949_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5949_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5949_0");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5949_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5949_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5949_1");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
@@ -56,7 +56,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5949_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5949_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("emitStatement");
     provider.setNoTargetText("<no emitStatement>");

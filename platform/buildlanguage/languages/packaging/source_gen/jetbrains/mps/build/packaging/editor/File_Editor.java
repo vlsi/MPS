@@ -21,8 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class File_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent3696_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent3696_1;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent3696_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent3696_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3696_0(context, node);
@@ -32,7 +32,7 @@ public class File_Editor extends DefaultNodeEditor {
     return this.createCollection_3696_1(context, node);
   }
 
-  public EditorCell createCollection_3696_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3696_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3696_0");
     editorCell.addEditorCell(this.createConceptProperty_3696_0(context, node));
@@ -43,14 +43,14 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3696_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3696_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3696_1");
     editorCell.addEditorCell(this.createComponent_3696_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createComponent_3696_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3696_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3696_0 == null) {
       this.myConfigurationReferencesEditorComponent3696_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -58,7 +58,7 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_3696_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_3696_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3696_1 == null) {
       this.myConfigurationReferencesEditorComponent3696_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -66,7 +66,7 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3696_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3696_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3696_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3696_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3696_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -97,7 +97,7 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3696_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3696_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -114,7 +114,7 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3696_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3696_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourcePath");
     provider.setNoTargetText("<no sourcePath>");

@@ -19,7 +19,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_9654_0(context, node);
   }
 
-  public EditorCell createCollection_9654_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9654_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9654_0");
     editorCell.addEditorCell(this.createConstant_9654_0(context, node, "changeFeatureName("));
@@ -33,42 +33,42 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9654_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9654_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9654_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9654_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9654_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9654_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9654_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9654_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9654_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9654_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9654_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9654_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9654_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9654_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9654_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_9654_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9654_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("feature");
     provider.setNoTargetText("<no feature>");
@@ -85,7 +85,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9654_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9654_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("newConceptFQName");
     provider.setNoTargetText("<no newConceptFQName>");
@@ -102,7 +102,7 @@ public class ChangeFeatureNameOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9654_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9654_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("newFeatureName");
     provider.setNoTargetText("<no newFeatureName>");

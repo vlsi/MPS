@@ -11,13 +11,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myCellProvider3927_0;
+  private AbstractCellProvider myCellProvider3927_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCustom_3927_0(context, node);
   }
 
-  public EditorCell createCustom_3927_0(EditorContext context, SNode node) {
+  private EditorCell createCustom_3927_0(EditorContext context, SNode node) {
     if (this.myCellProvider3927_0 == null) {
       this.myCellProvider3927_0 = this._cellProviderFactory_1208623526502(node, context);
     }

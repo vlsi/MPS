@@ -16,7 +16,7 @@ public class ToListOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_1502_0(context, node, "toList");
   }
 
-  public EditorCell createConstant_1502_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1502_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1502_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);

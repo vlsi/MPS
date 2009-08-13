@@ -32,7 +32,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return this.createCollection_1449_0(context, node);
   }
 
-  public EditorCell createAlternation_1449_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_1449_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = WindowsConfig_Editor.renderingCondition1449_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -45,14 +45,14 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1449_0");
     editorCell.addEditorCell(this.createCollection_1449_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_1");
     {
@@ -68,7 +68,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1449_2");
     {
@@ -83,7 +83,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_3");
     {
@@ -96,7 +96,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1449_4");
     {
@@ -118,7 +118,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_5");
     {
@@ -131,7 +131,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_6");
     {
@@ -144,7 +144,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_7");
     {
@@ -157,7 +157,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_8");
     {
@@ -170,7 +170,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_9");
     {
@@ -183,7 +183,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_10(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_10(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_10");
     {
@@ -196,7 +196,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_11(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_11(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_11");
     {
@@ -209,7 +209,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_12(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_12(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_12");
     {
@@ -222,7 +222,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1449_13(EditorContext context, SNode node) {
+  private EditorCell createCollection_1449_13(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1449_13");
     {
@@ -235,7 +235,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -243,7 +243,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -251,14 +251,14 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_3");
     DistribConfiguration_Styles_StyleSheet.getHint(editorCell).apply(editorCell);
@@ -267,7 +267,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_4");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -275,7 +275,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_5");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -283,7 +283,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_6");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -291,7 +291,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_7");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -299,7 +299,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_8");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -307,7 +307,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_9");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -315,7 +315,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_10");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -323,7 +323,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1449_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1449_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1449_11");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -331,22 +331,22 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1449_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1449_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1449_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1449_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell1449_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1449_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createConceptProperty_1449_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_1449_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -365,7 +365,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("pathToNsisZipFile");
     provider.setNoTargetText("<no pathToNsisZipFile>");
@@ -382,7 +382,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("signatureConfiguration");
     provider.setNoTargetText("<no signatureConfiguration>");
@@ -399,7 +399,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("license");
     provider.setNoTargetText("<no license>");
@@ -416,7 +416,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicationIcon");
     provider.setNoTargetText("<no applicationIcon>");
@@ -433,7 +433,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("homepageIcon");
     provider.setNoTargetText("<no homepageIcon>");
@@ -450,7 +450,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_5(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_5(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("embeddedJrePath");
     provider.setNoTargetText("<no embeddedJrePath>");
@@ -467,7 +467,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_6(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_6(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("installerIcon");
     provider.setNoTargetText("<no installerIcon>");
@@ -484,7 +484,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_7(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_7(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("uninstallerIcon");
     provider.setNoTargetText("<no uninstallerIcon>");
@@ -501,7 +501,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_8(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_8(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("settingsDir");
     provider.setNoTargetText("<no settingsDir>");
@@ -518,7 +518,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1449_9(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1449_9(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("examplesDir");
     provider.setNoTargetText("<no examplesDir>");
@@ -536,11 +536,11 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1449_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1449_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "signatureConfiguration", true) != null);
   }
 
-  public static boolean renderingCondition1449_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1449_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(node), "webSite", true) != null);
   }
 

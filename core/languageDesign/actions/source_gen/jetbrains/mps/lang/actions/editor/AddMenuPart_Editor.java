@@ -30,13 +30,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class AddMenuPart_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5863_0;
+  private AbstractCellListHandler myListHandler_5863_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5863_0(context, node);
   }
 
-  public EditorCell createCollection_5863_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5863_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5863_0");
     editorCell.setUsesBraces(true);
@@ -46,7 +46,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5863_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5863_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5863_1");
     {
@@ -58,7 +58,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5863_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5863_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5863_2");
     {
@@ -70,7 +70,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5863_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5863_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5863_3");
     {
@@ -83,7 +83,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5863_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5863_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5863_0");
     {
@@ -94,7 +94,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5863_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5863_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5863_1");
     {
@@ -105,7 +105,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5863_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5863_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5863_2");
     {
@@ -116,7 +116,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5863_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5863_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5863_3");
     {
@@ -128,7 +128,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5863_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5863_0(EditorContext context, SNode node) {
     if (this.myListHandler_5863_0 == null) {
       this.myListHandler_5863_0 = new AddMenuPart_Editor.partListHandler_5863_0(node, "part", context);
     }
@@ -138,12 +138,12 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell5863_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell5863_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefCell_5863_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5863_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -175,7 +175,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
       return this.createProperty_5863_0(context, node);
     }
 
-    public EditorCell createProperty_5863_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_5863_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -199,7 +199,7 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class partListHandler_5863_0 extends RefNodeListHandler {
+  private static class partListHandler_5863_0 extends RefNodeListHandler {
 
     public partListHandler_5863_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

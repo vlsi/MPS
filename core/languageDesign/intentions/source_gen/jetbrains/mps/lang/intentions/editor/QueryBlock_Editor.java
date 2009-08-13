@@ -26,8 +26,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class QueryBlock_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConceptFunction_Component6409_0;
-  /* package */AbstractCellProvider myCellProvider6409_0;
+  private AbstractCellProvider myConceptFunction_Component6409_0;
+  private AbstractCellProvider myCellProvider6409_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6409_0(context, node);
@@ -37,7 +37,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return this.createCustom_6409_0(context, node);
   }
 
-  public EditorCell createCollection_6409_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6409_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6409_0");
     editorCell.addEditorCell(this.createCollection_6409_1(context, node));
@@ -45,7 +45,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6409_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6409_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6409_1");
     {
@@ -59,7 +59,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6409_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6409_0(EditorContext context, SNode node) {
     if (this.myConceptFunction_Component6409_0 == null) {
       this.myConceptFunction_Component6409_0 = new ConceptFunction_Component(node);
     }
@@ -67,7 +67,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6409_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6409_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6409_0");
     {
@@ -81,7 +81,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6409_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6409_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6409_1");
     {
@@ -95,7 +95,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCustom_6409_0(EditorContext context, SNode node) {
+  private EditorCell createCustom_6409_0(EditorContext context, SNode node) {
     if (this.myCellProvider6409_0 == null) {
       this.myCellProvider6409_0 = this._cellProviderFactory_1240319640305(node, context);
     }
@@ -129,7 +129,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     };
   }
 
-  public EditorCell createRefNode_6409_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6409_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("paramType");
     provider.setNoTargetText("<no paramType>");

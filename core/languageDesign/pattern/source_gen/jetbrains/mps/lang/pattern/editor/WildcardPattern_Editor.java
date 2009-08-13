@@ -19,14 +19,14 @@ public class WildcardPattern_Editor extends DefaultNodeEditor {
     return this.createCollection_1606_0(context, node);
   }
 
-  public EditorCell createCollection_1606_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1606_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1606_0");
     editorCell.addEditorCell(this.createConstant_1606_0(context, node, "_"));
     return editorCell;
   }
 
-  public EditorCell createConstant_1606_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1606_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1606_0");
     {

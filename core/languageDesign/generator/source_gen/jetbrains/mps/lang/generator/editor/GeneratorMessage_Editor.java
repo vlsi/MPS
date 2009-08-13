@@ -23,7 +23,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     return this.createCollection_0648_0(context, node);
   }
 
-  public EditorCell createCollection_0648_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0648_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0648_0");
     editorCell.addEditorCell(this.createProperty_0648_0(context, node));
@@ -32,7 +32,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0648_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0648_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0648_0");
     {
@@ -43,7 +43,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0648_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0648_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("messageType");
     provider.setNoTargetText("<no messageType>");
@@ -66,7 +66,7 @@ public class GeneratorMessage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0648_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_0648_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("messageText");
     provider.setNoTargetText("<no text>");

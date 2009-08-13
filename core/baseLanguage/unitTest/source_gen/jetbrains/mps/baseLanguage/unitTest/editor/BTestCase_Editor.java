@@ -28,14 +28,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BTestCase_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7256_0;
-  /* package */AbstractCellListHandler myListHandler_7256_1;
+  private AbstractCellListHandler myListHandler_7256_0;
+  private AbstractCellListHandler myListHandler_7256_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7256_0(context, node);
   }
 
-  public EditorCell createCollection_7256_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7256_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7256_0");
     editorCell.addEditorCell(this.createConstant_7256_0(context, node, "test case"));
@@ -48,7 +48,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7256_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7256_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7256_1");
     {
@@ -67,7 +67,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -83,7 +83,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -95,7 +95,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -107,7 +107,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_4");
     {
@@ -119,7 +119,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_6");
     {
@@ -131,7 +131,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7256_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7256_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7256_7");
     {
@@ -143,7 +143,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7256_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7256_0(EditorContext context, SNode node) {
     if (this.myListHandler_7256_0 == null) {
       this.myListHandler_7256_0 = new BTestCase_Editor.staticFieldListHandler_7256_0(node, "staticField", context);
     }
@@ -157,7 +157,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7256_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7256_1(EditorContext context, SNode node) {
     if (this.myListHandler_7256_1 == null) {
       this.myListHandler_7256_1 = new BTestCase_Editor.methodListHandler_7256_0(node, "method", context);
     }
@@ -171,7 +171,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7256_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("testCaseName");
     provider.setNoTargetText("<no testCaseName>");
@@ -189,7 +189,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7256_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7256_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("superclass");
     provider.setNoTargetText("<none>");
@@ -206,7 +206,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7256_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7256_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("testMethodList");
     provider.setNoTargetText("<no testMethodList>");
@@ -227,7 +227,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class staticFieldListHandler_7256_0 extends RefNodeListHandler {
+  private static class staticFieldListHandler_7256_0 extends RefNodeListHandler {
 
     public staticFieldListHandler_7256_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -273,7 +273,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_7256_5(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_7256_5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_7256_5");
       {
@@ -286,7 +286,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class methodListHandler_7256_0 extends RefNodeListHandler {
+  private static class methodListHandler_7256_0 extends RefNodeListHandler {
 
     public methodListHandler_7256_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -332,7 +332,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_7256_8(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_7256_8(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_7256_8");
       {

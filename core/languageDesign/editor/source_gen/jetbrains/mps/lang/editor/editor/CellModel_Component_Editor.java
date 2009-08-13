@@ -18,9 +18,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CellModel_Component_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_OpenTag6025_0;
-  /* package */AbstractCellProvider my_CloseTag6025_0;
-  /* package */AbstractCellProvider my_CellModel_Common6025_0;
+  private AbstractCellProvider my_OpenTag6025_0;
+  private AbstractCellProvider my_CloseTag6025_0;
+  private AbstractCellProvider my_CellModel_Common6025_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6025_0(context, node);
@@ -30,7 +30,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return this.createCollection_6025_1(context, node);
   }
 
-  public EditorCell createCollection_6025_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6025_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6025_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
@@ -41,7 +41,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6025_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6025_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6025_1");
     {
@@ -52,7 +52,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6025_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6025_0(EditorContext context, SNode node) {
     if (this.my_OpenTag6025_0 == null) {
       this.my_OpenTag6025_0 = new _OpenTag(node);
     }
@@ -60,7 +60,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6025_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_6025_1(EditorContext context, SNode node) {
     if (this.my_CloseTag6025_0 == null) {
       this.my_CloseTag6025_0 = new _CloseTag(node);
     }
@@ -72,7 +72,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6025_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_6025_2(EditorContext context, SNode node) {
     if (this.my_CellModel_Common6025_0 == null) {
       this.my_CellModel_Common6025_0 = new _CellModel_Common(node);
     }
@@ -80,7 +80,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6025_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6025_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("editorComponent");
     provider.setNoTargetText("<no component>");
@@ -113,7 +113,7 @@ public class CellModel_Component_Editor extends DefaultNodeEditor {
       return this.createProperty_6025_0(context, node);
     }
 
-    public EditorCell createProperty_6025_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6025_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -29,7 +29,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return this.createCollection_4542_0(context, node);
   }
 
-  public EditorCell createCollection_4542_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4542_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4542_0");
     editorCell.addEditorCell(this.createConstant_4542_0(context, node, "link"));
@@ -41,7 +41,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4542_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4542_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4542_1");
     {
@@ -59,7 +59,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_0");
     {
@@ -70,7 +70,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_1");
     {
@@ -81,7 +81,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -95,7 +95,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -110,7 +110,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_4");
     {
@@ -122,7 +122,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_5");
     {
@@ -135,7 +135,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_6");
     {
@@ -147,7 +147,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4542_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4542_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4542_7");
     {
@@ -161,7 +161,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4542_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4542_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableLink");
     provider.setNoTargetText("<choose reference>");
@@ -179,7 +179,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4542_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4542_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referentSetHandler");
     provider.setNoTargetText("<none>");
@@ -200,7 +200,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4542_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4542_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchScopeFactory");
     provider.setNoTargetText("<default>");
@@ -236,7 +236,7 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       return this.createProperty_4542_0(context, node);
     }
 
-    public EditorCell createProperty_4542_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4542_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no name>");

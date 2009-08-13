@@ -32,7 +32,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return this.createCollection_1596_0(context, node);
   }
 
-  public EditorCell createCollection_1596_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1596_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1596_0");
     {
@@ -49,7 +49,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1596_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1596_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1596_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1596_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1596_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1596_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -70,7 +70,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1596_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1596_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1596_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1596_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1596_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1596_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -90,7 +90,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1596_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1596_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1596_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -103,7 +103,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1596_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1596_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -120,7 +120,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1596_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1596_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statementList");
     provider.setNoTargetText("<no statementList>");

@@ -17,7 +17,7 @@ public class StubBlock_Editor extends DefaultNodeEditor {
     return this.createConstant_9987_0(context, node, "stub");
   }
 
-  public EditorCell createConstant_9987_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9987_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9987_0");
     {

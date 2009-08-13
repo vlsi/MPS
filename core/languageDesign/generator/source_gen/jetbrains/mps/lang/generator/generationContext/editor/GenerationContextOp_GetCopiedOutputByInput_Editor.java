@@ -20,7 +20,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     return this.createCollection_4621_0(context, node);
   }
 
-  public EditorCell createCollection_4621_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4621_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4621_0");
     editorCell.addEditorCell(this.createConstant_4621_0(context, node, "get copied output for"));
@@ -30,7 +30,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     return editorCell;
   }
 
-  public EditorCell createConstant_4621_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4621_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4621_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     return editorCell;
   }
 
-  public EditorCell createConstant_4621_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4621_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4621_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     return editorCell;
   }
 
-  public EditorCell createConstant_4621_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4621_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4621_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
     return editorCell;
   }
 
-  public EditorCell createRefNode_4621_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4621_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("inputNode");
     provider.setNoTargetText("<no input node>");

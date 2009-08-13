@@ -28,7 +28,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return this.createCollection_0652_0(context, node);
   }
 
-  public EditorCell createCollection_0652_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0652_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0652_0");
     editorCell.addEditorCell(this.createCollection_0652_1(context, node));
@@ -36,7 +36,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0652_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0652_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0652_1");
     {
@@ -50,7 +50,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0652_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0652_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0652_2");
     {
@@ -65,7 +65,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0652_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0652_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0652_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -73,7 +73,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0652_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0652_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0652_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -85,7 +85,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0652_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0652_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0652_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -93,7 +93,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0652_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0652_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0652_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -105,7 +105,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0652_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0652_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -123,7 +123,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0652_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0652_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("actualArgumentsLink");
     provider.setNoTargetText("<no actualArgumentsLink>");
@@ -141,7 +141,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0652_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0652_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("procedureDeclaration");
     provider.setNoTargetText("<no procedureDeclaration>");
@@ -159,7 +159,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0652_2(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0652_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("parametersLink");
     provider.setNoTargetText("<no parametersLink>");
@@ -191,7 +191,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
       return this.createProperty_0652_0(context, node);
     }
 
-    public EditorCell createProperty_0652_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0652_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -226,7 +226,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
       return this.createProperty_0652_1(context, node);
     }
 
-    public EditorCell createProperty_0652_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_0652_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -261,7 +261,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
       return this.createProperty_0652_2(context, node);
     }
 
-    public EditorCell createProperty_0652_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_0652_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

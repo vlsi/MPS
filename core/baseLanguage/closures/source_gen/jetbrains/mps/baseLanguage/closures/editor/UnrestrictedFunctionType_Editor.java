@@ -32,8 +32,8 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8986_0;
-  /* package */AbstractCellListHandler myListHandler_8986_1;
+  private AbstractCellListHandler myListHandler_8986_0;
+  private AbstractCellListHandler myListHandler_8986_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8986_0(context, node);
@@ -43,7 +43,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return this.createCollection_8986_2(context, node);
   }
 
-  public EditorCell createCollection_8986_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8986_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8986_0");
     editorCell.addEditorCell(this.createConstant_8986_0(context, node, "{"));
@@ -57,7 +57,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8986_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8986_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8986_1");
     {
@@ -69,7 +69,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8986_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8986_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8986_2");
     editorCell.addEditorCell(this.createConstant_8986_5(context, node, "return:"));
@@ -77,7 +77,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8986_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8986_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8986_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -89,7 +89,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8986_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8986_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8986_2");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -97,7 +97,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8986_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8986_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8986_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -105,7 +105,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8986_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8986_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8986_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -117,14 +117,14 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8986_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8986_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8986_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8986_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8986_0(EditorContext context, SNode node) {
     if (this.myListHandler_8986_0 == null) {
       this.myListHandler_8986_0 = new UnrestrictedFunctionType_Editor.parameterTypeListHandler_8986_0(node, "parameterType", context);
     }
@@ -134,7 +134,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8986_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8986_1(EditorContext context, SNode node) {
     if (this.myListHandler_8986_1 == null) {
       this.myListHandler_8986_1 = new UnrestrictedFunctionType_Editor.throwsTypeListHandler_8986_0(node, "throwsType", context);
     }
@@ -144,7 +144,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8986_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8986_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("terminateType");
     provider.setNoTargetText("<no terminateType>");
@@ -161,7 +161,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8986_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8986_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("resultType");
     provider.setNoTargetText("<no resultType>");
@@ -183,11 +183,11 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8986_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8986_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
-  public static class parameterTypeListHandler_8986_0 extends RefNodeListHandler {
+  private static class parameterTypeListHandler_8986_0 extends RefNodeListHandler {
 
     public parameterTypeListHandler_8986_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -240,7 +240,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_8986_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_8986_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_8986_1");
       {
@@ -252,7 +252,7 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class throwsTypeListHandler_8986_0 extends RefNodeListHandler {
+  private static class throwsTypeListHandler_8986_0 extends RefNodeListHandler {
 
     public throwsTypeListHandler_8986_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -29,7 +29,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_4462_0(context, node);
   }
 
-  public EditorCell createCollection_4462_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4462_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4462_0");
     editorCell.addEditorCell(this.createConceptProperty_4462_0(context, node));
@@ -43,14 +43,14 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4462_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4462_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4462_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_4462_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_4462_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -70,7 +70,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4462_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4462_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -87,7 +87,7 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4462_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4462_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -108,11 +108,11 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4462_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4462_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
-  public static boolean renderingCondition4462_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4462_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 

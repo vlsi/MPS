@@ -30,7 +30,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_6059_0(context, node);
   }
 
-  public EditorCell createCollection_6059_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6059_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6059_0");
     {
@@ -44,7 +44,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6059_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6059_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6059_1");
     editorCell.addEditorCell(this.createConstant_6059_0(context, node, "->$"));
@@ -55,7 +55,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6059_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6059_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6059_2");
     {
@@ -67,7 +67,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6059_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_6059_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6059_3");
     {
@@ -80,7 +80,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -93,7 +93,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_1");
     {
@@ -106,7 +106,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_2");
     {
@@ -117,7 +117,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_3");
     {
@@ -128,14 +128,14 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6059_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6059_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6059_5");
     {
@@ -146,7 +146,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedLinkCell_6059_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedLinkCell_6059_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedLinkCell();
@@ -154,7 +154,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6059_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6059_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("referentFunction");
     provider.setNoTargetText("<none>");
@@ -174,7 +174,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6059_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6059_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -193,7 +193,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6059_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_6059_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -214,7 +214,7 @@ public class ReferenceMacro_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6059_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6059_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
 

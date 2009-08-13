@@ -23,7 +23,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return this.createCollection_1982_0(context, node);
   }
 
-  public EditorCell createCollection_1982_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1982_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1982_0");
     {
@@ -34,7 +34,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1982_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1982_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1982_0");
     {
@@ -47,7 +47,7 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createError_1982_0(EditorContext context, SNode node) {
+  private EditorCell createError_1982_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
     editorCell.setCellId("Error_1982_0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);

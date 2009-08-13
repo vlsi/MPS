@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Block_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common0905_0;
+  private AbstractCellProvider my_CellModel_Common0905_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_0905_0(context, node);
@@ -30,7 +30,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return this.createCollection_0905_3(context, node);
   }
 
-  public EditorCell createCollection_0905_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0905_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0905_0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0905_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0905_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0905_1");
     {
@@ -53,7 +53,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0905_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0905_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0905_2");
     {
@@ -66,7 +66,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0905_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_0905_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0905_3");
     editorCell.setGridLayout(true);
@@ -74,7 +74,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_0905_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_0905_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common0905_0 == null) {
       this.my_CellModel_Common0905_0 = new _CellModel_Common(node);
     }
@@ -82,12 +82,12 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell0905_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell0905_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_0905_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0905_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -104,7 +104,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0905_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0905_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("header");
     provider.setNoTargetText("<no header>");
@@ -121,7 +121,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0905_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0905_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("openBrace");
     provider.setNoTargetText("{");
@@ -146,7 +146,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0905_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_0905_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("closeBrace");
     provider.setNoTargetText("}");

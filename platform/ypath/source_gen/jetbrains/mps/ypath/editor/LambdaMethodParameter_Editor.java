@@ -21,7 +21,7 @@ public class LambdaMethodParameter_Editor extends DefaultNodeEditor {
     return this.createProperty_6133_0(context, node);
   }
 
-  public EditorCell createProperty_6133_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6133_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

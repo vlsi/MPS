@@ -30,14 +30,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ClassCreator_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments9368_0;
-  /* package */AbstractCellListHandler myListHandler_9368_0;
+  private AbstractCellProvider myIMethodCall_actualArguments9368_0;
+  private AbstractCellListHandler myListHandler_9368_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9368_0(context, node);
   }
 
-  public EditorCell createCollection_9368_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9368_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9368_0");
     editorCell.addEditorCell(this.createRefCell_9368_0(context, node));
@@ -48,7 +48,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9368_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9368_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9368_1");
     {
@@ -61,7 +61,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_9368_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_9368_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments9368_0 == null) {
       this.myIMethodCall_actualArguments9368_0 = new IMethodCall_actualArguments(node);
     }
@@ -73,7 +73,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9368_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9368_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9368_0");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9368_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9368_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9368_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9368_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9368_0(EditorContext context, SNode node) {
     if (this.myListHandler_9368_0 == null) {
       this.myListHandler_9368_0 = new ClassCreator_Editor.typeParameterListHandler_9368_0(node, "typeParameter", context);
     }
@@ -110,7 +110,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9368_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9368_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("constructorDeclaration");
     provider.setNoTargetText("<no constructor declaration>");
@@ -129,7 +129,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }
 
@@ -147,7 +147,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       return this.createProperty_9368_0(context, node);
     }
 
-    public EditorCell createProperty_9368_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_9368_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("resolveInfo");
       provider.setNoTargetText("<no resolveInfo>");
@@ -172,7 +172,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class typeParameterListHandler_9368_0 extends RefNodeListHandler {
+  private static class typeParameterListHandler_9368_0 extends RefNodeListHandler {
 
     public typeParameterListHandler_9368_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

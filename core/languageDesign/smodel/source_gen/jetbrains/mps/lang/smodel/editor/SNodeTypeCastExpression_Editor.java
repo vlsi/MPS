@@ -29,7 +29,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_6410_0(context, node);
   }
 
-  public EditorCell createCollection_6410_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6410_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6410_0");
     editorCell.addEditorCell(this.createRefNode_6410_0(context, node));
@@ -43,7 +43,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6410_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6410_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6410_0");
     {
@@ -54,7 +54,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6410_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6410_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6410_1");
     {
@@ -65,7 +65,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6410_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6410_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -82,7 +82,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6410_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6410_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -102,11 +102,11 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6410_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6410_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "asCast"));
   }
 
-  public static boolean renderingCondition6410_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6410_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "asCast");
   }
 
@@ -124,7 +124,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_6410_0(context, node);
     }
 
-    public EditorCell createProperty_6410_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6410_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

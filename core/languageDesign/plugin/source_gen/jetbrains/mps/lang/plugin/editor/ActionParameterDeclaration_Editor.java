@@ -27,9 +27,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myActionParameter_NameCellComponent6987_0;
-  /* package */AbstractCellProvider myActionParameter_Hint6987_0;
-  /* package */AbstractCellProvider myActionParameter_IsOptional6987_0;
+  private AbstractCellProvider myActionParameter_NameCellComponent6987_0;
+  private AbstractCellProvider myActionParameter_Hint6987_0;
+  private AbstractCellProvider myActionParameter_IsOptional6987_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6987_0(context, node);
@@ -39,7 +39,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return this.createComponent_6987_1(context, node);
   }
 
-  public EditorCell createCollection_6987_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6987_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6987_0");
     editorCell.addEditorCell(this.createRefNode_6987_0(context, node));
@@ -50,7 +50,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6987_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6987_0(EditorContext context, SNode node) {
     if (this.myActionParameter_NameCellComponent6987_0 == null) {
       this.myActionParameter_NameCellComponent6987_0 = new ActionParameter_NameCellComponent(node);
     }
@@ -58,7 +58,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6987_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_6987_1(EditorContext context, SNode node) {
     if (this.myActionParameter_Hint6987_0 == null) {
       this.myActionParameter_Hint6987_0 = new ActionParameter_Hint(node);
     }
@@ -66,7 +66,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6987_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_6987_2(EditorContext context, SNode node) {
     if (this.myActionParameter_IsOptional6987_0 == null) {
       this.myActionParameter_IsOptional6987_0 = new ActionParameter_IsOptional(node);
     }
@@ -74,7 +74,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6987_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6987_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6987_0");
     {
@@ -86,7 +86,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_6987_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6987_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -105,7 +105,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6987_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6987_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

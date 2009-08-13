@@ -47,7 +47,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_5916_3(context, node);
   }
 
-  public EditorCell createCollection_5916_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5916_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5916_0");
     {
@@ -69,7 +69,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5916_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5916_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5916_1");
     {
@@ -82,7 +82,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5916_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5916_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5916_2");
     editorCell.addEditorCell(this.createConstant_5916_2(context, node, "outer:"));
@@ -90,7 +90,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5916_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5916_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5916_3");
     {
@@ -103,7 +103,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5916_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5916_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5916_0");
     {
@@ -115,7 +115,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5916_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5916_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5916_1");
     {
@@ -126,14 +126,14 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5916_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5916_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5916_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_5916_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_5916_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -158,7 +158,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5916_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5916_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("role");
     provider.setNoTargetText("<no role>");
@@ -181,7 +181,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5916_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5916_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("sourceCardinality");
     provider.setNoTargetText("<no sourceCardinality>");
@@ -204,7 +204,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_5916_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5916_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("specializedLink");
     provider.setNoTargetText("<none>");
@@ -226,7 +226,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_5916_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5916_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
@@ -248,7 +248,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5916_4(EditorContext context, SNode node) {
+  private EditorCell createProperty_5916_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("outer");
     provider.setNoTargetText("<no outer>");
@@ -267,15 +267,15 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition5916_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5916_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
 
-  public static boolean renderingCondition5916_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5916_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
 
-  public static boolean renderingCondition5916_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5916_2(SNode node, EditorContext editorContext, IScope scope) {
     if (!(SPropertyOperations.hasValue(node, "metaClass", "reference", "reference"))) {
       return false;
     }
@@ -287,7 +287,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static boolean renderingCondition5916_3(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5916_3(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "metaClass", "reference", "reference") && SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
 
@@ -305,7 +305,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_5916_2(context, node);
     }
 
-    public EditorCell createProperty_5916_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_5916_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -339,7 +339,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_5916_3(context, node);
     }
 
-    public EditorCell createProperty_5916_3(EditorContext context, SNode node) {
+    private EditorCell createProperty_5916_3(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

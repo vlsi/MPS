@@ -23,7 +23,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return this.createCollection_5389_0(context, node);
   }
 
-  public EditorCell createCollection_5389_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5389_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5389_0");
     editorCell.addEditorCell(this.createCollection_5389_1(context, node));
@@ -34,7 +34,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_5389_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5389_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5389_1");
     {
@@ -47,7 +47,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createCollection_5389_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5389_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5389_2");
     {
@@ -63,28 +63,28 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_3");
     {
@@ -95,14 +95,14 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5389_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5389_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5389_5");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
@@ -114,7 +114,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_5389_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5389_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operationConcept");
     provider.setNoTargetText("<no operationConcept>");
@@ -131,7 +131,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_5389_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5389_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operandType");
     provider.setNoTargetText("<no operandType>");
@@ -148,7 +148,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createProperty_5389_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5389_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isExact");
     provider.setNoTargetText("<no isExact>");
@@ -166,7 +166,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_5389_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5389_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");

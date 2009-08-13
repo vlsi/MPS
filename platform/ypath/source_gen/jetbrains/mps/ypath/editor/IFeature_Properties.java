@@ -31,7 +31,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return this.createCollection_2453_0(context, node);
   }
 
-  public EditorCell createCollection_2453_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2453_0");
     editorCell.addEditorCell(this.createCollection_2453_1(context, node));
@@ -39,7 +39,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2453_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2453_1");
     {
@@ -50,7 +50,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2453_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2453_2");
     {
@@ -62,7 +62,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2453_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2453_3");
     {
@@ -75,7 +75,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2453_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2453_4");
     {
@@ -86,7 +86,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2453_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2453_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2453_5");
     {
@@ -98,7 +98,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2453_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2453_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2453_0");
     {
@@ -109,14 +109,14 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2453_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2453_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2453_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2453_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2453_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2453_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -124,7 +124,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2453_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2453_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2453_3");
     {
@@ -135,7 +135,7 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_2453_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2453_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("ascending");
     provider.setNoTargetText("<no ascending>");

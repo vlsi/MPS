@@ -22,7 +22,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return this.createCollection_7980_0(context, node);
   }
 
-  public EditorCell createCollection_7980_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7980_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7980_0");
     editorCell.addEditorCell(this.createRefNode_7980_0(context, node));
@@ -32,7 +32,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7980_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7980_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7980_0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -45,7 +45,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7980_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7980_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7980_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7980_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7980_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("map");
     provider.setNoTargetText("<no map>");
@@ -74,7 +74,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7980_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7980_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("key");
     provider.setNoTargetText("<no key>");

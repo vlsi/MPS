@@ -27,7 +27,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return this.createCollection_7959_0(context, node);
   }
 
-  public EditorCell createCollection_7959_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7959_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7959_0");
     editorCell.addEditorCell(this.createConstant_7959_0(context, node, "["));
@@ -44,7 +44,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7959_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7959_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7959_1");
     {
@@ -57,7 +57,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_0");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
@@ -65,7 +65,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_1");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
@@ -73,7 +73,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_2");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -81,7 +81,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -89,7 +89,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_4");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
@@ -97,7 +97,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_5");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
@@ -109,7 +109,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7959_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7959_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7959_6");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -117,7 +117,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7959_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7959_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("fieldType");
     provider.setNoTargetText("<no fieldType>");
@@ -134,7 +134,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7959_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7959_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instance");
     provider.setNoTargetText("<no instance>");
@@ -155,7 +155,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_7959_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7959_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fieldName");
     provider.setNoTargetText("<no fieldName>");
@@ -174,7 +174,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7959_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7959_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("instanceType");
     provider.setNoTargetText("<no instanceType>");
@@ -192,7 +192,7 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition7959_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7959_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instance", true) != null;
   }
 

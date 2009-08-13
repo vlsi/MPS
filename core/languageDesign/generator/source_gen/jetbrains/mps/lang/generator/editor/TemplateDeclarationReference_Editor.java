@@ -22,14 +22,14 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
     return this.createCollection_0479_0(context, node);
   }
 
-  public EditorCell createCollection_0479_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0479_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0479_0");
     editorCell.addEditorCell(this.createRefCell_0479_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_0479_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0479_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
@@ -65,7 +65,7 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
       return this.createProperty_0479_0(context, node);
     }
 
-    public EditorCell createProperty_0479_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0479_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

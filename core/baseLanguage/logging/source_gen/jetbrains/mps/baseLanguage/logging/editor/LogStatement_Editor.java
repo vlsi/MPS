@@ -30,7 +30,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_2351_2(context, node);
   }
 
-  public EditorCell createCollection_2351_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2351_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2351_0");
     editorCell.addEditorCell(this.createProperty_2351_0(context, node));
@@ -42,7 +42,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2351_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2351_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2351_1");
     {
@@ -54,7 +54,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2351_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2351_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2351_2");
     editorCell.addEditorCell(this.createConstant_2351_2(context, node, "Has exception"));
@@ -63,7 +63,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2351_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2351_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2351_0");
     {
@@ -74,21 +74,21 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2351_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2351_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2351_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2351_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2351_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2351_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2351_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2351_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2351_3");
     {
@@ -100,7 +100,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2351_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2351_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("severity");
     provider.setNoTargetText("<no severity>");
@@ -123,7 +123,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2351_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2351_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("logExpression");
     provider.setNoTargetText("<no logExpression>");
@@ -140,7 +140,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2351_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2351_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("exception");
     provider.setNoTargetText("<no exception>");
@@ -157,7 +157,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2351_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2351_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("hasException");
     provider.setNoTargetText("<no hasException>");
@@ -176,7 +176,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition2351_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2351_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "hasException");
   }
 

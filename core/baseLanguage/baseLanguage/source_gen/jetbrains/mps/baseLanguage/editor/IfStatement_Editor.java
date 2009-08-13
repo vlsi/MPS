@@ -35,13 +35,13 @@ import jetbrains.mps.smodel.SModel;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1754_0;
+  private AbstractCellListHandler myListHandler_1754_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1754_0(context, node);
   }
 
-  public EditorCell createCollection_1754_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1754_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1754_0");
     editorCell.addEditorCell(this.createConstant_1754_0(context, node, "if"));
@@ -58,7 +58,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1754_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1754_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1754_1");
     {
@@ -70,7 +70,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1754_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1754_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1754_2");
     {
@@ -105,7 +105,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1754_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1754_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1754_3");
     {
@@ -119,7 +119,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -127,7 +127,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -135,7 +135,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -143,7 +143,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -166,7 +166,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -180,7 +180,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -194,7 +194,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1754_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1754_0(EditorContext context, SNode node) {
     if (this.myListHandler_1754_0 == null) {
       this.myListHandler_1754_0 = new IfStatement_Editor.elsifClausesListHandler_1754_0(node, "elsifClauses", context);
     }
@@ -204,7 +204,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1754_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1754_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -221,7 +221,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1754_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1754_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifFalseStatement");
     provider.setNoTargetText("<no ifFalseStatement>");
@@ -238,7 +238,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1754_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1754_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifTrue");
     provider.setNoTargetText("<no ifTrue>");
@@ -256,27 +256,27 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1754_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1754_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty();
   }
 
-  public static boolean renderingCondition1754_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1754_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
 
-  public static boolean _StyleParameter_QueryFunction_1237573132288(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1237573132288(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  public static boolean _StyleParameter_QueryFunction_1237575954793(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1237575954793(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  public static boolean _StyleParameter_QueryFunction_1237575954801(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1237575954801(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  public static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {
+  private static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {
 
     public elsifClausesListHandler_1754_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

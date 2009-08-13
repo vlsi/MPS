@@ -20,13 +20,13 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp3997_0;
+  private AbstractCellProvider myReplaceableAlias_Comp3997_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3997_0(context, node);
   }
 
-  public EditorCell createCollection_3997_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3997_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3997_0");
     editorCell.addEditorCell(this.createComponent_3997_0(context, node));
@@ -38,7 +38,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createComponent_3997_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3997_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp3997_0 == null) {
       this.myReplaceableAlias_Comp3997_0 = new ReplaceableAlias_Comp(node);
     }
@@ -46,14 +46,14 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_3997_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3997_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3997_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3997_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3997_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3997_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -61,7 +61,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createConstant_3997_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3997_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3997_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -69,7 +69,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefNode_3997_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3997_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scope");
     provider.setNoTargetText("<no scope>");
@@ -86,7 +86,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public EditorCell createRefCell_3997_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3997_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -118,7 +118,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       return this.createProperty_3997_0(context, node);
     }
 
-    public EditorCell createProperty_3997_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3997_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

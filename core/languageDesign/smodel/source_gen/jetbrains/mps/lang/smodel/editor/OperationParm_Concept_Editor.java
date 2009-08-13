@@ -19,7 +19,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return this.createCollection_9344_0(context, node);
   }
 
-  public EditorCell createCollection_9344_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9344_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9344_0");
     editorCell.addEditorCell(this.createConstant_9344_0(context, node, "concept ="));
@@ -27,7 +27,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9344_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9344_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9344_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
@@ -35,7 +35,7 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9344_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9344_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conceptArgument");
     provider.setNoTargetText("<no concept>");

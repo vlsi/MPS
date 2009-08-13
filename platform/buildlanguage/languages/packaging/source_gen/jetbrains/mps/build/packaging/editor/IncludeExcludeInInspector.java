@@ -27,7 +27,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return this.createCollection_2096_0(context, node);
   }
 
-  public EditorCell createCollection_2096_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2096_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2096_0");
     editorCell.addEditorCell(this.createCollection_2096_1(context, node));
@@ -35,7 +35,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2096_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2096_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2096_1");
     editorCell.addEditorCell(this.createConstant_2096_0(context, node, "excludes"));
@@ -43,7 +43,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2096_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2096_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2096_2");
     editorCell.addEditorCell(this.createConstant_2096_1(context, node, "includes"));
@@ -51,7 +51,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2096_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2096_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2096_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2096_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2096_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2096_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_2096_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2096_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -86,7 +86,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_2096_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2096_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");

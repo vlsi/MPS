@@ -25,8 +25,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Module_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent6816_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent6816_1;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent6816_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent6816_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6816_0(context, node);
@@ -36,7 +36,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return this.createComponent_6816_0(context, node);
   }
 
-  public EditorCell createCollection_6816_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6816_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6816_0");
     editorCell.addKeyMap(new Module_KeyMap());
@@ -46,7 +46,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6816_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6816_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_0 == null) {
       this.myConfigurationReferencesEditorComponent6816_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -54,7 +54,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6816_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_6816_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent6816_1 == null) {
       this.myConfigurationReferencesEditorComponent6816_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -62,7 +62,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6816_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6816_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -81,7 +81,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6816_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6816_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

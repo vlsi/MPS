@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SNode;
 
 public class SNodeOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp1722_0;
+  private AbstractCellProvider myReplaceableAlias_Comp1722_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createComponent_1722_0(context, node);
   }
 
-  public EditorCell createComponent_1722_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1722_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp1722_0 == null) {
       this.myReplaceableAlias_Comp1722_0 = new ReplaceableAlias_Comp(node);
     }

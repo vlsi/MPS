@@ -23,7 +23,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return this.createCollection_9505_0(context, node);
   }
 
-  public EditorCell createCollection_9505_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9505_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9505_0");
     editorCell.addEditorCell(this.createCollection_9505_1(context, node));
@@ -32,7 +32,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9505_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9505_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9505_1");
     {
@@ -45,7 +45,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9505_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9505_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9505_2");
     {
@@ -57,14 +57,14 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9505_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9505_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9505_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9505_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9505_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9505_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9505_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9505_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9505_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -80,12 +80,12 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell9505_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell9505_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_9505_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9505_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -102,7 +102,7 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9505_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9505_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ifTrue");
     provider.setNoTargetText("<no ifTrue>");

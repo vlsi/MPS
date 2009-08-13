@@ -20,7 +20,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return this.createCollection_1754_0(context, node);
   }
 
-  public EditorCell createCollection_1754_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1754_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1754_0");
     editorCell.addEditorCell(this.createProperty_1754_0(context, node));
@@ -34,14 +34,14 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -49,7 +49,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1754_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1754_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1754_3");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -65,7 +65,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1754_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1754_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("extensions");
     provider.setNoTargetText("<no extensions>");
@@ -83,7 +83,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1754_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1754_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -101,7 +101,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1754_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1754_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("icon");
     provider.setNoTargetText("<no icon>");
@@ -118,7 +118,7 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1754_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1754_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("role");
     provider.setNoTargetText("<no role>");

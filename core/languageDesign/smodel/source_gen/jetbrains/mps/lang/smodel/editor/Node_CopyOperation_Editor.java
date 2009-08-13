@@ -19,7 +19,7 @@ public class Node_CopyOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_6119_0(context, node, "copy");
   }
 
-  public EditorCell createConstant_6119_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6119_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6119_0");
     {

@@ -17,7 +17,7 @@ public class Space_Editor extends DefaultNodeEditor {
     return this.createConstant_6634_0(context, node, "\\s");
   }
 
-  public EditorCell createConstant_6634_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6634_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6634_0");
     {

@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4569_0;
+  private AbstractCellListHandler myListHandler_4569_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4569_0(context, node);
   }
 
-  public EditorCell createCollection_4569_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4569_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4569_0");
     {
@@ -46,7 +46,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4569_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4569_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4569_1");
     {
@@ -58,7 +58,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_0");
     {
@@ -69,7 +69,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_1");
     {
@@ -80,7 +80,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4569_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4569_0(EditorContext context, SNode node) {
     if (this.myListHandler_4569_0 == null) {
       this.myListHandler_4569_0 = new InlineSwitch_RuleConsequence_Editor.caseListHandler_4569_0(node, "case", context);
     }
@@ -91,7 +91,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4569_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4569_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultConsequence");
     provider.setNoTargetText("<no defaultConsequence>");
@@ -108,7 +108,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class caseListHandler_4569_0 extends RefNodeListHandler {
+  private static class caseListHandler_4569_0 extends RefNodeListHandler {
 
     public caseListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

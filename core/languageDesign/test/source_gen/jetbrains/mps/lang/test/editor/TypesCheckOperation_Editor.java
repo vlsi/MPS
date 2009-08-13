@@ -26,7 +26,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_5668_0(context, node);
   }
 
-  public EditorCell createCollection_5668_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5668_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5668_0");
     editorCell.addEditorCell(this.createConstant_5668_0(context, node, "operation name:"));
@@ -38,7 +38,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5668_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5668_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5668_1");
     editorCell.addEditorCell(this.createConstant_5668_3(context, node, "check types"));
@@ -48,28 +48,28 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5668_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5668_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5668_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5668_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5668_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5668_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5668_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5668_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5668_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5668_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5668_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5668_3");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
@@ -77,7 +77,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5668_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5668_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("operationName");
     provider.setNoTargetText("default");
@@ -100,7 +100,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5668_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5668_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("allowErrors");
     provider.setNoTargetText("<no allowErrors>");
@@ -122,7 +122,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5668_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_5668_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("allowWarnings");
     provider.setNoTargetText("<no allowWarnings>");
@@ -144,7 +144,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNonEmptyProperty_5668_0(EditorContext context, SNode node) {
+  private EditorCell createNonEmptyProperty_5668_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("operationName");
     provider.setNoTargetText("<no operationName>");

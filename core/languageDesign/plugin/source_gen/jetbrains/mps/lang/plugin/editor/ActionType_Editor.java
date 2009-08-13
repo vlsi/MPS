@@ -26,7 +26,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     return this.createCollection_4556_0(context, node);
   }
 
-  public EditorCell createCollection_4556_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4556_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4556_0");
     editorCell.addEditorCell(this.createConstant_4556_0(context, node, "action"));
@@ -36,7 +36,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4556_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4556_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4556_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4556_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4556_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4556_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -61,7 +61,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4556_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4556_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4556_2");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -73,7 +73,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4556_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4556_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
@@ -105,7 +105,7 @@ public class ActionType_Editor extends DefaultNodeEditor {
       return this.createProperty_4556_0(context, node);
     }
 
-    public EditorCell createProperty_4556_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4556_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

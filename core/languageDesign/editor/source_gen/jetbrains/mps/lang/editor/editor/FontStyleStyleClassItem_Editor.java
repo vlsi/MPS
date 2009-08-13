@@ -34,7 +34,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_0528_0(context, node);
   }
 
-  public EditorCell createCollection_0528_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0528_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0528_0");
     editorCell.addEditorCell(this.createConstant_0528_0(context, node, "font-style"));
@@ -48,7 +48,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0528_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0528_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0528_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
@@ -57,14 +57,14 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0528_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0528_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0528_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_0528_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0528_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("style");
     provider.setNoTargetText("<no style>");
@@ -82,7 +82,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0528_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0528_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -101,11 +101,11 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))));
   }
 
-  public static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
     return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
 

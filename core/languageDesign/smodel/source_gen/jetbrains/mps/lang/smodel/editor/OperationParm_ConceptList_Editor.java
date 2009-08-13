@@ -24,13 +24,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8994_0;
+  private AbstractCellListHandler myListHandler_8994_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8994_0(context, node);
   }
 
-  public EditorCell createCollection_8994_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8994_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8994_0");
     editorCell.addEditorCell(this.createConstant_8994_0(context, node, "concept in:["));
@@ -39,7 +39,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8994_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8994_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8994_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8994_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8994_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8994_1");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8994_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8994_0(EditorContext context, SNode node) {
     if (this.myListHandler_8994_0 == null) {
       this.myListHandler_8994_0 = new OperationParm_ConceptList_Editor.conceptListHandler_8994_0(node, "concept", context);
     }
@@ -73,7 +73,7 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class conceptListHandler_8994_0 extends RefNodeListHandler {
+  private static class conceptListHandler_8994_0 extends RefNodeListHandler {
 
     public conceptListHandler_8994_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -24,7 +24,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myAbstractEquationInspector6235_0;
+  private AbstractCellProvider myAbstractEquationInspector6235_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6235_0(context, node);
@@ -34,7 +34,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_6235_1(context, node);
   }
 
-  public EditorCell createCollection_6235_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6235_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6235_0");
     editorCell.addEditorCell(this.createRefNode_6235_0(context, node));
@@ -44,7 +44,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6235_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6235_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6235_1");
     editorCell.addEditorCell(this.createComponent_6235_0(context, node));
@@ -55,7 +55,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6235_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6235_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector6235_0 == null) {
       this.myAbstractEquationInspector6235_0 = new AbstractEquationInspector(node);
     }
@@ -67,7 +67,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6235_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6235_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6235_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -75,14 +75,14 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6235_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6235_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6235_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6235_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6235_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6235_2");
     {
@@ -94,7 +94,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6235_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6235_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6235_3");
     {
@@ -105,7 +105,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6235_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6235_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -122,7 +122,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6235_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6235_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -141,7 +141,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6235_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6235_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -158,7 +158,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6235_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6235_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("direction");
     provider.setNoTargetText("<no direction>");

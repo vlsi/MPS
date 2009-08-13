@@ -20,7 +20,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_0079_0(context, node);
   }
 
-  public EditorCell createCollection_0079_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0079_0");
     editorCell.addEditorCell(this.createConstant_0079_0(context, node, "split with"));
@@ -28,7 +28,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0079_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0079_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -36,7 +36,7 @@ public class SplitOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0079_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0079_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");

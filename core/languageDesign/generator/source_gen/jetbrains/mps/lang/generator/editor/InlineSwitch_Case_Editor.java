@@ -21,7 +21,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return this.createCollection_5690_0(context, node);
   }
 
-  public EditorCell createCollection_5690_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5690_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5690_0");
     editorCell.addEditorCell(this.createCollection_5690_1(context, node));
@@ -30,7 +30,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5690_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5690_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5690_1");
     {
@@ -42,7 +42,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5690_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5690_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5690_2");
     {
@@ -54,14 +54,14 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5690_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5690_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5690_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5690_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5690_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5690_1");
     {
@@ -72,7 +72,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5690_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5690_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5690_2");
     {
@@ -83,7 +83,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5690_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5690_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<no conditionFunction>");
@@ -100,7 +100,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5690_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5690_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("caseConsequence");
     provider.setNoTargetText("<no caseConsequence>");

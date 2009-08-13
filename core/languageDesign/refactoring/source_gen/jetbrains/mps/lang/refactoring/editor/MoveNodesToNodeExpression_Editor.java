@@ -20,7 +20,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_9673_0(context, node);
   }
 
-  public EditorCell createCollection_9673_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9673_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9673_0");
     editorCell.addEditorCell(this.createConstant_9673_0(context, node, "moveNodes"));
@@ -32,7 +32,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9673_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9673_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9673_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9673_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9673_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9673_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9673_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9673_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9673_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -56,7 +56,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9673_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9673_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("whatToMove");
     provider.setNoTargetText("<no whatToMove>");
@@ -73,7 +73,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9673_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9673_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("destination");
     provider.setNoTargetText("<no destination>");
@@ -90,7 +90,7 @@ public class MoveNodesToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9673_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9673_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("roleInTarget");
     provider.setNoTargetText("<no roleInTarget>");

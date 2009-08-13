@@ -27,7 +27,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return this.createCollection_0481_0(context, node);
   }
 
-  public EditorCell createCollection_0481_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0481_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0481_0");
     editorCell.addEditorCell(this.createCollection_0481_1(context, node));
@@ -36,7 +36,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0481_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0481_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0481_1");
     {
@@ -48,7 +48,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0481_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0481_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0481_2");
     {
@@ -60,7 +60,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0481_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_0481_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0481_3");
     {
@@ -73,7 +73,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0481_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0481_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0481_0");
     {
@@ -84,7 +84,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0481_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0481_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0481_1");
     {
@@ -95,17 +95,17 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell0481_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell0481_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell0481_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell0481_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createConceptProperty_0481_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_0481_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -128,7 +128,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0481_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0481_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
@@ -146,7 +146,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0481_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0481_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("handler");
     provider.setNoTargetText("<no handler>");
@@ -177,7 +177,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
       return this.createProperty_0481_0(context, node);
     }
 
-    public EditorCell createProperty_0481_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0481_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

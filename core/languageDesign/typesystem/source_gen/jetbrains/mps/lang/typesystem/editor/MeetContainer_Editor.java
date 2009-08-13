@@ -19,7 +19,7 @@ public class MeetContainer_Editor extends DefaultNodeEditor {
     return this.createCollection_4798_0(context, node);
   }
 
-  public EditorCell createCollection_4798_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4798_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4798_0");
     editorCell.addEditorCell(this.createConstant_4798_0(context, node, "meet<"));
@@ -29,28 +29,28 @@ public class MeetContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4798_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4798_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4798_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4798_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4798_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4798_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell_4798_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedNodeCell_4798_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
   }
 
-  public EditorCell createRefNode_4798_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4798_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("meetType");
     provider.setNoTargetText("<no meetType>");

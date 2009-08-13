@@ -17,7 +17,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     return this.createProperty_9600_0(context, node);
   }
 
-  public EditorCell createProperty_9600_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9600_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

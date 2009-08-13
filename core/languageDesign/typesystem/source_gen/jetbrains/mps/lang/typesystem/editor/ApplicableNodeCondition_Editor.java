@@ -14,7 +14,7 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
     return this.createError_7758_0(context, node);
   }
 
-  public EditorCell createError_7758_0(EditorContext context, SNode node) {
+  private EditorCell createError_7758_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<condition>");
     editorCell.setCellId("Error_7758_0");
     return editorCell;

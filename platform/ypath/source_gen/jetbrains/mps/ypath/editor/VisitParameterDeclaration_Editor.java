@@ -22,7 +22,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_4240_0(context, node);
   }
 
-  public EditorCell createCollection_4240_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4240_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4240_0");
     editorCell.addEditorCell(this.createRefNode_4240_0(context, node));
@@ -32,7 +32,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4240_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4240_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4240_0");
     {
@@ -43,7 +43,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4240_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4240_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -60,7 +60,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4240_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4240_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -78,7 +78,7 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4240_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4240_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
     provider.setNoTargetText("<no initializer>");

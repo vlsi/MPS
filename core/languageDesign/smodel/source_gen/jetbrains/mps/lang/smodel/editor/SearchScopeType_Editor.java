@@ -19,7 +19,7 @@ public class SearchScopeType_Editor extends DefaultNodeEditor {
     return this.createConstant_2022_0(context, node, "search scope");
   }
 
-  public EditorCell createConstant_2022_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2022_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2022_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);

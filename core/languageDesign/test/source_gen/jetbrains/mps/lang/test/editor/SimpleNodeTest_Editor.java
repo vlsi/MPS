@@ -22,13 +22,13 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class SimpleNodeTest_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_DeprecatedPart7910_0;
+  private AbstractCellProvider my_DeprecatedPart7910_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7910_0(context, node);
   }
 
-  public EditorCell createCollection_7910_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7910_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7910_0");
     editorCell.addEditorCell(this.createComponent_7910_0(context, node));
@@ -38,7 +38,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7910_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7910_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7910_1");
     {
@@ -56,7 +56,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7910_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7910_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7910_2");
     {
@@ -73,7 +73,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_7910_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_7910_0(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart7910_0 == null) {
       this.my_DeprecatedPart7910_0 = new _DeprecatedPart(node);
     }
@@ -81,14 +81,14 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7910_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7910_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7910_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7910_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7910_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7910_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -96,7 +96,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7910_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7910_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7910_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -104,12 +104,12 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell7910_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell7910_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_7910_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7910_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -127,7 +127,7 @@ public class SimpleNodeTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7910_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7910_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

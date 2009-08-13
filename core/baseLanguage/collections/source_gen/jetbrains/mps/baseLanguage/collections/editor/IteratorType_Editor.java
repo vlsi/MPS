@@ -25,7 +25,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     return this.createCollection_2364_0(context, node);
   }
 
-  public EditorCell createCollection_2364_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2364_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2364_0");
     editorCell.addEditorCell(this.createConceptProperty_2364_0(context, node));
@@ -35,7 +35,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2364_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2364_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2364_0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2364_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2364_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2364_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2364_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2364_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");
@@ -76,7 +76,7 @@ public class IteratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2364_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2364_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

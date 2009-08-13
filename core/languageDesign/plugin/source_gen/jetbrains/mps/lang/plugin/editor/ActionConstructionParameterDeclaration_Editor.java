@@ -30,7 +30,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return this.createCollection_4196_1(context, node);
   }
 
-  public EditorCell createCollection_4196_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4196_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4196_0");
     editorCell.addEditorCell(this.createRefNode_4196_0(context, node));
@@ -39,7 +39,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createCollection_4196_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4196_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4196_1");
     {
@@ -50,7 +50,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createCollection_4196_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4196_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4196_2");
     if (renderingCondition4196_0(node, context, context.getOperationContext().getScope())) {
@@ -59,7 +59,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createConstant_4196_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4196_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4196_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createRefNode_4196_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4196_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -84,7 +84,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createProperty_4196_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4196_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<name>");
@@ -102,7 +102,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  public EditorCell createRefNode_4196_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4196_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("toStringFunction");
     provider.setNoTargetText("<no toStringFunction>");
@@ -124,7 +124,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   }
 
 
-  public static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }
 

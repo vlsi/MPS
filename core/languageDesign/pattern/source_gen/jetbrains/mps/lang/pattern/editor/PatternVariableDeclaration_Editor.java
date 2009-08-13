@@ -23,7 +23,7 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_2174_0(context, node);
   }
 
-  public EditorCell createCollection_2174_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2174_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2174_0");
     editorCell.addEditorCell(this.createConstant_2174_0(context, node, "#"));
@@ -31,7 +31,7 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2174_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2174_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2174_0");
     {
@@ -43,7 +43,7 @@ public class PatternVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2174_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2174_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("varName");
     provider.setNoTargetText("<var>");

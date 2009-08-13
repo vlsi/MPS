@@ -24,14 +24,14 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
     return this.createCollection_3065_0(context, node);
   }
 
-  public EditorCell createCollection_3065_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3065_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3065_0");
     editorCell.addEditorCell(this.createRefCell_3065_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_3065_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3065_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -67,7 +67,7 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
       return this.createProperty_3065_0(context, node);
     }
 
-    public EditorCell createProperty_3065_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3065_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

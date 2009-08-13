@@ -34,7 +34,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return this.createCollection_4147_0(context, node);
   }
 
-  public EditorCell createAlternation_4147_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_4147_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = TreeNodeKindProperty_Editor.renderingCondition4147_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -49,7 +49,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4147_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4147_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4147_0");
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
@@ -60,7 +60,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4147_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4147_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4147_0");
     {
@@ -71,7 +71,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4147_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4147_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4147_1");
     {
@@ -84,7 +84,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4147_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4147_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4147_2");
     {
@@ -95,7 +95,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4147_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4147_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -114,7 +114,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4147_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4147_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getter");
     provider.setNoTargetText("<no getter>");
@@ -132,7 +132,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4147_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4147_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
 

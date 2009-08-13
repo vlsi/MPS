@@ -24,7 +24,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_6768_0(context, node);
   }
 
-  public EditorCell createCollection_6768_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6768_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6768_0");
     editorCell.addEditorCell(this.createConstant_6768_0(context, node, "preferenceComponent"));
@@ -34,7 +34,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6768_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6768_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6768_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6768_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6768_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6768_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6768_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6768_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6768_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6768_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6768_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
@@ -99,7 +99,7 @@ public class GetPreferencesComponentOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_6768_0(context, node);
     }
 
-    public EditorCell createProperty_6768_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6768_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

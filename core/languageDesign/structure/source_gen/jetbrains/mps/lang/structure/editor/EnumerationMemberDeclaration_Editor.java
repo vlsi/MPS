@@ -27,7 +27,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_9117_0(context, node);
   }
 
-  public EditorCell createCollection_9117_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9117_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9117_0");
     if (renderingCondition9117_1(node, context, context.getOperationContext().getScope())) {
@@ -43,7 +43,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9117_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9117_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9117_1");
     {
@@ -56,7 +56,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9117_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9117_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9117_0");
     {
@@ -68,7 +68,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9117_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9117_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9117_1");
     {
@@ -81,7 +81,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9117_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9117_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9117_2");
     {
@@ -94,7 +94,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9117_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9117_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9117_3");
     {
@@ -107,14 +107,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9117_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9117_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9117_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_9117_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9117_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("externalValue");
     provider.setNoTargetText("<no external value>");
@@ -137,7 +137,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9117_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9117_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("internalValue");
     provider.setNoTargetText("<NULL>");
@@ -161,7 +161,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9117_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_9117_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("javaIdentifier");
     provider.setNoTargetText("<no identifier>");
@@ -186,11 +186,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
     return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 
-  public static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 

@@ -25,13 +25,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ManifestAttribute_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6753_0;
+  private AbstractCellListHandler myListHandler_6753_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6753_0(context, node);
   }
 
-  public EditorCell createCollection_6753_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6753_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6753_0");
     editorCell.addEditorCell(this.createProperty_6753_0(context, node));
@@ -40,14 +40,14 @@ public class ManifestAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6753_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6753_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6753_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6753_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6753_0(EditorContext context, SNode node) {
     if (this.myListHandler_6753_0 == null) {
       this.myListHandler_6753_0 = new ManifestAttribute_Editor.valueListHandler_6753_0(node, "value", context);
     }
@@ -61,7 +61,7 @@ public class ManifestAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6753_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6753_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -79,7 +79,7 @@ public class ManifestAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class valueListHandler_6753_0 extends RefNodeListHandler {
+  private static class valueListHandler_6753_0 extends RefNodeListHandler {
 
     public valueListHandler_6753_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

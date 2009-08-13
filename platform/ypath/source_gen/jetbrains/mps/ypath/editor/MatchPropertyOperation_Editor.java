@@ -25,7 +25,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_2129_0(context, node);
   }
 
-  public EditorCell createCollection_2129_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2129_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2129_0");
     editorCell.addEditorCell(this.createConstant_2129_2(context, node, "["));
@@ -38,7 +38,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2129_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2129_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2129_0");
     {
@@ -49,7 +49,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2129_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2129_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2129_1");
     {
@@ -60,7 +60,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2129_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2129_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2129_2");
     {
@@ -71,7 +71,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2129_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2129_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2129_3");
     {
@@ -82,7 +82,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2129_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2129_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeKindOccurrence");
     provider.setNoTargetText("kind?");
@@ -103,7 +103,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2129_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2129_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("property");
     provider.setNoTargetText("property?");
@@ -124,7 +124,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2129_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2129_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matchExpression");
     provider.setNoTargetText("<no matchExpression>");
@@ -155,7 +155,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_2129_0(context, node);
     }
 
-    public EditorCell createProperty_2129_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2129_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

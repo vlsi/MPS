@@ -14,7 +14,7 @@ public class Function_Editor extends DefaultNodeEditor {
     return this.createError_0412_0(context, node);
   }
 
-  public EditorCell createError_0412_0(EditorContext context, SNode node) {
+  private EditorCell createError_0412_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?function?");
     editorCell.setCellId("Error_0412_0");
     return editorCell;

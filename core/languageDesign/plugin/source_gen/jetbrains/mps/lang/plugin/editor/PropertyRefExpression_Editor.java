@@ -29,7 +29,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_1110_0(context, node);
   }
 
-  public EditorCell createCollection_1110_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1110_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1110_0");
     editorCell.addEditorCell(this.createConstant_1110_0(context, node, "property"));
@@ -41,7 +41,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1110_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1110_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1110_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -53,7 +53,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1110_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1110_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1110_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -61,7 +61,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1110_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1110_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1110_2");
     {
@@ -73,7 +73,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1110_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1110_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1110_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -81,7 +81,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1110_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1110_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeExpr");
     provider.setNoTargetText("<no nodeExpr>");
@@ -98,7 +98,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1110_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1110_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("link");
@@ -134,7 +134,7 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_1110_0(context, node);
     }
 
-    public EditorCell createProperty_1110_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1110_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

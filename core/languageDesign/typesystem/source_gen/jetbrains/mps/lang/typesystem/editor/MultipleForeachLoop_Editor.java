@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4210_0;
+  private AbstractCellListHandler myListHandler_4210_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4210_0(context, node);
   }
 
-  public EditorCell createCollection_4210_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4210_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4210_0");
     editorCell.addEditorCell(this.createConstant_4210_0(context, node, "foreach"));
@@ -46,7 +46,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4210_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4210_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4210_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4210_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4210_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4210_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4210_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4210_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4210_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -70,7 +70,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4210_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4210_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4210_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4210_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4210_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4210_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -90,7 +90,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4210_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4210_0(EditorContext context, SNode node) {
     if (this.myListHandler_4210_0 == null) {
       this.myListHandler_4210_0 = new MultipleForeachLoop_Editor.loopVariableListHandler_4210_0(node, "loopVariable", context);
     }
@@ -100,7 +100,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4210_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4210_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -122,7 +122,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class loopVariableListHandler_4210_0 extends RefNodeListHandler {
+  private static class loopVariableListHandler_4210_0 extends RefNodeListHandler {
 
     public loopVariableListHandler_4210_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

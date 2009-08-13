@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BracesBlock_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4321_0;
+  private AbstractCellListHandler myListHandler_4321_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4321_0(context, node);
   }
 
-  public EditorCell createCollection_4321_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4321_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4321_0");
     editorCell.setUsesBraces(true);
@@ -33,7 +33,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4321_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4321_0(EditorContext context, SNode node) {
     if (this.myListHandler_4321_0 == null) {
       this.myListHandler_4321_0 = new BracesBlock_Editor.statementListHandler_4321_0(node, "statement", context);
     }
@@ -43,7 +43,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class statementListHandler_4321_0 extends RefNodeListHandler {
+  private static class statementListHandler_4321_0 extends RefNodeListHandler {
 
     public statementListHandler_4321_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -89,7 +89,7 @@ public class BracesBlock_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_4321_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4321_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4321_0");
       editorCell.setDefaultText("");

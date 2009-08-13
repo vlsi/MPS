@@ -22,7 +22,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_5532_0(context, node);
   }
 
-  public EditorCell createCollection_5532_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5532_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5532_0");
     editorCell.addEditorCell(this.createCollection_5532_1(context, node));
@@ -31,7 +31,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5532_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5532_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5532_1");
     {
@@ -43,7 +43,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5532_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5532_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5532_2");
     {
@@ -55,7 +55,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5532_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5532_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5532_0");
     {
@@ -67,7 +67,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5532_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5532_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5532_1");
     {
@@ -78,14 +78,14 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5532_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5532_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5532_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_5532_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5532_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -103,7 +103,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5532_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5532_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("constraint");
     provider.setNoTargetText("<no value>");

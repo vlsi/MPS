@@ -22,11 +22,11 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Zip_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIncludeExcludeEditorComponent5723_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent5723_0;
-  /* package */AbstractCellProvider myCompositecomponentEntriesEditorComponent5723_0;
-  /* package */AbstractCellProvider myIncludeExcludeInInspector5723_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent5723_1;
+  private AbstractCellProvider myIncludeExcludeEditorComponent5723_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent5723_0;
+  private AbstractCellProvider myCompositecomponentEntriesEditorComponent5723_0;
+  private AbstractCellProvider myIncludeExcludeInInspector5723_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent5723_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5723_0(context, node);
@@ -36,7 +36,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return this.createCollection_5723_2(context, node);
   }
 
-  public EditorCell createCollection_5723_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5723_0");
     editorCell.addEditorCell(this.createCollection_5723_1(context, node));
@@ -44,7 +44,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_1");
     {
@@ -58,7 +58,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5723_2");
     editorCell.addEditorCell(this.createComponent_5723_3(context, node));
@@ -68,7 +68,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_3");
     {
@@ -80,7 +80,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_4");
     {
@@ -92,7 +92,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5723_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_5723_0(EditorContext context, SNode node) {
     if (this.myIncludeExcludeEditorComponent5723_0 == null) {
       this.myIncludeExcludeEditorComponent5723_0 = new IncludeExcludeEditorComponent(node);
     }
@@ -100,7 +100,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5723_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_5723_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent5723_0 == null) {
       this.myConfigurationReferencesEditorComponent5723_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -108,7 +108,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5723_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_5723_2(EditorContext context, SNode node) {
     if (this.myCompositecomponentEntriesEditorComponent5723_0 == null) {
       this.myCompositecomponentEntriesEditorComponent5723_0 = new CompositecomponentEntriesEditorComponent(node);
     }
@@ -116,7 +116,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5723_3(EditorContext context, SNode node) {
+  private EditorCell createComponent_5723_3(EditorContext context, SNode node) {
     if (this.myIncludeExcludeInInspector5723_0 == null) {
       this.myIncludeExcludeInInspector5723_0 = new IncludeExcludeInInspector(node);
     }
@@ -124,7 +124,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5723_4(EditorContext context, SNode node) {
+  private EditorCell createComponent_5723_4(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent5723_1 == null) {
       this.myConfigurationReferencesEditorComponent5723_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -132,7 +132,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -140,7 +140,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -148,7 +148,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_5723_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_5723_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -167,7 +167,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5723_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5723_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -188,7 +188,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5723_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5723_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("filemode");
     provider.setNoTargetText("<no filemode>");
@@ -207,7 +207,7 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5723_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5723_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("dirmode");
     provider.setNoTargetText("<no dirmode>");

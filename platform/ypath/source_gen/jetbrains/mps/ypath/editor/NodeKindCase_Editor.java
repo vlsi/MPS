@@ -14,7 +14,7 @@ public class NodeKindCase_Editor extends DefaultNodeEditor {
     return this.createError_1206_0(context, node);
   }
 
-  public EditorCell createError_1206_0(EditorContext context, SNode node) {
+  private EditorCell createError_1206_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "select case");
     editorCell.setCellId("Error_1206_0");
     return editorCell;

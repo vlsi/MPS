@@ -18,14 +18,14 @@ public class LineStartRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_6443_0(context, node);
   }
 
-  public EditorCell createCollection_6443_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6443_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6443_0");
     editorCell.addEditorCell(this.createConstant_6443_0(context, node, "^"));
     return editorCell;
   }
 
-  public EditorCell createConstant_6443_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6443_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6443_0");
     {

@@ -26,7 +26,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return this.createCollection_0889_0(context, node);
   }
 
-  public EditorCell createCollection_0889_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0889_0");
     editorCell.addEditorCell(this.createCollection_0889_1(context, node));
@@ -35,7 +35,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0889_1");
     {
@@ -47,7 +47,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0889_2");
     {
@@ -60,7 +60,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0889_3");
     {
@@ -73,7 +73,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0889_4");
     {
@@ -85,7 +85,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0889_5");
     {
@@ -98,7 +98,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0889_6");
     {
@@ -110,7 +110,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0889_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_0889_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0889_7");
     {
@@ -123,7 +123,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0889_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0889_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0889_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -131,7 +131,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0889_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0889_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0889_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -139,7 +139,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0889_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0889_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0889_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -147,7 +147,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0889_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0889_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0889_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -155,7 +155,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_0889_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0889_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no conceptDeclaration>");
@@ -173,7 +173,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0889_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0889_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -190,7 +190,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0889_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0889_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("replace");
     provider.setNoTargetText("<no replace>");
@@ -221,7 +221,7 @@ public class ReplaceModelQuery_Editor extends DefaultNodeEditor {
       return this.createProperty_0889_0(context, node);
     }
 
-    public EditorCell createProperty_0889_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0889_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

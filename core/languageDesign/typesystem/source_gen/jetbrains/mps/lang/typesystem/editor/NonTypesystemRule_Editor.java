@@ -37,7 +37,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return this.createCollection_9638_0(context, node);
   }
 
-  public EditorCell createCollection_9638_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9638_0");
     editorCell.addEditorCell(this.createCollection_9638_1(context, node));
@@ -46,7 +46,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_1");
     {
@@ -62,7 +62,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_2");
     {
@@ -74,7 +74,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9638_3");
     {
@@ -90,7 +90,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_4");
     {
@@ -103,7 +103,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_5");
     {
@@ -115,7 +115,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_6");
     editorCell.addEditorCell(this.createIndentCell9638_1(context, node));
@@ -123,7 +123,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9638_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_9638_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9638_7");
     {
@@ -135,7 +135,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -147,7 +147,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -155,7 +155,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -163,7 +163,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -171,7 +171,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -179,7 +179,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -191,7 +191,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_6");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -199,7 +199,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_7");
     {
@@ -210,7 +210,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_8");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -223,7 +223,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_9");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -231,7 +231,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_10");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -244,7 +244,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_11");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -256,7 +256,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9638_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9638_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9638_12");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -264,17 +264,17 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell9638_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell9638_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell9638_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell9638_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_9638_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9638_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -297,7 +297,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9638_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9638_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
@@ -317,7 +317,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9638_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9638_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("overrides");
     provider.setNoTargetText("<no overrides>");
@@ -335,7 +335,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9638_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9638_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

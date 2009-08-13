@@ -19,7 +19,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return this.createCollection_7811_0(context, node);
   }
 
-  public EditorCell createCollection_7811_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7811_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7811_0");
     editorCell.addEditorCell(this.createCollection_7811_1(context, node));
@@ -27,7 +27,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7811_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7811_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7811_1");
     {
@@ -38,7 +38,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7811_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7811_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7811_2");
     {
@@ -50,7 +50,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7811_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7811_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7811_0");
     {
@@ -62,7 +62,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7811_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7811_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7811_1");
     {
@@ -73,7 +73,7 @@ public class CellMenuPart_ReplaceChildPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7811_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7811_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7811_2");
     {

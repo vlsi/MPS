@@ -31,7 +31,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return this.createCollection_4770_0(context, node);
   }
 
-  public EditorCell createCollection_4770_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4770_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4770_0");
     {
@@ -44,7 +44,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4770_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4770_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4770_1");
     editorCell.addEditorCell(this.createConstant_4770_0(context, node, "<TF"));
@@ -56,7 +56,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4770_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4770_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4770_2");
     {
@@ -69,7 +69,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4770_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_4770_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4770_3");
     {
@@ -82,7 +82,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4770_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_4770_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4770_4");
     {
@@ -95,7 +95,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_0");
     {
@@ -109,7 +109,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_1");
     {
@@ -123,7 +123,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_2");
     {
@@ -136,7 +136,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_3");
     {
@@ -147,7 +147,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_4");
     {
@@ -158,7 +158,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_5");
     {
@@ -169,14 +169,14 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4770_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4770_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4770_7");
     {
@@ -187,7 +187,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createAttributedNodeCell_4770_0(EditorContext context, SNode node) {
+  private EditorCell createAttributedNodeCell_4770_0(EditorContext context, SNode node) {
     IOperationContext opContext = context.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
@@ -199,7 +199,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4770_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4770_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("contextNodeQuery");
     provider.setNoTargetText("<main context node>");
@@ -216,7 +216,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4770_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4770_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no label>");
@@ -234,7 +234,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4770_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4770_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no label>");
@@ -253,7 +253,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4770_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4770_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
@@ -271,7 +271,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       return this.createProperty_4770_0(context, node);
     }
 
-    public EditorCell createProperty_4770_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4770_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -309,7 +309,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       return this.createProperty_4770_1(context, node);
     }
 
-    public EditorCell createProperty_4770_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_4770_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

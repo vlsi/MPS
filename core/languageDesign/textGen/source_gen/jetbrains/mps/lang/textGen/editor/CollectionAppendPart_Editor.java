@@ -29,7 +29,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return this.createCollection_1727_2(context, node);
   }
 
-  public EditorCell createCollection_1727_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1727_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1727_0");
     editorCell.addEditorCell(this.createConstant_1727_0(context, node, "$list{"));
@@ -41,7 +41,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1727_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1727_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1727_1");
     {
@@ -54,7 +54,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1727_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1727_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1727_2");
     if (renderingCondition1727_1(node, context, context.getOperationContext().getScope())) {
@@ -63,7 +63,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1727_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1727_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1727_3");
     editorCell.addEditorCell(this.createConstant_1727_3(context, node, "separator"));
@@ -74,7 +74,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1727_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1727_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1727_0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1727_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1727_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1727_1");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1727_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1727_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1727_2");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -112,21 +112,21 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1727_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1727_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1727_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1727_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1727_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1727_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_1727_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1727_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("list");
     provider.setNoTargetText("<no list>");
@@ -143,7 +143,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1727_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1727_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("separator");
     provider.setNoTargetText("");
@@ -162,7 +162,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createNonEmptyProperty_1727_0(EditorContext context, SNode node) {
+  private EditorCell createNonEmptyProperty_1727_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("separator");
     provider.setNoTargetText("<no separator>");
@@ -182,11 +182,11 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1727_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1727_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "withSeparator") || StringUtils.isNotEmpty(SPropertyOperations.getString(node, "separator"));
   }
 
-  public static boolean renderingCondition1727_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1727_1(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "separator"));
   }
 

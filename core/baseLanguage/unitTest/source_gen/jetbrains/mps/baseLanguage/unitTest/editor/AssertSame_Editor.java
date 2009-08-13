@@ -23,7 +23,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return this.createCollection_9280_0(context, node);
   }
 
-  public EditorCell createCollection_9280_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9280_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9280_0");
     editorCell.addEditorCell(this.createConstant_9280_0(context, node, "assert"));
@@ -34,7 +34,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9280_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9280_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9280_0");
     {
@@ -45,7 +45,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9280_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9280_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9280_1");
     {
@@ -56,7 +56,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9280_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9280_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9280_2");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9280_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9280_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expected");
     provider.setNoTargetText("<no expected>");
@@ -85,7 +85,7 @@ public class AssertSame_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9280_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9280_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("actual");
     provider.setNoTargetText("<no actual>");

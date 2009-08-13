@@ -30,7 +30,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_4600_2(context, node);
   }
 
-  public EditorCell createCollection_4600_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4600_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4600_0");
     {
@@ -44,7 +44,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4600_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4600_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4600_1");
     editorCell.addEditorCell(this.createConstant_4600_2(context, node, "description:"));
@@ -64,7 +64,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4600_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4600_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4600_2");
     {
@@ -79,7 +79,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4600_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_4600_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4600_3");
     {
@@ -93,7 +93,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4600_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_4600_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4600_4");
     {
@@ -105,7 +105,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -113,7 +113,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -121,7 +121,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -129,7 +129,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -137,7 +137,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_4");
     {
@@ -149,7 +149,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_5");
     {
@@ -161,7 +161,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_6");
     {
@@ -173,7 +173,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_7");
     {
@@ -185,7 +185,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_8");
     {
@@ -197,7 +197,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_9");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -205,7 +205,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4600_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4600_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4600_10");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -213,12 +213,12 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell4600_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell4600_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_4600_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4600_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -236,7 +236,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4600_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4600_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
@@ -258,7 +258,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4600_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_4600_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -280,7 +280,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4600_3(EditorContext context, SNode node) {
+  private EditorCell createProperty_4600_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("longDescription");
     provider.setNoTargetText("<no longDescription>");
@@ -303,7 +303,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4600_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4600_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("isVisibleBlock");
     provider.setNoTargetText("<isVisible = true>");
@@ -324,7 +324,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4600_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4600_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("isApplicableFunction");
     provider.setNoTargetText("<isApplicable = true>");
@@ -345,7 +345,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4600_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4600_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("findFunction");
     provider.setNoTargetText("<no findFunction>");
@@ -366,7 +366,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4600_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4600_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("searchedNodesBlock");
     provider.setNoTargetText("<searched nodes default={query node}>");
@@ -387,7 +387,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4600_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4600_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("categorizeBlock");
     provider.setNoTargetText("<categorize block default=\"Uncategorized\">");
@@ -409,11 +409,11 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4600_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4600_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
-  public static boolean renderingCondition4600_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4600_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
@@ -431,7 +431,7 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       return this.createProperty_4600_1(context, node);
     }
 
-    public EditorCell createProperty_4600_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_4600_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

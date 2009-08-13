@@ -24,7 +24,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_6629_0(context, node);
   }
 
-  public EditorCell createCollection_6629_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6629_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6629_0");
     editorCell.addEditorCell(this.createRefNode_6629_0(context, node));
@@ -34,7 +34,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6629_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6629_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6629_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6629_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6629_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6629_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6629_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6629_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("createdType");
     provider.setNoTargetText("<no createdType>");
@@ -67,7 +67,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6629_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6629_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("prototypeNode");
     provider.setNoTargetText("<no prototypeNode>");

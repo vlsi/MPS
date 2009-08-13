@@ -19,7 +19,7 @@ public class MapEntry_Editor extends DefaultNodeEditor {
     return this.createCollection_8602_0(context, node);
   }
 
-  public EditorCell createCollection_8602_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8602_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8602_0");
     editorCell.addEditorCell(this.createRefNode_8602_0(context, node));
@@ -28,14 +28,14 @@ public class MapEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8602_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8602_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8602_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_8602_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8602_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("key");
     provider.setNoTargetText("<no key>");
@@ -52,7 +52,7 @@ public class MapEntry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8602_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8602_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

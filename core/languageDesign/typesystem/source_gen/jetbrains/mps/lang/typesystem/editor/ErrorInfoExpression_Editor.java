@@ -15,7 +15,7 @@ public class ErrorInfoExpression_Editor extends DefaultNodeEditor {
     return this.createConstant_3950_0(context, node, "equationInfo");
   }
 
-  public EditorCell createConstant_3950_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3950_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3950_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);

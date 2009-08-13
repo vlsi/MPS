@@ -29,7 +29,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_1140_1(context, node);
   }
 
-  public EditorCell createCollection_1140_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1140_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1140_0");
     editorCell.addEditorCell(this.createConstant_1140_0(context, node, "when concrete"));
@@ -44,7 +44,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1140_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1140_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1140_1");
     editorCell.addEditorCell(this.createConstant_1140_6(context, node, "is shallow:"));
@@ -54,7 +54,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -70,7 +70,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -90,7 +90,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -102,7 +102,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_5");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -114,21 +114,21 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1140_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1140_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1140_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_1140_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1140_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
@@ -145,7 +145,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1140_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1140_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -167,7 +167,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1140_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1140_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argumentRepresentator");
     provider.setNoTargetText("");
@@ -184,7 +184,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1140_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1140_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isShallow");
     provider.setNoTargetText("<no isShallow>");
@@ -206,7 +206,7 @@ public class WhenConcreteStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1140_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1140_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("skipsError");
     provider.setNoTargetText("<no skipsError>");

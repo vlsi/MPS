@@ -25,7 +25,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return this.createCollection_3584_0(context, node);
   }
 
-  public EditorCell createCollection_3584_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3584_0");
     editorCell.addEditorCell(this.createCollection_3584_1(context, node));
@@ -33,7 +33,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_1");
     {
@@ -44,7 +44,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_2");
     {
@@ -56,7 +56,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3584_3");
     {
@@ -78,7 +78,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_4");
     {
@@ -91,7 +91,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_5");
     {
@@ -104,7 +104,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_6");
     {
@@ -117,7 +117,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_7");
     {
@@ -130,7 +130,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_8");
     {
@@ -143,7 +143,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3584_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_3584_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3584_9");
     {
@@ -156,7 +156,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_0");
     {
@@ -168,7 +168,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_1");
     {
@@ -179,14 +179,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_3");
     {
@@ -197,14 +197,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_5");
     {
@@ -215,14 +215,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_7");
     {
@@ -233,14 +233,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_9");
     {
@@ -251,14 +251,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_11");
     {
@@ -269,14 +269,14 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_12");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3584_13(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3584_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3584_13");
     {
@@ -287,7 +287,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3584_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3584_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameterObjectType");
     provider.setNoTargetText("<none>");
@@ -304,7 +304,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3584_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3584_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parametersFunction");
     provider.setNoTargetText("<no parametersFunction>");
@@ -321,7 +321,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3584_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3584_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("presentation");
     provider.setNoTargetText("<no presentation>");
@@ -339,7 +339,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3584_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3584_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("matchingTextFunction");
     provider.setNoTargetText("<default>");
@@ -356,7 +356,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3584_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3584_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("descriptionTextFunction");
     provider.setNoTargetText("<default>");
@@ -373,7 +373,7 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3584_4(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3584_4(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("handlerFunction");
     provider.setNoTargetText("<default>");
@@ -391,11 +391,11 @@ public class CellMenuPart_Generic_Group_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3584_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3584_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 
-  public static boolean renderingCondition3584_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3584_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "presentation", "custom", null);
   }
 

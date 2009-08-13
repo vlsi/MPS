@@ -14,7 +14,7 @@ public class Constant_Editor extends DefaultNodeEditor {
     return this.createError_2040_0(context, node);
   }
 
-  public EditorCell createError_2040_0(EditorContext context, SNode node) {
+  private EditorCell createError_2040_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?constant?");
     editorCell.setCellId("Error_2040_0");
     return editorCell;

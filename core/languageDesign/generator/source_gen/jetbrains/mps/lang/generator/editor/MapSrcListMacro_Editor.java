@@ -26,7 +26,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class MapSrcListMacro_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myNodeMacro_postfix2762_0;
+  private AbstractCellProvider myNodeMacro_postfix2762_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2762_1(context, node);
@@ -36,7 +36,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_2762_0(context, node);
   }
 
-  public EditorCell createCollection_2762_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2762_0");
     {
@@ -49,7 +49,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_1");
     editorCell.addEditorCell(this.createConstant_2762_0(context, node, "$MAP_SRCL$"));
@@ -57,7 +57,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2762_2");
     {
@@ -73,7 +73,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_3");
     {
@@ -86,7 +86,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_4");
     {
@@ -99,7 +99,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_5");
     {
@@ -112,7 +112,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_6");
     {
@@ -125,7 +125,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2762_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_2762_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2762_7");
     {
@@ -138,7 +138,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2762_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2762_0(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix2762_0 == null) {
       this.myNodeMacro_postfix2762_0 = new NodeMacro_postfix(node);
     }
@@ -146,7 +146,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -159,7 +159,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_1");
     {
@@ -172,7 +172,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_2");
     {
@@ -183,7 +183,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_3");
     {
@@ -194,7 +194,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_4");
     {
@@ -205,7 +205,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_5");
     {
@@ -216,7 +216,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_6");
     {
@@ -227,14 +227,14 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_8");
     {
@@ -245,7 +245,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_9");
     {
@@ -256,7 +256,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_10");
     {
@@ -267,14 +267,14 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2762_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2762_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2762_12");
     {
@@ -285,7 +285,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2762_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2762_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourceNodesQuery");
     provider.setNoTargetText("<none>");
@@ -305,7 +305,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2762_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2762_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("mapperFunction");
     provider.setNoTargetText("<default>");
@@ -322,7 +322,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2762_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2762_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
@@ -340,7 +340,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2762_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2762_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("postMapperFunction");
     provider.setNoTargetText("<default>");
@@ -357,7 +357,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2762_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2762_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -390,7 +390,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
       return this.createProperty_2762_0(context, node);
     }
 
-    public EditorCell createProperty_2762_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2762_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

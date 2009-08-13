@@ -20,13 +20,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp3341_0;
+  private AbstractCellProvider myReplaceableAlias_Comp3341_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3341_0(context, node);
   }
 
-  public EditorCell createCollection_3341_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3341_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3341_0");
     editorCell.addEditorCell(this.createComponent_3341_0(context, node));
@@ -38,7 +38,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createComponent_3341_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3341_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp3341_0 == null) {
       this.myReplaceableAlias_Comp3341_0 = new ReplaceableAlias_Comp(node);
     }
@@ -46,7 +46,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_3341_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3341_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3341_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_3341_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3341_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3341_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -62,14 +62,14 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_3341_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3341_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3341_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_3341_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3341_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("referenceLink");
     provider.setNoTargetText("<no reference role>");
@@ -88,7 +88,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefNode_3341_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3341_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operationContext");
     provider.setNoTargetText("<no operationContext>");
@@ -119,7 +119,7 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       return this.createProperty_3341_0(context, node);
     }
 
-    public EditorCell createProperty_3341_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3341_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

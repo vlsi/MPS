@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Line_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8408_0;
+  private AbstractCellListHandler myListHandler_8408_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8408_0(context, node);
   }
 
-  public EditorCell createCollection_8408_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8408_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8408_0");
     editorCell.addEditorCell(this.createRefNodeList_8408_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8408_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8408_0(EditorContext context, SNode node) {
     if (this.myListHandler_8408_0 == null) {
       this.myListHandler_8408_0 = new Line_Editor.linePartListHandler_8408_0(node, "linePart", context);
     }
@@ -42,7 +42,7 @@ public class Line_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class linePartListHandler_8408_0 extends RefNodeListHandler {
+  private static class linePartListHandler_8408_0 extends RefNodeListHandler {
 
     public linePartListHandler_8408_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

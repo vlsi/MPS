@@ -38,7 +38,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return this.createCollection_7612_0(context, node);
   }
 
-  public EditorCell createCollection_7612_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7612_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7612_0");
     {
@@ -53,14 +53,14 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7612_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7612_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7612_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createReadOnlyModelAccessor_7612_0(final EditorContext context, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_7612_0(final EditorContext context, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
 
       public String getText() {
@@ -80,7 +80,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_7612_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7612_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("shortcutChar");
     provider.setNoTargetText("<no shortcut>");
@@ -100,7 +100,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
   }
 

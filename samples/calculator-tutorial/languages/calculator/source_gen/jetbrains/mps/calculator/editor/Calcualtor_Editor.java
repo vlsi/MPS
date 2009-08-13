@@ -25,14 +25,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Calcualtor_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6304_0;
-  /* package */AbstractCellListHandler myListHandler_6304_1;
+  private AbstractCellListHandler myListHandler_6304_0;
+  private AbstractCellListHandler myListHandler_6304_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6304_0(context, node);
   }
 
-  public EditorCell createCollection_6304_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6304_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6304_0");
     editorCell.addEditorCell(this.createCollection_6304_1(context, node));
@@ -42,7 +42,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6304_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6304_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6304_1");
     {
@@ -54,21 +54,21 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6304_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6304_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6304_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6304_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6304_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6304_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6304_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6304_0(EditorContext context, SNode node) {
     if (this.myListHandler_6304_0 == null) {
       this.myListHandler_6304_0 = new Calcualtor_Editor.inputFieldListHandler_6304_0(node, "inputField", context);
     }
@@ -78,7 +78,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6304_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6304_1(EditorContext context, SNode node) {
     if (this.myListHandler_6304_1 == null) {
       this.myListHandler_6304_1 = new Calcualtor_Editor.outputFieldListHandler_6304_0(node, "outputField", context);
     }
@@ -88,7 +88,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6304_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6304_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -106,7 +106,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class inputFieldListHandler_6304_0 extends RefNodeListHandler {
+  private static class inputFieldListHandler_6304_0 extends RefNodeListHandler {
 
     public inputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -149,7 +149,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class outputFieldListHandler_6304_0 extends RefNodeListHandler {
+  private static class outputFieldListHandler_6304_0 extends RefNodeListHandler {
 
     public outputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

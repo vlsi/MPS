@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InputNode_C_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3988_0;
+  private AbstractCellListHandler myListHandler_3988_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3988_0(context, node);
   }
 
-  public EditorCell createCollection_3988_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3988_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3988_0");
     editorCell.addEditorCell(this.createCollection_3988_1(context, node));
@@ -41,7 +41,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3988_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3988_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3988_1");
     {
@@ -57,7 +57,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3988_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3988_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3988_2");
     {
@@ -69,7 +69,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3988_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3988_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3988_3");
     {
@@ -81,7 +81,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3988_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3988_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3988_4");
     {
@@ -93,35 +93,35 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3988_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3988_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3988_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3988_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3988_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3988_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3988_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3988_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3988_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3988_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3988_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3988_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3988_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3988_0(EditorContext context, SNode node) {
     if (this.myListHandler_3988_0 == null) {
       this.myListHandler_3988_0 = new InputNode_C_Editor.inputChildListHandler_3988_0(node, "inputChild", context);
     }
@@ -131,7 +131,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3988_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3988_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -150,7 +150,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3988_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_3988_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("option");
     provider.setNoTargetText("<no option>");
@@ -168,7 +168,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class inputChildListHandler_3988_0 extends RefNodeListHandler {
+  private static class inputChildListHandler_3988_0 extends RefNodeListHandler {
 
     public inputChildListHandler_3988_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -221,7 +221,7 @@ public class InputNode_C_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_3988_3(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_3988_3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_3988_3");
       editorCell.setDefaultText("");

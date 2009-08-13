@@ -23,7 +23,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return this.createCollection_2759_0(context, node);
   }
 
-  public EditorCell createCollection_2759_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2759_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2759_0");
     editorCell.addEditorCell(this.createCollection_2759_2(context, node));
@@ -35,7 +35,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2759_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2759_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2759_1");
     {
@@ -51,7 +51,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2759_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2759_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2759_2");
     {
@@ -64,7 +64,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2759_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2759_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2759_3");
     {
@@ -79,21 +79,21 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_2");
     {
@@ -104,21 +104,21 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_5");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
@@ -130,21 +130,21 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2759_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2759_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2759_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_2759_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2759_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperandType");
     provider.setNoTargetText("<no leftOperandType>");
@@ -161,7 +161,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2759_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2759_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightOperandType");
     provider.setNoTargetText("<no rightOperandType>");
@@ -178,7 +178,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2759_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2759_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operationConcept");
     provider.setNoTargetText("<no operationConcept>");
@@ -195,7 +195,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2759_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2759_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -212,7 +212,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2759_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2759_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("leftIsExact");
     provider.setNoTargetText("<no leftIsExact>");
@@ -230,7 +230,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2759_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2759_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("rightIsExact");
     provider.setNoTargetText("<no rightIsExact>");

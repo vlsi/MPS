@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class PressKeyStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_3031_0;
+  private AbstractCellListHandler myListHandler_3031_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3031_0(context, node);
   }
 
-  public EditorCell createCollection_3031_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3031_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3031_0");
     editorCell.addEditorCell(this.createConstant_3031_0(context, node, "press keys"));
@@ -37,7 +37,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3031_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3031_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3031_0");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
@@ -45,7 +45,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3031_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3031_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3031_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -53,7 +53,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_3031_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_3031_0(EditorContext context, SNode node) {
     if (this.myListHandler_3031_0 == null) {
       this.myListHandler_3031_0 = new PressKeyStatement_Editor.keyStrokesListHandler_3031_0(node, "keyStrokes", context);
     }
@@ -63,7 +63,7 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class keyStrokesListHandler_3031_0 extends RefNodeListHandler {
+  private static class keyStrokesListHandler_3031_0 extends RefNodeListHandler {
 
     public keyStrokesListHandler_3031_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

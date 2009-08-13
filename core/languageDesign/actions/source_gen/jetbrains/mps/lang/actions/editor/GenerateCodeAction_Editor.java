@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class GenerateCodeAction_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5804_0;
+  private AbstractCellListHandler myListHandler_5804_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5804_0(context, node);
   }
 
-  public EditorCell createCollection_5804_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5804_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5804_0");
     editorCell.addEditorCell(this.createCollection_5804_1(context, node));
@@ -51,7 +51,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5804_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5804_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5804_1");
     {
@@ -64,7 +64,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_0");
     {
@@ -75,14 +75,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_2");
     {
@@ -93,14 +93,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_4");
     {
@@ -111,21 +111,21 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_7");
     {
@@ -136,14 +136,14 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5804_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5804_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5804_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5804_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5804_0(EditorContext context, SNode node) {
     if (this.myListHandler_5804_0 == null) {
       this.myListHandler_5804_0 = new GenerateCodeAction_Editor.smartActionParameterListHandler_5804_0(node, "smartActionParameter", context);
     }
@@ -153,7 +153,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5804_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5804_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("isApplicable");
     provider.setNoTargetText("<no isApplicable>");
@@ -170,7 +170,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5804_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5804_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("getActionUI");
     provider.setNoTargetText("<no getActionUI>");
@@ -187,7 +187,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5804_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5804_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("executeSmartAction");
     provider.setNoTargetText("<no executeSmartAction>");
@@ -204,7 +204,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5804_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5804_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -222,7 +222,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class smartActionParameterListHandler_5804_0 extends RefNodeListHandler {
+  private static class smartActionParameterListHandler_5804_0 extends RefNodeListHandler {
 
     public smartActionParameterListHandler_5804_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

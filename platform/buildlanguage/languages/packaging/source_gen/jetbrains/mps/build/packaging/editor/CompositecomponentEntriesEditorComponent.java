@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CompositecomponentEntriesEditorComponent extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandler_1434_0;
+  private AbstractCellListHandler myListHandler_1434_0;
 
   public CompositecomponentEntriesEditorComponent(SNode node) {
     super(node);
@@ -36,7 +36,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     return this.createCollection_1434_0(context, node);
   }
 
-  public EditorCell createCollection_1434_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1434_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1434_0");
     {
@@ -48,7 +48,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1434_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1434_0(EditorContext context, SNode node) {
     if (this.myListHandler_1434_0 == null) {
       this.myListHandler_1434_0 = new CompositecomponentEntriesEditorComponent.entryListHandler_1434_0(node, "entry", context);
     }
@@ -63,12 +63,12 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     return editorCell;
   }
 
-  public EditorCell createIndentCell1434_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1434_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public static class entryListHandler_1434_0 extends RefNodeListHandler {
+  private static class entryListHandler_1434_0 extends RefNodeListHandler {
 
     public entryListHandler_1434_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -114,7 +114,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_1434_0(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_1434_0(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_1434_0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);

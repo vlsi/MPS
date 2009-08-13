@@ -34,7 +34,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return this.createCollection_5723_4(context, node);
   }
 
-  public EditorCell createCollection_5723_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5723_0");
     {
@@ -46,7 +46,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5723_1");
     editorCell.setGridLayout(true);
@@ -57,7 +57,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_2");
     editorCell.addEditorCell(this.createConstant_5723_1(context, node, "refactor immediately"));
@@ -66,7 +66,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_3");
     editorCell.addEditorCell(this.createConstant_5723_3(context, node, "non-local"));
@@ -75,7 +75,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_5723_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5723_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5723_4");
     {
@@ -88,7 +88,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_0");
     {
@@ -100,35 +100,35 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5723_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5723_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5723_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_5723_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5723_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("refactorImmediatelyIfNoUsages");
     provider.setNoTargetText("<no refactorImmediatelyIfNoUsages>");
@@ -146,7 +146,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_5723_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5723_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("nonLocalByDefault");
     provider.setNoTargetText("<no nonLocalByDefault>");
@@ -165,11 +165,11 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   }
 
 
-  public static boolean renderingCondition5723_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5723_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "refactorImmediatelyIfNoUsages");
   }
 
-  public static boolean renderingCondition5723_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5723_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
   }
 

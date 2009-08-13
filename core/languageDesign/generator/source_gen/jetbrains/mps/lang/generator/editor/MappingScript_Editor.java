@@ -24,7 +24,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return this.createCollection_3053_0(context, node);
   }
 
-  public EditorCell createCollection_3053_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3053_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3053_0");
     editorCell.addEditorCell(this.createCollection_3053_1(context, node));
@@ -35,7 +35,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3053_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3053_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3053_1");
     {
@@ -47,7 +47,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3053_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3053_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3053_2");
     {
@@ -62,7 +62,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3053_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3053_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3053_3");
     {
@@ -75,7 +75,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3053_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3053_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3053_4");
     {
@@ -88,14 +88,14 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_1");
     {
@@ -106,14 +106,14 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_3");
     {
@@ -124,14 +124,14 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_5");
     {
@@ -142,7 +142,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3053_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3053_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3053_6");
     {
@@ -153,7 +153,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3053_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3053_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -171,7 +171,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3053_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3053_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("codeBlock");
     provider.setNoTargetText("<no codeBlock>");
@@ -188,7 +188,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3053_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_3053_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("scriptKind");
     provider.setNoTargetText("<no scriptKind>");
@@ -207,7 +207,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3053_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_3053_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("modifiesModel");
     provider.setNoTargetText("<no modifiesModel>");
@@ -227,7 +227,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3053_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3053_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "scriptKind", "pre_processing", "post_processing");
   }
 

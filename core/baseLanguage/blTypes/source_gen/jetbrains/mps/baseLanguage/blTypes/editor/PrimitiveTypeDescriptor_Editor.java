@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5100_0;
+  private AbstractCellListHandler myListHandler_5100_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5100_0(context, node);
   }
 
-  public EditorCell createCollection_5100_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5100_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5100_0");
     editorCell.addEditorCell(this.createConstant_5100_0(context, node, "Primitive"));
@@ -43,21 +43,21 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5100_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5100_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5100_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5100_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5100_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5100_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5100_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5100_0(EditorContext context, SNode node) {
     if (this.myListHandler_5100_0 == null) {
       this.myListHandler_5100_0 = new PrimitiveTypeDescriptor_Editor.extendsListHandler_5100_0(node, "extends", context);
     }
@@ -67,7 +67,7 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5100_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5100_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -89,7 +89,7 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class extendsListHandler_5100_0 extends RefNodeListHandler {
+  private static class extendsListHandler_5100_0 extends RefNodeListHandler {
 
     public extendsListHandler_5100_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

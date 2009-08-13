@@ -22,14 +22,14 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
     return this.createCollection_2583_0(context, node);
   }
 
-  public EditorCell createCollection_2583_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2583_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2583_0");
     editorCell.addEditorCell(this.createRefCell_2583_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_2583_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2583_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
@@ -65,7 +65,7 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
       return this.createProperty_2583_0(context, node);
     }
 
-    public EditorCell createProperty_2583_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2583_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("fullName");
       provider.setNoTargetText("<no fullName>");

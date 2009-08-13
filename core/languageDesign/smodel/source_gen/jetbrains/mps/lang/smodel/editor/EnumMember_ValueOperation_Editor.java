@@ -14,7 +14,7 @@ public class EnumMember_ValueOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_4510_0(context, node, "value");
   }
 
-  public EditorCell createConstant_4510_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4510_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4510_0");
     editorCell.setDefaultText("");

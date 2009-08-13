@@ -18,7 +18,7 @@ public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_4187_0(context, node, "prev-sibling");
   }
 
-  public EditorCell createConstant_4187_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4187_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4187_0");
     {

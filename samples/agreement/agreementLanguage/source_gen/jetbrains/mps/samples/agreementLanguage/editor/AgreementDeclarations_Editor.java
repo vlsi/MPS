@@ -25,14 +25,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class AgreementDeclarations_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_4569_0;
-  /* package */AbstractCellListHandler myListHandler_4569_1;
+  private AbstractCellListHandler myListHandler_4569_0;
+  private AbstractCellListHandler myListHandler_4569_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4569_0(context, node);
   }
 
-  public EditorCell createCollection_4569_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4569_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4569_0");
     editorCell.addEditorCell(this.createConstant_4569_0(context, node, "agreement declarations"));
@@ -43,7 +43,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4569_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4569_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4569_1");
     {
@@ -56,7 +56,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4569_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4569_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4569_2");
     {
@@ -68,14 +68,14 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_1");
     {
@@ -86,14 +86,14 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_4");
     {
@@ -104,7 +104,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_5");
     {
@@ -115,14 +115,14 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4569_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4569_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4569_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4569_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4569_0(EditorContext context, SNode node) {
     if (this.myListHandler_4569_0 == null) {
       this.myListHandler_4569_0 = new AgreementDeclarations_Editor.accountTypeListHandler_4569_0(node, "accountType", context);
     }
@@ -136,7 +136,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4569_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4569_1(EditorContext context, SNode node) {
     if (this.myListHandler_4569_1 == null) {
       this.myListHandler_4569_1 = new AgreementDeclarations_Editor.eventTypeListHandler_4569_0(node, "eventType", context);
     }
@@ -151,7 +151,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class accountTypeListHandler_4569_0 extends RefNodeListHandler {
+  private static class accountTypeListHandler_4569_0 extends RefNodeListHandler {
 
     public accountTypeListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -204,7 +204,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_4569_3(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4569_3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4569_3");
       {
@@ -217,7 +217,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class eventTypeListHandler_4569_0 extends RefNodeListHandler {
+  private static class eventTypeListHandler_4569_0 extends RefNodeListHandler {
 
     public eventTypeListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -263,7 +263,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_4569_7(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4569_7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4569_7");
       {

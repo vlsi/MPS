@@ -22,7 +22,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return this.createCollection_4522_0(context, node);
   }
 
-  public EditorCell createCollection_4522_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4522_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4522_0");
     editorCell.addEditorCell(this.createCollection_4522_1(context, node));
@@ -31,7 +31,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4522_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4522_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4522_1");
     editorCell.addEditorCell(this.createConstant_4522_3(context, node, "visit"));
@@ -43,7 +43,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4522_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4522_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4522_2");
     editorCell.addEditorCell(this.createConstant_4522_2(context, node, "  "));
@@ -51,21 +51,21 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4522_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4522_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4522_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4522_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4522_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4522_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4522_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4522_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4522_2");
     {
@@ -76,7 +76,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4522_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4522_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4522_3");
     {
@@ -87,7 +87,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4522_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4522_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4522_4");
     {
@@ -98,7 +98,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4522_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4522_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -115,7 +115,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4522_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4522_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -132,7 +132,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4522_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4522_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visitParameterDeclarationList");
     provider.setNoTargetText("<no visitParameterDeclarationList>");
@@ -149,7 +149,7 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4522_3(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4522_3(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");

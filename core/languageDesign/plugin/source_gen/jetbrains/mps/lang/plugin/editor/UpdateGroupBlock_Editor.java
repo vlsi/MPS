@@ -19,7 +19,7 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     return this.createCollection_9179_0(context, node);
   }
 
-  public EditorCell createCollection_9179_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9179_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9179_0");
     editorCell.addEditorCell(this.createRefNode_9179_0(context, node));
@@ -28,14 +28,14 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9179_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9179_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9179_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_9179_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9179_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("updateFunction");
     provider.setNoTargetText("<no updateFunction>");
@@ -52,7 +52,7 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9179_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9179_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("enumerateFunction");
     provider.setNoTargetText("<no enumerate function>");

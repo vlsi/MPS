@@ -25,7 +25,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_7664_0(context, node);
   }
 
-  public EditorCell createCollection_7664_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7664_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7664_0");
     editorCell.addEditorCell(this.createRefNode_7664_0(context, node));
@@ -34,7 +34,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7664_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7664_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7664_0");
     {
@@ -47,7 +47,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7664_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7664_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");
@@ -65,7 +65,7 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7664_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7664_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightOperand");
     provider.setNoTargetText("<no rightOperand>");

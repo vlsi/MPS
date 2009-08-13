@@ -21,7 +21,7 @@ public class GenerationContextOp_Base_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_4980_0(context, node);
   }
 
-  public EditorCell createConceptProperty_4980_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_4980_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

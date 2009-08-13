@@ -28,11 +28,11 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Annotation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility9459_0;
-  /* package */AbstractCellProvider my_GenericDeclaration_TypeVariables_Component9459_0;
-  /* package */AbstractCellListHandler myListHandler_9459_0;
-  /* package */AbstractCellListHandler myListHandler_9459_1;
-  /* package */AbstractCellListHandler myListHandler_9459_2;
+  private AbstractCellProvider my_Component_Visibility9459_0;
+  private AbstractCellProvider my_GenericDeclaration_TypeVariables_Component9459_0;
+  private AbstractCellListHandler myListHandler_9459_0;
+  private AbstractCellListHandler myListHandler_9459_1;
+  private AbstractCellListHandler myListHandler_9459_2;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9459_0(context, node);
@@ -42,7 +42,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return this.createCollection_9459_2(context, node);
   }
 
-  public EditorCell createCollection_9459_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9459_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9459_0");
     if (renderingCondition9459_1(node, context, context.getOperationContext().getScope())) {
@@ -60,7 +60,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9459_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9459_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9459_1");
     {
@@ -72,7 +72,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9459_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9459_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9459_2");
     editorCell.addEditorCell(this.createConstant_9459_4(context, node, "annotations:"));
@@ -80,7 +80,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_9459_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_9459_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility9459_0 == null) {
       this.my_Component_Visibility9459_0 = new _Component_Visibility(node);
     }
@@ -88,7 +88,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_9459_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_9459_1(EditorContext context, SNode node) {
     if (this.my_GenericDeclaration_TypeVariables_Component9459_0 == null) {
       this.my_GenericDeclaration_TypeVariables_Component9459_0 = new _GenericDeclaration_TypeVariables_Component(node);
     }
@@ -96,7 +96,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9459_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9459_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9459_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -108,7 +108,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9459_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9459_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9459_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -120,7 +120,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9459_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9459_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9459_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -132,7 +132,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9459_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9459_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9459_4");
     {
@@ -143,7 +143,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9459_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9459_0(EditorContext context, SNode node) {
     if (this.myListHandler_9459_0 == null) {
       this.myListHandler_9459_0 = new Annotation_Editor.annotationMethodListHandler_9459_0(node, "annotationMethod", context);
     }
@@ -159,7 +159,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9459_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9459_1(EditorContext context, SNode node) {
     if (this.myListHandler_9459_1 == null) {
       this.myListHandler_9459_1 = new Annotation_Editor.annotationListHandler_9459_0(node, "annotation", context);
     }
@@ -173,7 +173,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9459_2(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9459_2(EditorContext context, SNode node) {
     if (this.myListHandler_9459_2 == null) {
       this.myListHandler_9459_2 = new Annotation_Editor.annotationListHandler_9459_1(node, "annotation", context);
     }
@@ -187,7 +187,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_9459_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9459_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -211,15 +211,15 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9459_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
-  public static boolean renderingCondition9459_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9459_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class annotationMethodListHandler_9459_0 extends RefNodeListHandler {
+  private static class annotationMethodListHandler_9459_0 extends RefNodeListHandler {
 
     public annotationMethodListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -265,7 +265,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_9459_2(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_9459_2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_9459_2");
       {
@@ -277,7 +277,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_9459_0 extends RefNodeListHandler {
+  private static class annotationListHandler_9459_0 extends RefNodeListHandler {
 
     public annotationListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -320,7 +320,7 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_9459_1 extends RefNodeListHandler {
+  private static class annotationListHandler_9459_1 extends RefNodeListHandler {
 
     public annotationListHandler_9459_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

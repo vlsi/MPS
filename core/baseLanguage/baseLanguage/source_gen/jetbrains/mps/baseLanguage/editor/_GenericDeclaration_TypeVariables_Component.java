@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandler_9618_0;
+  private AbstractCellListHandler myListHandler_9618_0;
 
   public _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
@@ -36,7 +36,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return this.createCollection_9618_0(context, node);
   }
 
-  public EditorCell createCollection_9618_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9618_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9618_0");
     {
@@ -49,7 +49,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  public EditorCell createConstant_9618_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9618_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9618_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  public EditorCell createConstant_9618_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9618_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9618_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9618_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9618_0(EditorContext context, SNode node) {
     if (this.myListHandler_9618_0 == null) {
       this.myListHandler_9618_0 = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_9618_0(node, "typeVariableDeclaration", context);
     }
@@ -85,7 +85,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  public static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {
+  private static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {
 
     public typeVariableDeclarationListHandler_9618_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

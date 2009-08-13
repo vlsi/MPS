@@ -27,7 +27,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return this.createCollection_4762_0(context, node);
   }
 
-  public EditorCell createCollection_4762_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4762_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4762_0");
     editorCell.addEditorCell(this.createConstant_4762_0(context, node, "typeof"));
@@ -43,7 +43,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -59,7 +59,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -67,7 +67,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_3");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_4");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
@@ -83,7 +83,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4762_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4762_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4762_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -91,7 +91,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4762_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4762_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("restrictionKind");
     provider.setNoTargetText("<no restrictionKind>");
@@ -113,7 +113,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4762_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4762_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -130,7 +130,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4762_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4762_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("childLinkDeclaration");
     provider.setNoTargetText("<no childLinkDeclaration>");
@@ -148,7 +148,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4762_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_4762_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -181,7 +181,7 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
       return this.createProperty_4762_1(context, node);
     }
 
-    public EditorCell createProperty_4762_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_4762_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

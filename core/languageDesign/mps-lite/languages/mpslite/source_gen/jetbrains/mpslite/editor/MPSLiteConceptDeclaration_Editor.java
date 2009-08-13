@@ -30,7 +30,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_3196_2(context, node);
   }
 
-  public EditorCell createCollection_3196_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3196_0");
     editorCell.addEditorCell(this.createCollection_3196_1(context, node));
@@ -39,7 +39,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3196_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3196_1");
     if (renderingCondition3196_0(node, context, context.getOperationContext().getScope())) {
@@ -55,7 +55,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3196_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3196_2");
     editorCell.addEditorCell(this.createCollection_3196_3(context, node));
@@ -63,7 +63,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3196_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3196_3");
     {
@@ -75,7 +75,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3196_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3196_4");
     {
@@ -87,7 +87,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3196_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_3196_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3196_5");
     {
@@ -100,7 +100,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -108,7 +108,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -116,7 +116,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -124,7 +124,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_3");
     MPSLite_Style_StyleSheet.getMPSLiteOption(editorCell).apply(editorCell);
@@ -132,7 +132,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_4");
     MPSLite_Style_StyleSheet.getMPSLiteOption(editorCell).apply(editorCell);
@@ -140,7 +140,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -148,7 +148,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3196_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3196_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3196_6");
     {
@@ -159,12 +159,12 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell3196_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3196_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_3196_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3196_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -182,7 +182,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3196_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_3196_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("root");
     provider.setNoTargetText("<no root>");
@@ -200,7 +200,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3196_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_3196_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("abstract");
     provider.setNoTargetText("<no abstract>");
@@ -218,7 +218,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3196_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3196_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("lineList");
     provider.setNoTargetText("<no lineList>");
@@ -235,7 +235,7 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3196_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3196_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("extends");
     provider.setNoTargetText("<no extends>");
@@ -253,11 +253,11 @@ public class MPSLiteConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3196_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3196_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "root");
   }
 
-  public static boolean renderingCondition3196_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3196_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "abstract");
   }
 

@@ -23,7 +23,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_8499_0(context, node);
   }
 
-  public EditorCell createCollection_8499_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8499_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8499_0");
     editorCell.addEditorCell(this.createRefNode_8499_0(context, node));
@@ -31,7 +31,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8499_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8499_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8499_0");
     {
@@ -49,7 +49,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8499_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8499_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");

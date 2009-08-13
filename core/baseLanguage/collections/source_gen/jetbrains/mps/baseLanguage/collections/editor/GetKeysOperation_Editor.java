@@ -17,7 +17,7 @@ public class GetKeysOperation_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_7647_0(context, node);
   }
 
-  public EditorCell createConceptProperty_7647_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_7647_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

@@ -23,7 +23,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return this.createCollection_2322_0(context, node);
   }
 
-  public EditorCell createAlternation_2322_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_2322_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = CharConstant_Editor.renderingCondition2322_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -40,7 +40,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2322_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2322_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2322_0");
     editorCell.addEditorCell(this.createConstant_2322_0(context, node, "'"));
@@ -49,7 +49,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2322_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2322_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -57,7 +57,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2322_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2322_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2322_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -65,7 +65,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2322_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2322_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("charConstant");
     provider.setNoTargetText("<no charConstant>");
@@ -84,7 +84,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2322_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_2322_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("charConstant");
     provider.setNoTargetText("<no charConstant>");
@@ -104,7 +104,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition2322_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition2322_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
 

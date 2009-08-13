@@ -21,7 +21,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_2984_0(context, node);
   }
 
-  public EditorCell createCollection_2984_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2984_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2984_0");
     editorCell.addEditorCell(this.createRefNode_2984_0(context, node));
@@ -30,7 +30,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2984_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2984_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2984_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2984_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2984_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -59,7 +59,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2984_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2984_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("classType");
     provider.setNoTargetText("<no classType>");

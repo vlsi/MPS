@@ -23,7 +23,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     return this.createCollection_7861_0(context, node);
   }
 
-  public EditorCell createCollection_7861_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7861_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7861_0");
     editorCell.addEditorCell(this.createConstant_7861_0(context, node, "horizontal-align"));
@@ -32,7 +32,7 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7861_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7861_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7861_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
@@ -41,14 +41,14 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7861_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7861_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7861_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createProperty_7861_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_7861_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("align");
     provider.setNoTargetText("<no align>");

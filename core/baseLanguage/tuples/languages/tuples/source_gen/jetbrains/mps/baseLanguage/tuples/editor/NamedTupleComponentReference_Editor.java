@@ -24,7 +24,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return this.createCollection_0079_0(context, node);
   }
 
-  public EditorCell createCollection_0079_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0079_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0079_0");
     editorCell.addEditorCell(this.createRefCell_0079_0(context, node));
@@ -33,14 +33,14 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0079_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0079_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0079_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_0079_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_0079_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
@@ -58,7 +58,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0079_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0079_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -89,7 +89,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
       return this.createProperty_0079_0(context, node);
     }
 
-    public EditorCell createProperty_0079_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_0079_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

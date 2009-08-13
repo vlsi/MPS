@@ -18,7 +18,7 @@ public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
     return this.createConstant_5352_0(context, node, "parent");
   }
 
-  public EditorCell createConstant_5352_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5352_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5352_0");
     {

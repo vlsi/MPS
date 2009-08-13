@@ -19,7 +19,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_5565_0(context, node);
   }
 
-  public EditorCell createCollection_5565_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5565_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5565_0");
     editorCell.addEditorCell(this.createRefNode_5565_0(context, node));
@@ -31,7 +31,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5565_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5565_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5565_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -39,14 +39,14 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5565_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5565_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5565_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_5565_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5565_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5565_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5565_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5565_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operand");
     provider.setNoTargetText("<no operand>");
@@ -71,7 +71,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5565_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5565_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("startIndex");
     provider.setNoTargetText("0");
@@ -88,7 +88,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5565_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5565_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("endIndex");
     provider.setNoTargetText("end");

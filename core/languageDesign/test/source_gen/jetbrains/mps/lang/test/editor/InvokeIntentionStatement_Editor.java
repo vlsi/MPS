@@ -21,7 +21,7 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_1183_0(context, node);
   }
 
-  public EditorCell createCollection_1183_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1183_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1183_0");
     editorCell.addEditorCell(this.createConstant_1183_0(context, node, "invoke intention"));
@@ -29,14 +29,14 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1183_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1183_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1183_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_1183_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1183_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("intention");
     provider.setNoTargetText("<no intention>");
@@ -68,7 +68,7 @@ public class InvokeIntentionStatement_Editor extends DefaultNodeEditor {
       return this.createProperty_1183_0(context, node);
     }
 
-    public EditorCell createProperty_1183_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1183_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -21,7 +21,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     return this.createCollection_4497_0(context, node);
   }
 
-  public EditorCell createCollection_4497_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4497_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4497_0");
     editorCell.addEditorCell(this.createConstant_4497_0(context, node, "after"));
@@ -29,7 +29,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4497_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4497_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4497_0");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
@@ -37,7 +37,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4497_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4497_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -69,7 +69,7 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
       return this.createProperty_4497_0(context, node);
     }
 
-    public EditorCell createProperty_4497_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4497_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

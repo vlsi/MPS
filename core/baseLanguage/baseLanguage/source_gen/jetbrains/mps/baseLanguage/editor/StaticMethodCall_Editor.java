@@ -27,13 +27,13 @@ import jetbrains.mps.smodel.SModel;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments7119_0;
+  private AbstractCellProvider myIMethodCall_actualArguments7119_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7119_0(context, node);
   }
 
-  public EditorCell createCollection_7119_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7119_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7119_0");
     editorCell.addEditorCell(this.createRefCell_7119_1(context, node));
@@ -42,7 +42,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_7119_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7119_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7119_1");
     {
@@ -55,7 +55,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_7119_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_7119_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments7119_0 == null) {
       this.myIMethodCall_actualArguments7119_0 = new IMethodCall_actualArguments(node);
     }
@@ -67,7 +67,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7119_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7119_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7119_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7119_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7119_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("staticMethodDeclaration");
     provider.setNoTargetText("<no method>");
@@ -94,7 +94,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7119_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7119_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("classConcept");
     provider.setNoTargetText("<no class>");
@@ -127,7 +127,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       return this.createProperty_7119_0(context, node);
     }
 
-    public EditorCell createProperty_7119_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_7119_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -166,7 +166,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       return this.createProperty_7119_1(context, node);
     }
 
-    public EditorCell createProperty_7119_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_7119_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -20,7 +20,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
     return this.createCollection_8338_0(context, node);
   }
 
-  public EditorCell createCollection_8338_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8338_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8338_0");
     editorCell.addEditorCell(this.createConstant_8338_0(context, node, "error"));
@@ -30,7 +30,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8338_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8338_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8338_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8338_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8338_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8338_1");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8338_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8338_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8338_2");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8338_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_8338_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("errorText");
     provider.setNoTargetText("<no errorText>");

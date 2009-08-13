@@ -21,7 +21,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     return this.createCollection_7535_0(context, node);
   }
 
-  public EditorCell createCollection_7535_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7535_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7535_0");
     editorCell.addEditorCell(this.createConstant_7535_0(context, node, "get output"));
@@ -29,7 +29,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createConstant_7535_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7535_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7535_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
@@ -37,7 +37,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public EditorCell createRefCell_7535_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7535_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
@@ -70,7 +70,7 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
       return this.createProperty_7535_0(context, node);
     }
 
-    public EditorCell createProperty_7535_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_7535_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

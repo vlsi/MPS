@@ -28,13 +28,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StyleSheet_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6590_0;
+  private AbstractCellListHandler myListHandler_6590_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6590_0(context, node);
   }
 
-  public EditorCell createCollection_6590_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6590_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6590_0");
     editorCell.addEditorCell(this.createCollection_6590_1(context, node));
@@ -43,7 +43,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6590_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6590_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6590_1");
     {
@@ -56,7 +56,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6590_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6590_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6590_2");
     {
@@ -68,7 +68,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6590_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6590_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6590_0");
     {
@@ -79,7 +79,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6590_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6590_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6590_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6590_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6590_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6590_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -95,7 +95,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6590_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6590_0(EditorContext context, SNode node) {
     if (this.myListHandler_6590_0 == null) {
       this.myListHandler_6590_0 = new StyleSheet_Editor.styleClassListHandler_6590_0(node, "styleClass", context);
     }
@@ -105,12 +105,12 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell6590_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell6590_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_6590_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6590_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -128,7 +128,7 @@ public class StyleSheet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class styleClassListHandler_6590_0 extends RefNodeListHandler {
+  private static class styleClassListHandler_6590_0 extends RefNodeListHandler {
 
     public styleClassListHandler_6590_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

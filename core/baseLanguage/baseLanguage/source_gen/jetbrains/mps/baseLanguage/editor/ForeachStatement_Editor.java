@@ -28,7 +28,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_0809_2(context, node);
   }
 
-  public EditorCell createCollection_0809_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0809_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0809_0");
     if (renderingCondition0809_0(node, context, context.getOperationContext().getScope())) {
@@ -46,7 +46,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0809_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0809_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0809_1");
     {
@@ -58,7 +58,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0809_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0809_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0809_2");
     editorCell.addEditorCell(this.createConstant_0809_7(context, node, "label"));
@@ -67,7 +67,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -83,7 +83,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_2");
     {
@@ -94,7 +94,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -102,7 +102,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -114,7 +114,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -122,7 +122,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_6");
     {
@@ -134,7 +134,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_7");
     {
@@ -145,7 +145,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0809_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0809_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0809_8");
     {
@@ -157,7 +157,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0809_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0809_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("iterable");
     provider.setNoTargetText("<no iterable>");
@@ -174,7 +174,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0809_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0809_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -196,7 +196,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0809_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0809_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -213,7 +213,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0809_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0809_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -232,7 +232,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0809_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_0809_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("label");
     provider.setNoTargetText("<none>");
@@ -256,7 +256,7 @@ public class ForeachStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition0809_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0809_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 

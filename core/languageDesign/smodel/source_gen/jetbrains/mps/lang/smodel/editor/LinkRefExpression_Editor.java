@@ -28,7 +28,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_7291_0(context, node);
   }
 
-  public EditorCell createCollection_7291_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7291_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7291_0");
     editorCell.addEditorCell(this.createConstant_7291_0(context, node, "link"));
@@ -40,7 +40,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7291_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7291_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7291_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7291_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7291_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7291_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7291_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7291_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7291_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7291_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7291_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7291_3");
     {
@@ -80,7 +80,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7291_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7291_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("concept");
@@ -102,7 +102,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7291_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7291_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("link");
@@ -138,7 +138,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_7291_0(context, node);
     }
 
-    public EditorCell createProperty_7291_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_7291_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -177,7 +177,7 @@ public class LinkRefExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_7291_1(context, node);
     }
 
-    public EditorCell createProperty_7291_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_7291_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

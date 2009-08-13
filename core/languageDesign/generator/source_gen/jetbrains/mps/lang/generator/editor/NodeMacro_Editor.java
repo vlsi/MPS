@@ -26,7 +26,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class NodeMacro_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myNodeMacro_postfix3474_0;
+  private AbstractCellProvider myNodeMacro_postfix3474_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3474_1(context, node);
@@ -36,7 +36,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_3474_0(context, node);
   }
 
-  public EditorCell createCollection_3474_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3474_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3474_0");
     {
@@ -49,7 +49,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3474_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3474_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3474_1");
     editorCell.addEditorCell(this.createConstant_3474_2(context, node, "$$"));
@@ -57,7 +57,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3474_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3474_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3474_2");
     {
@@ -70,7 +70,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3474_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3474_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3474_3");
     if (renderingCondition3474_0(node, context, context.getOperationContext().getScope())) {
@@ -79,7 +79,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_3474_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3474_0(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix3474_0 == null) {
       this.myNodeMacro_postfix3474_0 = new NodeMacro_postfix(node);
     }
@@ -87,14 +87,14 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3474_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3474_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3474_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3474_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3474_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3474_1");
     {
@@ -105,7 +105,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3474_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3474_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3474_2");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -119,7 +119,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3474_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3474_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3474_3");
     {
@@ -130,7 +130,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3474_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3474_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3474_4");
     {
@@ -141,7 +141,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3474_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3474_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
@@ -160,7 +160,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3474_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3474_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
   }
 
@@ -178,7 +178,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
       return this.createProperty_3474_0(context, node);
     }
 
-    public EditorCell createProperty_3474_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3474_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -18,14 +18,14 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_2838_0(context, node);
   }
 
-  public EditorCell createCollection_2838_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2838_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2838_0");
     editorCell.addEditorCell(this.createConceptProperty_2838_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_2838_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_2838_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

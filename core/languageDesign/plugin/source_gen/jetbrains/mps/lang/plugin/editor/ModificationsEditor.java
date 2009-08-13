@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ModificationsEditor extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandler_2716_0;
+  private AbstractCellListHandler myListHandler_2716_0;
 
   public ModificationsEditor(SNode node) {
     super(node);
@@ -35,7 +35,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return this.createCollection_2716_0(context, node);
   }
 
-  public EditorCell createCollection_2716_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2716_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2716_0");
     editorCell.addEditorCell(this.createConstant_2716_0(context, node, "modifications"));
@@ -43,7 +43,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_2716_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2716_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2716_1");
     {
@@ -55,7 +55,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2716_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2716_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2716_0");
     {
@@ -66,7 +66,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_2716_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2716_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2716_1");
     {
@@ -77,7 +77,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2716_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2716_0(EditorContext context, SNode node) {
     if (this.myListHandler_2716_0 == null) {
       this.myListHandler_2716_0 = new ModificationsEditor.modifierListHandler_2716_0(node, "modifier", context);
     }
@@ -87,7 +87,7 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class modifierListHandler_2716_0 extends RefNodeListHandler {
+  private static class modifierListHandler_2716_0 extends RefNodeListHandler {
 
     public modifierListHandler_2716_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

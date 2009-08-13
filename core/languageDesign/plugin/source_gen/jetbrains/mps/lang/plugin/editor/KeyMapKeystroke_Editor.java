@@ -31,7 +31,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return this.createCollection_0302_0(context, node);
   }
 
-  public EditorCell createCollection_0302_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0302_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0302_0");
     editorCell.addEditorCell(this.createConstant_0302_0(context, node, "<"));
@@ -44,7 +44,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0302_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0302_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0302_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -58,7 +58,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0302_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0302_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0302_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -72,7 +72,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0302_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0302_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0302_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -86,7 +86,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0302_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0302_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0302_3");
     {
@@ -99,7 +99,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0302_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0302_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0302_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -113,7 +113,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0302_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0302_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("modifiers");
     provider.setNoTargetText("any");
@@ -137,7 +137,7 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0302_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_0302_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("keycode");
     provider.setNoTargetText("<keycode>");

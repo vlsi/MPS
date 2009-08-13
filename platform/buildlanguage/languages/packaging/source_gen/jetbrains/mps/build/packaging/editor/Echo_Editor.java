@@ -24,8 +24,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Echo_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent3881_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent3881_1;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent3881_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent3881_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_3881_0(context, node);
@@ -35,7 +35,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return this.createCollection_3881_1(context, node);
   }
 
-  public EditorCell createCollection_3881_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3881_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3881_0");
     editorCell.addEditorCell(this.createConceptProperty_3881_0(context, node));
@@ -51,7 +51,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3881_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3881_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3881_1");
     editorCell.addEditorCell(this.createComponent_3881_1(context, node));
@@ -59,7 +59,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3881_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3881_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3881_2");
     {
@@ -72,7 +72,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_3881_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_3881_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3881_0 == null) {
       this.myConfigurationReferencesEditorComponent3881_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -80,7 +80,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_3881_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_3881_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent3881_1 == null) {
       this.myConfigurationReferencesEditorComponent3881_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -88,7 +88,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3881_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3881_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3881_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -100,7 +100,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3881_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3881_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3881_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -112,7 +112,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3881_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3881_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3881_2");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -120,7 +120,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_3881_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3881_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -139,7 +139,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3881_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3881_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -156,7 +156,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3881_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3881_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -173,7 +173,7 @@ public class Echo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3881_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3881_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("append");
     provider.setNoTargetText("<no append>");
@@ -192,11 +192,11 @@ public class Echo_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3881_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3881_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "append");
   }
 
-  public static boolean renderingCondition3881_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3881_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "append"));
   }
 

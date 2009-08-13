@@ -23,14 +23,14 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
     return this.createCollection_3163_0(context, node);
   }
 
-  public EditorCell createCollection_3163_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3163_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_3163_0");
     editorCell.addEditorCell(this.createRefCell_3163_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_3163_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3163_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<choose concept>");
@@ -66,7 +66,7 @@ public class RefConcept_Reference_Editor extends DefaultNodeEditor {
       return this.createProperty_3163_0(context, node);
     }
 
-    public EditorCell createProperty_3163_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3163_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

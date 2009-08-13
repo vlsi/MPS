@@ -14,7 +14,7 @@ public class MenuPart_Editor extends DefaultNodeEditor {
     return this.createError_1562_0(context, node);
   }
 
-  public EditorCell createError_1562_0(EditorContext context, SNode node) {
+  private EditorCell createError_1562_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "menuPart");
     editorCell.setCellId("Error_1562_0");
     return editorCell;

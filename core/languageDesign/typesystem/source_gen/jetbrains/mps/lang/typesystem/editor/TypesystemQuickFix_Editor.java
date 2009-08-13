@@ -26,13 +26,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6837_0;
+  private AbstractCellListHandler myListHandler_6837_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6837_0(context, node);
   }
 
-  public EditorCell createCollection_6837_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6837_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6837_0");
     editorCell.addEditorCell(this.createCollection_6837_1(context, node));
@@ -46,7 +46,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6837_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6837_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6837_1");
     {
@@ -59,14 +59,14 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6837_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6837_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6837_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6837_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6837_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6837_1");
     {
@@ -77,14 +77,14 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6837_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6837_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6837_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6837_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6837_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6837_3");
     {
@@ -95,7 +95,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6837_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6837_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6837_4");
     {
@@ -106,7 +106,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6837_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6837_0(EditorContext context, SNode node) {
     if (this.myListHandler_6837_0 == null) {
       this.myListHandler_6837_0 = new TypesystemQuickFix_Editor.quickFixArgumentListHandler_6837_0(node, "quickFixArgument", context);
     }
@@ -116,7 +116,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6837_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -134,7 +134,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6837_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6837_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("executeBlock");
     provider.setNoTargetText("<no executeBlock>");
@@ -151,7 +151,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6837_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6837_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("descriptionBlock");
     provider.setNoTargetText("<no descriptionBlock>");
@@ -168,7 +168,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class quickFixArgumentListHandler_6837_0 extends RefNodeListHandler {
+  private static class quickFixArgumentListHandler_6837_0 extends RefNodeListHandler {
 
     public quickFixArgumentListHandler_6837_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

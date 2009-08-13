@@ -23,14 +23,14 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     return this.createCollection_2400_0(context, node);
   }
 
-  public EditorCell createCollection_2400_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2400_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2400_0");
     editorCell.addEditorCell(this.createRefCell_2400_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefCell_2400_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2400_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("intfc");
     provider.setNoTargetText("<no intfc>");
@@ -66,7 +66,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
       return this.createProperty_2400_0(context, node);
     }
 
-    public EditorCell createProperty_2400_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2400_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

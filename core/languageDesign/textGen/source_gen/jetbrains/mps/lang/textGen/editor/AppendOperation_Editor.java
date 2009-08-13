@@ -23,13 +23,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class AppendOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7985_0;
+  private AbstractCellListHandler myListHandler_7985_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7985_0(context, node);
   }
 
-  public EditorCell createCollection_7985_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7985_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7985_0");
     editorCell.addEditorCell(this.createConstant_7985_0(context, node, "append"));
@@ -38,7 +38,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7985_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7985_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7985_0");
     TextGenStyles_StyleSheet.getTextGenOperation(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7985_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7985_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7985_1");
     {
@@ -57,7 +57,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7985_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7985_0(EditorContext context, SNode node) {
     if (this.myListHandler_7985_0 == null) {
       this.myListHandler_7985_0 = new AppendOperation_Editor.partListHandler_7985_0(node, "part", context);
     }
@@ -67,7 +67,7 @@ public class AppendOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class partListHandler_7985_0 extends RefNodeListHandler {
+  private static class partListHandler_7985_0 extends RefNodeListHandler {
 
     public partListHandler_7985_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

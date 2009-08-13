@@ -25,7 +25,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return this.createCollection_8785_0(context, node);
   }
 
-  public EditorCell createCollection_8785_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8785_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8785_0");
     if (renderingCondition8785_0(node, context, context.getOperationContext().getScope())) {
@@ -38,7 +38,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8785_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8785_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
@@ -55,7 +55,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8785_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_8785_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
@@ -78,7 +78,7 @@ public class Quantity_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8785_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_8785_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
@@ -102,11 +102,11 @@ public class Quantity_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8785_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8785_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
   }
 
-  public static boolean renderingCondition8785_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8785_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH"));
   }
 

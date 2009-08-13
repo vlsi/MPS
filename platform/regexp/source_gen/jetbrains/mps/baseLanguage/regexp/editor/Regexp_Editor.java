@@ -14,7 +14,7 @@ public class Regexp_Editor extends DefaultNodeEditor {
     return this.createError_2317_0(context, node);
   }
 
-  public EditorCell createError_2317_0(EditorContext context, SNode node) {
+  private EditorCell createError_2317_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "regexp");
     editorCell.setCellId("Error_2317_0");
     return editorCell;

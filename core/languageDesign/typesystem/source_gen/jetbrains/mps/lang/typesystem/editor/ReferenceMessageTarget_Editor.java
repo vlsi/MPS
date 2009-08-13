@@ -22,7 +22,7 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     return this.createCollection_8369_0(context, node);
   }
 
-  public EditorCell createCollection_8369_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8369_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8369_0");
     editorCell.addEditorCell(this.createConstant_8369_0(context, node, "reference"));
@@ -30,7 +30,7 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8369_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8369_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8369_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8369_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8369_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no linkDeclaration>");
@@ -70,7 +70,7 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
       return this.createProperty_8369_0(context, node);
     }
 
-    public EditorCell createProperty_8369_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8369_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

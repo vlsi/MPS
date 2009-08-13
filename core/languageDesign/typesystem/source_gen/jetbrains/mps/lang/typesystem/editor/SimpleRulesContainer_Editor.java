@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_7856_0;
+  private AbstractCellListHandler myListHandler_7856_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7856_0(context, node);
   }
 
-  public EditorCell createCollection_7856_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7856_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7856_0");
     editorCell.addEditorCell(this.createConstant_7856_0(context, node, "simple rules container"));
@@ -37,14 +37,14 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7856_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7856_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7856_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_7856_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7856_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7856_1");
     {
@@ -55,7 +55,7 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7856_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7856_0(EditorContext context, SNode node) {
     if (this.myListHandler_7856_0 == null) {
       this.myListHandler_7856_0 = new SimpleRulesContainer_Editor.simpleRuleListHandler_7856_0(node, "simpleRule", context);
     }
@@ -65,7 +65,7 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class simpleRuleListHandler_7856_0 extends RefNodeListHandler {
+  private static class simpleRuleListHandler_7856_0 extends RefNodeListHandler {
 
     public simpleRuleListHandler_7856_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -21,7 +21,7 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     return this.createCollection_1626_0(context, node);
   }
 
-  public EditorCell createCollection_1626_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1626_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1626_0");
     editorCell.addEditorCell(this.createConstant_1626_0(context, node, "if"));
@@ -31,7 +31,7 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1626_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1626_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1626_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -39,7 +39,7 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1626_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1626_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1626_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1626_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_1626_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("artifactName");
     provider.setNoTargetText("<no artifactName>");
@@ -65,7 +65,7 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1626_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1626_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("create");
     provider.setNoTargetText("<no create>");

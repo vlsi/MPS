@@ -27,7 +27,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_1167_0(context, node);
   }
 
-  public EditorCell createCollection_1167_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1167_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_1167_0");
     editorCell.addEditorCell(this.createConstant_1167_0(context, node, "set"));
@@ -39,7 +39,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1167_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1167_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1167_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1167_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1167_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1167_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1167_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1167_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1167_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1167_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1167_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1167_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -76,7 +76,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1167_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1167_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("index");
     provider.setNoTargetText("<no index>");
@@ -96,7 +96,7 @@ public class SetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1167_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1167_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("element");
     provider.setNoTargetText("<no element>");

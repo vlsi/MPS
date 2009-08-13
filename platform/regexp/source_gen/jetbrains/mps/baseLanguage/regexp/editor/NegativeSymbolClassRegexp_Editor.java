@@ -19,13 +19,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9912_0;
+  private AbstractCellListHandler myListHandler_9912_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9912_0(context, node);
   }
 
-  public EditorCell createCollection_9912_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9912_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9912_0");
     editorCell.addEditorCell(this.createConstant_9912_0(context, node, "[^"));
@@ -34,7 +34,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9912_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9912_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9912_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9912_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9912_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9912_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9912_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9912_0(EditorContext context, SNode node) {
     if (this.myListHandler_9912_0 == null) {
       this.myListHandler_9912_0 = new NegativeSymbolClassRegexp_Editor.partListHandler_9912_0(node, "part", context);
     }
@@ -60,7 +60,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class partListHandler_9912_0 extends RefNodeListHandler {
+  private static class partListHandler_9912_0 extends RefNodeListHandler {
 
     public partListHandler_9912_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

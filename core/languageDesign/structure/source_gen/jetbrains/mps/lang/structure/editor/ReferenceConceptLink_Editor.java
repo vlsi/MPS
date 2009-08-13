@@ -25,7 +25,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     return this.createCollection_3669_0(context, node);
   }
 
-  public EditorCell createCollection_3669_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3669_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3669_0");
     editorCell.addEditorCell(this.createRefCell_3669_0(context, node));
@@ -34,14 +34,14 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3669_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3669_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3669_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_3669_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3669_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("referenceConceptLinkDeclaration");
     provider.setNoTargetText("<no link>");
@@ -59,7 +59,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3669_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3669_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
@@ -91,7 +91,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       return this.createProperty_3669_0(context, node);
     }
 
-    public EditorCell createProperty_3669_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3669_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -130,7 +130,7 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       return this.createProperty_3669_1(context, node);
     }
 
-    public EditorCell createProperty_3669_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_3669_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

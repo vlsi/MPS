@@ -30,11 +30,11 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_Component_Visibility6130_0;
-  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent6130_0;
-  /* package */AbstractCellProvider my_DeprecatedPart6130_0;
-  /* package */AbstractCellListHandler myListHandler_6130_0;
-  /* package */AbstractCellListHandler myListHandler_6130_1;
+  private AbstractCellProvider my_Component_Visibility6130_0;
+  private AbstractCellProvider myVariableDeclaration_NameCellComponent6130_0;
+  private AbstractCellProvider my_DeprecatedPart6130_0;
+  private AbstractCellListHandler myListHandler_6130_0;
+  private AbstractCellListHandler myListHandler_6130_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6130_1(context, node);
@@ -44,7 +44,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_6130_0(context, node);
   }
 
-  public EditorCell createCollection_6130_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6130_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6130_0");
     editorCell.addEditorCell(this.createConstant_6130_0(context, node, "isFinal"));
@@ -54,7 +54,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6130_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6130_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6130_1");
     editorCell.addEditorCell(this.createComponent_6130_2(context, node));
@@ -75,7 +75,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6130_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6130_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6130_2");
     {
@@ -87,7 +87,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6130_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_6130_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6130_3");
     {
@@ -99,7 +99,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6130_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6130_0(EditorContext context, SNode node) {
     if (this.my_Component_Visibility6130_0 == null) {
       this.my_Component_Visibility6130_0 = new _Component_Visibility(node);
     }
@@ -107,7 +107,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6130_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_6130_1(EditorContext context, SNode node) {
     if (this.myVariableDeclaration_NameCellComponent6130_0 == null) {
       this.myVariableDeclaration_NameCellComponent6130_0 = new VariableDeclaration_NameCellComponent(node);
     }
@@ -116,7 +116,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_6130_2(EditorContext context, SNode node) {
+  private EditorCell createComponent_6130_2(EditorContext context, SNode node) {
     if (this.my_DeprecatedPart6130_0 == null) {
       this.my_DeprecatedPart6130_0 = new _DeprecatedPart(node);
     }
@@ -128,14 +128,14 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -143,7 +143,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -151,7 +151,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_3");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
@@ -159,7 +159,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_4");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -171,7 +171,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6130_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6130_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6130_5");
     {
@@ -182,7 +182,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6130_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6130_0(EditorContext context, SNode node) {
     if (this.myListHandler_6130_0 == null) {
       this.myListHandler_6130_0 = new StaticFieldDeclaration_Editor.annotationListHandler_6130_0(node, "annotation", context);
     }
@@ -196,7 +196,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6130_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6130_1(EditorContext context, SNode node) {
     if (this.myListHandler_6130_1 == null) {
       this.myListHandler_6130_1 = new StaticFieldDeclaration_Editor.annotationListHandler_6130_1(node, "annotation", context);
     }
@@ -210,7 +210,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6130_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6130_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("isFinal");
     provider.setNoTargetText("<no isFinal>");
@@ -232,7 +232,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6130_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6130_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -249,7 +249,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6130_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6130_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("initializer");
     provider.setNoTargetText("<no initializer>");
@@ -271,19 +271,19 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6130_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6130_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  public static boolean renderingCondition6130_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6130_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
-  public static boolean renderingCondition6130_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6130_2(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static class annotationListHandler_6130_0 extends RefNodeListHandler {
+  private static class annotationListHandler_6130_0 extends RefNodeListHandler {
 
     public annotationListHandler_6130_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -326,7 +326,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class annotationListHandler_6130_1 extends RefNodeListHandler {
+  private static class annotationListHandler_6130_1 extends RefNodeListHandler {
 
     public annotationListHandler_6130_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

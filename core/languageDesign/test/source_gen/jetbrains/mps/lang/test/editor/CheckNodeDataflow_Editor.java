@@ -21,7 +21,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return this.createCollection_0726_0(context, node);
   }
 
-  public EditorCell createCollection_0726_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0726_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0726_0");
     editorCell.addEditorCell(this.createConstant_0726_0(context, node, "check"));
@@ -31,7 +31,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0726_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0726_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0726_0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
@@ -39,7 +39,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0726_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0726_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0726_1");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
@@ -47,7 +47,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0726_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0726_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0726_2");
     {
@@ -58,7 +58,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0726_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0726_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");

@@ -26,7 +26,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return this.createCollection_2499_1(context, node);
   }
 
-  public EditorCell createCollection_2499_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2499_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2499_0");
     {
@@ -39,14 +39,14 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2499_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2499_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2499_1");
     editorCell.addEditorCell(this.createCollection_2499_2(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_2499_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2499_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2499_2");
     editorCell.addEditorCell(this.createConstant_2499_2(context, node, "with"));
@@ -55,7 +55,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2499_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2499_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2499_0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2499_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2499_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2499_1");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
@@ -80,21 +80,21 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2499_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2499_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2499_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2499_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2499_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2499_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_2499_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2499_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -111,7 +111,7 @@ public class NodeAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2499_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2499_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("withIndent");
     provider.setNoTargetText("<no withIndent>");

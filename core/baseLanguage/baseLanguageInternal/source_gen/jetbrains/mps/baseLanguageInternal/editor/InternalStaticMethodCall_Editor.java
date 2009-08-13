@@ -31,14 +31,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments4702_0;
-  /* package */AbstractCellListHandler myListHandler_4702_0;
+  private AbstractCellProvider myIMethodCall_actualArguments4702_0;
+  private AbstractCellListHandler myListHandler_4702_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4702_0(context, node);
   }
 
-  public EditorCell createCollection_4702_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4702_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4702_0");
     editorCell.addEditorCell(this.createConstant_4702_1(context, node, "["));
@@ -54,7 +54,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_4702_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_4702_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments4702_0 == null) {
       this.myIMethodCall_actualArguments4702_0 = new IMethodCall_actualArguments(node);
     }
@@ -62,14 +62,14 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4702_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4702_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4702_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4702_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4702_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4702_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -82,7 +82,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4702_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4702_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4702_2");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -95,7 +95,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4702_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4702_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4702_3");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -107,7 +107,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4702_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4702_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4702_4");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -119,7 +119,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_4702_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_4702_0(EditorContext context, SNode node) {
     if (this.myListHandler_4702_0 == null) {
       this.myListHandler_4702_0 = new InternalStaticMethodCall_Editor.typeParameterListHandler_4702_0(node, "typeParameter", context);
     }
@@ -129,7 +129,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4702_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4702_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("methodName");
     provider.setNoTargetText("<no methodName>");
@@ -148,7 +148,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4702_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_4702_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -167,7 +167,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4702_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4702_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("returnType");
     provider.setNoTargetText("<no returnType>");
@@ -184,7 +184,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class typeParameterListHandler_4702_0 extends RefNodeListHandler {
+  private static class typeParameterListHandler_4702_0 extends RefNodeListHandler {
 
     public typeParameterListHandler_4702_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -237,7 +237,7 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstant_4702_5(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_4702_5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_4702_5");
       editorCell.setDefaultText("");

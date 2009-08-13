@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Style_Component extends AbstractCellProvider {
 
-  /* package */AbstractCellListHandler myListHandler_7233_0;
+  private AbstractCellListHandler myListHandler_7233_0;
 
   public Style_Component(SNode node) {
     super(node);
@@ -42,7 +42,7 @@ public class Style_Component extends AbstractCellProvider {
     return this.createCollection_7233_0(context, node);
   }
 
-  public EditorCell createCollection_7233_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7233_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_7233_0");
     editorCell.addEditorCell(this.createCollection_7233_2(context, node));
@@ -52,7 +52,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7233_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_7233_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7233_1");
     {
@@ -64,7 +64,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_7233_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_7233_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7233_2");
     {
@@ -77,7 +77,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7233_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7233_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7233_0");
     Styles_StyleSheet.getStyle(editorCell).apply(editorCell);
@@ -85,7 +85,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7233_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7233_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7233_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -93,7 +93,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7233_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7233_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7233_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -101,7 +101,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_7233_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7233_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7233_3");
     {
@@ -112,7 +112,7 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_7233_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_7233_0(EditorContext context, SNode node) {
     if (this.myListHandler_7233_0 == null) {
       this.myListHandler_7233_0 = new Style_Component.styleItemListHandler_7233_0(node, "styleItem", context);
     }
@@ -122,12 +122,12 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createIndentCell7233_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell7233_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefCell_7233_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7233_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("styleClass");
     provider.setNoTargetText("<no base style>");
@@ -159,7 +159,7 @@ public class Style_Component extends AbstractCellProvider {
       return this.createProperty_7233_0(context, node);
     }
 
-    public EditorCell createProperty_7233_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_7233_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -179,7 +179,7 @@ public class Style_Component extends AbstractCellProvider {
     }
 
 }
-  public static class styleItemListHandler_7233_0 extends RefNodeListHandler {
+  private static class styleItemListHandler_7233_0 extends RefNodeListHandler {
 
     public styleItemListHandler_7233_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -53,7 +53,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     return style;
   }
 
-  public static boolean _StyleParameter_QueryFunction_1230640044409(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1230640044409(SNode node, EditorContext editorContext) {
     return true;
   }
 

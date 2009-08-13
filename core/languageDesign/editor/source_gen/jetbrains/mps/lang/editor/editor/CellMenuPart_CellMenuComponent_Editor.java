@@ -24,7 +24,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return this.createCollection_8123_0(context, node);
   }
 
-  public EditorCell createCollection_8123_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8123_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8123_0");
     editorCell.addEditorCell(this.createCollection_8123_1(context, node));
@@ -32,7 +32,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8123_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8123_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8123_1");
     {
@@ -43,7 +43,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8123_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8123_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8123_2");
     {
@@ -57,7 +57,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8123_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8123_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8123_0");
     {
@@ -69,7 +69,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8123_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8123_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8123_1");
     {
@@ -80,7 +80,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8123_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8123_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8123_2");
     {
@@ -91,7 +91,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8123_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8123_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8123_3");
     {
@@ -102,7 +102,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8123_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8123_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("cellMenuComponent");
     provider.setNoTargetText("<choose menu component>");
@@ -134,7 +134,7 @@ public class CellMenuPart_CellMenuComponent_Editor extends DefaultNodeEditor {
       return this.createProperty_8123_0(context, node);
     }
 
-    public EditorCell createProperty_8123_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8123_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

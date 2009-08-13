@@ -26,7 +26,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
     return this.createCollection_5914_0(context, node);
   }
 
-  public EditorCell createCollection_5914_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5914_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5914_0");
     editorCell.addEditorCell(this.createConstant_5914_0(context, node, "tool"));
@@ -36,7 +36,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5914_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5914_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5914_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -48,7 +48,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5914_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5914_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5914_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -61,7 +61,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5914_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5914_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5914_2");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
@@ -73,7 +73,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_5914_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_5914_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("tool");
     provider.setNoTargetText("<no tool>");
@@ -105,7 +105,7 @@ public class ToolType_Editor extends DefaultNodeEditor {
       return this.createProperty_5914_0(context, node);
     }
 
-    public EditorCell createProperty_5914_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_5914_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

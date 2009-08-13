@@ -18,14 +18,14 @@ public class IndentLinePart_Editor extends DefaultNodeEditor {
     return this.createCollection_9913_0(context, node);
   }
 
-  public EditorCell createCollection_9913_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9913_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9913_0");
     editorCell.addEditorCell(this.createConstant_9913_0(context, node, "--->"));
     return editorCell;
   }
 
-  public EditorCell createConstant_9913_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9913_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9913_0");
     {

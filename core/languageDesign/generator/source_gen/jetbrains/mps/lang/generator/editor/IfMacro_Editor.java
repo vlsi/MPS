@@ -28,7 +28,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class IfMacro_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myNodeMacro_postfix1955_0;
+  private AbstractCellProvider myNodeMacro_postfix1955_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1955_1(context, node);
@@ -38,7 +38,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_1955_0(context, node);
   }
 
-  public EditorCell createCollection_1955_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1955_0");
     {
@@ -51,7 +51,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_1");
     editorCell.addEditorCell(this.createConstant_1955_1(context, node, "$IF$"));
@@ -62,7 +62,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1955_2");
     {
@@ -77,7 +77,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_3");
     {
@@ -90,7 +90,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_4");
     {
@@ -103,7 +103,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_5");
     {
@@ -116,7 +116,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_6");
     {
@@ -129,7 +129,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1955_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_1955_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1955_7");
     {
@@ -142,7 +142,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1955_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1955_0(EditorContext context, SNode node) {
     if (this.myNodeMacro_postfix1955_0 == null) {
       this.myNodeMacro_postfix1955_0 = new NodeMacro_postfix(node);
     }
@@ -150,7 +150,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_0");
     {
@@ -163,7 +163,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_1");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -180,7 +180,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_2");
     {
@@ -191,7 +191,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_3");
     {
@@ -202,7 +202,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_4");
     {
@@ -213,7 +213,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_5");
     {
@@ -224,7 +224,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_6");
     {
@@ -235,14 +235,14 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_8");
     {
@@ -253,7 +253,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_9");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
@@ -265,21 +265,21 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1955_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1955_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1955_12");
     {
@@ -290,7 +290,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1955_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1955_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<none>");
@@ -310,7 +310,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1955_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1955_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("alternativeConsequence");
     provider.setNoTargetText("<none>");
@@ -327,7 +327,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1955_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1955_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
@@ -345,7 +345,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1955_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1955_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("alternativeConsequence");
     provider.setNoTargetText("<no alternativeConsequence>");
@@ -366,7 +366,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_1955_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_1955_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -386,7 +386,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition1955_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition1955_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
 
@@ -404,7 +404,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       return this.createProperty_1955_0(context, node);
     }
 
-    public EditorCell createProperty_1955_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1955_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

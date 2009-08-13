@@ -23,7 +23,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_7750_0(context, node);
   }
 
-  public EditorCell createCollection_7750_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7750_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_7750_0");
     editorCell.addEditorCell(this.createConstant_7750_0(context, node, "<"));
@@ -32,7 +32,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7750_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7750_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7750_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -40,7 +40,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7750_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7750_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7750_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -51,7 +51,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_7750_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_7750_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("member");
     provider.setNoTargetText("<no member>");
@@ -83,7 +83,7 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_7750_0(context, node);
     }
 
-    public EditorCell createProperty_7750_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_7750_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("externalValue");
       provider.setNoTargetText("<no externalValue>");

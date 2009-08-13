@@ -22,7 +22,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return this.createCollection_4977_0(context, node);
   }
 
-  public EditorCell createCollection_4977_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4977_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4977_0");
     editorCell.addEditorCell(this.createConstant_4977_0(context, node, "assert false"));
@@ -31,7 +31,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4977_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4977_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4977_0");
     {
@@ -42,7 +42,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4977_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4977_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4977_1");
     {
@@ -53,7 +53,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4977_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4977_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");

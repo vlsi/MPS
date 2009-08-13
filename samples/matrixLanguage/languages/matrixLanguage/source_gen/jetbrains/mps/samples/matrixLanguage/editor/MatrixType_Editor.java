@@ -20,7 +20,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return this.createCollection_2303_0(context, node);
   }
 
-  public EditorCell createCollection_2303_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2303_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2303_0");
     editorCell.addEditorCell(this.createConstant_2303_0(context, node, "matrix"));
@@ -30,7 +30,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2303_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2303_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2303_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -38,7 +38,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2303_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2303_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2303_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -46,7 +46,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2303_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2303_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2303_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2303_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2303_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scalarType");
     provider.setNoTargetText("<no scalarType>");

@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StateMachineTest_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_1076_0;
+  private AbstractCellListHandler myListHandler_1076_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1076_0(context, node);
   }
 
-  public EditorCell createCollection_1076_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1076_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1076_0");
     editorCell.addEditorCell(this.createCollection_1076_1(context, node));
@@ -42,7 +42,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1076_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1076_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1076_1");
     {
@@ -54,21 +54,21 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1076_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1076_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1076_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_1076_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1076_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1076_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1076_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1076_0(EditorContext context, SNode node) {
     if (this.myListHandler_1076_0 == null) {
       this.myListHandler_1076_0 = new StateMachineTest_Editor.testMethodListHandler_1076_0(node, "testMethod", context);
     }
@@ -78,7 +78,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_1076_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_1076_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("stateMachine");
     provider.setNoTargetText("<no stateMachine>");
@@ -110,7 +110,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
       return this.createProperty_1076_0(context, node);
     }
 
-    public EditorCell createProperty_1076_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_1076_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("stateMachineName");
       provider.setNoTargetText("<no stateMachineName>");
@@ -130,7 +130,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class testMethodListHandler_1076_0 extends RefNodeListHandler {
+  private static class testMethodListHandler_1076_0 extends RefNodeListHandler {
 
     public testMethodListHandler_1076_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

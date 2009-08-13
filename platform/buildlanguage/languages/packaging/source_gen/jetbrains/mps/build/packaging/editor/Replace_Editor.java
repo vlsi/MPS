@@ -28,9 +28,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Replace_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent1160_0;
-  /* package */AbstractCellProvider myConfigurationReferencesEditorComponent1160_1;
-  /* package */AbstractCellListHandler myListHandler_1160_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent1160_0;
+  private AbstractCellProvider myConfigurationReferencesEditorComponent1160_1;
+  private AbstractCellListHandler myListHandler_1160_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_1160_0(context, node);
@@ -40,7 +40,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return this.createCollection_1160_2(context, node);
   }
 
-  public EditorCell createCollection_1160_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_1160_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1160_0");
     editorCell.addEditorCell(this.createCollection_1160_1(context, node));
@@ -48,7 +48,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1160_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_1160_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1160_1");
     editorCell.addEditorCell(this.createConceptProperty_1160_0(context, node));
@@ -59,14 +59,14 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_1160_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_1160_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_1160_2");
     editorCell.addEditorCell(this.createComponent_1160_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createCollection_1160_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_1160_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_1160_3");
     {
@@ -78,7 +78,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1160_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1160_0(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1160_0 == null) {
       this.myConfigurationReferencesEditorComponent1160_0 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -86,7 +86,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_1160_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_1160_1(EditorContext context, SNode node) {
     if (this.myConfigurationReferencesEditorComponent1160_1 == null) {
       this.myConfigurationReferencesEditorComponent1160_1 = new ConfigurationReferencesEditorComponent(node);
     }
@@ -94,7 +94,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_1160_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_1160_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_1160_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -102,7 +102,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_1160_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_1160_0(EditorContext context, SNode node) {
     if (this.myListHandler_1160_0 == null) {
       this.myListHandler_1160_0 = new Replace_Editor.replacingPairListHandler_1160_0(node, "replacingPair", context);
     }
@@ -116,12 +116,12 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell1160_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell1160_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_1160_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1160_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -138,7 +138,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_1160_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_1160_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -157,7 +157,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_1160_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_1160_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourcePath");
     provider.setNoTargetText("<no sourcePath>");
@@ -174,7 +174,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class replacingPairListHandler_1160_0 extends RefNodeListHandler {
+  private static class replacingPairListHandler_1160_0 extends RefNodeListHandler {
 
     public replacingPairListHandler_1160_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -220,7 +220,7 @@ public class Replace_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-    public EditorCell createConstant_1160_1(EditorContext context, SNode node, String text) {
+    private EditorCell createConstant_1160_1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
       editorCell.setCellId("Constant_1160_1");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);

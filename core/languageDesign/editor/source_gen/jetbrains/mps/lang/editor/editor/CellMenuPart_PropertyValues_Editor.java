@@ -22,7 +22,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return this.createCollection_0074_0(context, node);
   }
 
-  public EditorCell createCollection_0074_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0074_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_0074_0");
     editorCell.addEditorCell(this.createCollection_0074_2(context, node));
@@ -30,7 +30,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0074_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0074_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0074_1");
     {
@@ -44,7 +44,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0074_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_0074_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_0074_2");
     {
@@ -55,7 +55,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0074_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0074_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0074_0");
     {
@@ -66,7 +66,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0074_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0074_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0074_1");
     {
@@ -77,7 +77,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0074_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0074_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0074_2");
     {
@@ -89,7 +89,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0074_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0074_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0074_3");
     {
@@ -100,7 +100,7 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0074_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0074_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("valuesFunction");
     provider.setNoTargetText("<no valuesFunction>");

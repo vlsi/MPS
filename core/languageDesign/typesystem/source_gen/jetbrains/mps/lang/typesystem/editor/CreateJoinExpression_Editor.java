@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CreateJoinExpression_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_6670_0;
+  private AbstractCellListHandler myListHandler_6670_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_6670_0(context, node);
   }
 
-  public EditorCell createCollection_6670_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6670_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6670_0");
     editorCell.addEditorCell(this.createConceptProperty_6670_0(context, node));
@@ -46,7 +46,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6670_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6670_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6670_0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -54,7 +54,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6670_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6670_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6670_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
@@ -62,21 +62,21 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6670_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6670_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6670_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6670_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6670_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6670_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_6670_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_6670_0(EditorContext context, SNode node) {
     if (this.myListHandler_6670_0 == null) {
       this.myListHandler_6670_0 = new CreateJoinExpression_Editor.argumentListHandler_6670_0(node, "argument", context);
     }
@@ -86,7 +86,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_6670_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_6670_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -104,7 +104,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_6670_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_6670_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("conceptOfInstance");
     provider.setNoTargetText("<no conceptOfInstance>");
@@ -136,7 +136,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
       return this.createProperty_6670_0(context, node);
     }
 
-    public EditorCell createProperty_6670_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_6670_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -156,7 +156,7 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class argumentListHandler_6670_0 extends RefNodeListHandler {
+  private static class argumentListHandler_6670_0 extends RefNodeListHandler {
 
     public argumentListHandler_6670_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

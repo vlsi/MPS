@@ -37,13 +37,13 @@ import java.util.ArrayList;
 
 public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_0912_0;
+  private AbstractCellListHandler myListHandler_0912_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_0912_0(context, node);
   }
 
-  public EditorCell createCollection_0912_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0912_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0912_0");
     if (renderingCondition0912_0(node, context, context.getOperationContext().getScope())) {
@@ -58,7 +58,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_0912_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_0912_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0912_1");
     {
@@ -70,7 +70,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0912_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0912_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0912_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -78,7 +78,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0912_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0912_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0912_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -87,7 +87,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_0912_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_0912_0(EditorContext context, SNode node) {
     if (this.myListHandler_0912_0 == null) {
       this.myListHandler_0912_0 = new NamedTupleComponentDeclaration_Editor.annotationListHandler_0912_0(node, "annotation", context);
     }
@@ -101,7 +101,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0912_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0912_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -122,7 +122,7 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_0912_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0912_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -142,15 +142,15 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition0912_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0912_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
 
-  public static boolean renderingCondition0912_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0912_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "final");
   }
 
-  public static class annotationListHandler_0912_0 extends RefNodeListHandler {
+  private static class annotationListHandler_0912_0 extends RefNodeListHandler {
 
     public annotationListHandler_0912_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

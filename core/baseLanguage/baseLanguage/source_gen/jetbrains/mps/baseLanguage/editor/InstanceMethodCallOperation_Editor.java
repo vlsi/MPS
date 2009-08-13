@@ -18,13 +18,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myIMethodCall_actualArguments2215_0;
+  private AbstractCellProvider myIMethodCall_actualArguments2215_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2215_0(context, node);
   }
 
-  public EditorCell createCollection_2215_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2215_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2215_0");
     editorCell.addEditorCell(this.createRefCell_2215_0(context, node));
@@ -32,7 +32,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_2215_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2215_0(EditorContext context, SNode node) {
     if (this.myIMethodCall_actualArguments2215_0 == null) {
       this.myIMethodCall_actualArguments2215_0 = new IMethodCall_actualArguments(node);
     }
@@ -44,7 +44,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_2215_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_2215_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no method>");
@@ -76,7 +76,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_2215_0(context, node);
     }
 
-    public EditorCell createProperty_2215_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_2215_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -25,7 +25,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_6285_0(context, node);
   }
 
-  public EditorCell createAlternation_6285_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_6285_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = RemarkStatement_Editor.renderingCondition6285_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -39,7 +39,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6285_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6285_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6285_0");
     editorCell.addEditorCell(this.createConstant_6285_0(context, node, "//"));
@@ -47,7 +47,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6285_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6285_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6285_0");
     {
@@ -59,7 +59,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6285_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6285_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("");
@@ -83,7 +83,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6285_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_6285_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -107,7 +107,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6285_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6285_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }
 

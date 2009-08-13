@@ -22,13 +22,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ArrayCreator_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_5783_0;
+  private AbstractCellListHandler myListHandler_5783_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_5783_0(context, node);
   }
 
-  public EditorCell createCollection_5783_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5783_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_5783_0");
     editorCell.addEditorCell(this.createRefNode_5783_0(context, node));
@@ -36,7 +36,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_5783_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_5783_0(EditorContext context, SNode node) {
     if (this.myListHandler_5783_0 == null) {
       this.myListHandler_5783_0 = new ArrayCreator_Editor.dimensionExpressionListHandler_5783_0(node, "dimensionExpression", context);
     }
@@ -46,7 +46,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5783_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5783_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("componentType");
     provider.setNoTargetText("<no componentType>");
@@ -63,7 +63,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class dimensionExpressionListHandler_5783_0 extends RefNodeListHandler {
+  private static class dimensionExpressionListHandler_5783_0 extends RefNodeListHandler {
 
     public dimensionExpressionListHandler_5783_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

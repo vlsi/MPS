@@ -27,13 +27,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MacConfig_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8715_0;
+  private AbstractCellListHandler myListHandler_8715_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8715_0(context, node);
   }
 
-  public EditorCell createCollection_8715_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8715_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8715_0");
     editorCell.addEditorCell(this.createConceptProperty_8715_0(context, node));
@@ -44,7 +44,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8715_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8715_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8715_1");
     {
@@ -60,7 +60,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8715_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8715_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8715_2");
     {
@@ -72,7 +72,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8715_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_8715_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8715_3");
     {
@@ -85,7 +85,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8715_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_8715_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8715_4");
     {
@@ -98,14 +98,14 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8715_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8715_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8715_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8715_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8715_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8715_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -113,7 +113,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8715_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8715_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8715_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -121,7 +121,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8715_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8715_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8715_3");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
@@ -129,7 +129,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8715_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8715_0(EditorContext context, SNode node) {
     if (this.myListHandler_8715_0 == null) {
       this.myListHandler_8715_0 = new MacConfig_Editor.associationListHandler_8715_0(node, "association", context);
     }
@@ -143,22 +143,22 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell8715_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell8715_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell8715_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell8715_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell8715_2(EditorContext context, SNode node) {
+  private EditorCell createIndentCell8715_2(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createConceptProperty_8715_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_8715_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -177,7 +177,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8715_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8715_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("iconPath");
     provider.setNoTargetText("<no iconPath>");
@@ -194,7 +194,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8715_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8715_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("javaApplicationStubPath");
     provider.setNoTargetText("<no javaApplicationStubPath>");
@@ -211,7 +211,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class associationListHandler_8715_0 extends RefNodeListHandler {
+  private static class associationListHandler_8715_0 extends RefNodeListHandler {
 
     public associationListHandler_8715_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

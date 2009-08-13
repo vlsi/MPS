@@ -29,7 +29,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return this.createCollection_4245_1(context, node);
   }
 
-  public EditorCell createCollection_4245_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4245_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4245_0");
     if (renderingCondition4245_0(node, context, context.getOperationContext().getScope())) {
@@ -42,21 +42,21 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_4245_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4245_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4245_1");
     editorCell.addEditorCell(this.createRefCell_4245_1(context, node));
     return editorCell;
   }
 
-  public EditorCell createConstant_4245_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4245_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4245_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefCell_4245_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4245_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
@@ -74,7 +74,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_4245_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_4245_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");
@@ -92,7 +92,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4245_1(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4245_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
@@ -115,11 +115,11 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition4245_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4245_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "macro", false) != null);
   }
 
-  public static boolean renderingCondition4245_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4245_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "macro", false) != null);
   }
 
@@ -137,7 +137,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       return this.createProperty_4245_0(context, node);
     }
 
-    public EditorCell createProperty_4245_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4245_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -171,7 +171,7 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       return this.createProperty_4245_2(context, node);
     }
 
-    public EditorCell createProperty_4245_2(EditorContext context, SNode node) {
+    private EditorCell createProperty_4245_2(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

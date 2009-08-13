@@ -20,14 +20,14 @@ public class TestNode_Editor extends DefaultNodeEditor {
     return this.createCollection_4312_0(context, node);
   }
 
-  public EditorCell createCollection_4312_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4312_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4312_0");
     editorCell.addEditorCell(this.createRefNode_4312_0(context, node));
     return editorCell;
   }
 
-  public EditorCell createRefNode_4312_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4312_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");

@@ -27,7 +27,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_3902_2(context, node);
   }
 
-  public EditorCell createCollection_3902_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3902_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3902_0");
     editorCell.addEditorCell(this.createConceptProperty_3902_0(context, node));
@@ -35,7 +35,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3902_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3902_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3902_1");
     editorCell.addEditorCell(this.createConstant_3902_0(context, node, ""));
@@ -47,7 +47,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3902_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_3902_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_3902_2");
     {
@@ -62,7 +62,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3902_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_3902_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3902_3");
     {
@@ -76,7 +76,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3902_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_3902_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3902_4");
     {
@@ -88,7 +88,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3902_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3902_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3902_0");
     {
@@ -99,7 +99,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3902_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3902_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3902_1");
     {
@@ -110,7 +110,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3902_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3902_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3902_2");
     {
@@ -121,7 +121,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3902_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3902_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3902_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -129,7 +129,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3902_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3902_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3902_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -137,12 +137,12 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell3902_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell3902_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createConceptProperty_3902_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_3902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -160,7 +160,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_3902_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_3902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -178,7 +178,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3902_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3902_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("beforeGenerationBlock");
     provider.setNoTargetText("<no beforeGenerationBlock>");
@@ -195,7 +195,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3902_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3902_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("modelsGeneratedBlock");
     provider.setNoTargetText("<no modelsGeneratedBlock>");
@@ -212,7 +212,7 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3902_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3902_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("afterGenerationBlock");
     provider.setNoTargetText("<no afterGenerationBlock>");
@@ -230,11 +230,11 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3902_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3902_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 
-  public static boolean renderingCondition3902_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3902_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 

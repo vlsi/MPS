@@ -19,7 +19,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_0960_0(context, node);
   }
 
-  public EditorCell createCollection_0960_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_0960_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0960_0");
     editorCell.addEditorCell(this.createConstant_0960_0(context, node, "("));
@@ -30,28 +30,28 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_0960_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0960_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0960_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_0960_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0960_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0960_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_0960_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_0960_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0960_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_0960_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0960_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("complexExpression");
     provider.setNoTargetText("<no complexExpression>");
@@ -68,7 +68,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_0960_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_0960_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("degree");
     provider.setNoTargetText("<no degree>");

@@ -20,7 +20,7 @@ public class Type_Editor extends DefaultNodeEditor {
     return this.createAlternation_9010_0(context, node);
   }
 
-  public EditorCell createAlternation_9010_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_9010_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Type_Editor.renderingCondition9010_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -33,13 +33,13 @@ public class Type_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createError_9010_0(EditorContext context, SNode node) {
+  private EditorCell createError_9010_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
     editorCell.setCellId("Error_9010_0");
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9010_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9010_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<type has no alias>");
@@ -59,7 +59,7 @@ public class Type_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }
 

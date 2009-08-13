@@ -28,7 +28,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return this.createCollection_8169_0(context, node);
   }
 
-  public EditorCell createCollection_8169_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8169_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8169_0");
     editorCell.addEditorCell(this.createConstant_8169_0(context, node, "enum"));
@@ -40,7 +40,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8169_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8169_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8169_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8169_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8169_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8169_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -60,7 +60,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8169_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8169_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8169_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -68,7 +68,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8169_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8169_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8169_3");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
@@ -76,7 +76,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_8169_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_8169_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumDeclaration");
     provider.setNoTargetText("<no name>");
@@ -98,7 +98,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8169_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8169_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("operation");
     provider.setNoTargetText("<no operation>");
@@ -129,7 +129,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
       return this.createProperty_8169_0(context, node);
     }
 
-    public EditorCell createProperty_8169_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_8169_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<null>");

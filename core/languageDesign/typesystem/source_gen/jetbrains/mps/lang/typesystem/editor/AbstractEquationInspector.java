@@ -30,7 +30,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return this.createCollection_4585_0(context, node);
   }
 
-  public EditorCell createCollection_4585_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4585_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4585_0");
     editorCell.addEditorCell(this.createCollection_4585_1(context, node));
@@ -42,7 +42,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4585_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4585_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4585_1");
     editorCell.addEditorCell(this.createConstant_4585_0(context, node, "node to check ="));
@@ -50,7 +50,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4585_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4585_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4585_2");
     editorCell.addEditorCell(this.createConstant_4585_1(context, node, "error string ="));
@@ -58,7 +58,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4585_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_4585_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4585_3");
     {
@@ -70,7 +70,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4585_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_4585_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4585_4");
     {
@@ -83,21 +83,21 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_2");
     {
@@ -108,21 +108,21 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_4585_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4585_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4585_5");
     {
@@ -133,7 +133,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4585_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4585_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<auto>");
@@ -150,7 +150,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4585_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4585_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorString");
     provider.setNoTargetText("<no errorString>");
@@ -167,7 +167,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_4585_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_4585_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("checkOnly");
     provider.setNoTargetText("<no checkOnly>");
@@ -185,7 +185,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4585_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4585_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("helginsIntention");
     provider.setNoTargetText("<no helginsIntention>");

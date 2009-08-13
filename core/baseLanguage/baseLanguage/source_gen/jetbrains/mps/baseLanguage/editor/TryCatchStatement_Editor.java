@@ -25,13 +25,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_2643_0;
+  private AbstractCellListHandler myListHandler_2643_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_2643_0(context, node);
   }
 
-  public EditorCell createCollection_2643_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2643_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2643_0");
     editorCell.addEditorCell(this.createConstant_2643_0(context, node, "try"));
@@ -42,7 +42,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2643_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2643_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2643_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2643_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2643_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2643_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -62,7 +62,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2643_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2643_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2643_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -75,7 +75,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_2643_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_2643_0(EditorContext context, SNode node) {
     if (this.myListHandler_2643_0 == null) {
       this.myListHandler_2643_0 = new TryCatchStatement_Editor.catchClauseListHandler_2643_0(node, "catchClause", context);
     }
@@ -89,7 +89,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2643_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2643_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -111,7 +111,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class catchClauseListHandler_2643_0 extends RefNodeListHandler {
+  private static class catchClauseListHandler_2643_0 extends RefNodeListHandler {
 
     public catchClauseListHandler_2643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

@@ -23,13 +23,13 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myReplaceableAlias_Comp4338_0;
+  private AbstractCellProvider myReplaceableAlias_Comp4338_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_4338_0(context, node);
   }
 
-  public EditorCell createCollection_4338_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4338_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4338_0");
     editorCell.addEditorCell(this.createComponent_4338_0(context, node));
@@ -39,7 +39,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_4338_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_4338_0(EditorContext context, SNode node) {
     if (this.myReplaceableAlias_Comp4338_0 == null) {
       this.myReplaceableAlias_Comp4338_0 = new ReplaceableAlias_Comp(node);
     }
@@ -47,7 +47,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4338_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4338_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4338_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -55,7 +55,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_4338_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4338_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4338_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -63,7 +63,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4338_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4338_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
     provider.setNoTargetText("<default>");
@@ -99,7 +99,7 @@ public class Link_SetNewChildOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_4338_0(context, node);
     }
 
-    public EditorCell createProperty_4338_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4338_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -20,7 +20,7 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
     return this.createProperty_0598_0(context, node);
   }
 
-  public EditorCell createProperty_0598_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_0598_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
     provider.setNoTargetText("<int constant>");

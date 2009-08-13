@@ -23,7 +23,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return this.createCollection_2109_0(context, node);
   }
 
-  public EditorCell createCollection_2109_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_2109_0");
     editorCell.addEditorCell(this.createCollection_2109_1(context, node));
@@ -34,7 +34,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2109_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2109_1");
     {
@@ -51,7 +51,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2109_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2109_2");
     {
@@ -68,7 +68,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2109_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2109_3");
     {
@@ -85,7 +85,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2109_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2109_4");
     {
@@ -101,7 +101,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_2109_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_2109_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_2109_5");
     {
@@ -118,40 +118,40 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_2109_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2109_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2109_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2109_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2109_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2109_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2109_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2109_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2109_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_2109_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_2109_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2109_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createIndentCell2109_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell2109_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_2109_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2109_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToEdit");
     provider.setNoTargetText("<no nodeToEdit>");
@@ -168,7 +168,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2109_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2109_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("result");
     provider.setNoTargetText("<no result>");
@@ -185,7 +185,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_2109_2(EditorContext context, SNode node) {
+  private EditorCell createRefNode_2109_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("code");
     provider.setNoTargetText("<no code>");
@@ -202,7 +202,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_2109_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_2109_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

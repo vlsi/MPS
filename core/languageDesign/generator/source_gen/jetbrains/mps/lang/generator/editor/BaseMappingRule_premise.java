@@ -33,7 +33,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return this.createCollection_4181_0(context, node);
   }
 
-  public EditorCell createCollection_4181_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_4181_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_4181_0");
     {
@@ -49,7 +49,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4181_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_4181_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4181_1");
     {
@@ -61,7 +61,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4181_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_4181_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4181_2");
     {
@@ -73,7 +73,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_4181_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_4181_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_4181_3");
     {
@@ -85,7 +85,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4181_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4181_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4181_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -97,7 +97,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4181_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4181_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4181_1");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -109,7 +109,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_4181_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_4181_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4181_2");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
@@ -121,7 +121,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefCell_4181_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_4181_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
@@ -142,7 +142,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_4181_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_4181_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("applyToConceptInheritors");
     provider.setNoTargetText("<no applyToConceptInheritors>");
@@ -160,7 +160,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_4181_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_4181_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<always>");
@@ -191,7 +191,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       return this.createProperty_4181_0(context, node);
     }
 
-    public EditorCell createProperty_4181_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_4181_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

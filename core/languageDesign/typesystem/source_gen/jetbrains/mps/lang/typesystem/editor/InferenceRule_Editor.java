@@ -41,8 +41,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InferenceRule_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_8985_0;
-  /* package */AbstractCellListHandler myListHandler_8985_1;
+  private AbstractCellListHandler myListHandler_8985_0;
+  private AbstractCellListHandler myListHandler_8985_1;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_8985_0(context, node);
@@ -52,7 +52,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return this.createCollection_8985_2(context, node);
   }
 
-  public EditorCell createCollection_8985_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8985_0");
     editorCell.addEditorCell(this.createCollection_8985_1(context, node));
@@ -61,7 +61,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_1");
     editorCell.addEditorCell(this.createConstant_8985_0(context, node, "rule"));
@@ -70,7 +70,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8985_2");
     editorCell.addEditorCell(this.createConstant_8985_1(context, node, "user-defined dependencies(advanced):"));
@@ -78,7 +78,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_3");
     {
@@ -90,7 +90,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_8985_4");
     {
@@ -109,7 +109,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_5");
     editorCell.addEditorCell(this.createConstant_8985_4(context, node, "applicable"));
@@ -118,7 +118,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_6");
     {
@@ -130,7 +130,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_7(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_7(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_7");
     {
@@ -142,7 +142,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_8(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_8(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_8");
     editorCell.addEditorCell(this.createIndentCell8985_0(context, node));
@@ -150,7 +150,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_8985_9(EditorContext context, SNode node) {
+  private EditorCell createCollection_8985_9(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_8985_9");
     {
@@ -162,7 +162,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -174,14 +174,14 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -193,7 +193,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -205,7 +205,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -213,7 +213,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -225,7 +225,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_6");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -233,7 +233,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_7");
     {
@@ -244,7 +244,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_8");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -257,7 +257,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_9");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
@@ -270,7 +270,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_10");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
@@ -283,7 +283,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8985_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8985_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8985_11");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
@@ -291,7 +291,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8985_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8985_0(EditorContext context, SNode node) {
     if (this.myListHandler_8985_0 == null) {
       this.myListHandler_8985_0 = new InferenceRule_Editor.dependencyListHandler_8985_0(node, "dependency", context);
     }
@@ -302,7 +302,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_8985_1(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_8985_1(EditorContext context, SNode node) {
     if (this.myListHandler_8985_1 == null) {
       this.myListHandler_8985_1 = new InferenceRule_Editor.childTypeRestrictionListHandler_8985_0(node, "childTypeRestriction", context);
     }
@@ -312,17 +312,17 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell8985_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell8985_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createIndentCell8985_1(EditorContext context, SNode node) {
+  private EditorCell createIndentCell8985_1(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_8985_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_8985_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -345,7 +345,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8985_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8985_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
@@ -365,7 +365,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_8985_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_8985_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("overrides");
     provider.setNoTargetText("<no overrides>");
@@ -383,7 +383,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8985_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8985_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -401,11 +401,11 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition8985_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8985_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "childTypeRestriction", true)).isNotEmpty();
   }
 
-  public static class dependencyListHandler_8985_0 extends RefNodeListHandler {
+  private static class dependencyListHandler_8985_0 extends RefNodeListHandler {
 
     public dependencyListHandler_8985_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -448,7 +448,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class childTypeRestrictionListHandler_8985_0 extends RefNodeListHandler {
+  private static class childTypeRestrictionListHandler_8985_0 extends RefNodeListHandler {
 
     public childTypeRestrictionListHandler_8985_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

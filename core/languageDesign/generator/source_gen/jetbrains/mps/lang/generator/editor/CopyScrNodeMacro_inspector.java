@@ -33,7 +33,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return this.createCollection_9547_0(context, node);
   }
 
-  public EditorCell createCollection_9547_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9547_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9547_0");
     {
@@ -46,7 +46,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_9547_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9547_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9547_1");
     {
@@ -60,7 +60,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_9547_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9547_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9547_2");
     {
@@ -73,7 +73,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_9547_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9547_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9547_3");
     {
@@ -86,7 +86,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createCollection_9547_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9547_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9547_4");
     {
@@ -99,7 +99,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_0");
     {
@@ -112,7 +112,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_1");
     {
@@ -123,7 +123,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_2");
     {
@@ -134,7 +134,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_3");
     {
@@ -145,14 +145,14 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_5");
     {
@@ -163,14 +163,14 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9547_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9547_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9547_7");
     {
@@ -181,7 +181,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9547_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9547_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("sourceNodeQuery");
     provider.setNoTargetText("<none>");
@@ -201,7 +201,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9547_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9547_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no label>");
@@ -219,7 +219,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  public EditorCell createProperty_9547_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_9547_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("comment");
     provider.setNoTargetText("<none>");
@@ -252,7 +252,7 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
       return this.createProperty_9547_0(context, node);
     }
 
-    public EditorCell createProperty_9547_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_9547_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

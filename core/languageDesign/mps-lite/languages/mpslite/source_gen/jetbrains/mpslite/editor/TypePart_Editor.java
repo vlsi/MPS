@@ -17,7 +17,7 @@ public class TypePart_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_7793_0(context, node);
   }
 
-  public EditorCell createConceptProperty_7793_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_7793_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

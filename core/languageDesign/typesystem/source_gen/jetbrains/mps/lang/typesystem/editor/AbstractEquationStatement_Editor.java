@@ -25,7 +25,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myAbstractEquationInspector7653_0;
+  private AbstractCellProvider myAbstractEquationInspector7653_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_7653_0(context, node);
@@ -35,7 +35,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return this.createComponent_7653_0(context, node);
   }
 
-  public EditorCell createCollection_7653_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_7653_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7653_0");
     editorCell.addEditorCell(this.createRefNode_7653_0(context, node));
@@ -45,7 +45,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_7653_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_7653_0(EditorContext context, SNode node) {
     if (this.myAbstractEquationInspector7653_0 == null) {
       this.myAbstractEquationInspector7653_0 = new AbstractEquationInspector(node);
     }
@@ -53,14 +53,14 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_7653_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_7653_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7653_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_7653_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7653_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -77,7 +77,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_7653_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_7653_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -94,7 +94,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_7653_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_7653_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -129,7 +129,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  public static Color _StyleParameter_QueryFunction_1214399678504(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_1214399678504(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else

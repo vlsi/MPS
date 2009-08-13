@@ -14,7 +14,7 @@ public class AbstractCreator_Editor extends DefaultNodeEditor {
     return this.createError_2642_0(context, node);
   }
 
-  public EditorCell createError_2642_0(EditorContext context, SNode node) {
+  private EditorCell createError_2642_0(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "?");
     editorCell.setCellId("Error_2642_0");
     return editorCell;

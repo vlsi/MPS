@@ -23,7 +23,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return this.createCollection_6871_0(context, node);
   }
 
-  public EditorCell createCollection_6871_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6871_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_6871_0");
     editorCell.addEditorCell(this.createCollection_6871_1(context, node));
@@ -31,7 +31,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6871_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6871_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6871_1");
     {
@@ -42,7 +42,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6871_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_6871_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_6871_2");
     {
@@ -54,7 +54,7 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6871_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6871_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6871_0");
     {
@@ -65,12 +65,12 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell6871_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell6871_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createRefNode_6871_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6871_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");

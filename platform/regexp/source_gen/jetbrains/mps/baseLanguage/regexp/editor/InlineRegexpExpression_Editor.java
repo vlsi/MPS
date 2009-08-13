@@ -30,7 +30,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_6834_1(context, node);
   }
 
-  public EditorCell createCollection_6834_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6834_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6834_0");
     editorCell.addEditorCell(this.createConstant_6834_15(context, node, "["));
@@ -48,7 +48,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_6834_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_6834_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6834_1");
     editorCell.addEditorCell(this.createConstant_6834_0(context, node, "Options:"));
@@ -69,7 +69,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_0");
     {
@@ -80,14 +80,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_2");
     {
@@ -98,7 +98,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_3");
     {
@@ -110,7 +110,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_4");
     {
@@ -121,14 +121,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_6");
     {
@@ -139,7 +139,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_7");
     {
@@ -151,7 +151,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_8");
     {
@@ -162,7 +162,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_9");
     {
@@ -174,7 +174,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_10");
     {
@@ -185,14 +185,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_11(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_12(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_12");
     {
@@ -203,7 +203,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_13(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_13");
     {
@@ -214,7 +214,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_14(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_14(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_14");
     {
@@ -225,7 +225,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_15(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_15(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_15");
     {
@@ -237,7 +237,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6834_16(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6834_16(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6834_16");
     {
@@ -249,7 +249,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6834_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6834_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -266,7 +266,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6834_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_6834_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("dotAll");
     provider.setNoTargetText("<no dotAll>");
@@ -288,7 +288,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6834_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_6834_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("multiLine");
     provider.setNoTargetText("<no multiLine>");
@@ -310,7 +310,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_6834_2(EditorContext context, SNode node) {
+  private EditorCell createProperty_6834_2(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("caseInsensitive");
     provider.setNoTargetText("<no caseInsensitive>");
@@ -333,15 +333,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition6834_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "dotAll");
   }
 
-  public static boolean renderingCondition6834_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "caseInsensitive");
   }
 
-  public static boolean renderingCondition6834_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_2(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiLine");
   }
 

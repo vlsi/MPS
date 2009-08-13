@@ -29,13 +29,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TemplateSwitch_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellListHandler myListHandler_9202_0;
+  private AbstractCellListHandler myListHandler_9202_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCollection_9202_0(context, node);
   }
 
-  public EditorCell createCollection_9202_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9202_0");
     editorCell.addEditorCell(this.createCollection_9202_2(context, node));
@@ -44,7 +44,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9202_1");
     {
@@ -56,7 +56,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9202_2");
     {
@@ -70,7 +70,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_9202_3");
     {
@@ -88,7 +88,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9202_4");
     {
@@ -100,7 +100,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9202_5");
     {
@@ -112,7 +112,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_9202_6(EditorContext context, SNode node) {
+  private EditorCell createCollection_9202_6(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_9202_6");
     {
@@ -124,7 +124,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_0");
     {
@@ -135,14 +135,14 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_2");
     {
@@ -153,14 +153,14 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_4");
     {
@@ -171,7 +171,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_5");
     {
@@ -182,7 +182,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_6(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_6");
     {
@@ -193,7 +193,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_7(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_7");
     {
@@ -204,28 +204,28 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_8(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_9(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_9");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_9202_10(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9202_10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9202_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNodeList_9202_0(EditorContext context, SNode node) {
+  private EditorCell createRefNodeList_9202_0(EditorContext context, SNode node) {
     if (this.myListHandler_9202_0 == null) {
       this.myListHandler_9202_0 = new TemplateSwitch_Editor.reductionMappingRuleListHandler_9202_0(node, "reductionMappingRule", context);
     }
@@ -239,12 +239,12 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndentCell9202_0(EditorContext context, SNode node) {
+  private EditorCell createIndentCell9202_0(EditorContext context, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(context, node);
     return result;
   }
 
-  public EditorCell createProperty_9202_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_9202_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -262,7 +262,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_9202_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_9202_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("modifiedSwitch");
     provider.setNoTargetText("<none>");
@@ -280,7 +280,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9202_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9202_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("defaultConsequence");
     provider.setNoTargetText("<ignore switch>");
@@ -297,7 +297,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9202_1(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9202_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nullInputMessage");
     provider.setNoTargetText("<none>");
@@ -328,7 +328,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
       return this.createProperty_9202_1(context, node);
     }
 
-    public EditorCell createProperty_9202_1(EditorContext context, SNode node) {
+    private EditorCell createProperty_9202_1(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -349,7 +349,7 @@ public class TemplateSwitch_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class reductionMappingRuleListHandler_9202_0 extends RefNodeListHandler {
+  private static class reductionMappingRuleListHandler_9202_0 extends RefNodeListHandler {
 
     public reductionMappingRuleListHandler_9202_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);

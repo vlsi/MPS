@@ -21,7 +21,7 @@ import javax.swing.JComponent;
 
 public class CellModel_Image_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider my_CellModel_Common5161_0;
+  private AbstractCellProvider my_CellModel_Common5161_0;
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstant_5161_0(context, node, "$image$");
@@ -31,7 +31,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return this.createCollection_5161_0(context, node);
   }
 
-  public EditorCell createCollection_5161_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5161_0");
     {
@@ -46,7 +46,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5161_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     editorCell.setCellId("Collection_5161_1");
     {
@@ -59,7 +59,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5161_2(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5161_2");
     {
@@ -72,7 +72,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5161_3(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5161_3");
     {
@@ -85,7 +85,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5161_4(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5161_4");
     {
@@ -98,7 +98,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_5161_5(EditorContext context, SNode node) {
+  private EditorCell createCollection_5161_5(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_5161_5");
     {
@@ -111,7 +111,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createComponent_5161_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_5161_0(EditorContext context, SNode node) {
     if (this.my_CellModel_Common5161_0 == null) {
       this.my_CellModel_Common5161_0 = new _CellModel_Common(node);
     }
@@ -119,7 +119,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
@@ -127,7 +127,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_1");
     {
@@ -138,7 +138,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_2");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
@@ -146,7 +146,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_3(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_3");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
@@ -154,7 +154,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_4(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_4");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
@@ -162,7 +162,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_5161_5(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_5161_5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_5161_5");
     {
@@ -173,7 +173,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_5161_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_5161_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("imagePathProvider");
     provider.setNoTargetText("<no image provider>");
@@ -190,7 +190,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5161_0(EditorContext context, SNode node) {
+  private EditorCell createProperty_5161_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("imageFile");
     provider.setNoTargetText("<no imageFile>");
@@ -213,7 +213,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createProperty_5161_1(EditorContext context, SNode node) {
+  private EditorCell createProperty_5161_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("descent");
     provider.setNoTargetText("<no descent>");
@@ -236,7 +236,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
 
-  public static JComponent _QueryFunction_JComponent_1214480452884(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_1214480452884(SNode node, EditorContext editorContext) {
     return new SelectImageFileButton(node);
   }
 

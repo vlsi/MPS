@@ -28,7 +28,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_3694_0(context, node);
   }
 
-  public EditorCell createAlternation_3694_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_3694_0(EditorContext context, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = MatchKindOperation_Editor.renderingCondition3694_0(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
@@ -44,7 +44,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3694_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_3694_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3694_0");
     editorCell.addEditorCell(this.createConstant_3694_0(context, node, "["));
@@ -53,7 +53,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createCollection_3694_1(EditorContext context, SNode node) {
+  private EditorCell createCollection_3694_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     editorCell.setCellId("Collection_3694_1");
     editorCell.addEditorCell(this.createConstant_3694_2(context, node, "deprecated"));
@@ -61,14 +61,14 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3694_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3694_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3694_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_3694_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3694_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3694_1");
     {
@@ -79,7 +79,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_3694_2(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_3694_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_3694_2");
     {
@@ -91,7 +91,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefCell_3694_0(EditorContext context, SNode node) {
+  private EditorCell createRefCell_3694_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("nodeKind");
     provider.setNoTargetText("<no nodeKind>");
@@ -109,7 +109,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_3694_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_3694_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeKindOccurrence");
     provider.setNoTargetText("<no nodeKindOccurrence>");
@@ -131,7 +131,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  public static boolean renderingCondition3694_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3694_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "nodeKind", false) != null;
   }
 
@@ -149,7 +149,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       return this.createProperty_3694_0(context, node);
     }
 
-    public EditorCell createProperty_3694_0(EditorContext context, SNode node) {
+    private EditorCell createProperty_3694_0(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("<< kind >>");

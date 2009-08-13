@@ -14,7 +14,7 @@ public class PropertyRefType_Editor extends DefaultNodeEditor {
     return this.createConstant_9940_0(context, node, "propRef");
   }
 
-  public EditorCell createConstant_9940_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9940_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9940_0");
     editorCell.setDefaultText("");

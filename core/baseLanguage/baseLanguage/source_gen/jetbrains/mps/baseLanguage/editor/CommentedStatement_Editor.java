@@ -22,7 +22,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     return this.createCollection_6389_0(context, node);
   }
 
-  public EditorCell createCollection_6389_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6389_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6389_0");
     editorCell.addEditorCell(this.createConstant_6389_0(context, node, "//"));
@@ -30,7 +30,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6389_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6389_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6389_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
@@ -43,7 +43,7 @@ public class CommentedStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_6389_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6389_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("statement");
     provider.setNoTargetText("<no statement>");

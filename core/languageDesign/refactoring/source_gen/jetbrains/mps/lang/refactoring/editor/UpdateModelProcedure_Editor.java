@@ -19,7 +19,7 @@ public class UpdateModelProcedure_Editor extends DefaultNodeEditor {
     return this.createCollection_6905_0(context, node);
   }
 
-  public EditorCell createCollection_6905_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_6905_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_6905_0");
     editorCell.addEditorCell(this.createConstant_6905_0(context, node, "updateModel("));
@@ -28,21 +28,21 @@ public class UpdateModelProcedure_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_6905_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6905_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6905_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createConstant_6905_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_6905_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_6905_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createRefNode_6905_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_6905_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
