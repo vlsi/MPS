@@ -29,16 +29,16 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     super(node);
   }
 
-  public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell(context, this.getSNode());
+  public EditorCell createEditorCell(EditorContext editorContext) {
+    return this.createEditorCell(editorContext, this.getSNode());
   }
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createReadOnlyModelAccessor_3654_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createReadOnlyModelAccessor_3654_0(editorContext, node);
   }
 
-  private EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         return (SPropertyOperations.getBoolean(node, "isOptional") ?
@@ -55,7 +55,7 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu0(),new ActionParameter_IsOptional.ActionParameter_generic_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu0(),new ActionParameter_IsOptional.ActionParameter_generic_cellMenu1()}));
     editorCell.setCellId("ReadOnlyModelAccessor_3654_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

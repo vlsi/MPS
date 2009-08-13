@@ -148,10 +148,6 @@ public class QueriesGenerated {
     return "_" + _context.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1176794975313(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_cellProviderFactory_" + _context.getNode().getId();
-  }
-
   public static Object propertyMacro_GetPropertyValue_1176796774215(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "prefix");
   }
@@ -1324,10 +1320,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1176795160403(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1176886006186(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
@@ -1582,6 +1574,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3031123562487795395(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "validator", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3031123562488321479(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5170495790389308644(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

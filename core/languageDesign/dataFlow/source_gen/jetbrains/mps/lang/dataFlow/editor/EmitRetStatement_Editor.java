@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class EmitRetStatement_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_1061_0(context, node, "ret");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_1061_0(editorContext, node, "ret");
   }
 
-  private EditorCell createConstant_1061_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1061_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1061_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

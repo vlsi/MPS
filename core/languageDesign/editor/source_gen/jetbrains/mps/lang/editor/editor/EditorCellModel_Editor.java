@@ -15,27 +15,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError_1982_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createError_1982_0(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection_1982_0(context, node);
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_1982_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1982_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_1982_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1982_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1982_0(context, node, "< abstract cell >"));
+    editorCell.addEditorCell(this.createConstant_1982_0(editorContext, node, "< abstract cell >"));
     return editorCell;
   }
 
-  private EditorCell createConstant_1982_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1982_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1982_0");
     {
       Style style = editorCell.getStyle();
@@ -47,8 +47,8 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createError_1982_0(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose cell model>");
+  private EditorCell createError_1982_0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose cell model>");
     editorCell.setCellId("Error_1982_0");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     return editorCell;

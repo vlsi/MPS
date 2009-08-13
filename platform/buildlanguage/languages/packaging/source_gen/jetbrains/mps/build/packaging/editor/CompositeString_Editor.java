@@ -18,55 +18,55 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CompositeString_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_4772_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4772_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4772_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_4772_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4772_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.3, Measure.SPACES));
     }
-    CompositeString_RT.setCellActions(editorCell, node, context);
-    editorCell.addEditorCell(this.createRefNode_4772_0(context, node));
-    editorCell.addEditorCell(this.createRefNode_4772_1(context, node));
+    CompositeString_RT.setCellActions(editorCell, node, editorContext);
+    editorCell.addEditorCell(this.createRefNode_4772_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4772_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4772_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_4772_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
-    CompositeString_Left_Delete.setCellActions(editorCell, node, context);
+    editorCell = provider.createEditorCell(editorContext);
+    CompositeString_Left_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
 
-  private EditorCell createRefNode_4772_1(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_4772_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
-    CompositeString_Right_Delete.setCellActions(editorCell, node, context);
+    editorCell = provider.createEditorCell(editorContext);
+    CompositeString_Right_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

@@ -11,12 +11,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class SEnum_MembersOperation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_2621_0(context, node, "members");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_2621_0(editorContext, node, "members");
   }
 
-  private EditorCell createConstant_2621_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2621_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2621_0");
     BaseLanguageStyle_StyleSheet.getStaticMethod(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

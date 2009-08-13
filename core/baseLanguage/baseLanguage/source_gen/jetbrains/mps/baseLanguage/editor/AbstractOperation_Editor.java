@@ -7,28 +7,30 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCustom_3927_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCustom_3927_0(editorContext, node);
   }
 
-  private EditorCell createCustom_3927_0(EditorContext context, SNode node) {
-    AbstractCellProvider provider = this._cellProviderFactory_1208623526502(node, context);
-    EditorCell editorCell = provider.createEditorCell(context);
+  private EditorCell createCustom_3927_0(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0 <AbstractCellProvider>() {
+
+      public AbstractCellProvider invoke() {
+        return new AbstractCellProvider() {
+
+          public EditorCell createEditorCell(EditorContext context) {
+            return new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
+          }
+        };
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_3927_0");
     return editorCell;
-  }
-
-  public AbstractCellProvider _cellProviderFactory_1208623526502(final SNode node, final EditorContext editorContext) {
-    return new AbstractCellProvider() {
-
-      public EditorCell createEditorCell(EditorContext context) {
-        return new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
-      }
-    };
   }
 
 }

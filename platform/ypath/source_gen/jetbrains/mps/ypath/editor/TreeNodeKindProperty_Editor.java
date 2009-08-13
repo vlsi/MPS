@@ -30,38 +30,38 @@ import jetbrains.mps.smodel.SModel;
 
 public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_4147_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4147_0(editorContext, node);
   }
 
-  private EditorCell createAlternation_4147_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_4147_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = TreeNodeKindProperty_Editor.renderingCondition4147_0(node, context, context.getOperationContext().getScope());
+    alternationCondition = TreeNodeKindProperty_Editor.renderingCondition4147_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_4147_1(context, node, "default");
+      editorCell = this.createConstant_4147_1(editorContext, node, "default");
     } else
     {
-      editorCell = this.createConstant_4147_2(context, node, "");
+      editorCell = this.createConstant_4147_2(editorContext, node, "");
     }
-    TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, context);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu0()}));
+    TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createCollection_4147_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_4147_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4147_0");
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
-    editorCell.addEditorCell(this.createAlternation_4147_0(context, node));
-    editorCell.addEditorCell(this.createProperty_4147_0(context, node));
-    editorCell.addEditorCell(this.createConstant_4147_0(context, node, ":"));
-    editorCell.addEditorCell(this.createRefNode_4147_0(context, node));
+    editorCell.addEditorCell(this.createAlternation_4147_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4147_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4147_0(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createRefNode_4147_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_4147_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_4147_0");
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_4147_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_4147_1");
     {
       Style style = editorCell.getStyle();
@@ -84,8 +84,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_4147_2(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_4147_2");
     {
       Style style = editorCell.getStyle();
@@ -95,38 +95,38 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4147_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+  private EditorCell createProperty_4147_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
 
-  private EditorCell createRefNode_4147_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_4147_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getter");
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

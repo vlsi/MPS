@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SuperClassifierExpresson_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_5353_0(context, node, "super");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_5353_0(editorContext, node, "super");
   }
 
-  private EditorCell createConstant_5353_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_5353_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_5353_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

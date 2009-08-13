@@ -11,27 +11,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_6465_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_6465_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6465_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+  private EditorCell createCollection_6465_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6465_0");
-    editorCell.addEditorCell(this.createConstant_6465_0(context, node, "updateModelByDefault"));
-    editorCell.addEditorCell(this.createConstant_6465_1(context, node, ";"));
+    editorCell.addEditorCell(this.createConstant_6465_0(editorContext, node, "updateModelByDefault"));
+    editorCell.addEditorCell(this.createConstant_6465_1(editorContext, node, ";"));
     return editorCell;
   }
 
-  private EditorCell createConstant_6465_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_6465_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_6465_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6465_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_6465_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_6465_1");
     editorCell.setDefaultText("");
     return editorCell;

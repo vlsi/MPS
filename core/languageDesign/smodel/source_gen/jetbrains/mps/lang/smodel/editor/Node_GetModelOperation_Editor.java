@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class Node_GetModelOperation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_0741_0(context, node, "model");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_0741_0(editorContext, node, "model");
   }
 
-  private EditorCell createConstant_0741_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_0741_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_0741_0");
     {
       Style style = editorCell.getStyle();

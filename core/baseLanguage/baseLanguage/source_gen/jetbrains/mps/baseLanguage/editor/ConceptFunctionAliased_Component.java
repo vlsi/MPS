@@ -32,27 +32,27 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     super(node);
   }
 
-  public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell(context, this.getSNode());
+  public EditorCell createEditorCell(EditorContext editorContext) {
+    return this.createEditorCell(editorContext, this.getSNode());
   }
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_7219_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_7219_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7219_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+  private EditorCell createCollection_7219_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7219_0");
-    editorCell.addEditorCell(this.createConceptProperty_7219_0(context, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7219_0(context, node));
-    editorCell.addEditorCell(this.createConstant_7219_0(context, node, "{"));
-    editorCell.addEditorCell(this.createRefNode_7219_0(context, node));
-    editorCell.addEditorCell(this.createConstant_7219_1(context, node, "}"));
+    editorCell.addEditorCell(this.createConceptProperty_7219_0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7219_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7219_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createRefNode_7219_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7219_1(editorContext, node, "}"));
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7219_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7219_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -63,8 +63,8 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7219_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7219_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -75,8 +75,8 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7219_0(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_7219_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         StringBuilder result = new StringBuilder();
@@ -119,12 +119,12 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7219_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_7219_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
@@ -134,19 +134,19 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7219_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
+  private EditorCell createConceptProperty_7219_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     {
       Style style = editorCell.getStyle();
@@ -158,9 +158,9 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

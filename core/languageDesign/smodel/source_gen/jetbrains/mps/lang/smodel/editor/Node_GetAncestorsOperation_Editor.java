@@ -10,13 +10,13 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createComponent_1420_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_1420_0(editorContext, node);
   }
 
-  private EditorCell createComponent_1420_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_1420_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

@@ -14,19 +14,19 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RemoveDefaultsPart_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_4285_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4285_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4285_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_4285_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4285_0");
-    editorCell.addEditorCell(this.createConstant_4285_0(context, node, "remove defaults"));
+    editorCell.addEditorCell(this.createConstant_4285_0(editorContext, node, "remove defaults"));
     return editorCell;
   }
 
-  private EditorCell createConstant_4285_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_4285_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_4285_0");
     {
       Style style = editorCell.getStyle();

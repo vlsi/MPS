@@ -29,38 +29,38 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     super(node);
   }
 
-  public EditorCell createEditorCell(EditorContext context) {
-    return this.createEditorCell(context, this.getSNode());
+  public EditorCell createEditorCell(EditorContext editorContext) {
+    return this.createEditorCell(editorContext, this.getSNode());
   }
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_8189_1(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_8189_1(editorContext, node);
   }
 
-  private EditorCell createCollection_8189_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_8189_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8189_0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(context, node));
-    editorCell.addEditorCell(this.createConstant_8189_0(context, node, ""));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_1(context, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8189_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8189_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_8189_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8189_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    if (renderingCondition8189_0(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_8189_0(context, node));
+    if (renderingCondition8189_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8189_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_8189_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_8189_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_8189_0");
     {
       Style style = editorCell.getStyle();
@@ -70,8 +70,8 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_8189_0(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_8189_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter <SNode>() {
@@ -112,8 +112,8 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_8189_1(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_8189_1(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter <SNode>() {

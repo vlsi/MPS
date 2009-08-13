@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class TypeCheckerAccessExpression_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_2171_0(context, node, "typechecker");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_2171_0(editorContext, node, "typechecker");
   }
 
-  private EditorCell createConstant_2171_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2171_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2171_0");
     editorCell.setDefaultText("");
     return editorCell;

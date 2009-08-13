@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class StubBlock_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_9987_0(context, node, "stub");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_9987_0(editorContext, node, "stub");
   }
 
-  private EditorCell createConstant_9987_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_9987_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_9987_0");
     {
       Style style = editorCell.getStyle();

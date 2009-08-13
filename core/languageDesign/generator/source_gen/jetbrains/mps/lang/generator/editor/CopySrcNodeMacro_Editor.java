@@ -19,36 +19,36 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_2079_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_2079_0(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createComponent_2079_0(context, node);
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_2079_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2079_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_2079_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2079_0");
-    editorCell.addEditorCell(this.createConstant_2079_0(context, node, "$COPY_SRC$"));
-    editorCell.addEditorCell(this.createComponent_2079_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2079_0(editorContext, node, "$COPY_SRC$"));
+    editorCell.addEditorCell(this.createComponent_2079_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_2079_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2079_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CopyScrNodeMacro_inspector(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_2079_1(EditorContext context, SNode node) {
+  private EditorCell createComponent_2079_1(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new NodeMacro_postfix(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_2079_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2079_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2079_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -58,9 +58,9 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
-    MacroSymbol_Actions.setCellActions(editorCell, node, context);
+    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_Editor_replaceWith_NodeMacro_cellMenu0()}));
     return editorCell;
   }
 

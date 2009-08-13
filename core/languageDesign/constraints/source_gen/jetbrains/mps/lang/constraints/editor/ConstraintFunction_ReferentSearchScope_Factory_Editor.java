@@ -17,113 +17,113 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createComponent_2342_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createComponent_2342_0(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection_2342_0(context, node);
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_2342_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2342_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_2342_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2342_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_0(context, node, "search scope provider"));
-    editorCell.addEditorCell(this.createConstant_2342_1(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_2342_2(context, node, "creates search scope (jetbrains.mps.smodel.search.ISearchScope)"));
-    editorCell.addEditorCell(this.createConstant_2342_3(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_2342_4(context, node, "macros:"));
-    editorCell.addEditorCell(this.createCollection_2342_1(context, node));
+    editorCell.addEditorCell(this.createConstant_2342_0(editorContext, node, "search scope provider"));
+    editorCell.addEditorCell(this.createConstant_2342_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_2342_2(editorContext, node, "creates search scope (jetbrains.mps.smodel.search.ISearchScope)"));
+    editorCell.addEditorCell(this.createConstant_2342_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_2342_4(editorContext, node, "macros:"));
+    editorCell.addEditorCell(this.createCollection_2342_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_2342_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2342_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_2342_2(context, node));
-    editorCell.addEditorCell(this.createCollection_2342_3(context, node));
-    editorCell.addEditorCell(this.createCollection_2342_4(context, node));
-    editorCell.addEditorCell(this.createCollection_2342_6(context, node));
+    editorCell.addEditorCell(this.createCollection_2342_2(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2342_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2342_4(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2342_6(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_2342_2(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2342_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_5(context, node, "model"));
-    editorCell.addEditorCell(this.createConstant_2342_6(context, node, "context"));
+    editorCell.addEditorCell(this.createConstant_2342_5(editorContext, node, "model"));
+    editorCell.addEditorCell(this.createConstant_2342_6(editorContext, node, "context"));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_3(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_2342_3(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2342_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_7(context, node, "enclosingNode"));
-    editorCell.addEditorCell(this.createConstant_2342_8(context, node, "context"));
+    editorCell.addEditorCell(this.createConstant_2342_7(editorContext, node, "enclosingNode"));
+    editorCell.addEditorCell(this.createConstant_2342_8(editorContext, node, "context"));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_4(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_2342_4(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2342_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_9(context, node, "referenceNode"));
-    editorCell.addEditorCell(this.createCollection_2342_5(context, node));
+    editorCell.addEditorCell(this.createConstant_2342_9(editorContext, node, "referenceNode"));
+    editorCell.addEditorCell(this.createCollection_2342_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_5(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_2342_5(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2342_5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_10(context, node, "source of the reference link"));
-    editorCell.addEditorCell(this.createConstant_2342_11(context, node, "(optional - may not exist yet)"));
+    editorCell.addEditorCell(this.createConstant_2342_10(editorContext, node, "source of the reference link"));
+    editorCell.addEditorCell(this.createConstant_2342_11(editorContext, node, "(optional - may not exist yet)"));
     return editorCell;
   }
 
-  private EditorCell createCollection_2342_6(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_2342_6(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2342_6");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2342_12(context, node, "scope"));
-    editorCell.addEditorCell(this.createConstant_2342_13(context, node, "context (jetbrains.mps.smodel.IScope)"));
+    editorCell.addEditorCell(this.createConstant_2342_12(editorContext, node, "scope"));
+    editorCell.addEditorCell(this.createConstant_2342_13(editorContext, node, "context (jetbrains.mps.smodel.IScope)"));
     return editorCell;
   }
 
-  private EditorCell createComponent_2342_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_2342_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_0");
     {
       Style style = editorCell.getStyle();
@@ -134,8 +134,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_1");
     {
       Style style = editorCell.getStyle();
@@ -145,8 +145,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_2(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_2");
     {
       Style style = editorCell.getStyle();
@@ -156,8 +156,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_3(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_3");
     {
       Style style = editorCell.getStyle();
@@ -167,8 +167,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_4(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_4");
     {
       Style style = editorCell.getStyle();
@@ -178,15 +178,15 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_5(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_6(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_6(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_6");
     {
       Style style = editorCell.getStyle();
@@ -196,15 +196,15 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_7(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_7(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_8(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_8(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_8");
     {
       Style style = editorCell.getStyle();
@@ -214,15 +214,15 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_9(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_9(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_9");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_10(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_10(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_10");
     {
       Style style = editorCell.getStyle();
@@ -232,8 +232,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_11(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_11(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_11");
     {
       Style style = editorCell.getStyle();
@@ -244,15 +244,15 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_12(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_12(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_12");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2342_13(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_2342_13(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_2342_13");
     {
       Style style = editorCell.getStyle();

@@ -15,51 +15,51 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_0981_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_0981_0(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection_0981_1(context, node);
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_0981_1(editorContext, node);
   }
 
-  private EditorCell createCollection_0981_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_0981_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0981_0");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_0981_1(context, node, "[/>"));
-    editorCell.addEditorCell(this.createConstant_0981_0(context, node, "attributed property"));
-    editorCell.addEditorCell(this.createConstant_0981_2(context, node, "</]"));
+    editorCell.addEditorCell(this.createConstant_0981_1(editorContext, node, "[/>"));
+    editorCell.addEditorCell(this.createConstant_0981_0(editorContext, node, "attributed property"));
+    editorCell.addEditorCell(this.createConstant_0981_2(editorContext, node, "</]"));
     return editorCell;
   }
 
-  private EditorCell createCollection_0981_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_0981_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_0981_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createComponent_0981_0(context, node));
+    editorCell.addEditorCell(this.createComponent_0981_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_0981_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_0981_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_0981_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_0981_0");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_0981_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_0981_1");
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0981_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_0981_2(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_0981_2");
     {
       Style style = editorCell.getStyle();

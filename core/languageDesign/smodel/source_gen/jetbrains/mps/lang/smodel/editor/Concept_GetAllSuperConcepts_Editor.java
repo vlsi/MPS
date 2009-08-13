@@ -11,20 +11,20 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_6584_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_6584_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6584_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+  private EditorCell createCollection_6584_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6584_0");
-    editorCell.addEditorCell(this.createComponent_6584_0(context, node));
+    editorCell.addEditorCell(this.createComponent_6584_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6584_0(EditorContext context, SNode node) {
+  private EditorCell createComponent_6584_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(context);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

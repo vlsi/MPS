@@ -17,16 +17,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleString_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createProperty_4553_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createProperty_4553_0(editorContext, node);
   }
 
-  private EditorCell createProperty_4553_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, context);
+  private EditorCell createProperty_4553_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     PackagingStyles_StyleSheet.getString(editorCell).apply(editorCell);
     {
@@ -34,14 +34,14 @@ public class SimpleString_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.2, Measure.SPACES));
     }
-    CompositeString_RT.setCellActions(editorCell, node, context);
+    CompositeString_RT.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

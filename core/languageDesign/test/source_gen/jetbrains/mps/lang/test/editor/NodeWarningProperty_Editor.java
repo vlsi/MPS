@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class NodeWarningProperty_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createConstant_7453_0(context, node, "has warning");
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createConstant_7453_0(editorContext, node, "has warning");
   }
 
-  private EditorCell createConstant_7453_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7453_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7453_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -19,40 +19,40 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class Operation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_4955_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_4955_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4955_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_4955_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4955_0");
-    editorCell.addEditorCell(this.createRefNode_4955_0(context, node));
-    editorCell.addEditorCell(this.createError_4955_0(context, node));
+    editorCell.addEditorCell(this.createRefNode_4955_0(editorContext, node));
+    editorCell.addEditorCell(this.createError_4955_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createError_4955_0(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, " ");
+  private EditorCell createError_4955_0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, " ");
     editorCell.setCellId("Error_4955_0");
-    Operation_symbol_Actions.setCellActions(editorCell, node, context);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new SubstituteInfoPart[]{new Operation_Editor.Operation_Editor_replaceWith_Operation_cellMenu0()}));
+    Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new Operation_Editor.Operation_Editor_replaceWith_Operation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4955_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_4955_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<expression>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
-    Operation_leftOperand_Actions.setCellActions(editorCell, node, context);
+    editorCell = provider.createEditorCell(editorContext);
+    Operation_leftOperand_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

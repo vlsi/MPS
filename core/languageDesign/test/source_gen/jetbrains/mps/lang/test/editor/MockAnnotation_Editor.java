@@ -13,35 +13,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MockAnnotation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_3037_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_3037_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3037_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_3037_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3037_0");
-    editorCell.addEditorCell(this.createConstant_3037_0(context, node, "<mock"));
-    editorCell.addEditorCell(this.createAttributedNodeCell_3037_0(context, node));
-    editorCell.addEditorCell(this.createConstant_3037_1(context, node, ">"));
+    editorCell.addEditorCell(this.createConstant_3037_0(editorContext, node, "<mock"));
+    editorCell.addEditorCell(this.createAttributedNodeCell_3037_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3037_1(editorContext, node, ">"));
     return editorCell;
   }
 
-  private EditorCell createConstant_3037_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_3037_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_3037_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3037_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_3037_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_3037_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_3037_0(EditorContext context, SNode node) {
-    IOperationContext opContext = context.getOperationContext();
+  private EditorCell createAttributedNodeCell_3037_0(EditorContext editorContext, SNode node) {
+    IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;

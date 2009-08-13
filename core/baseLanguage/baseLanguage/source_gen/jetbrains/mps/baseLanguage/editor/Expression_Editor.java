@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
@@ -19,56 +20,57 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class Expression_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createAlternation_6116_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createAlternation_6116_0(editorContext, node);
   }
 
-  private EditorCell createAlternation_6116_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_6116_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Expression_Editor.renderingCondition6116_0(node, context, context.getOperationContext().getScope());
+    alternationCondition = Expression_Editor.renderingCondition6116_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCustom_6116_0(context, node);
+      editorCell = this.createCustom_6116_0(editorContext, node);
     } else
     {
-      editorCell = this.createConceptProperty_6116_0(context, node);
+      editorCell = this.createConceptProperty_6116_0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCustom_6116_0(EditorContext context, SNode node) {
-    AbstractCellProvider provider = this._cellProviderFactory_1209147315298(node, context);
-    EditorCell editorCell = provider.createEditorCell(context);
+  private EditorCell createCustom_6116_0(final EditorContext editorContext, final SNode node) {
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0 <AbstractCellProvider>() {
+
+      public AbstractCellProvider invoke() {
+        return new AbstractCellProvider() {
+
+          public EditorCell createEditorCell(EditorContext context) {
+            EditorCell_Error result = new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
+            result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
+            result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
+            return result;
+          }
+        };
+      }
+    }.invoke();
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_6116_0");
     return editorCell;
   }
 
-  public AbstractCellProvider _cellProviderFactory_1209147315298(final SNode node, final EditorContext editorContext) {
-    return new AbstractCellProvider() {
-
-      public EditorCell createEditorCell(EditorContext context) {
-        EditorCell_Error result = new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
-        result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
-        result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
-        return result;
-      }
-    };
-  }
-
-  private EditorCell createConceptProperty_6116_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
+  private EditorCell createConceptProperty_6116_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

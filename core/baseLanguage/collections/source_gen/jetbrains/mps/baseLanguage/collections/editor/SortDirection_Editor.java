@@ -17,25 +17,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SortDirection_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createAlternation_9499_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createAlternation_9499_0(editorContext, node);
   }
 
-  private EditorCell createAlternation_9499_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_9499_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = SortDirection_Editor.renderingCondition9499_0(node, context, context.getOperationContext().getScope());
+    alternationCondition = SortDirection_Editor.renderingCondition9499_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_9499_0(context, node, "asc");
+      editorCell = this.createConstant_9499_0(editorContext, node, "asc");
     } else
     {
-      editorCell = this.createConstant_9499_1(context, node, "desc");
+      editorCell = this.createConstant_9499_1(editorContext, node, "desc");
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_9499_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_9499_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_9499_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -46,8 +46,8 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9499_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_9499_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_9499_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

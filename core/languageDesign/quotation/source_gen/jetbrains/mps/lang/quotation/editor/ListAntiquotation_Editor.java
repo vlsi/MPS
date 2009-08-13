@@ -28,37 +28,37 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ListAntiquotation_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_7120_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_7120_0(editorContext, node);
   }
 
-  public EditorCell createInspectedCell(EditorContext context, SNode node) {
-    return this.createCollection_7120_1(context, node);
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_7120_1(editorContext, node);
   }
 
-  private EditorCell createCollection_7120_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+  private EditorCell createCollection_7120_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7120_0");
-    editorCell.addEditorCell(this.createConstant_7120_0(context, node, "*("));
-    editorCell.addEditorCell(this.createRefNode_7120_0(context, node));
-    editorCell.addEditorCell(this.createConstant_7120_1(context, node, ")*"));
+    editorCell.addEditorCell(this.createConstant_7120_0(editorContext, node, "*("));
+    editorCell.addEditorCell(this.createRefNode_7120_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7120_1(editorContext, node, ")*"));
     return editorCell;
   }
 
-  private EditorCell createCollection_7120_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
+  private EditorCell createCollection_7120_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7120_1");
-    editorCell.addEditorCell(this.createConstant_7120_2(context, node, "list antiquotation"));
-    editorCell.addEditorCell(this.createConstant_7120_3(context, node, ""));
-    editorCell.addEditorCell(this.createConstant_7120_4(context, node, "attributed node concept:"));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_0(context, node));
-    editorCell.addEditorCell(this.createConstant_7120_5(context, node, "attributed node role in parent:"));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_1(context, node));
+    editorCell.addEditorCell(this.createConstant_7120_2(editorContext, node, "list antiquotation"));
+    editorCell.addEditorCell(this.createConstant_7120_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_7120_4(editorContext, node, "attributed node concept:"));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7120_5(editorContext, node, "attributed node role in parent:"));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_0");
     {
       Style style = editorCell.getStyle();
@@ -82,8 +82,8 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_1");
     {
       Style style = editorCell.getStyle();
@@ -107,8 +107,8 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_2(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_2");
     {
       Style style = editorCell.getStyle();
@@ -118,8 +118,8 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_3(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_3");
     {
       Style style = editorCell.getStyle();
@@ -130,22 +130,22 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_4(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_4(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_5(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_7120_5(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_7120_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7120_0(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_7120_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -173,8 +173,8 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7120_1(final EditorContext context, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(context, new ModelAccessor() {
+  private EditorCell createReadOnlyModelAccessor_7120_1(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
 
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -202,19 +202,19 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7120_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_7120_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<expr>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

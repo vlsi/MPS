@@ -16,44 +16,44 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class Type_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createAlternation_9010_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createAlternation_9010_0(editorContext, node);
   }
 
-  private EditorCell createAlternation_9010_0(EditorContext context, SNode node) {
+  private EditorCell createAlternation_9010_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Type_Editor.renderingCondition9010_0(node, context, context.getOperationContext().getScope());
+    alternationCondition = Type_Editor.renderingCondition9010_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createError_9010_0(context, node);
+      editorCell = this.createError_9010_0(editorContext, node);
     } else
     {
-      editorCell = this.createConceptProperty_9010_0(context, node);
+      editorCell = this.createConceptProperty_9010_0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createError_9010_0(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<type>");
+  private EditorCell createError_9010_0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
     editorCell.setCellId("Error_9010_0");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9010_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
+  private EditorCell createConceptProperty_9010_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<type has no alias>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }

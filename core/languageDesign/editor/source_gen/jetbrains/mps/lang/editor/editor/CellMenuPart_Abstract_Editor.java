@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createError_7903_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createError_7903_0(editorContext, node);
   }
 
-  private EditorCell createError_7903_0(EditorContext context, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(context, node, "<choose menu part>");
+  private EditorCell createError_7903_0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_7903_0");
     {
       Style style = editorCell.getStyle();

@@ -18,45 +18,45 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor {
 
-  public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_1515_0(context, node);
+  public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_1515_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1515_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
+  private EditorCell createCollection_1515_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1515_0");
-    editorCell.addEditorCell(this.createCollection_1515_1(context, node));
-    editorCell.addEditorCell(this.createCollection_1515_2(context, node));
+    editorCell.addEditorCell(this.createCollection_1515_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1515_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1515_1(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_1515_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1515_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1515_0(context, node, "property postfix hints"));
+    editorCell.addEditorCell(this.createConstant_1515_0(editorContext, node, "property postfix hints"));
     return editorCell;
   }
 
-  private EditorCell createCollection_1515_2(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+  private EditorCell createCollection_1515_2(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1515_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1515_1(context, node, "  "));
-    editorCell.addEditorCell(this.createConstant_1515_2(context, node, "postfixes"));
-    editorCell.addEditorCell(this.createConstant_1515_3(context, node, ":"));
-    editorCell.addEditorCell(this.createRefNode_1515_0(context, node));
+    editorCell.addEditorCell(this.createConstant_1515_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_1515_2(editorContext, node, "postfixes"));
+    editorCell.addEditorCell(this.createConstant_1515_3(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createRefNode_1515_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1515_0(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1515_0(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1515_0");
     {
       Style style = editorCell.getStyle();
@@ -67,8 +67,8 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_1515_1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1515_1(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1515_1");
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_1515_2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1515_2(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1515_2");
     {
       Style style = editorCell.getStyle();
@@ -89,8 +89,8 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_1515_3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+  private EditorCell createConstant_1515_3(EditorContext editorContext, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
     editorCell.setCellId("Constant_1515_3");
     {
       Style style = editorCell.getStyle();
@@ -100,19 +100,19 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createRefNode_1515_0(EditorContext context, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+  private EditorCell createRefNode_1515_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("postfixesFunction");
     provider.setNoTargetText("<no postfixesFunction>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(context);
+    editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
-      IOperationContext opContext = context.getOperationContext();
+      IOperationContext opContext = editorContext.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, editorCell);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
   }
