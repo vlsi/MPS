@@ -15,6 +15,9 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
 
@@ -22,7 +25,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_0147_0(context, node);
   }
 
-  private EditorCell createCollection_0147_0(EditorContext context, SNode node) {
+  public EditorCell createCollection_0147_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_0147_0");
     editorCell.addEditorCell(this.createConceptProperty_0147_0(context, node));
@@ -32,7 +35,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0147_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0147_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0147_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -40,7 +43,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0147_1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_0147_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_0147_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -48,7 +51,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0147_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode_0147_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("closure");
     provider.setNoTargetText("<no closure>");
@@ -68,7 +71,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0147_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_0147_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -77,6 +80,7 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new InternalSequenceOperation_Editor.InternalSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -86,5 +90,16 @@ public class InternalSequenceOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
+
+  public static class InternalSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public InternalSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
+    }
+
+}
 
 }

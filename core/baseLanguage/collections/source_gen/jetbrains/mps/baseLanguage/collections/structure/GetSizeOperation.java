@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class GetSizeOperation extends SequenceOperation {
+public class GetSizeOperation extends NoArgumentsSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation";
 
   public GetSizeOperation(SNode node) {

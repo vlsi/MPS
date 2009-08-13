@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ClearAllElementsOperation extends SequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
+public class ClearAllElementsOperation extends NoArgumentsSequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

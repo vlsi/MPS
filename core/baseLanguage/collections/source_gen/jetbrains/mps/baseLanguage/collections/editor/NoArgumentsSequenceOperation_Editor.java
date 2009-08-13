@@ -6,29 +6,23 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
-public class ClearSetOperation_Editor extends DefaultNodeEditor {
+public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createCollection_2838_0(context, node);
+    return this.createConceptProperty_1243_0(context, node);
   }
 
-  public EditorCell createCollection_2838_0(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
-    editorCell.setCellId("Collection_2838_0");
-    editorCell.addEditorCell(this.createConceptProperty_2838_0(context, node));
-    return editorCell;
-  }
-
-  public EditorCell createConceptProperty_2838_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_1243_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -36,8 +30,12 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(context);
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ClearSetOperation_Editor.ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new NoArgumentsSequenceOperation_Editor.NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -48,9 +46,9 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+  public static class NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
-    public ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+    public NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

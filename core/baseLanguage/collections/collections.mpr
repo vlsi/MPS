@@ -36,9 +36,9 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="true" name="UnitTests" moduleRef="collections_unittest" />
-      <genConfModule runnable="false" name="collections lang test" moduleRef="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-      <genConfModule runnable="true" name="internalCollections" moduleRef="internalCollections.test" />
+      <genConfModule name="UnitTests" moduleRef="collections_unittest" />
+      <genConfModule name="collections lang test" moduleRef="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+      <genConfModule name="internalCollections" moduleRef="internalCollections.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RemoveFirstElementOperation extends SequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
+public class RemoveFirstElementOperation extends NoArgumentsSequenceOperation implements IListOperation, IQueueOperation, IStackOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

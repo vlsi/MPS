@@ -16,8 +16,11 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class JoinOperation_Editor extends DefaultNodeEditor {
 
@@ -25,7 +28,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_2943_0(context, node);
   }
 
-  private EditorCell createCollection_2943_0(EditorContext context, SNode node) {
+  public EditorCell createCollection_2943_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2943_0");
     editorCell.addEditorCell(this.createConceptProperty_2943_0(context, node));
@@ -35,7 +38,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_2943_1(EditorContext context, SNode node) {
+  public EditorCell createCollection_2943_1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_2943_1");
     {
@@ -49,7 +52,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2943_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2943_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2943_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -57,7 +60,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2943_1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_2943_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_2943_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -65,7 +68,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2943_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode_2943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("delimiter");
     provider.setNoTargetText("<no delimiter>");
@@ -82,7 +85,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2943_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_2943_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -95,6 +98,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new JoinOperation_Editor.JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -106,8 +110,19 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static boolean renderingCondition2943_0(SNode node, EditorContext editorContext, IScope scope) {
+  public static boolean renderingCondition2943_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "delimiter", true) != null);
   }
+
+  public static class JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public JoinOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
+    }
+
+}
 
 }

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class PopOperation extends SequenceOperation implements IStackOperation, IDequeOperation {
+public class PopOperation extends NoArgumentsSequenceOperation implements IStackOperation, IDequeOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.PopOperation";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

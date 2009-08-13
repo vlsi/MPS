@@ -11,9 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ChunkOperation_Editor extends DefaultNodeEditor {
 
@@ -21,7 +24,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_7170_0(context, node);
   }
 
-  private EditorCell createCollection_7170_0(EditorContext context, SNode node) {
+  public EditorCell createCollection_7170_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_7170_0");
     editorCell.addEditorCell(this.createConceptProperty_7170_0(context, node));
@@ -31,7 +34,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7170_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7170_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7170_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -39,7 +42,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7170_1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_7170_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_7170_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -47,7 +50,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7170_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_7170_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -56,6 +59,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ChunkOperation_Editor.ChunkOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -66,7 +70,7 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7170_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode_7170_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("length");
     provider.setNoTargetText("<no length>");
@@ -82,5 +86,16 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
+
+  public static class ChunkOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public ChunkOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
+    }
+
+}
 
 }

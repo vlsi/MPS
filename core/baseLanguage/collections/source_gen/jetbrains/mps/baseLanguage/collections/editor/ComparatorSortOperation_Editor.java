@@ -15,9 +15,12 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
 
@@ -25,7 +28,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_4999_0(context, node);
   }
 
-  private EditorCell createCollection_4999_0(EditorContext context, SNode node) {
+  public EditorCell createCollection_4999_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_4999_0");
     editorCell.addEditorCell(this.createConceptProperty_4999_0(context, node));
@@ -37,7 +40,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_0(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4999_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4999_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -45,7 +48,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_1(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4999_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4999_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
@@ -57,7 +60,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_2(EditorContext context, SNode node, String text) {
+  public EditorCell createConstant_4999_2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_4999_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -65,7 +68,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4999_0(EditorContext context, SNode node) {
+  public EditorCell createConceptProperty_4999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -74,6 +77,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new SubstituteInfoPart[]{new ComparatorSortOperation_Editor.ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -84,7 +88,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4999_0(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4999_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("comparator");
     provider.setNoTargetText("<no comparator>");
@@ -101,7 +105,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4999_1(EditorContext context, SNode node) {
+  public EditorCell createRefNode_4999_1(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("ascending");
     provider.setNoTargetText("<no ascending>");
@@ -117,5 +121,16 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
+
+  public static class ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
+    }
+
+}
 
 }

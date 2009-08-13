@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ToIteratorOperation extends SequenceOperation {
+public class ToIteratorOperation extends NoArgumentsSequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation";
 
   public ToIteratorOperation(SNode node) {
