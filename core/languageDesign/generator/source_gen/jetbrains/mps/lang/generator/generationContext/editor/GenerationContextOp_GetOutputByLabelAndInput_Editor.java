@@ -28,25 +28,25 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
   private EditorCell createCollection_6100_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6100_0");
-    editorCell.addEditorCell(this.createConstant_6100_0(editorContext, node, "get output"));
+    editorCell.addEditorCell(this.createConstant_6100_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6100_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6100_1(editorContext, node, "for"));
-    editorCell.addEditorCell(this.createConstant_6100_2(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_6100_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6100_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6100_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6100_3(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_6100_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6100_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6100_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get output");
     editorCell.setCellId("Constant_6100_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6100_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6100_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_6100_1");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
@@ -57,16 +57,16 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
     return editorCell;
   }
 
-  private EditorCell createConstant_6100_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6100_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6100_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6100_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6100_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6100_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -24,23 +24,23 @@ public class SwitchCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9384_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9384_0");
-    editorCell.addEditorCell(this.createConstant_9384_0(editorContext, node, "case"));
+    editorCell.addEditorCell(this.createConstant_9384_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9384_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9384_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_9384_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9384_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9384_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9384_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case");
     editorCell.setCellId("Constant_9384_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9384_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9384_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_9384_1");
     {
       Style style = editorCell.getStyle();

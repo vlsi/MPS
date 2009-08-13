@@ -39,7 +39,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_7653_0(editorContext, node));
     editorCell.addEditorCell(this.createConceptProperty_7653_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7653_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7653_0(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_7653_0(editorContext, node));
     return editorCell;
   }
 
@@ -49,8 +49,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7653_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7653_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7653_0");
     editorCell.setDefaultText("");
     return editorCell;

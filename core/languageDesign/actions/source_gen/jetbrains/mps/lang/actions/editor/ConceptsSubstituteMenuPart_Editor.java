@@ -62,7 +62,7 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2981_0(editorContext, node, "query"));
+    editorCell.addEditorCell(this.createConstant_2981_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2981_4(editorContext, node));
     return editorCell;
   }
@@ -79,8 +79,8 @@ public class ConceptsSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2981_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2981_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_2981_0");
     {
       Style style = editorCell.getStyle();

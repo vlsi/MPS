@@ -28,23 +28,23 @@ public class SimpleRule_Annotated_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5035_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5035_0");
-    editorCell.addEditorCell(this.createConstant_5035_0(editorContext, node, "annotated"));
+    editorCell.addEditorCell(this.createConstant_5035_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5035_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5035_1(editorContext, node, "has type annotation"));
+    editorCell.addEditorCell(this.createConstant_5035_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5035_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5035_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5035_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotated");
     editorCell.setCellId("Constant_5035_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5035_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5035_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has type annotation");
     editorCell.setCellId("Constant_5035_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

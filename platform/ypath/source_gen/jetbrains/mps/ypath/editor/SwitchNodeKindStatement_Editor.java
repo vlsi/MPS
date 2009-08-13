@@ -33,18 +33,18 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4855_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4855_0");
-    editorCell.addEditorCell(this.createConstant_4855_0(editorContext, node, "switch"));
+    editorCell.addEditorCell(this.createConstant_4855_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4855_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4855_1(editorContext, node, "kind"));
-    editorCell.addEditorCell(this.createConstant_4855_2(editorContext, node, "{"));
-    editorCell.addEditorCell(this.createConstant_4855_4(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_4855_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4855_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4855_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4855_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4855_3(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_4855_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4855_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4855_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "switch");
     editorCell.setCellId("Constant_4855_0");
     {
       Style style = editorCell.getStyle();
@@ -54,8 +54,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4855_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4855_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "kind");
     editorCell.setCellId("Constant_4855_1");
     {
       Style style = editorCell.getStyle();
@@ -65,8 +65,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4855_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4855_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_4855_2");
     {
       Style style = editorCell.getStyle();
@@ -76,8 +76,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4855_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4855_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_4855_3");
     {
       Style style = editorCell.getStyle();
@@ -87,8 +87,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4855_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4855_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_4855_4");
     {
       Style style = editorCell.getStyle();
@@ -152,7 +152,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4855_5(editorContext, node, "<no cases>");
+      return this.createConstant_4855_5(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -173,8 +173,8 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_4855_5(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4855_5(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no cases>");
       editorCell.setCellId("Constant_4855_5");
       {
         Style style = editorCell.getStyle();

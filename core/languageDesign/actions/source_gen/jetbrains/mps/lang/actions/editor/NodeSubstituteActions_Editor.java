@@ -35,7 +35,7 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1835_0");
     editorCell.addEditorCell(this.createCollection_1835_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1835_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1835_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1835_1(editorContext, node));
     return editorCell;
   }
@@ -58,13 +58,13 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1835_1(editorContext, node, "node substitute actions"));
+    editorCell.addEditorCell(this.createConstant_1835_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1835_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1835_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1835_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1835_0");
     {
       Style style = editorCell.getStyle();
@@ -74,8 +74,8 @@ public class NodeSubstituteActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1835_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1835_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node substitute actions");
     editorCell.setCellId("Constant_1835_1");
     editorCell.setDefaultText("");
     return editorCell;

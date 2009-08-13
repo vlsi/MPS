@@ -40,13 +40,13 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     if (renderingCondition7497_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7497_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7497_0(editorContext, node, "foreach"));
+    editorCell.addEditorCell(this.createConstant_7497_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_1(editorContext, node, "in"));
+    editorCell.addEditorCell(this.createConstant_7497_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7497_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_2(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7497_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7497_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_3(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7497_3(editorContext, node));
     return editorCell;
   }
 
@@ -58,37 +58,37 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createProperty_7497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7497_4(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_7497_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7497_2");
-    editorCell.addEditorCell(this.createConstant_7497_5(editorContext, node, "label"));
-    editorCell.addEditorCell(this.createConstant_7497_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7497_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7497_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7497_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_7497_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_7497_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7497_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -99,8 +99,8 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7497_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -111,8 +111,8 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7497_4");
     {
       Style style = editorCell.getStyle();
@@ -123,8 +123,8 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_7497_5");
     {
       Style style = editorCell.getStyle();
@@ -134,8 +134,8 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7497_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7497_6");
     {
       Style style = editorCell.getStyle();

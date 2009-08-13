@@ -30,7 +30,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_3153_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3153_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3153_4(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3153_4(editorContext, node));
     return editorCell;
   }
 
@@ -41,8 +41,8 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3153_0(editorContext, node, "foreach"));
-    editorCell.addEditorCell(this.createConstant_3153_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_3153_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3153_0(editorContext, node));
     return editorCell;
   }
@@ -54,21 +54,21 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3153_1(editorContext, node, "apply"));
-    editorCell.addEditorCell(this.createConstant_3153_3(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_3153_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_3(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3153_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3153_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_3153_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3153_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
     editorCell.setCellId("Constant_3153_1");
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3153_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3153_2");
     {
       Style style = editorCell.getStyle();
@@ -90,8 +90,8 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3153_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3153_3");
     {
       Style style = editorCell.getStyle();
@@ -102,8 +102,8 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3153_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3153_4");
     {
       Style style = editorCell.getStyle();

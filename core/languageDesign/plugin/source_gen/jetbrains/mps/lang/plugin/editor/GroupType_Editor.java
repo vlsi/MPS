@@ -29,15 +29,15 @@ public class GroupType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1859_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1859_0");
-    editorCell.addEditorCell(this.createConstant_1859_0(editorContext, node, "group"));
-    editorCell.addEditorCell(this.createConstant_1859_1(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_1859_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1859_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1859_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1859_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_1859_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1859_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1859_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
     editorCell.setCellId("Constant_1859_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -48,8 +48,8 @@ public class GroupType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1859_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1859_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_1859_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
@@ -61,8 +61,8 @@ public class GroupType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1859_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1859_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_1859_2");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {

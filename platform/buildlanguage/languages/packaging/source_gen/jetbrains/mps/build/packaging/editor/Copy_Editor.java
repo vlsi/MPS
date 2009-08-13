@@ -36,7 +36,7 @@ public class Copy_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2873_0");
     editorCell.addEditorCell(this.createConceptProperty_2873_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2873_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_2873_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2873_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2873_4(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2873_1(editorContext, node));
@@ -55,7 +55,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2873_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2873_2");
-    editorCell.addEditorCell(this.createConstant_2873_1(editorContext, node, "excludes"));
+    editorCell.addEditorCell(this.createConstant_2873_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2873_0(editorContext, node));
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2873_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2873_3");
-    editorCell.addEditorCell(this.createConstant_2873_2(editorContext, node, "includes"));
+    editorCell.addEditorCell(this.createConstant_2873_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2873_1(editorContext, node));
     return editorCell;
   }
@@ -88,7 +88,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2873_5(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2873_5");
-    editorCell.addEditorCell(this.createConstant_2873_3(editorContext, node, "excludes"));
+    editorCell.addEditorCell(this.createConstant_2873_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2873_2(editorContext, node));
     return editorCell;
   }
@@ -96,7 +96,7 @@ public class Copy_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2873_6(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2873_6");
-    editorCell.addEditorCell(this.createConstant_2873_4(editorContext, node, "includes"));
+    editorCell.addEditorCell(this.createConstant_2873_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2873_3(editorContext, node));
     return editorCell;
   }
@@ -113,32 +113,32 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2873_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2873_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_2873_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2873_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2873_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_2873_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2873_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2873_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_2873_2");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2873_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2873_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_2873_3");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -149,8 +149,8 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2873_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2873_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_2873_4");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

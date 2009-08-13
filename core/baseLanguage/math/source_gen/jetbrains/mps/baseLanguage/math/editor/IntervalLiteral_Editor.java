@@ -44,7 +44,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6862_0");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6862_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6862_0(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_6862_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6862_1(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_1(editorContext, node));
     return editorCell;
@@ -53,15 +53,15 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6862_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6862_1");
-    editorCell.addEditorCell(this.createConstant_6862_1(editorContext, node, "start incuded:"));
+    editorCell.addEditorCell(this.createConstant_6862_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6862_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6862_2(editorContext, node, "end included:"));
+    editorCell.addEditorCell(this.createConstant_6862_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6862_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6862_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_6862_0");
     {
       Style style = editorCell.getStyle();
@@ -71,15 +71,15 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6862_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "start incuded:");
     editorCell.setCellId("Constant_6862_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6862_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end included:");
     editorCell.setCellId("Constant_6862_2");
     editorCell.setDefaultText("");
     return editorCell;

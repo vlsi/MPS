@@ -25,14 +25,14 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8232_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8232_0");
-    editorCell.addEditorCell(this.createConstant_8232_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_8232_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8232_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8232_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_8232_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8232_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8232_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8232_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
@@ -48,8 +48,8 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8232_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8232_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8232_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {

@@ -25,7 +25,7 @@ public class Path_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0169_0");
     editorCell.addEditorCell(this.createCollection_0169_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0169_0(editorContext, node, "/"));
+    editorCell.addEditorCell(this.createConstant_0169_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0169_0(editorContext, node));
     return editorCell;
   }
@@ -42,8 +42,8 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0169_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0169_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_0169_0");
     PackagingStyles_StyleSheet.getSlash(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

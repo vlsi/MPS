@@ -49,7 +49,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1160_1");
     editorCell.addEditorCell(this.createConceptProperty_1160_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1160_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1160_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_1160_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1160_1(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1160_0(editorContext, node));
     return editorCell;
@@ -86,8 +86,8 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1160_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1160_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_1160_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -189,7 +189,7 @@ public class Replace_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_1160_1(editorContext, node, "<pairs token-value>");
+      return this.createConstant_1160_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -210,8 +210,8 @@ public class Replace_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_1160_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_1160_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<pairs token-value>");
       editorCell.setCellId("Constant_1160_1");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

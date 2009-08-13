@@ -29,50 +29,50 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9973_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9973_0");
-    editorCell.addEditorCell(this.createConstant_9973_0(editorContext, node, "info"));
+    editorCell.addEditorCell(this.createConstant_9973_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9973_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9973_1(editorContext, node, "->"));
+    editorCell.addEditorCell(this.createConstant_9973_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9973_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9973_2(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_9973_2(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_9973_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9973_1");
-    editorCell.addEditorCell(this.createConstant_9973_4(editorContext, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createConstant_9973_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9973_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9973_5(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_9973_3(editorContext, node, "intention linked with info message(optional)"));
+    editorCell.addEditorCell(this.createConstant_9973_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9973_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9973_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "info");
     editorCell.setCellId("Constant_9973_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_9973_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_9973_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention linked with info message(optional)");
     editorCell.setCellId("Constant_9973_3");
     {
       Style style = editorCell.getStyle();
@@ -82,8 +82,8 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_9973_4");
     {
       Style style = editorCell.getStyle();
@@ -93,8 +93,8 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9973_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9973_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_9973_5");
     {
       Style style = editorCell.getStyle();

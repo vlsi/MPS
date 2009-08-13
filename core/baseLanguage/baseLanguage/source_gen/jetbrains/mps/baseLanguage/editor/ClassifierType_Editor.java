@@ -52,14 +52,14 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
-    editorCell.addEditorCell(this.createConstant_9185_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_9185_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9185_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9185_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_9185_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9185_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9185_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_9185_0");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -71,8 +71,8 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9185_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9185_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_9185_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {

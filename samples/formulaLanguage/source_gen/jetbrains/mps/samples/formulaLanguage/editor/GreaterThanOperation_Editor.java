@@ -29,13 +29,13 @@ public class GreaterThanOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7664_0");
     editorCell.addEditorCell(this.createRefNode_7664_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7664_0(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_7664_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7664_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7664_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7664_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_7664_0");
     {
       Style style = editorCell.getStyle();

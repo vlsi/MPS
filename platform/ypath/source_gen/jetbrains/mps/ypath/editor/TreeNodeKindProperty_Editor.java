@@ -39,10 +39,10 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     alternationCondition = TreeNodeKindProperty_Editor.renderingCondition4147_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_4147_1(editorContext, node, "default");
+      editorCell = this.createConstant_4147_1(editorContext, node);
     } else
     {
-      editorCell = this.createConstant_4147_2(editorContext, node, "");
+      editorCell = this.createConstant_4147_2(editorContext, node);
     }
     TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu0()}));
@@ -55,13 +55,13 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
     editorCell.addEditorCell(this.createAlternation_4147_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4147_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4147_0(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4147_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4147_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4147_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4147_0");
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4147_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_4147_1");
     {
       Style style = editorCell.getStyle();
@@ -84,8 +84,8 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4147_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4147_2");
     {
       Style style = editorCell.getStyle();

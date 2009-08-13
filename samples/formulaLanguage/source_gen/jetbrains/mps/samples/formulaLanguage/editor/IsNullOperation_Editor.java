@@ -30,21 +30,21 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7734_0");
     editorCell.addEditorCell(this.createRefNode_7734_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7734_0(editorContext, node, "."));
-    editorCell.addEditorCell(this.createConstant_7734_1(editorContext, node, "isNull"));
+    editorCell.addEditorCell(this.createConstant_7734_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7734_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7734_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7734_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_7734_0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsNullOperation_Editor.IsNullOperation_Editor_replaceWith_Operation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_7734_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7734_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isNull");
     editorCell.setCellId("Constant_7734_1");
     {
       Style style = editorCell.getStyle();

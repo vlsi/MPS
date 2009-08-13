@@ -123,7 +123,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8965_0(editorContext, node, "");
+      return this.createConstant_8965_0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -151,8 +151,8 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_8965_0(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_8965_0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_8965_0");
       editorCell.setDefaultText("");
       return editorCell;

@@ -29,9 +29,9 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_2759_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2759_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2759_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2759_4(editorContext, node, "operation type:"));
+    editorCell.addEditorCell(this.createConstant_2759_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2759_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2759_5(editorContext, node, "-----------------------------------------------"));
+    editorCell.addEditorCell(this.createConstant_2759_5(editorContext, node));
     return editorCell;
   }
 
@@ -43,11 +43,11 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2759_0(editorContext, node, "left operand type:"));
+    editorCell.addEditorCell(this.createConstant_2759_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2759_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2759_6(editorContext, node, "is exact:"));
+    editorCell.addEditorCell(this.createConstant_2759_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2759_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2759_2(editorContext, node, "    "));
+    editorCell.addEditorCell(this.createConstant_2759_2(editorContext, node));
     return editorCell;
   }
 
@@ -59,7 +59,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2759_3(editorContext, node, "operation concept:"));
+    editorCell.addEditorCell(this.createConstant_2759_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2759_2(editorContext, node));
     return editorCell;
   }
@@ -72,29 +72,29 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2759_1(editorContext, node, "right operand type:"));
+    editorCell.addEditorCell(this.createConstant_2759_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2759_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2759_7(editorContext, node, "is exact:"));
+    editorCell.addEditorCell(this.createConstant_2759_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2759_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand type:");
     editorCell.setCellId("Constant_2759_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand type:");
     editorCell.setCellId("Constant_2759_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_2759_2");
     {
       Style style = editorCell.getStyle();
@@ -104,22 +104,22 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concept:");
     editorCell.setCellId("Constant_2759_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
     editorCell.setCellId("Constant_2759_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
     editorCell.setCellId("Constant_2759_5");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -130,15 +130,15 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_2759_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2759_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2759_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_2759_7");
     editorCell.setDefaultText("");
     return editorCell;

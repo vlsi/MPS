@@ -26,7 +26,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5532_0");
     editorCell.addEditorCell(this.createCollection_5532_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5532_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_5532_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5532_2(editorContext, node));
     return editorCell;
   }
@@ -38,7 +38,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5532_0(editorContext, node, "constrained string datatype:"));
+    editorCell.addEditorCell(this.createConstant_5532_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5532_0(editorContext, node));
     return editorCell;
   }
@@ -50,13 +50,13 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5532_2(editorContext, node, "    matching regexp:"));
+    editorCell.addEditorCell(this.createConstant_5532_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5532_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5532_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "constrained string datatype:");
     editorCell.setCellId("Constant_5532_0");
     {
       Style style = editorCell.getStyle();
@@ -67,8 +67,8 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5532_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5532_1");
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5532_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    matching regexp:");
     editorCell.setCellId("Constant_5532_2");
     editorCell.setDefaultText("");
     return editorCell;

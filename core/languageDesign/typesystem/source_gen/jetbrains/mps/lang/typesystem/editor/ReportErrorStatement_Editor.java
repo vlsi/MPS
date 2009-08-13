@@ -29,42 +29,42 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9503_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9503_0");
-    editorCell.addEditorCell(this.createConstant_9503_0(editorContext, node, "error"));
+    editorCell.addEditorCell(this.createConstant_9503_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9503_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9503_1(editorContext, node, "->"));
+    editorCell.addEditorCell(this.createConstant_9503_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9503_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9503_2(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_9503_2(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_9503_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9503_1");
-    editorCell.addEditorCell(this.createConstant_9503_4(editorContext, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createConstant_9503_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9503_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9503_5(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_9503_3(editorContext, node, "intention to fix an error(optional)"));
+    editorCell.addEditorCell(this.createConstant_9503_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9503_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9503_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error");
     editorCell.setCellId("Constant_9503_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_9503_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_9503_2");
     {
       Style style = editorCell.getStyle();
@@ -74,8 +74,8 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix an error(optional)");
     editorCell.setCellId("Constant_9503_3");
     {
       Style style = editorCell.getStyle();
@@ -85,8 +85,8 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_9503_4");
     {
       Style style = editorCell.getStyle();
@@ -96,8 +96,8 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9503_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9503_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_9503_5");
     {
       Style style = editorCell.getStyle();

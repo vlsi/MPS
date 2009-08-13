@@ -33,23 +33,23 @@ public class MatrixLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3502_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3502_0");
-    editorCell.addEditorCell(this.createConstant_3502_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_3502_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3502_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3502_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_3502_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3502_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3502_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3502_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_3502_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3502_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3502_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_3502_1");
     editorCell.setDefaultText("");
     return editorCell;

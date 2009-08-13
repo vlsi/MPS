@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class Node_GetPrevSiblingOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4187_0(editorContext, node, "prev-sibling");
+    return this.createConstant_4187_0(editorContext, node);
   }
 
-  private EditorCell createConstant_4187_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4187_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "prev-sibling");
     editorCell.setCellId("Constant_4187_0");
     {
       Style style = editorCell.getStyle();

@@ -36,7 +36,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_8715_0");
     editorCell.addEditorCell(this.createConceptProperty_8715_0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell8715_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8715_0(editorContext, node, "-"));
+    editorCell.addEditorCell(this.createConstant_8715_0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell8715_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8715_1(editorContext, node));
     return editorCell;
@@ -53,7 +53,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_8715_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8715_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8715_3(editorContext, node, "file associations:"));
+    editorCell.addEditorCell(this.createConstant_8715_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8715_4(editorContext, node));
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8715_1(editorContext, node, "icon file"));
+    editorCell.addEditorCell(this.createConstant_8715_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8715_0(editorContext, node));
     return editorCell;
   }
@@ -78,7 +78,7 @@ public class MacConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8715_2(editorContext, node, "java application stub path"));
+    editorCell.addEditorCell(this.createConstant_8715_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8715_1(editorContext, node));
     return editorCell;
   }
@@ -96,31 +96,31 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8715_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8715_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_8715_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8715_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8715_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon file");
     editorCell.setCellId("Constant_8715_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8715_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8715_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java application stub path");
     editorCell.setCellId("Constant_8715_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8715_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8715_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file associations:");
     editorCell.setCellId("Constant_8715_3");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

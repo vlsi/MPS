@@ -29,12 +29,12 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0777_0");
     editorCell.addEditorCell(this.createRefCell_0777_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0777_0(editorContext, node, "/list"));
+    editorCell.addEditorCell(this.createConstant_0777_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0777_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0777_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/list");
     editorCell.setCellId("Constant_0777_0");
     {
       Style style = editorCell.getStyle();

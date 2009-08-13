@@ -46,11 +46,11 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.lightGray);
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_6257_1(editorContext, node, "root template"));
+    editorCell.addEditorCell(this.createConstant_6257_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6257_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6257_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6257_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6257_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6257_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6257_6(editorContext, node));
     return editorCell;
   }
 
@@ -61,7 +61,7 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6257_0(editorContext, node, "input"));
+    editorCell.addEditorCell(this.createConstant_6257_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6257_0(editorContext, node));
     return editorCell;
   }
@@ -73,14 +73,14 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6257_3(editorContext, node, "Ctrl-Shift-M"));
-    editorCell.addEditorCell(this.createConstant_6257_4(editorContext, node, ":"));
-    editorCell.addEditorCell(this.createConstant_6257_5(editorContext, node, "create macro"));
+    editorCell.addEditorCell(this.createConstant_6257_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6257_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6257_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
     editorCell.setCellId("Constant_6257_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -91,8 +91,8 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root template");
     editorCell.setCellId("Constant_6257_1");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -103,8 +103,8 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6257_2");
     {
       Style style = editorCell.getStyle();
@@ -114,8 +114,8 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Ctrl-Shift-M");
     editorCell.setCellId("Constant_6257_3");
     {
       Style style = editorCell.getStyle();
@@ -125,8 +125,8 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_6257_4");
     {
       Style style = editorCell.getStyle();
@@ -136,15 +136,15 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create macro");
     editorCell.setCellId("Constant_6257_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6257_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6257_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6257_6");
     {
       Style style = editorCell.getStyle();

@@ -41,8 +41,8 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3474_0(editorContext, node, "< abstract node macro >"));
-    editorCell.addEditorCell(this.createConstant_3474_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3474_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3474_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3474_3(editorContext, node));
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3474_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3474_1");
-    editorCell.addEditorCell(this.createConstant_3474_2(editorContext, node, "$$"));
+    editorCell.addEditorCell(this.createConstant_3474_2(editorContext, node));
     editorCell.addEditorCell(this.createComponent_3474_0(editorContext, node));
     return editorCell;
   }
@@ -62,8 +62,8 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3474_3(editorContext, node, "mapping label"));
-    editorCell.addEditorCell(this.createConstant_3474_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_3474_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3474_4(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3474_0(editorContext, node));
     return editorCell;
   }
@@ -83,15 +83,15 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3474_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3474_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "< abstract node macro >");
     editorCell.setCellId("Constant_3474_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3474_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3474_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3474_1");
     {
       Style style = editorCell.getStyle();
@@ -101,8 +101,8 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3474_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3474_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$$");
     editorCell.setCellId("Constant_3474_2");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -115,8 +115,8 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3474_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3474_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_3474_3");
     {
       Style style = editorCell.getStyle();
@@ -126,8 +126,8 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3474_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3474_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3474_4");
     {
       Style style = editorCell.getStyle();

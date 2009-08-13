@@ -35,9 +35,9 @@ public class Plan_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4877_0");
     editorCell.addEditorCell(this.createCollection_4877_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4877_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4877_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4877_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4877_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4877_6(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4877_3(editorContext, node));
     return editorCell;
   }
@@ -49,7 +49,7 @@ public class Plan_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4877_2(editorContext, node, "plan"));
+    editorCell.addEditorCell(this.createConstant_4877_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4877_0(editorContext, node));
     return editorCell;
   }
@@ -61,7 +61,7 @@ public class Plan_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4877_0(editorContext, node, "    "));
+    editorCell.addEditorCell(this.createConstant_4877_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4877_0(editorContext, node));
     return editorCell;
   }
@@ -73,13 +73,13 @@ public class Plan_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4877_3(editorContext, node, "    "));
+    editorCell.addEditorCell(this.createConstant_4877_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4877_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4877_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4877_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_4877_0");
     {
       Style style = editorCell.getStyle();
@@ -89,15 +89,15 @@ public class Plan_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4877_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4877_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "plan");
     editorCell.setCellId("Constant_4877_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4877_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4877_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_4877_3");
     {
       Style style = editorCell.getStyle();
@@ -107,8 +107,8 @@ public class Plan_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4877_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4877_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4877_5");
     {
       Style style = editorCell.getStyle();
@@ -118,8 +118,8 @@ public class Plan_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4877_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4877_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4877_6");
     {
       Style style = editorCell.getStyle();
@@ -201,7 +201,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4877_1(editorContext, node, "press <Ctrl>+<Enter> to add Value");
+      return this.createConstant_4877_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -222,8 +222,8 @@ public class Plan_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_4877_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4877_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Value");
       editorCell.setCellId("Constant_4877_1");
       {
         Style style = editorCell.getStyle();
@@ -260,7 +260,7 @@ public class Plan_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4877_4(editorContext, node, "press <Ctrl>+<Enter> to add Event");
+      return this.createConstant_4877_4(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -281,8 +281,8 @@ public class Plan_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_4877_4(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4877_4(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Event");
       editorCell.setCellId("Constant_4877_4");
       {
         Style style = editorCell.getStyle();

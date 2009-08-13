@@ -31,14 +31,14 @@ public class OperationParm_StopConceptList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6596_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6596_0");
-    editorCell.addEditorCell(this.createConstant_6596_0(editorContext, node, "stop concepts are:["));
+    editorCell.addEditorCell(this.createConstant_6596_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6596_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6596_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_6596_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6596_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6596_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stop concepts are:[");
     editorCell.setCellId("Constant_6596_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -49,8 +49,8 @@ public class OperationParm_StopConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6596_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6596_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_6596_1");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {

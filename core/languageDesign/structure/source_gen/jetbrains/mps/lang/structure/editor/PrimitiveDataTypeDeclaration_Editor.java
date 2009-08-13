@@ -36,13 +36,13 @@ public class PrimitiveDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3949_0(editorContext, node, "primitive datatype:"));
+    editorCell.addEditorCell(this.createConstant_3949_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3949_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3949_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3949_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primitive datatype:");
     editorCell.setCellId("Constant_3949_0");
     {
       Style style = editorCell.getStyle();

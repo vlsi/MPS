@@ -29,13 +29,13 @@ public class OrOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0584_0");
     editorCell.addEditorCell(this.createRefNode_0584_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0584_0(editorContext, node, "||"));
+    editorCell.addEditorCell(this.createConstant_0584_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0584_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0584_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0584_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "||");
     editorCell.setCellId("Constant_0584_0");
     {
       Style style = editorCell.getStyle();

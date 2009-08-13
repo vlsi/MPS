@@ -31,13 +31,13 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1550_1");
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_1550_0(editorContext, node, "as"));
+    editorCell.addEditorCell(this.createConstant_1550_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1550_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1550_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1550_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_1550_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);

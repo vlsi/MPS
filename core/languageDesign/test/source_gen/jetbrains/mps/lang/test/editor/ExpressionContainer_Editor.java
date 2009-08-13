@@ -22,21 +22,21 @@ public class ExpressionContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2925_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2925_0");
-    editorCell.addEditorCell(this.createConstant_2925_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2925_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2925_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2925_1(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_2925_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2925_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2925_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2925_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2925_1");
     editorCell.setDefaultText("");
     return editorCell;

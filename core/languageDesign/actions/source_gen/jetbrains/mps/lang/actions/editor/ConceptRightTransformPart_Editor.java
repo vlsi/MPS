@@ -56,7 +56,7 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createIndentCell0481_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0481_0(editorContext, node, "handler"));
+    editorCell.addEditorCell(this.createConstant_0481_0(editorContext, node));
     return editorCell;
   }
 
@@ -67,14 +67,14 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0481_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_0481_1(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell0481_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0481_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0481_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0481_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handler");
     editorCell.setCellId("Constant_0481_0");
     {
       Style style = editorCell.getStyle();
@@ -84,8 +84,8 @@ public class ConceptRightTransformPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0481_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0481_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_0481_1");
     {
       Style style = editorCell.getStyle();

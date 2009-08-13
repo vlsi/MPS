@@ -29,51 +29,51 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8935_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8935_0");
-    editorCell.addEditorCell(this.createConstant_8935_0(editorContext, node, "warning"));
+    editorCell.addEditorCell(this.createConstant_8935_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8935_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_1(editorContext, node, "->"));
+    editorCell.addEditorCell(this.createConstant_8935_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8935_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_2(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_8935_2(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_8935_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8935_1");
-    editorCell.addEditorCell(this.createConstant_8935_4(editorContext, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createConstant_8935_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8935_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_5(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_8935_3(editorContext, node, "intention to fix a warning(optional)"));
+    editorCell.addEditorCell(this.createConstant_8935_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8935_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8935_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "warning");
     editorCell.setCellId("Constant_8935_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_8935_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_8935_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix a warning(optional)");
     editorCell.setCellId("Constant_8935_3");
     {
       Style style = editorCell.getStyle();
@@ -83,8 +83,8 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_8935_4");
     {
       Style style = editorCell.getStyle();
@@ -94,8 +94,8 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8935_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_8935_5");
     {
       Style style = editorCell.getStyle();

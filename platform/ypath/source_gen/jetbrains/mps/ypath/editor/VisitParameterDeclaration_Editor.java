@@ -27,13 +27,13 @@ public class VisitParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4240_0");
     editorCell.addEditorCell(this.createRefNode_4240_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4240_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4240_0(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_4240_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4240_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4240_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4240_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_4240_0");
     {
       Style style = editorCell.getStyle();

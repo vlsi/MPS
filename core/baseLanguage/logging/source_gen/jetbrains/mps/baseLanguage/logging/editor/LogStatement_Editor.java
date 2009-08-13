@@ -38,7 +38,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     if (renderingCondition2351_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2351_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_2351_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_2351_1(editorContext, node));
     return editorCell;
   }
 
@@ -49,7 +49,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2351_0(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_2351_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2351_1(editorContext, node));
     return editorCell;
   }
@@ -57,14 +57,14 @@ public class LogStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2351_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2351_2");
-    editorCell.addEditorCell(this.createConstant_2351_2(editorContext, node, "Has exception"));
+    editorCell.addEditorCell(this.createConstant_2351_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2351_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2351_3(editorContext, node, "Alt+Enter"));
+    editorCell.addEditorCell(this.createConstant_2351_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2351_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2351_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_2351_0");
     {
       Style style = editorCell.getStyle();
@@ -74,22 +74,22 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2351_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2351_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2351_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2351_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2351_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Has exception");
     editorCell.setCellId("Constant_2351_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2351_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2351_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Alt+Enter");
     editorCell.setCellId("Constant_2351_3");
     {
       Style style = editorCell.getStyle();

@@ -26,7 +26,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5690_0");
     editorCell.addEditorCell(this.createCollection_5690_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5690_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5690_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_5690_0(editorContext, node));
     return editorCell;
   }
 
@@ -37,7 +37,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5690_1(editorContext, node, "case:"));
+    editorCell.addEditorCell(this.createConstant_5690_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5690_0(editorContext, node));
     return editorCell;
   }
@@ -49,20 +49,20 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5690_2(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_5690_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5690_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5690_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5690_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5690_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case:");
     editorCell.setCellId("Constant_5690_1");
     {
       Style style = editorCell.getStyle();
@@ -72,8 +72,8 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5690_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_5690_2");
     {
       Style style = editorCell.getStyle();

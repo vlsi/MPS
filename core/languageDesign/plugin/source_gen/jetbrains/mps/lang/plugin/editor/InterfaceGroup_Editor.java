@@ -29,7 +29,7 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4570_0");
     editorCell.addEditorCell(this.createCollection_4570_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4570_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4570_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4570_3(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4570_0(editorContext, node));
     return editorCell;
   }
@@ -41,10 +41,10 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4570_2(editorContext, node, "bootstrap"));
-    editorCell.addEditorCell(this.createConstant_4570_0(editorContext, node, "group"));
+    editorCell.addEditorCell(this.createConstant_4570_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4570_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4570_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4570_1(editorContext, node, "internal-id"));
+    editorCell.addEditorCell(this.createConstant_4570_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4570_0(editorContext, node));
     return editorCell;
   }
@@ -55,22 +55,22 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4570_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4570_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
     editorCell.setCellId("Constant_4570_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4570_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4570_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
     editorCell.setCellId("Constant_4570_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4570_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4570_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap");
     editorCell.setCellId("Constant_4570_2");
     {
       Style style = editorCell.getStyle();
@@ -80,8 +80,8 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4570_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4570_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4570_3");
     {
       Style style = editorCell.getStyle();

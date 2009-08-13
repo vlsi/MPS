@@ -36,7 +36,7 @@ public class ModificationsEditor extends AbstractCellProvider {
   private EditorCell createCollection_2716_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2716_0");
-    editorCell.addEditorCell(this.createConstant_2716_0(editorContext, node, "modifications"));
+    editorCell.addEditorCell(this.createConstant_2716_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2716_1(editorContext, node));
     return editorCell;
   }
@@ -48,13 +48,13 @@ public class ModificationsEditor extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2716_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2716_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2716_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2716_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2716_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifications");
     editorCell.setCellId("Constant_2716_0");
     {
       Style style = editorCell.getStyle();
@@ -64,8 +64,8 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_2716_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2716_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2716_1");
     {
       Style style = editorCell.getStyle();

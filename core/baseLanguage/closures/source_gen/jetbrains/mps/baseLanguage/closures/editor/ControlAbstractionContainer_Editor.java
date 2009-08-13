@@ -45,18 +45,18 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createRefNode_0500_0(editorContext, node));
     if (renderingCondition0500_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_0500_0(editorContext, node, "static"));
+      editorCell.addEditorCell(this.createConstant_0500_0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0500_1(editorContext, node, "container"));
-    editorCell.addEditorCell(this.createConstant_0500_2(editorContext, node, " "));
+    editorCell.addEditorCell(this.createConstant_0500_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0500_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_0500_0(editorContext, node));
     if (renderingCondition0500_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0500_2(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0500_3(editorContext, node, "{"));
-    editorCell.addEditorCell(this.createConstant_0500_8(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_0500_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0500_8(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0500_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0500_7(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_0500_7(editorContext, node));
     return editorCell;
   }
 
@@ -80,22 +80,22 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0500_4(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_0500_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0500_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0500_5(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_0500_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_0500_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container");
     editorCell.setCellId("Constant_0500_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -106,8 +106,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_0500_2");
     {
       Style style = editorCell.getStyle();
@@ -119,8 +119,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_0500_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -131,8 +131,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_0500_4");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -144,8 +144,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_0500_5");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -156,8 +156,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_0500_7");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -168,8 +168,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0500_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0500_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_0500_8");
     {
       Style style = editorCell.getStyle();
@@ -388,7 +388,7 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_0500_6(editorContext, node, "");
+      return this.createConstant_0500_6(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -409,8 +409,8 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_0500_6(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_0500_6(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_0500_6");
       {
         Style style = editorCell.getStyle();

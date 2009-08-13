@@ -46,7 +46,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2653_0(editorContext, node, "test"));
+    editorCell.addEditorCell(this.createConstant_2653_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2653_0(editorContext, node));
     return editorCell;
   }
@@ -58,7 +58,7 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2653_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2653_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2653_3(editorContext, node));
     return editorCell;
   }
@@ -82,20 +82,20 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2653_2(editorContext, node, "final state:"));
+    editorCell.addEditorCell(this.createConstant_2653_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2653_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2653_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2653_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test");
     editorCell.setCellId("Constant_2653_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2653_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2653_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2653_1");
     {
       Style style = editorCell.getStyle();
@@ -105,8 +105,8 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2653_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2653_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final state:");
     editorCell.setCellId("Constant_2653_2");
     editorCell.setDefaultText("");
     return editorCell;

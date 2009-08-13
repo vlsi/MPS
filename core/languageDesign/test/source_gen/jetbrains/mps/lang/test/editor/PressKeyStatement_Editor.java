@@ -29,22 +29,22 @@ public class PressKeyStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3031_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3031_0");
-    editorCell.addEditorCell(this.createConstant_3031_0(editorContext, node, "press keys"));
+    editorCell.addEditorCell(this.createConstant_3031_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3031_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3031_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_3031_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3031_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3031_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
     editorCell.setCellId("Constant_3031_0");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3031_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3031_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_3031_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

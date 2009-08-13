@@ -32,38 +32,38 @@ public class FunctionType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1642_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1642_0");
-    editorCell.addEditorCell(this.createConstant_1642_0(editorContext, node, "FUNCTION"));
-    editorCell.addEditorCell(this.createConstant_1642_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_1642_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1642_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1642_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1642_2(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_1642_3(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1642_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1642_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1642_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1642_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1642_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "FUNCTION");
     editorCell.setCellId("Constant_1642_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1642_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1642_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1642_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1642_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1642_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1642_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1642_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1642_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1642_3");
     editorCell.setDefaultText("");
     return editorCell;

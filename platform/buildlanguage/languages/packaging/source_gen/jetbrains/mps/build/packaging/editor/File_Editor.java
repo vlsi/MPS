@@ -34,7 +34,7 @@ public class File_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_3696_0");
     editorCell.addEditorCell(this.createConceptProperty_3696_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3696_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3696_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_3696_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3696_1(editorContext, node));
     editorCell.addEditorCell(this.createComponent_3696_0(editorContext, node));
     return editorCell;
@@ -59,8 +59,8 @@ public class File_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3696_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3696_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_3696_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {

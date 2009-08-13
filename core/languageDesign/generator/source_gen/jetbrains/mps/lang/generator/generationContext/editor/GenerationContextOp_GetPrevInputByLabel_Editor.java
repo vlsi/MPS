@@ -24,13 +24,13 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   private EditorCell createCollection_3465_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3465_0");
-    editorCell.addEditorCell(this.createConstant_3465_0(editorContext, node, "get prev input"));
+    editorCell.addEditorCell(this.createConstant_3465_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3465_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3465_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3465_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get prev input");
     editorCell.setCellId("Constant_3465_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

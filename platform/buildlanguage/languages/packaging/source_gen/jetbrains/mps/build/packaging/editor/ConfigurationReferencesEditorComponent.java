@@ -44,7 +44,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4382_0(editorContext, node, "include in"));
+    editorCell.addEditorCell(this.createConstant_4382_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4382_0(editorContext, node));
     return editorCell;
   }
@@ -62,8 +62,8 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     return editorCell;
   }
 
-  private EditorCell createConstant_4382_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4382_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include in");
     editorCell.setCellId("Constant_4382_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -108,7 +108,7 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4382_1(editorContext, node, "<any configuration>");
+      return this.createConstant_4382_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -136,8 +136,8 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
       }
     }
 
-    private EditorCell createConstant_4382_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4382_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<any configuration>");
       editorCell.setCellId("Constant_4382_1");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

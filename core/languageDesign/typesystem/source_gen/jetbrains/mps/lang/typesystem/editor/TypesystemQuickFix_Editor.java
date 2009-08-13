@@ -34,12 +34,12 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6837_0");
     editorCell.addEditorCell(this.createCollection_6837_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_3(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6837_0(editorContext, node, "arguments:"));
+    editorCell.addEditorCell(this.createConstant_6837_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6837_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6837_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6837_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6837_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_4(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6837_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6837_0(editorContext, node));
     return editorCell;
   }
@@ -52,20 +52,20 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6837_2(editorContext, node, "quick fix"));
+    editorCell.addEditorCell(this.createConstant_6837_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6837_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6837_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "arguments:");
     editorCell.setCellId("Constant_6837_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6837_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6837_1");
     {
       Style style = editorCell.getStyle();
@@ -75,15 +75,15 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6837_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "quick fix");
     editorCell.setCellId("Constant_6837_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6837_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6837_3");
     {
       Style style = editorCell.getStyle();
@@ -93,8 +93,8 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6837_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6837_4");
     {
       Style style = editorCell.getStyle();

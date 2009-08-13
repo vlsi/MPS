@@ -24,14 +24,14 @@ public class XmlLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6412_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6412_0");
-    editorCell.addEditorCell(this.createConstant_6412_0(editorContext, node, "<xml"));
+    editorCell.addEditorCell(this.createConstant_6412_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6412_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6412_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_6412_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6412_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6412_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<xml");
     editorCell.setCellId("Constant_6412_0");
     {
       Style style = editorCell.getStyle();
@@ -41,8 +41,8 @@ public class XmlLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6412_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6412_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6412_1");
     editorCell.setDefaultText("");
     return editorCell;

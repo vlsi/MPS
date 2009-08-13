@@ -26,15 +26,15 @@ public class TreePathType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6561_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6561_0");
-    editorCell.addEditorCell(this.createConstant_6561_0(editorContext, node, "treepath"));
-    editorCell.addEditorCell(this.createConstant_6561_2(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_6561_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6561_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6561_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6561_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_6561_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6561_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6561_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "treepath");
     editorCell.setCellId("Constant_6561_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -45,16 +45,16 @@ public class TreePathType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6561_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6561_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6561_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6561_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6561_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_6561_2");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

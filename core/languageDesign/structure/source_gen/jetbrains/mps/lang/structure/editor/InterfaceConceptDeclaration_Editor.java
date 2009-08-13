@@ -52,7 +52,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8145_0");
     editorCell.addEditorCell(this.createCollection_8145_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8145_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8145_2(editorContext, node));
     return editorCell;
   }
@@ -64,7 +64,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8145_0(editorContext, node, "interface concept"));
+    editorCell.addEditorCell(this.createConstant_8145_0(editorContext, node));
     editorCell.addEditorCell(this.createTransactionalProperty_8145_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8145_4(editorContext, node));
     return editorCell;
@@ -77,7 +77,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8145_2(editorContext, node, "    "));
+    editorCell.addEditorCell(this.createConstant_8145_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8145_3(editorContext, node));
     return editorCell;
   }
@@ -89,28 +89,28 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8145_13(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_3(editorContext, node, "properties:"));
+    editorCell.addEditorCell(this.createConstant_8145_13(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_4(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_14(editorContext, node, "children:"));
+    editorCell.addEditorCell(this.createConstant_8145_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_14(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_15(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_16(editorContext, node, "references:"));
+    editorCell.addEditorCell(this.createConstant_8145_15(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_16(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_17(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_5(editorContext, node, "concept properties:"));
+    editorCell.addEditorCell(this.createConstant_8145_17(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_6(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_7(editorContext, node, "concept links:"));
+    editorCell.addEditorCell(this.createConstant_8145_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_7(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_8(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_9(editorContext, node, "concept property declarations:"));
+    editorCell.addEditorCell(this.createConstant_8145_8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_9(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_10(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_8145_11(editorContext, node, "concept link declarations:"));
+    editorCell.addEditorCell(this.createConstant_8145_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8145_11(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8145_12(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8145_12(editorContext, node));
     return editorCell;
   }
 
@@ -121,7 +121,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8145_18(editorContext, node, "extends"));
+    editorCell.addEditorCell(this.createConstant_8145_18(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8145_7(editorContext, node));
     return editorCell;
   }
@@ -133,20 +133,20 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8145_20(editorContext, node, "help URL:"));
+    editorCell.addEditorCell(this.createConstant_8145_20(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8145_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface concept");
     editorCell.setCellId("Constant_8145_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_1");
     {
       Style style = editorCell.getStyle();
@@ -156,8 +156,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_8145_2");
     {
       Style style = editorCell.getStyle();
@@ -167,8 +167,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties:");
     editorCell.setCellId("Constant_8145_3");
     {
       Style style = editorCell.getStyle();
@@ -178,8 +178,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_4");
     {
       Style style = editorCell.getStyle();
@@ -189,8 +189,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept properties:");
     editorCell.setCellId("Constant_8145_5");
     {
       Style style = editorCell.getStyle();
@@ -200,8 +200,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_6");
     {
       Style style = editorCell.getStyle();
@@ -211,8 +211,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept links:");
     editorCell.setCellId("Constant_8145_7");
     {
       Style style = editorCell.getStyle();
@@ -222,8 +222,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_8");
     {
       Style style = editorCell.getStyle();
@@ -233,8 +233,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept property declarations:");
     editorCell.setCellId("Constant_8145_9");
     {
       Style style = editorCell.getStyle();
@@ -244,8 +244,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_10");
     {
       Style style = editorCell.getStyle();
@@ -255,8 +255,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept link declarations:");
     editorCell.setCellId("Constant_8145_11");
     {
       Style style = editorCell.getStyle();
@@ -266,8 +266,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_12");
     {
       Style style = editorCell.getStyle();
@@ -277,8 +277,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_13(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_13(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_13");
     {
       Style style = editorCell.getStyle();
@@ -288,15 +288,15 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_14(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_14(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_8145_14");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_15(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_15(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_15");
     {
       Style style = editorCell.getStyle();
@@ -306,15 +306,15 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_16(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_16(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "references:");
     editorCell.setCellId("Constant_8145_16");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_17(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_17(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8145_17");
     {
       Style style = editorCell.getStyle();
@@ -324,8 +324,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_18(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_18(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_8145_18");
     {
       Style style = editorCell.getStyle();
@@ -335,8 +335,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8145_20(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8145_20(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help URL:");
     editorCell.setCellId("Constant_8145_20");
     editorCell.setDefaultText("");
     return editorCell;
@@ -821,7 +821,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8145_19(editorContext, node, "");
+      return this.createConstant_8145_19(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -842,8 +842,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_8145_19(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_8145_19(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_8145_19");
       editorCell.setDefaultText("<none>");
       return editorCell;

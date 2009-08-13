@@ -24,42 +24,42 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7938_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7938_0");
-    editorCell.addEditorCell(this.createConstant_7938_0(editorContext, node, "catch"));
-    editorCell.addEditorCell(this.createConstant_7938_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_7938_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7938_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7938_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7938_2(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_7938_3(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7938_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7938_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7938_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7938_4(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7938_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7938_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7938_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "catch");
     editorCell.setCellId("Constant_7938_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7938_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7938_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_7938_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7938_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7938_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_7938_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7938_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7938_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7938_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -70,8 +70,8 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7938_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7938_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7938_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

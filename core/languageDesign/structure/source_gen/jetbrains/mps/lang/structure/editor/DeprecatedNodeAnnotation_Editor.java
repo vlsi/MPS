@@ -45,7 +45,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8968_0(editorContext, node, "@Deprecated"));
+    editorCell.addEditorCell(this.createConstant_8968_0(editorContext, node));
     if (renderingCondition8968_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8968_4(editorContext, node));
     }
@@ -72,7 +72,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8968_1(editorContext, node, "comment"));
+    editorCell.addEditorCell(this.createConstant_8968_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8968_0(editorContext, node));
     return editorCell;
   }
@@ -85,9 +85,9 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8968_2(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_8968_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8968_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8968_4(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_8968_4(editorContext, node));
     return editorCell;
   }
 
@@ -99,7 +99,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8968_3(editorContext, node, "since build"));
+    editorCell.addEditorCell(this.createConstant_8968_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8968_1(editorContext, node));
     return editorCell;
   }
@@ -107,13 +107,13 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8968_6(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8968_6");
-    editorCell.addEditorCell(this.createConstant_8968_5(editorContext, node, "deprecated since build"));
+    editorCell.addEditorCell(this.createConstant_8968_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8968_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_8968_0");
     structure_StyleSheet.getAnnotationNode(editorCell).apply(editorCell);
     {
@@ -125,8 +125,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_8968_1");
     {
       Style style = editorCell.getStyle();
@@ -136,8 +136,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8968_2");
     {
       Style style = editorCell.getStyle();
@@ -149,8 +149,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since build");
     editorCell.setCellId("Constant_8968_3");
     {
       Style style = editorCell.getStyle();
@@ -161,8 +161,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8968_4");
     {
       Style style = editorCell.getStyle();
@@ -174,8 +174,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8968_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8968_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deprecated since build");
     editorCell.setCellId("Constant_8968_5");
     {
       Style style = editorCell.getStyle();

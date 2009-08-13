@@ -40,13 +40,13 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createProperty_6371_0(editorContext, node));
     }
     if (renderingCondition6371_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6371_0(editorContext, node, "no macro"));
+      editorCell.addEditorCell(this.createConstant_6371_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_6371_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6371_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no macro");
     editorCell.setCellId("Constant_6371_0");
     PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     {

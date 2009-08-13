@@ -39,11 +39,11 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6309_0");
     editorCell.addEditorCell(this.createConceptProperty_6309_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6309_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_6309_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6309_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6309_1(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_6309_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6309_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6309_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_6309_2(editorContext, node));
     if (renderingCondition6309_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_6309_2(editorContext, node));
     }
@@ -64,21 +64,21 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6309_3(editorContext, node, "iteration order:"));
+    editorCell.addEditorCell(this.createConstant_6309_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6309_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6309_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6309_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_6309_0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6309_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6309_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_6309_1");
     {
       Style style = editorCell.getStyle();
@@ -88,8 +88,8 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6309_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6309_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6309_2");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
@@ -101,8 +101,8 @@ public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6309_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6309_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "iteration order:");
     editorCell.setCellId("Constant_6309_3");
     editorCell.setDefaultText("");
     return editorCell;

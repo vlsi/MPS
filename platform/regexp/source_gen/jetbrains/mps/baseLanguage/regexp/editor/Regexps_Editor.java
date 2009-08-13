@@ -36,17 +36,17 @@ public class Regexps_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2642_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2642_0");
-    editorCell.addEditorCell(this.createConstant_2642_0(editorContext, node, "regexps"));
+    editorCell.addEditorCell(this.createConstant_2642_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2642_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2642_1(editorContext, node, "{"));
-    editorCell.addEditorCell(this.createConstant_2642_3(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2642_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2642_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2642_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2642_2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_2642_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2642_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexps");
     editorCell.setCellId("Constant_2642_0");
     {
       Style style = editorCell.getStyle();
@@ -56,8 +56,8 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2642_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2642_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -69,8 +69,8 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2642_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2642_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -81,8 +81,8 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2642_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2642_3");
     {
       Style style = editorCell.getStyle();

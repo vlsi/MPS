@@ -40,7 +40,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       editorCell = this.createRefNode_1449_1(editorContext, node);
     } else
     {
-      editorCell = this.createConstant_1449_3(editorContext, node, "do not digitally sign");
+      editorCell = this.createConstant_1449_3(editorContext, node);
     }
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConceptProperty_1449_0(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell1449_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1449_2(editorContext, node, "-"));
+    editorCell.addEditorCell(this.createConstant_1449_2(editorContext, node));
     editorCell.addEditorCell(this.createIndentCell1449_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1449_2(editorContext, node));
     return editorCell;
@@ -77,7 +77,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BRACKETS, true);
     }
-    editorCell.addEditorCell(this.createConstant_1449_0(editorContext, node, "nsis configuration"));
+    editorCell.addEditorCell(this.createConstant_1449_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1449_3(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_1449_0(editorContext, node));
     return editorCell;
@@ -126,7 +126,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_1(editorContext, node, "path to nsis zip file"));
+    editorCell.addEditorCell(this.createConstant_1449_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_0(editorContext, node));
     return editorCell;
   }
@@ -139,7 +139,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_4(editorContext, node, "license"));
+    editorCell.addEditorCell(this.createConstant_1449_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_2(editorContext, node));
     return editorCell;
   }
@@ -152,7 +152,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_5(editorContext, node, "application icon"));
+    editorCell.addEditorCell(this.createConstant_1449_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_3(editorContext, node));
     return editorCell;
   }
@@ -165,7 +165,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_6(editorContext, node, "homepage icon"));
+    editorCell.addEditorCell(this.createConstant_1449_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_4(editorContext, node));
     return editorCell;
   }
@@ -178,7 +178,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_7(editorContext, node, "path to embedded jre zip file"));
+    editorCell.addEditorCell(this.createConstant_1449_7(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_5(editorContext, node));
     return editorCell;
   }
@@ -191,7 +191,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_8(editorContext, node, "installer icon"));
+    editorCell.addEditorCell(this.createConstant_1449_8(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_6(editorContext, node));
     return editorCell;
   }
@@ -204,7 +204,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_9(editorContext, node, "uninstaller icon"));
+    editorCell.addEditorCell(this.createConstant_1449_9(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_7(editorContext, node));
     return editorCell;
   }
@@ -217,7 +217,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_10(editorContext, node, "settings directory"));
+    editorCell.addEditorCell(this.createConstant_1449_10(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_8(editorContext, node));
     return editorCell;
   }
@@ -230,36 +230,36 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1449_11(editorContext, node, "examples directory"));
+    editorCell.addEditorCell(this.createConstant_1449_11(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1449_9(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "nsis configuration");
     editorCell.setCellId("Constant_1449_0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to nsis zip file");
     editorCell.setCellId("Constant_1449_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_1449_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not digitally sign");
     editorCell.setCellId("Constant_1449_3");
     DistribConfiguration_Styles_StyleSheet.getHint(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -267,64 +267,64 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "license");
     editorCell.setCellId("Constant_1449_4");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "application icon");
     editorCell.setCellId("Constant_1449_5");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "homepage icon");
     editorCell.setCellId("Constant_1449_6");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to embedded jre zip file");
     editorCell.setCellId("Constant_1449_7");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "installer icon");
     editorCell.setCellId("Constant_1449_8");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninstaller icon");
     editorCell.setCellId("Constant_1449_9");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "settings directory");
     editorCell.setCellId("Constant_1449_10");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1449_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1449_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "examples directory");
     editorCell.setCellId("Constant_1449_11");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

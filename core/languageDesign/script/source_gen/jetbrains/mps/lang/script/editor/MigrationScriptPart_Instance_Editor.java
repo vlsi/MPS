@@ -31,7 +31,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_7916_0");
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_7916_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7916_0(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_7916_0(editorContext, node));
     return editorCell;
   }
 
@@ -60,8 +60,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7916_1(editorContext, node, "description"));
-    editorCell.addEditorCell(this.createConstant_7916_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7916_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7916_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7916_0(editorContext, node));
     return editorCell;
   }
@@ -73,8 +73,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7916_3(editorContext, node, "for each"));
-    editorCell.addEditorCell(this.createConstant_7916_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7916_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7916_4(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7916_0(editorContext, node));
     return editorCell;
   }
@@ -86,8 +86,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7916_5(editorContext, node, "where"));
-    editorCell.addEditorCell(this.createConstant_7916_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7916_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7916_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7916_0(editorContext, node));
     return editorCell;
   }
@@ -99,8 +99,8 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7916_7(editorContext, node, "do"));
-    editorCell.addEditorCell(this.createConstant_7916_8(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7916_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7916_8(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7916_1(editorContext, node));
     return editorCell;
   }
@@ -112,14 +112,14 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7916_9(editorContext, node, "show as intention"));
-    editorCell.addEditorCell(this.createConstant_7916_10(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7916_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7916_10(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7916_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7916_0");
     {
       Style style = editorCell.getStyle();
@@ -130,16 +130,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description");
     editorCell.setCellId("Constant_7916_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7916_2");
     {
       Style style = editorCell.getStyle();
@@ -150,16 +150,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for each");
     editorCell.setCellId("Constant_7916_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7916_4");
     {
       Style style = editorCell.getStyle();
@@ -170,16 +170,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "where");
     editorCell.setCellId("Constant_7916_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7916_6");
     {
       Style style = editorCell.getStyle();
@@ -190,16 +190,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_7916_7");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7916_8");
     {
       Style style = editorCell.getStyle();
@@ -210,16 +210,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show as intention");
     editorCell.setCellId("Constant_7916_9");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7916_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7916_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7916_10");
     {
       Style style = editorCell.getStyle();

@@ -34,7 +34,7 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6304_0");
     editorCell.addEditorCell(this.createCollection_6304_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6304_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6304_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_6304_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6304_1(editorContext, node));
     return editorCell;
   }
@@ -46,20 +46,20 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6304_0(editorContext, node, "calculator"));
+    editorCell.addEditorCell(this.createConstant_6304_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6304_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6304_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6304_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "calculator");
     editorCell.setCellId("Constant_6304_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6304_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6304_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6304_1");
     editorCell.setDefaultText("");
     return editorCell;

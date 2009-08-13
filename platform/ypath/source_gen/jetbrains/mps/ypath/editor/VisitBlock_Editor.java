@@ -27,46 +27,46 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4522_0");
     editorCell.addEditorCell(this.createCollection_4522_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4522_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4522_1(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_4522_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_4522_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4522_1");
-    editorCell.addEditorCell(this.createConstant_4522_3(editorContext, node, "visit"));
+    editorCell.addEditorCell(this.createConstant_4522_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4522_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4522_4(editorContext, node, "in"));
+    editorCell.addEditorCell(this.createConstant_4522_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4522_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4522_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4522_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_4522_0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_4522_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4522_2");
-    editorCell.addEditorCell(this.createConstant_4522_2(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_4522_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4522_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4522_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4522_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_4522_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4522_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4522_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_4522_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4522_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4522_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_4522_2");
     {
       Style style = editorCell.getStyle();
@@ -76,8 +76,8 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4522_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4522_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "visit");
     editorCell.setCellId("Constant_4522_3");
     {
       Style style = editorCell.getStyle();
@@ -87,8 +87,8 @@ public class VisitBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4522_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4522_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_4522_4");
     {
       Style style = editorCell.getStyle();

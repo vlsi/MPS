@@ -41,9 +41,9 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0103_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0103_0");
-    editorCell.addEditorCell(this.createConstant_0103_0(editorContext, node, "file generator"));
+    editorCell.addEditorCell(this.createConstant_0103_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_0103_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0103_1(editorContext, node, "extends"));
+    editorCell.addEditorCell(this.createConstant_0103_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_0103_0(editorContext, node));
     return editorCell;
   }
@@ -52,13 +52,13 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_0103_1");
     editorCell.addEditorCell(this.createRefNodeList_0103_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0103_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_0103_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0103_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0103_4(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_0103_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0103_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0103_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_0103_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0103_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0103_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_0103_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0103_1(editorContext, node));
     return editorCell;
   }
@@ -73,7 +73,7 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_0103_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_0103_4(editorContext, node));
     if (renderingCondition0103_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_0103_9(editorContext, node, "}"));
+      editorCell.addEditorCell(this.createConstant_0103_9(editorContext, node));
     }
     return editorCell;
   }
@@ -87,7 +87,7 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_0103_0(editorContext, node));
     if (renderingCondition0103_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_0103_8(editorContext, node, "{"));
+      editorCell.addEditorCell(this.createConstant_0103_8(editorContext, node));
     }
     return editorCell;
   }
@@ -104,22 +104,22 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file generator");
     editorCell.setCellId("Constant_0103_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_0103_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_0103_3");
     {
       Style style = editorCell.getStyle();
@@ -129,8 +129,8 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_0103_4");
     {
       Style style = editorCell.getStyle();
@@ -140,8 +140,8 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_0103_5");
     {
       Style style = editorCell.getStyle();
@@ -151,8 +151,8 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_0103_6");
     {
       Style style = editorCell.getStyle();
@@ -162,16 +162,16 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_0103_8");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0103_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0103_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_0103_9");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -358,7 +358,7 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_0103_2(editorContext, node, "");
+      return this.createConstant_0103_2(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -379,8 +379,8 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_0103_2(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_0103_2(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_0103_2");
       editorCell.setDefaultText("<fields>");
       return editorCell;
@@ -412,7 +412,7 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_0103_7(editorContext, node, "");
+      return this.createConstant_0103_7(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -433,8 +433,8 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_0103_7(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_0103_7(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_0103_7");
       editorCell.setDefaultText("<methods>");
       return editorCell;

@@ -24,41 +24,41 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1754_0");
     editorCell.addEditorCell(this.createProperty_1754_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1754_0(editorContext, node, "->"));
+    editorCell.addEditorCell(this.createConstant_1754_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1754_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1754_1(editorContext, node, "where"));
-    editorCell.addEditorCell(this.createConstant_1754_3(editorContext, node, "role:"));
+    editorCell.addEditorCell(this.createConstant_1754_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1754_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1754_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1754_2(editorContext, node, "icon:"));
+    editorCell.addEditorCell(this.createConstant_1754_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1754_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1754_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1754_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_1754_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1754_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1754_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "where");
     editorCell.setCellId("Constant_1754_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1754_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1754_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_1754_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1754_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1754_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role:");
     editorCell.setCellId("Constant_1754_3");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

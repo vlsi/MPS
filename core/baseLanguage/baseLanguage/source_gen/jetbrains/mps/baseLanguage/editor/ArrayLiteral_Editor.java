@@ -29,14 +29,14 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8106_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8106_0");
-    editorCell.addEditorCell(this.createConstant_8106_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8106_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8106_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8106_1(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_8106_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8106_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8106_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8106_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -47,8 +47,8 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8106_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8106_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8106_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

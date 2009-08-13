@@ -27,15 +27,15 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6948_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6948_0");
-    editorCell.addEditorCell(this.createConstant_6948_0(editorContext, node, "constructor"));
-    editorCell.addEditorCell(this.createConstant_6948_1(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_6948_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6948_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6948_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6948_2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_6948_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6948_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6948_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "constructor");
     editorCell.setCellId("Constant_6948_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -46,8 +46,8 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6948_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6948_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_6948_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -58,8 +58,8 @@ public class ConceptConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6948_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6948_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_6948_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

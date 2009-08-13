@@ -26,16 +26,16 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0098_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0098_0");
-    editorCell.addEditorCell(this.createConstant_0098_0(editorContext, node, "string"));
+    editorCell.addEditorCell(this.createConstant_0098_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_0098_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0098_1(editorContext, node, "<inheritable:"));
+    editorCell.addEditorCell(this.createConstant_0098_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_0098_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0098_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_0098_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0098_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0098_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "string");
     editorCell.setCellId("Constant_0098_0");
     {
       Style style = editorCell.getStyle();
@@ -46,8 +46,8 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0098_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0098_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
     editorCell.setCellId("Constant_0098_1");
     {
       Style style = editorCell.getStyle();
@@ -58,8 +58,8 @@ public class StringConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0098_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0098_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_0098_2");
     {
       Style style = editorCell.getStyle();

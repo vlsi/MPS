@@ -25,16 +25,16 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0936_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0936_0");
-    editorCell.addEditorCell(this.createConstant_0936_0(editorContext, node, "replaceAll"));
+    editorCell.addEditorCell(this.createConstant_0936_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0936_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0936_1(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_0936_2(editorContext, node, "with"));
+    editorCell.addEditorCell(this.createConstant_0936_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0936_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0936_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0936_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
     editorCell.setCellId("Constant_0936_0");
     {
       Style style = editorCell.getStyle();
@@ -44,8 +44,8 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0936_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_0936_1");
     {
       Style style = editorCell.getStyle();
@@ -55,8 +55,8 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0936_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_0936_2");
     {
       Style style = editorCell.getStyle();

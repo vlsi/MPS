@@ -41,8 +41,8 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1681_1(editorContext, node, "generate project component"));
-    editorCell.addEditorCell(this.createConstant_1681_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1681_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1681_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1681_0(editorContext, node));
     return editorCell;
   }
@@ -54,8 +54,8 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1681_3(editorContext, node, "generate application component"));
-    editorCell.addEditorCell(this.createConstant_1681_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1681_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1681_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1681_1(editorContext, node));
     return editorCell;
   }
@@ -70,7 +70,7 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_1681_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1681_5(editorContext, node));
     if (renderingCondition1681_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_1681_6(editorContext, node, "}"));
+      editorCell.addEditorCell(this.createConstant_1681_6(editorContext, node));
     }
     return editorCell;
   }
@@ -82,9 +82,9 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1681_0(editorContext, node, "Generate Plugins"));
+    editorCell.addEditorCell(this.createConstant_1681_0(editorContext, node));
     if (renderingCondition1681_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_1681_5(editorContext, node, "{"));
+      editorCell.addEditorCell(this.createConstant_1681_5(editorContext, node));
     }
     return editorCell;
   }
@@ -101,51 +101,51 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Generate Plugins");
     editorCell.setCellId("Constant_1681_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate project component");
     editorCell.setCellId("Constant_1681_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1681_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate application component");
     editorCell.setCellId("Constant_1681_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1681_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_1681_5");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1681_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1681_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_1681_6");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

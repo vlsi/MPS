@@ -41,7 +41,7 @@ public class PostingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4002_0(editorContext, node, "amount  :"));
+    editorCell.addEditorCell(this.createConstant_4002_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4002_0(editorContext, node));
     return editorCell;
   }
@@ -53,13 +53,13 @@ public class PostingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4002_1(editorContext, node, "account :"));
+    editorCell.addEditorCell(this.createConstant_4002_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4002_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4002_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4002_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "amount  :");
     editorCell.setCellId("Constant_4002_0");
     {
       Style style = editorCell.getStyle();
@@ -69,8 +69,8 @@ public class PostingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4002_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4002_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "account :");
     editorCell.setCellId("Constant_4002_1");
     {
       Style style = editorCell.getStyle();

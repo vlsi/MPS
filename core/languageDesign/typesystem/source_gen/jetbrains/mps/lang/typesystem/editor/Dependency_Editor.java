@@ -39,9 +39,9 @@ public class Dependency_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2527_0(editorContext, node, "target concept:"));
+    editorCell.addEditorCell(this.createConstant_2527_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2527_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2527_1(editorContext, node, " find source:"));
+    editorCell.addEditorCell(this.createConstant_2527_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2527_0(editorContext, node));
     return editorCell;
   }
@@ -53,27 +53,27 @@ public class Dependency_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2527_2(editorContext, node, "source concept(optional):"));
+    editorCell.addEditorCell(this.createConstant_2527_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2527_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2527_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2527_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_2527_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2527_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2527_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " find source:");
     editorCell.setCellId("Constant_2527_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2527_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2527_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source concept(optional):");
     editorCell.setCellId("Constant_2527_2");
     editorCell.setDefaultText("");
     return editorCell;

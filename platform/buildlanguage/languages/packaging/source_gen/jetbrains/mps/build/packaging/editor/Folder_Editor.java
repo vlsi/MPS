@@ -53,7 +53,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConceptProperty_5234_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5234_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5234_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_5234_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5234_1(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5234_3(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5234_1(editorContext, node));
@@ -104,8 +104,8 @@ public class Folder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5234_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5234_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_5234_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -208,7 +208,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_5234_1(editorContext, node, "<entries>");
+      return this.createConstant_5234_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -229,8 +229,8 @@ public class Folder_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_5234_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_5234_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
       editorCell.setCellId("Constant_5234_1");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

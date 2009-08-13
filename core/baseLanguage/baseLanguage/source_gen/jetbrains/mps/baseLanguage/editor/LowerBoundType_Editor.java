@@ -22,21 +22,21 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8181_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8181_0");
-    editorCell.addEditorCell(this.createConstant_8181_0(editorContext, node, "?"));
-    editorCell.addEditorCell(this.createConstant_8181_1(editorContext, node, "super"));
+    editorCell.addEditorCell(this.createConstant_8181_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8181_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8181_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8181_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8181_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_8181_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8181_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8181_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_8181_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

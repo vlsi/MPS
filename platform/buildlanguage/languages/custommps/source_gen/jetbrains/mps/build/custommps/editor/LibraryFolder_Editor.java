@@ -49,9 +49,9 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConceptProperty_6803_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6803_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6803_1(editorContext, node, "in folder"));
+    editorCell.addEditorCell(this.createConstant_6803_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6803_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6803_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_6803_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6803_1(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6803_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6803_1(editorContext, node));
@@ -96,16 +96,16 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6803_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6803_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_6803_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6803_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6803_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in folder");
     editorCell.setCellId("Constant_6803_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

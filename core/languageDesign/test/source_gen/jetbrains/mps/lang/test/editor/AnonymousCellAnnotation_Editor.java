@@ -32,7 +32,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     alternationCondition = AnonymousCellAnnotation_Editor.renderingCondition7250_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_7250_5(editorContext, node, "last");
+      editorCell = this.createConstant_7250_5(editorContext, node);
     } else
     {
       editorCell = this.createNonEmptyProperty_7250_0(editorContext, node);
@@ -47,21 +47,21 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7250_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7250_0");
-    editorCell.addEditorCell(this.createConstant_7250_0(editorContext, node, "<"));
-    editorCell.addEditorCell(this.createConstant_7250_2(editorContext, node, "cell"));
+    editorCell.addEditorCell(this.createConstant_7250_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7250_2(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_7250_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7250_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_7250_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_7250_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7250_1");
-    editorCell.addEditorCell(this.createConstant_7250_8(editorContext, node, "is in inspector"));
+    editorCell.addEditorCell(this.createConstant_7250_8(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7250_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7250_3(editorContext, node, "cell id:"));
+    editorCell.addEditorCell(this.createConstant_7250_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7250_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7250_4(editorContext, node, "position:"));
+    editorCell.addEditorCell(this.createConstant_7250_4(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_7250_0(editorContext, node));
     if (renderingCondition7250_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7250_2(editorContext, node));
@@ -77,15 +77,15 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createConstant_7250_6(editorContext, node, "selection start:"));
+    editorCell.addEditorCell(this.createConstant_7250_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7250_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7250_7(editorContext, node, "selection end:"));
+    editorCell.addEditorCell(this.createConstant_7250_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7250_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_7250_0");
     {
       Style style = editorCell.getStyle();
@@ -95,8 +95,8 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_7250_1");
     {
       Style style = editorCell.getStyle();
@@ -106,8 +106,8 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
     editorCell.setCellId("Constant_7250_2");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -115,43 +115,43 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell id:");
     editorCell.setCellId("Constant_7250_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position:");
     editorCell.setCellId("Constant_7250_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "last");
     editorCell.setCellId("Constant_7250_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection start:");
     editorCell.setCellId("Constant_7250_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection end:");
     editorCell.setCellId("Constant_7250_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7250_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7250_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is in inspector");
     editorCell.setCellId("Constant_7250_8");
     editorCell.setDefaultText("");
     return editorCell;

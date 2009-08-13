@@ -26,22 +26,22 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9912_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9912_0");
-    editorCell.addEditorCell(this.createConstant_9912_0(editorContext, node, "[^"));
+    editorCell.addEditorCell(this.createConstant_9912_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9912_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9912_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_9912_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9912_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9912_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[^");
     editorCell.setCellId("Constant_9912_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9912_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9912_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_9912_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

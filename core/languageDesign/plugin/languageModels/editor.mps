@@ -1047,17 +1047,6 @@
                   </node>
                 </node>
               </node>
-              <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1226062536888">
-                <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1226062536889">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536890" />
-                </node>
-                <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1226062536891">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536892" />
-                </node>
-                <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1226062536893">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226062536894" />
-                </node>
-              </node>
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1226321749478" />
               <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1226321753230">
                 <property name="color" value="darkGray" />
@@ -1223,7 +1212,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1208950262073">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1208950262074">
                     <link role="classConcept" targetNodeId="28.~EditorUtil" resolveInfo="EditorUtil" />
-                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
+                    <link role="baseMethodDeclaration" targetNodeId="28.~EditorUtil.createSelectIconButton(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.nodeEditor.EditorContext):javax.swing.JComponent" resolveInfo="createSelectIconButton" />
                     <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1208950262075" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1208950262076">
                       <property name="value" value="icon" />
@@ -4043,17 +4032,6 @@
             </node>
           </node>
         </node>
-        <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1171743928471867541">
-          <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1171743928471867542">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867543" />
-          </node>
-          <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1171743928471867544">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867545" />
-          </node>
-          <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1171743928471867546">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867547" />
-          </node>
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1171743928471867548" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171743928471867549">
@@ -4245,17 +4223,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="modelAcessor" type="jetbrains.mps.lang.editor.structure.ModelAccessor" id="1171743928471867634">
-          <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="1171743928471867635">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867636" />
-          </node>
-          <node role="setter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter" id="1171743928471867637">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867638" />
-          </node>
-          <node role="validator" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator" id="1171743928471867639">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1171743928471867640" />
           </node>
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1171743928471867641" />

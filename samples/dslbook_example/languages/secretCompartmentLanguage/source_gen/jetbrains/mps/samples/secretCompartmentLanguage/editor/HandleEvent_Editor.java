@@ -24,13 +24,13 @@ public class HandleEvent_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4330_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4330_0");
-    editorCell.addEditorCell(this.createConstant_4330_0(editorContext, node, "handle"));
+    editorCell.addEditorCell(this.createConstant_4330_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4330_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4330_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4330_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "handle");
     editorCell.setCellId("Constant_4330_0");
     editorCell.setDefaultText("");
     return editorCell;

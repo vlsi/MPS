@@ -41,9 +41,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6130_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6130_0");
-    editorCell.addEditorCell(this.createConstant_6130_0(editorContext, node, "isFinal"));
+    editorCell.addEditorCell(this.createConstant_6130_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6130_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6130_5(editorContext, node, "annotations:"));
+    editorCell.addEditorCell(this.createConstant_6130_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_6130_1(editorContext, node));
     return editorCell;
   }
@@ -56,16 +56,16 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_6130_3(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_6130_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6130_1(editorContext, node, "static"));
+    editorCell.addEditorCell(this.createConstant_6130_1(editorContext, node));
     if (renderingCondition6130_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6130_2(editorContext, node, "final"));
+      editorCell.addEditorCell(this.createConstant_6130_2(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_6130_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6130_1(editorContext, node));
     if (renderingCondition6130_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_6130_2(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_6130_4(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_6130_4(editorContext, node));
     return editorCell;
   }
 
@@ -76,7 +76,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6130_3(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_6130_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6130_1(editorContext, node));
     return editorCell;
   }
@@ -116,39 +116,39 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isFinal");
     editorCell.setCellId("Constant_6130_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_6130_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_6130_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_6130_3");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6130_4");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
@@ -159,8 +159,8 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6130_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6130_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_6130_5");
     {
       Style style = editorCell.getStyle();

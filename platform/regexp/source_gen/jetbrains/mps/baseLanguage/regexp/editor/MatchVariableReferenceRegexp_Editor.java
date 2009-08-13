@@ -28,22 +28,22 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1753_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1753_0");
-    editorCell.addEditorCell(this.createConstant_1753_0(editorContext, node, "(ref"));
+    editorCell.addEditorCell(this.createConstant_1753_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1753_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1753_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_1753_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1753_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1753_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(ref");
     editorCell.setCellId("Constant_1753_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1753_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1753_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1753_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

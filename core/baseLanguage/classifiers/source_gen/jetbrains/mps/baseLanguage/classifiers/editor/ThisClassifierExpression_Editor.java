@@ -36,7 +36,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
       editorCell = this.createCollection_8203_0(editorContext, node);
     } else
     {
-      editorCell = this.createConstant_8203_0(editorContext, node, "this");
+      editorCell = this.createConstant_8203_0(editorContext, node);
     }
     return editorCell;
   }
@@ -45,13 +45,13 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8203_0");
     editorCell.addEditorCell(this.createRefCell_8203_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8203_1(editorContext, node, "."));
-    editorCell.addEditorCell(this.createConstant_8203_2(editorContext, node, "this"));
+    editorCell.addEditorCell(this.createConstant_8203_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8203_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8203_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_8203_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -62,16 +62,16 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8203_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_8203_1");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8203_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_8203_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

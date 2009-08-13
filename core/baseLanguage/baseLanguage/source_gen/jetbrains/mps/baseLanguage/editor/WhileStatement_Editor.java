@@ -34,13 +34,13 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     if (renderingCondition8658_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8658_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_8658_0(editorContext, node, "while"));
-    editorCell.addEditorCell(this.createConstant_8658_3(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_8658_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8658_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8658_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8658_1(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_8658_7(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8658_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8658_7(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8658_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8658_2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_8658_2(editorContext, node));
     return editorCell;
   }
 
@@ -52,53 +52,53 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createProperty_8658_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8658_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8658_4(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_8658_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8658_2");
-    editorCell.addEditorCell(this.createConstant_8658_5(editorContext, node, "label"));
-    editorCell.addEditorCell(this.createConstant_8658_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8658_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8658_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8658_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
     editorCell.setCellId("Constant_8658_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8658_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8658_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8658_3");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8658_4");
     {
       Style style = editorCell.getStyle();
@@ -109,8 +109,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_8658_5");
     {
       Style style = editorCell.getStyle();
@@ -120,8 +120,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8658_6");
     {
       Style style = editorCell.getStyle();
@@ -132,8 +132,8 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8658_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8658_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8658_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {

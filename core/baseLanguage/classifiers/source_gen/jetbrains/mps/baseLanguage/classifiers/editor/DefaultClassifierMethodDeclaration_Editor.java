@@ -63,15 +63,15 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     }
     editorCell.addEditorCell(this.createRefNode_7205_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_7205_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7205_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_7205_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7205_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7205_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_7205_2(editorContext, node));
     if (renderingCondition7205_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7205_2(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7205_4(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7205_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7205_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7205_5(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7205_5(editorContext, node));
     return editorCell;
   }
 
@@ -94,7 +94,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7205_3(editorContext, node, "throws"));
+    editorCell.addEditorCell(this.createConstant_7205_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7205_2(editorContext, node));
     return editorCell;
   }
@@ -102,7 +102,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
   private EditorCell createCollection_7205_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7205_3");
-    editorCell.addEditorCell(this.createConstant_7205_6(editorContext, node, "annotations:"));
+    editorCell.addEditorCell(this.createConstant_7205_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7205_3(editorContext, node));
     return editorCell;
   }
@@ -136,16 +136,16 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_7205_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_7205_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
@@ -157,16 +157,16 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_7205_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7205_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -177,8 +177,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7205_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -191,8 +191,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_7205_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7205_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_7205_6");
     {
       Style style = editorCell.getStyle();
@@ -365,7 +365,7 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_7205_1(editorContext, node, "");
+      return this.createConstant_7205_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -393,8 +393,8 @@ public class DefaultClassifierMethodDeclaration_Editor extends DefaultNodeEditor
       }
     }
 
-    private EditorCell createConstant_7205_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_7205_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_7205_1");
       {
         Style style = editorCell.getStyle();

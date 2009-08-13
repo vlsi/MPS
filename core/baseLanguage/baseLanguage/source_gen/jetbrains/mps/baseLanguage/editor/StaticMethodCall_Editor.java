@@ -35,7 +35,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7119_0");
     editorCell.addEditorCell(this.createRefCell_7119_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7119_0(editorContext, node, "."));
+    editorCell.addEditorCell(this.createConstant_7119_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7119_1(editorContext, node));
     return editorCell;
   }
@@ -63,8 +63,8 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7119_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7119_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_7119_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

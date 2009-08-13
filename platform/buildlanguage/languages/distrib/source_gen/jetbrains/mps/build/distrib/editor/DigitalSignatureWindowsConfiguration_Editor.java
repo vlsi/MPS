@@ -33,7 +33,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
   private EditorCell createCollection_5815_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5815_0");
-    editorCell.addEditorCell(this.createConstant_5815_0(editorContext, node, "digital signature configuration"));
+    editorCell.addEditorCell(this.createConstant_5815_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5815_1(editorContext, node));
     return editorCell;
   }
@@ -71,7 +71,7 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5815_1(editorContext, node, "path to executable"));
+    editorCell.addEditorCell(this.createConstant_5815_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5815_0(editorContext, node));
     return editorCell;
   }
@@ -84,29 +84,29 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5815_2(editorContext, node, "command line"));
+    editorCell.addEditorCell(this.createConstant_5815_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5815_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5815_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "digital signature configuration");
     editorCell.setCellId("Constant_5815_0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5815_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to executable");
     editorCell.setCellId("Constant_5815_1");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5815_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "command line");
     editorCell.setCellId("Constant_5815_2");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

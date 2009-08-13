@@ -28,7 +28,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9621_0");
     editorCell.addEditorCell(this.createCollection_9621_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9621_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_9621_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9621_2(editorContext, node));
     return editorCell;
   }
@@ -40,7 +40,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_1(editorContext, node, "annotation link declaration"));
+    editorCell.addEditorCell(this.createConstant_9621_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9621_0(editorContext, node));
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_2(editorContext, node, "   "));
+    editorCell.addEditorCell(this.createConstant_9621_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9621_3(editorContext, node));
     return editorCell;
   }
@@ -79,7 +79,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_3(editorContext, node, "stereotype"));
+    editorCell.addEditorCell(this.createConstant_9621_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9621_1(editorContext, node));
     return editorCell;
   }
@@ -91,7 +91,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_4(editorContext, node, "source"));
+    editorCell.addEditorCell(this.createConstant_9621_4(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9621_0(editorContext, node));
     return editorCell;
   }
@@ -103,7 +103,7 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_5(editorContext, node, "target"));
+    editorCell.addEditorCell(this.createConstant_9621_5(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9621_1(editorContext, node));
     return editorCell;
   }
@@ -115,13 +115,13 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9621_6(editorContext, node, "cardinality"));
+    editorCell.addEditorCell(this.createConstant_9621_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9621_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_9621_0");
     {
       Style style = editorCell.getStyle();
@@ -131,15 +131,15 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotation link declaration");
     editorCell.setCellId("Constant_9621_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "   ");
     editorCell.setCellId("Constant_9621_2");
     {
       Style style = editorCell.getStyle();
@@ -149,29 +149,29 @@ public class AnnotationLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stereotype");
     editorCell.setCellId("Constant_9621_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source");
     editorCell.setCellId("Constant_9621_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target");
     editorCell.setCellId("Constant_9621_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9621_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9621_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cardinality");
     editorCell.setCellId("Constant_9621_6");
     editorCell.setDefaultText("");
     return editorCell;

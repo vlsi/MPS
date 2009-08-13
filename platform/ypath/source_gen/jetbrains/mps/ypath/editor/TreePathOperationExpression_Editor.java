@@ -30,10 +30,10 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
     alternationCondition = TreePathOperationExpression_Editor.renderingCondition7232_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_7232_0(editorContext, node, "");
+      editorCell = this.createConstant_7232_0(editorContext, node);
     } else
     {
-      editorCell = this.createConstant_7232_1(editorContext, node, "");
+      editorCell = this.createConstant_7232_1(editorContext, node);
     }
     {
       Style style = editorCell.getStyle();
@@ -52,8 +52,8 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7232_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7232_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7232_0");
     {
       Style style = editorCell.getStyle();
@@ -63,8 +63,8 @@ public class TreePathOperationExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7232_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7232_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7232_1");
     {
       Style style = editorCell.getStyle();

@@ -76,7 +76,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2334_0(editorContext, node, "path to mps build tools"));
+    editorCell.addEditorCell(this.createConstant_2334_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2334_0(editorContext, node));
     return editorCell;
   }
@@ -89,7 +89,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2334_1(editorContext, node, "path to license"));
+    editorCell.addEditorCell(this.createConstant_2334_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2334_1(editorContext, node));
     return editorCell;
   }
@@ -124,16 +124,16 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2334_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2334_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to mps build tools");
     editorCell.setCellId("Constant_2334_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2334_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2334_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to license");
     editorCell.setCellId("Constant_2334_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -34,8 +34,8 @@ public class InputRoot_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2000_0");
     editorCell.addEditorCell(this.createCollection_2000_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2000_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2000_1(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_2000_3(editorContext, node, "children:"));
+    editorCell.addEditorCell(this.createConstant_2000_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2000_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2000_2(editorContext, node));
     return editorCell;
   }
@@ -47,8 +47,8 @@ public class InputRoot_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2000_0(editorContext, node, "input root"));
-    editorCell.addEditorCell(this.createConstant_2000_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_2000_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2000_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2000_0(editorContext, node));
     return editorCell;
   }
@@ -60,7 +60,7 @@ public class InputRoot_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2000_2(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2000_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2000_0(editorContext, node));
     return editorCell;
   }
@@ -72,56 +72,56 @@ public class InputRoot_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2000_4(editorContext, node, "useInTest"));
-    editorCell.addEditorCell(this.createConstant_2000_5(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_2000_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2000_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2000_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input root");
     editorCell.setCellId("Constant_2000_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2000_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2000_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_2000_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "useInTest");
     editorCell.setCellId("Constant_2000_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2000_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2000_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2000_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2000_6");
     editorCell.setDefaultText("");
     return editorCell;

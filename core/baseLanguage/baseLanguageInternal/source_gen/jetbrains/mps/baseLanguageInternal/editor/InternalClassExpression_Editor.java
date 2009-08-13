@@ -28,13 +28,13 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7289_0");
     editorCell.addEditorCell(this.createRefNode_7289_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7289_1(editorContext, node, "."));
-    editorCell.addEditorCell(this.createConstant_7289_0(editorContext, node, "class"));
+    editorCell.addEditorCell(this.createConstant_7289_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7289_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7289_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7289_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_7289_0");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     {
@@ -45,8 +45,8 @@ public class InternalClassExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7289_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7289_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_7289_1");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

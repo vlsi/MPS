@@ -38,7 +38,7 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0295_0(editorContext, node, "generic query"));
+    editorCell.addEditorCell(this.createConstant_0295_0(editorContext, node));
     return editorCell;
   }
 
@@ -54,8 +54,8 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0295_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0295_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generic query");
     editorCell.setCellId("Constant_0295_0");
     {
       Style style = editorCell.getStyle();

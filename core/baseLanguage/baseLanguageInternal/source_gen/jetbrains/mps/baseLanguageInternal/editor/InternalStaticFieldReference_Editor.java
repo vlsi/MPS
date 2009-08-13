@@ -23,13 +23,13 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4144_0");
     editorCell.addEditorCell(this.createProperty_4144_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4144_0(editorContext, node, "."));
+    editorCell.addEditorCell(this.createConstant_4144_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4144_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4144_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4144_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_4144_0");
     editorCell.setDefaultText("");
     return editorCell;

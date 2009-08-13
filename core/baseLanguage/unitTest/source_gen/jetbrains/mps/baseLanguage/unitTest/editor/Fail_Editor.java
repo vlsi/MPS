@@ -25,14 +25,14 @@ public class Fail_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0894_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0894_0");
-    editorCell.addEditorCell(this.createConstant_0894_0(editorContext, node, "fail"));
+    editorCell.addEditorCell(this.createConstant_0894_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0894_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0894_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_0894_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0894_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0894_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fail");
     editorCell.setCellId("Constant_0894_0");
     {
       Style style = editorCell.getStyle();
@@ -42,8 +42,8 @@ public class Fail_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0894_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0894_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_0894_1");
     {
       Style style = editorCell.getStyle();

@@ -23,31 +23,31 @@ public class RuntimeErrorType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8338_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8338_0");
-    editorCell.addEditorCell(this.createConstant_8338_0(editorContext, node, "error"));
-    editorCell.addEditorCell(this.createConstant_8338_1(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_8338_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8338_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8338_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8338_2(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_8338_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8338_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8338_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error");
     editorCell.setCellId("Constant_8338_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8338_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8338_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_8338_1");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8338_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8338_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_8338_2");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

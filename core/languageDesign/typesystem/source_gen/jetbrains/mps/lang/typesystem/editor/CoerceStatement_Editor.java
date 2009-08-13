@@ -25,55 +25,55 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2216_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2216_0");
-    editorCell.addEditorCell(this.createConstant_2216_0(editorContext, node, "coerce"));
-    editorCell.addEditorCell(this.createConstant_2216_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_2216_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2216_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2216_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2216_2(editorContext, node, ":<"));
+    editorCell.addEditorCell(this.createConstant_2216_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2216_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2216_3(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_2216_4(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2216_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2216_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2216_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2216_5(editorContext, node, "}"));
-    editorCell.addEditorCell(this.createConstant_2216_6(editorContext, node, "else"));
-    editorCell.addEditorCell(this.createConstant_2216_7(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2216_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2216_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2216_7(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2216_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2216_8(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_2216_8(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerce");
     editorCell.setCellId("Constant_2216_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2216_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
     editorCell.setCellId("Constant_2216_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2216_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2216_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -84,24 +84,24 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2216_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
     editorCell.setCellId("Constant_2216_6");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2216_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -112,8 +112,8 @@ public class CoerceStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2216_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2216_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2216_8");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

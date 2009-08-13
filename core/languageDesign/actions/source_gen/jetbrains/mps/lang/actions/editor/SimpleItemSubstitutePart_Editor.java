@@ -34,7 +34,7 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9526_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9526_1");
-    editorCell.addEditorCell(this.createConstant_9526_0(editorContext, node, "simple item"));
+    editorCell.addEditorCell(this.createConstant_9526_0(editorContext, node));
     return editorCell;
   }
 
@@ -57,17 +57,17 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9526_1(editorContext, node, "can substitute"));
+    editorCell.addEditorCell(this.createConstant_9526_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9526_3(editorContext, node, "matching text"));
+    editorCell.addEditorCell(this.createConstant_9526_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9526_4(editorContext, node, "description text"));
+    editorCell.addEditorCell(this.createConstant_9526_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9526_5(editorContext, node, "icon"));
+    editorCell.addEditorCell(this.createConstant_9526_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9526_6(editorContext, node, "type"));
+    editorCell.addEditorCell(this.createConstant_9526_6(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_9(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9526_2(editorContext, node, "create child node"));
+    editorCell.addEditorCell(this.createConstant_9526_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9526_5(editorContext, node));
     return editorCell;
   }
@@ -144,8 +144,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple item");
     editorCell.setCellId("Constant_9526_0");
     {
       Style style = editorCell.getStyle();
@@ -155,8 +155,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can substitute");
     editorCell.setCellId("Constant_9526_1");
     {
       Style style = editorCell.getStyle();
@@ -166,8 +166,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create child node");
     editorCell.setCellId("Constant_9526_2");
     {
       Style style = editorCell.getStyle();
@@ -177,8 +177,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_9526_3");
     {
       Style style = editorCell.getStyle();
@@ -188,8 +188,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_9526_4");
     {
       Style style = editorCell.getStyle();
@@ -199,8 +199,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_9526_5");
     {
       Style style = editorCell.getStyle();
@@ -210,8 +210,8 @@ public class SimpleItemSubstitutePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9526_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9526_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_9526_6");
     {
       Style style = editorCell.getStyle();

@@ -28,21 +28,21 @@ public class VariableConvertersContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7098_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7098_0");
-    editorCell.addEditorCell(this.createConstant_7098_0(editorContext, node, "Variable Converters:"));
-    editorCell.addEditorCell(this.createConstant_7098_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_7098_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7098_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7098_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7098_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7098_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Variable Converters:");
     editorCell.setCellId("Constant_7098_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7098_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7098_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7098_1");
     {
       Style style = editorCell.getStyle();

@@ -27,12 +27,12 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1517_0");
     editorCell.addEditorCell(this.createRefNode_1517_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1517_0(editorContext, node, "/"));
+    editorCell.addEditorCell(this.createConstant_1517_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1517_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1517_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_1517_0");
     {
       Style style = editorCell.getStyle();

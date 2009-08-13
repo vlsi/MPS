@@ -29,15 +29,15 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1923_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1923_0");
-    editorCell.addEditorCell(this.createConstant_1923_0(editorContext, node, "preferenceComponent"));
-    editorCell.addEditorCell(this.createConstant_1923_1(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_1923_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1923_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1923_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1923_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_1923_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1923_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1923_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "preferenceComponent");
     editorCell.setCellId("Constant_1923_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -48,8 +48,8 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1923_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1923_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_1923_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
@@ -61,8 +61,8 @@ public class PreferencesComponentType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1923_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1923_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_1923_2");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {

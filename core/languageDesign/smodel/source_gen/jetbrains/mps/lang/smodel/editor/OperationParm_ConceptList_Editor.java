@@ -31,14 +31,14 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8994_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8994_0");
-    editorCell.addEditorCell(this.createConstant_8994_0(editorContext, node, "concept in:["));
+    editorCell.addEditorCell(this.createConstant_8994_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8994_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8994_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_8994_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8994_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8994_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept in:[");
     editorCell.setCellId("Constant_8994_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -49,8 +49,8 @@ public class OperationParm_ConceptList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8994_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8994_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_8994_1");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {

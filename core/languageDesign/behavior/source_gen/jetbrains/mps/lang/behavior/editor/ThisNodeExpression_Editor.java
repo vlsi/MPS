@@ -21,12 +21,12 @@ public class ThisNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9916_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9916_0");
-    editorCell.addEditorCell(this.createConstant_9916_0(editorContext, node, "this"));
+    editorCell.addEditorCell(this.createConstant_9916_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9916_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9916_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_9916_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

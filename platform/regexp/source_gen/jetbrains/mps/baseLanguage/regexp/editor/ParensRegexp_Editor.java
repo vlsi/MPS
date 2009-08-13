@@ -22,14 +22,14 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9798_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9798_0");
-    editorCell.addEditorCell(this.createConstant_9798_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_9798_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9798_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9798_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_9798_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9798_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9798_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9798_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
@@ -37,8 +37,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9798_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9798_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9798_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);

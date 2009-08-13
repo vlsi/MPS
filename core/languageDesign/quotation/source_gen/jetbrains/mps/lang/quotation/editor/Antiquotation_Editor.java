@@ -37,26 +37,26 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2990_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2990_0");
-    editorCell.addEditorCell(this.createConstant_2990_0(editorContext, node, "%("));
+    editorCell.addEditorCell(this.createConstant_2990_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2990_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2990_1(editorContext, node, ")%"));
+    editorCell.addEditorCell(this.createConstant_2990_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_2990_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2990_1");
-    editorCell.addEditorCell(this.createConstant_2990_2(editorContext, node, "node antiquotation "));
-    editorCell.addEditorCell(this.createConstant_2990_3(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_2990_4(editorContext, node, "attributed node concept:"));
+    editorCell.addEditorCell(this.createConstant_2990_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2990_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2990_4(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2990_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2990_5(editorContext, node, "attributed node role in parent:"));
+    editorCell.addEditorCell(this.createConstant_2990_5(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_2990_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%(");
     editorCell.setCellId("Constant_2990_0");
     {
       Style style = editorCell.getStyle();
@@ -79,8 +79,8 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")%");
     editorCell.setCellId("Constant_2990_1");
     {
       Style style = editorCell.getStyle();
@@ -103,8 +103,8 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node antiquotation ");
     editorCell.setCellId("Constant_2990_2");
     {
       Style style = editorCell.getStyle();
@@ -114,8 +114,8 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2990_3");
     {
       Style style = editorCell.getStyle();
@@ -126,15 +126,15 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node concept:");
     editorCell.setCellId("Constant_2990_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2990_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2990_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node role in parent:");
     editorCell.setCellId("Constant_2990_5");
     editorCell.setDefaultText("");
     return editorCell;

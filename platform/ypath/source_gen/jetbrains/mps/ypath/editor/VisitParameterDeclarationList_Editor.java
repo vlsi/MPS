@@ -29,21 +29,21 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2322_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2322_0");
-    editorCell.addEditorCell(this.createConstant_2322_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_2322_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2322_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2322_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2322_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2322_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2322_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2322_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2322_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2322_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2322_2");
     editorCell.setDefaultText("");
     return editorCell;
@@ -82,7 +82,7 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_2322_0(editorContext, node, "<no parameters>");
+      return this.createConstant_2322_0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -103,8 +103,8 @@ public class VisitParameterDeclarationList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_2322_0(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_2322_0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no parameters>");
       editorCell.setCellId("Constant_2322_0");
       {
         Style style = editorCell.getStyle();

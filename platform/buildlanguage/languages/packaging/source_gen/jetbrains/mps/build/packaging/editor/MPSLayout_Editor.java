@@ -40,15 +40,15 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8098_0");
     editorCell.addEditorCell(this.createCollection_8098_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8098_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8098_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8098_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8098_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_7(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8098_7(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8098_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8098_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8098_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8098_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8098_0(editorContext, node));
     return editorCell;
   }
@@ -72,9 +72,9 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8098_2(editorContext, node, "basedir"));
+    editorCell.addEditorCell(this.createConstant_8098_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8098_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_9(editorContext, node, "scripts folder"));
+    editorCell.addEditorCell(this.createConstant_8098_9(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8098_2(editorContext, node));
     return editorCell;
   }
@@ -86,7 +86,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8098_4(editorContext, node, "configurations"));
+    editorCell.addEditorCell(this.createConstant_8098_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8098_1(editorContext, node));
     return editorCell;
   }
@@ -123,7 +123,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8098_8(editorContext, node, "generate compilation script"));
+    editorCell.addEditorCell(this.createConstant_8098_8(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8098_1(editorContext, node));
     return editorCell;
   }
@@ -136,16 +136,16 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8098_10(editorContext, node, "variables"));
-    editorCell.addEditorCell(this.createConstant_8098_11(editorContext, node, "("));
-    editorCell.addEditorCell(this.createConstant_8098_12(editorContext, node, "read from"));
+    editorCell.addEditorCell(this.createConstant_8098_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8098_11(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8098_12(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8098_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8098_13(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_8098_13(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8098_0");
     {
       Style style = editorCell.getStyle();
@@ -155,16 +155,16 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "basedir");
     editorCell.setCellId("Constant_8098_2");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8098_3");
     {
       Style style = editorCell.getStyle();
@@ -174,16 +174,16 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "configurations");
     editorCell.setCellId("Constant_8098_4");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8098_5");
     {
       Style style = editorCell.getStyle();
@@ -193,8 +193,8 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8098_6");
     {
       Style style = editorCell.getStyle();
@@ -204,8 +204,8 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8098_7");
     {
       Style style = editorCell.getStyle();
@@ -215,16 +215,16 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate compilation script");
     editorCell.setCellId("Constant_8098_8");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scripts folder");
     editorCell.setCellId("Constant_8098_9");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
@@ -235,32 +235,32 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variables");
     editorCell.setCellId("Constant_8098_10");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8098_11");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "read from");
     editorCell.setCellId("Constant_8098_12");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8098_13(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8098_13(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8098_13");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -441,7 +441,7 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8098_1(editorContext, node, "<components>");
+      return this.createConstant_8098_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -462,8 +462,8 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_8098_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_8098_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<components>");
       editorCell.setCellId("Constant_8098_1");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

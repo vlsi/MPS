@@ -41,7 +41,7 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3739_0(editorContext, node, "application plugin"));
+    editorCell.addEditorCell(this.createConstant_3739_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3739_0(editorContext, node));
     return editorCell;
   }
@@ -50,9 +50,9 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3739_1");
     editorCell.addEditorCell(this.createRefNodeList_3739_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3739_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3739_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3739_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3739_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3739_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3739_1(editorContext, node));
     return editorCell;
   }
@@ -67,7 +67,7 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_3739_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3739_4(editorContext, node));
     if (renderingCondition3739_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_3739_4(editorContext, node, "}"));
+      editorCell.addEditorCell(this.createConstant_3739_4(editorContext, node));
     }
     return editorCell;
   }
@@ -81,7 +81,7 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_3739_0(editorContext, node));
     if (renderingCondition3739_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_3739_3(editorContext, node, "{"));
+      editorCell.addEditorCell(this.createConstant_3739_3(editorContext, node));
     }
     return editorCell;
   }
@@ -98,15 +98,15 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3739_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3739_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "application plugin");
     editorCell.setCellId("Constant_3739_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3739_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3739_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3739_1");
     {
       Style style = editorCell.getStyle();
@@ -116,8 +116,8 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3739_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3739_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3739_2");
     {
       Style style = editorCell.getStyle();
@@ -127,16 +127,16 @@ public class ApplicationPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3739_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3739_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_3739_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3739_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3739_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_3739_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

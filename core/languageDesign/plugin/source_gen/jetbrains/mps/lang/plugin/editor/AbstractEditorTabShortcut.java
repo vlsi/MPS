@@ -45,7 +45,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7612_0(editorContext, node, "shortcut char:"));
+    editorCell.addEditorCell(this.createConstant_7612_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7612_0(editorContext, node));
     if (renderingCondition7612_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createReadOnlyModelAccessor_7612_0(editorContext, node));
@@ -53,8 +53,8 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7612_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7612_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "shortcut char:");
     editorCell.setCellId("Constant_7612_0");
     editorCell.setDefaultText("");
     return editorCell;

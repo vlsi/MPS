@@ -34,17 +34,17 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5804_0");
     editorCell.addEditorCell(this.createCollection_5804_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_0(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_5804_1(editorContext, node, "is applicable:"));
+    editorCell.addEditorCell(this.createConstant_5804_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5804_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5804_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_2(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_5804_3(editorContext, node, "parameters"));
+    editorCell.addEditorCell(this.createConstant_5804_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5804_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5804_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_4(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_5804_5(editorContext, node, "get action UI"));
+    editorCell.addEditorCell(this.createConstant_5804_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5804_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5804_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_7(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_5804_6(editorContext, node, "execute"));
+    editorCell.addEditorCell(this.createConstant_5804_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5804_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5804_2(editorContext, node));
     return editorCell;
   }
@@ -57,13 +57,13 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5804_8(editorContext, node, "generate code"));
+    editorCell.addEditorCell(this.createConstant_5804_8(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5804_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_5804_0");
     {
       Style style = editorCell.getStyle();
@@ -73,15 +73,15 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_5804_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_5804_2");
     {
       Style style = editorCell.getStyle();
@@ -91,15 +91,15 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
     editorCell.setCellId("Constant_5804_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_5804_4");
     {
       Style style = editorCell.getStyle();
@@ -109,22 +109,22 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get action UI");
     editorCell.setCellId("Constant_5804_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
     editorCell.setCellId("Constant_5804_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_5804_7");
     {
       Style style = editorCell.getStyle();
@@ -134,8 +134,8 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5804_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate code");
     editorCell.setCellId("Constant_5804_8");
     editorCell.setDefaultText("");
     return editorCell;

@@ -28,15 +28,15 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_2114_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2114_0");
-    editorCell.addEditorCell(this.createConstant_2114_0(editorContext, node, "aggregation"));
+    editorCell.addEditorCell(this.createConstant_2114_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2114_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2114_1(editorContext, node, "target concept:"));
+    editorCell.addEditorCell(this.createConstant_2114_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2114_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2114_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2114_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aggregation");
     editorCell.setCellId("Constant_2114_0");
     {
       Style style = editorCell.getStyle();
@@ -47,8 +47,8 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_2114_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2114_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_2114_1");
     {
       Style style = editorCell.getStyle();

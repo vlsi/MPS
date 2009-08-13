@@ -22,23 +22,23 @@ public class EmitVariableValueIs_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0576_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0576_0");
-    editorCell.addEditorCell(this.createConstant_0576_0(editorContext, node, "variable"));
+    editorCell.addEditorCell(this.createConstant_0576_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0576_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0576_1(editorContext, node, "value is"));
+    editorCell.addEditorCell(this.createConstant_0576_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0576_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0576_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0576_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "variable");
     editorCell.setCellId("Constant_0576_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0576_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0576_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value is");
     editorCell.setCellId("Constant_0576_1");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 public class Node_TypeOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4604_0(editorContext, node, "type");
+    return this.createConstant_4604_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
@@ -25,8 +25,8 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4604_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4604_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_4604_0");
     editorCell.setDefaultText("");
     return editorCell;

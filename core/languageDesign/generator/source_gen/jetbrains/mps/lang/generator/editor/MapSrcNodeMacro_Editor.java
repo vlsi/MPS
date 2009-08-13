@@ -41,8 +41,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_1(editorContext, node, "map node macro"));
-    editorCell.addEditorCell(this.createConstant_5034_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_5034_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5034_2(editorContext, node));
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5034_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5034_1");
-    editorCell.addEditorCell(this.createConstant_5034_0(editorContext, node, "$MAP_SRC$"));
+    editorCell.addEditorCell(this.createConstant_5034_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5034_0(editorContext, node));
     return editorCell;
   }
@@ -78,8 +78,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_3(editorContext, node, "mapped node"));
-    editorCell.addEditorCell(this.createConstant_5034_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5034_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5034_0(editorContext, node));
     return editorCell;
   }
@@ -91,8 +91,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_5(editorContext, node, "mapping func"));
-    editorCell.addEditorCell(this.createConstant_5034_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5034_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5034_1(editorContext, node));
     return editorCell;
   }
@@ -104,8 +104,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_7(editorContext, node, "mapping label"));
-    editorCell.addEditorCell(this.createConstant_5034_8(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5034_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_8(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5034_0(editorContext, node));
     return editorCell;
   }
@@ -117,8 +117,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_9(editorContext, node, "post-processing"));
-    editorCell.addEditorCell(this.createConstant_5034_10(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5034_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_10(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5034_2(editorContext, node));
     return editorCell;
   }
@@ -130,8 +130,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5034_11(editorContext, node, "comment"));
-    editorCell.addEditorCell(this.createConstant_5034_12(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5034_11(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5034_12(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5034_1(editorContext, node));
     return editorCell;
   }
@@ -142,8 +142,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$MAP_SRC$");
     editorCell.setCellId("Constant_5034_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -159,8 +159,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "map node macro");
     editorCell.setCellId("Constant_5034_1");
     {
       Style style = editorCell.getStyle();
@@ -172,8 +172,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5034_2");
     {
       Style style = editorCell.getStyle();
@@ -183,8 +183,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_5034_3");
     {
       Style style = editorCell.getStyle();
@@ -194,8 +194,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5034_4");
     {
       Style style = editorCell.getStyle();
@@ -205,8 +205,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping func");
     editorCell.setCellId("Constant_5034_5");
     {
       Style style = editorCell.getStyle();
@@ -216,8 +216,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5034_6");
     {
       Style style = editorCell.getStyle();
@@ -227,15 +227,15 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_5034_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5034_8");
     {
       Style style = editorCell.getStyle();
@@ -245,8 +245,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing");
     editorCell.setCellId("Constant_5034_9");
     {
       Style style = editorCell.getStyle();
@@ -256,8 +256,8 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5034_10");
     {
       Style style = editorCell.getStyle();
@@ -267,15 +267,15 @@ public class MapSrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_5034_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5034_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5034_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5034_12");
     {
       Style style = editorCell.getStyle();

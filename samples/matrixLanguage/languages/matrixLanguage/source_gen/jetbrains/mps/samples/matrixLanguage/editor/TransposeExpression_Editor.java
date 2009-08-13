@@ -26,12 +26,12 @@ public class TransposeExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8379_0");
     editorCell.addEditorCell(this.createRefNode_8379_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8379_0(editorContext, node, "T"));
+    editorCell.addEditorCell(this.createConstant_8379_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8379_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8379_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "T");
     editorCell.setCellId("Constant_8379_0");
     {
       Style style = editorCell.getStyle();

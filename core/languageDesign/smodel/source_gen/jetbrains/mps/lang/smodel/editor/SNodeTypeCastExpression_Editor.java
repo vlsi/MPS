@@ -34,17 +34,17 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6410_0");
     editorCell.addEditorCell(this.createRefNode_6410_0(editorContext, node));
     if (renderingCondition6410_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6410_0(editorContext, node, ":"));
+      editorCell.addEditorCell(this.createConstant_6410_0(editorContext, node));
     }
     if (renderingCondition6410_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6410_1(editorContext, node, "as"));
+      editorCell.addEditorCell(this.createConstant_6410_1(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefCell_6410_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6410_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6410_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_6410_0");
     {
       Style style = editorCell.getStyle();
@@ -54,8 +54,8 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6410_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6410_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_6410_1");
     {
       Style style = editorCell.getStyle();

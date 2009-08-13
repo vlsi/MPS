@@ -27,28 +27,28 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5755_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5755_0");
-    editorCell.addEditorCell(this.createConstant_5755_0(editorContext, node, "if"));
-    editorCell.addEditorCell(this.createConstant_5755_4(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_5755_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5755_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5755_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5755_3(editorContext, node, "matches"));
+    editorCell.addEditorCell(this.createConstant_5755_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5755_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5755_5(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_5755_1(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_5755_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5755_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5755_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5755_2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_5755_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if");
     editorCell.setCellId("Constant_5755_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_5755_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -59,8 +59,8 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_5755_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -71,8 +71,8 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matches");
     editorCell.setCellId("Constant_5755_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -83,16 +83,16 @@ public class MatchRegexpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_5755_4");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5755_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5755_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5755_5");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

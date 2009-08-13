@@ -26,22 +26,22 @@ public class OptionalPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8761_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8761_0");
-    editorCell.addEditorCell(this.createConstant_8761_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_8761_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8761_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8761_1(editorContext, node, ")?"));
+    editorCell.addEditorCell(this.createConstant_8761_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8761_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8761_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8761_0");
     MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8761_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8761_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")?");
     editorCell.setCellId("Constant_8761_1");
     MPSLite_Style_StyleSheet.getMPSLiteOptionalPart(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -24,13 +24,13 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4497_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4497_0");
-    editorCell.addEditorCell(this.createConstant_4497_0(editorContext, node, "after"));
+    editorCell.addEditorCell(this.createConstant_4497_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4497_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4497_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4497_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
     editorCell.setCellId("Constant_4497_0");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

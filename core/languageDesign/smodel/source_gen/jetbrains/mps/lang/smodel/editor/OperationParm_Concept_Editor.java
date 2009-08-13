@@ -22,13 +22,13 @@ public class OperationParm_Concept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9344_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9344_0");
-    editorCell.addEditorCell(this.createConstant_9344_0(editorContext, node, "concept ="));
+    editorCell.addEditorCell(this.createConstant_9344_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9344_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9344_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9344_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept =");
     editorCell.setCellId("Constant_9344_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

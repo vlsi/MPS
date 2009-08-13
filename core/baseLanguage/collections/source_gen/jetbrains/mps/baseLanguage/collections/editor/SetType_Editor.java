@@ -35,14 +35,14 @@ public class SetType_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9680_0");
     editorCell.addEditorCell(this.createConceptProperty_9680_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9680_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_9680_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9680_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9680_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_9680_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9680_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9680_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_9680_0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
@@ -53,8 +53,8 @@ public class SetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9680_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9680_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_9680_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {

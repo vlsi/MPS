@@ -25,13 +25,13 @@ public class HexIntegerLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7888_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7888_0");
-    editorCell.addEditorCell(this.createConstant_7888_0(editorContext, node, "0x"));
+    editorCell.addEditorCell(this.createConstant_7888_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7888_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7888_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7888_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "0x");
     editorCell.setCellId("Constant_7888_0");
     {
       Style style = editorCell.getStyle();

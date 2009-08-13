@@ -38,7 +38,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5159_0(editorContext, node, "simple item"));
+    editorCell.addEditorCell(this.createConstant_5159_0(editorContext, node));
     return editorCell;
   }
 
@@ -61,15 +61,15 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5159_1(editorContext, node, "matching text"));
+    editorCell.addEditorCell(this.createConstant_5159_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5159_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_2(editorContext, node, "description text"));
+    editorCell.addEditorCell(this.createConstant_5159_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5159_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_4(editorContext, node, "icon"));
+    editorCell.addEditorCell(this.createConstant_5159_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5159_7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_5(editorContext, node, "type"));
+    editorCell.addEditorCell(this.createConstant_5159_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5159_8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_3(editorContext, node, "do transform"));
+    editorCell.addEditorCell(this.createConstant_5159_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5159_6(editorContext, node));
     return editorCell;
   }
@@ -134,8 +134,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple item");
     editorCell.setCellId("Constant_5159_0");
     {
       Style style = editorCell.getStyle();
@@ -145,8 +145,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_5159_1");
     {
       Style style = editorCell.getStyle();
@@ -156,8 +156,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_5159_2");
     {
       Style style = editorCell.getStyle();
@@ -167,8 +167,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
     editorCell.setCellId("Constant_5159_3");
     {
       Style style = editorCell.getStyle();
@@ -178,8 +178,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_5159_4");
     {
       Style style = editorCell.getStyle();
@@ -189,8 +189,8 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5159_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_5159_5");
     {
       Style style = editorCell.getStyle();

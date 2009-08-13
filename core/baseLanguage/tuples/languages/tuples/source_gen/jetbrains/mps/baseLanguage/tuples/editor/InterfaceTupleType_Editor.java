@@ -75,7 +75,7 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0883_0(editorContext, node, "interface:"));
+    editorCell.addEditorCell(this.createConstant_0883_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_0883_0(editorContext, node));
     return editorCell;
   }
@@ -88,21 +88,21 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0883_1(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_0883_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0883_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0883_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_0883_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0883_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0883_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface:");
     editorCell.setCellId("Constant_0883_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0883_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0883_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_0883_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
@@ -114,8 +114,8 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0883_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0883_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_0883_2");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {

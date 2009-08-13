@@ -25,15 +25,15 @@ public class Field_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2398_0");
     editorCell.addEditorCell(this.createProperty_2398_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2398_0(editorContext, node, "-"));
+    editorCell.addEditorCell(this.createConstant_2398_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2398_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2398_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_2398_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2398_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2398_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2398_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_2398_0");
     {
       Style style = editorCell.getStyle();
@@ -43,8 +43,8 @@ public class Field_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2398_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2398_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2398_1");
     {
       Style style = editorCell.getStyle();

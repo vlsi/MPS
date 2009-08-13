@@ -34,7 +34,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition2194_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_2194_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_2194_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_2194_1(editorContext, node));
     return editorCell;
   }
 
@@ -45,7 +45,7 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2194_0(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_2194_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2194_1(editorContext, node));
     return editorCell;
   }
@@ -58,16 +58,16 @@ public class PersistentPropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2194_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2194_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_2194_0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2194_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2194_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2194_1");
     editorCell.setDefaultText("");
     return editorCell;

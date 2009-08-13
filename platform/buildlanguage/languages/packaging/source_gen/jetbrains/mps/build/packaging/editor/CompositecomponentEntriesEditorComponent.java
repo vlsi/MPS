@@ -89,7 +89,7 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_1434_0(editorContext, node, "<entries>");
+      return this.createConstant_1434_0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -110,8 +110,8 @@ public class CompositecomponentEntriesEditorComponent extends AbstractCellProvid
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_1434_0(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_1434_0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
       editorCell.setCellId("Constant_1434_0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

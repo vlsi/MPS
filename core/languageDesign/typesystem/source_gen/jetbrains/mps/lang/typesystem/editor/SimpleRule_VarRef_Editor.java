@@ -31,23 +31,23 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5489_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5489_0");
-    editorCell.addEditorCell(this.createConstant_5489_0(editorContext, node, "var reference"));
+    editorCell.addEditorCell(this.createConstant_5489_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5489_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5489_1(editorContext, node, "has var decl role"));
+    editorCell.addEditorCell(this.createConstant_5489_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5489_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5489_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var reference");
     editorCell.setCellId("Constant_5489_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5489_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has var decl role");
     editorCell.setCellId("Constant_5489_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

@@ -29,7 +29,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1462_0");
     editorCell.addEditorCell(this.createCollection_1462_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1462_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1462_5(editorContext, node, " "));
+    editorCell.addEditorCell(this.createConstant_1462_5(editorContext, node));
     return editorCell;
   }
 
@@ -41,9 +41,9 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1462_0(editorContext, node, "binary operation concept"));
+    editorCell.addEditorCell(this.createConstant_1462_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1462_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1462_1(editorContext, node, "extends"));
+    editorCell.addEditorCell(this.createConstant_1462_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1462_0(editorContext, node));
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1462_2(editorContext, node, "left operand"));
+    editorCell.addEditorCell(this.createConstant_1462_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1462_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1462_1(editorContext, node));
     return editorCell;
@@ -97,7 +97,7 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1462_3(editorContext, node, "right operand"));
+    editorCell.addEditorCell(this.createConstant_1462_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1462_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1462_2(editorContext, node));
     return editorCell;
@@ -111,53 +111,53 @@ public class BinaryOperationConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1462_4(editorContext, node, "sign"));
+    editorCell.addEditorCell(this.createConstant_1462_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1462_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "binary operation concept");
     editorCell.setCellId("Constant_1462_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_1462_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand");
     editorCell.setCellId("Constant_1462_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand");
     editorCell.setCellId("Constant_1462_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sign");
     editorCell.setCellId("Constant_1462_4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1462_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1462_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_1462_5");
     {
       Style style = editorCell.getStyle();

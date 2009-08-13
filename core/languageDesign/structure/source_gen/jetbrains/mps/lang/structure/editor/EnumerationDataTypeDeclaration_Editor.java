@@ -51,7 +51,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_0(editorContext, node, "enumeration datatype"));
+    editorCell.addEditorCell(this.createConstant_4339_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4339_0(editorContext, node));
     return editorCell;
   }
@@ -75,10 +75,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_13(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4339_13(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4339_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4339_5(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_4339_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4339_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4339_0(editorContext, node));
     return editorCell;
   }
@@ -110,8 +110,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_1(editorContext, node, "member type"));
-    editorCell.addEditorCell(this.createConstant_4339_3(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4339_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_3(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4339_0(editorContext, node));
     return editorCell;
   }
@@ -123,8 +123,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_2(editorContext, node, "no default"));
-    editorCell.addEditorCell(this.createConstant_4339_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4339_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4339_4(editorContext, node));
     return editorCell;
   }
@@ -136,8 +136,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_7(editorContext, node, "member identifier"));
-    editorCell.addEditorCell(this.createConstant_4339_8(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4339_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_8(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4339_2(editorContext, node));
     return editorCell;
   }
@@ -149,8 +149,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_9(editorContext, node, "default"));
-    editorCell.addEditorCell(this.createConstant_4339_10(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4339_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_10(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4339_1(editorContext, node));
     return editorCell;
   }
@@ -162,14 +162,14 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4339_11(editorContext, node, "null text"));
-    editorCell.addEditorCell(this.createConstant_4339_12(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4339_11(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4339_12(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4339_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enumeration datatype");
     editorCell.setCellId("Constant_4339_0");
     {
       Style style = editorCell.getStyle();
@@ -179,8 +179,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "member type");
     editorCell.setCellId("Constant_4339_1");
     {
       Style style = editorCell.getStyle();
@@ -190,8 +190,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no default");
     editorCell.setCellId("Constant_4339_2");
     {
       Style style = editorCell.getStyle();
@@ -201,8 +201,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4339_3");
     {
       Style style = editorCell.getStyle();
@@ -212,8 +212,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4339_4");
     {
       Style style = editorCell.getStyle();
@@ -223,8 +223,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4339_5");
     {
       Style style = editorCell.getStyle();
@@ -234,8 +234,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4339_6");
     {
       Style style = editorCell.getStyle();
@@ -245,8 +245,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "member identifier");
     editorCell.setCellId("Constant_4339_7");
     {
       Style style = editorCell.getStyle();
@@ -256,8 +256,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4339_8");
     {
       Style style = editorCell.getStyle();
@@ -267,8 +267,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_4339_9");
     {
       Style style = editorCell.getStyle();
@@ -278,8 +278,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4339_10");
     {
       Style style = editorCell.getStyle();
@@ -289,8 +289,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null text");
     editorCell.setCellId("Constant_4339_11");
     {
       Style style = editorCell.getStyle();
@@ -300,8 +300,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4339_12");
     {
       Style style = editorCell.getStyle();
@@ -311,8 +311,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4339_13(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4339_13(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4339_13");
     {
       Style style = editorCell.getStyle();

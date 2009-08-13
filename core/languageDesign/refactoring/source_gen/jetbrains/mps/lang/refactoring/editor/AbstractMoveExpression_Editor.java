@@ -26,13 +26,13 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_2495_0");
     editorCell.addEditorCell(this.createConceptProperty_2495_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2495_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2495_0(editorContext, node, "to"));
+    editorCell.addEditorCell(this.createConstant_2495_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2495_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2495_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2495_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
     editorCell.setCellId("Constant_2495_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

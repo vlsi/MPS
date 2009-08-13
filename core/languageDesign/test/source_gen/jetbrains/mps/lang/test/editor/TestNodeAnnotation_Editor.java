@@ -27,23 +27,23 @@ public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1303_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1303_0");
-    editorCell.addEditorCell(this.createConstant_1303_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_1303_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1303_0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_1303_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1303_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_1303_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1303_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1303_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_1303_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1303_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1303_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_1303_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

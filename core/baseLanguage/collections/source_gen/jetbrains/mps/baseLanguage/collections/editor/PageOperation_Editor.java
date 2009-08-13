@@ -27,17 +27,17 @@ public class PageOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1220_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1220_0");
-    editorCell.addEditorCell(this.createConstant_1220_0(editorContext, node, "page"));
-    editorCell.addEditorCell(this.createConstant_1220_3(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_1220_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1220_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1220_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1220_1(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_1220_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1220_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1220_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_1220_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1220_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1220_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "page");
     editorCell.setCellId("Constant_1220_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -45,23 +45,23 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1220_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1220_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_1220_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1220_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1220_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1220_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1220_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1220_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1220_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

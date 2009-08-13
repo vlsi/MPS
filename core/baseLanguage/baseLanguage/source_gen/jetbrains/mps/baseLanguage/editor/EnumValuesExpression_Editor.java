@@ -33,21 +33,21 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8063_0");
     editorCell.addEditorCell(this.createRefCell_8063_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8063_0(editorContext, node, "."));
-    editorCell.addEditorCell(this.createConstant_8063_1(editorContext, node, "values"));
+    editorCell.addEditorCell(this.createConstant_8063_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8063_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8063_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8063_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_8063_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8063_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8063_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "values");
     editorCell.setCellId("Constant_8063_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

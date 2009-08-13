@@ -29,14 +29,14 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5398_0");
     editorCell.addEditorCell(this.createConceptProperty_5398_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5398_0(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_5398_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5398_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5398_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_5398_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5398_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5398_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_5398_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     {
@@ -47,8 +47,8 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     return editorCell;
   }
 
-  private EditorCell createConstant_5398_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5398_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_5398_1");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

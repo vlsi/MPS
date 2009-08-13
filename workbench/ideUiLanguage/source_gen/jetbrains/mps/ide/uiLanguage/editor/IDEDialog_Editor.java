@@ -39,7 +39,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1434_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1434_0");
-    editorCell.addEditorCell(this.createConstant_1434_0(editorContext, node, "IDEDialog"));
+    editorCell.addEditorCell(this.createConstant_1434_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1434_1(editorContext, node));
     return editorCell;
   }
@@ -65,11 +65,11 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createRefNode_1434_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1434_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1434_5(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_1434_1(editorContext, node, "content pane:"));
+    editorCell.addEditorCell(this.createConstant_1434_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1434_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1434_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1434_2(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_1434_3(editorContext, node, "buttons"));
+    editorCell.addEditorCell(this.createConstant_1434_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1434_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1434_0(editorContext, node));
     return editorCell;
   }
@@ -88,7 +88,7 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1434_4(editorContext, node, "stretch"));
+    editorCell.addEditorCell(this.createConstant_1434_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1434_0(editorContext, node));
     return editorCell;
   }
@@ -100,29 +100,29 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1434_6(editorContext, node, "title"));
-    editorCell.addEditorCell(this.createConstant_1434_7(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_1434_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1434_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1434_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IDEDialog");
     editorCell.setCellId("Constant_1434_0");
     Stylesheet_StyleSheet.getComponent(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content pane:");
     editorCell.setCellId("Constant_1434_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1434_2");
     {
       Style style = editorCell.getStyle();
@@ -132,22 +132,22 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "buttons");
     editorCell.setCellId("Constant_1434_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stretch");
     editorCell.setCellId("Constant_1434_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1434_5");
     {
       Style style = editorCell.getStyle();
@@ -157,15 +157,15 @@ public class IDEDialog_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title");
     editorCell.setCellId("Constant_1434_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1434_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1434_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1434_7");
     editorCell.setDefaultText("");
     return editorCell;

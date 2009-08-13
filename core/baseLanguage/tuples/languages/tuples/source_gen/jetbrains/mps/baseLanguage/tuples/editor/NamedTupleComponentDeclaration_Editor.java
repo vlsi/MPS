@@ -48,11 +48,11 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_0912_1(editorContext, node));
     }
     if (renderingCondition0912_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_0912_1(editorContext, node, "final"));
+      editorCell.addEditorCell(this.createConstant_0912_1(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_0912_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_0912_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0912_0(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_0912_0(editorContext, node));
     return editorCell;
   }
 
@@ -68,16 +68,16 @@ public class NamedTupleComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0912_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0912_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_0912_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0912_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0912_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_0912_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     NTCD_delete_final.setCellActions(editorCell, node, editorContext);

@@ -25,7 +25,7 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1080_0");
     editorCell.addEditorCell(this.createCollection_1080_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1080_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1080_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1080_2(editorContext, node));
     return editorCell;
   }
@@ -38,7 +38,7 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1080_0(editorContext, node, "the simplest concept instance"));
+    editorCell.addEditorCell(this.createConstant_1080_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1080_0(editorContext, node));
     return editorCell;
   }
@@ -51,20 +51,20 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1080_2(editorContext, node, "text = "));
+    editorCell.addEditorCell(this.createConstant_1080_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1080_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1080_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1080_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the simplest concept instance");
     editorCell.setCellId("Constant_1080_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1080_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1080_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1080_1");
     {
       Style style = editorCell.getStyle();
@@ -74,8 +74,8 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1080_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1080_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text = ");
     editorCell.setCellId("Constant_1080_2");
     editorCell.setDefaultText("");
     return editorCell;

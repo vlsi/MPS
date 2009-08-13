@@ -25,13 +25,13 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2984_0");
     editorCell.addEditorCell(this.createRefNode_2984_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2984_0(editorContext, node, "instanceof"));
+    editorCell.addEditorCell(this.createConstant_2984_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2984_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2984_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2984_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instanceof");
     editorCell.setCellId("Constant_2984_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

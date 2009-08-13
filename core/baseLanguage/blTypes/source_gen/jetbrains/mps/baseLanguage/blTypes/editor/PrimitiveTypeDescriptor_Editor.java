@@ -34,22 +34,22 @@ public class PrimitiveTypeDescriptor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5100_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5100_0");
-    editorCell.addEditorCell(this.createConstant_5100_0(editorContext, node, "Primitive"));
+    editorCell.addEditorCell(this.createConstant_5100_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5100_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5100_1(editorContext, node, "extends"));
+    editorCell.addEditorCell(this.createConstant_5100_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5100_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5100_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5100_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Primitive");
     editorCell.setCellId("Constant_5100_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5100_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5100_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
     editorCell.setCellId("Constant_5100_1");
     editorCell.setDefaultText("");
     return editorCell;

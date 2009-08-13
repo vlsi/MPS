@@ -25,13 +25,13 @@ public class PropertyMessageTarget_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3593_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3593_0");
-    editorCell.addEditorCell(this.createConstant_3593_0(editorContext, node, "property"));
+    editorCell.addEditorCell(this.createConstant_3593_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3593_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3593_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3593_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
     editorCell.setCellId("Constant_3593_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

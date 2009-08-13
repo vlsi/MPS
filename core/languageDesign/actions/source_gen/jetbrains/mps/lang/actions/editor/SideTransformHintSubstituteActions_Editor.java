@@ -35,7 +35,7 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_4827_0");
     editorCell.addEditorCell(this.createCollection_4827_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4827_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4827_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4827_1(editorContext, node));
     return editorCell;
   }
@@ -58,13 +58,13 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4827_1(editorContext, node, "side transform actions"));
+    editorCell.addEditorCell(this.createConstant_4827_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4827_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4827_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4827_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4827_0");
     {
       Style style = editorCell.getStyle();
@@ -74,8 +74,8 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_4827_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4827_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "side transform actions");
     editorCell.setCellId("Constant_4827_1");
     editorCell.setDefaultText("");
     return editorCell;

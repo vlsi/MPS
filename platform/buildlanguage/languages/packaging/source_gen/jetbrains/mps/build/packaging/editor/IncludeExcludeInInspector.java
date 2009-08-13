@@ -38,7 +38,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
   private EditorCell createCollection_2096_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2096_1");
-    editorCell.addEditorCell(this.createConstant_2096_0(editorContext, node, "excludes"));
+    editorCell.addEditorCell(this.createConstant_2096_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2096_0(editorContext, node));
     return editorCell;
   }
@@ -46,21 +46,21 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
   private EditorCell createCollection_2096_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2096_2");
-    editorCell.addEditorCell(this.createConstant_2096_1(editorContext, node, "includes"));
+    editorCell.addEditorCell(this.createConstant_2096_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2096_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2096_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2096_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_2096_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2096_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2096_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_2096_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

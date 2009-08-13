@@ -43,8 +43,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_0(editorContext, node, "if-macro"));
-    editorCell.addEditorCell(this.createConstant_1955_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1955_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1955_2(editorContext, node));
     return editorCell;
   }
@@ -52,7 +52,7 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1955_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1955_1");
-    editorCell.addEditorCell(this.createConstant_1955_1(editorContext, node, "$IF$"));
+    editorCell.addEditorCell(this.createConstant_1955_1(editorContext, node));
     editorCell.addEditorCell(this.createComponent_1955_0(editorContext, node));
     if (renderingCondition1955_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1955_6(editorContext, node));
@@ -82,8 +82,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_3(editorContext, node, "condition"));
-    editorCell.addEditorCell(this.createConstant_1955_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1955_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1955_0(editorContext, node));
     return editorCell;
   }
@@ -95,8 +95,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_5(editorContext, node, "alternative"));
-    editorCell.addEditorCell(this.createConstant_1955_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1955_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1955_1(editorContext, node));
     return editorCell;
   }
@@ -108,8 +108,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_7(editorContext, node, "mapping label"));
-    editorCell.addEditorCell(this.createConstant_1955_8(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1955_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_8(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1955_0(editorContext, node));
     return editorCell;
   }
@@ -121,8 +121,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_10(editorContext, node, "/"));
-    editorCell.addEditorCell(this.createConstant_1955_9(editorContext, node, "$ELSE$"));
+    editorCell.addEditorCell(this.createConstant_1955_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_9(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1955_2(editorContext, node));
     return editorCell;
   }
@@ -134,8 +134,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1955_11(editorContext, node, "comment"));
-    editorCell.addEditorCell(this.createConstant_1955_12(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1955_11(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1955_12(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1955_1(editorContext, node));
     return editorCell;
   }
@@ -146,8 +146,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if-macro");
     editorCell.setCellId("Constant_1955_0");
     {
       Style style = editorCell.getStyle();
@@ -159,8 +159,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$IF$");
     editorCell.setCellId("Constant_1955_1");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -176,8 +176,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1955_2");
     {
       Style style = editorCell.getStyle();
@@ -187,8 +187,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_1955_3");
     {
       Style style = editorCell.getStyle();
@@ -198,8 +198,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1955_4");
     {
       Style style = editorCell.getStyle();
@@ -209,8 +209,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alternative");
     editorCell.setCellId("Constant_1955_5");
     {
       Style style = editorCell.getStyle();
@@ -220,8 +220,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1955_6");
     {
       Style style = editorCell.getStyle();
@@ -231,15 +231,15 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_1955_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1955_8");
     {
       Style style = editorCell.getStyle();
@@ -249,8 +249,8 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ELSE$");
     editorCell.setCellId("Constant_1955_9");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -261,22 +261,22 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_1955_10");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_1955_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1955_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1955_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1955_12");
     {
       Style style = editorCell.getStyle();

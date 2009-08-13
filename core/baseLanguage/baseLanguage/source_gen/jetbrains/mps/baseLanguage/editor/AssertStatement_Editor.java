@@ -31,19 +31,19 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7459_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7459_0");
-    editorCell.addEditorCell(this.createConstant_7459_0(editorContext, node, "assert"));
+    editorCell.addEditorCell(this.createConstant_7459_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_0(editorContext, node));
     if (renderingCondition7459_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7459_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7459_3(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_7459_3(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_7459_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7459_1");
-    editorCell.addEditorCell(this.createConstant_7459_1(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_7459_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_1(editorContext, node));
     return editorCell;
   }
@@ -51,13 +51,13 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7459_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7459_2");
-    editorCell.addEditorCell(this.createConstant_7459_2(editorContext, node, "Error message : "));
+    editorCell.addEditorCell(this.createConstant_7459_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
     editorCell.setCellId("Constant_7459_0");
     {
       Style style = editorCell.getStyle();
@@ -67,22 +67,22 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_7459_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Error message : ");
     editorCell.setCellId("Constant_7459_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7459_3");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

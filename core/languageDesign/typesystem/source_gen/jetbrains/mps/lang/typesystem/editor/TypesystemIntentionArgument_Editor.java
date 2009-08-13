@@ -27,13 +27,13 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4548_0");
     editorCell.addEditorCell(this.createRefCell_4548_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4548_0(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_4548_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4548_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4548_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4548_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_4548_0");
     editorCell.setDefaultText("");
     return editorCell;

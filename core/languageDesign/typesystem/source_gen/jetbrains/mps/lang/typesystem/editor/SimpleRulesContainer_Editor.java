@@ -29,21 +29,21 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7856_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7856_0");
-    editorCell.addEditorCell(this.createConstant_7856_0(editorContext, node, "simple rules container"));
-    editorCell.addEditorCell(this.createConstant_7856_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_7856_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7856_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_7856_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7856_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7856_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple rules container");
     editorCell.setCellId("Constant_7856_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7856_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7856_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7856_1");
     {
       Style style = editorCell.getStyle();

@@ -41,7 +41,7 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5723_0(editorContext, node, "on no usages:"));
+    editorCell.addEditorCell(this.createConstant_5723_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5723_1(editorContext, node));
     return editorCell;
   }
@@ -60,8 +60,8 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   private EditorCell createCollection_5723_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5723_2");
-    editorCell.addEditorCell(this.createConstant_5723_1(editorContext, node, "refactor immediately"));
-    editorCell.addEditorCell(this.createConstant_5723_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5723_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5723_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5723_0(editorContext, node));
     return editorCell;
   }
@@ -69,8 +69,8 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   private EditorCell createCollection_5723_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5723_3");
-    editorCell.addEditorCell(this.createConstant_5723_3(editorContext, node, "non-local"));
-    editorCell.addEditorCell(this.createConstant_5723_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_5723_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5723_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5723_1(editorContext, node));
     return editorCell;
   }
@@ -88,8 +88,8 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on no usages:");
     editorCell.setCellId("Constant_5723_0");
     {
       Style style = editorCell.getStyle();
@@ -100,29 +100,29 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "refactor immediately");
     editorCell.setCellId("Constant_5723_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5723_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "non-local");
     editorCell.setCellId("Constant_5723_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_5723_4");
     editorCell.setDefaultText("");
     return editorCell;

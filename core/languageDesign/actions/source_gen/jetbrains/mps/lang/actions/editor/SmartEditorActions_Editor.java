@@ -34,11 +34,11 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2389_0");
     editorCell.addEditorCell(this.createCollection_2389_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2389_4(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_2389_1(editorContext, node, "generate code actions:"));
+    editorCell.addEditorCell(this.createConstant_2389_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2389_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2389_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2389_2(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_2389_0(editorContext, node, "surround with actions:"));
+    editorCell.addEditorCell(this.createConstant_2389_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2389_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2389_3(editorContext, node));
     return editorCell;
   }
@@ -51,7 +51,7 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2389_3(editorContext, node, "smart editor actions"));
+    editorCell.addEditorCell(this.createConstant_2389_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2389_0(editorContext, node));
     return editorCell;
   }
@@ -82,22 +82,22 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2389_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "surround with actions:");
     editorCell.setCellId("Constant_2389_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2389_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate code actions:");
     editorCell.setCellId("Constant_2389_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2389_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_2389_2");
     {
       Style style = editorCell.getStyle();
@@ -107,15 +107,15 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2389_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "smart editor actions");
     editorCell.setCellId("Constant_2389_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2389_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_2389_4");
     {
       Style style = editorCell.getStyle();

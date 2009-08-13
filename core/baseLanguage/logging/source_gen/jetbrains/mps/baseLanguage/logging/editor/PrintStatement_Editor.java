@@ -30,39 +30,39 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8438_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8438_0");
-    editorCell.addEditorCell(this.createConstant_8438_0(editorContext, node, "print"));
-    editorCell.addEditorCell(this.createConstant_8438_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_8438_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8438_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8438_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8438_2(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_8438_3(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_8438_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8438_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8438_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8438_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "print");
     editorCell.setCellId("Constant_8438_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8438_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8438_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8438_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8438_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8438_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8438_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8438_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8438_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_8438_3");
     editorCell.setDefaultText("");
     return editorCell;
@@ -105,7 +105,7 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8438_4(editorContext, node, "");
+      return this.createConstant_8438_4(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -133,8 +133,8 @@ public class PrintStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_8438_4(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_8438_4(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_8438_4");
       {
         Style style = editorCell.getStyle();

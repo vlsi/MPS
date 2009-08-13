@@ -31,61 +31,61 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7459_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7459_0");
-    editorCell.addEditorCell(this.createConstant_7459_0(editorContext, node, "ensure"));
+    editorCell.addEditorCell(this.createConstant_7459_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7459_4(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_7459_1(editorContext, node, "reportError"));
+    editorCell.addEditorCell(this.createConstant_7459_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7459_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7459_2(editorContext, node, "->"));
+    editorCell.addEditorCell(this.createConstant_7459_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7459_3(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_7459_3(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_7459_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7459_1");
-    editorCell.addEditorCell(this.createConstant_7459_6(editorContext, node, "node feature to highlight(optional)"));
+    editorCell.addEditorCell(this.createConstant_7459_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7459_7(editorContext, node, " "));
-    editorCell.addEditorCell(this.createConstant_7459_5(editorContext, node, "intention to fix an error(optional)"));
+    editorCell.addEditorCell(this.createConstant_7459_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7459_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7459_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ensure");
     editorCell.setCellId("Constant_7459_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reportError");
     editorCell.setCellId("Constant_7459_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_7459_2");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7459_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_7459_4");
     {
       Style style = editorCell.getStyle();
@@ -97,8 +97,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix an error(optional)");
     editorCell.setCellId("Constant_7459_5");
     {
       Style style = editorCell.getStyle();
@@ -108,8 +108,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_7459_6");
     {
       Style style = editorCell.getStyle();
@@ -119,8 +119,8 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7459_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_7459_7");
     {
       Style style = editorCell.getStyle();

@@ -25,14 +25,14 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9112_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9112_0");
-    editorCell.addEditorCell(this.createConstant_9112_0(editorContext, node, "assert true"));
+    editorCell.addEditorCell(this.createConstant_9112_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9112_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9112_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_9112_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9112_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9112_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert true");
     editorCell.setCellId("Constant_9112_0");
     {
       Style style = editorCell.getStyle();
@@ -42,8 +42,8 @@ public class AssertTrue_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9112_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9112_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_9112_1");
     {
       Style style = editorCell.getStyle();

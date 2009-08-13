@@ -25,13 +25,13 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0475_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0475_0");
-    editorCell.addEditorCell(this.createConstant_0475_0(editorContext, node, "new"));
+    editorCell.addEditorCell(this.createConstant_0475_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0475_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0475_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0475_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new");
     editorCell.setCellId("Constant_0475_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

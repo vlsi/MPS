@@ -23,13 +23,13 @@ public class MatchRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6931_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6931_0");
-    editorCell.addEditorCell(this.createConstant_6931_0(editorContext, node, "matches"));
+    editorCell.addEditorCell(this.createConstant_6931_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6931_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6931_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6931_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matches");
     editorCell.setCellId("Constant_6931_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

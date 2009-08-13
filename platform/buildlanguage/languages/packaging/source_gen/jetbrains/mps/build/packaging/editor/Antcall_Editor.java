@@ -50,7 +50,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_5497_1");
     editorCell.addEditorCell(this.createConceptProperty_5497_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5497_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5497_0(editorContext, node, "from"));
+    editorCell.addEditorCell(this.createConstant_5497_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5497_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5497_2(editorContext, node));
     editorCell.addEditorCell(this.createComponent_5497_1(editorContext, node));
@@ -69,7 +69,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5497_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5497_3");
-    editorCell.addEditorCell(this.createConstant_5497_1(editorContext, node, "excludes"));
+    editorCell.addEditorCell(this.createConstant_5497_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5497_1(editorContext, node));
     return editorCell;
   }
@@ -77,7 +77,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5497_4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5497_4");
-    editorCell.addEditorCell(this.createConstant_5497_2(editorContext, node, "includes"));
+    editorCell.addEditorCell(this.createConstant_5497_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5497_2(editorContext, node));
     return editorCell;
   }
@@ -112,23 +112,23 @@ public class Antcall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5497_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5497_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_5497_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5497_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5497_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
     editorCell.setCellId("Constant_5497_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5497_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5497_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
     editorCell.setCellId("Constant_5497_2");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -339,7 +339,7 @@ public class Antcall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_5497_3(editorContext, node, "<entries>");
+      return this.createConstant_5497_3(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -360,8 +360,8 @@ public class Antcall_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_5497_3(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_5497_3(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
       editorCell.setCellId("Constant_5497_3");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

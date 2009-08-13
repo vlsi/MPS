@@ -45,14 +45,14 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     editorCell.setCellId("Collection_7219_0");
     editorCell.addEditorCell(this.createConceptProperty_7219_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7219_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7219_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7219_1(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7219_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7219_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7219_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -63,8 +63,8 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7219_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7219_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

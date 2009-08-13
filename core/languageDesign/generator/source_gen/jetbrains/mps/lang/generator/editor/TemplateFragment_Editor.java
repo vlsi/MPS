@@ -38,8 +38,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4770_2(editorContext, node, "template fragment"));
-    editorCell.addEditorCell(this.createConstant_4770_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4770_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4770_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4770_2(editorContext, node));
     return editorCell;
   }
@@ -47,12 +47,12 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4770_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4770_1");
-    editorCell.addEditorCell(this.createConstant_4770_0(editorContext, node, "<TF"));
+    editorCell.addEditorCell(this.createConstant_4770_0(editorContext, node));
     if (renderingCondition4770_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefCell_4770_1(editorContext, node));
     }
     editorCell.addEditorCell(this.createAttributedNodeCell_4770_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4770_1(editorContext, node, "TF>"));
+    editorCell.addEditorCell(this.createConstant_4770_1(editorContext, node));
     return editorCell;
   }
 
@@ -76,8 +76,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4770_4(editorContext, node, "fragment context"));
-    editorCell.addEditorCell(this.createConstant_4770_5(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4770_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4770_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4770_0(editorContext, node));
     return editorCell;
   }
@@ -89,14 +89,14 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4770_6(editorContext, node, "mapping label"));
-    editorCell.addEditorCell(this.createConstant_4770_7(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4770_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4770_7(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4770_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<TF");
     editorCell.setCellId("Constant_4770_0");
     {
       Style style = editorCell.getStyle();
@@ -109,8 +109,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TF>");
     editorCell.setCellId("Constant_4770_1");
     {
       Style style = editorCell.getStyle();
@@ -123,8 +123,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template fragment");
     editorCell.setCellId("Constant_4770_2");
     {
       Style style = editorCell.getStyle();
@@ -136,8 +136,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4770_3");
     {
       Style style = editorCell.getStyle();
@@ -147,8 +147,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fragment context");
     editorCell.setCellId("Constant_4770_4");
     {
       Style style = editorCell.getStyle();
@@ -158,8 +158,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4770_5");
     {
       Style style = editorCell.getStyle();
@@ -169,15 +169,15 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_4770_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4770_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4770_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4770_7");
     {
       Style style = editorCell.getStyle();

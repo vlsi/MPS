@@ -41,8 +41,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8828_1(editorContext, node, "loop-macro"));
-    editorCell.addEditorCell(this.createConstant_8828_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8828_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8828_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8828_2(editorContext, node));
     return editorCell;
   }
@@ -50,7 +50,7 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8828_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8828_1");
-    editorCell.addEditorCell(this.createConstant_8828_0(editorContext, node, "$LOOP$"));
+    editorCell.addEditorCell(this.createConstant_8828_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_8828_0(editorContext, node));
     return editorCell;
   }
@@ -76,8 +76,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8828_3(editorContext, node, "mapped nodes"));
-    editorCell.addEditorCell(this.createConstant_8828_4(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8828_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8828_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8828_0(editorContext, node));
     return editorCell;
   }
@@ -89,8 +89,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8828_5(editorContext, node, "mapping label"));
-    editorCell.addEditorCell(this.createConstant_8828_6(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8828_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8828_6(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8828_0(editorContext, node));
     return editorCell;
   }
@@ -102,8 +102,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8828_7(editorContext, node, "comment"));
-    editorCell.addEditorCell(this.createConstant_8828_8(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8828_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8828_8(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8828_1(editorContext, node));
     return editorCell;
   }
@@ -114,8 +114,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$LOOP$");
     editorCell.setCellId("Constant_8828_0");
     Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
     {
@@ -131,8 +131,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "loop-macro");
     editorCell.setCellId("Constant_8828_1");
     {
       Style style = editorCell.getStyle();
@@ -144,8 +144,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8828_2");
     {
       Style style = editorCell.getStyle();
@@ -155,8 +155,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped nodes");
     editorCell.setCellId("Constant_8828_3");
     {
       Style style = editorCell.getStyle();
@@ -166,8 +166,8 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8828_4");
     {
       Style style = editorCell.getStyle();
@@ -177,15 +177,15 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_8828_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8828_6");
     {
       Style style = editorCell.getStyle();
@@ -195,15 +195,15 @@ public class LoopMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_8828_7");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8828_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8828_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8828_8");
     {
       Style style = editorCell.getStyle();

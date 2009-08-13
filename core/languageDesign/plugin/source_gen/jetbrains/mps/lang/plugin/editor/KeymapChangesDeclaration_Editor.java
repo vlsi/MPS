@@ -33,7 +33,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5128_0");
     editorCell.addEditorCell(this.createCollection_5128_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5128_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_5128_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5128_0(editorContext, node));
     return editorCell;
   }
@@ -45,29 +45,29 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5128_0(editorContext, node, "keymap changes"));
+    editorCell.addEditorCell(this.createConstant_5128_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5128_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5128_2(editorContext, node, "for"));
+    editorCell.addEditorCell(this.createConstant_5128_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5128_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5128_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap changes");
     editorCell.setCellId("Constant_5128_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5128_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5128_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5128_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_5128_2");
     editorCell.setDefaultText("");
     return editorCell;

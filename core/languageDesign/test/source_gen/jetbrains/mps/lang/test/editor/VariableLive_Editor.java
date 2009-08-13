@@ -23,13 +23,13 @@ public class VariableLive_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7812_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7812_0");
-    editorCell.addEditorCell(this.createConstant_7812_0(editorContext, node, "live"));
+    editorCell.addEditorCell(this.createConstant_7812_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7812_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7812_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7812_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "live");
     editorCell.setCellId("Constant_7812_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

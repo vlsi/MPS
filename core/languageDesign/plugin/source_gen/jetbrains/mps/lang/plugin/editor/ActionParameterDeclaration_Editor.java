@@ -40,7 +40,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_6987_0");
     editorCell.addEditorCell(this.createRefNode_6987_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6987_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6987_0(editorContext, node, "key:"));
+    editorCell.addEditorCell(this.createConstant_6987_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_6987_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_6987_2(editorContext, node));
     return editorCell;
@@ -64,8 +64,8 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6987_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6987_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
     editorCell.setCellId("Constant_6987_0");
     {
       Style style = editorCell.getStyle();

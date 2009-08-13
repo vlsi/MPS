@@ -33,17 +33,17 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6834_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6834_0");
-    editorCell.addEditorCell(this.createConstant_6834_15(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_6834_15(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6834_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_16(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_6834_16(editorContext, node));
     if (renderingCondition6834_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_13(editorContext, node, "CASE_INSENSITIVE"));
+      editorCell.addEditorCell(this.createConstant_6834_13(editorContext, node));
     }
     if (renderingCondition6834_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_12(editorContext, node, "DOTALL"));
+      editorCell.addEditorCell(this.createConstant_6834_12(editorContext, node));
     }
     if (renderingCondition6834_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_14(editorContext, node, "MULTILINE"));
+      editorCell.addEditorCell(this.createConstant_6834_14(editorContext, node));
     }
     return editorCell;
   }
@@ -51,26 +51,26 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6834_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6834_1");
-    editorCell.addEditorCell(this.createConstant_6834_0(editorContext, node, "Options:"));
-    editorCell.addEditorCell(this.createConstant_6834_11(editorContext, node, "Case insensitive :"));
+    editorCell.addEditorCell(this.createConstant_6834_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_11(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6834_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_10(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6834_1(editorContext, node, "Dot all : "));
+    editorCell.addEditorCell(this.createConstant_6834_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6834_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_2(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_3(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters"));
-    editorCell.addEditorCell(this.createConstant_6834_4(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6834_5(editorContext, node, "Multiline mode : "));
+    editorCell.addEditorCell(this.createConstant_6834_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6834_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_6(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_7(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and"));
-    editorCell.addEditorCell(this.createConstant_6834_8(editorContext, node, "  "));
-    editorCell.addEditorCell(this.createConstant_6834_9(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters"));
+    editorCell.addEditorCell(this.createConstant_6834_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_9(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Options:");
     editorCell.setCellId("Constant_6834_0");
     {
       Style style = editorCell.getStyle();
@@ -80,15 +80,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all : ");
     editorCell.setCellId("Constant_6834_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_6834_2");
     {
       Style style = editorCell.getStyle();
@@ -98,8 +98,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
     editorCell.setCellId("Constant_6834_3");
     {
       Style style = editorCell.getStyle();
@@ -110,8 +110,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6834_4");
     {
       Style style = editorCell.getStyle();
@@ -121,15 +121,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode : ");
     editorCell.setCellId("Constant_6834_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_6834_6");
     {
       Style style = editorCell.getStyle();
@@ -139,8 +139,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
     editorCell.setCellId("Constant_6834_7");
     {
       Style style = editorCell.getStyle();
@@ -151,8 +151,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_6834_8");
     {
       Style style = editorCell.getStyle();
@@ -162,8 +162,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
     editorCell.setCellId("Constant_6834_9");
     {
       Style style = editorCell.getStyle();
@@ -174,8 +174,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_10(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6834_10");
     {
       Style style = editorCell.getStyle();
@@ -185,15 +185,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_11(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_11(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive :");
     editorCell.setCellId("Constant_6834_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_12(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DOTALL");
     editorCell.setCellId("Constant_6834_12");
     {
       Style style = editorCell.getStyle();
@@ -203,8 +203,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_13(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_13(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "CASE_INSENSITIVE");
     editorCell.setCellId("Constant_6834_13");
     {
       Style style = editorCell.getStyle();
@@ -214,8 +214,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_14(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_14(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "MULTILINE");
     editorCell.setCellId("Constant_6834_14");
     {
       Style style = editorCell.getStyle();
@@ -225,8 +225,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_15(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_15(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_6834_15");
     {
       Style style = editorCell.getStyle();
@@ -237,8 +237,8 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_16(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6834_16(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_6834_16");
     {
       Style style = editorCell.getStyle();

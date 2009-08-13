@@ -23,40 +23,40 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2512_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2512_0");
-    editorCell.addEditorCell(this.createConstant_2512_0(editorContext, node, "Money"));
-    editorCell.addEditorCell(this.createConstant_2512_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_2512_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2512_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2512_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2512_3(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_2512_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2512_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2512_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2512_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2512_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Money");
     editorCell.setCellId("Constant_2512_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2512_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2512_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2512_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2512_2");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2512_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_2512_3");
     editorCell.setDefaultText("");
     return editorCell;

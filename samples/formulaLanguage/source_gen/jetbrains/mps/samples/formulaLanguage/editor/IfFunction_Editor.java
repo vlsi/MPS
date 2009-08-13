@@ -24,25 +24,25 @@ public class IfFunction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8841_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8841_0");
-    editorCell.addEditorCell(this.createConstant_8841_0(editorContext, node, "IF("));
+    editorCell.addEditorCell(this.createConstant_8841_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8841_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8841_1(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_8841_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8841_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8841_2(editorContext, node, ","));
+    editorCell.addEditorCell(this.createConstant_8841_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8841_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8841_3(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_8841_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8841_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8841_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "IF(");
     editorCell.setCellId("Constant_8841_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8841_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8841_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_8841_1");
     {
       Style style = editorCell.getStyle();
@@ -52,8 +52,8 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8841_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8841_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_8841_2");
     {
       Style style = editorCell.getStyle();
@@ -63,8 +63,8 @@ public class IfFunction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8841_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8841_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8841_3");
     editorCell.setDefaultText("");
     return editorCell;

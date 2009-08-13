@@ -32,12 +32,12 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4542_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4542_0");
-    editorCell.addEditorCell(this.createConstant_4542_0(editorContext, node, "link"));
-    editorCell.addEditorCell(this.createConstant_4542_2(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_4542_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4542_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4542_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4542_3(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_4542_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4542_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4542_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_4542_1(editorContext, node));
     return editorCell;
   }
 
@@ -50,17 +50,17 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createConstant_4542_4(editorContext, node, "referent set handler"));
-    editorCell.addEditorCell(this.createConstant_4542_5(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4542_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4542_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4542_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4542_6(editorContext, node, "search scope"));
-    editorCell.addEditorCell(this.createConstant_4542_7(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_4542_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4542_7(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4542_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link");
     editorCell.setCellId("Constant_4542_0");
     {
       Style style = editorCell.getStyle();
@@ -70,8 +70,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_4542_1");
     {
       Style style = editorCell.getStyle();
@@ -81,8 +81,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_4542_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
@@ -95,8 +95,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_4542_3");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
@@ -110,8 +110,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "referent set handler");
     editorCell.setCellId("Constant_4542_4");
     {
       Style style = editorCell.getStyle();
@@ -122,8 +122,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4542_5");
     {
       Style style = editorCell.getStyle();
@@ -135,8 +135,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "search scope");
     editorCell.setCellId("Constant_4542_6");
     {
       Style style = editorCell.getStyle();
@@ -147,8 +147,8 @@ public class NodeReferentConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4542_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4542_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_4542_7");
     {
       Style style = editorCell.getStyle();

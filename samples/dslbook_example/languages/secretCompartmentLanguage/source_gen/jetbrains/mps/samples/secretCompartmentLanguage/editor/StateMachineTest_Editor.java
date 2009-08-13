@@ -35,7 +35,7 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1076_0");
     editorCell.addEditorCell(this.createCollection_1076_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1076_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1076_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1076_0(editorContext, node));
     return editorCell;
   }
@@ -48,19 +48,19 @@ public class StateMachineTest_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefCell_1076_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1076_0(editorContext, node, "State Machine Test"));
+    editorCell.addEditorCell(this.createConstant_1076_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1076_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1076_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "State Machine Test");
     editorCell.setCellId("Constant_1076_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1076_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1076_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1076_1");
     editorCell.setDefaultText("");
     return editorCell;

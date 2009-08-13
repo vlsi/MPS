@@ -29,13 +29,13 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3936_0");
     editorCell.addEditorCell(this.createRefNode_3936_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3936_0(editorContext, node, "\u220d"));
+    editorCell.addEditorCell(this.createConstant_3936_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3936_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3936_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3936_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u220d");
     editorCell.setCellId("Constant_3936_0");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));

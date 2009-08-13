@@ -29,11 +29,11 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5668_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5668_0");
-    editorCell.addEditorCell(this.createConstant_5668_0(editorContext, node, "operation name:"));
+    editorCell.addEditorCell(this.createConstant_5668_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5668_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5668_1(editorContext, node, "allow errors:"));
+    editorCell.addEditorCell(this.createConstant_5668_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5668_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5668_2(editorContext, node, "allow warnings:"));
+    editorCell.addEditorCell(this.createConstant_5668_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5668_2(editorContext, node));
     return editorCell;
   }
@@ -41,36 +41,36 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5668_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5668_1");
-    editorCell.addEditorCell(this.createConstant_5668_3(editorContext, node, "check types"));
+    editorCell.addEditorCell(this.createConstant_5668_3(editorContext, node));
     if (node.hasProperty("operationName")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_5668_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_5668_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5668_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation name:");
     editorCell.setCellId("Constant_5668_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5668_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5668_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow errors:");
     editorCell.setCellId("Constant_5668_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5668_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5668_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow warnings:");
     editorCell.setCellId("Constant_5668_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5668_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5668_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check types");
     editorCell.setCellId("Constant_5668_3");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

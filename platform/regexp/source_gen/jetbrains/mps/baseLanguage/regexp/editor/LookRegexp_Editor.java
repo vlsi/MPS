@@ -28,12 +28,12 @@ public class LookRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1020_0");
     editorCell.addEditorCell(this.createConceptProperty_1020_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1020_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1020_0(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_1020_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1020_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1020_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1020_0");
     {
       Style style = editorCell.getStyle();

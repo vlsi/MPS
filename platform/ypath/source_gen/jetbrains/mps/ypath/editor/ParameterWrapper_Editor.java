@@ -47,13 +47,13 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5358_0(editorContext, node, "feature:"));
+    editorCell.addEditorCell(this.createConstant_5358_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_5358_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5358_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5358_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "feature:");
     editorCell.setCellId("Constant_5358_0");
     editorCell.setDefaultText("");
     return editorCell;

@@ -22,13 +22,13 @@ public class EmitLabelStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9838_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9838_0");
-    editorCell.addEditorCell(this.createConstant_9838_0(editorContext, node, "label"));
+    editorCell.addEditorCell(this.createConstant_9838_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9838_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9838_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9838_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_9838_0");
     DataFlow_StyleSheet.getLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

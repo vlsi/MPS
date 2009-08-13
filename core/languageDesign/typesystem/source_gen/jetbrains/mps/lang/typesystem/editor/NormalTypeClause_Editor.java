@@ -20,7 +20,7 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_2932_0(editorContext, node, "NORMAL TYPE CLAUSE");
+    return this.createConstant_2932_0(editorContext, node);
   }
 
   private EditorCell createCollection_2932_0(EditorContext editorContext, SNode node) {
@@ -30,8 +30,8 @@ public class NormalTypeClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2932_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2932_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "NORMAL TYPE CLAUSE");
     editorCell.setCellId("Constant_2932_0");
     editorCell.setDefaultText("");
     return editorCell;

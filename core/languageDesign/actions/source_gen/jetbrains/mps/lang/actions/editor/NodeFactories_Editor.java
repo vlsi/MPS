@@ -34,7 +34,7 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5274_0");
     editorCell.addEditorCell(this.createCollection_5274_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5274_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_5274_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5274_2(editorContext, node));
     return editorCell;
   }
@@ -46,7 +46,7 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5274_0(editorContext, node, "node factories"));
+    editorCell.addEditorCell(this.createConstant_5274_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5274_0(editorContext, node));
     return editorCell;
   }
@@ -62,15 +62,15 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5274_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5274_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node factories");
     editorCell.setCellId("Constant_5274_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5274_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5274_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5274_1");
     {
       Style style = editorCell.getStyle();

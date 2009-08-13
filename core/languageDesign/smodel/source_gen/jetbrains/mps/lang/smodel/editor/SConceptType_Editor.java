@@ -30,15 +30,15 @@ public class SConceptType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3885_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3885_0");
-    editorCell.addEditorCell(this.createConstant_3885_0(editorContext, node, "concept"));
-    editorCell.addEditorCell(this.createConstant_3885_1(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_3885_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3885_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3885_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3885_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_3885_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3885_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3885_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_3885_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -49,8 +49,8 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3885_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3885_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_3885_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
@@ -61,8 +61,8 @@ public class SConceptType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3885_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3885_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_3885_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

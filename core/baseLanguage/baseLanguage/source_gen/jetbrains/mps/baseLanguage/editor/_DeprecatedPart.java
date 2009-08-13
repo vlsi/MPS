@@ -50,16 +50,16 @@ public class _DeprecatedPart extends AbstractCellProvider {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     if (renderingCondition0235_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_0235_0(editorContext, node, "/**"));
+      editorCell.addEditorCell(this.createConstant_0235_0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0235_2(editorContext, node, " * "));
-    editorCell.addEditorCell(this.createConstant_0235_3(editorContext, node, "@deprecated"));
-    editorCell.addEditorCell(this.createConstant_0235_1(editorContext, node, " */"));
+    editorCell.addEditorCell(this.createConstant_0235_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0235_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0235_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0235_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0235_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_0235_0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -71,8 +71,8 @@ public class _DeprecatedPart extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_0235_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0235_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_0235_1");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
@@ -83,16 +83,16 @@ public class _DeprecatedPart extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_0235_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0235_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_0235_2");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0235_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0235_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_0235_3");
     BaseLanguageStyle_StyleSheet.getJavaDoc(editorCell).apply(editorCell);
     {

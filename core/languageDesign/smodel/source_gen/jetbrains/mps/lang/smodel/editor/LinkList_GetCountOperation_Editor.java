@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class LinkList_GetCountOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_2571_0(editorContext, node, "count");
+    return this.createConstant_2571_0(editorContext, node);
   }
 
-  private EditorCell createConstant_2571_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2571_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "count");
     editorCell.setCellId("Constant_2571_0");
     {
       Style style = editorCell.getStyle();

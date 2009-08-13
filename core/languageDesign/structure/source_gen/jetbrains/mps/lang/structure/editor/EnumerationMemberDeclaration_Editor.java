@@ -33,12 +33,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition9117_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9117_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_9117_1(editorContext, node, "value"));
+    editorCell.addEditorCell(this.createConstant_9117_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9117_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_2(editorContext, node, "  presentation"));
+    editorCell.addEditorCell(this.createConstant_9117_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9117_0(editorContext, node));
     if (renderingCondition9117_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_9117_0(editorContext, node, "    (default)"));
+      editorCell.addEditorCell(this.createConstant_9117_0(editorContext, node));
     }
     return editorCell;
   }
@@ -50,14 +50,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9117_3(editorContext, node, "identifier"));
+    editorCell.addEditorCell(this.createConstant_9117_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_9117_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_4(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_9117_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9117_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
     editorCell.setCellId("Constant_9117_0");
     {
       Style style = editorCell.getStyle();
@@ -68,8 +68,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9117_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
     editorCell.setCellId("Constant_9117_1");
     {
       Style style = editorCell.getStyle();
@@ -81,8 +81,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9117_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  presentation");
     editorCell.setCellId("Constant_9117_2");
     {
       Style style = editorCell.getStyle();
@@ -94,8 +94,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9117_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
     editorCell.setCellId("Constant_9117_3");
     {
       Style style = editorCell.getStyle();
@@ -107,8 +107,8 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9117_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_9117_4");
     editorCell.setDefaultText("");
     return editorCell;

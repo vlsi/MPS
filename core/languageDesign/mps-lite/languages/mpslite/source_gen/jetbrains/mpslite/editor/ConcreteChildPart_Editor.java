@@ -26,44 +26,44 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4338_0");
     editorCell.addKeyMap(new LinePart_Actions());
-    editorCell.addEditorCell(this.createConstant_4338_0(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_4338_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4338_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4338_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4338_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_4338_1(editorContext, node));
     if (renderingCondition4338_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4338_2(editorContext, node, "*"));
+      editorCell.addEditorCell(this.createConstant_4338_2(editorContext, node));
     }
     if (renderingCondition4338_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4338_3(editorContext, node, "V"));
+      editorCell.addEditorCell(this.createConstant_4338_3(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4338_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4338_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4338_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4338_1");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4338_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_4338_2");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4338_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "V");
     editorCell.setCellId("Constant_4338_3");
     editorCell.setDefaultText("");
     return editorCell;

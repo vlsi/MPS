@@ -29,13 +29,13 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3669_0");
     editorCell.addEditorCell(this.createRefCell_3669_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3669_0(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_3669_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_3669_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3669_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3669_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_3669_0");
     editorCell.setDefaultText("");
     return editorCell;

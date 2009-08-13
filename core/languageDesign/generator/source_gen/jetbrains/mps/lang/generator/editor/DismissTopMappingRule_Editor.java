@@ -25,13 +25,13 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9261_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9261_0");
-    editorCell.addEditorCell(this.createConstant_9261_0(editorContext, node, "DISMISS TOP RULE"));
+    editorCell.addEditorCell(this.createConstant_9261_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9261_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9261_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9261_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DISMISS TOP RULE");
     editorCell.setCellId("Constant_9261_0");
     {
       Style style = editorCell.getStyle();

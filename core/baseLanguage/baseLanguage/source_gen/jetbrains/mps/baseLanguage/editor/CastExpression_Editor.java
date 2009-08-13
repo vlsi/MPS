@@ -32,22 +32,22 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_9371_1");
     CastExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addKeyMap(new CastExpression_KeyMap());
-    editorCell.addEditorCell(this.createConstant_9371_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_9371_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9371_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9371_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_9371_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9371_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9371_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_9371_0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9371_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9371_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_9371_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

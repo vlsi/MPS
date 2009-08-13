@@ -34,7 +34,7 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0746_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_0746_1");
-    editorCell.addEditorCell(this.createConstant_0746_0(editorContext, node, "include transform menu for"));
+    editorCell.addEditorCell(this.createConstant_0746_0(editorContext, node));
     return editorCell;
   }
 
@@ -46,8 +46,8 @@ public class IncludeRightTransformForNodePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0746_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0746_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include transform menu for");
     editorCell.setCellId("Constant_0746_0");
     {
       Style style = editorCell.getStyle();

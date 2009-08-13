@@ -22,21 +22,21 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6697_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6697_0");
-    editorCell.addEditorCell(this.createConstant_6697_0(editorContext, node, "<ref"));
+    editorCell.addEditorCell(this.createConstant_6697_0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedLinkCell_6697_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6697_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_6697_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<ref");
     editorCell.setCellId("Constant_6697_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6697_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_6697_1");
     {
       Style style = editorCell.getStyle();

@@ -35,9 +35,9 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     editorCell.setCellId("Collection_4585_0");
     editorCell.addEditorCell(this.createCollection_4585_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4585_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4585_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4585_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4585_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4585_5(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_4585_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4585_4(editorContext, node));
     return editorCell;
   }
@@ -45,7 +45,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   private EditorCell createCollection_4585_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4585_1");
-    editorCell.addEditorCell(this.createConstant_4585_0(editorContext, node, "node to check ="));
+    editorCell.addEditorCell(this.createConstant_4585_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4585_0(editorContext, node));
     return editorCell;
   }
@@ -53,7 +53,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
   private EditorCell createCollection_4585_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4585_2");
-    editorCell.addEditorCell(this.createConstant_4585_1(editorContext, node, "error string ="));
+    editorCell.addEditorCell(this.createConstant_4585_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4585_1(editorContext, node));
     return editorCell;
   }
@@ -65,7 +65,7 @@ public class AbstractEquationInspector extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4585_3(editorContext, node, "check only"));
+    editorCell.addEditorCell(this.createConstant_4585_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4585_0(editorContext, node));
     return editorCell;
   }
@@ -78,27 +78,27 @@ public class AbstractEquationInspector extends AbstractCellProvider {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4585_4(editorContext, node, "intention to fix error"));
+    editorCell.addEditorCell(this.createConstant_4585_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4585_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node to check =");
     editorCell.setCellId("Constant_4585_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error string =");
     editorCell.setCellId("Constant_4585_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4585_2");
     {
       Style style = editorCell.getStyle();
@@ -108,22 +108,22 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check only");
     editorCell.setCellId("Constant_4585_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix error");
     editorCell.setCellId("Constant_4585_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4585_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4585_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4585_5");
     {
       Style style = editorCell.getStyle();

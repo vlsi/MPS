@@ -36,11 +36,11 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_0420_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_0420_0");
-    editorCell.addEditorCell(this.createConstant_0420_0(editorContext, node, "break"));
+    editorCell.addEditorCell(this.createConstant_0420_0(editorContext, node));
     if (renderingCondition0420_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_0420_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0420_1(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_0420_1(editorContext, node));
     return editorCell;
   }
 
@@ -55,8 +55,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0420_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0420_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
     editorCell.setCellId("Constant_0420_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -67,8 +67,8 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0420_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0420_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_0420_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -15,11 +15,11 @@ import jetbrains.mps.nodeEditor.style.Measure;
 public class Node_GetChildrenOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_1011_0(editorContext, node, "children");
+    return this.createConstant_1011_0(editorContext, node);
   }
 
-  private EditorCell createConstant_1011_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1011_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children");
     editorCell.setCellId("Constant_1011_0");
     {
       Style style = editorCell.getStyle();

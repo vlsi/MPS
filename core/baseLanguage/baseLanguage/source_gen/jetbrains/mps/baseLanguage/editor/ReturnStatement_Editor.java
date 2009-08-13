@@ -24,24 +24,24 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7565_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7565_0");
-    editorCell.addEditorCell(this.createConstant_7565_1(editorContext, node, "return"));
+    editorCell.addEditorCell(this.createConstant_7565_1(editorContext, node));
     if (renderingCondition7565_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_7565_0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7565_0(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_7565_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7565_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7565_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_7565_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7565_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7565_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
     editorCell.setCellId("Constant_7565_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     ReturnStatement_Actions.setCellActions(editorCell, node, editorContext);

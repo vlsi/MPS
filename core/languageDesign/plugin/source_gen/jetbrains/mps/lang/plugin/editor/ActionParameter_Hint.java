@@ -41,7 +41,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8189_0");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8189_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8189_0(editorContext, node));
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_1(editorContext, node));
     return editorCell;
   }
@@ -59,8 +59,8 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_8189_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8189_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8189_0");
     {
       Style style = editorCell.getStyle();

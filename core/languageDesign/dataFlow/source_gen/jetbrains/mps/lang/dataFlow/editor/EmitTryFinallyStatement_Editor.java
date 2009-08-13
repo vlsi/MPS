@@ -24,16 +24,16 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9240_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9240_0");
-    editorCell.addEditorCell(this.createConstant_9240_0(editorContext, node, "try"));
+    editorCell.addEditorCell(this.createConstant_9240_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9240_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9240_1(editorContext, node, "finally"));
+    editorCell.addEditorCell(this.createConstant_9240_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9240_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9240_2(editorContext, node, "end"));
+    editorCell.addEditorCell(this.createConstant_9240_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9240_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "try");
     editorCell.setCellId("Constant_9240_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
@@ -44,8 +44,8 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9240_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "finally");
     editorCell.setCellId("Constant_9240_1");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
@@ -56,8 +56,8 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9240_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_9240_2");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {

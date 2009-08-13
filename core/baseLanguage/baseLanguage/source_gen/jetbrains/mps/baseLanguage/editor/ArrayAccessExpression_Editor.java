@@ -23,14 +23,14 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2233_0");
     editorCell.addEditorCell(this.createRefNode_2233_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2233_0(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_2233_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2233_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2233_1(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_2233_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2233_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2233_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_2233_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, editorContext);
@@ -38,8 +38,8 @@ public class ArrayAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2233_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2233_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_2233_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     ArrayAccessExpression_Actions.setCellActions(editorCell, node, editorContext);

@@ -37,22 +37,22 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2165_0");
     editorCell.addEditorCell(this.createConceptProperty_2165_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2165_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_2165_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2165_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2165_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_2165_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2165_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2165_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2165_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2165_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2165_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2165_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -114,7 +114,7 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_2165_1(editorContext, node, "");
+      return this.createConstant_2165_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -142,8 +142,8 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_2165_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_2165_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_2165_1");
       {
         Style style = editorCell.getStyle();

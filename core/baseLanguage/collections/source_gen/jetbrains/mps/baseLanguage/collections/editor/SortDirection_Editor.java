@@ -26,16 +26,16 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     alternationCondition = SortDirection_Editor.renderingCondition9499_0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_9499_0(editorContext, node, "asc");
+      editorCell = this.createConstant_9499_0(editorContext, node);
     } else
     {
-      editorCell = this.createConstant_9499_1(editorContext, node, "desc");
+      editorCell = this.createConstant_9499_1(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_9499_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9499_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "asc");
     editorCell.setCellId("Constant_9499_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -46,8 +46,8 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9499_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9499_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "desc");
     editorCell.setCellId("Constant_9499_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

@@ -32,24 +32,24 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2643_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2643_0");
-    editorCell.addEditorCell(this.createConstant_2643_0(editorContext, node, "try"));
-    editorCell.addEditorCell(this.createConstant_2643_1(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2643_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2643_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2643_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2643_2(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_2643_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2643_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2643_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2643_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "try");
     editorCell.setCellId("Constant_2643_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2643_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2643_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2643_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -60,8 +60,8 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2643_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2643_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2643_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

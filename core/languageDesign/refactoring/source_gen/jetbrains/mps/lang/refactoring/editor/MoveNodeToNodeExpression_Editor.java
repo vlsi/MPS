@@ -23,33 +23,33 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1436_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1436_0");
-    editorCell.addEditorCell(this.createConstant_1436_0(editorContext, node, "moveNode"));
+    editorCell.addEditorCell(this.createConstant_1436_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1436_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1436_1(editorContext, node, "to"));
+    editorCell.addEditorCell(this.createConstant_1436_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1436_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1436_2(editorContext, node, "withRole"));
+    editorCell.addEditorCell(this.createConstant_1436_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1436_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1436_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "moveNode");
     editorCell.setCellId("Constant_1436_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1436_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
     editorCell.setCellId("Constant_1436_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1436_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "withRole");
     editorCell.setCellId("Constant_1436_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -26,7 +26,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
   private EditorCell createCollection_1362_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1362_0");
-    editorCell.addEditorCell(this.createConstant_1362_0(editorContext, node, "parameterized item"));
+    editorCell.addEditorCell(this.createConstant_1362_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_1(editorContext, node));
     return editorCell;
   }
@@ -51,17 +51,17 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createCollection_1362_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_3(editorContext, node, "query"));
+    editorCell.addEditorCell(this.createConstant_1362_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_4(editorContext, node, "matching text"));
+    editorCell.addEditorCell(this.createConstant_1362_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_5(editorContext, node, "description text"));
+    editorCell.addEditorCell(this.createConstant_1362_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_7(editorContext, node, "icon"));
+    editorCell.addEditorCell(this.createConstant_1362_7(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_8(editorContext, node, "type"));
+    editorCell.addEditorCell(this.createConstant_1362_8(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_9(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1362_6(editorContext, node, "do transform"));
+    editorCell.addEditorCell(this.createConstant_1362_6(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1362_7(editorContext, node));
     return editorCell;
   }
@@ -73,8 +73,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1362_1(editorContext, node, "parameter type"));
-    editorCell.addEditorCell(this.createConstant_1362_2(editorContext, node, "="));
+    editorCell.addEditorCell(this.createConstant_1362_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1362_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1362_0(editorContext, node));
     return editorCell;
   }
@@ -151,8 +151,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterized item");
     editorCell.setCellId("Constant_1362_0");
     {
       Style style = editorCell.getStyle();
@@ -162,8 +162,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter type");
     editorCell.setCellId("Constant_1362_1");
     {
       Style style = editorCell.getStyle();
@@ -173,15 +173,15 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_1362_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_1362_3");
     {
       Style style = editorCell.getStyle();
@@ -191,8 +191,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_1362_4");
     {
       Style style = editorCell.getStyle();
@@ -202,8 +202,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_1362_5");
     {
       Style style = editorCell.getStyle();
@@ -213,8 +213,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
     editorCell.setCellId("Constant_1362_6");
     {
       Style style = editorCell.getStyle();
@@ -224,8 +224,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_1362_7");
     {
       Style style = editorCell.getStyle();
@@ -235,8 +235,8 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_1362_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1362_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_1362_8");
     {
       Style style = editorCell.getStyle();

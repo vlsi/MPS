@@ -16,11 +16,11 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 public class Node_DetachOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4197_0(editorContext, node, "detach");
+    return this.createConstant_4197_0(editorContext, node);
   }
 
-  private EditorCell createConstant_4197_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4197_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "detach");
     editorCell.setCellId("Constant_4197_0");
     {
       Style style = editorCell.getStyle();

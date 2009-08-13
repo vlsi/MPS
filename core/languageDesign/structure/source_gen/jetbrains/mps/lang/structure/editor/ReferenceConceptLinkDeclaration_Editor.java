@@ -28,15 +28,15 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2409_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2409_0");
-    editorCell.addEditorCell(this.createConstant_2409_0(editorContext, node, "reference"));
+    editorCell.addEditorCell(this.createConstant_2409_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2409_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2409_1(editorContext, node, "target concept:"));
+    editorCell.addEditorCell(this.createConstant_2409_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2409_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2409_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2409_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference");
     editorCell.setCellId("Constant_2409_0");
     {
       Style style = editorCell.getStyle();
@@ -47,8 +47,8 @@ public class ReferenceConceptLinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2409_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2409_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
     editorCell.setCellId("Constant_2409_1");
     {
       Style style = editorCell.getStyle();

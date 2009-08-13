@@ -61,9 +61,9 @@ public class Cycle_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1178_0(editorContext, node, "cycle"));
+    editorCell.addEditorCell(this.createConstant_1178_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1178_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1178_1(editorContext, node, "depends on"));
+    editorCell.addEditorCell(this.createConstant_1178_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1178_0(editorContext, node));
     return editorCell;
   }
@@ -89,7 +89,7 @@ public class Cycle_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1178_2(editorContext, node, "classpath:"));
+    editorCell.addEditorCell(this.createConstant_1178_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1178_1(editorContext, node));
     return editorCell;
   }
@@ -102,34 +102,34 @@ public class Cycle_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1178_3(editorContext, node, "modules:"));
+    editorCell.addEditorCell(this.createConstant_1178_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_1178_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1178_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1178_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cycle");
     editorCell.setCellId("Constant_1178_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1178_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1178_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on");
     editorCell.setCellId("Constant_1178_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1178_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1178_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classpath:");
     editorCell.setCellId("Constant_1178_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1178_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1178_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modules:");
     editorCell.setCellId("Constant_1178_3");
     editorCell.setDefaultText("");
     return editorCell;

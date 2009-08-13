@@ -56,7 +56,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4181_0(editorContext, node, "concept"));
+    editorCell.addEditorCell(this.createConstant_4181_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4181_0(editorContext, node));
     return editorCell;
   }
@@ -68,7 +68,7 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4181_1(editorContext, node, "inheritors"));
+    editorCell.addEditorCell(this.createConstant_4181_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4181_1(editorContext, node));
     return editorCell;
   }
@@ -80,13 +80,13 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4181_2(editorContext, node, "condition"));
+    editorCell.addEditorCell(this.createConstant_4181_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4181_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4181_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4181_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_4181_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -97,8 +97,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_4181_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4181_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
     editorCell.setCellId("Constant_4181_1");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -109,8 +109,8 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_4181_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4181_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_4181_2");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {

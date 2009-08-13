@@ -23,13 +23,13 @@ public class ExpressionConcept_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3892_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3892_0");
-    editorCell.addEditorCell(this.createConstant_3892_0(editorContext, node, "expression concept"));
+    editorCell.addEditorCell(this.createConstant_3892_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3892_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3892_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3892_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expression concept");
     editorCell.setCellId("Constant_3892_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -29,7 +29,7 @@ public class Manifest_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9283_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_9283_0");
-    editorCell.addEditorCell(this.createConstant_9283_0(editorContext, node, "manifest:"));
+    editorCell.addEditorCell(this.createConstant_9283_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9283_1(editorContext, node));
     return editorCell;
   }
@@ -47,8 +47,8 @@ public class Manifest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9283_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9283_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "manifest:");
     editorCell.setCellId("Constant_9283_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

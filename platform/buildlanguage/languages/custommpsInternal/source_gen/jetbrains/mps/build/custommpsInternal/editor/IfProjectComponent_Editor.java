@@ -52,7 +52,7 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6811_0(editorContext, node, "then"));
+    editorCell.addEditorCell(this.createConstant_6811_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6811_1(editorContext, node));
     return editorCell;
   }
@@ -64,21 +64,21 @@ public class IfProjectComponent_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6811_1(editorContext, node, "else"));
+    editorCell.addEditorCell(this.createConstant_6811_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6811_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6811_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6811_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "then");
     editorCell.setCellId("Constant_6811_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6811_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6811_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");
     editorCell.setCellId("Constant_6811_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

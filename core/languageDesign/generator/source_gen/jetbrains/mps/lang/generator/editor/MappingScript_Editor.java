@@ -28,9 +28,9 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3053_0");
     editorCell.addEditorCell(this.createCollection_3053_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3053_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3053_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_3053_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3053_6(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_3053_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3053_0(editorContext, node));
     return editorCell;
   }
@@ -42,7 +42,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3053_0(editorContext, node, "mapping script"));
+    editorCell.addEditorCell(this.createConstant_3053_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3053_0(editorContext, node));
     return editorCell;
   }
@@ -69,8 +69,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3053_2(editorContext, node, "script kind"));
-    editorCell.addEditorCell(this.createConstant_3053_3(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_3053_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3053_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3053_1(editorContext, node));
     return editorCell;
   }
@@ -82,21 +82,21 @@ public class MappingScript_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3053_4(editorContext, node, "modifies model"));
-    editorCell.addEditorCell(this.createConstant_3053_5(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_3053_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3053_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3053_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping script");
     editorCell.setCellId("Constant_3053_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3053_1");
     {
       Style style = editorCell.getStyle();
@@ -106,15 +106,15 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script kind");
     editorCell.setCellId("Constant_3053_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3053_3");
     {
       Style style = editorCell.getStyle();
@@ -124,15 +124,15 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifies model");
     editorCell.setCellId("Constant_3053_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_3053_5");
     {
       Style style = editorCell.getStyle();
@@ -142,8 +142,8 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3053_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3053_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3053_6");
     {
       Style style = editorCell.getStyle();

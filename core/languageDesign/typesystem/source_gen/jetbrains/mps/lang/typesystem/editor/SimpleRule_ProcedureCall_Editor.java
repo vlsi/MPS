@@ -43,9 +43,9 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0652_0(editorContext, node, "procedure call"));
+    editorCell.addEditorCell(this.createConstant_0652_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0652_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0652_1(editorContext, node, "has arguments"));
+    editorCell.addEditorCell(this.createConstant_0652_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_0652_0(editorContext, node));
     return editorCell;
   }
@@ -58,23 +58,23 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0652_2(editorContext, node, "its procedure declaration"));
+    editorCell.addEditorCell(this.createConstant_0652_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_0652_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0652_3(editorContext, node, "has parameters"));
+    editorCell.addEditorCell(this.createConstant_0652_3(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_0652_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0652_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "procedure call");
     editorCell.setCellId("Constant_0652_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0652_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has arguments");
     editorCell.setCellId("Constant_0652_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -85,16 +85,16 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0652_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "its procedure declaration");
     editorCell.setCellId("Constant_0652_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_0652_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has parameters");
     editorCell.setCellId("Constant_0652_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

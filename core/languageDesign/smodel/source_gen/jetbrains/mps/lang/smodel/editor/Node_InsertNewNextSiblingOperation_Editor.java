@@ -31,9 +31,9 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4970_0");
     editorCell.addEditorCell(this.createComponent_4970_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4970_0(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_4970_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4970_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4970_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_4970_1(editorContext, node));
     return editorCell;
   }
 
@@ -43,16 +43,16 @@ public class Node_InsertNewNextSiblingOperation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createConstant_4970_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4970_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4970_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4970_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4970_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4970_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

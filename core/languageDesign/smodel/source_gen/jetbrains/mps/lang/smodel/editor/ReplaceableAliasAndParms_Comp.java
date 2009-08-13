@@ -65,14 +65,14 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
-    editorCell.addEditorCell(this.createConstant_4484_0(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_4484_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4484_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4484_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_4484_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4484_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4484_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_4484_0");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -87,8 +87,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_4484_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4484_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_4484_2");
     Styles_StyleSheet.getOperationParameter(editorCell).apply(editorCell);
     {
@@ -162,7 +162,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4484_1(editorContext, node, "no params");
+      return this.createConstant_4484_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -190,8 +190,8 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       }
     }
 
-    private EditorCell createConstant_4484_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4484_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no params");
       editorCell.setCellId("Constant_4484_1");
       {
         Style style = editorCell.getStyle();

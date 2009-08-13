@@ -42,7 +42,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4349_0(editorContext, node, "wrap"));
+    editorCell.addEditorCell(this.createConstant_4349_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4349_0(editorContext, node));
     return editorCell;
   }
@@ -66,7 +66,7 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4349_1(editorContext, node, "wrapper block"));
+    editorCell.addEditorCell(this.createConstant_4349_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4349_4(editorContext, node));
     return editorCell;
   }
@@ -114,9 +114,9 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4349_2(editorContext, node, "return"));
-    editorCell.addEditorCell(this.createConstant_4349_3(editorContext, node, "small"));
-    editorCell.addEditorCell(this.createConstant_4349_4(editorContext, node, "part"));
+    editorCell.addEditorCell(this.createConstant_4349_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4349_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4349_4(editorContext, node));
     return editorCell;
   }
 
@@ -132,8 +132,8 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4349_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4349_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "wrap");
     editorCell.setCellId("Constant_4349_0");
     {
       Style style = editorCell.getStyle();
@@ -143,8 +143,8 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4349_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4349_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "wrapper block");
     editorCell.setCellId("Constant_4349_1");
     {
       Style style = editorCell.getStyle();
@@ -154,8 +154,8 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4349_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4349_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
     editorCell.setCellId("Constant_4349_2");
     {
       Style style = editorCell.getStyle();
@@ -165,8 +165,8 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4349_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4349_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "small");
     editorCell.setCellId("Constant_4349_3");
     {
       Style style = editorCell.getStyle();
@@ -176,8 +176,8 @@ public class WrapperSubstituteMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4349_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4349_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "part");
     editorCell.setCellId("Constant_4349_4");
     {
       Style style = editorCell.getStyle();

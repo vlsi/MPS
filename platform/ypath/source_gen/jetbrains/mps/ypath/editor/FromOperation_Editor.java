@@ -22,21 +22,21 @@ public class FromOperation_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5007_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5007_0");
-    editorCell.addEditorCell(this.createConstant_5007_0(editorContext, node, "from("));
+    editorCell.addEditorCell(this.createConstant_5007_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5007_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5007_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_5007_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5007_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5007_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from(");
     editorCell.setCellId("Constant_5007_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5007_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5007_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5007_1");
     editorCell.setDefaultText("");
     return editorCell;

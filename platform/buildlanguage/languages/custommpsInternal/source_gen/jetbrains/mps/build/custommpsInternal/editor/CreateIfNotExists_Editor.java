@@ -24,23 +24,23 @@ public class CreateIfNotExists_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_1626_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1626_0");
-    editorCell.addEditorCell(this.createConstant_1626_0(editorContext, node, "if"));
+    editorCell.addEditorCell(this.createConstant_1626_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1626_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1626_1(editorContext, node, "not exists"));
+    editorCell.addEditorCell(this.createConstant_1626_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1626_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1626_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1626_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if");
     editorCell.setCellId("Constant_1626_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1626_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1626_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "not exists");
     editorCell.setCellId("Constant_1626_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

@@ -39,7 +39,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
     }
     editorCell.addEditorCell(this.createRefNodeList_4569_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4569_0(editorContext, node, "default:"));
+    editorCell.addEditorCell(this.createConstant_4569_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4569_1(editorContext, node));
     return editorCell;
   }
@@ -51,13 +51,13 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4569_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_4569_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4569_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4569_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4569_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default:");
     editorCell.setCellId("Constant_4569_0");
     {
       Style style = editorCell.getStyle();
@@ -67,8 +67,8 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4569_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4569_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_4569_1");
     {
       Style style = editorCell.getStyle();

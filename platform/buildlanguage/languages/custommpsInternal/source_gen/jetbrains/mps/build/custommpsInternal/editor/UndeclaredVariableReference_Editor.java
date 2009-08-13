@@ -35,13 +35,13 @@ public class UndeclaredVariableReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8928_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8928_1");
-    editorCell.addEditorCell(this.createConstant_8928_0(editorContext, node, "ant name"));
+    editorCell.addEditorCell(this.createConstant_8928_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_8928_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8928_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8928_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant name");
     editorCell.setCellId("Constant_8928_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

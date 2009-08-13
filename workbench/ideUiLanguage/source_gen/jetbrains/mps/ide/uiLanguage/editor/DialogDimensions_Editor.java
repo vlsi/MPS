@@ -24,19 +24,19 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_3895_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3895_0");
-    editorCell.addEditorCell(this.createConstant_3895_0(editorContext, node, "left:"));
+    editorCell.addEditorCell(this.createConstant_3895_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3895_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_1(editorContext, node, "top:"));
+    editorCell.addEditorCell(this.createConstant_3895_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3895_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_2(editorContext, node, "width:"));
+    editorCell.addEditorCell(this.createConstant_3895_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3895_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_3(editorContext, node, "height:"));
+    editorCell.addEditorCell(this.createConstant_3895_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_3895_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3895_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left:");
     editorCell.setCellId("Constant_3895_0");
     {
       Style style = editorCell.getStyle();
@@ -46,8 +46,8 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3895_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "top:");
     editorCell.setCellId("Constant_3895_1");
     {
       Style style = editorCell.getStyle();
@@ -57,8 +57,8 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3895_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width:");
     editorCell.setCellId("Constant_3895_2");
     {
       Style style = editorCell.getStyle();
@@ -68,8 +68,8 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_3895_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height:");
     editorCell.setCellId("Constant_3895_3");
     {
       Style style = editorCell.getStyle();

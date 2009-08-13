@@ -25,21 +25,21 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4221_0");
     editorCell.addEditorCell(this.createRefCell_4221_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4221_1(editorContext, node, "."));
-    editorCell.addEditorCell(this.createConstant_4221_0(editorContext, node, "class"));
+    editorCell.addEditorCell(this.createConstant_4221_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4221_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4221_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4221_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_4221_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4221_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4221_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_4221_1");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

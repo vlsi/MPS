@@ -41,9 +41,9 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4085_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4085_0");
-    editorCell.addEditorCell(this.createConstant_4085_0(editorContext, node, "final :"));
+    editorCell.addEditorCell(this.createConstant_4085_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4085_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4085_2(editorContext, node, "annotations:"));
+    editorCell.addEditorCell(this.createConstant_4085_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4085_0(editorContext, node));
     return editorCell;
   }
@@ -66,7 +66,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_4085_3(editorContext, node));
     }
     if (renderingCondition4085_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4085_1(editorContext, node, "final"));
+      editorCell.addEditorCell(this.createConstant_4085_1(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_4085_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_4085_0(editorContext, node));
@@ -90,15 +90,15 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4085_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final :");
     editorCell.setCellId("Constant_4085_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4085_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_4085_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
@@ -106,8 +106,8 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4085_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_4085_2");
     {
       Style style = editorCell.getStyle();

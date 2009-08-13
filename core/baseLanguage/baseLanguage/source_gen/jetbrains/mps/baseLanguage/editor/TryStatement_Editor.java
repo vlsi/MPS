@@ -33,20 +33,20 @@ public class TryStatement_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_8280_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8280_0");
-    editorCell.addEditorCell(this.createConstant_8280_2(editorContext, node, "try"));
-    editorCell.addEditorCell(this.createConstant_8280_3(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8280_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8280_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8280_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8280_4(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_8280_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_8280_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8280_0(editorContext, node, "finally"));
-    editorCell.addEditorCell(this.createConstant_8280_1(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_8280_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8280_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8280_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8280_5(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_8280_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "finally");
     editorCell.setCellId("Constant_8280_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -57,8 +57,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8280_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -70,16 +70,16 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "try");
     editorCell.setCellId("Constant_8280_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8280_3");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -90,8 +90,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8280_4");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -103,8 +103,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8280_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8280_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8280_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -194,7 +194,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8280_6(editorContext, node, "");
+      return this.createConstant_8280_6(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -215,8 +215,8 @@ public class TryStatement_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_8280_6(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_8280_6(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_8280_6");
       {
         Style style = editorCell.getStyle();

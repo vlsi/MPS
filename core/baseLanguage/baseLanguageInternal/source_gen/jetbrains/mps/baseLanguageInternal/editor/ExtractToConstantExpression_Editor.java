@@ -23,23 +23,23 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6364_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6364_0");
-    editorCell.addEditorCell(this.createConstant_6364_0(editorContext, node, "extract"));
+    editorCell.addEditorCell(this.createConstant_6364_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6364_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6364_1(editorContext, node, "to constant"));
+    editorCell.addEditorCell(this.createConstant_6364_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6364_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6364_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6364_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_6364_0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6364_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6364_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to constant");
     editorCell.setCellId("Constant_6364_1");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

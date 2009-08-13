@@ -14,11 +14,11 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 public class ToolInstanceExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_6263_0(editorContext, node, "instance");
+    return this.createConstant_6263_0(editorContext, node);
   }
 
-  private EditorCell createConstant_6263_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6263_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance");
     editorCell.setCellId("Constant_6263_0");
     {
       Style style = editorCell.getStyle();

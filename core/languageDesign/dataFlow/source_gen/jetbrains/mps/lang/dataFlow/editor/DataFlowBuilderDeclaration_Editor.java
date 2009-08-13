@@ -28,51 +28,51 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7509_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7509_0");
-    editorCell.addEditorCell(this.createConstant_7509_0(editorContext, node, "data"));
-    editorCell.addEditorCell(this.createConstant_7509_1(editorContext, node, "flow"));
-    editorCell.addEditorCell(this.createConstant_7509_2(editorContext, node, "builder"));
-    editorCell.addEditorCell(this.createConstant_7509_3(editorContext, node, "for"));
+    editorCell.addEditorCell(this.createConstant_7509_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7509_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7509_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7509_3(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7509_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7509_4(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_7509_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7509_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7509_5(editorContext, node, "}"));
+    editorCell.addEditorCell(this.createConstant_7509_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "data");
     editorCell.setCellId("Constant_7509_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "flow");
     editorCell.setCellId("Constant_7509_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "builder");
     editorCell.setCellId("Constant_7509_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_7509_3");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7509_4");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -83,8 +83,8 @@ public class DataFlowBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7509_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7509_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_7509_5");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

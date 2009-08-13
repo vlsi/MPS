@@ -24,15 +24,15 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2081_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2081_0");
-    editorCell.addEditorCell(this.createConstant_2081_0(editorContext, node, "{"));
+    editorCell.addEditorCell(this.createConstant_2081_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2081_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2081_1(editorContext, node, "}"));
-    editorCell.addEditorCell(this.createConstant_2081_2(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_2081_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2081_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2081_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_2081_0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -43,8 +43,8 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2081_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_2081_1");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
@@ -55,8 +55,8 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2081_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2081_2");
     {
       Style style = editorCell.getStyle();

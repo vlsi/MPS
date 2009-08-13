@@ -26,16 +26,16 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
   private EditorCell createCollection_4865_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4865_0");
-    editorCell.addEditorCell(this.createConstant_4865_0(editorContext, node, "integer"));
+    editorCell.addEditorCell(this.createConstant_4865_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4865_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4865_1(editorContext, node, "<inheritable:"));
+    editorCell.addEditorCell(this.createConstant_4865_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_4865_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4865_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_4865_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4865_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "integer");
     editorCell.setCellId("Constant_4865_0");
     {
       Style style = editorCell.getStyle();
@@ -46,8 +46,8 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4865_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
     editorCell.setCellId("Constant_4865_1");
     {
       Style style = editorCell.getStyle();
@@ -58,8 +58,8 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4865_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_4865_2");
     {
       Style style = editorCell.getStyle();

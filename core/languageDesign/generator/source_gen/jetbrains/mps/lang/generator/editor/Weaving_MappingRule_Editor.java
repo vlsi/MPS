@@ -38,8 +38,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_0(editorContext, node, "weaving rule"));
-    editorCell.addEditorCell(this.createConstant_8866_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8866_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8866_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8866_5(editorContext, node));
     return editorCell;
   }
@@ -48,12 +48,12 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8866_1");
     editorCell.addEditorCell(this.createCollection_8866_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_2(editorContext, node, "-->"));
+    editorCell.addEditorCell(this.createConstant_8866_2(editorContext, node));
     if (renderingCondition8866_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8866_6(editorContext, node));
     }
     editorCell.addEditorCell(this.createCollection_8866_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_8866_3(editorContext, node));
     return editorCell;
   }
 
@@ -90,8 +90,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_4(editorContext, node, "context"));
-    editorCell.addEditorCell(this.createConstant_8866_5(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8866_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8866_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8866_1(editorContext, node));
     return editorCell;
   }
@@ -103,7 +103,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_6(editorContext, node, "mapping label"));
+    editorCell.addEditorCell(this.createConstant_8866_6(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_8866_0(editorContext, node));
     return editorCell;
   }
@@ -116,7 +116,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefCell_8866_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_7(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_8866_7(editorContext, node));
     return editorCell;
   }
 
@@ -126,8 +126,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weaving rule");
     editorCell.setCellId("Constant_8866_0");
     {
       Style style = editorCell.getStyle();
@@ -139,8 +139,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8866_1");
     {
       Style style = editorCell.getStyle();
@@ -150,8 +150,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_8866_2");
     {
       Style style = editorCell.getStyle();
@@ -161,8 +161,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8866_3");
     {
       Style style = editorCell.getStyle();
@@ -173,16 +173,16 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_8866_4");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8866_5");
     {
       Style style = editorCell.getStyle();
@@ -193,15 +193,15 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_8866_6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8866_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_8866_7");
     editorCell.setDefaultText("");
     return editorCell;

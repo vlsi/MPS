@@ -39,7 +39,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4312_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4312_0");
-    editorCell.addEditorCell(this.createConstant_4312_0(editorContext, node, "@"));
+    editorCell.addEditorCell(this.createConstant_4312_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4312_0(editorContext, node));
     if (renderingCondition4312_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_4312_1(editorContext, node));
@@ -54,14 +54,14 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4312_3(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_4312_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4312_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4312_2(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_4312_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4312_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4312_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_4312_0");
     {
       Style style = editorCell.getStyle();
@@ -72,16 +72,16 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4312_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4312_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4312_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4312_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4312_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4312_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
@@ -187,7 +187,7 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4312_1(editorContext, node, "");
+      return this.createConstant_4312_1(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -215,8 +215,8 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_4312_1(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_4312_1(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_4312_1");
       editorCell.setDefaultText("");
       return editorCell;

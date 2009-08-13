@@ -44,24 +44,24 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9715_0(editorContext, node, "concepts"));
+    editorCell.addEditorCell(this.createConstant_9715_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9715_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9715_1(editorContext, node, " "));
+    editorCell.addEditorCell(this.createConstant_9715_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9715_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9715_2(editorContext, node, " "));
+    editorCell.addEditorCell(this.createConstant_9715_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9715_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9715_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts");
     editorCell.setCellId("Constant_9715_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9715_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_9715_1");
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_9715_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_9715_2");
     {
       Style style = editorCell.getStyle();

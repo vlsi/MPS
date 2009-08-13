@@ -51,7 +51,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_0(editorContext, node, "target type"));
+    editorCell.addEditorCell(this.createConstant_7104_0(editorContext, node));
     return editorCell;
   }
 
@@ -62,7 +62,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_7104_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7104_0(editorContext, node));
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_2(editorContext, node, "single cardinality"));
+    editorCell.addEditorCell(this.createConstant_7104_2(editorContext, node));
     return editorCell;
   }
 
@@ -85,7 +85,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_3(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_7104_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7104_1(editorContext, node));
     return editorCell;
   }
@@ -114,7 +114,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_4(editorContext, node, "properties"));
+    editorCell.addEditorCell(this.createConstant_7104_4(editorContext, node));
     return editorCell;
   }
 
@@ -125,7 +125,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_5(editorContext, node, "ascending"));
+    editorCell.addEditorCell(this.createConstant_7104_5(editorContext, node));
     return editorCell;
   }
 
@@ -136,7 +136,7 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_6(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_7104_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7104_0(editorContext, node));
     return editorCell;
   }
@@ -148,21 +148,21 @@ public class IParamFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7104_7(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_7104_7(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7104_5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target type");
     editorCell.setCellId("Constant_7104_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_7104_1");
     {
       Style style = editorCell.getStyle();
@@ -172,16 +172,16 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "single cardinality");
     editorCell.setCellId("Constant_7104_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_7104_3");
     {
       Style style = editorCell.getStyle();
@@ -191,8 +191,8 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties");
     editorCell.setCellId("Constant_7104_4");
     {
       Style style = editorCell.getStyle();
@@ -202,16 +202,16 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ascending");
     editorCell.setCellId("Constant_7104_5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_7104_6");
     {
       Style style = editorCell.getStyle();
@@ -221,8 +221,8 @@ public class IParamFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7104_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7104_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_7104_7");
     {
       Style style = editorCell.getStyle();

@@ -23,13 +23,13 @@ public class ReferenceRoleTarget_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6346_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6346_0");
-    editorCell.addEditorCell(this.createConstant_6346_0(editorContext, node, "reference role"));
+    editorCell.addEditorCell(this.createConstant_6346_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6346_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6346_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6346_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference role");
     editorCell.setCellId("Constant_6346_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

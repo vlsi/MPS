@@ -39,7 +39,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition7595_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7595_4(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7595_1(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_7595_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7595_0(editorContext, node));
     if (renderingCondition7595_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_7595_2(editorContext, node));
@@ -54,7 +54,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7595_0(editorContext, node, "group"));
+    editorCell.addEditorCell(this.createConstant_7595_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_0(editorContext, node));
     return editorCell;
   }
@@ -62,7 +62,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7595_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7595_2");
-    editorCell.addEditorCell(this.createConstant_7595_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_7595_3(editorContext, node));
     editorCell.addEditorCell(this.createComponent_7595_0(editorContext, node));
     return editorCell;
   }
@@ -74,7 +74,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7595_2(editorContext, node, "is popup:"));
+    editorCell.addEditorCell(this.createConstant_7595_2(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_1(editorContext, node));
     return editorCell;
   }
@@ -95,7 +95,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7595_4(editorContext, node, "caption:"));
+    editorCell.addEditorCell(this.createConstant_7595_4(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_2(editorContext, node));
     return editorCell;
   }
@@ -107,7 +107,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7595_5(editorContext, node, "mnemonic:"));
+    editorCell.addEditorCell(this.createConstant_7595_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_3(editorContext, node));
     return editorCell;
   }
@@ -119,7 +119,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7595_6(editorContext, node, "is invisible when disabled:"));
+    editorCell.addEditorCell(this.createConstant_7595_6(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_4(editorContext, node));
     return editorCell;
   }
@@ -127,7 +127,7 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7595_8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7595_8");
-    editorCell.addEditorCell(this.createConstant_7595_7(editorContext, node, "isInternal:"));
+    editorCell.addEditorCell(this.createConstant_7595_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_7595_5(editorContext, node));
     return editorCell;
   }
@@ -151,8 +151,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
     editorCell.setCellId("Constant_7595_0");
     {
       Style style = editorCell.getStyle();
@@ -162,8 +162,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7595_1");
     {
       Style style = editorCell.getStyle();
@@ -173,15 +173,15 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is popup:");
     editorCell.setCellId("Constant_7595_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7595_3");
     {
       Style style = editorCell.getStyle();
@@ -191,8 +191,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption:");
     editorCell.setCellId("Constant_7595_4");
     {
       Style style = editorCell.getStyle();
@@ -202,8 +202,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mnemonic:");
     editorCell.setCellId("Constant_7595_5");
     {
       Style style = editorCell.getStyle();
@@ -213,8 +213,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is invisible when disabled:");
     editorCell.setCellId("Constant_7595_6");
     {
       Style style = editorCell.getStyle();
@@ -224,8 +224,8 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7595_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_7595_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isInternal:");
     editorCell.setCellId("Constant_7595_7");
     editorCell.setDefaultText("");
     return editorCell;

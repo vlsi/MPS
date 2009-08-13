@@ -27,15 +27,15 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5953_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5953_0");
-    editorCell.addEditorCell(this.createConstant_5953_0(editorContext, node, "application plugin"));
-    editorCell.addEditorCell(this.createConstant_5953_1(editorContext, node, "<"));
+    editorCell.addEditorCell(this.createConstant_5953_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5953_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5953_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5953_2(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_5953_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5953_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "application plugin");
     editorCell.setCellId("Constant_5953_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
@@ -46,8 +46,8 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5953_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5953_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
@@ -59,8 +59,8 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5953_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5953_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {

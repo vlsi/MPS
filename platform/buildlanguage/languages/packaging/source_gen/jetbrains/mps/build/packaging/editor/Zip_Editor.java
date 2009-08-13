@@ -69,7 +69,7 @@ public class Zip_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5723_0(editorContext, node, "filemode"));
+    editorCell.addEditorCell(this.createConstant_5723_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5723_0(editorContext, node));
     return editorCell;
   }
@@ -81,7 +81,7 @@ public class Zip_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5723_1(editorContext, node, "dirmode"));
+    editorCell.addEditorCell(this.createConstant_5723_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_5723_1(editorContext, node));
     return editorCell;
   }
@@ -116,16 +116,16 @@ public class Zip_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filemode");
     editorCell.setCellId("Constant_5723_0");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5723_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5723_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dirmode");
     editorCell.setCellId("Constant_5723_1");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

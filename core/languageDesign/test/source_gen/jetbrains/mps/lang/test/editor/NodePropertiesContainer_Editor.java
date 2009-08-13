@@ -33,15 +33,15 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5968_0");
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_5968_0(editorContext, node, "<node"));
+    editorCell.addEditorCell(this.createConstant_5968_0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_5968_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_5968_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5968_1(editorContext, node, ">"));
+    editorCell.addEditorCell(this.createConstant_5968_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5968_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5968_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<node");
     editorCell.setCellId("Constant_5968_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
@@ -49,8 +49,8 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5968_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5968_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_5968_1");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
@@ -102,7 +102,7 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_5968_2(editorContext, node, "...");
+      return this.createConstant_5968_2(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -130,8 +130,8 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_5968_2(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_5968_2(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "...");
       editorCell.setCellId("Constant_5968_2");
       BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
       editorCell.setDefaultText("");

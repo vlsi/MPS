@@ -46,7 +46,7 @@ public class IFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2453_0(editorContext, node, "properties"));
+    editorCell.addEditorCell(this.createConstant_2453_0(editorContext, node));
     return editorCell;
   }
 
@@ -57,7 +57,7 @@ public class IFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2453_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2453_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2453_3(editorContext, node));
     return editorCell;
   }
@@ -82,7 +82,7 @@ public class IFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2453_2(editorContext, node, "ascending"));
+    editorCell.addEditorCell(this.createConstant_2453_2(editorContext, node));
     return editorCell;
   }
 
@@ -93,13 +93,13 @@ public class IFeature_Properties extends AbstractCellProvider {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2453_3(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_2453_3(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2453_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2453_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2453_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties");
     editorCell.setCellId("Constant_2453_0");
     {
       Style style = editorCell.getStyle();
@@ -109,23 +109,23 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_2453_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2453_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2453_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2453_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2453_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ascending");
     editorCell.setCellId("Constant_2453_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2453_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2453_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_2453_3");
     {
       Style style = editorCell.getStyle();

@@ -23,31 +23,31 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
   private EditorCell createCollection_4621_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4621_0");
-    editorCell.addEditorCell(this.createConstant_4621_0(editorContext, node, "get copied output for"));
-    editorCell.addEditorCell(this.createConstant_4621_2(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_4621_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4621_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_4621_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4621_1(editorContext, node, ")"));
+    editorCell.addEditorCell(this.createConstant_4621_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4621_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4621_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get copied output for");
     editorCell.setCellId("Constant_4621_0");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4621_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4621_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4621_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4621_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_4621_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4621_2");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

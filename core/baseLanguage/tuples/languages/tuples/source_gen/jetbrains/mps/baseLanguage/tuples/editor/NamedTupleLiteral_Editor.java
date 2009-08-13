@@ -67,7 +67,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createConstant_6372_1(editorContext, node, "declaration:"));
+    editorCell.addEditorCell(this.createConstant_6372_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6372_0(editorContext, node));
     return editorCell;
   }
@@ -75,20 +75,20 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6372_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6372_3");
-    editorCell.addEditorCell(this.createConstant_6372_2(editorContext, node, "components:"));
+    editorCell.addEditorCell(this.createConstant_6372_2(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_6372_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6372_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6372_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "declaration:");
     editorCell.setCellId("Constant_6372_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6372_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6372_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "components:");
     editorCell.setCellId("Constant_6372_2");
     {
       Style style = editorCell.getStyle();
@@ -278,7 +278,7 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_6372_0(editorContext, node, "");
+      return this.createConstant_6372_0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -306,8 +306,8 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_6372_0(EditorContext editorContext, SNode node, String text) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+    private EditorCell createConstant_6372_0(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_6372_0");
       editorCell.setDefaultText("<<components>>");
       return editorCell;

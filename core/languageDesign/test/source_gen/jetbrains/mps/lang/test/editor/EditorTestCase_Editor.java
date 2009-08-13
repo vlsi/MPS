@@ -46,7 +46,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createConstant_2109_0(editorContext, node, "Editor test case"));
+    editorCell.addEditorCell(this.createConstant_2109_0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_2109_0(editorContext, node));
     return editorCell;
   }
@@ -63,7 +63,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createConstant_2109_1(editorContext, node, "before:"));
+    editorCell.addEditorCell(this.createConstant_2109_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2109_0(editorContext, node));
     return editorCell;
   }
@@ -80,7 +80,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createConstant_2109_2(editorContext, node, "result:"));
+    editorCell.addEditorCell(this.createConstant_2109_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_2109_1(editorContext, node));
     return editorCell;
   }
@@ -97,7 +97,7 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createConstant_2109_3(editorContext, node, "code:"));
+    editorCell.addEditorCell(this.createConstant_2109_3(editorContext, node));
     return editorCell;
   }
 
@@ -118,29 +118,29 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2109_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2109_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Editor test case");
     editorCell.setCellId("Constant_2109_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2109_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2109_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before:");
     editorCell.setCellId("Constant_2109_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2109_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2109_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "result:");
     editorCell.setCellId("Constant_2109_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2109_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2109_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code:");
     editorCell.setCellId("Constant_2109_3");
     editorCell.setDefaultText("");
     return editorCell;

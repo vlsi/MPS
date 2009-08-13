@@ -38,7 +38,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6235_0(editorContext, node));
     editorCell.addEditorCell(this.createConceptProperty_6235_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_6235_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_0(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_6235_0(editorContext, node));
     return editorCell;
   }
 
@@ -46,9 +46,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6235_1");
     editorCell.addEditorCell(this.createComponent_6235_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_2(editorContext, node, ""));
-    editorCell.addEditorCell(this.createConstant_6235_3(editorContext, node, "advanced:"));
-    editorCell.addEditorCell(this.createConstant_6235_1(editorContext, node, "direction ="));
+    editorCell.addEditorCell(this.createConstant_6235_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_1(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6235_0(editorContext, node));
     return editorCell;
   }
@@ -63,23 +63,23 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6235_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6235_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6235_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "direction =");
     editorCell.setCellId("Constant_6235_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6235_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_6235_2");
     {
       Style style = editorCell.getStyle();
@@ -90,8 +90,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6235_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "advanced:");
     editorCell.setCellId("Constant_6235_3");
     {
       Style style = editorCell.getStyle();

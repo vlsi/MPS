@@ -23,13 +23,13 @@ public class NodeTypeProperty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5451_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5451_0");
-    editorCell.addEditorCell(this.createConstant_5451_0(editorContext, node, "has type"));
+    editorCell.addEditorCell(this.createConstant_5451_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_5451_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5451_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_5451_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has type");
     editorCell.setCellId("Constant_5451_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

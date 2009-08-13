@@ -33,15 +33,15 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6159_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6159_1");
-    editorCell.addEditorCell(this.createConstant_6159_0(editorContext, node, "default"));
-    editorCell.addEditorCell(this.createConstant_6159_2(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_6159_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6159_2(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_6159_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6159_2");
-    editorCell.addEditorCell(this.createConstant_6159_1(editorContext, node, "  "));
+    editorCell.addEditorCell(this.createConstant_6159_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6159_3(editorContext, node));
     return editorCell;
   }
@@ -57,13 +57,13 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_6159_4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6159_4");
-    editorCell.addEditorCell(this.createConstant_6159_3(editorContext, node, "break"));
-    editorCell.addEditorCell(this.createConstant_6159_4(editorContext, node, ";"));
+    editorCell.addEditorCell(this.createConstant_6159_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6159_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6159_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6159_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
     editorCell.setCellId("Constant_6159_0");
     {
       Style style = editorCell.getStyle();
@@ -73,8 +73,8 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6159_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6159_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_6159_1");
     {
       Style style = editorCell.getStyle();
@@ -84,8 +84,8 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6159_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6159_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_6159_2");
     {
       Style style = editorCell.getStyle();
@@ -96,8 +96,8 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6159_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6159_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
     editorCell.setCellId("Constant_6159_3");
     {
       Style style = editorCell.getStyle();
@@ -107,8 +107,8 @@ public class NodeKindDefaultCase_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6159_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_6159_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_6159_4");
     {
       Style style = editorCell.getStyle();

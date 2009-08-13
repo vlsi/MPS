@@ -37,12 +37,12 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1377_0");
     editorCell.addEditorCell(this.createCollection_1377_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1377_1(editorContext, node, "-->"));
+    editorCell.addEditorCell(this.createConstant_1377_1(editorContext, node));
     if (renderingCondition1377_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1377_8(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefCell_1377_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1377_0(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1377_0(editorContext, node));
     return editorCell;
   }
 
@@ -53,8 +53,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_2(editorContext, node, "root mapping rule"));
-    editorCell.addEditorCell(this.createConstant_1377_3(editorContext, node, ""));
+    editorCell.addEditorCell(this.createConstant_1377_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1377_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_1377_7(editorContext, node));
     return editorCell;
   }
@@ -83,7 +83,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_4(editorContext, node, "concept"));
+    editorCell.addEditorCell(this.createConstant_1377_4(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1377_1(editorContext, node));
     return editorCell;
   }
@@ -95,7 +95,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_5(editorContext, node, "inheritors"));
+    editorCell.addEditorCell(this.createConstant_1377_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1377_2(editorContext, node));
     return editorCell;
   }
@@ -107,7 +107,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_6(editorContext, node, "condition"));
+    editorCell.addEditorCell(this.createConstant_1377_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1377_0(editorContext, node));
     return editorCell;
   }
@@ -119,7 +119,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_7(editorContext, node, "keep input root"));
+    editorCell.addEditorCell(this.createConstant_1377_7(editorContext, node));
     editorCell.addEditorCell(this.createProperty_1377_3(editorContext, node));
     return editorCell;
   }
@@ -131,7 +131,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1377_8(editorContext, node, "mapping label"));
+    editorCell.addEditorCell(this.createConstant_1377_8(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_1377_2(editorContext, node));
     return editorCell;
   }
@@ -144,12 +144,12 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefCell_1377_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1377_9(editorContext, node, ":"));
+    editorCell.addEditorCell(this.createConstant_1377_9(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1377_0");
     {
       Style style = editorCell.getStyle();
@@ -160,8 +160,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_1377_1");
     {
       Style style = editorCell.getStyle();
@@ -171,8 +171,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root mapping rule");
     editorCell.setCellId("Constant_1377_2");
     {
       Style style = editorCell.getStyle();
@@ -184,8 +184,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1377_3");
     {
       Style style = editorCell.getStyle();
@@ -195,8 +195,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_1377_4");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -207,8 +207,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_5(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_5(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inheritors");
     editorCell.setCellId("Constant_1377_5");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -219,8 +219,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_6(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_1377_6");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -231,8 +231,8 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_7(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keep input root");
     editorCell.setCellId("Constant_1377_7");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
@@ -243,15 +243,15 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_8(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_8(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_1377_8");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1377_9(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_1377_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1377_9");
     editorCell.setDefaultText("");
     return editorCell;

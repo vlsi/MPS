@@ -32,24 +32,24 @@ public class DropRootRule_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8447_0");
     editorCell.addEditorCell(this.createRefCell_8447_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8447_0(editorContext, node, "condition"));
+    editorCell.addEditorCell(this.createConstant_8447_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_8447_0(editorContext, node));
     if (renderingCondition8447_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_8447_1(editorContext, node, ""));
+      editorCell.addEditorCell(this.createConstant_8447_1(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_8447_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8447_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_8447_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8447_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8447_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_8447_1");
     {
       Style style = editorCell.getStyle();

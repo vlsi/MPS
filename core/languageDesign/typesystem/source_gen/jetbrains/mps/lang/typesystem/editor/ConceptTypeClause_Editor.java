@@ -35,50 +35,50 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_2811_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2811_0");
-    editorCell.addEditorCell(this.createConstant_2811_0(editorContext, node, "typeInstanceOf"));
-    editorCell.addEditorCell(this.createConstant_2811_1(editorContext, node, "("));
+    editorCell.addEditorCell(this.createConstant_2811_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2811_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2811_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2811_2(editorContext, node, ")"));
-    editorCell.addEditorCell(this.createConstant_2811_3(editorContext, node, "["));
+    editorCell.addEditorCell(this.createConstant_2811_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2811_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_2811_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2811_4(editorContext, node, "]"));
+    editorCell.addEditorCell(this.createConstant_2811_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2811_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2811_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "typeInstanceOf");
     editorCell.setCellId("Constant_2811_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2811_1(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2811_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_2811_1");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2811_2(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2811_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_2811_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2811_3(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2811_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_2811_3");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2811_4(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_2811_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_2811_4");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");

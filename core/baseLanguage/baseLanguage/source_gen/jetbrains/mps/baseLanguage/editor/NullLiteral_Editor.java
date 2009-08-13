@@ -13,11 +13,11 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 public class NullLiteral_Editor extends DefaultNodeEditor {
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_8892_0(editorContext, node, "null");
+    return this.createConstant_8892_0(editorContext, node);
   }
 
-  private EditorCell createConstant_8892_0(EditorContext editorContext, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, text);
+  private EditorCell createConstant_8892_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_8892_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
