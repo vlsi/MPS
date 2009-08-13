@@ -295,6 +295,11 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return (IListSequence<T>) super.removeSequence(seq);
     }
     
+    @Override
+    public IListSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IListSequence<T>) super.removeWhere(filter);
+    }
+    
     public IListSequence<T> reversedList () {
         ListSequence<T> reversed = new ListSequence<T> (this);
         reversed._reverse();

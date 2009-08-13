@@ -14,7 +14,7 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_171().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_172().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

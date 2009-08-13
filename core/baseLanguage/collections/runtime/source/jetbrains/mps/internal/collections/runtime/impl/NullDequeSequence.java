@@ -18,6 +18,9 @@ package jetbrains.mps.internal.collections.runtime.impl;
 import java.util.Iterator;
 
 import jetbrains.mps.internal.collections.runtime.IDequeSequence;
+import jetbrains.mps.internal.collections.runtime.IQueueSequence;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 
 public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDequeSequence<T>, Deque<T> {
@@ -115,6 +118,21 @@ public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDeque
 
     public T removeLastElement() {
         return null;
+    }
+    
+    @Override
+    public IDequeSequence<T> addSequence(ISequence<? extends T> seq) {
+        return (IDequeSequence<T>) super.addSequence(seq);
+    }
+    
+    @Override
+    public IDequeSequence<T> removeSequence(ISequence<? extends T> seq) {
+        return (IDequeSequence<T>) super.removeSequence(seq);
+    }
+    
+    @Override
+    public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IDequeSequence<T>) super.removeWhere(filter);
     }
 
     public Deque<T> toDeque() {

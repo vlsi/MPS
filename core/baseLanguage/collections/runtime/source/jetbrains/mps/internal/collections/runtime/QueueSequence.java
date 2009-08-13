@@ -168,6 +168,11 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
     public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
         return (IQueueSequence<T>) super.removeSequence(seq);
     }
+    
+    @Override
+    public IQueueSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IQueueSequence<T>) super.removeWhere(filter);
+    }
 
     public Queue<T> toQueue() {
         return this;

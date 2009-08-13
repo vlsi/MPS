@@ -2753,5 +2753,61 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3055999550620853964">
+    <property name="package" value="sequence.closures" />
+    <property name="name" value="RemoveWhereOperation" />
+    <link role="extends" targetNodeId="1204796164442" resolveInfo="InternalSequenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3055999550620853968">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="specializedLink" targetNodeId="1204796294226" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3055999550620853965">
+      <property name="value" value="removeWhere" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3055999550620853967">
+      <property name="value" value="filter out the matched elements" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3055999550620853969">
+      <link role="intfc" targetNodeId="2141797557973018607" resolveInfo="IListOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3055999550620853971">
+      <link role="intfc" targetNodeId="6801639034384909355" resolveInfo="IStackOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3055999550620853973">
+      <link role="intfc" targetNodeId="497032923610827734" resolveInfo="IQueueOperation" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3055999550620853975">
+      <link role="intfc" targetNodeId="6801639034384909353" resolveInfo="IDequeOperation" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3055999550620853976">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="3055999550620853980">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="3055999550620853982" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3055999550620853984">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.StackType" id="3055999550620853986">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="3055999550620853988" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3055999550620853990">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.QueueType" id="3055999550620853992">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="3055999550620853994" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3055999550620853996">
+      <link role="conceptLinkDeclaration" targetNodeId="497032923610147119" resolveInfo="expectedOperandType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.collections.structure.DequeType" id="3055999550620853998">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="3055999550620854000" />
+      </node>
+    </node>
+  </node>
 </model>
 

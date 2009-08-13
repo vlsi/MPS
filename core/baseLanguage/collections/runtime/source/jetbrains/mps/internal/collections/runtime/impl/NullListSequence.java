@@ -20,8 +20,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
+import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 
 /**
@@ -114,6 +116,11 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
 
     public IListSequence<T> removeSequence(ISequence<? extends T> seq) {
     	return this;
+    }
+    
+    @Override
+    public IListSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IListSequence<T>) super.removeWhere(filter);
     }
     
     public IListSequence<T> distinctList() {

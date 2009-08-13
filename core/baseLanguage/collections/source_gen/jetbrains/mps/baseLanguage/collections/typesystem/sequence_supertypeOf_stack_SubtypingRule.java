@@ -15,7 +15,7 @@ public class sequence_supertypeOf_stack_SubtypingRule extends SubtypingRule_Runt
   }
 
   public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_175().createNode(SLinkOperations.getTarget(stackType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_176().createNode(SLinkOperations.getTarget(stackType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -19,6 +19,7 @@ import java.util.Collection;
 
 import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class NullCollectionSequence<T> extends NullSequence<T> implements ICollectionSequence<T>, Collection<T> {
     
@@ -31,7 +32,7 @@ public abstract class NullCollectionSequence<T> extends NullSequence<T> implemen
         return null;
     }
 
-    public ISequence<T> addSequence(ISequence<? extends T> seq) {
+    public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
         return this;
     }
 
@@ -39,7 +40,11 @@ public abstract class NullCollectionSequence<T> extends NullSequence<T> implemen
         return null;
     }
 
-    public ISequence<T> removeSequence(ISequence<? extends T> seq) {
+    public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
+        return this;
+    }
+    
+    public ICollectionSequence<T> removeWhere(IWhereFilter<T> filter) {
         return this;
     }
 

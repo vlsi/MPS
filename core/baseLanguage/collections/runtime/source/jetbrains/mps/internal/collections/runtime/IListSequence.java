@@ -40,8 +40,10 @@ public interface IListSequence<T> extends ICollectionSequence<T>, ISequence<T>, 
 
     IListSequence<T> removeSequence(ISequence<? extends T> seq);
 
+    IListSequence<T> removeWhere(IWhereFilter<T> filter);
+    
     IListSequence<T> reversedList ();
-
+    
     @Deprecated
     IListSequence<T> distinctList ();
     

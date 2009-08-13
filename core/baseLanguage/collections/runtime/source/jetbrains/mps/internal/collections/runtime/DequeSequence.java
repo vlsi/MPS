@@ -215,7 +215,6 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
         return t;
     }
 
-
     @Override
     public IDequeSequence<T> addSequence(ISequence<? extends T> seq) {
         return (IDequeSequence<T>) super.addSequence(seq);
@@ -224,6 +223,11 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     @Override
     public IDequeSequence<T> removeSequence(ISequence<? extends T> seq) {
         return (IDequeSequence<T>) super.removeSequence(seq);
+    }
+    
+    @Override
+    public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IDequeSequence<T>) super.removeWhere(filter);
     }
 
     public Deque<T> toDeque() {

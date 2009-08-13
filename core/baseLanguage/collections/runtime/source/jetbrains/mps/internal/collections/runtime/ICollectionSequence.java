@@ -23,8 +23,10 @@ public interface ICollectionSequence<T> extends ISequence<T>, Collection<T> {
     
     T removeElement (T t);
 
-    ISequence<T> addSequence(ISequence<? extends T> seq);
+    ICollectionSequence<T> addSequence(ISequence<? extends T> seq);
 
-    ISequence<T> removeSequence(ISequence<? extends T> seq);
+    ICollectionSequence<T> removeSequence(ISequence<? extends T> seq);
+    
+    ICollectionSequence<T> removeWhere(IWhereFilter<T> filter);
 
 }

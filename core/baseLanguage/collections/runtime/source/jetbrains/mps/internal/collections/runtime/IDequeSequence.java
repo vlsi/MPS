@@ -27,5 +27,11 @@ public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
     
     T pushElement (T t);
     
+    IDequeSequence<T> addSequence(ISequence<? extends T> seq);
+    
+    IDequeSequence<T> removeSequence(ISequence<? extends T> seq);
+
+    IDequeSequence<T> removeWhere (IWhereFilter<T> filter);
+
     Deque<T> toDeque ();
 }

@@ -27,6 +27,8 @@ public interface IQueueSequence<T> extends ISequence<T>, ICollectionSequence<T>,
     
     IQueueSequence<T> removeSequence(ISequence<? extends T> seq);
 
+    IQueueSequence<T> removeWhere (IWhereFilter<T> filter);
+    
     Queue<T> toQueue ();
     
 }

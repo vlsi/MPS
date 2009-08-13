@@ -68,6 +68,15 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
         return this;
     }
 
+    public ICollectionSequence<T> removeWhere(IWhereFilter<T> filter) {
+        for (Iterator<T> it = getCollection().iterator(); it.hasNext(); ) {
+            if (filter.accept(it.next())) {
+                it.remove();
+            }
+        }
+        return this;
+    }
+    
     // Delegated methods
     
     public boolean add(T e) {

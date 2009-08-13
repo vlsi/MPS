@@ -17,8 +17,10 @@ package jetbrains.mps.internal.collections.runtime.impl;
 
 import java.util.Queue;
 
+import jetbrains.mps.internal.collections.runtime.ICollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IQueueSequence;
 import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class NullQueueSequence<T> extends NullCollectionSequence<T> implements IQueueSequence<T>, Queue<T> {
     
@@ -50,6 +52,11 @@ public class NullQueueSequence<T> extends NullCollectionSequence<T> implements I
 
     public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
         return this;
+    }
+    
+    @Override
+    public IQueueSequence<T> removeWhere(IWhereFilter<T> filter) {
+        return (IQueueSequence<T>) super.removeWhere(filter);
     }
 
     public Queue<T> toQueue() {

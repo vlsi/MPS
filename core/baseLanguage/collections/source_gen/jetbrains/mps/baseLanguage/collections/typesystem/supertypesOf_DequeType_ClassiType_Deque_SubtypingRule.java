@@ -15,7 +15,7 @@ public class supertypesOf_DequeType_ClassiType_Deque_SubtypingRule extends Subty
   }
 
   public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_170().createNode(SLinkOperations.getTarget(dequeType, "elementType", true), typeCheckingContext);
+    return new _Quotations.QuotationClass_171().createNode(SLinkOperations.getTarget(dequeType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
