@@ -99,7 +99,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6322_3(context, node, "icon"));
     editorCell.addEditorCell(this.createConstant_6322_4(context, node, ":"));
     editorCell.addEditorCell(this.createAlternation_6322_0(context, node));
-    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_1767562947359900038(node, context), "_1767562947359900037"));
+    editorCell.addEditorCell(EditorCell_Component.createComponentCell(context, node, PreferencePage_Editor._QueryFunction_JComponent_1767562947361236525(node, context), "_1767562947361236524"));
     return editorCell;
   }
 
@@ -270,7 +270,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private EditorCell createImage_6322_0(EditorContext context, SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_1767562947359900027(node, context));
+    editorCell = EditorCell_Image.createImageCell(context, node, _image_provider_1767562947361236514(node, context));
     editorCell.setCellId("Image_6322_0");
     editorCell.setDescent(0);
     return editorCell;
@@ -390,7 +390,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   }
 
 
-  public static String _image_provider_1767562947359900027(SNode node, EditorContext editorContext) {
+  public static String _image_provider_1767562947361236514(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "icon");
   }
 
@@ -411,7 +411,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_1767562947359900038(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_1767562947361236525(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 
