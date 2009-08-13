@@ -127,7 +127,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3444116434173864874(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String uniqueName = _context.createUniqueName("childRole", mainNode);
-    mainNode.putUserObject("childRole_uniqueName", uniqueName);
+    _context.getNode().putUserObject("childRole_uniqueName", uniqueName);
     return uniqueName;
   }
 
@@ -230,16 +230,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865706(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode mainNode = _context.getNode().getReferent("mainNode");
-    return (String)mainNode.getUserObject("childRole_uniqueName");
+    return (String)_context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865740(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)SNodeOperations.getParent(_context.getNode()).getUserObject("childRole_uniqueName");
+    return (String)_context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865776(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)SNodeOperations.getParent(_context.getNode()).getUserObject("childRole_uniqueName");
+    return (String)_context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static boolean ifMacro_Condition_1190931376948(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -412,6 +411,10 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931377752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
+    String childRole = (String)_context.getNode().getUserObject("childRole_uniqueName");
+    for(SNode ch : mainNode.getChildren(role)) {
+      ch.putUserObject("childRole_uniqueName", childRole);
+    }
     return mainNode.getChildren(role);
   }
 
@@ -419,7 +422,10 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
-    ListSequence.fromList(result).addElement(mainNode.getChildren(role).get(0));
+    SNode ch = mainNode.getChildren(role).get(0);
+    String childRole = (String)_context.getNode().getUserObject("childRole_uniqueName");
+    ch.putUserObject("childRole_uniqueName", childRole);
+    ListSequence.fromList(result).addElement(ch);
     return result;
   }
 
