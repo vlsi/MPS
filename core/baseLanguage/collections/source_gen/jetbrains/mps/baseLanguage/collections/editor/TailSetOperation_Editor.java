@@ -24,7 +24,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_8233_0(context, node);
   }
 
-  public EditorCell createCollection_8233_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_8233_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_8233_0");
     editorCell.addEditorCell(this.createConceptProperty_8233_0(context, node));
@@ -34,7 +34,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8233_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8233_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8233_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -42,7 +42,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_8233_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_8233_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_8233_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -50,7 +50,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_8233_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_8233_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -70,7 +70,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_8233_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_8233_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("fromElement");
     provider.setNoTargetText("<no fromElement>");

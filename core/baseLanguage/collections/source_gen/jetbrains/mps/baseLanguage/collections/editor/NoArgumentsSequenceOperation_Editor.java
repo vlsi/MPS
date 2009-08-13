@@ -22,7 +22,7 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
     return this.createConceptProperty_1243_0(context, node);
   }
 
-  public EditorCell createConceptProperty_1243_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_1243_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

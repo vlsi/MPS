@@ -26,7 +26,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_9725_0(context, node);
   }
 
-  public EditorCell createCollection_9725_0(EditorContext context, SNode node) {
+  private EditorCell createCollection_9725_0(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(context, node);
     editorCell.setCellId("Collection_9725_0");
     editorCell.addEditorCell(this.createConceptProperty_9725_0(context, node));
@@ -36,7 +36,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9725_0(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9725_0(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9725_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
@@ -44,7 +44,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstant_9725_1(EditorContext context, SNode node, String text) {
+  private EditorCell createConstant_9725_1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     editorCell.setCellId("Constant_9725_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
@@ -52,7 +52,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConceptProperty_9725_0(EditorContext context, SNode node) {
+  private EditorCell createConceptProperty_9725_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -76,7 +76,7 @@ public class RemoveSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createRefNode_9725_0(EditorContext context, SNode node) {
+  private EditorCell createRefNode_9725_0(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
