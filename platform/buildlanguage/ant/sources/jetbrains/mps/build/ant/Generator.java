@@ -16,7 +16,6 @@
 package jetbrains.mps.build.ant;
 
 import jetbrains.mps.TestMain;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules;
 import jetbrains.mps.build.buildgeneration.graph.IVertex;
 import jetbrains.mps.build.buildgeneration.StronglyConnectedModules.IModuleDecorator;
@@ -37,18 +36,14 @@ import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.IdeMain.TestMode;
 
 import java.io.File;
@@ -62,29 +57,40 @@ import org.apache.tools.ant.Project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.util.Processor;
 import com.intellij.util.PathUtil;
 import com.intellij.ide.IdeEventQueue;
 
-import javax.swing.JTabbedPane;
-
 public class Generator {
   private final BaseGenerationType myGenerationType = getGenerationType();
   private final MyMessageHandler myMessageHandler = new MyMessageHandler();
   private final WhatToGenerate myWhatToGenerate;
-  private final ProjectComponent myProjectComponent;
+  private final AntLogger myLogger;
   private final List<String> myErrors = new ArrayList<String>();
   private final List<String> myWarnings = new ArrayList<String>();
 
   private final Set<MPSProject> myLoadedProjects = new HashSet<MPSProject>();
 
+  public static void main(String[] args) {
+    Generator generator = new Generator(WhatToGenerate.fromCommandLine(args), new SystemOutLogger());
+    try {
+      generator.generate();
+      System.exit(0);
+    } catch (Exception e) {
+      generator.log(e);
+      System.exit(1);
+    }
+  }
 
   public Generator(WhatToGenerate whatToGenerate, ProjectComponent component) {
     myWhatToGenerate = whatToGenerate;
-    myProjectComponent = component;
+    myLogger = new ProjectComponentLogger(component);
+  }
+
+  public Generator(WhatToGenerate whatToGenerate, AntLogger logger) {
+    myWhatToGenerate = whatToGenerate;
+    myLogger = logger;
   }
 
   public void generate() {
@@ -355,7 +361,7 @@ public class Generator {
   }
 
   private void log(String text, int level) {
-    if (level <= myWhatToGenerate.getLogLevel()) myProjectComponent.log(text, level);
+    if (level <= myWhatToGenerate.getLogLevel()) myLogger.log(text, level);
   }
 
   public void info(String text) {
@@ -475,6 +481,34 @@ public class Generator {
 
     public int compareTo(IModuleDecorator<IModule> o) {
       return hashCode() - ((ModuleDecorator) o).hashCode();
+    }
+  }
+
+  private static interface AntLogger {
+
+    void log(String text, int level);
+  }
+
+  private static class ProjectComponentLogger implements AntLogger {
+    private final ProjectComponent myProjectComponent;
+
+    public ProjectComponentLogger(ProjectComponent projectComponent) {
+      myProjectComponent = projectComponent;
+    }
+
+    public void log(String text, int level) {
+      myProjectComponent.log(text, level);
+    }
+  }
+
+  private static class SystemOutLogger implements AntLogger {
+
+    public void log(String text, int level) {
+      if (level == Project.MSG_ERR){
+        System.err.println(text);
+      } else {
+        System.out.println(text);
+      }
     }
   }
 }

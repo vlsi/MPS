@@ -17,11 +17,18 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
+import org.apache.tools.ant.Project;
+import org.apache.tools.ant.taskdefs.Execute;
+import org.apache.tools.ant.taskdefs.LogStreamHandler;
+import org.apache.tools.ant.taskdefs.ExecuteStreamHandler;
 import org.apache.tools.ant.types.DirSet;
 import org.apache.tools.ant.types.EnumeratedAttribute;
 import org.apache.tools.ant.types.resources.FileResource;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.*;
 import java.net.URLClassLoader;
 import java.net.URL;
@@ -30,10 +37,14 @@ import java.lang.reflect.Method;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Constructor;
 
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.logging.Logger;
+
 public class GenerateTask extends org.apache.tools.ant.Task {
   private File myMpsHome;
   private final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
   private boolean myUsePropertiesAsMacro = false;
+  private boolean myFork = false;
 
   public void setMpsHome(File mpsHome) {
     myMpsHome = mpsHome;
@@ -49,6 +60,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
 
   public void setLogLevel(LogLevelAttribute logLevel) {
     myWhatToGenerate.updateLogLevel(logLevel.getLevel());
+  }
+
+  public void setFork(boolean fork) {
+    myFork = fork;
   }
 
   public void addConfiguredModels(DirSet modelsInner) {
@@ -112,27 +127,14 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
       if (!path.exists() || !path.isDirectory()) {
-        throw new BuildException(myMpsHome + " is invalid MPS home path.");
+        throw new BuildException(myMpsHome + " myInputStream invalid MPS home path.");
       }
 
       gatherAllClassesAndJarsUnder(path, classPaths);
     }
-
-    List<URL> classPathUrls = new ArrayList<URL>();
-    for (File path : classPaths) {
-      try {
-        classPathUrls.add(new URL("file://" + path + (path.isDirectory() ? "/" : "")));
-      } catch (MalformedURLException e) {
-        throw new BuildException(e);
-      }
-    }
     File mpsClasses = new File(myMpsHome + File.separator + "classes");
     if (mpsClasses.exists()) {
-      try {
-        classPathUrls.add(new URL("file://" + mpsClasses.getAbsolutePath() + "/"));
-      } catch (MalformedURLException e) {
-        throw new BuildException(e);
-      }
+      classPaths.add(mpsClasses);
     }
 
     if (myUsePropertiesAsMacro) {
@@ -143,30 +145,118 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       }
     }
 
-    URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
-    try {
+    if (myFork) {
+      String currentClassPathString = System.getProperty("java.class.path");
 
-      Class<?> whatToGenerateClass = classLoader.loadClass(WhatToGenerate.class.getCanonicalName());
-      Object whatToGenerate = whatToGenerateClass.newInstance();
-      myWhatToGenerate.cloneTo(whatToGenerate);
+      List<String> commandLine = new ArrayList<String>();
+      commandLine.add("java");
+      commandLine.add("-Xss1024k");
+      commandLine.add("-Xmx512m");
+      commandLine.add("-XX:MaxPermSize=92m");
+      StringBuffer sb = new StringBuffer();
+      String pathSeparator = System.getProperty("path.separator");
+      for (File cp : classPaths) {
+        sb.append(pathSeparator);
+        sb.append(cp.getAbsolutePath());
+      }
+      commandLine.add("-classpath");
+      commandLine.add(currentClassPathString + sb.toString());
+      commandLine.add(Generator.class.getCanonicalName());
+      commandLine.add(myWhatToGenerate.toString());
 
-      Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
-      Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
-      Object generator = constructor.newInstance(whatToGenerate, this);
+      Execute exe = new Execute(new ExecuteStreamHandler() {
+        private Thread myOutputReadingThread;
+        private Thread myErrorReadingThread;
 
-      Method method = generatorClass.getMethod("generate");
-      method.invoke(generator);
+        public void setProcessInputStream(OutputStream os) throws IOException {
+        }
 
-    } catch (ClassNotFoundException e) {
-      throw new BuildException(e);
-    } catch (NoSuchMethodException e) {
-      throw new BuildException(e);
-    } catch (InvocationTargetException e) {
-      throw new BuildException(e.getTargetException());
-    } catch (IllegalAccessException e) {
-      throw new BuildException(e);
-    } catch (InstantiationException e) {
-      throw new BuildException(e);
+        public void setProcessErrorStream(final InputStream is) throws IOException {
+          myErrorReadingThread = new Thread(new Runnable() {
+            public void run() {
+              Scanner s = new Scanner(is);
+              while (s.hasNextLine()) {
+                log(s.nextLine(), Project.MSG_ERR);
+              }
+            }
+          });
+        }
+
+        public void setProcessOutputStream(final InputStream is) throws IOException {
+          myOutputReadingThread = new Thread(new Runnable() {
+            public void run() {
+              Scanner s = new Scanner(is);
+              while (s.hasNextLine()) {
+                log(s.nextLine());
+              }
+            }
+          });
+        }
+
+        public void start() throws IOException {
+          myOutputReadingThread.start();
+          myErrorReadingThread.start();
+        }
+
+        public void stop() {
+          try {
+            myOutputReadingThread.join();
+          } catch (InterruptedException e) {
+            // ignore
+          }
+          try {
+            myErrorReadingThread.join();
+          } catch (InterruptedException e) {
+            // ignore
+          }
+        }
+      });
+      exe.setAntRun(this.getProject());
+      exe.setWorkingDirectory(this.getProject().getBaseDir());
+      exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
+      try {
+        int i = exe.execute();
+        if (i != 0) {
+          throw new BuildException("Process exited with code " + i + ".");
+        }
+      } catch (IOException e) {
+        log(e, Project.MSG_ERR);
+      }
+    } else {
+      List<URL> classPathUrls = new ArrayList<URL>();
+      for (File path : classPaths) {
+        try {
+          classPathUrls.add(new URL("file://" + path + (path.isDirectory() ? "/" : "")));
+        } catch (MalformedURLException e) {
+          throw new BuildException(e);
+        }
+      }
+
+      URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
+      try {
+
+        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToGenerate.class.getCanonicalName());
+        Object whatToGenerate = whatToGenerateClass.newInstance();
+        myWhatToGenerate.cloneTo(whatToGenerate);
+
+        Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
+        Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
+        Object generator = constructor.newInstance(whatToGenerate, this);
+
+        Method method = generatorClass.getMethod("generate");
+        method.invoke(generator);
+
+      } catch (ClassNotFoundException e) {
+        throw new BuildException(e.getMessage() + "\n" + "Used class path: " + classPathUrls.toString());
+      } catch (NoSuchMethodException e) {
+        throw new BuildException(e);
+      } catch (InvocationTargetException e) {
+        throw new BuildException(e.getTargetException());
+      } catch (IllegalAccessException e) {
+        throw new BuildException(e);
+      } catch (InstantiationException e) {
+        throw new BuildException(e);
+      }
     }
   }
 
@@ -224,6 +314,27 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     public int getLevel() {
       return LogLevel.values()[myLevels.indexOf(getValue())].getLevel();
     }
+  }
+
+  public abstract static class AbstractOutputReader extends Thread {
+
+    private InputStream myInputStream;
+
+    public AbstractOutputReader(InputStream inputStream) {
+      this.myInputStream = inputStream;
+    }
+
+    public void run() {
+      Scanner s = new Scanner(this.myInputStream);
+      try {
+        while (!(this.isInterrupted()) && s.hasNextLine()) {
+          this.addMessage(s.nextLine());
+        }
+      } catch (Exception e) {
+      }
+    }
+
+    protected abstract void addMessage(String message);
   }
 
 }

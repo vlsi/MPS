@@ -32,6 +32,13 @@ public class WhatToGenerate {
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
   private int myLogLevel = org.apache.tools.ant.Project.MSG_INFO;
+  private static final String MODEL_DIR = "MODEL_DIR";
+  private static final String MODULE_DIR = "MODULE_DIR";
+  private static final String MPS_PROJECT = "MPS_PROJECT";
+  private static final String MPS_LIBRARY = "MPS_LIBRARY";
+  private static final String MPS_MACRO = "MPS_MACRO";
+  private static final String FAIL_ON_ERROR = "FAIL_ON_ERROR";
+  private static final String LOG_LEVEL = "LOG_LEVEL";
 
   public void addModuleDirectory(File dir) {
     assert dir.exists() && dir.isDirectory();
@@ -138,10 +145,79 @@ public class WhatToGenerate {
   @Override
   public String toString() {
     final StringBuffer sb = new StringBuffer();
-    sb.append("WhatToGenerate");
-    sb.append("{myModelDirectories=").append(myModelDirectories);
-    sb.append(", myMPSProjects=").append(myMPSProjects);
-    sb.append('}');
+    for (File f : myModelDirectories) {
+      sb.append(MODEL_DIR);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
+    for (File f : myModuleDirectories) {
+      sb.append(MODULE_DIR);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
+    for (File f : myMPSProjects) {
+      sb.append(MPS_PROJECT);
+      sb.append("=");
+      sb.append(f.getAbsolutePath());
+      sb.append(" ");
+    }
+    for (String libraryName : myLibraries.keySet()) {
+      sb.append(MPS_LIBRARY);
+      sb.append("=");
+      sb.append("[");
+      sb.append(libraryName);
+      sb.append("]");
+      sb.append(myLibraries.get(libraryName).getAbsolutePath());
+      sb.append(" ");
+    }
+    for (String macroName : myMacro.keySet()) {
+      sb.append(MPS_MACRO);
+      sb.append("=");
+      sb.append("[");
+      sb.append(macroName);
+      sb.append("]");
+      sb.append(myMacro.get(macroName));
+      sb.append(" ");
+    }
+    sb.append(FAIL_ON_ERROR);
+    sb.append("=");
+    sb.append(myFailOnError);
+    sb.append(" ");
+
+    sb.append(LOG_LEVEL);
+    sb.append("=");
+    sb.append(myLogLevel);
+
     return sb.toString();
+  }
+
+  public static WhatToGenerate fromCommandLine(String[] args) {
+    WhatToGenerate whatToGenerate = new WhatToGenerate();
+    for (String arg : args) {
+      String[] argsplit = arg.split("\\s+");
+      for (String s : argsplit) {
+        String[] propertyValuePair = s.split("=");
+        if (propertyValuePair[0].equals(MODEL_DIR)){
+          whatToGenerate.addModelDirectory(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MODULE_DIR)){
+          whatToGenerate.addModuleDirectory(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(MPS_LIBRARY)){
+          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
+          whatToGenerate.addLibrary(nameValuePair[0], new File(nameValuePair[1]));
+        } else if (propertyValuePair[0].equals(MPS_MACRO)){
+          String[] nameValuePair = propertyValuePair[1].split("\\[|\\]");
+          whatToGenerate.addMacro(nameValuePair[0], nameValuePair[1]);
+        } else if (propertyValuePair[0].equals(MPS_PROJECT)){
+          whatToGenerate.addProjectFile(new File(propertyValuePair[1]));
+        } else if (propertyValuePair[0].equals(FAIL_ON_ERROR)){
+          whatToGenerate.myFailOnError = Boolean.parseBoolean(propertyValuePair[1]);
+        } else if (propertyValuePair[0].equals(LOG_LEVEL)){
+          whatToGenerate.myLogLevel = Integer.parseInt(propertyValuePair[1]);          
+        }
+      }
+    }
+    return whatToGenerate;
   }
 }
