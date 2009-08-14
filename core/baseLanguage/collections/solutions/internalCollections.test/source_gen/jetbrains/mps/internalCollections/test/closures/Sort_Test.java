@@ -107,4 +107,28 @@ public class Sort_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
   }
 
+  @Test()
+  public void test_alsoSort() throws Exception {
+    List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "cd", "xy", "ABC", "abcd", "X", "Y", "XYZ");
+    Iterable<String> l1 = ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true);
+    Iterable<String> l2 = ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it.length();
+      }
+    }, false).alsoSort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true);
+    this.assertIterableEquals(Arrays.asList("ABC", "X", "XYZ", "Y", "a", "abcd", "b", "cd", "xy"), l1);
+    this.assertIterableEquals(Arrays.asList("abcd", "ABC", "XYZ", "cd", "xy", "X", "Y", "a", "b"), l2);
+  }
+
 }

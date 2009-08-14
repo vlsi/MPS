@@ -144,6 +144,10 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
         return new SortingSequence<T> (this, new SelectComparator<T> (selector), ascending);
     }
     
+    public ISequence<T> alsoSort(ISelector<T, Comparable<?>> selector, boolean ascending) {
+        return sort (selector, ascending);
+    }
+    
     public ISequence<T> sort(Comparator<T> comparator, boolean ascending) {
         return new SortingSequence<T> (this, comparator, ascending);
     }

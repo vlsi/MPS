@@ -22,6 +22,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ISequence;
+import jetbrains.mps.internal.collections.runtime.SelectComparator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 
@@ -32,21 +35,36 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U>{
 
     private final Sequence<U> input;
     private final Comparator<U> comparator;
-    private final boolean ascending;
 
     public SortingSequence (Sequence<U> input, Comparator<U> comparator, boolean ascending) {
         if (input == null || comparator == null) {
             throw new NullPointerException ();
         }
         this.input = input;
-        this.comparator = comparator;
-        this.ascending = ascending;
+        this.comparator = ascending ? comparator : new InversedComparator<U> (comparator);
     }
         
+    public SortingSequence (Sequence<U> input, Comparator<U> comparator) {
+        if (input == null || comparator == null) {
+            throw new NullPointerException ();
+        }
+        this.input = input;
+        this.comparator = comparator;
+    }
+
     public Iterator<U> iterator() {
         List<U> sortedInput = inputSortedWithSelector ();
-        return ascending ? new UnmodifiableIterator<U> (sortedInput.listIterator()) : 
-                            new UnmodifiableReverseIterator<U> (sortedInput.listIterator(sortedInput.size()));
+        return new UnmodifiableIterator<U> (sortedInput.listIterator());
+    }
+    
+    @Override
+    public ISequence<U> alsoSort(ISelector<U, Comparable<?>> selector, boolean ascending) {
+        SelectComparator<U> selectComparator = new SelectComparator<U> (selector);
+        return new SortingSequence<U> (
+                input, 
+                new CompoundComparator<U> (
+                        comparator, 
+                        ascending ? selectComparator : new InversedComparator<U> (selectComparator)));
     }
     
     @SuppressWarnings("unchecked")
@@ -82,24 +100,32 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U>{
         }
     } 
 
-    private static class UnmodifiableReverseIterator<U> implements Iterator<U> {
-        
-        private final ListIterator<U> source;
-        
-        public UnmodifiableReverseIterator (ListIterator<U> source) {
-            this.source = source;
+    private static class InversedComparator<T> implements Comparator<T>  {
+
+        private final Comparator<T> primary;
+            
+        public InversedComparator(Comparator<T> primary) {
+            this.primary = primary;
         }
         
-        public boolean hasNext() {
-            return source.hasPrevious();
+        public int compare(T a, T b) {
+            return - primary.compare(a, b);
+        };
+    }
+    
+    private static class CompoundComparator<T> implements Comparator<T>  {
+
+        private final Comparator<T> secondary;
+        private final Comparator<T> primary;
+            
+        public CompoundComparator(Comparator<T> primary, Comparator<T> secondary) {
+            this.primary = primary;
+            this.secondary = secondary;
         }
         
-        public U next() {
-            return source.previous();
-        }
-        
-        public void remove() {
-            throw new UnsupportedOperationException ();
-        }
+        public int compare(T a, T b) {
+            int c = primary.compare(a, b);
+            return c == 0 ? secondary.compare(a, b) : c;
+        };
     }
 }

@@ -2809,5 +2809,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="599357942184015200">
+    <property name="package" value="sequence.closures" />
+    <property name="name" value="AlsoSortOperation" />
+    <link role="extends" targetNodeId="1205679737078" resolveInfo="SortOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="599357942184015203">
+      <property name="value" value="alsoSortBy" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="599357942184015204">
+      <property name="value" value="sort by secondary key" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 

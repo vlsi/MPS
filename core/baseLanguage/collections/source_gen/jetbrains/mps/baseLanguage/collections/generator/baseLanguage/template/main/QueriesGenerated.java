@@ -1423,6 +1423,14 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static SNode sourceNodeQuery_599357942184284946(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "closure", true);
+  }
+
+  public static SNode sourceNodeQuery_599357942184284954(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "ascending", true);
+  }
+
   public static SNode sourceNodeQuery_1848858642722978903(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "argument", true);
   }

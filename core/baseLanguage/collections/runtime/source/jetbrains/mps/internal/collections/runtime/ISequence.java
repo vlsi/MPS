@@ -39,6 +39,8 @@ public interface ISequence<T> extends Iterable<T>, IEnumerable<T> {
     <U> ISequence<U> select(ISelector<T, U> selector);
 
     ISequence<T> sort(ISelector<T, Comparable<?>> selector, boolean ascending);
+    
+    ISequence<T> alsoSort(ISelector<T, Comparable<?>> selector, boolean ascending);
 
     ISequence<T> sort(Comparator<T> comparator, boolean ascending);
 
