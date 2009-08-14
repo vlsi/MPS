@@ -15,7 +15,7 @@ public class CoreActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action", "jetbrains.mps.lang.core");
+      CoreActions_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.ShowNodeMessages_Action", "jetbrains.mps.lang.core");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

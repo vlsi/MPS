@@ -8119,18 +8119,14 @@
         <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1176476307967">
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1176476307968">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176476307969">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176476312589">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1176476321846">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995316931">
-                    <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1176476335006">
-                      <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176476326312" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1494389153257636963">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1494389153257636965">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1494389153257636964" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1494389153257636969">
+                    <node role="baseName" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1494389153257636971">
+                      <property name="value" value="_QueryFunction_JComponent_" />
                     </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995316932">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getId():java.lang.String" resolveInfo="getId" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176476314282">
-                    <property name="value" value="_QueryFunction_JComponent_" />
+                    <node role="contextNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1494389153257636972" />
                   </node>
                 </node>
               </node>
@@ -8261,18 +8257,14 @@
                 <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1176477077331">
                   <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1176477077332">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176477077333">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176477077334">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1176477077335">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1176477077336">
-                            <property name="value" value="_" />
-                          </node>
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208995328069">
-                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1176477077338">
-                              <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1176477077339" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1494389153257636934">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1494389153257636937">
+                          <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1494389153257636936" />
+                          <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1494389153257636941">
+                            <node role="baseName" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1494389153257636943">
+                              <property name="value" value="_" />
                             </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208995328070">
-                              <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getId():java.lang.String" resolveInfo="getId" />
-                            </node>
+                            <node role="contextNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1494389153257636949" />
                           </node>
                         </node>
                       </node>
@@ -8962,11 +8954,14 @@
         <node role="propertyMacro$property_attribute$name" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="1176886006192">
           <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="1176886006193">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176886006194">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1221055229266">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1221055230549">
-                  <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1221055229267" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1221055233990">
-                    <link role="baseMethodDeclaration" targetNodeId="62.1221482178305" resolveInfo="getQueryMethodName" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1494389153257636921">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1494389153257636924">
+                  <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1494389153257636923" />
+                  <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1494389153257636928">
+                    <node role="baseName" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1494389153257636930">
+                      <property name="value" value="_StyleParameter_QueryFunction_" />
+                    </node>
+                    <node role="contextNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1494389153257636932" />
                   </node>
                 </node>
               </node>
@@ -18521,18 +18516,14 @@
                   <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="996730828437274955">
                     <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="996730828437274956">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="996730828437274957">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="996730828437274958">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="996730828437274959">
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="996730828437274960">
-                              <property name="value" value="_" />
-                            </node>
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="996730828437274961">
-                              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="996730828437274962">
-                                <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="996730828437274963" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1494389153257636951">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1494389153257636955">
+                            <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1494389153257636954" />
+                            <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" id="1494389153257636959">
+                              <node role="baseName" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1494389153257636961">
+                                <property name="value" value="_" />
                               </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="996730828437274964">
-                                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getId():java.lang.String" resolveInfo="getId" />
-                              </node>
+                              <node role="contextNode" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1494389153257636962" />
                             </node>
                           </node>
                         </node>

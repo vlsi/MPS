@@ -395,7 +395,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createJComponent_4170_0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ToolDeclaration_Editor._QueryFunction_JComponent_7456779980561189744(node, editorContext), "_7456779980561189743");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ToolDeclaration_Editor._QueryFunction_JComponent_4170_0(node, editorContext), "_4170_0");
     editorCell.setCellId("JComponent_4170_0");
     return editorCell;
   }
@@ -552,7 +552,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_7456779980561189744(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_4170_0(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 

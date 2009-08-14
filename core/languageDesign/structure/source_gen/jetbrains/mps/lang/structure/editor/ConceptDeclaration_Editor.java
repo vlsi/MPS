@@ -585,7 +585,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createJComponent_0886_0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ConceptDeclaration_Editor._QueryFunction_JComponent_1176492331666(node, editorContext), "_1160492829178");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ConceptDeclaration_Editor._QueryFunction_JComponent_0886_0(node, editorContext), "_0886_0");
     editorCell.setCellId("JComponent_0886_0");
     return editorCell;
   }
@@ -677,7 +677,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return FileSystem.getFile(s).exists();
   }
 
-  private static JComponent _QueryFunction_JComponent_1176492331666(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_0886_0(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
 

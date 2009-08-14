@@ -12,7 +12,6 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
@@ -137,11 +136,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176476307968(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_QueryFunction_JComponent_" + _context.getNode().getId();
+    return _context.createUniqueName("_QueryFunction_JComponent_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1176477077332(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_" + _context.getNode().getId();
+    return _context.createUniqueName("_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1176796774215(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -180,7 +179,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176886006193(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return QueryFunction_StyleParameter_Behavior.call_getQueryMethodName_1221482178305(_context.getNode());
+    return _context.createUniqueName("_StyleParameter_QueryFunction_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1182981596975(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -621,7 +620,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_996730828437274956(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "_" + _context.getNode().getId();
+    return _context.createUniqueName("_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1767562947360483216(final IOperationContext operationContext, final PropertyMacroContext _context) {

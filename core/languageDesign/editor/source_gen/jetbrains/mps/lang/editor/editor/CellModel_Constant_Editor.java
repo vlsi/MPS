@@ -167,7 +167,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237912391((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -179,7 +179,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237968304((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -191,7 +191,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221237984986((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_2((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -203,7 +203,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
         public Integer calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221238018498((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_3((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -215,7 +215,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_SIZE, new AttributeCalculator <Integer>() {
 
         public Integer calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221240468805((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_5((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -227,7 +227,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1221238039415((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_4((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -239,7 +239,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Constant_Editor._StyleParameter_QueryFunction_1223482212351((cell == null ?
+          return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_6((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -320,31 +320,31 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237912391(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6752_0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237968304(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6752_1(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237984986(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6752_2(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  private static int _StyleParameter_QueryFunction_1221238018498(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_6752_3(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1221238039415(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_6752_4(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static int _StyleParameter_QueryFunction_1221240468805(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_6752_5(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1223482212351(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_6752_6(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 

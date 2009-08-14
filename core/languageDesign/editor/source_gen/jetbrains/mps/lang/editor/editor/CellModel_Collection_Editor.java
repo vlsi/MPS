@@ -176,7 +176,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237473996305((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -257,7 +257,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237474002631((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -280,7 +280,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237474002644((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_2((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -292,7 +292,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_Collection_Editor._StyleParameter_QueryFunction_1237474002651((cell == null ?
+          return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_3((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -473,19 +473,19 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return !(CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) && !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
 
-  private static Color _StyleParameter_QueryFunction_1237473996305(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_2102_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237474002631(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_2102_1(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237474002644(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_2102_2(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237474002651(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_2102_3(SNode node, EditorContext editorContext) {
     return CellModel_Collection_Behavior.call_isVerticalIndent_1237451001939(node);
   }
 

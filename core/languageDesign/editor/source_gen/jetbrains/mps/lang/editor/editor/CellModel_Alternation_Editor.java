@@ -69,7 +69,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396893965((cell == null ?
+          return CellModel_Alternation_Editor._StyleParameter_QueryFunction_4233_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -104,7 +104,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Alternation_Editor._StyleParameter_QueryFunction_1214396913660((cell == null ?
+          return CellModel_Alternation_Editor._StyleParameter_QueryFunction_4233_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -425,11 +425,11 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
-  private static Color _StyleParameter_QueryFunction_1214396893965(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_4233_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1214396913660(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_4233_1(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

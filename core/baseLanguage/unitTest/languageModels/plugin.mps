@@ -2536,6 +2536,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208284838942">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1208284890711">
           <link role="constructorDeclaration" targetNodeId="11.~MPSTreeNode.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolveInfo="MPSTreeNode" />
+          <link role="baseMethodDeclaration" targetNodeId="11.~MPSTreeNode.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolveInfo="MPSTreeNode" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208284955637">
             <link role="variableDeclaration" targetNodeId="1208284925808" resolveInfo="operationContext" />
           </node>
@@ -3367,6 +3368,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1208285478264">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1208285478265">
           <link role="constructorDeclaration" targetNodeId="11.~MPSTreeNode.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolveInfo="MPSTreeNode" />
+          <link role="baseMethodDeclaration" targetNodeId="11.~MPSTreeNode.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext)" resolveInfo="MPSTreeNode" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1208285478266">
             <link role="variableDeclaration" targetNodeId="1208285478277" resolveInfo="operationContext" />
           </node>

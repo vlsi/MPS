@@ -5,6 +5,7 @@ package jetbrains.mps.samples.complex.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -13,8 +14,8 @@ public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime impl
   public Complex_is_Numeric_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode complexType) {
-    return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "descriptor", false);
+  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext) {
+    return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(typeCheckingContext), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {

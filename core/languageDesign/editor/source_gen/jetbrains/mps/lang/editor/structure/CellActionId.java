@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum CellActionId {
   RIGHT_TRANSFORM("RIGHT_TRANSFORM", "right_transform_action_id"),

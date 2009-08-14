@@ -340,7 +340,7 @@ public class ProjectTester {
     public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
       myNodeExtensionMap.clear();
       myOutputModelToPath.clear();
-      return new ArrayList<CompilationResult>();//super.compile(progress);
+      return super.compile(progress);
     }
 
     Collection<SModel> getOutputModels() {

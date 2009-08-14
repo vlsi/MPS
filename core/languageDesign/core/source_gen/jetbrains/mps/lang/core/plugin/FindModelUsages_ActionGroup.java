@@ -15,7 +15,7 @@ public class FindModelUsages_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core");
+      FindModelUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindModelUsages_Action", "jetbrains.mps.lang.core");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

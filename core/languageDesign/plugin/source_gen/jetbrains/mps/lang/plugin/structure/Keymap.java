@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.structure;
 
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.LinkedList;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Keymap {
   Mac_OS_X("Mac OS X", "Mac OS X"),

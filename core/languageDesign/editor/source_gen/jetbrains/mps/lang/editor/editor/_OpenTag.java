@@ -53,7 +53,7 @@ public class _OpenTag extends AbstractCellProvider {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return _OpenTag._StyleParameter_QueryFunction_1226320982079((cell == null ?
+          return _OpenTag._StyleParameter_QueryFunction_4575_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -68,7 +68,7 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1226320982079(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_4575_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

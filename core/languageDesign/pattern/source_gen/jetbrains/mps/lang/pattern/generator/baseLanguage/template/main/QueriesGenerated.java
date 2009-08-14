@@ -34,7 +34,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "nodeToMatch_" + _context.getNode().getId();
+    return _context.createUniqueName("nodeToMatch_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377077(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -72,7 +72,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377684(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "childVar_" + _context.getNode().getId();
+    return _context.createUniqueName("childVar_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -84,7 +84,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601049(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "parameter_" + _context.getNode().getId();
+    return _context.createUniqueName("parameter_", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1224175601140(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -594,7 +594,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createJComponent_0824_0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ActionDeclaration_Editor._QueryFunction_JComponent_7456779980561189466(node, editorContext), "_7456779980561189465");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, ActionDeclaration_Editor._QueryFunction_JComponent_0824_0(node, editorContext), "_0824_0");
     editorCell.setCellId("JComponent_0824_0");
     return editorCell;
   }
@@ -801,7 +801,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_7456779980561189466(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_0824_0(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "iconPath", editorContext);
   }
 

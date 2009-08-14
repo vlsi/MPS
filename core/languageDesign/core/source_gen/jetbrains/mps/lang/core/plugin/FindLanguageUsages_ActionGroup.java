@@ -15,8 +15,8 @@ public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action", "jetbrains.mps.lang.core");
-      this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action", "jetbrains.mps.lang.core");
+      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageUsages_Action", "jetbrains.mps.lang.core");
+      FindLanguageUsages_ActionGroup.this.addAction("jetbrains.mps.lang.core.plugin.FindLanguageConceptsUsages_Action", "jetbrains.mps.lang.core");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

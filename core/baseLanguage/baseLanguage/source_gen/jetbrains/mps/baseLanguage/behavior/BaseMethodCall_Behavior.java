@@ -18,12 +18,12 @@ public class BaseMethodCall_Behavior {
   }
 
   public static Object[] call_getActualArguments_1213877339153(SNode thisNode, final IModule module) {
-    return ListSequence.fromIterable(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector <SNode, Object>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector <SNode, Object>() {
 
       public Object select(SNode it) {
         return Expression_Behavior.call_eval_1213877519769(it, module);
       }
-    })).toGenericArray(Object.class);
+    }).toGenericArray(Object.class);
   }
 
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {

@@ -77,7 +77,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return IfStatement_Editor._StyleParameter_QueryFunction_1237575954793((cell == null ?
+          return IfStatement_Editor._StyleParameter_QueryFunction_1754_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -89,7 +89,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return IfStatement_Editor._StyleParameter_QueryFunction_1237575954801((cell == null ?
+          return IfStatement_Editor._StyleParameter_QueryFunction_1754_2((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -150,7 +150,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return IfStatement_Editor._StyleParameter_QueryFunction_1237573132288((cell == null ?
+          return IfStatement_Editor._StyleParameter_QueryFunction_1754_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -260,15 +260,15 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237573132288(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1754_0(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237575954793(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1754_1(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 
-  private static boolean _StyleParameter_QueryFunction_1237575954801(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1754_2(SNode node, EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node));
   }
 

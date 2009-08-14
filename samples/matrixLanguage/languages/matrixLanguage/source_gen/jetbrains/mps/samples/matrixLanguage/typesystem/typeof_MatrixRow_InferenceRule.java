@@ -20,9 +20,9 @@ public class typeof_MatrixRow_InferenceRule extends AbstractInferenceRule_Runtim
     SNode type = SLinkOperations.getTarget(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", false, false), "scalarType", true);
     for(SNode arg : SLinkOperations.getTargets(nodeToCheck, "items", true)) {
       {
-        SNode _nodeToCheck_1029348928467 = nodeToCheck;
+        SNode _nodeToCheck_1029348928467 = arg;
         BaseIntentionProvider intentionProvider = null;
-        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(arg, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215189863261", true), (SNode)type, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215189863259", false, 0, intentionProvider);
+        typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215189863261", true), (SNode)type, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1215189863259", false, 0, intentionProvider);
       }
     }
   }

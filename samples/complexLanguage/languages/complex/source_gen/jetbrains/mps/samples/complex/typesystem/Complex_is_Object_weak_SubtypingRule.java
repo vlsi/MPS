@@ -5,6 +5,7 @@ package jetbrains.mps.samples.complex.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -12,8 +13,8 @@ public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime 
   public Complex_is_Object_weak_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode complexType) {
-    return new _Quotations.QuotationClass_5().createNode();
+  public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_5().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

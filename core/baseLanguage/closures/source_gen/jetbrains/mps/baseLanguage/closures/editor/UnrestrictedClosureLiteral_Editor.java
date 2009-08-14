@@ -69,7 +69,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1237540662346((cell == null ?
+          return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1012_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -128,7 +128,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   }
 
 
-  private static boolean _StyleParameter_QueryFunction_1237540662346(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1012_0(SNode node, EditorContext editorContext) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 

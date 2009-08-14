@@ -102,7 +102,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return AbstractEquationStatement_Editor._StyleParameter_QueryFunction_1214399678504((cell == null ?
+          return AbstractEquationStatement_Editor._StyleParameter_QueryFunction_7653_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -125,7 +125,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1214399678504(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_7653_0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else

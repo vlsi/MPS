@@ -53,7 +53,7 @@ public class _CloseTag extends AbstractCellProvider {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return _CloseTag._StyleParameter_QueryFunction_1226320829979((cell == null ?
+          return _CloseTag._StyleParameter_QueryFunction_6449_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -68,7 +68,7 @@ public class _CloseTag extends AbstractCellProvider {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1226320829979(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6449_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 

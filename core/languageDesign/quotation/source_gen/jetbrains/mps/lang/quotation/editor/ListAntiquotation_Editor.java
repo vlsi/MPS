@@ -68,7 +68,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399677894((cell == null ?
+          return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -93,7 +93,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return ListAntiquotation_Editor._StyleParameter_QueryFunction_1214399678073((cell == null ?
+          return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -220,11 +220,11 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1214399677894(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_7120_0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_1214399678073(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_7120_1(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 

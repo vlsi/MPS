@@ -141,7 +141,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_1221238429633((cell == null ?
+          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -153,7 +153,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_1221238429640((cell == null ?
+          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -165,7 +165,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_1221238429647((cell == null ?
+          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_2((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -177,7 +177,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
         public Integer calculate(EditorCell cell) {
-          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_1221238429654((cell == null ?
+          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_3((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -189,7 +189,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_1221238429661((cell == null ?
+          return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_4((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -265,23 +265,23 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1221238429633(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_0649_0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221238429640(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_0649_1(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221238429647(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_0649_2(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  private static int _StyleParameter_QueryFunction_1221238429654(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_0649_3(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1221238429661(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_0649_4(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 

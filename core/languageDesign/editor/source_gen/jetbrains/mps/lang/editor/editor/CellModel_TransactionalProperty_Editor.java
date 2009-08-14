@@ -191,7 +191,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741110((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -203,7 +203,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741116((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_1((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -215,7 +215,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741123((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_2((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -227,7 +227,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741130((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_3((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -239,7 +239,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
 
         public Integer calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741137((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_4((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -251,7 +251,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1221237741151((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_5((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -263,7 +263,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
 
         public Boolean calculate(EditorCell cell) {
-          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_1223482371662((cell == null ?
+          return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_6((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -342,31 +342,31 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1221237741110(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_3190_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237741116(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_3190_1(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237741123(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_3190_2(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
   }
 
-  private static Color _StyleParameter_QueryFunction_1221237741130(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_3190_3(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
 
-  private static int _StyleParameter_QueryFunction_1221237741137(SNode node, EditorContext editorContext) {
+  private static int _StyleParameter_QueryFunction_3190_4(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1221237741151(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_3190_5(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_1223482371662(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_3190_6(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
 

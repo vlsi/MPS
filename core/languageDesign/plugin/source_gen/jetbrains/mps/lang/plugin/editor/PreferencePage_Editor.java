@@ -288,7 +288,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createJComponent_6322_0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, PreferencePage_Editor._QueryFunction_JComponent_7456779980561189963(node, editorContext), "_7456779980561189962");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, PreferencePage_Editor._QueryFunction_JComponent_6322_0(node, editorContext), "_6322_0");
     editorCell.setCellId("JComponent_6322_0");
     return editorCell;
   }
@@ -419,7 +419,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static JComponent _QueryFunction_JComponent_7456779980561189963(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_6322_0(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
 

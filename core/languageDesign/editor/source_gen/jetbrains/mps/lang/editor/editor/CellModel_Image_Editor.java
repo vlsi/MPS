@@ -170,7 +170,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createJComponent_5161_0(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CellModel_Image_Editor._QueryFunction_JComponent_1214480452884(node, editorContext), "_1214480452883");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CellModel_Image_Editor._QueryFunction_JComponent_5161_0(node, editorContext), "_5161_0");
     editorCell.setCellId("JComponent_5161_0");
     {
       Style style = editorCell.getStyle();
@@ -242,7 +242,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   }
 
 
-  private static JComponent _QueryFunction_JComponent_1214480452884(SNode node, EditorContext editorContext) {
+  private static JComponent _QueryFunction_JComponent_5161_0(SNode node, EditorContext editorContext) {
     return new SelectImageFileButton(node);
   }
 

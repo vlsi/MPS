@@ -58,7 +58,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return TypeOfExpression_Editor._StyleParameter_QueryFunction_1214399678001((cell == null ?
+          return TypeOfExpression_Editor._StyleParameter_QueryFunction_6237_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -132,7 +132,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1214399678001(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6237_0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else

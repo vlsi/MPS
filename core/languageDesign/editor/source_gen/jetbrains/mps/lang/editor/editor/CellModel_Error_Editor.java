@@ -141,7 +141,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
 
         public Color calculate(EditorCell cell) {
-          return CellModel_Error_Editor._StyleParameter_QueryFunction_1214396913642((cell == null ?
+          return CellModel_Error_Editor._StyleParameter_QueryFunction_6148_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -189,7 +189,7 @@ public class CellModel_Error_Editor extends DefaultNodeEditor {
   }
 
 
-  private static Color _StyleParameter_QueryFunction_1214396913642(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6148_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 
