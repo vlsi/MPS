@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.BaseGenerationType;
 import jetbrains.mps.project.*;
@@ -185,7 +186,11 @@ public class Generator {
     collectFromModuleDirs(modelDescriptors);
 
     ArrayList<SModelDescriptor> modelDescriptorsList = new ArrayList<SModelDescriptor>();
-    modelDescriptorsList.addAll(modelDescriptors);
+    for (SModelDescriptor smodelDescriptor : modelDescriptors) {
+      if (!ModelGenerationStatusManager.isDoNotGenerate(smodelDescriptor)){
+        modelDescriptorsList.add(smodelDescriptor);
+      }
+    }
     return modelDescriptorsList;
   }
 
