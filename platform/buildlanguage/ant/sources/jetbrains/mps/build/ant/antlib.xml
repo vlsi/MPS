@@ -19,4 +19,5 @@
     <typedef name="modules" classname="org.apache.tools.ant.types.DirSet"/>
     <typedef name="project" classname="jetbrains.mps.build.ant.ProjectDataType"/>
     <typedef name="library" classname="jetbrains.mps.build.ant.LibraryDataType"/>
+    <typedef name="jvmarg" classname="jetbrains.mps.build.ant.JvmArg"/>
 </antlib>
