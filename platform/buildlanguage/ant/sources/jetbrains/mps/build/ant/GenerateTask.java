@@ -111,10 +111,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
   public void execute() throws BuildException {
     if (myMpsHome == null) {
       String mpsHomePath = getProject().getProperty("mps.home");
-      if (mpsHomePath == null || !new File(mpsHomePath).exists()) {
+      if (mpsHomePath == null || !getProject().resolveFile(mpsHomePath).exists()) {
         throw new BuildException("Path to mps home expected. Specify mps.home property or mpshome attribute.");
       }
-      myMpsHome = new File(mpsHomePath);
+      myMpsHome = getProject().resolveFile(mpsHomePath);
     }
 
     File[] pathsToLook;
