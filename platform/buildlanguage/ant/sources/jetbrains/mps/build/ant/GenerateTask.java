@@ -18,6 +18,7 @@ package jetbrains.mps.build.ant;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.Project;
+import org.apache.tools.ant.util.JavaEnvUtils;
 import org.apache.tools.ant.taskdefs.Execute;
 import org.apache.tools.ant.taskdefs.LogStreamHandler;
 import org.apache.tools.ant.taskdefs.ExecuteStreamHandler;
@@ -45,6 +46,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
   private final WhatToGenerate myWhatToGenerate = new WhatToGenerate();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = false;
+  private final List<String> myJvmArgs = new ArrayList<String>();
 
   public void setMpsHome(File mpsHome) {
     myMpsHome = mpsHome;
@@ -98,6 +100,13 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     myUsePropertiesAsMacro = usePropertiesAsMacro;
   }
 
+  public void addConfiguredJvmArg(JvmArg jvmArg) {
+    if (!myFork) {
+      throw new BuildException("Nested jvmarg is only allowed in fork mode.");
+    }
+    myJvmArgs.add(jvmArg.getValue());
+  }
+
   @Override
   public void execute() throws BuildException {
     if (myMpsHome == null) {
@@ -149,10 +158,14 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       String currentClassPathString = System.getProperty("java.class.path");
 
       List<String> commandLine = new ArrayList<String>();
-      commandLine.add("java");
-      commandLine.add("-Xss1024k");
-      commandLine.add("-Xmx512m");
-      commandLine.add("-XX:MaxPermSize=92m");
+      commandLine.add(JavaEnvUtils.getJreExecutable("java"));
+      if (myJvmArgs.isEmpty()) {
+        commandLine.add("-Xss1024k");
+        commandLine.add("-Xmx512m");
+        commandLine.add("-XX:MaxPermSize=92m");
+      } else {
+        commandLine.addAll(myJvmArgs);
+      }
       StringBuffer sb = new StringBuffer();
       String pathSeparator = System.getProperty("path.separator");
       for (File cp : classPaths) {
