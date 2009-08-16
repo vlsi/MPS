@@ -17,59 +17,49 @@
     <property name="module.home" value="${ant.file}/../../../../../.."/>
     <property name="test.projects.home" value="${module.home}/testProjects"/>
 
-    <path id="tasks.class.path">
-        <pathelement path="${module.home}/classes"/>
-    </path>
-
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
-             classpathref="tasks.class.path"/>
+             classpath="${module.home}/classes"/>
 
     <target name="testBuildException">
-        <generate/>
+        <mps.generate/>
     </target>
 
     <target name="testComplexLanguageProject">
-        <generate mpshome="${module.home}/../../.." loglevel="info">
+        <mps.generate mpshome="${module.home}/../../.." loglevel="info">
             <project file="${module.home}/../../../samples/complexLanguage/Complex.mpr"/>
-        </generate>
+        </mps.generate>
     </target>
 
     <target name="testComplexLanguageModels">
-        <generate mpshome="${module.home}/../../..">
+        <mps.generate mpshome="${module.home}/../../..">
             <models dir="${module.home}/../../../samples/complexLanguage"/>
-        </generate>
+        </mps.generate>
     </target>
 
     <target name="testComplexLanguageModules">
-        <generate mpshome="${module.home}/../../..">
+        <mps.generate mpshome="${module.home}/../../..">
             <modules dir="${module.home}/../../../samples/complexLanguage"/>
-        </generate>
+        </mps.generate>
     </target>
 
     <target name="testFailOnGenerationError">
         <unzip src="${test.projects.home}/failedProject.zip" dest="${test.projects.home}"/>
-        <generate mpshome="${module.home}/../../.." failonerror="true" loglevel="info">
+        <mps.generate mpshome="${module.home}/../../.." failonerror="true" loglevel="info">
             <project file="${test.projects.home}/failedProject/FailedProject.mpr"/>
-        </generate>
+        </mps.generate>
         <delete dir="${test.projects.home}/failedProject"/>
     </target>
 
     <target name="testSuccess">
         <unzip src="${test.projects.home}/successfulProject.zip" dest="${test.projects.home}"/>
-        <generate mpshome="${module.home}/../../.." failonerror="true" loglevel="debug">
+        <mps.generate mpshome="${module.home}/../../.." failonerror="true" loglevel="debug">
             <project file="${test.projects.home}/SuccessfulProject/SuccessfulProject.mpr"/>
-        </generate>
+        </mps.generate>
         <delete dir="${test.projects.home}/SuccessfulProject"/>
     </target>
 
-    <target name="testModelsWithBuildException">
-        <generate>
-            <models/>
-        </generate>
-    </target>
-
     <target name="testSamplesProjects">
-        <generate mpshome="${module.home}/../../.." loglevel="info">
+        <mps.generate mpshome="${module.home}/../../.." loglevel="info">
             <project file="${module.home}/../../../samples/agreement/agreement.mpr"/>
             <project file="${module.home}/../../../samples/calculator/calculator.mpr"/>
             <project file="${module.home}/../../../samples/calculator-tutorial/calculator-tutorial.mpr"/>
@@ -81,16 +71,16 @@
             <project file="${module.home}/../../../samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
             <project file="${module.home}/../../../samples/sampleXML/sampleXML.mpr"/>
             <project file="${module.home}/../../../samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
-        </generate>
+        </mps.generate>
     </target>
 
     <target name="testLibraries">
         <property name="mps.webr-dnq" value="${module.home}/../../../../webr-dnq"/>
         <property name="charisma" value="${module.home}/../../../../charisma"/>
-        <generate mpshome="${module.home}/../../.." usepropertiesasmacro="true" failonerror="true">
+        <mps.generate mpshome="${module.home}/../../.." usepropertiesasmacro="true" failonerror="true">
             <library name="webr-dnq" dir="${mps.webr-dnq}"/>
             <modules dir="${module.home}/../../../../charisma"/>
-        </generate>
+        </mps.generate>
     </target>
 
 </project>

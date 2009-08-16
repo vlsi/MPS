@@ -347,7 +347,7 @@ public class Generator {
 
     EmptyProgressIndicator emptyProgressIndicator = new EmptyProgressIndicator();
     for (Set<IModule> modulesSet : modulesOrder) {
-      info("Generating scc " + modulesSet);
+      startModulesGeneration(modulesSet);
       List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : modulesSet) {
         ModuleContext moduleContext = new ModuleContext(module, project);
@@ -362,7 +362,16 @@ public class Generator {
         emptyProgressIndicator,
         myMessageHandler,
         false);
+      finishModulesGeneration(modulesSet);
     }
+  }
+
+  protected void finishModulesGeneration(Set<IModule> modulesSet) {
+    info("Finished generating " + modulesSet);
+  }
+
+  protected void startModulesGeneration(Set<IModule> modulesSet) {
+    info("Start generating " + modulesSet);
   }
 
   private void log(String text, int level) {
@@ -489,7 +498,7 @@ public class Generator {
     }
   }
 
-  private static interface AntLogger {
+  protected static interface AntLogger {
 
     void log(String text, int level);
   }

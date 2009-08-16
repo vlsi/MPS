@@ -174,7 +174,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       }
       commandLine.add("-classpath");
       commandLine.add(currentClassPathString + sb.toString());
-      commandLine.add(Generator.class.getCanonicalName());
+      commandLine.add(getGeneratorClass().getCanonicalName());
       commandLine.add(myWhatToGenerate.toString());
 
       Execute exe = new Execute(new ExecuteStreamHandler() {
@@ -252,7 +252,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         Object whatToGenerate = whatToGenerateClass.newInstance();
         myWhatToGenerate.cloneTo(whatToGenerate);
 
-        Class<?> generatorClass = classLoader.loadClass(Generator.class.getCanonicalName());
+        Class<?> generatorClass = classLoader.loadClass(getGeneratorClass().getCanonicalName());
         Constructor<?> constructor = generatorClass.getConstructor(whatToGenerateClass, ProjectComponent.class);
         Object generator = constructor.newInstance(whatToGenerate, this);
 
@@ -271,6 +271,10 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         throw new BuildException(e);
       }
     }
+  }
+
+  protected Class<? extends Generator> getGeneratorClass() {
+    return Generator.class;
   }
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
