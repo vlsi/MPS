@@ -13,17 +13,11 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new StringLiteral_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MultiLineString_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TargetReferencePropertyValueExpression_fullName_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TargetReference_targetDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_declaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new PathReference_call_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new Reference_declaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new GenericAttribute_attributeDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyReference_propertyDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new GenericCall_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

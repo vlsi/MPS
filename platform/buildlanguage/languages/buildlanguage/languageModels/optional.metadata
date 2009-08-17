@@ -4,5 +4,9 @@
     <key>doNotGenerate</key>
     <value>true</value>
   </entry>
+  <entry>
+    <key>version</key>
+    <value>0</value>
+  </entry>
 </metadata>
 

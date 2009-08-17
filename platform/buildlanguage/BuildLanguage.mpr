@@ -29,18 +29,19 @@
       <languagePath path="${project}/languages/custommpsInternal/custommpsInternal.mpl" folder="customMPS" />
       <languagePath path="${project}/languages/dependency/dependency.mpl" folder="packaging" />
       <languagePath path="${project}/languages/distrib/distrib.mpl" folder="packaging" />
+      <languagePath path="${project}/languages/generictasks/generictasks.mpl" />
       <languagePath path="${project}/languages/packaging/packaging.mpl" folder="packaging" />
       <languagePath path="${project}/languages/property/property.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="false" name="generate buildLanguage" moduleRef="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
-      <genConfModule runnable="false" name="generate custommps" moduleRef="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
-      <genConfModule runnable="false" name="generate dependency language" moduleRef="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
-      <genConfModule runnable="false" name="generate distrib" moduleRef="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
-      <genConfModule runnable="false" name="generate mpsautobuild" moduleRef="jetbrains.mps.build.mpsautobuild" />
-      <genConfModule runnable="false" name="generate packaging language" moduleRef="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
-      <genConfModule runnable="false" name="generate property language" moduleRef="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)" />
+      <genConfModule name="generate buildLanguage" moduleRef="0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)" />
+      <genConfModule name="generate custommps" moduleRef="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
+      <genConfModule name="generate dependency language" moduleRef="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
+      <genConfModule name="generate distrib" moduleRef="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
+      <genConfModule name="generate mpsautobuild" moduleRef="jetbrains.mps.build.mpsautobuild" />
+      <genConfModule name="generate packaging language" moduleRef="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
+      <genConfModule name="generate property language" moduleRef="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

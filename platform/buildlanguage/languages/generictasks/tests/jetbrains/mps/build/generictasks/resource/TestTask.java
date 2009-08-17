@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.buildlanguage.resource;
+package jetbrains.mps.build.generictasks.resource;
 
 import org.apache.tools.ant.Task;
 

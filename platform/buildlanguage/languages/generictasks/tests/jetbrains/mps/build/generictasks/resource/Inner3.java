@@ -13,22 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.buildlanguage.resource;
+package jetbrains.mps.build.generictasks.resource;
 
-import org.apache.tools.ant.Task;
-import org.apache.tools.ant.types.FileSet;
+import org.apache.tools.ant.types.DataType;
 
-public class BigTask extends Task {
-
-  public Inner1 createInner(){
-    return null;
-  }
-
-  public void addInner(Inner2 inner){
-
-  }
-
-  public void addConfiguredInner(Inner3 inner){
-    
-  }
+public class Inner3 extends DataType {
 }

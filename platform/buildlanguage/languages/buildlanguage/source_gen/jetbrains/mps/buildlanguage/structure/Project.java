@@ -121,19 +121,19 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     return this.getChildCount(Project.PATHS);
   }
 
-  public Iterator<GenericCall> pathses() {
-    return this.children(GenericCall.class, Project.PATHS);
+  public Iterator<Call> pathses() {
+    return this.children(Call.class, Project.PATHS);
   }
 
-  public List<GenericCall> getPathses() {
-    return this.getChildren(GenericCall.class, Project.PATHS);
+  public List<Call> getPathses() {
+    return this.getChildren(Call.class, Project.PATHS);
   }
 
-  public void addPaths(GenericCall node) {
+  public void addPaths(Call node) {
     this.addChild(Project.PATHS, node);
   }
 
-  public void insertPaths(GenericCall prev, GenericCall node) {
+  public void insertPaths(Call prev, Call node) {
     this.insertChild(prev, Project.PATHS, node);
   }
 

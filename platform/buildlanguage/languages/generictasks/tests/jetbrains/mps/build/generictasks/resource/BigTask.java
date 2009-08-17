@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.buildlanguage.resource;
+package jetbrains.mps.build.generictasks.resource;
 
 import org.apache.tools.ant.Task;
 
-public class Parent extends Task {
+public class BigTask extends Task {
 
-  private String myStringAttribute;
-
-  public String getStringAttribute() {
-    return myStringAttribute;
+  public Inner1 createInner(){
+    return null;
   }
 
-  public void setStringAttribute(String stringAttribute) {
-    myStringAttribute = stringAttribute;
+  public void addInner(Inner2 inner){
+
   }
 
+  public void addConfiguredInner(Inner3 inner){
+    
+  }
 }

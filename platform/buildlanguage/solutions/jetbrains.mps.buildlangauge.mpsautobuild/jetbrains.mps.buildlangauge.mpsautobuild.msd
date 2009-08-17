@@ -7,6 +7,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguages>a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)</usedLanguages>
+    <usedLanguages>fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</usedLanguages>
   </usedLanguages>
 </solution>
 

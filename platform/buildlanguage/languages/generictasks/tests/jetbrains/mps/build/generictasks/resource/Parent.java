@@ -13,9 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.buildlanguage.resource;
+package jetbrains.mps.build.generictasks.resource;
 
-import org.apache.tools.ant.types.DataType;
+import org.apache.tools.ant.Task;
 
-public class Inner2 extends DataType {
+public class Parent extends Task {
+
+  private String myStringAttribute;
+
+  public String getStringAttribute() {
+    return myStringAttribute;
+  }
+
+  public void setStringAttribute(String stringAttribute) {
+    myStringAttribute = stringAttribute;
+  }
+
 }
