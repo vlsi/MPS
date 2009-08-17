@@ -23,6 +23,13 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.baseLanguage.plugin.PositionInfo;
+import jetbrains.mps.baseLanguage.structure.Statement;
+
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * User: Dmitriev.
@@ -43,11 +50,21 @@ public class TextGenManager {
     return myInstance;
   }
 
+  public HashMap<SNode, PositionInfo> positions;
+
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
+    positions = new HashMap<SNode, PositionInfo>();
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject("PACKAGE_NAME", node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
+    List<SNode> nodes = new ArrayList<SNode>(positions.keySet());
+    int topLength = buffer.getTopBufferText().split("\n", -1).length + 2;
+    for (SNode n: nodes) {
+      PositionInfo position = positions.get(n);
+      position.setStartLine(position.getStartLine() + topLength);
+      position.setEndLine(position.getEndLine() + topLength);
+    }
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), positions);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -73,9 +90,20 @@ public class TextGenManager {
 
     nodeTextGen.setBuffer(buffer);
     try {
+      PositionInfo info = new PositionInfo();
+
+      info.setStartLine(buffer.getLineNumber());
+      info.setStartPosition(buffer.getPosition());
       nodeTextGen.setSNode(node);
       nodeTextGen.doGenerateText(node);
       nodeTextGen.setSNode(null);
+
+      info.setEndLine(buffer.getLineNumber());
+      info.setEndPosition(buffer.getPosition());
+      
+      if (node.isInstanceOfConcept(Statement.concept)) {
+        positions.put(node, info);
+      }
     } catch (Exception e) {
       buffer.foundError();
       LOG.error("failed to generate text for " + node.getDebugText(), e, node);
@@ -116,10 +144,12 @@ public class TextGenManager {
   public static class TextGenerationResult {
     private String myText;
     private boolean myContainErrors;
+    private HashMap<SNode, PositionInfo> myPositions;
 
-    private TextGenerationResult(String text, boolean containErrors) {
+    private TextGenerationResult(String text, boolean containErrors, HashMap<SNode, PositionInfo> positions) {
       myText = text;
       myContainErrors = containErrors;
+      myPositions = positions;
     }
 
     public String getText() {
@@ -128,6 +158,10 @@ public class TextGenManager {
 
     public boolean hasErrors() {
       return myContainErrors;
+    }
+
+    public Map<SNode, PositionInfo> getPositions() {
+      return myPositions;
     }
   }
 }
