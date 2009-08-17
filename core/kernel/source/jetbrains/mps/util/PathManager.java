@@ -165,6 +165,7 @@ public class PathManager {
   }
 
   public static String getWorkbenchPath() {
+
     return getHomePath() + File.separator + "workbench";
   }
 
