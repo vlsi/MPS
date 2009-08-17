@@ -520,7 +520,84 @@ __switch__:
         };
       }
     });
+    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("ANCESTORS"));
+    Sequence.fromClosure(new ISequenceClosure <SNode>() {
+
+      public Iterable<SNode> iterable() {
+        return new Iterable <SNode>() {
+
+          public Iterator<SNode> iterator() {
+            return new YieldingIterator <SNode>() {
+
+              private int __CP__ = 0;
+              private SNode _3__zzz_;
+              private List<SNode> _7__yyy_;
+              private SNode _11__xxx_;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 8:
+                      if (ListSequence.fromList(_7__yyy_).isNotEmpty()) {
+                        this.__CP__ = 9;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 4:
+                      this.__CP__ = 5;
+                      this.yield(_3__zzz_);
+                      return true;
+                    case 12:
+                      this.__CP__ = 13;
+                      this.yield(_11__xxx_);
+                      return true;
+                    case 0:
+                      this._3__zzz_ = foo;
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this._7__yyy_ = ListSequence.fromList(new ArrayList<SNode>());
+                      ListSequence.fromList(_7__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_3__zzz_)));
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      this._11__xxx_ = ListSequence.fromList(_7__yyy_).first();
+                      ListSequence.fromList(_7__yyy_).removeElement(_11__xxx_);
+                      this.__CP__ = 12;
+                      break;
+                    case 13:
+                      ListSequence.fromList(_7__yyy_).addSequence(ListSequence.fromList(SNodeOperations.getChildren(_11__xxx_)));
+                      this.__CP__ = 8;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS"));
+    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
+    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
+    Sequence.fromClosure(new ISequenceClosure <SNode>() {
+
+      public Iterable<SNode> iterable() {
+        SNode _zzz_ = foo;
+        return SNodeOperations.getChildren(_zzz_);
+      }
+    });
+    // !@#$&
   }
 
 }

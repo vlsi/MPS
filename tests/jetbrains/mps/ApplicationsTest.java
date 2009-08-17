@@ -19,35 +19,35 @@ import java.io.File;
 
 public class ApplicationsTest extends BaseMPSTest {
   public void testMPSLite() {
-    assertGenerates(new File("core/languageDesign/mps-lite/mps-lite.mpr"));
+    assertGenerates(new File("core/languageDesign/mps-lite/mps-lite.mpr"), true);
   }
 
   public void testBuildLanguage() {
-    assertGenerates(new File("platform/buildlanguage/BuildLanguage.mpr"));
+    assertGenerates(new File("platform/buildlanguage/BuildLanguage.mpr"), true);
   }
 
   public void testComplexLanguage() {
-    assertGenerates(new File("samples/complexLanguage/Complex.mpr"));
+    assertGenerates(new File("samples/complexLanguage/Complex.mpr"), true);
   }
 
   public void testUILanguage() {
-    assertGenerates(new File("platform/uiLanguage/uiLanguage.mpr"));
+    assertGenerates(new File("platform/uiLanguage/uiLanguage.mpr"), true);
   }
 
   public void testIDESolution() {
-    assertGenerates(new File("workbench/ideSolution/ide.mpr"));
+    assertGenerates(new File("workbench/ideSolution/ide.mpr"), true);
   }
 
   public void testTestLanguage() {
-    assertGenerates(new File("core/languageDesign/test/test.mpr"));
+    assertGenerates(new File("core/languageDesign/test/test.mpr"), true);
   }
 
   public void testMatrixLanguage() {
-    assertGenerates(new File("samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"));
+    assertGenerates(new File("samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"), true);
   }
 
   public void testYpath() {
-    assertGenerates(new File("platform/ypath/YPath.mpr"));
+    assertGenerates(new File("platform/ypath/YPath.mpr"), true);
   }
 
 }

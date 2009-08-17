@@ -28,7 +28,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
 
       public Boolean calculate(EditorCell cell) {
-        return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_1230640044409((cell == null ?
+        return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_4592_0((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -53,7 +53,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     return style;
   }
 
-  private static boolean _StyleParameter_QueryFunction_1230640044409(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_4592_0(SNode node, EditorContext editorContext) {
     return true;
   }
 
