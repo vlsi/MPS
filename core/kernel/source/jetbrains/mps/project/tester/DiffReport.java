@@ -26,7 +26,7 @@ public class DiffReport {
       final int idx = startIndex + i;
       if (idx >= 0 && idx < content.length && count != 0) {
         String currentUserObject = content[idx];
-        stringBuilder.append((i < 0 || i >= count)? "  " : type).append(currentUserObject).append("\n");
+        stringBuilder.append((i < 0 || i >= count)? " " : type).append(currentUserObject).append("\n");
       }
     }
     return stringBuilder.toString();
