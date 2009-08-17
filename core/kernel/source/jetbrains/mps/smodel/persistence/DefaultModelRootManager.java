@@ -310,7 +310,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
     if (!metadataFile.exists()) {
       metadataFile.createNewFile();
-      ModelChangesWatcher.instance().fireMetadataFileCreated(metadataFile);
+      ModelChangesWatcher.instance().fireDataFileCreated(metadataFile);
     }
 
     DefaultMetadataPersistence.save(metadataFile, metadata);

@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
-  <maxImportIndex value="120" />
+  <maxImportIndex value="121" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -128,6 +128,7 @@
   <import index="118" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
   <import index="119" modelUID="f:java_stub#com.intellij.execution.filters(com.intellij.execution.filters@java_stub)" version="-1" />
   <import index="120" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
+  <import index="121" modelUID="f:java_stub#jetbrains.mps.watching(jetbrains.mps.watching@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1205247197267">
     <property name="name" value="BaseLanguageEditorPopup" />
     <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1205247338363">
@@ -41509,6 +41510,20 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3744653146075890573">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3744653146075890582">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3744653146075890575">
+              <link role="baseMethodDeclaration" targetNodeId="121.~ModelChangesWatcher.instance():jetbrains.mps.watching.ModelChangesWatcher" resolveInfo="instance" />
+              <link role="classConcept" targetNodeId="121.~ModelChangesWatcher" resolveInfo="ModelChangesWatcher" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3744653146075890586">
+              <link role="baseMethodDeclaration" targetNodeId="121.~ModelChangesWatcher.fireDataFileCreated(jetbrains.mps.vfs.IFile):void" resolveInfo="fireDataFileCreated" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3744653146075890587">
+                <link role="variableDeclaration" targetNodeId="6173548178016197648" resolveInfo="file" />
               </node>
             </node>
           </node>
