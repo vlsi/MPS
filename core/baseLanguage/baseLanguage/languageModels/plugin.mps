@@ -41654,9 +41654,9 @@
         <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197718" />
       </node>
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6173548178016197719">
-        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" id="6173548178016197720">
-          <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197721" />
-          <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="116783874583560996">
+        <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator" id="12917651018464451">
+          <node role="keyType" type="jetbrains.mps.baseLanguage.structure.StringType" id="12917651018464478" />
+          <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="12917651018464503">
             <link role="classifier" targetNodeId="116783874583185755" resolveInfo="PositionInfo" />
           </node>
         </node>
