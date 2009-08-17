@@ -16,6 +16,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,7 +36,7 @@ import com.intellij.execution.filters.HyperlinkInfo;
 public class AnalyzeStacktrace_Tool extends GeneratedTool {
 
   private String myStackTrace;
-  private ConsoleViewImpl textView;
+  private ConsoleViewImpl myConsoleView;
   private String STRING_START = "at ";
   private JPanel myComponent;
   private MPSProject myProject;
@@ -50,12 +51,16 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
 
   public void init(Project project) {
     AnalyzeStacktrace_Tool.this.myProject = AnalyzeStacktrace_Tool.this.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
-    AnalyzeStacktrace_Tool.this.textView = new ConsoleViewImpl(AnalyzeStacktrace_Tool.this.getProject(), false);
+    AnalyzeStacktrace_Tool.this.myConsoleView = new ConsoleViewImpl(AnalyzeStacktrace_Tool.this.getProject(), false);
     AnalyzeStacktrace_Tool.this.myComponent = new JPanel(new BorderLayout());
-    AnalyzeStacktrace_Tool.this.myComponent.add(AnalyzeStacktrace_Tool.this.textView.getComponent());
+    AnalyzeStacktrace_Tool.this.myComponent.add(AnalyzeStacktrace_Tool.this.myConsoleView.getComponent());
     DefaultActionGroup actions = new DefaultActionGroup();
     actions.add(new CloseAction(AnalyzeStacktrace_Tool.this));
     AnalyzeStacktrace_Tool.this.myComponent.add(ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actions, false).getComponent(), BorderLayout.LINE_START);
+  }
+
+  public void dispose() {
+    Disposer.dispose(AnalyzeStacktrace_Tool.this.myConsoleView);
   }
 
   private SNode getNodes(String method, String position) {
@@ -94,7 +99,7 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
 
   public void setStackTrace(String str) {
     AnalyzeStacktrace_Tool.this.myStackTrace = str;
-    AnalyzeStacktrace_Tool.this.textView.clear();
+    AnalyzeStacktrace_Tool.this.myConsoleView.clear();
     String[] lines = str.split("\n");
     for(String line : lines) {
       if (StringUtils.trim(line).startsWith(AnalyzeStacktrace_Tool.this.STRING_START)) {
@@ -106,22 +111,22 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
         String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
         final SNode nodeToShow = AnalyzeStacktrace_Tool.this.getNodes(methodName, position);
         if (nodeToShow != null) {
-          AnalyzeStacktrace_Tool.this.textView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
-          AnalyzeStacktrace_Tool.this.textView.printHyperlink(position, new HyperlinkInfo() {
+          AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
+          AnalyzeStacktrace_Tool.this.myConsoleView.printHyperlink(position, new HyperlinkInfo() {
 
             public void navigate(Project p0) {
               AnalyzeStacktrace_Tool.this.showNode(nodeToShow);
             }
           });
-          AnalyzeStacktrace_Tool.this.textView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
-          AnalyzeStacktrace_Tool.this.textView.print("\n", ConsoleViewContentType.ERROR_OUTPUT);
+          AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
+          AnalyzeStacktrace_Tool.this.myConsoleView.print("\n", ConsoleViewContentType.ERROR_OUTPUT);
         } else
         {
-          AnalyzeStacktrace_Tool.this.textView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
+          AnalyzeStacktrace_Tool.this.myConsoleView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
         }
       } else
       {
-        AnalyzeStacktrace_Tool.this.textView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
+        AnalyzeStacktrace_Tool.this.myConsoleView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
       }
     }
   }

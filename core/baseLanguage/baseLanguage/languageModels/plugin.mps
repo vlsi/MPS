@@ -40018,7 +40018,7 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197416" />
     </node>
     <node role="fieldDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration" id="6173548178016197417">
-      <property name="name" value="textView" />
+      <property name="name" value="myConsoleView" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6173548178016197418" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3201726544224019943">
         <link role="classifier" targetNodeId="44.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
@@ -40991,6 +40991,22 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="451934581190500080">
                 <link role="classifier" targetNodeId="17.~BorderLayout" resolveInfo="BorderLayout" />
                 <link role="variableDeclaration" targetNodeId="17.~BorderLayout.LINE_START" resolveInfo="LINE_START" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="disposeBlock" type="jetbrains.mps.lang.plugin.structure.ProjectPluginDisposeBlock" id="8136820323456449867">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8136820323456449868">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8136820323456515392">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8136820323456515578">
+            <link role="baseMethodDeclaration" targetNodeId="50.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
+            <link role="classConcept" targetNodeId="50.~Disposer" resolveInfo="Disposer" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8136820323456515579">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8136820323456515580" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8136820323456515581">
+                <link role="member" targetNodeId="6173548178016197417" resolveInfo="textView" />
               </node>
             </node>
           </node>
