@@ -109,42 +109,8 @@ public class GenerateTask extends org.apache.tools.ant.Task {
 
   @Override
   public void execute() throws BuildException {
-    if (myMpsHome == null) {
-      String mpsHomePath = getProject().getProperty("mps.home");
-      if (mpsHomePath == null || !getProject().resolveFile(mpsHomePath).exists()) {
-        throw new BuildException("Path to mps home expected. Specify mps.home property or mpshome attribute.");
-      }
-      myMpsHome = getProject().resolveFile(mpsHomePath);
-    }
-
-    File[] pathsToLook;
-    if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
-    } else {
-      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
-    }
-
-
-    Set<File> classPaths = new LinkedHashSet<File>();
-    for (File path : pathsToLook) {
-      if (!path.exists() || !path.isDirectory()) {
-        throw new BuildException(myMpsHome + " myInputStream invalid MPS home path.");
-      }
-
-      gatherAllClassesAndJarsUnder(path, classPaths);
-    }
-    File mpsClasses = new File(myMpsHome + File.separator + "classes");
-    if (mpsClasses.exists()) {
-      classPaths.add(mpsClasses);
-    }
+    checkMpsHome();
+    Set<File> classPaths = calculateClassPath();
 
     if (myUsePropertiesAsMacro) {
       Hashtable properties = getProject().getProperties();
@@ -177,53 +143,7 @@ public class GenerateTask extends org.apache.tools.ant.Task {
       commandLine.add(getGeneratorClass().getCanonicalName());
       commandLine.add(myWhatToGenerate.toString());
 
-      Execute exe = new Execute(new ExecuteStreamHandler() {
-        private Thread myOutputReadingThread;
-        private Thread myErrorReadingThread;
-
-        public void setProcessInputStream(OutputStream os) throws IOException {
-        }
-
-        public void setProcessErrorStream(final InputStream is) throws IOException {
-          myErrorReadingThread = new Thread(new Runnable() {
-            public void run() {
-              Scanner s = new Scanner(is);
-              while (s.hasNextLine()) {
-                log(s.nextLine(), Project.MSG_ERR);
-              }
-            }
-          });
-        }
-
-        public void setProcessOutputStream(final InputStream is) throws IOException {
-          myOutputReadingThread = new Thread(new Runnable() {
-            public void run() {
-              Scanner s = new Scanner(is);
-              while (s.hasNextLine()) {
-                log(s.nextLine());
-              }
-            }
-          });
-        }
-
-        public void start() throws IOException {
-          myOutputReadingThread.start();
-          myErrorReadingThread.start();
-        }
-
-        public void stop() {
-          try {
-            myOutputReadingThread.join();
-          } catch (InterruptedException e) {
-            // ignore
-          }
-          try {
-            myErrorReadingThread.join();
-          } catch (InterruptedException e) {
-            // ignore
-          }
-        }
-      });
+      Execute exe = new Execute(new MyExecuteStreamHandler());
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
       exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
@@ -271,6 +191,48 @@ public class GenerateTask extends org.apache.tools.ant.Task {
         throw new BuildException(e);
       }
     }
+  }
+
+  private void checkMpsHome() {
+    if (myMpsHome == null) {
+      String mpsHomePath = getProject().getProperty("mps.home");
+      if (mpsHomePath == null || !getProject().resolveFile(mpsHomePath).exists()) {
+        throw new BuildException("Path to mps home expected. Specify mps.home property or mpshome attribute.");
+      }
+      myMpsHome = getProject().resolveFile(mpsHomePath);
+    }
+  }
+
+  private Set<File> calculateClassPath() {
+    File[] pathsToLook;
+    if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
+      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
+    } else {
+      pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
+    }
+
+
+    Set<File> classPaths = new LinkedHashSet<File>();
+    for (File path : pathsToLook) {
+      if (!path.exists() || !path.isDirectory()) {
+        throw new BuildException(myMpsHome + " is invalid MPS home path: path " + path + " does not exist or is not a directory.");
+      }
+
+      gatherAllClassesAndJarsUnder(path, classPaths);
+    }
+    File mpsClasses = new File(myMpsHome + File.separator + "classes");
+    if (mpsClasses.exists()) {
+      classPaths.add(mpsClasses);
+    }
+    return classPaths;
   }
 
   protected Class<? extends Generator> getGeneratorClass() {
@@ -354,4 +316,51 @@ public class GenerateTask extends org.apache.tools.ant.Task {
     protected abstract void addMessage(String message);
   }
 
+  private class MyExecuteStreamHandler implements ExecuteStreamHandler {
+    private Thread myOutputReadingThread;
+    private Thread myErrorReadingThread;
+
+    public void setProcessInputStream(OutputStream os) throws IOException {
+    }
+
+    public void setProcessErrorStream(final InputStream is) throws IOException {
+      myErrorReadingThread = new Thread(new Runnable() {
+        public void run() {
+          Scanner s = new Scanner(is);
+          while (s.hasNextLine()) {
+            log(s.nextLine(), Project.MSG_ERR);
+          }
+        }
+      });
+    }
+
+    public void setProcessOutputStream(final InputStream is) throws IOException {
+      myOutputReadingThread = new Thread(new Runnable() {
+        public void run() {
+          Scanner s = new Scanner(is);
+          while (s.hasNextLine()) {
+            log(s.nextLine());
+          }
+        }
+      });
+    }
+
+    public void start() throws IOException {
+      myOutputReadingThread.start();
+      myErrorReadingThread.start();
+    }
+
+    public void stop() {
+      try {
+        myOutputReadingThread.join();
+      } catch (InterruptedException e) {
+        // ignore
+      }
+      try {
+        myErrorReadingThread.join();
+      } catch (InterruptedException e) {
+        // ignore
+      }
+    }
+  }
 }
