@@ -104,11 +104,11 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5776618742611309705">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7991141904621606967">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7991141904621606968">
-            <link role="baseMethodDeclaration" targetNodeId="7000563142704382113" resolveInfo="myMethod" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="6483084807636298591">
-              <property name="value" value="5" />
+            <link role="baseMethodDeclaration" targetNodeId="6267080011352970718" resolveInfo="myMethod" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8990537424049856797">
+              <property name="value" value="6" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3560111476163841318">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3699340385265810805">
               <property name="value" value="6" />
             </node>
           </node>
@@ -160,12 +160,15 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="565947800734506524">
-          <link role="baseMethodDeclaration" targetNodeId="8417933508988540534" resolveInfo="MyClass" />
+          <link role="baseMethodDeclaration" targetNodeId="5776618742611309715" resolveInfo="MyClass" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3197305674124539742">
             <property name="value" value="2" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="565947800734506526">
             <property name="value" value="3" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="3699340385265810809">
+            <property name="value" value="9" />
           </node>
         </node>
       </node>
