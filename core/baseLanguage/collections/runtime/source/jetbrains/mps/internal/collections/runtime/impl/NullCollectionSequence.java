@@ -78,6 +78,14 @@ public abstract class NullCollectionSequence<T> extends NullSequence<T> implemen
     public boolean retainAll(Collection<?> c) {
         return false;
     }
+    
+    public ICollectionSequence<T> asUnmodifiable() {
+        return this;
+    }
+    
+    public ICollectionSequence<T> asSynchronized() {
+        return this;
+    }
 
     public int size() {
         return 0;

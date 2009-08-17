@@ -229,6 +229,18 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     public IDequeSequence<T> removeWhere(IWhereFilter<T> filter) {
         return (IDequeSequence<T>) super.removeWhere(filter);
     }
+    
+    @Override
+    public IDequeSequence<T> asUnmodifiable() {
+        // TODO Auto-generated method stub
+        return (IDequeSequence<T>) super.asUnmodifiable();
+    }
+    
+    @Override
+    public IDequeSequence<T> asSynchronized() {
+        // TODO Auto-generated method stub
+        return (IDequeSequence<T>) super.asSynchronized();
+    }
 
     public Deque<T> toDeque() {
         return this;

@@ -123,6 +123,16 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
         return (IListSequence<T>) super.removeWhere(filter);
     }
     
+    @Override
+    public IListSequence<T> asSynchronized() {
+        return (IListSequence<T>) super.asSynchronized();
+    }
+    
+    @Override
+    public IListSequence<T> asUnmodifiable() {
+        return (IListSequence<T>) super.asUnmodifiable();
+    }
+    
     public IListSequence<T> distinctList() {
         return this;
     }

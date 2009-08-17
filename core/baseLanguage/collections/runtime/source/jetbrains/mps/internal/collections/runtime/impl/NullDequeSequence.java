@@ -135,6 +135,16 @@ public class NullDequeSequence<T> extends NullQueueSequence<T> implements IDeque
         return (IDequeSequence<T>) super.removeWhere(filter);
     }
 
+    @Override
+    public IDequeSequence<T> asUnmodifiable() {
+        return (IDequeSequence<T>) super.asUnmodifiable();
+    }
+    
+    @Override
+    public IDequeSequence<T> asSynchronized() {
+        return (IDequeSequence<T>) super.asSynchronized();
+    }
+    
     public Deque<T> toDeque() {
         return this;
     }

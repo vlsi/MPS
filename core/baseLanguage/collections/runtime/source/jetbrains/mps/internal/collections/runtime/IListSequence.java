@@ -52,4 +52,9 @@ public interface IListSequence<T> extends ICollectionSequence<T>, ISequence<T>, 
     T[] toGenericArray();
 
     T[] toGenericArray(Class<T> runtimeClass);
+    
+    IListSequence<T> asUnmodifiable ();
+    
+    IListSequence<T> asSynchronized ();
+
 }

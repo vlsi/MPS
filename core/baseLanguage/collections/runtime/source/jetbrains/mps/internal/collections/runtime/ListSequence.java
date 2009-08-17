@@ -306,6 +306,16 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
         return reversed;
     }
     
+    @Override
+    public IListSequence<T> asUnmodifiable() {
+        return new ListSequence<T> (Collections.unmodifiableList(getList())); 
+    }
+    
+    @Override
+    public IListSequence<T> asSynchronized() {
+        return (IListSequence<T>) super.asSynchronized();
+    }
+    
     @Deprecated
     public IListSequence<T> distinctList() {
         return ListSequence.fromIterable(this.distinct());

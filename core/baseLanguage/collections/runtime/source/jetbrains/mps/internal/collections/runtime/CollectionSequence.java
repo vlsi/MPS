@@ -132,6 +132,14 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
         return getCollection().iterator();
     }
     
+    public ICollectionSequence<T> asUnmodifiable() {
+        return this;
+    }
+    
+    public ICollectionSequence<T> asSynchronized() {
+        return this;
+    }
+    
     // ISequence
     
     @Override
@@ -159,5 +167,5 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
     }
 
     protected abstract Collection<T> getCollection ();
-    
+
 }

@@ -31,4 +31,9 @@ public interface IQueueSequence<T> extends ISequence<T>, ICollectionSequence<T>,
     
     Queue<T> toQueue ();
     
+    IQueueSequence<T> asUnmodifiable ();
+    
+    IQueueSequence<T> asSynchronized ();
+
+    
 }

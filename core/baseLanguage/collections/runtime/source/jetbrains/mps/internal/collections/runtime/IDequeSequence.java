@@ -34,4 +34,9 @@ public interface IDequeSequence<T> extends IQueueSequence<T>, Deque<T> {
     IDequeSequence<T> removeWhere (IWhereFilter<T> filter);
 
     Deque<T> toDeque ();
+    
+    IDequeSequence<T> asUnmodifiable ();
+    
+    IDequeSequence<T> asSynchronized ();
+
 }

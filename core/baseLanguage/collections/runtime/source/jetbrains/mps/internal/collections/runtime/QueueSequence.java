@@ -174,6 +174,16 @@ public class QueueSequence<T> extends CollectionSequence<T> implements Queue<T>,
         return (IQueueSequence<T>) super.removeWhere(filter);
     }
 
+    @Override
+    public IQueueSequence<T> asUnmodifiable() {
+        return (IQueueSequence<T>) super.asUnmodifiable();
+    }
+    
+    @Override
+    public IQueueSequence<T> asSynchronized() {
+        return (IQueueSequence<T>) super.asSynchronized();
+    }
+    
     public Queue<T> toQueue() {
         return this;
     }

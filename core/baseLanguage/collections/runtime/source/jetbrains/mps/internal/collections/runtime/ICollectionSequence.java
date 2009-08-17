@@ -29,4 +29,7 @@ public interface ICollectionSequence<T> extends ISequence<T>, Collection<T> {
     
     ICollectionSequence<T> removeWhere(IWhereFilter<T> filter);
 
+    ICollectionSequence<T> asUnmodifiable ();
+    
+    ICollectionSequence<T> asSynchronized ();
 }
