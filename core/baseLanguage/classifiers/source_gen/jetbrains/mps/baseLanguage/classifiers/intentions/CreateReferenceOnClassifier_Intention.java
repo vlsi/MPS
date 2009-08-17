@@ -34,6 +34,13 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention {
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false) != null);
   }
 

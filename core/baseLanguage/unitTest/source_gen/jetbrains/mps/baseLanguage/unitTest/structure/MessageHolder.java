@@ -9,7 +9,5 @@ public interface MessageHolder extends INodeAdapter {
   public static final String MESSAGE = "message";
 
   public Message getMessage();
-
   public void setMessage(Message node);
-
 }
