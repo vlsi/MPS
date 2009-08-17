@@ -18,6 +18,7 @@ import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SReference;
 
 public class QueriesGenerated {
@@ -290,7 +291,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(String property : _context.getNode().getPropertyNames()) {
+    List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
+    ListSequence.fromList(propertyNames).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true);
+    for(String property : propertyNames) {
       if (SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", property), true) != null) {
         continue;
       }
@@ -344,7 +352,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196871487533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(String property : _context.getNode().getPropertyNames()) {
+    List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
+    ListSequence.fromList(propertyNames).sort(new ISelector <String, Comparable<?>>() {
+
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true);
+    for(String property : propertyNames) {
       SNode attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", property), true);
       if (attribute != null) {
         ListSequence.fromList(result).addElement(attribute);
