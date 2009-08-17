@@ -59,10 +59,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new checkAllRequiredAttributesPresent_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
       NonTypesystemRule_Runtime nonTypesystemRule = new checkAttributeValueIsInEnum_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
