@@ -5,15 +5,14 @@ import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
 import jetbrains.mps.nodeEditor.EditorCheckerAdapter;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
-import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import java.util.*;
 
@@ -22,10 +21,12 @@ import com.intellij.openapi.command.CommandProcessor;
 
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
-  private static boolean DISABLED = true;
+  private static boolean DISABLED = false;
 
   private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
   private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
+  private Map<Pair<String, String>, Set<SNode>> myMethodConceptsAndNamesToCheckedMethodCalls =
+    new HashMap<Pair<String, String>, Set<SNode>>();
   private Map<SNode, SNode> myParametersToCheckedMethodCalls = new HashMap<SNode, SNode>();
   private Map<SNode, SNode> myMethodCallsToSetDecls = new HashMap<SNode, SNode>();
 
@@ -94,7 +95,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           SNode node = event.getNode();
           if (BaseAdapter.isInstance(node, BaseMethodDeclaration.class)) {
             if (BaseMethodDeclaration.NAME.equals(event.getPropertyName())) {
-              methodDeclarationChanged(node, reResolvedTargets);
+              methodDeclarationNameChanged(node, reResolvedTargets);
+              methodDeclarationSignatureChanged(node, reResolvedTargets);
             }
           }
         }
@@ -139,6 +141,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   public void clearCaches() {
     myCheckedMethodCalls.clear();
     myMethodDeclsToCheckedMethodCalls.clear();
+    myMethodConceptsAndNamesToCheckedMethodCalls.clear();
     myParametersToCheckedMethodCalls.clear();
     myMethodCallsToSetDecls.clear();
   }
@@ -151,10 +154,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     String methodName = baseMethodDeclaration.getName();
     List<Expression> actualArgs = methodCall.getActualArguments();
-    /*  ClassifierType classifierType= getClassifierAndTypeParams(methodCall);
-Classifier classifier = classifierType == null ? null : classifierType.getClassifier();
-List<Type> typeParameters = classifierType == null ? null : classifierType.getParameters();*/
-
 
     List<? extends BaseMethodDeclaration> candidates = getCandidates(methodCall, methodName);
     if (candidates.isEmpty()) {
@@ -175,11 +174,23 @@ List<Type> typeParameters = classifierType == null ? null : classifierType.getPa
       }
       myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());
       myCheckedMethodCalls.add(methodCallNode);
-      Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTarget.getNode());
+
+      SNode newTargetNode = newTarget.getNode();
+      Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetNode);
       if (nodeSet == null) {
         nodeSet = new HashSet<SNode>();
+        myMethodDeclsToCheckedMethodCalls.put(newTargetNode, nodeSet);
       }
       nodeSet.add(methodCallNode);
+
+      Pair<String, String> key = new Pair<String, String>(newTarget.getConceptFQName(), methodName);
+      Set<SNode> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(
+        key);
+      if (nodesByNameAndConcept == null) {
+        nodesByNameAndConcept = new HashSet<SNode>();
+        myMethodConceptsAndNamesToCheckedMethodCalls.put(key, nodesByNameAndConcept);
+      }
+      nodesByNameAndConcept.add(methodCallNode);
     }
   }
 
@@ -196,8 +207,20 @@ List<Type> typeParameters = classifierType == null ? null : classifierType.getPa
     return result;
   }
 
-  private void methodDeclarationChanged(SNode method, Map<SNode, SNode> resolveTargets) {
+  private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
+    if (methodCalls != null) {
+      for (SNode methodCall : methodCalls) {
+        if (methodCall != null) {
+          testAndFixMethodCall(methodCall, resolveTargets);
+        }
+      }
+    }
+  }
+
+  private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
+    Set<SNode> methodCalls = myMethodConceptsAndNamesToCheckedMethodCalls.get(
+      new Pair<String, String>(method.getConceptFqName(), method.getName()));
     if (methodCalls != null) {
       for (SNode methodCall : methodCalls) {
         if (methodCall != null) {
@@ -215,10 +238,6 @@ List<Type> typeParameters = classifierType == null ? null : classifierType.getPa
     testAndFixMethodCall(methodCall, resolveTargets);
   }
 
-  private void methodCallCreated(SNode methodCall, Map<SNode, SNode> resolveTargets) {
-    testAndFixMethodCall(methodCall, resolveTargets);
-  }
-
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNode methodCall = myParametersToCheckedMethodCalls.get(expression);
     if (methodCall != null) {
@@ -226,24 +245,46 @@ List<Type> typeParameters = classifierType == null ? null : classifierType.getPa
     }
   }
 
-  private void nodeAdded(SNode expression, Map<SNode, SNode> resolveTargets) {
+  private void nodeAdded(SNode child, Map<SNode, SNode> resolveTargets) {
     //added methods
-    for (SNode methodCall : expression.getDescendants(new IsInstanceCondition(IMethodCall.concept))) {
+    List<SNode> addedMethodCalls = SNodeOperations.getDescendants(child, IMethodCall.concept, true);
+    for (SNode methodCall : addedMethodCalls) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
+
     //actual argument
-    SNode parent = expression.getParent();
+    SNode parent = child.getParent();
     if (myCheckedMethodCalls.contains(parent)) {
       testAndFixMethodCall(parent, resolveTargets);
     }
+
+    //formal param
+    SNode formalParam = SNodeOperations.getAncestor(child, ParameterDeclaration.concept, true, false);
+    if (formalParam != null && formalParam.getParent() != null) {
+      methodDeclarationSignatureChanged(formalParam.getParent(), resolveTargets);
+    }
   }
 
-  private void nodeRemoved(SNode expression, SNode formerParent, Map<SNode, SNode> resolveTargets) {
-    if (BaseAdapter.isInstance(expression, IMethodCall.class)) {
+  private void nodeRemoved(SNode child, SNode formerParent, Map<SNode, SNode> resolveTargets) {
+    List<SNode> removedMethodCalls = SNodeOperations.getDescendants(child, IMethodCall.concept, true);
+    for (SNode methodCall : removedMethodCalls) {
+      //todo
+    }
 
+    //actual arg deleted
+    if (myCheckedMethodCalls.contains(formerParent)) {
+      //if arg deleted then fix method call
+      //if deleted inside argument and arg type is changed it is processed elsewhere
+      testAndFixMethodCall(formerParent, resolveTargets);
+    }
+
+    //formal param
+    if (SNodeOperations.isInstanceOf(child, ParameterDeclaration.concept)) {
+      methodDeclarationSignatureChanged(formerParent, resolveTargets);
     } else {
-      if (myCheckedMethodCalls.contains(formerParent)) {
-        testAndFixMethodCall(formerParent, resolveTargets);
+      SNode formalParam = SNodeOperations.getAncestor(formerParent, ParameterDeclaration.concept, true, false);
+      if (formalParam != null && formalParam.getParent() != null) {
+        methodDeclarationSignatureChanged(formalParam.getParent(), resolveTargets);
       }
     }
   }

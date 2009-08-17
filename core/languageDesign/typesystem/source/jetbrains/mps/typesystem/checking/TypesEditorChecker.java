@@ -41,6 +41,8 @@ import com.intellij.openapi.application.ModalityState;
 public class TypesEditorChecker extends EditorCheckerAdapter {
   private static Logger LOG = Logger.getLogger(TypesEditorChecker.class);
 
+  public static boolean IMMEDIATE_QFIX_DISABLED = false;
+
   private Timer myTimer = new Timer("helgins interruptor");
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
 
@@ -77,7 +79,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
         HighlighterMessage message = createHighlighterMessage(errorNode.o1, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorNode.o2);
         IntentionProvider intentionProvider = errorNode.o2.getIntentionProvider();
 
-        if (intentionProvider != null && intentionProvider.isExecutedImmediately()) {
+        if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {
           final QuickFix_Runtime intention = intentionProvider.getQuickFix();
           if (intention != null) {
             if (!myOnceExecutedQuickFixes.contains(intention)) {
