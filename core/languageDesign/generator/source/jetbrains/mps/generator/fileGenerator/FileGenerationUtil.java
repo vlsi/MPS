@@ -140,8 +140,9 @@ public class FileGenerationUtil {
 
       if (input != null) {
         PositionInfo positionInfo = result.getPositions().get(out);
+        positionInfo.setNodeId(input.getId());
         positionInfo.setFileName(outputNode.getName() + ".java");
-        info.addNode(input.getId(), positionInfo);
+        info.addPosition(positionInfo);
         model = input.getModel();
       }
     }
