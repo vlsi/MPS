@@ -728,7 +728,7 @@ public class SModel implements Iterable<SNode> {
         languages.add(language);
         languages.addAll(language.getAllExtendedLanguages());
         //addAspectModelsVersions(languageNamespace, language);
-      } 
+      }
     }
 
     for (ModuleReference dk : getDevKitRefs()) {
@@ -953,7 +953,7 @@ public class SModel implements Iterable<SNode> {
 
       if (modelDescriptor != null) {
         modelsList.add(modelDescriptor);
-      } 
+      }
     }
     return modelsList;
   }

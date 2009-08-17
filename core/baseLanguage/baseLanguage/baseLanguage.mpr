@@ -23,7 +23,7 @@
       <devkitPath path="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
     </projectDevkits>
     <genConfs>
-      <genConfModule runnable="false" name="baseLanguage" moduleRef="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+      <genConfModule name="baseLanguage" moduleRef="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
     </genConfs>
   </component>
   <component name="ProjectDetails">

@@ -16,6 +16,7 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
     this.setPopup(false);
     try {
       BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.ShowTodoViewer_Action", "jetbrains.mps.baseLanguage");
+      BaseLanguageToolsAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.AnalyzeStacktrace_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
