@@ -209,7 +209,7 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    Set<String> result = new LinkedHashSet<String>();
+    Set<String> result = new HashSet<String>();
     if (myReferences != null) {
       for (SReference ref : myReferences) {
         result.add(ref.getRole());
