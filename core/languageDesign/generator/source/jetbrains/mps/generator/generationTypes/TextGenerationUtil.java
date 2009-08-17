@@ -21,28 +21,23 @@ import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.CommonPaths;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import com.intellij.openapi.progress.ProgressIndicator;
 
-import java.util.Map;
-
 public class TextGenerationUtil {
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
     String nodeText;
     boolean containsErrors = false;
-    Map<SNode, PositionInfo> positions = null;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
       containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
-      positions = generationResult.getPositions();
     } else {
       nodeText = "Can't generate text from " + node;
     }
-    return new TextGenerationResult(nodeText, containsErrors, positions);
+    return new TextGenerationResult(nodeText, containsErrors);
   }
 
   public static JavaCompiler compile(IOperationContext context, SModel targetModel, ProgressIndicator progress) {
@@ -78,12 +73,10 @@ public class TextGenerationUtil {
   public static class TextGenerationResult {
     private boolean myContainsErrors;
     private String myText;
-    private Map<SNode, PositionInfo> myPositions;
 
-    public TextGenerationResult(String text, boolean containsErrors, Map<SNode, PositionInfo> positions) {
+    public TextGenerationResult(String text, boolean containsErrors) {
       myContainsErrors = containsErrors;
       myText = text;
-      myPositions = positions;
     }
 
 
@@ -94,11 +87,6 @@ public class TextGenerationUtil {
     public String getText() {
       return myText;
     }
-
-    public Map<SNode, PositionInfo> getPositions() {
-      return myPositions;
-    }
-
   }
 
 }

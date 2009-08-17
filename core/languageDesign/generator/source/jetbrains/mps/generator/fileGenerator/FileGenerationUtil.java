@@ -18,7 +18,6 @@ package jetbrains.mps.generator.fileGenerator;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -27,12 +26,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.vcs.MPSVCSManager;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.baseLanguage.plugin.DebugInfo;
-import jetbrains.mps.baseLanguage.plugin.PositionInfo;
-import jetbrains.mps.baseLanguage.structure.Statement;
 
 import java.io.File;
 import java.io.IOException;
@@ -59,7 +52,7 @@ public class FileGenerationUtil {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
-    if (!generateText(context, status, outputNodeContents, outputDir)) {
+    if (!generateText(context, status, outputNodeContents)) {
       return false;
     }
 
@@ -108,44 +101,18 @@ public class FileGenerationUtil {
     return getDefaultOutputDir(inputModel.getSModelReference(), outputRootDir);
   }
 
-  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
+  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
-    DebugInfo info = new DebugInfo();
-    SModel model = null;
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-
-        model = fillDebugInfo(info, outputNode, result);
-
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
       } finally {
         TextGenManager.reset();
       }
     }
-    if (model != null) {
-      info.saveTo(model.getModelDescriptor());
-    }
     return !hasErrors;
-  }
-
-  private static SModel fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
-    SModel model = null;
-    for (SNode out : result.getPositions().keySet()) {      
-      SNode input = out;
-      while (input != null && input.getModel().getSModelReference().hasStereotype()) {
-        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
-      }
-
-      if (input != null) {
-        PositionInfo positionInfo = result.getPositions().get(out);
-        positionInfo.setFileName(outputNode.getName() + ".java");
-        info.addNode(input.getId(), positionInfo);
-        model = input.getModel();
-      }
-    }
-    return model;
   }
 
   public static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
@@ -209,6 +176,6 @@ public class FileGenerationUtil {
       }
     }
   }
-
+  
 
 }

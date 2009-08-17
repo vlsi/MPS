@@ -28,8 +28,6 @@ public final class TextGenBuffer {
     new StringBuilder(256),
     new StringBuilder(256)
   };
-  private int[] myPostions = new int[2];
-  private int[] myLineNumbers = new int[2];
   private int myCurrBuffer = 1;
   private HashMap myUserObjects = new HashMap();
 
@@ -64,26 +62,18 @@ public final class TextGenBuffer {
   }
 
   protected void append(String s) {
-    String lineSeparator = getLineSeparator();
-    if (s.contains(lineSeparator)) {
-      myLineNumbers[myCurrBuffer] += s.split(lineSeparator, -1).length - 1;
-      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(lineSeparator) - 1;
-    } else {
-      myPostions[myCurrBuffer] += s.length();
-    }
     myBuffers[myCurrBuffer].append(s);
   }
 
   protected void appendWithIndent(String s) {
     indentBuffer();
-    append(s);
+    myBuffers[myCurrBuffer].append(s);
   }
 
   protected void indentBuffer() {
     for (int i = 0; i < myIndent * myDepth; i++) {
       myBuffers[myCurrBuffer].append(' ');
     }
-    myPostions[myCurrBuffer] += myIndent * myDepth;
   }
 
   public void putUserObject(Object key, Object o) {
@@ -112,14 +102,6 @@ public final class TextGenBuffer {
 
   public int getBufferLength(int partId) {
     return myBuffers[partId].length();
-  }
-
-  public int getLineNumber() {
-    return myLineNumbers[DEFAULT];
-  }
-
-  public int getPosition() {
-    return myPostions[DEFAULT];
   }
 
   public int selectPart(int partId) {
