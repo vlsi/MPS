@@ -4154,7 +4154,7 @@
     <property name="name" value="SmallPatternSubstitutionTest" />
     <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="5778786395602485270">
       <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5778786395602485271">
-        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="5778786395602485274">
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1887775760356960331">
           <property name="isLastPosition" value="true" />
           <property name="useLabelSelection" value="true" />
           <property name="selectionStart" value="0" />
@@ -4169,12 +4169,12 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2600341035666016323">
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2600341035666016324">
               <link role="classifier" targetNodeId="7.~Map" resolveInfo="Map" />
-              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="2600341035666106742">
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1887775760356960332">
                 <property name="isLastPosition" value="true" />
                 <property name="useLabelSelection" value="true" />
                 <property name="selectionStart" value="3" />
                 <property name="selectionEnd" value="3" />
-                <property name="cellId" value="property_nestedName" />
+                <property name="cellId" value="ReadOnlyModelAccessor_9185_0" />
               </node>
             </node>
           </node>
