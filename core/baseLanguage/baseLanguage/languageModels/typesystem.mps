@@ -17874,5 +17874,63 @@
       <link role="concept" targetNodeId="1.1224071154655" resolveInfo="AsExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="4539702814067106471">
+    <property name="name" value="check_CorrectScope" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067106472">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4539702814067113796">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="4539702814067113813">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113814">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113815">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4539702814067113816">
+                <link role="applicableNode" targetNodeId="4539702814067106474" resolveInfo="thisExpression" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4539702814067113817">
+                <link role="baseMethodDeclaration" targetNodeId="37.1215682129821" resolveInfo="getPossibleClassifiers" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="4539702814067113818">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113821">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4539702814067113820">
+                  <link role="applicableNode" targetNodeId="4539702814067106474" resolveInfo="thisExpression" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4539702814067113825">
+                  <link role="link" targetNodeId="1.1182955020723" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067113798">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="4539702814067113826">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="4539702814067113830">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4539702814067113829">
+                <property name="value" value="Can't access " />
+              </node>
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113839">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113834">
+                  <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4539702814067113833">
+                    <link role="applicableNode" targetNodeId="4539702814067106474" resolveInfo="thisExpression" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4539702814067113838">
+                    <link role="link" targetNodeId="1.1182955020723" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4539702814067113843">
+                  <link role="property" targetNodeId="25.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4539702814067113844">
+              <link role="applicableNode" targetNodeId="4539702814067106474" resolveInfo="thisExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4539702814067106474">
+      <property name="name" value="thisExpression" />
+      <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
+    </node>
+  </node>
 </model>
 

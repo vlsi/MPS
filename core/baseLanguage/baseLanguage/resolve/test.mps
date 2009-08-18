@@ -166,14 +166,14 @@
     </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8540045600162404084">
       <property name="name" value="CDE" />
-      <property name="nonStatic" value="false" />
+      <property name="nonStatic" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8540045600162404085" />
       <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8540045600162404086">
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8540045600162404087" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8540045600162404088" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8540045600162404089">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="521412098689995927">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="521412098689995929">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4539702814067104410">
               <link role="classConcept" targetNodeId="186788241848729168" resolveInfo="ABC" />
             </node>
           </node>
