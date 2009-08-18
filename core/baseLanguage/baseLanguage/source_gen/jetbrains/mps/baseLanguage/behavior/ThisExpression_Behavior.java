@@ -16,6 +16,7 @@ public class ThisExpression_Behavior {
 
   public static List<SNode> call_getPossibleClassifiers_1215682129821(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
+    boolean prevWasStatic = false;
     for(SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false))) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
@@ -25,8 +26,15 @@ public class ThisExpression_Behavior {
         ListSequence.fromList(result).addElement(classifier);
       } else
       {
-        ListSequence.fromList(result).addElement(current);
+        if (!(prevWasStatic)) {
+          ListSequence.fromList(result).addElement(current);
+        }
+        if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
+          prevWasStatic = true;
+          continue;
+        }
       }
+      prevWasStatic = false;
     }
     return result;
   }
