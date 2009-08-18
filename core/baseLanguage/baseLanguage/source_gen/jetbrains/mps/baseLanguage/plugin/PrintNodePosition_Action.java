@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,6 +19,7 @@ public class PrintNodePosition_Action extends GeneratedAction {
 
   private SNode node;
   private SModelDescriptor model;
+  private IModule module;
 
   public PrintNodePosition_Action() {
     super("Print Node Line", "", ICON);
@@ -57,12 +59,16 @@ public class PrintNodePosition_Action extends GeneratedAction {
     if (this.model == null) {
       return false;
     }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull() final AnActionEvent event) {
     try {
-      IFile file = DebugInfo.getDebugFileOfModel(PrintNodePosition_Action.this.model);
+      IFile file = DebugInfo.getDebugFileOfModel(PrintNodePosition_Action.this.module.getGeneratorOutputPath(), PrintNodePosition_Action.this.model);
       if (file.exists()) {
         DebugInfo result = DebugInfo.load(file);
         PositionInfo positionInfo = result.getPositionForNode(PrintNodePosition_Action.this.node.getSNodeId().toString());

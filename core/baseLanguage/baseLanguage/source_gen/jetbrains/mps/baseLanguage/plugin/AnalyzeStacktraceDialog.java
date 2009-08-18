@@ -10,7 +10,9 @@ import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import jetbrains.mps.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class AnalyzeStacktraceDialog extends BaseDialog {
 
@@ -31,15 +33,27 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
   public JComponent createPanel() {
     JPanel panel = new JPanel(new BorderLayout());
     this.myText = new JTextArea("");
+    String str = TextPasteUtil.getStringFromClipboard();
+    if (str != null) {
+      this.myText.setText(str);
+    }
     panel.add(this.myText);
-    return new JScrollPane(panel);
+    JScrollPane scrollPane = new JScrollPane(panel);
+    scrollPane.getVerticalScrollBar().setBlockIncrement(40);
+    scrollPane.getVerticalScrollBar().setUnitIncrement(20);
+    scrollPane.getHorizontalScrollBar().setBlockIncrement(40);
+    return scrollPane;
+  }
+
+  public DialogDimensionsSettings.DialogDimensions getDefaultDementionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(100, 200, 400, 600);
   }
 
   @BaseDialog.Button(name = "Ok", position = 0, defaultButton = false)
   public void onOk() {
     AnalyzeStacktrace_Tool tool = this.myProject.getPluginManager().getTool(AnalyzeStacktrace_Tool.class);
     tool.setStackTrace(this.myText.getText());
-    tool.makeAvailable();
+    tool.openToolLater(true);
     this.dispose();
   }
 

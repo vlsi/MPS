@@ -125,7 +125,7 @@ public class FileGenerationUtil {
       }
     }
     if (model != null) {
-      info.saveTo(model.getModelDescriptor());
+      info.saveTo(DebugInfo.getDebugFileOfModel(outputRootDir, model.getModelDescriptor()));
     }
     return !hasErrors;
   }
@@ -134,7 +134,7 @@ public class FileGenerationUtil {
     SModel model = null;
     for (SNode out : result.getPositions().keySet()) {      
       SNode input = out;
-      while (input != null && input.getModel().getSModelReference().hasStereotype()) {
+      while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
         input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE);
       }
 

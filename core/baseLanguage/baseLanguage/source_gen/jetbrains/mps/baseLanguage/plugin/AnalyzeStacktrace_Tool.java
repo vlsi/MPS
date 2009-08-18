@@ -23,14 +23,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.vfs.IFile;
-import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.execution.filters.HyperlinkInfo;
 
 public class AnalyzeStacktrace_Tool extends GeneratedTool {
@@ -63,20 +63,20 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     Disposer.dispose(AnalyzeStacktrace_Tool.this.myConsoleView);
   }
 
-  private SNode getNodes(String method, String position) {
+  private SNode getNodes(String method, final String position) {
     int lastDot = method.lastIndexOf(".");
     lastDot = method.lastIndexOf(".", lastDot - 1);
     String pkg = method.substring(0, lastDot);
-    for(SModelDescriptor descriptor : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+    for(final SModelDescriptor descriptor : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (ObjectUtils.equals(descriptor.getSModelFqName().getLongName(), pkg) && ObjectUtils.equals(descriptor.getStereotype(), "")) {
-        IFile file = DebugInfo.getDebugFileOfModel(descriptor);
+        IFile file = DebugInfo.getDebugFileOfModel(descriptor.getModule().getGeneratorOutputPath(), descriptor);
         if (file.exists()) {
-          DebugInfo result = DebugInfo.load(file);
-          final List<SNode> nodes = result.getNodesForLine(position, descriptor.getSModel());
+          final DebugInfo result = DebugInfo.load(file);
           final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
 
             public void run() {
+              List<SNode> nodes = result.getNodesForLine(position, descriptor.getSModel());
               for(SNode n : ListSequence.fromList(nodes)) {
                 if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.Statement")) {
                   nodeToShow.value = n;
@@ -102,32 +102,45 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     AnalyzeStacktrace_Tool.this.myConsoleView.clear();
     String[] lines = str.split("\n");
     for(String line : lines) {
-      if (StringUtils.trim(line).startsWith(AnalyzeStacktrace_Tool.this.STRING_START)) {
-        int start = line.indexOf(AnalyzeStacktrace_Tool.this.STRING_START) + AnalyzeStacktrace_Tool.this.STRING_START.length();
-        String tmpStr = line.substring(start);
-        int parenIndex = tmpStr.indexOf("(");
-        String methodName = tmpStr.substring(0, parenIndex);
-        int closingParenIndex = tmpStr.indexOf(")");
-        String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
-        final SNode nodeToShow = AnalyzeStacktrace_Tool.this.getNodes(methodName, position);
-        if (nodeToShow != null) {
-          AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
-          AnalyzeStacktrace_Tool.this.myConsoleView.printHyperlink(position, new HyperlinkInfo() {
-
-            public void navigate(Project p0) {
-              AnalyzeStacktrace_Tool.this.showNode(nodeToShow);
-            }
-          });
-          AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
-          AnalyzeStacktrace_Tool.this.myConsoleView.print("\n", ConsoleViewContentType.ERROR_OUTPUT);
-        } else
-        {
-          AnalyzeStacktrace_Tool.this.myConsoleView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
-        }
-      } else
-      {
+      if (!(AnalyzeStacktrace_Tool.this.tryToParseLine(line))) {
         AnalyzeStacktrace_Tool.this.myConsoleView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
       }
+    }
+  }
+
+  private boolean tryToParseLine(String line) {
+    if (StringUtils.trim(line).startsWith(AnalyzeStacktrace_Tool.this.STRING_START)) {
+      int start = line.indexOf(AnalyzeStacktrace_Tool.this.STRING_START) + AnalyzeStacktrace_Tool.this.STRING_START.length();
+      String tmpStr = line.substring(start);
+      int parenIndex = tmpStr.indexOf("(");
+      if (parenIndex == -1) {
+        return false;
+      }
+      String methodName = tmpStr.substring(0, parenIndex);
+      int closingParenIndex = tmpStr.indexOf(")");
+      if (closingParenIndex == -1) {
+        return false;
+      }
+      String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
+      final SNode nodeToShow = AnalyzeStacktrace_Tool.this.getNodes(methodName, position);
+      if (nodeToShow != null) {
+        AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
+        AnalyzeStacktrace_Tool.this.myConsoleView.printHyperlink(position, new HyperlinkInfo() {
+
+          public void navigate(Project p0) {
+            AnalyzeStacktrace_Tool.this.showNode(nodeToShow);
+          }
+        });
+        AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
+        AnalyzeStacktrace_Tool.this.myConsoleView.print("\n", ConsoleViewContentType.ERROR_OUTPUT);
+        return true;
+      } else
+      {
+        return false;
+      }
+    } else
+    {
+      return false;
     }
   }
 
