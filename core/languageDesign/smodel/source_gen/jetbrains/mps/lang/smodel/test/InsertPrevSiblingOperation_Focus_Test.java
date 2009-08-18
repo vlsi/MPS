@@ -13,7 +13,7 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
 
   @Test()
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
-    this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
+    this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
