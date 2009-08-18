@@ -120,6 +120,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "classifier");
     }
+    ClassifierType_ActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

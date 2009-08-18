@@ -4588,6 +4588,7 @@
     <link role="conceptDeclaration" targetNodeId="17.1107535904670" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1211505069981">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" id="7829308473164511208">
+        <link role="actionMap" targetNodeId="4539702814067580558" resolveInfo="ClassifierType_ActionMap" />
         <node role="modelAccessor" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" id="7829308473164511209">
           <node role="getter" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" id="7829308473164511210">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7829308473164511211">
@@ -15244,6 +15245,24 @@
                   <property name="value" value="true" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" id="4539702814067580558">
+    <property name="package" value="type" />
+    <property name="name" value="ClassifierType_ActionMap" />
+    <link role="applicableConcept" targetNodeId="17.1107535904670" resolveInfo="ClassifierType" />
+    <node role="item" type="jetbrains.mps.lang.editor.structure.CellActionMapItem" id="4539702814067603946">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" id="4539702814067603947">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067603948">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4539702814067604694">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067604696">
+              <node role="operand" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" id="4539702814067604695" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" id="4539702814067605882" />
             </node>
           </node>
         </node>
