@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -30,6 +32,16 @@ public class ClassConcept_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constructor", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
     return members;
+  }
+
+  public static boolean call_isDescendant_1213877355812(SNode thisNode, SNode classToCompare) {
+    if (EqualUtil.equals(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode), INamedConcept_Behavior.call_getFqName_1213877404258(classToCompare))) {
+      return true;
+    }
+    if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {
+      return false;
+    }
+    return ClassConcept_Behavior.call_isDescendant_1213877355812(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), classToCompare);
   }
 
   public static SNode call_getMainMethod_1213877355884(SNode thisNode) {
