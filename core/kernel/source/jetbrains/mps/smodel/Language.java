@@ -506,7 +506,10 @@ public class Language extends AbstractModule {
     }
 
     for (Language extended : getExtendedLanguages()) {
-      result.add(LanguageAspect.STRUCTURE.get(extended));
+      SModelDescriptor structure = LanguageAspect.STRUCTURE.get(extended);
+      if (structure != null) {
+        result.add(structure);
+      }
       if (LanguageAspect.CONSTRAINTS.get(extended) != null) {
         result.add(LanguageAspect.CONSTRAINTS.get(extended));
       }
