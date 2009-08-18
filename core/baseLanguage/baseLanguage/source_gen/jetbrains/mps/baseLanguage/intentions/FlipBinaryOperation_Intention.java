@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FlipBinaryOperation_Intention extends BaseIntention {
-
   public FlipBinaryOperation_Intention() {
   }
 
@@ -54,5 +53,4 @@ public class FlipBinaryOperation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

@@ -89,5 +89,4 @@ public class ConceptFunction_Behavior {
   public static String callSuper_getName_1216468837268(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getName_1216468837268", PARAMETERS_1216468837268);
   }
-
 }

@@ -28,6 +28,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(BaseMethodDeclaration.NAME);
   }
@@ -160,5 +161,4 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public static BaseMethodDeclaration newInstance(SModel sm) {
     return BaseMethodDeclaration.newInstance(sm, false);
   }
-
 }

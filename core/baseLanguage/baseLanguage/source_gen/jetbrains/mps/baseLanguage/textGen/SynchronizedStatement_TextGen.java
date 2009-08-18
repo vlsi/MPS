@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SynchronizedStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
@@ -21,5 +20,4 @@ public class SynchronizedStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
   }
-
 }

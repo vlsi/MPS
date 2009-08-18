@@ -22,6 +22,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ClassCreator.SHORT_DESCRIPTION);
   }
@@ -110,5 +111,4 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   public static ClassCreator newInstance(SModel sm) {
     return ClassCreator.newInstance(sm, false);
   }
-
 }

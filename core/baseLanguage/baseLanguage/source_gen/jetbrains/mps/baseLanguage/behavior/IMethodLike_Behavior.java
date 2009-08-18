@@ -43,5 +43,4 @@ public class IMethodLike_Behavior {
   public static SNode callSuper_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
   }
-
 }

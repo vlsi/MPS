@@ -14,6 +14,7 @@ public class IntegerLiteral extends Expression {
     super(node);
   }
 
+
   public static IntegerLiteral newInstance(SModel sm, boolean init) {
     return (IntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class IntegerLiteral extends Expression {
   public static IntegerLiteral newInstance(SModel sm) {
     return IntegerLiteral.newInstance(sm, false);
   }
-
 }

@@ -14,6 +14,7 @@ public class NPENotEqualsExpression extends BinaryOperation {
     super(node);
   }
 
+
   public static NPENotEqualsExpression newInstance(SModel sm, boolean init) {
     return (NPENotEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class NPENotEqualsExpression extends BinaryOperation {
   public static NPENotEqualsExpression newInstance(SModel sm) {
     return NPENotEqualsExpression.newInstance(sm, false);
   }
-
 }

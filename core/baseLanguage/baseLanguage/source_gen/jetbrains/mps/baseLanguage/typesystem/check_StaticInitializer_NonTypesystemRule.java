@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_StaticInitializer_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_StaticInitializer_NonTypesystemRule() {
   }
 
@@ -29,5 +28,4 @@ public class check_StaticInitializer_NonTypesystemRule extends AbstractNonTypesy
   public boolean overrides() {
     return false;
   }
-
 }

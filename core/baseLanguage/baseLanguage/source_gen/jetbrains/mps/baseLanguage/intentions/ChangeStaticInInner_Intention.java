@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ChangeStaticInInner_Intention extends BaseIntention {
-
   public ChangeStaticInInner_Intention() {
   }
 
@@ -32,8 +31,7 @@ public class ChangeStaticInInner_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (Classifier_Behavior.call_isStatic_521412098689998668(node)) {
       return "Make Non Static";
-    } else
-    {
+    } else {
       return "Make Static";
     }
   }
@@ -56,5 +54,4 @@ public class ChangeStaticInInner_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

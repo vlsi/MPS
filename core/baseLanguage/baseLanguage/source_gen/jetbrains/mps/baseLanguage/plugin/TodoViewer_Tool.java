@@ -10,12 +10,12 @@ import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 
 public class TodoViewer_Tool extends GeneratedTool {
-
   private JComponent myComponent;
 
   public TodoViewer_Tool(Project project) {
     super(project, "TODO", 2, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\source\\jetbrains\\mps\\baseLanguage\\plugin\\todo.png", "jetbrains.mps.baseLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
+
 
   public JComponent getComponent() {
     return TodoViewer_Tool.this.myComponent;
@@ -24,5 +24,4 @@ public class TodoViewer_Tool extends GeneratedTool {
   public void init(Project project) {
     TodoViewer_Tool.this.myComponent = new TodoViewer(TodoViewer_Tool.this.getMPSProject());
   }
-
 }

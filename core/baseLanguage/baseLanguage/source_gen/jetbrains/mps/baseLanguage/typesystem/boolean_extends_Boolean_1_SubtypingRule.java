@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class boolean_extends_Boolean_1_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public boolean_extends_Boolean_1_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class boolean_extends_Boolean_1_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-
 }

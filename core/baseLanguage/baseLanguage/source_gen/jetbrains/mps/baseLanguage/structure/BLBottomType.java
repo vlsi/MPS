@@ -14,6 +14,7 @@ public class BLBottomType extends Type {
     super(node);
   }
 
+
   public static BLBottomType newInstance(SModel sm, boolean init) {
     return (BLBottomType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BLBottomType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class BLBottomType extends Type {
   public static BLBottomType newInstance(SModel sm) {
     return BLBottomType.newInstance(sm, false);
   }
-
 }

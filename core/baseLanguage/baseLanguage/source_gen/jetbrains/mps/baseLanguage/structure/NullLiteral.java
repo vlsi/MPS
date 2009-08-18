@@ -14,6 +14,7 @@ public class NullLiteral extends Expression {
     super(node);
   }
 
+
   public static NullLiteral newInstance(SModel sm, boolean init) {
     return (NullLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class NullLiteral extends Expression {
   public static NullLiteral newInstance(SModel sm) {
     return NullLiteral.newInstance(sm, false);
   }
-
 }

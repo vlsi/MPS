@@ -73,5 +73,4 @@ public class IOperation_Behavior {
   public static boolean callSuper_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IOperation"), callerConceptFqName, "virtual_isDotExpressionLegalAsStatement_1239212437413", PARAMETERS_1239212437413);
   }
-
 }

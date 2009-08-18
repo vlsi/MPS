@@ -20,6 +20,7 @@ public class SwitchStatement extends Statement {
     super(node);
   }
 
+
   public String getLabel() {
     return this.getProperty(SwitchStatement.LABEL);
   }
@@ -72,5 +73,4 @@ public class SwitchStatement extends Statement {
   public static SwitchStatement newInstance(SModel sm) {
     return SwitchStatement.newInstance(sm, false);
   }
-
 }

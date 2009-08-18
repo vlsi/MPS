@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public anonymousClassExtendsItsClassifier_SubtypingRule() {
   }
 
@@ -49,5 +48,4 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
   public boolean isWeak() {
     return false;
   }
-
 }

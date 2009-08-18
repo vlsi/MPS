@@ -20,5 +20,4 @@ public class IMemberContainer_Behavior {
   public static List<SNode> callSuper_getMembers_1213877531970(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), callerConceptFqName, "virtual_getMembers_1213877531970", PARAMETERS_1213877531970);
   }
-
 }

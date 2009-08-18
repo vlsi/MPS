@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_supertypeof_bottom_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public any_type_supertypeof_bottom_InequationReplacementRule() {
   }
 
@@ -42,5 +41,4 @@ public class any_type_supertypeof_bottom_InequationReplacementRule extends Abstr
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
 }

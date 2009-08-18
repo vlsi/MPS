@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ClosureParameterReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8575_0(editorContext, node);
   }
@@ -54,7 +53,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8575_0 extends AbstractCellProvider {
-
     public _Inline8575_0() {
       super();
     }
@@ -90,7 +88,5 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

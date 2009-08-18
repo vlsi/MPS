@@ -61,15 +61,14 @@ public class BaseMethodDeclaration_Behavior {
     StringBuilder result = new StringBuilder();
     result.append("(");
     boolean first = true;
-    for(SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       if (!(first)) {
         result.append(",");
       }
       first = false;
       if (SLinkOperations.getTarget(parm, "type", true) != null) {
         result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
-      } else
-      {
+      } else {
         result.append("???");
       }
       /*
@@ -87,16 +86,14 @@ public class BaseMethodDeclaration_Behavior {
     String name = SPropertyOperations.getString(thisNode, "name");
     if (name != null) {
       result.append(name);
-    } else
-    {
+    } else {
       result.append("<no name>");
     }
     result.append(BaseMethodDeclaration_Behavior.call_getParametersPresentation_1213877350304(thisNode));
     result.append(":");
     if (SLinkOperations.getTarget(thisNode, "returnType", true) != null) {
       result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "returnType", true)));
-    } else
-    {
+    } else {
       result.append("???");
     }
     return result.toString();
@@ -107,8 +104,7 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final IModule module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector <SNode, Class>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
         return Type_Behavior.call_getClass_1213877337327(SLinkOperations.getTarget(it, "type", true), module);
       }
@@ -118,7 +114,7 @@ public class BaseMethodDeclaration_Behavior {
   public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
     if (SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")) && SLinkOperations.getCount(thisNode, "parameter") == SLinkOperations.getCount(checked, "parameter")) {
       boolean same = true;
-      for(int i = 0 ; i < SLinkOperations.getCount(thisNode, "parameter") ; i++ ) {
+      for (int i = 0 ; i < SLinkOperations.getCount(thisNode, "parameter") ; i++ ) {
         String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
         String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
         if (!(foundParamType.equals(searchedParamType))) {
@@ -169,5 +165,4 @@ public class BaseMethodDeclaration_Behavior {
   public static boolean callSuper_isAbstract_1232982539764(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
   }
-
 }

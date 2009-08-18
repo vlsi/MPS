@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 
 public class LocalVariableDeclaration_DataFlow extends DataFlowBuilder {
-
   public LocalVariableDeclaration_DataFlow() {
   }
 
@@ -21,5 +20,4 @@ public class LocalVariableDeclaration_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitWrite(_context.getNode(), Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(_context.getNode(), "initializer", true)));
     }
   }
-
 }

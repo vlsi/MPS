@@ -9,25 +9,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class BlockStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     boolean needBrackets = false;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BlockStatement") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       if ((SLinkOperations.getTarget(node, "statements", true) != null)) {
-        for(SNode statement : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)) {
+        for (SNode statement : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)) {
           if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
             needBrackets = true;
             break;
           }
         }
       }
-    } else
-    {
+    } else {
       needBrackets = true;
     }
     if (needBrackets) {
-      this.appendNewLine();
-      this.appendWithIndent("{");
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+        this.append(" {");
+      } else {
+        this.appendNewLine();
+        this.appendWithIndent("{");
+      }
       this.increaseDepth();
     }
     if ((SLinkOperations.getTarget(node, "statements", true) != null)) {
@@ -39,5 +41,4 @@ public class BlockStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("}");
     }
   }
-
 }

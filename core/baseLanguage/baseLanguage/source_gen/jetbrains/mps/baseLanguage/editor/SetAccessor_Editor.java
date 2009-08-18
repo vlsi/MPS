@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SetAccessor_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4227_0(editorContext, node);
   }
@@ -116,5 +115,4 @@ public class SetAccessor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

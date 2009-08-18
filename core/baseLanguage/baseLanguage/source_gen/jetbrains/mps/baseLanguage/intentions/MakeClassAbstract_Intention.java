@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class MakeClassAbstract_Intention extends BaseIntention {
-
   public MakeClassAbstract_Intention() {
   }
 
@@ -47,8 +46,7 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).where(new IWhereFilter <SNode>() {
-
+    return !(SPropertyOperations.getBoolean(node, "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isAbstract");
       }
@@ -66,5 +64,4 @@ public class MakeClassAbstract_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

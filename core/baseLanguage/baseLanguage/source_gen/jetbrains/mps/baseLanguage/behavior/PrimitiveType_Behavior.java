@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class PrimitiveType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,5 +23,4 @@ public class PrimitiveType_Behavior {
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return thisNode;
   }
-
 }

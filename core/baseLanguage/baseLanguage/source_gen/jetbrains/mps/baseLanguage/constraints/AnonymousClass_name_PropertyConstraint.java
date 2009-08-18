@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AnonymousClass_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public AnonymousClass_name_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class AnonymousClass_name_PropertyConstraint implements IModelConstraints
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name") + "$anonymous";
   }
-
 }

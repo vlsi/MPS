@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6051_0(editorContext, node);
   }
@@ -92,7 +91,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6051_0 extends AbstractCellProvider {
-
     public _Inline6051_0() {
       super();
     }
@@ -127,10 +125,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6051_1 extends AbstractCellProvider {
-
     public _Inline6051_1() {
       super();
     }
@@ -161,10 +158,9 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class StaticFieldReference_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
-
     public StaticFieldReference_customReplace_cellMenu0() {
     }
 
@@ -183,12 +179,10 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return true;
     }
+  }
 
-}
   public static class StaticFieldReference_staticFieldDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
-
     public StaticFieldReference_staticFieldDeclaration_cellMenu0() {
     }
-}
-
+  }
 }

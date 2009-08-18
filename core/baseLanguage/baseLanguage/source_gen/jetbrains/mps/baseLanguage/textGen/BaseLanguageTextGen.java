@@ -16,12 +16,11 @@ import java.util.HashSet;
 import jetbrains.mps.generator.JavaNameUtil;
 
 public abstract class BaseLanguageTextGen {
-
   public static void typeParameters(List<SNode> types, final SNodeTextGen textGen) {
     if (ListSequence.fromList(types).isNotEmpty()) {
       textGen.append("<");
       if (ListSequence.fromList(types).isNotEmpty()) {
-        for(SNode item : types) {
+        for (SNode item : types) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
           if (item != ListSequence.fromList(types).last()) {
             textGen.append(", ");
@@ -35,7 +34,7 @@ public abstract class BaseLanguageTextGen {
   public static void arguments(SNode methodCall, final SNodeTextGen textGen) {
     textGen.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(methodCall, "actualArgument", true)) {
+      for (SNode item : SLinkOperations.getTargets(methodCall, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).last()) {
           textGen.append(", ");
@@ -45,9 +44,15 @@ public abstract class BaseLanguageTextGen {
     textGen.append(")");
   }
 
+  public static void newLine(boolean need, final SNodeTextGen textGen) {
+    if (need) {
+      textGen.appendNewLine();
+    }
+  }
+
   public static void annotations(SNode annotable, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(annotable, "annotation", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(annotable, "annotation", true)) {
+      for (SNode item : SLinkOperations.getTargets(annotable, "annotation", true)) {
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
       }
     }
@@ -55,9 +60,8 @@ public abstract class BaseLanguageTextGen {
 
   public static void visibility(SNode v, final SNodeTextGen textGen) {
     if ((v == null)) {
-      textGen.append("/* package */");
-    } else
-    {
+      textGen.append("/*package*/ ");
+    } else {
       TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), v, textGen.getSNode());
     }
   }
@@ -138,8 +142,7 @@ public abstract class BaseLanguageTextGen {
     String importedShortName = className.split("\\.")[0];
     if (packageName.length() > 0) {
       importedFqName = packageName + "." + importedShortName;
-    } else
-    {
+    } else {
       importedFqName = importedShortName;
     }
     Set<String> importedNames = BaseLanguageTextGen.getImportedNames(textGen);
@@ -147,13 +150,12 @@ public abstract class BaseLanguageTextGen {
       textGen.append(className);
       return;
     }
-    for(String importedName : importedNames) {
+    for (String importedName : importedNames) {
       if (importedShortName.equals(JavaNameUtil.shortName(importedName))) {
         String fqName;
         if (packageName.length() > 0) {
           fqName = packageName + "." + className;
-        } else
-        {
+        } else {
           fqName = className;
         }
         textGen.append(fqName);
@@ -169,5 +171,4 @@ public abstract class BaseLanguageTextGen {
     }
     textGen.append(className);
   }
-
 }

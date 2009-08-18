@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NotExpression_Parens_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new NotExpression_Parens_Actions.NotExpression_Parens_Actions_DELETE(node));
   }
 
   public static class NotExpression_Parens_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public NotExpression_Parens_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "remove not-expression";
@@ -35,7 +34,5 @@ public class NotExpression_Parens_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }
-
-}
-
+  }
 }

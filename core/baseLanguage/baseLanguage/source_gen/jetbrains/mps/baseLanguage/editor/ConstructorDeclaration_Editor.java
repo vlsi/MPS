@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5292_0(editorContext, node);
   }
@@ -46,8 +45,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_5292_1(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_5292_4(editorContext, node);
     }
     {
@@ -328,7 +326,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_5292_0 extends RefNodeListHandler {
-
     public parameterListHandler_5292_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -391,10 +388,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class throwsItemListHandler_5292_0 extends RefNodeListHandler {
-
     public throwsItemListHandler_5292_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -441,10 +437,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class annotationListHandler_5292_0 extends RefNodeListHandler {
-
     public annotationListHandler_5292_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -484,10 +479,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_5292_1 extends RefNodeListHandler {
-
     public annotationListHandler_5292_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -527,7 +521,5 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

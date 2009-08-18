@@ -39,18 +39,18 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
-    for(SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+    for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
       ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
     // 
     Set<SNode> implementorsAndAncestorsNodes = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
+    for (SNode implementorOrAncestor : ListSequence.fromList(implementorsAndAncestorsList)) {
       SetSequence.fromSet(implementorsAndAncestorsNodes).addElement(SNodeOperations.cast(implementorOrAncestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
     // 
-    for(SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {
-      for(SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
+    for (SNode classNode : SetSequence.fromSet(implementorsAndAncestorsNodes)) {
+      for (SNode sMethod : ListSequence.fromList(SLinkOperations.getTargets(classNode, "method", true))) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
           ListSequence.fromList(_results).addElement(sMethod);
         }
@@ -61,5 +61,4 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Method Implementation";
   }
-
 }

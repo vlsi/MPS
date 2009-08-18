@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PasteWrappers {
-
   public static List<PasteWrapper> createPasteWrappers() {
     List<PasteWrapper> result = ListSequence.fromList(new ArrayList<PasteWrapper>());
     ListSequence.fromList(result).addElement(new PasteWrapper() {
-
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
@@ -32,7 +30,6 @@ public class PasteWrappers {
       }
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
-
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
       }
@@ -46,7 +43,6 @@ public class PasteWrappers {
       }
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
-
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
       }
@@ -60,7 +56,6 @@ public class PasteWrappers {
       }
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
-
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
       }
@@ -77,5 +72,4 @@ public class PasteWrappers {
     });
     return result;
   }
-
 }

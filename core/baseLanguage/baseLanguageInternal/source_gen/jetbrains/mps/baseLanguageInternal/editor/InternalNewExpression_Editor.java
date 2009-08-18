@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InternalNewExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4191_0(editorContext, node);
   }
@@ -259,7 +258,6 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_4191_0 extends RefNodeListHandler {
-
     public parameterListHandler_4191_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -299,7 +297,5 @@ public class InternalNewExpression_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

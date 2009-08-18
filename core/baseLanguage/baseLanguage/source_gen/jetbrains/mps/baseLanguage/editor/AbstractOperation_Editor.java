@@ -11,17 +11,14 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCustom_3927_0(editorContext, node);
   }
 
   private EditorCell createCustom_3927_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0 <AbstractCellProvider>() {
-
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-
           public EditorCell createEditorCell(EditorContext context) {
             return new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
           }
@@ -32,5 +29,4 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Custom_3927_0");
     return editorCell;
   }
-
 }

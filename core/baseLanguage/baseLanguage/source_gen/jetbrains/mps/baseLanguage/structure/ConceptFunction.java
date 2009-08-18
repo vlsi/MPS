@@ -24,6 +24,7 @@ public class ConceptFunction extends BaseConcept implements IMethodLike {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ConceptFunction.SHORT_DESCRIPTION);
   }
@@ -64,5 +65,4 @@ public class ConceptFunction extends BaseConcept implements IMethodLike {
   public static ConceptFunction newInstance(SModel sm) {
     return ConceptFunction.newInstance(sm, false);
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntention {
-
   public AddRuntimeExceptionToMethodSignature_Intention() {
   }
 
@@ -65,8 +64,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check if it's not thrown by a method yet
-    if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter <SNode>() {
-
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);
       }
@@ -84,5 +82,4 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

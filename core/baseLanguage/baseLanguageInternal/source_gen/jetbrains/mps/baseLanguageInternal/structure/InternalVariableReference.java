@@ -18,6 +18,7 @@ public class InternalVariableReference extends Expression {
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(InternalVariableReference.NAME);
   }
@@ -42,5 +43,4 @@ public class InternalVariableReference extends Expression {
   public static InternalVariableReference newInstance(SModel sm) {
     return InternalVariableReference.newInstance(sm, false);
   }
-
 }

@@ -26,6 +26,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(EnumConstantDeclaration.NAME);
   }
@@ -118,5 +119,4 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public static EnumConstantDeclaration newInstance(SModel sm) {
     return EnumConstantDeclaration.newInstance(sm, false);
   }
-
 }

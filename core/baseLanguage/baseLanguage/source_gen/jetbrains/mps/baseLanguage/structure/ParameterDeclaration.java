@@ -19,6 +19,7 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
     super(node);
   }
 
+
   public String getResolveInfo() {
     return this.getProperty(ParameterDeclaration.RESOLVE_INFO);
   }
@@ -59,5 +60,4 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
   public static ParameterDeclaration newInstance(SModel sm) {
     return ParameterDeclaration.newInstance(sm, false);
   }
-
 }

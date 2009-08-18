@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.behavior.LocalVariableReference_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LocalVariableReference_DataFlow extends DataFlowBuilder {
-
   public LocalVariableReference_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class LocalVariableReference_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
     }
   }
-
 }

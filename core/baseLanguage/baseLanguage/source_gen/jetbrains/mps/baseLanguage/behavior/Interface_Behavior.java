@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Interface_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,12 +17,11 @@ public class Interface_Behavior {
     if (EqualUtil.equals(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode), INamedConcept_Behavior.call_getFqName_1213877404258(interfaceToCompare))) {
       return true;
     }
-    for(SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
+    for (SNode extended : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true))) {
       if (Interface_Behavior.call_isDescendant_1238269307226(SNodeOperations.cast(SLinkOperations.getTarget(extended, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), interfaceToCompare)) {
         return true;
       }
     }
     return false;
   }
-
 }

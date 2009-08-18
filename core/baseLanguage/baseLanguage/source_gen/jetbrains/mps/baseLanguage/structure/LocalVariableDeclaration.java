@@ -19,6 +19,7 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
     super(node);
   }
 
+
   public String getResolveInfo() {
     return this.getProperty(LocalVariableDeclaration.RESOLVE_INFO);
   }
@@ -59,5 +60,4 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
   public static LocalVariableDeclaration newInstance(SModel sm) {
     return LocalVariableDeclaration.newInstance(sm, false);
   }
-
 }

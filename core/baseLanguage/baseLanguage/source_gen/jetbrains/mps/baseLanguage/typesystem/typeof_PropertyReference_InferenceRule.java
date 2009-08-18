@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_PropertyReference_InferenceRule() {
   }
 
@@ -44,5 +43,4 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-
 }

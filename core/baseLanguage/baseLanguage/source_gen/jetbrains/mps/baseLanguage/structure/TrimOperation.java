@@ -15,6 +15,7 @@ public class TrimOperation extends BaseStringOperation {
     super(node);
   }
 
+
   public TrimKind getTrimKind() {
     String value = super.getProperty(TrimOperation.TRIM_KIND);
     return TrimKind.parseValue(value);
@@ -32,5 +33,4 @@ public class TrimOperation extends BaseStringOperation {
   public static TrimOperation newInstance(SModel sm) {
     return TrimOperation.newInstance(sm, false);
   }
-
 }

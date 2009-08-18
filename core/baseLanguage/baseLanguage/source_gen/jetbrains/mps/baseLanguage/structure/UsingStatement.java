@@ -18,6 +18,7 @@ public class UsingStatement extends Statement {
     super(node);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(StatementList.class, UsingStatement.BODY);
   }
@@ -54,5 +55,4 @@ public class UsingStatement extends Statement {
   public static UsingStatement newInstance(SModel sm) {
     return UsingStatement.newInstance(sm, false);
   }
-
 }

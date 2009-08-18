@@ -11,13 +11,12 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ArrayLiteral_InferenceRule() {
   }
 
   public void applyRule(final SNode arrayLiteral, final TypeCheckingContext typeCheckingContext) {
     final SNode elementType_typevar_1188221443596 = typeCheckingContext.createNewRuntimeTypesVariable();
-    for(SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
+    for (SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
       {
         SNode _nodeToCheck_1029348928467 = item;
         BaseIntentionProvider intentionProvider = null;
@@ -42,5 +41,4 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
   public boolean overrides() {
     return false;
   }
-
 }

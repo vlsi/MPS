@@ -21,6 +21,7 @@ public class Interface extends Classifier implements IBLDeprecatable {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(Interface.SHORT_DESCRIPTION);
   }
@@ -81,5 +82,4 @@ public class Interface extends Classifier implements IBLDeprecatable {
   public static Interface newInstance(SModel sm) {
     return Interface.newInstance(sm, false);
   }
-
 }

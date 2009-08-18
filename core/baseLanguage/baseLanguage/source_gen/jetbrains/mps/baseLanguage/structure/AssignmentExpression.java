@@ -17,6 +17,7 @@ public class AssignmentExpression extends BaseAssignmentExpression implements Ty
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(AssignmentExpression.SHORT_DESCRIPTION);
   }
@@ -49,5 +50,4 @@ public class AssignmentExpression extends BaseAssignmentExpression implements Ty
   public static AssignmentExpression newInstance(SModel sm) {
     return AssignmentExpression.newInstance(sm, false);
   }
-
 }

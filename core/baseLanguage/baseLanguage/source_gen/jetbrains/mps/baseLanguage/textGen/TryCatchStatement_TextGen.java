@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TryCatchStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
@@ -17,11 +16,10 @@ public class TryCatchStatement_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
     this.decreaseDepth();
     this.appendNewLine();
-    for(SNode clause : SLinkOperations.getTargets(node, "catchClause", true)) {
+    for (SNode clause : SLinkOperations.getTargets(node, "catchClause", true)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), clause, this.getSNode());
       this.appendNewLine();
     }
     this.appendWithIndent("}");
   }
-
 }

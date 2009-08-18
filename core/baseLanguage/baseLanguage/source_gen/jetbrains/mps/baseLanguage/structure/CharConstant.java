@@ -15,6 +15,7 @@ public class CharConstant extends Expression {
     super(node);
   }
 
+
   public String getCharConstant() {
     return this.getProperty(CharConstant.CHAR_CONSTANT);
   }
@@ -31,5 +32,4 @@ public class CharConstant extends Expression {
   public static CharConstant newInstance(SModel sm) {
     return CharConstant.newInstance(sm, false);
   }
-
 }

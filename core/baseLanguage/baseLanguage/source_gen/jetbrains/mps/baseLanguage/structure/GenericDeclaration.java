@@ -23,6 +23,7 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(GenericDeclaration.NAME);
   }
@@ -83,5 +84,4 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public static GenericDeclaration newInstance(SModel sm) {
     return GenericDeclaration.newInstance(sm, false);
   }
-
 }

@@ -16,6 +16,7 @@ public class ForStatement extends AbstractForStatement {
     super(node);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, ForStatement.CONDITION);
   }
@@ -40,5 +41,4 @@ public class ForStatement extends AbstractForStatement {
   public static ForStatement newInstance(SModel sm) {
     return ForStatement.newInstance(sm, false);
   }
-
 }

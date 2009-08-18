@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AssignmentExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -41,5 +40,4 @@ public class AssignmentExpression_Behavior {
     SNodeOperations.replaceWithAnother(exprStatement, varDeclStmnt);
     return varDeclStmnt;
   }
-
 }

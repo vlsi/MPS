@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public any_type_subtypeof_wildcard_type_InequationReplacementRule() {
   }
 
@@ -42,5 +41,4 @@ public class any_type_subtypeof_wildcard_type_InequationReplacementRule extends 
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.WildCardType";
   }
-
 }

@@ -20,6 +20,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(StaticMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -68,5 +69,4 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   public static StaticMethodDeclaration newInstance(SModel sm) {
     return StaticMethodDeclaration.newInstance(sm, false);
   }
-
 }

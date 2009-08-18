@@ -15,6 +15,7 @@ public class ThrowStatement extends Statement {
     super(node);
   }
 
+
   public Expression getThrowable() {
     return (Expression)this.getChild(Expression.class, ThrowStatement.THROWABLE);
   }
@@ -31,5 +32,4 @@ public class ThrowStatement extends Statement {
   public static ThrowStatement newInstance(SModel sm) {
     return ThrowStatement.newInstance(sm, false);
   }
-
 }

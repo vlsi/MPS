@@ -31,7 +31,8 @@ public class InlineMethod_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt N";
   }
@@ -39,7 +40,6 @@ public class InlineMethod_Action extends GeneratedAction {
   public boolean isApplicable(AnActionEvent event) {
     final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         b.value = MethodCallAdapter.isMethodCall(InlineMethod_Action.this.node) || SNodeOperations.isInstanceOf(InlineMethod_Action.this.node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
@@ -47,7 +47,7 @@ public class InlineMethod_Action extends GeneratedAction {
     return b.value;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -59,7 +59,7 @@ public class InlineMethod_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -88,7 +88,7 @@ public class InlineMethod_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       InlineMethodDialog dialog = new InlineMethodDialog(InlineMethod_Action.this.node, InlineMethod_Action.this.project, InlineMethod_Action.this.operationContext);
       dialog.tryToShow();
@@ -97,5 +97,4 @@ public class InlineMethod_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "InlineMethod", t);
     }
   }
-
 }

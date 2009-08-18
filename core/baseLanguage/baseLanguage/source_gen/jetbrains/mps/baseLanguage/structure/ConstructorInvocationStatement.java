@@ -21,6 +21,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ConstructorInvocationStatement.SHORT_DESCRIPTION);
   }
@@ -89,5 +90,4 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   public static ConstructorInvocationStatement newInstance(SModel sm) {
     return ConstructorInvocationStatement.newInstance(sm, false);
   }
-
 }

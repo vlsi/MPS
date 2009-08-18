@@ -16,6 +16,7 @@ public class AssertStatement extends Statement {
     super(node);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
   }
@@ -40,5 +41,4 @@ public class AssertStatement extends Statement {
   public static AssertStatement newInstance(SModel sm) {
     return AssertStatement.newInstance(sm, false);
   }
-
 }

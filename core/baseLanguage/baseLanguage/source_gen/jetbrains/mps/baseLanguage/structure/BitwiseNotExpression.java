@@ -15,6 +15,7 @@ public class BitwiseNotExpression extends Expression {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, BitwiseNotExpression.EXPRESSION);
   }
@@ -31,5 +32,4 @@ public class BitwiseNotExpression extends Expression {
   public static BitwiseNotExpression newInstance(SModel sm) {
     return BitwiseNotExpression.newInstance(sm, false);
   }
-
 }

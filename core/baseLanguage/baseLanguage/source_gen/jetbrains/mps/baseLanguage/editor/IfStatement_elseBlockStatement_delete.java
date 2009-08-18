@@ -14,18 +14,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class IfStatement_elseBlockStatement_delete {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
   }
 
   public static class IfStatement_elseBlockStatement_delete_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public IfStatement_elseBlockStatement_delete_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -37,13 +36,10 @@ public class IfStatement_elseBlockStatement_delete {
       List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true), "statement", true);
       if (ListSequence.fromList(statements).isEmpty()) {
         statement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
-      } else
-      {
+      } else {
         statement = ListSequence.fromList(statements).first();
       }
       SNodeOperations.replaceWithAnother(ifFalseStatement, statement);
     }
-
-}
-
+  }
 }

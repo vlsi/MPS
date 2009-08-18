@@ -12,7 +12,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1233837557097(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.TupleMemberAccessOperation");
   }
@@ -37,5 +36,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1233837222427(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "item", true);
   }
-
 }

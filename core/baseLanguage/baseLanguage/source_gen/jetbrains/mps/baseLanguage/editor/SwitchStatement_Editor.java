@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SwitchStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6015_0(editorContext, node);
   }
@@ -291,7 +290,6 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static class caseListHandler_6015_0 extends RefNodeListHandler {
-
     public caseListHandler_6015_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -331,7 +329,5 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

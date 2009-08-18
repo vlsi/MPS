@@ -22,6 +22,7 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(StatementList.SHORT_DESCRIPTION);
   }
@@ -74,5 +75,4 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
   public static StatementList newInstance(SModel sm) {
     return StatementList.newInstance(sm, false);
   }
-
 }

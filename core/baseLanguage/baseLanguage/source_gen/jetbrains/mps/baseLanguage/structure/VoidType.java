@@ -14,6 +14,7 @@ public class VoidType extends PrimitiveType {
     super(node);
   }
 
+
   public static VoidType newInstance(SModel sm, boolean init) {
     return (VoidType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class VoidType extends PrimitiveType {
   public static VoidType newInstance(SModel sm) {
     return VoidType.newInstance(sm, false);
   }
-
 }

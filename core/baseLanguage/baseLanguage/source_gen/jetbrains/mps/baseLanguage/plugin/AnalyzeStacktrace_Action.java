@@ -26,12 +26,13 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -40,7 +41,7 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -60,7 +61,7 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(AnalyzeStacktrace_Action.this.frame, AnalyzeStacktrace_Action.this.context, AnalyzeStacktrace_Action.this.project);
       dialog.showDialog();
@@ -68,5 +69,4 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "AnalyzeStacktrace", t);
     }
   }
-
 }

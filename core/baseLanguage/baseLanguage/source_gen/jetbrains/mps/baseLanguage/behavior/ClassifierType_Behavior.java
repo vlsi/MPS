@@ -17,7 +17,6 @@ import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ClassifierType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,7 +29,7 @@ public class ClassifierType_Behavior {
     List<SNode> parms = SLinkOperations.getTargets(thisNode, "parameter", true);
     if (ListSequence.fromList(parms).isNotEmpty()) {
       String parmsText = "";
-      for(SNode parm : ListSequence.fromList(parms)) {
+      for (SNode parm : ListSequence.fromList(parms)) {
         if (parmsText.length() > 0) {
           parmsText = parmsText + ",";
         }
@@ -65,7 +64,7 @@ public class ClassifierType_Behavior {
       if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).isNotEmpty()) {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
         SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
-        for(SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
+        for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
           SLinkOperations.addChild(creator, "typeParameter", SNodeOperations.copyNode(typeParm));
         }
         return creator;
@@ -111,8 +110,7 @@ public class ClassifierType_Behavior {
               if (!(Type_Behavior.call_isSupersetOf_1220438914705(myParam, typeParam))) {
                 return false;
               }
-            } else
-            {
+            } else {
               if (!(MatchingUtil.matchNodes(myParam, typeParam))) {
                 return false;
               }
@@ -120,11 +118,9 @@ public class ClassifierType_Behavior {
           }
         }
         return true;
-      } else
-      {
+      } else {
       }
     }
     return Type_Behavior.callSuper_isSupersetOf_1220438914705(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType", t);
   }
-
 }

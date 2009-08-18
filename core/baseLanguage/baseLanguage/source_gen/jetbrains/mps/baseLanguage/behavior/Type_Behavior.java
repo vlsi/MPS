@@ -74,8 +74,7 @@ public class Type_Behavior {
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
       if (coercedNode_1 != null) {
         return new _Quotations.QuotationClass_24().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
-      } else
-      {
+      } else {
         throw new UnsupportedOperationException();
       }
     }
@@ -87,8 +86,7 @@ public class Type_Behavior {
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
       if (coercedNode_2 != null) {
         return true;
-      } else
-      {
+      } else {
       }
     }
     return false;
@@ -165,5 +163,4 @@ public class Type_Behavior {
   public static boolean callSuper_isSupersetOf_1220438914705(SNode thisNode, String callerConceptFqName, SNode t) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_isSupersetOf_1220438914705", PARAMETERS_1220438914705, t);
   }
-
 }

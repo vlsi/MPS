@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 
 public class ConvertElseToElseIf_Intention extends BaseIntention {
-
   public ConvertElseToElseIf_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class ConvertElseToElseIf_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

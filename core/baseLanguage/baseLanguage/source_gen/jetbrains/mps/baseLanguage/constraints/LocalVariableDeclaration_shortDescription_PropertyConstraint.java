@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class LocalVariableDeclaration_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public LocalVariableDeclaration_shortDescription_PropertyConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class LocalVariableDeclaration_shortDescription_PropertyConstraint implem
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "local variable";
   }
-
 }

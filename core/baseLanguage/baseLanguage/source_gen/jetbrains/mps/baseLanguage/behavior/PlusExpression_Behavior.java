@@ -7,7 +7,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PlusExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,11 +16,9 @@ public class PlusExpression_Behavior {
     Object rightExpression = Expression_Behavior.call_eval_1213877519769(SLinkOperations.getTarget(thisNode, "rightExpression", true), module);
     if (leftExpression instanceof String) {
       result = "" + leftExpression + rightExpression;
-    } else
-    {
+    } else {
       throw new UnsupportedOperationException();
     }
     return result;
   }
-
 }

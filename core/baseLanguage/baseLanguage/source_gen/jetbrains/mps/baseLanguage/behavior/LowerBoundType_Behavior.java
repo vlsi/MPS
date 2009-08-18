@@ -7,17 +7,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class LowerBoundType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "bound", true) != null) {
       return "? super " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true));
-    } else
-    {
+    } else {
       return "? super ???";
     }
   }
-
 }

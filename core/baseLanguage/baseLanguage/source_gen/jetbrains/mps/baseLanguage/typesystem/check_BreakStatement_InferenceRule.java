@@ -17,15 +17,13 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BreakStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public check_BreakStatement_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     if (!(SPropertyOperations.hasValue(nodeToCheck, "label", null))) {
       final String lbl = SPropertyOperations.getString(nodeToCheck, "label");
-      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter <SNode>() {
-
+      Iterable<SNode> matchingLoops = ListSequence.fromList(SNodeOperations.getAncestors(nodeToCheck, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return lbl.equals(SPropertyOperations.getString(it, "label"));
         }
@@ -49,5 +47,4 @@ public class check_BreakStatement_InferenceRule extends AbstractInferenceRule_Ru
   public boolean overrides() {
     return false;
   }
-
 }

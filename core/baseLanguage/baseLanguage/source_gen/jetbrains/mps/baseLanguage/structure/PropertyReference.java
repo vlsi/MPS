@@ -19,6 +19,7 @@ public class PropertyReference extends BaseConcept implements IOperation {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(PropertyReference.SHORT_DESCRIPTION);
   }
@@ -59,5 +60,4 @@ public class PropertyReference extends BaseConcept implements IOperation {
   public static PropertyReference newInstance(SModel sm) {
     return PropertyReference.newInstance(sm, false);
   }
-
 }

@@ -16,6 +16,7 @@ public class EnumConstantReference extends Expression {
     super(node);
   }
 
+
   public EnumClass getEnumClass() {
     return (EnumClass)this.getReferent(EnumClass.class, EnumConstantReference.ENUM_CLASS);
   }
@@ -40,5 +41,4 @@ public class EnumConstantReference extends Expression {
   public static EnumConstantReference newInstance(SModel sm) {
     return EnumConstantReference.newInstance(sm, false);
   }
-
 }

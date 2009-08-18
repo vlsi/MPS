@@ -11,7 +11,6 @@ import jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
-
   public BaseAssignmentExpression_DataFlow() {
   }
 
@@ -22,10 +21,8 @@ public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
       }
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rValue", true));
       _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
-    } else
-    {
+    } else {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "lValue", true));
     }
   }
-
 }

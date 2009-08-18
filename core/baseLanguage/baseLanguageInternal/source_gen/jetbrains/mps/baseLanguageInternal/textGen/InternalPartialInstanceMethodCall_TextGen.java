@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, "instance", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "instance", true), this.getSNode());
@@ -22,7 +21,7 @@ public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
     this.append(SPropertyOperations.getString(node, "methodName"));
     this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
@@ -31,5 +30,4 @@ public class InternalPartialInstanceMethodCall_TextGen extends SNodeTextGen {
     }
     this.append(")");
   }
-
 }

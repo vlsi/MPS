@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class StyleSheet_StyleSheet {
-
   public static Style getInternalKeyword(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
@@ -31,5 +30,4 @@ public class StyleSheet_StyleSheet {
     style.set(StyleAttributes.SELECTABLE, false);
     return style;
   }
-
 }

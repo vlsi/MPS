@@ -15,6 +15,7 @@ public class AbstractUnaryNumberOperation extends Expression {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, AbstractUnaryNumberOperation.EXPRESSION);
   }
@@ -31,5 +32,4 @@ public class AbstractUnaryNumberOperation extends Expression {
   public static AbstractUnaryNumberOperation newInstance(SModel sm) {
     return AbstractUnaryNumberOperation.newInstance(sm, false);
   }
-
 }

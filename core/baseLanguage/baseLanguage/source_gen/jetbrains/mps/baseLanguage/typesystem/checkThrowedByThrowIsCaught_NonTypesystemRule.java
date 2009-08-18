@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public checkThrowedByThrowIsCaught_NonTypesystemRule() {
   }
 
@@ -43,5 +42,4 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
   public boolean overrides() {
     return false;
   }
-
 }

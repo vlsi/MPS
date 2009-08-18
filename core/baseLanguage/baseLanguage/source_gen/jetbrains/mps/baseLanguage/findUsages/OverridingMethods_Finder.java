@@ -42,15 +42,14 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for(SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
+    for (SNode classNode : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       Iterable<SNode> methodsOfSameKind;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
         methodsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-      } else
-      {
+      } else {
         methodsOfSameKind = SLinkOperations.getTargets(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
       }
-      for(SNode sMethod : Sequence.fromIterable(methodsOfSameKind)) {
+      for (SNode sMethod : Sequence.fromIterable(methodsOfSameKind)) {
         if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(node, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(node, "parameter")) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(sMethod, node)) {
             ListSequence.fromList(_results).addElement(sMethod);
@@ -63,5 +62,4 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Overriding Methods";
   }
-
 }

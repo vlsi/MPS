@@ -4,9 +4,7 @@ package jetbrains.mps.baseLanguage.constraints;
 
 
 public class PropertyImplementation_Constraints {
-
   public static String getDefaultConcreteConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation";
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NPENotEqualsExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_NPENotEqualsExpression_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class typeof_NPENotEqualsExpression_InferenceRule extends AbstractInferen
   public boolean overrides() {
     return false;
   }
-
 }

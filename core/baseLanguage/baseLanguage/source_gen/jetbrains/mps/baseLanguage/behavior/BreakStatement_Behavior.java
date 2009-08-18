@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BreakStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,7 +27,7 @@ public class BreakStatement_Behavior {
   }
 
   public static SNode call_getLoopOrSwitch_1213877377041(SNode thisNode) {
-    for(SNode item : SNodeOperations.getAncestorsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
+    for (SNode item : SNodeOperations.getAncestorsWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false)) {
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && SPropertyOperations.getString(thisNode, "label") == null) {
         return item;
       }
@@ -38,8 +37,7 @@ public class BreakStatement_Behavior {
           if (SPropertyOperations.getString(loop, "label") == null) {
             return loop;
           }
-        } else
-        {
+        } else {
           if (SPropertyOperations.getString(thisNode, "label").equals(SPropertyOperations.getString(loop, "label"))) {
             return loop;
           }
@@ -52,5 +50,4 @@ public class BreakStatement_Behavior {
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return true;
   }
-
 }

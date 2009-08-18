@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7959_0(editorContext, node);
   }
@@ -195,5 +194,4 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7959_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instance", true) != null;
   }
-
 }

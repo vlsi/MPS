@@ -15,6 +15,7 @@ public class UpperBoundType extends Type {
     super(node);
   }
 
+
   public Type getBound() {
     return (Type)this.getChild(Type.class, UpperBoundType.BOUND);
   }
@@ -31,5 +32,4 @@ public class UpperBoundType extends Type {
   public static UpperBoundType newInstance(SModel sm) {
     return UpperBoundType.newInstance(sm, false);
   }
-
 }

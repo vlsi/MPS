@@ -21,16 +21,15 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_LocalStaticMethodCall_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode call, final TypeCheckingContext typeCheckingContext) {
     List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode classConcept : containers) {
+    for (SNode classConcept : containers) {
       List<SNode> classifiers = ((List<SNode>)BaseAdapter.toNodes(new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(classConcept))).getClassifiers()));
-      for(SNode classifier : classifiers) {
+      for (SNode classifier : classifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }
     }
@@ -54,5 +53,4 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
   public boolean overrides() {
     return false;
   }
-
 }

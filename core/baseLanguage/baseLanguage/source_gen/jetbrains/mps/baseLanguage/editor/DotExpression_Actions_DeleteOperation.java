@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DotExpression_Actions_DeleteOperation {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DotExpression_Actions_DeleteOperation.DotExpression_Actions_DeleteOperation_DELETE(node));
   }
 
   public static class DotExpression_Actions_DeleteOperation_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public DotExpression_Actions_DeleteOperation_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "Delete operation";
@@ -35,7 +34,5 @@ public class DotExpression_Actions_DeleteOperation {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
     }
-
-}
-
+  }
 }

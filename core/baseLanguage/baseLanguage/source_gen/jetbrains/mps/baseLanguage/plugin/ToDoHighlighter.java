@@ -17,14 +17,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class ToDoHighlighter extends EditorCheckerAdapter {
-
   public ToDoHighlighter() {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     SNode node = rootNode;
-    for(SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {
+    for (SNode remark : SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.RemarkStatement", false, new String[]{})) {
       if (RemarkStatement_Behavior.call_isTodo_1213877427548(remark)) {
         SetSequence.fromSet(messages).addElement(new ToDoMessage(remark, SPropertyOperations.getString(remark, "value"), this.getOwner(rootNode)));
       }
@@ -41,5 +40,4 @@ public class ToDoHighlighter extends EditorCheckerAdapter {
     }
     return false;
   }
-
 }

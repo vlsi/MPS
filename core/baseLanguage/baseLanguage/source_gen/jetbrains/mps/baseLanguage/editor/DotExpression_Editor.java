@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class DotExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0533_0(editorContext, node);
   }
@@ -74,5 +73,4 @@ public class DotExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

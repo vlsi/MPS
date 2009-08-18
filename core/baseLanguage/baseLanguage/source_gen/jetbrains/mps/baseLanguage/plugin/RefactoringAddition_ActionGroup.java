@@ -29,8 +29,8 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
     }
   }
 
+
   public void adjust() {
     this.insertGroupIntoAnother(NodeRefactoring_ActionGroup.ID, null);
   }
-
 }

@@ -14,6 +14,7 @@ public class PostfixDecrementExpression extends AbstractUnaryNumberOperation {
     super(node);
   }
 
+
   public static PostfixDecrementExpression newInstance(SModel sm, boolean init) {
     return (PostfixDecrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class PostfixDecrementExpression extends AbstractUnaryNumberOperation {
   public static PostfixDecrementExpression newInstance(SModel sm) {
     return PostfixDecrementExpression.newInstance(sm, false);
   }
-
 }

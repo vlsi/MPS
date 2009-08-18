@@ -14,6 +14,7 @@ public class DivExpression extends BinaryOperation {
     super(node);
   }
 
+
   public static DivExpression newInstance(SModel sm, boolean init) {
     return (DivExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class DivExpression extends BinaryOperation {
   public static DivExpression newInstance(SModel sm) {
     return DivExpression.newInstance(sm, false);
   }
-
 }

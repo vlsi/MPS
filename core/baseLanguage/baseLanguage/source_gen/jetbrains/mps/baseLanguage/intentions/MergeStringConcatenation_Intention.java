@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MergeStringConcatenation_Intention extends BaseIntention {
-
   public MergeStringConcatenation_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class MergeStringConcatenation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

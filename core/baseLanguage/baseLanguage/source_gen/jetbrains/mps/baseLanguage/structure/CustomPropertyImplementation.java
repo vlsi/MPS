@@ -16,6 +16,7 @@ public class CustomPropertyImplementation extends PropertyImplementation {
     super(node);
   }
 
+
   public GetAccessor getGetAccessor() {
     return (GetAccessor)this.getChild(GetAccessor.class, CustomPropertyImplementation.GET_ACCESSOR);
   }
@@ -40,5 +41,4 @@ public class CustomPropertyImplementation extends PropertyImplementation {
   public static CustomPropertyImplementation newInstance(SModel sm) {
     return CustomPropertyImplementation.newInstance(sm, false);
   }
-
 }

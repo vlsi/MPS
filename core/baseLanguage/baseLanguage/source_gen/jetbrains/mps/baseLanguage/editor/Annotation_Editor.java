@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Annotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9459_0(editorContext, node);
   }
@@ -204,7 +203,6 @@ public class Annotation_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationMethodListHandler_9459_0 extends RefNodeListHandler {
-
     public annotationMethodListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -259,10 +257,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_9459_0 extends RefNodeListHandler {
-
     public annotationListHandler_9459_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -302,10 +299,9 @@ public class Annotation_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_9459_1 extends RefNodeListHandler {
-
     public annotationListHandler_9459_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -345,7 +341,5 @@ public class Annotation_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

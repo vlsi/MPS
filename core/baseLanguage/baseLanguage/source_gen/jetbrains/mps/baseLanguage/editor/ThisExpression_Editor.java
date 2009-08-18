@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ThisExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_6954_0(editorContext, node);
   }
@@ -36,8 +35,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_6954_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_6954_0(editorContext, node);
     }
     return editorCell;
@@ -147,7 +145,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6954_0 extends AbstractCellProvider {
-
     public _Inline6954_0() {
       super();
     }
@@ -178,10 +175,9 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6954_1 extends AbstractCellProvider {
-
     public _Inline6954_1() {
       super();
     }
@@ -212,7 +208,5 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

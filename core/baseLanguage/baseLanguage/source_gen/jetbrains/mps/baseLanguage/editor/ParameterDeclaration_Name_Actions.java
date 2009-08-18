@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParameterDeclaration_Name_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new ParameterDeclaration_Name_Actions.ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(node));
   }
 
   public static class ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "add next parameter";
@@ -37,7 +36,5 @@ public class ParameterDeclaration_Name_Actions {
         SLinkOperations.addNewChild(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       }
     }
-
-}
-
+  }
 }

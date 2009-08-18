@@ -36,7 +36,7 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
-    for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
+    for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, indicator))) {
       if (MethodCallAdapter.isMethodCall(nodeUsage)) {
         if (new MethodCallAdapter(nodeUsage).getMethodDeclaration() == node) {
           ListSequence.fromList(_results).addElement(nodeUsage);
@@ -44,5 +44,4 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
       }
     }
   }
-
 }

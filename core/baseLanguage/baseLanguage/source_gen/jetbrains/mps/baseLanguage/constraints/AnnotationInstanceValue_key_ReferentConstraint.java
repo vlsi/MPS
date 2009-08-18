@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AnnotationInstanceValue_key_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public AnnotationInstanceValue_key_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class AnnotationInstanceValue_key_ReferentConstraint extends BaseNodeRefe
     }
     return result;
   }
-
 }

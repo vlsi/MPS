@@ -58,28 +58,26 @@ public class BaseMethod_Finder extends GeneratedFinder {
       ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, indicator)));
     }
     Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode ancestor : ListSequence.fromList(allAncestors)) {
+    for (SNode ancestor : ListSequence.fromList(allAncestors)) {
       List<SNode> classMethods = null;
       if (isStatic) {
         if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticMethod", true);
         }
-      } else
-      {
+      } else {
         if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-        } else
-        {
+        } else {
           classMethods = SLinkOperations.getTargets(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.Interface"), "method", true);
         }
       }
-      for(SNode classMethod : ListSequence.fromList(classMethods)) {
+      for (SNode classMethod : ListSequence.fromList(classMethods)) {
         if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(classMethod, method)) {
           SetSequence.fromSet(results).addElement(classMethod);
         }
       }
     }
-    for(SNode result : SetSequence.fromSet(results)) {
+    for (SNode result : SetSequence.fromSet(results)) {
       ListSequence.fromList(_results).addElement(result);
     }
   }
@@ -87,5 +85,4 @@ public class BaseMethod_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Base methods";
   }
-
 }

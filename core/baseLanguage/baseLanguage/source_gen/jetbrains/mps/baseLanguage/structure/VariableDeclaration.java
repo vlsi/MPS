@@ -25,6 +25,7 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(VariableDeclaration.NAME);
   }
@@ -109,5 +110,4 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   public static VariableDeclaration newInstance(SModel sm) {
     return VariableDeclaration.newInstance(sm, false);
   }
-
 }

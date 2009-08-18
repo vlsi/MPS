@@ -5,5 +5,4 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 
 public interface IValidIdentifier extends INamedConcept {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IValidIdentifier";
-}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IValidIdentifier";}

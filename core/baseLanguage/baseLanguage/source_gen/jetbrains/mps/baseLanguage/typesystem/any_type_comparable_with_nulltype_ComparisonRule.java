@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_comparable_with_nulltype_ComparisonRule extends ComparisonRule_Runtime {
-
   public any_type_comparable_with_nulltype_ComparisonRule() {
   }
 
@@ -38,5 +37,4 @@ public class any_type_comparable_with_nulltype_ComparisonRule extends Comparison
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.NullType";
   }
-
 }

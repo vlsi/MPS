@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AddCastStatement_Intention extends BaseIntention {
-
   public AddCastStatement_Intention() {
   }
 
@@ -65,5 +64,4 @@ public class AddCastStatement_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

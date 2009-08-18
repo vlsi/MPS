@@ -8,7 +8,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.baseLanguage.behavior.BreakStatement_Behavior;
 
 public class BreakStatement_DataFlow extends DataFlowBuilder {
-
   public BreakStatement_DataFlow() {
   }
 
@@ -18,10 +17,8 @@ public class BreakStatement_DataFlow extends DataFlowBuilder {
     } else
     if ((BreakStatement_Behavior.call_getSwitch_1213877377021(_context.getNode()) != null)) {
       _context.getBuilder().emitJump(_context.getBuilder().after(BreakStatement_Behavior.call_getSwitch_1213877377021(_context.getNode())));
-    } else
-    {
+    } else {
       _context.getBuilder().emitNop();
     }
   }
-
 }

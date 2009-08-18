@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class VariableDeclaration_DataFlow extends DataFlowBuilder {
-
   public VariableDeclaration_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class VariableDeclaration_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitWrite(_context.getNode());
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "initializer", true));
   }
-
 }

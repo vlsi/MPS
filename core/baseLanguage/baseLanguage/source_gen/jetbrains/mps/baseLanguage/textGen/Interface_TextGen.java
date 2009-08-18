@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class Interface_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
@@ -27,7 +26,7 @@ public class Interface_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
       this.append(" extends ");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "extendedInterface", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "extendedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).last()) {
             this.append(", ");
@@ -38,22 +37,21 @@ public class Interface_TextGen extends SNodeTextGen {
     this.append(" {");
     this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
+      BaseLanguageTextGen.newLine(ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty(), this);
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "method", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
     }
     this.decreaseDepth();
-    this.appendNewLine();
     this.append("}");
     this.appendNewLine();
   }
-
 }

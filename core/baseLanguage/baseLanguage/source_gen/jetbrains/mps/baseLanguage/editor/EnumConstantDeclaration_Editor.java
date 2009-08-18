@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4713_0(editorContext, node);
   }
@@ -90,7 +89,6 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class actualArgumentListHandler_4713_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_4713_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -153,7 +151,5 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

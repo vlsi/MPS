@@ -14,6 +14,7 @@ public class WildCardType extends Type {
     super(node);
   }
 
+
   public static WildCardType newInstance(SModel sm, boolean init) {
     return (WildCardType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class WildCardType extends Type {
   public static WildCardType newInstance(SModel sm) {
     return WildCardType.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntention {
-
   public ConvertAssignmentToVariableDeclaration_Intention() {
   }
 
@@ -58,5 +57,4 @@ public class ConvertAssignmentToVariableDeclaration_Intention extends BaseIntent
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

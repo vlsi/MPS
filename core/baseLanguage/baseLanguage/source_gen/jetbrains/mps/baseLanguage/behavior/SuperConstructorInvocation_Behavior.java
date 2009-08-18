@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 
 public class SuperConstructorInvocation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class SuperConstructorInvocation_Behavior {
     }
     return SLinkOperations.getTargets(superclass, "constructor", true);
   }
-
 }

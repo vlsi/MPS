@@ -10,13 +10,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Closure_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> call_getVariablesReferencedInClosure_1223989736803(SNode thisNode) {
     List<SNode> referencedInClosures = new ArrayList<SNode>();
-    for(SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+    for (SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
       SNode closure = SNodeOperations.getAncestor(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.Closure", false, false);
       if ((closure == null) || closure != SNodeOperations.getParent(thisNode)) {
         ListSequence.fromList(referencedInClosures).addElement(SLinkOperations.getTarget(varRef, "variableDeclaration", false));
@@ -24,5 +23,4 @@ public class Closure_Behavior {
     }
     return referencedInClosures;
   }
-
 }

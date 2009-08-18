@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
@@ -22,7 +21,7 @@ public class IfStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "elsifClauses", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "elsifClauses", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
@@ -31,5 +30,4 @@ public class IfStatement_TextGen extends SNodeTextGen {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "ifFalseStatement", true), this.getSNode());
     }
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 
 public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
-
   public ReplaceBlockWithItsContent_Intention() {
   }
 
@@ -72,7 +71,7 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true);
-    for(SNode statement : ListSequence.fromList(statements)) {
+    for (SNode statement : ListSequence.fromList(statements)) {
       SNodeOperations.insertPrevSiblingChild(node, statement);
     }
     SNodeOperations.deleteNode(node);
@@ -81,5 +80,4 @@ public class ReplaceBlockWithItsContent_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

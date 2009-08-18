@@ -14,6 +14,7 @@ public class IsEmptyOperation extends StringBooleanOperation {
     super(node);
   }
 
+
   public static IsEmptyOperation newInstance(SModel sm, boolean init) {
     return (IsEmptyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IsEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class IsEmptyOperation extends StringBooleanOperation {
   public static IsEmptyOperation newInstance(SModel sm) {
     return IsEmptyOperation.newInstance(sm, false);
   }
-
 }

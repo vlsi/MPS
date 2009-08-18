@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 
 public class ClassCreator_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ClassCreator_constructorDeclaration_ReferentConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class ClassCreator_constructorDeclaration_ReferentConstraint extends Base
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassConstructorsScope(_context.getModel(), operationContext.getScope());
   }
-
 }

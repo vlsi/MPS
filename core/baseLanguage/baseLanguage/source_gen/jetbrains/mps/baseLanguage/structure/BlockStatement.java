@@ -15,6 +15,7 @@ public class BlockStatement extends Statement {
     super(node);
   }
 
+
   public StatementList getStatements() {
     return (StatementList)this.getChild(StatementList.class, BlockStatement.STATEMENTS);
   }
@@ -31,5 +32,4 @@ public class BlockStatement extends Statement {
   public static BlockStatement newInstance(SModel sm) {
     return BlockStatement.newInstance(sm, false);
   }
-
 }

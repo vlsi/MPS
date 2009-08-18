@@ -18,6 +18,7 @@ public class VariableReference extends Expression implements TypeAnnotable {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(VariableReference.SHORT_DESCRIPTION);
   }
@@ -58,5 +59,4 @@ public class VariableReference extends Expression implements TypeAnnotable {
   public static VariableReference newInstance(SModel sm) {
     return VariableReference.newInstance(sm, false);
   }
-
 }

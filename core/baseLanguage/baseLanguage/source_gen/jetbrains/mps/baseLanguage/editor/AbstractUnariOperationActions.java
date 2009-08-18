@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AbstractUnariOperationActions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new AbstractUnariOperationActions.AbstractUnariOperationActions_DELETE(node));
   }
 
   public static class AbstractUnariOperationActions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public AbstractUnariOperationActions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "Delete decrement";
@@ -35,7 +34,5 @@ public class AbstractUnariOperationActions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }
-
-}
-
+  }
 }

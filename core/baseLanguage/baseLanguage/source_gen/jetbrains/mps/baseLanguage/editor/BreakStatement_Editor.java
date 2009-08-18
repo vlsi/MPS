@@ -28,7 +28,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.smodel.SModel;
 
 public class BreakStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0420_0(editorContext, node);
   }
@@ -106,19 +105,15 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class BreakStatement_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public BreakStatement_generic_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2 <SNode, String>() {
-
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
-          return new Iterable <String>() {
-
+          return new Iterable<String>() {
             public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
-
+              return new YieldingIterator<String>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -170,7 +165,5 @@ __switch__:
     public boolean isReferentPresentation() {
       return false;
     }
-
-}
-
+  }
 }

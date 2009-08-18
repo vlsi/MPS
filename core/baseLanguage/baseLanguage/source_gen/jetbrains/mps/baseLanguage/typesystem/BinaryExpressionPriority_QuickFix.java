@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 
 public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
-
   public BinaryExpressionPriority_QuickFix() {
   }
 
@@ -23,5 +22,4 @@ public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
       ParenthesisUtil.rotateTree(((SNode)BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode)BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), true);
     }
   }
-
 }

@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 
 public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
-
   public OpenParenthesis_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -22,7 +21,6 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl+shift", "VK_RIGHT", action);
   }
   public static class OpenParenthesis_KeyMap_Action0 extends EditorCellKeyMapAction {
-
     public OpenParenthesis_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -62,10 +60,9 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift LEFT";
     }
+  }
 
-}
   public static class OpenParenthesis_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public OpenParenthesis_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
@@ -105,7 +102,5 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift RIGHT";
     }
-
-}
-
+  }
 }

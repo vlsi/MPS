@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EnumClass_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3195_0(editorContext, node);
   }
@@ -250,7 +249,6 @@ public class EnumClass_Editor extends DefaultNodeEditor {
   }
 
   private static class fieldListHandler_3195_0 extends RefNodeListHandler {
-
     public fieldListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -305,10 +303,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class enumConstantListHandler_3195_0 extends RefNodeListHandler {
-
     public enumConstantListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -363,10 +360,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class constructorListHandler_3195_0 extends RefNodeListHandler {
-
     public constructorListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -421,10 +417,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_3195_0 extends RefNodeListHandler {
-
     public methodListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -479,10 +474,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class staticMethodListHandler_3195_0 extends RefNodeListHandler {
-
     public staticMethodListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -537,10 +531,9 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class implementedInterfaceListHandler_3195_0 extends RefNodeListHandler {
-
     public implementedInterfaceListHandler_3195_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -595,7 +588,5 @@ public class EnumClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
-
-}
-
+  }
 }

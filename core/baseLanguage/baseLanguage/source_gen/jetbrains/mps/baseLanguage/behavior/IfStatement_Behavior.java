@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,8 +17,7 @@ public class IfStatement_Behavior {
     SNode ifFalseStatement = SLinkOperations.getTarget(thisNode, "ifFalseStatement", true);
     if (SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true)), true);
-    } else
-    {
+    } else {
       SLinkOperations.addChild(SLinkOperations.getTarget(result, "statementList", true), "statement", SNodeOperations.copyNode(ifFalseStatement));
     }
     SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
@@ -40,5 +38,4 @@ public class IfStatement_Behavior {
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IfStatement_Behavior.call_isGuardIf_1237547453258(thisNode);
   }
-
 }

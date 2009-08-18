@@ -32,6 +32,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ClassConcept.SHORT_DESCRIPTION);
   }
@@ -240,5 +241,4 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   public static ClassConcept newInstance(SModel sm) {
     return ClassConcept.newInstance(sm, false);
   }
-
 }

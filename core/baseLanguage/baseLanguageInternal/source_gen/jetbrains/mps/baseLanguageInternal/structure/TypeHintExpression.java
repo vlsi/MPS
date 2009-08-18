@@ -18,6 +18,7 @@ public class TypeHintExpression extends Expression {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, TypeHintExpression.EXPRESSION);
   }
@@ -42,5 +43,4 @@ public class TypeHintExpression extends Expression {
   public static TypeHintExpression newInstance(SModel sm) {
     return TypeHintExpression.newInstance(sm, false);
   }
-
 }

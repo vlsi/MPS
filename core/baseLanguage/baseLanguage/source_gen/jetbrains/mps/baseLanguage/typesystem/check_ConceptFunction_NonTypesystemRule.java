@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunction_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ConceptFunction_NonTypesystemRule() {
   }
 
@@ -36,5 +35,4 @@ public class check_ConceptFunction_NonTypesystemRule extends AbstractNonTypesyst
   public boolean overrides() {
     return false;
   }
-
 }

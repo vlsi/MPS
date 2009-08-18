@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClosureParameterReference_closureParameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ClosureParameterReference_closureParameter_ReferentConstraint() {
   }
 
@@ -27,5 +26,4 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint exten
     SNode enclosingClosure = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Closure", true, false);
     return SNodeOperations.getChildren(enclosingClosure);
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class add_parameter_to_InternalClassifierType_Intention extends BaseIntention {
-
   public add_parameter_to_InternalClassifierType_Intention() {
   }
 
@@ -50,5 +49,4 @@ public class add_parameter_to_InternalClassifierType_Intention extends BaseInten
   public String getLocationString() {
     return "jetbrains.mps.baseLanguageInternal.intentions";
   }
-
 }

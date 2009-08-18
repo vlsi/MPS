@@ -9,7 +9,6 @@ import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DeprecatedJavaDoc_Intention extends BaseIntention {
-
   public DeprecatedJavaDoc_Intention() {
   }
 
@@ -32,8 +31,7 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (IDeprecatable_Behavior.call_isDeprecated_1224609060727(node)) {
       return "Remove Deprecated javadoc";
-    } else
-    {
+    } else {
       return "Add Deprecated javadoc";
     }
   }
@@ -41,8 +39,7 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
       SPropertyOperations.set(node, "isDeprecated", "" + (false));
-    } else
-    {
+    } else {
       SPropertyOperations.set(node, "isDeprecated", "" + (true));
     }
   }
@@ -50,5 +47,4 @@ public class DeprecatedJavaDoc_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

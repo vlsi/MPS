@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ArrayLiteral_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8106_0(editorContext, node);
   }
@@ -68,7 +67,6 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
   }
 
   private static class itemListHandler_8106_0 extends RefNodeListHandler {
-
     public itemListHandler_8106_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -115,7 +113,5 @@ public class ArrayLiteral_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

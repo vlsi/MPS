@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 
 public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_VarRef_InferenceRule() {
   }
 
@@ -54,5 +53,4 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
   public boolean overrides() {
     return false;
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public NonFinalVariablesInAnonymousClass_NonTypesystemRule() {
   }
 
@@ -47,5 +46,4 @@ public class NonFinalVariablesInAnonymousClass_NonTypesystemRule extends Abstrac
   public boolean overrides() {
     return false;
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Visibility_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       this.append("private ");
@@ -19,5 +18,4 @@ public class Visibility_TextGen extends SNodeTextGen {
       this.append("public ");
     }
   }
-
 }

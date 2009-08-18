@@ -17,6 +17,7 @@ public class ExtractToConstantExpression extends Expression {
     super(node);
   }
 
+
   public String getFieldName() {
     return this.getProperty(ExtractToConstantExpression.FIELD_NAME);
   }
@@ -41,5 +42,4 @@ public class ExtractToConstantExpression extends Expression {
   public static ExtractToConstantExpression newInstance(SModel sm) {
     return ExtractToConstantExpression.newInstance(sm, false);
   }
-
 }

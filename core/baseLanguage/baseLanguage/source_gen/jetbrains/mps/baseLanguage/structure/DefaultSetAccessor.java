@@ -16,6 +16,7 @@ public class DefaultSetAccessor extends BaseConcept {
     super(node);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
   }
@@ -32,5 +33,4 @@ public class DefaultSetAccessor extends BaseConcept {
   public static DefaultSetAccessor newInstance(SModel sm) {
     return DefaultSetAccessor.newInstance(sm, false);
   }
-
 }

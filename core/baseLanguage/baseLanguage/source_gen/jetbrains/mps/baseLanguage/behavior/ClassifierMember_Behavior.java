@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ClassifierMember_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

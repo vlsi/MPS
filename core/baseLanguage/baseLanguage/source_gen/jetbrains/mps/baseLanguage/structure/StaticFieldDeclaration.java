@@ -21,6 +21,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(StaticFieldDeclaration.SHORT_DESCRIPTION);
   }
@@ -77,5 +78,4 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   public static StaticFieldDeclaration newInstance(SModel sm) {
     return StaticFieldDeclaration.newInstance(sm, false);
   }
-
 }

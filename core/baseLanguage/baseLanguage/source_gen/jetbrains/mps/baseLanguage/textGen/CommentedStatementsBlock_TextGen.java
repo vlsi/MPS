@@ -9,13 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class CommentedStatementsBlock_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.appendWithIndent("/*");
     this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "statement", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "statement", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
@@ -23,5 +22,4 @@ public class CommentedStatementsBlock_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("*/");
   }
-
 }

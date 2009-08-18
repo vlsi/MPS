@@ -104,5 +104,4 @@ public class Expression_Behavior {
   public static boolean callSuper_isLegalAsStatement_1239211900844(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_1239211900844);
   }
-
 }

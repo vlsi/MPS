@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReturnStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -38,8 +37,7 @@ public class ReturnStatement_Behavior {
       SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
       if (SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         type = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true));
-      } else
-      {
+      } else {
         SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ConceptFunction"));
         if (SNodeOperations.isInstanceOf(expectedReturnType, "jetbrains.mps.baseLanguage.structure.Type")) {
           type = SNodeOperations.cast(SNodeOperations.copyNode(expectedReturnType), "jetbrains.mps.baseLanguage.structure.Type");
@@ -63,5 +61,4 @@ public class ReturnStatement_Behavior {
     }
     return true;
   }
-
 }

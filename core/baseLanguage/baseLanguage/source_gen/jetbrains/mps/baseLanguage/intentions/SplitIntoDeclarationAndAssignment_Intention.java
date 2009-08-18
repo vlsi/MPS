@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention {
-
   public SplitIntoDeclarationAndAssignment_Intention() {
   }
 
@@ -57,5 +56,4 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

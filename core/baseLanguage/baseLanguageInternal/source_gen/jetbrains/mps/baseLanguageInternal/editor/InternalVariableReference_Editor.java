@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalVariableReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8666_0(editorContext, node);
   }
@@ -102,7 +101,6 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class InternalVariableReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public InternalVariableReference_name_postfixCellMenu0() {
     }
 
@@ -111,8 +109,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       // we need this because of smart input
@@ -122,7 +119,5 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
       }
       return result;
     }
-
-}
-
+  }
 }

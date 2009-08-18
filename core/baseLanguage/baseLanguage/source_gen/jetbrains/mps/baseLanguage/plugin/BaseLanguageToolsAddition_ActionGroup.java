@@ -22,8 +22,8 @@ public class BaseLanguageToolsAddition_ActionGroup extends GeneratedActionGroup 
     }
   }
 
+
   public void adjust() {
     this.insertGroupIntoAnother(Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_customTools);
   }
-
 }

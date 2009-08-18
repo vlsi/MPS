@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AssertStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7459_0(editorContext, node);
   }
@@ -148,5 +147,4 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "message", true) != null;
   }
-
 }

@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1596_0(editorContext, node);
   }
@@ -143,7 +142,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   }
 
   public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public ElsifClause_generic_cellMenu0() {
     }
 
@@ -173,7 +171,5 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return false;
     }
-
-}
-
+  }
 }

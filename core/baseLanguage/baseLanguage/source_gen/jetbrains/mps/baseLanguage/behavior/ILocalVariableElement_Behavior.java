@@ -23,5 +23,4 @@ public class ILocalVariableElement_Behavior {
   public static SNode callSuper_getLocalVariableDeclaration_1238803857389(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElement"), callerConceptFqName, "virtual_getLocalVariableDeclaration_1238803857389", PARAMETERS_1238803857389);
   }
-
 }

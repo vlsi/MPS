@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_0 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_0 myMatchingPattern;
 
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
+
 
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_6().createNode(typeCheckingContext);
@@ -30,5 +30,4 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-
 }

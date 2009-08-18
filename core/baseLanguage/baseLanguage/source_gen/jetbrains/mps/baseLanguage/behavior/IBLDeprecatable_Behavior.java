@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class IBLDeprecatable_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,7 +17,7 @@ public class IBLDeprecatable_Behavior {
       return true;
     }
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation")) {
-      for(SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
+      for (SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)) {
         if ((annotation == null) || (SLinkOperations.getTarget(annotation, "annotation", false) == null) || SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name") == null) {
           continue;
         }
@@ -36,5 +35,4 @@ public class IBLDeprecatable_Behavior {
     result.append(" is deprecated");
     return result.toString();
   }
-
 }

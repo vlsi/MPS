@@ -18,6 +18,7 @@ public class ArrayCreator extends AbstractCreator {
     super(node);
   }
 
+
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, ArrayCreator.COMPONENT_TYPE);
   }
@@ -54,5 +55,4 @@ public class ArrayCreator extends AbstractCreator {
   public static ArrayCreator newInstance(SModel sm) {
     return ArrayCreator.newInstance(sm, false);
   }
-
 }

@@ -15,6 +15,7 @@ public class DoWhileStatement extends AbstractLoopStatement {
     super(node);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, DoWhileStatement.CONDITION);
   }
@@ -31,5 +32,4 @@ public class DoWhileStatement extends AbstractLoopStatement {
   public static DoWhileStatement newInstance(SModel sm) {
     return DoWhileStatement.newInstance(sm, false);
   }
-
 }

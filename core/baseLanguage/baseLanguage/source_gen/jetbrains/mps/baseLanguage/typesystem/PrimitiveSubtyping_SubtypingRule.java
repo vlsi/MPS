@@ -13,13 +13,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public PrimitiveSubtyping_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
+    for (SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "descriptor", false));
     }
     return result;
@@ -36,5 +35,4 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
   public boolean isWeak() {
     return false;
   }
-
 }

@@ -27,8 +27,7 @@ public class IMethodCall_Behavior {
   }
 
   public static Object[] call_getActualArguments_1219275428261(SNode thisNode, final IModule module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector <SNode, Object>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
         return Expression_Behavior.call_eval_1213877519769(it, module);
       }
@@ -55,17 +54,15 @@ public class IMethodCall_Behavior {
             SNode resultType;
             if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
               resultType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, SNodeOperations.cast(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), coercedNode_3, methodClassifier);
-            } else
-            {
-              for(SNode typeVariableReference : SNodeOperations.getDescendants(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
+            } else {
+              for (SNode typeVariableReference : SNodeOperations.getDescendants(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
                 SNode concreteType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, typeVariableReference, coercedNode_3, methodClassifier);
                 SNodeOperations.replaceWithAnother(typeVariableReference, concreteType);
               }
               resultType = rawType;
             }
             return resultType;
-          } else
-          {
+          } else {
             return rawType;
           }
         }
@@ -82,8 +79,7 @@ public class IMethodCall_Behavior {
     SNode concreteType;
     if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
       concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
-    } else
-    {
+    } else {
       concreteType = new _Quotations.QuotationClass_25().createNode();
     }
     return concreteType;
@@ -138,5 +134,4 @@ public class IMethodCall_Behavior {
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, methodName);
   }
-
 }

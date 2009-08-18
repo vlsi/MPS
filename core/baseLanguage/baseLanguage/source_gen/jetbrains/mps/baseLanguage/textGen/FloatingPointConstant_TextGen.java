@@ -7,12 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FloatingPointConstant_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "value") == null) {
       SPropertyOperations.set(node, "value", "?.?f");
     }
     this.append(SPropertyOperations.getString(node, "value"));
   }
-
 }

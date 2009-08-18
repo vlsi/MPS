@@ -32,5 +32,4 @@ public class StaticFieldDeclaration_Behavior {
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459921);
   }
-
 }

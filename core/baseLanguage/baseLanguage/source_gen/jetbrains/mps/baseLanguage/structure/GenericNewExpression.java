@@ -15,6 +15,7 @@ public class GenericNewExpression extends Expression {
     super(node);
   }
 
+
   public AbstractCreator getCreator() {
     return (AbstractCreator)this.getChild(AbstractCreator.class, GenericNewExpression.CREATOR);
   }
@@ -31,5 +32,4 @@ public class GenericNewExpression extends Expression {
   public static GenericNewExpression newInstance(SModel sm) {
     return GenericNewExpression.newInstance(sm, false);
   }
-
 }

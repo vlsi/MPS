@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_HasSuperConstructorCall_NonTypesystemRule() {
   }
 
@@ -31,7 +30,7 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
         if (ListSequence.fromList(constructors).isEmpty()) {
           return;
         }
-        for(SNode constructor : constructors) {
+        for (SNode constructor : constructors) {
           if (ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).isEmpty()) {
             return;
           }
@@ -56,5 +55,4 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
   public boolean overrides() {
     return false;
   }
-
 }

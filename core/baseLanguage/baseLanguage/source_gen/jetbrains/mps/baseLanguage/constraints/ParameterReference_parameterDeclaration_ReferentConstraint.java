@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class ParameterReference_parameterDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ParameterReference_parameterDeclaration_ReferentConstraint() {
   }
 
@@ -30,8 +29,8 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint extends 
     // parameters declared in enclosing method
     List<SNode> methods = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
     List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode bmd : methods) {
-      for(SNode child : SNodeOperations.getChildren(bmd)) {
+    for (SNode bmd : methods) {
+      for (SNode child : SNodeOperations.getChildren(bmd)) {
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
           ListSequence.fromList(params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
         }
@@ -39,5 +38,4 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint extends 
     }
     return params;
   }
-
 }

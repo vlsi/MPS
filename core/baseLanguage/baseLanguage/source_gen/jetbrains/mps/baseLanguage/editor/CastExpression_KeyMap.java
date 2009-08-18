@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 
 public class CastExpression_KeyMap extends EditorCellKeyMap {
-
   public CastExpression_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -24,7 +23,6 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl+shift", "VK_SPACE", action);
   }
   public static class CastExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
-
     public CastExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -60,10 +58,9 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " DELETE";
     }
+  }
 
-}
   public static class CastExpression_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public CastExpression_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
@@ -108,7 +105,5 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift SPACE";
     }
-
-}
-
+  }
 }

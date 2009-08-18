@@ -10,32 +10,30 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class AnnotationInstance_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     boolean oneLine = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     if (oneLine) {
       this.append("@");
-    } else
-    {
+    } else {
       this.appendWithIndent("@");
     }
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "annotation", false), this);
-    this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "value", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).last()) {
-          this.append(", ");
+      this.append("(");
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
+        for (SNode item : SLinkOperations.getTargets(node, "value", true)) {
+          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).last()) {
+            this.append(", ");
+          }
         }
       }
+      this.append(")");
     }
-    this.append(")");
     if (oneLine) {
       this.append(" ");
-    } else
-    {
+    } else {
       this.appendNewLine();
     }
   }
-
 }

@@ -15,14 +15,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public subtyping_arrayType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
-      for(SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(arrayType, "componentType", true))) {
+      for (SNode componentTypeSupertype : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(SLinkOperations.getTarget(arrayType, "componentType", true))) {
         if (SNodeOperations.isInstanceOf(componentTypeSupertype, "jetbrains.mps.baseLanguage.structure.Type")) {
           ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_40().createNode(componentTypeSupertype, typeCheckingContext));
         }
@@ -42,5 +41,4 @@ public class subtyping_arrayType_SubtypingRule extends SubtypingRule_Runtime imp
   public boolean isWeak() {
     return false;
   }
-
 }

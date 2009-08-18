@@ -15,6 +15,7 @@ public class IntegerConstant extends IntegerLiteral {
     super(node);
   }
 
+
   public int getValue() {
     return this.getIntegerProperty(IntegerConstant.VALUE);
   }
@@ -31,5 +32,4 @@ public class IntegerConstant extends IntegerLiteral {
   public static IntegerConstant newInstance(SModel sm) {
     return IntegerConstant.newInstance(sm, false);
   }
-
 }

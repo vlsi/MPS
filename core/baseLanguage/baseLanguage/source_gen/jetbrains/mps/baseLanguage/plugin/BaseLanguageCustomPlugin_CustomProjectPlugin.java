@@ -17,6 +17,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
   public BaseLanguageCustomPlugin_CustomProjectPlugin() {
   }
 
+
   public void doInit(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
@@ -32,5 +33,4 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
     }
   }
-
 }

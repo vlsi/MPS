@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,13 +28,11 @@ public class StaticFieldReference_Behavior {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if ((classifier != null) && SModelStereotype.JAVA_STUB.equals(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
       return Expression_Behavior.call_eval_1213877519769(thisNode, module);
-    } else
-    {
+    } else {
       return (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true)) ?
         Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true), module) :
         null
       );
     }
   }
-
 }

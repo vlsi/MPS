@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIntention {
-
   public ExtractWhileConditionToInternalIfStatement_Intention() {
   }
 
@@ -63,5 +62,4 @@ public class ExtractWhileConditionToInternalIfStatement_Intention extends BaseIn
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

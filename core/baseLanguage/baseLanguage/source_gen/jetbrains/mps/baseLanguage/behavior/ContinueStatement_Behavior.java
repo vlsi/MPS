@@ -7,12 +7,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ContinueStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getLoop_1213877346346(SNode thisNode) {
-    for(SNode loop : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)) {
+    for (SNode loop : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)) {
       if (SPropertyOperations.getString(thisNode, "label") == null) {
         return loop;
       }
@@ -26,5 +25,4 @@ public class ContinueStatement_Behavior {
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return true;
   }
-
 }

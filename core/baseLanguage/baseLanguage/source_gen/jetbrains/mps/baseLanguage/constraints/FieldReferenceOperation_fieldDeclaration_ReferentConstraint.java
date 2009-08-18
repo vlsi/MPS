@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public FieldReferenceOperation_fieldDeclaration_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint extends
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new ClassifierVisibleMembersScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_FIELD);
   }
-
 }

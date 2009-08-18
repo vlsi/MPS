@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_VariableArityType_NonTypesystemRule() {
   }
 
@@ -58,5 +57,4 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
   public boolean overrides() {
     return false;
   }
-
 }

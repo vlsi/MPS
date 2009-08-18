@@ -41,7 +41,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class ClassifierType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9185_0(editorContext, node);
   }
@@ -97,7 +96,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_9185_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
           return "?no classifier?";
@@ -138,7 +136,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_9185_0 extends RefNodeListHandler {
-
     public parameterListHandler_9185_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -185,17 +182,16 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   public static class ClassifierType_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public ClassifierType_generic_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       ISearchScope searchScope = SNodeOperations.getReferentSearchScope(node, "classifier", operationContext);
       List<Pair<SNode, SNode>> result = ListSequence.fromList(new ArrayList<Pair<SNode, SNode>>());
-      for(SNode n : searchScope.getNodes()) {
+      for (SNode n : searchScope.getNodes()) {
         ListSequence.fromList(result).addElement(new Pair<SNode, SNode>(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), node));
       }
       return result;
@@ -228,7 +224,5 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     public String getDescriptionText_internal(Pair<SNode, SNode> parameterObject) {
       return NodePresentationUtil.descriptionText(parameterObject.o1);
     }
-
-}
-
+  }
 }

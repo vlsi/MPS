@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 
 public class EnumConstantReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,5 +17,4 @@ public class EnumConstantReference_Behavior {
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "enumConstantDeclaration", false), "name");
     return ReflectionUtil.getEnum(module, enumClass, name);
   }
-
 }

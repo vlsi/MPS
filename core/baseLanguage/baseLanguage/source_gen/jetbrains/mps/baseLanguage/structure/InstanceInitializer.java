@@ -20,6 +20,7 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(InstanceInitializer.SHORT_DESCRIPTION);
   }
@@ -68,5 +69,4 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   public static InstanceInitializer newInstance(SModel sm) {
     return InstanceInitializer.newInstance(sm, false);
   }
-
 }

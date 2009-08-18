@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention {
-
   public ReplaceForLoopWithWhileLoop_Intention() {
   }
 
@@ -65,5 +64,4 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ArrayType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,7 +26,7 @@ public class ArrayType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "array");
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
-      for(String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
+      for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "componentType", true)))) {
         ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
       }
     }
@@ -44,5 +43,4 @@ public class ArrayType_Behavior {
     SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(type), true);
     return arrayCreator;
   }
-
 }

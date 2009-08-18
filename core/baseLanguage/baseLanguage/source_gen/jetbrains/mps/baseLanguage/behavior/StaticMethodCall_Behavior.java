@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StaticMethodCall_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,11 +29,10 @@ public class StaticMethodCall_Behavior {
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(thisNode, "classConcept", false))), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
     List<SNode> result = new ArrayList<SNode>();
-    for(BaseMethodDeclaration bmd : methods) {
+    for (BaseMethodDeclaration bmd : methods) {
       SNode node = bmd.getNode();
       ListSequence.fromList(result).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
     }
     return result;
   }
-
 }

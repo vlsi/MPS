@@ -14,6 +14,7 @@ public class ParameterReference extends VariableReference {
     super(node);
   }
 
+
   public ParameterDeclaration getParameterDeclaration() {
     return this.ensureAdapter(ParameterDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -30,5 +31,4 @@ public class ParameterReference extends VariableReference {
   public static ParameterReference newInstance(SModel sm) {
     return ParameterReference.newInstance(sm, false);
   }
-
 }

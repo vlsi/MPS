@@ -20,6 +20,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
     super(node);
   }
 
+
   public String getLabel() {
     return this.getProperty(AbstractLoopStatement.LABEL);
   }
@@ -68,5 +69,4 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   public static AbstractLoopStatement newInstance(SModel sm) {
     return AbstractLoopStatement.newInstance(sm, false);
   }
-
 }

@@ -15,6 +15,7 @@ public class ContinueStatement extends Statement {
     super(node);
   }
 
+
   public String getLabel() {
     return this.getProperty(ContinueStatement.LABEL);
   }
@@ -31,5 +32,4 @@ public class ContinueStatement extends Statement {
   public static ContinueStatement newInstance(SModel sm) {
     return ContinueStatement.newInstance(sm, false);
   }
-
 }

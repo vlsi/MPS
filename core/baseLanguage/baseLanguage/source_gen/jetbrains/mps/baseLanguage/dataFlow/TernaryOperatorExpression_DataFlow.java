@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TernaryOperatorExpression_DataFlow extends DataFlowBuilder {
-
   public TernaryOperatorExpression_DataFlow() {
   }
 
@@ -20,5 +19,4 @@ public class TernaryOperatorExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalse", true));
   }
-
 }

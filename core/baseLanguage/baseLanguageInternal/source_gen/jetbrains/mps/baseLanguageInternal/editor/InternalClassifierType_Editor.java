@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class InternalClassifierType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_7316_0(editorContext, node);
   }
@@ -40,8 +39,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_7316_1(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createCollection_7316_0(editorContext, node);
     }
     return editorCell;
@@ -222,7 +220,6 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7316_0 extends AbstractCellProvider {
-
     public _Inline7316_0() {
       super();
     }
@@ -253,10 +250,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline7316_1 extends AbstractCellProvider {
-
     public _Inline7316_1() {
       super();
     }
@@ -287,10 +283,9 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class parameterListHandler_7316_0 extends RefNodeListHandler {
-
     public parameterListHandler_7316_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -337,7 +332,5 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

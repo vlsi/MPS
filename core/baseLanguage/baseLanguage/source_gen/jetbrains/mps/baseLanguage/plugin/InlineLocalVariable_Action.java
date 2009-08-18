@@ -28,7 +28,8 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt N";
   }
@@ -36,7 +37,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
   public boolean isApplicable(AnActionEvent event) {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         result.value = InlineVariableRefactoring.isApplicable(InlineLocalVariable_Action.this.node);
       }
@@ -44,7 +44,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     return result.value;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -81,12 +81,11 @@ public class InlineLocalVariable_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<InlineVariableRefactoring> ref = new Wrappers._T<InlineVariableRefactoring>();
       boolean isAvailable;
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           ref.value = InlineVariableRefactoring.createRefactoring(InlineLocalVariable_Action.this.node);
         }
@@ -94,7 +93,6 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       isAvailable = ref.value.checkRefactoring(InlineLocalVariable_Action.this.frame);
       if (isAvailable) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             SNode result = ref.value.doRefactoring();
             InlineLocalVariable_Action.this.editorContext.select(result);
@@ -105,5 +103,4 @@ public class InlineLocalVariable_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "InlineLocalVariable", t);
     }
   }
-
 }

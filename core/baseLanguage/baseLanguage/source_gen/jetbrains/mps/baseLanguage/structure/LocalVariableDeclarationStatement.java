@@ -19,6 +19,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(LocalVariableDeclarationStatement.SHORT_DESCRIPTION);
   }
@@ -59,5 +60,4 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   public static LocalVariableDeclarationStatement newInstance(SModel sm) {
     return LocalVariableDeclarationStatement.newInstance(sm, false);
   }
-
 }

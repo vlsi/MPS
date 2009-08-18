@@ -19,7 +19,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ClassCreator_InferenceRule() {
   }
 
@@ -35,7 +34,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
         typeCheckingContext.reportTypeError(creator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1216200944338", intentionProvider, errorTarget);
       }
     }
-    for(SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
+    for (SNode parameter : SLinkOperations.getTargets(creator, "typeParameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_73().createNode(typeCheckingContext), "descriptor", false), false)))) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -73,5 +72,4 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
   public boolean overrides() {
     return true;
   }
-
 }

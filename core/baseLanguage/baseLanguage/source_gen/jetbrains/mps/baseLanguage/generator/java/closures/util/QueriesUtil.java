@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesUtil {
-
   public static SNode createClassType_forClosure_enclosingClass(SNode inputClosure, ITemplateGenerator generator) {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
@@ -24,7 +23,7 @@ public class QueriesUtil {
     SModel outputModel = generator.getOutputModel();
     SNode outputClassType = SModelOperations.createNewNode(outputModel, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(outputClassType, "classifier", enclosingClass, false);
-    for(SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true))) {
+    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true))) {
       SNode typeVarRef = SLinkOperations.addNewChild(outputClassType, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       SLinkOperations.setTarget(typeVarRef, "typeVariableDeclaration", typeVar, false);
     }
@@ -70,5 +69,4 @@ public class QueriesUtil {
   private static SNode getJavaLangObject() {
     return SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
 }

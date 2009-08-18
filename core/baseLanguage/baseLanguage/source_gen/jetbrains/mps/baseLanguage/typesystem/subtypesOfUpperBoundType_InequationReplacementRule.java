@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtypesOfUpperBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public subtypesOfUpperBoundType_InequationReplacementRule() {
   }
 
@@ -24,8 +23,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode)SLinkOperations.getTarget(supertype, "bound", true), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220443995701", false, 0, intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
@@ -38,8 +36,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode)SLinkOperations.getTarget(supertype, "bound", true), true);
-    } else
-    {
+    } else {
       result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)subtype, (SNode)SLinkOperations.getTarget(supertype, "bound", true), true);
     }
     return result_14532009;
@@ -64,5 +61,4 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UpperBoundType";
   }
-
 }

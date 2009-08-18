@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MakeFieldVolatile_Intention extends BaseIntention {
-
   public MakeFieldVolatile_Intention() {
   }
 
@@ -42,5 +41,4 @@ public class MakeFieldVolatile_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

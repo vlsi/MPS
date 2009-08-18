@@ -22,6 +22,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
   }
@@ -90,5 +91,4 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public static InstanceMethodCallOperation newInstance(SModel sm) {
     return InstanceMethodCallOperation.newInstance(sm, false);
   }
-
 }

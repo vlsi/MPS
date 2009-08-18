@@ -9,15 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interfaces_are_comparable_ComparisonRule extends ComparisonRule_Runtime {
-
   public interfaces_are_comparable_ComparisonRule() {
   }
 
   public boolean areComparable(SNode node1, SNode node2) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
       return true;
-    } else
-    {
+    } else {
       return false;
     }
   }
@@ -41,5 +39,4 @@ public class interfaces_are_comparable_ComparisonRule extends ComparisonRule_Run
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
 }

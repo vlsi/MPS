@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class WildCardType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class WildCardType_Behavior {
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return true;
   }
-
 }

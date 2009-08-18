@@ -10,7 +10,6 @@ import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LocalVariableDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -45,5 +44,4 @@ public class LocalVariableDeclaration_Behavior {
     }
     return false;
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_UnaryMinus_InferenceRule() {
   }
 
@@ -27,7 +26,6 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
     {
       final SNode exType = typeCheckingContext.getEquationManager().getRepresentator(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
-
         public void run() {
           SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new _Quotations.QuotationClass_122().createNode(typeCheckingContext));
           if (type != null) {
@@ -36,8 +34,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
               BaseIntentionProvider intentionProvider = null;
               typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3860149536565525541", true), (SNode)type, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3860149536565525538", intentionProvider);
             }
-          } else
-          {
+          } else {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
@@ -60,5 +57,4 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
   public boolean overrides() {
     return true;
   }
-
 }

@@ -15,6 +15,7 @@ public class RemarkStatement extends Statement {
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(RemarkStatement.VALUE);
   }
@@ -31,5 +32,4 @@ public class RemarkStatement extends Statement {
   public static RemarkStatement newInstance(SModel sm) {
     return RemarkStatement.newInstance(sm, false);
   }
-
 }

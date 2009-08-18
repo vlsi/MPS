@@ -4,5 +4,4 @@ package jetbrains.mps.baseLanguage.structure;
 
 
 public interface ClassifierMember extends IVisible {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassifierMember";
-}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassifierMember";}

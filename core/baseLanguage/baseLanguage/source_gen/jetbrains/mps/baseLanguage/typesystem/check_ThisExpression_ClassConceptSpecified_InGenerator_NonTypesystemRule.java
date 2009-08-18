@@ -20,7 +20,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule() {
   }
 
@@ -38,14 +37,12 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
       return;
     }
 
-    boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter <SNode>() {
-
+    boolean expressionInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(expression, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
       }
     }).isNotEmpty() || (SNodeOperations.getAncestor(expression, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
-    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter <SNode>() {
-
+    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
       }
@@ -70,5 +67,4 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
   public boolean overrides() {
     return false;
   }
-
 }

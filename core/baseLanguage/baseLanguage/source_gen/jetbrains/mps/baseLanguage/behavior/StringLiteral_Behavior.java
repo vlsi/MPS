@@ -7,7 +7,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StringLiteral_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,7 +24,7 @@ public class StringLiteral_Behavior {
     if (value == null) {
       return true;
     }
-    for(int i = 0 ; i < value.length() ; i++ ) {
+    for (int i = 0 ; i < value.length() ; i++ ) {
       char c = SPropertyOperations.getString(thisNode, "value").charAt(i);
       if (isEscapeMode) {
         if (c == 'u') {
@@ -42,8 +41,7 @@ public class StringLiteral_Behavior {
       } else if (isSymbolCodeMode) {
         if (Character.isDigit(c)) {
           digitNumber++ ;
-        } else
-        {
+        } else {
           return false;
         }
         if (digitNumber == 3) {
@@ -53,8 +51,7 @@ public class StringLiteral_Behavior {
       } else if (isUnicodeMode) {
         if (Character.isDigit(c) || StringLiteral_Behavior.call_isHexChar_1221565869792(thisNode, c)) {
           unicodeDigitNumber++ ;
-        } else
-        {
+        } else {
           return false;
         }
         if (unicodeDigitNumber == 4) {
@@ -78,5 +75,4 @@ public class StringLiteral_Behavior {
     char lc = Character.toLowerCase(ch);
     return lc >= 'a' && lc <= 'f';
   }
-
 }

@@ -7,11 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class StaticMethodCall_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classConcept", false), this);
     this.append(".");
     BaseLanguageTextGen.methodCall(node, this);
   }
-
 }

@@ -10,11 +10,11 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.CollectionUtil;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_8 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_8 myMatchingPattern;
 
   public ObjectArraySupertypes_SubtypingRule() {
   }
+
 
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType, TypeCheckingContext typeCheckingContext) {
     // see JLS 3.0
@@ -33,5 +33,4 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   public boolean isWeak() {
     return false;
   }
-
 }

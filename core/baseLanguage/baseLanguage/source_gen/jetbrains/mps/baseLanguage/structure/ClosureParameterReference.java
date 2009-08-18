@@ -15,6 +15,7 @@ public class ClosureParameterReference extends Expression {
     super(node);
   }
 
+
   public ClosureParameter getClosureParameter() {
     return (ClosureParameter)this.getReferent(ClosureParameter.class, ClosureParameterReference.CLOSURE_PARAMETER);
   }
@@ -31,5 +32,4 @@ public class ClosureParameterReference extends Expression {
   public static ClosureParameterReference newInstance(SModel sm) {
     return ClosureParameterReference.newInstance(sm, false);
   }
-
 }

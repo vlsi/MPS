@@ -8,16 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class GenericNewExpression_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append("new ");
     if ((SLinkOperations.getTarget(node, "creator", true) == null)) {
       this.foundError();
       this.append("???");
-    } else
-    {
+    } else {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "creator", true), this.getSNode());
     }
   }
-
 }

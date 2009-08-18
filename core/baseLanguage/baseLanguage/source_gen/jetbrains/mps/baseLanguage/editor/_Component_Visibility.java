@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class _Component_Visibility extends AbstractCellProvider {
-
   public _Component_Visibility(SNode node) {
     super(node);
   }
@@ -56,5 +55,4 @@ public class _Component_Visibility extends AbstractCellProvider {
     } else
     return editorCell;
   }
-
 }

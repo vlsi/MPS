@@ -10,19 +10,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     if (SPropertyOperations.getString(node, "name") == null) {
       this.foundError();
       this.appendWithIndent("???");
-    } else
-    {
+    } else {
       this.appendWithIndent(SPropertyOperations.getString(node, "name"));
     }
     this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
@@ -31,5 +29,4 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
     }
     this.append(")");
   }
-
 }

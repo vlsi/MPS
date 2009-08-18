@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class ConceptFunctionParameter_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append(SConceptPropertyOperations.getString(node, "alias"));
   }
-
 }

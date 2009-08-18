@@ -17,6 +17,7 @@ public class EnumClass extends ClassConcept {
     super(node);
   }
 
+
   public int getEnumConstantsCount() {
     return this.getChildCount(EnumClass.ENUM_CONSTANT);
   }
@@ -45,5 +46,4 @@ public class EnumClass extends ClassConcept {
   public static EnumClass newInstance(SModel sm) {
     return EnumClass.newInstance(sm, false);
   }
-
 }

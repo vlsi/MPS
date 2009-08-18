@@ -9,16 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class Statement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")) {
       this.append("/* error: statement w/o textGen:");
       this.append(BaseConcept_Behavior.call_getPresentation_1213877396640(node));
       this.append(" */");
-    } else
-    {
+    } else {
       this.appendNewLine();
     }
   }
-
 }

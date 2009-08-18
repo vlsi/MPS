@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 
 public class StatementList_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,9 +20,9 @@ public class StatementList_Behavior {
     Set<SNode> reference = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})));
     SetSequence.fromSet(reference).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{})));
-    for(SNode ref : reference) {
+    for (SNode ref : reference) {
       boolean statementsContainsVar = false;
-      for(SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
+      for (SNode parent : SNodeOperations.getAncestors(SLinkOperations.getTarget(ref, "variableDeclaration", false), null, false)) {
         if (parent == SNodeOperations.getParent(thisNode)) {
           statementsContainsVar = true;
         }
@@ -59,5 +58,4 @@ public class StatementList_Behavior {
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "statement", true);
   }
-
 }

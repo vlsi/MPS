@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1878_0(editorContext, node);
   }
@@ -102,14 +101,11 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression";
     }
-
-}
-
+  }
 }

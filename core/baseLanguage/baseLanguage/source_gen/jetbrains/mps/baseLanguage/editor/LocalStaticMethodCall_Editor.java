@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2124_0(editorContext, node);
   }
@@ -56,7 +55,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2124_0 extends AbstractCellProvider {
-
     public _Inline2124_0() {
       super();
     }
@@ -91,7 +89,5 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

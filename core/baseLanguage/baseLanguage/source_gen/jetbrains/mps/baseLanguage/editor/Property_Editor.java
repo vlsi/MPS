@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Property_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_8551_0(editorContext, node);
   }
@@ -32,8 +31,7 @@ public class Property_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_8551_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createCollection_8551_1(editorContext, node);
     }
     return editorCell;
@@ -238,5 +236,4 @@ public class Property_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition8551_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
   }
-
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Style;
 
 public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8960_0(editorContext, node);
   }
@@ -78,7 +77,6 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   }
 
   private static class actualArgumentListHandler_8960_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_8960_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -141,7 +139,5 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

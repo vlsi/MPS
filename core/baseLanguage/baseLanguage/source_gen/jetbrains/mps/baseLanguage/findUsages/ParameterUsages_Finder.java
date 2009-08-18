@@ -39,9 +39,9 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, indicator);
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
+    for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
       SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
-      for(SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
+      for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, indicator))) {
         ListSequence.fromList(_results).addElement(parameterUsage);
       }
     }
@@ -53,7 +53,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     List<SNode> overridingMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", nodeParentMethod, scope, new EmptyProgressIndicator());
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
-    for(SNode methodNode : ListSequence.fromList(overridingMethods)) {
+    for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
       ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
@@ -61,5 +61,4 @@ public class ParameterUsages_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Parameter Usages";
   }
-
 }

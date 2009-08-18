@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExpandBoolean_Intention extends BaseIntention {
-
   public ExpandBoolean_Intention() {
   }
 
@@ -69,27 +68,23 @@ public class ExpandBoolean_Intention extends BaseIntention {
     // 
     final SNode fake_node = node;
     Iterable<SNode> refs;
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
     });
-    Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
-
+    Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (true));
       }
     });
-    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    refs = ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).first(), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(fake_node, "variableDeclaration", false);
       }
     });
-    Sequence.fromIterable(refs).visitAll(new IVisitor <SNode>() {
-
+    Sequence.fromIterable(refs).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNode booleanConstant = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.BooleanConstant");
         SPropertyOperations.set(booleanConstant, "value", "" + (false));
@@ -102,5 +97,4 @@ public class ExpandBoolean_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

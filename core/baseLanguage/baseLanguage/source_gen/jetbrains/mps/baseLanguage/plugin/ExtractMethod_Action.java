@@ -27,7 +27,8 @@ public class ExtractMethod_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt M";
   }
@@ -36,7 +37,7 @@ public class ExtractMethod_Action extends GeneratedAction {
     return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -48,7 +49,7 @@ public class ExtractMethod_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -60,8 +61,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -75,7 +75,7 @@ public class ExtractMethod_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
       dialog.showDialog();
@@ -84,5 +84,4 @@ public class ExtractMethod_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
   }
-
 }

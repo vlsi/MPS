@@ -19,6 +19,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(FieldReferenceOperation.SHORT_DESCRIPTION);
   }
@@ -59,5 +60,4 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   public static FieldReferenceOperation newInstance(SModel sm) {
     return FieldReferenceOperation.newInstance(sm, false);
   }
-
 }

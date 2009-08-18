@@ -14,6 +14,7 @@ public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
     super(node);
   }
 
+
   public static AnnotationMethodDeclaration newInstance(SModel sm, boolean init) {
     return (AnnotationMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
   public static AnnotationMethodDeclaration newInstance(SModel sm) {
     return AnnotationMethodDeclaration.newInstance(sm, false);
   }
-
 }

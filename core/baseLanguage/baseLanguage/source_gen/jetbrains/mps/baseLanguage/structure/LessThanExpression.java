@@ -14,6 +14,7 @@ public class LessThanExpression extends BinaryCompareOperation {
     super(node);
   }
 
+
   public static LessThanExpression newInstance(SModel sm, boolean init) {
     return (LessThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class LessThanExpression extends BinaryCompareOperation {
   public static LessThanExpression newInstance(SModel sm) {
     return LessThanExpression.newInstance(sm, false);
   }
-
 }

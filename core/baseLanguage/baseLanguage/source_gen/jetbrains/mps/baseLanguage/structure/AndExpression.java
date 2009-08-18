@@ -14,6 +14,7 @@ public class AndExpression extends BinaryOperation {
     super(node);
   }
 
+
   public static AndExpression newInstance(SModel sm, boolean init) {
     return (AndExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class AndExpression extends BinaryOperation {
   public static AndExpression newInstance(SModel sm) {
     return AndExpression.newInstance(sm, false);
   }
-
 }

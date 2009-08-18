@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalPartialFieldReference_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if ((SLinkOperations.getTarget(node, "instance", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "instance", true), this.getSNode());
@@ -20,5 +19,4 @@ public class InternalPartialFieldReference_TextGen extends SNodeTextGen {
     }
     this.append(SPropertyOperations.getString(node, "fieldName"));
   }
-
 }

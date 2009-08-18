@@ -11,7 +11,6 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1199879576743(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.getGetterName(SConceptPropertyOperations.getString(_context.getNode(), "alias"));
   }
@@ -27,5 +26,4 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacroContext _context) {
     return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1213877522908(_context.getNode()));
   }
-
 }

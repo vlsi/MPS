@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Classifier_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public Classifier_shortDescription_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class Classifier_shortDescription_PropertyConstraint implements IModelCon
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getSModelFqName().getCompactPresentation() + ")";
   }
-
 }

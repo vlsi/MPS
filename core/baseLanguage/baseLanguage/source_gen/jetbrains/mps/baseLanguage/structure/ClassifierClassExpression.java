@@ -15,6 +15,7 @@ public class ClassifierClassExpression extends Expression {
     super(node);
   }
 
+
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, ClassifierClassExpression.CLASSIFIER);
   }
@@ -31,5 +32,4 @@ public class ClassifierClassExpression extends Expression {
   public static ClassifierClassExpression newInstance(SModel sm) {
     return ClassifierClassExpression.newInstance(sm, false);
   }
-
 }

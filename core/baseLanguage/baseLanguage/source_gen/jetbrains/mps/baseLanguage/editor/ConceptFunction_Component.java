@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ConceptFunction_Component extends AbstractCellProvider {
-
   public ConceptFunction_Component(SNode node) {
     super(node);
   }
@@ -75,7 +74,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   private EditorCell createReadOnlyModelAccessor_8338_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         StringBuilder result = new StringBuilder();
         // by default 'alias' is not shown.
@@ -87,7 +85,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         result.append("(");
         List<SNode> parameters = ConceptFunction_Behavior.call_getParameters_1213877374450(node);
         boolean isFirst = true;
-        for(SNode cfp : parameters) {
+        for (SNode cfp : parameters) {
           if (!(isFirst)) {
             result.append(", ");
           }
@@ -98,8 +96,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
         SNode expectedReturnType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(node);
         if (expectedReturnType == null) {
           result.append("void");
-        } else
-        {
+        } else {
           result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
         }
         return result.toString();
@@ -144,5 +141,4 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     } else
     return editorCell;
   }
-
 }

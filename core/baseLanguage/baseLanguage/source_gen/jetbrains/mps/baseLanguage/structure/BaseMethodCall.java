@@ -21,6 +21,7 @@ public class BaseMethodCall extends Expression implements IMethodCall {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
   }
@@ -81,5 +82,4 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   public static BaseMethodCall newInstance(SModel sm) {
     return BaseMethodCall.newInstance(sm, false);
   }
-
 }

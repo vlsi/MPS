@@ -17,6 +17,7 @@ public class TernaryOperatorExpression extends Expression {
     super(node);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, TernaryOperatorExpression.CONDITION);
   }
@@ -49,5 +50,4 @@ public class TernaryOperatorExpression extends Expression {
   public static TernaryOperatorExpression newInstance(SModel sm) {
     return TernaryOperatorExpression.newInstance(sm, false);
   }
-
 }

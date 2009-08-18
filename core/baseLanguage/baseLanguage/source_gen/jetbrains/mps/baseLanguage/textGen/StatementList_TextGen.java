@@ -12,10 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class StatementList_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
-    for(int i = 0 ; i < size ; i++ ) {
+    for (int i = 0 ; i < size ; i++ ) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       if ((i == size - 1) && (LastStatementUtil.canMakeReturnStatement(statement, null))) {
         SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
@@ -28,11 +27,9 @@ public class StatementList_TextGen extends SNodeTextGen {
         // rollback changes
         SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
         SLinkOperations.setTarget(expressionStatement, "expression", expression, true);
-      } else
-      {
+      } else {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), statement, this.getSNode());
       }
     }
   }
-
 }

@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class AnnotationInstanceValue_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "key", false), "name"));
     this.append(" = ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "value", true), this.getSNode());
   }
-
 }

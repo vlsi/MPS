@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_1 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_1 myMatchingPattern;
 
   public char_unboxing_SubtypingRule() {
   }
+
 
   public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_48().createNode(typeCheckingContext);
@@ -30,5 +30,4 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public boolean isWeak() {
     return true;
   }
-
 }

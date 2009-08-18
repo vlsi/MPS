@@ -9,13 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
     this.append("super(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "actualArgument", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()) {
           this.append(", ");
@@ -24,5 +23,4 @@ public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
     }
     this.append(");");
   }
-
 }

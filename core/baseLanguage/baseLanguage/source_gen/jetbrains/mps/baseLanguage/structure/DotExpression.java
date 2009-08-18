@@ -16,6 +16,7 @@ public class DotExpression extends Expression {
     super(node);
   }
 
+
   public Expression getOperand() {
     return (Expression)this.getChild(Expression.class, DotExpression.OPERAND);
   }
@@ -40,5 +41,4 @@ public class DotExpression extends Expression {
   public static DotExpression newInstance(SModel sm) {
     return DotExpression.newInstance(sm, false);
   }
-
 }

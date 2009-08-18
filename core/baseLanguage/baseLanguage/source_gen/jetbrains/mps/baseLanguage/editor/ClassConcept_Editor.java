@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class ClassConcept_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8372_0(editorContext, node);
   }
@@ -763,7 +762,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static class fieldListHandler_8372_0 extends RefNodeListHandler {
-
     public fieldListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -818,10 +816,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<fields>>");
       return editorCell;
     }
+  }
 
-}
   private static class constructorListHandler_8372_0 extends RefNodeListHandler {
-
     public constructorListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -876,10 +873,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<constructor>>");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_8372_0 extends RefNodeListHandler {
-
     public methodListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -934,10 +930,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<methods>>");
       return editorCell;
     }
+  }
 
-}
   private static class staticMethodListHandler_8372_0 extends RefNodeListHandler {
-
     public staticMethodListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -992,10 +987,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<static methods>>");
       return editorCell;
     }
+  }
 
-}
   private static class implementedInterfaceListHandler_8372_0 extends RefNodeListHandler {
-
     public implementedInterfaceListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1057,10 +1051,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
+  }
 
-}
   private static class staticFieldListHandler_8372_0 extends RefNodeListHandler {
-
     public staticFieldListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1115,10 +1108,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<static fields>>");
       return editorCell;
     }
+  }
 
-}
   private static class staticInnerClassifiersListHandler_8372_0 extends RefNodeListHandler {
-
     public staticInnerClassifiersListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1180,10 +1172,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<static inner classifiers>>");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_8372_0 extends RefNodeListHandler {
-
     public annotationListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1223,10 +1214,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_8372_1 extends RefNodeListHandler {
-
     public annotationListHandler_8372_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1266,10 +1256,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class propertyListHandler_8372_0 extends RefNodeListHandler {
-
     public propertyListHandler_8372_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1324,7 +1313,5 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<properties>>");
       return editorCell;
     }
-
-}
-
+  }
 }

@@ -9,20 +9,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SwitchStatement_DataFlow extends DataFlowBuilder {
-
   public SwitchStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    for(SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
+    for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(switchCase));
     }
     _context.getBuilder().emitIfJump(_context.getBuilder().before(SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true)));
-    for(SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
+    for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {
       _context.getBuilder().build((SNode)switchCase);
     }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true));
   }
-
 }

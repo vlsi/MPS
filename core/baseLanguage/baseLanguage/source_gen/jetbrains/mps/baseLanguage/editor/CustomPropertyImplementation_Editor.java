@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0068_0(editorContext, node);
   }
@@ -78,5 +77,4 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition0068_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReturnStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7565_0(editorContext, node);
   }
@@ -70,5 +69,4 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
-
 }

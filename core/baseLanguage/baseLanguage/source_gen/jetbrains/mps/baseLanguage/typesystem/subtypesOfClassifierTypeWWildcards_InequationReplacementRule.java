@@ -19,7 +19,6 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public subtypesOfClassifierTypeWWildcards_InequationReplacementRule() {
   }
 
@@ -27,7 +26,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       typeCheckingContext.whenConcrete(t, new Runnable() {
-
         public void run() {
           {
             _Patterns.Pattern_9 pattern_0 = new _Patterns.Pattern_9(SLinkOperations.getTarget(supertype, "classifier", false));
@@ -57,7 +55,6 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                     {
                       final SNode concreteParam = myParam;
                       typeCheckingContext.whenConcrete(concreteParam, new Runnable() {
-
                         public void run() {
                           if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(concreteParam), "jetbrains.mps.baseLanguage.structure.UpperBoundType"))) {
                             {
@@ -72,8 +69,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                   }
                 }
               }
-            } else
-            {
+            } else {
               SNode nodeWithError = equationInfo.getNodeWithError();
               SNode methodCall = null;
               if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -88,8 +84,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
                   IErrorTarget errorTarget = new NodeErrorTarget();
                   typeCheckingContext.reportTypeError(nodeWithError, BaseConcept_Behavior.call_getPresentation_1213877396640(subtype) + " is not a subtype of " + BaseConcept_Behavior.call_getPresentation_1213877396640(supertype), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1227259028675", intentionProvider, errorTarget);
                 }
-              } else
-              {
+              } else {
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();
@@ -137,8 +132,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
               }
             }
           }
-        } else
-        {
+        } else {
           SNode nodeWithError = equationInfo.getNodeWithError();
           SNode methodCall = null;
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(nodeWithError), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -149,8 +143,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
           if (methodCall != null) {
             SNode classifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             result_14532009 = false;
-          } else
-          {
+          } else {
             result_14532009 = false;
           }
         }
@@ -178,5 +171,4 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
 }

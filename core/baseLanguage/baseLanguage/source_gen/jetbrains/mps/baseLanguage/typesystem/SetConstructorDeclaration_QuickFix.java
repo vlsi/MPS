@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SetConstructorDeclaration_QuickFix extends QuickFix_Runtime {
-
   public SetConstructorDeclaration_QuickFix() {
   }
 
@@ -18,5 +17,4 @@ public class SetConstructorDeclaration_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     SLinkOperations.setTarget(((SNode)SetConstructorDeclaration_QuickFix.this.getField("constructorInvocation")[0]), "baseMethodDeclaration", ((SNode)SetConstructorDeclaration_QuickFix.this.getField("constructorDeclaration")[0]), false);
   }
-
 }

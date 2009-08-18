@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LocalVariableReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class LocalVariableReference_Behavior {
     }
     return false;
   }
-
 }

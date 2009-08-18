@@ -16,6 +16,7 @@ public class InternalClassifierType extends ClassifierType {
     super(node);
   }
 
+
   public String getFqClassName() {
     return this.getProperty(InternalClassifierType.FQ_CLASS_NAME);
   }
@@ -32,5 +33,4 @@ public class InternalClassifierType extends ClassifierType {
   public static InternalClassifierType newInstance(SModel sm) {
     return InternalClassifierType.newInstance(sm, false);
   }
-
 }

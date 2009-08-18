@@ -17,6 +17,7 @@ public class AnnotationInstanceValue extends BaseConcept {
     super(node);
   }
 
+
   public AnnotationMethodDeclaration getKey() {
     return (AnnotationMethodDeclaration)this.getReferent(AnnotationMethodDeclaration.class, AnnotationInstanceValue.KEY);
   }
@@ -41,5 +42,4 @@ public class AnnotationInstanceValue extends BaseConcept {
   public static AnnotationInstanceValue newInstance(SModel sm) {
     return AnnotationInstanceValue.newInstance(sm, false);
   }
-
 }

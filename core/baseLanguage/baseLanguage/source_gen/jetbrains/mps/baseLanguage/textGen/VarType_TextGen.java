@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class VarType_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     SNode type = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
@@ -19,10 +18,8 @@ public class VarType_TextGen extends SNodeTextGen {
     }
     if ((type == null)) {
       this.append("???");
-    } else
-    {
+    } else {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), type, this.getSNode());
     }
   }
-
 }

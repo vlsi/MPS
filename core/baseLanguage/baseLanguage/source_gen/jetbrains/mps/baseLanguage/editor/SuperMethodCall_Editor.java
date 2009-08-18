@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SuperMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4254_0(editorContext, node);
   }
@@ -123,7 +122,6 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4254_0 extends AbstractCellProvider {
-
     public _Inline4254_0() {
       super();
     }
@@ -154,10 +152,9 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class actualArgumentListHandler_4254_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_4254_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -220,7 +217,5 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

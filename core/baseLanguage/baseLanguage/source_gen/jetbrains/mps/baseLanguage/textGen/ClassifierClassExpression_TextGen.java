@@ -7,10 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClassifierClassExpression_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classifier", false), this);
     this.append(".class");
   }
-
 }

@@ -7,12 +7,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FloatingPointFloatConstant_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return SPropertyOperations.getString(thisNode, "value");
   }
-
 }

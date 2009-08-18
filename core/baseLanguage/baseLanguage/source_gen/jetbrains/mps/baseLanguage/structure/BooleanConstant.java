@@ -15,6 +15,7 @@ public class BooleanConstant extends Expression {
     super(node);
   }
 
+
   public boolean getValue() {
     return this.getBooleanProperty(BooleanConstant.VALUE);
   }
@@ -31,5 +32,4 @@ public class BooleanConstant extends Expression {
   public static BooleanConstant newInstance(SModel sm) {
     return BooleanConstant.newInstance(sm, false);
   }
-
 }

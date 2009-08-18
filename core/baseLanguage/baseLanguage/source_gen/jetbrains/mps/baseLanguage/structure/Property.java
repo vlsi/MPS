@@ -24,6 +24,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
     super(node);
   }
 
+
   public String getPropertyName() {
     return this.getProperty(Property.PROPERTY_NAME);
   }
@@ -96,5 +97,4 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   public static Property newInstance(SModel sm) {
     return Property.newInstance(sm, false);
   }
-
 }

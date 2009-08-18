@@ -7,17 +7,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RemarkStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "value") != null) {
       this.appendNewLine();
       this.appendWithIndent("// ");
       this.append(SPropertyOperations.getString(node, "value"));
-    } else
-    {
+    } else {
       this.appendNewLine();
       this.appendWithIndent("// ");
     }
   }
-
 }

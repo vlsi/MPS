@@ -27,7 +27,8 @@ public class CommentStatements_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift SLASH";
   }
@@ -36,7 +37,7 @@ public class CommentStatements_Action extends GeneratedAction {
     return (SNodeOperations.getAncestor(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -48,7 +49,7 @@ public class CommentStatements_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -57,7 +58,7 @@ public class CommentStatements_Action extends GeneratedAction {
       List<SNode> nodes = event.getData(MPSDataKeys.NODES);
       boolean error = false;
       if (nodes != null) {
-        for(SNode node : ListSequence.fromList(nodes)) {
+        for (SNode node : ListSequence.fromList(nodes)) {
           if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
             error = true;
             break;
@@ -66,8 +67,7 @@ public class CommentStatements_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -77,7 +77,7 @@ public class CommentStatements_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
       SLinkOperations.addAll(commentedStatementsBlock, "statement", CommentStatements_Action.this.nodes);
@@ -85,5 +85,4 @@ public class CommentStatements_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);
     }
   }
-
 }

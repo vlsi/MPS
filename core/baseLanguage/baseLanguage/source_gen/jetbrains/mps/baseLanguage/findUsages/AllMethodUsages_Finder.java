@@ -44,14 +44,13 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
       methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, indicator);
       ListSequence.fromList(methodDeclarations).addElement(node);
-    } else
-    {
+    } else {
       methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, indicator);
       ListSequence.fromList(methodDeclarations).addElement(node);
     }
     // 
-    for(SNode methodDeclaration : methodDeclarations) {
-      for(SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, indicator))) {
+    for (SNode methodDeclaration : methodDeclarations) {
+      for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, indicator))) {
         if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(nodeUsage), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) && !(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(nodeUsage), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
           continue;
         }
@@ -66,12 +65,11 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(node);
       methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder", node, scope, new EmptyProgressIndicator());
       ListSequence.fromList(methodDeclarations).addElement(node);
-    } else
-    {
+    } else {
       methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, new EmptyProgressIndicator());
     }
     // 
-    for(SNode methodDeclaration : methodDeclarations) {
+    for (SNode methodDeclaration : methodDeclarations) {
       ListSequence.fromList(_results).addElement(methodDeclaration);
     }
   }
@@ -79,5 +77,4 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Overriden And Implemented methods";
   }
-
 }

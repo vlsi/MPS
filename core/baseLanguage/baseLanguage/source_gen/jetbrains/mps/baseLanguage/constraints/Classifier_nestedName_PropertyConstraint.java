@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Classifier_nestedName_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public Classifier_nestedName_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class Classifier_nestedName_PropertyConstraint implements IModelConstrain
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return Classifier_Behavior.call_getNestedName_8540045600162184125(node);
   }
-
 }

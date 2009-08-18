@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
 
 public class RemarkStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6285_0(editorContext, node);
   }
@@ -31,8 +30,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_6285_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createProperty_6285_1(editorContext, node);
     }
     editorCell.addKeyMap(new RemarkStatement_KeyMap());
@@ -110,5 +108,4 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition6285_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }
-
 }

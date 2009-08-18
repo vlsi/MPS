@@ -14,7 +14,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class IterateOverIterable_Intention extends BaseIntention {
-
   public IterateOverIterable_Intention() {
   }
 
@@ -61,8 +60,7 @@ public class IterateOverIterable_Intention extends BaseIntention {
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
         SNodeOperations.insertNextSiblingChild(node, foreachStatement);
         SNodeOperations.deleteNode(node);
-      } else
-      {
+      } else {
       }
     }
   }
@@ -70,5 +68,4 @@ public class IterateOverIterable_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

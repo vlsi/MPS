@@ -15,6 +15,7 @@ public class TypeVariableReference extends Type {
     super(node);
   }
 
+
   public TypeVariableDeclaration getTypeVariableDeclaration() {
     return (TypeVariableDeclaration)this.getReferent(TypeVariableDeclaration.class, TypeVariableReference.TYPE_VARIABLE_DECLARATION);
   }
@@ -31,5 +32,4 @@ public class TypeVariableReference extends Type {
   public static TypeVariableReference newInstance(SModel sm) {
     return TypeVariableReference.newInstance(sm, false);
   }
-
 }

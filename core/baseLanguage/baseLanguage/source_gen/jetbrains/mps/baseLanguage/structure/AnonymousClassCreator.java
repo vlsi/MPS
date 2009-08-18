@@ -15,6 +15,7 @@ public class AnonymousClassCreator extends AbstractCreator {
     super(node);
   }
 
+
   public AnonymousClass getCls() {
     return (AnonymousClass)this.getChild(AnonymousClass.class, AnonymousClassCreator.CLS);
   }
@@ -31,5 +32,4 @@ public class AnonymousClassCreator extends AbstractCreator {
   public static AnonymousClassCreator newInstance(SModel sm) {
     return AnonymousClassCreator.newInstance(sm, false);
   }
-
 }

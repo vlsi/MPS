@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public PrimitiveArraySupertypes_SubtypingRule() {
   }
 
@@ -38,5 +37,4 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public boolean isWeak() {
     return false;
   }
-
 }

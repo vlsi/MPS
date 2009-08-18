@@ -9,7 +9,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DoWhileStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "label") != null) {
       this.appendNewLine();
@@ -27,5 +26,4 @@ public class DoWhileStatement_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     this.append(");");
   }
-
 }

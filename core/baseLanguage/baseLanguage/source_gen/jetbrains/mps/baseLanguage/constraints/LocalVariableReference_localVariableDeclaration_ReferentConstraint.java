@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 
 public class LocalVariableReference_localVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LocalVariableReference_localVariableDeclaration_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class LocalVariableReference_localVariableDeclaration_ReferentConstraint 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new LocalVariablesScope(_context.getEnclosingNode());
   }
-
 }

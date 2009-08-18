@@ -15,6 +15,7 @@ public class CommentedStatement extends Statement {
     super(node);
   }
 
+
   public Statement getStatement() {
     return (Statement)this.getChild(Statement.class, CommentedStatement.STATEMENT);
   }
@@ -31,5 +32,4 @@ public class CommentedStatement extends Statement {
   public static CommentedStatement newInstance(SModel sm) {
     return CommentedStatement.newInstance(sm, false);
   }
-
 }

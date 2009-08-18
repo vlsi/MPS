@@ -12,18 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CommentedStatementsBlock_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CommentedStatementsBlock_Actions.CommentedStatementsBlock_Actions_DELETE(node));
   }
 
   public static class CommentedStatementsBlock_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public CommentedStatementsBlock_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "remove commenting";
@@ -34,12 +33,10 @@ public class CommentedStatementsBlock_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      for(SNode statement : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
+      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(node, statement);
       }
       SNodeOperations.deleteNode(node);
     }
-
-}
-
+  }
 }

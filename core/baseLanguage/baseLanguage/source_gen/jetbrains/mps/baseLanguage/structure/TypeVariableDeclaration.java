@@ -26,6 +26,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(TypeVariableDeclaration.NAME);
   }
@@ -110,5 +111,4 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public static TypeVariableDeclaration newInstance(SModel sm) {
     return TypeVariableDeclaration.newInstance(sm, false);
   }
-
 }

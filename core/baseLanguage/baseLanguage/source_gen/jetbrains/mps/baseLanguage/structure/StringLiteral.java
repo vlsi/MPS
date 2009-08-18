@@ -15,6 +15,7 @@ public class StringLiteral extends Expression {
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(StringLiteral.VALUE);
   }
@@ -31,5 +32,4 @@ public class StringLiteral extends Expression {
   public static StringLiteral newInstance(SModel sm) {
     return StringLiteral.newInstance(sm, false);
   }
-
 }

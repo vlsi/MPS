@@ -9,7 +9,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Property_Behavior {
-
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
@@ -52,5 +51,4 @@ public class Property_Behavior {
   public static boolean call_hasSetter_1213877383224(SNode thisNode) {
     return PropertyImplementation_Behavior.call_hasSetter_1213877430658(SLinkOperations.getTarget(thisNode, "propertyImplementation", true));
   }
-
 }

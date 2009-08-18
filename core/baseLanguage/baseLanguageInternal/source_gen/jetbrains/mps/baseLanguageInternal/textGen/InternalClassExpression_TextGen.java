@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class InternalClassExpression_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     SNode type = SLinkOperations.getTarget(node, "type", true);
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -21,15 +20,12 @@ public class InternalClassExpression_TextGen extends SNodeTextGen {
         String pack = NameUtil.namespaceFromLongName(SPropertyOperations.getString(icf, "fqClassName"));
         String name = NameUtil.shortNameFromLongName(SPropertyOperations.getString(icf, "fqClassName"));
         BaseLanguageTextGen.clsName(pack, name, this);
-      } else
-      {
+      } else {
         BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), this);
       }
-    } else
-    {
+    } else {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), type, this.getSNode());
     }
     this.append(".class");
   }
-
 }

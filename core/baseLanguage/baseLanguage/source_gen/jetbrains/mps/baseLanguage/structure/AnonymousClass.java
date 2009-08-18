@@ -19,6 +19,7 @@ public class AnonymousClass extends ClassConcept {
     super(node);
   }
 
+
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, AnonymousClass.CLASSIFIER);
   }
@@ -75,5 +76,4 @@ public class AnonymousClass extends ClassConcept {
   public static AnonymousClass newInstance(SModel sm) {
     return AnonymousClass.newInstance(sm, false);
   }
-
 }

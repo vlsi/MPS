@@ -15,6 +15,7 @@ public class ParenthesizedExpression extends Expression {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, ParenthesizedExpression.EXPRESSION);
   }
@@ -31,5 +32,4 @@ public class ParenthesizedExpression extends Expression {
   public static ParenthesizedExpression newInstance(SModel sm) {
     return ParenthesizedExpression.newInstance(sm, false);
   }
-
 }

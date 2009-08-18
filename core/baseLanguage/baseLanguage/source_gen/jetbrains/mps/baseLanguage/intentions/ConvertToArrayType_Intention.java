@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertToArrayType_Intention extends BaseIntention {
-
   public ConvertToArrayType_Intention() {
   }
 
@@ -55,5 +54,4 @@ public class ConvertToArrayType_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

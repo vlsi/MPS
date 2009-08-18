@@ -15,6 +15,7 @@ public class FloatingPointConstant extends Expression {
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(FloatingPointConstant.VALUE);
   }
@@ -31,5 +32,4 @@ public class FloatingPointConstant extends Expression {
   public static FloatingPointConstant newInstance(SModel sm) {
     return FloatingPointConstant.newInstance(sm, false);
   }
-
 }

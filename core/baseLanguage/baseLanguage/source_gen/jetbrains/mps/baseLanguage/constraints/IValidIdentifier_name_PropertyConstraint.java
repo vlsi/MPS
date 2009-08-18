@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IValidIdentifier_name_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
-
   public IValidIdentifier_name_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class IValidIdentifier_name_PropertyConstraint implements IModelConstrain
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   }
-
 }

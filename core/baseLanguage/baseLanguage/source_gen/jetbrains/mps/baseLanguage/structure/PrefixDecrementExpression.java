@@ -14,6 +14,7 @@ public class PrefixDecrementExpression extends AbstractUnaryNumberOperation {
     super(node);
   }
 
+
   public static PrefixDecrementExpression newInstance(SModel sm, boolean init) {
     return (PrefixDecrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class PrefixDecrementExpression extends AbstractUnaryNumberOperation {
   public static PrefixDecrementExpression newInstance(SModel sm) {
     return PrefixDecrementExpression.newInstance(sm, false);
   }
-
 }

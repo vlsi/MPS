@@ -46,13 +46,13 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 
 public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
-
   @Tag(value = "state")
   private DefaultJavaApplication_Configuration.MyState myState = new DefaultJavaApplication_Configuration.MyState();
 
   public DefaultJavaApplication_Configuration(Project p, ConfigurationFactory f, String name) {
     super(p, f, name);
   }
+
 
   public RunConfiguration clone() {
     try {
@@ -70,7 +70,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>(null);
       if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
-
           public void run() {
             node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
           }
@@ -85,11 +84,10 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     }
   }
 
-  public RunProfileState getState(@NotNull() final Executor executor, @NotNull() final ExecutionEnvironment environment) throws ExecutionException {
+  public RunProfileState getState(@NotNull final Executor executor, @NotNull final ExecutionEnvironment environment) throws ExecutionException {
     return new RunProfileState() {
-
-      @Nullable()
-      public ExecutionResult execute(Executor executor, @NotNull() ProgramRunner runner) throws ExecutionException {
+      @Nullable
+      public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         final Wrappers._T<JComponent> consoleComponent = new Wrappers._T<JComponent>();
         final Wrappers._T<Runnable> consoleDispose = new Wrappers._T<Runnable>(null);
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
@@ -100,7 +98,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
           }
           final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
             }
@@ -116,7 +113,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
             GeneratorManager genManager = mpsProject.getComponent(GeneratorManager.class);
             final Wrappers._T<SModelDescriptor> md = new Wrappers._T<SModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
-
               public void run() {
                 md.value = SNodeOperations.getModel(node.value).getModelDescriptor();
               }
@@ -125,14 +121,12 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
           }
 
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               final RunComponent runComponent = new RunComponent(project);
               ClassRunner classRunner = new ClassRunner(runComponent);
 
               consoleComponent.value = runComponent;
               consoleDispose.value = new Runnable() {
-
                 public void run() {
                   runComponent.dispose();
                 }
@@ -147,10 +141,8 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
         final Runnable finalConsoleDispose = consoleDispose.value;
         final ProcessHandler finalHandler = handler.value;
         return new ExecutionResult() {
-
           public ExecutionConsole getExecutionConsole() {
             return new ExecutionConsole() {
-
               public void dispose() {
                 if (finalConsoleDispose == null) {
                   return;
@@ -196,7 +188,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     return new DefaultJavaApplication_Configuration.MySettingsEditor();
   }
 
-  @Nullable()
+  @Nullable
   public SettingsEditor<JDOMExternalizable> getRunnerSettingsEditor(ProgramRunner p0) {
     return null;
   }
@@ -214,11 +206,11 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
   }
 
   private static class MySettingsEditor extends SettingsEditor<DefaultJavaApplication_Configuration> {
-
     private ConfigEditor myComponent = null;
 
     public MySettingsEditor() {
     }
+
 
     protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
@@ -228,7 +220,7 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
       MySettingsEditor.this.myComponent.apply(c);
     }
 
-    @NotNull()
+    @NotNull
     protected JComponent createEditor() {
       this.myComponent = new ConfigEditor();
       return this.myComponent;
@@ -236,10 +228,9 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
     protected void disposeEditor() {
     }
+  }
 
-}
   public static class MyState implements Cloneable {
-
     public String nodeId;
     public String modelId;
     public String programParams;
@@ -250,10 +241,9 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     public MyState() {
     }
 
+
     public Object clone() throws CloneNotSupportedException {
       return super.clone();
     }
-
-}
-
+  }
 }

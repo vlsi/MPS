@@ -9,13 +9,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class AnonymousClass_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classifier", false), this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
-      this.append(" <");
+      this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
             this.append(", ");
@@ -26,7 +25,7 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     }
     this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
           this.append(", ");
@@ -41,7 +40,7 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
       this.append(" implements ");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
             this.append(", ");
@@ -51,48 +50,8 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
     }
     this.append(" {");
     this.increaseDepth();
-    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "instanceInitializer", true), this.getSNode());
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "field", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "constructor", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "staticMethod", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-      this.appendNewLine();
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "method", true)) {
-          TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-        }
-      }
-    }
+    BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
     this.appendWithIndent("}");
   }
-
 }

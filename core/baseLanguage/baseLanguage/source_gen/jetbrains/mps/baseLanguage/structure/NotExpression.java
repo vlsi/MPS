@@ -15,6 +15,7 @@ public class NotExpression extends Expression {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, NotExpression.EXPRESSION);
   }
@@ -31,5 +32,4 @@ public class NotExpression extends Expression {
   public static NotExpression newInstance(SModel sm) {
     return NotExpression.newInstance(sm, false);
   }
-
 }

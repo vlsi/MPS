@@ -17,6 +17,7 @@ public class Closure extends ConceptFunction implements Closureoid {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(Closure.SHORT_DESCRIPTION);
   }
@@ -49,5 +50,4 @@ public class Closure extends ConceptFunction implements Closureoid {
   public static Closure newInstance(SModel sm) {
     return Closure.newInstance(sm, false);
   }
-
 }

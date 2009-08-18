@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class InternalNewExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static NullableVariableState virtual_getNullableState_1230540989695(SNode thisNode) {
     return NullableVariableState.NOT_NULL;
   }
-
 }

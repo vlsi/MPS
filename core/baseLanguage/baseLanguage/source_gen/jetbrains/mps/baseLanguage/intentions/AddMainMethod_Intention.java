@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddMainMethod_Intention extends BaseIntention {
-
   public AddMainMethod_Intention() {
   }
 
@@ -41,5 +40,4 @@ public class AddMainMethod_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

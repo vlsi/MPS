@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1944_0(editorContext, node);
   }
@@ -143,7 +142,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class auxBoundsListHandler_1944_0 extends RefNodeListHandler {
-
     public auxBoundsListHandler_1944_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -190,7 +188,5 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ReplaceConditionalWithIf_Intention extends BaseIntention {
-
   public ReplaceConditionalWithIf_Intention() {
   }
 
@@ -89,5 +88,4 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

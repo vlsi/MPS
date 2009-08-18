@@ -16,6 +16,7 @@ public class ArrayAccessExpression extends Expression {
     super(node);
   }
 
+
   public Expression getArray() {
     return (Expression)this.getChild(Expression.class, ArrayAccessExpression.ARRAY);
   }
@@ -40,5 +41,4 @@ public class ArrayAccessExpression extends Expression {
   public static ArrayAccessExpression newInstance(SModel sm) {
     return ArrayAccessExpression.newInstance(sm, false);
   }
-
 }

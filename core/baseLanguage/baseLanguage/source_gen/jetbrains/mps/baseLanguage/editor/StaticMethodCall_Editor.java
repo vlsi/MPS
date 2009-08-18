@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class StaticMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7119_0(editorContext, node);
   }
@@ -110,7 +109,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7119_0 extends AbstractCellProvider {
-
     public _Inline7119_0() {
       super();
     }
@@ -146,10 +144,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline7119_1 extends AbstractCellProvider {
-
     public _Inline7119_1() {
       super();
     }
@@ -180,10 +177,9 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class StaticMethodCall_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
-
     public StaticMethodCall_customReplace_cellMenu0() {
     }
 
@@ -202,7 +198,5 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return true;
     }
-
-}
-
+  }
 }

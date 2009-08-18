@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 
 public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConstraint() {
   }
 
@@ -37,5 +36,4 @@ public class InstanceMethodCallOperation_instanceMethodDeclaration_ReferentConst
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new InstanceMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(classifierType)), _context.getEnclosingNode());
   }
-
 }

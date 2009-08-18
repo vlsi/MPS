@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IfStatement_DataFlow extends DataFlowBuilder {
-
   public IfStatement_DataFlow() {
   }
 
@@ -22,26 +21,23 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
       }
-    } else
-    {
+    } else {
       _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
     }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true)));
         }
       });
     }
     _context.getBuilder().emitLabel("endOfTrue");
-    for(SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
+    for (SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
       _context.getBuilder().build((SNode)elseIf);
     }
     if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
     }
   }
-
 }

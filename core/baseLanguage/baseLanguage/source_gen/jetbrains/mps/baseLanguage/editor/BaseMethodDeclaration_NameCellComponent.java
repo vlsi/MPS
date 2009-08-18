@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvider {
-
   public BaseMethodDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
@@ -61,8 +60,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_4313_0((cell == null ?
             null :
@@ -92,7 +90,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   public static class BaseMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public BaseMethodDeclaration_name_postfixCellMenu0() {
     }
 
@@ -101,13 +98,10 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }
-
-}
-
+  }
 }

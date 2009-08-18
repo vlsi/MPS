@@ -15,6 +15,7 @@ public class BreakStatement extends Statement {
     super(node);
   }
 
+
   public String getLabel() {
     return this.getProperty(BreakStatement.LABEL);
   }
@@ -31,5 +32,4 @@ public class BreakStatement extends Statement {
   public static BreakStatement newInstance(SModel sm) {
     return BreakStatement.newInstance(sm, false);
   }
-
 }

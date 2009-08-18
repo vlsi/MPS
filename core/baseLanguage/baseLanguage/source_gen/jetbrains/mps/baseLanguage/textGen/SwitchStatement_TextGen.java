@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SwitchStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "label") != null) {
       this.appendNewLine();
@@ -22,14 +21,13 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "expression", true), this.getSNode());
     this.append(") {");
     this.increaseDepth();
-    for(SNode sc : SLinkOperations.getTargets(node, "case", true)) {
+    for (SNode sc : SLinkOperations.getTargets(node, "case", true)) {
       this.appendNewLine();
       this.appendWithIndent("case ");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, "expression", true), "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
         SNode enumConstant = (SNode)SLinkOperations.getTarget(sc, "expression", true);
         this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, "enumConstantDeclaration", false), "name"));
-      } else
-      {
+      } else {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(sc, "expression", true), this.getSNode());
       }
       this.append(":");
@@ -46,5 +44,4 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
   }
-
 }

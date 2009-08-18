@@ -22,6 +22,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
+
   public String getFqClassName() {
     return this.getProperty(InternalStaticMethodCall.FQ_CLASS_NAME);
   }
@@ -74,5 +75,4 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   public static InternalStaticMethodCall newInstance(SModel sm) {
     return InternalStaticMethodCall.newInstance(sm, false);
   }
-
 }

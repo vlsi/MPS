@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConstructorDeclaration_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public ConstructorDeclaration_resolveInfo_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class ConstructorDeclaration_resolveInfo_PropertyConstraint implements IM
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
   }
-
 }

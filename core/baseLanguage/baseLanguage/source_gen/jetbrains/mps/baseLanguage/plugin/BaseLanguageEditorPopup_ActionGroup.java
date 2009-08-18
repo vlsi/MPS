@@ -23,8 +23,8 @@ public class BaseLanguageEditorPopup_ActionGroup extends GeneratedActionGroup {
     }
   }
 
+
   public void adjust() {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
-
 }

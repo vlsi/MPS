@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_EnumConstantReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_EnumConstantReference_InferenceRule() {
   }
 
@@ -41,5 +40,4 @@ public class typeOf_EnumConstantReference_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return false;
   }
-
 }

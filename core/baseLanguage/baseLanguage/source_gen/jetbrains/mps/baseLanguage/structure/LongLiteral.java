@@ -15,6 +15,7 @@ public class LongLiteral extends Expression {
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(LongLiteral.VALUE);
   }
@@ -31,5 +32,4 @@ public class LongLiteral extends Expression {
   public static LongLiteral newInstance(SModel sm) {
     return LongLiteral.newInstance(sm, false);
   }
-
 }

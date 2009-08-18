@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemarkStatement_KeyMap extends EditorCellKeyMap {
-
   public RemarkStatement_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -23,7 +22,6 @@ public class RemarkStatement_KeyMap extends EditorCellKeyMap {
     this.putAction("any", "VK_ENTER", action);
   }
   public static class RemarkStatement_KeyMap_Action0 extends EditorCellKeyMapAction {
-
     public RemarkStatement_KeyMap_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION);
       this.setShownInPopupMenu(false);
@@ -66,7 +64,5 @@ public class RemarkStatement_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " ENTER";
     }
-
-}
-
+  }
 }

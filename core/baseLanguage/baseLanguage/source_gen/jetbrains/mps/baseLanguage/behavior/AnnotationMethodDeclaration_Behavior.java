@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class AnnotationMethodDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return false;
   }
-
 }

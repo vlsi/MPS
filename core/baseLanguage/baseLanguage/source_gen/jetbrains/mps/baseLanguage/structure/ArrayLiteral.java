@@ -17,6 +17,7 @@ public class ArrayLiteral extends Expression {
     super(node);
   }
 
+
   public int getItemsCount() {
     return this.getChildCount(ArrayLiteral.ITEM);
   }
@@ -45,5 +46,4 @@ public class ArrayLiteral extends Expression {
   public static ArrayLiteral newInstance(SModel sm) {
     return ArrayLiteral.newInstance(sm, false);
   }
-
 }

@@ -18,6 +18,7 @@ public class Statement extends BaseConcept implements ILocalVariableElement {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(Statement.SHORT_DESCRIPTION);
   }
@@ -50,5 +51,4 @@ public class Statement extends BaseConcept implements ILocalVariableElement {
   public static Statement newInstance(SModel sm) {
     return Statement.newInstance(sm, false);
   }
-
 }

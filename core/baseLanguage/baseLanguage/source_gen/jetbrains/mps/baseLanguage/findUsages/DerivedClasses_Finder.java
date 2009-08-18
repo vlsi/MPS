@@ -35,7 +35,7 @@ public class DerivedClasses_Finder extends GeneratedFinder {
     int passed = 0;
     while (ListSequence.fromList(derived).count() != passed) {
       SNode passingNode = ListSequence.fromList(derived).getElement(passed);
-      for(SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
+      for (SNode classNode : FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder", passingNode, scope, indicator)) {
         ListSequence.fromList(derived).addElement(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
       if (passingNode != node) {
@@ -48,5 +48,4 @@ public class DerivedClasses_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Derived Classes";
   }
-
 }

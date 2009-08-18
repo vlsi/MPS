@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ReturnStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_ReturnStatement_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class typeOf_ReturnStatement_InferenceRule extends AbstractInferenceRule_
   public boolean overrides() {
     return false;
   }
-
 }

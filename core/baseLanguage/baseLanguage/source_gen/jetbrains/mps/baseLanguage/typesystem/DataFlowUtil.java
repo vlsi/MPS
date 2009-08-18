@@ -20,11 +20,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.dataFlow.runtime.NullableAnalysisResult;
 
 public class DataFlowUtil {
-
   public DataFlowUtil() {
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     if (statementList == null) {
       return;
@@ -42,17 +41,16 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   public static void checkReturns(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(statementList);
-    for(SNode n : expectedReturns) {
+    for (SNode n : expectedReturns) {
       if (n != null) {
         SNode nodeToSelect;
         SNode sl = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
         if ((sl != null) && ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).isNotEmpty()) {
           nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.Statement", true, false);
-        } else
-        {
+        } else {
           nodeToSelect = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.structure.StatementList", true, false);
         }
         if (nodeToSelect != null) {
@@ -61,8 +59,7 @@ public class DataFlowUtil {
             IErrorTarget errorTarget = new NodeErrorTarget();
             typeCheckingContext.reportTypeError(nodeToSelect, "Return expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223640343628", intentionProvider, errorTarget);
           }
-        } else
-        {
+        } else {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
@@ -73,10 +70,10 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   private static void checkUnreachable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> unreachable = DataFlow.getUnreachableNodes(statementList);
-    for(SNode n : unreachable) {
+    for (SNode n : unreachable) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -85,10 +82,10 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> uninitializedReads = DataFlow.getUninitializedReads(statementList);
-    for(SNode read : uninitializedReads) {
+    for (SNode read : uninitializedReads) {
       if (SNodeOperations.isInstanceOf(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") && !(LocalVariableDeclaration_Behavior.call_isVariableReferencedInClosures_1229352990212(SLinkOperations.getTarget(SNodeOperations.cast(read, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", false)))) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -106,10 +103,10 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(statementList);
-    for(SNode write : unusedAssignments) {
+    for (SNode write : unusedAssignments) {
       if (SNodeOperations.isInstanceOf(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
         SNode assignment = SNodeOperations.cast(write, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(assignment, "lValue", true), "jetbrains.mps.baseLanguage.structure.ParameterReference")) {
@@ -144,10 +141,10 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
-  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull() SNode statementList) {
+  @CheckingMethod
+  public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList) {
     Set<SNode> unusedVariables = DataFlow.getUnusedVariables(statementList);
-    for(SNode var : unusedVariables) {
+    for (SNode var : unusedVariables) {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -158,10 +155,10 @@ public class DataFlowUtil {
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   public static void checkNullable(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     NullableAnalysisResult result = new NullableAnalysisResult(statementList);
-    for(SNode problemNode : ListSequence.fromList(result.checkNodes(statementList))) {
+    for (SNode problemNode : ListSequence.fromList(result.checkNodes(statementList))) {
       if (SNodeOperations.isInstanceOf(problemNode, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -177,5 +174,4 @@ public class DataFlowUtil {
       }
     }
   }
-
 }

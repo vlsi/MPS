@@ -9,7 +9,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class WhileStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "label") != null) {
       this.appendNewLine();
@@ -27,5 +26,4 @@ public class WhileStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
   }
-
 }

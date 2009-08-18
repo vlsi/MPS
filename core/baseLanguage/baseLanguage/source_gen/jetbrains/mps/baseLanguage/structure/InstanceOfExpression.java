@@ -16,6 +16,7 @@ public class InstanceOfExpression extends Expression {
     super(node);
   }
 
+
   public Expression getLeftExpression() {
     return (Expression)this.getChild(Expression.class, InstanceOfExpression.LEFT_EXPRESSION);
   }
@@ -40,5 +41,4 @@ public class InstanceOfExpression extends Expression {
   public static InstanceOfExpression newInstance(SModel sm) {
     return InstanceOfExpression.newInstance(sm, false);
   }
-
 }

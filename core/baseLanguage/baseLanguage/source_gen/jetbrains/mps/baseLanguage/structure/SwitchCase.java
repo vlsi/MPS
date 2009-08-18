@@ -17,6 +17,7 @@ public class SwitchCase extends BaseConcept {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, SwitchCase.EXPRESSION);
   }
@@ -41,5 +42,4 @@ public class SwitchCase extends BaseConcept {
   public static SwitchCase newInstance(SModel sm) {
     return SwitchCase.newInstance(sm, false);
   }
-
 }

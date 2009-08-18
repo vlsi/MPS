@@ -14,6 +14,7 @@ public class LocalVariableReference extends VariableReference {
     super(node);
   }
 
+
   public LocalVariableDeclaration getLocalVariableDeclaration() {
     return this.ensureAdapter(LocalVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -30,5 +31,4 @@ public class LocalVariableReference extends VariableReference {
   public static LocalVariableReference newInstance(SModel sm) {
     return LocalVariableReference.newInstance(sm, false);
   }
-
 }

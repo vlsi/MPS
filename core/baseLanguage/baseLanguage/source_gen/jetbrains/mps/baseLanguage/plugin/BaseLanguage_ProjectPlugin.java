@@ -13,7 +13,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 
 public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
-
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
     ListSequence.fromList(tools).addElement(new RunClass_Tool(project));
@@ -37,5 +36,4 @@ public class BaseLanguage_ProjectPlugin extends BaseProjectPlugin {
     ListSequence.fromList(generators).addElement(new Java_FileGenerator());
     return generators;
   }
-
 }

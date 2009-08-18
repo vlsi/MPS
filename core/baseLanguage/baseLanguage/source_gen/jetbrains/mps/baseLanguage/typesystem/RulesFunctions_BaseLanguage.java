@@ -31,7 +31,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 public class RulesFunctions_BaseLanguage {
   private static boolean TRACE_METHOD_TYPES = false;
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void comparisonOp(final TypeCheckingContext typeCheckingContext, SNode binOp) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(binOp, "rightExpression", true);
@@ -50,7 +50,7 @@ public class RulesFunctions_BaseLanguage {
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void numericOp(final TypeCheckingContext typeCheckingContext, final SNode binOp) {
     final SNode rightExpressionType_typevar_1185962758265 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode leftExpressionType_typevar_1185962769627 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -67,12 +67,10 @@ public class RulesFunctions_BaseLanguage {
     {
       final SNode leftType = typeCheckingContext.getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627);
       typeCheckingContext.whenConcrete(leftType, new Runnable() {
-
         public void run() {
           {
             final SNode rightType = typeCheckingContext.getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
-
               public void run() {
                 SNode opType = typeCheckingContext.getOverloadedOperationType(binOp, typeCheckingContext.getEquationManager().getRepresentator(leftType), typeCheckingContext.getEquationManager().getRepresentator(rightType));
                 if ((opType != null)) {
@@ -81,8 +79,7 @@ public class RulesFunctions_BaseLanguage {
                     BaseIntentionProvider intentionProvider = null;
                     typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239362683636", true), (SNode)opType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239362683634", intentionProvider);
                   }
-                } else
-                {
+                } else {
                   {
                     BaseIntentionProvider intentionProvider = null;
                     IErrorTarget errorTarget = new NodeErrorTarget();
@@ -98,14 +95,11 @@ public class RulesFunctions_BaseLanguage {
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
-    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator2 <SNode, SNode>() {
-
+    Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _11_returnStmt;
               private Iterator<SNode> _11_returnStmt_it;
@@ -193,11 +187,11 @@ __switch__:
     return returnStatements;
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     if ((genericClassifier != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
       List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
-      for(SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
+      for (SNode tvd : SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true)) {
         List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();
         if (nodes != null) {
@@ -221,7 +215,7 @@ __switch__:
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
@@ -268,7 +262,6 @@ __switch__:
                 {
                   final SNode actualType = typeCheckingContext.typeOf(actual, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347108709", true);
                   typeCheckingContext.whenConcrete(actualType, new Runnable() {
-
                     public void run() {
                       if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
                         {
@@ -276,8 +269,7 @@ __switch__:
                           BaseIntentionProvider intentionProvider = null;
                           typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(actualType), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true), (SNode)matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347279318", false, 2, intentionProvider);
                         }
-                      } else
-                      {
+                      } else {
                         SNode _nodeToCheck_1029348928467 = actual;
                         BaseIntentionProvider intentionProvider = null;
                         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.getEquationManager().getRepresentator(actualType), (SNode)matchedType, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347200873", false, 2, intentionProvider);
@@ -285,8 +277,7 @@ __switch__:
                     }
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220347102532", false, false);
                 }
-              } else
-              {
+              } else {
                 // in this case the actual parameter is definitely a vararg
                 while (actualIterator.hasNext()) {
                   SNode actual = actualIterator.next();
@@ -302,8 +293,7 @@ __switch__:
           }
         }
       } while(false);
-    } else
-    {
+    } else {
       {
         SNode arg;
         SNode param;
@@ -344,10 +334,10 @@ __switch__:
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void inference_setConcreteUpperBorders(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
-      for(SNode tvd : MapSequence.fromMap(mmap).keySet()) {
+      for (SNode tvd : MapSequence.fromMap(mmap).keySet()) {
         List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
         if (nodes != null && !(ListSequence.fromList(nodes).isEmpty())) {
           {
@@ -360,12 +350,12 @@ __switch__:
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void inference_equateMatchingTypeVariables(final TypeCheckingContext typeCheckingContext, Map<SNode, List<SNode>> mmap) {
     if (mmap != null) {
-      for(List<SNode> nodes : MapSequence.fromMap(mmap).values()) {
+      for (List<SNode> nodes : MapSequence.fromMap(mmap).values()) {
         SNode prev = null;
-        for(SNode tvar : nodes) {
+        for (SNode tvar : nodes) {
           if (prev != null && prev != tvar) {
             if (TRACE_METHOD_TYPES) {
               System.out.println("-3- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(prev, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")));
@@ -390,7 +380,6 @@ __switch__:
             {
               final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
               typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
-
                 public void run() {
                   System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), "jetbrains.mps.lang.core.structure.BaseConcept")));
                 }
@@ -402,7 +391,7 @@ __switch__:
     }
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   public static SNode inference_matchTypeWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     SNode resType = SNodeOperations.copyNode(type);
     if (SNodeOperations.isInstanceOf(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -410,24 +399,22 @@ __switch__:
       SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(resType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896), mmap);
       resType = typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203439588896);
-    } else
-    {
+    } else {
       inference_mapTypeVariables(typeCheckingContext, resType, mmap);
     }
     return resType;
   }
 
-  @CheckingMethod()
+  @CheckingMethod
   private static void inference_mapTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       final SNode tvar_typevar_1203431658168 = typeCheckingContext.createNewRuntimeTypesVariable();
       SNode tvd = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
       inference_mapTypeVariable(tvd, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168), mmap);
       SNodeOperations.replaceWithAnother(type, typeCheckingContext.getEquationManager().getRepresentator(tvar_typevar_1203431658168));
-    } else
-    {
+    } else {
       List<SNode> children = ListSequence.fromListWithValues(new ArrayList<SNode>(), SNodeOperations.getChildren(type));
-      for(SNode chld : children) {
+      for (SNode chld : children) {
         inference_mapTypeVariables(typeCheckingContext, chld, mmap);
       }
     }
@@ -477,9 +464,9 @@ __switch__:
     return false;
   }
 
-  @CheckingMethod()
-  /* package */static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
-    for(SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
+  @CheckingMethod
+  /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
+    for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_72().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new _Quotations.QuotationClass_71().createNode(typeCheckingContext))) {
         SetSequence.fromSet(throwables).removeElement(livingThrowable);
       }
@@ -488,13 +475,13 @@ __switch__:
       return;
     }
     List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
-    for(SNode statementList : statementLists) {
+    for (SNode statementList : statementLists) {
       SNode parent = SNodeOperations.getParent(statementList);
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) == statementList) {
         SNode tryStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement");
-        for(SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
+        for (SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for(SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
+          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
@@ -506,9 +493,9 @@ __switch__:
       }
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true) == statementList) {
         SNode tryCatchStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
-        for(SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
+        for (SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
           SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for(SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
+          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
@@ -520,8 +507,8 @@ __switch__:
       }
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true) == statementList) {
         SNode baseMethodDeclaration = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-        for(SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
-          for(SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
+        for (SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
+          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
               SetSequence.fromSet(throwables).removeElement(livingThrowable);
             }
@@ -529,7 +516,7 @@ __switch__:
         }
         if (!(SetSequence.fromSet(throwables).isEmpty())) {
           String errorString = "uncaught exceptions:";
-          for(SNode exc : throwables) {
+          for (SNode exc : throwables) {
             errorString = errorString + " " + exc;
           }
           {
@@ -544,5 +531,4 @@ __switch__:
       }
     }
   }
-
 }

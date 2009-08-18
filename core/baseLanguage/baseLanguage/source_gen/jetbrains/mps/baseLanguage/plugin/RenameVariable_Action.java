@@ -25,7 +25,8 @@ public class RenameVariable_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "shift F6";
   }
@@ -34,7 +35,7 @@ public class RenameVariable_Action extends GeneratedAction {
     return SNodeOperations.isInstanceOf(RenameVariable_Action.this.node, "jetbrains.mps.baseLanguage.structure.VariableReference");
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -46,7 +47,7 @@ public class RenameVariable_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -67,7 +68,7 @@ public class RenameVariable_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RenameRafactoringDialog dialog = new RenameRafactoringDialog(RenameVariable_Action.this.frame, RenameVariable_Action.this.node);
       dialog.showDialog();
@@ -75,5 +76,4 @@ public class RenameVariable_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "RenameVariable", t);
     }
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ForeachStatement_DataFlow extends DataFlowBuilder {
-
   public ForeachStatement_DataFlow() {
   }
 
@@ -20,11 +19,9 @@ public class ForeachStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "variable", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"));
       }
     });
   }
-
 }

@@ -16,6 +16,7 @@ public class BaseAssignmentExpression extends Expression {
     super(node);
   }
 
+
   public Expression getLValue() {
     return (Expression)this.getChild(Expression.class, BaseAssignmentExpression.L_VALUE);
   }
@@ -40,5 +41,4 @@ public class BaseAssignmentExpression extends Expression {
   public static BaseAssignmentExpression newInstance(SModel sm) {
     return BaseAssignmentExpression.newInstance(sm, false);
   }
-
 }

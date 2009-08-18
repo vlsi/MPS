@@ -20,7 +20,6 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1170198286262(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode());
     if (ClosuresUtil.isClosureContextOwner(parent)) {
@@ -192,5 +191,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "closure_adapterClass");
   }
-
 }

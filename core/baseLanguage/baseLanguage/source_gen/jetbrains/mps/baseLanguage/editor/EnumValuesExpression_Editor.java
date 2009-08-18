@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class EnumValuesExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8063_0(editorContext, node);
   }
@@ -74,7 +73,6 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8063_0 extends AbstractCellProvider {
-
     public _Inline8063_0() {
       super();
     }
@@ -105,10 +103,9 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class EnumValuesExpression_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
-
     public EnumValuesExpression_customReplace_cellMenu0() {
     }
 
@@ -127,7 +124,5 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return true;
     }
-
-}
-
+  }
 }

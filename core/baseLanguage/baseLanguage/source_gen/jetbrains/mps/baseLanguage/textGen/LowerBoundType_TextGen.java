@@ -8,10 +8,8 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LowerBoundType_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append("? super ");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "bound", true), this.getSNode());
   }
-
 }

@@ -8,7 +8,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Annotation_Behavior {
-
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
@@ -18,5 +17,4 @@ public class Annotation_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     return members;
   }
-
 }

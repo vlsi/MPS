@@ -14,13 +14,12 @@ import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class ParenthesisUtil {
-
-  public static void addClosingParenthesis(@NotNull() SNode expression, boolean opening, EditorContext context) {
+  public static void addClosingParenthesis(@NotNull SNode expression, boolean opening, EditorContext context) {
     SNode newExpr = createParenthesis(expression, opening);
     selectNode(context, newExpr, !(opening));
   }
 
-  public static SNode createParenthesis(@NotNull() SNode expression, boolean opening) {
+  public static SNode createParenthesis(@NotNull SNode expression, boolean opening) {
     SNode current = expression;
     SNode prev = expression;
     while (current != null && !(SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
@@ -47,8 +46,7 @@ public class ParenthesisUtil {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         SNodeOperations.replaceWithAnother(current, parExpr);
         SLinkOperations.setTarget(parExpr, "expression", current, true);
-      } else
-      {
+      } else {
         SNodeOperations.replaceWithAnother(binOp, parExpr);
         SLinkOperations.setTarget(parExpr, "expression", binOp, true);
       }
@@ -89,8 +87,7 @@ public class ParenthesisUtil {
     SNodeOperations.replaceWithAnother(sidemost, binOp);
     if (toRight) {
       SLinkOperations.setTarget(binOp, "leftExpression", sidemost, true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(binOp, "rightExpression", sidemost, true);
     }
     SNode sideSubtree = (toRight ?
@@ -100,8 +97,7 @@ public class ParenthesisUtil {
     SNodeOperations.detachNode(leaf);
     if (toRight) {
       SLinkOperations.setTarget(binOp, "rightExpression", leaf, true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(binOp, "leftExpression", leaf, true);
     }
     if (sideSubtree != leaf) {
@@ -110,8 +106,7 @@ public class ParenthesisUtil {
       SNodeOperations.replaceWithAnother(expr, sideSubtree);
       if (toRight) {
         SLinkOperations.setTarget(leafParentOperation, "leftExpression", expr, true);
-      } else
-      {
+      } else {
         SLinkOperations.setTarget(leafParentOperation, "rightExpression", expr, true);
       }
       checkOperationWRTPriority(SNodeOperations.cast(exprParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
@@ -139,8 +134,7 @@ public class ParenthesisUtil {
     SNodeOperations.replaceWithAnother(expr, binOp);
     if (toRight) {
       SLinkOperations.setTarget(binOp, "rightExpression", expr, true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(binOp, "leftExpression", expr, true);
     }
     checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
@@ -244,8 +238,7 @@ public class ParenthesisUtil {
     SNodeOperations.replaceWithAnother(backsideExpr, op);
     if (isRight) {
       SLinkOperations.setTarget(op, "rightExpression", backsideExpr, true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(op, "leftExpression", backsideExpr, true);
     }
   }
@@ -253,5 +246,4 @@ public class ParenthesisUtil {
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return SConceptPropertyOperations.getInteger(child, "priority") < SConceptPropertyOperations.getInteger(parent, "priority") || (isRight && SConceptPropertyOperations.getInteger(child, "priority") == SConceptPropertyOperations.getInteger(parent, "priority"));
   }
-
 }

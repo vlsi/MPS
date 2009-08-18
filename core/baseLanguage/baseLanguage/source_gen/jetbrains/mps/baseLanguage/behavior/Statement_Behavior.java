@@ -23,5 +23,4 @@ public class Statement_Behavior {
   public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
   }
-
 }

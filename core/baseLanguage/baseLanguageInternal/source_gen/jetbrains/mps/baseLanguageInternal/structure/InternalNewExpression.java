@@ -21,6 +21,7 @@ public class InternalNewExpression extends BaseMethodCall {
     super(node);
   }
 
+
   public String getFqClassName() {
     return this.getProperty(InternalNewExpression.FQ_CLASS_NAME);
   }
@@ -65,5 +66,4 @@ public class InternalNewExpression extends BaseMethodCall {
   public static InternalNewExpression newInstance(SModel sm) {
     return InternalNewExpression.newInstance(sm, false);
   }
-
 }

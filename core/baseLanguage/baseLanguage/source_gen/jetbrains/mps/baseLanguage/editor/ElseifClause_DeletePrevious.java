@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ElseifClause_DeletePrevious {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ElseifClause_DeletePrevious.ElseifClause_DeletePrevious_DELETE(node));
   }
 
   public static class ElseifClause_DeletePrevious_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public ElseifClause_DeletePrevious_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "delete previous if there is one or current ";
@@ -35,8 +34,7 @@ public class ElseifClause_DeletePrevious {
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((SNodeOperations.getPrevSibling(node) != null)) {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));
-      } else
-      {
+      } else {
         SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
         SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
         SNodeOperations.replaceWithAnother(condition, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "condition", true)));
@@ -45,7 +43,5 @@ public class ElseifClause_DeletePrevious {
         SNodeOperations.deleteNode(node);
       }
     }
-
-}
-
+  }
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EnumConstantDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class EnumConstantDeclaration_Behavior {
     SNode enumClass = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return SLinkOperations.getTargets(enumClass, "constructor", true);
   }
-
 }

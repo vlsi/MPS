@@ -9,7 +9,6 @@ import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 import jetbrains.mps.dataFlow.runtime.NullableUtil;
 
 public class FieldReferenceOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,5 +27,4 @@ public class FieldReferenceOperation_Behavior {
   public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return false;
   }
-
 }

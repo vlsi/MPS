@@ -34,7 +34,6 @@ import org.apache.commons.lang.StringUtils;
 import com.intellij.execution.filters.HyperlinkInfo;
 
 public class AnalyzeStacktrace_Tool extends GeneratedTool {
-
   private String myStackTrace;
   private ConsoleViewImpl myConsoleView;
   private String STRING_START = "at ";
@@ -44,6 +43,7 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
   public AnalyzeStacktrace_Tool(Project project) {
     super(project, "Analyze Stacktrace", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
   }
+
 
   public JComponent getComponent() {
     return AnalyzeStacktrace_Tool.this.myComponent;
@@ -67,17 +67,16 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     int lastDot = method.lastIndexOf(".");
     lastDot = method.lastIndexOf(".", lastDot - 1);
     String pkg = method.substring(0, lastDot);
-    for(final SModelDescriptor descriptor : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+    for (final SModelDescriptor descriptor : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (ObjectUtils.equals(descriptor.getSModelFqName().getLongName(), pkg) && ObjectUtils.equals(descriptor.getStereotype(), "")) {
         IFile file = DebugInfo.getDebugFileOfModel(descriptor.getModule().getGeneratorOutputPath(), descriptor);
         if (file.exists()) {
           final DebugInfo result = DebugInfo.load(file);
           final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               List<SNode> nodes = result.getNodesForLine(position, descriptor.getSModel());
-              for(SNode n : ListSequence.fromList(nodes)) {
+              for (SNode n : ListSequence.fromList(nodes)) {
                 if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.Statement")) {
                   nodeToShow.value = n;
                 }
@@ -101,7 +100,7 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     AnalyzeStacktrace_Tool.this.myStackTrace = str;
     AnalyzeStacktrace_Tool.this.myConsoleView.clear();
     String[] lines = str.split("\n");
-    for(String line : lines) {
+    for (String line : lines) {
       if (!(AnalyzeStacktrace_Tool.this.tryToParseLine(line))) {
         AnalyzeStacktrace_Tool.this.myConsoleView.print(line + "\n", ConsoleViewContentType.ERROR_OUTPUT);
       }
@@ -126,7 +125,6 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
       if (nodeToShow != null) {
         AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
         AnalyzeStacktrace_Tool.this.myConsoleView.printHyperlink(position, new HyperlinkInfo() {
-
           public void navigate(Project p0) {
             AnalyzeStacktrace_Tool.this.showNode(nodeToShow);
           }
@@ -134,14 +132,11 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
         AnalyzeStacktrace_Tool.this.myConsoleView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
         AnalyzeStacktrace_Tool.this.myConsoleView.print("\n", ConsoleViewContentType.ERROR_OUTPUT);
         return true;
-      } else
-      {
+      } else {
         return false;
       }
-    } else
-    {
+    } else {
       return false;
     }
   }
-
 }

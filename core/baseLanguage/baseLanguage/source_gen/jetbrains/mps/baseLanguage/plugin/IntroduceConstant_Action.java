@@ -32,7 +32,8 @@ public class IntroduceConstant_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt C";
   }
@@ -41,7 +42,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
     return SNodeOperations.isInstanceOf(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -53,7 +54,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -82,12 +83,11 @@ public class IntroduceConstant_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<IntroduceConstantRefactoring> refactoring = new Wrappers._T<IntroduceConstantRefactoring>();
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
           error.value = refactoring.value.init(SNodeOperations.cast(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceConstant_Action.this.component);
@@ -96,13 +96,11 @@ public class IntroduceConstant_Action extends GeneratedAction {
       if (error.value == null) {
         IntroduceConstantDialog dialog = new IntroduceConstantDialog(IntroduceConstant_Action.this.frame, refactoring.value, IntroduceConstant_Action.this.context);
         dialog.showDialog();
-      } else
-      {
+      } else {
         JOptionPane.showMessageDialog(IntroduceConstant_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceConstant", t);
     }
   }
-
 }

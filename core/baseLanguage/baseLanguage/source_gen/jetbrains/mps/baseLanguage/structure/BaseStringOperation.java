@@ -18,6 +18,7 @@ public class BaseStringOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(BaseStringOperation.SHORT_DESCRIPTION);
   }
@@ -50,5 +51,4 @@ public class BaseStringOperation extends BaseConcept implements IOperation {
   public static BaseStringOperation newInstance(SModel sm) {
     return BaseStringOperation.newInstance(sm, false);
   }
-
 }

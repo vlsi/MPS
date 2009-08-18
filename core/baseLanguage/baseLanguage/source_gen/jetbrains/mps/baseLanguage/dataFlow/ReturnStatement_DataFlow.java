@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ReturnStatement_Behavior;
 
 public class ReturnStatement_DataFlow extends DataFlowBuilder {
-
   public ReturnStatement_DataFlow() {
   }
 
@@ -18,10 +17,8 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
     if (ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode()) != null) {
       _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode())));
-    } else
-    {
+    } else {
       _context.getBuilder().emitRet();
     }
   }
-
 }

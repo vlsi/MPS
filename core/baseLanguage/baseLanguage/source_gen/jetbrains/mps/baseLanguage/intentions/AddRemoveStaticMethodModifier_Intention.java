@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
-
   public AddRemoveStaticMethodModifier_Intention() {
   }
 
@@ -53,8 +52,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
-    for(SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    for (SNode variableReference : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
       }
@@ -71,8 +69,7 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
     SNode method;
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       method = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-    } else
-    {
+    } else {
       method = SLinkOperations.addNewChild(classConcept, "staticMethod", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     }
     SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
@@ -89,5 +86,4 @@ public class AddRemoveStaticMethodModifier_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

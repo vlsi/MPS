@@ -14,6 +14,7 @@ public class LocalStaticFieldReference extends VariableReference {
     super(node);
   }
 
+
   public StaticFieldDeclaration getStaticFieldDeclaration() {
     return this.ensureAdapter(StaticFieldDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -30,5 +31,4 @@ public class LocalStaticFieldReference extends VariableReference {
   public static LocalStaticFieldReference newInstance(SModel sm) {
     return LocalStaticFieldReference.newInstance(sm, false);
   }
-
 }

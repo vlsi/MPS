@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FieldDeclaration_keyMap extends EditorCellKeyMap {
-
   public FieldDeclaration_keyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -27,7 +26,6 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     this.putAction("alt", "VK_HELP", action);
   }
   public static class FieldDeclaration_keyMap_Action0 extends EditorCellKeyMapAction {
-
     public FieldDeclaration_keyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -74,10 +72,9 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "alt INSERT";
     }
+  }
 
-}
   public static class FieldDeclaration_keyMap_Action1 extends EditorCellKeyMapAction {
-
     public FieldDeclaration_keyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
@@ -124,7 +121,5 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "alt INSERT";
     }
-
-}
-
+  }
 }

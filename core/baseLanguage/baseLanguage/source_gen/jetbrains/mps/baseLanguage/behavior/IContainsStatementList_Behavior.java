@@ -16,8 +16,7 @@ public class IContainsStatementList_Behavior {
   }
 
   public static SNode call_getStatementList_1237545932619(SNode thisNode) {
-    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter <SNode>() {
-
+    return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StatementList");
       }
@@ -47,5 +46,4 @@ public class IContainsStatementList_Behavior {
   public static boolean callSuper_isStatementListCompact_1237546693016(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), callerConceptFqName, "virtual_isStatementListCompact_1237546693016", PARAMETERS_1237546693016);
   }
-
 }

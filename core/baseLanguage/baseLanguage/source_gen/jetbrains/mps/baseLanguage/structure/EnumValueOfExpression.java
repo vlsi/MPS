@@ -16,6 +16,7 @@ public class EnumValueOfExpression extends Expression {
     super(node);
   }
 
+
   public EnumClass getEnumClass() {
     return (EnumClass)this.getReferent(EnumClass.class, EnumValueOfExpression.ENUM_CLASS);
   }
@@ -40,5 +41,4 @@ public class EnumValueOfExpression extends Expression {
   public static EnumValueOfExpression newInstance(SModel sm) {
     return EnumValueOfExpression.newInstance(sm, false);
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_parametersCount_NonTypesystemRule() {
   }
 
@@ -28,12 +27,11 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
       List<SNode> actualArguments = SLinkOperations.getTargets(iMethodCall, "actualArgument", true);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
         b = ListSequence.fromList(parameterDeclarations).count() - 1 <= ListSequence.fromList(actualArguments).count();
-      } else
-      {
+      } else {
         b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
       }
       if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
-        for(SNode actual : actualArguments) {
+        for (SNode actual : actualArguments) {
           typeCheckingContext.addDependencyForCurrent(actual);
         }
       }
@@ -58,5 +56,4 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
   public boolean overrides() {
     return false;
   }
-
 }

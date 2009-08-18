@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
-
   public VariableDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
@@ -61,7 +60,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   public static class VariableDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public VariableDeclaration_name_postfixCellMenu0() {
     }
 
@@ -70,13 +68,10 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }
-
-}
-
+  }
 }

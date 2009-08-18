@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FilpEqualsIntention_Intention extends BaseIntention {
-
   public FilpEqualsIntention_Intention() {
   }
 
@@ -61,5 +60,4 @@ public class FilpEqualsIntention_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

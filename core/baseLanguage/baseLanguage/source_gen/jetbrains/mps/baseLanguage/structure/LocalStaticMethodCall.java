@@ -14,6 +14,7 @@ public class LocalStaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
+
   public StaticMethodDeclaration getStaticMethodDeclaration() {
     return this.ensureAdapter(StaticMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
@@ -30,5 +31,4 @@ public class LocalStaticMethodCall extends BaseMethodCall {
   public static LocalStaticMethodCall newInstance(SModel sm) {
     return LocalStaticMethodCall.newInstance(sm, false);
   }
-
 }

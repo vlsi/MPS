@@ -26,6 +26,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
     super(node);
   }
 
+
   public String getMethodName() {
     return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
   }
@@ -102,5 +103,4 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   public static InternalPartialInstanceMethodCall newInstance(SModel sm) {
     return InternalPartialInstanceMethodCall.newInstance(sm, false);
   }
-
 }

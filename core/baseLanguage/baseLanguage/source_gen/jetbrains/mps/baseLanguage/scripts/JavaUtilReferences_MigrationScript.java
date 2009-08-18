@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
 public class JavaUtilReferences_MigrationScript extends BaseMigrationScript {
-
   public JavaUtilReferences_MigrationScript(IOperationContext operationContext) {
     super("find java util references");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "find java util refrences";
       }
@@ -27,7 +25,7 @@ public class JavaUtilReferences_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        for(SReference ref : node.getReferences()) {
+        for (SReference ref : node.getReferences()) {
           String targetModelFQName = ref.getTargetSModelReference().getSModelFqName().toString();
           if ("java.util@java_stub".equals(targetModelFQName)) {
             return true;

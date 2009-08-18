@@ -15,6 +15,7 @@ public class HexIntegerLiteral extends IntegerLiteral {
     super(node);
   }
 
+
   public String getValue() {
     return this.getProperty(HexIntegerLiteral.VALUE);
   }
@@ -31,5 +32,4 @@ public class HexIntegerLiteral extends IntegerLiteral {
   public static HexIntegerLiteral newInstance(SModel sm) {
     return HexIntegerLiteral.newInstance(sm, false);
   }
-
 }

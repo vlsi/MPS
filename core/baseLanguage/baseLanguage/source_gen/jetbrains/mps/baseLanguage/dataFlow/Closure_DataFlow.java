@@ -10,14 +10,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Closure_Behavior;
 
 public class Closure_DataFlow extends DataFlowBuilder {
-
   public Closure_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode var : ListSequence.fromList(Closure_Behavior.call_getVariablesReferencedInClosure_1223989736803(_context.getNode()))) {
+    for (SNode var : ListSequence.fromList(Closure_Behavior.call_getVariablesReferencedInClosure_1223989736803(_context.getNode()))) {
       _context.getBuilder().emitRead(var);
     }
   }
-
 }

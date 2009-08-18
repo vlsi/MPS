@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class IMethodCall_actualArguments extends AbstractCellProvider {
-
   public IMethodCall_actualArguments(SNode node) {
     super(node);
   }
@@ -105,7 +104,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
   }
 
   private static class actualArgumentListHandler_4497_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_4497_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -168,7 +166,5 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

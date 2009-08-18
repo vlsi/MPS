@@ -15,6 +15,7 @@ public class StaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
+
   public ClassConcept getClassConcept() {
     return (ClassConcept)this.getReferent(ClassConcept.class, StaticMethodCall.CLASS_CONCEPT);
   }
@@ -39,5 +40,4 @@ public class StaticMethodCall extends BaseMethodCall {
   public static StaticMethodCall newInstance(SModel sm) {
     return StaticMethodCall.newInstance(sm, false);
   }
-
 }

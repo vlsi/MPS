@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class BaseLanguageStyle_StyleSheet {
-
   public static Style getKeyWord(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -215,5 +214,4 @@ public class BaseLanguageStyle_StyleSheet {
     style.set(StyleAttributes.MATCHING_LABEL, "matching");
     return style;
   }
-
 }

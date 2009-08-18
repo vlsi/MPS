@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SuperConstructorInvocation_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SuperConstructorInvocation_constructorDeclaration_ReferentConstraint() {
   }
 
@@ -33,5 +32,4 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
     }
     return SLinkOperations.getTargets(superClass, "constructor", true);
   }
-
 }

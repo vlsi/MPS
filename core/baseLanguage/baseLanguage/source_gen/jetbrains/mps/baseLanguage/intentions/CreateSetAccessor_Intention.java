@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreateSetAccessor_Intention extends BaseIntention {
-
   public CreateSetAccessor_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class CreateSetAccessor_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

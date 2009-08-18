@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class _GenericDeclaration_TypeVariables_Component extends AbstractCellProvider {
-
   public _GenericDeclaration_TypeVariables_Component(SNode node) {
     super(node);
   }
@@ -82,7 +81,6 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   private static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {
-
     public typeVariableDeclarationListHandler_9618_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -129,7 +127,5 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
         return editorCell;
       }
     }
-
-}
-
+  }
 }

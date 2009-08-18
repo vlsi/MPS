@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class DoubleType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class DoubleType_Behavior {
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return new _Quotations.QuotationClass_15().createNode();
   }
-
 }

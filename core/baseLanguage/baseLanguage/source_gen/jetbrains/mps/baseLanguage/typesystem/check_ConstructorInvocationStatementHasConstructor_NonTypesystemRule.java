@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule() {
   }
 
@@ -30,8 +29,7 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportTypeError(constructorInvocation, "no reference to constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1241543946857", intentionProvider, errorTarget);
         }
-      } else
-      {
+      } else {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
@@ -52,5 +50,4 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
   public boolean overrides() {
     return false;
   }
-
 }

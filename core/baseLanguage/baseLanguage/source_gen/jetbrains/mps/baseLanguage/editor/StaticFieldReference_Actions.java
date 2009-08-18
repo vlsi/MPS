@@ -11,18 +11,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldReference_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new StaticFieldReference_Actions.StaticFieldReference_Actions_DELETE(node));
   }
 
   public static class StaticFieldReference_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public StaticFieldReference_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -36,7 +35,5 @@ public class StaticFieldReference_Actions {
         SLinkOperations.setTarget(localStaticFieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
       }
     }
-
-}
-
+  }
 }

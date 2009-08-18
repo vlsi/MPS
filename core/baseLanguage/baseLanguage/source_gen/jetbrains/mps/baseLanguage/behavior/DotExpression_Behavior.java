@@ -13,7 +13,6 @@ import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class DotExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -47,5 +46,4 @@ public class DotExpression_Behavior {
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return IOperation_Behavior.call_isDotExpressionLegalAsStatement_1239212437413(SLinkOperations.getTarget(thisNode, "operation", true));
   }
-
 }

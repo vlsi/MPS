@@ -32,7 +32,8 @@ public class IntroduceField_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt F";
   }
@@ -41,7 +42,7 @@ public class IntroduceField_Action extends GeneratedAction {
     return SNodeOperations.isInstanceOf(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -53,7 +54,7 @@ public class IntroduceField_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -82,12 +83,11 @@ public class IntroduceField_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final IntroduceFieldRefactoring introducer = new IntroduceFieldRefactoring();
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runWriteAction(new Runnable() {
-
         public void run() {
           error.value = introducer.init(SNodeOperations.cast(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceField_Action.this.component);
         }
@@ -95,13 +95,11 @@ public class IntroduceField_Action extends GeneratedAction {
       if (error.value == null) {
         IntroduceFieldDialog dialog = new IntroduceFieldDialog(IntroduceField_Action.this.frame, introducer, IntroduceField_Action.this.context);
         dialog.showDialog();
-      } else
-      {
+      } else {
         JOptionPane.showMessageDialog(IntroduceField_Action.this.component, error.value, "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "IntroduceField", t);
     }
   }
-
 }

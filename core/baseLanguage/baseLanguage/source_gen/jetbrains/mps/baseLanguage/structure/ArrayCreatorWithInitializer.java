@@ -18,6 +18,7 @@ public class ArrayCreatorWithInitializer extends AbstractCreator {
     super(node);
   }
 
+
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, ArrayCreatorWithInitializer.COMPONENT_TYPE);
   }
@@ -54,5 +55,4 @@ public class ArrayCreatorWithInitializer extends AbstractCreator {
   public static ArrayCreatorWithInitializer newInstance(SModel sm) {
     return ArrayCreatorWithInitializer.newInstance(sm, false);
   }
-
 }

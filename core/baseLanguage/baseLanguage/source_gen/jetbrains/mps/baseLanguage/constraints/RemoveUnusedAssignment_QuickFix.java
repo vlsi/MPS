@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
-
   public RemoveUnusedAssignment_QuickFix() {
   }
 
@@ -29,5 +28,4 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
       SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true));
     }
   }
-
 }

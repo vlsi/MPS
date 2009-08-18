@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
 
 public class AddAnnotation_Intention extends BaseIntention {
-
   public AddAnnotation_Intention() {
   }
 
@@ -63,5 +62,4 @@ public class AddAnnotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

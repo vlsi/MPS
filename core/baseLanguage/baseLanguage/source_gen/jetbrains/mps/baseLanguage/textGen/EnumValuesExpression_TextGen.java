@@ -7,10 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EnumValuesExpression_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "enumClass", false), this);
     this.append(".values()");
   }
-
 }

@@ -33,8 +33,7 @@ public class ClosuresUtil {
     if (node == null) {
       return null;
     }
-    return node.findParent(new Condition <SNode>() {
-
+    return node.findParent(new Condition<SNode>() {
       public boolean met(SNode n) {
         return isClosureContextOwner(n);
       }
@@ -76,8 +75,7 @@ public class ClosuresUtil {
       MapSequence.fromMap(closureContexts).put(node, new ClosuresUtil.ClosureContextData());
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         processMethodDeclaration(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), generator);
-      } else
-      {
+      } else {
         processConceptFunction(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), generator);
       }
     }
@@ -106,7 +104,7 @@ public class ClosuresUtil {
 
   private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
-    for(SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         SetSequence.fromSet(localVariables).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       } else if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
@@ -130,7 +128,7 @@ public class ClosuresUtil {
 
   private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
-    for(SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
       // skip inner closure
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Closure")) {
         continue;
@@ -141,8 +139,7 @@ public class ClosuresUtil {
           getClosureContextData(contextOwner, generator).putVariable(variable);
           outerVarsFound = true;
         }
-      } else
-      {
+      } else {
         if (processClosureNode(contextOwner, child, localVars, generator)) {
           outerVarsFound = true;
         }
@@ -161,13 +158,13 @@ public class ClosuresUtil {
   }
 
   public static class ClosureContextData {
-
     private Map<SNode, String> myVar2Name;
     private Map<String, SNode> myName2Var;
     private List<SNode> myVars;
 
     public ClosureContextData() {
     }
+
 
     public List<SNode> getVariables() {
       if (this.myVars == null) {
@@ -191,7 +188,7 @@ public class ClosuresUtil {
       return MapSequence.fromMap(this.myVar2Name).containsKey(var);
     }
 
-    /* package */void putVariable(SNode var) {
+    /*package*/ void putVariable(SNode var) {
       this.ensureInitialized();
       if (this.hasVariable(var)) {
         return;
@@ -213,7 +210,5 @@ public class ClosuresUtil {
         this.myVars = new ArrayList<SNode>();
       }
     }
-
-}
-
+  }
 }

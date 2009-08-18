@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ClassifierType_NonTypesystemRule() {
   }
 
@@ -24,7 +23,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
       IErrorTarget errorTarget = new NodeErrorTarget();
       typeCheckingContext.reportTypeError(classifierType, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591081", intentionProvider, errorTarget);
     }
-    for(SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
+    for (SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
       if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_60().createNode(typeCheckingContext), "descriptor", false), false)))) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -44,5 +43,4 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
   public boolean overrides() {
     return false;
   }
-
 }

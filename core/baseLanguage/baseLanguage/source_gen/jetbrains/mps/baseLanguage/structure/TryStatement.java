@@ -19,6 +19,7 @@ public class TryStatement extends Statement {
     super(node);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(StatementList.class, TryStatement.BODY);
   }
@@ -63,5 +64,4 @@ public class TryStatement extends Statement {
   public static TryStatement newInstance(SModel sm) {
     return TryStatement.newInstance(sm, false);
   }
-
 }

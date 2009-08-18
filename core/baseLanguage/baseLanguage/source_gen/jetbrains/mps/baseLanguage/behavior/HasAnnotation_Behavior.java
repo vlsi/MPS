@@ -38,5 +38,4 @@ public class HasAnnotation_Behavior {
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.HasAnnotation"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319200", PARAMETERS_4025276038182319200);
   }
-
 }

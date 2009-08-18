@@ -14,7 +14,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public checkThrowsOfMethodIsCaught_NonTypesystemRule() {
   }
 
@@ -41,5 +40,4 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTy
   public boolean overrides() {
     return false;
   }
-
 }

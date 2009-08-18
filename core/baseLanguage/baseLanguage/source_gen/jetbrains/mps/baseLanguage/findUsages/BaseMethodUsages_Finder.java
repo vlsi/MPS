@@ -41,8 +41,8 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), indicator);
-    for(SNode method : ListSequence.fromList(baseMethods)) {
-      for(SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, indicator))) {
+    for (SNode method : ListSequence.fromList(baseMethods)) {
+      for (SNode usage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder", method, scope, indicator))) {
         ListSequence.fromList(_results).addElement(usage);
       }
     }
@@ -51,7 +51,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), new EmptyProgressIndicator());
     ListSequence.fromList(baseMethods).addElement(node);
-    for(SNode method : ListSequence.fromList(baseMethods)) {
+    for (SNode method : ListSequence.fromList(baseMethods)) {
       ListSequence.fromList(_results).addElement(method);
     }
   }
@@ -59,5 +59,4 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Base method usages";
   }
-
 }

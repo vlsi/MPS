@@ -16,6 +16,7 @@ public class SynchronizedStatement extends Statement {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, SynchronizedStatement.EXPRESSION);
   }
@@ -40,5 +41,4 @@ public class SynchronizedStatement extends Statement {
   public static SynchronizedStatement newInstance(SModel sm) {
     return SynchronizedStatement.newInstance(sm, false);
   }
-
 }

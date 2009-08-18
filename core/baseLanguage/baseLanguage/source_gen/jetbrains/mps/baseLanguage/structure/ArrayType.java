@@ -15,6 +15,7 @@ public class ArrayType extends Type {
     super(node);
   }
 
+
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, ArrayType.COMPONENT_TYPE);
   }
@@ -31,5 +32,4 @@ public class ArrayType extends Type {
   public static ArrayType newInstance(SModel sm) {
     return ArrayType.newInstance(sm, false);
   }
-
 }

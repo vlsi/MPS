@@ -18,6 +18,7 @@ public class ReturnStatement extends Statement implements TypeDerivable {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ReturnStatement.SHORT_DESCRIPTION);
   }
@@ -58,5 +59,4 @@ public class ReturnStatement extends Statement implements TypeDerivable {
   public static ReturnStatement newInstance(SModel sm) {
     return ReturnStatement.newInstance(sm, false);
   }
-
 }

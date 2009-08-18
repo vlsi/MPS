@@ -14,7 +14,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import javax.swing.JOptionPane;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
-
   public TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
@@ -22,7 +21,6 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
     this.putAction("ctrl+alt+shift", "VK_T", action);
   }
   public static class TestCoercion_Keymap_Action0 extends EditorCellKeyMapAction {
-
     public TestCoercion_Keymap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -96,7 +94,5 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl alt shift T";
     }
-
-}
-
+  }
 }

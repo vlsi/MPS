@@ -18,6 +18,7 @@ public class AbstractOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(AbstractOperation.SHORT_DESCRIPTION);
   }
@@ -50,5 +51,4 @@ public class AbstractOperation extends BaseConcept implements IOperation {
   public static AbstractOperation newInstance(SModel sm) {
     return AbstractOperation.newInstance(sm, false);
   }
-
 }

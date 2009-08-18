@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StatementList_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6577_0(editorContext, node);
   }
@@ -82,7 +81,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
 
   private static class statementListHandler_6577_0 extends RefNodeListHandler {
-
     public statementListHandler_6577_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -140,10 +138,9 @@ public class StatementList_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }
+  }
 
-}
   private static class statementListHandler_6577_1 extends RefNodeListHandler {
-
     public statementListHandler_6577_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -201,7 +198,5 @@ public class StatementList_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }
-
-}
-
+  }
 }

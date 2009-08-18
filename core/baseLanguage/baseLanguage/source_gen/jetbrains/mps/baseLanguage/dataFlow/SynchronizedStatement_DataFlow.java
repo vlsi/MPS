@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SynchronizedStatement_DataFlow extends DataFlowBuilder {
-
   public SynchronizedStatement_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class SynchronizedStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "block", true));
   }
-
 }

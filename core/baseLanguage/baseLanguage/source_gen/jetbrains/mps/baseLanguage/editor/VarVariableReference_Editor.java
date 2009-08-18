@@ -15,7 +15,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class VarVariableReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6452_1(editorContext, node);
   }
@@ -46,7 +45,6 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6452_0 extends AbstractCellProvider {
-
     public _Inline6452_0() {
       super();
     }
@@ -77,7 +75,5 @@ public class VarVariableReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

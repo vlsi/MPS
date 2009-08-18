@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InstanceInitializer_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.appendWithIndent("{");
@@ -19,5 +18,4 @@ public class InstanceInitializer_TextGen extends SNodeTextGen {
     this.appendWithIndent("}");
     this.appendNewLine();
   }
-
 }

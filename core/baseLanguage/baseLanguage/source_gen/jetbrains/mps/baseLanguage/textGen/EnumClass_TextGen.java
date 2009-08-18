@@ -11,7 +11,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumClass_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
@@ -29,7 +28,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
       this.append(" implements ");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "implementedInterface", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).last()) {
             this.append(", ");
@@ -40,7 +39,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     this.append(" {");
     this.increaseDepth();
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "enumConstant", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "enumConstant", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).last()) {
           this.append(",");
@@ -49,14 +48,14 @@ public class EnumClass_TextGen extends SNodeTextGen {
     }
     this.append(";");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "field", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "field", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
@@ -64,7 +63,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "constructor", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "constructor", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
@@ -72,7 +71,7 @@ public class EnumClass_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "method", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "method", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
@@ -80,15 +79,13 @@ public class EnumClass_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
       this.appendNewLine();
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "staticMethod", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "staticMethod", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         }
       }
     }
     this.decreaseDepth();
-    this.appendNewLine();
     this.append("}");
     this.appendNewLine();
   }
-
 }

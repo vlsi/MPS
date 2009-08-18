@@ -5,5 +5,4 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IContainsStatementList extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IContainsStatementList";
-}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IContainsStatementList";}

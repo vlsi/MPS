@@ -16,6 +16,7 @@ public class CastExpression extends Expression {
     super(node);
   }
 
+
   public Type getType() {
     return (Type)this.getChild(Type.class, CastExpression.TYPE);
   }
@@ -40,5 +41,4 @@ public class CastExpression extends Expression {
   public static CastExpression newInstance(SModel sm) {
     return CastExpression.newInstance(sm, false);
   }
-
 }

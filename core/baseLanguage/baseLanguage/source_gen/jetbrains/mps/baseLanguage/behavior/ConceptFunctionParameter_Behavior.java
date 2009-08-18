@@ -33,8 +33,7 @@ public class ConceptFunctionParameter_Behavior {
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
     List<SNode> functions = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
-    return ListSequence.fromList(functions).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "conceptFunctionParameter")).contains(ourConcept) || ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "applicableConceptFunctionParameter")).contains(ourConcept);
       }
@@ -76,5 +75,4 @@ public class ConceptFunctionParameter_Behavior {
   public static boolean callSuper_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
   }
-
 }

@@ -18,6 +18,7 @@ public class ClassifierType extends Type {
     super(node);
   }
 
+
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, ClassifierType.CLASSIFIER);
   }
@@ -54,5 +55,4 @@ public class ClassifierType extends Type {
   public static ClassifierType newInstance(SModel sm) {
     return ClassifierType.newInstance(sm, false);
   }
-
 }

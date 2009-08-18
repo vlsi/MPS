@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ForStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0938_0(editorContext, node);
   }
@@ -295,5 +294,4 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition0938_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
 }

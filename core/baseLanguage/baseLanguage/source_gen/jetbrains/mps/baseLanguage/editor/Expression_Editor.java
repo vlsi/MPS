@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class Expression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_6116_0(editorContext, node);
   }
@@ -30,19 +29,16 @@ public class Expression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCustom_6116_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConceptProperty_6116_0(editorContext, node);
     }
     return editorCell;
   }
 
   private EditorCell createCustom_6116_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0 <AbstractCellProvider>() {
-
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(editorContext, node, "<" + node.getRole_() + ">");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -79,5 +75,4 @@ public class Expression_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;
   }
-
 }

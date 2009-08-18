@@ -11,14 +11,13 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.baseLanguage.textGen.BaseLanguageTextGen;
 
 public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
     this.append(".");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "typeParameter", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last()) {
             this.append(", ");
@@ -30,5 +29,4 @@ public class InternalStaticMethodCall_TextGen extends SNodeTextGen {
     this.append(SPropertyOperations.getString(node, "methodName"));
     BaseLanguageTextGen.arguments(node, this);
   }
-
 }

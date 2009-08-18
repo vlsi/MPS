@@ -16,6 +16,7 @@ public class DimensionExpression extends BaseConcept {
     super(node);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, DimensionExpression.EXPRESSION);
   }
@@ -32,5 +33,4 @@ public class DimensionExpression extends BaseConcept {
   public static DimensionExpression newInstance(SModel sm) {
     return DimensionExpression.newInstance(sm, false);
   }
-
 }

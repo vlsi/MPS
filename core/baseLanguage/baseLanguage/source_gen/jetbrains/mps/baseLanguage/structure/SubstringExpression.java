@@ -17,6 +17,7 @@ public class SubstringExpression extends Expression {
     super(node);
   }
 
+
   public Expression getOperand() {
     return (Expression)this.getChild(Expression.class, SubstringExpression.OPERAND);
   }
@@ -49,5 +50,4 @@ public class SubstringExpression extends Expression {
   public static SubstringExpression newInstance(SModel sm) {
     return SubstringExpression.newInstance(sm, false);
   }
-
 }

@@ -11,13 +11,12 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Switch_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_Switch_InferenceRule() {
   }
 
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext) {
     SNode switchSt = switchStatement;
-    for(SNode switchCase : SLinkOperations.getTargets(switchSt, "case", true)) {
+    for (SNode switchCase : SLinkOperations.getTargets(switchSt, "case", true)) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(switchCase, "expression", true);
         BaseIntentionProvider intentionProvider = null;
@@ -37,5 +36,4 @@ public class typeOf_Switch_InferenceRule extends AbstractInferenceRule_Runtime i
   public boolean overrides() {
     return false;
   }
-
 }

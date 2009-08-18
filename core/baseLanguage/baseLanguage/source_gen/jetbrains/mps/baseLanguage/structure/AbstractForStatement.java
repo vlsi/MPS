@@ -15,6 +15,7 @@ public class AbstractForStatement extends AbstractLoopStatement {
     super(node);
   }
 
+
   public LocalVariableDeclaration getVariable() {
     return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, AbstractForStatement.VARIABLE);
   }
@@ -31,5 +32,4 @@ public class AbstractForStatement extends AbstractLoopStatement {
   public static AbstractForStatement newInstance(SModel sm) {
     return AbstractForStatement.newInstance(sm, false);
   }
-
 }

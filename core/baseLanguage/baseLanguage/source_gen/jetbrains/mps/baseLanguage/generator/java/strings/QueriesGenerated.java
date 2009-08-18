@@ -13,7 +13,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1225277059829(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.BaseStringOperation");
   }
@@ -81,5 +80,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1225277059823(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
   }
-
 }

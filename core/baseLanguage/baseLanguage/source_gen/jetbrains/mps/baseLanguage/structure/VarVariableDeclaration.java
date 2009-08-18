@@ -20,6 +20,7 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(VarVariableDeclaration.NAME);
   }
@@ -68,5 +69,4 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
   public static VarVariableDeclaration newInstance(SModel sm) {
     return VarVariableDeclaration.newInstance(sm, false);
   }
-
 }

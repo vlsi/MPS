@@ -21,6 +21,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(InstanceMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -77,5 +78,4 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   public static InstanceMethodDeclaration newInstance(SModel sm) {
     return InstanceMethodDeclaration.newInstance(sm, false);
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public EnumConstantReference_enumConstantDeclaration_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint ex
     // constants declared in the specified class
     return new ClassifierVisibleStaticMembersScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false))), _context.getReferenceNode(), IClassifiersSearchScope.ENUM_CONSTANT);
   }
-
 }

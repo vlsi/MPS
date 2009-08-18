@@ -25,6 +25,7 @@ public class InternalPartialFieldReference extends Expression implements IOperat
     super(node);
   }
 
+
   public String getFieldName() {
     return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
   }
@@ -89,5 +90,4 @@ public class InternalPartialFieldReference extends Expression implements IOperat
   public static InternalPartialFieldReference newInstance(SModel sm) {
     return InternalPartialFieldReference.newInstance(sm, false);
   }
-
 }

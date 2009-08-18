@@ -12,18 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StaticMethodCall_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new StaticMethodCall_Actions.StaticMethodCall_Actions_DELETE(node));
   }
 
   public static class StaticMethodCall_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public StaticMethodCall_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -35,12 +34,10 @@ public class StaticMethodCall_Actions {
       if (classConcept1 == classConcept2) {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        for(SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true))) {
+        for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true))) {
           SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
         }
       }
     }
-
-}
-
+  }
 }

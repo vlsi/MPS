@@ -22,6 +22,7 @@ public class ClosureParameter extends BaseConcept implements INamedConcept, IRes
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(ClosureParameter.NAME);
   }
@@ -70,5 +71,4 @@ public class ClosureParameter extends BaseConcept implements INamedConcept, IRes
   public static ClosureParameter newInstance(SModel sm) {
     return ClosureParameter.newInstance(sm, false);
   }
-
 }

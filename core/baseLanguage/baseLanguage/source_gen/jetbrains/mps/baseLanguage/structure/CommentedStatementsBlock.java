@@ -20,6 +20,7 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(CommentedStatementsBlock.SHORT_DESCRIPTION);
   }
@@ -72,5 +73,4 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
   public static CommentedStatementsBlock newInstance(SModel sm) {
     return CommentedStatementsBlock.newInstance(sm, false);
   }
-
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_ConceptFunction_InferenceRule() {
   }
 
@@ -37,7 +36,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     final SNode LCS_typevar_1186052624152 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (noReturnExpected) {
       // shouldn't return any values
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -51,19 +50,17 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485210", true), (SNode)null, _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981485205", intentionProvider);
       }
-    } else
-    {
+    } else {
       // should return subtypes of the 'expected type'
       // if 'expected type' is null - should still return some value (of any type)
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1186053304501", intentionProvider, errorTarget);
           }
-        } else
-        {
+        } else {
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
             BaseIntentionProvider intentionProvider = null;
@@ -119,5 +116,4 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
   public boolean overrides() {
     return false;
   }
-
 }

@@ -28,5 +28,4 @@ public class IParameter_Behavior {
   public static SNode callSuper_getDeclaration_1225282371351(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
   }
-
 }

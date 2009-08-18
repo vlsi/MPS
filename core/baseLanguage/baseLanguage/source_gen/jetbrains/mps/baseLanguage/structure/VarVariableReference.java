@@ -15,6 +15,7 @@ public class VarVariableReference extends Expression {
     super(node);
   }
 
+
   public VarVariableDeclaration getDeclaration() {
     return (VarVariableDeclaration)this.getReferent(VarVariableDeclaration.class, VarVariableReference.DECLARATION);
   }
@@ -31,5 +32,4 @@ public class VarVariableReference extends Expression {
   public static VarVariableReference newInstance(SModel sm) {
     return VarVariableReference.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class Annotation_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public Annotation_DefaultSearchScope() {
   }
 
@@ -25,5 +24,4 @@ public class Annotation_DefaultSearchScope extends BaseNodeReferenceSearchScopeP
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.ANNOTATION, operationContext.getScope());
   }
-
 }

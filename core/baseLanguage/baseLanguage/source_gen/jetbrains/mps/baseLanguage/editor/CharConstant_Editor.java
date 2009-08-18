@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CharConstant_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2322_0(editorContext, node);
   }
@@ -29,8 +28,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createProperty_2322_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createProperty_2322_1(editorContext, node);
     }
     {
@@ -107,5 +105,4 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition2322_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
-
 }

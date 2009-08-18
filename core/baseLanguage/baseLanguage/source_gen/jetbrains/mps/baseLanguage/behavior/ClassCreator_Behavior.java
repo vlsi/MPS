@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 
 public class ClassCreator_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,7 +16,7 @@ public class ClassCreator_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", classConcept, false);
-    for(SNode typeParameter : SLinkOperations.getTargets(thisNode, "typeParameter", true)) {
+    for (SNode typeParameter : SLinkOperations.getTargets(thisNode, "typeParameter", true)) {
       SLinkOperations.addChild(classifierType, "parameter", SNodeOperations.copyNode(typeParameter));
     }
     return classifierType;
@@ -27,5 +26,4 @@ public class ClassCreator_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return SLinkOperations.getTargets(classConcept, "constructor", true);
   }
-
 }

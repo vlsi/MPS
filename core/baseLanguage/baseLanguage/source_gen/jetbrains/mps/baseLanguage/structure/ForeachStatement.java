@@ -15,6 +15,7 @@ public class ForeachStatement extends AbstractForStatement {
     super(node);
   }
 
+
   public Expression getIterable() {
     return (Expression)this.getChild(Expression.class, ForeachStatement.ITERABLE);
   }
@@ -31,5 +32,4 @@ public class ForeachStatement extends AbstractForStatement {
   public static ForeachStatement newInstance(SModel sm) {
     return ForeachStatement.newInstance(sm, false);
   }
-
 }

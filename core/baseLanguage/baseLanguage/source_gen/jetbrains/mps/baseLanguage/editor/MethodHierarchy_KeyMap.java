@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementMethodDialog;
 
 public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
-
   public MethodHierarchy_KeyMap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
@@ -36,7 +35,6 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl", "VK_I", action);
   }
   public static class MethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
-
     public MethodHierarchy_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -87,10 +85,9 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl U";
     }
+  }
 
-}
   public static class MethodHierarchy_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public MethodHierarchy_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
@@ -126,7 +123,6 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           new OverrideMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
@@ -136,10 +132,9 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl O";
     }
+  }
 
-}
   public static class MethodHierarchy_KeyMap_Action2 extends EditorCellKeyMapAction {
-
     public MethodHierarchy_KeyMap_Action2() {
       this.setShownInPopupMenu(true);
     }
@@ -175,7 +170,6 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           new ImplementMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
@@ -185,7 +179,5 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl I";
     }
-
-}
-
+  }
 }

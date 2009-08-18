@@ -14,18 +14,17 @@ import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class BinaryOperation_LeftArgument_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new BinaryOperation_LeftArgument_Actions.BinaryOperation_LeftArgument_Actions_DELETE(node));
   }
 
   public static class BinaryOperation_LeftArgument_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public BinaryOperation_LeftArgument_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "replace binary operation with right operand";
@@ -49,7 +48,5 @@ public class BinaryOperation_LeftArgument_Actions {
         }
       }
     }
-
-}
-
+  }
 }

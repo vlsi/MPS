@@ -12,12 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_ArrayCreatorWithInitializer_InferenceRule() {
   }
 
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext) {
-    for(SNode value : SLinkOperations.getTargets(arrayCreator, "initValue", true)) {
+    for (SNode value : SLinkOperations.getTargets(arrayCreator, "initValue", true)) {
       {
         SNode _nodeToCheck_1029348928467 = value;
         BaseIntentionProvider intentionProvider = null;
@@ -42,5 +41,4 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule extends AbstractIn
   public boolean overrides() {
     return false;
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class Type_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_9010_0(editorContext, node);
   }
@@ -26,8 +25,7 @@ public class Type_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createError_9010_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConceptProperty_9010_0(editorContext, node);
     }
     return editorCell;
@@ -62,5 +60,4 @@ public class Type_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AssertStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     this.indentBuffer();
@@ -20,5 +19,4 @@ public class AssertStatement_TextGen extends SNodeTextGen {
     }
     this.append(";");
   }
-
 }

@@ -15,6 +15,7 @@ public class LowerBoundType extends Type {
     super(node);
   }
 
+
   public Type getBound() {
     return (Type)this.getChild(Type.class, LowerBoundType.BOUND);
   }
@@ -31,5 +32,4 @@ public class LowerBoundType extends Type {
   public static LowerBoundType newInstance(SModel sm) {
     return LowerBoundType.newInstance(sm, false);
   }
-
 }

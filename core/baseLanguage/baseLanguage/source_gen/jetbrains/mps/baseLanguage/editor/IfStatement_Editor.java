@@ -34,7 +34,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import jetbrains.mps.smodel.SModel;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1754_0(editorContext, node);
   }
@@ -74,8 +73,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return IfStatement_Editor._StyleParameter_QueryFunction_1754_1((cell == null ?
             null :
@@ -86,8 +84,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return IfStatement_Editor._StyleParameter_QueryFunction_1754_2((cell == null ?
             null :
@@ -147,8 +144,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return IfStatement_Editor._StyleParameter_QueryFunction_1754_0((cell == null ?
             null :
@@ -273,7 +269,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   }
 
   private static class elsifClausesListHandler_1754_0 extends RefNodeListHandler {
-
     public elsifClausesListHandler_1754_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -313,10 +308,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class IfStatement_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public IfStatement_generic_cellMenu0() {
     }
 
@@ -326,10 +320,9 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "else";
     }
+  }
 
-}
   public static class IfStatement_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public IfStatement_generic_cellMenu1() {
     }
 
@@ -340,7 +333,5 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "else if";
     }
-
-}
-
+  }
 }

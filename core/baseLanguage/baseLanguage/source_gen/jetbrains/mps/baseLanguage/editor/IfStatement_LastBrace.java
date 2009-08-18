@@ -12,18 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IfStatement_LastBrace {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new IfStatement_LastBrace.IfStatement_LastBrace_DELETE(node));
   }
 
   public static class IfStatement_LastBrace_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public IfStatement_LastBrace_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -32,12 +31,9 @@ public class IfStatement_LastBrace {
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
         SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).last());
-      } else
-      {
+      } else {
         SNodeOperations.deleteNode(node);
       }
     }
-
-}
-
+  }
 }

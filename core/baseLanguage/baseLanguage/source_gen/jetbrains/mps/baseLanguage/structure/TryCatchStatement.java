@@ -18,6 +18,7 @@ public class TryCatchStatement extends Statement {
     super(node);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(StatementList.class, TryCatchStatement.BODY);
   }
@@ -54,5 +55,4 @@ public class TryCatchStatement extends Statement {
   public static TryCatchStatement newInstance(SModel sm) {
     return TryCatchStatement.newInstance(sm, false);
   }
-
 }

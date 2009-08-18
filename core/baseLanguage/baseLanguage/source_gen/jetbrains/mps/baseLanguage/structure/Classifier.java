@@ -30,6 +30,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
     super(node);
   }
 
+
   public String getNestedName() {
     return this.getProperty(Classifier.NESTED_NAME);
   }
@@ -170,5 +171,4 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static Classifier newInstance(SModel sm) {
     return Classifier.newInstance(sm, false);
   }
-
 }

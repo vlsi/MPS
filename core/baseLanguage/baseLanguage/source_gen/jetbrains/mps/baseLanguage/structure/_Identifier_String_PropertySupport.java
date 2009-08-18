@@ -5,16 +5,13 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.PropertySupport;
 
 public class _Identifier_String_PropertySupport extends PropertySupport {
-
   public boolean canSetValue(String value) {
     String testValue = null;
     if (value == null) {
       testValue = "";
-    } else
-    {
+    } else {
       testValue = value;
     }
     return testValue.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   }
-
 }

@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AnonymousClass_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return new _Quotations.QuotationClass_19().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
   }
-
 }

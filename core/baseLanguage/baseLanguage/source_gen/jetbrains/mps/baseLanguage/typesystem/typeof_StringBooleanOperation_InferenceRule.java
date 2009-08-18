@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_StringBooleanOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_StringBooleanOperation_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class typeof_StringBooleanOperation_InferenceRule extends AbstractInferen
   public boolean overrides() {
     return false;
   }
-
 }

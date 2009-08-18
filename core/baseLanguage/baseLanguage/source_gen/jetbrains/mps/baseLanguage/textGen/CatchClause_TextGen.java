@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CatchClause_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendWithIndent("} catch (");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "throwable", true), this.getSNode());
@@ -17,5 +16,4 @@ public class CatchClause_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "catchBody", true), this.getSNode());
     this.decreaseDepth();
   }
-
 }

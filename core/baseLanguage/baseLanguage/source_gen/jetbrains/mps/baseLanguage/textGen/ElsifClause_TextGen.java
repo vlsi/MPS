@@ -8,7 +8,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ElsifClause_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.append(" else if (");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
@@ -19,5 +18,4 @@ public class ElsifClause_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
   }
-
 }

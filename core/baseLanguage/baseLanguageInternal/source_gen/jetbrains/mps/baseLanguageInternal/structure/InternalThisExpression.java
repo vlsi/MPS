@@ -15,6 +15,7 @@ public class InternalThisExpression extends Expression {
     super(node);
   }
 
+
   public static InternalThisExpression newInstance(SModel sm, boolean init) {
     return (InternalThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -22,5 +23,4 @@ public class InternalThisExpression extends Expression {
   public static InternalThisExpression newInstance(SModel sm) {
     return InternalThisExpression.newInstance(sm, false);
   }
-
 }

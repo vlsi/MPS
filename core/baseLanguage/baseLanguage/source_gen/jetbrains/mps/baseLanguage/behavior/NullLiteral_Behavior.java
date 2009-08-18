@@ -7,7 +7,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 public class NullLiteral_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class NullLiteral_Behavior {
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     return null;
   }
-
 }

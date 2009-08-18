@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TryCatchStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2643_0(editorContext, node);
   }
@@ -108,7 +107,6 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
   }
 
   private static class catchClauseListHandler_2643_0 extends RefNodeListHandler {
-
     public catchClauseListHandler_2643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -148,7 +146,5 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

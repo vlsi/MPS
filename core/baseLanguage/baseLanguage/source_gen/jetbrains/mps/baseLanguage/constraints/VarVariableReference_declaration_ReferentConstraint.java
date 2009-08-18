@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class VarVariableReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public VarVariableReference_declaration_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class VarVariableReference_declaration_ReferentConstraint extends BaseNod
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(methodDeclaration, "jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", false, new String[]{})));
     return result;
   }
-
 }

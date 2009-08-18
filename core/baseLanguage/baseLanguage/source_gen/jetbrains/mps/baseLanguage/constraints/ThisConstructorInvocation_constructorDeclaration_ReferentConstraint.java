@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ThisConstructorInvocation_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ThisConstructorInvocation_constructorDeclaration_ReferentConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class ThisConstructorInvocation_constructorDeclaration_ReferentConstraint
     SNode thisConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     return SLinkOperations.getTargets(thisConcept, "constructor", true);
   }
-
 }

@@ -17,6 +17,7 @@ public class InternalClassExpression extends Expression {
     super(node);
   }
 
+
   public Type getType() {
     return (Type)this.getChild(Type.class, InternalClassExpression.TYPE);
   }
@@ -33,5 +34,4 @@ public class InternalClassExpression extends Expression {
   public static InternalClassExpression newInstance(SModel sm) {
     return InternalClassExpression.newInstance(sm, false);
   }
-
 }

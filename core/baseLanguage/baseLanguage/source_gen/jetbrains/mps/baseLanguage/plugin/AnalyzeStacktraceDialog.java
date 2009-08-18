@@ -15,7 +15,6 @@ import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class AnalyzeStacktraceDialog extends BaseDialog {
-
   private JComponent myComponent;
   private JTextArea myText;
   private MPSProject myProject;
@@ -25,6 +24,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     this.myProject = project;
     this.myComponent = this.createPanel();
   }
+
 
   protected JComponent getMainComponent() {
     return this.myComponent;
@@ -61,5 +61,4 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
   public void onCancel() {
     this.dispose();
   }
-
 }

@@ -8,7 +8,6 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.project.Project;
 
 public class DefaultJavaApplication_Factory extends ConfigurationFactory {
-
   public DefaultJavaApplication_Factory(ConfigurationType type) {
     super(type);
   }
@@ -16,5 +15,4 @@ public class DefaultJavaApplication_Factory extends ConfigurationFactory {
   public RunConfiguration createTemplateConfiguration(Project p) {
     return new DefaultJavaApplication_Configuration(p, this, "TemplateName");
   }
-
 }

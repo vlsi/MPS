@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _DeprecatedPart extends AbstractCellProvider {
-
   public _DeprecatedPart(SNode node) {
     super(node);
   }
@@ -111,5 +110,4 @@ public class _DeprecatedPart extends AbstractCellProvider {
   private static boolean renderingCondition0235_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
-
 }

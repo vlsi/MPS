@@ -14,6 +14,7 @@ public class SuperMethodCall extends BaseMethodCall {
     super(node);
   }
 
+
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {
     return this.ensureAdapter(InstanceMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
@@ -30,5 +31,4 @@ public class SuperMethodCall extends BaseMethodCall {
   public static SuperMethodCall newInstance(SModel sm) {
     return SuperMethodCall.newInstance(sm, false);
   }
-
 }

@@ -18,12 +18,11 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_BaseMethodDeclaration_InferenceRule() {
   }
 
   public void applyRule(final SNode bmd, final TypeCheckingContext typeCheckingContext) {
-    for(SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
+    for (SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
       {
         SNode _nodeToCheck_1029348928467 = bmd;
         BaseIntentionProvider intentionProvider = null;
@@ -46,7 +45,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if (expectedRetType == null) {
       // shouldn't return any values
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
           {
             BaseIntentionProvider intentionProvider = null;
@@ -55,18 +54,16 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           }
         }
       }
-    } else
-    {
+    } else {
       // should return subtypes of the 'expected type'
-      for(SNode returnStatement : Sequence.fromIterable(returnStatements)) {
+      for (SNode returnStatement : Sequence.fromIterable(returnStatements)) {
         if ((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
             typeCheckingContext.reportTypeError(returnStatement, "should return value", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765314800", intentionProvider, errorTarget);
           }
-        } else
-        {
+        } else {
           SNode returnType = typeCheckingContext.typeOf(SLinkOperations.getTarget(returnStatement, "expression", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1178765405776", true);
           {
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(returnStatement, "expression", true);
@@ -102,5 +99,4 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return false;
   }
-
 }

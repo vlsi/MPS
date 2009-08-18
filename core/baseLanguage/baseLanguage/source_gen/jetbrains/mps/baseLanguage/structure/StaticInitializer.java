@@ -16,6 +16,7 @@ public class StaticInitializer extends BaseConcept {
     super(node);
   }
 
+
   public StatementList getStatementList() {
     return (StatementList)this.getChild(StatementList.class, StaticInitializer.STATEMENT_LIST);
   }
@@ -32,5 +33,4 @@ public class StaticInitializer extends BaseConcept {
   public static StaticInitializer newInstance(SModel sm) {
     return StaticInitializer.newInstance(sm, false);
   }
-
 }

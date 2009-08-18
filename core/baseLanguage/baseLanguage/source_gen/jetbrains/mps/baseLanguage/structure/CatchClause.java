@@ -17,6 +17,7 @@ public class CatchClause extends BaseConcept {
     super(node);
   }
 
+
   public LocalVariableDeclaration getThrowable() {
     return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
   }
@@ -41,5 +42,4 @@ public class CatchClause extends BaseConcept {
   public static CatchClause newInstance(SModel sm) {
     return CatchClause.newInstance(sm, false);
   }
-
 }

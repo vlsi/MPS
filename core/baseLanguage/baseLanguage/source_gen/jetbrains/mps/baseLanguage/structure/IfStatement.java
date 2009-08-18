@@ -23,6 +23,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(IfStatement.SHORT_DESCRIPTION);
   }
@@ -99,5 +100,4 @@ public class IfStatement extends Statement implements IContainsStatementList {
   public static IfStatement newInstance(SModel sm) {
     return IfStatement.newInstance(sm, false);
   }
-
 }

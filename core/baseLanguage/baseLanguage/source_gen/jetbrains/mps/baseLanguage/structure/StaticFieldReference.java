@@ -15,6 +15,7 @@ public class StaticFieldReference extends VariableReference {
     super(node);
   }
 
+
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, StaticFieldReference.CLASSIFIER);
   }
@@ -39,5 +40,4 @@ public class StaticFieldReference extends VariableReference {
   public static StaticFieldReference newInstance(SModel sm) {
     return StaticFieldReference.newInstance(sm, false);
   }
-
 }

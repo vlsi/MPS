@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SuperMethodCall_instanceMethodDeclaration_ReferentConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extend
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
   }
-
 }

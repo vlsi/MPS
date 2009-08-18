@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CorrectScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_CorrectScope_NonTypesystemRule() {
   }
 
@@ -41,5 +40,4 @@ public class check_CorrectScope_NonTypesystemRule extends AbstractNonTypesystemR
   public boolean overrides() {
     return false;
   }
-
 }

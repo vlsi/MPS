@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddElsifClause_Intention extends BaseIntention {
-
   public AddElsifClause_Intention() {
   }
 
@@ -54,5 +53,4 @@ public class AddElsifClause_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

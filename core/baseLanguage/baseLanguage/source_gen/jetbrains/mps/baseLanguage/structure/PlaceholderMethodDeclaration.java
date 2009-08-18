@@ -14,6 +14,7 @@ public class PlaceholderMethodDeclaration extends InstanceMethodDeclaration {
     super(node);
   }
 
+
   public static PlaceholderMethodDeclaration newInstance(SModel sm, boolean init) {
     return (PlaceholderMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class PlaceholderMethodDeclaration extends InstanceMethodDeclaration {
   public static PlaceholderMethodDeclaration newInstance(SModel sm) {
     return PlaceholderMethodDeclaration.newInstance(sm, false);
   }
-
 }

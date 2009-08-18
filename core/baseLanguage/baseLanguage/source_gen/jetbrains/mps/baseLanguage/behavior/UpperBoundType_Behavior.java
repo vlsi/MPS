@@ -8,15 +8,13 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UpperBoundType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "bound", true) == null) {
       return "? extends ???";
-    } else
-    {
+    } else {
       return "? extends " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true));
     }
   }
@@ -27,5 +25,4 @@ public class UpperBoundType_Behavior {
     }
     return Type_Behavior.call_isSupersetOf_1220438914705(SLinkOperations.getTarget(thisNode, "bound", true), t);
   }
-
 }

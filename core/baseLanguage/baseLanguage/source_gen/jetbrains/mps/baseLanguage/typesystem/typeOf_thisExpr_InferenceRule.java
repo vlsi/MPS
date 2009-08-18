@@ -15,7 +15,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_thisExpr_InferenceRule() {
   }
 
@@ -23,12 +22,11 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     SNode classifier;
     if ((SLinkOperations.getTarget(thisExpr, "classConcept", false) != null)) {
       classifier = SLinkOperations.getTarget(thisExpr, "classConcept", false);
-    } else
-    {
+    } else {
       classifier = ClassConcept_Behavior.getContextClass_8008512149545173402(thisExpr);
     }
     List<SNode> typeVarRefs = new ArrayList<SNode>();
-    for(SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
+    for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
       ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_70().createNode(typeVariableDeclaration, typeCheckingContext));
     }
     {
@@ -49,5 +47,4 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
   public boolean overrides() {
     return false;
   }
-
 }

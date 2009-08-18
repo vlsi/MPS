@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConstructorDeclaration_nestedName_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public ConstructorDeclaration_nestedName_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class ConstructorDeclaration_nestedName_PropertyConstraint implements IMo
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "nestedName");
   }
-
 }

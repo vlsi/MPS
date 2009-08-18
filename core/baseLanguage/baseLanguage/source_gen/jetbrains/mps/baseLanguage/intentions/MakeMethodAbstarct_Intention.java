@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MakeMethodAbstarct_Intention extends BaseIntention {
-
   public MakeMethodAbstarct_Intention() {
   }
 
@@ -53,8 +52,7 @@ public class MakeMethodAbstarct_Intention extends BaseIntention {
       return true;
     }
     List<SNode> includingStatementLists = SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.StatementList", true);
-    Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> includingBodies = ListSequence.fromList(includingStatementLists).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.hasRole(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "body");
       }
@@ -69,5 +67,4 @@ public class MakeMethodAbstarct_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

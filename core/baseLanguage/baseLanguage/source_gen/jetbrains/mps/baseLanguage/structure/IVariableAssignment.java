@@ -5,5 +5,4 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IVariableAssignment extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IVariableAssignment";
-}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IVariableAssignment";}

@@ -16,6 +16,7 @@ public class GetAccessor extends BaseConcept {
     super(node);
   }
 
+
   public StatementList getStatementList() {
     return (StatementList)this.getChild(StatementList.class, GetAccessor.STATEMENT_LIST);
   }
@@ -32,5 +33,4 @@ public class GetAccessor extends BaseConcept {
   public static GetAccessor newInstance(SModel sm) {
     return GetAccessor.newInstance(sm, false);
   }
-
 }

@@ -25,7 +25,8 @@ public class UncommentStatements_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift SLASH";
   }
@@ -34,7 +35,7 @@ public class UncommentStatements_Action extends GeneratedAction {
     return (SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) != null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -46,7 +47,7 @@ public class UncommentStatements_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,10 +67,10 @@ public class UncommentStatements_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.getAncestor(UncommentStatements_Action.this.node, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
-      for(SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
+      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
         SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
       }
       SNodeOperations.deleteNode(commentedStatementsBlock);
@@ -77,5 +78,4 @@ public class UncommentStatements_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "UncommentStatements", t);
     }
   }
-
 }

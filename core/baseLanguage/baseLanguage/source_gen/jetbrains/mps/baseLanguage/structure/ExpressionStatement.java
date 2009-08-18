@@ -19,6 +19,7 @@ public class ExpressionStatement extends Statement implements IWrapper {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ExpressionStatement.SHORT_DESCRIPTION);
   }
@@ -59,5 +60,4 @@ public class ExpressionStatement extends Statement implements IWrapper {
   public static ExpressionStatement newInstance(SModel sm) {
     return ExpressionStatement.newInstance(sm, false);
   }
-
 }

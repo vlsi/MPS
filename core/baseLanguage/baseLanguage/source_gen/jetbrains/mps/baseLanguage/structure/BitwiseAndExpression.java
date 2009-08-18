@@ -14,6 +14,7 @@ public class BitwiseAndExpression extends BinaryBitwiseOperation {
     super(node);
   }
 
+
   public static BitwiseAndExpression newInstance(SModel sm, boolean init) {
     return (BitwiseAndExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class BitwiseAndExpression extends BinaryBitwiseOperation {
   public static BitwiseAndExpression newInstance(SModel sm) {
     return BitwiseAndExpression.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SubstringExpression_DataFlow extends DataFlowBuilder {
-
   public SubstringExpression_DataFlow() {
   }
 
@@ -22,5 +21,4 @@ public class SubstringExpression_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "endIndex", true));
     }
   }
-
 }

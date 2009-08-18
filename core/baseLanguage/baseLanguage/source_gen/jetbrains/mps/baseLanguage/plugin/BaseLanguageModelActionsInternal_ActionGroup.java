@@ -20,8 +20,8 @@ public class BaseLanguageModelActionsInternal_ActionGroup extends GeneratedActio
     }
   }
 
+
   public void adjust() {
     this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, null);
   }
-
 }

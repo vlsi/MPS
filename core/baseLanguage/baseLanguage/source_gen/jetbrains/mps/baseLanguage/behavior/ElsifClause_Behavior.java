@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ElsifClause_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,5 +22,4 @@ public class ElsifClause_Behavior {
     SNodeOperations.deleteNode(thisNode);
     SLinkOperations.setTarget(ifStatement, "ifFalseStatement", elseStatement, true);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReplaceEqualityWithEquals_Intention extends BaseIntention {
-
   public ReplaceEqualityWithEquals_Intention() {
   }
 
@@ -59,5 +58,4 @@ public class ReplaceEqualityWithEquals_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

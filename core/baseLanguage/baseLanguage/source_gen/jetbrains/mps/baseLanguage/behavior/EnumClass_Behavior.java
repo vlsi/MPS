@@ -9,12 +9,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumClass_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_findConstantByName_1213877267258(SNode thisNode, String name) {
-    for(SNode constant : SLinkOperations.getTargets(thisNode, "enumConstant", true)) {
+    for (SNode constant : SLinkOperations.getTargets(thisNode, "enumConstant", true)) {
       if (name.equalsIgnoreCase(SPropertyOperations.getString(constant, "name"))) {
         return constant;
       }
@@ -32,5 +31,4 @@ public class EnumClass_Behavior {
     // enums always have static operations: valueOf and values
     return true;
   }
-
 }

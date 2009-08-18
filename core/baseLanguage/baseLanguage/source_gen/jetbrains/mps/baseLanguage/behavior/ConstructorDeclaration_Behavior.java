@@ -41,15 +41,14 @@ public class ConstructorDeclaration_Behavior {
     result.append(SPropertyOperations.getString(thisNode, "nestedName"));
     result.append("(");
     boolean first = true;
-    for(SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       if (!(first)) {
         result.append(",");
       }
       first = false;
       if (SLinkOperations.getTarget(parm, "type", true) != null) {
         result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(parm, "type", true)));
-      } else
-      {
+      } else {
         result.append("???");
       }
     }
@@ -64,5 +63,4 @@ public class ConstructorDeclaration_Behavior {
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459842(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182319417", PARAMETERS_4025276038182459842);
   }
-
 }

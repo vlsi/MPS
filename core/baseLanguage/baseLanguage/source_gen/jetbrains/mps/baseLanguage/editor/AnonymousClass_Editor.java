@@ -37,7 +37,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import jetbrains.mps.smodel.SModel;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1871_0(editorContext, node);
   }
@@ -365,7 +364,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1871_0 extends AbstractCellProvider {
-
     public _Inline1871_0() {
       super();
     }
@@ -400,10 +398,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class fieldListHandler_1871_0 extends RefNodeListHandler {
-
     public fieldListHandler_1871_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -459,10 +456,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_1871_0 extends RefNodeListHandler {
-
     public methodListHandler_1871_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -525,10 +521,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class parameterListHandler_1871_0 extends RefNodeListHandler {
-
     public parameterListHandler_1871_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -591,10 +586,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class typeParameterListHandler_1871_0 extends RefNodeListHandler {
-
     public typeParameterListHandler_1871_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -641,10 +635,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   public static class AnonymousClass_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public AnonymousClass_generic_cellMenu0() {
     }
 
@@ -655,10 +648,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "add initializer";
     }
+  }
 
-}
   public static class AnonymousClass_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public AnonymousClass_generic_cellMenu1() {
     }
 
@@ -669,10 +661,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "add method";
     }
+  }
 
-}
   public static class AnonymousClass_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-
     public AnonymousClass_generic_cellMenu2() {
     }
 
@@ -683,7 +674,5 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "add field";
     }
-
-}
-
+  }
 }

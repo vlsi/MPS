@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeOf_andExpression_InferenceRule();
@@ -667,8 +666,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
-          } else
-          {
+          } else {
             return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
           }
         }
@@ -689,8 +687,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
-          } else
-          {
+          } else {
             return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
           }
         }
@@ -711,8 +708,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
-          } else
-          {
+          } else {
             return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
           }
         }
@@ -733,8 +729,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
-          } else
-          {
+          } else {
             return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
           }
         }
@@ -772,8 +767,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
-          } else
-          {
+          } else {
             return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
           }
         }
@@ -814,7 +808,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
         }
@@ -834,7 +827,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.structure.GenericNewExpression";
         }
@@ -854,7 +846,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.structure.Expression";
         }
@@ -878,7 +869,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
                 }
                 param = param_iterator.next();
                 arg = arg_iterator.next();
-                for(SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
+                for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
                   if (ListSequence.fromList(declarations).contains(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))) {
                     SetSequence.fromSet(result).addElement(arg);
                   }

@@ -17,6 +17,7 @@ public class BinaryOperation extends Expression {
     super(node);
   }
 
+
   public Expression getRightExpression() {
     return (Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
   }
@@ -41,5 +42,4 @@ public class BinaryOperation extends Expression {
   public static BinaryOperation newInstance(SModel sm) {
     return BinaryOperation.newInstance(sm, false);
   }
-
 }

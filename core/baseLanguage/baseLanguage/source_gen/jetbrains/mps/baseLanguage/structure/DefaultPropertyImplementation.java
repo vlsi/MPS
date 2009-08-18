@@ -16,6 +16,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
     super(node);
   }
 
+
   public DefaultGetAccessor getDefaultGetAccessor() {
     return (DefaultGetAccessor)this.getChild(DefaultGetAccessor.class, DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR);
   }
@@ -40,5 +41,4 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   public static DefaultPropertyImplementation newInstance(SModel sm) {
     return DefaultPropertyImplementation.newInstance(sm, false);
   }
-
 }

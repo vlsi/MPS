@@ -14,6 +14,7 @@ public class ShortType extends PrimitiveType {
     super(node);
   }
 
+
   public static ShortType newInstance(SModel sm, boolean init) {
     return (ShortType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class ShortType extends PrimitiveType {
   public static ShortType newInstance(SModel sm) {
     return ShortType.newInstance(sm, false);
   }
-
 }

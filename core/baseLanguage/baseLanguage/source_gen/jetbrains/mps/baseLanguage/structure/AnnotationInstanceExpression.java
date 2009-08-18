@@ -15,6 +15,7 @@ public class AnnotationInstanceExpression extends Expression {
     super(node);
   }
 
+
   public AnnotationInstance getAnnotationInstance() {
     return (AnnotationInstance)this.getChild(AnnotationInstance.class, AnnotationInstanceExpression.ANNOTATION_INSTANCE);
   }
@@ -31,5 +32,4 @@ public class AnnotationInstanceExpression extends Expression {
   public static AnnotationInstanceExpression newInstance(SModel sm) {
     return AnnotationInstanceExpression.newInstance(sm, false);
   }
-
 }

@@ -17,7 +17,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_FieldReferenceOperation_InferenceRule() {
   }
 
@@ -66,5 +65,4 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-
 }

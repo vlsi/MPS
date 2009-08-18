@@ -11,7 +11,6 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
@@ -28,7 +27,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     this.append(SPropertyOperations.getString(node, "name"));
     this.append("(");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
-      for(SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
+      for (SNode item : SLinkOperations.getTargets(node, "parameter", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
         if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()) {
           this.append(", ");
@@ -39,7 +38,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
       this.append(" throws ");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
-        for(SNode item : SLinkOperations.getTargets(node, "throwsItem", true)) {
+        for (SNode item : SLinkOperations.getTargets(node, "throwsItem", true)) {
           TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
           if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last()) {
             this.append(", ");
@@ -52,14 +51,12 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
         this.appendNewLine();
       }
-    } else
-    {
+    } else {
       this.append(" {");
       this.increaseDepth();
       if ((SLinkOperations.getTarget(node, "body", true) != null)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
-      } else
-      {
+      } else {
         this.appendNewLine();
         this.appendWithIndent("throw new RuntimeException(\"NOT IMPLEMENTED\");");
       }
@@ -69,5 +66,4 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       this.appendNewLine();
     }
   }
-
 }

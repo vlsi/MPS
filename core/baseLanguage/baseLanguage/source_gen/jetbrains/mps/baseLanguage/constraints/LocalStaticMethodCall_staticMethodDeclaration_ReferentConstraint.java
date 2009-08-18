@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint ex
     SNode clazz = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypes_of_typeVariableReference_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypes_of_typeVariableReference_SubtypingRule() {
   }
 
@@ -23,7 +22,7 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
     if ((SLinkOperations.getTarget(typeVariableDeclaration, "bound", true) != null)) {
       ListSequence.fromList(supertypes).addElement(SLinkOperations.getTarget(typeVariableDeclaration, "bound", true));
     }
-    for(SNode bound : SLinkOperations.getTargets(typeVariableDeclaration, "auxBounds", true)) {
+    for (SNode bound : SLinkOperations.getTargets(typeVariableDeclaration, "auxBounds", true)) {
       ListSequence.fromList(supertypes).addElement(bound);
     }
     if (ListSequence.fromList(supertypes).isEmpty()) {
@@ -43,5 +42,4 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
   public boolean isWeak() {
     return false;
   }
-
 }

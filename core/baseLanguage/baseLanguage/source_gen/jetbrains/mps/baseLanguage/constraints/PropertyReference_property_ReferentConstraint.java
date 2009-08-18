@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 
 public class PropertyReference_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PropertyReference_property_ReferentConstraint() {
   }
 
@@ -41,11 +40,11 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
     }
     List<SNode> resultProperties = new ArrayList<SNode>();
     List<SNode> classifiers = ((List<SNode>)new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes());
-    for(SNode classifier : ListSequence.fromList(classifiers)) {
+    for (SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
         List<SNode> properties = SLinkOperations.getTargets(classConcept, "property", true);
-        for(SNode property : ListSequence.fromList(properties)) {
+        for (SNode property : ListSequence.fromList(properties)) {
           if (VisibilityUtil.isVisible(_context.getEnclosingNode(), property)) {
             ListSequence.fromList(resultProperties).addElement(property);
           }
@@ -54,5 +53,4 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
     }
     return resultProperties;
   }
-
 }

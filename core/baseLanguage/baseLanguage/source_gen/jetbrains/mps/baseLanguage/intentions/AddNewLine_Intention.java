@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddNewLine_Intention extends BaseIntention {
-
   public AddNewLine_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class AddNewLine_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

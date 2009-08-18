@@ -18,6 +18,7 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ArrayLengthOperation.SHORT_DESCRIPTION);
   }
@@ -50,5 +51,4 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
   public static ArrayLengthOperation newInstance(SModel sm) {
     return ArrayLengthOperation.newInstance(sm, false);
   }
-
 }

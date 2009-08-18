@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveArrayType_Intention extends BaseIntention {
-
   public RemoveArrayType_Intention() {
   }
 
@@ -40,5 +39,4 @@ public class RemoveArrayType_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_ForeachStatement_InferenceRule() {
   }
 
@@ -40,5 +39,4 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
   public boolean overrides() {
     return false;
   }
-
 }

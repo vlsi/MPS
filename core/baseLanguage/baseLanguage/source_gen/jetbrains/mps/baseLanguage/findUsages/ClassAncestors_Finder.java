@@ -47,5 +47,4 @@ public class ClassAncestors_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Ancestor";
   }
-
 }

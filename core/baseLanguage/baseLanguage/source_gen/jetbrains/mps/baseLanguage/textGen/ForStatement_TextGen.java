@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class ForStatement_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     if (SPropertyOperations.getString(node, "label") != null) {
       this.appendNewLine();
@@ -18,7 +17,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
     }
     this.appendNewLine();
     this.indentBuffer();
-    this.append("for(");
+    this.append("for (");
     if ((SLinkOperations.getTarget(node, "variable", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "variable", true), this.getSNode());
     }
@@ -37,5 +36,4 @@ public class ForStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.appendWithIndent("}");
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 
 public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ThisExpression_classConcept_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class ThisExpression_classConcept_ReferentConstraint extends BaseNodeRefe
     }
     return ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.structure.ThisExpression"));
   }
-
 }

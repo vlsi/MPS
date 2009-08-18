@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TypeVariableDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,8 +27,7 @@ public class TypeVariableDeclaration_Behavior {
     SetSequence.fromSet(visitedVars).addElement(thisNode);
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
       return TypeVariableDeclaration_Behavior.getTypeWithConcreteUpperBounds_4346214032091504651(SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
-    } else
-    {
+    } else {
       return new _Quotations.QuotationClass_20().createNode();
     }
   }
@@ -42,11 +40,10 @@ public class TypeVariableDeclaration_Behavior {
     List<SNode> variableReferences = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
     List<SNode> list = new ArrayList<SNode>();
     ListSequence.fromList(list).addSequence(ListSequence.fromList(variableReferences));
-    for(SNode typeVariableReference : list) {
+    for (SNode typeVariableReference : list) {
       SNode concreteUpperBound = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false), visitedVars);
       SNodeOperations.replaceWithAnother(typeVariableReference, concreteUpperBound);
     }
     return result;
   }
-
 }

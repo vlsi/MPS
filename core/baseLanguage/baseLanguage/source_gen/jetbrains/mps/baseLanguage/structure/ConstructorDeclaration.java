@@ -21,6 +21,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
     super(node);
   }
 
+
   public String getNestedName() {
     return this.getProperty(ConstructorDeclaration.NESTED_NAME);
   }
@@ -77,5 +78,4 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   public static ConstructorDeclaration newInstance(SModel sm) {
     return ConstructorDeclaration.newInstance(sm, false);
   }
-
 }

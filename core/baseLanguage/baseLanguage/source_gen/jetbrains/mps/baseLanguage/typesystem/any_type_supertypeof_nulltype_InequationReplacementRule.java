@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class any_type_supertypeof_nulltype_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public any_type_supertypeof_nulltype_InequationReplacementRule() {
   }
 
@@ -54,5 +53,4 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
 }

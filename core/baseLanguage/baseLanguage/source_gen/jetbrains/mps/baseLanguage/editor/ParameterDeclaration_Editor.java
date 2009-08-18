@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ParameterDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4085_1(editorContext, node);
   }
@@ -186,7 +185,6 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_4085_0 extends RefNodeListHandler {
-
     public annotationListHandler_4085_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -226,10 +224,9 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_4085_1 extends RefNodeListHandler {
-
     public annotationListHandler_4085_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -269,7 +266,5 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

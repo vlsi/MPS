@@ -11,19 +11,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReturnStatement_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
     editorCell.setAction(CellActionType.DELETE, new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
   }
 
   public static class ReturnStatement_Actions_RIGHT_TRANSFORM extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public ReturnStatement_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "add return expression";
@@ -38,15 +37,15 @@ public class ReturnStatement_Actions {
         SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
+  }
 
-}
   public static class ReturnStatement_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public ReturnStatement_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -56,7 +55,5 @@ public class ReturnStatement_Actions {
       SNode expressionStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       SLinkOperations.setTarget(expressionStatement, "expression", SLinkOperations.getTarget(node, "expression", true), true);
     }
-
-}
-
+  }
 }

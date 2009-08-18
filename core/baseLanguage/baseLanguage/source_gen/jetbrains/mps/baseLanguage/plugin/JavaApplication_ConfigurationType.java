@@ -32,10 +32,9 @@ public class JavaApplication_ConfigurationType implements ConfigurationType {
     return ICON;
   }
 
-  @NonNls()
-  @NotNull()
+  @NonNls
+  @NotNull
   public String getId() {
     return "JavaApplication";
   }
-
 }

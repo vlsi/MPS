@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Class_Void_weak_supertypeof_void_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
   public boolean isWeak() {
     return true;
   }
-
 }

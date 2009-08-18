@@ -17,7 +17,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public FieldIsNeverUsed_NonTypesystemRule() {
   }
 
@@ -26,8 +25,7 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
       if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
         List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
-        if (ListSequence.fromList(memberOperations).where(new IWhereFilter <SNode>() {
-
+        if (ListSequence.fromList(memberOperations).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "member", false) == member;
           }
@@ -38,11 +36,9 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
             typeCheckingContext.reportWarning(fieldDeclaration, "Field is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8706754199947716227", intentionProvider, errorTarget);
           }
         }
-      } else
-      {
+      } else {
         List<SNode> fieldReferenceOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{});
-        if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter <SNode>() {
-
+        if (ListSequence.fromList(fieldReferenceOperations).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "fieldDeclaration", false) == fieldDeclaration;
           }
@@ -68,5 +64,4 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
   public boolean overrides() {
     return false;
   }
-
 }

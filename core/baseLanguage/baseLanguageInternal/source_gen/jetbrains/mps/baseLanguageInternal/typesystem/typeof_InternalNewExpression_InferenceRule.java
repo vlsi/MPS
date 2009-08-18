@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_InternalNewExpression_InferenceRule() {
   }
 
@@ -19,8 +18,7 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     SNode type;
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
-    } else
-    {
+    } else {
       type = new _Quotations.QuotationClass_0().createNode(typeCheckingContext);
     }
     {
@@ -41,5 +39,4 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
   public boolean overrides() {
     return true;
   }
-
 }

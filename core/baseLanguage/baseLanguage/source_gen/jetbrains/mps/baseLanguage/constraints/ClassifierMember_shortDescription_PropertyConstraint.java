@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 
 public class ClassifierMember_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public ClassifierMember_shortDescription_PropertyConstraint() {
   }
 
@@ -31,5 +30,4 @@ public class ClassifierMember_shortDescription_PropertyConstraint implements IMo
     }
     return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (?declaring classifier?)";
   }
-
 }

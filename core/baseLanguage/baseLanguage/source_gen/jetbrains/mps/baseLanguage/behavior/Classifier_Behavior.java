@@ -68,7 +68,7 @@ public class Classifier_Behavior {
     int index = ListSequence.fromList(containers).indexOf(contextContainer);
     if (index != -1) {
       List<SNode> newContainers = new ArrayList<SNode>();
-      for(int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
+      for (int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
         ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).getElement(i));
       }
       containers = newContainers;
@@ -76,11 +76,10 @@ public class Classifier_Behavior {
 
     StringBuilder result = new StringBuilder();
     boolean first = true;
-    for(SNode c : containers) {
+    for (SNode c : containers) {
       if (first) {
         first = false;
-      } else
-      {
+      } else {
         result.append(".");
       }
       result.append(SPropertyOperations.getString(c, "name"));
@@ -103,5 +102,4 @@ public class Classifier_Behavior {
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4221_0(editorContext, node);
   }
@@ -65,7 +64,6 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4221_0 extends AbstractCellProvider {
-
     public _Inline4221_0() {
       super();
     }
@@ -97,7 +95,5 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

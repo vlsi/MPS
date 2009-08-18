@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExpressionStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -15,5 +14,4 @@ public class ExpressionStatement_Behavior {
     SNode retType = IMethodLike_Behavior.call_getExpectedRetType_1239354342632(methodLike);
     return IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
-
 }

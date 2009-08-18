@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExpectedType_FactoryUtil {
-
   public static boolean canComputeCastType(SNode castExpression) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   }
@@ -24,12 +23,11 @@ public class ExpectedType_FactoryUtil {
 
   public static SNode getOriginalExpression(SNode enclosingNode, SNode copiedExpression) {
     SNode originalExpression = null;
-    for(SNode child : ListSequence.fromList(SNodeOperations.getChildren(enclosingNode))) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(enclosingNode))) {
       if (MatchingUtil.matchNodes(copiedExpression, child)) {
         originalExpression = SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
     return originalExpression;
   }
-
 }

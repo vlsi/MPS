@@ -36,8 +36,7 @@ public class FieldDeclaration_Behavior {
 
   public static boolean call_hasGetter_1213877243808(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isGetter_1213877243833(fieldDeclaration, it);
       }
@@ -54,8 +53,7 @@ public class FieldDeclaration_Behavior {
 
   public static boolean call_hasSetter_1213877243871(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
-    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return FieldDeclaration_Behavior.call_isSetter_1213877243896(fieldDeclaration, it);
       }
@@ -77,5 +75,4 @@ public class FieldDeclaration_Behavior {
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
   }
-
 }

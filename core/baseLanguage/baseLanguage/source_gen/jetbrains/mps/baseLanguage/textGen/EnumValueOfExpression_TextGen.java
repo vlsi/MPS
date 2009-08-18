@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class EnumValueOfExpression_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "enumClass", false), this);
     this.append(".");
@@ -16,5 +15,4 @@ public class EnumValueOfExpression_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "value", true), this.getSNode());
     this.append(")");
   }
-
 }

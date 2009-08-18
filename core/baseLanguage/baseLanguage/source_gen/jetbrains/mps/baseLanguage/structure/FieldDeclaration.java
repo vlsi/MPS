@@ -22,6 +22,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(FieldDeclaration.SHORT_DESCRIPTION);
   }
@@ -86,5 +87,4 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static FieldDeclaration newInstance(SModel sm) {
     return FieldDeclaration.newInstance(sm, false);
   }
-
 }

@@ -17,6 +17,7 @@ public class InternalStaticFieldReference extends Expression {
     super(node);
   }
 
+
   public String getFqClassName() {
     return this.getProperty(InternalStaticFieldReference.FQ_CLASS_NAME);
   }
@@ -41,5 +42,4 @@ public class InternalStaticFieldReference extends Expression {
   public static InternalStaticFieldReference newInstance(SModel sm) {
     return InternalStaticFieldReference.newInstance(sm, false);
   }
-
 }

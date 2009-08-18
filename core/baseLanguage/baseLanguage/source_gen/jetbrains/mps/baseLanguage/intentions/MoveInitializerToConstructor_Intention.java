@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MoveInitializerToConstructor_Intention extends BaseIntention {
-
   public MoveInitializerToConstructor_Intention() {
   }
 
@@ -63,7 +62,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention {
     SLinkOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
     SLinkOperations.setTarget(SLinkOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
     // 
-    for(SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
+    for (SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
       SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
     }
     // 
@@ -73,5 +72,4 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }
-
 }

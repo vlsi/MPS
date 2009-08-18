@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
 public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
-
   public void doGenerateText(SNode node) {
     this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
@@ -27,5 +26,4 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
     }
     this.append(";");
   }
-
 }

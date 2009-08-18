@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickFix_Runtime {
-
   public ReplaceClassAntiquotationWithClassifierType_QuickFix() {
   }
 
@@ -25,5 +24,4 @@ public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickF
     SNode referenceAntiquotation = SLinkOperations.setNewChild(classifierType, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", "classifier"), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
     SLinkOperations.setTarget(referenceAntiquotation, "expression", expression, true);
   }
-
 }

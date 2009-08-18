@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class DefaultPropertyImplementation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_hasSetter_1213877430658(SNode thisNode) {
     return true;
   }
-
 }

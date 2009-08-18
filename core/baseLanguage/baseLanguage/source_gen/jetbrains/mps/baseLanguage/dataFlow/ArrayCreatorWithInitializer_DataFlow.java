@@ -9,14 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayCreatorWithInitializer_DataFlow extends DataFlowBuilder {
-
   public ArrayCreatorWithInitializer_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode initValue : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
+    for (SNode initValue : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
       _context.getBuilder().build((SNode)initValue);
     }
   }
-
 }

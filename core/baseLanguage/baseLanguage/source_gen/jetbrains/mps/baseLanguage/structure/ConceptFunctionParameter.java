@@ -19,6 +19,7 @@ public class ConceptFunctionParameter extends Expression implements IParameter {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ConceptFunctionParameter.SHORT_DESCRIPTION);
   }
@@ -51,5 +52,4 @@ public class ConceptFunctionParameter extends Expression implements IParameter {
   public static ConceptFunctionParameter newInstance(SModel sm) {
     return ConceptFunctionParameter.newInstance(sm, false);
   }
-
 }

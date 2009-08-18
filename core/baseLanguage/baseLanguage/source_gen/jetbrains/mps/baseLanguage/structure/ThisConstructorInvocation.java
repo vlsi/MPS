@@ -14,6 +14,7 @@ public class ThisConstructorInvocation extends ConstructorInvocationStatement {
     super(node);
   }
 
+
   public static ThisConstructorInvocation newInstance(SModel sm, boolean init) {
     return (ThisConstructorInvocation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class ThisConstructorInvocation extends ConstructorInvocationStatement {
   public static ThisConstructorInvocation newInstance(SModel sm) {
     return ThisConstructorInvocation.newInstance(sm, false);
   }
-
 }

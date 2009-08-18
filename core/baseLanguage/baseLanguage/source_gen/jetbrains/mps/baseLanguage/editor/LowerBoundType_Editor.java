@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LowerBoundType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8181_0(editorContext, node);
   }
@@ -59,5 +58,4 @@ public class LowerBoundType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

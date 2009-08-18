@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_EnumConstantHasConstructorDeclaration_NonTypesystemRule() {
   }
 
@@ -39,5 +38,4 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
   public boolean overrides() {
     return false;
   }
-
 }

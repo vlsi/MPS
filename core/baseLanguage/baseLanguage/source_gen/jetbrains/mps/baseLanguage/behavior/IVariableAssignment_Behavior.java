@@ -32,5 +32,4 @@ public class IVariableAssignment_Behavior {
   public static SNode callSuper_getValue_1224857430232(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_1224857430232);
   }
-
 }

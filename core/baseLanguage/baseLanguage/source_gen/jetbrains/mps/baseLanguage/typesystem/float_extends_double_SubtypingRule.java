@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public float_extends_double_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
   public boolean isWeak() {
     return false;
   }
-
 }

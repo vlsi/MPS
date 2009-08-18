@@ -15,6 +15,7 @@ public class VariableArityType extends Type {
     super(node);
   }
 
+
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, VariableArityType.COMPONENT_TYPE);
   }
@@ -31,5 +32,4 @@ public class VariableArityType extends Type {
   public static VariableArityType newInstance(SModel sm) {
     return VariableArityType.newInstance(sm, false);
   }
-
 }

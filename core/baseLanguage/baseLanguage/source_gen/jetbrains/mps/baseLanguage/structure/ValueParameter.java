@@ -14,6 +14,7 @@ public class ValueParameter extends Expression {
     super(node);
   }
 
+
   public static ValueParameter newInstance(SModel sm, boolean init) {
     return (ValueParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ValueParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -21,5 +22,4 @@ public class ValueParameter extends Expression {
   public static ValueParameter newInstance(SModel sm) {
     return ValueParameter.newInstance(sm, false);
   }
-
 }

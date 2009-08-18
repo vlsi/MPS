@@ -12,13 +12,12 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ArrayCreator_InferenceRule() {
   }
 
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
-    for(int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i++ ) {
+    for (int i = 0 ; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count() ; i++ ) {
       type = new _Quotations.QuotationClass_69().createNode(type, typeCheckingContext);
     }
     {
@@ -39,5 +38,4 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
   public boolean overrides() {
     return false;
   }
-
 }

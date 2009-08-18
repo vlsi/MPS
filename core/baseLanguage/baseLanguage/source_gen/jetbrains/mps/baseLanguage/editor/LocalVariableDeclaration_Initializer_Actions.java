@@ -14,18 +14,17 @@ import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
 public class LocalVariableDeclaration_Initializer_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new LocalVariableDeclaration_Initializer_Actions.LocalVariableDeclaration_Initializer_Actions_DELETE(node));
   }
 
   public static class LocalVariableDeclaration_Initializer_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public LocalVariableDeclaration_Initializer_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
+
 
     public String getDescriptionText() {
       return "remove initializer";
@@ -46,7 +45,5 @@ public class LocalVariableDeclaration_Initializer_Actions {
         ((EditorCell_Label)lastSelectable).end();
       }
     }
-
-}
-
+  }
 }

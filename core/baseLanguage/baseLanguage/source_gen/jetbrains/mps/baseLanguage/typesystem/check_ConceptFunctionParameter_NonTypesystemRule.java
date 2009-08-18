@@ -20,7 +20,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ConceptFunctionParameter_NonTypesystemRule() {
   }
 
@@ -32,11 +31,9 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
         IErrorTarget errorTarget = new NodeErrorTarget();
         typeCheckingContext.reportTypeError(parameter, "concept function parameter can not be used in closure", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1197313614703", intentionProvider, errorTarget);
       }
-    } else
-    {
+    } else {
       final SNode parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
-      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_Behavior.call_getParameters_1213877374450(conceptFunction)).where(new IWhereFilter <SNode>() {
-
+      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction_Behavior.call_getParameters_1213877374450(conceptFunction)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(it));
         }
@@ -62,5 +59,4 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
   public boolean overrides() {
     return false;
   }
-
 }
