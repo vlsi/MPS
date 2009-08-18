@@ -42297,12 +42297,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="116783874583632056">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="116783874583632058">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="116783874583632063">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="116783874583632066">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="116783874583632067">
-                <link role="fieldDeclaration" targetNodeId="116783874583220719" resolveInfo="myEndLine" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="116783874583632068" />
-            </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="116783874583731800">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="116783874583731803">
                 <property name="value" value=":" />
@@ -42312,6 +42306,19 @@
                   <link role="fieldDeclaration" targetNodeId="116783874583220711" resolveInfo="myFileName" />
                 </node>
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="116783874583632062" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="7989071516665863625">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="7989071516665835686">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7989071516665863624">
+                  <property name="value" value="1" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="116783874583632066">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="7989071516665835685">
+                    <link role="fieldDeclaration" targetNodeId="116783874583220715" resolveInfo="myStartLine" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="116783874583632068" />
+                </node>
               </node>
             </node>
           </node>
