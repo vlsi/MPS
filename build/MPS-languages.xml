@@ -545,6 +545,17 @@
       <zipfileset dir="platform/buildlanguage/languages/distrib/classes" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.build.generictasks0">
+    <mkdir dir="platform/buildlanguage/languages/generictasks/classes" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.generictasks.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/buildlanguage/languages/generictasks/generictasks.mpl" prefix="module" />
+      <zipfileset dir="platform/buildlanguage/languages/generictasks" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/buildlanguage/languages/generictasks/classes" />
+    </jar>
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.generictasks.runtime.jar" duplicate="preserve" filesonly="true">
+      <fileset dir="platform/buildlanguage/languages/generictasks/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.build.packaging0">
     <mkdir dir="platform/buildlanguage/languages/packaging/classes" />
     <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.build.packaging.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -570,6 +581,14 @@
       <zipfileset file="platform/buildlanguage/languages/property/property.mpl" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/property" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/buildlanguage/languages/property/classes" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.bash0">
+    <mkdir dir="platform/bash/languages/bash/classes_gen" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.bash.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/bash/languages/bash/bash.mpl" prefix="module" />
+      <zipfileset dir="platform/bash/languages/bash" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/bash/languages/bash/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.regexp0">

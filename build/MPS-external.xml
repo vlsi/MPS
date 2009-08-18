@@ -303,9 +303,11 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommps0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.custommpsInternal0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.distrib0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.build.generictasks0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.packaging0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.dependency0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.build.property0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.bash0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.regexp.examples0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.uiLanguage0" />
