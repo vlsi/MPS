@@ -58,8 +58,12 @@ public class Classifier_Behavior {
   }
 
   public static String call_getNestedNameInContext_8540045600162183880(SNode thisNode, SNode context) {
-    List<SNode> containers = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+    List<SNode> containers = ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
     SNode contextContainer = SNodeOperations.getAncestor(context, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+
+    if (ListSequence.fromList(SNodeOperations.getAncestors(context, null, false)).contains(thisNode)) {
+      return SPropertyOperations.getString(thisNode, "name");
+    }
 
     int index = ListSequence.fromList(containers).indexOf(contextContainer);
     if (index != -1) {
@@ -67,14 +71,23 @@ public class Classifier_Behavior {
       for(int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
         ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).getElement(i));
       }
+      if (ListSequence.fromList(newContainers).isEmpty()) {
+        ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).last());
+      }
       containers = newContainers;
     }
 
     StringBuilder result = new StringBuilder();
+    boolean first = true;
     for(SNode c : containers) {
-      result.append(SPropertyOperations.getString(c, "name")).append(".");
+      if (first) {
+        first = false;
+      } else
+      {
+        result.append(".");
+      }
+      result.append(SPropertyOperations.getString(c, "name"));
     }
-    result.append(SPropertyOperations.getString(thisNode, "name"));
     return result.toString();
   }
 
