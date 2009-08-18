@@ -78,19 +78,19 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     return this.getChildCount(TargetDeclaration.TASK_CALL);
   }
 
-  public Iterator<Call> taskCalls() {
-    return this.children(Call.class, TargetDeclaration.TASK_CALL);
+  public Iterator<AbstractCall> taskCalls() {
+    return this.children(AbstractCall.class, TargetDeclaration.TASK_CALL);
   }
 
-  public List<Call> getTaskCalls() {
-    return this.getChildren(Call.class, TargetDeclaration.TASK_CALL);
+  public List<AbstractCall> getTaskCalls() {
+    return this.getChildren(AbstractCall.class, TargetDeclaration.TASK_CALL);
   }
 
-  public void addTaskCall(Call node) {
+  public void addTaskCall(AbstractCall node) {
     this.addChild(TargetDeclaration.TASK_CALL, node);
   }
 
-  public void insertTaskCall(Call prev, Call node) {
+  public void insertTaskCall(AbstractCall prev, AbstractCall node) {
     this.insertChild(prev, TargetDeclaration.TASK_CALL, node);
   }
 

@@ -16,11 +16,11 @@ public class CallReference extends PropertyValueExpression {
     super(node);
   }
 
-  public Call getCall() {
-    return (Call)this.getReferent(Call.class, CallReference.CALL);
+  public AbstractCall getCall() {
+    return (AbstractCall)this.getReferent(AbstractCall.class, CallReference.CALL);
   }
 
-  public void setCall(Call node) {
+  public void setCall(AbstractCall node) {
     super.setReferent(CallReference.CALL, node);
   }
 
