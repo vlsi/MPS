@@ -74,33 +74,6 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="186788241848729171" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="186788241848729172" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="186788241848729173">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1314539882763336355">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1314539882763336356">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1314539882763336357">
-              <link role="classifier" targetNodeId="186788241848729168" resolveInfo="ABC" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1314539882763336363">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1314539882763336364">
-            <link role="classifier" targetNodeId="8540045600162404084" resolveInfo="CDE" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1314539882763276276">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1314539882763276277">
-            <property name="name" value="abc" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1314539882763276278">
-              <link role="classifier" targetNodeId="8540045600162404084" resolveInfo="CDE" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1314539882763153563">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1314539882763153564">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1314539882763153565">
-              <link role="classifier" targetNodeId="8540045600162404084" resolveInfo="CDE" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8540045600162404090">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8540045600162404091">
             <property name="name" value="abc" />
@@ -193,11 +166,18 @@
     </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8540045600162404084">
       <property name="name" value="CDE" />
+      <property name="nonStatic" value="false" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8540045600162404085" />
       <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8540045600162404086">
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8540045600162404087" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8540045600162404088" />
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8540045600162404089" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8540045600162404089">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="521412098689995927">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="521412098689995929">
+              <link role="classConcept" targetNodeId="186788241848729168" resolveInfo="ABC" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

@@ -78,6 +78,14 @@ public class Classifier_Behavior {
     return result.toString();
   }
 
+  public static boolean call_isStatic_521412098689998668(SNode thisNode) {
+    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
+  }
+
+  public static boolean call_isInner_521412098689998677(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier");
+  }
+
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }

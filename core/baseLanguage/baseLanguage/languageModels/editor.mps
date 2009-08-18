@@ -222,13 +222,13 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1626829428755615665">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1626829428755615664" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1626829428755615669">
-                    <link role="baseMethodDeclaration" targetNodeId="75.1626829428755601428" resolveInfo="isStatic" />
+                    <link role="baseMethodDeclaration" targetNodeId="75.521412098689998668" resolveInfo="isStatic" />
                   </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1626829428755615656">
                   <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1626829428755615655" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1626829428755615660">
-                    <link role="baseMethodDeclaration" targetNodeId="75.1626829428755601452" resolveInfo="isInner" />
+                    <link role="baseMethodDeclaration" targetNodeId="75.521412098689998677" resolveInfo="isInner" />
                   </node>
                 </node>
               </node>

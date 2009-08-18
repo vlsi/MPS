@@ -2309,6 +2309,7 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" id="1234891178357">
     <property name="extention" value="java" />
     <link role="conceptDeclaration" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
@@ -2341,19 +2342,17 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1234891250414">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891250415">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891250416">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1234891250417">
-                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1234891250418" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="1234891250419" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1234891250420">
-                  <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-                </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="521412098689931982">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689931986">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="521412098689931985" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="521412098690016031">
+                <link role="baseMethodDeclaration" targetNodeId="4v.521412098689998668" resolveInfo="isStatic" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" id="1234891250421">
-                <node role="argument" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1234891250422" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689931971">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="521412098689931970" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="521412098689931975">
+                <link role="baseMethodDeclaration" targetNodeId="4v.521412098689998677" resolveInfo="isInner" />
               </node>
             </node>
           </node>

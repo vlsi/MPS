@@ -8515,5 +8515,72 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="521412098689817330">
+    <property name="package" value="classifier" />
+    <property name="name" value="ChangeStaticInInner" />
+    <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="521412098689817331">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="521412098689817332">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="521412098689820024">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689820028">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="521412098689820027" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="521412098689820032">
+              <link role="baseMethodDeclaration" targetNodeId="29.521412098689998668" resolveInfo="isStatic" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="521412098689820026">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="521412098689820033">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="521412098689820035">
+                <property name="value" value="Make Non Static" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="521412098689820036">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="521412098689820037">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="521412098689820038">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="521412098689820040">
+                  <property name="value" value="Make Static" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="521412098689817333">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="521412098689817334">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="521412098689820041">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="521412098689820048">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="521412098689820051">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689820054">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="521412098689820053" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="521412098689820058">
+                  <link role="property" targetNodeId="1.521412098689998745" resolveInfo="nonStatic" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689820043">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="521412098689820042" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="521412098689820047">
+                <link role="property" targetNodeId="1.521412098689998745" resolveInfo="nonStatic" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="521412098689820015">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="521412098689820016">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="521412098689820017">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="521412098689820019">
+            <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="521412098689820018" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="521412098689820023">
+              <link role="baseMethodDeclaration" targetNodeId="29.521412098689998677" resolveInfo="isInner" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

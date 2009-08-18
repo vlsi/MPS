@@ -16,7 +16,6 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String ABSTRACT_CLASS = "abstractClass";
   public static final String IS_FINAL = "isFinal";
-  public static final String NON_STATIC = "nonStatic";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String SUPERCLASS = "superclass";
   public static final String INSTANCE_INITIALIZER = "instanceInitializer";
@@ -71,14 +70,6 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
 
   public void setIsFinal(boolean value) {
     this.setBooleanProperty(ClassConcept.IS_FINAL, value);
-  }
-
-  public boolean getNonStatic() {
-    return this.getBooleanProperty(ClassConcept.NON_STATIC);
-  }
-
-  public void setNonStatic(boolean value) {
-    this.setBooleanProperty(ClassConcept.NON_STATIC, value);
   }
 
   public boolean getIsDeprecated() {

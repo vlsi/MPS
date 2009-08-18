@@ -102,14 +102,6 @@ public class ClassConcept_Behavior {
     );
   }
 
-  public static boolean call_isStatic_1626829428755601428(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
-  }
-
-  public static boolean call_isInner_1626829428755601452(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier");
-  }
-
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
     return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }

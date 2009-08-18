@@ -20,6 +20,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String NAME = "name";
   public static final String IS_DEPRECATED = "isDeprecated";
+  public static final String NON_STATIC = "nonStatic";
   public static final String VISIBILITY = "visibility";
   public static final String STATIC_FIELD = "staticField";
   public static final String METHOD = "method";
@@ -83,6 +84,14 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void setIsDeprecated(boolean value) {
     this.setBooleanProperty(Classifier.IS_DEPRECATED, value);
+  }
+
+  public boolean getNonStatic() {
+    return this.getBooleanProperty(Classifier.NON_STATIC);
+  }
+
+  public void setNonStatic(boolean value) {
+    this.setBooleanProperty(Classifier.NON_STATIC, value);
   }
 
   public Visibility getVisibility() {
