@@ -161,4 +161,8 @@ method:
     return methods;
   }
 
+  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "concept", false);
+  }
+
 }

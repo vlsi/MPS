@@ -47,6 +47,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225194240798">
       <link role="intfc" targetNodeId="2.1222174328436" resolveInfo="IStaticContainerForMethods" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="613704153953837671">
+      <link role="intfc" targetNodeId="3.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1225194240799">
       <property name="role" value="concept" />
       <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />

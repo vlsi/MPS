@@ -1225,6 +1225,24 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5466054087443746092" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="613704153953837718">
+      <property name="name" value="getBaseConcept" />
+      <link role="overriddenMethod" targetNodeId="17.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="613704153953837721">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="613704153953838572">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="613704153953838575">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="613704153953838574" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="613704153953838579">
+              <link role="link" targetNodeId="1.1225194240799" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="613704153953838570">
+        <link role="concept" targetNodeId="6.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="613704153953838571" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225196403919">
     <property name="package" value="Behavior" />
