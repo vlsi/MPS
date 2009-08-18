@@ -53,6 +53,31 @@ public class Classifier_Behavior {
     return SLinkOperations.getCount(thisNode, "staticField") > 0;
   }
 
+  public static String call_getNestedName_8540045600162184125(SNode thisNode) {
+    return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(thisNode, null);
+  }
+
+  public static String call_getNestedNameInContext_8540045600162183880(SNode thisNode, SNode context) {
+    List<SNode> containers = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+    SNode contextContainer = SNodeOperations.getAncestor(context, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+
+    int index = ListSequence.fromList(containers).indexOf(contextContainer);
+    if (index != -1) {
+      List<SNode> newContainers = new ArrayList<SNode>();
+      for(int i = index + 1 ; i < ListSequence.fromList(containers).count() ; i++ ) {
+        ListSequence.fromList(newContainers).addElement(ListSequence.fromList(containers).getElement(i));
+      }
+      containers = newContainers;
+    }
+
+    StringBuilder result = new StringBuilder();
+    for(SNode c : containers) {
+      result.append(SPropertyOperations.getString(c, "name")).append(".");
+    }
+    result.append(SPropertyOperations.getString(thisNode, "name"));
+    return result.toString();
+  }
+
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }

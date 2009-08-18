@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-@Deprecated
-//use com.intellij.openapi.util.Pair
 @SuppressWarnings({"InstanceVariableNamingConvention"})
 public class Pair<T1, T2> {
   @SuppressWarnings({"ClassEscapesDefinedScope"})

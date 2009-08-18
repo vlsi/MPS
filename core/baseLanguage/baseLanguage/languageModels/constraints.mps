@@ -413,62 +413,11 @@
       <link role="applicableProperty" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
       <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1213104846251">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846252">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213104846253">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213104846254">
-              <property name="name" value="enclosing" />
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213104846255">
-                <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846256">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104846257" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1213104846258">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1213104846259">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1213104846260">
-                      <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1213104846261">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104846262">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104846263">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213104846265">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846266">
-                    <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104846267" />
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104846268">
-                      <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1213104846264">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846270">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104846271">
-                        <link role="variableDeclaration" targetNodeId="1213104846254" resolveInfo="enclosing" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104846272">
-                        <link role="property" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213104846269">
-                      <property name="value" value="." />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1213104846273">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1213104846274" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213104846275">
-                <link role="variableDeclaration" targetNodeId="1213104846254" resolveInfo="enclosing" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104846276">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846277">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104846278" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104846279">
-                <link role="property" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7829308473164457386">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7829308473164457380">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="7829308473164457379" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7829308473164457385">
+                <link role="baseMethodDeclaration" targetNodeId="50.8540045600162184125" resolveInfo="getNestedName" />
               </node>
             </node>
           </node>
@@ -482,7 +431,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104846283">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104846284">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104846285" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1213104846286">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7829308473164456477">
                 <link role="property" targetNodeId="1.1211504562189" resolveInfo="nestedName" />
               </node>
             </node>
