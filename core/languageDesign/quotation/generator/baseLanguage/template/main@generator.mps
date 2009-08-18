@@ -529,28 +529,12 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5176740929024542417">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5176740929024542421">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5176740929024542418">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8436079732036467544">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8436079732036467548">
+                            <link role="baseMethodDeclaration" targetNodeId="25.~Collections.sort(java.util.List):void" resolveInfo="sort" />
+                            <link role="classConcept" targetNodeId="25.~Collections" resolveInfo="Collections" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8436079732036467551">
                               <link role="variableDeclaration" targetNodeId="5176740929024541646" resolveInfo="propertyNames" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperation" id="5176740929024542444">
-                              <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="5176740929024542445">
-                                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5176740929024542446">
-                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5176740929024542457">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5176740929024542458">
-                                      <link role="variableDeclaration" targetNodeId="5176740929024542447" resolveInfo="it" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="5176740929024542447">
-                                  <property name="name" value="it" />
-                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5176740929024542448" />
-                                </node>
-                              </node>
-                              <node role="ascending" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection" id="5176740929024542449">
-                                <property name="value" value="true" />
-                              </node>
                             </node>
                           </node>
                         </node>
@@ -800,28 +784,12 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5176740929024542485">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5176740929024542486">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5176740929024542487">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8436079732036467561">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8436079732036467566">
+                            <link role="baseMethodDeclaration" targetNodeId="25.~Collections.sort(java.util.List):void" resolveInfo="sort" />
+                            <link role="classConcept" targetNodeId="25.~Collections" resolveInfo="Collections" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8436079732036467570">
                               <link role="variableDeclaration" targetNodeId="5176740929024542475" resolveInfo="propertyNames" />
-                            </node>
-                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.SortOperation" id="5176740929024542488">
-                              <node role="closure" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="5176740929024542489">
-                                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5176740929024542490">
-                                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5176740929024542491">
-                                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5176740929024542492">
-                                      <link role="variableDeclaration" targetNodeId="5176740929024542493" resolveInfo="it" />
-                                    </node>
-                                  </node>
-                                </node>
-                                <node role="parameter" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" id="5176740929024542493">
-                                  <property name="name" value="it" />
-                                  <node role="type" type="jetbrains.mps.baseLanguage.structure.WildCardType" id="5176740929024542494" />
-                                </node>
-                              </node>
-                              <node role="ascending" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection" id="5176740929024542495">
-                                <property name="value" value="true" />
-                              </node>
                             </node>
                           </node>
                         </node>

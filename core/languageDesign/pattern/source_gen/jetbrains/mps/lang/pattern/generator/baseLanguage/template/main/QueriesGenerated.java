@@ -21,6 +21,8 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Collections;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class QueriesGenerated {
@@ -380,7 +382,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(String referentRole : _context.getNode().getReferenceRoles()) {
+    List<String> referencetRoles = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(referencetRoles).addSequence(SetSequence.fromSet(_context.getNode().getReferenceRoles()));
+    Collections.sort(referencetRoles);
+    for(String referentRole : referencetRoles) {
       if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
         continue;
       }
