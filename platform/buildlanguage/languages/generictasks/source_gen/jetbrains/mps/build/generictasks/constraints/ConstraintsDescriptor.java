@@ -17,7 +17,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new Attribute_attributeDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TaskCall_declaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PathReference_call_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new Reference_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new TaskReference_declaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TaskCall_DefaultSearchScope());
   }
 
