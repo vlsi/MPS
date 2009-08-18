@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.lang.core.structure.IResolveInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -113,7 +114,7 @@ public class StaticReference extends SReferenceBase {
     super.makeMature();
     myTargetNodeId = myImmatureTargetNode.getSNodeId();
     setTargetSModelReference(myImmatureTargetNode.getModel().getSModelReference());
-    setResolveInfo(myImmatureTargetNode.getName());
+    setResolveInfo(myImmatureTargetNode.getResolveInfo());
     myImmatureTargetNode = null;
   }
 }
