@@ -39,6 +39,7 @@
       <genConfModule name="generate custommps" moduleRef="a79f53b6-9aaa-48eb-9fbb-aaec80a6da9a(jetbrains.mps.build.custommps)" />
       <genConfModule name="generate dependency language" moduleRef="500e32a4-ab9e-46a4-ae29-127ae883d208(jetbrains.mps.build.dependency)" />
       <genConfModule name="generate distrib" moduleRef="02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)" />
+      <genConfModule name="generate generictasks" moduleRef="jetbrains.mps.build.generictasks" />
       <genConfModule name="generate mpsautobuild" moduleRef="jetbrains.mps.build.mpsautobuild" />
       <genConfModule name="generate packaging language" moduleRef="4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)" />
       <genConfModule name="generate property language" moduleRef="dd61a7d7-8e1b-45a1-9aa3-8585ec2b60fc(jetbrains.mps.build.property)" />
