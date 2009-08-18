@@ -111,6 +111,10 @@
       <property name="name" value="isFinal" />
       <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1626829428755597658">
+      <property name="name" value="nonStatic" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1068390468199">
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="field" />

@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -758,7 +758,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition8372_6(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return ClassConcept_Behavior.call_isInner_1626829428755601452(node) && ClassConcept_Behavior.call_isStatic_1626829428755601428(node);
   }
 
   private static class fieldListHandler_8372_0 extends RefNodeListHandler {

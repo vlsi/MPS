@@ -217,15 +217,18 @@
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
         <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1224500205261">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224500205262">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224500208200">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500209894">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224500208280">
-                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1224500208201" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="1224500209330" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1626829428755615654">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1626829428755615661">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1626829428755615665">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1626829428755615664" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1626829428755615669">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1626829428755601428" resolveInfo="isStatic" />
+                  </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1224500210944">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1224500214257">
-                    <link role="conceptDeclaration" targetNodeId="17.1107461130800" resolveInfo="Classifier" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1626829428755615656">
+                  <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1626829428755615655" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1626829428755615660">
+                    <link role="baseMethodDeclaration" targetNodeId="75.1626829428755601452" resolveInfo="isInner" />
                   </node>
                 </node>
               </node>
