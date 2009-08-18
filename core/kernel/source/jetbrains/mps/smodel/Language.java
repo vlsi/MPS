@@ -605,6 +605,9 @@ public class Language extends AbstractModule {
   public AbstractConceptDeclaration findConceptDeclaration(@NotNull String conceptName) {
     if (myNameToConceptCache.isEmpty()) {
       SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+
+      if (structureModelDescriptor == null) return null;
+      
       SModel structureModel = structureModelDescriptor.getSModel();
       structureModel.allNodes(new Condition<SNode>() {
         public boolean met(SNode node) {
