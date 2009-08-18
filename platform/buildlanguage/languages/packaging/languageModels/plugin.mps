@@ -3035,7 +3035,7 @@
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1222950820951">
-                  <link role="baseMethodDeclaration" targetNodeId="10.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <link role="baseMethodDeclaration" targetNodeId="4.~SModelFqName.equals(java.lang.Object):boolean" resolveInfo="equals" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1222950820952">
                     <link role="variableDeclaration" targetNodeId="1222950820921" resolveInfo="newModelFQName" />
                   </node>
@@ -3206,7 +3206,7 @@
                     <link role="classConcept" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240327558082">
-                    <link role="baseMethodDeclaration" targetNodeId="4.~ModelAccess.runReadAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runReadAction" />
+                    <link role="baseMethodDeclaration" targetNodeId="4.~ModelAccess.runReadAction(java.lang.Runnable):void" resolveInfo="runReadAction" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240327559527">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1240327566448">
                         <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1240327566449">
@@ -3561,7 +3561,7 @@
               <link role="classConcept" targetNodeId="4.~ModelAccess" resolveInfo="ModelAccess" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1240326901981">
-              <link role="baseMethodDeclaration" targetNodeId="4.~ModelAccess.runWriteAction(com.intellij.openapi.util.Computable):java.lang.Object" resolveInfo="runWriteAction" />
+              <link role="baseMethodDeclaration" targetNodeId="4.~ModelAccess.runWriteAction(java.lang.Runnable):void" resolveInfo="runWriteAction" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1240326903841">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1240326909622">
                   <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1240326909623">

@@ -5,21 +5,26 @@ package jetbrains.mps.build.generictasks.plugin;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 
 public class ImportAntStuffUtil {
-  private static final String BUILDLANGUAGE_NAMESPACE = "jetbrains.mps.build.generictasks";
+  private static final String LANGUAGE_NAMESPACE = "jetbrains.mps.build.generictasks";
   private static final String GENERATED_MODEL_SUFFIX = ".generated";
   private static final String OPTIONAL_MODEL_SUFFIX = ".optional";
 
   public static SModelDescriptor getGenerated(Language l) {
-    SModelReference modelRef = SModelReference.fromString(BUILDLANGUAGE_NAMESPACE + GENERATED_MODEL_SUFFIX);
+    SModelReference modelRef = SModelReference.fromString(LANGUAGE_NAMESPACE + GENERATED_MODEL_SUFFIX);
     return l.getScope().getModelDescriptor(modelRef);
   }
 
   public static SModelDescriptor getOptional(Language l) {
-    SModelReference modelRef = SModelReference.fromString(BUILDLANGUAGE_NAMESPACE + OPTIONAL_MODEL_SUFFIX);
+    SModelReference modelRef = SModelReference.fromString(LANGUAGE_NAMESPACE + OPTIONAL_MODEL_SUFFIX);
     return l.getScope().getModelDescriptor(modelRef);
+  }
+
+  public static Language getLanguageReference() {
+    return MPSModuleRepository.getInstance().getLanguage(LANGUAGE_NAMESPACE);
   }
 
   public static SModel[] getAllModels(Language l) {
