@@ -38,9 +38,7 @@ import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
   public BaseSNodeDescriptorIndex myIndex;
@@ -113,7 +111,11 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   private void iterateClassPath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
-    for (String cls : item.getAvailableClasses(pack)) {
+    int numberInStubModel = 0;
+    List<String> availableClasses = new ArrayList<String>();
+    availableClasses.addAll(item.getAvailableClasses(pack));
+    Collections.sort(availableClasses);
+    for (String cls : availableClasses) {
       if (cls.contains("$")) continue;
 
       byte[] content = item.getClass("".equals(pack) ? cls : pack + "." + cls);
@@ -136,12 +138,13 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
           continue;
       }
 
-      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, 0) {
+      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, numberInStubModel) {
         @Override
         public SModelReference getModelReference() {
           return ClassPathModelProvider.uidForPackage(pack);
         }
       });
+      numberInStubModel++;
     }
 
     for (String subpack : item.getSubpackages(pack)) {
