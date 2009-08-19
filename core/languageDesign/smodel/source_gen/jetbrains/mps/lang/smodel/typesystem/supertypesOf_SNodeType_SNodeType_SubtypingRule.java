@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_SNodeType_SNodeType_SubtypingRule() {
   }
 
@@ -25,7 +24,7 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     // DO NOT TOUCH THIS. CONCEPT MIGHT BE A TYPE VARIABLE
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
-      for(SNode superConcept : ListSequence.fromList(superConcepts)) {
+      for (SNode superConcept : ListSequence.fromList(superConcepts)) {
         ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_27().createNode(superConcept, typeCheckingContext));
       }
       ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_28().createNode(typeCheckingContext));
@@ -44,5 +43,4 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
   public boolean isWeak() {
     return false;
   }
-
 }

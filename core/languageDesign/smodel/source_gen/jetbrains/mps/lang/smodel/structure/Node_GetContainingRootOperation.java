@@ -21,5 +21,4 @@ public class Node_GetContainingRootOperation extends SNodeOperation {
   public static Node_GetContainingRootOperation newInstance(SModel sm) {
     return Node_GetContainingRootOperation.newInstance(sm, false);
   }
-
 }

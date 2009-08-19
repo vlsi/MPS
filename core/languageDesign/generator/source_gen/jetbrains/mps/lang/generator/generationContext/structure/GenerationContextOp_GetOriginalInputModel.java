@@ -21,5 +21,4 @@ public class GenerationContextOp_GetOriginalInputModel extends GenerationContext
   public static GenerationContextOp_GetOriginalInputModel newInstance(SModel sm) {
     return GenerationContextOp_GetOriginalInputModel.newInstance(sm, false);
   }
-
 }

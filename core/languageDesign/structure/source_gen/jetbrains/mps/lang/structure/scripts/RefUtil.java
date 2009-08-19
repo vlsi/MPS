@@ -9,9 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RefUtil {
-
   public static SNode findEditorDeclaration(SModel editorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"))) {
       if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
         return root;
       }
@@ -20,7 +19,7 @@ public class RefUtil {
   }
 
   public static SNode findBehaviorDeclaration(SModel behaviorModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(behaviorModel, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))) {
       if (concept == SLinkOperations.getTarget(root, "concept", false)) {
         return root;
       }
@@ -29,7 +28,7 @@ public class RefUtil {
   }
 
   public static SNode findConstraintsDeclaration(SModel constraintsModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(constraintsModel, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))) {
       if (concept == SLinkOperations.getTarget(root, "concept", false)) {
         return root;
       }
@@ -38,12 +37,11 @@ public class RefUtil {
   }
 
   public static SNode findDataFlowDeclaration(SModel dataFlowModel, SNode concept) {
-    for(SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(dataFlowModel, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"))) {
       if (concept == SLinkOperations.getTarget(root, "conceptDeclaration", false)) {
         return root;
       }
     }
     return null;
   }
-
 }

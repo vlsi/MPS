@@ -18,7 +18,6 @@ public class TypeHintExpression extends Expression {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, TypeHintExpression.EXPRESSION);
   }
@@ -34,7 +33,6 @@ public class TypeHintExpression extends Expression {
   public void setTypeHint(Type node) {
     super.setChild(TypeHintExpression.TYPE_HINT, node);
   }
-
 
   public static TypeHintExpression newInstance(SModel sm, boolean init) {
     return (TypeHintExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", sm, GlobalScope.getInstance(), init).getAdapter();

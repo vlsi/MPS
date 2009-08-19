@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class CellModel_Alternation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,5 +19,4 @@ public class CellModel_Alternation_Behavior {
   public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return true;
   }
-
 }

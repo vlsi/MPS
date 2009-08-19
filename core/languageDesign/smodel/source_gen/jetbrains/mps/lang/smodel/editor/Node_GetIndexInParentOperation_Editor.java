@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Node_GetIndexInParentOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConceptProperty_7155_0(editorContext, node);
   }
@@ -47,5 +46,4 @@ public class Node_GetIndexInParentOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

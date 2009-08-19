@@ -22,5 +22,4 @@ public class QueryFunction_String extends ConceptFunction {
   public static QueryFunction_String newInstance(SModel sm) {
     return QueryFunction_String.newInstance(sm, false);
   }
-
 }

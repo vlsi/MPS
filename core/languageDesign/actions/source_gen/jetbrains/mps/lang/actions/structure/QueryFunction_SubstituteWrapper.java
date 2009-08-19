@@ -22,5 +22,4 @@ public class QueryFunction_SubstituteWrapper extends ConceptFunction {
   public static QueryFunction_SubstituteWrapper newInstance(SModel sm) {
     return QueryFunction_SubstituteWrapper.newInstance(sm, false);
   }
-
 }

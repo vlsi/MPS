@@ -22,5 +22,4 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase extends Concept
   public static ConstraintFunction_ReferentSearchScope_AbstractBase newInstance(SModel sm) {
     return ConstraintFunction_ReferentSearchScope_AbstractBase.newInstance(sm, false);
   }
-
 }

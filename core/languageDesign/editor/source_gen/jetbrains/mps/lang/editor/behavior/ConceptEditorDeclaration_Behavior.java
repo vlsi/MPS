@@ -24,5 +24,4 @@ public class ConceptEditorDeclaration_Behavior {
   public static SNode callSuper_getBaseConcept_8952337903384629359(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384629359);
   }
-
 }

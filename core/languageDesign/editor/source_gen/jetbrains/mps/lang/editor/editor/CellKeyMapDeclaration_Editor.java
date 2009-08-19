@@ -36,7 +36,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6671_0(editorContext, node);
   }
@@ -236,7 +235,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6671_0 extends AbstractCellProvider {
-
     public _Inline6671_0() {
       super();
     }
@@ -272,10 +270,9 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class itemListHandler_6671_0 extends RefNodeListHandler {
-
     public itemListHandler_6671_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -315,10 +312,9 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class CellKeyMapDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public CellKeyMapDeclaration_name_postfixCellMenu0() {
     }
 
@@ -330,7 +326,5 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       }
       return prefixes;
     }
-
-}
-
+  }
 }

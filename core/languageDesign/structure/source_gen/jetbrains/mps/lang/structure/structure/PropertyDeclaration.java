@@ -61,7 +61,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
     super.setReferent(PropertyDeclaration.DATA_TYPE, node);
   }
 
-
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
     return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   public static PropertyDeclaration newInstance(SModel sm) {
     return PropertyDeclaration.newInstance(sm, false);
   }
-
 }

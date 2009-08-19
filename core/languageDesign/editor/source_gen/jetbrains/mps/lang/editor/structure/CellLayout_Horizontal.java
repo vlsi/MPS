@@ -21,5 +21,4 @@ public class CellLayout_Horizontal extends CellLayout {
   public static CellLayout_Horizontal newInstance(SModel sm) {
     return CellLayout_Horizontal.newInstance(sm, false);
   }
-
 }

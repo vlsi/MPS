@@ -21,5 +21,4 @@ public class AutoDeletableStyleClassItem extends BooleanStyleSheetItem {
   public static AutoDeletableStyleClassItem newInstance(SModel sm) {
     return AutoDeletableStyleClassItem.newInstance(sm, false);
   }
-
 }

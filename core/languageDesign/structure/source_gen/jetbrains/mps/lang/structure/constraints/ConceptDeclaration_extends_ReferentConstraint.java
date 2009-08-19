@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 
 public class ConceptDeclaration_extends_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ConceptDeclaration_extends_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class ConceptDeclaration_extends_ReferentConstraint extends BaseNodeRefer
     // don't allow cycling
     return new ConceptDeclarationExtendedConceptSearchScope(_context.getReferenceNode(), operationContext.getScope());
   }
-
 }

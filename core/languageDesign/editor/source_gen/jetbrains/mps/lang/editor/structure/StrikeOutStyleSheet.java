@@ -21,5 +21,4 @@ public class StrikeOutStyleSheet extends BooleanStyleSheetItem {
   public static StrikeOutStyleSheet newInstance(SModel sm) {
     return StrikeOutStyleSheet.newInstance(sm, false);
   }
-
 }

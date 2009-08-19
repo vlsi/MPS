@@ -62,7 +62,6 @@ public class Locale extends BaseConcept implements INamedConcept {
     super.setChild(Locale.JAVA_LOCALE, node);
   }
 
-
   public static Locale newInstance(SModel sm, boolean init) {
     return (Locale)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Locale", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class Locale extends BaseConcept implements INamedConcept {
   public static Locale newInstance(SModel sm) {
     return Locale.newInstance(sm, false);
   }
-
 }

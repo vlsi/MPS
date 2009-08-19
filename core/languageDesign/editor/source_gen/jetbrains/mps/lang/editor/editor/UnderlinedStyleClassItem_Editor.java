@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import jetbrains.mps.smodel.SModel;
 
 public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2890_0(editorContext, node);
   }
@@ -105,7 +104,6 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition2890_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
@@ -115,17 +113,15 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static class UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
 
-}
   public static class UnderlinedStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public UnderlinedStyleClassItem_generic_cellMenu0() {
     }
 
@@ -136,7 +132,5 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
-
-}
-
+  }
 }

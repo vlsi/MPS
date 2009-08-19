@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8866_1(editorContext, node);
   }
@@ -277,13 +276,11 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8866_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
   public static class _Inline8866_0 extends AbstractCellProvider {
-
     public _Inline8866_0() {
       super();
     }
@@ -318,10 +315,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline8866_1 extends AbstractCellProvider {
-
     public _Inline8866_1() {
       super();
     }
@@ -356,7 +352,5 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

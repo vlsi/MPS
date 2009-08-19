@@ -22,5 +22,4 @@ public class ConstraintFunction_CanBeARoot extends ConceptFunction {
   public static ConstraintFunction_CanBeARoot newInstance(SModel sm) {
     return ConstraintFunction_CanBeARoot.newInstance(sm, false);
   }
-
 }

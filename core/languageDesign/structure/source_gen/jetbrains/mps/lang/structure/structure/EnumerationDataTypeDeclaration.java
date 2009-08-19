@@ -83,7 +83,6 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     this.insertChild(prev, EnumerationDataTypeDeclaration.MEMBER, node);
   }
 
-
   public static EnumerationDataTypeDeclaration newInstance(SModel sm, boolean init) {
     return (EnumerationDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -91,5 +90,4 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static EnumerationDataTypeDeclaration newInstance(SModel sm) {
     return EnumerationDataTypeDeclaration.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class TransactionalPropertyHandler extends ConceptFunction {
   public static TransactionalPropertyHandler newInstance(SModel sm) {
     return TransactionalPropertyHandler.newInstance(sm, false);
   }
-
 }

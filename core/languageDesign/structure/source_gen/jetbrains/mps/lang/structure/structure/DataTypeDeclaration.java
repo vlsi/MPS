@@ -52,7 +52,6 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
     this.setProperty(DataTypeDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static DataTypeDeclaration newInstance(SModel sm, boolean init) {
     return (DataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.DataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
   public static DataTypeDeclaration newInstance(SModel sm) {
     return DataTypeDeclaration.newInstance(sm, false);
   }
-
 }

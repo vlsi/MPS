@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.Generator;
 import com.intellij.ide.BrowserUtil;
 
 public class HelpHelper {
-
   public static HelpHelper.HelpType getDefaultHelpFor(IModule contextModule, SModelDescriptor contextModel, SNode node) {
     if (helpForNodeIsAvailable(node)) {
       return HelpHelper.HelpType.NODE;
@@ -64,8 +63,7 @@ public class HelpHelper {
         return false;
       }
       return aspect.getHelpURL() != null && !(aspect.getHelpURL().equals(""));
-    } else
-    {
+    } else {
       return module instanceof Generator;
     }
   }
@@ -75,8 +73,7 @@ public class HelpHelper {
       Language language = ((Language)contextModule);
       LanguageAspect aspect = language.getAspectForModel(contextModel);
       BrowserUtil.launchBrowser(aspect.getHelpURL());
-    } else
-    {
+    } else {
       BrowserUtil.launchBrowser("http://www.jetbrains.net/confluence/display/MPS/Generator#Generator-aboutgenerator");
     }
   }
@@ -103,7 +100,5 @@ public class HelpHelper {
     public String getName() {
       return this.myName;
     }
-
 }
-
 }

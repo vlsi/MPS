@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8968_0(editorContext, node);
   }
@@ -286,7 +285,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8968_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "build") != null;
   }
@@ -294,5 +292,4 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition8968_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
-
 }

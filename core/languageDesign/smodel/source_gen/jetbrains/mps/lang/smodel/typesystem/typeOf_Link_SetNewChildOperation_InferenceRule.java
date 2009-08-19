@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_Link_SetNewChildOperation_InferenceRule() {
   }
 
@@ -25,8 +24,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304627", true), (SNode)new _Quotations.QuotationClass_61().createNode(typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1206099875685), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1205442304625", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = op;
         BaseIntentionProvider intentionProvider = null;
@@ -51,5 +49,4 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule extends AbstractInfe
   public boolean overrides() {
     return true;
   }
-
 }

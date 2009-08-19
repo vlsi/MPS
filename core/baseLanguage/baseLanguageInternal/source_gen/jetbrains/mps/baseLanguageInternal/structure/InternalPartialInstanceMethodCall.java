@@ -26,7 +26,6 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
     super(node);
   }
 
-
   public String getMethodName() {
     return this.getProperty(InternalPartialInstanceMethodCall.METHOD_NAME);
   }
@@ -94,7 +93,6 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InternalPartialInstanceMethodCall.ACTUAL_ARGUMENT, node);
   }
-
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
     return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();

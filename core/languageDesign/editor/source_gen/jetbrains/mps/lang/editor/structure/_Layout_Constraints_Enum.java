@@ -59,5 +59,4 @@ public enum _Layout_Constraints_Enum {
     }
     return _Layout_Constraints_Enum.getDefault();
   }
-
 }

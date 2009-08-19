@@ -34,7 +34,6 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
     super.setChild(Model_CreateNewNodeOperation.PROTOTYPE_NODE, node);
   }
 
-
   public static Model_CreateNewNodeOperation newInstance(SModel sm, boolean init) {
     return (Model_CreateNewNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   public static Model_CreateNewNodeOperation newInstance(SModel sm) {
     return Model_CreateNewNodeOperation.newInstance(sm, false);
   }
-
 }

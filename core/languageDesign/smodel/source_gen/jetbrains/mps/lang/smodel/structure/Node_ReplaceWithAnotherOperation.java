@@ -24,7 +24,6 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
     super.setChild(Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE, node);
   }
 
-
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm, boolean init) {
     return (Node_ReplaceWithAnotherOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm) {
     return Node_ReplaceWithAnotherOperation.newInstance(sm, false);
   }
-
 }

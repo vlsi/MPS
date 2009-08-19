@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeFactory_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class NodeFactory_Behavior {
     SNode setupFunction = SLinkOperations.getTarget(thisNode, "setupFunction", true);
     return "nodeFactory_NodeSetup_" + conceptName + "_" + setupFunction.getId();
   }
-
 }

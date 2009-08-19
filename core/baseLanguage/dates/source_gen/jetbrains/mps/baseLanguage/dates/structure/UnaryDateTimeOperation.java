@@ -25,7 +25,6 @@ public class UnaryDateTimeOperation extends Expression {
     super.setChild(UnaryDateTimeOperation.DATETIME, node);
   }
 
-
   public static UnaryDateTimeOperation newInstance(SModel sm, boolean init) {
     return (UnaryDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class UnaryDateTimeOperation extends Expression {
   public static UnaryDateTimeOperation newInstance(SModel sm) {
     return UnaryDateTimeOperation.newInstance(sm, false);
   }
-
 }

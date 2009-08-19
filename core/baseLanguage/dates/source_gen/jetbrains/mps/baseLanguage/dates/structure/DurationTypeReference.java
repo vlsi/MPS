@@ -25,7 +25,6 @@ public class DurationTypeReference extends BaseConcept {
     super.setReferent(DurationTypeReference.DURATION_TYPE, node);
   }
 
-
   public static DurationTypeReference newInstance(SModel sm, boolean init) {
     return (DurationTypeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DurationTypeReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class DurationTypeReference extends BaseConcept {
   public static DurationTypeReference newInstance(SModel sm) {
     return DurationTypeReference.newInstance(sm, false);
   }
-
 }

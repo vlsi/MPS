@@ -22,5 +22,4 @@ public class QueryFunction_ParameterizedSubstitute_Handler extends ConceptFuncti
   public static QueryFunction_ParameterizedSubstitute_Handler newInstance(SModel sm) {
     return QueryFunction_ParameterizedSubstitute_Handler.newInstance(sm, false);
   }
-
 }

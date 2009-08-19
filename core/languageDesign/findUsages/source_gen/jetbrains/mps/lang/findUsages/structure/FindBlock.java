@@ -22,5 +22,4 @@ public class FindBlock extends ConceptFunction {
   public static FindBlock newInstance(SModel sm) {
     return FindBlock.newInstance(sm, false);
   }
-
 }

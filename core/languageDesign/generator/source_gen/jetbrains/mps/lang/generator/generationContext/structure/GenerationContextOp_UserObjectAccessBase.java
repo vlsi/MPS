@@ -24,7 +24,6 @@ public class GenerationContextOp_UserObjectAccessBase extends GenerationContextO
     super.setChild(GenerationContextOp_UserObjectAccessBase.USER_KEY, node);
   }
 
-
   public static GenerationContextOp_UserObjectAccessBase newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_UserObjectAccessBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GenerationContextOp_UserObjectAccessBase extends GenerationContextO
   public static GenerationContextOp_UserObjectAccessBase newInstance(SModel sm) {
     return GenerationContextOp_UserObjectAccessBase.newInstance(sm, false);
   }
-
 }

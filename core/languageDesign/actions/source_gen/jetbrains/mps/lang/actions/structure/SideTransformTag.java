@@ -74,5 +74,4 @@ public enum SideTransformTag {
     }
     return SideTransformTag.getDefault();
   }
-
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9987_0(editorContext, node);
   }
@@ -116,5 +115,4 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     } else
     return editorCell;
   }
-
 }

@@ -22,5 +22,4 @@ public class QueryFunction_ReturnSmallPart extends ConceptFunction {
   public static QueryFunction_ReturnSmallPart newInstance(SModel sm) {
     return QueryFunction_ReturnSmallPart.newInstance(sm, false);
   }
-
 }

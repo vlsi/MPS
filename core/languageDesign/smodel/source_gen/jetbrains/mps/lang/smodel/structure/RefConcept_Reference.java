@@ -52,7 +52,6 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
     super.setReferent(RefConcept_Reference.CONCEPT_DECLARATION, node);
   }
 
-
   public static RefConcept_Reference newInstance(SModel sm, boolean init) {
     return (RefConcept_Reference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   public static RefConcept_Reference newInstance(SModel sm) {
     return RefConcept_Reference.newInstance(sm, false);
   }
-
 }

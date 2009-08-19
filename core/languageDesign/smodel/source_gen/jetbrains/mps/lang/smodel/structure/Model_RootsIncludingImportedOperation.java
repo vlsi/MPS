@@ -34,7 +34,6 @@ public class Model_RootsIncludingImportedOperation extends SNodeOperation {
     super.setChild(Model_RootsIncludingImportedOperation.SCOPE, node);
   }
 
-
   public static Model_RootsIncludingImportedOperation newInstance(SModel sm, boolean init) {
     return (Model_RootsIncludingImportedOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Model_RootsIncludingImportedOperation extends SNodeOperation {
   public static Model_RootsIncludingImportedOperation newInstance(SModel sm) {
     return Model_RootsIncludingImportedOperation.newInstance(sm, false);
   }
-
 }

@@ -13,19 +13,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class BaseEditorComponent_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> call_getApplicableComponents_1213877372457(SNode thisNode, IScope scope) {
     final SNode conceptDeclaration = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(thisNode);
     List<SNode> editorComponents = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), scope, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
-    return ListSequence.fromList(editorComponents).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(editorComponents).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SConceptOperations.isSuperConceptOf(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(it), NameUtil.nodeFQName(conceptDeclaration));
       }
     }).toListSequence();
   }
-
 }

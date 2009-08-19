@@ -21,5 +21,4 @@ public class Concept_GetHierarchy extends SNodeOperation {
   public static Concept_GetHierarchy newInstance(SModel sm) {
     return Concept_GetHierarchy.newInstance(sm, false);
   }
-
 }

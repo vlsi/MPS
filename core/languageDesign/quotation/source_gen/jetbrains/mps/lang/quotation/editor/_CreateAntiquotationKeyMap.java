@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 
 public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
-
   public _CreateAntiquotationKeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -33,8 +32,8 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     action = new _CreateAntiquotationKeyMap._CreateAntiquotationKeyMap_Action3();
     this.putAction("any", "$", action);
   }
-  public static class _CreateAntiquotationKeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class _CreateAntiquotationKeyMap_Action0 extends EditorCellKeyMapAction {
     public _CreateAntiquotationKeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -91,10 +90,9 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " %";
     }
+  }
 
-}
   public static class _CreateAntiquotationKeyMap_Action1 extends EditorCellKeyMapAction {
-
     public _CreateAntiquotationKeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
@@ -152,10 +150,9 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " *";
     }
+  }
 
-}
   public static class _CreateAntiquotationKeyMap_Action2 extends EditorCellKeyMapAction {
-
     public _CreateAntiquotationKeyMap_Action2() {
       this.setShownInPopupMenu(false);
     }
@@ -216,8 +213,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       }
       if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), true) != null) {
         SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
-      } else
-      {
+      } else {
         SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
       }
     }
@@ -225,10 +221,9 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " ^";
     }
+  }
 
-}
   public static class _CreateAntiquotationKeyMap_Action3 extends EditorCellKeyMapAction {
-
     public _CreateAntiquotationKeyMap_Action3() {
       this.setShownInPopupMenu(false);
     }
@@ -285,8 +280,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       }
       if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), true) != null) {
         SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), null, true);
-      } else
-      {
+      } else {
         SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", propertyName), "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation");
       }
     }
@@ -294,7 +288,5 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " $";
     }
-
-}
-
+  }
 }

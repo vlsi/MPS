@@ -21,5 +21,4 @@ public class EmitReadStatement extends BaseEmitVariableStatement {
   public static EmitReadStatement newInstance(SModel sm) {
     return EmitReadStatement.newInstance(sm, false);
   }
-
 }

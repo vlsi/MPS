@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class NewTemplateInWeaveEach_Intention extends BaseIntention {
-
   public NewTemplateInWeaveEach_Intention() {
   }
 
@@ -82,5 +81,4 @@ public class NewTemplateInWeaveEach_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

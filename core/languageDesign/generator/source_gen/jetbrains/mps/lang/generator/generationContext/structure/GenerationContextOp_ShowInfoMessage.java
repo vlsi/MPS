@@ -21,5 +21,4 @@ public class GenerationContextOp_ShowInfoMessage extends GenerationContextOp_Sho
   public static GenerationContextOp_ShowInfoMessage newInstance(SModel sm) {
     return GenerationContextOp_ShowInfoMessage.newInstance(sm, false);
   }
-
 }

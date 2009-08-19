@@ -30,7 +30,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
-
   public NodeMacro_postfix(SNode node) {
     super(node);
   }
@@ -81,7 +80,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
 
   private EditorCell createReadOnlyModelAccessor_9824_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return node.getRole_();
       }
@@ -148,7 +146,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9824_0(SNode node, EditorContext editorContext, IScope scope) {
     String actualRole = node.getRole_();
     String expectedRole = AttributesRolesUtil.childRoleFromAttributeRole(NodeMacro_AnnotationLink.NODE_MACRO);
@@ -164,7 +161,6 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   }
 
   public static class _Inline9824_0 extends AbstractCellProvider {
-
     public _Inline9824_0() {
       super();
     }
@@ -196,7 +192,5 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

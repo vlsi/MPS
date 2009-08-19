@@ -21,5 +21,4 @@ public class Node_IsNullOperation extends SNodeOperation {
   public static Node_IsNullOperation newInstance(SModel sm) {
     return Node_IsNullOperation.newInstance(sm, false);
   }
-
 }

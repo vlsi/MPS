@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuPart_AbstractGroup_Query_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class CellMenuPart_AbstractGroup_Query_Behavior {
     }
     return new _Quotations.QuotationClass_4().createNode(parameterObjectType);
   }
-
 }

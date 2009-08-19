@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SideTransform_SimpleString_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8737_0(editorContext, node);
   }
@@ -49,5 +48,4 @@ public class SideTransform_SimpleString_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

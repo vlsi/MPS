@@ -21,5 +21,4 @@ public class AbsDateTimeMinusOperation extends DateTimeMinusOperation {
   public static AbsDateTimeMinusOperation newInstance(SModel sm) {
     return AbsDateTimeMinusOperation.newInstance(sm, false);
   }
-
 }

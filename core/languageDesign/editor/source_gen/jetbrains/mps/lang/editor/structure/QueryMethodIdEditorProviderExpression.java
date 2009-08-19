@@ -98,7 +98,6 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
     this.insertChild(prev, QueryMethodIdEditorProviderExpression.ADDITIONAL_IMPORT, node);
   }
 
-
   public static QueryMethodIdEditorProviderExpression newInstance(SModel sm, boolean init) {
     return (QueryMethodIdEditorProviderExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryMethodIdEditorProviderExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -106,5 +105,4 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   public static QueryMethodIdEditorProviderExpression newInstance(SModel sm) {
     return QueryMethodIdEditorProviderExpression.newInstance(sm, false);
   }
-
 }

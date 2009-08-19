@@ -24,7 +24,6 @@ public class ConceptProperty extends BaseConcept {
     super.setReferent(ConceptProperty.CONCEPT_PROPERTY_DECLARATION, node);
   }
 
-
   public static ConceptProperty newInstance(SModel sm, boolean init) {
     return (ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ConceptProperty extends BaseConcept {
   public static ConceptProperty newInstance(SModel sm) {
     return ConceptProperty.newInstance(sm, false);
   }
-
 }

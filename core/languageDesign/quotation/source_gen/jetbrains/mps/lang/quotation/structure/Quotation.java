@@ -34,7 +34,6 @@ public class Quotation extends Expression {
     super.setChild(Quotation.MODEL_TO_CREATE, node);
   }
 
-
   public static Quotation newInstance(SModel sm, boolean init) {
     return (Quotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.Quotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Quotation extends Expression {
   public static Quotation newInstance(SModel sm) {
     return Quotation.newInstance(sm, false);
   }
-
 }

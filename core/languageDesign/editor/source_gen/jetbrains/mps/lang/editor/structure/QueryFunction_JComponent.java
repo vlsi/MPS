@@ -22,5 +22,4 @@ public class QueryFunction_JComponent extends ConceptFunction {
   public static QueryFunction_JComponent newInstance(SModel sm) {
     return QueryFunction_JComponent.newInstance(sm, false);
   }
-
 }

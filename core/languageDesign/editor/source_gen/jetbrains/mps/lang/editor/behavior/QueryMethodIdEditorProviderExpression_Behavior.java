@@ -5,8 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class QueryMethodIdEditorProviderExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

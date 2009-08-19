@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class QueryBlock_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6409_0(editorContext, node);
   }
@@ -92,11 +91,9 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCustom_6409_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0 <AbstractCellProvider>() {
-
+    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
-
           public EditorCell createEditorCell(EditorContext editorContext) {
             EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
@@ -105,7 +102,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
             }
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, ""));
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Parameter help:"));
-            for(SNode cfp : ConceptFunction_Behavior.call_getParameters_1213877374450(node)) {
+            for (SNode cfp : ConceptFunction_Behavior.call_getParameters_1213877374450(node)) {
               String alias = SPropertyOperations.getString(cfp, "alias");
               String description = SPropertyOperations.getString(cfp, "shortDescription");
               if (description == null) {
@@ -143,5 +140,4 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

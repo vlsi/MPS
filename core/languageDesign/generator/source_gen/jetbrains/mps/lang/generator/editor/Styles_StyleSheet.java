@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import java.awt.Color;
 
 public class Styles_StyleSheet {
-
   public static Style getGeneratorKeyWord(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
@@ -66,5 +65,4 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     return style;
   }
-
 }

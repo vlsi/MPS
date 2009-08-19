@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RGBColor_value_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
-
   public RGBColor_value_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class RGBColor_value_PropertyConstraint implements IModelConstraints, INo
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     return SPropertyOperations.getString(node, "value") == null || (SPropertyOperations.getString(propertyValue)).matches("[0-9a-fA-Z]{1,6}");
   }
-
 }

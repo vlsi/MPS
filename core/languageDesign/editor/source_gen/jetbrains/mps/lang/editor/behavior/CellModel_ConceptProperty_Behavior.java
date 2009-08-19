@@ -10,7 +10,6 @@ import jetbrains.mps.lang.structure.behavior.ConceptPropertyDeclaration_Behavior
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class CellModel_ConceptProperty_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -33,5 +32,4 @@ public class CellModel_ConceptProperty_Behavior {
   public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return ConceptPropertyCellProvider.DEFAULT_FONT_STYLE;
   }
-
 }

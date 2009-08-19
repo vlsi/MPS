@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.Primitives;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PrimitiveDataTypeDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -32,5 +31,4 @@ public class PrimitiveDataTypeDeclaration_Behavior {
   public static boolean call_isBoolean_1220268791641(SNode thisNode) {
     return Primitives.BOOLEAN_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
   }
-
 }

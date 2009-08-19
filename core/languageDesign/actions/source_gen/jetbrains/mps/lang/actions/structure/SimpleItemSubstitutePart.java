@@ -59,7 +59,6 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
     super.setChild(SimpleItemSubstitutePart.HANDLER, node);
   }
 
-
   public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
     return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   public static SimpleItemSubstitutePart newInstance(SModel sm) {
     return SimpleItemSubstitutePart.newInstance(sm, false);
   }
-
 }

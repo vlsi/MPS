@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class EnumerationDataTypeDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,5 +26,4 @@ public class EnumerationDataTypeDeclaration_Behavior {
     }
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).first();
   }
-
 }

@@ -21,5 +21,4 @@ public class AbandonInput_RuleConsequence extends RuleConsequence {
   public static AbandonInput_RuleConsequence newInstance(SModel sm) {
     return AbandonInput_RuleConsequence.newInstance(sm, false);
   }
-
 }

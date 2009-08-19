@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_templateReferent extends ConceptFunctionP
   public static TemplateFunctionParameter_templateReferent newInstance(SModel sm) {
     return TemplateFunctionParameter_templateReferent.newInstance(sm, false);
   }
-
 }

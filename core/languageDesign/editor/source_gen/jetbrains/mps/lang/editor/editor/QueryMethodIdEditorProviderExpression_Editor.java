@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9522_0(editorContext, node);
   }
@@ -253,7 +252,6 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline9522_0 extends AbstractCellProvider {
-
     public _Inline9522_0() {
       super();
     }
@@ -284,10 +282,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
       } else
       return editorCell;
     }
+  }
 
-}
   private static class parameterListHandler_9522_0 extends RefNodeListHandler {
-
     public parameterListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -334,10 +331,9 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
         return editorCell;
       }
     }
+  }
 
-}
   private static class additionalImportListHandler_9522_0 extends RefNodeListHandler {
-
     public additionalImportListHandler_9522_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -377,7 +373,5 @@ public class QueryMethodIdEditorProviderExpression_Editor extends DefaultNodeEdi
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

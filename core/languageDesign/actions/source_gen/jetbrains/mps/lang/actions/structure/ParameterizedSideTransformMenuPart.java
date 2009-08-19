@@ -69,7 +69,6 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
     super.setChild(ParameterizedSideTransformMenuPart.HANDLER, node);
   }
 
-
   public static ParameterizedSideTransformMenuPart newInstance(SModel sm, boolean init) {
     return (ParameterizedSideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   public static ParameterizedSideTransformMenuPart newInstance(SModel sm) {
     return ParameterizedSideTransformMenuPart.newInstance(sm, false);
   }
-
 }

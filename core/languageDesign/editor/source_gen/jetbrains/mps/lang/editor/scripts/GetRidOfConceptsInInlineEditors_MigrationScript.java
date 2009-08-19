@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GetRidOfConceptsInInlineEditors_MigrationScript extends BaseMigrationScript {
-
   public GetRidOfConceptsInInlineEditors_MigrationScript(IOperationContext operationContext) {
     super("get rid of concepts in inline editors");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "remove concepts";
       }

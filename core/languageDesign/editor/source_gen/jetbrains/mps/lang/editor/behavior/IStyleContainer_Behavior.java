@@ -23,7 +23,7 @@ public class IStyleContainer_Behavior {
 
   public static List<SNode> call_getClassItems_1219419901278(SNode thisNode, SNode itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
+    for (SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
       if (SNodeOperations.isInstanceOf(item, NameUtil.nodeFQName(itemConcept))) {
         ListSequence.fromList(result).addElement(item);
       }
@@ -41,5 +41,4 @@ public class IStyleContainer_Behavior {
   public static SNode callSuper_getParent_1219419981626(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IStyleContainer"), callerConceptFqName, "virtual_getParent_1219419981626", PARAMETERS_1219419981626);
   }
-
 }

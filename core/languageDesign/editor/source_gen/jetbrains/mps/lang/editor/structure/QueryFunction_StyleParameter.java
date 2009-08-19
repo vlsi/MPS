@@ -22,5 +22,4 @@ public class QueryFunction_StyleParameter extends ConceptFunction {
   public static QueryFunction_StyleParameter newInstance(SModel sm) {
     return QueryFunction_StyleParameter.newInstance(sm, false);
   }
-
 }

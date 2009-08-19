@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3900_0(editorContext, node);
   }
@@ -110,7 +109,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
   }
 
   public static class _Inline3900_0 extends AbstractCellProvider {
-
     public _Inline3900_0() {
       super();
     }
@@ -141,7 +139,5 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

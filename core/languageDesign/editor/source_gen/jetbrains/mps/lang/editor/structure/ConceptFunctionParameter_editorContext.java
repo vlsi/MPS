@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_editorContext extends ConceptFunctionParam
   public static ConceptFunctionParameter_editorContext newInstance(SModel sm) {
     return ConceptFunctionParameter_editorContext.newInstance(sm, false);
   }
-
 }

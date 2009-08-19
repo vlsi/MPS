@@ -33,7 +33,6 @@ public class TemplateFragment extends BaseConcept {
     super.setChild(TemplateFragment.CONTEXT_NODE_QUERY, node);
   }
 
-
   public static TemplateFragment newInstance(SModel sm, boolean init) {
     return (TemplateFragment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class TemplateFragment extends BaseConcept {
   public static TemplateFragment newInstance(SModel sm) {
     return TemplateFragment.newInstance(sm, false);
   }
-
 }

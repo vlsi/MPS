@@ -22,5 +22,4 @@ public class QueryFunction_NodeCondition extends ConceptFunction {
   public static QueryFunction_NodeCondition newInstance(SModel sm) {
     return QueryFunction_NodeCondition.newInstance(sm, false);
   }
-
 }

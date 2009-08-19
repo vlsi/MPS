@@ -10,13 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SelectOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getSelectPositionParameter_1213877395572(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "selectLaterParameter", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "selectLaterParameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.SelectPositionParameter");
       }
@@ -24,8 +22,7 @@ public class SelectOperation_Behavior {
   }
 
   public static SNode call_getCaretPositionParameter_1213877395591(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "selectLaterParameter", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "selectLaterParameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.editor.structure.CaretPositionParameter");
       }
@@ -47,5 +44,4 @@ public class SelectOperation_Behavior {
     }
     return false;
   }
-
 }

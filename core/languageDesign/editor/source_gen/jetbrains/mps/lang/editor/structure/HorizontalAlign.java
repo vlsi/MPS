@@ -24,7 +24,6 @@ public class HorizontalAlign extends StyleClassItem {
     super.setProperty(HorizontalAlign.ALIGN, value.getValueAsString());
   }
 
-
   public static HorizontalAlign newInstance(SModel sm, boolean init) {
     return (HorizontalAlign)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.HorizontalAlign", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class HorizontalAlign extends StyleClassItem {
   public static HorizontalAlign newInstance(SModel sm) {
     return HorizontalAlign.newInstance(sm, false);
   }
-
 }

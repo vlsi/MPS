@@ -22,5 +22,4 @@ public class CellKeyMap_AbstractFunction extends ConceptFunction {
   public static CellKeyMap_AbstractFunction newInstance(SModel sm) {
     return CellKeyMap_AbstractFunction.newInstance(sm, false);
   }
-
 }

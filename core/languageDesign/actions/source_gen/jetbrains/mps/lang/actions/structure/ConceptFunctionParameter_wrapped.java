@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_wrapped extends ConceptFunctionParameter {
   public static ConceptFunctionParameter_wrapped newInstance(SModel sm) {
     return ConceptFunctionParameter_wrapped.newInstance(sm, false);
   }
-
 }

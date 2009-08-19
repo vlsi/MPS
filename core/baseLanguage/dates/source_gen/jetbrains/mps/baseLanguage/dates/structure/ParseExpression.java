@@ -63,7 +63,6 @@ public class ParseExpression extends Expression {
     super.setChild(ParseExpression.DEFAULT, node);
   }
 
-
   public static ParseExpression newInstance(SModel sm, boolean init) {
     return (ParseExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -71,5 +70,4 @@ public class ParseExpression extends Expression {
   public static ParseExpression newInstance(SModel sm) {
     return ParseExpression.newInstance(sm, false);
   }
-
 }

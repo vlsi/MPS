@@ -34,7 +34,6 @@ import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1226343664102(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()) != null;
   }
@@ -720,14 +719,11 @@ public class QueriesGenerated {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all string-type-properties from implemented interfaces
     final List<String> names = ListSequence.fromList(new ArrayList<String>());
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_p;
               private Iterator<SNode> _2_p_it;
@@ -798,14 +794,11 @@ __switch__:
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all boolean-type-properties from implemented interfaces
     final List<String> names = ListSequence.fromList(new ArrayList<String>());
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_p;
               private Iterator<SNode> _2_p_it;
@@ -876,14 +869,11 @@ __switch__:
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all integer-type-properties from implemented interfaces
     final List<String> names = ListSequence.fromList(new ArrayList<String>());
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_p;
               private Iterator<SNode> _2_p_it;
@@ -954,14 +944,11 @@ __switch__:
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all enum-type-properties from implemented interfaces
     final List<String> names = ListSequence.fromList(new ArrayList<String>());
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_p;
               private Iterator<SNode> _2_p_it;
@@ -1031,14 +1018,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1169582939001(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all reference links with cardinality=1 and no specialization
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_link;
               private Iterator<SNode> _2_link_it;
@@ -1097,14 +1081,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1169583297000(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all reference links with cardinality=1 and specialization
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_link;
               private Iterator<SNode> _2_link_it;
@@ -1163,14 +1144,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1169591070416(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:1 and no specialization
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_link;
               private Iterator<SNode> _2_link_it;
@@ -1229,14 +1207,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:1 and specialization
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_link;
               private Iterator<SNode> _2_link_it;
@@ -1289,8 +1264,7 @@ __switch__:
           }
         };
       }
-    }).where(new IWhereFilter <SNode>() {
-
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getString(it, "role").equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, "specializedLink", false), "role")));
       }
@@ -1300,14 +1274,11 @@ __switch__:
   public static Iterable sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_context.getNode());
     // all aggregation links with cardinality:n and no specialization
-    return ListSequence.fromList(concepts).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(concepts).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_link;
               private Iterator<SNode> _2_link_it;
@@ -1364,8 +1335,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169751054593(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isString(p);
       }
@@ -1373,8 +1343,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isBoolean(p);
       }
@@ -1382,8 +1351,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isInteger(p);
       }
@@ -1391,8 +1359,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
         return QueriesUtil.propertyDataType_isEnum(p);
       }
@@ -1400,8 +1367,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_1_nospec(link);
       }
@@ -1409,8 +1375,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_1_spec(link);
       }
@@ -1418,8 +1383,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return QueriesUtil.isAggLink_card_n_nospec(link);
       }
@@ -1427,8 +1391,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return QueriesUtil.isRefLink_card_1_nospec(link);
       }
@@ -1436,8 +1399,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return QueriesUtil.isRefLink_card_1_spec(link);
       }
@@ -1465,8 +1427,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1198508062250(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
       }
@@ -1474,8 +1435,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1198509713444(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         if ((SLinkOperations.getTarget(it, "intfc", false) == null)) {
           _context.showErrorMessage(it, "Can't extend null interface");
@@ -1494,8 +1454,7 @@ __switch__:
     if (SPropertyOperations.hasValue(memberDataType, "name", "string")) {
       if (internalValue == null) {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
-      } else
-      {
+      } else {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value", internalValue);
       }
@@ -1504,8 +1463,7 @@ __switch__:
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       if (internalValue == null) {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (true));
-      } else
-      {
+      } else {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value", "" + (Boolean.parseBoolean(internalValue)));
       }
     } else
@@ -1513,8 +1471,7 @@ __switch__:
       targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       if (internalValue == null) {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
-      } else
-      {
+      } else {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (Integer.parseInt(internalValue)));
       }
     }
@@ -1526,7 +1483,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for(SNode method : ListSequence.fromList(methods)) {
+    for (SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -1536,7 +1493,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for(SNode method : ListSequence.fromList(methods)) {
+    for (SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -1546,7 +1503,7 @@ __switch__:
 
   public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     List<SNode> methods = SLinkOperations.getTargets(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true);
-    for(SNode method : ListSequence.fromList(methods)) {
+    for (SNode method : ListSequence.fromList(methods)) {
       if ("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
         return SLinkOperations.getTarget(method, "body", true);
       }
@@ -1641,5 +1598,4 @@ __switch__:
   public static SNode weaving_MappingRule_ContextNodeQuery_1187044602478(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
   }
-
 }

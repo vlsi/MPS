@@ -21,5 +21,4 @@ public class IntegerConceptPropertyDeclaration extends ConceptPropertyDeclaratio
   public static IntegerConceptPropertyDeclaration newInstance(SModel sm) {
     return IntegerConceptPropertyDeclaration.newInstance(sm, false);
   }
-
 }

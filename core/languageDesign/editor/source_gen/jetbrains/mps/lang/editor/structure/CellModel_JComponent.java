@@ -23,7 +23,6 @@ public class CellModel_JComponent extends EditorCellModel {
     super.setChild(CellModel_JComponent.COMPONENT_PROVIDER, node);
   }
 
-
   public static CellModel_JComponent newInstance(SModel sm, boolean init) {
     return (CellModel_JComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_JComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_JComponent extends EditorCellModel {
   public static CellModel_JComponent newInstance(SModel sm) {
     return CellModel_JComponent.newInstance(sm, false);
   }
-
 }

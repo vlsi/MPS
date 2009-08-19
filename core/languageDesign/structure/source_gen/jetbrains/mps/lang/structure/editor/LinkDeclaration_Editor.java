@@ -38,7 +38,6 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import jetbrains.mps.util.NameUtil;
 
 public class LinkDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5916_0(editorContext, node);
   }
@@ -135,7 +134,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_5916_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return SEnumOperations.getEnumMemberName(SModelUtil.getGenuineLinkSourceCardinality(node));
       }
@@ -266,7 +264,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition5916_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
@@ -281,8 +278,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
     if (SLinkOperations.getTarget(node, "specializedLink", false) == null) {
       return SPropertyOperations.getBoolean(node, "outer");
-    } else
-    {
+    } else {
       return SPropertyOperations.getBoolean(SModelUtil.getGenuineLinkDeclaration(node), "outer");
     }
   }
@@ -292,7 +288,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline5916_0 extends AbstractCellProvider {
-
     public _Inline5916_0() {
       super();
     }
@@ -323,10 +318,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline5916_1 extends AbstractCellProvider {
-
     public _Inline5916_1() {
       super();
     }
@@ -361,30 +355,27 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class LinkDeclaration_sourceCardinality_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public LinkDeclaration_sourceCardinality_cellMenu0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
-        for(SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
+        for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
           ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
         }
-      } else
-      {
+      } else {
         ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
         ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
       }
       return result;
     }
+  }
 
-}
   public static class LinkDeclaration_role_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public LinkDeclaration_role_postfixCellMenu0() {
     }
 
@@ -396,7 +387,5 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       }
       return postfixes;
     }
-
-}
-
+  }
 }

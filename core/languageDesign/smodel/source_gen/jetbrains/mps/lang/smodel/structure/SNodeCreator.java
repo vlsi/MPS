@@ -34,7 +34,6 @@ public class SNodeCreator extends AbstractCreator {
     super.setChild(SNodeCreator.PROTOTYPE_NODE, node);
   }
 
-
   public static SNodeCreator newInstance(SModel sm, boolean init) {
     return (SNodeCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SNodeCreator extends AbstractCreator {
   public static SNodeCreator newInstance(SModel sm) {
     return SNodeCreator.newInstance(sm, false);
   }
-
 }

@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class Quotation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static int virtual_getChildMetaLevel_3981318653438239103(SNode thisNode) {
     return BaseConcept_Behavior.call_getMetaLevel_3981318653438234726(thisNode) - 1;
   }
-
 }

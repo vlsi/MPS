@@ -25,7 +25,6 @@ public class SNodeListType extends Type {
     super.setReferent(SNodeListType.ELEMENT_CONCEPT, node);
   }
 
-
   public static SNodeListType newInstance(SModel sm, boolean init) {
     return (SNodeListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SNodeListType extends Type {
   public static SNodeListType newInstance(SModel sm) {
     return SNodeListType.newInstance(sm, false);
   }
-
 }

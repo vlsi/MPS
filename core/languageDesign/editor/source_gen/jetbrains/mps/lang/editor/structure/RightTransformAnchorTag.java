@@ -79,5 +79,4 @@ public enum RightTransformAnchorTag {
     }
     return RightTransformAnchorTag.getDefault();
   }
-
 }

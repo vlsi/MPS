@@ -75,7 +75,6 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
     this.insertChild(prev, StyleSheet.STYLE_CLASS, node);
   }
 
-
   public static StyleSheet newInstance(SModel sm, boolean init) {
     return (StyleSheet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
   public static StyleSheet newInstance(SModel sm) {
     return StyleSheet.newInstance(sm, false);
   }
-
 }

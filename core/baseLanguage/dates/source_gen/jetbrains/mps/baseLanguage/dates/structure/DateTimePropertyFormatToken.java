@@ -34,7 +34,6 @@ public class DateTimePropertyFormatToken extends FormatToken {
     super.setReferent(DateTimePropertyFormatToken.DATE_TIME_PROPERTY_FORMAT_TYPE, node);
   }
 
-
   public static DateTimePropertyFormatToken newInstance(SModel sm, boolean init) {
     return (DateTimePropertyFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePropertyFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class DateTimePropertyFormatToken extends FormatToken {
   public static DateTimePropertyFormatToken newInstance(SModel sm) {
     return DateTimePropertyFormatToken.newInstance(sm, false);
   }
-
 }

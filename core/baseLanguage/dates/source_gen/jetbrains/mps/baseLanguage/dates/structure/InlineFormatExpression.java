@@ -66,7 +66,6 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
     this.insertChild(prev, InlineFormatExpression.FORMAT_TOKEN, node);
   }
 
-
   public static InlineFormatExpression newInstance(SModel sm, boolean init) {
     return (InlineFormatExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -74,5 +73,4 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   public static InlineFormatExpression newInstance(SModel sm) {
     return InlineFormatExpression.newInstance(sm, false);
   }
-
 }

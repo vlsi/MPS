@@ -72,7 +72,6 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
     super.setChild(TemplateDeclaration.CONTENT_NODE, node);
   }
 
-
   public static TemplateDeclaration newInstance(SModel sm, boolean init) {
     return (TemplateDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -80,5 +79,4 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
   public static TemplateDeclaration newInstance(SModel sm) {
     return TemplateDeclaration.newInstance(sm, false);
   }
-
 }

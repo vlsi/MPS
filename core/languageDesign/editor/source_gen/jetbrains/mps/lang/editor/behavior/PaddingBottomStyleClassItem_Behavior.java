@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class PaddingBottomStyleClassItem_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class PaddingBottomStyleClassItem_Behavior {
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return true;
   }
-
 }

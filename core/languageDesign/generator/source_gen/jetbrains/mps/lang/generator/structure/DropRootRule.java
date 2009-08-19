@@ -34,7 +34,6 @@ public class DropRootRule extends BaseConcept {
     super.setChild(DropRootRule.CONDITION_FUNCTION, node);
   }
 
-
   public static DropRootRule newInstance(SModel sm, boolean init) {
     return (DropRootRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DropRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class DropRootRule extends BaseConcept {
   public static DropRootRule newInstance(SModel sm) {
     return DropRootRule.newInstance(sm, false);
   }
-
 }

@@ -14,5 +14,4 @@ public class RootTemplateAnnotation_AnnotationLink {
   public static RootTemplateAnnotation getRootTemplateAnnotation(BaseConcept source) {
     return (RootTemplateAnnotation)source.getAttribute(RootTemplateAnnotation_AnnotationLink.ROOT_TEMPLATE_ANNOTATION);
   }
-
 }

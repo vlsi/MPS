@@ -22,5 +22,4 @@ public class CheckCancelledStatusStatement extends Statement {
   public static CheckCancelledStatusStatement newInstance(SModel sm) {
     return CheckCancelledStatusStatement.newInstance(sm, false);
   }
-
 }

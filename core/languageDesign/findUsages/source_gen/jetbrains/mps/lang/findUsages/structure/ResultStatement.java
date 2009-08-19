@@ -25,7 +25,6 @@ public class ResultStatement extends Statement {
     super.setChild(ResultStatement.FOUND_NODE, node);
   }
 
-
   public static ResultStatement newInstance(SModel sm, boolean init) {
     return (ResultStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.ResultStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ResultStatement extends Statement {
   public static ResultStatement newInstance(SModel sm) {
     return ResultStatement.newInstance(sm, false);
   }
-
 }

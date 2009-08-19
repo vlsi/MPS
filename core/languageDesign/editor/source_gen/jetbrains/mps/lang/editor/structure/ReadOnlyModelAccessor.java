@@ -24,7 +24,6 @@ public class ReadOnlyModelAccessor extends BaseConcept {
     super.setChild(ReadOnlyModelAccessor.GETTER, node);
   }
 
-
   public static ReadOnlyModelAccessor newInstance(SModel sm, boolean init) {
     return (ReadOnlyModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ReadOnlyModelAccessor extends BaseConcept {
   public static ReadOnlyModelAccessor newInstance(SModel sm) {
     return ReadOnlyModelAccessor.newInstance(sm, false);
   }
-
 }

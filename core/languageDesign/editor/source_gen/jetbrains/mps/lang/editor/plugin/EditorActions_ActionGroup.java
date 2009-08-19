@@ -27,5 +27,4 @@ public class EditorActions_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
     this.insertGroupIntoAnother(Edit_ActionGroup.ID, Edit_ActionGroup.LABEL_ID_custom);
   }
-
 }

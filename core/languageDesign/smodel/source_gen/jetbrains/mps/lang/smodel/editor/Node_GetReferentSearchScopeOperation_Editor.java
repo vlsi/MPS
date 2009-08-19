@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3341_0(editorContext, node);
   }
@@ -102,7 +101,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline3341_0 extends AbstractCellProvider {
-
     public _Inline3341_0() {
       super();
     }
@@ -133,7 +131,5 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

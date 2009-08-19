@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class EditorCellModel_KeyMap extends EditorCellKeyMap {
-
   public EditorCellModel_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -21,8 +20,8 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     action = new EditorCellModel_KeyMap.EditorCellModel_KeyMap_Action1();
     this.putAction("ctrl+alt+shift", "VK_F", action);
   }
-  public static class EditorCellModel_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class EditorCellModel_KeyMap_Action0 extends EditorCellKeyMapAction {
     public EditorCellModel_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -58,8 +57,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(SPropertyOperations.hasValue(node, "attractsFocus", "1", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "1");
-      } else
-      {
+      } else {
         SPropertyOperations.set(node, "attractsFocus", "0");
       }
     }
@@ -67,10 +65,9 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift F";
     }
+  }
 
-}
   public static class EditorCellModel_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public EditorCellModel_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
@@ -106,8 +103,7 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(SPropertyOperations.hasValue(node, "attractsFocus", "2", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "2");
-      } else
-      {
+      } else {
         SPropertyOperations.set(node, "attractsFocus", "0");
       }
     }
@@ -115,7 +111,5 @@ public class EditorCellModel_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl alt shift F";
     }
-
-}
-
+  }
 }

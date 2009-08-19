@@ -21,5 +21,4 @@ public class MaxDateTimeOperation extends MathDateTimeOperation {
   public static MaxDateTimeOperation newInstance(SModel sm) {
     return MaxDateTimeOperation.newInstance(sm, false);
   }
-
 }

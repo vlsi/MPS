@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9102_1(editorContext, node);
   }
@@ -223,13 +222,11 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9102_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
   public static class _Inline9102_0 extends AbstractCellProvider {
-
     public _Inline9102_0() {
       super();
     }
@@ -264,10 +261,9 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline9102_1 extends AbstractCellProvider {
-
     public _Inline9102_1() {
       super();
     }
@@ -302,7 +298,5 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

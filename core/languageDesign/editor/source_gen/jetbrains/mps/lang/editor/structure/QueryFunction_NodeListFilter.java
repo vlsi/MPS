@@ -22,5 +22,4 @@ public class QueryFunction_NodeListFilter extends ConceptFunction {
   public static QueryFunction_NodeListFilter newInstance(SModel sm) {
     return QueryFunction_NodeListFilter.newInstance(sm, false);
   }
-
 }

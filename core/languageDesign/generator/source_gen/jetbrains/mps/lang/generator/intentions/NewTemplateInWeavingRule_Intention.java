@@ -17,7 +17,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 
 public class NewTemplateInWeavingRule_Intention extends BaseIntention {
-
   public NewTemplateInWeavingRule_Intention() {
   }
 
@@ -86,5 +85,4 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MappingConfiguration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,5 +23,4 @@ public class MappingConfiguration_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mappingLabel", true)));
     return members;
   }
-
 }

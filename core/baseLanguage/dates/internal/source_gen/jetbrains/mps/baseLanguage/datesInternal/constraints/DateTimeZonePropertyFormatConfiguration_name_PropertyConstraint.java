@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class DateTimeZonePropertyFormatConfiguration_name_PropertyConstraint imp
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "zone";
   }
-
 }

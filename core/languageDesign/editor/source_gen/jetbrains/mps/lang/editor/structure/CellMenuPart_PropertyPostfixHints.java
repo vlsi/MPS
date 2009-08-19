@@ -23,7 +23,6 @@ public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
     super.setChild(CellMenuPart_PropertyPostfixHints.POSTFIXES_FUNCTION, node);
   }
 
-
   public static CellMenuPart_PropertyPostfixHints newInstance(SModel sm, boolean init) {
     return (CellMenuPart_PropertyPostfixHints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
   public static CellMenuPart_PropertyPostfixHints newInstance(SModel sm) {
     return CellMenuPart_PropertyPostfixHints.newInstance(sm, false);
   }
-
 }

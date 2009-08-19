@@ -24,7 +24,6 @@ public class InterfaceConceptReference extends BaseConcept {
     super.setReferent(InterfaceConceptReference.INTFC, node);
   }
 
-
   public static InterfaceConceptReference newInstance(SModel sm, boolean init) {
     return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InterfaceConceptReference extends BaseConcept {
   public static InterfaceConceptReference newInstance(SModel sm) {
     return InterfaceConceptReference.newInstance(sm, false);
   }
-
 }

@@ -42,7 +42,6 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1167271337341(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"));
   }
@@ -158,7 +157,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1176796902480(final IOperationContext operationContext, final PropertyMacroContext _context) {
     StringBuilder result = new StringBuilder();
     int index = 0;
-    for(SNode pd : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
+    for (SNode pd : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       if (index > 0) {
         result.append(",");
       }
@@ -1621,12 +1620,12 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
     }
-    for(SNode pd : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
+    for (SNode pd : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(pd, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(pd, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
       }
     }
-    for(SNode t : SLinkOperations.getTargets(_context.getNode(), "additionalImport", true)) {
+    for (SNode t : SLinkOperations.getTargets(_context.getNode(), "additionalImport", true)) {
       if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         SetSequence.fromSet(classes).addElement(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
       }
@@ -1869,5 +1868,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_996730828437274999(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
   }
-
 }

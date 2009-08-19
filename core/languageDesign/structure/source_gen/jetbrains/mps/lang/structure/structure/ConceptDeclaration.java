@@ -64,7 +64,6 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
   }
 
-
   public static ConceptDeclaration newInstance(SModel sm, boolean init) {
     return (ConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -72,5 +71,4 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   public static ConceptDeclaration newInstance(SModel sm) {
     return ConceptDeclaration.newInstance(sm, false);
   }
-
 }

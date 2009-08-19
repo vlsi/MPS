@@ -22,5 +22,4 @@ public class QueryFunction_ImagePath extends ConceptFunction {
   public static QueryFunction_ImagePath newInstance(SModel sm) {
     return QueryFunction_ImagePath.newInstance(sm, false);
   }
-
 }

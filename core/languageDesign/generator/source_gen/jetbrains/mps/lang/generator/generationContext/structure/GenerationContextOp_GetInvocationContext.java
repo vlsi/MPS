@@ -21,5 +21,4 @@ public class GenerationContextOp_GetInvocationContext extends GenerationContextO
   public static GenerationContextOp_GetInvocationContext newInstance(SModel sm) {
     return GenerationContextOp_GetInvocationContext.newInstance(sm, false);
   }
-
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3153_0(editorContext, node);
   }
@@ -149,7 +148,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3153_0 extends AbstractCellProvider {
-
     public _Inline3153_0() {
       super();
     }
@@ -181,7 +179,5 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

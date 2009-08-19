@@ -32,7 +32,6 @@ public class WeaveEach_RuleConsequence extends RuleConsequence {
     super.setChild(WeaveEach_RuleConsequence.SOURCE_NODES_QUERY, node);
   }
 
-
   public static WeaveEach_RuleConsequence newInstance(SModel sm, boolean init) {
     return (WeaveEach_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class WeaveEach_RuleConsequence extends RuleConsequence {
   public static WeaveEach_RuleConsequence newInstance(SModel sm) {
     return WeaveEach_RuleConsequence.newInstance(sm, false);
   }
-
 }

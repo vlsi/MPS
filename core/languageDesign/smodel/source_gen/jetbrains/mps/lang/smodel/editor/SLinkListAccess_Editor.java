@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SLinkListAccess_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5555_0(editorContext, node);
   }
@@ -56,7 +55,6 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline5555_0 extends AbstractCellProvider {
-
     public _Inline5555_0() {
       super();
     }
@@ -93,7 +91,5 @@ public class SLinkListAccess_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

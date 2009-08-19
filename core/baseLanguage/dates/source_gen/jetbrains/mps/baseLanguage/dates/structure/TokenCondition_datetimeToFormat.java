@@ -22,5 +22,4 @@ public class TokenCondition_datetimeToFormat extends ConceptFunctionParameter {
   public static TokenCondition_datetimeToFormat newInstance(SModel sm) {
     return TokenCondition_datetimeToFormat.newInstance(sm, false);
   }
-
 }

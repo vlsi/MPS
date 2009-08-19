@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellModel_RefNode_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1311_0(editorContext, node);
   }
@@ -257,13 +256,11 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1311_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
   public static class _Inline1311_0 extends AbstractCellProvider {
-
     public _Inline1311_0() {
       super();
     }
@@ -298,10 +295,9 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline1311_1 extends AbstractCellProvider {
-
     public _Inline1311_1() {
       super();
     }
@@ -336,7 +332,5 @@ public class CellModel_RefNode_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

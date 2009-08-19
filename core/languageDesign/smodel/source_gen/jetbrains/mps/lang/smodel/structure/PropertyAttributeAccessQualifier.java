@@ -61,7 +61,6 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
     super.setChild(PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER, node);
   }
 
-
   public static PropertyAttributeAccessQualifier newInstance(SModel sm, boolean init) {
     return (PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   public static PropertyAttributeAccessQualifier newInstance(SModel sm) {
     return PropertyAttributeAccessQualifier.newInstance(sm, false);
   }
-
 }

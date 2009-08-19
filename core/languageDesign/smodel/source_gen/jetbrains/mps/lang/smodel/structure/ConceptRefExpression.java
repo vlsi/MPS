@@ -25,7 +25,6 @@ public class ConceptRefExpression extends Expression {
     super.setReferent(ConceptRefExpression.CONCEPT_DECLARATION, node);
   }
 
-
   public static ConceptRefExpression newInstance(SModel sm, boolean init) {
     return (ConceptRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ConceptRefExpression extends Expression {
   public static ConceptRefExpression newInstance(SModel sm) {
     return ConceptRefExpression.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class IncludeRightTransformForNodePart extends MenuBuilderPart {
     super.setChild(IncludeRightTransformForNodePart.NODE_BLOCK, node);
   }
 
-
   public static IncludeRightTransformForNodePart newInstance(SModel sm, boolean init) {
     return (IncludeRightTransformForNodePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class IncludeRightTransformForNodePart extends MenuBuilderPart {
   public static IncludeRightTransformForNodePart newInstance(SModel sm) {
     return IncludeRightTransformForNodePart.newInstance(sm, false);
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeRefExpression_referentNode_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public NodeRefExpression_referentNode_ReferentConstraint() {
   }
 
@@ -27,5 +26,4 @@ public class NodeRefExpression_referentNode_ReferentConstraint extends BaseNodeR
     // roots only
     return SModelSearchUtil.createModelAndImportedModelsScope(SNodeOperations.getModel(_context.getReferenceNode()), true, operationContext.getScope());
   }
-
 }

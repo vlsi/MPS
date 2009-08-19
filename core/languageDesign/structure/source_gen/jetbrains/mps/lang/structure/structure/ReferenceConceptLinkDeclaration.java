@@ -21,5 +21,4 @@ public class ReferenceConceptLinkDeclaration extends ConceptLinkDeclaration {
   public static ReferenceConceptLinkDeclaration newInstance(SModel sm) {
     return ReferenceConceptLinkDeclaration.newInstance(sm, false);
   }
-
 }

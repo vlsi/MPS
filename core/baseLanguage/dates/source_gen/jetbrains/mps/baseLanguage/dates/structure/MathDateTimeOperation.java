@@ -33,7 +33,6 @@ public class MathDateTimeOperation extends Expression {
     super.setChild(MathDateTimeOperation.RIGHT_EXPRESSION, node);
   }
 
-
   public static MathDateTimeOperation newInstance(SModel sm, boolean init) {
     return (MathDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MathDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class MathDateTimeOperation extends Expression {
   public static MathDateTimeOperation newInstance(SModel sm) {
     return MathDateTimeOperation.newInstance(sm, false);
   }
-
 }

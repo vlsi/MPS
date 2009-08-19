@@ -17,7 +17,6 @@ public class ExtractToConstantExpression extends Expression {
     super(node);
   }
 
-
   public String getFieldName() {
     return this.getProperty(ExtractToConstantExpression.FIELD_NAME);
   }
@@ -33,7 +32,6 @@ public class ExtractToConstantExpression extends Expression {
   public void setExpression(Expression node) {
     super.setChild(ExtractToConstantExpression.EXPRESSION, node);
   }
-
 
   public static ExtractToConstantExpression newInstance(SModel sm, boolean init) {
     return (ExtractToConstantExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", sm, GlobalScope.getInstance(), init).getAdapter();

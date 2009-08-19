@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0295_0(editorContext, node);
   }
@@ -86,5 +85,4 @@ public class GenericSubstituteMenuPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

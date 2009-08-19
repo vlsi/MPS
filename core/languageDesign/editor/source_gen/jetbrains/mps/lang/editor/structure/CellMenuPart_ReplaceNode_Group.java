@@ -32,7 +32,6 @@ public class CellMenuPart_ReplaceNode_Group extends CellMenuPart_AbstractGroup {
     super.setChild(CellMenuPart_ReplaceNode_Group.CREATE_FUNCTION, node);
   }
 
-
   public static CellMenuPart_ReplaceNode_Group newInstance(SModel sm, boolean init) {
     return (CellMenuPart_ReplaceNode_Group)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class CellMenuPart_ReplaceNode_Group extends CellMenuPart_AbstractGroup {
   public static CellMenuPart_ReplaceNode_Group newInstance(SModel sm) {
     return CellMenuPart_ReplaceNode_Group.newInstance(sm, false);
   }
-
 }

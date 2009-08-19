@@ -24,7 +24,6 @@ public class SLinkAccess extends SNodeOperation {
     super.setReferent(SLinkAccess.LINK, node);
   }
 
-
   public static SLinkAccess newInstance(SModel sm, boolean init) {
     return (SLinkAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SLinkAccess extends SNodeOperation {
   public static SLinkAccess newInstance(SModel sm) {
     return SLinkAccess.newInstance(sm, false);
   }
-
 }

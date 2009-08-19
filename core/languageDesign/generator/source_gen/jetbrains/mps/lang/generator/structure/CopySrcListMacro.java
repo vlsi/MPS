@@ -23,7 +23,6 @@ public class CopySrcListMacro extends SourceSubstituteMacro {
     super.setChild(CopySrcListMacro.SOURCE_NODES_QUERY, node);
   }
 
-
   public static CopySrcListMacro newInstance(SModel sm, boolean init) {
     return (CopySrcListMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CopySrcListMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CopySrcListMacro extends SourceSubstituteMacro {
   public static CopySrcListMacro newInstance(SModel sm) {
     return CopySrcListMacro.newInstance(sm, false);
   }
-
 }

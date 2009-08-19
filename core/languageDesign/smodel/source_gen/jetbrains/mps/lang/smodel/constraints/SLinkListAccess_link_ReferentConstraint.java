@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class SLinkListAccess_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SLinkListAccess_link_ReferentConstraint() {
   }
 
@@ -33,12 +32,10 @@ public class SLinkListAccess_link_ReferentConstraint extends BaseNodeReferenceSe
     // links with cardinality 0..n or 1..n
     SNode dotOperandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
-    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
       }
     }).toListSequence();
   }
-
 }

@@ -22,5 +22,4 @@ public class QueryFunction_STVariableInitializer extends ConceptFunction {
   public static QueryFunction_STVariableInitializer newInstance(SModel sm) {
     return QueryFunction_STVariableInitializer.newInstance(sm, false);
   }
-
 }

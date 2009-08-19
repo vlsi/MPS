@@ -23,7 +23,6 @@ public class BaseEditorComponent extends AbstractComponent {
     super.setChild(BaseEditorComponent.CELL_MODEL, node);
   }
 
-
   public static BaseEditorComponent newInstance(SModel sm, boolean init) {
     return (BaseEditorComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BaseEditorComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class BaseEditorComponent extends AbstractComponent {
   public static BaseEditorComponent newInstance(SModel sm) {
     return BaseEditorComponent.newInstance(sm, false);
   }
-
 }

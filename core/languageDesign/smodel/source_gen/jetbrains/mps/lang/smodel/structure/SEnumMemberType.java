@@ -25,7 +25,6 @@ public class SEnumMemberType extends Type {
     super.setReferent(SEnumMemberType.ENUM, node);
   }
 
-
   public static SEnumMemberType newInstance(SModel sm, boolean init) {
     return (SEnumMemberType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SEnumMemberType extends Type {
   public static SEnumMemberType newInstance(SModel sm) {
     return SEnumMemberType.newInstance(sm, false);
   }
-
 }

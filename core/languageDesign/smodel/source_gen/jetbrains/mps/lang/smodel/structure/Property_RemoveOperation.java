@@ -21,5 +21,4 @@ public class Property_RemoveOperation extends SNodeOperation {
   public static Property_RemoveOperation newInstance(SModel sm) {
     return Property_RemoveOperation.newInstance(sm, false);
   }
-
 }

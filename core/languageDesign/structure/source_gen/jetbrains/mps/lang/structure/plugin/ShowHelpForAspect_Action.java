@@ -26,7 +26,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -35,7 +35,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
     return HelpHelper.helpForAspectIsAvailable(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model) && HelpHelper.getDefaultHelpFor(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model, ShowHelpForAspect_Action.this.node) != HelpHelper.HelpType.ASPECT;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -47,7 +47,7 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -69,12 +69,11 @@ public class ShowHelpForAspect_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpForAspect(ShowHelpForAspect_Action.this.module, ShowHelpForAspect_Action.this.model);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForAspect", t);
     }
   }
-
 }

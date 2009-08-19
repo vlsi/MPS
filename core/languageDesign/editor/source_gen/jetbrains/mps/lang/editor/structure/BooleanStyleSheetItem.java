@@ -32,7 +32,6 @@ public class BooleanStyleSheetItem extends StyleClassItem {
     super.setChild(BooleanStyleSheetItem.QUERY, node);
   }
 
-
   public static BooleanStyleSheetItem newInstance(SModel sm, boolean init) {
     return (BooleanStyleSheetItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class BooleanStyleSheetItem extends StyleClassItem {
   public static BooleanStyleSheetItem newInstance(SModel sm) {
     return BooleanStyleSheetItem.newInstance(sm, false);
   }
-
 }

@@ -70,7 +70,6 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
     super.setChild(PredefinedDateFormat.FORMATTER, node);
   }
 
-
   public static PredefinedDateFormat newInstance(SModel sm, boolean init) {
     return (PredefinedDateFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -78,5 +77,4 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
   public static PredefinedDateFormat newInstance(SModel sm) {
     return PredefinedDateFormat.newInstance(sm, false);
   }
-
 }

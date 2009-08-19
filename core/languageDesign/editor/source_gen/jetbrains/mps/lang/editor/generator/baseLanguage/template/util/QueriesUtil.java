@@ -47,14 +47,11 @@ public class QueriesUtil {
 
   public static SNode getGeneratedClassByAncestor(SNode inputNode, final TemplateQueryContext genctx) {
     List<SNode> ancestors = SNodeOperations.getAncestors(inputNode, null, false);
-    Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).translate(new ITranslator2 <SNode, SNode>() {
-
+    Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _5_output;
 
@@ -113,7 +110,7 @@ __switch__:
   public static String keyMapActionClassName(SNode keyMapItem) {
     SNode keyMapDeclaration = SNodeOperations.cast(SNodeOperations.getParent(keyMapItem), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration");
     int index = 0;
-    for(SNode curItem : ListSequence.fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
+    for (SNode curItem : ListSequence.fromList(SLinkOperations.getTargets(keyMapDeclaration, "item", true))) {
       if (curItem == keyMapItem) {
         break;
       }
@@ -138,5 +135,4 @@ __switch__:
     SetSequence.fromSet(namesSet).addElement(result);
     return result;
   }
-
 }

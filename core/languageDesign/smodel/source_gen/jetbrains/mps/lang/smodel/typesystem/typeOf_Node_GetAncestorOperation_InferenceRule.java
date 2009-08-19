@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_Node_GetAncestorOperation_InferenceRule() {
   }
 
@@ -35,5 +34,4 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInfe
   public boolean overrides() {
     return true;
   }
-
 }

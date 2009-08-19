@@ -21,5 +21,4 @@ public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration
   public static StringConceptPropertyDeclaration newInstance(SModel sm) {
     return StringConceptPropertyDeclaration.newInstance(sm, false);
   }
-
 }

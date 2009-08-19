@@ -22,5 +22,4 @@ public class CellMenuPart_AbstractGroup_DescriptionText extends ConceptFunction 
   public static CellMenuPart_AbstractGroup_DescriptionText newInstance(SModel sm) {
     return CellMenuPart_AbstractGroup_DescriptionText.newInstance(sm, false);
   }
-
 }

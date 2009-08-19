@@ -21,5 +21,4 @@ public class AddMenuPart extends ConceptPart {
   public static AddMenuPart newInstance(SModel sm) {
     return AddMenuPart.newInstance(sm, false);
   }
-
 }

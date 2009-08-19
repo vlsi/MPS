@@ -138,7 +138,6 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
     this.insertChild(prev, EditorCellModel.STYLE_ITEM, node);
   }
 
-
   public static EditorCellModel newInstance(SModel sm, boolean init) {
     return (EditorCellModel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellModel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -146,5 +145,4 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   public static EditorCellModel newInstance(SModel sm) {
     return EditorCellModel.newInstance(sm, false);
   }
-
 }

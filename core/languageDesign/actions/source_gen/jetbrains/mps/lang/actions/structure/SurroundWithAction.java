@@ -22,5 +22,4 @@ public class SurroundWithAction extends BaseConcept {
   public static SurroundWithAction newInstance(SModel sm) {
     return SurroundWithAction.newInstance(sm, false);
   }
-
 }

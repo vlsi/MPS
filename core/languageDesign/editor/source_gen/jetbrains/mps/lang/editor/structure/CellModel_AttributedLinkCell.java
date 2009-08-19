@@ -21,5 +21,4 @@ public class CellModel_AttributedLinkCell extends EditorCellModel {
   public static CellModel_AttributedLinkCell newInstance(SModel sm) {
     return CellModel_AttributedLinkCell.newInstance(sm, false);
   }
-
 }

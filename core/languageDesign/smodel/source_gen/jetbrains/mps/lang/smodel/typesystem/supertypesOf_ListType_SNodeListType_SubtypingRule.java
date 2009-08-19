@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class supertypesOf_ListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_3 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_3 myMatchingPattern;
 
   public supertypesOf_ListType_SNodeListType_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   public boolean isWeak() {
     return false;
   }
-
 }

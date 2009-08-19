@@ -24,7 +24,6 @@ public class RemovePart extends MenuBuilderPart {
     super.setReferent(RemovePart.CONCEPT_TO_REMOVE, node);
   }
 
-
   public static RemovePart newInstance(SModel sm, boolean init) {
     return (RemovePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemovePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RemovePart extends MenuBuilderPart {
   public static RemovePart newInstance(SModel sm) {
     return RemovePart.newInstance(sm, false);
   }
-
 }

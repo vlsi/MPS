@@ -22,5 +22,4 @@ public class ExecuteSmartActionFunction extends ConceptFunction {
   public static ExecuteSmartActionFunction newInstance(SModel sm) {
     return ExecuteSmartActionFunction.newInstance(sm, false);
   }
-
 }

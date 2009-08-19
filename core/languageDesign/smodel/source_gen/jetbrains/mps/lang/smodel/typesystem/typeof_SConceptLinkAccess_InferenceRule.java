@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SConceptLinkAccess_InferenceRule() {
   }
 
@@ -39,5 +38,4 @@ public class typeof_SConceptLinkAccess_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return true;
   }
-
 }

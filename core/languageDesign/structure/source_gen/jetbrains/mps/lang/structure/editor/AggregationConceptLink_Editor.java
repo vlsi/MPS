@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8612_0(editorContext, node);
   }
@@ -84,7 +83,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8612_0 extends AbstractCellProvider {
-
     public _Inline8612_0() {
       super();
     }
@@ -120,17 +118,14 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class AggregationConceptLink_target_cellMenu0 extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
-
     public AggregationConceptLink_target_cellMenu0() {
     }
 
     public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
     }
-
-}
-
+  }
 }

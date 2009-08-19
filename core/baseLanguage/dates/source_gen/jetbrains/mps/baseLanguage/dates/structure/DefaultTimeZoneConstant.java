@@ -21,5 +21,4 @@ public class DefaultTimeZoneConstant extends TimeZoneConstant {
   public static DefaultTimeZoneConstant newInstance(SModel sm) {
     return DefaultTimeZoneConstant.newInstance(sm, false);
   }
-
 }

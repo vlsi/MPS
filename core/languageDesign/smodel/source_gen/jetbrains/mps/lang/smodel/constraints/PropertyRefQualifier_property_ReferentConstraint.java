@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class PropertyRefQualifier_property_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PropertyRefQualifier_property_ReferentConstraint() {
   }
 
@@ -41,5 +40,4 @@ public class PropertyRefQualifier_property_ReferentConstraint extends BaseNodeRe
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(dotOperandConcept);
   }
-
 }

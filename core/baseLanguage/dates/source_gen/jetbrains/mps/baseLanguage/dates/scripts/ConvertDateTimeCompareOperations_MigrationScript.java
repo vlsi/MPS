@@ -12,11 +12,9 @@ import jetbrains.mps.baseLanguage.dates.behavior.DateTimeCompareOperation_Behavi
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConvertDateTimeCompareOperations_MigrationScript extends BaseMigrationScript {
-
   public ConvertDateTimeCompareOperations_MigrationScript(IOperationContext operationContext) {
     super("convert datetime compare operations ");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "convert with property";
       }
@@ -75,7 +73,6 @@ public class ConvertDateTimeCompareOperations_MigrationScript extends BaseMigrat
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "convert without property";
       }

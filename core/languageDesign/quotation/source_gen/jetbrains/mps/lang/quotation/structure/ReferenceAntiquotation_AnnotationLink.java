@@ -14,5 +14,4 @@ public class ReferenceAntiquotation_AnnotationLink {
   public static ReferenceAntiquotation getReferenceAntiquotation(BaseConcept source, String linkRole) {
     return (ReferenceAntiquotation)source.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, linkRole);
   }
-
 }

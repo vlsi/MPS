@@ -31,7 +31,6 @@ public class StringConceptProperty extends ConceptProperty {
     this.setConceptPropertyDeclaration(node);
   }
 
-
   public static StringConceptProperty newInstance(SModel sm, boolean init) {
     return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -39,5 +38,4 @@ public class StringConceptProperty extends ConceptProperty {
   public static StringConceptProperty newInstance(SModel sm) {
     return StringConceptProperty.newInstance(sm, false);
   }
-
 }

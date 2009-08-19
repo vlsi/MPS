@@ -23,7 +23,6 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
     this.setProperty(ConstrainedDataTypeDeclaration.CONSTRAINT, value);
   }
 
-
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm, boolean init) {
     return (ConstrainedDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ConstrainedDataTypeDeclaration extends DataTypeDeclaration {
   public static ConstrainedDataTypeDeclaration newInstance(SModel sm) {
     return ConstrainedDataTypeDeclaration.newInstance(sm, false);
   }
-
 }

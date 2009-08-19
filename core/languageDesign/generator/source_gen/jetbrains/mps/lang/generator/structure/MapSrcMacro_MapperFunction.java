@@ -21,5 +21,4 @@ public class MapSrcMacro_MapperFunction extends TemplateQueryBase {
   public static MapSrcMacro_MapperFunction newInstance(SModel sm) {
     return MapSrcMacro_MapperFunction.newInstance(sm, false);
   }
-
 }

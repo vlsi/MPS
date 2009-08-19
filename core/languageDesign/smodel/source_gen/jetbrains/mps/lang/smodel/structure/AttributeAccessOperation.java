@@ -51,7 +51,6 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
     super.setChild(AttributeAccessOperation.ATTRIBUTE_QUALIFIER, node);
   }
 
-
   public static AttributeAccessOperation newInstance(SModel sm, boolean init) {
     return (AttributeAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.AttributeAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class AttributeAccessOperation extends SNodeOperation implements IOperati
   public static AttributeAccessOperation newInstance(SModel sm) {
     return AttributeAccessOperation.newInstance(sm, false);
   }
-
 }

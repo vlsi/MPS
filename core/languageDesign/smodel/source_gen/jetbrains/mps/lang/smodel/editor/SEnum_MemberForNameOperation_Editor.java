@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8820_0(editorContext, node);
   }
@@ -71,5 +70,4 @@ public class SEnum_MemberForNameOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

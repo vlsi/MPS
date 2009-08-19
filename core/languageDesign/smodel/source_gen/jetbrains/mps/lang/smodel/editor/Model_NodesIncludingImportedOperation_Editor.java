@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3997_0(editorContext, node);
   }
@@ -101,7 +100,6 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline3997_0 extends AbstractCellProvider {
-
     public _Inline3997_0() {
       super();
     }
@@ -132,7 +130,5 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

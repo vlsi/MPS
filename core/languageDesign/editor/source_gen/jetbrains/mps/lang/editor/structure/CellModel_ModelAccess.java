@@ -32,7 +32,6 @@ public class CellModel_ModelAccess extends CellModel_AbstractLabel {
     super.setChild(CellModel_ModelAccess.MODEL_ACESSOR, node);
   }
 
-
   public static CellModel_ModelAccess newInstance(SModel sm, boolean init) {
     return (CellModel_ModelAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class CellModel_ModelAccess extends CellModel_AbstractLabel {
   public static CellModel_ModelAccess newInstance(SModel sm) {
     return CellModel_ModelAccess.newInstance(sm, false);
   }
-
 }

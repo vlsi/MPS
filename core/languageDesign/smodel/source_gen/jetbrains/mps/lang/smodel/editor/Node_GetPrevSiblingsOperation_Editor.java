@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_2830_0(editorContext, node);
   }
@@ -19,5 +18,4 @@ public class Node_GetPrevSiblingsOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
-
 }

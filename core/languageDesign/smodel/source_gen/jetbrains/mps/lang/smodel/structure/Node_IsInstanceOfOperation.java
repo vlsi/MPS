@@ -23,7 +23,6 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
     super.setChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT, node);
   }
 
-
   public static Node_IsInstanceOfOperation newInstance(SModel sm, boolean init) {
     return (Node_IsInstanceOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   public static Node_IsInstanceOfOperation newInstance(SModel sm) {
     return Node_IsInstanceOfOperation.newInstance(sm, false);
   }
-
 }

@@ -32,7 +32,6 @@ public class CellMenuPart_Generic_Group extends CellMenuPart_AbstractGroup {
     super.setChild(CellMenuPart_Generic_Group.HANDLER_FUNCTION, node);
   }
 
-
   public static CellMenuPart_Generic_Group newInstance(SModel sm, boolean init) {
     return (CellMenuPart_Generic_Group)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class CellMenuPart_Generic_Group extends CellMenuPart_AbstractGroup {
   public static CellMenuPart_Generic_Group newInstance(SModel sm) {
     return CellMenuPart_Generic_Group.newInstance(sm, false);
   }
-
 }

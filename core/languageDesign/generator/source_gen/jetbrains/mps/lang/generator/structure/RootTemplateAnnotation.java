@@ -25,7 +25,6 @@ public class RootTemplateAnnotation extends BaseConcept {
     super.setReferent(RootTemplateAnnotation.APPLICABLE_CONCEPT, node);
   }
 
-
   public static RootTemplateAnnotation newInstance(SModel sm, boolean init) {
     return (RootTemplateAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class RootTemplateAnnotation extends BaseConcept {
   public static RootTemplateAnnotation newInstance(SModel sm) {
     return RootTemplateAnnotation.newInstance(sm, false);
   }
-
 }

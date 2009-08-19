@@ -111,9 +111,7 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
     return components;
   }
 
-
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
   }
-
 }

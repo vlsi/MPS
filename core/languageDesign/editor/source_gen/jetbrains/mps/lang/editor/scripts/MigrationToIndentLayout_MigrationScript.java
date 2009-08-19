@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript {
-
   public MigrationToIndentLayout_MigrationScript(IOperationContext operationContext) {
     super("Migration to Indent Layout");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "MoveEditor to indent Layout";
       }
@@ -43,7 +41,6 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "CellModel_RefNodeList migration";
       }

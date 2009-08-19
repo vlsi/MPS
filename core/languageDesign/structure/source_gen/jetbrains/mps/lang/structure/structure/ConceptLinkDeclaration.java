@@ -61,7 +61,6 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
     super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
   }
 
-
   public static ConceptLinkDeclaration newInstance(SModel sm, boolean init) {
     return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   public static ConceptLinkDeclaration newInstance(SModel sm) {
     return ConceptLinkDeclaration.newInstance(sm, false);
   }
-
 }

@@ -85,7 +85,6 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
     this.insertChild(prev, Node_ConceptMethodCall.ACTUAL_ARGUMENT, node);
   }
 
-
   public static Node_ConceptMethodCall newInstance(SModel sm, boolean init) {
     return (Node_ConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   public static Node_ConceptMethodCall newInstance(SModel sm) {
     return Node_ConceptMethodCall.newInstance(sm, false);
   }
-
 }

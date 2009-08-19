@@ -33,7 +33,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     boolean alreadyHasParms = SLinkOperations.getCount(_context.getSourceNode(), "parameter") > 0;
     if (alreadyHasParms) {
@@ -71,7 +70,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
-      for(SNode parm : ListSequence.fromList(parms)) {
+      for (SNode parm : ListSequence.fromList(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
@@ -111,7 +110,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_Node_GetDescendantsOperation_1207248813875(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
-      for(SNode parm : ListSequence.fromList(parms)) {
+      for (SNode parm : ListSequence.fromList(parms)) {
         SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
       }
     }
@@ -126,7 +125,6 @@ public class QueriesGenerated {
     final ApplicableTypesInfo appTypesInfo;
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
@@ -165,16 +163,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getParentNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final SNode item : queryResult) {
+          for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null);
                 SLinkOperations.setTarget(result, "concept", (item), false);
@@ -204,14 +200,13 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           return ((List<SNode>)SLinkOperations.getConceptLinkTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "applicableParameter"));
         }
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
-        for(Object item : queryResult) {
+        for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
           ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
         }
@@ -225,7 +220,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
           return _context.getSourceNode();
@@ -252,7 +246,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode newNode = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
@@ -275,7 +268,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode newNode = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
@@ -304,7 +296,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode newNode = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
           SLinkOperations.setTarget(newNode, "leftExpression", _context.getSourceNode(), true);
@@ -331,7 +322,6 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
@@ -346,7 +336,6 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
@@ -361,7 +350,6 @@ public class QueriesGenerated {
     final ApplicableTypesInfo appTypesInfo;
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
@@ -396,7 +384,6 @@ public class QueriesGenerated {
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       Condition cond = new Condition() {
-
         public boolean met(Object object) {
           SNode parameterOp = (SNode)concept;
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
@@ -410,8 +397,7 @@ public class QueriesGenerated {
               SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false), "dataType", false);
               if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToEnumProperty"));
-              } else
-              {
+              } else {
                 return !(SConceptPropertyOperations.getBoolean(parameterOp, "applicableToSimpleProperty"));
               }
             }
@@ -456,7 +442,6 @@ public class QueriesGenerated {
     final ApplicableTypesInfo appTypesInfo;
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           ApplicableTypesInfo result = new ApplicableTypesInfo();
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
@@ -491,7 +476,6 @@ public class QueriesGenerated {
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       Condition cond = new Condition() {
-
         public boolean met(Object object) {
           SNode linkAccessT = appTypesInfo.myLinkAccessT;
           if (linkAccessT != null && !(SPropertyOperations.getBoolean(linkAccessT, "aggregation"))) {
@@ -514,5 +498,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

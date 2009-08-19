@@ -21,5 +21,4 @@ public class PaddingBottomStyleClassItem extends AbstractPaddingStyleClassItem {
   public static PaddingBottomStyleClassItem newInstance(SModel sm) {
     return PaddingBottomStyleClassItem.newInstance(sm, false);
   }
-
 }

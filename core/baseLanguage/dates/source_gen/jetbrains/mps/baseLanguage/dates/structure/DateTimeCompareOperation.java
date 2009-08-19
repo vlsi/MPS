@@ -54,7 +54,6 @@ public class DateTimeCompareOperation extends Expression {
     super.setChild(DateTimeCompareOperation.OP2, node);
   }
 
-
   public static DateTimeCompareOperation newInstance(SModel sm, boolean init) {
     return (DateTimeCompareOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeCompareOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -62,5 +61,4 @@ public class DateTimeCompareOperation extends Expression {
   public static DateTimeCompareOperation newInstance(SModel sm) {
     return DateTimeCompareOperation.newInstance(sm, false);
   }
-
 }

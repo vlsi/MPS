@@ -42,7 +42,6 @@ public class ChildFilterFunction extends ConceptFunction implements ChildFilterB
     this.setProperty(ChildFilterFunction.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ChildFilterFunction newInstance(SModel sm, boolean init) {
     return (ChildFilterFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ChildFilterFunction extends ConceptFunction implements ChildFilterB
   public static ChildFilterFunction newInstance(SModel sm) {
     return ChildFilterFunction.newInstance(sm, false);
   }
-
 }

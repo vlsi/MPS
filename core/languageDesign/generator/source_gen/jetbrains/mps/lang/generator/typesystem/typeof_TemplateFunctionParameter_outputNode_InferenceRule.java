@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_TemplateFunctionParameter_outputNode_InferenceRule() {
   }
 
@@ -29,8 +28,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
     SNode mapperFunc;
     if (SNodeOperations.isInstanceOf(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
       mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
-    } else
-    {
+    } else {
       mapperFunc = SLinkOperations.getTarget(SNodeOperations.cast(parentMacro, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
     }
     //  ----
@@ -40,8 +38,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234901779", true), (SNode)typeCheckingContext.typeOf(mapperFunc, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234918647", false), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234911251", intentionProvider);
       }
-    } else
-    {
+    } else {
       //  concept of the wrapped template code
       SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(parentMacro));
       {
@@ -63,5 +60,4 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   public boolean overrides() {
     return false;
   }
-
 }

@@ -102,7 +102,6 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
     this.insertChild(prev, TemplateSwitch.REDUCTION_MAPPING_RULE, node);
   }
 
-
   public static TemplateSwitch newInstance(SModel sm, boolean init) {
     return (TemplateSwitch)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -110,5 +109,4 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept {
   public static TemplateSwitch newInstance(SModel sm) {
     return TemplateSwitch.newInstance(sm, false);
   }
-
 }

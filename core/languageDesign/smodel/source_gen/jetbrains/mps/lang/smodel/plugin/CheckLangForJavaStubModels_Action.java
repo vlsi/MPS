@@ -34,7 +34,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -43,7 +43,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     return CheckLangForJavaStubModels_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -55,7 +55,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -71,31 +71,30 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = ((Language)CheckLangForJavaStubModels_Action.this.module);
       Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
       Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
-      for(SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
-        for(SModelReference model : ListSequence.fromList(md.getSModel().getImportedModelUIDs())) {
+      for (SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
+        for (SModelReference model : ListSequence.fromList(md.getSModel().getImportedModelUIDs())) {
           if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
             SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
             String modelName = model.getSModelFqName().toString();
             if (langModelForStub != null && language.getAspectForModel(langModelForStub) != null) {
               SetSequence.fromSet(langStubModels).addElement(modelName);
-            } else
-            {
+            } else {
               SetSequence.fromSet(otherStubModels).addElement(modelName);
             }
           }
         }
       }
       String langStubsMsg = "";
-      for(String modelName : SetSequence.fromSet(langStubModels)) {
+      for (String modelName : SetSequence.fromSet(langStubModels)) {
         langStubsMsg += "  " + modelName + "\n";
       }
       String otherStubsMsg = "";
-      for(String modelName : SetSequence.fromSet(otherStubModels)) {
+      for (String modelName : SetSequence.fromSet(otherStubModels)) {
         otherStubsMsg += "  " + modelName + "\n";
       }
       String message = ((SetSequence.fromSet(langStubModels).isEmpty() ?
@@ -110,5 +109,4 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "CheckLangForJavaStubModels", t);
     }
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DataFlowBuilderDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public DataFlowBuilderDeclaration_name_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class DataFlowBuilderDeclaration_name_PropertyConstraint implements IMode
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "conceptDeclaration", false), "name") + "_DataFlow";
   }
-
 }

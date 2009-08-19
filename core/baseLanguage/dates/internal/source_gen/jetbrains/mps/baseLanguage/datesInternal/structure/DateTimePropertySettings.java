@@ -143,7 +143,6 @@ public class DateTimePropertySettings extends BaseConcept {
     this.insertChild(prev, DateTimePropertySettings.ZONE, node);
   }
 
-
   public static DateTimePropertySettings newInstance(SModel sm, boolean init) {
     return (DateTimePropertySettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertySettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -151,5 +150,4 @@ public class DateTimePropertySettings extends BaseConcept {
   public static DateTimePropertySettings newInstance(SModel sm) {
     return DateTimePropertySettings.newInstance(sm, false);
   }
-
 }

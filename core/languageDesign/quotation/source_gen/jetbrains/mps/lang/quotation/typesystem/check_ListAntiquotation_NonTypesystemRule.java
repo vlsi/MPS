@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ListAntiquotation_NonTypesystemRule() {
   }
 
@@ -55,5 +54,4 @@ public class check_ListAntiquotation_NonTypesystemRule extends AbstractNonTypesy
   public boolean overrides() {
     return false;
   }
-
 }

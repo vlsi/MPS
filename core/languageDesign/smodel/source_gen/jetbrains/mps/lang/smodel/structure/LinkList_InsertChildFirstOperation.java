@@ -24,7 +24,6 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
     super.setChild(LinkList_InsertChildFirstOperation.CHILD_NODE, node);
   }
 
-
   public static LinkList_InsertChildFirstOperation newInstance(SModel sm, boolean init) {
     return (LinkList_InsertChildFirstOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
   public static LinkList_InsertChildFirstOperation newInstance(SModel sm) {
     return LinkList_InsertChildFirstOperation.newInstance(sm, false);
   }
-
 }

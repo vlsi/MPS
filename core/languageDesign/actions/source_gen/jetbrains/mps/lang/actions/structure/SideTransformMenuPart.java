@@ -21,5 +21,4 @@ public class SideTransformMenuPart extends MenuPart {
   public static SideTransformMenuPart newInstance(SModel sm) {
     return SideTransformMenuPart.newInstance(sm, false);
   }
-
 }

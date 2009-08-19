@@ -20,7 +20,6 @@ import jetbrains.mps.intentions.Intention;
 import java.util.ArrayList;
 
 public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention {
-
   private SNode myParameter;
 
   public AddNodeMacroParam_ifMacro_Intention() {
@@ -82,14 +81,12 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention {
     return "jetbrains.mps.lang.generator.intentions";
   }
 
-
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
     if (sourceNode == null) {
       return null;
     }
-    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(SLinkOperations.getTarget(it, "dataType", false));
       }
@@ -100,7 +97,7 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention {
     List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
-      for(SNode param : paramList) {
+      for (SNode param : paramList) {
         AddNodeMacroParam_ifMacro_Intention intention = new AddNodeMacroParam_ifMacro_Intention();
         intention.myParameter = param;
         ListSequence.fromList(list).addElement(intention);
@@ -108,5 +105,4 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention {
     }
     return list;
   }
-
 }

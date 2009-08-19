@@ -61,7 +61,6 @@ public class AbstractFinderDeclaration extends BaseConcept {
     super.setChild(AbstractFinderDeclaration.CATEGORIZE_BLOCK, node);
   }
 
-
   public static AbstractFinderDeclaration newInstance(SModel sm, boolean init) {
     return (AbstractFinderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class AbstractFinderDeclaration extends BaseConcept {
   public static AbstractFinderDeclaration newInstance(SModel sm) {
     return AbstractFinderDeclaration.newInstance(sm, false);
   }
-
 }

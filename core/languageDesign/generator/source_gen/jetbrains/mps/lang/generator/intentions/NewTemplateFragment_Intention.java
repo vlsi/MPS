@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 
 public class NewTemplateFragment_Intention extends BaseIntention {
-
   public NewTemplateFragment_Intention() {
   }
 
@@ -46,8 +45,7 @@ public class NewTemplateFragment_Intention extends BaseIntention {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) == null) {
       return false;
     }
-    if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter <SNode>() {
-
+    if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isAttribute(it);
       }
@@ -61,8 +59,7 @@ public class NewTemplateFragment_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter <SNode>() {
-
+    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
@@ -73,5 +70,4 @@ public class NewTemplateFragment_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

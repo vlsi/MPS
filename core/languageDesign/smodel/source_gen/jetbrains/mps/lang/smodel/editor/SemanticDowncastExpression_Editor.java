@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8499_0(editorContext, node);
   }
@@ -65,5 +64,4 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

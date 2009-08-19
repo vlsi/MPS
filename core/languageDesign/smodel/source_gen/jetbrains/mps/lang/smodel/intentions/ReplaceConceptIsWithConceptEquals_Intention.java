@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention {
-
   public ReplaceConceptIsWithConceptEquals_Intention() {
   }
 
@@ -55,5 +54,4 @@ public class ReplaceConceptIsWithConceptEquals_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

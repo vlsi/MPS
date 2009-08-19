@@ -232,7 +232,6 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
     this.insertChild(prev, MappingConfiguration.MAPPING_LABEL, node);
   }
 
-
   public static MappingConfiguration newInstance(SModel sm, boolean init) {
     return (MappingConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -240,5 +239,4 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static MappingConfiguration newInstance(SModel sm) {
     return MappingConfiguration.newInstance(sm, false);
   }
-
 }

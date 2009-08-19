@@ -21,5 +21,4 @@ public class QueryFunction_Underlined extends QueryFunction_StyleParameter {
   public static QueryFunction_Underlined newInstance(SModel sm) {
     return QueryFunction_Underlined.newInstance(sm, false);
   }
-
 }

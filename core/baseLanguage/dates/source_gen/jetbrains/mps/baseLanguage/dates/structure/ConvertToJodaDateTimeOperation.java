@@ -21,5 +21,4 @@ public class ConvertToJodaDateTimeOperation extends DateTimeOperation {
   public static ConvertToJodaDateTimeOperation newInstance(SModel sm) {
     return ConvertToJodaDateTimeOperation.newInstance(sm, false);
   }
-
 }

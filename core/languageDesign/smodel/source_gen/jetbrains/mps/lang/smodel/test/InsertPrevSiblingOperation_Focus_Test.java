@@ -10,19 +10,16 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTest {
-
-  @Test()
+  @Test
   public void test_InsertPrevSiblingOperation_Focus() throws Throwable {
     this.initTest("${mps_home}/core/languageDesign/smodel/smodel.mpr", "r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)");
     this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
   }
 
   public static class TestBody extends BaseEditorTestBody {
-
     public void testMethod() throws Exception {
       final IEditor[] editorWrap = new IEditor[1];
       SwingUtilities.invokeAndWait(new Runnable() {
-
         public void run() {
           try {
             editorWrap[0] = TestBody.this.initEditor("1835794636205189194", "1835794636205189199");
@@ -37,7 +34,5 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
       BaseEditorTestBody.typeString(editorComponent, "new");
       TestBody.this.finishTest();
     }
-
-}
-
+  }
 }

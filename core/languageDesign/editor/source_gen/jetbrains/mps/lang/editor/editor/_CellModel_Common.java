@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class _CellModel_Common extends AbstractCellProvider {
-
   public _CellModel_Common(SNode node) {
     super(node);
   }
@@ -420,13 +419,11 @@ public class _CellModel_Common extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7442_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
   public static class _Inline7442_0 extends AbstractCellProvider {
-
     public _Inline7442_0() {
       super();
     }
@@ -461,10 +458,9 @@ public class _CellModel_Common extends AbstractCellProvider {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline7442_1 extends AbstractCellProvider {
-
     public _Inline7442_1() {
       super();
     }
@@ -499,10 +495,9 @@ public class _CellModel_Common extends AbstractCellProvider {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline7442_2 extends AbstractCellProvider {
-
     public _Inline7442_2() {
       super();
     }
@@ -533,10 +528,9 @@ public class _CellModel_Common extends AbstractCellProvider {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class styleItemListHandler_7442_0 extends RefNodeListHandler {
-
     public styleItemListHandler_7442_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -576,7 +570,5 @@ public class _CellModel_Common extends AbstractCellProvider {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

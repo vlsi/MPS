@@ -21,5 +21,4 @@ public class LinkList_GetCountOperation extends SNodeOperation {
   public static LinkList_GetCountOperation newInstance(SModel sm) {
     return LinkList_GetCountOperation.newInstance(sm, false);
   }
-
 }

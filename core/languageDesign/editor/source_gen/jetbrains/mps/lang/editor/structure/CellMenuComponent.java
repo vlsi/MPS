@@ -69,7 +69,6 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
     super.setChild(CellMenuComponent.MENU_DESCRIPTOR, node);
   }
 
-
   public static CellMenuComponent newInstance(SModel sm, boolean init) {
     return (CellMenuComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
   public static CellMenuComponent newInstance(SModel sm) {
     return CellMenuComponent.newInstance(sm, false);
   }
-
 }

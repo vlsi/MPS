@@ -30,5 +30,4 @@ public class EditorLangPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
       highlighter.removeChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
     }
   }
-
 }

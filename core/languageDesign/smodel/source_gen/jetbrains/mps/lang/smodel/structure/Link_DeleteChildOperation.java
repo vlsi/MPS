@@ -21,5 +21,4 @@ public class Link_DeleteChildOperation extends SNodeOperation {
   public static Link_DeleteChildOperation newInstance(SModel sm) {
     return Link_DeleteChildOperation.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
   public static AggregationConceptLinkDeclaration newInstance(SModel sm) {
     return AggregationConceptLinkDeclaration.newInstance(sm, false);
   }
-
 }

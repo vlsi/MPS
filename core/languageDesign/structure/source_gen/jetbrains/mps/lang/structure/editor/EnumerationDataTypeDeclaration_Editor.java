@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4339_0(editorContext, node);
   }
@@ -458,7 +457,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4339_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "hasNoDefaultMember"));
   }
@@ -468,7 +466,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4339_0 extends AbstractCellProvider {
-
     public _Inline4339_0() {
       super();
     }
@@ -499,10 +496,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline4339_1 extends AbstractCellProvider {
-
     public _Inline4339_1() {
       super();
     }
@@ -538,10 +534,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class memberListHandler_4339_0 extends RefNodeListHandler {
-
     public memberListHandler_4339_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -581,7 +576,5 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class CellModel_RefNodeList_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public CellModel_RefNodeList_linkDeclaration_ReferentConstraint() {
   }
 
@@ -33,12 +32,10 @@ public class CellModel_RefNodeList_linkDeclaration_ReferentConstraint extends Ba
     SNode editorComponent = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(editedConcept);
-    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(it));
       }
     }).toListSequence();
   }
-
 }

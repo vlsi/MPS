@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3190_0(editorContext, node);
   }
@@ -188,8 +187,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_0((cell == null ?
             null :
@@ -200,8 +198,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_1((cell == null ?
             null :
@@ -212,8 +209,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_2((cell == null ?
             null :
@@ -224,8 +220,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_3((cell == null ?
             null :
@@ -236,8 +231,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_4((cell == null ?
             null :
@@ -248,8 +242,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_5((cell == null ?
             null :
@@ -260,8 +253,7 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_3190_6((cell == null ?
             null :
@@ -341,7 +333,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_3190_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
@@ -371,7 +362,6 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3190_0 extends AbstractCellProvider {
-
     public _Inline3190_0() {
       super();
     }
@@ -406,10 +396,9 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline3190_1 extends AbstractCellProvider {
-
     public _Inline3190_1() {
       super();
     }
@@ -444,7 +433,5 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

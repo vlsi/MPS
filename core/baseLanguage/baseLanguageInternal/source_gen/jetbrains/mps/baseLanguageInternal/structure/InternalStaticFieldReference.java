@@ -17,7 +17,6 @@ public class InternalStaticFieldReference extends Expression {
     super(node);
   }
 
-
   public String getFqClassName() {
     return this.getProperty(InternalStaticFieldReference.FQ_CLASS_NAME);
   }
@@ -33,7 +32,6 @@ public class InternalStaticFieldReference extends Expression {
   public void setFieldName(String value) {
     this.setProperty(InternalStaticFieldReference.FIELD_NAME, value);
   }
-
 
   public static InternalStaticFieldReference newInstance(SModel sm, boolean init) {
     return (InternalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();

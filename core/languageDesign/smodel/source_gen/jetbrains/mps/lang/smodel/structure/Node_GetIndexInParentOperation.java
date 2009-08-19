@@ -21,5 +21,4 @@ public class Node_GetIndexInParentOperation extends SNodeOperation {
   public static Node_GetIndexInParentOperation newInstance(SModel sm) {
     return Node_GetIndexInParentOperation.newInstance(sm, false);
   }
-
 }

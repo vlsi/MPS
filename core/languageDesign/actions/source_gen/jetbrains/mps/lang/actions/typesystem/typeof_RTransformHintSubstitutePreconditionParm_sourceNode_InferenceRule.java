@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
   }
 
@@ -37,5 +36,4 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
   public boolean overrides() {
     return false;
   }
-
 }

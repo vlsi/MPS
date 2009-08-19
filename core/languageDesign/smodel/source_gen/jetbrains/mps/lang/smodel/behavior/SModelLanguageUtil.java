@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SModelLanguageUtil {
-
   private SModelLanguageUtil() {
   }
 
@@ -46,5 +45,4 @@ public class SModelLanguageUtil {
     }
     return null;
   }
-
 }

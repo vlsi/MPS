@@ -42,7 +42,6 @@ public class Month extends BaseConcept {
     this.setIntegerProperty(Month.DAYS, value);
   }
 
-
   public static Month newInstance(SModel sm, boolean init) {
     return (Month)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Month", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class Month extends BaseConcept {
   public static Month newInstance(SModel sm) {
     return Month.newInstance(sm, false);
   }
-
 }

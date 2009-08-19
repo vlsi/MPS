@@ -11,7 +11,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
 
 public class StyleClassItem_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
       SNode testInstance = SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(_context.getChildConcept()), null), "jetbrains.mps.lang.editor.structure.StyleClassItem");
@@ -19,5 +18,4 @@ public class StyleClassItem_Constraints {
     }
     return true;
   }
-
 }

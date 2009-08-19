@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntentionParameter_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1903_0(editorContext, node);
   }
@@ -51,5 +50,4 @@ public class IntentionParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

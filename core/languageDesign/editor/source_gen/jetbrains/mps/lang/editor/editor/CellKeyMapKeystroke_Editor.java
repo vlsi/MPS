@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.EditorCellKeyMap;
 
 public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3628_0(editorContext, node);
   }
@@ -129,7 +128,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   }
 
   public static class CellKeyMapKeystroke_keycode_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public CellKeyMapKeystroke_keycode_cellMenu0() {
     }
 
@@ -138,17 +136,14 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       ListSequence.fromList(keycodes).addSequence(ListSequence.fromList(EditorCellKeyMap.getVirtualKeycodes()));
       return keycodes;
     }
+  }
 
-}
   public static class CellKeyMapKeystroke_modifiers_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public CellKeyMapKeystroke_modifiers_cellMenu0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
     }
-
-}
-
+  }
 }

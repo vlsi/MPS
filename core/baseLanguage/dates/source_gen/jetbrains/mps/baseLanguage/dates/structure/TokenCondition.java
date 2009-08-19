@@ -22,5 +22,4 @@ public class TokenCondition extends ConceptFunction {
   public static TokenCondition newInstance(SModel sm) {
     return TokenCondition.newInstance(sm, false);
   }
-
 }

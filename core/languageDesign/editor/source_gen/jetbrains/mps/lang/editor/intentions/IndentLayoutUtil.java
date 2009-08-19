@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 
 public class IndentLayoutUtil {
-
   public IndentLayoutUtil() {
   }
 
@@ -31,17 +30,15 @@ public class IndentLayoutUtil {
           SLinkOperations.addChild(node, "styleItem", classItem);
         }
         ListSequence.fromList(result).addElement(node);
-      } else
-      {
+      } else {
         List<SNode> children = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "childCellModel", true);
-        for(int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
+        for (int i = 0 ; i < ListSequence.fromList(children).count() ; i++ ) {
           ListSequence.fromList(result).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(ListSequence.fromList(children).getElement(i), isLast && (i == ListSequence.fromList(children).count() - 1))));
         }
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_Indent")) {
       IndentLayoutUtil.makeIndent(SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
-    } else
-    {
+    } else {
       ListSequence.fromList(result).addElement(node);
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical")) {
@@ -62,7 +59,7 @@ public class IndentLayoutUtil {
   public static void moveToIndentLayout(SNode node) {
     if (SLinkOperations.getTarget(node, "cellLayout", true) == null || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       List<SNode> children = new ArrayList<SNode>();
-      for(SNode cellModel : ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true))) {
+      for (SNode cellModel : ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true))) {
         ListSequence.fromList(children).addSequence(ListSequence.fromList(moveToIndentLayoutChildren(cellModel, CellModel_Collection_Behavior.call_isVertical_1237380214915(node))));
       }
       SLinkOperations.removeAllChildren(node, "childCellModel");
@@ -87,5 +84,4 @@ public class IndentLayoutUtil {
     }
     return true;
   }
-
 }

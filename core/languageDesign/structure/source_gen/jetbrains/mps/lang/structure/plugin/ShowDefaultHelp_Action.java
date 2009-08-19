@@ -27,12 +27,12 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " F1";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         HelpHelper.HelpType defaultHelp = HelpHelper.getDefaultHelpFor(ShowDefaultHelp_Action.this.module, ShowDefaultHelp_Action.this.model, ShowDefaultHelp_Action.this.node);
@@ -49,7 +49,7 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -65,12 +65,11 @@ public class ShowDefaultHelp_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpFor(ShowDefaultHelp_Action.this.module, ShowDefaultHelp_Action.this.model, ShowDefaultHelp_Action.this.node);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDefaultHelp", t);
     }
   }
-
 }

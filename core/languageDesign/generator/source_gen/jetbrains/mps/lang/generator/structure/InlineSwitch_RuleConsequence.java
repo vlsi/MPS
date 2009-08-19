@@ -46,7 +46,6 @@ public class InlineSwitch_RuleConsequence extends RuleConsequence {
     this.insertChild(prev, InlineSwitch_RuleConsequence.CASE, node);
   }
 
-
   public static InlineSwitch_RuleConsequence newInstance(SModel sm, boolean init) {
     return (InlineSwitch_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -54,5 +53,4 @@ public class InlineSwitch_RuleConsequence extends RuleConsequence {
   public static InlineSwitch_RuleConsequence newInstance(SModel sm) {
     return InlineSwitch_RuleConsequence.newInstance(sm, false);
   }
-
 }

@@ -52,7 +52,6 @@ public class NodePropertyConstraint extends BaseConcept {
     super.setChild(NodePropertyConstraint.PROPERTY_VALIDATOR, node);
   }
 
-
   public static NodePropertyConstraint newInstance(SModel sm, boolean init) {
     return (NodePropertyConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class NodePropertyConstraint extends BaseConcept {
   public static NodePropertyConstraint newInstance(SModel sm) {
     return NodePropertyConstraint.newInstance(sm, false);
   }
-
 }

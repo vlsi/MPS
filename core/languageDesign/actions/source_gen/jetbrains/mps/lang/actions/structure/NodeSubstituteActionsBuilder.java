@@ -96,7 +96,6 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
     this.insertChild(prev, NodeSubstituteActionsBuilder.VARIABLE, node);
   }
 
-
   public static NodeSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
     return (NodeSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -104,5 +103,4 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   public static NodeSubstituteActionsBuilder newInstance(SModel sm) {
     return NodeSubstituteActionsBuilder.newInstance(sm, false);
   }
-
 }

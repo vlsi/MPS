@@ -34,7 +34,6 @@ public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
     super.setChild(Node_GetReferentSearchScopeOperation.OPERATION_CONTEXT, node);
   }
 
-
   public static Node_GetReferentSearchScopeOperation newInstance(SModel sm, boolean init) {
     return (Node_GetReferentSearchScopeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferentSearchScopeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Node_GetReferentSearchScopeOperation extends SNodeOperation {
   public static Node_GetReferentSearchScopeOperation newInstance(SModel sm) {
     return Node_GetReferentSearchScopeOperation.newInstance(sm, false);
   }
-
 }

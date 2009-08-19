@@ -33,7 +33,6 @@ public class EmitVariableValueIs extends EmitStatement {
     super.setChild(EmitVariableValueIs.VALUE, node);
   }
 
-
   public static EmitVariableValueIs newInstance(SModel sm, boolean init) {
     return (EmitVariableValueIs)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitVariableValueIs", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class EmitVariableValueIs extends EmitStatement {
   public static EmitVariableValueIs newInstance(SModel sm) {
     return EmitVariableValueIs.newInstance(sm, false);
   }
-
 }

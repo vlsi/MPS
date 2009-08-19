@@ -24,7 +24,6 @@ public class RelativePosition extends Position {
     super.setChild(RelativePosition.RELATIVE_TO, node);
   }
 
-
   public static RelativePosition newInstance(SModel sm, boolean init) {
     return (RelativePosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.RelativePosition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RelativePosition extends Position {
   public static RelativePosition newInstance(SModel sm) {
     return RelativePosition.newInstance(sm, false);
   }
-
 }

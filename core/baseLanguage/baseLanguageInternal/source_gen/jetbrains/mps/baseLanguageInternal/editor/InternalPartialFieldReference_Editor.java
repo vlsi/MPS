@@ -190,7 +190,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7959_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "instance", true) != null;
   }

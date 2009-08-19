@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3669_0(editorContext, node);
   }
@@ -78,7 +77,6 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3669_0 extends AbstractCellProvider {
-
     public _Inline3669_0() {
       super();
     }
@@ -114,10 +112,9 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline3669_1 extends AbstractCellProvider {
-
     public _Inline3669_1() {
       super();
     }
@@ -148,7 +145,5 @@ public class ReferenceConceptLink_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

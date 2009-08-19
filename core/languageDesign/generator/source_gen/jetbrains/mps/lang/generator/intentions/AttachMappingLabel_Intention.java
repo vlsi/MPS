@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 
 public class AttachMappingLabel_Intention extends BaseIntention {
-
   public AttachMappingLabel_Intention() {
   }
 
@@ -81,8 +80,7 @@ public class AttachMappingLabel_Intention extends BaseIntention {
     }
     //  in template fragment - ok
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter <SNode>() {
-
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
         }
@@ -97,18 +95,14 @@ public class AttachMappingLabel_Intention extends BaseIntention {
     List<SNode> mappings;
     if (module instanceof Generator) {
       mappings = (List<SNode>)BaseAdapter.toNodes(((Generator)module).getOwnMappings());
-    } else
-    {
+    } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }
-    final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2 <SNode, String>() {
-
+    final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(final SNode it) {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private SNode _2_label;
               private Iterator<SNode> _2_label_it;
@@ -153,7 +147,6 @@ __switch__:
       }
     }).toListSequence();
     SwingUtilities.invokeLater(new Runnable() {
-
       public void run() {
         AttachMappingLabelDialog dialog = new AttachMappingLabelDialog(node, existingLabels, operationContext.getMainFrame(), editorContext);
         dialog.showDialog();
@@ -164,5 +157,4 @@ __switch__:
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

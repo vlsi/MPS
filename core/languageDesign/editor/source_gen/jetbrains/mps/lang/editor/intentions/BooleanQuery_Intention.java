@@ -10,7 +10,6 @@ import jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BooleanQuery_Intention extends BaseIntention {
-
   public BooleanQuery_Intention() {
   }
 
@@ -33,8 +32,7 @@ public class BooleanQuery_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       return "Add Query";
-    } else
-    {
+    } else {
       return "Remove Query";
     }
   }
@@ -53,8 +51,7 @@ public class BooleanQuery_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
-    } else
-    {
+    } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
     }
   }
@@ -62,5 +59,4 @@ public class BooleanQuery_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

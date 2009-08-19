@@ -43,7 +43,6 @@ public class GenerationContextOp_Base extends BaseConcept implements IOperation 
     this.setProperty(GenerationContextOp_Base.VIRTUAL_PACKAGE, value);
   }
 
-
   public static GenerationContextOp_Base newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_Base)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class GenerationContextOp_Base extends BaseConcept implements IOperation 
   public static GenerationContextOp_Base newInstance(SModel sm) {
     return GenerationContextOp_Base.newInstance(sm, false);
   }
-
 }

@@ -129,5 +129,4 @@ public enum _Colors_Enum {
     }
     return _Colors_Enum.getDefault();
   }
-
 }

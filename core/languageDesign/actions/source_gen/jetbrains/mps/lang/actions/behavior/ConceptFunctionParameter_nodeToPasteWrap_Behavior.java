@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptFunctionParameter_nodeToPasteWrap_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getWrapper_1221137356128(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.PasteWrapper", false, false);
   }
-
 }

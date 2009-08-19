@@ -21,5 +21,4 @@ public class CellLayout_Indent_Old extends CellLayout {
   public static CellLayout_Indent_Old newInstance(SModel sm) {
     return CellLayout_Indent_Old.newInstance(sm, false);
   }
-
 }

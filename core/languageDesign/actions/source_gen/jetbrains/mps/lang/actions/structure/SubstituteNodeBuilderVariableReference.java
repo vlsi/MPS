@@ -23,7 +23,6 @@ public class SubstituteNodeBuilderVariableReference extends VariableReference {
     this.setVariableDeclaration(node);
   }
 
-
   public static SubstituteNodeBuilderVariableReference newInstance(SModel sm, boolean init) {
     return (SubstituteNodeBuilderVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class SubstituteNodeBuilderVariableReference extends VariableReference {
   public static SubstituteNodeBuilderVariableReference newInstance(SModel sm) {
     return SubstituteNodeBuilderVariableReference.newInstance(sm, false);
   }
-
 }

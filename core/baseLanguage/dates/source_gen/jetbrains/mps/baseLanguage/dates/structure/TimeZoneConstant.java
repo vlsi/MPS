@@ -22,5 +22,4 @@ public class TimeZoneConstant extends Expression {
   public static TimeZoneConstant newInstance(SModel sm) {
     return TimeZoneConstant.newInstance(sm, false);
   }
-
 }

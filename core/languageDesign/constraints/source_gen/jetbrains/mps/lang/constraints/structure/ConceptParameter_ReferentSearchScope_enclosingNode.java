@@ -22,5 +22,4 @@ public class ConceptParameter_ReferentSearchScope_enclosingNode extends ConceptF
   public static ConceptParameter_ReferentSearchScope_enclosingNode newInstance(SModel sm) {
     return ConceptParameter_ReferentSearchScope_enclosingNode.newInstance(sm, false);
   }
-
 }

@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5843_0(editorContext, node);
   }
@@ -116,7 +115,6 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline5843_0 extends AbstractCellProvider {
-
     public _Inline5843_0() {
       super();
     }
@@ -152,10 +150,9 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline5843_1 extends AbstractCellProvider {
-
     public _Inline5843_1() {
       super();
     }
@@ -191,10 +188,9 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class actualArgumentListHandler_5843_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_5843_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -256,7 +252,5 @@ public class StaticConceptMethodCall_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

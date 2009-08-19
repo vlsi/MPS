@@ -21,5 +21,4 @@ public class HorizontalGapStyleClassItem extends AbstractPaddingStyleClassItem {
   public static HorizontalGapStyleClassItem newInstance(SModel sm) {
     return HorizontalGapStyleClassItem.newInstance(sm, false);
   }
-
 }

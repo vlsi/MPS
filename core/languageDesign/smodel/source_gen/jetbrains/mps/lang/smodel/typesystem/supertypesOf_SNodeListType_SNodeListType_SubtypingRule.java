@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_SNodeListType_SNodeListType_SubtypingRule() {
   }
 
@@ -23,7 +22,7 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
-      for(SNode superConcept : ListSequence.fromList(superConcepts)) {
+      for (SNode superConcept : ListSequence.fromList(superConcepts)) {
         ListSequence.fromList(supertypes).addElement(new _Quotations.QuotationClass_24().createNode(superConcept, typeCheckingContext));
       }
       // ==========
@@ -43,5 +42,4 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
   public boolean isWeak() {
     return false;
   }
-
 }

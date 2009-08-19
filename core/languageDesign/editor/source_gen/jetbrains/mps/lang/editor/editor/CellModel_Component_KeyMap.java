@@ -13,15 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellModel_Component_KeyMap extends EditorCellKeyMap {
-
   public CellModel_Component_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new CellModel_Component_KeyMap.CellModel_Component_KeyMap_Action0();
     this.putAction("ctrl+alt", "VK_N", action);
   }
-  public static class CellModel_Component_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class CellModel_Component_KeyMap_Action0 extends EditorCellKeyMapAction {
     public CellModel_Component_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -57,7 +56,5 @@ public class CellModel_Component_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl alt N";
     }
-
-}
-
+  }
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class CellModel_WithRole_relationDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public CellModel_WithRole_relationDeclaration_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class CellModel_WithRole_relationDeclaration_ReferentConstraint extends B
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(editedConcept)));
   }
-
 }

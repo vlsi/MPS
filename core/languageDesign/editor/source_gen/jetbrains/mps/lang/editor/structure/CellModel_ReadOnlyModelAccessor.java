@@ -23,7 +23,6 @@ public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
     super.setChild(CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR, node);
   }
 
-
   public static CellModel_ReadOnlyModelAccessor newInstance(SModel sm, boolean init) {
     return (CellModel_ReadOnlyModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
   public static CellModel_ReadOnlyModelAccessor newInstance(SModel sm) {
     return CellModel_ReadOnlyModelAccessor.newInstance(sm, false);
   }
-
 }

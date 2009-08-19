@@ -24,7 +24,6 @@ public class Model_AddRootOperation extends SNodeOperation {
     super.setChild(Model_AddRootOperation.NODE_ARGUMENT, node);
   }
 
-
   public static Model_AddRootOperation newInstance(SModel sm, boolean init) {
     return (Model_AddRootOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Model_AddRootOperation extends SNodeOperation {
   public static Model_AddRootOperation newInstance(SModel sm) {
     return Model_AddRootOperation.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class GenerationContextOp_ShowWarningMessage extends GenerationContextOp_
   public static GenerationContextOp_ShowWarningMessage newInstance(SModel sm) {
     return GenerationContextOp_ShowWarningMessage.newInstance(sm, false);
   }
-
 }

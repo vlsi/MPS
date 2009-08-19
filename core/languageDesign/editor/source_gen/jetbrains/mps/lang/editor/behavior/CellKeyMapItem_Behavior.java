@@ -7,7 +7,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellKeyMapItem_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class CellKeyMapItem_Behavior {
     }
     return CellKeyMapKeystroke_Behavior.call_getKeyStroke_1213877273475(first);
   }
-
 }

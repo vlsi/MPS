@@ -24,7 +24,6 @@ public class ConceptSubstitutePart extends MenuBuilderPart {
     super.setReferent(ConceptSubstitutePart.CONCEPT, node);
   }
 
-
   public static ConceptSubstitutePart newInstance(SModel sm, boolean init) {
     return (ConceptSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ConceptSubstitutePart extends MenuBuilderPart {
   public static ConceptSubstitutePart newInstance(SModel sm) {
     return ConceptSubstitutePart.newInstance(sm, false);
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AttributeAccessOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,5 +23,4 @@ public class AttributeAccessOperation_Behavior {
     }
     return false;
   }
-
 }

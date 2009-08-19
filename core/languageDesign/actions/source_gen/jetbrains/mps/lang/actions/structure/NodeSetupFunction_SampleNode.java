@@ -22,5 +22,4 @@ public class NodeSetupFunction_SampleNode extends ConceptFunctionParameter {
   public static NodeSetupFunction_SampleNode newInstance(SModel sm) {
     return NodeSetupFunction_SampleNode.newInstance(sm, false);
   }
-
 }

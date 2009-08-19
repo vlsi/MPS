@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2114_0(editorContext, node);
   }
@@ -100,7 +99,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline2114_0 extends AbstractCellProvider {
-
     public _Inline2114_0() {
       super();
     }
@@ -131,7 +129,5 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

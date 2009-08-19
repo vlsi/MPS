@@ -54,5 +54,4 @@ public enum _Enum_Measure {
     }
     return _Enum_Measure.getDefault();
   }
-
 }

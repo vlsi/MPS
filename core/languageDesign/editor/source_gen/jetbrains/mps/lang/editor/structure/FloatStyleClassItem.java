@@ -23,7 +23,6 @@ public class FloatStyleClassItem extends StyleClassItem {
     this.setProperty(FloatStyleClassItem.VALUE, value);
   }
 
-
   public static FloatStyleClassItem newInstance(SModel sm, boolean init) {
     return (FloatStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FloatStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class FloatStyleClassItem extends StyleClassItem {
   public static FloatStyleClassItem newInstance(SModel sm) {
     return FloatStyleClassItem.newInstance(sm, false);
   }
-
 }

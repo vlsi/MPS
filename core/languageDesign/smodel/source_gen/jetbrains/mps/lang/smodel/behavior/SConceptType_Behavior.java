@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 
 public class SConceptType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,8 +18,7 @@ public class SConceptType_Behavior {
     SNode concept = SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false);
     if (concept == null) {
       return "concept< >";
-    } else
-    {
+    } else {
       return "concept<" + SPropertyOperations.getString(concept, "name") + ">";
     }
   }
@@ -29,11 +27,10 @@ public class SConceptType_Behavior {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {
       String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false), "name"));
-      for(String element : ListSequence.fromList(NameUtil.splitByCamels(name))) {
+      for (String element : ListSequence.fromList(NameUtil.splitByCamels(name))) {
         ListSequence.fromList(variableSuffixes).addElement(element + "Concept");
       }
     }
     return variableSuffixes;
   }
-
 }

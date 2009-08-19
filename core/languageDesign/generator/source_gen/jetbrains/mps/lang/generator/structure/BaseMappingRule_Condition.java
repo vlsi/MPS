@@ -21,5 +21,4 @@ public class BaseMappingRule_Condition extends TemplateQueryBase {
   public static BaseMappingRule_Condition newInstance(SModel sm) {
     return BaseMappingRule_Condition.newInstance(sm, false);
   }
-
 }

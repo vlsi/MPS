@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntention {
-
   public ConvertTemplateDeclRefToInlineTemplate_Intention() {
   }
 
@@ -75,5 +74,4 @@ public class ConvertTemplateDeclRefToInlineTemplate_Intention extends BaseIntent
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

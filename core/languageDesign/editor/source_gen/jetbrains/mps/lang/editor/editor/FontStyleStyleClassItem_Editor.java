@@ -29,7 +29,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0528_0(editorContext, node);
   }
@@ -100,7 +99,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))));
   }
@@ -110,17 +108,15 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
 
-}
   public static class FontStyleStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public FontStyleStyleClassItem_generic_cellMenu0() {
     }
 
@@ -140,10 +136,9 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return false;
     }
+  }
 
-}
   public static class FontStyleStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public FontStyleStyleClassItem_generic_cellMenu1() {
     }
 
@@ -154,7 +149,5 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query body";
     }
-
-}
-
+  }
 }

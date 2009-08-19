@@ -33,7 +33,6 @@ public class GenerationContextOp_GetPrevInputByLabel extends GenerationContextOp
     super.setReferent(GenerationContextOp_GetPrevInputByLabel.LABEL, node);
   }
 
-
   public static GenerationContextOp_GetPrevInputByLabel newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_GetPrevInputByLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class GenerationContextOp_GetPrevInputByLabel extends GenerationContextOp
   public static GenerationContextOp_GetPrevInputByLabel newInstance(SModel sm) {
     return GenerationContextOp_GetPrevInputByLabel.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class CellMenuPart_Abstract_editedNode extends ConceptFunctionParameter {
   public static CellMenuPart_Abstract_editedNode newInstance(SModel sm) {
     return CellMenuPart_Abstract_editedNode.newInstance(sm, false);
   }
-
 }

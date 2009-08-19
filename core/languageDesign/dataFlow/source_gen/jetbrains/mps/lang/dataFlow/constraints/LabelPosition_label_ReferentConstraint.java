@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LabelPosition_label_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LabelPosition_label_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class LabelPosition_label_ReferentConstraint extends BaseNodeReferenceSea
     ListSequence.fromList(labels).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(builder, "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", true, new String[]{})));
     return labels;
   }
-
 }

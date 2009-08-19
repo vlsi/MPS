@@ -43,7 +43,6 @@ public class CellActionMapItem extends BaseConcept {
     super.setChild(CellActionMapItem.EXECUTE_FUNCTION, node);
   }
 
-
   public static CellActionMapItem newInstance(SModel sm, boolean init) {
     return (CellActionMapItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class CellActionMapItem extends BaseConcept {
   public static CellActionMapItem newInstance(SModel sm) {
     return CellActionMapItem.newInstance(sm, false);
   }
-
 }

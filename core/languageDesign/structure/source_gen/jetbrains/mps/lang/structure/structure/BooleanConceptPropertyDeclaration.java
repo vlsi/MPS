@@ -21,5 +21,4 @@ public class BooleanConceptPropertyDeclaration extends ConceptPropertyDeclaratio
   public static BooleanConceptPropertyDeclaration newInstance(SModel sm) {
     return BooleanConceptPropertyDeclaration.newInstance(sm, false);
   }
-
 }

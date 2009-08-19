@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerationContextOp_CreateUniqueName_DataFlow extends DataFlowBuilder {
-
   public GenerationContextOp_CreateUniqueName_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class GenerationContextOp_CreateUniqueName_DataFlow extends DataFlowBuild
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "baseName", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "contextNode", true));
   }
-
 }

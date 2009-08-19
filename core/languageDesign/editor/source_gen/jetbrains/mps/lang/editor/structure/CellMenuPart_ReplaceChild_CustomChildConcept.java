@@ -23,7 +23,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept extends CellMenuPart_A
     super.setChild(CellMenuPart_ReplaceChild_CustomChildConcept.CHILD_CONCEPT_FUNCTION, node);
   }
 
-
   public static CellMenuPart_ReplaceChild_CustomChildConcept newInstance(SModel sm, boolean init) {
     return (CellMenuPart_ReplaceChild_CustomChildConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept extends CellMenuPart_A
   public static CellMenuPart_ReplaceChild_CustomChildConcept newInstance(SModel sm) {
     return CellMenuPart_ReplaceChild_CustomChildConcept.newInstance(sm, false);
   }
-
 }

@@ -31,12 +31,12 @@ public class DeleteLine_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl Y";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,7 +45,7 @@ public class DeleteLine_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -61,7 +61,7 @@ public class DeleteLine_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (DeleteLine_Action.this.currentCell instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection)DeleteLine_Action.this.currentCell;
@@ -69,11 +69,11 @@ public class DeleteLine_Action extends GeneratedAction {
         List<EditorCell_Collection> newFrontier = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
         ListSequence.fromList(cells).addElement(collection);
         while (!(ListSequence.fromList(cells).isEmpty())) {
-          for(EditorCell_Collection cellCollection : cells) {
+          for (EditorCell_Collection cellCollection : cells) {
             if (cellCollection.getCellLayout() instanceof CellLayout_Vertical) {
               return;
             }
-            for(EditorCell cell : cellCollection) {
+            for (EditorCell cell : cellCollection) {
               if (cell instanceof EditorCell_Collection) {
                 ListSequence.fromList(newFrontier).addElement((EditorCell_Collection)cell);
               }
@@ -97,5 +97,4 @@ public class DeleteLine_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "DeleteLine", t);
     }
   }
-
 }

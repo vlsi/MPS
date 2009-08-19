@@ -32,7 +32,6 @@ public class IncludeMacro extends SourceSubstituteMacro {
     super.setChild(IncludeMacro.SOURCE_NODE_QUERY, node);
   }
 
-
   public static IncludeMacro newInstance(SModel sm, boolean init) {
     return (IncludeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.IncludeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class IncludeMacro extends SourceSubstituteMacro {
   public static IncludeMacro newInstance(SModel sm) {
     return IncludeMacro.newInstance(sm, false);
   }
-
 }

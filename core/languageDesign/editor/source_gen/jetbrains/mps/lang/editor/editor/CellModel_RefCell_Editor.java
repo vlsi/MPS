@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CellModel_RefCell_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8529_0(editorContext, node);
   }
@@ -351,7 +350,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8529_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "relationDeclaration", false) != null;
   }
@@ -365,7 +363,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8529_0 extends AbstractCellProvider {
-
     public _Inline8529_0() {
       super();
     }
@@ -402,10 +399,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline8529_1 extends AbstractCellProvider {
-
     public _Inline8529_1() {
       super();
     }
@@ -440,10 +436,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline8529_2 extends AbstractCellProvider {
-
     public _Inline8529_2() {
       super();
     }
@@ -484,10 +479,9 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline8529_3 extends AbstractCellProvider {
-
     public _Inline8529_3() {
       super();
     }
@@ -518,7 +512,5 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

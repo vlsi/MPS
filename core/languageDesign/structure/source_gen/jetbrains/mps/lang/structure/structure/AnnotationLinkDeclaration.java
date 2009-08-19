@@ -99,7 +99,6 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
     super.setReferent(AnnotationLinkDeclaration.TARGET, node);
   }
 
-
   public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
     return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -107,5 +106,4 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   public static AnnotationLinkDeclaration newInstance(SModel sm) {
     return AnnotationLinkDeclaration.newInstance(sm, false);
   }
-
 }

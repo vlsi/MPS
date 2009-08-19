@@ -22,5 +22,4 @@ public class TransactionPropertyHandler_oldValue extends ConceptFunctionParamete
   public static TransactionPropertyHandler_oldValue newInstance(SModel sm) {
     return TransactionPropertyHandler_oldValue.newInstance(sm, false);
   }
-
 }

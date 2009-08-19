@@ -12,7 +12,6 @@ import jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class RemoveIndent_Intention extends BaseIntention {
-
   public RemoveIndent_Intention() {
   }
 
@@ -54,5 +53,4 @@ public class RemoveIndent_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

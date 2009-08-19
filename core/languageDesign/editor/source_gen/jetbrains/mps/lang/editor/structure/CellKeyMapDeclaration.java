@@ -94,7 +94,6 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept 
     this.insertChild(prev, CellKeyMapDeclaration.ITEM, node);
   }
 
-
   public static CellKeyMapDeclaration newInstance(SModel sm, boolean init) {
     return (CellKeyMapDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,5 +101,4 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept 
   public static CellKeyMapDeclaration newInstance(SModel sm) {
     return CellKeyMapDeclaration.newInstance(sm, false);
   }
-
 }

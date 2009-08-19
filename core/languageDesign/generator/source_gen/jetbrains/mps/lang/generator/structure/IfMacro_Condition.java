@@ -21,5 +21,4 @@ public class IfMacro_Condition extends TemplateQueryBase {
   public static IfMacro_Condition newInstance(SModel sm) {
     return IfMacro_Condition.newInstance(sm, false);
   }
-
 }

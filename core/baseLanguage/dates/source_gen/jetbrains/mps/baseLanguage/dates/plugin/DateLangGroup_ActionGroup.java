@@ -24,5 +24,4 @@ public class DateLangGroup_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(ModelActionsInternal_ActionGroup.ID, null);
   }
-
 }

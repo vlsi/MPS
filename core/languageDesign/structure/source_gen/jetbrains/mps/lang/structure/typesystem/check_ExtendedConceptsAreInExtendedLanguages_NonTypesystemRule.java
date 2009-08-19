@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule() {
   }
 
@@ -30,7 +29,7 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
     }
     List<SNode> superConcepts = AbstractConceptDeclaration_Behavior.call_getImmediateSuperconcepts_1222430305282(cd);
     List<Language> extendedLanguages = language.getAllExtendedLanguages();
-    for(SNode superConcept : superConcepts) {
+    for (SNode superConcept : superConcepts) {
       Language conceptLanguage = SModelUtil.getDeclaringLanguage(superConcept, GlobalScope.getInstance());
       if (conceptLanguage == null) {
         continue;
@@ -57,5 +56,4 @@ public class check_ExtendedConceptsAreInExtendedLanguages_NonTypesystemRule exte
   public boolean overrides() {
     return false;
   }
-
 }

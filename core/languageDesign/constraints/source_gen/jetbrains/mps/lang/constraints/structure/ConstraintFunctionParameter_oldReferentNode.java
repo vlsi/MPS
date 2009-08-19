@@ -22,5 +22,4 @@ public class ConstraintFunctionParameter_oldReferentNode extends ConceptFunction
   public static ConstraintFunctionParameter_oldReferentNode newInstance(SModel sm) {
     return ConstraintFunctionParameter_oldReferentNode.newInstance(sm, false);
   }
-
 }

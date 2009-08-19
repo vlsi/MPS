@@ -28,7 +28,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
 public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4607_0(editorContext, node);
   }
@@ -111,7 +110,6 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4607_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
@@ -121,17 +119,15 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
   }
 
   public static class ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public ColorStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public ColorStyleClassItem_generic_cellMenu0() {
     }
 
@@ -151,10 +147,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return false;
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
-
     public ColorStyleClassItem_generic_cellMenu1() {
     }
 
@@ -174,10 +169,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public boolean isReferentPresentation() {
       return false;
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-
     public ColorStyleClassItem_generic_cellMenu2() {
     }
 
@@ -188,10 +182,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "#RRGGBB";
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu3 extends AbstractCellMenuPart_Generic_Item {
-
     public ColorStyleClassItem_generic_cellMenu3() {
     }
 
@@ -202,10 +195,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu4 extends AbstractCellMenuPart_Generic_Item {
-
     public ColorStyleClassItem_generic_cellMenu4() {
     }
 
@@ -216,10 +208,9 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "#RRGGBB";
     }
+  }
 
-}
   public static class ColorStyleClassItem_generic_cellMenu5 extends AbstractCellMenuPart_Generic_Item {
-
     public ColorStyleClassItem_generic_cellMenu5() {
     }
 
@@ -230,7 +221,5 @@ public class ColorStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
-
-}
-
+  }
 }

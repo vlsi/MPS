@@ -52,7 +52,6 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
     super.setReferent(NodeAttributeAccessQualifier.ANNOTATION_LINK, node);
   }
 
-
   public static NodeAttributeAccessQualifier newInstance(SModel sm, boolean init) {
     return (NodeAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static NodeAttributeAccessQualifier newInstance(SModel sm) {
     return NodeAttributeAccessQualifier.newInstance(sm, false);
   }
-
 }

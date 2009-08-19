@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule() {
   }
 
@@ -24,8 +23,7 @@ public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule ex
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1212097641580", true), (SNode)new _Quotations.QuotationClass_4().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1212097641578", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
@@ -45,5 +43,4 @@ public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule ex
   public boolean overrides() {
     return false;
   }
-
 }

@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_PropertyAttributeAccessQualifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_PropertyAttributeAccessQualifier_NonTypesystemRule() {
   }
 
@@ -48,5 +47,4 @@ public class check_PropertyAttributeAccessQualifier_NonTypesystemRule extends Ab
   public boolean overrides() {
     return false;
   }
-
 }

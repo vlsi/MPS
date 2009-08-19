@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint ext
     // members declared here
     return new SubnodesSearchScope(_context.getReferenceNode());
   }
-
 }

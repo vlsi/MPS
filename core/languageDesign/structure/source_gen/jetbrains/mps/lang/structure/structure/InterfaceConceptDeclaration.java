@@ -37,7 +37,6 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
     this.insertChild(prev, InterfaceConceptDeclaration.EXTENDS, node);
   }
 
-
   public static InterfaceConceptDeclaration newInstance(SModel sm, boolean init) {
     return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -45,5 +44,4 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   public static InterfaceConceptDeclaration newInstance(SModel sm) {
     return InterfaceConceptDeclaration.newInstance(sm, false);
   }
-
 }

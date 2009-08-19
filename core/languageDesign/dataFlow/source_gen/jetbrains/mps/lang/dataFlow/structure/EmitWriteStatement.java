@@ -24,7 +24,6 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
     super.setChild(EmitWriteStatement.VALUE, node);
   }
 
-
   public static EmitWriteStatement newInstance(SModel sm, boolean init) {
     return (EmitWriteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
   public static EmitWriteStatement newInstance(SModel sm) {
     return EmitWriteStatement.newInstance(sm, false);
   }
-
 }

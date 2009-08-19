@@ -51,7 +51,6 @@ public class SideTransform_SimpleString extends BaseConcept implements ISideTran
     this.setProperty(SideTransform_SimpleString.VIRTUAL_PACKAGE, value);
   }
 
-
   public static SideTransform_SimpleString newInstance(SModel sm, boolean init) {
     return (SideTransform_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class SideTransform_SimpleString extends BaseConcept implements ISideTran
   public static SideTransform_SimpleString newInstance(SModel sm) {
     return SideTransform_SimpleString.newInstance(sm, false);
   }
-
 }

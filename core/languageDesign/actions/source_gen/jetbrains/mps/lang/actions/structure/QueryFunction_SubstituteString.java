@@ -42,7 +42,6 @@ public class QueryFunction_SubstituteString extends ConceptFunction implements I
     this.setProperty(QueryFunction_SubstituteString.VIRTUAL_PACKAGE, value);
   }
 
-
   public static QueryFunction_SubstituteString newInstance(SModel sm, boolean init) {
     return (QueryFunction_SubstituteString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class QueryFunction_SubstituteString extends ConceptFunction implements I
   public static QueryFunction_SubstituteString newInstance(SModel sm) {
     return QueryFunction_SubstituteString.newInstance(sm, false);
   }
-
 }

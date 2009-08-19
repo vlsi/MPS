@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior;
 
 public class CellModel_Component_editorComponent_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public CellModel_Component_editorComponent_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class CellModel_Component_editorComponent_ReferentConstraint extends Base
     SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.BaseEditorComponent", true, false);
     return BaseEditorComponent_Behavior.call_getApplicableComponents_1213877372457(container, operationContext.getScope());
   }
-
 }

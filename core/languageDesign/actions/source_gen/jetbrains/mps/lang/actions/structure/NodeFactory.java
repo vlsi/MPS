@@ -43,7 +43,6 @@ public class NodeFactory extends BaseConcept {
     super.setChild(NodeFactory.SETUP_FUNCTION, node);
   }
 
-
   public static NodeFactory newInstance(SModel sm, boolean init) {
     return (NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class NodeFactory extends BaseConcept {
   public static NodeFactory newInstance(SModel sm) {
     return NodeFactory.newInstance(sm, false);
   }
-
 }

@@ -51,7 +51,6 @@ public class EditorComponentDeclaration extends BaseEditorComponent implements I
     this.setProperty(EditorComponentDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static EditorComponentDeclaration newInstance(SModel sm, boolean init) {
     return (EditorComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class EditorComponentDeclaration extends BaseEditorComponent implements I
   public static EditorComponentDeclaration newInstance(SModel sm) {
     return EditorComponentDeclaration.newInstance(sm, false);
   }
-
 }

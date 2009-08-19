@@ -22,5 +22,4 @@ public class ConstraintFunctionParameter_parentNode extends ConceptFunctionParam
   public static ConstraintFunctionParameter_parentNode newInstance(SModel sm) {
     return ConstraintFunctionParameter_parentNode.newInstance(sm, false);
   }
-
 }

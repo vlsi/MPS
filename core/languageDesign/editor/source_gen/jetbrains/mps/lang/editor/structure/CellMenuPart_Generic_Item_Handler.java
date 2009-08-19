@@ -22,5 +22,4 @@ public class CellMenuPart_Generic_Item_Handler extends ConceptFunction {
   public static CellMenuPart_Generic_Item_Handler newInstance(SModel sm) {
     return CellMenuPart_Generic_Item_Handler.newInstance(sm, false);
   }
-
 }

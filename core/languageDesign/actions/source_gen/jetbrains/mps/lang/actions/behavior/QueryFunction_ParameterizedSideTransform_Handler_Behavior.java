@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryFunction_ParameterizedSideTransform_Handler_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class QueryFunction_ParameterizedSideTransform_Handler_Behavior {
     }
     return true;
   }
-
 }

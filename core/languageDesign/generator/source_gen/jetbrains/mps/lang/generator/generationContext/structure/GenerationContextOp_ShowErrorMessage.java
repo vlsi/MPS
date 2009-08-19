@@ -21,5 +21,4 @@ public class GenerationContextOp_ShowErrorMessage extends GenerationContextOp_Sh
   public static GenerationContextOp_ShowErrorMessage newInstance(SModel sm) {
     return GenerationContextOp_ShowErrorMessage.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class QueryFunction_SideTransform_Handler extends ConceptFunction {
   public static QueryFunction_SideTransform_Handler newInstance(SModel sm) {
     return QueryFunction_SideTransform_Handler.newInstance(sm, false);
   }
-
 }

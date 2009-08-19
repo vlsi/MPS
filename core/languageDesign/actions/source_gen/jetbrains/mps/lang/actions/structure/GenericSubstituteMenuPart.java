@@ -23,7 +23,6 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
     super.setChild(GenericSubstituteMenuPart.QUERY, node);
   }
 
-
   public static GenericSubstituteMenuPart newInstance(SModel sm, boolean init) {
     return (GenericSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
   public static GenericSubstituteMenuPart newInstance(SModel sm) {
     return GenericSubstituteMenuPart.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8094_0(editorContext, node);
   }
@@ -114,7 +113,6 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8094_0 extends AbstractCellProvider {
-
     public _Inline8094_0() {
       super();
     }
@@ -149,10 +147,9 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline8094_1 extends AbstractCellProvider {
-
     public _Inline8094_1() {
       super();
     }
@@ -189,7 +186,5 @@ public class Node_IsRoleOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

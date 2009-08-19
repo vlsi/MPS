@@ -23,7 +23,6 @@ public class BaseEmitJumpStatement extends EmitStatement {
     super.setChild(BaseEmitJumpStatement.JUMP_TO, node);
   }
 
-
   public static BaseEmitJumpStatement newInstance(SModel sm, boolean init) {
     return (BaseEmitJumpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class BaseEmitJumpStatement extends EmitStatement {
   public static BaseEmitJumpStatement newInstance(SModel sm) {
     return BaseEmitJumpStatement.newInstance(sm, false);
   }
-
 }

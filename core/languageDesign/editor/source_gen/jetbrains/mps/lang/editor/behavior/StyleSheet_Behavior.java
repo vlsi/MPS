@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StyleSheet_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class StyleSheet_Behavior {
   public static String call_getClassName_1213877515618(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "_StyleSheet";
   }
-
 }

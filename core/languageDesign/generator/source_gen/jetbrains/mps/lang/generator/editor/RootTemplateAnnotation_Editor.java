@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6257_0(editorContext, node);
   }
@@ -180,7 +179,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6257_0 extends AbstractCellProvider {
-
     public _Inline6257_0() {
       super();
     }
@@ -215,7 +213,5 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

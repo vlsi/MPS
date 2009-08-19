@@ -33,7 +33,6 @@ public class EmitTryFinallyStatement extends EmitStatement {
     super.setChild(EmitTryFinallyStatement.FINALLY_PART, node);
   }
 
-
   public static EmitTryFinallyStatement newInstance(SModel sm, boolean init) {
     return (EmitTryFinallyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class EmitTryFinallyStatement extends EmitStatement {
   public static EmitTryFinallyStatement newInstance(SModel sm) {
     return EmitTryFinallyStatement.newInstance(sm, false);
   }
-
 }

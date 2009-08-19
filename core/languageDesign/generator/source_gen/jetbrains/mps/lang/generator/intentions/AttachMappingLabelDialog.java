@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import java.awt.Insets;
 
 public class AttachMappingLabelDialog extends BaseDialog {
-
   protected EditorContext myEditorContext;
   protected JPanel myPanel;
   private SNode myTemplateNode;
@@ -52,7 +51,6 @@ public class AttachMappingLabelDialog extends BaseDialog {
     nameCombo.setEditable(true);
     namePanel.add(nameCombo, c);
     nameCombo.addActionListener(new ActionListener() {
-
       public void actionPerformed(ActionEvent p0) {
         AttachMappingLabelDialog.this.myResultLabelName = (String)nameCombo.getSelectedItem();
       }
@@ -87,7 +85,6 @@ public class AttachMappingLabelDialog extends BaseDialog {
 
   protected void doAttachMappingLabel() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         SNode mappingLabel = MappingLabelUtil.findOrCreateMappingLabelForName(AttachMappingLabelDialog.this.myTemplateNode, AttachMappingLabelDialog.this.myResultLabelName);
         SNode existingMacro = ListSequence.fromList(SLinkOperations.getTargets(AttachMappingLabelDialog.this.myTemplateNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).last();
@@ -118,5 +115,4 @@ public class AttachMappingLabelDialog extends BaseDialog {
     c.weighty = 0;
     this.myPanel.add(this.createNamePanel(), c);
   }
-
 }

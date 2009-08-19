@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AddDeprecatedAnnotation_Intention extends BaseIntention {
-
   public AddDeprecatedAnnotation_Intention() {
   }
 
@@ -42,8 +41,7 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
     if ((SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true) == null)) {
       SNode annotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
       SLinkOperations.setTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), annotation, true);
-    } else
-    {
+    } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("deprecatedNode"), true));
     }
   }
@@ -51,5 +49,4 @@ public class AddDeprecatedAnnotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.structure.intentions";
   }
-
 }

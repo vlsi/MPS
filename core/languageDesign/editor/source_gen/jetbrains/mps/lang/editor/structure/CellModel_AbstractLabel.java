@@ -60,7 +60,6 @@ public class CellModel_AbstractLabel extends EditorCellModel {
     super.setChild(CellModel_AbstractLabel.TEXT_BG_COLOR_SELECTED_FUNCTION, node);
   }
 
-
   public static CellModel_AbstractLabel newInstance(SModel sm, boolean init) {
     return (CellModel_AbstractLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   public static CellModel_AbstractLabel newInstance(SModel sm) {
     return CellModel_AbstractLabel.newInstance(sm, false);
   }
-
 }

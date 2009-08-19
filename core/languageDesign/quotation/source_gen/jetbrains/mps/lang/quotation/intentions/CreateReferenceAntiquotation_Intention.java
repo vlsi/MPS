@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class CreateReferenceAntiquotation_Intention extends BaseIntention {
-
   public CreateReferenceAntiquotation_Intention() {
   }
 
@@ -85,8 +84,7 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
     }
     if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), true) != null) {
       SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
-    } else
-    {
+    } else {
       SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
     }
   }
@@ -94,5 +92,4 @@ public class CreateReferenceAntiquotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.quotation.intentions";
   }
-
 }

@@ -22,7 +22,6 @@ public class InternalStaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
-
   public String getFqClassName() {
     return this.getProperty(InternalStaticMethodCall.FQ_CLASS_NAME);
   }
@@ -66,7 +65,6 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   public void insertTypeParameter(Type prev, Type node) {
     this.insertChild(prev, InternalStaticMethodCall.TYPE_PARAMETER, node);
   }
-
 
   public static InternalStaticMethodCall newInstance(SModel sm, boolean init) {
     return (InternalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();

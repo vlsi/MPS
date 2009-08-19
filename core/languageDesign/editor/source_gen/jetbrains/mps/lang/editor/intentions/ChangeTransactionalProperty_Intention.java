@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SReference;
 
 public class ChangeTransactionalProperty_Intention extends BaseIntention {
-
   public ChangeTransactionalProperty_Intention() {
   }
 
@@ -43,15 +42,15 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention {
     SLinkOperations.setTarget(transactional, "relationDeclaration", SLinkOperations.getTarget(node, "property", false), false);
     SLinkOperations.setTarget(node, "property", null, false);
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "handlerBlock", true));
-    for(SNode child : ListSequence.fromList(node.getChildren())) {
+    for (SNode child : ListSequence.fromList(node.getChildren())) {
       String role = child.getRole_();
       node.removeChild(child);
       transactional.addChild(role, child);
     }
-    for(Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
+    for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(node.getProperties().entrySet())) {
       transactional.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
     }
-    for(SReference reference : ListSequence.fromList(node.getReferences())) {
+    for (SReference reference : ListSequence.fromList(node.getReferences())) {
       transactional.addReference(reference);
     }
     SNodeOperations.replaceWithAnother(node, transactional);
@@ -60,5 +59,4 @@ public class ChangeTransactionalProperty_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ChangeOrientationList_Intention extends BaseIntention {
-
   public ChangeOrientationList_Intention() {
   }
 
@@ -52,8 +51,7 @@ public class ChangeOrientationList_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     if (CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node)) {
       SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
     }
   }
@@ -61,5 +59,4 @@ public class ChangeOrientationList_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

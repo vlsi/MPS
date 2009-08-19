@@ -21,5 +21,4 @@ public class UTCTimeZoneConstant extends TimeZoneConstant {
   public static UTCTimeZoneConstant newInstance(SModel sm) {
     return UTCTimeZoneConstant.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class LoopMacro extends SourceSubstituteMacro {
     super.setChild(LoopMacro.SOURCE_NODES_QUERY, node);
   }
 
-
   public static LoopMacro newInstance(SModel sm, boolean init) {
     return (LoopMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.LoopMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class LoopMacro extends SourceSubstituteMacro {
   public static LoopMacro newInstance(SModel sm) {
     return LoopMacro.newInstance(sm, false);
   }
-
 }

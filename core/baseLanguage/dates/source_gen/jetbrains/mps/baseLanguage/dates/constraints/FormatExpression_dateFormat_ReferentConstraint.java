@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 
 public class FormatExpression_dateFormat_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public FormatExpression_dateFormat_ReferentConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class FormatExpression_dateFormat_ReferentConstraint extends BaseNodeRefe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return DateFormatReferenceUtil.buildIDateFormatSearchScope(_context.getEnclosingNode(), operationContext.getScope());
   }
-
 }

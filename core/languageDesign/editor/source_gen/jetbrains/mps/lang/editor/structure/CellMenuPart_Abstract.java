@@ -22,5 +22,4 @@ public class CellMenuPart_Abstract extends BaseConcept {
   public static CellMenuPart_Abstract newInstance(SModel sm) {
     return CellMenuPart_Abstract.newInstance(sm, false);
   }
-
 }

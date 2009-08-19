@@ -24,7 +24,6 @@ public class SNodeListCreator extends AbstractCreator {
     super.setChild(SNodeListCreator.CREATED_TYPE, node);
   }
 
-
   public static SNodeListCreator newInstance(SModel sm, boolean init) {
     return (SNodeListCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SNodeListCreator extends AbstractCreator {
   public static SNodeListCreator newInstance(SModel sm) {
     return SNodeListCreator.newInstance(sm, false);
   }
-
 }

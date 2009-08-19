@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SideTransformHintSubstituteActionsBuilder_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class SideTransformHintSubstituteActionsBuilder_Behavior {
     SNode precondtion = SLinkOperations.getTarget(thisNode, "precondition", true);
     return "sideTransformHintSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondtion.getId();
   }
-
 }

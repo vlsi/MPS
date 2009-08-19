@@ -22,5 +22,4 @@ public class CellActionMap_ExecuteFunction extends ConceptFunction {
   public static CellActionMap_ExecuteFunction newInstance(SModel sm) {
     return CellActionMap_ExecuteFunction.newInstance(sm, false);
   }
-
 }

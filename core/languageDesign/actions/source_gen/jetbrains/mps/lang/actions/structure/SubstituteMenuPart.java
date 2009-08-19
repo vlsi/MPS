@@ -21,5 +21,4 @@ public class SubstituteMenuPart extends MenuPart {
   public static SubstituteMenuPart newInstance(SModel sm) {
     return SubstituteMenuPart.newInstance(sm, false);
   }
-
 }

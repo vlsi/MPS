@@ -32,7 +32,6 @@ public class ReferenceConceptLink extends ConceptLink {
     this.setConceptLinkDeclaration(node);
   }
 
-
   public static ReferenceConceptLink newInstance(SModel sm, boolean init) {
     return (ReferenceConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class ReferenceConceptLink extends ConceptLink {
   public static ReferenceConceptLink newInstance(SModel sm) {
     return ReferenceConceptLink.newInstance(sm, false);
   }
-
 }

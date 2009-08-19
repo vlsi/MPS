@@ -14,11 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class Styles_StyleSheet {
-
   public static Style getRootCellModelStyle(final EditorCell cell) {
     Style style = new Style(cell);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return Styles_StyleSheet._StyleParameter_QueryFunction_7582_0((cell == null ?
           null :
@@ -29,8 +27,7 @@ public class Styles_StyleSheet {
         ));
       }
     });
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return Styles_StyleSheet._StyleParameter_QueryFunction_7582_1((cell == null ?
           null :
@@ -41,8 +38,7 @@ public class Styles_StyleSheet {
         ));
       }
     });
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return Styles_StyleSheet._StyleParameter_QueryFunction_7582_2((cell == null ?
           null :
@@ -118,8 +114,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return Styles_StyleSheet._StyleParameter_QueryFunction_7582_3((cell == null ?
           null :
@@ -163,5 +158,4 @@ public class Styles_StyleSheet {
   private static boolean _StyleParameter_QueryFunction_7582_3(SNode node, EditorContext editorContext) {
     return true;
   }
-
 }

@@ -21,5 +21,4 @@ public class MinDateTimeOperation extends MathDateTimeOperation {
   public static MinDateTimeOperation newInstance(SModel sm) {
     return MinDateTimeOperation.newInstance(sm, false);
   }
-
 }

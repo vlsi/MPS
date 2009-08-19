@@ -53,7 +53,6 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
     super.setChild(CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION, node);
   }
 
-
   public static CellMenuPart_AbstractGroup newInstance(SModel sm, boolean init) {
     return (CellMenuPart_AbstractGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   public static CellMenuPart_AbstractGroup newInstance(SModel sm) {
     return CellMenuPart_AbstractGroup.newInstance(sm, false);
   }
-
 }

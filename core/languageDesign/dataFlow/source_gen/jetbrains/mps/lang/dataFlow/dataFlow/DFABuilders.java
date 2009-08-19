@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", new EmitCodeForStatement_DataFlow());
     manager.register("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", new EmitMayBeUnreachable_DataFlow());
@@ -15,5 +14,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.dataFlow.structure.RelativePosition", new RelativePosition_DataFlow());
     manager.register("jetbrains.mps.lang.dataFlow.structure.EmitVariableValueIs", new EmitVariableValueIs_DataFlow());
   }
-
 }

@@ -21,5 +21,4 @@ public class CellMenuPart_ReplaceChildPrimary extends CellMenuPart_Abstract {
   public static CellMenuPart_ReplaceChildPrimary newInstance(SModel sm) {
     return CellMenuPart_ReplaceChildPrimary.newInstance(sm, false);
   }
-
 }

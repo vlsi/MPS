@@ -21,5 +21,4 @@ public class MapSrcMacro_PostMapperFunction extends TemplateQueryBase {
   public static MapSrcMacro_PostMapperFunction newInstance(SModel sm) {
     return MapSrcMacro_PostMapperFunction.newInstance(sm, false);
   }
-
 }

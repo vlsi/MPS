@@ -21,5 +21,4 @@ public class GenerationContextOp_TransientObjectAccess extends GenerationContext
   public static GenerationContextOp_TransientObjectAccess newInstance(SModel sm) {
     return GenerationContextOp_TransientObjectAccess.newInstance(sm, false);
   }
-
 }

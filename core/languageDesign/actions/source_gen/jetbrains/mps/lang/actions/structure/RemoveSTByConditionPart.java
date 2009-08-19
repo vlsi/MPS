@@ -23,7 +23,6 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
     super.setChild(RemoveSTByConditionPart.CONDITION, node);
   }
 
-
   public static RemoveSTByConditionPart newInstance(SModel sm, boolean init) {
     return (RemoveSTByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
   public static RemoveSTByConditionPart newInstance(SModel sm) {
     return RemoveSTByConditionPart.newInstance(sm, false);
   }
-
 }

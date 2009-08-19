@@ -80,7 +80,6 @@ public class FormatTokenSettings extends BaseConcept {
     this.insertChild(prev, FormatTokenSettings.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION, node);
   }
 
-
   public static FormatTokenSettings newInstance(SModel sm, boolean init) {
     return (FormatTokenSettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -88,5 +87,4 @@ public class FormatTokenSettings extends BaseConcept {
   public static FormatTokenSettings newInstance(SModel sm) {
     return FormatTokenSettings.newInstance(sm, false);
   }
-
 }

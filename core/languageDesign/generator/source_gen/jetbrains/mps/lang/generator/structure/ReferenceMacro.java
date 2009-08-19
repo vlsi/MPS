@@ -23,7 +23,6 @@ public class ReferenceMacro extends AbstractMacro {
     super.setChild(ReferenceMacro.REFERENT_FUNCTION, node);
   }
 
-
   public static ReferenceMacro newInstance(SModel sm, boolean init) {
     return (ReferenceMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ReferenceMacro extends AbstractMacro {
   public static ReferenceMacro newInstance(SModel sm) {
     return ReferenceMacro.newInstance(sm, false);
   }
-
 }

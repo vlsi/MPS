@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertLinkSetToAssignment_Intention extends BaseIntention {
-
   public ConvertLinkSetToAssignment_Intention() {
   }
 
@@ -50,5 +49,4 @@ public class ConvertLinkSetToAssignment_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

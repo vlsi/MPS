@@ -82,7 +82,6 @@ public class CellModel_Collection extends EditorCellModel {
     this.insertChild(prev, CellModel_Collection.CHILD_CELL_MODEL, node);
   }
 
-
   public static CellModel_Collection newInstance(SModel sm, boolean init) {
     return (CellModel_Collection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Collection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -90,5 +89,4 @@ public class CellModel_Collection extends EditorCellModel {
   public static CellModel_Collection newInstance(SModel sm) {
     return CellModel_Collection.newInstance(sm, false);
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.behavior.SEnumOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SEnum_MemberForValueOperation_checkArg_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SEnum_MemberForValueOperation_checkArg_InferenceRule() {
   }
 
@@ -36,5 +35,4 @@ public class typeof_SEnum_MemberForValueOperation_checkArg_InferenceRule extends
   public boolean overrides() {
     return false;
   }
-
 }

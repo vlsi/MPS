@@ -22,5 +22,4 @@ public class Position extends BaseConcept {
   public static Position newInstance(SModel sm) {
     return Position.newInstance(sm, false);
   }
-
 }

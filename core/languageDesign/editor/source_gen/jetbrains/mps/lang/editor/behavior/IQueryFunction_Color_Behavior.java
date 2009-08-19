@@ -36,5 +36,4 @@ public class IQueryFunction_Color_Behavior {
   public static String callSuper_getRGBValue_1225468086082(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), callerConceptFqName, "virtual_getRGBValue_1225468086082", PARAMETERS_1225468086082);
   }
-
 }

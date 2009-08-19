@@ -21,5 +21,4 @@ public class Concept_GetAllSuperConcepts extends SNodeOperation {
   public static Concept_GetAllSuperConcepts newInstance(SModel sm) {
     return Concept_GetAllSuperConcepts.newInstance(sm, false);
   }
-
 }

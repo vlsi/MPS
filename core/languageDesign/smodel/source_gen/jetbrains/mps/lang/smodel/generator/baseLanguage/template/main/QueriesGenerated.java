@@ -35,7 +35,6 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1168911272662(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.lang.smodel.structure.SNodeListCreator");
   }
@@ -437,8 +436,7 @@ public class QueriesGenerated {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
     if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression")) {
       return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1225196404049(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
-    } else
-    {
+    } else {
       return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1225196404032(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false));
     }
   }
@@ -1451,5 +1449,4 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     return IInternalType_Behavior.call_getPublicType_1213877443338(_context.getNode());
   }
-
 }

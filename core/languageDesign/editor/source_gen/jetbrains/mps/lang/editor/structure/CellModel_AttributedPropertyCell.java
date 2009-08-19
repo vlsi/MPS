@@ -21,5 +21,4 @@ public class CellModel_AttributedPropertyCell extends EditorCellModel {
   public static CellModel_AttributedPropertyCell newInstance(SModel sm) {
     return CellModel_AttributedPropertyCell.newInstance(sm, false);
   }
-
 }

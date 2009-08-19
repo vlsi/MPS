@@ -11,7 +11,6 @@ import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.nodeEditor.InspectorTool;
 
 public class AddReferenceMacro_Intention extends BaseIntention {
-
   public AddReferenceMacro_Intention() {
   }
 
@@ -61,5 +60,4 @@ public class AddReferenceMacro_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

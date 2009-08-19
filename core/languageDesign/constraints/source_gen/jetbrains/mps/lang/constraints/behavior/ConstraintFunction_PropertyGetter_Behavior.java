@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 
 public class ConstraintFunction_PropertyGetter_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class ConstraintFunction_PropertyGetter_Behavior {
     }
     return new _Quotations.QuotationClass_0().createNode();
   }
-
 }

@@ -24,7 +24,6 @@ public class ConceptProperty_SetOperation extends SNodeOperation {
     super.setChild(ConceptProperty_SetOperation.VALUE, node);
   }
 
-
   public static ConceptProperty_SetOperation newInstance(SModel sm, boolean init) {
     return (ConceptProperty_SetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptProperty_SetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ConceptProperty_SetOperation extends SNodeOperation {
   public static ConceptProperty_SetOperation newInstance(SModel sm) {
     return ConceptProperty_SetOperation.newInstance(sm, false);
   }
-
 }

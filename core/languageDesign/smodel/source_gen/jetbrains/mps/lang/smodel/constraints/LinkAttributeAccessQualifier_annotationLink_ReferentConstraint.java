@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LinkAttributeAccessQualifier_annotationLink_ReferentConstraint() {
   }
 
@@ -31,13 +30,11 @@ public class LinkAttributeAccessQualifier_annotationLink_ReferentConstraint exte
     // all 'link' annotation links
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, operationContext.getScope());
-    List<SNode> linkAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter <SNode>() {
-
+    List<SNode> linkAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "stereotype", "link", "node");
       }
     }).toListSequence();
     return linkAttrLinks;
   }
-
 }

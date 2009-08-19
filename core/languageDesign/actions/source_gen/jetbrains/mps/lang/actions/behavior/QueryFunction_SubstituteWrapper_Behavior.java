@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_SubstituteWrapper_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -26,5 +25,4 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     SNode concept = SLinkOperations.getTarget(hostMenuPart, "concept", false);
     return new _Quotations.QuotationClass_2().createNode(concept);
   }
-
 }

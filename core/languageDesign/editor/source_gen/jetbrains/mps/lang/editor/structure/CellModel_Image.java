@@ -41,7 +41,6 @@ public class CellModel_Image extends EditorCellModel {
     super.setChild(CellModel_Image.IMAGE_PATH_PROVIDER, node);
   }
 
-
   public static CellModel_Image newInstance(SModel sm, boolean init) {
     return (CellModel_Image)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Image", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class CellModel_Image extends EditorCellModel {
   public static CellModel_Image newInstance(SModel sm) {
     return CellModel_Image.newInstance(sm, false);
   }
-
 }

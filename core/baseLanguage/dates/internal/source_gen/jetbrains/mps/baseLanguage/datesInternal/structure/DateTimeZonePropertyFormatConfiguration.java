@@ -21,5 +21,4 @@ public class DateTimeZonePropertyFormatConfiguration extends DateTimePropertyCon
   public static DateTimeZonePropertyFormatConfiguration newInstance(SModel sm) {
     return DateTimeZonePropertyFormatConfiguration.newInstance(sm, false);
   }
-
 }

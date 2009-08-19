@@ -80,7 +80,6 @@ public class MappingScript extends BaseConcept implements INamedConcept {
     super.setChild(MappingScript.CODE_BLOCK, node);
   }
 
-
   public static MappingScript newInstance(SModel sm, boolean init) {
     return (MappingScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -88,5 +87,4 @@ public class MappingScript extends BaseConcept implements INamedConcept {
   public static MappingScript newInstance(SModel sm) {
     return MappingScript.newInstance(sm, false);
   }
-
 }

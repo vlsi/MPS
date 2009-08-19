@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 
 public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ConceptProperty_conceptPropertyDeclaration_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint exten
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", true, false);
     return new ConceptAndSuperConceptsScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
   }
-
 }

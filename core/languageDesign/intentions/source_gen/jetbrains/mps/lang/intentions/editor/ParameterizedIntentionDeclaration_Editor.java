@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6165_4(editorContext, node);
   }
@@ -372,7 +371,6 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-
   private static boolean renderingCondition6165_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -382,7 +380,6 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
   }
 
   public static class _Inline6165_0 extends AbstractCellProvider {
-
     public _Inline6165_0() {
       super();
     }
@@ -414,7 +411,5 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

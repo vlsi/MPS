@@ -33,7 +33,6 @@ public class NodeDefaultSearchScope extends BaseConcept {
     super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY, node);
   }
 
-
   public static NodeDefaultSearchScope newInstance(SModel sm, boolean init) {
     return (NodeDefaultSearchScope)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class NodeDefaultSearchScope extends BaseConcept {
   public static NodeDefaultSearchScope newInstance(SModel sm) {
     return NodeDefaultSearchScope.newInstance(sm, false);
   }
-
 }

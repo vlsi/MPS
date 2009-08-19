@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SemanticDowncastExpression_InferenceRule() {
   }
 
@@ -29,7 +28,6 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
       {
         final SNode v = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
         typeCheckingContext.whenConcrete(v, new Runnable() {
-
           public void run() {
             if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.lang.smodel.structure.SModelType")) {
               {
@@ -59,12 +57,10 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
                   BaseIntentionProvider intentionProvider = null;
                   typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206059653548", true), (SNode)new _Quotations.QuotationClass_65().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206059653546", intentionProvider);
                 }
-              } else
-              {
+              } else {
                 {
                   final SNode lt = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186060911559);
                   typeCheckingContext.whenConcrete(lt, new Runnable() {
-
                     public void run() {
                       {
                         SNode _nodeToCheck_1029348928467 = expr;
@@ -81,8 +77,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
                 BaseIntentionProvider intentionProvider = null;
                 typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162512076", true), (SNode)new _Quotations.QuotationClass_90().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1221162518298", intentionProvider);
               }
-            } else
-            {
+            } else {
               {
                 SNode _nodeToCheck_1029348928467 = expr;
                 BaseIntentionProvider intentionProvider = null;
@@ -106,5 +101,4 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
   public boolean overrides() {
     return false;
   }
-
 }

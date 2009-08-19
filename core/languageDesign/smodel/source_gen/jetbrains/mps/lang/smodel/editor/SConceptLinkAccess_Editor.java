@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0777_0(editorContext, node);
   }
@@ -65,7 +64,6 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline0777_0 extends AbstractCellProvider {
-
     public _Inline0777_0() {
       super();
     }
@@ -101,7 +99,5 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

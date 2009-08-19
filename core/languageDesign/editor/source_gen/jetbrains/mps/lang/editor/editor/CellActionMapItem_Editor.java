@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellActionMapItem_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7515_0(editorContext, node);
   }
@@ -181,5 +180,4 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

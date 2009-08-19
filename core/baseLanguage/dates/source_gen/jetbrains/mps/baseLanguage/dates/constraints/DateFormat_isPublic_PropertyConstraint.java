@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DateFormat_isPublic_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public DateFormat_isPublic_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class DateFormat_isPublic_PropertyConstraint implements IModelConstraints
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return Boolean.toString(SPropertyOperations.hasValue(node, "dateFormatVisibility", "public", "public"));
   }
-
 }

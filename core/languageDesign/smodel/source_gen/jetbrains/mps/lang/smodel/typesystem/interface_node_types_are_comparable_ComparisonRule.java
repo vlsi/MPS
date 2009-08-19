@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class interface_node_types_are_comparable_ComparisonRule extends ComparisonRule_Runtime {
-
   public interface_node_types_are_comparable_ComparisonRule() {
   }
 
@@ -39,5 +38,4 @@ public class interface_node_types_are_comparable_ComparisonRule extends Comparis
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
-
 }

@@ -25,7 +25,6 @@ public class AbstractComponent extends BaseConcept {
     super.setReferent(AbstractComponent.CONCEPT_DECLARATION, node);
   }
 
-
   public static AbstractComponent newInstance(SModel sm, boolean init) {
     return (AbstractComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AbstractComponent extends BaseConcept {
   public static AbstractComponent newInstance(SModel sm) {
     return AbstractComponent.newInstance(sm, false);
   }
-
 }

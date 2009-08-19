@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ColorQuery_Intention extends BaseIntention {
-
   public ColorQuery_Intention() {
   }
 
@@ -33,8 +32,7 @@ public class ColorQuery_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       return "Add Query";
-    } else
-    {
+    } else {
       return "Remove Query";
     }
   }
@@ -43,8 +41,7 @@ public class ColorQuery_Intention extends BaseIntention {
     SPropertyOperations.set(node, "color", null);
     if ((SLinkOperations.getTarget(node, "query", true) == null)) {
       SLinkOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
-    } else
-    {
+    } else {
       SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
     }
   }
@@ -52,5 +49,4 @@ public class ColorQuery_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

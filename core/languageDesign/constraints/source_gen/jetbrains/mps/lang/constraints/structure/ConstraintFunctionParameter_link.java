@@ -22,5 +22,4 @@ public class ConstraintFunctionParameter_link extends ConceptFunctionParameter {
   public static ConstraintFunctionParameter_link newInstance(SModel sm) {
     return ConstraintFunctionParameter_link.newInstance(sm, false);
   }
-
 }

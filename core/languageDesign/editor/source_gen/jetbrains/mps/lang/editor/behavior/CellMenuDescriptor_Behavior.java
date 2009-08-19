@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuDescriptor_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,10 +21,8 @@ public class CellMenuDescriptor_Behavior {
         return SLinkOperations.getTarget(feature, "relationDeclaration", false);
       }
       return null;
-    } else
-    {
+    } else {
       return null;
     }
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_SideTransform_ConceptHandler_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,5 +24,4 @@ public class QueryFunction_SideTransform_ConceptHandler_Behavior {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", false, false);
     return new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
   }
-
 }

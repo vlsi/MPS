@@ -22,5 +22,4 @@ public class ConstraintFunction_CanBeAParent extends ConceptFunction {
   public static ConstraintFunction_CanBeAParent newInstance(SModel sm) {
     return ConstraintFunction_CanBeAParent.newInstance(sm, false);
   }
-
 }

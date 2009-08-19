@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6697_0(editorContext, node);
   }
@@ -190,8 +189,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_0((cell == null ?
             null :
@@ -202,8 +200,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_1((cell == null ?
             null :
@@ -214,8 +211,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_2((cell == null ?
             null :
@@ -226,8 +222,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_3((cell == null ?
             null :
@@ -238,8 +233,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_4((cell == null ?
             null :
@@ -250,8 +244,7 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_ConceptProperty_Editor._StyleParameter_QueryFunction_6697_5((cell == null ?
             null :
@@ -346,7 +339,6 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6697_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
@@ -376,7 +368,6 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6697_0 extends AbstractCellProvider {
-
     public _Inline6697_0() {
       super();
     }
@@ -411,10 +402,9 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6697_1 extends AbstractCellProvider {
-
     public _Inline6697_1() {
       super();
     }
@@ -449,7 +439,5 @@ public class CellModel_ConceptProperty_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

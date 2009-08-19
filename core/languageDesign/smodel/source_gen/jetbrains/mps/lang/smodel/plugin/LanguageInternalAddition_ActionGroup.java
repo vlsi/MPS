@@ -25,5 +25,4 @@ public class LanguageInternalAddition_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, null);
   }
-
 }

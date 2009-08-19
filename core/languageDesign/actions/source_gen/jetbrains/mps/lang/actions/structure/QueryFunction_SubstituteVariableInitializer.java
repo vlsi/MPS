@@ -22,5 +22,4 @@ public class QueryFunction_SubstituteVariableInitializer extends ConceptFunction
   public static QueryFunction_SubstituteVariableInitializer newInstance(SModel sm) {
     return QueryFunction_SubstituteVariableInitializer.newInstance(sm, false);
   }
-
 }

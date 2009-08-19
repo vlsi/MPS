@@ -15,15 +15,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
-
   public _SplitConctantCellIntoWordsKeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _SplitConctantCellIntoWordsKeyMap._SplitConctantCellIntoWordsKeyMap_Action0();
     this.putAction("ctrl+alt+shift", "VK_W", action);
   }
-  public static class _SplitConctantCellIntoWordsKeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class _SplitConctantCellIntoWordsKeyMap_Action0 extends EditorCellKeyMapAction {
     public _SplitConctantCellIntoWordsKeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -66,7 +65,7 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
       SNodeOperations.replaceWithAnother(node, collection);
       String text = SPropertyOperations.getString(node, "text");
       String[] strings = text.split(" ");
-      for(String word : strings) {
+      for (String word : strings) {
         SNode constantCell = SNodeOperations.copyNode(node);
         SPropertyOperations.set(constantCell, "text", word);
         SLinkOperations.addChild(collection, "childCellModel", constantCell);
@@ -76,7 +75,5 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl alt shift W";
     }
-
-}
-
+  }
 }

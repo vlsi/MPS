@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SNodeTypeCastExpression_InferenceRule() {
   }
 
@@ -27,7 +26,6 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
     {
       final SNode ignore1 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
       typeCheckingContext.whenConcrete(ignore1, new Runnable() {
-
         public void run() {
           if (TypeChecker.getInstance().getSubtypingManager().isSubtype(typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false)) {
             {
@@ -35,8 +33,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
               BaseIntentionProvider intentionProvider = null;
               typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082190", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(expr, "concept", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203712082188", intentionProvider);
             }
-          } else
-          {
+          } else {
             {
               SNode _nodeToCheck_1029348928467 = expr;
               BaseIntentionProvider intentionProvider = null;
@@ -46,7 +43,6 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
           {
             final SNode ignore2 = typeCheckingContext.getEquationManager().getRepresentator(LeftType_typevar_1186061665928);
             typeCheckingContext.whenConcrete(ignore2, new Runnable() {
-
               public void run() {
                 {
                   SNode _nodeToCheck_1029348928467 = expr;
@@ -72,5 +68,4 @@ public class typeof_SNodeTypeCastExpression_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-
 }

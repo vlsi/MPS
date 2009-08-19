@@ -54,5 +54,4 @@ public enum Side {
     }
     return Side.getDefault();
   }
-
 }

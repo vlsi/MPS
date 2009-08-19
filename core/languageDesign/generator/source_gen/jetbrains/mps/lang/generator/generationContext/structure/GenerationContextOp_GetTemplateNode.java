@@ -21,5 +21,4 @@ public class GenerationContextOp_GetTemplateNode extends GenerationContextOp_Bas
   public static GenerationContextOp_GetTemplateNode newInstance(SModel sm) {
     return GenerationContextOp_GetTemplateNode.newInstance(sm, false);
   }
-
 }

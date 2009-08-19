@@ -22,5 +22,4 @@ public class CellLayout extends BaseConcept {
   public static CellLayout newInstance(SModel sm) {
     return CellLayout.newInstance(sm, false);
   }
-
 }

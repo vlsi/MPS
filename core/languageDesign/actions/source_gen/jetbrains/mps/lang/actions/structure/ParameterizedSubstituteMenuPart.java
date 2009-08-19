@@ -69,7 +69,6 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
     super.setChild(ParameterizedSubstituteMenuPart.HANDLER, node);
   }
 
-
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm, boolean init) {
     return (ParameterizedSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm) {
     return ParameterizedSubstituteMenuPart.newInstance(sm, false);
   }
-
 }

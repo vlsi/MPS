@@ -22,5 +22,4 @@ public class SearchScopeType extends Type {
   public static SearchScopeType newInstance(SModel sm) {
     return SearchScopeType.newInstance(sm, false);
   }
-
 }

@@ -41,7 +41,6 @@ public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
     super.setChild(CellMenuPart_ReplaceChild_Item.CREATE_FUNCTION, node);
   }
 
-
   public static CellMenuPart_ReplaceChild_Item newInstance(SModel sm, boolean init) {
     return (CellMenuPart_ReplaceChild_Item)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
   public static CellMenuPart_ReplaceChild_Item newInstance(SModel sm) {
     return CellMenuPart_ReplaceChild_Item.newInstance(sm, false);
   }
-
 }

@@ -28,5 +28,4 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, EditorPopup_ActionGroup.LABEL_ID_structure);
     this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_structure);
   }
-
 }

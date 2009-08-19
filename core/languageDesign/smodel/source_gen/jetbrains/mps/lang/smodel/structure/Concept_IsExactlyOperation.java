@@ -23,7 +23,6 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
     super.setChild(Concept_IsExactlyOperation.CONCEPT_ARGUMENT, node);
   }
 
-
   public static Concept_IsExactlyOperation newInstance(SModel sm, boolean init) {
     return (Concept_IsExactlyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   public static Concept_IsExactlyOperation newInstance(SModel sm) {
     return Concept_IsExactlyOperation.newInstance(sm, false);
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public CellMenuComponentFeature_Property_propertyDeclaration_ReferentConstraint() {
   }
 
@@ -31,5 +30,4 @@ public class CellMenuComponentFeature_Property_propertyDeclaration_ReferentConst
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(editedConcept);
   }
-
 }

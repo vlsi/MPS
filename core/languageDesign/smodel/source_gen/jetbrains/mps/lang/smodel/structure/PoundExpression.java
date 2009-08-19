@@ -52,7 +52,6 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
     super.setChild(PoundExpression.EXPRESSION, node);
   }
 
-
   public static PoundExpression newInstance(SModel sm, boolean init) {
     return (PoundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   public static PoundExpression newInstance(SModel sm) {
     return PoundExpression.newInstance(sm, false);
   }
-
 }

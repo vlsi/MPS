@@ -96,7 +96,6 @@ public class SmartEditorActions extends BaseConcept implements INamedConcept {
     this.insertChild(prev, SmartEditorActions.GENERATE_CODE, node);
   }
 
-
   public static SmartEditorActions newInstance(SModel sm, boolean init) {
     return (SmartEditorActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartEditorActions", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -104,5 +103,4 @@ public class SmartEditorActions extends BaseConcept implements INamedConcept {
   public static SmartEditorActions newInstance(SModel sm) {
     return SmartEditorActions.newInstance(sm, false);
   }
-
 }

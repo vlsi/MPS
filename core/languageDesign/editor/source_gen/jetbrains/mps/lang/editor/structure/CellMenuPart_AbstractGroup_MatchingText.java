@@ -22,5 +22,4 @@ public class CellMenuPart_AbstractGroup_MatchingText extends ConceptFunction {
   public static CellMenuPart_AbstractGroup_MatchingText newInstance(SModel sm) {
     return CellMenuPart_AbstractGroup_MatchingText.newInstance(sm, false);
   }
-
 }

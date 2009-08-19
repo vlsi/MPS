@@ -59,5 +59,4 @@ public enum AnnotationLinkStereotype {
     }
     return AnnotationLinkStereotype.getDefault();
   }
-
 }

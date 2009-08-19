@@ -22,5 +22,4 @@ public class IntentionParameter extends Expression {
   public static IntentionParameter newInstance(SModel sm) {
     return IntentionParameter.newInstance(sm, false);
   }
-
 }

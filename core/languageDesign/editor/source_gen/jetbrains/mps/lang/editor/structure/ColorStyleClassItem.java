@@ -33,7 +33,6 @@ public class ColorStyleClassItem extends StyleClassItem {
     super.setChild(ColorStyleClassItem.QUERY, node);
   }
 
-
   public static ColorStyleClassItem newInstance(SModel sm, boolean init) {
     return (ColorStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class ColorStyleClassItem extends StyleClassItem {
   public static ColorStyleClassItem newInstance(SModel sm) {
     return ColorStyleClassItem.newInstance(sm, false);
   }
-
 }

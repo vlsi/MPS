@@ -22,5 +22,4 @@ public class GenerationContextType extends Type {
   public static GenerationContextType newInstance(SModel sm) {
     return GenerationContextType.newInstance(sm, false);
   }
-
 }

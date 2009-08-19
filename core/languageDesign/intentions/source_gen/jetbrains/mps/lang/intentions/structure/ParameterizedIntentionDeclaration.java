@@ -23,7 +23,6 @@ public class ParameterizedIntentionDeclaration extends IntentionDeclaration {
     super.setChild(ParameterizedIntentionDeclaration.QUERY_BLOCK, node);
   }
 
-
   public static ParameterizedIntentionDeclaration newInstance(SModel sm, boolean init) {
     return (ParameterizedIntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ParameterizedIntentionDeclaration extends IntentionDeclaration {
   public static ParameterizedIntentionDeclaration newInstance(SModel sm) {
     return ParameterizedIntentionDeclaration.newInstance(sm, false);
   }
-
 }

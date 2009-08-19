@@ -24,7 +24,6 @@ public class Property_SetOperation extends SNodeOperation {
     super.setChild(Property_SetOperation.VALUE, node);
   }
 
-
   public static Property_SetOperation newInstance(SModel sm, boolean init) {
     return (Property_SetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_SetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Property_SetOperation extends SNodeOperation {
   public static Property_SetOperation newInstance(SModel sm) {
     return Property_SetOperation.newInstance(sm, false);
   }
-
 }

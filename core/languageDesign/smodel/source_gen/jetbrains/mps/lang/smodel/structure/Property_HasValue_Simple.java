@@ -24,7 +24,6 @@ public class Property_HasValue_Simple extends SNodeOperation {
     super.setChild(Property_HasValue_Simple.VALUE, node);
   }
 
-
   public static Property_HasValue_Simple newInstance(SModel sm, boolean init) {
     return (Property_HasValue_Simple)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Property_HasValue_Simple extends SNodeOperation {
   public static Property_HasValue_Simple newInstance(SModel sm) {
     return Property_HasValue_Simple.newInstance(sm, false);
   }
-
 }

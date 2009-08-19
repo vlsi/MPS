@@ -21,5 +21,4 @@ public class InlineEditorComponent extends BaseEditorComponent {
   public static InlineEditorComponent newInstance(SModel sm) {
     return InlineEditorComponent.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class QueryFunction_GenericSubstituteMenuPart extends ConceptFunction {
   public static QueryFunction_GenericSubstituteMenuPart newInstance(SModel sm) {
     return QueryFunction_GenericSubstituteMenuPart.newInstance(sm, false);
   }
-
 }

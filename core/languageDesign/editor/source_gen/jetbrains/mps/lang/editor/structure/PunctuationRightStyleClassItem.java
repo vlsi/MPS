@@ -21,5 +21,4 @@ public class PunctuationRightStyleClassItem extends BooleanStyleSheetItem {
   public static PunctuationRightStyleClassItem newInstance(SModel sm) {
     return PunctuationRightStyleClassItem.newInstance(sm, false);
   }
-
 }

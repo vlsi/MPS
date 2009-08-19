@@ -7,6 +7,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 
 public abstract class BaseClassConceptTextGen {
   public static void body(SNode concept, final SNodeTextGen textGen) {
@@ -16,28 +17,18 @@ public abstract class BaseClassConceptTextGen {
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticField", true)).isNotEmpty()) {
-      if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticField", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(concept, "staticField", true)) {
-          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-        }
-      }
+      BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "staticField", true), textGen);
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "field", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(needNewLine, textGen);
-      if (ListSequence.fromList(SLinkOperations.getTargets(concept, "field", true)).isNotEmpty()) {
-        for (SNode item : SLinkOperations.getTargets(concept, "field", true)) {
-          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
-        }
-      }
+      BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "field", true), textGen);
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "constructor", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(needNewLine, textGen);
-      BaseClassConceptTextGen.constructors(concept, textGen);
+      BaseClassConceptTextGen.collection(SLinkOperations.getTargets(concept, "constructor", true), textGen);
+      needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(needNewLine, textGen);
       if (ListSequence.fromList(SLinkOperations.getTargets(concept, "method", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(concept, "method", true)) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
@@ -46,7 +37,6 @@ public abstract class BaseClassConceptTextGen {
       needNewLine = true;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
-      BaseLanguageTextGen.newLine(needNewLine, textGen);
       if (ListSequence.fromList(SLinkOperations.getTargets(concept, "staticMethod", true)).isNotEmpty()) {
         for (SNode item : SLinkOperations.getTargets(concept, "staticMethod", true)) {
           TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
@@ -91,10 +81,12 @@ public abstract class BaseClassConceptTextGen {
     }
   }
 
-  public static void constructors(SNode concept, final SNodeTextGen textGen) {
-    for (SNode constructor : SLinkOperations.getTargets(concept, "constructor", true)) {
-      TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), constructor, textGen.getSNode());
-      textGen.appendNewLine();
+  public static void collection(List<SNode> nodes, final SNodeTextGen textGen) {
+    if (ListSequence.fromList(nodes).isNotEmpty()) {
+      for (SNode item : nodes) {
+        TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+      }
     }
+    textGen.appendNewLine();
   }
 }

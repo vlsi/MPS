@@ -23,7 +23,6 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0523_0(editorContext, node);
   }
@@ -100,14 +99,11 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
     }
-
-}
-
+  }
 }

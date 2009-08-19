@@ -41,7 +41,6 @@ public class QueryFunction_Color extends QueryFunction_StyleParameter implements
     this.setProperty(QueryFunction_Color.VIRTUAL_PACKAGE, value);
   }
 
-
   public static QueryFunction_Color newInstance(SModel sm, boolean init) {
     return (QueryFunction_Color)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Color", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class QueryFunction_Color extends QueryFunction_StyleParameter implements
   public static QueryFunction_Color newInstance(SModel sm) {
     return QueryFunction_Color.newInstance(sm, false);
   }
-
 }

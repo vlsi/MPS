@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 
 public class AddNodeMacro_Intention extends BaseIntention {
-
   public AddNodeMacro_Intention() {
   }
 
@@ -57,5 +56,4 @@ public class AddNodeMacro_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

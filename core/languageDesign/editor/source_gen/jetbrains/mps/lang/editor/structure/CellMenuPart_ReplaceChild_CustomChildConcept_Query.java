@@ -22,5 +22,4 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Query extends ConceptF
   public static CellMenuPart_ReplaceChild_CustomChildConcept_Query newInstance(SModel sm) {
     return CellMenuPart_ReplaceChild_CustomChildConcept_Query.newInstance(sm, false);
   }
-
 }

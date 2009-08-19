@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_SNodeTypeCastExpression_InferenceRule();
@@ -438,7 +437,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IVariableConverter_Runtime converter = new IVariableConverter_Runtime() {
-
         public boolean isApplicable(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           if (isAggregation) {
             return false;
@@ -458,7 +456,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IVariableConverter_Runtime converter = new IVariableConverter_Runtime() {
-
         public boolean isApplicable(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           if (isAggregation) {
             return false;

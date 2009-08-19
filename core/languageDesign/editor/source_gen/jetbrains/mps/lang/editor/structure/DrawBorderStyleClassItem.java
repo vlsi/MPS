@@ -21,5 +21,4 @@ public class DrawBorderStyleClassItem extends BooleanStyleSheetItem {
   public static DrawBorderStyleClassItem newInstance(SModel sm) {
     return DrawBorderStyleClassItem.newInstance(sm, false);
   }
-
 }

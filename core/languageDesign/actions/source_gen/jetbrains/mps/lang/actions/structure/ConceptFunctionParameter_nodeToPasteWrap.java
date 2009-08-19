@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_nodeToPasteWrap extends ConceptFunctionPar
   public static ConceptFunctionParameter_nodeToPasteWrap newInstance(SModel sm) {
     return ConceptFunctionParameter_nodeToPasteWrap.newInstance(sm, false);
   }
-
 }

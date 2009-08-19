@@ -21,7 +21,6 @@ public class InternalNewExpression extends BaseMethodCall {
     super(node);
   }
 
-
   public String getFqClassName() {
     return this.getProperty(InternalNewExpression.FQ_CLASS_NAME);
   }
@@ -57,7 +56,6 @@ public class InternalNewExpression extends BaseMethodCall {
   public void insertParameter(Type prev, Type node) {
     this.insertChild(prev, InternalNewExpression.PARAMETER, node);
   }
-
 
   public static InternalNewExpression newInstance(SModel sm, boolean init) {
     return (InternalNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();

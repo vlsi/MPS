@@ -23,7 +23,6 @@ public class OperationParm_Concept extends AbstractOperationParameter {
     super.setChild(OperationParm_Concept.CONCEPT_ARGUMENT, node);
   }
 
-
   public static OperationParm_Concept newInstance(SModel sm, boolean init) {
     return (OperationParm_Concept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class OperationParm_Concept extends AbstractOperationParameter {
   public static OperationParm_Concept newInstance(SModel sm) {
     return OperationParm_Concept.newInstance(sm, false);
   }
-
 }

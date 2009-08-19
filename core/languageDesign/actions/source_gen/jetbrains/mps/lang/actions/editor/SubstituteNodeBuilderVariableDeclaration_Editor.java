@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9629_0(editorContext, node);
   }
@@ -115,5 +114,4 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
     } else
     return editorCell;
   }
-
 }

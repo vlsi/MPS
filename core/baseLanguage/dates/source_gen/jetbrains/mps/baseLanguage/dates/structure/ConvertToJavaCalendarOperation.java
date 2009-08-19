@@ -21,5 +21,4 @@ public class ConvertToJavaCalendarOperation extends DateTimeOperation {
   public static ConvertToJavaCalendarOperation newInstance(SModel sm) {
     return ConvertToJavaCalendarOperation.newInstance(sm, false);
   }
-
 }

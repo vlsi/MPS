@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellModel_Component_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,5 +26,4 @@ public class CellModel_Component_Behavior {
   public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return true;
   }
-
 }

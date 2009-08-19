@@ -22,5 +22,4 @@ public class QueryFunction_ParameterizedSubstitute_Query extends ConceptFunction
   public static QueryFunction_ParameterizedSubstitute_Query newInstance(SModel sm) {
     return QueryFunction_ParameterizedSubstitute_Query.newInstance(sm, false);
   }
-
 }

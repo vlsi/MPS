@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_templatePropertyValue extends ConceptFunc
   public static TemplateFunctionParameter_templatePropertyValue newInstance(SModel sm) {
     return TemplateFunctionParameter_templatePropertyValue.newInstance(sm, false);
   }
-
 }

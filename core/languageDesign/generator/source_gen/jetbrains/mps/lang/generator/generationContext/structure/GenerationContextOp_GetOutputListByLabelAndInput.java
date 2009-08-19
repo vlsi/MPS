@@ -43,7 +43,6 @@ public class GenerationContextOp_GetOutputListByLabelAndInput extends Generation
     super.setChild(GenerationContextOp_GetOutputListByLabelAndInput.INPUT_NODE, node);
   }
 
-
   public static GenerationContextOp_GetOutputListByLabelAndInput newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_GetOutputListByLabelAndInput)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class GenerationContextOp_GetOutputListByLabelAndInput extends Generation
   public static GenerationContextOp_GetOutputListByLabelAndInput newInstance(SModel sm) {
     return GenerationContextOp_GetOutputListByLabelAndInput.newInstance(sm, false);
   }
-
 }

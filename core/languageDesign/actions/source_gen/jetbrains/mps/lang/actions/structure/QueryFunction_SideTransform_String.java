@@ -42,7 +42,6 @@ public class QueryFunction_SideTransform_String extends ConceptFunction implemen
     this.setProperty(QueryFunction_SideTransform_String.VIRTUAL_PACKAGE, value);
   }
 
-
   public static QueryFunction_SideTransform_String newInstance(SModel sm, boolean init) {
     return (QueryFunction_SideTransform_String)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class QueryFunction_SideTransform_String extends ConceptFunction implemen
   public static QueryFunction_SideTransform_String newInstance(SModel sm) {
     return QueryFunction_SideTransform_String.newInstance(sm, false);
   }
-
 }

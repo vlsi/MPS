@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4523_0(editorContext, node);
   }
@@ -76,7 +75,6 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4523_0 extends AbstractCellProvider {
-
     public _Inline4523_0() {
       super();
     }
@@ -111,7 +109,5 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

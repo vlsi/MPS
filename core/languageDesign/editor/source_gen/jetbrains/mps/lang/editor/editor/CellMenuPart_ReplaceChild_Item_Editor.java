@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0355_0(editorContext, node);
   }
@@ -246,5 +245,4 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

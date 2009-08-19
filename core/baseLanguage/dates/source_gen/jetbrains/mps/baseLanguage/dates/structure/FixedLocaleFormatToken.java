@@ -34,7 +34,6 @@ public class FixedLocaleFormatToken extends FormatToken {
     super.setReferent(FixedLocaleFormatToken.DATE_FORMAT, node);
   }
 
-
   public static FixedLocaleFormatToken newInstance(SModel sm, boolean init) {
     return (FixedLocaleFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FixedLocaleFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class FixedLocaleFormatToken extends FormatToken {
   public static FixedLocaleFormatToken newInstance(SModel sm) {
     return FixedLocaleFormatToken.newInstance(sm, false);
   }
-
 }

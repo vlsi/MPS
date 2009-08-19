@@ -52,7 +52,6 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
     super.setReferent(PropertyRefQualifier.PROPERTY, node);
   }
 
-
   public static PropertyRefQualifier newInstance(SModel sm, boolean init) {
     return (PropertyRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   public static PropertyRefQualifier newInstance(SModel sm) {
     return PropertyRefQualifier.newInstance(sm, false);
   }
-
 }

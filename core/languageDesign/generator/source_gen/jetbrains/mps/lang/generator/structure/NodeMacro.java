@@ -23,7 +23,6 @@ public class NodeMacro extends AbstractMacro {
     super.setReferent(NodeMacro.MAPPING_LABEL, node);
   }
 
-
   public static NodeMacro newInstance(SModel sm, boolean init) {
     return (NodeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class NodeMacro extends AbstractMacro {
   public static NodeMacro newInstance(SModel sm) {
     return NodeMacro.newInstance(sm, false);
   }
-
 }

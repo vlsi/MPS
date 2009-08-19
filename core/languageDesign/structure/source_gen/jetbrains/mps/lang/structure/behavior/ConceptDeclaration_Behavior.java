@@ -9,17 +9,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
-    for(SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "implements", true)) {
+    for (SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "implements", true)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
     }
     return result;
   }
-
 }

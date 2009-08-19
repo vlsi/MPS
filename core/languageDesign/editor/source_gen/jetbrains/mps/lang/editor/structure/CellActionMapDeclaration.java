@@ -85,7 +85,6 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
     this.insertChild(prev, CellActionMapDeclaration.ITEM, node);
   }
 
-
   public static CellActionMapDeclaration newInstance(SModel sm, boolean init) {
     return (CellActionMapDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   public static CellActionMapDeclaration newInstance(SModel sm) {
     return CellActionMapDeclaration.newInstance(sm, false);
   }
-
 }

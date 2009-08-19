@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertConceptPropertySetToAssignment_Intention extends BaseIntention {
-
   public ConvertConceptPropertySetToAssignment_Intention() {
   }
 
@@ -50,5 +49,4 @@ public class ConvertConceptPropertySetToAssignment_Intention extends BaseIntenti
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

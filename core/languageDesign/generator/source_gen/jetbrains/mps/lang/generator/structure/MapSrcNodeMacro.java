@@ -41,7 +41,6 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
     super.setChild(MapSrcNodeMacro.POST_MAPPER_FUNCTION, node);
   }
 
-
   public static MapSrcNodeMacro newInstance(SModel sm, boolean init) {
     return (MapSrcNodeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   public static MapSrcNodeMacro newInstance(SModel sm) {
     return MapSrcNodeMacro.newInstance(sm, false);
   }
-
 }

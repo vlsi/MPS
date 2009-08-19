@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_1215_0(editorContext, node);
   }
@@ -68,5 +67,4 @@ public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerationContextOp_ShowMessageBase_DataFlow extends DataFlowBuilder {
-
   public GenerationContextOp_ShowMessageBase_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class GenerationContextOp_ShowMessageBase_DataFlow extends DataFlowBuilde
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "messageText", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "referenceNode", true));
   }
-
 }

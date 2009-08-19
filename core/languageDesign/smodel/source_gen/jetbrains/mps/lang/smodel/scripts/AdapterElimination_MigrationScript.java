@@ -12,11 +12,9 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 
 public class AdapterElimination_MigrationScript extends BaseMigrationScript {
-
   public AdapterElimination_MigrationScript(IOperationContext operationContext) {
     super("findAdapters");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "findAdapterClassUsagesInVariableDeclarations";
       }
@@ -47,7 +45,6 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "findAdapterInterfaceUsagesInVariableDeclarations";
       }

@@ -22,5 +22,4 @@ public class QueryFunction_NodeFactory extends ConceptFunction {
   public static QueryFunction_NodeFactory newInstance(SModel sm) {
     return QueryFunction_NodeFactory.newInstance(sm, false);
   }
-
 }

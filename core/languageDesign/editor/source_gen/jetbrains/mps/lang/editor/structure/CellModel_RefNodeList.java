@@ -59,7 +59,6 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
     super.setChild(CellModel_RefNodeList.FILTER, node);
   }
 
-
   public static CellModel_RefNodeList newInstance(SModel sm, boolean init) {
     return (CellModel_RefNodeList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   public static CellModel_RefNodeList newInstance(SModel sm) {
     return CellModel_RefNodeList.newInstance(sm, false);
   }
-
 }

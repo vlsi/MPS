@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DataFlowEditorAction_DeleteMayBeUnreachable {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DataFlowEditorAction_DeleteMayBeUnreachable.DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(node));
   }
 
   public static class DataFlowEditorAction_DeleteMayBeUnreachable_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public DataFlowEditorAction_DeleteMayBeUnreachable_DELETE(SNode node) {
       this.myNode = node;
@@ -31,7 +29,5 @@ public class DataFlowEditorAction_DeleteMayBeUnreachable {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "emitStatement", true));
     }
-
-}
-
+  }
 }

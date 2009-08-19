@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_oldText extends ConceptFunctionParameter {
   public static ConceptFunctionParameter_oldText newInstance(SModel sm) {
     return ConceptFunctionParameter_oldText.newInstance(sm, false);
   }
-
 }

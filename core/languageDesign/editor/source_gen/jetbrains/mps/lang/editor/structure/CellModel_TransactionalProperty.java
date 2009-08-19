@@ -42,7 +42,6 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
     super.setChild(CellModel_TransactionalProperty.HANDLER_BLOCK, node);
   }
 
-
   public static CellModel_TransactionalProperty newInstance(SModel sm, boolean init) {
     return (CellModel_TransactionalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   public static CellModel_TransactionalProperty newInstance(SModel sm) {
     return CellModel_TransactionalProperty.newInstance(sm, false);
   }
-
 }

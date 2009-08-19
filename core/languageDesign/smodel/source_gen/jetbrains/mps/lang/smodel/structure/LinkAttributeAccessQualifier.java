@@ -61,7 +61,6 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
     super.setChild(LinkAttributeAccessQualifier.LINK_QUALIFIER, node);
   }
 
-
   public static LinkAttributeAccessQualifier newInstance(SModel sm, boolean init) {
     return (LinkAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class LinkAttributeAccessQualifier extends BaseConcept implements IAttrib
   public static LinkAttributeAccessQualifier newInstance(SModel sm) {
     return LinkAttributeAccessQualifier.newInstance(sm, false);
   }
-
 }

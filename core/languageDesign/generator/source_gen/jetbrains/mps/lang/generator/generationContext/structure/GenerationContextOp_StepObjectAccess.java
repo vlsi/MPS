@@ -21,5 +21,4 @@ public class GenerationContextOp_StepObjectAccess extends GenerationContextOp_Us
   public static GenerationContextOp_StepObjectAccess newInstance(SModel sm) {
     return GenerationContextOp_StepObjectAccess.newInstance(sm, false);
   }
-
 }

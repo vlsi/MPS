@@ -11,7 +11,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LinkRefExpression_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LinkRefExpression_linkDeclaration_ReferentConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class LinkRefExpression_linkDeclaration_ReferentConstraint extends BaseNo
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptDeclaration", false));
   }
-
 }

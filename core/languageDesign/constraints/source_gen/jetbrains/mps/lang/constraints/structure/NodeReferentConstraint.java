@@ -43,7 +43,6 @@ public class NodeReferentConstraint extends BaseConcept {
     super.setChild(NodeReferentConstraint.REFERENT_SET_HANDLER, node);
   }
 
-
   public static NodeReferentConstraint newInstance(SModel sm, boolean init) {
     return (NodeReferentConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class NodeReferentConstraint extends BaseConcept {
   public static NodeReferentConstraint newInstance(SModel sm) {
     return NodeReferentConstraint.newInstance(sm, false);
   }
-
 }

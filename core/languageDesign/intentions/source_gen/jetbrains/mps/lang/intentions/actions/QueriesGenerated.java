@@ -15,12 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
-
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240404186104(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       Calculable calc = new Calculable() {
-
         public Object calculate() {
           List<SNode> parameters = ListSequence.fromList(new ArrayList<SNode>());
           boolean inParInt = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", false, false) != null;
@@ -33,7 +31,7 @@ public class QueriesGenerated {
       };
       Iterable queryResult = (Iterable)calc.calculate();
       if (queryResult != null) {
-        for(Object item : queryResult) {
+        for (Object item : queryResult) {
           List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
           ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
         }
@@ -41,5 +39,4 @@ public class QueriesGenerated {
     }
     return result;
   }
-
 }

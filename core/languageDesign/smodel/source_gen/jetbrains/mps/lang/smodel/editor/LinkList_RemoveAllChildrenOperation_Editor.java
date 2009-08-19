@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_9398_0(editorContext, node);
   }
@@ -29,5 +28,4 @@ public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
 }

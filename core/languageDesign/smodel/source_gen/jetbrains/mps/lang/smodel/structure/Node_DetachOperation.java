@@ -21,5 +21,4 @@ public class Node_DetachOperation extends SNodeOperation {
   public static Node_DetachOperation newInstance(SModel sm) {
     return Node_DetachOperation.newInstance(sm, false);
   }
-
 }

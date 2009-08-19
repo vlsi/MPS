@@ -22,5 +22,4 @@ public class SelectParameter extends BaseConcept {
   public static SelectParameter newInstance(SModel sm) {
     return SelectParameter.newInstance(sm, false);
   }
-
 }

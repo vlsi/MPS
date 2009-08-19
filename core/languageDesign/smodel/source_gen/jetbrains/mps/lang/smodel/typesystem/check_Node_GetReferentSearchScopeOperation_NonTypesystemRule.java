@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_Node_GetReferentSearchScopeOperation_NonTypesystemRule() {
   }
 
@@ -52,5 +51,4 @@ public class check_Node_GetReferentSearchScopeOperation_NonTypesystemRule extend
   public boolean overrides() {
     return false;
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public check_CellModel_RefCell_InferenceRule() {
   }
 
@@ -37,5 +36,4 @@ public class check_CellModel_RefCell_InferenceRule extends AbstractInferenceRule
   public boolean overrides() {
     return false;
   }
-
 }

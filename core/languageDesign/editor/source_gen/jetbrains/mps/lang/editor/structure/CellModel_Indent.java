@@ -21,5 +21,4 @@ public class CellModel_Indent extends EditorCellModel {
   public static CellModel_Indent newInstance(SModel sm) {
     return CellModel_Indent.newInstance(sm, false);
   }
-
 }

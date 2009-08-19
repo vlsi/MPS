@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class ConceptDeclaration_Constraints {
-
   public static boolean canBeARoot(final IOperationContext operationContext, final CanBeARootContext _context) {
     return LanguageAspect.STRUCTURE.is(_context.getModel());
   }
-
 }

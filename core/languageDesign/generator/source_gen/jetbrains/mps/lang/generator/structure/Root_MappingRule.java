@@ -35,7 +35,6 @@ public class Root_MappingRule extends BaseMappingRule {
     super.setReferent(Root_MappingRule.TEMPLATE, node);
   }
 
-
   public static Root_MappingRule newInstance(SModel sm, boolean init) {
     return (Root_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Root_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class Root_MappingRule extends BaseMappingRule {
   public static Root_MappingRule newInstance(SModel sm) {
     return Root_MappingRule.newInstance(sm, false);
   }
-
 }

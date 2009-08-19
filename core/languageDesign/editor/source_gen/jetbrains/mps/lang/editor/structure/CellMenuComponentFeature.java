@@ -24,7 +24,6 @@ public class CellMenuComponentFeature extends BaseConcept {
     super.setReferent(CellMenuComponentFeature.RELATION_DECLARATION, node);
   }
 
-
   public static CellMenuComponentFeature newInstance(SModel sm, boolean init) {
     return (CellMenuComponentFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class CellMenuComponentFeature extends BaseConcept {
   public static CellMenuComponentFeature newInstance(SModel sm) {
     return CellMenuComponentFeature.newInstance(sm, false);
   }
-
 }

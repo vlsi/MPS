@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
-
   public CopyScrNodeMacro_inspector(SNode node) {
     super(node);
   }
@@ -239,7 +238,6 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
   }
 
   public static class _Inline9547_0 extends AbstractCellProvider {
-
     public _Inline9547_0() {
       super();
     }
@@ -271,7 +269,5 @@ public class CopyScrNodeMacro_inspector extends AbstractCellProvider {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

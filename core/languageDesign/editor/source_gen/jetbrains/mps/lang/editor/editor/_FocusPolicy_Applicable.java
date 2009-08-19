@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _FocusPolicy_Applicable extends AbstractCellProvider {
-
   public _FocusPolicy_Applicable(SNode node) {
     super(node);
   }
@@ -91,9 +90,7 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7117_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
-
 }

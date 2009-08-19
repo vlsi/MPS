@@ -22,5 +22,4 @@ public class QueryFunction_ST_RemoveBy_Condition extends ConceptFunction {
   public static QueryFunction_ST_RemoveBy_Condition newInstance(SModel sm) {
     return QueryFunction_ST_RemoveBy_Condition.newInstance(sm, false);
   }
-
 }

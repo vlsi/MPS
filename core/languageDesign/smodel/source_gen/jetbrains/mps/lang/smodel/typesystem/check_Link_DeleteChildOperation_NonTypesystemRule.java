@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Link_DeleteChildOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_Link_DeleteChildOperation_NonTypesystemRule() {
   }
 
@@ -28,5 +27,4 @@ public class check_Link_DeleteChildOperation_NonTypesystemRule extends AbstractN
   public boolean overrides() {
     return false;
   }
-
 }

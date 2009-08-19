@@ -23,7 +23,6 @@ public class CellModel_BlockEnd extends EditorCellModel {
     this.setProperty(CellModel_BlockEnd.CLOSE_BRACE, value);
   }
 
-
   public static CellModel_BlockEnd newInstance(SModel sm, boolean init) {
     return (CellModel_BlockEnd)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_BlockEnd extends EditorCellModel {
   public static CellModel_BlockEnd newInstance(SModel sm) {
     return CellModel_BlockEnd.newInstance(sm, false);
   }
-
 }

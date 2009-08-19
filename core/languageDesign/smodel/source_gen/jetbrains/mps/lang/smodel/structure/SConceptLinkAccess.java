@@ -24,7 +24,6 @@ public class SConceptLinkAccess extends SNodeOperation {
     super.setReferent(SConceptLinkAccess.CONCEPT_LINK_DECLARATION, node);
   }
 
-
   public static SConceptLinkAccess newInstance(SModel sm, boolean init) {
     return (SConceptLinkAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptLinkAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SConceptLinkAccess extends SNodeOperation {
   public static SConceptLinkAccess newInstance(SModel sm) {
     return SConceptLinkAccess.newInstance(sm, false);
   }
-
 }

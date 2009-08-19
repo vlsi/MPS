@@ -22,5 +22,4 @@ public class CategorizeBlock extends ConceptFunction {
   public static CategorizeBlock newInstance(SModel sm) {
     return CategorizeBlock.newInstance(sm, false);
   }
-
 }

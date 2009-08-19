@@ -1267,13 +1267,46 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1196351886991">
-                          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216933352640">
-                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1196351886993" />
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216933352641">
-                              <link role="baseMethodDeclaration" targetNodeId="11.~SNode.getReferenceRoles():java.util.Set" resolveInfo="getReferenceRoles" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="5738719242364746425">
+                          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="5738719242364746426">
+                            <property name="name" value="refRoles" />
+                            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="5738719242364746427">
+                              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5738719242364746432" />
+                            </node>
+                            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5738719242364746440">
+                              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="5738719242364746441">
+                                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5738719242364746442" />
+                              </node>
                             </node>
                           </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5738719242364746450">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5738719242364746455">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5738719242364746451">
+                              <link role="variableDeclaration" targetNodeId="5738719242364746426" resolveInfo="refRoles" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="5738719242364746462">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5738719242364746511">
+                                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="5738719242364746501">
+                                  <node role="leftExpression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5738719242364746472" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5738719242364746523">
+                                  <link role="baseMethodDeclaration" targetNodeId="11.~SNode.getReferenceRoles():java.util.Set" resolveInfo="getReferenceRoles" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5738719242364746536">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5738719242364746541">
+                            <link role="baseMethodDeclaration" targetNodeId="25.~Collections.sort(java.util.List):void" resolveInfo="sort" />
+                            <link role="classConcept" targetNodeId="25.~Collections" resolveInfo="Collections" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5738719242364746545">
+                              <link role="variableDeclaration" targetNodeId="5738719242364746426" resolveInfo="refRoles" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1196351886991">
                           <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196351886994">
                             <property name="name" value="refRole" />
                             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192786697" />
@@ -1322,6 +1355,9 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5738719242364746563">
+                            <link role="variableDeclaration" targetNodeId="5738719242364746426" resolveInfo="refRoles" />
                           </node>
                         </node>
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196351887017">

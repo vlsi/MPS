@@ -25,7 +25,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class MapSrcListMacro_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2762_1(editorContext, node);
   }
@@ -373,7 +372,6 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2762_0 extends AbstractCellProvider {
-
     public _Inline2762_0() {
       super();
     }
@@ -405,17 +403,14 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class MapSrcListMacro_Editor_replaceWith_NodeMacro_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public MapSrcListMacro_Editor_replaceWith_NodeMacro_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.generator.structure.NodeMacro";
     }
-
-}
-
+  }
 }

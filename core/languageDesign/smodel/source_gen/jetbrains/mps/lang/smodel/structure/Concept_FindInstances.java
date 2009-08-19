@@ -24,7 +24,6 @@ public class Concept_FindInstances extends SNodeOperation {
     super.setChild(Concept_FindInstances.SCOPE, node);
   }
 
-
   public static Concept_FindInstances newInstance(SModel sm, boolean init) {
     return (Concept_FindInstances)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_FindInstances", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Concept_FindInstances extends SNodeOperation {
   public static Concept_FindInstances newInstance(SModel sm) {
     return Concept_FindInstances.newInstance(sm, false);
   }
-
 }

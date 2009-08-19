@@ -45,5 +45,4 @@ public class FinderDeclaration_Behavior {
   public static SNode callSuper_getBaseConcept_8952337903384724634(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384724634);
   }
-
 }

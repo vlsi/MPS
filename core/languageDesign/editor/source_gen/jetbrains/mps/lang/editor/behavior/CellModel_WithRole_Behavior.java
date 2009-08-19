@@ -40,5 +40,4 @@ public class CellModel_WithRole_Behavior {
   public static String callSuper_getCellProviderClassName_1216378357889(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), callerConceptFqName, "virtual_getCellProviderClassName_1216378357889", PARAMETERS_1216378357889);
   }
-
 }

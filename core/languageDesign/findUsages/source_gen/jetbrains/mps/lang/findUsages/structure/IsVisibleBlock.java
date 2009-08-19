@@ -22,5 +22,4 @@ public class IsVisibleBlock extends ConceptFunction {
   public static IsVisibleBlock newInstance(SModel sm) {
     return IsVisibleBlock.newInstance(sm, false);
   }
-
 }

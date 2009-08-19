@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class CellModel_Custom_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class CellModel_Custom_Behavior {
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "$";
   }
-
 }

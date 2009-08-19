@@ -93,7 +93,6 @@ public class CellKeyMapItem extends BaseConcept {
     this.insertChild(prev, CellKeyMapItem.KEYSTROKE, node);
   }
 
-
   public static CellKeyMapItem newInstance(SModel sm, boolean init) {
     return (CellKeyMapItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -101,5 +100,4 @@ public class CellKeyMapItem extends BaseConcept {
   public static CellKeyMapItem newInstance(SModel sm) {
     return CellKeyMapItem.newInstance(sm, false);
   }
-
 }

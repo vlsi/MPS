@@ -24,7 +24,6 @@ public class MappingScriptReference extends BaseConcept {
     super.setReferent(MappingScriptReference.MAPPING_SCRIPT, node);
   }
 
-
   public static MappingScriptReference newInstance(SModel sm, boolean init) {
     return (MappingScriptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScriptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MappingScriptReference extends BaseConcept {
   public static MappingScriptReference newInstance(SModel sm) {
     return MappingScriptReference.newInstance(sm, false);
   }
-
 }

@@ -64,5 +64,4 @@ public enum FocusPolicy {
     }
     return FocusPolicy.getDefault();
   }
-
 }

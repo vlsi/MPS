@@ -22,5 +22,4 @@ public class CellKeyMap_FunctionParm_selectedNodes extends ConceptFunctionParame
   public static CellKeyMap_FunctionParm_selectedNodes newInstance(SModel sm) {
     return CellKeyMap_FunctionParm_selectedNodes.newInstance(sm, false);
   }
-
 }

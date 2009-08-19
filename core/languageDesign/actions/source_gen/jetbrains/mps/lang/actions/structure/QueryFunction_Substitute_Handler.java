@@ -22,5 +22,4 @@ public class QueryFunction_Substitute_Handler extends ConceptFunction {
   public static QueryFunction_Substitute_Handler newInstance(SModel sm) {
     return QueryFunction_Substitute_Handler.newInstance(sm, false);
   }
-
 }

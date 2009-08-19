@@ -70,7 +70,6 @@ public class DateTimeZone extends BaseConcept implements INamedConcept {
     this.setProperty(DateTimeZone.VIRTUAL_PACKAGE, value);
   }
 
-
   public static DateTimeZone newInstance(SModel sm, boolean init) {
     return (DateTimeZone)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZone", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -78,5 +77,4 @@ public class DateTimeZone extends BaseConcept implements INamedConcept {
   public static DateTimeZone newInstance(SModel sm) {
     return DateTimeZone.newInstance(sm, false);
   }
-
 }

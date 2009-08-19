@@ -21,5 +21,4 @@ public class SourceSubstituteMacro_SourceNodeQuery extends TemplateQueryBase {
   public static SourceSubstituteMacro_SourceNodeQuery newInstance(SModel sm) {
     return SourceSubstituteMacro_SourceNodeQuery.newInstance(sm, false);
   }
-
 }

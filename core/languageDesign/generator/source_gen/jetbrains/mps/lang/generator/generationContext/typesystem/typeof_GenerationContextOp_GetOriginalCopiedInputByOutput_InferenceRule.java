@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_Inference
   public boolean overrides() {
     return false;
   }
-
 }

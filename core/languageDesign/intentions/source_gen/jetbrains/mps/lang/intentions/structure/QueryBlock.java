@@ -25,7 +25,6 @@ public class QueryBlock extends ConceptFunction {
     super.setChild(QueryBlock.PARAM_TYPE, node);
   }
 
-
   public static QueryBlock newInstance(SModel sm, boolean init) {
     return (QueryBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.QueryBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class QueryBlock extends ConceptFunction {
   public static QueryBlock newInstance(SModel sm) {
     return QueryBlock.newInstance(sm, false);
   }
-
 }

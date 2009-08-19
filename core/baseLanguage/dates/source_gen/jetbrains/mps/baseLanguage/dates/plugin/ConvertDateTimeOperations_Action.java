@@ -27,12 +27,12 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,7 +41,7 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -56,16 +56,16 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<SNode> minusPeriodOperations = SModelOperations.getNodes(ConvertDateTimeOperations_Action.this.model, "jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation");
-      for(SNode operation : minusPeriodOperations) {
+      for (SNode operation : minusPeriodOperations) {
         SNode minusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.MinusExpression");
         SLinkOperations.setTarget(minusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);
         SLinkOperations.setTarget(minusExpression, "rightExpression", SLinkOperations.getTarget(operation, "rightValue", true), true);
       }
       List<SNode> plusPeriodOperations = SModelOperations.getNodes(ConvertDateTimeOperations_Action.this.model, "jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation");
-      for(SNode operation : plusPeriodOperations) {
+      for (SNode operation : plusPeriodOperations) {
         SNode plusExpression = SNodeOperations.replaceWithNewChild(operation, "jetbrains.mps.baseLanguage.structure.PlusExpression");
         SLinkOperations.setTarget(plusExpression, "leftExpression", SLinkOperations.getTarget(operation, "leftValue", true), true);
         SLinkOperations.setTarget(plusExpression, "rightExpression", SLinkOperations.getTarget(operation, "rightValue", true), true);
@@ -74,5 +74,4 @@ public class ConvertDateTimeOperations_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ConvertDateTimeOperations", t);
     }
   }
-
 }

@@ -42,6 +42,9 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     this.increaseDepth();
     BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
+    if ((SLinkOperations.getTarget(node, "classInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && (SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "property", true)).isEmpty() && (SLinkOperations.getTarget(node, "staticInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).isEmpty()) {
+      this.appendNewLine();
+    }
     if (!(node.isRoot())) {
       this.appendWithIndent("}");
     } else {

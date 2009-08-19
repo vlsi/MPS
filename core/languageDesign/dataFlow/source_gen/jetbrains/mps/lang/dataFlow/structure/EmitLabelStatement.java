@@ -51,7 +51,6 @@ public class EmitLabelStatement extends EmitStatement implements INamedConcept {
     this.setProperty(EmitLabelStatement.VIRTUAL_PACKAGE, value);
   }
 
-
   public static EmitLabelStatement newInstance(SModel sm, boolean init) {
     return (EmitLabelStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class EmitLabelStatement extends EmitStatement implements INamedConcept {
   public static EmitLabelStatement newInstance(SModel sm) {
     return EmitLabelStatement.newInstance(sm, false);
   }
-
 }

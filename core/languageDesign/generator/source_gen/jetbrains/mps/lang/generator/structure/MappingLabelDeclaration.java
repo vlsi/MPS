@@ -71,7 +71,6 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
     super.setReferent(MappingLabelDeclaration.TARGET_CONCEPT, node);
   }
 
-
   public static MappingLabelDeclaration newInstance(SModel sm, boolean init) {
     return (MappingLabelDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingLabelDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class MappingLabelDeclaration extends BaseConcept implements INamedConcep
   public static MappingLabelDeclaration newInstance(SModel sm) {
     return MappingLabelDeclaration.newInstance(sm, false);
   }
-
 }

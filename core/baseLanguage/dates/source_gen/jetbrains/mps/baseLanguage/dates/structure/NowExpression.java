@@ -22,5 +22,4 @@ public class NowExpression extends Expression {
   public static NowExpression newInstance(SModel sm) {
     return NowExpression.newInstance(sm, false);
   }
-
 }

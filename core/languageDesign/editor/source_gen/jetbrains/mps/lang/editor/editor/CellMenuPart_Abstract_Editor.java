@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_7903_0(editorContext, node);
   }
@@ -26,5 +25,4 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint implements IModelConstraints, INodePropertySetter {
-
   public EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class EnumerationDataTypeDeclaration_hasNoDefaultMember_PropertyConstrain
       SLinkOperations.setTarget(node, "defaultMember", null, false);
     }
   }
-
 }

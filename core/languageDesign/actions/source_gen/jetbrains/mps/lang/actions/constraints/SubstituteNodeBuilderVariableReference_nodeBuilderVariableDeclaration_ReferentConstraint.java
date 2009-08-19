@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclaration_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class SubstituteNodeBuilderVariableReference_nodeBuilderVariableDeclarati
     }
     return vars;
   }
-
 }

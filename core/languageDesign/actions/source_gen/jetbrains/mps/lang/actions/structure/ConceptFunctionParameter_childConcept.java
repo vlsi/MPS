@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_childConcept extends ConceptFunctionParame
   public static ConceptFunctionParameter_childConcept newInstance(SModel sm) {
     return ConceptFunctionParameter_childConcept.newInstance(sm, false);
   }
-
 }

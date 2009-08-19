@@ -21,5 +21,4 @@ public class QueryFunction_FontStyle extends QueryFunction_StyleParameter {
   public static QueryFunction_FontStyle newInstance(SModel sm) {
     return QueryFunction_FontStyle.newInstance(sm, false);
   }
-
 }

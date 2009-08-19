@@ -38,5 +38,4 @@ public class StyleClassItem_Behavior {
   public static SNode callSuper_getStyleConstant_1215703564594(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.StyleClassItem"), callerConceptFqName, "virtual_getStyleConstant_1215703564594", PARAMETERS_1215703564594);
   }
-
 }

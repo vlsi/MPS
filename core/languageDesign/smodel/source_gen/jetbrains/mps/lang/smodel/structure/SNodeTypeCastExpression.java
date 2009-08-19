@@ -43,7 +43,6 @@ public class SNodeTypeCastExpression extends Expression {
     super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
   }
 
-
   public static SNodeTypeCastExpression newInstance(SModel sm, boolean init) {
     return (SNodeTypeCastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class SNodeTypeCastExpression extends Expression {
   public static SNodeTypeCastExpression newInstance(SModel sm) {
     return SNodeTypeCastExpression.newInstance(sm, false);
   }
-
 }

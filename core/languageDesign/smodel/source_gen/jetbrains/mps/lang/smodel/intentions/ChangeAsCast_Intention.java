@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ChangeAsCast_Intention extends BaseIntention {
-
   public ChangeAsCast_Intention() {
   }
 
@@ -31,8 +30,7 @@ public class ChangeAsCast_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "asCast")) {
       return "Convert to Regular Cast";
-    } else
-    {
+    } else {
       return "Convert to 'as' Cast";
     }
   }
@@ -44,5 +42,4 @@ public class ChangeAsCast_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

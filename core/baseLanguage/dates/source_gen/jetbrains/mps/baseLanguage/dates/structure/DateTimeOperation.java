@@ -44,7 +44,6 @@ public class DateTimeOperation extends BaseConcept implements IOperation {
     this.setProperty(DateTimeOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static DateTimeOperation newInstance(SModel sm, boolean init) {
     return (DateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -52,5 +51,4 @@ public class DateTimeOperation extends BaseConcept implements IOperation {
   public static DateTimeOperation newInstance(SModel sm) {
     return DateTimeOperation.newInstance(sm, false);
   }
-
 }

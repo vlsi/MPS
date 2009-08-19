@@ -21,5 +21,4 @@ public class LinkList_RemoveAllChildrenOperation extends SNodeOperation {
   public static LinkList_RemoveAllChildrenOperation newInstance(SModel sm) {
     return LinkList_RemoveAllChildrenOperation.newInstance(sm, false);
   }
-
 }

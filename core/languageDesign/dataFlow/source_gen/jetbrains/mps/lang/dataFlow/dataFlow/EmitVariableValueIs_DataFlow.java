@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EmitVariableValueIs_DataFlow extends DataFlowBuilder {
-
   public EmitVariableValueIs_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class EmitVariableValueIs_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitNop();
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "value", true));
   }
-
 }

@@ -23,7 +23,6 @@ public class Reduction_MappingRule extends BaseMappingRule {
     super.setChild(Reduction_MappingRule.RULE_CONSEQUENCE, node);
   }
 
-
   public static Reduction_MappingRule newInstance(SModel sm, boolean init) {
     return (Reduction_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Reduction_MappingRule extends BaseMappingRule {
   public static Reduction_MappingRule newInstance(SModel sm) {
     return Reduction_MappingRule.newInstance(sm, false);
   }
-
 }

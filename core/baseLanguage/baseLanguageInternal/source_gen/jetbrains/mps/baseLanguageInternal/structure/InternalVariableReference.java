@@ -18,7 +18,6 @@ public class InternalVariableReference extends Expression {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(InternalVariableReference.NAME);
   }
@@ -34,7 +33,6 @@ public class InternalVariableReference extends Expression {
   public void setType(Type node) {
     super.setChild(InternalVariableReference.TYPE, node);
   }
-
 
   public static InternalVariableReference newInstance(SModel sm, boolean init) {
     return (InternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();

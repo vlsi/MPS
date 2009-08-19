@@ -21,5 +21,4 @@ public class BracketColorStyleClassItem extends ColorStyleClassItem {
   public static BracketColorStyleClassItem newInstance(SModel sm) {
     return BracketColorStyleClassItem.newInstance(sm, false);
   }
-
 }

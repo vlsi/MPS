@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_ListWithRole_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,5 +22,4 @@ public class CellModel_ListWithRole_Behavior {
   public static boolean call_isHorizontal_1239873867736(SNode thisNode) {
     return (!(SPropertyOperations.getBoolean(thisNode, "vertical")) && (SLinkOperations.getTarget(thisNode, "cellLayout", true) == null)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
   }
-
 }

@@ -24,7 +24,6 @@ public class TemplateSwitchReference extends BaseConcept {
     super.setReferent(TemplateSwitchReference.TEMPLATE_SWITCH, node);
   }
 
-
   public static TemplateSwitchReference newInstance(SModel sm, boolean init) {
     return (TemplateSwitchReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitchReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TemplateSwitchReference extends BaseConcept {
   public static TemplateSwitchReference newInstance(SModel sm) {
     return TemplateSwitchReference.newInstance(sm, false);
   }
-
 }

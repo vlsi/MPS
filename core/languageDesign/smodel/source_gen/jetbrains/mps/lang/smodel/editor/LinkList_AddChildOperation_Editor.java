@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8105_0(editorContext, node);
   }
@@ -69,5 +68,4 @@ public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

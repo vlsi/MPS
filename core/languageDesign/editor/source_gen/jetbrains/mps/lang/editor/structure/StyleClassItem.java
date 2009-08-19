@@ -23,5 +23,4 @@ public class StyleClassItem extends BaseConcept {
   public static StyleClassItem newInstance(SModel sm) {
     return StyleClassItem.newInstance(sm, false);
   }
-
 }

@@ -115,9 +115,7 @@ public class RenameConcept extends BaseGeneratedRefactoring {
     return components;
   }
 
-
   public static String getKeyStroke_static() {
     return Rename.getKeyStroke_static();
   }
-
 }

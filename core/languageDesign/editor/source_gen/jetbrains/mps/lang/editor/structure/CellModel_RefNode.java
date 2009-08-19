@@ -23,7 +23,6 @@ public class CellModel_RefNode extends CellModel_WithRole {
     this.setRelationDeclaration(node);
   }
 
-
   public static CellModel_RefNode newInstance(SModel sm, boolean init) {
     return (CellModel_RefNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_RefNode extends CellModel_WithRole {
   public static CellModel_RefNode newInstance(SModel sm) {
     return CellModel_RefNode.newInstance(sm, false);
   }
-
 }

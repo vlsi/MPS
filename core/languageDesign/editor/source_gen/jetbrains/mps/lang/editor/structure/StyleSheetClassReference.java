@@ -24,7 +24,6 @@ public class StyleSheetClassReference extends BaseConcept {
     super.setReferent(StyleSheetClassReference.STYLE_SHEET_CLASS, node);
   }
 
-
   public static StyleSheetClassReference newInstance(SModel sm, boolean init) {
     return (StyleSheetClassReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class StyleSheetClassReference extends BaseConcept {
   public static StyleSheetClassReference newInstance(SModel sm) {
     return StyleSheetClassReference.newInstance(sm, false);
   }
-
 }

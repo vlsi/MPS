@@ -75,7 +75,6 @@ public class SNodeOperation extends BaseConcept implements IOperation {
     this.insertChild(prev, SNodeOperation.PARAMETER, node);
   }
 
-
   public static SNodeOperation newInstance(SModel sm, boolean init) {
     return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class SNodeOperation extends BaseConcept implements IOperation {
   public static SNodeOperation newInstance(SModel sm) {
     return SNodeOperation.newInstance(sm, false);
   }
-
 }

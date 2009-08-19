@@ -21,5 +21,4 @@ public class Node_GetAncestorOperation extends SNodeOperation {
   public static Node_GetAncestorOperation newInstance(SModel sm) {
     return Node_GetAncestorOperation.newInstance(sm, false);
   }
-
 }

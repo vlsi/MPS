@@ -16,7 +16,6 @@ public class InternalClassifierType extends ClassifierType {
     super(node);
   }
 
-
   public String getFqClassName() {
     return this.getProperty(InternalClassifierType.FQ_CLASS_NAME);
   }
@@ -24,7 +23,6 @@ public class InternalClassifierType extends ClassifierType {
   public void setFqClassName(String value) {
     this.setProperty(InternalClassifierType.FQ_CLASS_NAME, value);
   }
-
 
   public static InternalClassifierType newInstance(SModel sm, boolean init) {
     return (InternalClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -21,5 +21,4 @@ public class IndentLayoutNewLineStyleClassItem extends BooleanStyleSheetItem {
   public static IndentLayoutNewLineStyleClassItem newInstance(SModel sm) {
     return IndentLayoutNewLineStyleClassItem.newInstance(sm, false);
   }
-
 }

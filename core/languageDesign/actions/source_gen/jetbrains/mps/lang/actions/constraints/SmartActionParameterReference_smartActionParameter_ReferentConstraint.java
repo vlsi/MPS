@@ -14,7 +14,6 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SmartActionParameterReference_smartActionParameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SmartActionParameterReference_smartActionParameter_ReferentConstraint() {
   }
 
@@ -33,5 +32,4 @@ public class SmartActionParameterReference_smartActionParameter_ReferentConstrai
     }
     return SLinkOperations.getTargets(ancestor, "smartActionParameter", true);
   }
-
 }

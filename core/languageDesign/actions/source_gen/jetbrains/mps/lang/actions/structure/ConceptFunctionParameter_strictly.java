@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_strictly extends ConceptFunctionParameter 
   public static ConceptFunctionParameter_strictly newInstance(SModel sm) {
     return ConceptFunctionParameter_strictly.newInstance(sm, false);
   }
-
 }

@@ -5,7 +5,6 @@ package jetbrains.mps.lang.smodel.actions;
 import jetbrains.mps.smodel.SNode;
 
 public class ApplicableTypesInfo {
-
   public boolean myToConcept = false;
   public boolean myToNode = false;
   public boolean myToModel = false;

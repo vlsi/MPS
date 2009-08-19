@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Styles_StyleSheet {
-
   public static Style getGenContext_operation(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.EDITABLE, true);
@@ -17,5 +16,4 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
-
 }

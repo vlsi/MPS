@@ -21,5 +21,4 @@ public class QueryFunction_Boolean extends QueryFunction_StyleParameter {
   public static QueryFunction_Boolean newInstance(SModel sm) {
     return QueryFunction_Boolean.newInstance(sm, false);
   }
-
 }

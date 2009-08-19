@@ -12,7 +12,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_Node_GetAdapterOperation_InferenceRule() {
   }
 
@@ -22,7 +21,6 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
     {
       final SNode C = typeCheckingContext.getEquationManager().getRepresentator(Concept_typevar_1205967245422);
       typeCheckingContext.whenConcrete(C, new Runnable() {
-
         public void run() {
           SNode inputNodeConcept = SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(C), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
           {
@@ -51,5 +49,4 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return true;
   }
-
 }

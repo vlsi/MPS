@@ -21,5 +21,4 @@ public class CellKeyMap_IsApplicableFunction extends CellKeyMap_AbstractFunction
   public static CellKeyMap_IsApplicableFunction newInstance(SModel sm) {
     return CellKeyMap_IsApplicableFunction.newInstance(sm, false);
   }
-
 }

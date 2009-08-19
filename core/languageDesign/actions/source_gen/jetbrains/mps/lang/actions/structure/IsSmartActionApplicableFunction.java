@@ -22,5 +22,4 @@ public class IsSmartActionApplicableFunction extends ConceptFunction {
   public static IsSmartActionApplicableFunction newInstance(SModel sm) {
     return IsSmartActionApplicableFunction.newInstance(sm, false);
   }
-
 }

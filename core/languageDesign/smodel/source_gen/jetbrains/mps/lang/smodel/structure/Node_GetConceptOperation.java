@@ -21,5 +21,4 @@ public class Node_GetConceptOperation extends SNodeOperation {
   public static Node_GetConceptOperation newInstance(SModel sm) {
     return Node_GetConceptOperation.newInstance(sm, false);
   }
-
 }

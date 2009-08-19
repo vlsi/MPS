@@ -22,5 +22,4 @@ public class PeriodType extends PrimitiveType {
   public static PeriodType newInstance(SModel sm) {
     return PeriodType.newInstance(sm, false);
   }
-
 }

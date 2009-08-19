@@ -23,7 +23,6 @@ public class Property_HasValue_Enum extends SNodeOperation {
     super.setChild(Property_HasValue_Enum.VALUE, node);
   }
 
-
   public static Property_HasValue_Enum newInstance(SModel sm, boolean init) {
     return (Property_HasValue_Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Property_HasValue_Enum extends SNodeOperation {
   public static Property_HasValue_Enum newInstance(SModel sm) {
     return Property_HasValue_Enum.newInstance(sm, false);
   }
-
 }

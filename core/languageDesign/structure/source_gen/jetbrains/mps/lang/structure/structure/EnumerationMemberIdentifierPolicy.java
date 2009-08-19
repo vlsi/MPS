@@ -59,5 +59,4 @@ public enum EnumerationMemberIdentifierPolicy {
     }
     return EnumerationMemberIdentifierPolicy.getDefault();
   }
-
 }

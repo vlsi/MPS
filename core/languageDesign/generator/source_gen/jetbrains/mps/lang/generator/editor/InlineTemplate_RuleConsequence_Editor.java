@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8721_0(editorContext, node);
   }
@@ -71,5 +70,4 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

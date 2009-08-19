@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 import jetbrains.mps.plugin.GeneratedQueriesOpener;
 
 public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
-
   public MacrosSwitch_KeyMap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
@@ -31,8 +30,8 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     action = new MacrosSwitch_KeyMap.MacrosSwitch_KeyMap_Action4();
     this.putAction("ctrl+alt+shift", "VK_Q", action);
   }
-  public static class MacrosSwitch_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class MacrosSwitch_KeyMap_Action0 extends EditorCellKeyMapAction {
     public MacrosSwitch_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -69,8 +68,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
       if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false) == null) {
         return false;
       }
-      if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter <SNode>() {
-
+      if (ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isAttribute(it);
         }
@@ -85,8 +83,7 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       // do not hang <TF> on other attributes
-      SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter <SNode>() {
-
+      SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
         }
@@ -97,10 +94,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift F";
     }
+  }
 
-}
   public static class MacrosSwitch_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public MacrosSwitch_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
@@ -146,10 +142,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift M";
     }
+  }
 
-}
   public static class MacrosSwitch_KeyMap_Action2 extends EditorCellKeyMapAction {
-
     public MacrosSwitch_KeyMap_Action2() {
       this.setShownInPopupMenu(true);
     }
@@ -198,10 +193,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift M";
     }
+  }
 
-}
   public static class MacrosSwitch_KeyMap_Action3 extends EditorCellKeyMapAction {
-
     public MacrosSwitch_KeyMap_Action3() {
       this.setShownInPopupMenu(true);
     }
@@ -250,10 +244,9 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift M";
     }
+  }
 
-}
   public static class MacrosSwitch_KeyMap_Action4 extends EditorCellKeyMapAction {
-
     public MacrosSwitch_KeyMap_Action4() {
       this.setShownInPopupMenu(true);
     }
@@ -295,7 +288,5 @@ public class MacrosSwitch_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl alt shift Q";
     }
-
-}
-
+  }
 }

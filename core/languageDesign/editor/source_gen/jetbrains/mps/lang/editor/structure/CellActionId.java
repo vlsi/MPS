@@ -54,5 +54,4 @@ public enum CellActionId {
     }
     return CellActionId.getDefault();
   }
-
 }

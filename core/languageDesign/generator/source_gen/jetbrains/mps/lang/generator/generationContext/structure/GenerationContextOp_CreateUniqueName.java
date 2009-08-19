@@ -33,7 +33,6 @@ public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Ba
     super.setChild(GenerationContextOp_CreateUniqueName.CONTEXT_NODE, node);
   }
 
-
   public static GenerationContextOp_CreateUniqueName newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_CreateUniqueName)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Ba
   public static GenerationContextOp_CreateUniqueName newInstance(SModel sm) {
     return GenerationContextOp_CreateUniqueName.newInstance(sm, false);
   }
-
 }

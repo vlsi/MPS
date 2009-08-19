@@ -59,5 +59,4 @@ public enum _NextLine_Enum {
     }
     return _NextLine_Enum.getDefault();
   }
-
 }

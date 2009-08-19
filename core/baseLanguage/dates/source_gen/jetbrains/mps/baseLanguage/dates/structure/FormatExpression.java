@@ -81,7 +81,6 @@ public class FormatExpression extends Expression implements TypeDerivable {
     super.setChild(FormatExpression.ZONE, node);
   }
 
-
   public static FormatExpression newInstance(SModel sm, boolean init) {
     return (FormatExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -89,5 +88,4 @@ public class FormatExpression extends Expression implements TypeDerivable {
   public static FormatExpression newInstance(SModel sm) {
     return FormatExpression.newInstance(sm, false);
   }
-
 }

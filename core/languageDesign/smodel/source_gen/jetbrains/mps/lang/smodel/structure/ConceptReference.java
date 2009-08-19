@@ -25,7 +25,6 @@ public class ConceptReference extends BaseConcept {
     super.setReferent(ConceptReference.CONCEPT, node);
   }
 
-
   public static ConceptReference newInstance(SModel sm, boolean init) {
     return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ConceptReference extends BaseConcept {
   public static ConceptReference newInstance(SModel sm) {
     return ConceptReference.newInstance(sm, false);
   }
-
 }

@@ -52,7 +52,6 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
     super.setChild(SEnum_MemberForValueOperation.VALUE_EXPRESSION, node);
   }
 
-
   public static SEnum_MemberForValueOperation newInstance(SModel sm, boolean init) {
     return (SEnum_MemberForValueOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
   public static SEnum_MemberForValueOperation newInstance(SModel sm) {
     return SEnum_MemberForValueOperation.newInstance(sm, false);
   }
-
 }

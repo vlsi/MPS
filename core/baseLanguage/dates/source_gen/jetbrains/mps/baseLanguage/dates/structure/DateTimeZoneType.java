@@ -22,5 +22,4 @@ public class DateTimeZoneType extends PrimitiveType {
   public static DateTimeZoneType newInstance(SModel sm) {
     return DateTimeZoneType.newInstance(sm, false);
   }
-
 }

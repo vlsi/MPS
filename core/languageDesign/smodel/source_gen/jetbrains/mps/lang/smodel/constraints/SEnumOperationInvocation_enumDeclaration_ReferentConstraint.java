@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SEnumOperationInvocation_enumDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SEnumOperationInvocation_enumDeclaration_ReferentConstraint() {
   }
 
@@ -27,5 +26,4 @@ public class SEnumOperationInvocation_enumDeclaration_ReferentConstraint extends
     // roots only
     return SModelSearchUtil.createModelAndImportedModelsScope(SNodeOperations.getModel(_context.getReferenceNode()), true, operationContext.getScope());
   }
-
 }

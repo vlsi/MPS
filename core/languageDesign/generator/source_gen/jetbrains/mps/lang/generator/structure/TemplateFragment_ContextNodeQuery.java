@@ -21,5 +21,4 @@ public class TemplateFragment_ContextNodeQuery extends TemplateQueryBase {
   public static TemplateFragment_ContextNodeQuery newInstance(SModel sm) {
     return TemplateFragment_ContextNodeQuery.newInstance(sm, false);
   }
-
 }

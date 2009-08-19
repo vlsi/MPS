@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6410_0(editorContext, node);
   }
@@ -101,7 +100,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6410_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "asCast"));
   }
@@ -111,7 +109,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6410_0 extends AbstractCellProvider {
-
     public _Inline6410_0() {
       super();
     }
@@ -147,7 +144,5 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

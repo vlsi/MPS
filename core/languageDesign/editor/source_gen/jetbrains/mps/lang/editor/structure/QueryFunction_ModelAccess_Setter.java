@@ -22,5 +22,4 @@ public class QueryFunction_ModelAccess_Setter extends ConceptFunction {
   public static QueryFunction_ModelAccess_Setter newInstance(SModel sm) {
     return QueryFunction_ModelAccess_Setter.newInstance(sm, false);
   }
-
 }

@@ -52,7 +52,6 @@ public class SEnum_MemberForNameOperation extends BaseConcept implements SEnumOp
     super.setChild(SEnum_MemberForNameOperation.NAME_EXPRESSION, node);
   }
 
-
   public static SEnum_MemberForNameOperation newInstance(SModel sm, boolean init) {
     return (SEnum_MemberForNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class SEnum_MemberForNameOperation extends BaseConcept implements SEnumOp
   public static SEnum_MemberForNameOperation newInstance(SModel sm) {
     return SEnum_MemberForNameOperation.newInstance(sm, false);
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,5 +19,4 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
     return new _Quotations.QuotationClass_0().createNode(conceptOfChild);
   }
-
 }

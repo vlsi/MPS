@@ -15,7 +15,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class SmartActionParameter_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3006_0(editorContext, node);
   }
@@ -63,5 +62,4 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

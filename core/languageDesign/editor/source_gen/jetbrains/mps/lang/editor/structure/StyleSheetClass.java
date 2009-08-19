@@ -85,7 +85,6 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
     this.insertChild(prev, StyleSheetClass.STYLE_ITEM, node);
   }
 
-
   public static StyleSheetClass newInstance(SModel sm, boolean init) {
     return (StyleSheetClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheetClass", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class StyleSheetClass extends BaseConcept implements INamedConcept, IVali
   public static StyleSheetClass newInstance(SModel sm) {
     return StyleSheetClass.newInstance(sm, false);
   }
-
 }

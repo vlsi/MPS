@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParameterizedIntentionDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
     SNode parameter = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.IntentionParameter", null);
     ListSequence.fromList(SLinkOperations.getConceptLinkTargets(SLinkOperations.getTarget(thisNode, "executeFunction", true), "applicableConceptFunctionParameter")).addElement((SNode)parameter.getConceptDeclarationAdapter().getNode());
@@ -18,5 +17,4 @@ public class ParameterizedIntentionDeclaration_Behavior {
   public static boolean virtual_isParameterized_1240406910049(SNode thisNode) {
     return true;
   }
-
 }

@@ -21,5 +21,4 @@ public class LastPositionAllowedStyleClassItem extends BooleanStyleSheetItem {
   public static LastPositionAllowedStyleClassItem newInstance(SModel sm) {
     return LastPositionAllowedStyleClassItem.newInstance(sm, false);
   }
-
 }

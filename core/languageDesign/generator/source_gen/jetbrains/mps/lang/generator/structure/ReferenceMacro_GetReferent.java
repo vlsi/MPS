@@ -21,5 +21,4 @@ public class ReferenceMacro_GetReferent extends TemplateQueryBase {
   public static ReferenceMacro_GetReferent newInstance(SModel sm) {
     return ReferenceMacro_GetReferent.newInstance(sm, false);
   }
-
 }

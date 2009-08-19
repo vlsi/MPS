@@ -9,7 +9,6 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import javax.swing.JComponent;
 
 public class StructureView_Tool extends GeneratedTool {
-
   private StructureViewComponent myComponent;
 
   public StructureView_Tool(Project project) {
@@ -27,5 +26,4 @@ public class StructureView_Tool extends GeneratedTool {
   public StructureViewComponent getStructureView() {
     return StructureView_Tool.this.myComponent;
   }
-
 }

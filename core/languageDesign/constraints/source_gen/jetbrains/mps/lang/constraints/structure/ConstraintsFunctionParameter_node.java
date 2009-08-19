@@ -22,5 +22,4 @@ public class ConstraintsFunctionParameter_node extends ConceptFunctionParameter 
   public static ConstraintsFunctionParameter_node newInstance(SModel sm) {
     return ConstraintsFunctionParameter_node.newInstance(sm, false);
   }
-
 }

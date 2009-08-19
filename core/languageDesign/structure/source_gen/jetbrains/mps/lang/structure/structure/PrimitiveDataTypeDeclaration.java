@@ -21,5 +21,4 @@ public class PrimitiveDataTypeDeclaration extends DataTypeDeclaration {
   public static PrimitiveDataTypeDeclaration newInstance(SModel sm) {
     return PrimitiveDataTypeDeclaration.newInstance(sm, false);
   }
-
 }

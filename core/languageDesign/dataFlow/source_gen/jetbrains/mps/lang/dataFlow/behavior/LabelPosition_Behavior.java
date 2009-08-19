@@ -5,8 +5,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class LabelPosition_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

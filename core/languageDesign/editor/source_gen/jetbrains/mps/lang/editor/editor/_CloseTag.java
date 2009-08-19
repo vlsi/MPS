@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 
 public class _CloseTag extends AbstractCellProvider {
-
   public _CloseTag(SNode node) {
     super(node);
   }
@@ -33,7 +32,6 @@ public class _CloseTag extends AbstractCellProvider {
 
   private EditorCell createReadOnlyModelAccessor_6449_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node);
       }
@@ -50,8 +48,7 @@ public class _CloseTag extends AbstractCellProvider {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return _CloseTag._StyleParameter_QueryFunction_6449_0((cell == null ?
             null :
@@ -67,9 +64,7 @@ public class _CloseTag extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_6449_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
-
 }

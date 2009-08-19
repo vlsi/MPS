@@ -10,14 +10,12 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DeprecatedNodeAnnotation_ActionMap {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeprecatedNodeAnnotation_ActionMap.DeprecatedNodeAnnotation_ActionMap_DELETE(node));
   }
 
   public static class DeprecatedNodeAnnotation_ActionMap_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public DeprecatedNodeAnnotation_ActionMap_DELETE(SNode node) {
       this.myNode = node;
@@ -30,7 +28,5 @@ public class DeprecatedNodeAnnotation_ActionMap {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
-
-}
-
+  }
 }

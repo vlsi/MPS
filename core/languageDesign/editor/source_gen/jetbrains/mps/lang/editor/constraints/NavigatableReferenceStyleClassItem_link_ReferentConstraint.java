@@ -13,7 +13,6 @@ import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class NavigatableReferenceStyleClassItem_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public NavigatableReferenceStyleClassItem_link_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class NavigatableReferenceStyleClassItem_link_ReferentConstraint extends 
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(editedConcept);
   }
-
 }

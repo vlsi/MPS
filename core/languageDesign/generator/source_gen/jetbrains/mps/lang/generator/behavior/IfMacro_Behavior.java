@@ -5,8 +5,6 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class IfMacro_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

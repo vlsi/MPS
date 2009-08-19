@@ -22,5 +22,4 @@ public class DateTimeType extends Type {
   public static DateTimeType newInstance(SModel sm) {
     return DateTimeType.newInstance(sm, false);
   }
-
 }

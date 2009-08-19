@@ -21,5 +21,4 @@ public class DropRootRule_Condition extends TemplateQueryBase {
   public static DropRootRule_Condition newInstance(SModel sm) {
     return DropRootRule_Condition.newInstance(sm, false);
   }
-
 }

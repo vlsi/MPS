@@ -24,7 +24,6 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
     super.setChild(SubstituteNodeBuilderVariableDeclaration.INITIALIZER_BLOCK, node);
   }
 
-
   public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm, boolean init) {
     return (SubstituteNodeBuilderVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaratio
   public static SubstituteNodeBuilderVariableDeclaration newInstance(SModel sm) {
     return SubstituteNodeBuilderVariableDeclaration.newInstance(sm, false);
   }
-
 }

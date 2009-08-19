@@ -21,5 +21,4 @@ public class CellKeyMap_ExecuteFunction extends CellKeyMap_AbstractFunction {
   public static CellKeyMap_ExecuteFunction newInstance(SModel sm) {
     return CellKeyMap_ExecuteFunction.newInstance(sm, false);
   }
-
 }

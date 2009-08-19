@@ -75,7 +75,6 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
     this.insertChild(prev, NodeFactories.NODE_FACTORY, node);
   }
 
-
   public static NodeFactories newInstance(SModel sm, boolean init) {
     return (NodeFactories)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactories", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
   public static NodeFactories newInstance(SModel sm) {
     return NodeFactories.newInstance(sm, false);
   }
-
 }

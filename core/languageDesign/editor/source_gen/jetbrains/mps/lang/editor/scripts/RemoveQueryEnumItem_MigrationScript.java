@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RemoveQueryEnumItem_MigrationScript extends BaseMigrationScript {
-
   public RemoveQueryEnumItem_MigrationScript(IOperationContext operationContext) {
     super("remove enum item \"query\"");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "font style query";
       }

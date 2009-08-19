@@ -24,7 +24,6 @@ public class SPropertyAccess extends SNodeOperation {
     super.setReferent(SPropertyAccess.PROPERTY, node);
   }
 
-
   public static SPropertyAccess newInstance(SModel sm, boolean init) {
     return (SPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SPropertyAccess extends SNodeOperation {
   public static SPropertyAccess newInstance(SModel sm) {
     return SPropertyAccess.newInstance(sm, false);
   }
-
 }

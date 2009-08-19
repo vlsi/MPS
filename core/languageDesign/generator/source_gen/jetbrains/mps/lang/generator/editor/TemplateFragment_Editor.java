@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TemplateFragment_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4770_1(editorContext, node);
   }
@@ -252,13 +251,11 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4770_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
   public static class _Inline4770_0 extends AbstractCellProvider {
-
     public _Inline4770_0() {
       super();
     }
@@ -293,10 +290,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline4770_1 extends AbstractCellProvider {
-
     public _Inline4770_1() {
       super();
     }
@@ -331,7 +327,5 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

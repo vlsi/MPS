@@ -52,7 +52,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = editor.getSModel();
-    for(SNode editorNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
+    for (SNode editorNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")) {
       if (SLinkOperations.getTarget(editorNode, "conceptDeclaration", false) == thisNode) {
         return editorNode;
       }
@@ -70,7 +70,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = constraints.getSModel();
-    for(SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
+    for (SNode constraintsRoot : SModelOperations.getRoots(model, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
       if (SLinkOperations.getTarget(constraintsRoot, "concept", false) == thisNode) {
         return constraintsRoot;
       }
@@ -88,7 +88,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = constraints.getSModel();
-    for(SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
+    for (SNode behaviour : SModelOperations.getRoots(model, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       if (SLinkOperations.getTarget(behaviour, "concept", false) == thisNode) {
         return behaviour;
       }
@@ -122,7 +122,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = textgen.getSModel();
-    for(SNode textgenNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration")) {
+    for (SNode textgenNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration")) {
       if (SLinkOperations.getTarget(textgenNode, "conceptDeclaration", false) == thisNode) {
         return textgenNode;
       }
@@ -140,7 +140,7 @@ public class AbstractConceptDeclaration_Behavior {
       return null;
     }
     SModel model = dataFlow.getSModel();
-    for(SNode dataFlowNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")) {
+    for (SNode dataFlowNode : SModelOperations.getRoots(model, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")) {
       if (SLinkOperations.getTarget(dataFlowNode, "conceptDeclaration", false) == thisNode) {
         return dataFlowNode;
       }
@@ -173,10 +173,10 @@ public class AbstractConceptDeclaration_Behavior {
       return methods;
     }
     SNode contextBehaviour = SNodeOperations.getAncestor(context, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-    for(SNode concept : SConceptOperations.getConceptHierarchy(thisNode)) {
+    for (SNode concept : SConceptOperations.getConceptHierarchy(thisNode)) {
       SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behaviour != null) {
-        for(SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
+        for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           if (SLinkOperations.getTarget(method, "overriddenMethod", false) != null) {
             continue;
           }
@@ -206,10 +206,10 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_getVirtualConceptMethods_1213877394290(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
-    for(SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
+    for (SNode concept : SConceptOperations.getAllSuperConcepts(thisNode, false)) {
       SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behaviour != null) {
-        for(SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
+        for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           if (SPropertyOperations.getBoolean(method, "isVirtual")) {
             ListSequence.fromList(methods).addElement(method);
           }
@@ -224,9 +224,9 @@ public class AbstractConceptDeclaration_Behavior {
     List<SNode> implementedMethods = new ArrayList<SNode>();
     List<SNode> concepts = SConceptOperations.getAllSuperConcepts(thisNode, false);
     ListSequence.fromList(concepts).addElement(thisNode);
-    for(SNode concept : concepts) {
+    for (SNode concept : concepts) {
       SNode behavior = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
-      for(SNode method : SLinkOperations.getTargets(behavior, "method", true)) {
+      for (SNode method : SLinkOperations.getTargets(behavior, "method", true)) {
         if (SPropertyOperations.getBoolean(method, "isAbstract")) {
           ListSequence.fromList(abstractMethods).addElement(method);
         }
@@ -261,8 +261,7 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_getReferenceLinkDeclarations_1213877394496(SNode thisNode) {
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(thisNode);
-    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
@@ -271,8 +270,7 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_getAggregationLinkDeclarations_1213877394521(SNode thisNode) {
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(thisNode);
-    return ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
       }
@@ -301,7 +299,7 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {
     if (ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(thisNode)).contains(link) && !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "linkDeclaration", true)).contains(link))) {
-      for(SNode linkDeclarationOfMine : SLinkOperations.getTargets(thisNode, "linkDeclaration", true)) {
+      for (SNode linkDeclarationOfMine : SLinkOperations.getTargets(thisNode, "linkDeclaration", true)) {
         if (SLinkOperations.getTarget(linkDeclarationOfMine, "specializedLink", false) == link) {
           return null;
         }
@@ -341,11 +339,9 @@ public class AbstractConceptDeclaration_Behavior {
       }
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         SPropertyOperations.set(node, "name", newValue);
       }
     });
   }
-
 }

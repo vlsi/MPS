@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public LinkRefQualifier_link_ReferentConstraint() {
   }
 
@@ -45,13 +44,11 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
     // reference only?
-    links = ListSequence.fromList(links).where(new IWhereFilter <SNode>() {
-
+    links = ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
       }
     }).toListSequence();
     return links;
   }
-
 }

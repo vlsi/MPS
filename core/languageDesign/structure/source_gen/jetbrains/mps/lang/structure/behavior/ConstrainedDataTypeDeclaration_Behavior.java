@@ -5,12 +5,10 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ConstrainedDataTypeDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     return new _Quotations.QuotationClass_1().createNode();
   }
-
 }

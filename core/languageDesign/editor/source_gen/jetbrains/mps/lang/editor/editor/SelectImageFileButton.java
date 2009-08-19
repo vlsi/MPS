@@ -23,7 +23,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class SelectImageFileButton extends JButton {
-
   private SNode myNode;
 
   public SelectImageFileButton(SNode node) {
@@ -37,7 +36,6 @@ public class SelectImageFileButton extends JButton {
       new File(filename)
     );
     this.setAction(new AbstractAction(" ... ") {
-
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(SelectImageFileButton.this);
         if (root instanceof Frame) {
@@ -53,7 +51,6 @@ public class SelectImageFileButton extends JButton {
           String selectedPath = FileUtil.getCanonicalPath(result.toFile());
           final String pathToShow = Macros.languageDescriptor().shrinkPath(selectedPath, language.getDescriptorFile());
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
             public void run() {
               SPropertyOperations.set(SelectImageFileButton.this.myNode, "imageFile", pathToShow);
             }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class MenuPart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_1562_0(editorContext, node);
   }
@@ -19,5 +18,4 @@ public class MenuPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_1562_0");
     return editorCell;
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule() {
   }
 
@@ -53,5 +52,4 @@ public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends Abst
   public boolean overrides() {
     return false;
   }
-
 }

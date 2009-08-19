@@ -22,5 +22,4 @@ public class NodeSetupFunction_NewNode extends ConceptFunctionParameter {
   public static NodeSetupFunction_NewNode newInstance(SModel sm) {
     return NodeSetupFunction_NewNode.newInstance(sm, false);
   }
-
 }

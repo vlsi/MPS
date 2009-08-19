@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_childNode extends ConceptFunctionParameter
   public static ConceptFunctionParameter_childNode newInstance(SModel sm) {
     return ConceptFunctionParameter_childNode.newInstance(sm, false);
   }
-
 }

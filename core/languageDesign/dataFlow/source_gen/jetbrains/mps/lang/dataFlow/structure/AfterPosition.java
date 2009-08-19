@@ -21,5 +21,4 @@ public class AfterPosition extends RelativePosition {
   public static AfterPosition newInstance(SModel sm) {
     return AfterPosition.newInstance(sm, false);
   }
-
 }

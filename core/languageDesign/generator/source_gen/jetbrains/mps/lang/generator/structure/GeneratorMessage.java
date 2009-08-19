@@ -34,7 +34,6 @@ public class GeneratorMessage extends BaseConcept {
     super.setProperty(GeneratorMessage.MESSAGE_TYPE, value.getValueAsString());
   }
 
-
   public static GeneratorMessage newInstance(SModel sm, boolean init) {
     return (GeneratorMessage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.GeneratorMessage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class GeneratorMessage extends BaseConcept {
   public static GeneratorMessage newInstance(SModel sm) {
     return GeneratorMessage.newInstance(sm, false);
   }
-
 }

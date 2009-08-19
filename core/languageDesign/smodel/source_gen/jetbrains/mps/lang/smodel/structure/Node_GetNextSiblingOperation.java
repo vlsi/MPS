@@ -21,5 +21,4 @@ public class Node_GetNextSiblingOperation extends SNodeOperation {
   public static Node_GetNextSiblingOperation newInstance(SModel sm) {
     return Node_GetNextSiblingOperation.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class SourceSubstituteMacro extends NodeMacro {
   public static SourceSubstituteMacro newInstance(SModel sm) {
     return SourceSubstituteMacro.newInstance(sm, false);
   }
-
 }

@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CellModel_Constant_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return EditorCell_Constant.DEFAULT_FONT_STYLE;
   }
-
 }

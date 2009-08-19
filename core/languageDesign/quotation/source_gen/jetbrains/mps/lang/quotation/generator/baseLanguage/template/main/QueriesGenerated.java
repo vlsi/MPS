@@ -20,9 +20,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import java.util.Collections;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1224163515766(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.quotation.structure.Quotation")).isNotEmpty();
   }
@@ -126,7 +126,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1196351887203(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
-    for(SNode child : SNodeOperations.getChildren(_context.getNode())) {
+    for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
         antiquotation = SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.Antiquotation");
         break;
@@ -141,7 +141,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1196351887411(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
-    for(SNode child : SNodeOperations.getChildren(_context.getNode())) {
+    for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         antiquotation = SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
         break;
@@ -219,7 +219,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1196351887167(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for(SNode child : children) {
+    for (SNode child : children) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         return false;
       }
@@ -229,7 +229,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1196351887377(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for(SNode child : children) {
+    for (SNode child : children) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
         return true;
       }
@@ -243,7 +243,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1196351887529(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> children = SNodeOperations.getChildren(_context.getNode());
-    for(SNode child : children) {
+    for (SNode child : children) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         return true;
       }
@@ -280,7 +280,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         SNode antiqExpression = SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true);
         ListSequence.fromList(result).addElement(antiqExpression);
@@ -293,7 +293,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
     Collections.sort(propertyNames);
-    for(String property : propertyNames) {
+    for (String property : propertyNames) {
       if (SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", property), true) != null) {
         continue;
       }
@@ -307,7 +307,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SReference reference : _context.getNode().getReferences()) {
+    for (SReference reference : _context.getNode().getReferences()) {
       if (SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", reference.getRole()), true) != null) {
         continue;
       }
@@ -326,7 +326,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886984(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(String refRole : _context.getNode().getReferenceRoles()) {
+    List<String> refRoles = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(refRoles).addSequence(SetSequence.fromSet(_context.getNode().getReferenceRoles()));
+    Collections.sort(refRoles);
+    for (String refRole : refRoles) {
       SNode attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", refRole), true);
       if (attribute != null) {
         ListSequence.fromList(result).addElement(attribute);
@@ -337,7 +340,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351887023(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getChildren(_context.getNode())) {
+    for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"))) {
         ListSequence.fromList(result).addElement(child);
       }
@@ -349,7 +352,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     List<String> propertyNames = ListSequence.fromListWithValues(new ArrayList<String>(), _context.getNode().getPropertyNames());
     Collections.sort(propertyNames);
-    for(String property : propertyNames) {
+    for (String property : propertyNames) {
       SNode attribute = SLinkOperations.getTarget(_context.getNode(), AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyAntiquotation", property), true);
       if (attribute != null) {
         ListSequence.fromList(result).addElement(attribute);
@@ -366,8 +369,8 @@ public class QueriesGenerated {
     ListSequence.fromList(frontier).addElement(root);
     List<SNode> newFrontier = new ArrayList<SNode>();
     while (ListSequence.fromList(frontier).isNotEmpty()) {
-      for(SNode node : frontier) {
-        for(SNode child : SNodeOperations.getChildren(node)) {
+      for (SNode node : frontier) {
+        for (SNode child : SNodeOperations.getChildren(node)) {
           if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"))) {
             ListSequence.fromList(result).addElement(child);
             ListSequence.fromList(newFrontier).addElement(child);
@@ -387,10 +390,10 @@ public class QueriesGenerated {
     ListSequence.fromList(frontier).addElement(root);
     List<SNode> newFrontier = new ArrayList<SNode>();
     while (ListSequence.fromList(frontier).isNotEmpty()) {
-      for(SNode node : frontier) {
-        for(SNode child : SNodeOperations.getChildren(node)) {
+      for (SNode node : frontier) {
+        for (SNode child : SNodeOperations.getChildren(node)) {
           if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"))) {
-            for(SReference reference : child.getReferences()) {
+            for (SReference reference : child.getReferences()) {
               if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", reference.getRole()), true) != null) {
                 continue;
               }
@@ -418,7 +421,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
       }
@@ -429,5 +432,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1224163411985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.quotation.structure.Quotation");
   }
-
 }

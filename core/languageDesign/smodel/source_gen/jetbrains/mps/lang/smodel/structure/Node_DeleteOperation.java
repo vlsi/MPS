@@ -21,5 +21,4 @@ public class Node_DeleteOperation extends SNodeOperation {
   public static Node_DeleteOperation newInstance(SModel sm) {
     return Node_DeleteOperation.newInstance(sm, false);
   }
-
 }

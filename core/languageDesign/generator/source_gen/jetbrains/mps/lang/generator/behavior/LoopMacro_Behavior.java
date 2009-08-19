@@ -7,7 +7,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LoopMacro_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,11 +16,9 @@ public class LoopMacro_Behavior {
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_2);
       if (coercedNode_2 != null) {
         return pattern_2.PatternVar2;
-      } else
-      {
+      } else {
       }
     }
     return null;
   }
-
 }

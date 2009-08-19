@@ -12,15 +12,14 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class _Quotation_createModel extends EditorCellKeyMap {
-
   public _Quotation_createModel() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new _Quotation_createModel._Quotation_createModel_Action0();
     this.putAction("any", "[", action);
   }
-  public static class _Quotation_createModel_Action0 extends EditorCellKeyMapAction {
 
+  public static class _Quotation_createModel_Action0 extends EditorCellKeyMapAction {
     public _Quotation_createModel_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
@@ -61,7 +60,5 @@ public class _Quotation_createModel extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " [";
     }
-
-}
-
+  }
 }

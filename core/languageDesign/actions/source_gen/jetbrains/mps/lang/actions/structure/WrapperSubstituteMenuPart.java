@@ -42,7 +42,6 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
     super.setChild(WrapperSubstituteMenuPart.RETURN_SMALL_PART, node);
   }
 
-
   public static WrapperSubstituteMenuPart newInstance(SModel sm, boolean init) {
     return (WrapperSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static WrapperSubstituteMenuPart newInstance(SModel sm) {
     return WrapperSubstituteMenuPart.newInstance(sm, false);
   }
-
 }

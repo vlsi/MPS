@@ -64,5 +64,4 @@ public enum Cardinality {
     }
     return Cardinality.getDefault();
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class CreateListAntiquotation_Intention extends BaseIntention {
-
   public CreateListAntiquotation_Intention() {
   }
 
@@ -55,5 +54,4 @@ public class CreateListAntiquotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.quotation.intentions";
   }
-
 }

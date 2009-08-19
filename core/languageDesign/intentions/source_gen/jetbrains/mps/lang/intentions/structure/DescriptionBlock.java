@@ -22,5 +22,4 @@ public class DescriptionBlock extends ConceptFunction {
   public static DescriptionBlock newInstance(SModel sm) {
     return DescriptionBlock.newInstance(sm, false);
   }
-
 }

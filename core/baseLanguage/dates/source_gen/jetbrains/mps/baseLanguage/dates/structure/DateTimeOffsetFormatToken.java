@@ -37,7 +37,6 @@ public class DateTimeOffsetFormatToken extends FormatToken {
     this.insertChild(prev, DateTimeOffsetFormatToken.DURATION_TYPE_REFERENCE, node);
   }
 
-
   public static DateTimeOffsetFormatToken newInstance(SModel sm, boolean init) {
     return (DateTimeOffsetFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeOffsetFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -45,5 +44,4 @@ public class DateTimeOffsetFormatToken extends FormatToken {
   public static DateTimeOffsetFormatToken newInstance(SModel sm) {
     return DateTimeOffsetFormatToken.newInstance(sm, false);
   }
-
 }

@@ -26,7 +26,7 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -35,7 +35,7 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     return HelpHelper.helpForNodeIsAvailable(ShowHelpForNode_Action.this.node) && HelpHelper.getDefaultHelpFor(ShowHelpForNode_Action.this.module, ShowHelpForNode_Action.this.model, ShowHelpForNode_Action.this.node) != HelpHelper.HelpType.NODE;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -47,7 +47,7 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,12 +66,11 @@ public class ShowHelpForNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpForNode(ShowHelpForNode_Action.this.node);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForNode", t);
     }
   }
-
 }

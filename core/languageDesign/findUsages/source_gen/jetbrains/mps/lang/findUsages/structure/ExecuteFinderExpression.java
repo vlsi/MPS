@@ -42,7 +42,6 @@ public class ExecuteFinderExpression extends Expression {
     super.setChild(ExecuteFinderExpression.QUERY_SCOPE, node);
   }
 
-
   public static ExecuteFinderExpression newInstance(SModel sm, boolean init) {
     return (ExecuteFinderExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ExecuteFinderExpression extends Expression {
   public static ExecuteFinderExpression newInstance(SModel sm) {
     return ExecuteFinderExpression.newInstance(sm, false);
   }
-
 }

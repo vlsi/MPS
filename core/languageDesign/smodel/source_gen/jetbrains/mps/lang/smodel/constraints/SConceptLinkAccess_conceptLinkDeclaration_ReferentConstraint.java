@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint() {
   }
 
@@ -35,12 +34,10 @@ public class SConceptLinkAccess_conceptLinkDeclaration_ReferentConstraint extend
       SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
       if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SConceptType")) {
         operandConcept = SLinkOperations.getTarget(SNodeOperations.cast(leftType, "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false);
-      } else
-      {
+      } else {
         operandConcept = SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"));
       }
     }
     return AbstractConceptDeclaration_Behavior.call_getConceptLinkDeclarations_1213877394578(operandConcept);
   }
-
 }

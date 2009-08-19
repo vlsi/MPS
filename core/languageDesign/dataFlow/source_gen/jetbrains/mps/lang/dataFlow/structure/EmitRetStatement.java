@@ -21,5 +21,4 @@ public class EmitRetStatement extends EmitStatement {
   public static EmitRetStatement newInstance(SModel sm) {
     return EmitRetStatement.newInstance(sm, false);
   }
-
 }

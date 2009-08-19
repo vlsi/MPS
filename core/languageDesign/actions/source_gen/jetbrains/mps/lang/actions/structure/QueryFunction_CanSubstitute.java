@@ -22,5 +22,4 @@ public class QueryFunction_CanSubstitute extends ConceptFunction {
   public static QueryFunction_CanSubstitute newInstance(SModel sm) {
     return QueryFunction_CanSubstitute.newInstance(sm, false);
   }
-
 }

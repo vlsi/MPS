@@ -26,7 +26,7 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -35,7 +35,7 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
     return HelpHelper.helpForRootIsAvailable(ShowHelpForRoot_Action.this.node) && HelpHelper.getDefaultHelpFor(ShowHelpForRoot_Action.this.module, ShowHelpForRoot_Action.this.model, ShowHelpForRoot_Action.this.node) != HelpHelper.HelpType.ROOT_NODE;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -47,7 +47,7 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,12 +66,11 @@ public class ShowHelpForRoot_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HelpHelper.showHelpForRoot(ShowHelpForRoot_Action.this.node);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowHelpForRoot", t);
     }
   }
-
 }

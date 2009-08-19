@@ -54,5 +54,4 @@ public enum LinkMetaclass {
     }
     return LinkMetaclass.getDefault();
   }
-
 }

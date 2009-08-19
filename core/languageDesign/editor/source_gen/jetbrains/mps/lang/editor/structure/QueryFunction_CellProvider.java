@@ -22,5 +22,4 @@ public class QueryFunction_CellProvider extends ConceptFunction {
   public static QueryFunction_CellProvider newInstance(SModel sm) {
     return QueryFunction_CellProvider.newInstance(sm, false);
   }
-
 }

@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
 public class RemoveObsoleteLinks_MigrationScript extends BaseMigrationScript {
-
   public RemoveObsoleteLinks_MigrationScript(IOperationContext operationContext) {
     super("Remove Obsolete Links");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Remove Obsolete 'link' Link";
       }
@@ -40,7 +38,6 @@ public class RemoveObsoleteLinks_MigrationScript extends BaseMigrationScript {
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Remove Obsolete 'property' Link";
       }

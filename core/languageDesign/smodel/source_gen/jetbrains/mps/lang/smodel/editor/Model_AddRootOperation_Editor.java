@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7118_0(editorContext, node);
   }
@@ -69,5 +68,4 @@ public class Model_AddRootOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

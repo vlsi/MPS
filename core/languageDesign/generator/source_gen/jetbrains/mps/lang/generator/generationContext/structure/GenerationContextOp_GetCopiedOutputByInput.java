@@ -24,7 +24,6 @@ public class GenerationContextOp_GetCopiedOutputByInput extends GenerationContex
     super.setChild(GenerationContextOp_GetCopiedOutputByInput.INPUT_NODE, node);
   }
 
-
   public static GenerationContextOp_GetCopiedOutputByInput newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_GetCopiedOutputByInput)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GenerationContextOp_GetCopiedOutputByInput extends GenerationContex
   public static GenerationContextOp_GetCopiedOutputByInput newInstance(SModel sm) {
     return GenerationContextOp_GetCopiedOutputByInput.newInstance(sm, false);
   }
-
 }

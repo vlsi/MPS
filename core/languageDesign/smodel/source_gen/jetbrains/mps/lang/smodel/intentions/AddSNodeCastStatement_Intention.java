@@ -13,7 +13,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class AddSNodeCastStatement_Intention extends BaseIntention {
-
   public AddSNodeCastStatement_Intention() {
   }
 
@@ -71,8 +70,7 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
       SNode nodeTypeCastExpression = SLinkOperations.setNewChild(declaration, "initializer", "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression");
       SLinkOperations.setTarget(nodeTypeCastExpression, "concept", conceptDeclaration, false);
       SLinkOperations.setTarget(nodeTypeCastExpression, "leftExpression", SNodeOperations.copyNode(expression), true);
-    } else
-    {
+    } else {
       SNode castExpression = SLinkOperations.setNewChild(declaration, "initializer", "jetbrains.mps.baseLanguage.structure.CastExpression");
       SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), true);
       SLinkOperations.setTarget(castExpression, "expression", SNodeOperations.copyNode(expression), true);
@@ -83,5 +81,4 @@ public class AddSNodeCastStatement_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

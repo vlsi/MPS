@@ -22,5 +22,4 @@ public class EmitStatement extends Statement {
   public static EmitStatement newInstance(SModel sm) {
     return EmitStatement.newInstance(sm, false);
   }
-
 }

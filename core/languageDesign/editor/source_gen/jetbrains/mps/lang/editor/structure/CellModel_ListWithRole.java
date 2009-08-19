@@ -105,7 +105,6 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
     super.setChild(CellModel_ListWithRole.SEPARATOR_STYLE, node);
   }
 
-
   public static CellModel_ListWithRole newInstance(SModel sm, boolean init) {
     return (CellModel_ListWithRole)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -113,5 +112,4 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   public static CellModel_ListWithRole newInstance(SModel sm) {
     return CellModel_ListWithRole.newInstance(sm, false);
   }
-
 }

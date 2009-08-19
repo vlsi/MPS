@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class FinderDeclaration_Constraints {
-
   public static boolean canBeARoot(final IOperationContext operationContext, final CanBeARootContext _context) {
     return LanguageAspect.FIND_USAGES.is(_context.getModel());
   }
-
 }

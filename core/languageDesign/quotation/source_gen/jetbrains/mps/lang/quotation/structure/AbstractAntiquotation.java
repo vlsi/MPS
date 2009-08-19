@@ -25,7 +25,6 @@ public class AbstractAntiquotation extends BaseConcept {
     super.setChild(AbstractAntiquotation.EXPRESSION, node);
   }
 
-
   public static AbstractAntiquotation newInstance(SModel sm, boolean init) {
     return (AbstractAntiquotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AbstractAntiquotation extends BaseConcept {
   public static AbstractAntiquotation newInstance(SModel sm) {
     return AbstractAntiquotation.newInstance(sm, false);
   }
-
 }

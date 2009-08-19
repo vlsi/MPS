@@ -94,7 +94,6 @@ public class DateFormat extends BaseConcept implements IDateFormat {
     this.insertChild(prev, DateFormat.TOKEN, node);
   }
 
-
   public static DateFormat newInstance(SModel sm, boolean init) {
     return (DateFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,5 +101,4 @@ public class DateFormat extends BaseConcept implements IDateFormat {
   public static DateFormat newInstance(SModel sm) {
     return DateFormat.newInstance(sm, false);
   }
-
 }

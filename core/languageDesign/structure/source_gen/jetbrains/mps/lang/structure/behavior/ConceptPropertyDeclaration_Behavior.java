@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptPropertyDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String call_getCellId_1216822989252(SNode thisNode) {
     return "conceptProperty_" + SPropertyOperations.getString(thisNode, "name");
   }
-
 }

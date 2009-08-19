@@ -7,12 +7,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
 public class ResultStatement_DataFlow extends DataFlowBuilder {
-
   public ResultStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(_context.getNode());
   }
-
 }

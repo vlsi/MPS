@@ -54,5 +54,4 @@ public enum _LeftRight_Enum {
     }
     return _LeftRight_Enum.getDefault();
   }
-
 }

@@ -21,5 +21,4 @@ public class ConstraintFunction_ReferentSearchScope_Factory extends ConstraintFu
   public static ConstraintFunction_ReferentSearchScope_Factory newInstance(SModel sm) {
     return ConstraintFunction_ReferentSearchScope_Factory.newInstance(sm, false);
   }
-
 }

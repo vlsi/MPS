@@ -98,7 +98,6 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
     super.setReferent(LinkDeclaration.TARGET, node);
   }
 
-
   public static LinkDeclaration newInstance(SModel sm, boolean init) {
     return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -106,5 +105,4 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   public static LinkDeclaration newInstance(SModel sm) {
     return LinkDeclaration.newInstance(sm, false);
   }
-
 }

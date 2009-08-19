@@ -22,5 +22,4 @@ public class ConstraintFunction_PropertyValidator extends ConceptFunction {
   public static ConstraintFunction_PropertyValidator newInstance(SModel sm) {
     return ConstraintFunction_PropertyValidator.newInstance(sm, false);
   }
-
 }

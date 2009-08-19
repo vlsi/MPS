@@ -21,5 +21,4 @@ public class PropertyAntiquotation extends AbstractAntiquotation {
   public static PropertyAntiquotation newInstance(SModel sm) {
     return PropertyAntiquotation.newInstance(sm, false);
   }
-
 }

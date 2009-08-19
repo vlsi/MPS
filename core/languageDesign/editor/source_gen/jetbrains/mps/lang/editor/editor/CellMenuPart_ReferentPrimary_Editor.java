@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2608_0(editorContext, node);
   }
@@ -84,5 +83,4 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
 }

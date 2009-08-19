@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Antiquotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2990_0(editorContext, node);
   }
@@ -60,8 +59,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2990_0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return Antiquotation_Editor._StyleParameter_QueryFunction_2990_1((cell == null ?
             null :
@@ -84,8 +82,7 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_2990_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return Antiquotation_Editor._StyleParameter_QueryFunction_2990_0((cell == null ?
             null :
@@ -142,13 +139,11 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_2990_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((parent != null)) {
           return parent.getRole_();
-        } else
-        {
+        } else {
           return "";
         }
       }
@@ -171,13 +166,11 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_2990_1(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
         if ((SNodeOperations.getParent(node) != null)) {
           return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)), "name");
-        } else
-        {
+        } else {
           return "";
         }
       }
@@ -215,7 +208,6 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_2990_0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
@@ -223,5 +215,4 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
   private static Color _StyleParameter_QueryFunction_2990_1(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
-
 }

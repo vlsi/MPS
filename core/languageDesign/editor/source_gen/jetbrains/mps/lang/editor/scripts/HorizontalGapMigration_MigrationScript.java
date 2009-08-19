@@ -15,11 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript {
-
   public HorizontalGapMigration_MigrationScript(IOperationContext operationContext) {
     super("horizontal gap migration");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Padding rigth delete";
       }
@@ -45,7 +43,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Padding left delete";
       }
@@ -71,7 +68,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "First posiotion allowed repacement";
       }
@@ -99,7 +95,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Last position allowad replacement";
       }
@@ -128,7 +123,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Selectable false";
       }
@@ -162,7 +156,6 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add punctuation left to constant cell";
       }

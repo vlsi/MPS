@@ -23,7 +23,6 @@ import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177495846676(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false) != null;
   }
@@ -97,7 +96,6 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.actions.structure.Substitute_SimpleString", null);
             SPropertyOperations.set(result, "text", pattern);
@@ -120,7 +118,6 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", null);
             SPropertyOperations.set(result, "text", pattern);
@@ -147,7 +144,6 @@ public class QueriesGenerated {
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart");
       Condition cond = new Condition() {
-
         public boolean met(Object object) {
           return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.actions.structure.SubstituteMenuPart"));
         }
@@ -165,7 +161,6 @@ public class QueriesGenerated {
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart");
       Condition cond = new Condition() {
-
         public boolean met(Object object) {
           return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.actions.structure.SideTransformMenuPart"));
         }
@@ -175,5 +170,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

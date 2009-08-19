@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class _CellKeyMapLnk_Component extends AbstractCellProvider {
-
   public _CellKeyMapLnk_Component(SNode node) {
     super(node);
   }
@@ -60,7 +59,6 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   public static class _Inline8023_0 extends AbstractCellProvider {
-
     public _Inline8023_0() {
       super();
     }
@@ -95,7 +93,5 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

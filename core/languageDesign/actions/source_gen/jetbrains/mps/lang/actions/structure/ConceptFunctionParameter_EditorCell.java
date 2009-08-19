@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_EditorCell extends ConceptFunctionParamete
   public static ConceptFunctionParameter_EditorCell newInstance(SModel sm) {
     return ConceptFunctionParameter_EditorCell.newInstance(sm, false);
   }
-
 }

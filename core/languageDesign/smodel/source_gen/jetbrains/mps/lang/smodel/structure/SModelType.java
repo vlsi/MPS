@@ -22,5 +22,4 @@ public class SModelType extends Type {
   public static SModelType newInstance(SModel sm) {
     return SModelType.newInstance(sm, false);
   }
-
 }

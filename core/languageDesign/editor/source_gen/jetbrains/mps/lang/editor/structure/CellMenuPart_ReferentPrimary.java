@@ -21,5 +21,4 @@ public class CellMenuPart_ReferentPrimary extends CellMenuPart_Abstract {
   public static CellMenuPart_ReferentPrimary newInstance(SModel sm) {
     return CellMenuPart_ReferentPrimary.newInstance(sm, false);
   }
-
 }

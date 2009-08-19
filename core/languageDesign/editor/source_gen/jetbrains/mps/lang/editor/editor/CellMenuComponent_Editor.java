@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuComponent_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4976_0(editorContext, node);
   }
@@ -198,7 +197,6 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4976_0 extends AbstractCellProvider {
-
     public _Inline4976_0() {
       super();
     }
@@ -234,7 +232,5 @@ public class CellMenuComponent_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

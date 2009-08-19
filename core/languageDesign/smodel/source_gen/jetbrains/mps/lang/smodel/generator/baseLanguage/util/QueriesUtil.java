@@ -18,11 +18,10 @@ import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Beha
 import jetbrains.mps.util.NameUtil;
 
 public class QueriesUtil {
-
   public static List<SNode> getNodeOperation_ConceptList_concepts(SNode operation) {
     SNode parm_ConceptList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList");
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_ConceptList, "concept", true))) {
+    for (SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_ConceptList, "concept", true))) {
       if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));
       }
@@ -36,7 +35,7 @@ public class QueriesUtil {
     if ((parm_StopList == null)) {
       return result;
     }
-    for(SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_StopList, "concept", true))) {
+    for (SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_StopList, "concept", true))) {
       if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
         ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));
       }
@@ -60,7 +59,7 @@ public class QueriesUtil {
       methodName = "getBoolean";
     }
     SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -76,7 +75,7 @@ public class QueriesUtil {
       methodName = "setBoolean";
     }
     SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -96,7 +95,7 @@ public class QueriesUtil {
       }
     }
     SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -114,7 +113,7 @@ public class QueriesUtil {
       methodName = "getBoolean_def";
     }
     SNode operationClass = SNodeOperations.cast(SModelUtil.findNodeByFQName("jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"), scope), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(operationClass, "staticMethod", true))) {
       if (methodName.equals(SPropertyOperations.getString(method, "name"))) {
         return method;
       }
@@ -150,5 +149,4 @@ public class QueriesUtil {
   public static String getConceptFqName(SNode concept) {
     return NameUtil.nodeFQName(concept);
   }
-
 }

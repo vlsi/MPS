@@ -14,5 +14,4 @@ public class ReferenceMacro_AnnotationLink {
   public static ReferenceMacro getReferenceMacro(BaseConcept source, String linkRole) {
     return (ReferenceMacro)source.getLinkAttribute(ReferenceMacro_AnnotationLink.REFERENCE_MACRO, linkRole);
   }
-
 }

@@ -14,5 +14,4 @@ public class PropertyMacro_AnnotationLink {
   public static PropertyMacro getPropertyMacro(BaseConcept source, String propertyName) {
     return (PropertyMacro)source.getPropertyAttribute(PropertyMacro_AnnotationLink.PROPERTY_MACRO, propertyName);
   }
-
 }

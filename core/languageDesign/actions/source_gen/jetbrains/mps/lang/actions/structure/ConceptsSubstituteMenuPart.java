@@ -23,7 +23,6 @@ public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
     super.setChild(ConceptsSubstituteMenuPart.QUERY, node);
   }
 
-
   public static ConceptsSubstituteMenuPart newInstance(SModel sm, boolean init) {
     return (ConceptsSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
   public static ConceptsSubstituteMenuPart newInstance(SModel sm) {
     return ConceptsSubstituteMenuPart.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class LabelPosition extends Position {
     super.setReferent(LabelPosition.LABEL, node);
   }
 
-
   public static LabelPosition newInstance(SModel sm, boolean init) {
     return (LabelPosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.LabelPosition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class LabelPosition extends Position {
   public static LabelPosition newInstance(SModel sm) {
     return LabelPosition.newInstance(sm, false);
   }
-
 }

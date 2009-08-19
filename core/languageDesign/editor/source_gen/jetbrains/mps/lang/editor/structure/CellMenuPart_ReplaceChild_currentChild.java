@@ -22,5 +22,4 @@ public class CellMenuPart_ReplaceChild_currentChild extends ConceptFunctionParam
   public static CellMenuPart_ReplaceChild_currentChild newInstance(SModel sm) {
     return CellMenuPart_ReplaceChild_currentChild.newInstance(sm, false);
   }
-
 }

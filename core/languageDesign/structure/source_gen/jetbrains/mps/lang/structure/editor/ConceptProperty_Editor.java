@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class ConceptProperty_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_5599_0(editorContext, node);
   }
@@ -19,5 +18,4 @@ public class ConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_5599_0");
     return editorCell;
   }
-
 }

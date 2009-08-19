@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReferenceConceptLink_target_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ReferenceConceptLink_target_ReferentConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class ReferenceConceptLink_target_ReferentConstraint extends BaseNodeRefe
     }
     return new ReferenceConceptLinkTargetSearchScope(_context.getReferenceNode(), operationContext.getScope());
   }
-
 }

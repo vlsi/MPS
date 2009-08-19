@@ -21,5 +21,4 @@ public class OperationParm_Root extends AbstractOperationParameter {
   public static OperationParm_Root newInstance(SModel sm) {
     return OperationParm_Root.newInstance(sm, false);
   }
-
 }

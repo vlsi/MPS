@@ -24,7 +24,6 @@ public class DateTimePropetyReferenceOperation extends DateTimeOperation {
     super.setReferent(DateTimePropetyReferenceOperation.DATE_TIME_PROPERTY, node);
   }
 
-
   public static DateTimePropetyReferenceOperation newInstance(SModel sm, boolean init) {
     return (DateTimePropetyReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePropetyReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class DateTimePropetyReferenceOperation extends DateTimeOperation {
   public static DateTimePropetyReferenceOperation newInstance(SModel sm) {
     return DateTimePropetyReferenceOperation.newInstance(sm, false);
   }
-
 }

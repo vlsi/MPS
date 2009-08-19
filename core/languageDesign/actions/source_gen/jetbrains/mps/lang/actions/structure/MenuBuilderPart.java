@@ -22,5 +22,4 @@ public class MenuBuilderPart extends BaseConcept {
   public static MenuBuilderPart newInstance(SModel sm) {
     return MenuBuilderPart.newInstance(sm, false);
   }
-
 }

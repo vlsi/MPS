@@ -22,5 +22,4 @@ public class CellMenuPart_PropertyPostfixHints_GetPostfixes extends ConceptFunct
   public static CellMenuPart_PropertyPostfixHints_GetPostfixes newInstance(SModel sm) {
     return CellMenuPart_PropertyPostfixHints_GetPostfixes.newInstance(sm, false);
   }
-
 }

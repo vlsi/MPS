@@ -14,7 +14,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
 
 public class DefaultEditorBuilder {
-
   public DefaultEditorBuilder() {
   }
 
@@ -22,7 +21,7 @@ public class DefaultEditorBuilder {
     SNode conceptDeclaration = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(node);
     SNode collection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
     SLinkOperations.setTarget(collection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
-    for(SNode property : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration))) {
+    for (SNode property : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(conceptDeclaration))) {
       if (SNodeOperations.getParent(property) != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")) {
         DefaultEditorBuilder.addName(SPropertyOperations.getString(property, "name"), collection);
         SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
@@ -31,7 +30,7 @@ public class DefaultEditorBuilder {
         SLinkOperations.addChild(collection, "childCellModel", propertyCell);
       }
     }
-    for(SNode linkDeclaration : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration))) {
+    for (SNode linkDeclaration : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration))) {
       DefaultEditorBuilder.addName(SPropertyOperations.getString(linkDeclaration, "role"), collection);
       if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
@@ -39,8 +38,7 @@ public class DefaultEditorBuilder {
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           DefaultEditorBuilder.makeNewLine(linkCell);
           SLinkOperations.addChild(collection, "childCellModel", linkCell);
-        } else
-        {
+        } else {
           SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           SLinkOperations.setTarget(linkCell, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
@@ -49,8 +47,7 @@ public class DefaultEditorBuilder {
           DefaultEditorBuilder.addClassItem(linkCell, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
           SLinkOperations.addChild(collection, "childCellModel", linkCell);
         }
-      } else
-      {
+      } else {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
           SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
@@ -88,5 +85,4 @@ public class DefaultEditorBuilder {
     SPropertyOperations.set(classItem, "flag", "" + true);
     SLinkOperations.addChild(linkCell, "styleItem", classItem);
   }
-
 }

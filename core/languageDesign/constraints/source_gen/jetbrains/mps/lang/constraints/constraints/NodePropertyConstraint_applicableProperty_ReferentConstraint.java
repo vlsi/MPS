@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class NodePropertyConstraint_applicableProperty_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public NodePropertyConstraint_applicableProperty_ReferentConstraint() {
   }
 
@@ -33,12 +32,10 @@ public class NodePropertyConstraint_applicableProperty_ReferentConstraint extend
       SNode root = SNodeOperations.getContainingRoot(_context.getEnclosingNode());
       if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints")) {
         applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), "concept", false);
-      } else
-      {
+      } else {
         applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);
       }
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(applicableConcept);
   }
-
 }

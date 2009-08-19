@@ -37,7 +37,6 @@ public class ConditionalFormatToken extends FormatToken {
     this.insertChild(prev, ConditionalFormatToken.CONDITION_PAIR, node);
   }
 
-
   public static ConditionalFormatToken newInstance(SModel sm, boolean init) {
     return (ConditionalFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConditionalFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -45,5 +44,4 @@ public class ConditionalFormatToken extends FormatToken {
   public static ConditionalFormatToken newInstance(SModel sm) {
     return ConditionalFormatToken.newInstance(sm, false);
   }
-
 }

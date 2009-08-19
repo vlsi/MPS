@@ -24,7 +24,6 @@ public class Link_SetNewChildOperation extends SNodeOperation {
     super.setReferent(Link_SetNewChildOperation.CONCEPT, node);
   }
 
-
   public static Link_SetNewChildOperation newInstance(SModel sm, boolean init) {
     return (Link_SetNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Link_SetNewChildOperation extends SNodeOperation {
   public static Link_SetNewChildOperation newInstance(SModel sm) {
     return Link_SetNewChildOperation.newInstance(sm, false);
   }
-
 }

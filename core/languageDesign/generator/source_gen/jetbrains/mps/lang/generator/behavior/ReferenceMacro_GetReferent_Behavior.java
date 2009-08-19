@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ReferenceMacro_GetReferent_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -32,5 +31,4 @@ public class ReferenceMacro_GetReferent_Behavior {
     }
     return expectedNodeType;
   }
-
 }

@@ -22,5 +22,4 @@ public class QueryFunction_ModelAccess_Validator extends ConceptFunction {
   public static QueryFunction_ModelAccess_Validator newInstance(SModel sm) {
     return QueryFunction_ModelAccess_Validator.newInstance(sm, false);
   }
-
 }

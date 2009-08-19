@@ -62,7 +62,6 @@ public class DurationType extends BaseConcept implements INamedConcept {
     super.setChild(DurationType.JODA_DURATION_FIELD_TYPE, node);
   }
 
-
   public static DurationType newInstance(SModel sm, boolean init) {
     return (DurationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class DurationType extends BaseConcept implements INamedConcept {
   public static DurationType newInstance(SModel sm) {
     return DurationType.newInstance(sm, false);
   }
-
 }

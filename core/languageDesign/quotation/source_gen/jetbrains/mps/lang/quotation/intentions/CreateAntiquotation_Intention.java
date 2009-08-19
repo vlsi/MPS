@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class CreateAntiquotation_Intention extends BaseIntention {
-
   public CreateAntiquotation_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class CreateAntiquotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.quotation.intentions";
   }
-
 }

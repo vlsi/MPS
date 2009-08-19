@@ -5,12 +5,10 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class SModelType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return "model";
   }
-
 }

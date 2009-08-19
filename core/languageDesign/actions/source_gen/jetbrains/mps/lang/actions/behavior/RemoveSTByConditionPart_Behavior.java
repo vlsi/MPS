@@ -5,12 +5,10 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class RemoveSTByConditionPart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String call_getQueryMethodName_1220279474449(SNode thisNode) {
     return "removeSideTransformActionsByCondition_" + thisNode.getId();
   }
-
 }

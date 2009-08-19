@@ -24,7 +24,6 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
     super.setReferent(RoundDateTimeOperation.PRECISION, node);
   }
 
-
   public static RoundDateTimeOperation newInstance(SModel sm, boolean init) {
     return (RoundDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
   public static RoundDateTimeOperation newInstance(SModel sm) {
     return RoundDateTimeOperation.newInstance(sm, false);
   }
-
 }

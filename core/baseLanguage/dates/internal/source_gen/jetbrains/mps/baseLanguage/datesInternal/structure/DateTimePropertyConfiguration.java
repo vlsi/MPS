@@ -75,7 +75,6 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
     this.insertChild(prev, DateTimePropertyConfiguration.DATE_TIME_PROPERTY_FORMAT_TYPE, node);
   }
 
-
   public static DateTimePropertyConfiguration newInstance(SModel sm, boolean init) {
     return (DateTimePropertyConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
   public static DateTimePropertyConfiguration newInstance(SModel sm) {
     return DateTimePropertyConfiguration.newInstance(sm, false);
   }
-
 }

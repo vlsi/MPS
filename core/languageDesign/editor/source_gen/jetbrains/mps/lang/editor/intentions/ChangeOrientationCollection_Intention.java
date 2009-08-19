@@ -11,7 +11,6 @@ import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ChangeOrientationCollection_Intention extends BaseIntention {
-
   public ChangeOrientationCollection_Intention() {
   }
 
@@ -52,8 +51,7 @@ public class ChangeOrientationCollection_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     if (CellModel_Collection_Behavior.call_isVertical_1237380214915(node)) {
       SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-    } else
-    {
+    } else {
       SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
     }
   }
@@ -61,5 +59,4 @@ public class ChangeOrientationCollection_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

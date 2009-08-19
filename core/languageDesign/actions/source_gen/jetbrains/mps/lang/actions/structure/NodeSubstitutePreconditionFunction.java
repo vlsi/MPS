@@ -22,5 +22,4 @@ public class NodeSubstitutePreconditionFunction extends ConceptFunction {
   public static NodeSubstitutePreconditionFunction newInstance(SModel sm) {
     return NodeSubstitutePreconditionFunction.newInstance(sm, false);
   }
-
 }

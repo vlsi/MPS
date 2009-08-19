@@ -24,7 +24,6 @@ public class ReferenceFormatToken extends FormatToken {
     super.setReferent(ReferenceFormatToken.DATE_FORMAT, node);
   }
 
-
   public static ReferenceFormatToken newInstance(SModel sm, boolean init) {
     return (ReferenceFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ReferenceFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ReferenceFormatToken extends FormatToken {
   public static ReferenceFormatToken newInstance(SModel sm) {
     return ReferenceFormatToken.newInstance(sm, false);
   }
-
 }

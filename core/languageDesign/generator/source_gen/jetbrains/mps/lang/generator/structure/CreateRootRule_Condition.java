@@ -21,5 +21,4 @@ public class CreateRootRule_Condition extends TemplateQueryBase {
   public static CreateRootRule_Condition newInstance(SModel sm) {
     return CreateRootRule_Condition.newInstance(sm, false);
   }
-
 }

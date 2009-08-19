@@ -32,7 +32,6 @@ public class SwitchMacro extends SourceSubstituteMacro {
     super.setChild(SwitchMacro.SOURCE_NODE_QUERY, node);
   }
 
-
   public static SwitchMacro newInstance(SModel sm, boolean init) {
     return (SwitchMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class SwitchMacro extends SourceSubstituteMacro {
   public static SwitchMacro newInstance(SModel sm) {
     return SwitchMacro.newInstance(sm, false);
   }
-
 }

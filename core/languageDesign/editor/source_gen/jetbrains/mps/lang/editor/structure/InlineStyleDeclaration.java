@@ -74,7 +74,6 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
     this.insertChild(prev, InlineStyleDeclaration.STYLE_ITEM, node);
   }
 
-
   public static InlineStyleDeclaration newInstance(SModel sm, boolean init) {
     return (InlineStyleDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -82,5 +81,4 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
   public static InlineStyleDeclaration newInstance(SModel sm) {
     return InlineStyleDeclaration.newInstance(sm, false);
   }
-
 }

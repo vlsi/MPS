@@ -32,7 +32,6 @@ public class CellModel_RefCell extends CellModel_WithRole {
     super.setChild(CellModel_RefCell.EDITOR_COMPONENT, node);
   }
 
-
   public static CellModel_RefCell newInstance(SModel sm, boolean init) {
     return (CellModel_RefCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class CellModel_RefCell extends CellModel_WithRole {
   public static CellModel_RefCell newInstance(SModel sm) {
     return CellModel_RefCell.newInstance(sm, false);
   }
-
 }

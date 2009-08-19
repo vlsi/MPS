@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 
 public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SEnum_MemberOperation_member_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class SEnum_MemberOperation_member_ReferentConstraint extends BaseNodeRef
     }
     return new ArrayList<SNode>();
   }
-
 }

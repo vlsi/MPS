@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddMayBeUnreachable_Intention extends BaseIntention {
-
   public AddMayBeUnreachable_Intention() {
   }
 
@@ -55,5 +54,4 @@ public class AddMayBeUnreachable_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.dataFlow.intentions";
   }
-
 }

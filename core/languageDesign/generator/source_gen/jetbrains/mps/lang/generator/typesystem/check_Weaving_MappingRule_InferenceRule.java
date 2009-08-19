@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public check_Weaving_MappingRule_InferenceRule() {
   }
 
@@ -22,7 +21,7 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
       SNode template = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"), "template", false);
       boolean useRootTemplateFragment = false;
-      for(SNode child : SNodeOperations.getChildren(SLinkOperations.getTarget(template, "contentNode", true))) {
+      for (SNode child : SNodeOperations.getChildren(SLinkOperations.getTarget(template, "contentNode", true))) {
         if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.generator.structure.TemplateFragment")) {
           useRootTemplateFragment = true;
         }
@@ -48,5 +47,4 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-
 }

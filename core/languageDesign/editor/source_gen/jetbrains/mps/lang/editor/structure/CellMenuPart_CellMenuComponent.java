@@ -23,7 +23,6 @@ public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
     super.setReferent(CellMenuPart_CellMenuComponent.CELL_MENU_COMPONENT, node);
   }
 
-
   public static CellMenuPart_CellMenuComponent newInstance(SModel sm, boolean init) {
     return (CellMenuPart_CellMenuComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
   public static CellMenuPart_CellMenuComponent newInstance(SModel sm) {
     return CellMenuPart_CellMenuComponent.newInstance(sm, false);
   }
-
 }

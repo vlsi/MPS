@@ -24,7 +24,6 @@ public class SmartActionParameterReference extends Expression {
     super.setReferent(SmartActionParameterReference.SMART_ACTION_PARAMETER, node);
   }
 
-
   public static SmartActionParameterReference newInstance(SModel sm, boolean init) {
     return (SmartActionParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SmartActionParameterReference extends Expression {
   public static SmartActionParameterReference newInstance(SModel sm) {
     return SmartActionParameterReference.newInstance(sm, false);
   }
-
 }

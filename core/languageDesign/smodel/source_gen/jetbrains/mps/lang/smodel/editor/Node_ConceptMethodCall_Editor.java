@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6574_0(editorContext, node);
   }
@@ -62,7 +61,6 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6574_0 extends AbstractCellProvider {
-
     public _Inline6574_0() {
       super();
     }
@@ -97,7 +95,5 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

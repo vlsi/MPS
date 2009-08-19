@@ -22,5 +22,4 @@ public class ConstraintFunction_CanBeAChild extends ConceptFunction {
   public static ConstraintFunction_CanBeAChild newInstance(SModel sm) {
     return ConstraintFunction_CanBeAChild.newInstance(sm, false);
   }
-
 }

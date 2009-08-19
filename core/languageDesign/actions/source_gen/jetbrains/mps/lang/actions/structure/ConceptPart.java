@@ -47,7 +47,6 @@ public class ConceptPart extends MenuBuilderPart {
     this.insertChild(prev, ConceptPart.PART, node);
   }
 
-
   public static ConceptPart newInstance(SModel sm, boolean init) {
     return (ConceptPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class ConceptPart extends MenuBuilderPart {
   public static ConceptPart newInstance(SModel sm) {
     return ConceptPart.newInstance(sm, false);
   }
-
 }

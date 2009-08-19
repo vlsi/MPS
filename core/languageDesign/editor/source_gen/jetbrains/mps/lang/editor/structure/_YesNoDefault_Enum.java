@@ -59,5 +59,4 @@ public enum _YesNoDefault_Enum {
     }
     return _YesNoDefault_Enum.getDefault();
   }
-
 }

@@ -33,7 +33,6 @@ public class UnderlinedStyleClassItem extends StyleClassItem {
     super.setChild(UnderlinedStyleClassItem.QUERY, node);
   }
 
-
   public static UnderlinedStyleClassItem newInstance(SModel sm, boolean init) {
     return (UnderlinedStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class UnderlinedStyleClassItem extends StyleClassItem {
   public static UnderlinedStyleClassItem newInstance(SModel sm) {
     return UnderlinedStyleClassItem.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0649_0(editorContext, node);
   }
@@ -138,8 +137,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_0((cell == null ?
             null :
@@ -150,8 +148,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_1((cell == null ?
             null :
@@ -162,8 +159,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_2((cell == null ?
             null :
@@ -174,8 +170,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_3((cell == null ?
             null :
@@ -186,8 +181,7 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_ModelAccess_Editor._StyleParameter_QueryFunction_0649_4((cell == null ?
             null :
@@ -264,7 +258,6 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_0649_0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
   }
@@ -284,5 +277,4 @@ public class CellModel_ModelAccess_Editor extends DefaultNodeEditor {
   private static boolean _StyleParameter_QueryFunction_0649_4(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
-
 }

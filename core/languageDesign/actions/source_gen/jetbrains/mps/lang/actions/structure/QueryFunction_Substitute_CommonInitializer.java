@@ -22,5 +22,4 @@ public class QueryFunction_Substitute_CommonInitializer extends ConceptFunction 
   public static QueryFunction_Substitute_CommonInitializer newInstance(SModel sm) {
     return QueryFunction_Substitute_CommonInitializer.newInstance(sm, false);
   }
-
 }

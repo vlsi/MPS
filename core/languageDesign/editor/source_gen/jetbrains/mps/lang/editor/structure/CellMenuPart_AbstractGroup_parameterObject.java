@@ -22,5 +22,4 @@ public class CellMenuPart_AbstractGroup_parameterObject extends ConceptFunctionP
   public static CellMenuPart_AbstractGroup_parameterObject newInstance(SModel sm) {
     return CellMenuPart_AbstractGroup_parameterObject.newInstance(sm, false);
   }
-
 }

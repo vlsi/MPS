@@ -7,12 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SConceptPropertyAccess_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "conceptProperty", false), "name");
   }
-
 }

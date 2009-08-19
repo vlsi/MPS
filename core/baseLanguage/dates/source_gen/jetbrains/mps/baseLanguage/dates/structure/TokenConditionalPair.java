@@ -34,7 +34,6 @@ public class TokenConditionalPair extends BaseConcept {
     super.setChild(TokenConditionalPair.CONDITION, node);
   }
 
-
   public static TokenConditionalPair newInstance(SModel sm, boolean init) {
     return (TokenConditionalPair)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class TokenConditionalPair extends BaseConcept {
   public static TokenConditionalPair newInstance(SModel sm) {
     return TokenConditionalPair.newInstance(sm, false);
   }
-
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 
 public class Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint() {
   }
 
@@ -39,11 +38,9 @@ public class Node_ConceptMethodCall_conceptMethodDeclaration_ReferentConstraint 
       SNode concept = SLinkOperations.getTarget(snodeType, "concept", false);
       List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getAvailableConceptMethods_1213877394200(concept, _context.getEnclosingNode(), operationContext.getScope());
       searchScope = new SimpleSearchScope(methods);
-    } else
-    {
+    } else {
       searchScope = new EmptySearchScope();
     }
     return searchScope;
   }
-
 }

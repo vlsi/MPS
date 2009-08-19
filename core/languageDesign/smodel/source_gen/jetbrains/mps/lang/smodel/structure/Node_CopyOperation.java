@@ -21,5 +21,4 @@ public class Node_CopyOperation extends SNodeOperation {
   public static Node_CopyOperation newInstance(SModel sm) {
     return Node_CopyOperation.newInstance(sm, false);
   }
-
 }

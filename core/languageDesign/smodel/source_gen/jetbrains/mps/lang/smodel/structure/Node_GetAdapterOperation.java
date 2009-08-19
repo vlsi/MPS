@@ -21,5 +21,4 @@ public class Node_GetAdapterOperation extends SNodeOperation {
   public static Node_GetAdapterOperation newInstance(SModel sm) {
     return Node_GetAdapterOperation.newInstance(sm, false);
   }
-
 }

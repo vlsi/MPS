@@ -189,7 +189,6 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
     this.insertChild(prev, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION, node);
   }
 
-
   public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {
     return (AbstractConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -197,5 +196,4 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static AbstractConceptDeclaration newInstance(SModel sm) {
     return AbstractConceptDeclaration.newInstance(sm, false);
   }
-
 }

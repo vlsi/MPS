@@ -27,12 +27,12 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,7 +41,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -65,7 +65,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       StructureView_Tool tool = ShowConceptStructure_Action.this.project.getPluginManager().getTool(StructureView_Tool.class);
       tool.getStructureView().inspect(((ConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.cast(ShowConceptStructure_Action.this.node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
@@ -74,5 +74,4 @@ public class ShowConceptStructure_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ShowConceptStructure", t);
     }
   }
-
 }

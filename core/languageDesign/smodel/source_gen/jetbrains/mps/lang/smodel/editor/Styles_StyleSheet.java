@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Styles_StyleSheet {
-
   public static Style getRef_link_role(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -25,5 +24,4 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     return style;
   }
-
 }

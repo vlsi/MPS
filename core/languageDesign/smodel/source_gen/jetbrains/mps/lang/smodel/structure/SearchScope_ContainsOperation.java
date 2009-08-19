@@ -53,7 +53,6 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
     super.setChild(SearchScope_ContainsOperation.NODE_TO_CHECK, node);
   }
 
-
   public static SearchScope_ContainsOperation newInstance(SModel sm, boolean init) {
     return (SearchScope_ContainsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   public static SearchScope_ContainsOperation newInstance(SModel sm) {
     return SearchScope_ContainsOperation.newInstance(sm, false);
   }
-
 }

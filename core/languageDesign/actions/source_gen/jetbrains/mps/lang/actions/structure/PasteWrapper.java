@@ -43,7 +43,6 @@ public class PasteWrapper extends BaseConcept {
     super.setChild(PasteWrapper.WRAPPER_FUNCTION, node);
   }
 
-
   public static PasteWrapper newInstance(SModel sm, boolean init) {
     return (PasteWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PasteWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class PasteWrapper extends BaseConcept {
   public static PasteWrapper newInstance(SModel sm) {
     return PasteWrapper.newInstance(sm, false);
   }
-
 }

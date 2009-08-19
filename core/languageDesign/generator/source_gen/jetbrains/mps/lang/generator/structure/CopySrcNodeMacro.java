@@ -23,7 +23,6 @@ public class CopySrcNodeMacro extends SourceSubstituteMacro {
     super.setChild(CopySrcNodeMacro.SOURCE_NODE_QUERY, node);
   }
 
-
   public static CopySrcNodeMacro newInstance(SModel sm, boolean init) {
     return (CopySrcNodeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CopySrcNodeMacro extends SourceSubstituteMacro {
   public static CopySrcNodeMacro newInstance(SModel sm) {
     return CopySrcNodeMacro.newInstance(sm, false);
   }
-
 }

@@ -25,7 +25,6 @@ public class DateTimeZoneCreator extends AbstractCreator {
     super.setChild(DateTimeZoneCreator.STRING, node);
   }
 
-
   public static DateTimeZoneCreator newInstance(SModel sm, boolean init) {
     return (DateTimeZoneCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class DateTimeZoneCreator extends AbstractCreator {
   public static DateTimeZoneCreator newInstance(SModel sm) {
     return DateTimeZoneCreator.newInstance(sm, false);
   }
-
 }

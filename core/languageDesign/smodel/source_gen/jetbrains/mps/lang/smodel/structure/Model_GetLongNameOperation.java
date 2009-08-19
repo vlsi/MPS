@@ -21,5 +21,4 @@ public class Model_GetLongNameOperation extends SNodeOperation {
   public static Model_GetLongNameOperation newInstance(SModel sm) {
     return Model_GetLongNameOperation.newInstance(sm, false);
   }
-
 }

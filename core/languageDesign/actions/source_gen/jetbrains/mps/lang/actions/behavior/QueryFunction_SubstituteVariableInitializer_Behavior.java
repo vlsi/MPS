@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_SubstituteVariableInitializer_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class QueryFunction_SubstituteVariableInitializer_Behavior {
     SNode varDecl = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
     return SLinkOperations.getTarget(varDecl, "type", true);
   }
-
 }

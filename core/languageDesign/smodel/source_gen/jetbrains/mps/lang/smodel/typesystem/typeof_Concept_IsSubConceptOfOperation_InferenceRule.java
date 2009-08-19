@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Concept_IsSubConceptOfOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_Concept_IsSubConceptOfOperation_InferenceRule() {
   }
 
@@ -39,5 +38,4 @@ public class typeof_Concept_IsSubConceptOfOperation_InferenceRule extends Abstra
   public boolean overrides() {
     return false;
   }
-
 }

@@ -23,7 +23,6 @@ public class CellModel_ConceptProperty extends CellModel_WithRole {
     this.setRelationDeclaration(node);
   }
 
-
   public static CellModel_ConceptProperty newInstance(SModel sm, boolean init) {
     return (CellModel_ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_ConceptProperty extends CellModel_WithRole {
   public static CellModel_ConceptProperty newInstance(SModel sm) {
     return CellModel_ConceptProperty.newInstance(sm, false);
   }
-
 }

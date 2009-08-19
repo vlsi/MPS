@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_LinkList_InsertChildFirstOperation_InferenceRule() {
   }
 
@@ -47,5 +46,4 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule extends Abs
   public boolean overrides() {
     return true;
   }
-
 }

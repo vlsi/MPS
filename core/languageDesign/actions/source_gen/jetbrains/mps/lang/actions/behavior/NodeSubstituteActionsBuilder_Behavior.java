@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeSubstituteActionsBuilder_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class NodeSubstituteActionsBuilder_Behavior {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
     return "nodeSubstituteActionsBuilder_ActionsFactory_" + conceptName + "_" + thisNode.getId();
   }
-
 }

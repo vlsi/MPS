@@ -72,7 +72,6 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
     super.setChild(DataFlowBuilderDeclaration.BUILDER_BLOCK, node);
   }
 
-
   public static DataFlowBuilderDeclaration newInstance(SModel sm, boolean init) {
     return (DataFlowBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -80,5 +79,4 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   public static DataFlowBuilderDeclaration newInstance(SModel sm) {
     return DataFlowBuilderDeclaration.newInstance(sm, false);
   }
-
 }

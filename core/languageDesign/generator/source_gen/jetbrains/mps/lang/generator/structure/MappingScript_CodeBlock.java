@@ -21,5 +21,4 @@ public class MappingScript_CodeBlock extends TemplateQueryBase {
   public static MappingScript_CodeBlock newInstance(SModel sm) {
     return MappingScript_CodeBlock.newInstance(sm, false);
   }
-
 }

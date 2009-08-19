@@ -21,5 +21,4 @@ public class Weaving_MappingRule_ContextNodeQuery extends TemplateQueryBase {
   public static Weaving_MappingRule_ContextNodeQuery newInstance(SModel sm) {
     return Weaving_MappingRule_ContextNodeQuery.newInstance(sm, false);
   }
-
 }

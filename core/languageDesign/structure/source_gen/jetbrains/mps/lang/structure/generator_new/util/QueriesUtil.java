@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 
 public class QueriesUtil {
-
   public static boolean propertyDataType_isString(SNode property) {
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
@@ -174,5 +173,4 @@ public class QueriesUtil {
   public static Language getInputLanguage(SModel inputModel) {
     return Language.getLanguageFor(inputModel.getModelDescriptor());
   }
-
 }

@@ -21,5 +21,4 @@ public class CellLayout_VerticalGrid extends CellLayout_Vertical {
   public static CellLayout_VerticalGrid newInstance(SModel sm) {
     return CellLayout_VerticalGrid.newInstance(sm, false);
   }
-
 }

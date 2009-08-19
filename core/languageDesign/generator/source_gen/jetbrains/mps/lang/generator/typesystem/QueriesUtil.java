@@ -20,8 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesUtil {
-
-  @InferenceMethod()
+  @InferenceMethod
   public static void equate_templateFunction_inputNodeType(final TypeCheckingContext typeCheckingContext, SNode contextNode, SNode InputNodeType) {
     SNode enclosingMacro = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.PropertyMacro","jetbrains.mps.lang.generator.structure.ReferenceMacro","jetbrains.mps.lang.generator.structure.NodeMacro"}, false, false);
     if (enclosingMacro != null) {
@@ -72,7 +71,7 @@ public class QueriesUtil {
     }
     List<SNode> attributes = SNodeOperations.getAllAttributes(node);
     SNode prevMacro = null;
-    for(SNode attribute : ListSequence.fromList(attributes)) {
+    for (SNode attribute : ListSequence.fromList(attributes)) {
       if (attribute == currMacroNode) {
         break;
       }
@@ -102,14 +101,11 @@ public class QueriesUtil {
 
   public static SNode getEnclosing_TemplateFragment(SNode node) {
     //  find first ancestor (inclusive) which has a template fragment attribute
-    Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator2 <SNode, SNode>() {
-
+    Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _5_TF;
 
@@ -190,8 +186,8 @@ __switch__:
     return null;
   }
 
-  @InferenceMethod()
-  /* package */static void equate_outputNodeType_fromSourceQuery(final TypeCheckingContext typeCheckingContext, final SNode query, final SNode TypeToEquate) {
+  @InferenceMethod
+  /*package*/ static void equate_outputNodeType_fromSourceQuery(final TypeCheckingContext typeCheckingContext, final SNode query, final SNode TypeToEquate) {
     if (query == null) {
       {
         SNode _nodeToCheck_1029348928467 = null;
@@ -220,13 +216,11 @@ __switch__:
     SNode OutputType = TypeChecker.getInstance().getTypeOf(query);
     if (SNodeOperations.isInstanceOf(OutputType, "jetbrains.mps.lang.smodel.structure.SNodeListType")) {
       return new _Quotations.QuotationClass_8().createNode(SLinkOperations.getTarget(SNodeOperations.cast(OutputType, "jetbrains.mps.lang.smodel.structure.SNodeListType"), "elementConcept", false));
-    } else
-    {
+    } else {
       SNode outputSNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(OutputType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
       if (outputSNodeType != null) {
         return outputSNodeType;
-      } else
-      {
+      } else {
         SNode outputSequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(OutputType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
         if (outputSequenceType != null) {
           SNode elementType = SLinkOperations.getTarget(outputSequenceType, "elementType", true);
@@ -252,5 +246,4 @@ __switch__:
     SNode rootAnnotation = SLinkOperations.getTarget(SNodeOperations.getContainingRoot(node), AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true);
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
-
 }

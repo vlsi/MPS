@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2014_0(editorContext, node);
   }
@@ -385,7 +384,6 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2014_0 extends AbstractCellProvider {
-
     public _Inline2014_0() {
       super();
     }
@@ -420,10 +418,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class partListHandler_2014_0 extends RefNodeListHandler {
-
     public partListHandler_2014_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -470,10 +467,9 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class variableListHandler_2014_0 extends RefNodeListHandler {
-
     public variableListHandler_2014_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -528,7 +524,5 @@ public class NodeSubstituteActionsBuilder_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<no common variables>");
       return editorCell;
     }
-
-}
-
+  }
 }

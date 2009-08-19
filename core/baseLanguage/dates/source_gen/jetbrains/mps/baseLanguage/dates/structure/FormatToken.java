@@ -22,5 +22,4 @@ public class FormatToken extends BaseConcept {
   public static FormatToken newInstance(SModel sm) {
     return FormatToken.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IStructureDeprecatable_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -32,5 +31,4 @@ public class IStructureDeprecatable_Behavior {
     }
     return result.toString();
   }
-
 }

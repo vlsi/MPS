@@ -21,5 +21,4 @@ public class ReferenceAntiquotation extends AbstractAntiquotation {
   public static ReferenceAntiquotation newInstance(SModel sm) {
     return ReferenceAntiquotation.newInstance(sm, false);
   }
-
 }

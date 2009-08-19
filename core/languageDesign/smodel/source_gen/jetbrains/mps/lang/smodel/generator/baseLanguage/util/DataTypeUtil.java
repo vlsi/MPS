@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DataTypeUtil {
-
   public DataTypeUtil() {
   }
 
@@ -19,5 +18,4 @@ public class DataTypeUtil {
     }
     return ListSequence.fromList(SLinkOperations.getTargets(enumDatatype, "member", true)).first();
   }
-
 }

@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MappingConfiguration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2420_0(editorContext, node);
   }
@@ -673,7 +672,6 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private static class createRootRuleListHandler_2420_0 extends RefNodeListHandler {
-
     public createRootRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -713,10 +711,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class rootMappingRuleListHandler_2420_0 extends RefNodeListHandler {
-
     public rootMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -756,10 +753,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class weavingMappingRuleListHandler_2420_0 extends RefNodeListHandler {
-
     public weavingMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -799,10 +795,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class reductionMappingRuleListHandler_2420_0 extends RefNodeListHandler {
-
     public reductionMappingRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -842,10 +837,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class preMappingScriptListHandler_2420_0 extends RefNodeListHandler {
-
     public preMappingScriptListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -885,10 +879,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class postMappingScriptListHandler_2420_0 extends RefNodeListHandler {
-
     public postMappingScriptListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -928,10 +921,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class mappingLabelListHandler_2420_0 extends RefNodeListHandler {
-
     public mappingLabelListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -971,10 +963,9 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class dropRootRuleListHandler_2420_0 extends RefNodeListHandler {
-
     public dropRootRuleListHandler_2420_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -1014,7 +1005,5 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

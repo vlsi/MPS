@@ -61,7 +61,6 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
     super.setChild(ConceptEditorDeclaration.INSPECTED_CELL_MODEL, node);
   }
 
-
   public static ConceptEditorDeclaration newInstance(SModel sm, boolean init) {
     return (ConceptEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
   public static ConceptEditorDeclaration newInstance(SModel sm) {
     return ConceptEditorDeclaration.newInstance(sm, false);
   }
-
 }

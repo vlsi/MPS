@@ -75,7 +75,6 @@ public class PasteWrappers extends BaseConcept implements INamedConcept {
     this.insertChild(prev, PasteWrappers.WRAPPER, node);
   }
 
-
   public static PasteWrappers newInstance(SModel sm, boolean init) {
     return (PasteWrappers)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PasteWrappers", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class PasteWrappers extends BaseConcept implements INamedConcept {
   public static PasteWrappers newInstance(SModel sm) {
     return PasteWrappers.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ public class MenuPart extends BaseConcept {
     super.setChild(MenuPart.ACTION_TYPE, node);
   }
 
-
   public static MenuPart newInstance(SModel sm, boolean init) {
     return (MenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MenuPart extends BaseConcept {
   public static MenuPart newInstance(SModel sm) {
     return MenuPart.newInstance(sm, false);
   }
-
 }

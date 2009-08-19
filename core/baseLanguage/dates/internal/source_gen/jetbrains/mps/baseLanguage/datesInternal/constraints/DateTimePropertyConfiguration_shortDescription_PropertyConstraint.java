@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class DateTimePropertyConfiguration_shortDescription_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public DateTimePropertyConfiguration_shortDescription_PropertyConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class DateTimePropertyConfiguration_shortDescription_PropertyConstraint i
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "datetime property";
   }
-
 }

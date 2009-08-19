@@ -25,7 +25,6 @@ public class SNodeType extends Type {
     super.setReferent(SNodeType.CONCEPT, node);
   }
 
-
   public static SNodeType newInstance(SModel sm, boolean init) {
     return (SNodeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SNodeType extends Type {
   public static SNodeType newInstance(SModel sm) {
     return SNodeType.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class Antiquotation extends AbstractAntiquotation {
   public static Antiquotation newInstance(SModel sm) {
     return Antiquotation.newInstance(sm, false);
   }
-
 }

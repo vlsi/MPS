@@ -23,7 +23,6 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
     super.setReferent(DateTimeIntPropertyFormatConfiguration.DATE_TIME_PROPERTY, node);
   }
 
-
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm, boolean init) {
     return (DateTimeIntPropertyFormatConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm) {
     return DateTimeIntPropertyFormatConfiguration.newInstance(sm, false);
   }
-
 }

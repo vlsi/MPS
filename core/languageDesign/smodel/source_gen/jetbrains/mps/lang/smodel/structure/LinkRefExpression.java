@@ -35,7 +35,6 @@ public class LinkRefExpression extends Expression {
     super.setReferent(LinkRefExpression.LINK_DECLARATION, node);
   }
 
-
   public static LinkRefExpression newInstance(SModel sm, boolean init) {
     return (LinkRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class LinkRefExpression extends Expression {
   public static LinkRefExpression newInstance(SModel sm) {
     return LinkRefExpression.newInstance(sm, false);
   }
-
 }

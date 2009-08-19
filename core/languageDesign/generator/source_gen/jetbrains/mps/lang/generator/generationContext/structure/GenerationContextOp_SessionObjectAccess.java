@@ -21,5 +21,4 @@ public class GenerationContextOp_SessionObjectAccess extends GenerationContextOp
   public static GenerationContextOp_SessionObjectAccess newInstance(SModel sm) {
     return GenerationContextOp_SessionObjectAccess.newInstance(sm, false);
   }
-
 }

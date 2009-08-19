@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Concept_NewInstance_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_Concept_NewInstance_InferenceRule() {
   }
 
@@ -49,5 +48,4 @@ public class typeOf_Concept_NewInstance_InferenceRule extends AbstractInferenceR
   public boolean overrides() {
     return false;
   }
-
 }

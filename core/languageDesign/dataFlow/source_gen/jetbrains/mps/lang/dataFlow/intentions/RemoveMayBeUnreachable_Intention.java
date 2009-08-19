@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemoveMayBeUnreachable_Intention extends BaseIntention {
-
   public RemoveMayBeUnreachable_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class RemoveMayBeUnreachable_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.dataFlow.intentions";
   }
-
 }

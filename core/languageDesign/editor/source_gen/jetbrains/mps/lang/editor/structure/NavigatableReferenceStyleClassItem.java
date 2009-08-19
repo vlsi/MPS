@@ -24,7 +24,6 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
     super.setReferent(NavigatableReferenceStyleClassItem.LINK, node);
   }
 
-
   public static NavigatableReferenceStyleClassItem newInstance(SModel sm, boolean init) {
     return (NavigatableReferenceStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
   public static NavigatableReferenceStyleClassItem newInstance(SModel sm) {
     return NavigatableReferenceStyleClassItem.newInstance(sm, false);
   }
-
 }

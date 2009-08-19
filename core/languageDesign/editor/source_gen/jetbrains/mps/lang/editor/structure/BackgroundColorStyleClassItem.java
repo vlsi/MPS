@@ -21,5 +21,4 @@ public class BackgroundColorStyleClassItem extends ColorStyleClassItem {
   public static BackgroundColorStyleClassItem newInstance(SModel sm) {
     return BackgroundColorStyleClassItem.newInstance(sm, false);
   }
-
 }

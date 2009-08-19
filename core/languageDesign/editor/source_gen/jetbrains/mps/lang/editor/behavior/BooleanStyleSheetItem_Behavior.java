@@ -34,5 +34,4 @@ public class BooleanStyleSheetItem_Behavior {
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
-
 }

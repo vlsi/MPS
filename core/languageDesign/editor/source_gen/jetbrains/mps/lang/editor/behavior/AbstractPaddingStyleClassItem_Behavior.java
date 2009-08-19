@@ -27,5 +27,4 @@ public class AbstractPaddingStyleClassItem_Behavior {
   public static boolean callSuper_canUseSpaces_1226492824000(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), callerConceptFqName, "virtual_canUseSpaces_1226492824000", PARAMETERS_1226492824000);
   }
-
 }

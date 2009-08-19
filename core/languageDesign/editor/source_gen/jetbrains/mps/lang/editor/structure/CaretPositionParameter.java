@@ -24,7 +24,6 @@ public class CaretPositionParameter extends SelectParameter {
     super.setChild(CaretPositionParameter.POSITION, node);
   }
 
-
   public static CaretPositionParameter newInstance(SModel sm, boolean init) {
     return (CaretPositionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CaretPositionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class CaretPositionParameter extends SelectParameter {
   public static CaretPositionParameter newInstance(SModel sm) {
     return CaretPositionParameter.newInstance(sm, false);
   }
-
 }

@@ -13,14 +13,12 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 
 public class PropertyMacroActions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new PropertyMacroActions.PropertyMacroActions_DELETE(node));
   }
 
   public static class PropertyMacroActions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public PropertyMacroActions_DELETE(SNode node) {
       this.myNode = node;
@@ -38,7 +36,5 @@ public class PropertyMacroActions {
       editorContext.getNodeEditorComponent().changeSelection(cell);
       SNodeOperations.deleteNode(node);
     }
-
-}
-
+  }
 }

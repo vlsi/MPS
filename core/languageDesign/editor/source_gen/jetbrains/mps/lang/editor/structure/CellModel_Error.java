@@ -23,7 +23,6 @@ public class CellModel_Error extends CellModel_AbstractLabel {
     this.setProperty(CellModel_Error.TEXT, value);
   }
 
-
   public static CellModel_Error newInstance(SModel sm, boolean init) {
     return (CellModel_Error)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Error", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellModel_Error extends CellModel_AbstractLabel {
   public static CellModel_Error newInstance(SModel sm) {
     return CellModel_Error.newInstance(sm, false);
   }
-
 }

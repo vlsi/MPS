@@ -71,7 +71,6 @@ public class _LinkAccessT extends Type implements IInternalType {
     super.setReferent(_LinkAccessT.TARGET_CONCEPT, node);
   }
 
-
   public static _LinkAccessT newInstance(SModel sm, boolean init) {
     return (_LinkAccessT)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure._LinkAccessT", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class _LinkAccessT extends Type implements IInternalType {
   public static _LinkAccessT newInstance(SModel sm) {
     return _LinkAccessT.newInstance(sm, false);
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinkDeclarationUtil {
-
   public static String getterMethodName(SNode link) {
     return "get" + NameUtil.capitalize(SPropertyOperations.getString(link, "role"));
   }
@@ -15,5 +14,4 @@ public class LinkDeclarationUtil {
   public static String setterMethodName(SNode link) {
     return "set" + NameUtil.capitalize(SPropertyOperations.getString(link, "role"));
   }
-
 }

@@ -33,7 +33,6 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
     super.setChild(ConceptRightTransformPart.HANDLER, node);
   }
 
-
   public static ConceptRightTransformPart newInstance(SModel sm, boolean init) {
     return (ConceptRightTransformPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   public static ConceptRightTransformPart newInstance(SModel sm) {
     return ConceptRightTransformPart.newInstance(sm, false);
   }
-
 }

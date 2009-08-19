@@ -24,7 +24,6 @@ public class InlineTemplate_RuleConsequence extends RuleConsequence {
     super.setChild(InlineTemplate_RuleConsequence.TEMPLATE_NODE, node);
   }
 
-
   public static InlineTemplate_RuleConsequence newInstance(SModel sm, boolean init) {
     return (InlineTemplate_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InlineTemplate_RuleConsequence extends RuleConsequence {
   public static InlineTemplate_RuleConsequence newInstance(SModel sm) {
     return InlineTemplate_RuleConsequence.newInstance(sm, false);
   }
-
 }

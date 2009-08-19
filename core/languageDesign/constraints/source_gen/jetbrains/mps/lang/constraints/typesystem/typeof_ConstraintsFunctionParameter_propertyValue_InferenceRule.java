@@ -13,7 +13,6 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule() {
   }
 
@@ -41,5 +40,4 @@ public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule ext
   public boolean overrides() {
     return false;
   }
-
 }

@@ -34,7 +34,6 @@ public class SEnumOperationInvocation extends Expression {
     super.setChild(SEnumOperationInvocation.OPERATION, node);
   }
 
-
   public static SEnumOperationInvocation newInstance(SModel sm, boolean init) {
     return (SEnumOperationInvocation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SEnumOperationInvocation extends Expression {
   public static SEnumOperationInvocation newInstance(SModel sm) {
     return SEnumOperationInvocation.newInstance(sm, false);
   }
-
 }

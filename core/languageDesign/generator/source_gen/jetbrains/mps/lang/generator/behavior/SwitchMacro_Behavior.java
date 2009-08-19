@@ -7,7 +7,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SwitchMacro_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,11 +16,9 @@ public class SwitchMacro_Behavior {
       SNode coercedNode_5 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_5);
       if (coercedNode_5 != null) {
         return pattern_5.PatternVar5;
-      } else
-      {
+      } else {
       }
     }
     return NodeMacro_Behavior.callSuper_getInputNodeTypeInsideOfMacro_1213877290799(thisNode, "jetbrains.mps.lang.generator.structure.SwitchMacro");
   }
-
 }

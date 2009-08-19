@@ -22,5 +22,4 @@ public class QueryFunction_SubstituteIcon extends ConceptFunction {
   public static QueryFunction_SubstituteIcon newInstance(SModel sm) {
     return QueryFunction_SubstituteIcon.newInstance(sm, false);
   }
-
 }

@@ -50,7 +50,6 @@ public class CellModel_Alternation extends EditorCellModel {
     super.setChild(CellModel_Alternation.IF_FALSE_CELL_MODEL, node);
   }
 
-
   public static CellModel_Alternation newInstance(SModel sm, boolean init) {
     return (CellModel_Alternation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Alternation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -58,5 +57,4 @@ public class CellModel_Alternation extends EditorCellModel {
   public static CellModel_Alternation newInstance(SModel sm) {
     return CellModel_Alternation.newInstance(sm, false);
   }
-
 }

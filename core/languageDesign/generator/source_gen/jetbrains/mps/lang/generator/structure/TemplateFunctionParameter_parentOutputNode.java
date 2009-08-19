@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_parentOutputNode extends ConceptFunctionP
   public static TemplateFunctionParameter_parentOutputNode newInstance(SModel sm) {
     return TemplateFunctionParameter_parentOutputNode.newInstance(sm, false);
   }
-
 }

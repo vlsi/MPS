@@ -17,15 +17,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
-
   public RootTemplateAnnotation_KeyMap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
     action = new RootTemplateAnnotation_KeyMap.RootTemplateAnnotation_KeyMap_Action0();
     this.putAction("ctrl+shift", "VK_H", action);
   }
-  public static class RootTemplateAnnotation_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class RootTemplateAnnotation_KeyMap_Action0 extends EditorCellKeyMapAction {
     public RootTemplateAnnotation_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -74,7 +73,5 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl shift H";
     }
-
-}
-
+  }
 }

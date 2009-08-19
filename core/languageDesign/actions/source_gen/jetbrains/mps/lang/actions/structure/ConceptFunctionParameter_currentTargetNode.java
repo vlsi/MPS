@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_currentTargetNode extends ConceptFunctionP
   public static ConceptFunctionParameter_currentTargetNode newInstance(SModel sm) {
     return ConceptFunctionParameter_currentTargetNode.newInstance(sm, false);
   }
-
 }

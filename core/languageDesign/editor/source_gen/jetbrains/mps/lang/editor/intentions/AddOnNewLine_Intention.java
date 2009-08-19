@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AddOnNewLine_Intention extends BaseIntention {
-
   public AddOnNewLine_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class AddOnNewLine_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

@@ -7,12 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SEnumOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode call_getEnum_1240931322043(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation"), "enumDeclaration", false);
   }
-
 }

@@ -21,5 +21,4 @@ public class Node_GetChildrenOperation extends SNodeOperation {
   public static Node_GetChildrenOperation newInstance(SModel sm) {
     return Node_GetChildrenOperation.newInstance(sm, false);
   }
-
 }

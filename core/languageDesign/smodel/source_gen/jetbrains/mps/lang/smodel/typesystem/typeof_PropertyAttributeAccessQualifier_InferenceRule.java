@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_PropertyAttributeAccessQualifier_InferenceRule() {
   }
 
@@ -58,5 +57,4 @@ public class typeof_PropertyAttributeAccessQualifier_InferenceRule extends Abstr
   public boolean overrides() {
     return false;
   }
-
 }

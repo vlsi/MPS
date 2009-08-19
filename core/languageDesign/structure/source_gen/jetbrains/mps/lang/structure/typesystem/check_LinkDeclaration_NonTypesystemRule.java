@@ -22,7 +22,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_LinkDeclaration_NonTypesystemRule() {
   }
 
@@ -33,14 +32,11 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
     }
     SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, false);
-    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2 <SNode, SNode>() {
-
+    Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode concept) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private List<SNode> _3_links;
               private SNode _4_link;
@@ -86,7 +82,7 @@ __switch__:
         };
       }
     });
-    for(SNode link : Sequence.fromIterable(linksInSupers)) {
+    for (SNode link : Sequence.fromIterable(linksInSupers)) {
       if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -108,5 +104,4 @@ __switch__:
   public boolean overrides() {
     return false;
   }
-
 }

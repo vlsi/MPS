@@ -13,12 +13,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class MappingLabelUtil {
-
   public static SNode findOrCreateMappingLabelForName(SNode templateNode, String labelName) {
     SNode mappingLabel = null;
     List<SNode> mappingConfigurations = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(templateNode), GlobalScope.getInstance(), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    for(SNode mc : ListSequence.fromList(mappingConfigurations)) {
-      for(SNode ml : ListSequence.fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
+    for (SNode mc : ListSequence.fromList(mappingConfigurations)) {
+      for (SNode ml : ListSequence.fromList(SLinkOperations.getTargets(mc, "mappingLabel", true))) {
         if (labelName.equals(SPropertyOperations.getString(ml, "name"))) {
           mappingLabel = ml;
           break;
@@ -30,8 +29,7 @@ public class MappingLabelUtil {
       SNode mc;
       List<SNode> localMCs = SModelOperations.getRoots(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
       if (ListSequence.fromList(localMCs).isNotEmpty()) {
-        mc = ListSequence.fromList(localMCs).where(new IWhereFilter <SNode>() {
-
+        mc = ListSequence.fromList(localMCs).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).isNotEmpty();
           }
@@ -39,8 +37,7 @@ public class MappingLabelUtil {
         if (mc == null) {
           mc = ListSequence.fromList(localMCs).first();
         }
-      } else
-      {
+      } else {
         mc = SModelOperations.createNewRootNode(SNodeOperations.getModel(templateNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
         SPropertyOperations.set(mc, "name", "MappingLabels");
       }
@@ -51,5 +48,4 @@ public class MappingLabelUtil {
     }
     return mappingLabel;
   }
-
 }

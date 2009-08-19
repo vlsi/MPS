@@ -21,5 +21,4 @@ public class DrawBracketsStyleClassItem extends BooleanStyleSheetItem {
   public static DrawBracketsStyleClassItem newInstance(SModel sm) {
     return DrawBracketsStyleClassItem.newInstance(sm, false);
   }
-
 }

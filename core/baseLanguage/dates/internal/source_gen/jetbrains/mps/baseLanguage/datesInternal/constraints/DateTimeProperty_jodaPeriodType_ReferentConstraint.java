@@ -13,7 +13,6 @@ import org.joda.time.Period;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class DateTimeProperty_jodaPeriodType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public DateTimeProperty_jodaPeriodType_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class DateTimeProperty_jodaPeriodType_ReferentConstraint extends BaseNode
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new ClassifierVisibleStaticMembersScope(JavaModelUtil_new.findClassifier(Period.class), _context.getEnclosingNode(), IClassifiersSearchScope.STATIC_METHOD);
   }
-
 }

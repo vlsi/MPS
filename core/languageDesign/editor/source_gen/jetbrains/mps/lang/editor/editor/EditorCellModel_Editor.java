@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_1982_0(editorContext, node);
   }
@@ -53,5 +52,4 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     return editorCell;
   }
-
 }

@@ -22,5 +22,4 @@ public class ConstraintsFunctionParameter_propertyValue extends ConceptFunctionP
   public static ConstraintsFunctionParameter_propertyValue newInstance(SModel sm) {
     return ConstraintsFunctionParameter_propertyValue.newInstance(sm, false);
   }
-
 }

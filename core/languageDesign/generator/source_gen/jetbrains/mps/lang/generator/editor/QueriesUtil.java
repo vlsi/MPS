@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 
 public class QueriesUtil {
-
   public static boolean isNodeMacroApplicable(SNode node) {
     return isAnyMacroApplicable(node);
   }
@@ -80,8 +79,7 @@ public class QueriesUtil {
 
   public static SNode addNodeMacro(SNode node) {
     // do not hang $$ on other attributes
-    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter <SNode>() {
-
+    SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
@@ -97,8 +95,7 @@ public class QueriesUtil {
     SNode nodeMacro = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.NodeMacro", null);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
-    } else
-    {
+    } else {
       SLinkOperations.addChild(applyToNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), nodeMacro);
     }
     return nodeMacro;
@@ -130,8 +127,7 @@ public class QueriesUtil {
   }
 
   public static boolean isInsideTemplateFragment(SNode node) {
-    Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), true) != null;
       }
@@ -142,23 +138,20 @@ public class QueriesUtil {
   public static void createTemplateFragment(final SNode node) {
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("templateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
     // remove subordinate template fragments
-    Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> children = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isAttribute(it));
       }
     });
-    for(SNode child : Sequence.fromIterable(children)) {
-      ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).visitAll(new IVisitor <SNode>() {
-
+    for (SNode child : Sequence.fromIterable(children)) {
+      ListSequence.fromList(SNodeOperations.getDescendants(child, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.deleteNode(it);
         }
       });
     }
     // re append all macros to make them go 'after' the <TF>
-    ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).visitAll(new IVisitor <SNode>() {
-
+    ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), it);
       }
@@ -188,5 +181,4 @@ public class QueriesUtil {
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
     return cell.getRefNode();
   }
-
 }

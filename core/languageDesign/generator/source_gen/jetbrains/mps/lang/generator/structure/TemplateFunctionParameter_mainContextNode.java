@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_mainContextNode extends ConceptFunctionPa
   public static TemplateFunctionParameter_mainContextNode newInstance(SModel sm) {
     return TemplateFunctionParameter_mainContextNode.newInstance(sm, false);
   }
-
 }

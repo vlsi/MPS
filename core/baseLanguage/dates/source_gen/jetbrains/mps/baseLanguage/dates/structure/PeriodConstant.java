@@ -34,7 +34,6 @@ public class PeriodConstant extends Expression {
     super.setChild(PeriodConstant.COUNT, node);
   }
 
-
   public static PeriodConstant newInstance(SModel sm, boolean init) {
     return (PeriodConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class PeriodConstant extends Expression {
   public static PeriodConstant newInstance(SModel sm) {
     return PeriodConstant.newInstance(sm, false);
   }
-
 }

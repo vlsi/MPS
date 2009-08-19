@@ -62,7 +62,6 @@ public class SmartActionParameter extends BaseConcept implements INamedConcept {
     super.setChild(SmartActionParameter.TYPE, node);
   }
 
-
   public static SmartActionParameter newInstance(SModel sm, boolean init) {
     return (SmartActionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class SmartActionParameter extends BaseConcept implements INamedConcept {
   public static SmartActionParameter newInstance(SModel sm) {
     return SmartActionParameter.newInstance(sm, false);
   }
-
 }

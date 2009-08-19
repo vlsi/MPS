@@ -50,7 +50,6 @@ public class CellModel_Block extends EditorCellModel {
     super.setChild(CellModel_Block.BODY, node);
   }
 
-
   public static CellModel_Block newInstance(SModel sm, boolean init) {
     return (CellModel_Block)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Block", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -58,5 +57,4 @@ public class CellModel_Block extends EditorCellModel {
   public static CellModel_Block newInstance(SModel sm) {
     return CellModel_Block.newInstance(sm, false);
   }
-
 }

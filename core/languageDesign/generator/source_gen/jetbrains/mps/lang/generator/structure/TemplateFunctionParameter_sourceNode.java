@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_sourceNode extends ConceptFunctionParamet
   public static TemplateFunctionParameter_sourceNode newInstance(SModel sm) {
     return TemplateFunctionParameter_sourceNode.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention {
-
   public UseIndentLayoutInRefNodeList_Intention() {
   }
 
@@ -32,8 +31,7 @@ public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       return "Use Indent Layout";
-    } else
-    {
+    } else {
       return "Use Horizontal Layout";
     }
   }
@@ -41,8 +39,7 @@ public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"))) {
       SLinkOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
-    } else
-    {
+    } else {
       SLinkOperations.setNewChild(node, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Horizontal");
     }
   }
@@ -50,5 +47,4 @@ public class UseIndentLayoutInRefNodeList_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 
 public class PropertyMacro_GetPropertyValue_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,5 +29,4 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     }
     return new _Quotations.QuotationClass_2().createNode();
   }
-
 }

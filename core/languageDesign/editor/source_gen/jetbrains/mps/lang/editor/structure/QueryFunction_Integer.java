@@ -21,5 +21,4 @@ public class QueryFunction_Integer extends QueryFunction_StyleParameter {
   public static QueryFunction_Integer newInstance(SModel sm) {
     return QueryFunction_Integer.newInstance(sm, false);
   }
-
 }

@@ -59,5 +59,4 @@ public enum _CaretPosition_Enum {
     }
     return _CaretPosition_Enum.getDefault();
   }
-
 }

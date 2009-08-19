@@ -7,12 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class _EditorUtil {
-
   public static Color grayIfNotSelectable(SNode cellModel) {
     if (!(EditorCellModel_Behavior.call_isSelectable_1219420196673(cellModel))) {
       return new Color(230, 230, 230);
     }
     return null;
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NodeFactory_alias_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public NodeFactory_alias_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class NodeFactory_alias_PropertyConstraint implements IModelConstraints, 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return "factory for " + SLinkOperations.getTarget(node, "applicableConcept", false);
   }
-
 }

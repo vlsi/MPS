@@ -22,5 +22,4 @@ public class ConstraintFunction_ReferentSetHandler extends ConceptFunction {
   public static ConstraintFunction_ReferentSetHandler newInstance(SModel sm) {
     return ConstraintFunction_ReferentSetHandler.newInstance(sm, false);
   }
-
 }

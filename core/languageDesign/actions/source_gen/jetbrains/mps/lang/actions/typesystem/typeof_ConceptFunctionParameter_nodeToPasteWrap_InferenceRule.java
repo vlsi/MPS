@@ -12,7 +12,6 @@ import jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPasteW
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule() {
   }
 
@@ -35,5 +34,4 @@ public class typeof_ConceptFunctionParameter_nodeToPasteWrap_InferenceRule exten
   public boolean overrides() {
     return false;
   }
-
 }

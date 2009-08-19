@@ -51,14 +51,13 @@ public class LinkInstances_Finder extends GeneratedFinder {
     }
     boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
     // find instances and link examples
-    for(SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator))) {
-      for(String role : SetSequence.fromSet(roles)) {
+    for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator))) {
+      for (String role : SetSequence.fromSet(roles)) {
         if (isChild) {
-          for(SNode child : ListSequence.fromList(instance.getChildren(role))) {
+          for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
             ListSequence.fromList(_results).addElement(child);
           }
-        } else
-        {
+        } else {
           SNode referent = instance.getReferent(role);
           if (referent != null) {
             ListSequence.fromList(_results).addElement(referent);
@@ -71,5 +70,4 @@ public class LinkInstances_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Link Instances";
   }
-
 }

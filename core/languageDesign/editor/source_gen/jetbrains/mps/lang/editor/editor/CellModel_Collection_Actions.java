@@ -13,14 +13,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CellModel_Collection_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CellModel_Collection_Actions.CellModel_Collection_Actions_DELETE(node));
   }
 
   public static class CellModel_Collection_Actions_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public CellModel_Collection_Actions_DELETE(SNode node) {
       this.myNode = node;
@@ -38,7 +36,7 @@ public class CellModel_Collection_Actions {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
         SNode p = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
         List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
-        for(SNode child : ListSequence.fromList(children)) {
+        for (SNode child : ListSequence.fromList(children)) {
           SNodeOperations.insertPrevSiblingChild(node, child);
         }
       } else if (SLinkOperations.getCount(node, "childCellModel") == 1) {
@@ -48,7 +46,5 @@ public class CellModel_Collection_Actions {
       }
       SNodeOperations.deleteNode(node);
     }
-
-}
-
+  }
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_Node_ConceptMethodCall_InferenceRule() {
   }
 
@@ -71,5 +70,4 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
   public boolean overrides() {
     return false;
   }
-
 }

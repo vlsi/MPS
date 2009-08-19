@@ -21,5 +21,4 @@ public class BaseLineCell extends BooleanStyleSheetItem {
   public static BaseLineCell newInstance(SModel sm) {
     return BaseLineCell.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class _LinkAccessT_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,16 +28,13 @@ public class _LinkAccessT_Behavior {
     if (SPropertyOperations.getBoolean(thisNode, "aggregation")) {
       if (SPropertyOperations.getBoolean(thisNode, "singularCradinality")) {
         sb.append("child ");
-      } else
-      {
+      } else {
         sb.append("children ");
       }
-    } else
-    {
+    } else {
       sb.append("referent ");
     }
     sb.append("node<").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "targetConcept", false), "name")).append(">]");
     return sb.toString();
   }
-
 }

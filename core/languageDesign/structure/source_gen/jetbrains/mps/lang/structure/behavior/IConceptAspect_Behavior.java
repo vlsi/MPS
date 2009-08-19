@@ -19,5 +19,4 @@ public class IConceptAspect_Behavior {
   public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768);
   }
-
 }

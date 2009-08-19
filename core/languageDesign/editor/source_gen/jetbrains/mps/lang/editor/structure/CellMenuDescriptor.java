@@ -38,7 +38,6 @@ public class CellMenuDescriptor extends BaseConcept {
     this.insertChild(prev, CellMenuDescriptor.CELL_MENU_PART, node);
   }
 
-
   public static CellMenuDescriptor newInstance(SModel sm, boolean init) {
     return (CellMenuDescriptor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuDescriptor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class CellMenuDescriptor extends BaseConcept {
   public static CellMenuDescriptor newInstance(SModel sm) {
     return CellMenuDescriptor.newInstance(sm, false);
   }
-
 }

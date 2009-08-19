@@ -24,7 +24,6 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
     super.setChild(Node_InsertPrevSiblingOperation.INSERTED_NODE, node);
   }
 
-
   public static Node_InsertPrevSiblingOperation newInstance(SModel sm, boolean init) {
     return (Node_InsertPrevSiblingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   public static Node_InsertPrevSiblingOperation newInstance(SModel sm) {
     return Node_InsertPrevSiblingOperation.newInstance(sm, false);
   }
-
 }

@@ -43,7 +43,6 @@ public class CreateRootRule extends BaseConcept {
     super.setChild(CreateRootRule.CONDITION_FUNCTION, node);
   }
 
-
   public static CreateRootRule newInstance(SModel sm, boolean init) {
     return (CreateRootRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CreateRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class CreateRootRule extends BaseConcept {
   public static CreateRootRule newInstance(SModel sm) {
     return CreateRootRule.newInstance(sm, false);
   }
-
 }

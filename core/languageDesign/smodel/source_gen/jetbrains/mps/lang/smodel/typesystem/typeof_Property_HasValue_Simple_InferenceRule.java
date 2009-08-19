@@ -16,7 +16,6 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_Property_HasValue_Simple_InferenceRule() {
   }
 
@@ -55,8 +54,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
           BaseIntentionProvider intentionProvider = null;
           typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218136", true), (SNode)new _Quotations.QuotationClass_10().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1186059218131", false, 0, intentionProvider);
         }
-      } else
-      {
+      } else {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
@@ -77,5 +75,4 @@ public class typeof_Property_HasValue_Simple_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return true;
   }
-
 }

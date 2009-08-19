@@ -32,7 +32,7 @@ public class PropertyInstances_Finder extends GeneratedFinder {
     String role = SPropertyOperations.getString(node, "name");
     SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     if (!((conceptDeclaration == null))) {
-      for(SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator)) {
+      for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, indicator)) {
         String property = instance.getProperty(role);
         if (property != null && !(property.equals(""))) {
           ListSequence.fromList(_results).addElement(instance);
@@ -44,5 +44,4 @@ public class PropertyInstances_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Property Instances";
   }
-
 }

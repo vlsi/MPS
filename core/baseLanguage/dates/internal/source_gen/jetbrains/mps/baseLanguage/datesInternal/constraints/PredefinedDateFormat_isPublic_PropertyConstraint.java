@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class PredefinedDateFormat_isPublic_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public PredefinedDateFormat_isPublic_PropertyConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class PredefinedDateFormat_isPublic_PropertyConstraint implements IModelC
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return true;
   }
-
 }

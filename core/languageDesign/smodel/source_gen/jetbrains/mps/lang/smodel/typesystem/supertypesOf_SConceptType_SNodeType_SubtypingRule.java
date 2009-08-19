@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_SConceptType_SNodeType_SubtypingRule() {
   }
 
@@ -45,5 +44,4 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
   public boolean isWeak() {
     return false;
   }
-
 }

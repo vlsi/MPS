@@ -14,7 +14,6 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_EnumMember_ValueOperation_InferenceRule() {
   }
 
@@ -34,7 +33,6 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
     {
       final SNode memberType = typeCheckingContext.getEquationManager().getRepresentator(Member_typevar_1240331876974);
       typeCheckingContext.whenConcrete(memberType, new Runnable() {
-
         public void run() {
           {
             SNode _nodeToCheck_1029348928467 = operation;
@@ -57,5 +55,4 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
   public boolean overrides() {
     return false;
   }
-
 }

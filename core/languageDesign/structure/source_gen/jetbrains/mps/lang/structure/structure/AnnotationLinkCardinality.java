@@ -54,5 +54,4 @@ public enum AnnotationLinkCardinality {
     }
     return AnnotationLinkCardinality.getDefault();
   }
-
 }

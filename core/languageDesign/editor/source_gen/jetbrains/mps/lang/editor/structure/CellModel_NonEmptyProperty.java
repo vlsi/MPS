@@ -21,5 +21,4 @@ public class CellModel_NonEmptyProperty extends CellModel_Property {
   public static CellModel_NonEmptyProperty newInstance(SModel sm) {
     return CellModel_NonEmptyProperty.newInstance(sm, false);
   }
-
 }

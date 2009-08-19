@@ -21,5 +21,4 @@ public class PropertyMacro_GetPropertyValue extends TemplateQueryBase {
   public static PropertyMacro_GetPropertyValue newInstance(SModel sm) {
     return PropertyMacro_GetPropertyValue.newInstance(sm, false);
   }
-
 }

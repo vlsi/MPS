@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class MigrateToIndentLayout_Intention extends BaseIntention {
-
   public MigrateToIndentLayout_Intention() {
   }
 
@@ -38,5 +37,4 @@ public class MigrateToIndentLayout_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

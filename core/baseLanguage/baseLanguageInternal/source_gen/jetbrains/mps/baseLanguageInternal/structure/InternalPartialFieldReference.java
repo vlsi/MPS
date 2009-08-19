@@ -25,7 +25,6 @@ public class InternalPartialFieldReference extends Expression implements IOperat
     super(node);
   }
 
-
   public String getFieldName() {
     return this.getProperty(InternalPartialFieldReference.FIELD_NAME);
   }
@@ -81,7 +80,6 @@ public class InternalPartialFieldReference extends Expression implements IOperat
   public void setInstance(Expression node) {
     super.setChild(InternalPartialFieldReference.INSTANCE, node);
   }
-
 
   public static InternalPartialFieldReference newInstance(SModel sm, boolean init) {
     return (InternalPartialFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();

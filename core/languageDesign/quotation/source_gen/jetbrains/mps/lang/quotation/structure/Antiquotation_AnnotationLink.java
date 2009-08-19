@@ -14,5 +14,4 @@ public class Antiquotation_AnnotationLink {
   public static Antiquotation getAntiquotation(BaseConcept source) {
     return (Antiquotation)source.getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
   }
-
 }

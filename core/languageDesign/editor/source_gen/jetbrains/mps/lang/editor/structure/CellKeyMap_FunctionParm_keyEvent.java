@@ -22,5 +22,4 @@ public class CellKeyMap_FunctionParm_keyEvent extends ConceptFunctionParameter {
   public static CellKeyMap_FunctionParm_keyEvent newInstance(SModel sm) {
     return CellKeyMap_FunctionParm_keyEvent.newInstance(sm, false);
   }
-
 }

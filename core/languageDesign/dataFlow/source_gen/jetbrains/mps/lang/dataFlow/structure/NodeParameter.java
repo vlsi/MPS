@@ -22,5 +22,4 @@ public class NodeParameter extends ConceptFunctionParameter {
   public static NodeParameter newInstance(SModel sm) {
     return NodeParameter.newInstance(sm, false);
   }
-
 }

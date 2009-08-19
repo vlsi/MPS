@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6321_0(editorContext, node);
   }
@@ -846,7 +845,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6321_0(SNode node, EditorContext editorContext, IScope scope) {
     return CellModel_ListWithRole_Behavior.call_isVertical_1239873472748(node);
   }
@@ -860,7 +858,6 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6321_0 extends AbstractCellProvider {
-
     public _Inline6321_0() {
       super();
     }
@@ -895,10 +892,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6321_1 extends AbstractCellProvider {
-
     public _Inline6321_1() {
       super();
     }
@@ -933,10 +929,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6321_2 extends AbstractCellProvider {
-
     public _Inline6321_2() {
       super();
     }
@@ -971,10 +966,9 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6321_3 extends AbstractCellProvider {
-
     public _Inline6321_3() {
       super();
     }
@@ -1005,7 +999,5 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

@@ -33,7 +33,6 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
     super.setChild(Concept_GetAllSubConcepts.SCOPE, node);
   }
 
-
   public static Concept_GetAllSubConcepts newInstance(SModel sm, boolean init) {
     return (Concept_GetAllSubConcepts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   public static Concept_GetAllSubConcepts newInstance(SModel sm) {
     return Concept_GetAllSubConcepts.newInstance(sm, false);
   }
-
 }

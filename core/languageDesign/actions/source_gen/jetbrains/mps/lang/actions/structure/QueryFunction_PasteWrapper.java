@@ -22,5 +22,4 @@ public class QueryFunction_PasteWrapper extends ConceptFunction {
   public static QueryFunction_PasteWrapper newInstance(SModel sm) {
     return QueryFunction_PasteWrapper.newInstance(sm, false);
   }
-
 }

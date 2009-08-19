@@ -9,7 +9,6 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 
 public class CellModel_Property_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,5 +27,4 @@ public class CellModel_Property_Behavior {
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}";
   }
-
 }

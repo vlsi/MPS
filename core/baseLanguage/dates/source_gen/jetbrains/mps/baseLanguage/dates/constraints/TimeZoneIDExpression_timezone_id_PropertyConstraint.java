@@ -11,7 +11,6 @@ import org.joda.time.DateTimeZone;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TimeZoneIDExpression_timezone_id_PropertyConstraint implements IModelConstraints, INodePropertyValidator {
-
   public TimeZoneIDExpression_timezone_id_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class TimeZoneIDExpression_timezone_id_PropertyConstraint implements IMod
   public boolean checkPropertyValue(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
     return DateTimeZone.getAvailableIDs().contains((SPropertyOperations.getString(propertyValue)));
   }
-
 }

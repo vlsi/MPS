@@ -21,5 +21,4 @@ public class EditableStyleClassItem extends BooleanStyleSheetItem {
   public static EditableStyleClassItem newInstance(SModel sm) {
     return EditableStyleClassItem.newInstance(sm, false);
   }
-
 }

@@ -34,12 +34,12 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(nodes).addElement(node);
-    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
       SetSequence.fromSet(nodes).addElement(child);
     }
     // 
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, scope, new FindUsagesManager.ProgressAdapter(indicator), false);
-    for(SReference reference : resRefs) {
+    for (SReference reference : resRefs) {
       if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
         ListSequence.fromList(_results).addElement(reference.getSourceNode());
       }
@@ -47,7 +47,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    for(SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
+    for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
       ListSequence.fromList(_results).addElement(child);
     }
   }
@@ -55,5 +55,4 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Node Descendants Usages";
   }
-
 }

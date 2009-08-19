@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", new GenerationContextOp_GetOutputByLabelAndInput_DataFlow());
     manager.register("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", new GenerationContextOp_GetCopiedOutputByInput_DataFlow());
@@ -17,5 +16,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_DataFlow());
     manager.register("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", new GenerationContextOp_GetOriginalCopiedInputByOutput_DataFlow());
   }
-
 }

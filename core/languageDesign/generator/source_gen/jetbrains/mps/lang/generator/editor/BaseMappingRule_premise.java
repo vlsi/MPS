@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseMappingRule_premise extends AbstractCellProvider {
-
   public BaseMappingRule_premise(SNode node) {
     super(node);
   }
@@ -178,7 +177,6 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
   }
 
   public static class _Inline4181_0 extends AbstractCellProvider {
-
     public _Inline4181_0() {
       super();
     }
@@ -213,7 +211,5 @@ public class BaseMappingRule_premise extends AbstractCellProvider {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

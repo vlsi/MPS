@@ -22,5 +22,4 @@ public class CellMenuPart_PropertyValues_GetValues extends ConceptFunction {
   public static CellMenuPart_PropertyValues_GetValues newInstance(SModel sm) {
     return CellMenuPart_PropertyValues_GetValues.newInstance(sm, false);
   }
-
 }

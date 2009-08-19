@@ -42,7 +42,6 @@ public class EnumMember_ValueOperation extends BaseConcept implements SEnumMembe
     this.setProperty(EnumMember_ValueOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static EnumMember_ValueOperation newInstance(SModel sm, boolean init) {
     return (EnumMember_ValueOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class EnumMember_ValueOperation extends BaseConcept implements SEnumMembe
   public static EnumMember_ValueOperation newInstance(SModel sm) {
     return EnumMember_ValueOperation.newInstance(sm, false);
   }
-
 }

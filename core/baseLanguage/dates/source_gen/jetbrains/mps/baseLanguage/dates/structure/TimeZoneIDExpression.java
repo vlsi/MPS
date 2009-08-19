@@ -24,7 +24,6 @@ public class TimeZoneIDExpression extends Expression {
     this.setProperty(TimeZoneIDExpression.TIMEZONE_ID, value);
   }
 
-
   public static TimeZoneIDExpression newInstance(SModel sm, boolean init) {
     return (TimeZoneIDExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIDExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TimeZoneIDExpression extends Expression {
   public static TimeZoneIDExpression newInstance(SModel sm) {
     return TimeZoneIDExpression.newInstance(sm, false);
   }
-
 }

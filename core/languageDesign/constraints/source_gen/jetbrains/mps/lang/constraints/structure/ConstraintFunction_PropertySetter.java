@@ -22,5 +22,4 @@ public class ConstraintFunction_PropertySetter extends ConceptFunction {
   public static ConstraintFunction_PropertySetter newInstance(SModel sm) {
     return ConstraintFunction_PropertySetter.newInstance(sm, false);
   }
-
 }

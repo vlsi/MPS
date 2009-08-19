@@ -32,7 +32,6 @@ public class IfMacro extends NodeMacro {
     super.setChild(IfMacro.ALTERNATIVE_CONSEQUENCE, node);
   }
 
-
   public static IfMacro newInstance(SModel sm, boolean init) {
     return (IfMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class IfMacro extends NodeMacro {
   public static IfMacro newInstance(SModel sm) {
     return IfMacro.newInstance(sm, false);
   }
-
 }

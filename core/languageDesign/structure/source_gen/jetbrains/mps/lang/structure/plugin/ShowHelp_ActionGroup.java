@@ -28,5 +28,4 @@ public class ShowHelp_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(Structure_ActionGroup.ID, Structure_ActionGroup.LABEL_ID_showHelp);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_showHelp);
   }
-
 }

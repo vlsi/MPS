@@ -25,7 +25,6 @@ public class EnumMemberReference extends Expression {
     super.setReferent(EnumMemberReference.ENUM_MEMBER, node);
   }
 
-
   public static EnumMemberReference newInstance(SModel sm, boolean init) {
     return (EnumMemberReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EnumMemberReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class EnumMemberReference extends Expression {
   public static EnumMemberReference newInstance(SModel sm) {
     return EnumMemberReference.newInstance(sm, false);
   }
-
 }

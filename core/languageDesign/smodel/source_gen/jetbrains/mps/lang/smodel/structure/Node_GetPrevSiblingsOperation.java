@@ -21,5 +21,4 @@ public class Node_GetPrevSiblingsOperation extends SNodeOperation {
   public static Node_GetPrevSiblingsOperation newInstance(SModel sm) {
     return Node_GetPrevSiblingsOperation.newInstance(sm, false);
   }
-
 }

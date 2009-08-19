@@ -22,5 +22,4 @@ public class ConstraintFunctionParameter_linkTarget extends ConceptFunctionParam
   public static ConstraintFunctionParameter_linkTarget newInstance(SModel sm) {
     return ConstraintFunctionParameter_linkTarget.newInstance(sm, false);
   }
-
 }

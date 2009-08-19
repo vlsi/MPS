@@ -22,5 +22,4 @@ public class NeverExpression extends Expression {
   public static NeverExpression newInstance(SModel sm) {
     return NeverExpression.newInstance(sm, false);
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ChangeOrientationAlternation_Intention extends BaseIntention {
-
   public ChangeOrientationAlternation_Intention() {
   }
 
@@ -42,5 +41,4 @@ public class ChangeOrientationAlternation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

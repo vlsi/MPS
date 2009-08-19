@@ -21,5 +21,4 @@ public class NotNullOperation extends DateTimeOperation {
   public static NotNullOperation newInstance(SModel sm) {
     return NotNullOperation.newInstance(sm, false);
   }
-
 }

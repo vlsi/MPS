@@ -22,5 +22,4 @@ public class QueryFunction_MatchingNode extends ConceptFunction {
   public static QueryFunction_MatchingNode newInstance(SModel sm) {
     return QueryFunction_MatchingNode.newInstance(sm, false);
   }
-
 }

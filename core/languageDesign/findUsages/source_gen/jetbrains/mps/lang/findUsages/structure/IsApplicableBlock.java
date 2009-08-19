@@ -22,5 +22,4 @@ public class IsApplicableBlock extends ConceptFunction {
   public static IsApplicableBlock newInstance(SModel sm) {
     return IsApplicableBlock.newInstance(sm, false);
   }
-
 }

@@ -81,7 +81,6 @@ public class ScheduleLiteral extends BaseConcept {
     super.setReferent(ScheduleLiteral.MONTH, node);
   }
 
-
   public static ScheduleLiteral newInstance(SModel sm, boolean init) {
     return (ScheduleLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ScheduleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -89,5 +88,4 @@ public class ScheduleLiteral extends BaseConcept {
   public static ScheduleLiteral newInstance(SModel sm) {
     return ScheduleLiteral.newInstance(sm, false);
   }
-
 }

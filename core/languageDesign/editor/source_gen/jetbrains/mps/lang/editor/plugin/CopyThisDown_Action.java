@@ -30,7 +30,7 @@ public class CopyThisDown_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl D";
   }
@@ -42,7 +42,7 @@ public class CopyThisDown_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class CopyThisDown_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,8 +66,7 @@ public class CopyThisDown_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.inputNodes = null;
-      } else
-      {
+      } else {
         this.inputNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -81,7 +80,7 @@ public class CopyThisDown_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (ListSequence.fromList(CopyThisDown_Action.this.inputNodes).count() == 1) {
         SNode nodeToCopy = ListSequence.fromList(CopyThisDown_Action.this.inputNodes).first();
@@ -101,8 +100,7 @@ public class CopyThisDown_Action extends GeneratedAction {
           }
           nodeToCopy = parent;
         }
-      } else
-      {
+      } else {
         SNode firstNode = ListSequence.fromList(CopyThisDown_Action.this.inputNodes).first();
         SNode lastNode = ListSequence.fromList(CopyThisDown_Action.this.inputNodes).last();
         String role = firstNode.getRole_();
@@ -111,7 +109,7 @@ public class CopyThisDown_Action extends GeneratedAction {
         if (link == null) {
           return;
         }
-        for(SNode node : ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList()) {
+        for (SNode node : ListSequence.fromList(CopyThisDown_Action.this.inputNodes).reversedList()) {
           parent.insertChild(lastNode, role, SNodeOperations.copyNode(node));
         }
         CopyThisDown_Action.this.editor.getEditorContext().selectRange(firstNode, lastNode);
@@ -120,5 +118,4 @@ public class CopyThisDown_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
     }
   }
-
 }

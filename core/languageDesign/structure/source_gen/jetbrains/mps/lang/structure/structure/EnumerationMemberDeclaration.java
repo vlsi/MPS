@@ -42,7 +42,6 @@ public class EnumerationMemberDeclaration extends BaseConcept {
     this.setProperty(EnumerationMemberDeclaration.JAVA_IDENTIFIER, value);
   }
 
-
   public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
     return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class EnumerationMemberDeclaration extends BaseConcept {
   public static EnumerationMemberDeclaration newInstance(SModel sm) {
     return EnumerationMemberDeclaration.newInstance(sm, false);
   }
-
 }

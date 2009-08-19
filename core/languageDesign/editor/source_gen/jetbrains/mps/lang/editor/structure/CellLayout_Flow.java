@@ -21,5 +21,4 @@ public class CellLayout_Flow extends CellLayout {
   public static CellLayout_Flow newInstance(SModel sm) {
     return CellLayout_Flow.newInstance(sm, false);
   }
-
 }

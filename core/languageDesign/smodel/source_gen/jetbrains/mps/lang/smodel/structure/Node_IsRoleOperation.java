@@ -34,7 +34,6 @@ public class Node_IsRoleOperation extends SNodeOperation {
     super.setReferent(Node_IsRoleOperation.LINK_IN_PARENT, node);
   }
 
-
   public static Node_IsRoleOperation newInstance(SModel sm, boolean init) {
     return (Node_IsRoleOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Node_IsRoleOperation extends SNodeOperation {
   public static Node_IsRoleOperation newInstance(SModel sm) {
     return Node_IsRoleOperation.newInstance(sm, false);
   }
-
 }

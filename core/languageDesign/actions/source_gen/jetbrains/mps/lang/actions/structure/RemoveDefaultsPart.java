@@ -21,5 +21,4 @@ public class RemoveDefaultsPart extends MenuBuilderPart {
   public static RemoveDefaultsPart newInstance(SModel sm) {
     return RemoveDefaultsPart.newInstance(sm, false);
   }
-
 }

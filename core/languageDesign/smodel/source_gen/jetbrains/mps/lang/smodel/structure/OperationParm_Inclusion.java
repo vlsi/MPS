@@ -21,5 +21,4 @@ public class OperationParm_Inclusion extends AbstractOperationParameter {
   public static OperationParm_Inclusion newInstance(SModel sm) {
     return OperationParm_Inclusion.newInstance(sm, false);
   }
-
 }

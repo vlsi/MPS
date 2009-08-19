@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class NewRootMappingRule_Intention extends BaseIntention {
-
   public NewRootMappingRule_Intention() {
   }
 
@@ -63,11 +62,9 @@ public class NewRootMappingRule_Intention extends BaseIntention {
     if (ListSequence.fromList(configs).isEmpty()) {
       return false;
     }
-    SNode usage = ListSequence.fromList(configs).findFirst(new IWhereFilter <SNode>() {
-
+    SNode usage = ListSequence.fromList(configs).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getTargets(it, "rootMappingRule", true)).findFirst(new IWhereFilter <SNode>() {
-
+        return ListSequence.fromList(SLinkOperations.getTargets(it, "rootMappingRule", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SLinkOperations.getTarget(it, "template", false) == node;
           }
@@ -81,8 +78,7 @@ public class NewRootMappingRule_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     if (ListSequence.fromList(configs).count() > 1) {
-      Iterable<SNode> sameVPackConfigs = ListSequence.fromList(configs).where(new IWhereFilter <SNode>() {
-
+      Iterable<SNode> sameVPackConfigs = ListSequence.fromList(configs).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return Comparing.equal(SPropertyOperations.getString(it, "virtualPackage"), SPropertyOperations.getString(node, "virtualPackage"));
         }
@@ -106,5 +102,4 @@ public class NewRootMappingRule_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

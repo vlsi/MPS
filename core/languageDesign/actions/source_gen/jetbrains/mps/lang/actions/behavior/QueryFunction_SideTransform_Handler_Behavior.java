@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_SideTransform_Handler_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,5 +22,4 @@ public class QueryFunction_SideTransform_Handler_Behavior {
     SNode conceptOfNodeReturnedByHandler = SLinkOperations.getTarget(ancestor, "concept", false);
     return new _Quotations.QuotationClass_1().createNode();
   }
-
 }

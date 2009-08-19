@@ -43,7 +43,6 @@ public class PeriodInPropertyOperation extends Expression {
     super.setChild(PeriodInPropertyOperation.DATETIME, node);
   }
 
-
   public static PeriodInPropertyOperation newInstance(SModel sm, boolean init) {
     return (PeriodInPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodInPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class PeriodInPropertyOperation extends Expression {
   public static PeriodInPropertyOperation newInstance(SModel sm) {
     return PeriodInPropertyOperation.newInstance(sm, false);
   }
-
 }

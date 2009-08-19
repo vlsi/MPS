@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
-
   public ConvertCastToSModelCast_QuickFix() {
   }
 
@@ -27,5 +26,4 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
     SNodeOperations.replaceWithAnother(snode, cast);
     SLinkOperations.setTarget(cast, "leftExpression", expr, true);
   }
-
 }

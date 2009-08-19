@@ -23,7 +23,6 @@ public class SideTransformVariableReference extends VariableReference {
     this.setVariableDeclaration(node);
   }
 
-
   public static SideTransformVariableReference newInstance(SModel sm, boolean init) {
     return (SideTransformVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class SideTransformVariableReference extends VariableReference {
   public static SideTransformVariableReference newInstance(SModel sm) {
     return SideTransformVariableReference.newInstance(sm, false);
   }
-
 }

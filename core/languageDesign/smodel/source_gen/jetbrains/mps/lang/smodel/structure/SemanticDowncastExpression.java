@@ -24,7 +24,6 @@ public class SemanticDowncastExpression extends Expression {
     super.setChild(SemanticDowncastExpression.LEFT_EXPRESSION, node);
   }
 
-
   public static SemanticDowncastExpression newInstance(SModel sm, boolean init) {
     return (SemanticDowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SemanticDowncastExpression extends Expression {
   public static SemanticDowncastExpression newInstance(SModel sm) {
     return SemanticDowncastExpression.newInstance(sm, false);
   }
-
 }

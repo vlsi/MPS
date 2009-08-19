@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8039_0(editorContext, node);
   }
@@ -77,5 +76,4 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

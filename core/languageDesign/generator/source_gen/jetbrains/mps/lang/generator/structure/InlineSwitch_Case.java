@@ -33,7 +33,6 @@ public class InlineSwitch_Case extends BaseConcept {
     super.setChild(InlineSwitch_Case.CASE_CONSEQUENCE, node);
   }
 
-
   public static InlineSwitch_Case newInstance(SModel sm, boolean init) {
     return (InlineSwitch_Case)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class InlineSwitch_Case extends BaseConcept {
   public static InlineSwitch_Case newInstance(SModel sm) {
     return InlineSwitch_Case.newInstance(sm, false);
   }
-
 }

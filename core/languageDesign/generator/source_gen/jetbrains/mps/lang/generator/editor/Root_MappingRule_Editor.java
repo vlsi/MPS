@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Root_MappingRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1377_0(editorContext, node);
   }
@@ -385,13 +384,11 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1377_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
   public static class _Inline1377_0 extends AbstractCellProvider {
-
     public _Inline1377_0() {
       super();
     }
@@ -427,10 +424,9 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline1377_1 extends AbstractCellProvider {
-
     public _Inline1377_1() {
       super();
     }
@@ -465,10 +461,9 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline1377_2 extends AbstractCellProvider {
-
     public _Inline1377_2() {
       super();
     }
@@ -503,10 +498,9 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline1377_3 extends AbstractCellProvider {
-
     public _Inline1377_3() {
       super();
     }
@@ -541,7 +535,5 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

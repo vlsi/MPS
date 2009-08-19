@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1538_0(editorContext, node);
   }
@@ -70,5 +69,4 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     } else
     return editorCell;
   }
-
 }

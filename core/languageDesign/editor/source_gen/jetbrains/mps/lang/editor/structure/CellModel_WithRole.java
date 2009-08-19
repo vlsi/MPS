@@ -60,7 +60,6 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
     super.setReferent(CellModel_WithRole.RELATION_DECLARATION, node);
   }
 
-
   public static CellModel_WithRole newInstance(SModel sm, boolean init) {
     return (CellModel_WithRole)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_WithRole", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
   public static CellModel_WithRole newInstance(SModel sm) {
     return CellModel_WithRole.newInstance(sm, false);
   }
-
 }

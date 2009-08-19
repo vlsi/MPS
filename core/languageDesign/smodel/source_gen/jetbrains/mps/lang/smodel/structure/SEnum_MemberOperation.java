@@ -52,7 +52,6 @@ public class SEnum_MemberOperation extends BaseConcept implements SEnumOperation
     super.setReferent(SEnum_MemberOperation.MEMBER, node);
   }
 
-
   public static SEnum_MemberOperation newInstance(SModel sm, boolean init) {
     return (SEnum_MemberOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class SEnum_MemberOperation extends BaseConcept implements SEnumOperation
   public static SEnum_MemberOperation newInstance(SModel sm) {
     return SEnum_MemberOperation.newInstance(sm, false);
   }
-
 }

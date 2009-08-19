@@ -24,7 +24,6 @@ public class AbstractPaddingStyleClassItem extends FloatStyleClassItem {
     super.setProperty(AbstractPaddingStyleClassItem.MEASURE, value.getValueAsString());
   }
 
-
   public static AbstractPaddingStyleClassItem newInstance(SModel sm, boolean init) {
     return (AbstractPaddingStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AbstractPaddingStyleClassItem extends FloatStyleClassItem {
   public static AbstractPaddingStyleClassItem newInstance(SModel sm) {
     return AbstractPaddingStyleClassItem.newInstance(sm, false);
   }
-
 }

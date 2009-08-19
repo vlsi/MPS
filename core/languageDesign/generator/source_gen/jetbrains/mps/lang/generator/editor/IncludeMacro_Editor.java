@@ -25,7 +25,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class IncludeMacro_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6568_0(editorContext, node);
   }
@@ -330,7 +329,6 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6568_0 extends AbstractCellProvider {
-
     public _Inline6568_0() {
       super();
     }
@@ -362,10 +360,9 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6568_1 extends AbstractCellProvider {
-
     public _Inline6568_1() {
       super();
     }
@@ -397,17 +394,14 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class IncludeMacro_Editor_replaceWith_NodeMacro_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public IncludeMacro_Editor_replaceWith_NodeMacro_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.generator.structure.NodeMacro";
     }
-
-}
-
+  }
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class StyleSheetClass_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,12 +19,11 @@ public class StyleSheetClass_Behavior {
   public static String call_getGetterMethodName_1221829967694(SNode thisNode) {
     StringBuffer bufferName = new StringBuffer();
     bufferName.append("get");
-    for(int i = 0 ; i < SPropertyOperations.getString(thisNode, "name").length() ; i++ ) {
+    for (int i = 0 ; i < SPropertyOperations.getString(thisNode, "name").length() ; i++ ) {
       char ch = SPropertyOperations.getString(thisNode, "name").charAt(i);
       if (i == 0) {
         bufferName.append(Character.toUpperCase(ch));
-      } else
-      {
+      } else {
         bufferName.append(ch);
       }
     }
@@ -39,5 +37,4 @@ public class StyleSheetClass_Behavior {
   public static SNode virtual_getParent_1219419981626(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "extendedClass", true), "styleSheetClass", false);
   }
-
 }

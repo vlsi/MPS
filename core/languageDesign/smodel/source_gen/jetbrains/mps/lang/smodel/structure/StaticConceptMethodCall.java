@@ -34,7 +34,6 @@ public class StaticConceptMethodCall extends BaseMethodCall {
     this.setBaseMethodDeclaration(node);
   }
 
-
   public static StaticConceptMethodCall newInstance(SModel sm, boolean init) {
     return (StaticConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class StaticConceptMethodCall extends BaseMethodCall {
   public static StaticConceptMethodCall newInstance(SModel sm) {
     return StaticConceptMethodCall.newInstance(sm, false);
   }
-
 }

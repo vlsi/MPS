@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1216862267898(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base");
   }
@@ -286,5 +285,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1229480209067(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "outputNode", true);
   }
-
 }

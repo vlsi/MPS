@@ -32,7 +32,6 @@ public class AggregationConceptLink extends ConceptLink {
     super.setChild(AggregationConceptLink.TARGET, node);
   }
 
-
   public static AggregationConceptLink newInstance(SModel sm, boolean init) {
     return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class AggregationConceptLink extends ConceptLink {
   public static AggregationConceptLink newInstance(SModel sm) {
     return AggregationConceptLink.newInstance(sm, false);
   }
-
 }

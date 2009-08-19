@@ -24,7 +24,6 @@ public class EmitMayBeUnreachable extends Statement {
     super.setChild(EmitMayBeUnreachable.EMIT_STATEMENT, node);
   }
 
-
   public static EmitMayBeUnreachable newInstance(SModel sm, boolean init) {
     return (EmitMayBeUnreachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class EmitMayBeUnreachable extends Statement {
   public static EmitMayBeUnreachable newInstance(SModel sm) {
     return EmitMayBeUnreachable.newInstance(sm, false);
   }
-
 }

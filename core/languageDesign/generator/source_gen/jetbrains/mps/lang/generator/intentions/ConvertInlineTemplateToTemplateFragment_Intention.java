@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseIntention {
-
   public ConvertInlineTemplateToTemplateFragment_Intention() {
   }
 
@@ -68,5 +67,4 @@ public class ConvertInlineTemplateToTemplateFragment_Intention extends BaseInten
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

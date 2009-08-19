@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_CellMenuPart_Abstract_editedNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_CellMenuPart_Abstract_editedNode_InferenceRule() {
   }
 
@@ -37,5 +36,4 @@ public class typeof_CellMenuPart_Abstract_editedNode_InferenceRule extends Abstr
   public boolean overrides() {
     return false;
   }
-
 }

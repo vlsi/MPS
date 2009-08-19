@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class AddOperationParameter_Intention extends BaseIntention {
-
   public AddOperationParameter_Intention() {
   }
 
@@ -54,8 +53,7 @@ public class AddOperationParameter_Intention extends BaseIntention {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
     if (ListSequence.fromList(applicableParms).count() == 1) {
       SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)ListSequence.fromList(applicableParms).first())), null));
-    } else
-    {
+    } else {
       SLinkOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
     }
   }
@@ -63,5 +61,4 @@ public class AddOperationParameter_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

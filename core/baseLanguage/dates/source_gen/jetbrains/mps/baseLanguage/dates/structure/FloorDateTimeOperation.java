@@ -21,5 +21,4 @@ public class FloorDateTimeOperation extends RoundDateTimeOperation {
   public static FloorDateTimeOperation newInstance(SModel sm) {
     return FloorDateTimeOperation.newInstance(sm, false);
   }
-
 }

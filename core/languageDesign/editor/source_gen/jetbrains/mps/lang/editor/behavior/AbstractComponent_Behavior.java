@@ -24,5 +24,4 @@ public class AbstractComponent_Behavior {
   public static SNode callSuper_getConceptDeclaration_7055725856388417603(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), callerConceptFqName, "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
   }
-
 }

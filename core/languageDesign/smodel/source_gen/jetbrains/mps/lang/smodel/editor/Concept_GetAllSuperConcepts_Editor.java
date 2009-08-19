@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6584_0(editorContext, node);
   }
@@ -27,5 +26,4 @@ public class Concept_GetAllSuperConcepts_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
-
 }

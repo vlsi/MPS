@@ -22,5 +22,4 @@ public class BuilderBlock extends ConceptFunction {
   public static BuilderBlock newInstance(SModel sm) {
     return BuilderBlock.newInstance(sm, false);
   }
-
 }

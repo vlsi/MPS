@@ -32,7 +32,6 @@ public class FontSizeStyleClassItem extends StyleClassItem {
     super.setChild(FontSizeStyleClassItem.QUERY, node);
   }
 
-
   public static FontSizeStyleClassItem newInstance(SModel sm, boolean init) {
     return (FontSizeStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class FontSizeStyleClassItem extends StyleClassItem {
   public static FontSizeStyleClassItem newInstance(SModel sm) {
     return FontSizeStyleClassItem.newInstance(sm, false);
   }
-
 }

@@ -37,7 +37,6 @@ public class OperationParm_StopConceptList extends AbstractOperationParameter {
     this.insertChild(prev, OperationParm_StopConceptList.CONCEPT, node);
   }
 
-
   public static OperationParm_StopConceptList newInstance(SModel sm, boolean init) {
     return (OperationParm_StopConceptList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -45,5 +44,4 @@ public class OperationParm_StopConceptList extends AbstractOperationParameter {
   public static OperationParm_StopConceptList newInstance(SModel sm) {
     return OperationParm_StopConceptList.newInstance(sm, false);
   }
-
 }

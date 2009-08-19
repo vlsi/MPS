@@ -153,7 +153,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
     this.insertChild(prev, ConceptConstraints.REFERENT, node);
   }
 
-
   public static ConceptConstraints newInstance(SModel sm, boolean init) {
     return (ConceptConstraints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -161,5 +160,4 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   public static ConceptConstraints newInstance(SModel sm) {
     return ConceptConstraints.newInstance(sm, false);
   }
-
 }

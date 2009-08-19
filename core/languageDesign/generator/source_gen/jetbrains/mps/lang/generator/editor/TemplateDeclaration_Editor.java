@@ -30,7 +30,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TemplateDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7348_0(editorContext, node);
   }
@@ -302,7 +301,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7348_0 extends AbstractCellProvider {
-
     public _Inline7348_0() {
       super();
     }
@@ -337,10 +335,9 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class TemplateDeclaration_name_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public TemplateDeclaration_name_cellMenu0() {
     }
 
@@ -352,7 +349,5 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       }
       return values;
     }
-
-}
-
+  }
 }

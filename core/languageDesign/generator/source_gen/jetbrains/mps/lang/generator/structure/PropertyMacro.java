@@ -23,7 +23,6 @@ public class PropertyMacro extends AbstractMacro {
     super.setChild(PropertyMacro.PROPERTY_VALUE_FUNCTION, node);
   }
 
-
   public static PropertyMacro newInstance(SModel sm, boolean init) {
     return (PropertyMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class PropertyMacro extends AbstractMacro {
   public static PropertyMacro newInstance(SModel sm) {
     return PropertyMacro.newInstance(sm, false);
   }
-
 }

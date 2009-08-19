@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ConceptConstraints_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4286_0(editorContext, node);
   }
@@ -537,7 +536,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4286_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "concept", false), "abstract");
   }
@@ -571,7 +569,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4286_0 extends AbstractCellProvider {
-
     public _Inline4286_0() {
       super();
     }
@@ -602,10 +599,9 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline4286_1 extends AbstractCellProvider {
-
     public _Inline4286_1() {
       super();
     }
@@ -636,10 +632,9 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class propertyListHandler_4286_0 extends RefNodeListHandler {
-
     public propertyListHandler_4286_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -694,10 +689,9 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class referentListHandler_4286_0 extends RefNodeListHandler {
-
     public referentListHandler_4286_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -752,7 +746,5 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

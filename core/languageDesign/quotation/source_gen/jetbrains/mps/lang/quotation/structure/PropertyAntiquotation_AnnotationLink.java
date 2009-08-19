@@ -14,5 +14,4 @@ public class PropertyAntiquotation_AnnotationLink {
   public static PropertyAntiquotation getPropertyAntiquotation(BaseConcept source, String propertyName) {
     return (PropertyAntiquotation)source.getPropertyAttribute(PropertyAntiquotation_AnnotationLink.PROPERTY_ANTIQUOTATION, propertyName);
   }
-
 }

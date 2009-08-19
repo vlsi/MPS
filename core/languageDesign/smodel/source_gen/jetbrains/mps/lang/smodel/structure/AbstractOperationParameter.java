@@ -22,5 +22,4 @@ public class AbstractOperationParameter extends BaseConcept {
   public static AbstractOperationParameter newInstance(SModel sm) {
     return AbstractOperationParameter.newInstance(sm, false);
   }
-
 }

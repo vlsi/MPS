@@ -29,7 +29,6 @@ import jetbrains.mps.lang.constraints.generator.baseLanguage.template.util.Queri
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1194967181314(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return SModelOperations.getModelName(_context.getInputModel()).endsWith(".constraints");
   }
@@ -337,5 +336,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1212104879922(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "class_for_concept");
   }
-
 }

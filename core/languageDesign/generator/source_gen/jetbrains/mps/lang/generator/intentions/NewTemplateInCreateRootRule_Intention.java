@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
-
   public NewTemplateInCreateRootRule_Intention() {
   }
 
@@ -57,8 +56,7 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
       name.value = "_name_";
     }
     final SNode rule = node;
-    CreateFromUsageUtil.showCreateNewRootMenu(editorContext, new Condition <SNode>() {
-
+    CreateFromUsageUtil.showCreateNewRootMenu(editorContext, new Condition<SNode>() {
       public boolean met(SNode c) {
         if (SConceptOperations.isExactly(c, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
           return false;
@@ -74,8 +72,7 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
         }
         return true;
       }
-    }, new Setter <SNode>() {
-
+    }, new Setter<SNode>() {
       public void set(SNode root) {
         if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return;
@@ -90,5 +87,4 @@ public class NewTemplateInCreateRootRule_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

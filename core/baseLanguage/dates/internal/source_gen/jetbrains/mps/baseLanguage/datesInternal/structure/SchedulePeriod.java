@@ -78,7 +78,6 @@ public class SchedulePeriod extends BaseConcept {
     this.setBooleanProperty(SchedulePeriod.MONTH, value);
   }
 
-
   public static SchedulePeriod newInstance(SModel sm, boolean init) {
     return (SchedulePeriod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -86,5 +85,4 @@ public class SchedulePeriod extends BaseConcept {
   public static SchedulePeriod newInstance(SModel sm) {
     return SchedulePeriod.newInstance(sm, false);
   }
-
 }

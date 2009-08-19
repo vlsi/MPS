@@ -23,7 +23,6 @@ public class DismissTopMappingRule extends RuleConsequence {
     super.setChild(DismissTopMappingRule.GENERATOR_MESSAGE, node);
   }
 
-
   public static DismissTopMappingRule newInstance(SModel sm, boolean init) {
     return (DismissTopMappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DismissTopMappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class DismissTopMappingRule extends RuleConsequence {
   public static DismissTopMappingRule newInstance(SModel sm) {
     return DismissTopMappingRule.newInstance(sm, false);
   }
-
 }

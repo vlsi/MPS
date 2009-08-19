@@ -32,7 +32,6 @@ public class MatchingLabelStyleClassItem extends StyleClassItem {
     super.setChild(MatchingLabelStyleClassItem.QUERY, node);
   }
 
-
   public static MatchingLabelStyleClassItem newInstance(SModel sm, boolean init) {
     return (MatchingLabelStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class MatchingLabelStyleClassItem extends StyleClassItem {
   public static MatchingLabelStyleClassItem newInstance(SModel sm) {
     return MatchingLabelStyleClassItem.newInstance(sm, false);
   }
-
 }

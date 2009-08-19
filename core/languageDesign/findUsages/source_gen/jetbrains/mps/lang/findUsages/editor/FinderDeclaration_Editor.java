@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class FinderDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4600_2(editorContext, node);
   }
@@ -408,7 +407,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4600_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -418,7 +416,6 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4600_0 extends AbstractCellProvider {
-
     public _Inline4600_0() {
       super();
     }
@@ -448,7 +445,5 @@ public class FinderDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

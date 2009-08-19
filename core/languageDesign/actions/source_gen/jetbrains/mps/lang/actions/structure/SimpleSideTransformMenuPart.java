@@ -50,7 +50,6 @@ public class SimpleSideTransformMenuPart extends SideTransformMenuPart {
     super.setChild(SimpleSideTransformMenuPart.HANDLER, node);
   }
 
-
   public static SimpleSideTransformMenuPart newInstance(SModel sm, boolean init) {
     return (SimpleSideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -58,5 +57,4 @@ public class SimpleSideTransformMenuPart extends SideTransformMenuPart {
   public static SimpleSideTransformMenuPart newInstance(SModel sm) {
     return SimpleSideTransformMenuPart.newInstance(sm, false);
   }
-
 }

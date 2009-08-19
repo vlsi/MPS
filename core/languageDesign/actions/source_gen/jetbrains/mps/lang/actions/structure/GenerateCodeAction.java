@@ -74,7 +74,6 @@ public class GenerateCodeAction extends BaseConcept {
     this.insertChild(prev, GenerateCodeAction.SMART_ACTION_PARAMETER, node);
   }
 
-
   public static GenerateCodeAction newInstance(SModel sm, boolean init) {
     return (GenerateCodeAction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenerateCodeAction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -82,5 +81,4 @@ public class GenerateCodeAction extends BaseConcept {
   public static GenerateCodeAction newInstance(SModel sm) {
     return GenerateCodeAction.newInstance(sm, false);
   }
-
 }

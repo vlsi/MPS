@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
   }
 
@@ -39,5 +38,4 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   public boolean isWeak() {
     return true;
   }
-
 }

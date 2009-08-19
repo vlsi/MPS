@@ -24,7 +24,6 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
     super.setReferent(CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT, node);
   }
 
-
   public static CellMenuPart_ReplaceNode_CustomNodeConcept newInstance(SModel sm, boolean init) {
     return (CellMenuPart_ReplaceNode_CustomNodeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
   public static CellMenuPart_ReplaceNode_CustomNodeConcept newInstance(SModel sm) {
     return CellMenuPart_ReplaceNode_CustomNodeConcept.newInstance(sm, false);
   }
-
 }

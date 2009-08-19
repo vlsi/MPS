@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertDateTimeMathOperations_MigrationScript extends BaseMigrationScript {
-
   public ConvertDateTimeMathOperations_MigrationScript(IOperationContext operationContext) {
     super("convert datetime math operations");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "datetime minus period convert";
       }
@@ -44,7 +42,6 @@ public class ConvertDateTimeMathOperations_MigrationScript extends BaseMigration
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "datetime plus period convert";
       }

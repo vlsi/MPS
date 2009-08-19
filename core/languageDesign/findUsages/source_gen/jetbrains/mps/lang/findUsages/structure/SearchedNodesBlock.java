@@ -22,5 +22,4 @@ public class SearchedNodesBlock extends ConceptFunction {
   public static SearchedNodesBlock newInstance(SModel sm) {
     return SearchedNodesBlock.newInstance(sm, false);
   }
-
 }

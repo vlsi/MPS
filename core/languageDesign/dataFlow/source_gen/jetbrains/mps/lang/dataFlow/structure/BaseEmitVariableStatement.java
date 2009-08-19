@@ -24,7 +24,6 @@ public class BaseEmitVariableStatement extends EmitStatement {
     super.setChild(BaseEmitVariableStatement.VARIABLE, node);
   }
 
-
   public static BaseEmitVariableStatement newInstance(SModel sm, boolean init) {
     return (BaseEmitVariableStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class BaseEmitVariableStatement extends EmitStatement {
   public static BaseEmitVariableStatement newInstance(SModel sm) {
     return BaseEmitVariableStatement.newInstance(sm, false);
   }
-
 }

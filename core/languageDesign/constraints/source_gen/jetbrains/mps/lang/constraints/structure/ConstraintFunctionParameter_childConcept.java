@@ -22,5 +22,4 @@ public class ConstraintFunctionParameter_childConcept extends ConceptFunctionPar
   public static ConstraintFunctionParameter_childConcept newInstance(SModel sm) {
     return ConstraintFunctionParameter_childConcept.newInstance(sm, false);
   }
-
 }

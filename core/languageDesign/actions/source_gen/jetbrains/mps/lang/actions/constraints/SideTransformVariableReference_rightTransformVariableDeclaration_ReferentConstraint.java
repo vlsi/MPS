@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SideTransformVariableReference_rightTransformVariableDeclaration_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class SideTransformVariableReference_rightTransformVariableDeclaration_Re
     }
     return vars;
   }
-
 }

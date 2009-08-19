@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8073_0(editorContext, node);
   }
@@ -117,7 +116,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8073_0 extends AbstractCellProvider {
-
     public _Inline8073_0() {
       super();
     }
@@ -153,7 +151,5 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

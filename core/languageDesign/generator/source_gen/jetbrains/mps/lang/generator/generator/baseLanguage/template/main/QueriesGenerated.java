@@ -19,7 +19,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1167762379110(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return TemplateFunctionMethodName.createRootRule_Condition(_context.getNode());
   }
@@ -183,7 +182,7 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
-    for(SNode node : nodes) {
+    for (SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
       SNodeOperations.replaceWithAnother(node, replacement);
@@ -199,7 +198,7 @@ public class QueriesGenerated {
     {
       // references in 'get by label'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel");
-      for(SNode op : ops) {
+      for (SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
           _context.showErrorMessage(op, "reference on mapping label is broken");
@@ -212,7 +211,7 @@ public class QueriesGenerated {
     {
       // references in 'get by label and node'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput");
-      for(SNode op : ops) {
+      for (SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
           _context.showErrorMessage(op, "reference on mapping label is broken");
@@ -225,7 +224,7 @@ public class QueriesGenerated {
     {
       // references in 'get by label and node and ref.scope'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope");
-      for(SNode op : ops) {
+      for (SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
           _context.showErrorMessage(op, "reference on mapping label is broken");
@@ -238,7 +237,7 @@ public class QueriesGenerated {
     {
       // references in 'get all by label and node'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput");
-      for(SNode op : ops) {
+      for (SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
           _context.showErrorMessage(op, "reference on mapping label is broken");
@@ -251,7 +250,7 @@ public class QueriesGenerated {
     {
       // references in 'get prev input by label'
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel");
-      for(SNode op : ops) {
+      for (SNode op : ops) {
         SNode label = SLinkOperations.getTarget(op, "label", false);
         if (label == null) {
           _context.showErrorMessage(op, "reference on mapping label is broken");
@@ -262,5 +261,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

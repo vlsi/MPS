@@ -48,7 +48,6 @@ public class SelectOperation extends SNodeOperation {
     this.insertChild(prev, SelectOperation.SELECT_LATER_PARAMETER, node);
   }
 
-
   public static SelectOperation newInstance(SModel sm, boolean init) {
     return (SelectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class SelectOperation extends SNodeOperation {
   public static SelectOperation newInstance(SModel sm) {
     return SelectOperation.newInstance(sm, false);
   }
-
 }

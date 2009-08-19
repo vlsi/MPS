@@ -25,7 +25,6 @@ public class NodeRefExpression extends Expression {
     super.setReferent(NodeRefExpression.REFERENT_NODE, node);
   }
 
-
   public static NodeRefExpression newInstance(SModel sm, boolean init) {
     return (NodeRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class NodeRefExpression extends Expression {
   public static NodeRefExpression newInstance(SModel sm) {
     return NodeRefExpression.newInstance(sm, false);
   }
-
 }

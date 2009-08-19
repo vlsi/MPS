@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.search.ModelNodesSearchScope;
 
 public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public NodeFactory_applicableConcept_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class NodeFactory_applicableConcept_ReferentConstraint extends BaseNodeRe
     SModel structureModel = language.getStructureModelDescriptor().getSModel();
     return new ModelNodesSearchScope(structureModel);
   }
-
 }

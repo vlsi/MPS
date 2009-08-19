@@ -22,5 +22,4 @@ public class QueryFunction_SideTransform_NodeQuery extends ConceptFunction {
   public static QueryFunction_SideTransform_NodeQuery newInstance(SModel sm) {
     return QueryFunction_SideTransform_NodeQuery.newInstance(sm, false);
   }
-
 }

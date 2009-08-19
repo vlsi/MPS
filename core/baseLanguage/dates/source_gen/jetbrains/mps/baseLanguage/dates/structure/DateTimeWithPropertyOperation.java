@@ -34,7 +34,6 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
     super.setChild(DateTimeWithPropertyOperation.EXPRESSION, node);
   }
 
-
   public static DateTimeWithPropertyOperation newInstance(SModel sm, boolean init) {
     return (DateTimeWithPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeWithPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   public static DateTimeWithPropertyOperation newInstance(SModel sm) {
     return DateTimeWithPropertyOperation.newInstance(sm, false);
   }
-
 }

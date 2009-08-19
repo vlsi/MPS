@@ -22,5 +22,4 @@ public class GetActionUIFunction extends ConceptFunction {
   public static GetActionUIFunction newInstance(SModel sm) {
     return GetActionUIFunction.newInstance(sm, false);
   }
-
 }

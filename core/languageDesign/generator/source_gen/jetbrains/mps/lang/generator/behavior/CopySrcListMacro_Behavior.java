@@ -7,7 +7,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CopySrcListMacro_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,11 +17,9 @@ public class CopySrcListMacro_Behavior {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_0);
       if (coercedNode_0 != null) {
         return pattern_0.PatternVar0;
-      } else
-      {
+      } else {
       }
     }
     return null;
   }
-
 }

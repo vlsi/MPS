@@ -116,7 +116,6 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
     this.insertChild(prev, SideTransformHintSubstituteActionsBuilder.VARIABLE, node);
   }
 
-
   public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
     return (SideTransformHintSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -124,5 +123,4 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm) {
     return SideTransformHintSubstituteActionsBuilder.newInstance(sm, false);
   }
-
 }

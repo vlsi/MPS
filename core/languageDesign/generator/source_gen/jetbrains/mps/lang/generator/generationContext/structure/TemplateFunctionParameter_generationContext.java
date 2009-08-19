@@ -22,5 +22,4 @@ public class TemplateFunctionParameter_generationContext extends ConceptFunction
   public static TemplateFunctionParameter_generationContext newInstance(SModel sm) {
     return TemplateFunctionParameter_generationContext.newInstance(sm, false);
   }
-
 }

@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ReplacingOfVerticalProperty_MigrationScript extends BaseMigrationScript {
-
   public ReplacingOfVerticalProperty_MigrationScript(IOperationContext operationContext) {
     super("Replacing of vertical property with style");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Set layout property for collection";
       }
@@ -35,12 +33,10 @@ public class ReplacingOfVerticalProperty_MigrationScript extends BaseMigrationSc
       public void doUpdateInstanceNode(SNode node) {
         if (!(SPropertyOperations.getBoolean(node, "vertical"))) {
           SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-        } else
-        {
+        } else {
           if (SPropertyOperations.getBoolean(node, "gridLayout")) {
             SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", null), true);
-          } else
-          {
+          } else {
             SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
           }
         }
@@ -51,7 +47,6 @@ public class ReplacingOfVerticalProperty_MigrationScript extends BaseMigrationSc
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Set layout property for RefNodeList";
       }
@@ -71,12 +66,10 @@ public class ReplacingOfVerticalProperty_MigrationScript extends BaseMigrationSc
       public void doUpdateInstanceNode(SNode node) {
         if (!(SPropertyOperations.getBoolean(node, "vertical"))) {
           SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-        } else
-        {
+        } else {
           if (SPropertyOperations.getBoolean(node, "gridLayout")) {
             SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", null), true);
-          } else
-          {
+          } else {
             SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
           }
         }

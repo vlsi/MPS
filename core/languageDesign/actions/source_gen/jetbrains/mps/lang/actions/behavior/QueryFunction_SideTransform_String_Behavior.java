@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class QueryFunction_SideTransform_String_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,5 +27,4 @@ public class QueryFunction_SideTransform_String_Behavior {
     }
     return result;
   }
-
 }

@@ -54,5 +54,4 @@ public enum SelectPosition {
     }
     return SelectPosition.getDefault();
   }
-
 }

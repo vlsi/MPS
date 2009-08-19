@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public class CellModel_RefNode_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,5 +30,4 @@ public class CellModel_RefNode_Behavior {
   public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return true;
   }
-
 }

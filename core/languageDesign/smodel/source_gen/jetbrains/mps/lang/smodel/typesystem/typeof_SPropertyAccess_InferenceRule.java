@@ -12,7 +12,6 @@ import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SPropertyAccess_InferenceRule() {
   }
 
@@ -38,5 +37,4 @@ public class typeof_SPropertyAccess_InferenceRule extends AbstractInferenceRule_
   public boolean overrides() {
     return true;
   }
-
 }

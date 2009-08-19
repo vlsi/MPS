@@ -59,5 +59,4 @@ public enum _ImageAlignment_Enum {
     }
     return _ImageAlignment_Enum.getDefault();
   }
-
 }

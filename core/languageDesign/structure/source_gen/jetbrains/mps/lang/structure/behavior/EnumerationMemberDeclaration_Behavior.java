@@ -8,7 +8,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class EnumerationMemberDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -33,5 +32,4 @@ public class EnumerationMemberDeclaration_Behavior {
     }
     return SPropertyOperations.getString(thisNode, "javaIdentifier");
   }
-
 }

@@ -75,7 +75,6 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
     this.insertChild(prev, SideTransformHintSubstituteActions.ACTIONS_BUILDER, node);
   }
 
-
   public static SideTransformHintSubstituteActions newInstance(SModel sm, boolean init) {
     return (SideTransformHintSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class SideTransformHintSubstituteActions extends BaseConcept implements I
   public static SideTransformHintSubstituteActions newInstance(SModel sm) {
     return SideTransformHintSubstituteActions.newInstance(sm, false);
   }
-
 }

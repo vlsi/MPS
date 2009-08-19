@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class EnumMemberReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9300_0(editorContext, node);
   }
@@ -86,7 +85,6 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline9300_0 extends AbstractCellProvider {
-
     public _Inline9300_0() {
       super();
     }
@@ -123,7 +121,5 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

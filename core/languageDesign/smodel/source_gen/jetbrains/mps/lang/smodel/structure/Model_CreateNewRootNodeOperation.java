@@ -21,5 +21,4 @@ public class Model_CreateNewRootNodeOperation extends Model_CreateNewNodeOperati
   public static Model_CreateNewRootNodeOperation newInstance(SModel sm) {
     return Model_CreateNewRootNodeOperation.newInstance(sm, false);
   }
-
 }

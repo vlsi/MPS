@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_Property_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3263_0(editorContext, node);
   }
@@ -264,8 +263,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_0((cell == null ?
             null :
@@ -276,8 +274,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_1((cell == null ?
             null :
@@ -288,8 +285,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_2((cell == null ?
             null :
@@ -300,8 +296,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_3((cell == null ?
             null :
@@ -312,8 +307,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_4((cell == null ?
             null :
@@ -324,8 +318,7 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Property_Editor._StyleParameter_QueryFunction_3263_5((cell == null ?
             null :
@@ -439,7 +432,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3263_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "noTargetText") == null;
   }
@@ -473,7 +465,6 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3263_0 extends AbstractCellProvider {
-
     public _Inline3263_0() {
       super();
     }
@@ -508,10 +499,9 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline3263_1 extends AbstractCellProvider {
-
     public _Inline3263_1() {
       super();
     }
@@ -546,7 +536,5 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

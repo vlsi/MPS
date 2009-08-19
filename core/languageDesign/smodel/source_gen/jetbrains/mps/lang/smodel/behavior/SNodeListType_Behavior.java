@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SNodeListType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -47,5 +46,4 @@ public class SNodeListType_Behavior {
   public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {
     return true;
   }
-
 }

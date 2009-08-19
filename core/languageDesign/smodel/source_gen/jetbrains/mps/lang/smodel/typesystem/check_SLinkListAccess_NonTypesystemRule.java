@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SLinkListAccess_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_SLinkListAccess_NonTypesystemRule() {
   }
 
@@ -46,5 +45,4 @@ public class check_SLinkListAccess_NonTypesystemRule extends AbstractNonTypesyst
   public boolean overrides() {
     return false;
   }
-
 }

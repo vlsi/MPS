@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 
 public class ConceptEditorDeclaration_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public ConceptEditorDeclaration_name_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class ConceptEditorDeclaration_name_PropertyConstraint implements IModelC
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(node), "name") + "_Editor";
   }
-
 }

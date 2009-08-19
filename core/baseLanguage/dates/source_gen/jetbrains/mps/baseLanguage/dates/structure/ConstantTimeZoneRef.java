@@ -25,7 +25,6 @@ public class ConstantTimeZoneRef extends Expression {
     super.setReferent(ConstantTimeZoneRef.ZONE, node);
   }
 
-
   public static ConstantTimeZoneRef newInstance(SModel sm, boolean init) {
     return (ConstantTimeZoneRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConstantTimeZoneRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ConstantTimeZoneRef extends Expression {
   public static ConstantTimeZoneRef newInstance(SModel sm) {
     return ConstantTimeZoneRef.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ public class SelectPositionParameter extends SelectParameter {
     super.setProperty(SelectPositionParameter.POSITION, value.getValueAsString());
   }
 
-
   public static SelectPositionParameter newInstance(SModel sm, boolean init) {
     return (SelectPositionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectPositionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SelectPositionParameter extends SelectParameter {
   public static SelectPositionParameter newInstance(SModel sm) {
     return SelectPositionParameter.newInstance(sm, false);
   }
-
 }

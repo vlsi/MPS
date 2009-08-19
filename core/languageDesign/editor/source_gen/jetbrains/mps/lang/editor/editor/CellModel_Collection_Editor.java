@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CellModel_Collection_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_2102_0(editorContext, node);
   }
@@ -49,8 +48,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_2102_5(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createCollection_2102_11(editorContext, node);
     }
     return editorCell;
@@ -173,8 +171,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_0((cell == null ?
             null :
@@ -254,8 +251,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_1((cell == null ?
             null :
@@ -277,8 +273,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getTag(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_2((cell == null ?
             null :
@@ -289,8 +284,7 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Collection_Editor._StyleParameter_QueryFunction_2102_3((cell == null ?
             null :
@@ -460,7 +454,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition2102_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(CellModel_Collection_Behavior.call_isIndentLayout_1237380273398(node));
   }
@@ -490,7 +483,6 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
   }
 
   private static class childCellModelListHandler_2102_0 extends RefNodeListHandler {
-
     public childCellModelListHandler_2102_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -530,10 +522,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class childCellModelListHandler_2102_1 extends RefNodeListHandler {
-
     public childCellModelListHandler_2102_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -573,10 +564,9 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class childCellModelListHandler_2102_2 extends RefNodeListHandler {
-
     public childCellModelListHandler_2102_2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -616,7 +606,5 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SplitConstantCellIntoWords_Intention extends BaseIntention {
-
   public SplitConstantCellIntoWords_Intention() {
   }
 
@@ -63,12 +62,12 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
     SNodeOperations.replaceWithAnother(node, collection);
     String[] strings = text.split(" ");
     int i = 0;
-    for(String word : strings) {
+    for (String word : strings) {
       SNode constantCell = SNodeOperations.copyNode(node);
       SPropertyOperations.set(constantCell, "text", word);
       boolean leftPaddingSet = false;
       boolean rightPaddingSet = false;
-      for(SNode styleClassItem : SLinkOperations.getTargets(constantCell, "styleItem", true)) {
+      for (SNode styleClassItem : SLinkOperations.getTargets(constantCell, "styleItem", true)) {
         if (SNodeOperations.isInstanceOf(styleClassItem, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem")) {
           leftPaddingSet = true;
           if (i != 0) {
@@ -98,5 +97,4 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

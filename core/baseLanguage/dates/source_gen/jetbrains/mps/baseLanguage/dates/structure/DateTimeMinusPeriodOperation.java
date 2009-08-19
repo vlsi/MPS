@@ -33,7 +33,6 @@ public class DateTimeMinusPeriodOperation extends Expression {
     super.setChild(DateTimeMinusPeriodOperation.RIGHT_VALUE, node);
   }
 
-
   public static DateTimeMinusPeriodOperation newInstance(SModel sm, boolean init) {
     return (DateTimeMinusPeriodOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeMinusPeriodOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class DateTimeMinusPeriodOperation extends Expression {
   public static DateTimeMinusPeriodOperation newInstance(SModel sm) {
     return DateTimeMinusPeriodOperation.newInstance(sm, false);
   }
-
 }

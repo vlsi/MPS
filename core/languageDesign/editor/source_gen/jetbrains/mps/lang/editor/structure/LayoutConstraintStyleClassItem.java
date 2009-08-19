@@ -24,7 +24,6 @@ public class LayoutConstraintStyleClassItem extends StyleClassItem {
     super.setProperty(LayoutConstraintStyleClassItem.LAYOUT_CONSTRAINT, value.getValueAsString());
   }
 
-
   public static LayoutConstraintStyleClassItem newInstance(SModel sm, boolean init) {
     return (LayoutConstraintStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class LayoutConstraintStyleClassItem extends StyleClassItem {
   public static LayoutConstraintStyleClassItem newInstance(SModel sm) {
     return LayoutConstraintStyleClassItem.newInstance(sm, false);
   }
-
 }

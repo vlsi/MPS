@@ -42,7 +42,6 @@ public class SEnum_MembersOperation extends BaseConcept implements SEnumOperatio
     this.setProperty(SEnum_MembersOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static SEnum_MembersOperation newInstance(SModel sm, boolean init) {
     return (SEnum_MembersOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class SEnum_MembersOperation extends BaseConcept implements SEnumOperatio
   public static SEnum_MembersOperation newInstance(SModel sm) {
     return SEnum_MembersOperation.newInstance(sm, false);
   }
-
 }

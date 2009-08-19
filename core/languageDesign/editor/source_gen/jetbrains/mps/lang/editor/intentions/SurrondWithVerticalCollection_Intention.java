@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SurrondWithVerticalCollection_Intention extends BaseIntention {
-
   public SurrondWithVerticalCollection_Intention() {
   }
 
@@ -52,7 +51,7 @@ public class SurrondWithVerticalCollection_Intention extends BaseIntention {
     SLinkOperations.setTarget(result, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
     List<SNode> nodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(ListSequence.fromList(nodes).last(), result);
-    for(SNode sn : nodes) {
+    for (SNode sn : nodes) {
       SLinkOperations.addChild(result, "childCellModel", SNodeOperations.cast(sn, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
     }
   }
@@ -60,5 +59,4 @@ public class SurrondWithVerticalCollection_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.editor.intentions";
   }
-
 }

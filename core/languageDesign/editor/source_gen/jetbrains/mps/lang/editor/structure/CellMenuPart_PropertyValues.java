@@ -23,7 +23,6 @@ public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
     super.setChild(CellMenuPart_PropertyValues.VALUES_FUNCTION, node);
   }
 
-
   public static CellMenuPart_PropertyValues newInstance(SModel sm, boolean init) {
     return (CellMenuPart_PropertyValues)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
   public static CellMenuPart_PropertyValues newInstance(SModel sm) {
     return CellMenuPart_PropertyValues.newInstance(sm, false);
   }
-
 }

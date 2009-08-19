@@ -20,7 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import javax.swing.JComponent;
 
 public class CellModel_Image_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_5161_0(editorContext, node);
   }
@@ -241,9 +240,7 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static JComponent _QueryFunction_JComponent_5161_0(SNode node, EditorContext editorContext) {
     return new SelectImageFileButton(node);
   }
-
 }

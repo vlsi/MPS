@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Quotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3472_0(editorContext, node);
   }
@@ -129,9 +128,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3472_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
   }
-
 }

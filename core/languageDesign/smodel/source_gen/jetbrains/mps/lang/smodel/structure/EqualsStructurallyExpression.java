@@ -22,5 +22,4 @@ public class EqualsStructurallyExpression extends BinaryOperation {
   public static EqualsStructurallyExpression newInstance(SModel sm) {
     return EqualsStructurallyExpression.newInstance(sm, false);
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EnumMemberReference_enumMember_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public EnumMemberReference_enumMember_ReferentConstraint() {
   }
 
@@ -36,5 +35,4 @@ public class EnumMemberReference_enumMember_ReferentConstraint extends BaseNodeR
     }
     return null;
   }
-
 }

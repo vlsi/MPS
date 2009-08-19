@@ -22,5 +22,4 @@ public class CellMenuPart_AbstractGroup_Query extends ConceptFunction {
   public static CellMenuPart_AbstractGroup_Query newInstance(SModel sm) {
     return CellMenuPart_AbstractGroup_Query.newInstance(sm, false);
   }
-
 }

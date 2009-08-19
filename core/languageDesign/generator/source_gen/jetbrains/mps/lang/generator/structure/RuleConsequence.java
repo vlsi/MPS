@@ -22,5 +22,4 @@ public class RuleConsequence extends BaseConcept {
   public static RuleConsequence newInstance(SModel sm) {
     return RuleConsequence.newInstance(sm, false);
   }
-
 }

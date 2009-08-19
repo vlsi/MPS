@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class NewTemplateInReductionRule_Intention extends BaseIntention {
-
   public NewTemplateInReductionRule_Intention() {
   }
 
@@ -74,5 +73,4 @@ public class NewTemplateInReductionRule_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.generator.intentions";
   }
-
 }

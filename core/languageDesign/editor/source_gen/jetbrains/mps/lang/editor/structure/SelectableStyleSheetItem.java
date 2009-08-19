@@ -21,5 +21,4 @@ public class SelectableStyleSheetItem extends BooleanStyleSheetItem {
   public static SelectableStyleSheetItem newInstance(SModel sm) {
     return SelectableStyleSheetItem.newInstance(sm, false);
   }
-
 }

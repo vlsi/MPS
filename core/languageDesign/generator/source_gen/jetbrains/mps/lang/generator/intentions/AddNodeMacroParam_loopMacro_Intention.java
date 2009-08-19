@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.Intention;
 
 public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
-
   private SNode myParameter;
 
   public AddNodeMacroParam_loopMacro_Intention() {
@@ -81,14 +80,13 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
     return "jetbrains.mps.lang.generator.intentions";
   }
 
-
   private static List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
     if (sourceNode == null) {
       return null;
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
+    for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
       if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1..n", "0..1")) {
         ListSequence.fromList(result).addElement(child);
       }
@@ -100,7 +98,7 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
     List<Intention> list = ListSequence.fromList(new ArrayList<Intention>());
     List<SNode> paramList = parameter(node, editorContext);
     if (paramList != null) {
-      for(SNode param : paramList) {
+      for (SNode param : paramList) {
         AddNodeMacroParam_loopMacro_Intention intention = new AddNodeMacroParam_loopMacro_Intention();
         intention.myParameter = param;
         ListSequence.fromList(list).addElement(intention);
@@ -108,5 +106,4 @@ public class AddNodeMacroParam_loopMacro_Intention extends BaseIntention {
     }
     return list;
   }
-
 }

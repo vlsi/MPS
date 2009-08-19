@@ -69,5 +69,4 @@ public enum _FontStyle_Enum {
     }
     return _FontStyle_Enum.getDefault();
   }
-
 }

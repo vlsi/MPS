@@ -80,7 +80,6 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
     super.setReferent(DateTimeProperty.JODA_PERIOD_TYPE, node);
   }
 
-
   public static DateTimeProperty newInstance(SModel sm, boolean init) {
     return (DateTimeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -88,5 +87,4 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   public static DateTimeProperty newInstance(SModel sm) {
     return DateTimeProperty.newInstance(sm, false);
   }
-
 }

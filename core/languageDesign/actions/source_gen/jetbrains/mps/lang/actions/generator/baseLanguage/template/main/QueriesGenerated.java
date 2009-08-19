@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1221138344773(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.PasteWrapper")).isNotEmpty();
   }
@@ -83,8 +82,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1183017316762(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (_context.getInputModel().getLongName().endsWith(".actions")) {
       return "QueriesGenerated";
-    } else
-    {
+    } else {
       return "ActionsQueriesGenerated";
     }
   }
@@ -581,7 +579,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1235155841332(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> smartEditorActions = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SmartEditorActions");
-    for(SNode actionsContainer : smartEditorActions) {
+    for (SNode actionsContainer : smartEditorActions) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(actionsContainer, "generateCode", true)));
     }
     return result;
@@ -614,5 +612,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1197455643098(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
   }
-
 }

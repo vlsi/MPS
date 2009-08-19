@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint() {
   }
 
@@ -31,5 +30,4 @@ public class QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConst
     SNode editedConcept = AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(editorComponent);
     return new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(editedConcept)));
   }
-
 }

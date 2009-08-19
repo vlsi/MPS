@@ -5,8 +5,6 @@ package jetbrains.mps.lang.findUsages.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ResultStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

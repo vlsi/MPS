@@ -21,5 +21,4 @@ public class GenerationContextOp_GetScope extends GenerationContextOp_Base {
   public static GenerationContextOp_GetScope newInstance(SModel sm) {
     return GenerationContextOp_GetScope.newInstance(sm, false);
   }
-
 }

@@ -85,9 +85,7 @@ public class SafeDeleteLink extends BaseGeneratedRefactoring {
     return true;
   }
 
-
   public static String getKeyStroke_static() {
     return SafeDelete.getKeyStroke_static();
   }
-
 }

@@ -33,7 +33,6 @@ public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Bas
     super.setChild(GenerationContextOp_ShowMessageBase.REFERENCE_NODE, node);
   }
 
-
   public static GenerationContextOp_ShowMessageBase newInstance(SModel sm, boolean init) {
     return (GenerationContextOp_ShowMessageBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Bas
   public static GenerationContextOp_ShowMessageBase newInstance(SModel sm) {
     return GenerationContextOp_ShowMessageBase.newInstance(sm, false);
   }
-
 }

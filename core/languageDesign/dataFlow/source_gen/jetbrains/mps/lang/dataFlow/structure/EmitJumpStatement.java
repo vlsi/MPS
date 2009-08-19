@@ -21,5 +21,4 @@ public class EmitJumpStatement extends BaseEmitJumpStatement {
   public static EmitJumpStatement newInstance(SModel sm) {
     return EmitJumpStatement.newInstance(sm, false);
   }
-
 }

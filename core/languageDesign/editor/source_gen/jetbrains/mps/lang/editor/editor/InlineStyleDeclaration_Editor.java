@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7686_0(editorContext, node);
   }
@@ -114,7 +113,6 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7686_0 extends AbstractCellProvider {
-
     public _Inline7686_0() {
       super();
     }
@@ -145,10 +143,9 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class styleItemListHandler_7686_0 extends RefNodeListHandler {
-
     public styleItemListHandler_7686_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -188,7 +185,5 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

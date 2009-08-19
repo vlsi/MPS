@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 
 public class CellModel_Constant_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6752_0(editorContext, node);
   }
@@ -164,8 +163,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_0((cell == null ?
             null :
@@ -176,8 +174,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_1((cell == null ?
             null :
@@ -188,8 +185,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_2((cell == null ?
             null :
@@ -200,8 +196,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_STYLE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_3((cell == null ?
             null :
@@ -212,8 +207,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FONT_SIZE, new AttributeCalculator <Integer>() {
-
+      style.set(StyleAttributes.FONT_SIZE, new AttributeCalculator<Integer>() {
         public Integer calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_5((cell == null ?
             null :
@@ -224,8 +218,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_4((cell == null ?
             null :
@@ -236,8 +229,7 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return CellModel_Constant_Editor._StyleParameter_QueryFunction_6752_6((cell == null ?
             null :
@@ -311,7 +303,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6752_0(SNode node, EditorContext editorContext, IScope scope) {
     return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
@@ -347,5 +338,4 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
   private static boolean _StyleParameter_QueryFunction_6752_6(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
   }
-
 }

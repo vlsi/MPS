@@ -5,12 +5,10 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class StrikeOutStyleSheet_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return true;
   }
-
 }

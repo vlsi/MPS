@@ -21,5 +21,4 @@ public class TextBackgroundColorStyleClassItem extends ColorStyleClassItem {
   public static TextBackgroundColorStyleClassItem newInstance(SModel sm) {
     return TextBackgroundColorStyleClassItem.newInstance(sm, false);
   }
-
 }

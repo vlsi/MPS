@@ -21,5 +21,4 @@ public class GenerationContextOp_GetOutputModel extends GenerationContextOp_Base
   public static GenerationContextOp_GetOutputModel newInstance(SModel sm) {
     return GenerationContextOp_GetOutputModel.newInstance(sm, false);
   }
-
 }

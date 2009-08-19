@@ -22,5 +22,4 @@ public class CellMenuPart_ReplaceNode_Group_Create extends ConceptFunction {
   public static CellMenuPart_ReplaceNode_Group_Create newInstance(SModel sm) {
     return CellMenuPart_ReplaceNode_Group_Create.newInstance(sm, false);
   }
-
 }

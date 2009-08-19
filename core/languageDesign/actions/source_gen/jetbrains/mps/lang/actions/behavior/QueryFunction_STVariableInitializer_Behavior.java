@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueryFunction_STVariableInitializer_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class QueryFunction_STVariableInitializer_Behavior {
     }
     return new _Quotations.QuotationClass_11().createNode();
   }
-
 }

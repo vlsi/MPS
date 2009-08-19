@@ -31,7 +31,7 @@ public class NodeUsages_Finder extends GeneratedFinder {
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressIndicator indicator) {
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(CollectionUtil.set(node), scope, new FindUsagesManager.ProgressAdapter(indicator), false);
-    for(SReference reference : resRefs) {
+    for (SReference reference : resRefs) {
       ListSequence.fromList(_results).addElement(reference.getSourceNode());
     }
   }
@@ -39,5 +39,4 @@ public class NodeUsages_Finder extends GeneratedFinder {
   public String getNodeCategory(SNode node) {
     return "Node Usages";
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3465_0(editorContext, node);
   }
@@ -57,7 +56,6 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
   }
 
   public static class _Inline3465_0 extends AbstractCellProvider {
-
     public _Inline3465_0() {
       super();
     }
@@ -88,7 +86,5 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

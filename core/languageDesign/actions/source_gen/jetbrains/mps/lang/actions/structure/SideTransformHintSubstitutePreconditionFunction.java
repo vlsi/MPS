@@ -22,5 +22,4 @@ public class SideTransformHintSubstitutePreconditionFunction extends ConceptFunc
   public static SideTransformHintSubstitutePreconditionFunction newInstance(SModel sm) {
     return SideTransformHintSubstitutePreconditionFunction.newInstance(sm, false);
   }
-
 }

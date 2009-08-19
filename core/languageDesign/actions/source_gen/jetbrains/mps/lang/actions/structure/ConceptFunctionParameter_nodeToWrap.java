@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_nodeToWrap extends ConceptFunctionParamete
   public static ConceptFunctionParameter_nodeToWrap newInstance(SModel sm) {
     return ConceptFunctionParameter_nodeToWrap.newInstance(sm, false);
   }
-
 }

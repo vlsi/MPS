@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class MacroIntentionsUtil {
-
   public static SNode getContextNodeConcept(SNode contextNode) {
     SNode enclosingMacro = findOuterMacro(contextNode);
     if ((enclosingMacro == null)) {
@@ -33,8 +32,7 @@ public class MacroIntentionsUtil {
         SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_0);
         if (coercedNode_0 != null) {
           return pattern_0.PatternVar1;
-        } else
-        {
+        } else {
           return null;
         }
       }
@@ -44,13 +42,11 @@ public class MacroIntentionsUtil {
         SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_1);
         if (coercedNode_1 != null) {
           return pattern_1.PatternVar0;
-        } else
-        {
+        } else {
           return null;
         }
       }
-    } else
-    {
+    } else {
       SNode macroOuterNode = SNodeOperations.getParent(SNodeOperations.getParent(macro));
       return getContextNodeConcept(macroOuterNode);
     }
@@ -65,5 +61,4 @@ public class MacroIntentionsUtil {
     }
     return findOuterMacro(SNodeOperations.getParent(contextNode));
   }
-
 }

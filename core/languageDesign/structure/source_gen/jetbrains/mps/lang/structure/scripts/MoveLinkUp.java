@@ -123,9 +123,7 @@ public class MoveLinkUp extends BaseGeneratedRefactoring {
     return components;
   }
 
-
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
   }
-
 }

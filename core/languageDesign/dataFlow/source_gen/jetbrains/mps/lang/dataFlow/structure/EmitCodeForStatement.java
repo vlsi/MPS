@@ -24,7 +24,6 @@ public class EmitCodeForStatement extends EmitStatement {
     super.setChild(EmitCodeForStatement.CODE_FOR, node);
   }
 
-
   public static EmitCodeForStatement newInstance(SModel sm, boolean init) {
     return (EmitCodeForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class EmitCodeForStatement extends EmitStatement {
   public static EmitCodeForStatement newInstance(SModel sm) {
     return EmitCodeForStatement.newInstance(sm, false);
   }
-
 }

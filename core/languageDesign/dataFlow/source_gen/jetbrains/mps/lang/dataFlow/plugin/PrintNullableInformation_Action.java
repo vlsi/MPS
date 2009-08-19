@@ -32,12 +32,12 @@ public class PrintNullableInformation_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,7 +46,7 @@ public class PrintNullableInformation_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,13 +63,13 @@ public class PrintNullableInformation_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(PrintNullableInformation_Action.this.node);
       AnalysisResult<Map<SNode, NullableVariableState>> result = program.analyze(new NullableAnalyzer<SNode>());
-      for(Instruction instruction : ListSequence.fromList(program.getInstructions())) {
+      for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
         System.out.println(instruction.toString());
-        for(SNode key : SetSequence.fromSet(MapSequence.fromMap(result.get(instruction)).keySet())) {
+        for (SNode key : SetSequence.fromSet(MapSequence.fromMap(result.get(instruction)).keySet())) {
           System.out.println("\t" + key + " -> " + MapSequence.fromMap(result.get(instruction)).get(key));
         }
       }
@@ -77,5 +77,4 @@ public class PrintNullableInformation_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "PrintNullableInformation", t);
     }
   }
-
 }

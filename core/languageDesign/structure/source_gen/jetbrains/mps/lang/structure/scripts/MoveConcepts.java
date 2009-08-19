@@ -61,7 +61,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       return false;
     }
     SModel model = SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first());
-    for(SNode node : refactoringContext.getSelectedNodes()) {
+    for (SNode node : refactoringContext.getSelectedNodes()) {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         return false;
       }
@@ -82,7 +82,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;
@@ -100,7 +100,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     // collecting editors:
     SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
     if (editorModelDescriptor != null) {
-      for(SNode node : nodes) {
+      for (SNode node : nodes) {
         SNode editor = RefUtil.findEditorDeclaration(editorModelDescriptor.getSModel(), node);
         if (editor != null) {
           ListSequence.fromList(editors).addElement(editor);
@@ -110,7 +110,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     // collecting behaviors:
     SModelDescriptor behaviorModelDescriptor = sourceLanguage.getBehaviorModelDescriptor();
     if (behaviorModelDescriptor != null) {
-      for(SNode node : nodes) {
+      for (SNode node : nodes) {
         SNode behavior = RefUtil.findBehaviorDeclaration(behaviorModelDescriptor.getSModel(), node);
         if (behavior != null) {
           ListSequence.fromList(behaviors).addElement(behavior);
@@ -120,7 +120,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     // collecting constraints:
     SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) {
-      for(SNode node : nodes) {
+      for (SNode node : nodes) {
         SNode constraint = RefUtil.findConstraintsDeclaration(constraintsModelDescriptor.getSModel(), node);
         if (constraint != null) {
           ListSequence.fromList(constraints).addElement(constraint);
@@ -130,7 +130,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     // collecting data flow:
     SModelDescriptor dataflowModelDescriptor = sourceLanguage.getDataFlowModelDescriptor();
     if (dataflowModelDescriptor != null) {
-      for(SNode node : nodes) {
+      for (SNode node : nodes) {
         SNode dataFlow = RefUtil.findDataFlowDeclaration(dataflowModelDescriptor.getSModel(), node);
         if (dataFlow != null) {
           ListSequence.fromList(dataFlows).addElement(dataFlow);
@@ -138,7 +138,7 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
       }
     }
     // refactoring itself
-    for(SNode node : nodes) {
+    for (SNode node : nodes) {
       refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
     refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
@@ -220,13 +220,11 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     return components;
   }
 
-
   public static String getKeyStroke_static() {
     return MoveNodes.getKeyStroke_static();
   }
 
   public static class My_targetModel_Condition implements Condition<SModelDescriptor> {
-
     private RefactoringContext myRefactoringContext;
 
     public My_targetModel_Condition(RefactoringContext refactoringContext) {
@@ -240,7 +238,5 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     public boolean met_internal(SModelDescriptor argument, RefactoringContext refactoringContext) {
       return Language.getModelAspect(argument) == LanguageAspect.STRUCTURE;
     }
-
-}
-
+  }
 }

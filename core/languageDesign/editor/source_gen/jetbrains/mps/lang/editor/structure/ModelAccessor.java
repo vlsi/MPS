@@ -42,7 +42,6 @@ public class ModelAccessor extends BaseConcept {
     super.setChild(ModelAccessor.VALIDATOR, node);
   }
 
-
   public static ModelAccessor newInstance(SModel sm, boolean init) {
     return (ModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ModelAccessor extends BaseConcept {
   public static ModelAccessor newInstance(SModel sm) {
     return ModelAccessor.newInstance(sm, false);
   }
-
 }

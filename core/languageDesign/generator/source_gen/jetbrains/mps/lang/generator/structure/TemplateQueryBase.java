@@ -22,5 +22,4 @@ public class TemplateQueryBase extends ConceptFunction {
   public static TemplateQueryBase newInstance(SModel sm) {
     return TemplateQueryBase.newInstance(sm, false);
   }
-
 }

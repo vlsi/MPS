@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
-
   public Replace_ListType_withNodeListType_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class Replace_ListType_withNodeListType_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.smodel.intentions";
   }
-
 }

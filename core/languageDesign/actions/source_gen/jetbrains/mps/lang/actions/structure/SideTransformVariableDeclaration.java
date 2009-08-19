@@ -24,7 +24,6 @@ public class SideTransformVariableDeclaration extends VariableDeclaration {
     super.setChild(SideTransformVariableDeclaration.INITIALIZER_BLOCK, node);
   }
 
-
   public static SideTransformVariableDeclaration newInstance(SModel sm, boolean init) {
     return (SideTransformVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SideTransformVariableDeclaration extends VariableDeclaration {
   public static SideTransformVariableDeclaration newInstance(SModel sm) {
     return SideTransformVariableDeclaration.newInstance(sm, false);
   }
-
 }

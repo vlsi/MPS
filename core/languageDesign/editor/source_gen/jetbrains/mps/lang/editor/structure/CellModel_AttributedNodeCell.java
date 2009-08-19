@@ -21,5 +21,4 @@ public class CellModel_AttributedNodeCell extends EditorCellModel {
   public static CellModel_AttributedNodeCell newInstance(SModel sm) {
     return CellModel_AttributedNodeCell.newInstance(sm, false);
   }
-
 }

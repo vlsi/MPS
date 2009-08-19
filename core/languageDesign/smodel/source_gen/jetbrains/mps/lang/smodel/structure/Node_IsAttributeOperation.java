@@ -21,5 +21,4 @@ public class Node_IsAttributeOperation extends SNodeOperation {
   public static Node_IsAttributeOperation newInstance(SModel sm) {
     return Node_IsAttributeOperation.newInstance(sm, false);
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_NodeAttributeAccessQualifier_InferenceRule() {
   }
 
@@ -53,5 +52,4 @@ public class typeof_NodeAttributeAccessQualifier_InferenceRule extends AbstractI
   public boolean overrides() {
     return false;
   }
-
 }

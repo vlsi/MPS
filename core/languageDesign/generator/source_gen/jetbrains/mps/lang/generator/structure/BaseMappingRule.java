@@ -52,7 +52,6 @@ public class BaseMappingRule extends BaseConcept {
     super.setChild(BaseMappingRule.CONDITION_FUNCTION, node);
   }
 
-
   public static BaseMappingRule newInstance(SModel sm, boolean init) {
     return (BaseMappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.BaseMappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class BaseMappingRule extends BaseConcept {
   public static BaseMappingRule newInstance(SModel sm) {
     return BaseMappingRule.newInstance(sm, false);
   }
-
 }

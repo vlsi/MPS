@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class structure_StyleSheet {
-
   public static Style getAnnotationNode(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -18,5 +17,4 @@ public class structure_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
-
 }

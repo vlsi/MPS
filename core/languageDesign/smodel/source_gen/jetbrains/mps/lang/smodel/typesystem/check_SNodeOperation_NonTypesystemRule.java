@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SNodeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_SNodeOperation_NonTypesystemRule() {
   }
 
@@ -29,5 +28,4 @@ public class check_SNodeOperation_NonTypesystemRule extends AbstractNonTypesyste
   public boolean overrides() {
     return false;
   }
-
 }

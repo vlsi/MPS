@@ -32,7 +32,6 @@ public class Weaving_MappingRule extends BaseMappingRule {
     super.setChild(Weaving_MappingRule.CONTEXT_NODE_QUERY, node);
   }
 
-
   public static Weaving_MappingRule newInstance(SModel sm, boolean init) {
     return (Weaving_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class Weaving_MappingRule extends BaseMappingRule {
   public static Weaving_MappingRule newInstance(SModel sm) {
     return Weaving_MappingRule.newInstance(sm, false);
   }
-
 }

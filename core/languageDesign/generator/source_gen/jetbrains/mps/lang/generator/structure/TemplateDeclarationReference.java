@@ -23,7 +23,6 @@ public class TemplateDeclarationReference extends RuleConsequence {
     super.setReferent(TemplateDeclarationReference.TEMPLATE, node);
   }
 
-
   public static TemplateDeclarationReference newInstance(SModel sm, boolean init) {
     return (TemplateDeclarationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class TemplateDeclarationReference extends RuleConsequence {
   public static TemplateDeclarationReference newInstance(SModel sm) {
     return TemplateDeclarationReference.newInstance(sm, false);
   }
-
 }

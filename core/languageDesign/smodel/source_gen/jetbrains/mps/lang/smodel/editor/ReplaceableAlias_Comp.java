@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAlias_Comp extends AbstractCellProvider {
-
   public ReplaceableAlias_Comp(SNode node) {
     super(node);
   }
@@ -41,8 +40,7 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConceptProperty_3900_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createError_3900_0(editorContext, node);
     }
     return editorCell;
@@ -77,20 +75,16 @@ public class ReplaceableAlias_Comp extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3900_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
 
   public static class ReplaceableAlias_Comp_replaceWith_SNodeOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public ReplaceableAlias_Comp_replaceWith_SNodeOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
     }
-
-}
-
+  }
 }

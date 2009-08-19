@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 
 public class SEnumMemberType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -31,5 +30,4 @@ public class SEnumMemberType_Behavior {
     }
     return variableSuffixes;
   }
-
 }

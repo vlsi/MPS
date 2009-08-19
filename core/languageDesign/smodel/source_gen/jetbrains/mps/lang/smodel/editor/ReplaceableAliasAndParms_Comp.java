@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
-
   public ReplaceableAliasAndParms_Comp(SNode node) {
     super(node);
   }
@@ -132,13 +131,11 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4484_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static class parameterListHandler_4484_0 extends RefNodeListHandler {
-
     public parameterListHandler_4484_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -203,17 +200,14 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   public static class ReplaceableAliasAndParms_Comp_replaceWith_SNodeOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public ReplaceableAliasAndParms_Comp_replaceWith_SNodeOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
     }
-
-}
-
+  }
 }

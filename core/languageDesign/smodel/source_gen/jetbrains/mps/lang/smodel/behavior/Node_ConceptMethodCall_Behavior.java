@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class Node_ConceptMethodCall_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,8 +22,7 @@ public class Node_ConceptMethodCall_Behavior {
     } else
     if (SPropertyOperations.getBoolean(methodDeclaration, "isVirtual")) {
       return methodDeclaration;
-    } else
-    {
+    } else {
       return null;
     }
   }
@@ -40,5 +38,4 @@ public class Node_ConceptMethodCall_Behavior {
     }
     return NameUtil.decapitalize(variableExpectedName);
   }
-
 }

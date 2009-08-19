@@ -14,7 +14,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SNodeOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -40,8 +39,7 @@ public class SNodeOperation_Behavior {
   }
 
   public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(parameterConcept));
       }
@@ -62,8 +60,7 @@ public class SNodeOperation_Behavior {
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     if (SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(operandType, "jetbrains.mps.lang.smodel.structure._LinkAccessT"), "targetConcept", false);
-    } else
-    {
+    } else {
       SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
       if (nodeType != null) {
         return SLinkOperations.getTarget(nodeType, "concept", false);
@@ -71,5 +68,4 @@ public class SNodeOperation_Behavior {
     }
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }
-
 }

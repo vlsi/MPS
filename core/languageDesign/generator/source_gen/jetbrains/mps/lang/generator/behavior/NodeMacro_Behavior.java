@@ -19,8 +19,7 @@ public class NodeMacro_Behavior {
     SNode prevNodeMacro = NodeMacro_Behavior.call_getPreviousNodeMacro_1213877290823(thisNode);
     if (prevNodeMacro != null) {
       return NodeMacro_Behavior.call_getInputNodeTypeInsideOfMacro_1213877290799(prevNodeMacro);
-    } else
-    {
+    } else {
       return NodeMacro_Behavior.call_getInputNodeTypeFromEnvironment_1213877290892(thisNode);
     }
   }
@@ -32,15 +31,14 @@ public class NodeMacro_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder builder = new StringBuilder();
     boolean newWord = false;
-    for(char ch : SConceptPropertyOperations.getString(thisNode, "alias").toCharArray()) {
+    for (char ch : SConceptPropertyOperations.getString(thisNode, "alias").toCharArray()) {
       if (ch == '$' || ch == '_') {
         newWord = true;
         continue;
       }
       if (newWord) {
         builder.append(Character.toUpperCase(ch));
-      } else
-      {
+      } else {
         builder.append(Character.toLowerCase(ch));
       }
       newWord = false;
@@ -53,7 +51,7 @@ public class NodeMacro_Behavior {
       return null;
     }
     SNode result = null;
-    for(SNode currentAttribute : currentNode.getAllAttributes()) {
+    for (SNode currentAttribute : currentNode.getAllAttributes()) {
       if (SNodeOperations.isInstanceOf(currentAttribute, "jetbrains.mps.lang.generator.structure.NodeMacro")) {
         if (currentAttribute == currentMacro) {
           break;
@@ -86,5 +84,4 @@ public class NodeMacro_Behavior {
   public static SNode callSuper_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.NodeMacro"), callerConceptFqName, "virtual_getInputNodeTypeInsideOfMacro_1213877290799", PARAMETERS_1213877290799);
   }
-
 }

@@ -52,7 +52,6 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
     super.setReferent(LinkRefQualifier.LINK, node);
   }
 
-
   public static LinkRefQualifier newInstance(SModel sm, boolean init) {
     return (LinkRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   public static LinkRefQualifier newInstance(SModel sm) {
     return LinkRefQualifier.newInstance(sm, false);
   }
-
 }

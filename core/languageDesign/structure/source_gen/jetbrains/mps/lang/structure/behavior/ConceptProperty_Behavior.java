@@ -5,8 +5,6 @@ package jetbrains.mps.lang.structure.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ConceptProperty_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

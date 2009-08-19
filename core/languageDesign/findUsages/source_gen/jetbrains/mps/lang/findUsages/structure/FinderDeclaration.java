@@ -80,7 +80,6 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
     super.setChild(FinderDeclaration.IS_VISIBLE_BLOCK, node);
   }
 
-
   public static FinderDeclaration newInstance(SModel sm, boolean init) {
     return (FinderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.FinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -88,5 +87,4 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
   public static FinderDeclaration newInstance(SModel sm) {
     return FinderDeclaration.newInstance(sm, false);
   }
-
 }

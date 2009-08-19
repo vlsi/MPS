@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_ReferentConstraint implements IModelConstraints, INodeReferentSetEventHandler {
-
   public DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_ReferentConstraint() {
   }
 
@@ -27,5 +26,4 @@ public class DateTimePropertyFormatToken_dateTimePropertyFormatConfiguration_Ref
       SLinkOperations.setTarget(referenceNode, "dateTimePropertyFormatType", DateTimePropertFormatTokenUtil.getDefaultFormatType(referenceNode), false);
     }
   }
-
 }

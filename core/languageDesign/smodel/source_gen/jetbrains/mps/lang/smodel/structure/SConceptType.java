@@ -25,7 +25,6 @@ public class SConceptType extends Type {
     super.setReferent(SConceptType.CONCEPT_DECLARATON, node);
   }
 
-
   public static SConceptType newInstance(SModel sm, boolean init) {
     return (SConceptType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SConceptType extends Type {
   public static SConceptType newInstance(SModel sm) {
     return SConceptType.newInstance(sm, false);
   }
-
 }

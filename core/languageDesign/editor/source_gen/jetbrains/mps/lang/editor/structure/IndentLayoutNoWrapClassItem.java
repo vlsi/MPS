@@ -21,5 +21,4 @@ public class IndentLayoutNoWrapClassItem extends BooleanStyleSheetItem {
   public static IndentLayoutNoWrapClassItem newInstance(SModel sm) {
     return IndentLayoutNoWrapClassItem.newInstance(sm, false);
   }
-
 }

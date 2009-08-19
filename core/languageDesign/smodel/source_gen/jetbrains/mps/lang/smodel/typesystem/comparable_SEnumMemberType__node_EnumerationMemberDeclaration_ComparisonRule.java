@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
-
-  /* package */_Patterns.Pattern_4 myMatchingPattern2;
+  /*package*/ _Patterns.Pattern_4 myMatchingPattern2;
 
   public comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule() {
   }
@@ -37,5 +36,4 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
-
 }

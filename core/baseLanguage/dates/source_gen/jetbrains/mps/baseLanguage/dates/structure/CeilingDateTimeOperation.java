@@ -21,5 +21,4 @@ public class CeilingDateTimeOperation extends RoundDateTimeOperation {
   public static CeilingDateTimeOperation newInstance(SModel sm) {
     return CeilingDateTimeOperation.newInstance(sm, false);
   }
-
 }

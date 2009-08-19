@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_2342_0(editorContext, node);
   }
@@ -261,5 +260,4 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
-
 }

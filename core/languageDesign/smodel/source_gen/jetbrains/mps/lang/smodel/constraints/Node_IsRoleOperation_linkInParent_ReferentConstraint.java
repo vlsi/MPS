@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class Node_IsRoleOperation_linkInParent_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public Node_IsRoleOperation_linkInParent_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint extends BaseNo
     SNode conceptOfParent = SLinkOperations.getTarget(_context.getReferenceNode(), "conceptOfParent", false);
     return AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(conceptOfParent);
   }
-
 }

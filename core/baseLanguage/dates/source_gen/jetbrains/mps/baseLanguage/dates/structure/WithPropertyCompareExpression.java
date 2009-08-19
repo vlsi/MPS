@@ -36,7 +36,6 @@ public class WithPropertyCompareExpression extends Expression {
     super.setChild(WithPropertyCompareExpression.OPERATION, node);
   }
 
-
   public static WithPropertyCompareExpression newInstance(SModel sm, boolean init) {
     return (WithPropertyCompareExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.WithPropertyCompareExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -44,5 +43,4 @@ public class WithPropertyCompareExpression extends Expression {
   public static WithPropertyCompareExpression newInstance(SModel sm) {
     return WithPropertyCompareExpression.newInstance(sm, false);
   }
-
 }
