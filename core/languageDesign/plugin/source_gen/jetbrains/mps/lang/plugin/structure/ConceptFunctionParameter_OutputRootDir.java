@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_OutputRootDir extends ConceptFunctionParam
   public static ConceptFunctionParameter_OutputRootDir newInstance(SModel sm) {
     return ConceptFunctionParameter_OutputRootDir.newInstance(sm, false);
   }
-
 }

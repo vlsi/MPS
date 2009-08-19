@@ -23,7 +23,6 @@ public class SingletabbedEditorTab extends AbstractEditorTab {
     super.setChild(SingletabbedEditorTab.GET_NODE_BLOCK, node);
   }
 
-
   public static SingletabbedEditorTab newInstance(SModel sm, boolean init) {
     return (SingletabbedEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class SingletabbedEditorTab extends AbstractEditorTab {
   public static SingletabbedEditorTab newInstance(SModel sm) {
     return SingletabbedEditorTab.newInstance(sm, false);
   }
-
 }

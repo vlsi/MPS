@@ -27,7 +27,6 @@ import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Type_1217414480519(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", true, false) != null;
   }
@@ -48,16 +47,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return ListSequence.fromListAndArray(new ArrayList<SNode>(), new _Quotations.QuotationClass_0().createNode(), new _Quotations.QuotationClass_1().createNode(), new _Quotations.QuotationClass_2().createNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final SNode item : queryResult) {
+          for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", null);
                 SLinkOperations.setTarget(result, "type", (item), true);
@@ -84,16 +81,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final SNode item : queryResult) {
+          for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", null);
                 SLinkOperations.setTarget(result, "key", (item), false);
@@ -101,8 +96,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                SNode annotation = ListSequence.fromList(SLinkOperations.getTargets((item), "annotation", true)).where(new IWhereFilter <SNode>() {
-
+                SNode annotation = ListSequence.fromList(SLinkOperations.getTargets((item), "annotation", true)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
                   }
@@ -110,8 +104,7 @@ public class QueriesGenerated {
                 if (annotation == null) {
                   return "";
                 }
-                SNode value = ListSequence.fromList(SLinkOperations.getTargets(annotation, "value", true)).where(new IWhereFilter <SNode>() {
-
+                SNode value = ListSequence.fromList(SLinkOperations.getTargets(annotation, "value", true)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("description");
                   }
@@ -146,16 +139,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
           }
         };
         Iterable<SNode> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final SNode item : queryResult) {
+          for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.lang.plugin.structure.ActionInstance", null);
                 SLinkOperations.setTarget(result, "action", (item), false);
@@ -181,7 +172,6 @@ public class QueriesGenerated {
       final SNode concept = current.getOutputConcept();
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
       Condition cond = new Condition() {
-
         public boolean met(Object object) {
           boolean isNode = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeType");
           boolean isNList = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeListType");
@@ -194,5 +184,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

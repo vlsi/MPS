@@ -9,17 +9,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AbstractContainerCreator_DataFlow extends DataFlowBuilder {
-
   public AbstractContainerCreator_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode expression : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
+    for (SNode expression : SLinkOperations.getTargets(_context.getNode(), "initValue", true)) {
       _context.getBuilder().build((SNode)expression);
     }
     if (SLinkOperations.getTarget(_context.getNode(), "copyFrom", true) != null) {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "copyFrom", true));
     }
   }
-
 }

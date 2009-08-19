@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_OutputRootNode extends ConceptFunctionPara
   public static ConceptFunctionParameter_OutputRootNode newInstance(SModel sm) {
     return ConceptFunctionParameter_OutputRootNode.newInstance(sm, false);
   }
-
 }

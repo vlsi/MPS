@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueueType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class QueueType_Behavior {
     ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_19().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     return res;
   }
-
 }

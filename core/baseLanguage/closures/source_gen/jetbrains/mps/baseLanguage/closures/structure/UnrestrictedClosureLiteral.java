@@ -21,5 +21,4 @@ public class UnrestrictedClosureLiteral extends ClosureLiteral {
   public static UnrestrictedClosureLiteral newInstance(SModel sm) {
     return UnrestrictedClosureLiteral.newInstance(sm, false);
   }
-
 }

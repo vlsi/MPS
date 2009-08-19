@@ -24,7 +24,6 @@ public class AbstractContainerType extends Type {
     super.setChild(AbstractContainerType.ELEMENT_TYPE, node);
   }
 
-
   public static AbstractContainerType newInstance(SModel sm, boolean init) {
     return (AbstractContainerType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AbstractContainerType extends Type {
   public static AbstractContainerType newInstance(SModel sm) {
     return AbstractContainerType.newInstance(sm, false);
   }
-
 }

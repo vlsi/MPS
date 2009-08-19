@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behav
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PopOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_PopOperation_InferenceRule() {
   }
 
@@ -41,5 +40,4 @@ public class typeof_PopOperation_InferenceRule extends AbstractInferenceRule_Run
   public boolean overrides() {
     return false;
   }
-
 }

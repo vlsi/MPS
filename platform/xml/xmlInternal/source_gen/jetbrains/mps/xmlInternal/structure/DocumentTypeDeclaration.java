@@ -33,7 +33,6 @@ public class DocumentTypeDeclaration extends BaseConcept {
     super.setChild(DocumentTypeDeclaration.EXTERNAL_ID, node);
   }
 
-
   public static DocumentTypeDeclaration newInstance(SModel sm, boolean init) {
     return (DocumentTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class DocumentTypeDeclaration extends BaseConcept {
   public static DocumentTypeDeclaration newInstance(SModel sm) {
     return DocumentTypeDeclaration.newInstance(sm, false);
   }
-
 }

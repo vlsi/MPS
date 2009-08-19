@@ -20,7 +20,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public FunctionType_subtypeOf_ClassifierType_InequationReplacementRule() {
   }
 
@@ -71,16 +70,13 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             }
           }
           return;
-        } else
-        {
+        } else {
           errorMsg = ": wrong parameter number";
         }
-      } else
-      {
+      } else {
         errorMsg = ": interface must define a method";
       }
-    } else
-    {
+    } else {
       errorMsg = ": not an interface";
     }
     {
@@ -127,16 +123,13 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               }
             }
             return result_14532009;
-          } else
-          {
+          } else {
             errorMsg = ": wrong parameter number";
           }
-        } else
-        {
+        } else {
           errorMsg = ": interface must define a method";
         }
-      } else
-      {
+      } else {
         errorMsg = ": not an interface";
       }
       result_14532009 = false;
@@ -163,5 +156,4 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
 }

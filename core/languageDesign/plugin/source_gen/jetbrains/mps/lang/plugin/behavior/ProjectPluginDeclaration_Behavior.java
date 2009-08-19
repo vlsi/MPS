@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ProjectPluginDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,5 +26,4 @@ public class ProjectPluginDeclaration_Behavior {
     SLinkOperations.setTarget(type, "plugin", thisNode, false);
     return type;
   }
-
 }

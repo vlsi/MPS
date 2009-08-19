@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.NodeListChildrenSearchScope;
 
 public class ForEachVariableReference_variable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ForEachVariableReference_variable_ReferentConstraint() {
   }
 
@@ -30,5 +29,4 @@ public class ForEachVariableReference_variable_ReferentConstraint extends BaseNo
     List<SNode> forEachStatements = SNodeOperations.getAncestors(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", false);
     return new NodeListChildrenSearchScope(forEachStatements);
   }
-
 }

@@ -23,7 +23,6 @@ public class GetToolOperation extends ProjectOperation {
     super.setReferent(GetToolOperation.TOOL, node);
   }
 
-
   public static GetToolOperation newInstance(SModel sm, boolean init) {
     return (GetToolOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetToolOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GetToolOperation extends ProjectOperation {
   public static GetToolOperation newInstance(SModel sm) {
     return GetToolOperation.newInstance(sm, false);
   }
-
 }

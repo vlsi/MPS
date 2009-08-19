@@ -12,15 +12,14 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SequenceCreator_add_initializer extends EditorCellKeyMap {
-
   public SequenceCreator_add_initializer() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new SequenceCreator_add_initializer.SequenceCreator_add_initializer_Action0();
     this.putAction("any", "VK_ENTER", action);
   }
-  public static class SequenceCreator_add_initializer_Action0 extends EditorCellKeyMapAction {
 
+  public static class SequenceCreator_add_initializer_Action0 extends EditorCellKeyMapAction {
     public SequenceCreator_add_initializer_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -64,7 +63,5 @@ public class SequenceCreator_add_initializer extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " ENTER";
     }
-
-}
-
+  }
 }

@@ -23,7 +23,6 @@ public class ElementReference extends TypeExpression {
     super.setReferent(ElementReference.ELEMENT_DECLARATION, node);
   }
 
-
   public static ElementReference newInstance(SModel sm, boolean init) {
     return (ElementReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ElementReference extends TypeExpression {
   public static ElementReference newInstance(SModel sm) {
     return ElementReference.newInstance(sm, false);
   }
-
 }

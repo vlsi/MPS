@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 
 public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3902_2(editorContext, node);
   }
@@ -229,7 +228,6 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3902_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -237,5 +235,4 @@ public class GenerationListenerDeclaration_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition3902_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
-
 }

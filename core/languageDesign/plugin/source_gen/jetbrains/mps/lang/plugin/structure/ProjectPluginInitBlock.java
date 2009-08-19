@@ -22,5 +22,4 @@ public class ProjectPluginInitBlock extends ConceptFunction {
   public static ProjectPluginInitBlock newInstance(SModel sm) {
     return ProjectPluginInitBlock.newInstance(sm, false);
   }
-
 }

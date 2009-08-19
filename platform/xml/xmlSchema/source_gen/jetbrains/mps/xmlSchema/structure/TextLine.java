@@ -24,7 +24,6 @@ public class TextLine extends BaseConcept {
     this.setProperty(TextLine.LINE, value);
   }
 
-
   public static TextLine newInstance(SModel sm, boolean init) {
     return (TextLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.TextLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TextLine extends BaseConcept {
   public static TextLine newInstance(SModel sm) {
     return TextLine.newInstance(sm, false);
   }
-
 }

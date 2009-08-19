@@ -37,7 +37,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F8";
   }
@@ -57,7 +57,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -69,7 +69,7 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -89,14 +89,13 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IModule module = FindLanguageConceptsUsages_Action.this.module;
       final IScope scope = FindLanguageConceptsUsages_Action.this.scope;
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageConceptsUsagesFinder());
@@ -107,5 +106,4 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
     }
   }
-
 }

@@ -24,7 +24,6 @@ public class ChunkOperation extends SequenceOperation {
     super.setChild(ChunkOperation.LENGTH, node);
   }
 
-
   public static ChunkOperation newInstance(SModel sm, boolean init) {
     return (ChunkOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ChunkOperation extends SequenceOperation {
   public static ChunkOperation newInstance(SModel sm) {
     return ChunkOperation.newInstance(sm, false);
   }
-
 }

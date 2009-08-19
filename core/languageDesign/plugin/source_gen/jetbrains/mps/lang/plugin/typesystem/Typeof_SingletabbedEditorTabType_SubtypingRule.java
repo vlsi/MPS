@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Typeof_SingletabbedEditorTabType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Typeof_SingletabbedEditorTabType_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class Typeof_SingletabbedEditorTabType_SubtypingRule extends SubtypingRul
   public boolean isWeak() {
     return false;
   }
-
 }

@@ -20,11 +20,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._UnrestrictedFunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Result;
 
 public class ClassifierAdapters_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_interfaceAsFunctionType() throws Exception {
     Worker wrk = new Worker() {
-
       public String doWork(Integer d) {
         return "Done: " + Integer.valueOf(d);
       }
@@ -39,10 +37,9 @@ public class ClassifierAdapters_Test extends TestCase {
     }
   }
 
-  @Test()
+  @Test
   public void test_functionTypeAsInterface() throws Exception {
-    _FunctionTypes._return_P1_E0<? extends String, ? super Integer> cls = new _FunctionTypes._return_P1_E0 <String, Integer>() {
-
+    _FunctionTypes._return_P1_E0<? extends String, ? super Integer> cls = new _FunctionTypes._return_P1_E0<String, Integer>() {
       public String invoke(Integer foo) {
         return "Done: " + foo;
       }
@@ -56,10 +53,9 @@ public class ClassifierAdapters_Test extends TestCase {
     }
   }
 
-  @Test()
+  @Test
   public void test_closureLiteralAsInterface() throws Exception {
     Worker wrk = new Worker() {
-
       public String doWork(Integer foo) {
         return "Done: " + foo;
       }
@@ -67,16 +63,13 @@ public class ClassifierAdapters_Test extends TestCase {
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
 
-  @Test()
+  @Test
   public void test_yieldClosureLiteralAsInterface() throws Exception {
     NumberGenerator ng = new NumberGenerator() {
-
       public Iterable<Integer> generate() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -115,22 +108,19 @@ __switch__:
     };
     Integer[] exp = new Integer[]{1,2,3};
     int i = 0;
-    for(Integer in : ng.generate()) {
+    for (Integer in : ng.generate()) {
       Assert.assertEquals(exp[i], in);
       i++ ;
     }
   }
 
-  @Test()
+  @Test
   public void test_genericInterfaceAdapter() throws Exception {
-    Generator<Integer> g = new Generator <Integer>() {
-
+    Generator<Integer> g = new Generator<Integer>() {
       public Iterable<Integer> generate() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -168,34 +158,31 @@ __switch__:
       }
     };
     Integer exp = 1;
-    for(Integer i : g.generate()) {
+    for (Integer i : g.generate()) {
       Assert.assertEquals(exp, i);
       exp++ ;
     }
     Assert.assertEquals(exp, (Integer)4);
   }
 
-  @Test()
+  @Test
   public void test_instanceMethodCall() throws Exception {
     Assert.assertEquals("1234", this.makeWork(new Worker() {
-
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
     }, 1234));
     Assert.assertEquals("4321", this.makeWork(new Worker() {
-
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
     }, 4321));
   }
 
-  @Test()
+  @Test
   public void test_exceptions() throws Exception {
     try {
       this.process(new Processor() {
-
         public int process(String instr) throws ProcessingException {
           if (Integer.parseInt(instr) < 0) {
             throw new ProcessingException();
@@ -209,7 +196,7 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4,3,5,1,2})));
@@ -220,8 +207,7 @@ __switch__:
     // Why declare equals() in an interface escapes me: it's already there and declaring it in an interface doesn't change anything
     // Besides, overriding only equals() without overriding also hashCode() is simply plain wrong.
     // ===================================================================
-    Collections.sort(list, new Comparator <Object>() {
-
+    Collections.sort(list, new Comparator<Object>() {
       public int compare(Object a, Object b) {
         return a.hashCode() - b.hashCode();
       }
@@ -229,11 +215,10 @@ __switch__:
     Assert.assertEquals(Arrays.asList(new Integer[]{1,2,3,4,5}), list);
   }
 
-  @Test()
+  @Test
   public void test_closureLiteralAsParameterToConstructor() throws Exception {
     final Wrappers._int foo = new Wrappers._int(-1);
     Thread trd = new Thread(new Runnable() {
-
       public void run() {
         foo.value = 42;
       }
@@ -246,22 +231,21 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_wrongParametersNumber() throws Exception {
     this.acceptWorker(new Worker() {
-
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
     });
   }
 
-  @Test()
+  @Test
   public void test_returnWorker() throws Exception {
     Worker wrk = this.returnWorker();
   }
 
-  @Test()
+  @Test
   public void test_returnProcessor() throws Exception {
     Processor prc = this.returnProcessor();
     try {
@@ -272,11 +256,10 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_mps5315() throws Exception {
     /*
-      _FunctionTypes._void_P2_E0<? super Integer, ? super String> cls = new _FunctionTypes._void_P2_E0 <Integer, String>() {
-
+      _FunctionTypes._void_P2_E0<? super Integer, ? super String> cls = new _FunctionTypes._void_P2_E0<Integer, String>() {
         public void invoke(Integer foo, String bar) {
         }
       };
@@ -284,33 +267,30 @@ __switch__:
     */
   }
 
-  @Test()
+  @Test
   public void test_mps5316() throws Exception {
     /*
       this.acceptWorker();
     */
   }
 
-  @Test()
+  @Test
   public void test_compactInvoke() throws Exception {
     final Wrappers._int count = new Wrappers._int(0);
-    _FunctionTypes._return_P0_E0<? extends Integer> cl = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    _FunctionTypes._return_P0_E0<? extends Integer> cl = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return count.value++ ;
       }
     };
     cl.invoke();
     Assert.assertSame(1, count.value);
-    new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return count.value++ ;
       }
     }.invoke();
     Assert.assertSame(2, count.value);
-    _UnrestrictedFunctionTypes._return_terminate_P0_E0<? extends Integer, ? extends Integer> ucl = new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
-
+    _UnrestrictedFunctionTypes._return_terminate_P0_E0<? extends Integer, ? extends Integer> ucl = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
       public Result<Integer, Integer> invokeUnrestricted() {
         return Result.TERMINATE(count.value++ );
       }
@@ -334,8 +314,7 @@ __switch__:
     Assert.assertSame(3, count.value);
     
     {
-      Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0 <Integer, Integer>() {
-
+      Result<? extends Integer, ?> __result__ = new _UnrestrictedFunctionTypes._return_terminate_P0_E0<Integer, Integer>() {
         public Result<Integer, Integer> invokeUnrestricted() {
           return Result.TERMINATE(count.value++ );
         }
@@ -372,7 +351,6 @@ __switch__:
 
   public Worker returnWorker() {
     return new Worker() {
-
       public String doWork(Integer i) {
         return String.valueOf(i);
       }
@@ -381,11 +359,9 @@ __switch__:
 
   public Processor returnProcessor() {
     return new Processor() {
-
       public int process(String str) throws ProcessingException {
         throw new ProcessingException(str);
       }
     };
   }
-
 }

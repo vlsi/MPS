@@ -22,5 +22,4 @@ public class OverloadedOperatorTypeFunction extends ConceptFunction {
   public static OverloadedOperatorTypeFunction newInstance(SModel sm) {
     return OverloadedOperatorTypeFunction.newInstance(sm, false);
   }
-
 }

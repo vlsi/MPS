@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_AnActionEvent extends ConceptFunctionParam
   public static ConceptFunctionParameter_AnActionEvent newInstance(SModel sm) {
     return ConceptFunctionParameter_AnActionEvent.newInstance(sm, false);
   }
-
 }

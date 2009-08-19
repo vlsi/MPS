@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InequationReplacementRule_DataFlow extends DataFlowBuilder {
-
   public InequationReplacementRule_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class InequationReplacementRule_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
-
 }

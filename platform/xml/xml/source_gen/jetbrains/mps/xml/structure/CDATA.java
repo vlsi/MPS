@@ -23,7 +23,6 @@ public class CDATA extends Content {
     super.setChild(CDATA.CONTENT_LIST, node);
   }
 
-
   public static CDATA newInstance(SModel sm, boolean init) {
     return (CDATA)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CDATA extends Content {
   public static CDATA newInstance(SModel sm) {
     return CDATA.newInstance(sm, false);
   }
-
 }

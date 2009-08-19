@@ -21,5 +21,4 @@ public class SortedSetOperation extends AbstractSetOperation {
   public static SortedSetOperation newInstance(SModel sm) {
     return SortedSetOperation.newInstance(sm, false);
   }
-
 }

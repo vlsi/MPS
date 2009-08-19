@@ -32,7 +32,6 @@ public class SortOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static SortOperation newInstance(SModel sm, boolean init) {
     return (SortOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class SortOperation extends InternalSequenceOperation {
   public static SortOperation newInstance(SModel sm) {
     return SortOperation.newInstance(sm, false);
   }
-
 }

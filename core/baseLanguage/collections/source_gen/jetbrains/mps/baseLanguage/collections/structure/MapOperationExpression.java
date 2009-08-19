@@ -33,7 +33,6 @@ public class MapOperationExpression extends Expression {
     super.setChild(MapOperationExpression.MAP_OPERATION, node);
   }
 
-
   public static MapOperationExpression newInstance(SModel sm, boolean init) {
     return (MapOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class MapOperationExpression extends Expression {
   public static MapOperationExpression newInstance(SModel sm) {
     return MapOperationExpression.newInstance(sm, false);
   }
-
 }

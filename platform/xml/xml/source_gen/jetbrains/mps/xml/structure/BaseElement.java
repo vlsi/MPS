@@ -46,7 +46,6 @@ public class BaseElement extends Content {
     this.insertChild(prev, BaseElement.ATTRIBUTE, node);
   }
 
-
   public static BaseElement newInstance(SModel sm, boolean init) {
     return (BaseElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -54,5 +53,4 @@ public class BaseElement extends Content {
   public static BaseElement newInstance(SModel sm) {
     return BaseElement.newInstance(sm, false);
   }
-
 }

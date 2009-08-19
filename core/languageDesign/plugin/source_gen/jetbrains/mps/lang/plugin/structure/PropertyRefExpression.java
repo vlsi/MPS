@@ -34,7 +34,6 @@ public class PropertyRefExpression extends Expression {
     super.setChild(PropertyRefExpression.NODE_EXPR, node);
   }
 
-
   public static PropertyRefExpression newInstance(SModel sm, boolean init) {
     return (PropertyRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PropertyRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class PropertyRefExpression extends Expression {
   public static PropertyRefExpression newInstance(SModel sm) {
     return PropertyRefExpression.newInstance(sm, false);
   }
-
 }

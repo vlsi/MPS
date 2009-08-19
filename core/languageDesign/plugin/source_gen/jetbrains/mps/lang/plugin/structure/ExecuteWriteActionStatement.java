@@ -21,5 +21,4 @@ public class ExecuteWriteActionStatement extends BaseExecuteCommandStatementSync
   public static ExecuteWriteActionStatement newInstance(SModel sm) {
     return ExecuteWriteActionStatement.newInstance(sm, false);
   }
-
 }

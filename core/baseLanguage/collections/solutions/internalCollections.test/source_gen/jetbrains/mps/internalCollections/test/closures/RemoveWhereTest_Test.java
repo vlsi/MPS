@@ -13,12 +13,10 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import java.util.PriorityQueue;
 
 public class RemoveWhereTest_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_listRemoveWhere() throws Exception {
     List<String> l1 = Sequence.fromIterable(Sequence.fromArray(new String[]{"a","bb","ccc","dddd"})).toListSequence();
-    ListSequence.fromList(l1).removeWhere(new IWhereFilter <String>() {
-
+    ListSequence.fromList(l1).removeWhere(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return it.length() > 2;
       }
@@ -27,11 +25,10 @@ public class RemoveWhereTest_Test extends Util_Test {
     Assert.assertEquals("bb", ListSequence.fromList(l1).last());
   }
 
-  @Test()
+  @Test
   public void test_queueRemoveWhere() throws Exception {
     Queue<String> pq = QueueSequence.fromQueueAndArray(new PriorityQueue<String>(), "a", "aa", "b", "bb");
-    Queue<String> q = QueueSequence.fromQueue(pq).removeWhere(new IWhereFilter <String>() {
-
+    Queue<String> q = QueueSequence.fromQueue(pq).removeWhere(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return it.length() > 1;
       }
@@ -40,5 +37,4 @@ public class RemoveWhereTest_Test extends Util_Test {
     Assert.assertEquals("b", QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
-
 }

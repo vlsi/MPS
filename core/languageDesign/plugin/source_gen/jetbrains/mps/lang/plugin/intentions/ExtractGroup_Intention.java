@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExtractGroup_Intention extends BaseIntention {
-
   public ExtractGroup_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class ExtractGroup_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.plugin.intentions";
   }
-
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class AbstractEditorTab_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,5 +29,4 @@ public class AbstractEditorTab_Behavior {
     ListSequence.fromList(props).addElement(new PropertyReference(thisNode, "emptyCaption"));
     return props;
   }
-
 }

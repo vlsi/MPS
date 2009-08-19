@@ -220,7 +220,6 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
     this.insertChild(prev, ActionDeclaration.PLACES, node);
   }
 
-
   public static ActionDeclaration newInstance(SModel sm, boolean init) {
     return (ActionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -228,5 +227,4 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   public static ActionDeclaration newInstance(SModel sm) {
     return ActionDeclaration.newInstance(sm, false);
   }
-
 }

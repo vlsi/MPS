@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ProjectOperation_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     boolean can = false;
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -17,5 +16,4 @@ public class ProjectOperation_Constraints {
     }
     return can;
   }
-
 }

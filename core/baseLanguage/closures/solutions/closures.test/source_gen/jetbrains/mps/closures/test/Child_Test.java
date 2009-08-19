@@ -6,12 +6,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class Child_Test extends Parent_Test {
-
   public void testFoo() {
     this.setFoo(7);
     final int foo = 11;
-    int bar = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    int bar = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return Child_Test.this.foo * foo;
       }
@@ -23,8 +21,6 @@ public class Child_Test extends Parent_Test {
     this.foo = foo;
   }
 
-
-  public static  <T>void foo() {
+  public static <T>void foo() {
   }
-
 }

@@ -54,5 +54,4 @@ public enum LinkedHashMapOrder {
     }
     return LinkedHashMapOrder.getDefault();
   }
-
 }

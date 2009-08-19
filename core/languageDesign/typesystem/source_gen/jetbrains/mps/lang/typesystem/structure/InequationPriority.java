@@ -69,5 +69,4 @@ public enum InequationPriority {
     }
     return InequationPriority.getDefault();
   }
-
 }

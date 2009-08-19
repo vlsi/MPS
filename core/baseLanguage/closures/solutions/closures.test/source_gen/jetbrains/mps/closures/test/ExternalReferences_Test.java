@@ -11,12 +11,10 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ExternalReferences_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_localVariableDeclaration() throws Exception {
     final Wrappers._int foo = new Wrappers._int(42);
-    int bar = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    int bar = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return ++foo.value;
       }
@@ -24,12 +22,11 @@ public class ExternalReferences_Test extends TestCase {
     Assert.assertEquals(foo.value, bar);
   }
 
-  @Test()
+  @Test
   public void test_alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for(int i = 1 ; i <= 5 ; i++ ) {
-      new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    for (int i = 1 ; i <= 5 ; i++ ) {
+      new _FunctionTypes._return_P0_E0<Integer>() {
         public Integer invoke() {
           return res.value++ ;
         }
@@ -39,18 +36,15 @@ public class ExternalReferences_Test extends TestCase {
     Assert.assertEquals(0, res.value);
   }
 
-  @Test()
+  @Test
   public void test_alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
-    for(int i = 1 ; i <= 5 ; i++ ) {
-      for(int j : new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    for (int i = 1 ; i <= 5 ; i++ ) {
+      for (int j : new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
         public Iterable<Integer> invoke() {
-          return new Iterable <Integer>() {
-
+          return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {
-              return new YieldingIterator <Integer>() {
-
+              return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -86,11 +80,10 @@ __switch__:
     Assert.assertEquals(0, res.value);
   }
 
-  @Test()
+  @Test
   public void test_alteredLocalVariable3() throws Exception {
     final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
     new _FunctionTypes._void_P0_E0() {
-
       public void invoke() {
         bytes.value = new byte[3];
         //  no return value
@@ -99,13 +92,11 @@ __switch__:
     Assert.assertSame(3, bytes.value.length);
   }
 
-  @Test()
+  @Test
   public void test_methodParameter() throws Exception {
     Worker wrk = new Worker() {
-
       public String doWork(final Integer d) {
-        return new _FunctionTypes._return_P0_E0 <String>() {
-
+        return new _FunctionTypes._return_P0_E0<String>() {
           public String invoke() {
             return "Done: " + d;
           }
@@ -115,14 +106,12 @@ __switch__:
     Assert.assertEquals("Done: 1234", wrk.doWork(1234));
   }
 
-  @Test()
+  @Test
   public void test_methodParameter2() throws Exception {
     Worker wrk = new Worker() {
-
       public String doWork(Integer d) {
         final Wrappers._T<Integer> _d = new Wrappers._T<Integer>(d);
-        new _FunctionTypes._return_P0_E0 <Integer>() {
-
+        new _FunctionTypes._return_P0_E0<Integer>() {
           public Integer invoke() {
             return _d.value = _d.value * 2;
           }
@@ -133,18 +122,16 @@ __switch__:
     Assert.assertEquals("Done: 2468", wrk.doWork(1234));
   }
 
-  @Test()
+  @Test
   public void test_field() throws Exception {
     Worker wrk = new Worker() {
-
       public int field;
       public int foo;
 
       public String doWork(Integer foo) {
         this.foo = foo;
         this.field = this.foo;
-        return new _FunctionTypes._return_P0_E0 <String>() {
-
+        return new _FunctionTypes._return_P0_E0<String>() {
           public String invoke() {
             return "Done: " + field;
           }
@@ -154,17 +141,15 @@ __switch__:
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
 
-  @Test()
+  @Test
   public void test_mps4102() throws Exception {
     int a;
-    for(final Wrappers._int i = new Wrappers._int(0) ; i.value < 10 ; i.value++ ) {
-      a = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    for (final Wrappers._int i = new Wrappers._int(0) ; i.value < 10 ; i.value++ ) {
+      a = new _FunctionTypes._return_P0_E0<Integer>() {
         public Integer invoke() {
           return i.value;
         }
       }.invoke();
     }
   }
-
 }

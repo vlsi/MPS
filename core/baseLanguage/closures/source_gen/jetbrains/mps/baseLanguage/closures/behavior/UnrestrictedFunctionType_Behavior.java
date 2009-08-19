@@ -10,14 +10,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class UnrestrictedFunctionType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
-    for(SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
+    for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(pt));
       sep = ",";
     }
@@ -29,14 +28,12 @@ public class UnrestrictedFunctionType_Behavior {
     StringBuilder sb = new StringBuilder();
     if ((FunctionType_Behavior.call_getResultType_1230475757059(thisNode) != null)) {
       sb.append("_return");
-    } else
-    {
+    } else {
       sb.append("_void");
     }
     if ((FunctionType_Behavior.call_getTerminateType_1232032188607(thisNode) != null)) {
       sb.append("_terminate");
-    } else
-    {
+    } else {
       sb.append("_void");
     }
     sb.append("_P").append(SLinkOperations.getCount(thisNode, "parameterType"));
@@ -63,5 +60,4 @@ public class UnrestrictedFunctionType_Behavior {
       null
     );
   }
-
 }

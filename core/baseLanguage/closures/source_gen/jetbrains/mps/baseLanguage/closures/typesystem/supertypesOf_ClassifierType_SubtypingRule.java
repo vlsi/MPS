@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_ClassifierType_SubtypingRule() {
   }
 
@@ -27,7 +26,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
       if (methods != null && ListSequence.fromList(methods).count() == 1) {
         SNode md = ListSequence.fromList(methods).getElement(0);
         List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
-        for(SNode p : SLinkOperations.getTargets(md, "parameter", true)) {
+        for (SNode p : SLinkOperations.getTargets(md, "parameter", true)) {
           ListSequence.fromList(paramTypes).addElement(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(p, "type", true), ct));
         }
         SNode resType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), ct);
@@ -48,5 +47,4 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
   public boolean isWeak() {
     return true;
   }
-
 }

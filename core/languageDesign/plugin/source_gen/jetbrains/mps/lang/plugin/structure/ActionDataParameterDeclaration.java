@@ -71,7 +71,6 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
     super.setReferent(ActionDataParameterDeclaration.KEY, node);
   }
 
-
   public static ActionDataParameterDeclaration newInstance(SModel sm, boolean init) {
     return (ActionDataParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   public static ActionDataParameterDeclaration newInstance(SModel sm) {
     return ActionDataParameterDeclaration.newInstance(sm, false);
   }
-
 }

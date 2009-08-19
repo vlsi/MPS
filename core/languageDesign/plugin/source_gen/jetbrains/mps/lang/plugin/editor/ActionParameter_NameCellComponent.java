@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ActionParameter_NameCellComponent extends AbstractCellProvider {
-
   public ActionParameter_NameCellComponent(SNode node) {
     super(node);
   }
@@ -55,7 +54,6 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
   }
 
   public static class ActionParameter_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public ActionParameter_name_postfixCellMenu0() {
     }
 
@@ -64,8 +62,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
       SNode nodeType = ActionParameter_Behavior.call_getType_1171743928471337193(node);
       if (nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1213877337304(nodeType);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       // we need this because of smart input
@@ -75,7 +72,5 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
       }
       return result;
     }
-
-}
-
+  }
 }

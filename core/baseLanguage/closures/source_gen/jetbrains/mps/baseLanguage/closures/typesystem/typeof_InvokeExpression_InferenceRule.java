@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_InvokeExpression_InferenceRule() {
   }
 
@@ -29,7 +28,7 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.reportTypeError(invoke, "Must be within ClosureLiteral", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1199711581032", intentionProvider, errorTarget);
     }
     List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
+    for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       ListSequence.fromList(ptypes).addElement(typeCheckingContext.typeOf(p, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1237042863568", true));
     }
     final SNode ret_typevar_1225469708846 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -56,5 +55,4 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
   public boolean overrides() {
     return false;
   }
-
 }

@@ -22,5 +22,4 @@ public class CreateBlock extends ConceptFunction {
   public static CreateBlock newInstance(SModel sm) {
     return CreateBlock.newInstance(sm, false);
   }
-
 }

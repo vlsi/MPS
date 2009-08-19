@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_StackType_ClassiType_Deque_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_StackType_ClassiType_Deque_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class supertypesOf_StackType_ClassiType_Deque_SubtypingRule extends Subty
   public boolean isWeak() {
     return true;
   }
-
 }

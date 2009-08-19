@@ -33,7 +33,6 @@ public class SubMapOperation extends SortedMapOperation {
     super.setChild(SubMapOperation.TO_KEY, node);
   }
 
-
   public static SubMapOperation newInstance(SModel sm, boolean init) {
     return (SubMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class SubMapOperation extends SortedMapOperation {
   public static SubMapOperation newInstance(SModel sm) {
     return SubMapOperation.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class CommandClosureLiteral extends ClosureLiteral {
   public static CommandClosureLiteral newInstance(SModel sm) {
     return CommandClosureLiteral.newInstance(sm, false);
   }
-
 }

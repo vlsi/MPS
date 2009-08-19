@@ -139,7 +139,6 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
     this.insertChild(prev, RunConfigurationDeclaration.PROPERTY, node);
   }
 
-
   public static RunConfigurationDeclaration newInstance(SModel sm, boolean init) {
     return (RunConfigurationDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -147,5 +146,4 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static RunConfigurationDeclaration newInstance(SModel sm) {
     return RunConfigurationDeclaration.newInstance(sm, false);
   }
-
 }

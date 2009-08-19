@@ -41,7 +41,6 @@ public class PushOperation extends SingleArgumentSequenceOperation implements IS
     this.setProperty(PushOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PushOperation newInstance(SModel sm, boolean init) {
     return (PushOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PushOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class PushOperation extends SingleArgumentSequenceOperation implements IS
   public static PushOperation newInstance(SModel sm) {
     return PushOperation.newInstance(sm, false);
   }
-
 }

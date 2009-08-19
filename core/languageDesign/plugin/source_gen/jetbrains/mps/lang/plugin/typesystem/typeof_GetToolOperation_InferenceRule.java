@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetToolOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_GetToolOperation_InferenceRule() {
   }
 
@@ -35,5 +34,4 @@ public class typeof_GetToolOperation_InferenceRule extends AbstractInferenceRule
   public boolean overrides() {
     return false;
   }
-
 }

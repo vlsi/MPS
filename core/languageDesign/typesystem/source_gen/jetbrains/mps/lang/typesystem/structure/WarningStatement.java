@@ -79,7 +79,6 @@ public class WarningStatement extends Statement implements MessageStatement {
     super.setChild(WarningStatement.MESSAGE_TARGET, node);
   }
 
-
   public static WarningStatement newInstance(SModel sm, boolean init) {
     return (WarningStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WarningStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class WarningStatement extends Statement implements MessageStatement {
   public static WarningStatement newInstance(SModel sm) {
     return WarningStatement.newInstance(sm, false);
   }
-
 }

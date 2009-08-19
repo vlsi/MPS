@@ -43,7 +43,6 @@ public class Dependency extends BaseConcept {
     super.setChild(Dependency.FIND_SOURCE_BLOCK, node);
   }
 
-
   public static Dependency newInstance(SModel sm, boolean init) {
     return (Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class Dependency extends BaseConcept {
   public static Dependency newInstance(SModel sm) {
     return Dependency.newInstance(sm, false);
   }
-
 }

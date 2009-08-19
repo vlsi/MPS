@@ -22,5 +22,4 @@ public class PreferencePageIsModifiedBlock extends ConceptFunction {
   public static PreferencePageIsModifiedBlock newInstance(SModel sm) {
     return PreferencePageIsModifiedBlock.newInstance(sm, false);
   }
-
 }

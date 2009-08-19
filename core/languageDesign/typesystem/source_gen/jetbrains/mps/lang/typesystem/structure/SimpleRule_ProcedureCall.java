@@ -52,7 +52,6 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
     super.setChild(SimpleRule_ProcedureCall.CONCEPT_REFERENCE, node);
   }
 
-
   public static SimpleRule_ProcedureCall newInstance(SModel sm, boolean init) {
     return (SimpleRule_ProcedureCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   public static SimpleRule_ProcedureCall newInstance(SModel sm) {
     return SimpleRule_ProcedureCall.newInstance(sm, false);
   }
-
 }

@@ -25,7 +25,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ForEachStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7497_0(editorContext, node);
   }
@@ -247,7 +246,6 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7497_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
@@ -255,5 +253,4 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7497_1(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
 }

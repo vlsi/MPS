@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class SimpleOperations1 extends TestCase {
-
   public void test_S1() {
     Iterable<Object> S = Sequence.fromIterable(Collections.<Object>emptyList());
     Assert.assertEquals(null, Sequence.fromIterable(S).first());
@@ -26,14 +25,11 @@ public class SimpleOperations1 extends TestCase {
   }
 
   public void test_S2() {
-    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -82,14 +78,11 @@ __switch__:
   }
 
   public void test_S3() {
-    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -127,7 +120,7 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(S)) {
+    for (String s : Sequence.fromIterable(S)) {
       Assert.assertEquals("" + count, s);
       count++ ;
       Assert.assertEquals("0", Sequence.fromIterable(S).first());
@@ -155,5 +148,4 @@ __switch__:
     Assert.assertEquals(3, ListSequence.fromList(L).count());
     Assert.assertEquals(false, ListSequence.fromList(L).isEmpty());
   }
-
 }

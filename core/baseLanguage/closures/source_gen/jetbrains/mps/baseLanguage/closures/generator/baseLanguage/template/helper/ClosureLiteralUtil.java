@@ -24,9 +24,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
 
 public class ClosureLiteralUtil {
-
   public static boolean hasYieldStatement(SNode cl) {
-    for(SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})) {
+    for (SNode desc : SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})) {
       if (cl == SNodeOperations.getAncestorWhereConceptInList(desc, new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false)) {
         return true;
       }
@@ -36,7 +35,7 @@ public class ClosureLiteralUtil {
 
   public static List<SNode> collectNonFinalVariableDeclarations(SNode cl) {
     List<SNode> vrefs = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode desc : SNodeOperations.getDescendants(cl, null, false, new String[]{})) {
+    for (SNode desc : SNodeOperations.getDescendants(cl, null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (cl != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
@@ -77,7 +76,7 @@ public class ClosureLiteralUtil {
       }
       List<SNode> ptypes = FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(ft);
       int idx = 0;
-      for(SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
+      for (SNode pd : SLinkOperations.getTargets(method, "parameter", true)) {
         if (idx >= ListSequence.fromList(ptypes).count()) {
           genContext.showErrorMessage(literal, "Closure parameters count doesn't match method '" + SPropertyOperations.getString(method, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(ctNoParams, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(ctNoParams, "classifier", false), "name")));
           return;
@@ -95,12 +94,12 @@ public class ClosureLiteralUtil {
         }
       */
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
-      for(SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      for (SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (adapterName.equals(JavaNameUtil.shortName(SPropertyOperations.getString(cls, "name")))) {
           SNode newRetCT = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
           SLinkOperations.setTarget(newRetCT, "classifier", cls, false);
           /*
-            for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(absRetCT, "classifier", false), "typeVariableDeclaration", true)) {
+            for (SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(absRetCT, "classifier", false), "typeVariableDeclaration", true)) {
               SLinkOperations.addChild(newRetCT, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
             }
           */
@@ -110,13 +109,13 @@ public class ClosureLiteralUtil {
       }
     }
     /*
-      for(SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
+      for (SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
         SLinkOperations.addChild(ctNoParams, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
       }
     */
     List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
     int idx = 0;
-    for(SNode p : SLinkOperations.getTargets(origCT, "parameter", true)) {
+    for (SNode p : SLinkOperations.getTargets(origCT, "parameter", true)) {
       if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
         p = (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
           SLinkOperations.getTarget(SNodeOperations.cast(p, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true) :
@@ -131,8 +130,7 @@ public class ClosureLiteralUtil {
             null
           ));
         }
-      } else
-      {
+      } else {
         SLinkOperations.addChild(ctNoParams, "parameter", SNodeOperations.copyNode(p));
       }
       idx++ ;
@@ -143,11 +141,10 @@ public class ClosureLiteralUtil {
     Set<String> visited = SetSequence.fromSet(new HashSet<String>());
     List<SNode> queue = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      for(SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
+      for (SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
         ListSequence.fromList(queue).addElement(arg);
       }
-    } else
-    {
+    } else {
       ListSequence.fromList(queue).addElement(realType);
     }
     /*
@@ -177,7 +174,7 @@ public class ClosureLiteralUtil {
           return map;
         }
         SetSequence.fromSet(visited).addElement(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));
-        for(SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
+        for (SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
           ListSequence.fromList(queue).addElement(superType);
         }
       }
@@ -186,7 +183,7 @@ public class ClosureLiteralUtil {
   }
 
   private static SNode whichTypeMatching(List<SNode> leftList, SNode right) {
-    for(SNode left : leftList) {
+    for (SNode left : leftList) {
       if (isTypeMatching(left, right)) {
         return left;
       }
@@ -220,12 +217,11 @@ public class ClosureLiteralUtil {
     if ((matched != null)) {
       if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         MapSequence.fromMap((map = getMap(map))).put(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), "name"), SNodeOperations.copyNode(matched));
-      } else
-      {
+      } else {
         int idx = 0;
         List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
         List<SNode> rptypes = SLinkOperations.getTargets(SNodeOperations.as(matched, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-        for(int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i++ ) {
+        for (int i = 0 ; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count() ; i++ ) {
           map = matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i), getMap(map));
         }
       }
@@ -239,5 +235,4 @@ public class ClosureLiteralUtil {
     }
     return map;
   }
-
 }

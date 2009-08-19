@@ -120,7 +120,6 @@ public class Schema extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Schema.DECLARATION_BLOCK, node);
   }
 
-
   public static Schema newInstance(SModel sm, boolean init) {
     return (Schema)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Schema", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -128,5 +127,4 @@ public class Schema extends BaseConcept implements INamedConcept {
   public static Schema newInstance(SModel sm) {
     return Schema.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ public class RunConfigType extends BaseClassifierType {
     super.setReferent(RunConfigType.RUN_CONFIG, node);
   }
 
-
   public static RunConfigType newInstance(SModel sm, boolean init) {
     return (RunConfigType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RunConfigType extends BaseClassifierType {
   public static RunConfigType newInstance(SModel sm) {
     return RunConfigType.newInstance(sm, false);
   }
-
 }

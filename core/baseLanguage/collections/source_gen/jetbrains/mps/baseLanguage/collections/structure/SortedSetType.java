@@ -21,5 +21,4 @@ public class SortedSetType extends SetType {
   public static SortedSetType newInstance(SModel sm) {
     return SortedSetType.newInstance(sm, false);
   }
-
 }

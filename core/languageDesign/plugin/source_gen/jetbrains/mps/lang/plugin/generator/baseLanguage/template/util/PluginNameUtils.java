@@ -6,7 +6,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.NameUtil;
 
 public class PluginNameUtils {
-
   public static String getModuleShortName(IModule module) {
     String moduleUID = module.getModuleUID();
     String shortName = NameUtil.shortNameFromLongName(moduleUID);
@@ -21,5 +20,4 @@ public class PluginNameUtils {
   public static String getApplicationPluginName(IModule module) {
     return getModuleShortName(module) + "_ApplicationPlugin";
   }
-
 }

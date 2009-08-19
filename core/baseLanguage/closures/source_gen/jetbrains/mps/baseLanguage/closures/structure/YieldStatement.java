@@ -25,7 +25,6 @@ public class YieldStatement extends Statement {
     super.setChild(YieldStatement.EXPRESSION, node);
   }
 
-
   public static YieldStatement newInstance(SModel sm, boolean init) {
     return (YieldStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.YieldStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class YieldStatement extends Statement {
   public static YieldStatement newInstance(SModel sm) {
     return YieldStatement.newInstance(sm, false);
   }
-
 }

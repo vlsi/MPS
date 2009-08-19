@@ -21,5 +21,4 @@ public class ToArrayOperation extends NoArgumentsSequenceOperation {
   public static ToArrayOperation newInstance(SModel sm) {
     return ToArrayOperation.newInstance(sm, false);
   }
-
 }

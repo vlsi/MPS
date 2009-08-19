@@ -12,5 +12,4 @@ public class Xml_Language {
   public static Language get() {
     return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
-
 }

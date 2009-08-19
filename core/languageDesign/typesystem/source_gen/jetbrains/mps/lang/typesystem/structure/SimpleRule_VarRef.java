@@ -34,7 +34,6 @@ public class SimpleRule_VarRef extends SimpleRule {
     super.setChild(SimpleRule_VarRef.CONCEPT_REFERENCE, node);
   }
 
-
   public static SimpleRule_VarRef newInstance(SModel sm, boolean init) {
     return (SimpleRule_VarRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SimpleRule_VarRef extends SimpleRule {
   public static SimpleRule_VarRef newInstance(SModel sm) {
     return SimpleRule_VarRef.newInstance(sm, false);
   }
-
 }

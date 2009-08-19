@@ -22,5 +22,4 @@ public class DisposeBlock extends ConceptFunction {
   public static DisposeBlock newInstance(SModel sm) {
     return DisposeBlock.newInstance(sm, false);
   }
-
 }

@@ -52,7 +52,6 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
     super.setChild(ProcessHandlerStatement.PROCESS_HANDLER, node);
   }
 
-
   public static ProcessHandlerStatement newInstance(SModel sm, boolean init) {
     return (ProcessHandlerStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
   public static ProcessHandlerStatement newInstance(SModel sm) {
     return ProcessHandlerStatement.newInstance(sm, false);
   }
-
 }

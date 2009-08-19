@@ -22,5 +22,4 @@ public class AfterGenerationBlock extends ConceptFunction {
   public static AfterGenerationBlock newInstance(SModel sm) {
     return AfterGenerationBlock.newInstance(sm, false);
   }
-
 }

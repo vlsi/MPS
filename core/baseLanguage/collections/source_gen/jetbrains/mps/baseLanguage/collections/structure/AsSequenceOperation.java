@@ -43,7 +43,6 @@ public class AsSequenceOperation extends AbstractOperation implements IOperation
     this.setProperty(AsSequenceOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AsSequenceOperation newInstance(SModel sm, boolean init) {
     return (AsSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class AsSequenceOperation extends AbstractOperation implements IOperation
   public static AsSequenceOperation newInstance(SModel sm) {
     return AsSequenceOperation.newInstance(sm, false);
   }
-
 }

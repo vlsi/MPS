@@ -11,17 +11,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 
 public class SkipTakePage_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_skip1() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -76,16 +72,13 @@ __switch__:
     Assert.assertSame(Sequence.fromIterable(s).skip(5).first(), 6);
   }
 
-  @Test()
+  @Test
   public void test_take1() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -140,16 +133,13 @@ __switch__:
     Assert.assertSame(Sequence.fromIterable(s).take(1).last(), 0);
   }
 
-  @Test()
+  @Test
   public void test_takeSkip() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -201,16 +191,13 @@ __switch__:
     Assert.assertSame(Sequence.fromIterable(s).last(), 7);
   }
 
-  @Test()
+  @Test
   public void test_page() throws Exception {
-    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -261,5 +248,4 @@ __switch__:
     Assert.assertSame(Sequence.fromIterable(s).first(), 5);
     Assert.assertSame(Sequence.fromIterable(s).last(), 7);
   }
-
 }

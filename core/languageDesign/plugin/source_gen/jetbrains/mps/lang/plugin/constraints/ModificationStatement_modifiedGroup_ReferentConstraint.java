@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ModificationStatement_modifiedGroup_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ModificationStatement_modifiedGroup_ReferentConstraint() {
   }
 
@@ -30,8 +29,7 @@ public class ModificationStatement_modifiedGroup_ReferentConstraint extends Base
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> actionGroupDeclarations = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
     SNode groupDeclaration = SNodeOperations.getAncestor(_context.getReferenceNode(), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false);
-    List<SNode> thisGroupChildGroups = ((List<SNode>)ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    List<SNode> thisGroupChildGroups = ((List<SNode>)ListSequence.fromList(SNodeOperations.getDescendants(groupDeclaration, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
@@ -39,5 +37,4 @@ public class ModificationStatement_modifiedGroup_ReferentConstraint extends Base
     ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
     return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
   }
-
 }

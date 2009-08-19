@@ -27,5 +27,4 @@ public class AbstractRule_Behavior {
   public static SNode callSuper_getBaseConcept_8952337903384866977(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384866977);
   }
-
 }

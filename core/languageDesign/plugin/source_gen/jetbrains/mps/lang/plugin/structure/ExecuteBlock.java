@@ -22,5 +22,4 @@ public class ExecuteBlock extends ConceptFunction {
   public static ExecuteBlock newInstance(SModel sm) {
     return ExecuteBlock.newInstance(sm, false);
   }
-
 }

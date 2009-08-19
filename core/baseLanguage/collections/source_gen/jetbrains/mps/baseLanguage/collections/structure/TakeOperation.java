@@ -24,7 +24,6 @@ public class TakeOperation extends SequenceOperation {
     super.setChild(TakeOperation.ELEMENTS_TO_TAKE, node);
   }
 
-
   public static TakeOperation newInstance(SModel sm, boolean init) {
     return (TakeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TakeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TakeOperation extends SequenceOperation {
   public static TakeOperation newInstance(SModel sm) {
     return TakeOperation.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class RuntimeHoleType extends BaseConcept {
   public static RuntimeHoleType newInstance(SModel sm) {
     return RuntimeHoleType.newInstance(sm, false);
   }
-
 }

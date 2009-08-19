@@ -33,5 +33,4 @@ public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
       TypesystemPlugin_CustomProjectPlugin.this.myChecker.dispose();
     }
   }
-
 }

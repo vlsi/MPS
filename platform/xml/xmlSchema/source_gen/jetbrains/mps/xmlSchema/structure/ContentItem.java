@@ -24,7 +24,6 @@ public class ContentItem extends BaseConcept {
     super.setChild(ContentItem.COMPLEX_TYPE_REFERENCE, node);
   }
 
-
   public static ContentItem newInstance(SModel sm, boolean init) {
     return (ContentItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ContentItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ContentItem extends BaseConcept {
   public static ContentItem newInstance(SModel sm) {
     return ContentItem.newInstance(sm, false);
   }
-
 }

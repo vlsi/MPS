@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class PropertyMessageTarget_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PropertyMessageTarget_propertyDeclaration_ReferentConstraint() {
   }
 
@@ -41,11 +40,9 @@ public class PropertyMessageTarget_propertyDeclaration_ReferentConstraint extend
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_0);
       if (coercedNode_0 != null) {
         return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(coercedNode_0, "concept", false));
-      } else
-      {
+      } else {
         return Sequence.fromIterable(Collections.<SNode>emptyList());
       }
     }
   }
-
 }

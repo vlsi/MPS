@@ -33,12 +33,12 @@ public class FindModelUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F7";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -47,7 +47,7 @@ public class FindModelUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -67,14 +67,13 @@ public class FindModelUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final SModel model = FindModelUsages_Action.this.model.getSModel();
       final IScope scope = FindModelUsages_Action.this.scope;
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           query[0] = new SearchQuery(model, scope);
           provider[0] = FindUtils.makeProvider(new ModelUsagesFinder());
@@ -85,5 +84,4 @@ public class FindModelUsages_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "FindModelUsages", t);
     }
   }
-
 }

@@ -18,25 +18,20 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Arrays;
 
 public class NullValues_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_nullValues() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       Iterable<Integer> input = this.input5();
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector <Integer, Integer>() {
-
+      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
           return (Integer)null;
         }
       }));
-      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2 <Integer, Integer>() {
-
+      this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2<Integer, Integer>() {
         public Iterable<Integer> translate(final Integer it) {
-          return new Iterable <Integer>() {
-
+          return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {
-              return new YieldingIterator <Integer>() {
-
+              return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -65,30 +60,24 @@ __switch__:
           };
         }
       }));
-    } else
-    {
+    } else {
       Iterable<Integer> input = this.input5();
-      Iterable<Integer> seqOfNulls = Sequence.fromIterable(input).select(new ISelector <Integer, Integer>() {
-
+      Iterable<Integer> seqOfNulls = Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
           return (Integer)null;
         }
       });
       Assert.assertSame(Sequence.fromIterable(input).count(), Sequence.fromIterable(seqOfNulls).count());
-      Assert.assertTrue(Sequence.fromIterable(seqOfNulls).all(new IWhereFilter <Integer>() {
-
+      Assert.assertTrue(Sequence.fromIterable(seqOfNulls).all(new IWhereFilter<Integer>() {
         public boolean accept(Integer it) {
           return it == null;
         }
       }));
-      Iterable<Integer> seqOfNulls2 = Sequence.fromIterable(input).translate(new ITranslator2 <Integer, Integer>() {
-
+      Iterable<Integer> seqOfNulls2 = Sequence.fromIterable(input).translate(new ITranslator2<Integer, Integer>() {
         public Iterable<Integer> translate(final Integer it) {
-          return new Iterable <Integer>() {
-
+          return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {
-              return new YieldingIterator <Integer>() {
-
+              return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -122,8 +111,7 @@ __switch__:
         }
       });
       Assert.assertSame(Sequence.fromIterable(input).count() * 2, Sequence.fromIterable(seqOfNulls2).count());
-      Assert.assertFalse(Sequence.fromIterable(seqOfNulls2).any(new IWhereFilter <Integer>() {
-
+      Assert.assertFalse(Sequence.fromIterable(seqOfNulls2).any(new IWhereFilter<Integer>() {
         public boolean accept(Integer it) {
           return it != null;
         }
@@ -131,7 +119,7 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_nullElements() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
@@ -145,8 +133,7 @@ __switch__:
       this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null));
       Integer nullvalue = null;
       this.assertEmptyList(ListSequence.fromListAndArray(new ArrayList<Integer>(), nullvalue));
-    } else
-    {
+    } else {
       List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
       ListSequence.fromList(list5).addElement(null);
       this.assertIterableEquals(this.expect5(), ListSequence.fromList(list5).take(5));
@@ -162,14 +149,11 @@ __switch__:
       Assert.assertSame(3, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null)).addSequence(Sequence.fromIterable(Sequence.fromArray(new Integer[]{null}))).count());
       final Integer nullvalue = null;
       Assert.assertSame(1, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), nullvalue)).count());
-      Assert.assertSame(3, Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+      Assert.assertSame(3, Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<Integer>() {
         public Iterable<Integer> iterable() {
-          return new Iterable <Integer>() {
-
+          return new Iterable<Integer>() {
             public Iterator<Integer> iterator() {
-              return new YieldingIterator <Integer>() {
-
+              return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -209,7 +193,7 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_nullsViaBackdoor() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> listWithNulls = Arrays.asList("foo", null, "bar");
@@ -221,8 +205,7 @@ __switch__:
       List<String> dlist = ListSequence.fromList(listWithNulls).distinct().toListSequence();
       Assert.assertSame(2, ListSequence.fromList(dlist).count());
       this.assertIterableEquals(Arrays.asList("foo", "bar"), dlist);
-    } else
-    {
+    } else {
       List<String> listWithNulls = Arrays.asList("foo", null, "bar");
       String[] arr = ListSequence.fromList(listWithNulls).toGenericArray(String.class);
       Assert.assertSame(3, arr.length);
@@ -244,5 +227,4 @@ __switch__:
     ListSequence.fromList(emptyList).addSequence(Sequence.fromIterable(this.input5()));
     this.assertIterableEquals(this.expect5(), emptyList);
   }
-
 }

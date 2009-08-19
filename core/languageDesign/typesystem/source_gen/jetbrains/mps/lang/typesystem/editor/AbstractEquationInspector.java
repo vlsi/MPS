@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class AbstractEquationInspector extends AbstractCellProvider {
-
   public AbstractEquationInspector(SNode node) {
     super(node);
   }
@@ -201,5 +200,4 @@ public class AbstractEquationInspector extends AbstractCellProvider {
     } else
     return editorCell;
   }
-
 }

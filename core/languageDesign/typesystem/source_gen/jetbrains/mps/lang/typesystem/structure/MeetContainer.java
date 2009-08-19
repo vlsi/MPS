@@ -24,7 +24,6 @@ public class MeetContainer extends BaseConcept {
     super.setChild(MeetContainer.MEET_TYPE, node);
   }
 
-
   public static MeetContainer newInstance(SModel sm, boolean init) {
     return (MeetContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MeetContainer extends BaseConcept {
   public static MeetContainer newInstance(SModel sm) {
     return MeetContainer.newInstance(sm, false);
   }
-
 }

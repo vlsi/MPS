@@ -22,5 +22,4 @@ public class SimpleRule extends BaseConcept {
   public static SimpleRule newInstance(SModel sm) {
     return SimpleRule.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
-
   public ReportErrorStatement_DataFlow() {
   }
 
@@ -23,5 +22,4 @@ public class ReportErrorStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
     }
   }
-
 }

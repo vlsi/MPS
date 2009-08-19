@@ -34,7 +34,6 @@ public class Document extends BaseConcept {
     super.setChild(Document.ROOT_ELEMENT, node);
   }
 
-
   public static Document newInstance(SModel sm, boolean init) {
     return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class Document extends BaseConcept {
   public static Document newInstance(SModel sm) {
     return Document.newInstance(sm, false);
   }
-
 }

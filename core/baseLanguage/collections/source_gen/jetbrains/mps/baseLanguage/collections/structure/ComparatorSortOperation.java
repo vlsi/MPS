@@ -32,7 +32,6 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static ComparatorSortOperation newInstance(SModel sm, boolean init) {
     return (ComparatorSortOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
   public static ComparatorSortOperation newInstance(SModel sm) {
     return ComparatorSortOperation.newInstance(sm, false);
   }
-
 }

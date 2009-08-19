@@ -24,7 +24,6 @@ public class ReferenceMessageTarget extends MessageTarget {
     super.setReferent(ReferenceMessageTarget.LINK_DECLARATION, node);
   }
 
-
   public static ReferenceMessageTarget newInstance(SModel sm, boolean init) {
     return (ReferenceMessageTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ReferenceMessageTarget extends MessageTarget {
   public static ReferenceMessageTarget newInstance(SModel sm) {
     return ReferenceMessageTarget.newInstance(sm, false);
   }
-
 }

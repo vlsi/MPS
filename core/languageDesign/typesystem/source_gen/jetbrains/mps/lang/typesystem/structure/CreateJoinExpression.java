@@ -48,7 +48,6 @@ public class CreateJoinExpression extends Expression {
     this.insertChild(prev, CreateJoinExpression.ARGUMENT, node);
   }
 
-
   public static CreateJoinExpression newInstance(SModel sm, boolean init) {
     return (CreateJoinExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateJoinExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class CreateJoinExpression extends Expression {
   public static CreateJoinExpression newInstance(SModel sm) {
     return CreateJoinExpression.newInstance(sm, false);
   }
-
 }

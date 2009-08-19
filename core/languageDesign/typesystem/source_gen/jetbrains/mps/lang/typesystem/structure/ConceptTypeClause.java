@@ -47,7 +47,6 @@ public class ConceptTypeClause extends TypeClause {
     this.insertChild(prev, ConceptTypeClause.LINK_INFO, node);
   }
 
-
   public static ConceptTypeClause newInstance(SModel sm, boolean init) {
     return (ConceptTypeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class ConceptTypeClause extends TypeClause {
   public static ConceptTypeClause newInstance(SModel sm) {
     return ConceptTypeClause.newInstance(sm, false);
   }
-
 }

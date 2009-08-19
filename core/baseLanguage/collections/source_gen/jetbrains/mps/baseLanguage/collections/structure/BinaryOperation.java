@@ -24,7 +24,6 @@ public class BinaryOperation extends SequenceOperation {
     super.setChild(BinaryOperation.RIGHT_EXPRESSION, node);
   }
 
-
   public static BinaryOperation newInstance(SModel sm, boolean init) {
     return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class BinaryOperation extends SequenceOperation {
   public static BinaryOperation newInstance(SModel sm) {
     return BinaryOperation.newInstance(sm, false);
   }
-
 }

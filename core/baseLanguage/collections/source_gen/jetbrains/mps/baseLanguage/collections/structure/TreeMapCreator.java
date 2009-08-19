@@ -21,5 +21,4 @@ public class TreeMapCreator extends HashMapCreator {
   public static TreeMapCreator newInstance(SModel sm) {
     return TreeMapCreator.newInstance(sm, false);
   }
-
 }

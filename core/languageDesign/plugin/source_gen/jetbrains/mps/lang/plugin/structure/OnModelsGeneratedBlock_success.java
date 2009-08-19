@@ -22,5 +22,4 @@ public class OnModelsGeneratedBlock_success extends ConceptFunctionParameter {
   public static OnModelsGeneratedBlock_success newInstance(SModel sm) {
     return OnModelsGeneratedBlock_success.newInstance(sm, false);
   }
-
 }

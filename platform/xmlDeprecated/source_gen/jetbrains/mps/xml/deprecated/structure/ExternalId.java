@@ -22,5 +22,4 @@ public class ExternalId extends BaseConcept {
   public static ExternalId newInstance(SModel sm) {
     return ExternalId.newInstance(sm, false);
   }
-
 }

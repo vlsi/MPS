@@ -32,7 +32,6 @@ public class PublicExternalId extends ExternalId {
     super.setChild(PublicExternalId.SYSTEM_LITERAL, node);
   }
 
-
   public static PublicExternalId newInstance(SModel sm, boolean init) {
     return (PublicExternalId)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.PublicExternalId", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class PublicExternalId extends ExternalId {
   public static PublicExternalId newInstance(SModel sm) {
     return PublicExternalId.newInstance(sm, false);
   }
-
 }

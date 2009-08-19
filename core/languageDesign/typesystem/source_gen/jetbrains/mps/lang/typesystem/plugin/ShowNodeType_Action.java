@@ -34,12 +34,12 @@ public class ShowNodeType_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift T";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class ShowNodeType_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -68,11 +68,10 @@ public class ShowNodeType_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           type.value = TypeChecker.getInstance().getTypeDontCheck(ShowNodeType_Action.this.node);
         }
@@ -83,7 +82,6 @@ public class ShowNodeType_Action extends GeneratedAction {
       }
       final Wrappers._T<MyBaseNodeDialog> dialog = new Wrappers._T<MyBaseNodeDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           IErrorReporter reporter = TypeChecker.getInstance().getTypeMessageDontCheck(ShowNodeType_Action.this.node);
           dialog.value = new MyBaseNodeDialog(ShowNodeType_Action.this.context, ShowNodeType_Action.this.node, type.value, reporter);
@@ -94,5 +92,4 @@ public class ShowNodeType_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeType", t);
     }
   }
-
 }

@@ -98,7 +98,6 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
     super.setChild(PreferencePage.COMMIT_BLOCK, node);
   }
 
-
   public static PreferencePage newInstance(SModel sm, boolean init) {
     return (PreferencePage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -106,5 +105,4 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   public static PreferencePage newInstance(SModel sm) {
     return PreferencePage.newInstance(sm, false);
   }
-
 }

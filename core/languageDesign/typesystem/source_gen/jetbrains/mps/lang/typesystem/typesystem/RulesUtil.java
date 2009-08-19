@@ -18,7 +18,7 @@ public class RulesUtil {
       return true;
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "annotation", true);
-    for(SNode annotation : annotations) {
+    for (SNode annotation : annotations) {
       if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_15().createNode(), "classifier", false)) {
         return true;
       }
@@ -34,12 +34,11 @@ public class RulesUtil {
       return true;
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false), "annotation", true);
-    for(SNode annotation : annotations) {
+    for (SNode annotation : annotations) {
       if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_54().createNode(), "classifier", false) || SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_55().createNode(), "classifier", false)) {
         return true;
       }
     }
     return false;
   }
-
 }

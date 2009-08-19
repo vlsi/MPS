@@ -22,5 +22,4 @@ public class SingletabbedEditorTabType extends BaseClassifierType {
   public static SingletabbedEditorTabType newInstance(SModel sm) {
     return SingletabbedEditorTabType.newInstance(sm, false);
   }
-
 }

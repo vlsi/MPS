@@ -23,7 +23,6 @@ public class SelectOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static SelectOperation newInstance(SModel sm, boolean init) {
     return (SelectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class SelectOperation extends InternalSequenceOperation {
   public static SelectOperation newInstance(SModel sm) {
     return SelectOperation.newInstance(sm, false);
   }
-
 }

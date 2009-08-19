@@ -24,7 +24,6 @@ public class PropertyMessageTarget extends MessageTarget {
     super.setReferent(PropertyMessageTarget.PROPERTY_DECLARATION, node);
   }
 
-
   public static PropertyMessageTarget newInstance(SModel sm, boolean init) {
     return (PropertyMessageTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PropertyMessageTarget extends MessageTarget {
   public static PropertyMessageTarget newInstance(SModel sm) {
     return PropertyMessageTarget.newInstance(sm, false);
   }
-
 }

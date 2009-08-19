@@ -10,11 +10,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class FunctionTypes_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_functionTypeAdapter_simple() throws Exception {
-    _FunctionTypes._return_P0_E0<? extends Integer> fun1 = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    _FunctionTypes._return_P0_E0<? extends Integer> fun1 = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return 1;
       }
@@ -26,54 +24,46 @@ public class FunctionTypes_Test extends TestCase {
     this.accept_int(fun2);
     this.accept_Integer(fun2);
     this.accept_Number(fun2);
-    this.accept_int(new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    this.accept_int(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return 1;
       }
     });
-    this.accept_Integer(new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    this.accept_Integer(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return (Integer)1;
       }
     });
-    this.accept_Number(new _FunctionTypes._return_P0_E0 <Number>() {
-
+    this.accept_Number(new _FunctionTypes._return_P0_E0<Number>() {
       public Number invoke() {
         return (Integer)1;
       }
     });
   }
 
-  @Test()
+  @Test
   public void test_exceptions() throws Exception {
-    _FunctionTypes._void_P0_E1<? extends Exception> throwsException = new _FunctionTypes._void_P0_E1 <Exception>() {
-
+    _FunctionTypes._void_P0_E1<? extends Exception> throwsException = new _FunctionTypes._void_P0_E1<Exception>() {
       public void invoke() throws Exception {
         throw new Exception();
       }
     };
-    _FunctionTypes._void_P0_E1<? extends RuntimeException> throwsRuntimeException = new _FunctionTypes._void_P0_E1 <RuntimeException>() {
-
+    _FunctionTypes._void_P0_E1<? extends RuntimeException> throwsRuntimeException = new _FunctionTypes._void_P0_E1<RuntimeException>() {
       public void invoke() throws RuntimeException {
         throw new RuntimeException();
       }
     };
     throwsException = throwsRuntimeException;
-    _FunctionTypes._void_P0_E1<? extends IllegalArgumentException> throwsOne = new _FunctionTypes._void_P0_E1 <IllegalArgumentException>() {
-
+    _FunctionTypes._void_P0_E1<? extends IllegalArgumentException> throwsOne = new _FunctionTypes._void_P0_E1<IllegalArgumentException>() {
       public void invoke() throws IllegalArgumentException {
         throw new IllegalArgumentException();
       }
     };
-    _FunctionTypes._void_P0_E2<? extends NumberFormatException, ? extends IllegalThreadStateException> throwsTwo = new _FunctionTypes._void_P0_E2 <NumberFormatException, IllegalThreadStateException>() {
-
+    _FunctionTypes._void_P0_E2<? extends NumberFormatException, ? extends IllegalThreadStateException> throwsTwo = new _FunctionTypes._void_P0_E2<NumberFormatException, IllegalThreadStateException>() {
       public void invoke() throws NumberFormatException, IllegalThreadStateException {
         if (true) {
           throw new NumberFormatException();
-        } else
-        {
+        } else {
           throw new IllegalThreadStateException();
         }
       }
@@ -85,16 +75,13 @@ public class FunctionTypes_Test extends TestCase {
     }
   }
 
-  @Test()
+  @Test
   public void test_exceptionsYield() throws Exception {
-    _FunctionTypes._return_P0_E1<? extends Iterable<Integer>, ? extends IllegalArgumentException> throwsOne = new _FunctionTypes._return_P0_E1 <Iterable<Integer>, IllegalArgumentException>() {
-
+    _FunctionTypes._return_P0_E1<? extends Iterable<Integer>, ? extends IllegalArgumentException> throwsOne = new _FunctionTypes._return_P0_E1<Iterable<Integer>, IllegalArgumentException>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -132,14 +119,11 @@ __switch__:
         };
       }
     };
-    _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalArgumentException, ? extends NumberFormatException, ? extends IllegalThreadStateException> throwsThree = new _FunctionTypes._return_P0_E3 <Iterable<Integer>, IllegalArgumentException, NumberFormatException, IllegalThreadStateException>() {
-
+    _FunctionTypes._return_P0_E3<? extends Iterable<Integer>, ? extends IllegalArgumentException, ? extends NumberFormatException, ? extends IllegalThreadStateException> throwsThree = new _FunctionTypes._return_P0_E3<Iterable<Integer>, IllegalArgumentException, NumberFormatException, IllegalThreadStateException>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -216,74 +200,64 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test_functionTypeAdapter_complex() throws Exception {
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun1 = new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun1 = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return i.intValue();
       }
     };
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun2 = new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun2 = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return Integer.valueOf(i);
       }
     };
     fun1 = fun2;
     fun2 = fun1;
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super Object> fun3 = new _FunctionTypes._return_P1_E0 <Integer, Object>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Object> fun3 = new _FunctionTypes._return_P1_E0<Integer, Object>() {
       public Integer invoke(Object o) {
         return o.hashCode();
       }
     };
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super String> fun4 = new _FunctionTypes._return_P1_E0 <Integer, String>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super String> fun4 = new _FunctionTypes._return_P1_E0<Integer, String>() {
       public Integer invoke(String s) {
         return s.length();
       }
     };
     fun4 = fun3;
-    this.accept_int_from_int(new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    this.accept_int_from_int(new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return i.intValue();
       }
     });
     this.accept_int_from_int(fun1);
     this.accept_int_from_int(fun2);
-    this.accept_int_from_Integer(new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    this.accept_int_from_Integer(new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return Integer.valueOf(i);
       }
     });
     this.accept_int_from_Integer(fun1);
     this.accept_int_from_Integer(fun2);
-    this.accept_Integer_from_int(new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    this.accept_Integer_from_int(new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
         return i.intValue();
       }
     });
     this.accept_Integer_from_int(fun1);
     this.accept_Integer_from_int(fun2);
-    this.accept_Integer_from_Object(new _FunctionTypes._return_P1_E0 <Integer, Object>() {
-
+    this.accept_Integer_from_Object(new _FunctionTypes._return_P1_E0<Integer, Object>() {
       public Integer invoke(Object o) {
         return o.hashCode();
       }
     });
     this.accept_Integer_from_Object(fun3);
-    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0 <Number, String>() {
-
+    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Number, String>() {
       public Number invoke(String s) {
         return s.length();
       }
     });
-    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0 <Number, Object>() {
-
+    this.accept_Number_from_String(new _FunctionTypes._return_P1_E0<Number, Object>() {
       public Number invoke(Object o) {
         return o.hashCode();
       }
@@ -315,5 +289,4 @@ __switch__:
 
   public void accept_Number_from_String(_FunctionTypes._return_P1_E0<? extends Number, ? super String> fun) {
   }
-
 }

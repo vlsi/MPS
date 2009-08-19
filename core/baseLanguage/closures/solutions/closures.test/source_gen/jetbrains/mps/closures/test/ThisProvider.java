@@ -6,7 +6,6 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ThisProvider {
-
   private int bar = 10;
 
   public ThisProvider() {
@@ -14,13 +13,11 @@ public class ThisProvider {
 
   public void testThisExpression() {
     Assert.assertEquals(10, this.bar);
-    new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return ThisProvider.this.bar = 1000;
       }
     }.invoke();
     Assert.assertEquals(1000, this.bar);
   }
-
 }

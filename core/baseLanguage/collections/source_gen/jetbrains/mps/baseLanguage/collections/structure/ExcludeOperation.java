@@ -21,5 +21,4 @@ public class ExcludeOperation extends BinaryOperation {
   public static ExcludeOperation newInstance(SModel sm) {
     return ExcludeOperation.newInstance(sm, false);
   }
-
 }

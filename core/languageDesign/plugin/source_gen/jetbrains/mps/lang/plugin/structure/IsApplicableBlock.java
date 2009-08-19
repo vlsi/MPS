@@ -21,5 +21,4 @@ public class IsApplicableBlock extends UpdateBlock {
   public static IsApplicableBlock newInstance(SModel sm) {
     return IsApplicableBlock.newInstance(sm, false);
   }
-
 }

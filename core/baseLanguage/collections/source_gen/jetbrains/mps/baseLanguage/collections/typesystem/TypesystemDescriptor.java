@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_SkipOperation_InferenceRule();
@@ -574,7 +573,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
         }
@@ -591,7 +589,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.ToListOperation";
         }
@@ -608,7 +605,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.SkipOperation";
         }
@@ -625,7 +621,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.PageOperation";
         }
@@ -642,7 +637,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.TakeOperation";
         }
@@ -659,7 +653,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.baseLanguage.collections.structure.DistinctOperation";
         }

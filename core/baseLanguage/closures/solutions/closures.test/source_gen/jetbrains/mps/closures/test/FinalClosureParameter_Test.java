@@ -9,15 +9,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class FinalClosureParameter_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_runnable() throws Exception {
     final Wrappers._T<String> foo = new Wrappers._T<String>("foo");
-    this.acceptFunction(new _FunctionTypes._void_P1_E0 <String>() {
-
+    this.acceptFunction(new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(final String s) {
         Runnable r = new Runnable() {
-
           public void run() {
             foo.value = s;
           }
@@ -31,5 +28,4 @@ public class FinalClosureParameter_Test extends TestCase {
   public void acceptFunction(_FunctionTypes._void_P1_E0<? super String> fun) {
     fun.invoke("BAR");
   }
-
 }

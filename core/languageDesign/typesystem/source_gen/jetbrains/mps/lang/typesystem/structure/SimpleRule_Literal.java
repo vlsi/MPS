@@ -34,7 +34,6 @@ public class SimpleRule_Literal extends SimpleRule {
     super.setChild(SimpleRule_Literal.TYPE, node);
   }
 
-
   public static SimpleRule_Literal newInstance(SModel sm, boolean init) {
     return (SimpleRule_Literal)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Literal", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SimpleRule_Literal extends SimpleRule {
   public static SimpleRule_Literal newInstance(SModel sm) {
     return SimpleRule_Literal.newInstance(sm, false);
   }
-
 }

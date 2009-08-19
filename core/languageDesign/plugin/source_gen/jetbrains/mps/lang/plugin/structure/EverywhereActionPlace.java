@@ -42,7 +42,6 @@ public class EverywhereActionPlace extends BaseConcept implements ActionPlaceSpe
     this.setProperty(EverywhereActionPlace.VIRTUAL_PACKAGE, value);
   }
 
-
   public static EverywhereActionPlace newInstance(SModel sm, boolean init) {
     return (EverywhereActionPlace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EverywhereActionPlace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class EverywhereActionPlace extends BaseConcept implements ActionPlaceSpe
   public static EverywhereActionPlace newInstance(SModel sm) {
     return EverywhereActionPlace.newInstance(sm, false);
   }
-
 }

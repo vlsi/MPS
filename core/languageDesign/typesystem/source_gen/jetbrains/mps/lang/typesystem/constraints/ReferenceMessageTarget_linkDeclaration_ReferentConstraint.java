@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class ReferenceMessageTarget_linkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ReferenceMessageTarget_linkDeclaration_ReferentConstraint() {
   }
 
@@ -41,11 +40,9 @@ public class ReferenceMessageTarget_linkDeclaration_ReferentConstraint extends B
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_1);
       if (coercedNode_1 != null) {
         return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_1, "concept", false));
-      } else
-      {
+      } else {
         return Sequence.fromIterable(Collections.<SNode>emptyList());
       }
     }
   }
-
 }

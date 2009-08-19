@@ -41,7 +41,6 @@ public class AddLastElementOperation extends SingleArgumentSequenceOperation imp
     this.setProperty(AddLastElementOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AddLastElementOperation newInstance(SModel sm, boolean init) {
     return (AddLastElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class AddLastElementOperation extends SingleArgumentSequenceOperation imp
   public static AddLastElementOperation newInstance(SModel sm) {
     return AddLastElementOperation.newInstance(sm, false);
   }
-
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class JoinType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3192_0(editorContext, node);
   }
@@ -69,7 +68,6 @@ public class JoinType_Editor extends DefaultNodeEditor {
   }
 
   private static class argumentListHandler_3192_0 extends RefNodeListHandler {
-
     public argumentListHandler_3192_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -116,7 +114,5 @@ public class JoinType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

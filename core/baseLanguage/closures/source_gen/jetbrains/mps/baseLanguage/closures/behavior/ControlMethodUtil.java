@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ControlMethodUtil {
-
   public static boolean isControlMethod(SNode smd) {
     return ControlMethodUtil.analyze(smd) != null;
   }
@@ -26,7 +25,7 @@ public class ControlMethodUtil {
       int initClosures = 0;
       int controlClosures = 0;
       List<SNode> closureParamTypes = null;
-      for(int idx = ListSequence.fromList(params).count() - 1 ; idx >= 0 ; idx-- ) {
+      for (int idx = ListSequence.fromList(params).count() - 1 ; idx >= 0 ; idx-- ) {
         SNode p = ListSequence.fromList(params).getElement(idx);
         SNode ptype = SLinkOperations.getTarget(p, "type", true);
         if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
@@ -41,18 +40,17 @@ public class ControlMethodUtil {
             inf.addControlClosureType(SNodeOperations.copyNode(ptype));
             if (closureParamTypes == null) {
               closureParamTypes = ListSequence.fromList(new ArrayList<SNode>());
-              for(SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
+              for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 ListSequence.fromList(closureParamTypes).addElement(SNodeOperations.copyNode(pt));
               }
             } else if (closureParamTypes != null && ListSequence.fromList(closureParamTypes).count() == SLinkOperations.getCount(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType")) {
               int i = 0;
-              for(SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
+              for (SNode pt : SLinkOperations.getTargets(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true)) {
                 if (!(MatchingUtil.matchNodes(pt, ListSequence.fromList(closureParamTypes).getElement(i++ )))) {
                   return null;
                 }
               }
-            } else
-            {
+            } else {
               return null;
             }
           } else if (SLinkOperations.getCount(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType") == 0 && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -65,15 +63,13 @@ public class ControlMethodUtil {
             if (!(MatchingUtil.matchNodes(rt, ListSequence.fromList(closureParamTypes).getElement(ListSequence.fromList(closureParamTypes).count() - initClosures)))) {
               return null;
             }
-          } else
-          {
+          } else {
             return null;
           }
         } else if (controlClosures > 0) {
           functionParams++ ;
           inf.addFunctionParameterType(SNodeOperations.copyNode(ptype));
-        } else
-        {
+        } else {
           return null;
         }
       }
@@ -86,7 +82,6 @@ public class ControlMethodUtil {
   }
 
   public static class Info {
-
     private List<SNode> controlClosures;
     private List<SNode> initClosures;
     private List<SNode> functionParams;
@@ -141,7 +136,5 @@ public class ControlMethodUtil {
         this.initialized = true;
       }
     }
-
-}
-
+  }
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.util.NameUtil;
 
 public class AbstractContainerType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,11 +23,10 @@ public class AbstractContainerType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), SConceptPropertyOperations.getString(thisNode, "alias"));
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
-      for(String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
+      for (String suffix : ListSequence.fromList(Type_Behavior.call_getVariableSuffixes_1213877337304(SLinkOperations.getTarget(thisNode, "elementType", true)))) {
         ListSequence.fromList(variableSuffixes).addElement(NameUtil.pluralize(suffix));
       }
     }
     return variableSuffixes;
   }
-
 }

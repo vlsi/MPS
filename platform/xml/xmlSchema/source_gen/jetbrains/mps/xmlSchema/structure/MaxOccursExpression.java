@@ -22,5 +22,4 @@ public class MaxOccursExpression extends BaseConcept {
   public static MaxOccursExpression newInstance(SModel sm) {
     return MaxOccursExpression.newInstance(sm, false);
   }
-
 }

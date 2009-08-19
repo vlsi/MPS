@@ -21,5 +21,4 @@ public class ExecuteCommandInEDTStatement extends BaseExecuteCommandStatement {
   public static ExecuteCommandInEDTStatement newInstance(SModel sm) {
     return ExecuteCommandInEDTStatement.newInstance(sm, false);
   }
-
 }

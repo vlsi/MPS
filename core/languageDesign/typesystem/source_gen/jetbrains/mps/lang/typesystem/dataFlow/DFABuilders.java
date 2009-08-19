@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", new AbstractCheckingRule_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", new AbstractSubtypingRule_DataFlow());
@@ -39,5 +38,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.typesystem.structure.WarningStatement", new WarningStatement_DataFlow());
     manager.register("jetbrains.mps.lang.typesystem.structure.InfoStatement", new InfoStatement_DataFlow());
   }
-
 }

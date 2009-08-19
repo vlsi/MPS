@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1751_0(editorContext, node);
   }
@@ -53,7 +52,6 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1751_0 extends AbstractCellProvider {
-
     public _Inline1751_0() {
       super();
     }
@@ -85,7 +83,5 @@ public class ChildTypeRestrictionReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

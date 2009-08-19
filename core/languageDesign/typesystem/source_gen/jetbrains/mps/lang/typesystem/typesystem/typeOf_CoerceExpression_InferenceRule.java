@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_CoerceExpression_InferenceRule() {
   }
 
@@ -23,8 +22,7 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
       concept = SLinkOperations.getTarget(SNodeOperations.cast(pattern, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
     } else if (SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.lang.typesystem.structure.PatternCondition")) {
       concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(pattern, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true), "patternNode", true));
-    } else
-    {
+    } else {
       return;
     }
     {
@@ -45,5 +43,4 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
   public boolean overrides() {
     return false;
   }
-
 }

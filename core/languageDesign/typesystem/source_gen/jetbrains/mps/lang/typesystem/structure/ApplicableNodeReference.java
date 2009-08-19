@@ -24,7 +24,6 @@ public class ApplicableNodeReference extends Expression {
     super.setReferent(ApplicableNodeReference.APPLICABLE_NODE, node);
   }
 
-
   public static ApplicableNodeReference newInstance(SModel sm, boolean init) {
     return (ApplicableNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ApplicableNodeReference extends Expression {
   public static ApplicableNodeReference newInstance(SModel sm) {
     return ApplicableNodeReference.newInstance(sm, false);
   }
-
 }

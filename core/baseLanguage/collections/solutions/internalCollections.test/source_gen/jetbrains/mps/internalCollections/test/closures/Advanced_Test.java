@@ -9,17 +9,13 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Advanced_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_nestedYield() throws Exception {
-    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private String[] _3_array;
               private String _4_s;
@@ -34,14 +30,11 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 4:
-                      this._4_s_it = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+                      this._4_s_it = Sequence.fromClosure(new ISequenceClosure<String>() {
                         public Iterable<String> iterable() {
-                          return new Iterable <String>() {
-
+                          return new Iterable<String>() {
                             public Iterator<String> iterator() {
-                              return new YieldingIterator <String>() {
-
+                              return new YieldingIterator<String>() {
                                 private int __CP__ = 0;
                                 private int _3_len;
 
@@ -114,5 +107,4 @@ __switch__:
     });
     this.assertIterableEquals(Sequence.fromArray(new String[]{"C","B","A"}), test);
   }
-
 }

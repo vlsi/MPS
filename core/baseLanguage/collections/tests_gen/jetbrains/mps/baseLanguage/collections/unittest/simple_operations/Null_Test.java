@@ -9,8 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.Assert;
 
 public class Null_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_1() throws Exception {
     List<String> l = null;
     ListSequence.fromList(l).addElement("");
@@ -25,5 +24,4 @@ public class Null_Test extends TestCase {
     ListSequence.fromList(l).removeElement("");
     ListSequence.fromList(l).removeSequence(ListSequence.fromList(l));
   }
-
 }

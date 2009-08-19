@@ -24,7 +24,6 @@ public class PreferencesComponentType extends BaseClassifierType {
     super.setReferent(PreferencesComponentType.COMPONENT_DECLARATION, node);
   }
 
-
   public static PreferencesComponentType newInstance(SModel sm, boolean init) {
     return (PreferencesComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PreferencesComponentType extends BaseClassifierType {
   public static PreferencesComponentType newInstance(SModel sm) {
     return PreferencesComponentType.newInstance(sm, false);
   }
-
 }

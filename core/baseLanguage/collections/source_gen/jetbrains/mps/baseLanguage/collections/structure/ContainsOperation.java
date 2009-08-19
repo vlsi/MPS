@@ -21,5 +21,4 @@ public class ContainsOperation extends SingleArgumentSequenceOperation {
   public static ContainsOperation newInstance(SModel sm) {
     return ContainsOperation.newInstance(sm, false);
   }
-
 }

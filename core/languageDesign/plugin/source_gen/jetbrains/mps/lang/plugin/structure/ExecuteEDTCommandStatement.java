@@ -21,5 +21,4 @@ public class ExecuteEDTCommandStatement extends BaseExecuteCommandStatement {
   public static ExecuteEDTCommandStatement newInstance(SModel sm) {
     return ExecuteEDTCommandStatement.newInstance(sm, false);
   }
-
 }

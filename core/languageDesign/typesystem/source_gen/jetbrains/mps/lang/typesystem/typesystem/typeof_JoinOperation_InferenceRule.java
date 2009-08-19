@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_JoinOperation_InferenceRule() {
   }
 
@@ -21,7 +20,7 @@ public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Ru
       BaseIntentionProvider intentionProvider = null;
       typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239038069332", true), (SNode)new _Quotations.QuotationClass_43().createNode(SLinkOperations.getTarget(expression, "conceptOfInstance", false), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1239038069330", intentionProvider);
     }
-    for(SNode argument : SLinkOperations.getTargets(expression, "argument", true)) {
+    for (SNode argument : SLinkOperations.getTargets(expression, "argument", true)) {
       {
         SNode _nodeToCheck_1029348928467 = argument;
         BaseIntentionProvider intentionProvider = null;
@@ -41,5 +40,4 @@ public class typeof_JoinOperation_InferenceRule extends AbstractInferenceRule_Ru
   public boolean overrides() {
     return false;
   }
-
 }

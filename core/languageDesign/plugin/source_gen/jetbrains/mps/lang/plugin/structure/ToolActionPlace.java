@@ -42,7 +42,6 @@ public class ToolActionPlace extends BaseConcept implements ActionPlaceSpecifica
     this.setProperty(ToolActionPlace.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ToolActionPlace newInstance(SModel sm, boolean init) {
     return (ToolActionPlace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolActionPlace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class ToolActionPlace extends BaseConcept implements ActionPlaceSpecifica
   public static ToolActionPlace newInstance(SModel sm) {
     return ToolActionPlace.newInstance(sm, false);
   }
-
 }

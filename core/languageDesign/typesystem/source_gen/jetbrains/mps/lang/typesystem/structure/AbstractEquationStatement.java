@@ -70,7 +70,6 @@ public class AbstractEquationStatement extends Statement {
     super.setChild(AbstractEquationStatement.HELGINS_INTENTION, node);
   }
 
-
   public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
     return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -78,5 +77,4 @@ public class AbstractEquationStatement extends Statement {
   public static AbstractEquationStatement newInstance(SModel sm) {
     return AbstractEquationStatement.newInstance(sm, false);
   }
-
 }

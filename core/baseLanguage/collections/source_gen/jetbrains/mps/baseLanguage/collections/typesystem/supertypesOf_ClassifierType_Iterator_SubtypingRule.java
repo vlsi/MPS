@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_6 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_6 myMatchingPattern;
 
   public supertypesOf_ClassifierType_Iterator_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
   public boolean isWeak() {
     return true;
   }
-
 }

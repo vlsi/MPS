@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6715_0(editorContext, node);
   }
@@ -70,7 +69,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6715_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return BaseConcept_Behavior.call_getPresentation_1213877396640(ActionParameter_Behavior.call_getType_1171743928471337193(node));
       }
@@ -106,7 +104,6 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6715_0 extends AbstractCellProvider {
-
     public _Inline6715_0() {
       super();
     }
@@ -137,7 +134,5 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

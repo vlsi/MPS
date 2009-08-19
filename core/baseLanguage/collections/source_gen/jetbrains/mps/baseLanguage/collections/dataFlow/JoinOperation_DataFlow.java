@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class JoinOperation_DataFlow extends DataFlowBuilder {
-
   public JoinOperation_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class JoinOperation_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "delimiter", true));
     }
   }
-
 }

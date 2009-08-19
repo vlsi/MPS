@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9248_0(editorContext, node);
   }
@@ -108,8 +107,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return AbstractInequationStatement_Editor._StyleParameter_QueryFunction_9248_0((cell == null ?
             null :
@@ -194,25 +192,20 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_9248_0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
-    } else
-    {
+    } else {
       return Color.BLACK;
     }
   }
 
   public static class AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public AbstractInequationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
-
-}
-
+  }
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SortDirection_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_9499_0(editorContext, node);
   }
@@ -27,8 +26,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_9499_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_9499_1(editorContext, node);
     }
     return editorCell;
@@ -58,9 +56,7 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9499_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "value");
   }
-
 }

@@ -24,7 +24,6 @@ public class InterfaceExtentionPoint extends GroupAnchor {
     super.setChild(InterfaceExtentionPoint.POINT_I_D, node);
   }
 
-
   public static InterfaceExtentionPoint newInstance(SModel sm, boolean init) {
     return (InterfaceExtentionPoint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InterfaceExtentionPoint extends GroupAnchor {
   public static InterfaceExtentionPoint newInstance(SModel sm) {
     return InterfaceExtentionPoint.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IsSubtypeExpression_DataFlow extends DataFlowBuilder {
-
   public IsSubtypeExpression_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class IsSubtypeExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "subtypeExpression", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "supertypeExpression", true));
   }
-
 }

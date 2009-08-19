@@ -24,7 +24,6 @@ public class SingleArgumentSequenceOperation extends SequenceOperation {
     super.setChild(SingleArgumentSequenceOperation.ARGUMENT, node);
   }
 
-
   public static SingleArgumentSequenceOperation newInstance(SModel sm, boolean init) {
     return (SingleArgumentSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SingleArgumentSequenceOperation extends SequenceOperation {
   public static SingleArgumentSequenceOperation newInstance(SModel sm) {
     return SingleArgumentSequenceOperation.newInstance(sm, false);
   }
-
 }

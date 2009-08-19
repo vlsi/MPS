@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SequenceOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -15,5 +14,4 @@ public class SequenceOperation_Behavior {
     SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     return operand;
   }
-
 }

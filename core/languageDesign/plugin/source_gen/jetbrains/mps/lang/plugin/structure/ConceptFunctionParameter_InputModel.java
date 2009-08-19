@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_InputModel extends ConceptFunctionParamete
   public static ConceptFunctionParameter_InputModel newInstance(SModel sm) {
     return ConceptFunctionParameter_InputModel.newInstance(sm, false);
   }
-
 }

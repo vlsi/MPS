@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule extends 
   public boolean overrides() {
     return false;
   }
-
 }

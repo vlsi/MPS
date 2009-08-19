@@ -24,7 +24,6 @@ public class LinkedHashMapCreator extends HashMapCreator {
     super.setProperty(LinkedHashMapCreator.ORDER, value.getValueAsString());
   }
 
-
   public static LinkedHashMapCreator newInstance(SModel sm, boolean init) {
     return (LinkedHashMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class LinkedHashMapCreator extends HashMapCreator {
   public static LinkedHashMapCreator newInstance(SModel sm) {
     return LinkedHashMapCreator.newInstance(sm, false);
   }
-
 }

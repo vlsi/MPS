@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1201878705329(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return !(RulesUtil.withinInferenceItem(_context.getParentNode()));
   }
@@ -61,8 +60,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       if (!(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"))) {
         SLinkOperations.setTarget(_context.getNewNode(), "term", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      } else
-      {
+      } else {
         SLinkOperations.setTarget(_context.getNewNode(), "term", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), "term", true), true);
       }
     }
@@ -73,7 +71,6 @@ public class QueriesGenerated {
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
-
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
           SNode normalTypeClause = SModelOperations.createNewNode(model, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
           SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
@@ -89,8 +86,7 @@ public class QueriesGenerated {
           _context.getChildSetter().execute(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedNode, operationContext.getScope());
           if (this.returnSmallPart(nc)) {
             return nc;
-          } else
-          {
+          } else {
             return wrappedNode;
           }
         }
@@ -115,12 +111,10 @@ public class QueriesGenerated {
     {
       final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
       Calculable calculable = new Calculable() {
-
         public Object calculate() {
           List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), _context.getModel(), operationContext.getScope());
           final IScope scope = operationContext.getScope();
-          return ListSequence.fromList(subconcepts).where(new IWhereFilter <SNode>() {
-
+          return ListSequence.fromList(subconcepts).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1213877394594(it, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), scope);
             }
@@ -129,9 +123,8 @@ public class QueriesGenerated {
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
-      for(final SNode item : parameterObjects) {
+      for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
-
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null);
             SNode statement = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -153,5 +146,4 @@ public class QueriesGenerated {
     }
     return result;
   }
-
 }

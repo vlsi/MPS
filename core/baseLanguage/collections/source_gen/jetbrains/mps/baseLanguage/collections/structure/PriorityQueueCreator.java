@@ -21,5 +21,4 @@ public class PriorityQueueCreator extends AbstractContainerCreator {
   public static PriorityQueueCreator newInstance(SModel sm) {
     return PriorityQueueCreator.newInstance(sm, false);
   }
-
 }

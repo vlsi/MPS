@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MapType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,5 +28,4 @@ public class MapType_Behavior {
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return new _Quotations.QuotationClass_12().createNode();
   }
-
 }

@@ -51,7 +51,6 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
     super.setChild(OverloadedOperatorTypeRule.RIGHT_OPERAND_TYPE, node);
   }
 
-
   public static OverloadedOperatorTypeRule newInstance(SModel sm, boolean init) {
     return (OverloadedOperatorTypeRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
   public static OverloadedOperatorTypeRule newInstance(SModel sm) {
     return OverloadedOperatorTypeRule.newInstance(sm, false);
   }
-
 }

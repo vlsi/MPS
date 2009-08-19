@@ -38,7 +38,6 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
     this.insertChild(prev, MultipleForeachLoop.LOOP_VARIABLE, node);
   }
 
-
   public static MultipleForeachLoop newInstance(SModel sm, boolean init) {
     return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   public static MultipleForeachLoop newInstance(SModel sm) {
     return MultipleForeachLoop.newInstance(sm, false);
   }
-
 }

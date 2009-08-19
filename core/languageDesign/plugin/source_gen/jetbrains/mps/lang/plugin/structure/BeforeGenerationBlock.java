@@ -22,5 +22,4 @@ public class BeforeGenerationBlock extends ConceptFunction {
   public static BeforeGenerationBlock newInstance(SModel sm) {
     return BeforeGenerationBlock.newInstance(sm, false);
   }
-
 }

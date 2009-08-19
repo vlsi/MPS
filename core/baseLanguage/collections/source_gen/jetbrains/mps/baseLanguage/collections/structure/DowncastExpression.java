@@ -24,7 +24,6 @@ public class DowncastExpression extends Expression {
     super.setChild(DowncastExpression.EXPRESSION, node);
   }
 
-
   public static DowncastExpression newInstance(SModel sm, boolean init) {
     return (DowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class DowncastExpression extends Expression {
   public static DowncastExpression newInstance(SModel sm) {
     return DowncastExpression.newInstance(sm, false);
   }
-
 }

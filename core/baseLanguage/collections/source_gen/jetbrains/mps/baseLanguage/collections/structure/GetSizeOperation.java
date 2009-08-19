@@ -21,5 +21,4 @@ public class GetSizeOperation extends NoArgumentsSequenceOperation {
   public static GetSizeOperation newInstance(SModel sm) {
     return GetSizeOperation.newInstance(sm, false);
   }
-
 }

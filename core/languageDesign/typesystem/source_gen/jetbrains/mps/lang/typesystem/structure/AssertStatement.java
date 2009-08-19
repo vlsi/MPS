@@ -24,7 +24,6 @@ public class AssertStatement extends ReportErrorStatement {
     super.setChild(AssertStatement.CONDITION, node);
   }
 
-
   public static AssertStatement newInstance(SModel sm, boolean init) {
     return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AssertStatement extends ReportErrorStatement {
   public static AssertStatement newInstance(SModel sm) {
     return AssertStatement.newInstance(sm, false);
   }
-
 }

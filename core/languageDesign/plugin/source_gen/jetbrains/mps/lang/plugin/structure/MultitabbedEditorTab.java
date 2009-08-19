@@ -32,7 +32,6 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
     super.setChild(MultitabbedEditorTab.GET_INNER_TAB_NAME_BLOCK, node);
   }
 
-
   public static MultitabbedEditorTab newInstance(SModel sm, boolean init) {
     return (MultitabbedEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   public static MultitabbedEditorTab newInstance(SModel sm) {
     return MultitabbedEditorTab.newInstance(sm, false);
   }
-
 }

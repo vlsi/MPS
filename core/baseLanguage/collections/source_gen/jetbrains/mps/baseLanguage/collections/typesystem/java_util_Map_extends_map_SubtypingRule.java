@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_2 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_2 myMatchingPattern;
 
   public java_util_Map_extends_map_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-
 }

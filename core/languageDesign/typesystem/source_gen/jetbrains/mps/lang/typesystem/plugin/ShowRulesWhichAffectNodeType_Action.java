@@ -44,12 +44,12 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt shift T";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -58,7 +58,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -91,7 +91,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().getNodeTypesComponent(SNodeOperations.getContainingRoot(ShowRulesWhichAffectNodeType_Action.this.node));
       if (component == null) {
@@ -102,7 +102,7 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
         return;
       }
       List<SNode> rules = ListSequence.fromList(new ArrayList<SNode>());
-      for(Pair<String, String> ruleId : SetSequence.fromSet(rulesIds)) {
+      for (Pair<String, String> ruleId : SetSequence.fromSet(rulesIds)) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ruleId.o1));
         if (modelDescriptor == null) {
           continue;
@@ -130,5 +130,4 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ShowRulesWhichAffectNodeType", t);
     }
   }
-
 }

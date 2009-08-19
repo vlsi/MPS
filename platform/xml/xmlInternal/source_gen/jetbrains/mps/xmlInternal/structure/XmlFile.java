@@ -90,7 +90,6 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
     super.setChild(XmlFile.DOCUMENT, node);
   }
 
-
   public static XmlFile newInstance(SModel sm, boolean init) {
     return (XmlFile)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.XmlFile", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -98,5 +97,4 @@ public class XmlFile extends BaseConcept implements INamedConcept, XmlRoot {
   public static XmlFile newInstance(SModel sm) {
     return XmlFile.newInstance(sm, false);
   }
-
 }

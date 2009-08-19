@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIntention {
-
   public replace_invokeOperation_with_compactInvoke_Intention() {
   }
 
@@ -52,5 +51,4 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
-
 }

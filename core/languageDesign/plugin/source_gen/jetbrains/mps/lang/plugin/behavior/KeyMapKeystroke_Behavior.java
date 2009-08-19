@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class KeyMapKeystroke_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,11 +17,9 @@ public class KeyMapKeystroke_Behavior {
     String keyName;
     if (SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
       keyName = SPropertyOperations.getString(thisNode, "keycode").substring(3);
-    } else
-    {
+    } else {
       keyName = SPropertyOperations.getString(thisNode, "keycode");
     }
     return modifiers.replaceAll("\\+", " ") + " " + keyName;
   }
-
 }

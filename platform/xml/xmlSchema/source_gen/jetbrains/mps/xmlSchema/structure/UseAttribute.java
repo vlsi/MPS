@@ -25,7 +25,6 @@ public class UseAttribute extends BaseConcept {
     super.setProperty(UseAttribute.USE, value.getValueAsString());
   }
 
-
   public static UseAttribute newInstance(SModel sm, boolean init) {
     return (UseAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.UseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class UseAttribute extends BaseConcept {
   public static UseAttribute newInstance(SModel sm) {
     return UseAttribute.newInstance(sm, false);
   }
-
 }

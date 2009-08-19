@@ -24,7 +24,6 @@ public class WhenConcreteVariableReference extends Expression {
     super.setReferent(WhenConcreteVariableReference.WHEN_CONCRETE_VAR, node);
   }
 
-
   public static WhenConcreteVariableReference newInstance(SModel sm, boolean init) {
     return (WhenConcreteVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class WhenConcreteVariableReference extends Expression {
   public static WhenConcreteVariableReference newInstance(SModel sm) {
     return WhenConcreteVariableReference.newInstance(sm, false);
   }
-
 }

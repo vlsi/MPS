@@ -24,7 +24,6 @@ public class ChildTypeRestrictionReference extends Expression {
     super.setReferent(ChildTypeRestrictionReference.TYPE_RESTRICTION, node);
   }
 
-
   public static ChildTypeRestrictionReference newInstance(SModel sm, boolean init) {
     return (ChildTypeRestrictionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ChildTypeRestrictionReference extends Expression {
   public static ChildTypeRestrictionReference newInstance(SModel sm) {
     return ChildTypeRestrictionReference.newInstance(sm, false);
   }
-
 }

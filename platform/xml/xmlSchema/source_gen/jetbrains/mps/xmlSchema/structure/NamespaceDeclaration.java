@@ -33,7 +33,6 @@ public class NamespaceDeclaration extends BaseConcept {
     this.setProperty(NamespaceDeclaration.URI, value);
   }
 
-
   public static NamespaceDeclaration newInstance(SModel sm, boolean init) {
     return (NamespaceDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.NamespaceDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class NamespaceDeclaration extends BaseConcept {
   public static NamespaceDeclaration newInstance(SModel sm) {
     return NamespaceDeclaration.newInstance(sm, false);
   }
-
 }

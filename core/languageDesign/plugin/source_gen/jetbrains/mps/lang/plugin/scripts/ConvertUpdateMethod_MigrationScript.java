@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertUpdateMethod_MigrationScript extends BaseMigrationScript {
-
   public ConvertUpdateMethod_MigrationScript(IOperationContext operationContext) {
     super("Convert Update Method");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Convert DoUpdateGroupBlock to UpdateGroupBlock";
       }

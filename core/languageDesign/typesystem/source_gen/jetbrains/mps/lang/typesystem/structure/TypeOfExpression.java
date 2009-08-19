@@ -33,7 +33,6 @@ public class TypeOfExpression extends Expression {
     super.setChild(TypeOfExpression.TERM, node);
   }
 
-
   public static TypeOfExpression newInstance(SModel sm, boolean init) {
     return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class TypeOfExpression extends Expression {
   public static TypeOfExpression newInstance(SModel sm) {
     return TypeOfExpression.newInstance(sm, false);
   }
-
 }

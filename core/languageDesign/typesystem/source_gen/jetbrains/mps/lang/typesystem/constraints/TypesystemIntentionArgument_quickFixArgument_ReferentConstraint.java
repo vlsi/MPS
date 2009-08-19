@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypesystemIntentionArgument_quickFixArgument_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public TypesystemIntentionArgument_quickFixArgument_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class TypesystemIntentionArgument_quickFixArgument_ReferentConstraint ext
     }
     return nodes;
   }
-
 }

@@ -43,7 +43,6 @@ public class HashMapCreator extends AbstractCreator {
     super.setChild(HashMapCreator.INITIALIZER, node);
   }
 
-
   public static HashMapCreator newInstance(SModel sm, boolean init) {
     return (HashMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class HashMapCreator extends AbstractCreator {
   public static HashMapCreator newInstance(SModel sm) {
     return HashMapCreator.newInstance(sm, false);
   }
-
 }

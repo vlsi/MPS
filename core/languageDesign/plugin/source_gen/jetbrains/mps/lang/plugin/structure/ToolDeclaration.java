@@ -152,7 +152,6 @@ public class ToolDeclaration extends BaseConcept implements IClassifier, IChecke
     this.insertChild(prev, ToolDeclaration.FIELD_DECLARATION, node);
   }
 
-
   public static ToolDeclaration newInstance(SModel sm, boolean init) {
     return (ToolDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -160,5 +159,4 @@ public class ToolDeclaration extends BaseConcept implements IClassifier, IChecke
   public static ToolDeclaration newInstance(SModel sm) {
     return ToolDeclaration.newInstance(sm, false);
   }
-
 }

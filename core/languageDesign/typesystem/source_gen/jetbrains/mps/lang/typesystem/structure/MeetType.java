@@ -38,7 +38,6 @@ public class MeetType extends BaseConcept {
     this.insertChild(prev, MeetType.ARGUMENT, node);
   }
 
-
   public static MeetType newInstance(SModel sm, boolean init) {
     return (MeetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class MeetType extends BaseConcept {
   public static MeetType newInstance(SModel sm) {
     return MeetType.newInstance(sm, false);
   }
-
 }

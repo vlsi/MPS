@@ -47,7 +47,6 @@ public class CompactInvokeFunctionExpression extends Expression {
     this.insertChild(prev, CompactInvokeFunctionExpression.PARAMETER, node);
   }
 
-
   public static CompactInvokeFunctionExpression newInstance(SModel sm, boolean init) {
     return (CompactInvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class CompactInvokeFunctionExpression extends Expression {
   public static CompactInvokeFunctionExpression newInstance(SModel sm) {
     return CompactInvokeFunctionExpression.newInstance(sm, false);
   }
-
 }

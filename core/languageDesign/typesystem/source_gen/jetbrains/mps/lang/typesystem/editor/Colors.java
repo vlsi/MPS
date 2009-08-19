@@ -5,5 +5,5 @@ package jetbrains.mps.lang.typesystem.editor;
 import java.awt.Color;
 
 public class Colors {
-  /* package */static Color BROWN = new Color(200, 150, 0);
+  /*package*/ static Color BROWN = new Color(200, 150, 0);
 }

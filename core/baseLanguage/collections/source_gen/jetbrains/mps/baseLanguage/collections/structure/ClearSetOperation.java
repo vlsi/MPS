@@ -21,5 +21,4 @@ public class ClearSetOperation extends AbstractSetOperation {
   public static ClearSetOperation newInstance(SModel sm) {
     return ClearSetOperation.newInstance(sm, false);
   }
-
 }

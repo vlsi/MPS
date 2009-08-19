@@ -33,7 +33,6 @@ public class OverloadedOpTypeRule_OneTypeSpecified extends AbstractOverloadedOps
     super.setChild(OverloadedOpTypeRule_OneTypeSpecified.OPERAND_TYPE, node);
   }
 
-
   public static OverloadedOpTypeRule_OneTypeSpecified newInstance(SModel sm, boolean init) {
     return (OverloadedOpTypeRule_OneTypeSpecified)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class OverloadedOpTypeRule_OneTypeSpecified extends AbstractOverloadedOps
   public static OverloadedOpTypeRule_OneTypeSpecified newInstance(SModel sm) {
     return OverloadedOpTypeRule_OneTypeSpecified.newInstance(sm, false);
   }
-
 }

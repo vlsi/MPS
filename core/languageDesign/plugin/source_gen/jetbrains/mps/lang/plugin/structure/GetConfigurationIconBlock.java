@@ -22,5 +22,4 @@ public class GetConfigurationIconBlock extends ConceptFunction {
   public static GetConfigurationIconBlock newInstance(SModel sm) {
     return GetConfigurationIconBlock.newInstance(sm, false);
   }
-
 }

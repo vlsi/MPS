@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_ListType_SequenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_ListType_SequenceType_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class supertypesOf_ListType_SequenceType_SubtypingRule extends SubtypingR
   public boolean isWeak() {
     return false;
   }
-
 }

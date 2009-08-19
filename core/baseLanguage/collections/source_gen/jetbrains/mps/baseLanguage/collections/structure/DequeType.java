@@ -21,5 +21,4 @@ public class DequeType extends QueueType {
   public static DequeType newInstance(SModel sm) {
     return DequeType.newInstance(sm, false);
   }
-
 }

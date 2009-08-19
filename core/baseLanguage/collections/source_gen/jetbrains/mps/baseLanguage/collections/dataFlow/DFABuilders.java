@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", new ForEachStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", new AddAllElementsOperation_DataFlow());
@@ -55,5 +54,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", new ComparatorSortOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.SortOperation", new SortOperation_DataFlow());
   }
-
 }

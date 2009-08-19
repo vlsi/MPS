@@ -33,7 +33,6 @@ public class PageOperation extends SequenceOperation {
     super.setChild(PageOperation.TO_ELEMENT, node);
   }
 
-
   public static PageOperation newInstance(SModel sm, boolean init) {
     return (PageOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PageOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class PageOperation extends SequenceOperation {
   public static PageOperation newInstance(SModel sm) {
     return PageOperation.newInstance(sm, false);
   }
-
 }

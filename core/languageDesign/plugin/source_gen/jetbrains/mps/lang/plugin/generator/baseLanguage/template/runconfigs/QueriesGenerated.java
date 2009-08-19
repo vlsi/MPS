@@ -27,7 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_680902548763517194(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration") && (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.GetConfigurationIconBlock", false, false) != null);
   }
@@ -218,8 +217,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7840798570674946693(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "configType", false) == _context.getNode();
       }
@@ -233,5 +231,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7840798570675189192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "action", true);
   }
-
 }

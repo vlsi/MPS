@@ -62,7 +62,6 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
     super.setChild(AbstractRule.APPLICABLE_NODE, node);
   }
 
-
   public static AbstractRule newInstance(SModel sm, boolean init) {
     return (AbstractRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
   public static AbstractRule newInstance(SModel sm) {
     return AbstractRule.newInstance(sm, false);
   }
-
 }

@@ -79,7 +79,6 @@ public class InfoStatement extends Statement implements MessageStatement {
     super.setChild(InfoStatement.MESSAGE_TARGET, node);
   }
 
-
   public static InfoStatement newInstance(SModel sm, boolean init) {
     return (InfoStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InfoStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class InfoStatement extends Statement implements MessageStatement {
   public static InfoStatement newInstance(SModel sm) {
     return InfoStatement.newInstance(sm, false);
   }
-
 }

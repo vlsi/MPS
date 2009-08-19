@@ -22,5 +22,4 @@ public class OnBeforeWriteBlock extends ConceptFunction {
   public static OnBeforeWriteBlock newInstance(SModel sm) {
     return OnBeforeWriteBlock.newInstance(sm, false);
   }
-
 }

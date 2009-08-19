@@ -14,20 +14,19 @@ import junit.framework.Assert;
 import java.util.NoSuchElementException;
 
 public class Distinct_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_distinctMethod() throws Exception {
     ISequence<Integer> input = Sequence.fromArray(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), input.distinct());
   }
 
-  @Test()
+  @Test
   public void test_distinctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).distinct());
   }
 
-  @Test()
+  @Test
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
     Assert.assertSame(1, it.next());
@@ -41,5 +40,4 @@ public class Distinct_Test extends Util_Test {
       // expected exception
     }
   }
-
 }

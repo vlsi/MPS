@@ -5,7 +5,6 @@ package jetbrains.mps.internalCollections.test.closures;
 import java.util.List;
 
 public class B {
-
   public List<A> as;
   public List<A> listofa;
   public Iterable<A> seqofa;

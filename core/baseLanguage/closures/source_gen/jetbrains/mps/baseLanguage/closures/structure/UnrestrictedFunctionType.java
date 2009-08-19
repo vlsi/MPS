@@ -24,7 +24,6 @@ public class UnrestrictedFunctionType extends FunctionType {
     super.setChild(UnrestrictedFunctionType.TERMINATE_TYPE, node);
   }
 
-
   public static UnrestrictedFunctionType newInstance(SModel sm, boolean init) {
     return (UnrestrictedFunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class UnrestrictedFunctionType extends FunctionType {
   public static UnrestrictedFunctionType newInstance(SModel sm) {
     return UnrestrictedFunctionType.newInstance(sm, false);
   }
-
 }

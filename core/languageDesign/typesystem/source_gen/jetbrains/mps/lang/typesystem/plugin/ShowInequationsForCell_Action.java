@@ -25,12 +25,12 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -39,7 +39,7 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -51,19 +51,17 @@ public class ShowInequationsForCell_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeSubstituteInfo substituteInfo = ShowInequationsForCell_Action.this.selectedCell.getSubstituteInfo();
       InequationSystem inequationSystem = substituteInfo.getInequationSystem(ShowInequationsForCell_Action.this.selectedCell);
       if (inequationSystem == null) {
         JOptionPane.showMessageDialog(null, "no inequation system");
-      } else
-      {
+      } else {
         JOptionPane.showMessageDialog(null, inequationSystem.getPresentation());
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowInequationsForCell", t);
     }
   }
-
 }

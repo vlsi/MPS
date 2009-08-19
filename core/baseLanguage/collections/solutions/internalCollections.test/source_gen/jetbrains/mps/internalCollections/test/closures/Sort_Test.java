@@ -13,12 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Sort_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_sortMethod() throws Exception {
     ISequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
-    ISequence<String> test = input.sort(new ISelector <String, Comparable<?>>() {
-
+    ISequence<String> test = input.sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
@@ -26,18 +24,16 @@ public class Sort_Test extends Util_Test {
     this.assertIterableEquals(Sequence.fromArray("XXXX", "ZZZ", "WW", "Y"), test);
   }
 
-  @Test()
+  @Test
   public void test_toComparableVar() throws Exception {
     ISequence<String> input = Sequence.fromArray("ZZZ", "Y", "XXXX", "WW");
-    ISelector<String, Comparable<?>> length = new ISelector <String, Comparable<?>>() {
-
+    ISelector<String, Comparable<?>> length = new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
     };
     ISequence<String> test = input.sort(length, false);
-    ISelector<String, Comparable<?>> itself = new ISelector <String, Comparable<?>>() {
-
+    ISelector<String, Comparable<?>> itself = new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it;
       }
@@ -48,58 +44,52 @@ public class Sort_Test extends Util_Test {
     this.assertIterableEquals(Sequence.fromArray("WW", "XXXX", "Y", "ZZZ"), test2);
   }
 
-  @Test()
+  @Test
   public void test_sortOperationInternal() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
-    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector <String, Comparable<?>>() {
-
+    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
     }, false);
-    Iterable<String> test2 = Sequence.fromIterable(input).sort(new Comparator <String>() {
-
+    Iterable<String> test2 = Sequence.fromIterable(input).sort(new Comparator<String>() {
       public int compare(String a, String b) {
         return a.length() - b.length();
       }
     }, false);
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test2);
-    this.assertIterableEquals(input, Sequence.fromIterable(test).sort(new ISelector <String, Comparable<?>>() {
-
+    this.assertIterableEquals(input, Sequence.fromIterable(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
     }, true));
   }
 
-  @Test()
+  @Test
   public void test_caseSensitive() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
-    this.assertIterableEquals(Arrays.asList("ABC", "ABCD", "Abc", "aBC", "abc", "abcD", "abcd"), ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
-
+    this.assertIterableEquals(Arrays.asList("ABC", "ABCD", "Abc", "aBC", "abc", "abcD", "abcd"), ListSequence.fromList(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it;
       }
     }, true));
   }
 
-  @Test()
+  @Test
   public void test_caseInsensitive() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "abc", "ABC", "aBC", "Abc", "abcd", "ABCD", "abcD");
-    this.assertIterableEquals(test, ListSequence.fromList(test).sort(new Comparator <String>() {
-
+    this.assertIterableEquals(test, ListSequence.fromList(test).sort(new Comparator<String>() {
       public int compare(String a, String b) {
         return String.CASE_INSENSITIVE_ORDER.compare(a, b);
       }
     }, true));
   }
 
-  @Test()
+  @Test
   public void test_legacySort() throws Exception {
     Iterable<String> input = Arrays.asList("Z", "YY", "XXX", "WWWW");
-    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector <String, Comparable<?>>() {
-
+    Iterable<String> test = Sequence.fromIterable(input).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
@@ -107,22 +97,19 @@ public class Sort_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList("WWWW", "XXX", "YY", "Z"), test);
   }
 
-  @Test()
+  @Test
   public void test_alsoSort() throws Exception {
     List<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "cd", "xy", "ABC", "abcd", "X", "Y", "XYZ");
-    Iterable<String> l1 = ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
-
+    Iterable<String> l1 = ListSequence.fromList(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it;
       }
     }, true);
-    Iterable<String> l2 = ListSequence.fromList(test).sort(new ISelector <String, Comparable<?>>() {
-
+    Iterable<String> l2 = ListSequence.fromList(test).sort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it.length();
       }
-    }, false).alsoSort(new ISelector <String, Comparable<?>>() {
-
+    }, false).alsoSort(new ISelector<String, Comparable<?>>() {
       public Comparable<?> select(String it) {
         return it;
       }
@@ -130,5 +117,4 @@ public class Sort_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList("ABC", "X", "XYZ", "Y", "a", "abcd", "b", "cd", "xy"), l1);
     this.assertIterableEquals(Arrays.asList("abcd", "ABC", "XYZ", "cd", "xy", "X", "Y", "a", "b"), l2);
   }
-
 }

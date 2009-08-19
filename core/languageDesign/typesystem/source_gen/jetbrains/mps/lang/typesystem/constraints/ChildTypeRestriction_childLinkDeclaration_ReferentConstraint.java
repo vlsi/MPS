@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 
 public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ChildTypeRestriction_childLinkDeclaration_ReferentConstraint() {
   }
 
@@ -33,5 +32,4 @@ public class ChildTypeRestriction_childLinkDeclaration_ReferentConstraint extend
     ConceptAndSuperConceptsScope conceptScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(abstractConceptDeclaration)));
     return conceptScope;
   }
-
 }

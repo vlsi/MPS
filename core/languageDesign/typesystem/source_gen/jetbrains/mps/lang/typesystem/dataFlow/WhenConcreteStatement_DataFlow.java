@@ -10,17 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class WhenConcreteStatement_DataFlow extends DataFlowBuilder {
-
   public WhenConcreteStatement_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode lvr : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})) {
+    for (SNode lvr : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false, new String[]{})) {
       SNode variableDeclaration = SLinkOperations.getTarget(lvr, "variableDeclaration", false);
       if (SNodeOperations.getAncestor(variableDeclaration, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false, false) != _context.getNode()) {
         _context.getBuilder().emitRead(variableDeclaration);
       }
     }
   }
-
 }

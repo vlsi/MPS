@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_MPSProject extends ConceptFunctionParamete
   public static ConceptFunctionParameter_MPSProject newInstance(SModel sm) {
     return ConceptFunctionParameter_MPSProject.newInstance(sm, false);
   }
-
 }

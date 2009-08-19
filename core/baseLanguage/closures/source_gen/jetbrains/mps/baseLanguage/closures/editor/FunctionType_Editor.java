@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class FunctionType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1642_0(editorContext, node);
   }
@@ -139,13 +138,11 @@ public class FunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1642_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
   private static class parameterTypeListHandler_1642_0 extends RefNodeListHandler {
-
     public parameterTypeListHandler_1642_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -208,10 +205,9 @@ public class FunctionType_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class throwsTypeListHandler_1642_0 extends RefNodeListHandler {
-
     public throwsTypeListHandler_1642_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -258,7 +254,5 @@ public class FunctionType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.collections.behavior.IContainerOperation_Behav
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_RemoveFirstElementOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_RemoveFirstElementOperation_InferenceRule() {
   }
 
@@ -41,5 +40,4 @@ public class typeof_RemoveFirstElementOperation_InferenceRule extends AbstractIn
   public boolean overrides() {
     return false;
   }
-
 }

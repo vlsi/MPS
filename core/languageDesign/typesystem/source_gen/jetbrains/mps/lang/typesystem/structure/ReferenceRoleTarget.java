@@ -24,7 +24,6 @@ public class ReferenceRoleTarget extends MessageTarget {
     super.setChild(ReferenceRoleTarget.REFERENCE_ROLE, node);
   }
 
-
   public static ReferenceRoleTarget newInstance(SModel sm, boolean init) {
     return (ReferenceRoleTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ReferenceRoleTarget extends MessageTarget {
   public static ReferenceRoleTarget newInstance(SModel sm) {
     return ReferenceRoleTarget.newInstance(sm, false);
   }
-
 }

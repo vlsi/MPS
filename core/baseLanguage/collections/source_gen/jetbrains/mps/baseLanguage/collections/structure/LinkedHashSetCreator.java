@@ -21,5 +21,4 @@ public class LinkedHashSetCreator extends HashSetCreator {
   public static LinkedHashSetCreator newInstance(SModel sm) {
     return LinkedHashSetCreator.newInstance(sm, false);
   }
-
 }

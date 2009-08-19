@@ -13,8 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class SmartClosureParameterTypeUtil {
-
-  @InferenceMethod()
+  @InferenceMethod
   public static void equateInputType(final TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
     SNode vabs = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.VariableDeclaration","jetbrains.mps.baseLanguage.structure.AssignmentExpression","jetbrains.mps.baseLanguage.structure.IMethodCall","jetbrains.mps.baseLanguage.structure.DotExpression"}, false, false);
     if (SNodeOperations.isInstanceOf(vabs, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
@@ -52,7 +51,7 @@ public class SmartClosureParameterTypeUtil {
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void equateResolveType(final TypeCheckingContext typeCheckingContext, SNode scpd, SNode InputType) {
     SNode bmc = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall"}, false, false);
     if (SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
@@ -75,5 +74,4 @@ public class SmartClosureParameterTypeUtil {
     SNode bmc = SNodeOperations.getAncestorWhereConceptInList(scpd, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodCall"}, false, false);
     return SNodeOperations.isInstanceOf(bmc, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
   }
-
 }

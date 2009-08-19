@@ -21,5 +21,4 @@ public class ToListOperation extends NoArgumentsSequenceOperation {
   public static ToListOperation newInstance(SModel sm) {
     return ToListOperation.newInstance(sm, false);
   }
-
 }

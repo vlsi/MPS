@@ -24,7 +24,6 @@ public class QuickFixArgumentReference extends Expression {
     super.setReferent(QuickFixArgumentReference.QUICK_FIX_ARGUMENT, node);
   }
 
-
   public static QuickFixArgumentReference newInstance(SModel sm, boolean init) {
     return (QuickFixArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class QuickFixArgumentReference extends Expression {
   public static QuickFixArgumentReference newInstance(SModel sm) {
     return QuickFixArgumentReference.newInstance(sm, false);
   }
-
 }

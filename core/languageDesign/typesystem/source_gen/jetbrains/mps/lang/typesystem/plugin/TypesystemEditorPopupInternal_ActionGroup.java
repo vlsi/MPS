@@ -26,5 +26,4 @@ public class TypesystemEditorPopupInternal_ActionGroup extends GeneratedActionGr
   public void adjust() {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
-
 }

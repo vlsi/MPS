@@ -12,7 +12,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptReference_concept_ReferentConstraint implements IModelConstraints, INodeReferentSetEventHandler {
-
   public ConceptReference_concept_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class ConceptReference_concept_ReferentConstraint implements IModelConstr
       }
     }
   }
-
 }

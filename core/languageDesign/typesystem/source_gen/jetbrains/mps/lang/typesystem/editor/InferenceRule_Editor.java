@@ -40,7 +40,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InferenceRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8985_0(editorContext, node);
   }
@@ -393,13 +392,11 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8985_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "childTypeRestriction", true)).isNotEmpty();
   }
 
   private static class dependencyListHandler_8985_0 extends RefNodeListHandler {
-
     public dependencyListHandler_8985_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -439,10 +436,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class childTypeRestrictionListHandler_8985_0 extends RefNodeListHandler {
-
     public childTypeRestrictionListHandler_8985_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -482,10 +478,9 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class InferenceRule_name_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public InferenceRule_name_cellMenu0() {
     }
 
@@ -500,7 +495,5 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       }
       return result;
     }
-
-}
-
+  }
 }

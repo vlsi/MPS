@@ -22,5 +22,4 @@ public class InitTabBlock extends ConceptFunction {
   public static InitTabBlock newInstance(SModel sm) {
     return InitTabBlock.newInstance(sm, false);
   }
-
 }

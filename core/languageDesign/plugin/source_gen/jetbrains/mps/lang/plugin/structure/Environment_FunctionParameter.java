@@ -22,5 +22,4 @@ public class Environment_FunctionParameter extends ConceptFunctionParameter {
   public static Environment_FunctionParameter newInstance(SModel sm) {
     return Environment_FunctionParameter.newInstance(sm, false);
   }
-
 }

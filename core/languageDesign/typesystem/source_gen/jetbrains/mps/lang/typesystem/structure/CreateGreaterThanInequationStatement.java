@@ -21,5 +21,4 @@ public class CreateGreaterThanInequationStatement extends AbstractInequationStat
   public static CreateGreaterThanInequationStatement newInstance(SModel sm) {
     return CreateGreaterThanInequationStatement.newInstance(sm, false);
   }
-
 }

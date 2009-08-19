@@ -57,7 +57,6 @@ public class MatchStatement extends Statement {
     this.insertChild(prev, MatchStatement.ITEM, node);
   }
 
-
   public static MatchStatement newInstance(SModel sm, boolean init) {
     return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -65,5 +64,4 @@ public class MatchStatement extends Statement {
   public static MatchStatement newInstance(SModel sm) {
     return MatchStatement.newInstance(sm, false);
   }
-
 }

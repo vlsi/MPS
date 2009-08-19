@@ -32,7 +32,6 @@ public class GroupDeclaration extends Declaration {
     super.setChild(GroupDeclaration.GROUP_EXPRESSION, node);
   }
 
-
   public static GroupDeclaration newInstance(SModel sm, boolean init) {
     return (GroupDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class GroupDeclaration extends Declaration {
   public static GroupDeclaration newInstance(SModel sm) {
     return GroupDeclaration.newInstance(sm, false);
   }
-
 }

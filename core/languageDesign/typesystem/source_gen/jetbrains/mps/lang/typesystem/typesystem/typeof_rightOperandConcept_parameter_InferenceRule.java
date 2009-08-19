@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_rightOperandConcept_parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_rightOperandConcept_parameter_InferenceRule() {
   }
 
@@ -30,8 +29,7 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1097880957047046565", true), (SNode)new _Quotations.QuotationClass_51().createNode(typeCheckingContext.getEquationManager().getRepresentator(C_typevar_1097880957047046546), typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1097880957047046558", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = concept_parameter;
         BaseIntentionProvider intentionProvider = null;
@@ -51,5 +49,4 @@ public class typeof_rightOperandConcept_parameter_InferenceRule extends Abstract
   public boolean overrides() {
     return true;
   }
-
 }

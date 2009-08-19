@@ -51,7 +51,6 @@ public class RemoveAtElementOperation extends SequenceOperation implements IList
     super.setChild(RemoveAtElementOperation.INDEX, node);
   }
 
-
   public static RemoveAtElementOperation newInstance(SModel sm, boolean init) {
     return (RemoveAtElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class RemoveAtElementOperation extends SequenceOperation implements IList
   public static RemoveAtElementOperation newInstance(SModel sm) {
     return RemoveAtElementOperation.newInstance(sm, false);
   }
-
 }

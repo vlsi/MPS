@@ -37,7 +37,6 @@ public class SimpleShortcutChange extends ShortcutChange {
     this.insertChild(prev, SimpleShortcutChange.KEYSTROKE, node);
   }
 
-
   public static SimpleShortcutChange newInstance(SModel sm, boolean init) {
     return (SimpleShortcutChange)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SimpleShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -45,5 +44,4 @@ public class SimpleShortcutChange extends ShortcutChange {
   public static SimpleShortcutChange newInstance(SModel sm) {
     return SimpleShortcutChange.newInstance(sm, false);
   }
-
 }

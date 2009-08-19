@@ -21,5 +21,4 @@ public class GetFirstOperation extends NoArgumentsSequenceOperation {
   public static GetFirstOperation newInstance(SModel sm) {
     return GetFirstOperation.newInstance(sm, false);
   }
-
 }

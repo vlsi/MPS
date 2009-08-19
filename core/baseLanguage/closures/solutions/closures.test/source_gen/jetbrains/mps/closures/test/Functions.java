@@ -5,13 +5,11 @@ package jetbrains.mps.closures.test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Functions {
-
   public Functions() {
   }
 
   public static _FunctionTypes._return_P1_E0<? extends String, ? super Integer> value() {
-    return new _FunctionTypes._return_P1_E0 <String, Integer>() {
-
+    return new _FunctionTypes._return_P1_E0<String, Integer>() {
       public String invoke(Integer i) {
         return String.valueOf(i);
       }
@@ -19,12 +17,10 @@ public class Functions {
   }
 
   public static _FunctionTypes._return_P1_E0<? extends String, ? super Integer> underscore() {
-    return new _FunctionTypes._return_P1_E0 <String, Integer>() {
-
+    return new _FunctionTypes._return_P1_E0<String, Integer>() {
       public String invoke(Integer i) {
         return "_" + i;
       }
     };
   }
-
 }

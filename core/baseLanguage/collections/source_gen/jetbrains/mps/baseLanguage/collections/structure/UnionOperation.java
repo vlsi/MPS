@@ -21,5 +21,4 @@ public class UnionOperation extends BinaryOperation {
   public static UnionOperation newInstance(SModel sm) {
     return UnionOperation.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class PropertyRefType extends Type {
   public static PropertyRefType newInstance(SModel sm) {
     return PropertyRefType.newInstance(sm, false);
   }
-
 }

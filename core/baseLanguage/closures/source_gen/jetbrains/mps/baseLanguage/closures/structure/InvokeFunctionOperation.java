@@ -67,7 +67,6 @@ public class InvokeFunctionOperation extends BaseConcept implements IOperation {
     this.insertChild(prev, InvokeFunctionOperation.PARAMETER, node);
   }
 
-
   public static InvokeFunctionOperation newInstance(SModel sm, boolean init) {
     return (InvokeFunctionOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -75,5 +74,4 @@ public class InvokeFunctionOperation extends BaseConcept implements IOperation {
   public static InvokeFunctionOperation newInstance(SModel sm) {
     return InvokeFunctionOperation.newInstance(sm, false);
   }
-
 }

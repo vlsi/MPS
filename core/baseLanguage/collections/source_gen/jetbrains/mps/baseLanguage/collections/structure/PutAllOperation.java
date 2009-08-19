@@ -24,7 +24,6 @@ public class PutAllOperation extends MapOperation {
     super.setChild(PutAllOperation.MAP, node);
   }
 
-
   public static PutAllOperation newInstance(SModel sm, boolean init) {
     return (PutAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PutAllOperation extends MapOperation {
   public static PutAllOperation newInstance(SModel sm) {
     return PutAllOperation.newInstance(sm, false);
   }
-
 }

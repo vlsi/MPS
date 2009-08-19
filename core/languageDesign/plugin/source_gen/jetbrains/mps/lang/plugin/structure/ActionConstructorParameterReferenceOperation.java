@@ -61,7 +61,6 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
     this.setMember(node);
   }
 
-
   public static ActionConstructorParameterReferenceOperation newInstance(SModel sm, boolean init) {
     return (ActionConstructorParameterReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructorParameterReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ActionConstructorParameterReferenceOperation extends BaseConcept im
   public static ActionConstructorParameterReferenceOperation newInstance(SModel sm) {
     return ActionConstructorParameterReferenceOperation.newInstance(sm, false);
   }
-
 }

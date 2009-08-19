@@ -22,5 +22,4 @@ public enum Keys {
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.closures.generator." + str;
   }
-
 }

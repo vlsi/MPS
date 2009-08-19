@@ -22,5 +22,4 @@ public class MessageTarget extends BaseConcept {
   public static MessageTarget newInstance(SModel sm) {
     return MessageTarget.newInstance(sm, false);
   }
-
 }

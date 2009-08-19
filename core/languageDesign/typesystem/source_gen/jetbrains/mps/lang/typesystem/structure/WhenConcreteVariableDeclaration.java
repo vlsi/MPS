@@ -22,5 +22,4 @@ public class WhenConcreteVariableDeclaration extends VariableDeclaration {
   public static WhenConcreteVariableDeclaration newInstance(SModel sm) {
     return WhenConcreteVariableDeclaration.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class Extension extends ContentItem {
     super.setChild(Extension.TYPE_EXPRESSION_LIST, node);
   }
 
-
   public static Extension newInstance(SModel sm, boolean init) {
     return (Extension)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Extension", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Extension extends ContentItem {
   public static Extension newInstance(SModel sm) {
     return Extension.newInstance(sm, false);
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 
 public class ListMigrationUtil {
-
   public ListMigrationUtil() {
   }
 
@@ -134,5 +133,4 @@ public class ListMigrationUtil {
     }
     return false;
   }
-
 }

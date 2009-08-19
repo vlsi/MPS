@@ -11,17 +11,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 
 public class Union_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_union1() throws Exception {
-    Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s1 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -58,14 +54,11 @@ __switch__:
         };
       }
     });
-    Iterable<Integer> s2 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> s2 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -118,5 +111,4 @@ __switch__:
     Iterable<Integer> s4 = Sequence.fromIterable(s1).union(null);
     Assert.assertNull(Sequence.fromIterable(s4).first());
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_PatternVariableReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_PatternVariableReference_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class typeof_PatternVariableReference_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return false;
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public map_extends_java_util_Map_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-
 }

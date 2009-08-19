@@ -21,5 +21,4 @@ public class GetIndexOfOperation extends SingleArgumentSequenceOperation {
   public static GetIndexOfOperation newInstance(SModel sm) {
     return GetIndexOfOperation.newInstance(sm, false);
   }
-
 }

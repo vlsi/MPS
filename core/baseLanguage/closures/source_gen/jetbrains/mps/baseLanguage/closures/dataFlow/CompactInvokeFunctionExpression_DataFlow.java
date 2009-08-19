@@ -9,15 +9,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CompactInvokeFunctionExpression_DataFlow extends DataFlowBuilder {
-
   public CompactInvokeFunctionExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "function", true));
-    for(SNode p : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
+    for (SNode p : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
       _context.getBuilder().build((SNode)p);
     }
   }
-
 }

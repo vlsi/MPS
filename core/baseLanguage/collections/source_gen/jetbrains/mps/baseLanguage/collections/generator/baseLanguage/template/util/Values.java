@@ -31,7 +31,7 @@ public enum Values {
 
 
   public static void copy(SNode from, SNode to) {
-    for(Values val : Values.values()) {
+    for (Values val : Values.values()) {
       val.set(to, val.get(from));
     }
   }
@@ -39,5 +39,4 @@ public enum Values {
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.collections.generator." + str;
   }
-
 }

@@ -43,7 +43,6 @@ public class SequenceOperation extends BaseConcept implements IOperation {
     this.setProperty(SequenceOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static SequenceOperation newInstance(SModel sm, boolean init) {
     return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class SequenceOperation extends BaseConcept implements IOperation {
   public static SequenceOperation newInstance(SModel sm) {
     return SequenceOperation.newInstance(sm, false);
   }
-
 }

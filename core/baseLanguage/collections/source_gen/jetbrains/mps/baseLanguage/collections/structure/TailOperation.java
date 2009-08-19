@@ -21,5 +21,4 @@ public class TailOperation extends ChunkOperation {
   public static TailOperation newInstance(SModel sm) {
     return TailOperation.newInstance(sm, false);
   }
-
 }

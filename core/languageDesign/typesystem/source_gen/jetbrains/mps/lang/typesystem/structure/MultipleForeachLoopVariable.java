@@ -35,7 +35,6 @@ public class MultipleForeachLoopVariable extends BaseConcept {
     super.setChild(MultipleForeachLoopVariable.ITERABLE, node);
   }
 
-
   public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
     return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   public static MultipleForeachLoopVariable newInstance(SModel sm) {
     return MultipleForeachLoopVariable.newInstance(sm, false);
   }
-
 }

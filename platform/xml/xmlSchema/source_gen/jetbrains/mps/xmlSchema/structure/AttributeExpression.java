@@ -21,5 +21,4 @@ public class AttributeExpression extends TypeExpression {
   public static AttributeExpression newInstance(SModel sm) {
     return AttributeExpression.newInstance(sm, false);
   }
-
 }

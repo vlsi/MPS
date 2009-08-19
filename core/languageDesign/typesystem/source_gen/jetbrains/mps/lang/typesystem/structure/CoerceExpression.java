@@ -33,7 +33,6 @@ public class CoerceExpression extends Expression {
     super.setChild(CoerceExpression.NODE_TO_COERCE, node);
   }
 
-
   public static CoerceExpression newInstance(SModel sm, boolean init) {
     return (CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class CoerceExpression extends Expression {
   public static CoerceExpression newInstance(SModel sm) {
     return CoerceExpression.newInstance(sm, false);
   }
-
 }

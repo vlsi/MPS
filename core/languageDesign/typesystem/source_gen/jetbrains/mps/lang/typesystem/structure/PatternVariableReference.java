@@ -25,7 +25,6 @@ public class PatternVariableReference extends Expression {
     super.setReferent(PatternVariableReference.PATTERN_VAR_DECL, node);
   }
 
-
   public static PatternVariableReference newInstance(SModel sm, boolean init) {
     return (PatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class PatternVariableReference extends Expression {
   public static PatternVariableReference newInstance(SModel sm) {
     return PatternVariableReference.newInstance(sm, false);
   }
-
 }

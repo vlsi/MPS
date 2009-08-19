@@ -15,14 +15,13 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_InvokeFunctionOperation_InferenceRule() {
   }
 
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext) {
     List<SNode> ptypes1 = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> ptypes2 = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
+    for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
       final SNode T_typevar_1240926882799 = typeCheckingContext.createNewRuntimeTypesVariable();
       ListSequence.fromList(ptypes1).addElement(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1240926882799));
       ListSequence.fromList(ptypes2).addElement(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_1240926882799));
@@ -57,5 +56,4 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-
 }

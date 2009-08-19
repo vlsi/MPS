@@ -25,7 +25,6 @@ public class StatementElement extends Content {
     super.setChild(StatementElement.STATEMENT_LIST, node);
   }
 
-
   public static StatementElement newInstance(SModel sm, boolean init) {
     return (StatementElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.StatementElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class StatementElement extends Content {
   public static StatementElement newInstance(SModel sm) {
     return StatementElement.newInstance(sm, false);
   }
-
 }

@@ -38,7 +38,6 @@ public class SimpleRulesContainer extends BaseConcept {
     this.insertChild(prev, SimpleRulesContainer.SIMPLE_RULE, node);
   }
 
-
   public static SimpleRulesContainer newInstance(SModel sm, boolean init) {
     return (SimpleRulesContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRulesContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class SimpleRulesContainer extends BaseConcept {
   public static SimpleRulesContainer newInstance(SModel sm) {
     return SimpleRulesContainer.newInstance(sm, false);
   }
-
 }

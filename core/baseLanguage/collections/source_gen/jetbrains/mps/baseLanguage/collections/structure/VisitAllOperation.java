@@ -23,7 +23,6 @@ public class VisitAllOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static VisitAllOperation newInstance(SModel sm, boolean init) {
     return (VisitAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class VisitAllOperation extends InternalSequenceOperation {
   public static VisitAllOperation newInstance(SModel sm) {
     return VisitAllOperation.newInstance(sm, false);
   }
-
 }

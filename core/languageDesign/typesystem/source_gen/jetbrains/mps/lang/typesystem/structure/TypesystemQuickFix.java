@@ -93,7 +93,6 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
     this.insertChild(prev, TypesystemQuickFix.QUICK_FIX_ARGUMENT, node);
   }
 
-
   public static TypesystemQuickFix newInstance(SModel sm, boolean init) {
     return (TypesystemQuickFix)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -101,5 +100,4 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   public static TypesystemQuickFix newInstance(SModel sm) {
     return TypesystemQuickFix.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class GetComponentBlock extends ConceptFunction {
   public static GetComponentBlock newInstance(SModel sm) {
     return GetComponentBlock.newInstance(sm, false);
   }
-
 }

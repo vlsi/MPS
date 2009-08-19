@@ -15,8 +15,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 
 public class NullEmpty_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_nullFirstLast() throws Exception {
     if (Sequence.NULL_WHEN_EMPTY) {
       Iterable<Integer> emptySeq = Sequence.fromIterable(Collections.<Integer>emptyList());
@@ -30,7 +29,7 @@ public class NullEmpty_Test extends Util_Test {
     }
   }
 
-  @Test()
+  @Test
   public void test_nullAddAll() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     List<Integer> nullList = null;
@@ -41,5 +40,4 @@ public class NullEmpty_Test extends Util_Test {
     ListSequence.fromList(test).addSequence(SetSequence.fromSet(nullSet));
     this.assertIterableEqualsAsSet(this.expect5(), test2);
   }
-
 }

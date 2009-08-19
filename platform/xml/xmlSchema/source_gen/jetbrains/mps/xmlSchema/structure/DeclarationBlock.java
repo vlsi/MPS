@@ -59,7 +59,6 @@ public class DeclarationBlock extends BaseConcept {
     this.insertChild(prev, DeclarationBlock.DECLARATION, node);
   }
 
-
   public static DeclarationBlock newInstance(SModel sm, boolean init) {
     return (DeclarationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.DeclarationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class DeclarationBlock extends BaseConcept {
   public static DeclarationBlock newInstance(SModel sm) {
     return DeclarationBlock.newInstance(sm, false);
   }
-
 }

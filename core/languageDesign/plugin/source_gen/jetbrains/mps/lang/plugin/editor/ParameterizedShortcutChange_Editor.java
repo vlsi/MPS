@@ -28,7 +28,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1789_0(editorContext, node);
   }
@@ -51,10 +50,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_1789_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         StringBuilder params = new StringBuilder();
-        for(SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "parameter", true))) {
+        for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "action", false), "parameter", true))) {
           params.append(SPropertyOperations.getString(param, "name"));
           params.append(", ");
         }
@@ -97,7 +95,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1789_0 extends AbstractCellProvider {
-
     public _Inline1789_0() {
       super();
     }
@@ -128,7 +125,5 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

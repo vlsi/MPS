@@ -7,12 +7,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
 public class TypeVarDeclaration_DataFlow extends DataFlowBuilder {
-
   public TypeVarDeclaration_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode());
   }
-
 }

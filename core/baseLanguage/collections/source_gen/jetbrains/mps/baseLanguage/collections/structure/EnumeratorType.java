@@ -24,7 +24,6 @@ public class EnumeratorType extends Type {
     super.setChild(EnumeratorType.ELEMENT_TYPE, node);
   }
 
-
   public static EnumeratorType newInstance(SModel sm, boolean init) {
     return (EnumeratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class EnumeratorType extends Type {
   public static EnumeratorType newInstance(SModel sm) {
     return EnumeratorType.newInstance(sm, false);
   }
-
 }

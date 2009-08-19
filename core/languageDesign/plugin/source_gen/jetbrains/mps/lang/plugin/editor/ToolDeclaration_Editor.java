@@ -45,7 +45,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class ToolDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4170_7(editorContext, node);
   }
@@ -56,8 +55,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_4170_6(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_4170_7(editorContext, node);
     }
     return editorCell;
@@ -338,8 +336,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createImage_4170_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
-
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, "icon");
       }
@@ -351,7 +348,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_4170_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return "Alt-" + SPropertyOperations.getString(node, "number");
       }
@@ -530,7 +526,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4170_0(SNode node, EditorContext editorContext, IScope scope) {
     return ToolDeclaration_Behavior.call_hasNumber_1213877425741(node);
   }
@@ -557,7 +552,6 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class fieldDeclarationListHandler_4170_0 extends RefNodeListHandler {
-
     public fieldDeclarationListHandler_4170_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -597,10 +591,9 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class methodDeclarationListHandler_4170_0 extends RefNodeListHandler {
-
     public methodDeclarationListHandler_4170_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -647,7 +640,5 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

@@ -79,5 +79,4 @@ public class BaseConcept_Behavior {
   public static int callSuper_getChildMetaLevel_3981318653438239103(SNode thisNode, String callerConceptFqName) {
     return (Integer)BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.BaseConcept"), callerConceptFqName, "virtual_getChildMetaLevel_3981318653438239103", PARAMETERS_3981318653438239103);
   }
-
 }

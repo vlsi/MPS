@@ -21,8 +21,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 public class Map_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_mapMethod() throws Exception {
     IMapSequence<Integer, String> map = MapSequence.fromMap(new HashMap<Integer, String>());
     map.put(1, "a");
@@ -33,35 +32,35 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(Arrays.asList("a", "b", "c"), map.values());
   }
 
-  @Test()
+  @Test
   public void test_mapInitializer() throws Exception {
     Map<Integer, String> map = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     List<String> values = Arrays.asList("a", "b", "c");
-    for(Integer i : Arrays.asList(1, 2, 3)) {
+    for (Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
       Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
     }
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3), MapSequence.fromMap(map).keySet());
-    for(Integer i : Arrays.asList(1, 2, 3)) {
+    for (Integer i : Arrays.asList(1, 2, 3)) {
       MapSequence.fromMap(map).remove(i);
     }
-    for(Integer i : Arrays.asList(1, 2, 3)) {
+    for (Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertFalse(MapSequence.fromMap(map).containsKey(i));
       Assert.assertFalse(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
     }
   }
 
-  @Test()
+  @Test
   public void test_mapNoInitializer() throws Exception {
     Map<Integer, String> map = MapSequence.fromMap(new HashMap<Integer, String>());
     List<String> values = Arrays.asList("a", "b", "c");
     Integer idx = 1;
-    for(String val : values) {
+    for (String val : values) {
       MapSequence.fromMap(map).put(idx, val);
       idx++ ;
     }
-    for(Integer i : Arrays.asList(1, 2, 3)) {
+    for (Integer i : Arrays.asList(1, 2, 3)) {
       Assert.assertTrue(MapSequence.fromMap(map).containsKey(i));
       Assert.assertTrue(MapSequence.fromMap(map).containsValue(values.get(i - 1)));
       Assert.assertEquals(values.get(i - 1), MapSequence.fromMap(map).get(i));
@@ -70,7 +69,7 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(Arrays.asList("a", "b", "c"), MapSequence.fromMap(map).values());
   }
 
-  @Test()
+  @Test
   public void test_clear() throws Exception {
     Map<Integer, String> map1 = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     Assert.assertFalse(SetSequence.fromSet(MapSequence.fromMap(map1).keySet()).isEmpty());
@@ -80,17 +79,17 @@ public class Map_Test extends Util_Test {
     Assert.assertTrue(Sequence.fromIterable(MapSequence.fromMap(map1).values()).isEmpty());
   }
 
-  @Test()
+  @Test
   public void test_primitiveParameter() throws Exception {
     Map<Integer, Character> ascii = MapSequence.<Integer, Character>fromKeysArray(48, 49, 50).withValues('0', '1', '2');
     Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
-    for(int k : Sequence.fromIterable(keys)) {
+    for (int k : Sequence.fromIterable(keys)) {
       Assert.assertEquals(Character.valueOf((char)k), MapSequence.fromMap(ascii).get(k));
     }
   }
 
-  @Test()
+  @Test
   public void test_array() throws Exception {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
@@ -99,7 +98,7 @@ public class Map_Test extends Util_Test {
     Assert.assertSame(2, array.length);
   }
 
-  @Test()
+  @Test
   public void test_arrayOfString() throws Exception {
     Map<String, String[]> test = MapSequence.<String, String[]>fromKeysArray("foo").withValues(new String[]{"bar","baz"});
     Iterable<String> seq = MapSequence.fromMap(test).keySet();
@@ -108,27 +107,27 @@ public class Map_Test extends Util_Test {
     Assert.assertSame(2, array.length);
   }
 
-  @Test()
+  @Test
   public void test_contains() throws Exception {
   }
 
-  @Test()
+  @Test
   public void test_mps4050() throws Exception {
     /*
       Map<Foo, List<Bar>> mmap = MapSequence.fromMap(new HashMap<Foo, List<Bar>>());
-      for(List<Bar> lst : Sequence.fromIterable(mmap.values())) {
+      for (List<Bar> lst : Sequence.fromIterable(mmap.values())) {
         lst.<!TextGen not found for 'jetbrains.mps.baseLanguage.structure.AbstractOperation'!>;
       }
     */
   }
 
-  @Test()
+  @Test
   public void test_toString() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1).withValues("a");
     Assert.assertEquals("[1=a]", String.valueOf(test));
   }
 
-  @Test()
+  @Test
   public void test_mappings() throws Exception {
     Map<Integer, String> test = MapSequence.<Integer, String>fromKeysArray(1, 2, 3).withValues("a", "b", "c");
     List<Integer> nums = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -151,7 +150,7 @@ public class Map_Test extends Util_Test {
     Assert.assertTrue(ListSequence.fromList(nums).isEmpty());
   }
 
-  @Test()
+  @Test
   public void test_mapIsASequence() throws Exception {
     Map<String, Integer> test = MapSequence.<String, Integer>fromKeysArray("a", "b", "c").withValues(1, 2, 3);
     Iterable<IMapping<String, Integer>> seq = MapSequence.fromMap(test);
@@ -163,7 +162,7 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(seq, seq2);
   }
 
-  @Test()
+  @Test
   public void test_putAll() throws Exception {
     Map<String, String> map = MapSequence.<String, String>fromKeysArray("a", "b", "c").withValues("A", "B", "C");
     Map<String, String> test = MapSequence.fromMap(new HashMap<String, String>());
@@ -174,5 +173,4 @@ public class Map_Test extends Util_Test {
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).keySet(), MapSequence.fromMap(test).keySet());
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(map).mappingsSet(), MapSequence.fromMap(test).mappingsSet());
   }
-
 }

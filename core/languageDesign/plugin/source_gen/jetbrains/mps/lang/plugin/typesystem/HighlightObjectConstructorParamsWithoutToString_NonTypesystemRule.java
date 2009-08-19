@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule() {
   }
 
@@ -41,5 +40,4 @@ public class HighlightObjectConstructorParamsWithoutToString_NonTypesystemRule e
   public boolean overrides() {
     return false;
   }
-
 }

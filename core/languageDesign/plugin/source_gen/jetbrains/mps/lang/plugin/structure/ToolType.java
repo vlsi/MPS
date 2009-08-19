@@ -24,7 +24,6 @@ public class ToolType extends BaseClassifierType {
     super.setReferent(ToolType.TOOL, node);
   }
 
-
   public static ToolType newInstance(SModel sm, boolean init) {
     return (ToolType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ToolType extends BaseClassifierType {
   public static ToolType newInstance(SModel sm) {
     return ToolType.newInstance(sm, false);
   }
-
 }

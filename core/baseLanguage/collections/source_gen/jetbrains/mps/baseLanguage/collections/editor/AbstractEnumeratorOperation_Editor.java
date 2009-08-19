@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AbstractEnumeratorOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0283_0(editorContext, node);
   }
@@ -42,5 +41,4 @@ public class AbstractEnumeratorOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

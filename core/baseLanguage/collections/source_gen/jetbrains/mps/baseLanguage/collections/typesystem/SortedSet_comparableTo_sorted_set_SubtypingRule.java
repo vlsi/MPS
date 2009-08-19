@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_9 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_9 myMatchingPattern;
 
   public SortedSet_comparableTo_sorted_set_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   public boolean isWeak() {
     return true;
   }
-
 }

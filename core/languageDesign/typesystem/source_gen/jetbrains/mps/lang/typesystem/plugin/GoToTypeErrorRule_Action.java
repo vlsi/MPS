@@ -28,7 +28,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt R";
   }
@@ -38,7 +38,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -50,7 +50,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,7 +70,7 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(GoToTypeErrorRule_Action.this.node);
       GoToTypeErrorRuleUtil.goToTypeErrorRule(GoToTypeErrorRule_Action.this.operationContext, error);
@@ -78,5 +78,4 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }
   }
-
 }

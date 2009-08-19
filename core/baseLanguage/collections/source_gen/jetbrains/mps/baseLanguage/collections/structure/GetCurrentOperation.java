@@ -21,5 +21,4 @@ public class GetCurrentOperation extends AbstractEnumeratorOperation {
   public static GetCurrentOperation newInstance(SModel sm) {
     return GetCurrentOperation.newInstance(sm, false);
   }
-
 }

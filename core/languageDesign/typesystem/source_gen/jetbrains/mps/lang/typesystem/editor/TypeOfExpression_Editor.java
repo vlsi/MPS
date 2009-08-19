@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TypeOfExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6237_0(editorContext, node);
   }
@@ -55,8 +54,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator <Color>() {
-
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return TypeOfExpression_Editor._StyleParameter_QueryFunction_6237_0((cell == null ?
             null :
@@ -131,14 +129,11 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static Color _StyleParameter_QueryFunction_6237_0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
-    } else
-    {
+    } else {
       return MPSColors.DARK_BLUE;
     }
   }
-
 }

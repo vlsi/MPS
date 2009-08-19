@@ -21,5 +21,4 @@ public class QueueType extends AbstractContainerType {
   public static QueueType newInstance(SModel sm) {
     return QueueType.newInstance(sm, false);
   }
-
 }

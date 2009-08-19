@@ -21,5 +21,4 @@ public class DoUpdateBlock extends UpdateBlock {
   public static DoUpdateBlock newInstance(SModel sm) {
     return DoUpdateBlock.newInstance(sm, false);
   }
-
 }

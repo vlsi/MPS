@@ -79,7 +79,6 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
     super.setChild(ReportErrorStatement.MESSAGE_TARGET, node);
   }
 
-
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
     return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   public static ReportErrorStatement newInstance(SModel sm) {
     return ReportErrorStatement.newInstance(sm, false);
   }
-
 }

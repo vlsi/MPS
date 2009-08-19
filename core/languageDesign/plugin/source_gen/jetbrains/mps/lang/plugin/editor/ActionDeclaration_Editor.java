@@ -43,7 +43,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ActionDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0824_14(editorContext, node);
   }
@@ -54,8 +53,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_0824_10(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_0824_9(editorContext, node);
     }
     return editorCell;
@@ -534,8 +532,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createImage_0824_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
-
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, "iconPath");
       }
@@ -783,7 +780,6 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0824_0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
     IModule module = EditorUtil.findAnchorModule(node);
@@ -806,7 +802,6 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class placesListHandler_0824_0 extends RefNodeListHandler {
-
     public placesListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -853,10 +848,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class constructionParameterListHandler_0824_0 extends RefNodeListHandler {
-
     public constructionParameterListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -896,10 +890,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class parameterListHandler_0824_0 extends RefNodeListHandler {
-
     public parameterListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -939,10 +932,9 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class methodDeclarationListHandler_0824_0 extends RefNodeListHandler {
-
     public methodDeclarationListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -982,7 +974,5 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

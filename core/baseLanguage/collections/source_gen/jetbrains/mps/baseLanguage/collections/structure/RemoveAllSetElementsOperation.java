@@ -24,7 +24,6 @@ public class RemoveAllSetElementsOperation extends AbstractSetOperation {
     super.setChild(RemoveAllSetElementsOperation.ARGUMENT, node);
   }
 
-
   public static RemoveAllSetElementsOperation newInstance(SModel sm, boolean init) {
     return (RemoveAllSetElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RemoveAllSetElementsOperation extends AbstractSetOperation {
   public static RemoveAllSetElementsOperation newInstance(SModel sm) {
     return RemoveAllSetElementsOperation.newInstance(sm, false);
   }
-
 }

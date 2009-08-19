@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class SequenceCreator_DataFlow extends DataFlowBuilder {
-
   public SequenceCreator_DataFlow() {
   }
 
@@ -20,5 +19,4 @@ public class SequenceCreator_DataFlow extends DataFlowBuilder {
       }
     }
   }
-
 }

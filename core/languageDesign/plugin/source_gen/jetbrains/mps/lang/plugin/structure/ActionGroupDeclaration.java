@@ -130,7 +130,6 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
     this.insertChild(prev, ActionGroupDeclaration.MODIFIER, node);
   }
 
-
   public static ActionGroupDeclaration newInstance(SModel sm, boolean init) {
     return (ActionGroupDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -138,5 +137,4 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   public static ActionGroupDeclaration newInstance(SModel sm) {
     return ActionGroupDeclaration.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class SimpleRule_Annotated_Parameter extends Expression {
   public static SimpleRule_Annotated_Parameter newInstance(SModel sm) {
     return SimpleRule_Annotated_Parameter.newInstance(sm, false);
   }
-
 }

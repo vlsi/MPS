@@ -24,7 +24,6 @@ public class HeadMapOperation extends SortedMapOperation {
     super.setChild(HeadMapOperation.TO_KEY, node);
   }
 
-
   public static HeadMapOperation newInstance(SModel sm, boolean init) {
     return (HeadMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class HeadMapOperation extends SortedMapOperation {
   public static HeadMapOperation newInstance(SModel sm) {
     return HeadMapOperation.newInstance(sm, false);
   }
-
 }

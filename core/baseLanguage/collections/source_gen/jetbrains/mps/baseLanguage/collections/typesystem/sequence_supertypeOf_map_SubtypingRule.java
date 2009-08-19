@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public sequence_supertypeOf_map_SubtypingRule() {
   }
 
@@ -30,5 +29,4 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
   public boolean isWeak() {
     return false;
   }
-
 }

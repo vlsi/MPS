@@ -41,7 +41,6 @@ public class RemoveAllElementsOperation extends SingleArgumentSequenceOperation 
     this.setProperty(RemoveAllElementsOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static RemoveAllElementsOperation newInstance(SModel sm, boolean init) {
     return (RemoveAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class RemoveAllElementsOperation extends SingleArgumentSequenceOperation 
   public static RemoveAllElementsOperation newInstance(SModel sm) {
     return RemoveAllElementsOperation.newInstance(sm, false);
   }
-
 }

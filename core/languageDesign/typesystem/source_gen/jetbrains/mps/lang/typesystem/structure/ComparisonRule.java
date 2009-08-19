@@ -23,7 +23,6 @@ public class ComparisonRule extends AbstractSubtypingRule {
     super.setChild(ComparisonRule.ANOTHER_NODE, node);
   }
 
-
   public static ComparisonRule newInstance(SModel sm, boolean init) {
     return (ComparisonRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ComparisonRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ComparisonRule extends AbstractSubtypingRule {
   public static ComparisonRule newInstance(SModel sm) {
     return ComparisonRule.newInstance(sm, false);
   }
-
 }

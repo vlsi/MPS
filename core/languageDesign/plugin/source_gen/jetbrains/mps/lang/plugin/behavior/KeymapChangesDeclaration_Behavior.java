@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class KeymapChangesDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,5 +18,4 @@ public class KeymapChangesDeclaration_Behavior {
   public static String call_getGeneratedClassFQName_6277721878946468954(SNode thisNode) {
     return SNodeOperations.getModel(thisNode).getLongName() + "." + KeymapChangesDeclaration_Behavior.call_getGeneratedName_6277721878946468943(thisNode);
   }
-
 }

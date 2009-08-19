@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class YieldAllStatement_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return true;
   }
-
 }

@@ -14,5 +14,4 @@ public class MeetAnnotation_AnnotationLink {
   public static MeetContainer getMeetAnnotation(BaseConcept source) {
     return (MeetContainer)source.getAttribute(MeetAnnotation_AnnotationLink.MEET_ANNOTATION);
   }
-
 }

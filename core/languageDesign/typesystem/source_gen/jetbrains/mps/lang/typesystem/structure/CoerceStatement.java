@@ -53,7 +53,6 @@ public class CoerceStatement extends Statement {
     super.setChild(CoerceStatement.ELSE_CLAUSE, node);
   }
 
-
   public static CoerceStatement newInstance(SModel sm, boolean init) {
     return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class CoerceStatement extends Statement {
   public static CoerceStatement newInstance(SModel sm) {
     return CoerceStatement.newInstance(sm, false);
   }
-
 }

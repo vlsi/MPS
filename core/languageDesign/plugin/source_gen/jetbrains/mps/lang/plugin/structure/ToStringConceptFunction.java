@@ -22,5 +22,4 @@ public class ToStringConceptFunction extends ConceptFunction {
   public static ToStringConceptFunction newInstance(SModel sm) {
     return ToStringConceptFunction.newInstance(sm, false);
   }
-
 }

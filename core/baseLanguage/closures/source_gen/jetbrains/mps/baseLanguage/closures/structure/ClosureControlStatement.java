@@ -58,7 +58,6 @@ public class ClosureControlStatement extends Statement {
     this.insertChild(prev, ClosureControlStatement.ACTUAL_PARAMETER, node);
   }
 
-
   public static ClosureControlStatement newInstance(SModel sm, boolean init) {
     return (ClosureControlStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -66,5 +65,4 @@ public class ClosureControlStatement extends Statement {
   public static ClosureControlStatement newInstance(SModel sm) {
     return ClosureControlStatement.newInstance(sm, false);
   }
-
 }

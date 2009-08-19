@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8986_0(editorContext, node);
   }
@@ -175,13 +174,11 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8986_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isNotEmpty();
   }
 
   private static class parameterTypeListHandler_8986_0 extends RefNodeListHandler {
-
     public parameterTypeListHandler_8986_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -243,10 +240,9 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class throwsTypeListHandler_8986_0 extends RefNodeListHandler {
-
     public throwsTypeListHandler_8986_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -293,7 +289,5 @@ public class UnrestrictedFunctionType_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

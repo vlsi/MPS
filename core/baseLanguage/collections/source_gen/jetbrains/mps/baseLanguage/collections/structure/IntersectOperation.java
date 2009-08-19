@@ -21,5 +21,4 @@ public class IntersectOperation extends BinaryOperation {
   public static IntersectOperation newInstance(SModel sm) {
     return IntersectOperation.newInstance(sm, false);
   }
-
 }

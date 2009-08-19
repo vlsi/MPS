@@ -22,5 +22,4 @@ public class SmartClosureParameterDeclaration extends UnboundClosureParameterDec
   public static SmartClosureParameterDeclaration newInstance(SModel sm) {
     return SmartClosureParameterDeclaration.newInstance(sm, false);
   }
-
 }

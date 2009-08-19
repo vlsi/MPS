@@ -79,7 +79,6 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
     this.insertChild(prev, ClosureLiteral.PARAMETER, node);
   }
 
-
   public static ClosureLiteral newInstance(SModel sm, boolean init) {
     return (ClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public static ClosureLiteral newInstance(SModel sm) {
     return ClosureLiteral.newInstance(sm, false);
   }
-
 }

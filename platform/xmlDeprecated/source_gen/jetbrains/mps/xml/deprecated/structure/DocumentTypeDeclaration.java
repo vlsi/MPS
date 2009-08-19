@@ -61,7 +61,6 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
     super.setChild(DocumentTypeDeclaration.EXTERNAL_I_D, node);
   }
 
-
   public static DocumentTypeDeclaration newInstance(SModel sm, boolean init) {
     return (DocumentTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.DocumentTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class DocumentTypeDeclaration extends BaseConcept implements INamedConcep
   public static DocumentTypeDeclaration newInstance(SModel sm) {
     return DocumentTypeDeclaration.newInstance(sm, false);
   }
-
 }

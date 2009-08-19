@@ -15,13 +15,11 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import junit.framework.Assert;
 
 public class VisitAll_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_visitAllMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     final ArrayList<Integer> res = new ArrayList<Integer>();
-    seq.visitAll(new IVisitor <Integer>() {
-
+    seq.visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
         res.add(i * 2);
       }
@@ -29,12 +27,11 @@ public class VisitAll_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), res);
   }
 
-  @Test()
+  @Test
   public void test_visitorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     final ArrayList<Integer> res = new ArrayList<Integer>();
-    IVisitor<Integer> visitor = new IVisitor <Integer>() {
-
+    IVisitor<Integer> visitor = new IVisitor<Integer>() {
       public void visit(Integer i) {
         res.add(i * 2);
       }
@@ -43,11 +40,10 @@ public class VisitAll_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), res);
   }
 
-  @Test()
+  @Test
   public void test_visitOperation() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
-    Sequence.fromIterable(this.input5()).visitAll(new IVisitor <Integer>() {
-
+    Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
         res.add(it * 2);
       }
@@ -55,11 +51,10 @@ public class VisitAll_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), res);
   }
 
-  @Test()
+  @Test
   public void test_legacyForEach() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
-    Sequence.fromIterable(this.input5()).visitAll(new IVisitor <Integer>() {
-
+    Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
         res.add(it * 2);
       }
@@ -67,11 +62,10 @@ public class VisitAll_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), res);
   }
 
-  @Test()
+  @Test
   public void test_skipStop() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
-    Sequence.fromIterable(this.input10()).visitAll(new IVisitor <Integer>() {
-
+    Sequence.fromIterable(this.input10()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
 __skip__:
         do {
@@ -87,8 +81,7 @@ __skip__:
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
     res.clear();
-    Sequence.fromIterable(this.input10()).visitAll(new IVisitor <Integer>() {
-
+    Sequence.fromIterable(this.input10()).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
 __skip__:
         do {
@@ -105,12 +98,11 @@ __skip__:
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
   }
 
-  @Test()
+  @Test
   public void test_parameterizedAdaptation() throws Exception {
     List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "BB", "CCC", "DDDD");
     final Wrappers._int len = new Wrappers._int(0);
-    this.forEach(ls, new IVisitor <String>() {
-
+    this.forEach(ls, new IVisitor<String>() {
       public void visit(String s) {
         len.value += s.length();
       }
@@ -118,12 +110,11 @@ __skip__:
     Assert.assertEquals(10, len.value);
   }
 
-  @Test()
+  @Test
   public void test_typing() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 6);
     final List<Integer> out = ListSequence.fromList(new ArrayList<Integer>());
-    ListSequence.fromList(test).visitAll(new IVisitor <Integer>() {
-
+    ListSequence.fromList(test).visitAll(new IVisitor<Integer>() {
       public void visit(Integer it) {
         ListSequence.fromList(out).addElement(it - 1);
       }
@@ -134,5 +125,4 @@ __skip__:
   public void forEach(Iterable<String> seqs, IVisitor<String> visitor) {
     Sequence.fromIterable(seqs).visitAll(visitor);
   }
-
 }

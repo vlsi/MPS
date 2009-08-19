@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class ActionParameter_IsOptional extends AbstractCellProvider {
-
   public ActionParameter_IsOptional(SNode node) {
     super(node);
   }
@@ -39,7 +38,6 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
 
   private EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return (SPropertyOperations.getBoolean(node, "isOptional") ?
           "optional" :
@@ -66,7 +64,6 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
   }
 
   public static class ActionParameter_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public ActionParameter_generic_cellMenu0() {
     }
 
@@ -77,10 +74,9 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     public String getMatchingText() {
       return "optional";
     }
+  }
 
-}
   public static class ActionParameter_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public ActionParameter_generic_cellMenu1() {
     }
 
@@ -91,7 +87,5 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     public String getMatchingText() {
       return "required";
     }
-
-}
-
+  }
 }

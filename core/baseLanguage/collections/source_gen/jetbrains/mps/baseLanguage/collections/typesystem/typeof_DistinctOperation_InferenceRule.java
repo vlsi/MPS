@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DistinctOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_DistinctOperation_InferenceRule() {
   }
 
@@ -28,5 +27,4 @@ public class typeof_DistinctOperation_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-
 }

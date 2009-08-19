@@ -9,14 +9,13 @@ import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
 import java.util.Arrays;
 
 public class SortedMap_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_sortedMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     this.assertIterableEquals(SortedMapSequence.fromMap(smap).values(), this.input5());
   }
 
-  @Test()
+  @Test
   public void test_headMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).headMap("C");
@@ -24,19 +23,18 @@ public class SortedMap_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(1, 2, 3), SortedMapSequence.fromMap(SortedMapSequence.fromMap(smap).headMap("C\0")).values());
   }
 
-  @Test()
+  @Test
   public void test_tailMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).tailMap("C");
     this.assertIterableEquals(Arrays.asList(3, 4, 5), SortedMapSequence.fromMap(submap).values());
   }
 
-  @Test()
+  @Test
   public void test_subMap() throws Exception {
     SortedMap<String, Integer> smap = SortedMapSequence.<String, Integer>fromKeysArray("C", "A", "B", "E", "D").withValues(3, 1, 2, 5, 4);
     SortedMap<String, Integer> submap = SortedMapSequence.fromMap(smap).subMap("B", "E");
     this.assertIterableEquals(Arrays.asList(2, 3, 4), SortedMapSequence.fromMap(submap).values());
     this.assertIterableEquals(Arrays.asList(2, 3, 4, 5), SortedMapSequence.fromMap(SortedMapSequence.fromMap(smap).subMap("B", "E\0")).values());
   }
-
 }

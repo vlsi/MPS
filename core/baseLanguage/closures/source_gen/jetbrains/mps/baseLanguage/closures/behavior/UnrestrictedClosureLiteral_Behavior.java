@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 
 public class UnrestrictedClosureLiteral_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class UnrestrictedClosureLiteral_Behavior {
   public static boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return true;
   }
-
 }

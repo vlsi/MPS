@@ -21,5 +21,4 @@ public class TreeSetCreator extends HashSetCreator {
   public static TreeSetCreator newInstance(SModel sm) {
     return TreeSetCreator.newInstance(sm, false);
   }
-
 }

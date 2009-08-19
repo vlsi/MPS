@@ -21,14 +21,13 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class Sequence_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_sequenceMethods() throws Exception {
     ISequence<Integer> input = Sequence.fromIterable(this.input5());
     Assert.assertEquals(((Integer)1), input.first());
     Assert.assertEquals(((Integer)5), input.last());
     Assert.assertEquals(5, input.count());
-    for(Integer i : this.input5()) {
+    for (Integer i : this.input5()) {
       Assert.assertEquals(true, input.contains(i));
       Assert.assertEquals(i - 1, input.indexOf(i));
     }
@@ -39,16 +38,13 @@ public class Sequence_Test extends Util_Test {
     Assert.assertEquals(false, Sequence.fromIterable(Collections.emptyList()).isNotEmpty());
   }
 
-  @Test()
+  @Test
   public void test_sequenceFromClosure() throws Exception {
-    Iterable<Integer> seq = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    Iterable<Integer> seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -97,16 +93,13 @@ __switch__:
     this.assertIterableEquals(this.expect5(), seq);
   }
 
-  @Test()
+  @Test
   public void test_sequenceInitializer() throws Exception {
-    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -155,16 +148,13 @@ __switch__:
     this.assertIterableEquals(this.expect5(), seq);
   }
 
-  @Test()
+  @Test
   public void test_sequenceInitializer2() throws Exception {
-    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -213,14 +203,11 @@ __switch__:
     this.assertIterableEquals(this.expect5(), seq);
     Iterable<Integer> seq2 = Sequence.fromIterable(Collections.<Integer>emptyList());
     Assert.assertTrue(Sequence.fromIterable(seq2).isEmpty());
-    Iterable<Integer> seq3 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> seq3 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _4_i;
 
@@ -289,13 +276,13 @@ __switch__:
     this.assertIterableEquals(this.expect5(), seq3);
   }
 
-  @Test()
+  @Test
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());
     Assert.assertEquals(((Integer)5), Sequence.fromIterable(input).last());
     Assert.assertEquals(5, Sequence.fromIterable(input).count());
-    for(Integer i : this.input5()) {
+    for (Integer i : this.input5()) {
       Assert.assertEquals(true, Sequence.fromIterable(input).contains(i));
       Assert.assertEquals(i - 1, Sequence.fromIterable(input).indexOf(i));
     }
@@ -306,13 +293,13 @@ __switch__:
     Assert.assertEquals(false, Sequence.fromIterable(this.inputEmpty()).isNotEmpty());
   }
 
-  @Test()
+  @Test
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertTrue(Arrays.equals(new Integer[]{1,2,3,4,5}, Sequence.fromIterable(input).toListSequence().toGenericArray(Integer.class)));
     this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).toListSequence());
     Integer i = 1;
-    for(Iterator<Integer> it = input.iterator() ; it.hasNext() ; i++ ) {
+    for (Iterator<Integer> it = input.iterator() ; it.hasNext() ; i++ ) {
       Assert.assertEquals(i, it.next());
     }
     Assert.assertSame(6, i);
@@ -321,22 +308,19 @@ __switch__:
     List list = Arrays.asList(oarr);
     List<String> slist = ((List<String>)list);
     String[] toarray = ListSequence.fromList(slist).toGenericArray(String.class);
-    for(String s : toarray) {
+    for (String s : toarray) {
       Assert.assertTrue(s instanceof String);
     }
     Assert.assertTrue(Arrays.equals(sarr, oarr));
   }
 
-  @Test()
+  @Test
   public void test_primitiveParameter() throws Exception {
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -383,24 +367,21 @@ __switch__:
     Assert.assertEquals(0, carr.length);
   }
 
-  @Test()
+  @Test
   public void test_singleton() throws Exception {
     Iterable<Integer> ssl = Sequence.<Integer>singleton(42);
     Assert.assertSame(1, Sequence.fromIterable(ssl).count());
     Assert.assertSame(42, Sequence.fromIterable(ssl).first());
   }
 
-  @Test()
+  @Test
   public void test_toString() throws Exception {
     final Wrappers._int count = new Wrappers._int(1);
-    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -469,17 +450,16 @@ __switch__:
     Assert.assertEquals("[duh, foo, bar]", String.valueOf(test));
   }
 
-  @Test()
+  @Test
   public void test_asSequence() throws Exception {
     String[] arr = new String[]{"A","B","C"};
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
   }
 
-  @Test()
+  @Test
   public void test_join() throws Exception {
     Iterable<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "vodka", "tequila", "whisky");
     Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));
     Assert.assertEquals("vodka, tequila, whisky", IterableUtils.join(Sequence.fromIterable(test), ", "));
   }
-
 }

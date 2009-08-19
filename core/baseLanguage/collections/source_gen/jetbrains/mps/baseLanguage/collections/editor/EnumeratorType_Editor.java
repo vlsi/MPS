@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class EnumeratorType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9470_0(editorContext, node);
   }
@@ -99,5 +98,4 @@ public class EnumeratorType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

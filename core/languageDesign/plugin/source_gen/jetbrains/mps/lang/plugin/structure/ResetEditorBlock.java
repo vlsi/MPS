@@ -22,5 +22,4 @@ public class ResetEditorBlock extends ConceptFunction {
   public static ResetEditorBlock newInstance(SModel sm) {
     return ResetEditorBlock.newInstance(sm, false);
   }
-
 }

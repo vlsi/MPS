@@ -24,7 +24,6 @@ public class MapRemoveOperation extends MapOperation {
     super.setChild(MapRemoveOperation.KEY, node);
   }
 
-
   public static MapRemoveOperation newInstance(SModel sm, boolean init) {
     return (MapRemoveOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MapRemoveOperation extends MapOperation {
   public static MapRemoveOperation newInstance(SModel sm) {
     return MapRemoveOperation.newInstance(sm, false);
   }
-
 }

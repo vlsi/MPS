@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_10 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_10 myMatchingPattern;
 
   public mappingType_sypertypeOf_IMapping_interface_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   public boolean isWeak() {
     return true;
   }
-
 }

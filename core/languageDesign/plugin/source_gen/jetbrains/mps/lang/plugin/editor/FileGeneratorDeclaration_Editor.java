@@ -33,7 +33,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0103_2(editorContext, node);
   }
@@ -286,7 +285,6 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0103_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -296,7 +294,6 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline0103_0 extends AbstractCellProvider {
-
     public _Inline0103_0() {
       super();
     }
@@ -331,10 +328,9 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class fieldListHandler_0103_0 extends RefNodeListHandler {
-
     public fieldListHandler_0103_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -385,10 +381,9 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<fields>");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_0103_0 extends RefNodeListHandler {
-
     public methodListHandler_0103_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -439,7 +434,5 @@ public class FileGeneratorDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<methods>");
       return editorCell;
     }
-
-}
-
+  }
 }

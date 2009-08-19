@@ -61,7 +61,6 @@ public class ActionParameterDeclaration extends FieldDeclaration implements IMem
     this.setBooleanProperty(ActionParameterDeclaration.IS_OPTIONAL, value);
   }
 
-
   public static ActionParameterDeclaration newInstance(SModel sm, boolean init) {
     return (ActionParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ActionParameterDeclaration extends FieldDeclaration implements IMem
   public static ActionParameterDeclaration newInstance(SModel sm) {
     return ActionParameterDeclaration.newInstance(sm, false);
   }
-
 }

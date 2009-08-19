@@ -36,5 +36,4 @@ public class IDeprecatable_Behavior {
   public static String callSuper_getMessage_1225207468592(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.IDeprecatable"), callerConceptFqName, "virtual_getMessage_1225207468592", PARAMETERS_1225207468592);
   }
-
 }

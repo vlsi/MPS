@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeUtil_Collections {
-
   public static SNode coerceTo_SequenceType(SNode type) {
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
     if (sequenceType != null) {
@@ -66,5 +65,4 @@ public class TypeUtil_Collections {
     // ==========
     return null;
   }
-
 }

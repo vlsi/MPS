@@ -7,17 +7,13 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
-/* package */class MySequence <T> {
-
-  /* package */Iterable<T> get() {
-    return Sequence.fromClosure(new ISequenceClosure <T>() {
-
+/*package*/ class MySequence<T> {
+  /*package*/ Iterable<T> get() {
+    return Sequence.fromClosure(new ISequenceClosure<T>() {
       public Iterable<T> iterable() {
-        return new Iterable <T>() {
-
+        return new Iterable<T>() {
           public Iterator<T> iterator() {
-            return new YieldingIterator <T>() {
-
+            return new YieldingIterator<T>() {
               private int __CP__ = 0;
               private T _7_next;
 
@@ -80,8 +76,7 @@ __switch__:
     });
   }
 
-  /* package */T getNext() {
+  /*package*/ T getNext() {
     return null;
   }
-
 }

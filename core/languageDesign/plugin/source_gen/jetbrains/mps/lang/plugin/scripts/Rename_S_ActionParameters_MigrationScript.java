@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScript {
-
   public Rename_S_ActionParameters_MigrationScript(IOperationContext operationContext) {
     super("rename \"S...\" action parameters");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "rename \"SNODE\" action parameters";
       }
@@ -39,7 +37,6 @@ public class Rename_S_ActionParameters_MigrationScript extends BaseMigrationScri
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "rename \"SNODES\" action parameters";
       }

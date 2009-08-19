@@ -21,5 +21,4 @@ public class DistinctOperation extends NoArgumentsSequenceOperation {
   public static DistinctOperation newInstance(SModel sm) {
     return DistinctOperation.newInstance(sm, false);
   }
-
 }

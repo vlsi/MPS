@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_8 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_8 myMatchingPattern;
 
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   public boolean isWeak() {
     return true;
   }
-
 }

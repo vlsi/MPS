@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SortOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9219_0(editorContext, node);
   }
@@ -123,14 +122,11 @@ public class SortOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class SortOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public SortOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
-
-}
-
+  }
 }

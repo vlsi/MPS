@@ -25,7 +25,6 @@ public class ContentStatement extends Statement {
     super.setChild(ContentStatement.CONTENT, node);
   }
 
-
   public static ContentStatement newInstance(SModel sm, boolean init) {
     return (ContentStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.ContentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ContentStatement extends Statement {
   public static ContentStatement newInstance(SModel sm) {
     return ContentStatement.newInstance(sm, false);
   }
-
 }

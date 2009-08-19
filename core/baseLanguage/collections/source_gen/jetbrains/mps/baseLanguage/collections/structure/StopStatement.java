@@ -22,5 +22,4 @@ public class StopStatement extends Statement {
   public static StopStatement newInstance(SModel sm) {
     return StopStatement.newInstance(sm, false);
   }
-
 }

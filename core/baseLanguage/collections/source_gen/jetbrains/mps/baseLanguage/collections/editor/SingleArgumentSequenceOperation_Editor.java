@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9701_0(editorContext, node);
   }
@@ -98,14 +97,11 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
-
-}
-
+  }
 }

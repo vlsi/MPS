@@ -94,7 +94,6 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
     this.insertChild(prev, ProjectPluginDeclaration.FIELD_DECLARATION, node);
   }
 
-
   public static ProjectPluginDeclaration newInstance(SModel sm, boolean init) {
     return (ProjectPluginDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,5 +101,4 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
   public static ProjectPluginDeclaration newInstance(SModel sm) {
     return ProjectPluginDeclaration.newInstance(sm, false);
   }
-
 }

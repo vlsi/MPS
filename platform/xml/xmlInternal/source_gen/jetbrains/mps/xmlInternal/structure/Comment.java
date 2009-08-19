@@ -39,7 +39,6 @@ public class Comment extends Content {
     this.insertChild(prev, Comment.TEXT, node);
   }
 
-
   public static Comment newInstance(SModel sm, boolean init) {
     return (Comment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Comment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -47,5 +46,4 @@ public class Comment extends Content {
   public static Comment newInstance(SModel sm) {
     return Comment.newInstance(sm, false);
   }
-
 }

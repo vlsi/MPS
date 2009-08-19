@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class sorted_set_subtypeOf_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public sorted_set_subtypeOf_set_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class sorted_set_subtypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   public boolean isWeak() {
     return false;
   }
-
 }

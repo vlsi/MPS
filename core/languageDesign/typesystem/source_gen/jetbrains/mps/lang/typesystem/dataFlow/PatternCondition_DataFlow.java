@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PatternCondition_DataFlow extends DataFlowBuilder {
-
   public PatternCondition_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class PatternCondition_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "pattern", true));
     _context.getBuilder().emitWrite(_context.getNode());
   }
-
 }

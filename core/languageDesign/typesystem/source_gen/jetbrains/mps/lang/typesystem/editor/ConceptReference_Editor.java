@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4215_0(editorContext, node);
   }
@@ -114,7 +113,6 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4215_0 extends AbstractCellProvider {
-
     public _Inline4215_0() {
       super();
     }
@@ -146,10 +144,9 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class ConceptReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public ConceptReference_name_postfixCellMenu0() {
     }
 
@@ -158,13 +155,10 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
       if ((SLinkOperations.getTarget(node, "concept", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name") != null) {
         String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
         result = NameUtil.splitByCamels(name);
-      } else
-      {
+      } else {
         result = ListSequence.fromList(new ArrayList<String>());
       }
       return result;
     }
-
-}
-
+  }
 }

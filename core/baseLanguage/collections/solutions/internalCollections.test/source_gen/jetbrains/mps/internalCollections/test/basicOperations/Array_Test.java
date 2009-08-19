@@ -12,28 +12,24 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class Array_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_iterateArrayFor() throws Exception {
     int[] arr = new int[]{1,2,3,4,5};
     List test = new ArrayList();
-    for(int i : arr) {
+    for (int i : arr) {
       test.add(i);
     }
     this.assertIterableEquals(this.expect5(), test);
   }
 
-  @Test()
+  @Test
   public void test_iterateArrayYield() throws Exception {
     final int[] arr = new int[]{1,2,3,4,5};
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
               private int _2_i_idx;
@@ -78,14 +74,11 @@ __switch__:
       }
     });
     this.assertIterableEquals(this.expect5(), test);
-    Iterable<Integer> test2 = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> test2 = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
               private int _2_i_idx;
@@ -131,14 +124,11 @@ __switch__:
     });
     this.assertIterableEquals(this.expect5(), test2);
     final String[] arr2 = new String[]{"A","B","C"};
-    Iterable<String> test3 = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> test3 = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private String _2_s;
               private int _2_s_idx;
@@ -183,14 +173,11 @@ __switch__:
       }
     });
     this.assertIterableEquals(this.inputABC(), test3);
-    Iterable<String> test4 = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> test4 = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private String _2_s;
               private int _2_s_idx;
@@ -236,5 +223,4 @@ __switch__:
     });
     this.assertIterableEquals(this.inputABC(), test4);
   }
-
 }

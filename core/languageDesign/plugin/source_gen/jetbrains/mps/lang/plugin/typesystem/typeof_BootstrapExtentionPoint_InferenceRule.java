@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_BootstrapExtentionPoint_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_BootstrapExtentionPoint_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class typeof_BootstrapExtentionPoint_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.checkedName.PropertyReference;
 
 public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
-
   public FixNamingPolicy_QuickFix() {
   }
 
@@ -19,14 +18,13 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    for(SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(((SNode)FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
+    for (SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(((SNode)FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
       SPropertyOperations.set(s, "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, "value")));
     }
-    for(PropertyReference p : ICheckedNamePolicy_Behavior.call_getPropertiesToCheck_1628770029971140570(((SNode)FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
+    for (PropertyReference p : ICheckedNamePolicy_Behavior.call_getPropertiesToCheck_1628770029971140570(((SNode)FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]))) {
       String value = p.getNode().getProperty(p.getProperty());
       String newValue = NameUtil.captionWithNamingPolicy(value);
       p.getNode().setProperty(p.getProperty(), newValue);
     }
   }
-
 }

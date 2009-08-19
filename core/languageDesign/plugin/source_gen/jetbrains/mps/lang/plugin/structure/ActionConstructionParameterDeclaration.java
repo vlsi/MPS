@@ -61,7 +61,6 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
     super.setChild(ActionConstructionParameterDeclaration.TO_STRING_FUNCTION, node);
   }
 
-
   public static ActionConstructionParameterDeclaration newInstance(SModel sm, boolean init) {
     return (ActionConstructionParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ActionConstructionParameterDeclaration extends DefaultClassifierFie
   public static ActionConstructionParameterDeclaration newInstance(SModel sm) {
     return ActionConstructionParameterDeclaration.newInstance(sm, false);
   }
-
 }

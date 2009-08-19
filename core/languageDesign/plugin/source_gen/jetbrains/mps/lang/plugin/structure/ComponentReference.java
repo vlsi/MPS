@@ -22,5 +22,4 @@ public class ComponentReference extends Expression {
   public static ComponentReference newInstance(SModel sm) {
     return ComponentReference.newInstance(sm, false);
   }
-
 }

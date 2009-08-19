@@ -52,7 +52,6 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
     this.setProperty(ListVarDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ListVarDeclaration newInstance(SModel sm, boolean init) {
     return (ListVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
   public static ListVarDeclaration newInstance(SModel sm) {
     return ListVarDeclaration.newInstance(sm, false);
   }
-
 }

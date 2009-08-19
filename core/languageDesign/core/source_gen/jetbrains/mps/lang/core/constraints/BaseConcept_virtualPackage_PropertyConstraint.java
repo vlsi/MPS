@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class BaseConcept_virtualPackage_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public BaseConcept_virtualPackage_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class BaseConcept_virtualPackage_PropertyConstraint implements IModelCons
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return node.getProperty(SModelTreeNode.PACK);
   }
-
 }

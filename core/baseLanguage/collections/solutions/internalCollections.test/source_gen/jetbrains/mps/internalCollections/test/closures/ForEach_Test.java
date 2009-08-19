@@ -8,44 +8,43 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import junit.framework.Assert;
 
 public class ForEach_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_legacyForeach() throws Exception {
     ArrayList<Integer> res = new ArrayList<Integer>();
-    for(Integer foo : Sequence.fromIterable(this.input5())) {
+    for (Integer foo : Sequence.fromIterable(this.input5())) {
       res.add(foo * 2);
     }
     this.assertIterableEquals(this.expectEven10(), res);
   }
 
-  @Test()
+  @Test
   public void test_iterateArray() throws Exception {
     int[] arr = new int[]{1,2,3,4,5};
     Iterable<Integer> exp = this.input5();
-    for(int i : arr) {
+    for (int i : arr) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
     }
     String[] arr2 = new String[]{"A","B","C"};
     Iterable<String> exp2 = this.inputABC();
-    for(String s : arr2) {
+    for (String s : arr2) {
       Assert.assertTrue(Sequence.fromIterable(exp2).contains(s));
     }
   }
 
-  @Test()
+  @Test
   public void test_noWrapperForGNE() throws Exception {
     Iterable<Integer> exp = this.input5();
-    for(int i : new int[]{1,2,3,4,5}) {
+    for (int i : new int[]{1,2,3,4,5}) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
   }
 
-  @Test()
+  @Test
   public void test_noWrapperForArray() throws Exception {
     Iterable<Integer> exp = this.input5();
     int[] arr = new int[]{1,2,3,4,5};
-    for(int i : arr) {
+    for (int i : arr) {
       Assert.assertTrue(Sequence.fromIterable(exp).contains(i));
       this.accept(i);
     }
@@ -57,5 +56,4 @@ public class ForEach_Test extends Util_Test {
   private void accept(Object invalid) {
     Assert.assertTrue(false);
   }
-
 }

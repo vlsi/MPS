@@ -25,7 +25,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 
 public class ForEachVariable_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9802_0(editorContext, node);
   }
@@ -61,7 +60,6 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
   }
 
   public static class ForEachVariable_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-
     public ForEachVariable_name_postfixCellMenu0() {
     }
 
@@ -72,7 +70,5 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
       }
       return postfixes;
     }
-
-}
-
+  }
 }

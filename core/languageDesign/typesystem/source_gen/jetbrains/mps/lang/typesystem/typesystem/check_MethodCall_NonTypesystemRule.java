@@ -13,12 +13,11 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_MethodCall_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode baseMethodCall, final TypeCheckingContext typeCheckingContext) {
-    for(SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
+    for (SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_18().createNode(typeCheckingContext), "classifier", false)) {
         if (!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           BaseIntentionProvider intentionProvider = null;
@@ -48,5 +47,4 @@ public class check_MethodCall_NonTypesystemRule extends AbstractNonTypesystemRul
   public boolean overrides() {
     return false;
   }
-
 }

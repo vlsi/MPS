@@ -88,7 +88,6 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
     super.setChild(AbstractEditorTab.CREATE_BLOCK, node);
   }
 
-
   public static AbstractEditorTab newInstance(SModel sm, boolean init) {
     return (AbstractEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AbstractEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -96,5 +95,4 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static AbstractEditorTab newInstance(SModel sm) {
     return AbstractEditorTab.newInstance(sm, false);
   }
-
 }

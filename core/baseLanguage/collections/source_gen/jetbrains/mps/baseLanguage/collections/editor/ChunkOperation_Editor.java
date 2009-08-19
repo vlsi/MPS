@@ -19,7 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class ChunkOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7170_0(editorContext, node);
   }
@@ -88,14 +87,11 @@ public class ChunkOperation_Editor extends DefaultNodeEditor {
   }
 
   public static class ChunkOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public ChunkOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
-
-}
-
+  }
 }

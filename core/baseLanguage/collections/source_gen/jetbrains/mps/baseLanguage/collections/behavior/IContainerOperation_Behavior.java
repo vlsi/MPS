@@ -17,7 +17,7 @@ public class IContainerOperation_Behavior {
 
   public static SNode virtual_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    for(SNode et : SLinkOperations.getConceptLinkTargets(thisNode, "expectedOperandType")) {
+    for (SNode et : SLinkOperations.getConceptLinkTargets(thisNode, "expectedOperandType")) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
@@ -34,5 +34,4 @@ public class IContainerOperation_Behavior {
   public static SNode callSuper_expectedOperandType_2141797557973018589(SNode thisNode, String callerConceptFqName, SNode elementType) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
   }
-
 }

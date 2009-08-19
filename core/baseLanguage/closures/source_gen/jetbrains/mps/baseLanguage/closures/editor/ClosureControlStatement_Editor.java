@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ClosureControlStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3967_0(editorContext, node);
   }
@@ -203,7 +202,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3967_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(SLinkOperations.getTarget(node, "controlClosure", true), "parameter") > 0;
   }
@@ -217,7 +215,6 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3967_0 extends AbstractCellProvider {
-
     public _Inline3967_0() {
       super();
     }
@@ -252,10 +249,9 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline3967_1 extends AbstractCellProvider {
-
     public _Inline3967_1() {
       super();
     }
@@ -286,10 +282,9 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }
+  }
 
-}
   private static class actualParameterListHandler_3967_0 extends RefNodeListHandler {
-
     public actualParameterListHandler_3967_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -336,10 +331,9 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class parameterListHandler_3967_0 extends RefNodeListHandler {
-
     public parameterListHandler_3967_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -401,7 +395,5 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

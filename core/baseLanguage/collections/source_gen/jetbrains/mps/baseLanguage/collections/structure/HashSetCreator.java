@@ -21,5 +21,4 @@ public class HashSetCreator extends AbstractContainerCreator {
   public static HashSetCreator newInstance(SModel sm) {
     return HashSetCreator.newInstance(sm, false);
   }
-
 }

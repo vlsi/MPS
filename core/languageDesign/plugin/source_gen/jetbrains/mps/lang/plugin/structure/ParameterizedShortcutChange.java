@@ -21,5 +21,4 @@ public class ParameterizedShortcutChange extends ShortcutChange {
   public static ParameterizedShortcutChange newInstance(SModel sm) {
     return ParameterizedShortcutChange.newInstance(sm, false);
   }
-
 }

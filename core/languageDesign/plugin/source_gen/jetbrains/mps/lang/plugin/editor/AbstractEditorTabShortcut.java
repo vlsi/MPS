@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IScope;
 import org.apache.commons.lang.StringUtils;
 
 public class AbstractEditorTabShortcut extends AbstractCellProvider {
-
   public AbstractEditorTabShortcut(SNode node) {
     super(node);
   }
@@ -62,7 +61,6 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
 
   private EditorCell createReadOnlyModelAccessor_7612_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return "(alt shift " + SPropertyOperations.getString(node, "shortcutChar").toUpperCase() + ")";
       }
@@ -99,9 +97,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
   }
-
 }

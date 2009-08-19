@@ -24,7 +24,6 @@ public class ConceptReference extends ApplicableNodeCondition {
     super.setReferent(ConceptReference.CONCEPT, node);
   }
 
-
   public static ConceptReference newInstance(SModel sm, boolean init) {
     return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ConceptReference extends ApplicableNodeCondition {
   public static ConceptReference newInstance(SModel sm) {
     return ConceptReference.newInstance(sm, false);
   }
-
 }

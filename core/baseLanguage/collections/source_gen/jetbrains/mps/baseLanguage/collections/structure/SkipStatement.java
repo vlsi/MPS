@@ -22,5 +22,4 @@ public class SkipStatement extends Statement {
   public static SkipStatement newInstance(SModel sm) {
     return SkipStatement.newInstance(sm, false);
   }
-
 }

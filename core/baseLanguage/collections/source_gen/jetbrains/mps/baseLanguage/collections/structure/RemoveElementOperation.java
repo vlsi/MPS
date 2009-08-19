@@ -41,7 +41,6 @@ public class RemoveElementOperation extends SingleArgumentSequenceOperation impl
     this.setProperty(RemoveElementOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static RemoveElementOperation newInstance(SModel sm, boolean init) {
     return (RemoveElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class RemoveElementOperation extends SingleArgumentSequenceOperation impl
   public static RemoveElementOperation newInstance(SModel sm) {
     return RemoveElementOperation.newInstance(sm, false);
   }
-
 }

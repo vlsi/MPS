@@ -21,5 +21,4 @@ public class LinkedListCreator extends AbstractContainerCreator {
   public static LinkedListCreator newInstance(SModel sm) {
     return LinkedListCreator.newInstance(sm, false);
   }
-
 }

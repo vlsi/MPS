@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChildTypeRestrictionReference_typeRestriction_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ChildTypeRestrictionReference_typeRestriction_ReferentConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class ChildTypeRestrictionReference_typeRestriction_ReferentConstraint ex
     List<SNode> childTypeRestrictions = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false), "childTypeRestriction", true);
     return childTypeRestrictions;
   }
-
 }

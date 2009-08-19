@@ -75,7 +75,6 @@ public class OverloadedOpRulesContainer extends BaseConcept implements INamedCon
     this.insertChild(prev, OverloadedOpRulesContainer.RULE, node);
   }
 
-
   public static OverloadedOpRulesContainer newInstance(SModel sm, boolean init) {
     return (OverloadedOpRulesContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class OverloadedOpRulesContainer extends BaseConcept implements INamedCon
   public static OverloadedOpRulesContainer newInstance(SModel sm) {
     return OverloadedOpRulesContainer.newInstance(sm, false);
   }
-
 }

@@ -14,17 +14,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Contains_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_test1() throws Exception {
-    Iterable<Integer> intS = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> intS = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -65,7 +61,7 @@ __switch__:
     Assert.assertFalse(Sequence.fromIterable(intS).contains(15));
   }
 
-  @Test()
+  @Test
   public void test_test2() throws Exception {
     List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));
@@ -74,5 +70,4 @@ __switch__:
     intL = null;
     Assert.assertFalse(ListSequence.fromList(intL).contains(15));
   }
-
 }

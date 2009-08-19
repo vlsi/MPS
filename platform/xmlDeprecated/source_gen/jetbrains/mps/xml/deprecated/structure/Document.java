@@ -79,7 +79,6 @@ public class Document extends BaseConcept implements INamedConcept {
     super.setChild(Document.ROOT_ELEMENT, node);
   }
 
-
   public static Document newInstance(SModel sm, boolean init) {
     return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class Document extends BaseConcept implements INamedConcept {
   public static Document newInstance(SModel sm) {
     return Document.newInstance(sm, false);
   }
-
 }

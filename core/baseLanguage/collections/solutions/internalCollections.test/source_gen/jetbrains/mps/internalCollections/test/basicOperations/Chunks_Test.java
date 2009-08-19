@@ -16,8 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Chunks_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_chunkMethods() throws Exception {
     ISequence<Integer> input = Sequence.fromIterable(this.input10());
     this.assertIterableEquals(Arrays.asList(1, 2, 3), input.take(3));
@@ -28,7 +27,7 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(input.skip(3).take(5), input.page(3, 8));
   }
 
-  @Test()
+  @Test
   public void test_chunkOperations() throws Exception {
     Iterable<Integer> input = this.input10();
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).take(3));
@@ -39,7 +38,7 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(Sequence.fromIterable(input).skip(3).take(5), Sequence.fromIterable(input).page(3, 8));
   }
 
-  @Test()
+  @Test
   public void test_pageOperationNoSideEffects() throws Exception {
     Iterable<Integer> input = this.input10();
     int from = 3;
@@ -47,16 +46,13 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(from = from + 1, to = to - 1));
   }
 
-  @Test()
+  @Test
   public void test_takeAll() throws Exception {
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -105,7 +101,7 @@ __switch__:
     Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
   }
 
-  @Test()
+  @Test
   public void test_nextWithoutHasNext() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     this.assertIteratorYields(ListSequence.fromList(test).take(3).iterator(), 1, 2, 3);
@@ -114,5 +110,4 @@ __switch__:
     this.assertIteratorYields(ListSequence.fromList(test).tail(5).iterator(), 6, 7, 8, 9, 10);
     this.assertIteratorYields(ListSequence.fromList(test).page(4, 7).iterator(), 5, 6, 7);
   }
-
 }

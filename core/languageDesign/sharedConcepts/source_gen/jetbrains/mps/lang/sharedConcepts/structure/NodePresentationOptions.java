@@ -59,5 +59,4 @@ public enum NodePresentationOptions {
     }
     return NodePresentationOptions.getDefault();
   }
-
 }

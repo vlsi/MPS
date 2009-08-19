@@ -24,7 +24,6 @@ public class GetGroupOperation extends Expression {
     super.setReferent(GetGroupOperation.GROUP, node);
   }
 
-
   public static GetGroupOperation newInstance(SModel sm, boolean init) {
     return (GetGroupOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetGroupOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GetGroupOperation extends Expression {
   public static GetGroupOperation newInstance(SModel sm) {
     return GetGroupOperation.newInstance(sm, false);
   }
-
 }

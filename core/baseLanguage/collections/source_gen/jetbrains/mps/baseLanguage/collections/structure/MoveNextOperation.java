@@ -21,5 +21,4 @@ public class MoveNextOperation extends AbstractEnumeratorOperation {
   public static MoveNextOperation newInstance(SModel sm) {
     return MoveNextOperation.newInstance(sm, false);
   }
-
 }

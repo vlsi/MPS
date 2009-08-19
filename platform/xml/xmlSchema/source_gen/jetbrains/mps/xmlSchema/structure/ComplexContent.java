@@ -23,7 +23,6 @@ public class ComplexContent extends TypeExpression {
     super.setChild(ComplexContent.CONTENT_ITEM, node);
   }
 
-
   public static ComplexContent newInstance(SModel sm, boolean init) {
     return (ComplexContent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexContent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ComplexContent extends TypeExpression {
   public static ComplexContent newInstance(SModel sm) {
     return ComplexContent.newInstance(sm, false);
   }
-
 }

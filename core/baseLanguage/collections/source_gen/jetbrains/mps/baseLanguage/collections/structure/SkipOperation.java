@@ -24,7 +24,6 @@ public class SkipOperation extends SequenceOperation {
     super.setChild(SkipOperation.ELEMENTS_TO_SKIP, node);
   }
 
-
   public static SkipOperation newInstance(SModel sm, boolean init) {
     return (SkipOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SkipOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SkipOperation extends SequenceOperation {
   public static SkipOperation newInstance(SModel sm) {
     return SkipOperation.newInstance(sm, false);
   }
-
 }

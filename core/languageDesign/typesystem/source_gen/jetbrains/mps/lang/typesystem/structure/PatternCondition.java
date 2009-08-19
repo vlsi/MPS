@@ -24,7 +24,6 @@ public class PatternCondition extends ApplicableNodeCondition {
     super.setChild(PatternCondition.PATTERN, node);
   }
 
-
   public static PatternCondition newInstance(SModel sm, boolean init) {
     return (PatternCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PatternCondition extends ApplicableNodeCondition {
   public static PatternCondition newInstance(SModel sm) {
     return PatternCondition.newInstance(sm, false);
   }
-
 }

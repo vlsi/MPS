@@ -34,7 +34,6 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
     super.setChild(AbstractOverloadedOpsTypeRule.FUNCTION, node);
   }
 
-
   public static AbstractOverloadedOpsTypeRule newInstance(SModel sm, boolean init) {
     return (AbstractOverloadedOpsTypeRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
   public static AbstractOverloadedOpsTypeRule newInstance(SModel sm) {
     return AbstractOverloadedOpsTypeRule.newInstance(sm, false);
   }
-
 }

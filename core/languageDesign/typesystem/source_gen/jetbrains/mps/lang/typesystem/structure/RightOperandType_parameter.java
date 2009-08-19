@@ -22,5 +22,4 @@ public class RightOperandType_parameter extends ConceptFunctionParameter {
   public static RightOperandType_parameter newInstance(SModel sm) {
     return RightOperandType_parameter.newInstance(sm, false);
   }
-
 }

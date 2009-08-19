@@ -24,7 +24,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class PropertyRefExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1110_0(editorContext, node);
   }
@@ -121,7 +120,6 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1110_0 extends AbstractCellProvider {
-
     public _Inline1110_0() {
       super();
     }
@@ -157,7 +155,5 @@ public class PropertyRefExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

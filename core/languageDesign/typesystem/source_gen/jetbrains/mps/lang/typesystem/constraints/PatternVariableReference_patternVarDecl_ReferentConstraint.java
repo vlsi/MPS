@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PatternVariableReference_patternVarDecl_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PatternVariableReference_patternVarDecl_ReferentConstraint() {
   }
 
@@ -61,5 +60,4 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint extends 
     }
     return result;
   }
-
 }

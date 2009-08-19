@@ -52,7 +52,6 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
     super.setChild(ConfigurationEditorDeclaration.DISPOSE_BLOCK, node);
   }
 
-
   public static ConfigurationEditorDeclaration newInstance(SModel sm, boolean init) {
     return (ConfigurationEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   public static ConfigurationEditorDeclaration newInstance(SModel sm) {
     return ConfigurationEditorDeclaration.newInstance(sm, false);
   }
-
 }

@@ -69,7 +69,6 @@ public class FunctionType extends Type {
     this.insertChild(prev, FunctionType.THROWS_TYPE, node);
   }
 
-
   public static FunctionType newInstance(SModel sm, boolean init) {
     return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class FunctionType extends Type {
   public static FunctionType newInstance(SModel sm) {
     return FunctionType.newInstance(sm, false);
   }
-
 }

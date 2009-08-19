@@ -12,8 +12,7 @@ import junit.framework.Assert;
 import java.util.Iterator;
 
 public class ClosuresBase_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_stub() throws Exception {
     // this method exists only to calm down the JUnit complaining about lacking tests
   }
@@ -22,7 +21,7 @@ public class ClosuresBase_Test extends TestCase {
     List<Integer> expectedList = ListSequence.fromList(new ArrayList<Integer>());
     expected.invoke(expectedList);
     List<Integer> testList = ListSequence.fromList(new ArrayList<Integer>());
-    for(Integer i : test.invoke()) {
+    for (Integer i : test.invoke()) {
       ListSequence.fromList(testList).addElement(i);
     }
     Assert.assertEquals(expectedList, testList);
@@ -37,5 +36,4 @@ public class ClosuresBase_Test extends TestCase {
     Assert.assertFalse(expIt.hasNext());
     Assert.assertFalse(testIt.hasNext());
   }
-
 }

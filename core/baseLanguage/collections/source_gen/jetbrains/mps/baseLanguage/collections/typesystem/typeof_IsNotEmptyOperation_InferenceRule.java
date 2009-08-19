@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 
 public class typeof_IsNotEmptyOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_IsNotEmptyOperation_InferenceRule() {
   }
 
@@ -56,5 +55,4 @@ public class typeof_IsNotEmptyOperation_InferenceRule extends AbstractInferenceR
   public boolean overrides() {
     return false;
   }
-
 }

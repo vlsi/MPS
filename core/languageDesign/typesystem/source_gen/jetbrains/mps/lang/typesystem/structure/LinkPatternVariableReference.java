@@ -25,7 +25,6 @@ public class LinkPatternVariableReference extends Expression {
     super.setReferent(LinkPatternVariableReference.PATTERN_VAR_DECL, node);
   }
 
-
   public static LinkPatternVariableReference newInstance(SModel sm, boolean init) {
     return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class LinkPatternVariableReference extends Expression {
   public static LinkPatternVariableReference newInstance(SModel sm) {
     return LinkPatternVariableReference.newInstance(sm, false);
   }
-
 }

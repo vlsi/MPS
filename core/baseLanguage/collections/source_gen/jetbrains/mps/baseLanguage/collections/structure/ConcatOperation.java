@@ -21,5 +21,4 @@ public class ConcatOperation extends BinaryOperation {
   public static ConcatOperation newInstance(SModel sm) {
     return ConcatOperation.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class FindFirstOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static FindFirstOperation newInstance(SModel sm, boolean init) {
     return (FindFirstOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class FindFirstOperation extends InternalSequenceOperation {
   public static FindFirstOperation newInstance(SModel sm) {
     return FindFirstOperation.newInstance(sm, false);
   }
-
 }

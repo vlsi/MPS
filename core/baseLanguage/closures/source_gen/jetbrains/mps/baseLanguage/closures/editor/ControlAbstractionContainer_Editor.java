@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0500_0(editorContext, node);
   }
@@ -257,7 +256,6 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0500_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
@@ -271,7 +269,6 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_0500_0 extends RefNodeListHandler {
-
     public annotationListHandler_0500_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -311,10 +308,9 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class typeVariableDeclarationListHandler_0500_0 extends RefNodeListHandler {
-
     public typeVariableDeclarationListHandler_0500_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -361,10 +357,9 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class controlAbstractionListHandler_0500_0 extends RefNodeListHandler {
-
     public controlAbstractionListHandler_0500_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -419,7 +414,5 @@ public class ControlAbstractionContainer_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<<control abstractions>>");
       return editorCell;
     }
-
-}
-
+  }
 }

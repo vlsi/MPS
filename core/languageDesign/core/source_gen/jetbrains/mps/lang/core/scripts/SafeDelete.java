@@ -15,7 +15,6 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 
 public class SafeDelete extends BaseGeneratedRefactoring {
-
   public SafeDelete() {
   }
 
@@ -60,9 +59,7 @@ public class SafeDelete extends BaseGeneratedRefactoring {
     SNodeOperations.deleteNode(node);
   }
 
-
   public static String getKeyStroke_static() {
     return "alt DELETE";
   }
-
 }

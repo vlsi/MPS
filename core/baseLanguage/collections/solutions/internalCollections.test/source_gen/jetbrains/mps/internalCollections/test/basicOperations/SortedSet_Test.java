@@ -11,8 +11,7 @@ import junit.framework.Assert;
 import java.util.Arrays;
 
 public class SortedSet_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_order() throws Exception {
     SortedSet<Integer> set = SortedSetSequence.fromSetAndArray(new TreeSet<Integer>(), 4, 5, 3, 2, 1);
     this.assertIterableEquals(this.input5(), set);
@@ -20,7 +19,7 @@ public class SortedSet_Test extends Util_Test {
     Assert.assertSame(5, SortedSetSequence.fromSet(set).last());
   }
 
-  @Test()
+  @Test
   public void test_multiOrder() throws Exception {
     SortedSet<Integer> set = SortedSetSequence.fromSetAndArray(new TreeSet<Integer>(), 2, 1, 2, 5, 4, 3, 1, 5, 3, 2, 3, 1);
     this.assertIterableEquals(this.input5(), set);
@@ -28,24 +27,23 @@ public class SortedSet_Test extends Util_Test {
     Assert.assertSame(5, SortedSetSequence.fromSet(set).last());
   }
 
-  @Test()
+  @Test
   public void test_headSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("A", "B"), SortedSetSequence.fromSet(set).headSet("C"));
     this.assertIterableEquals(Arrays.asList("A", "B", "C"), SortedSetSequence.fromSet(set).headSet("C\0"));
   }
 
-  @Test()
+  @Test
   public void test_tailSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D", "E", "F"), SortedSetSequence.fromSet(set).tailSet("C"));
   }
 
-  @Test()
+  @Test
   public void test_subSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D"), SortedSetSequence.fromSet(set).subSet("C", "E"));
     this.assertIterableEquals(Arrays.asList("C", "D", "E"), SortedSetSequence.fromSet(set).subSet("C", "E\0"));
   }
-
 }

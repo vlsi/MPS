@@ -32,7 +32,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NonTypesystemRule_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9638_0(editorContext, node);
   }
@@ -353,7 +352,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   }
 
   public static class NonTypesystemRule_name_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public NonTypesystemRule_name_cellMenu0() {
     }
 
@@ -368,7 +366,5 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
       }
       return result;
     }
-
-}
-
+  }
 }

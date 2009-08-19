@@ -4,7 +4,6 @@ package jetbrains.mps.internalCollections.test.closures;
 
 
 public class A {
-
   public A() {
   }
 }

@@ -9,12 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RemoveAllSetElementsOperation_DataFlow extends DataFlowBuilder {
-
   public RemoveAllSetElementsOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "argument", true));
   }
-
 }

@@ -34,7 +34,6 @@ public class TypesystemIntentionArgument extends BaseConcept {
     super.setChild(TypesystemIntentionArgument.VALUE, node);
   }
 
-
   public static TypesystemIntentionArgument newInstance(SModel sm, boolean init) {
     return (TypesystemIntentionArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class TypesystemIntentionArgument extends BaseConcept {
   public static TypesystemIntentionArgument newInstance(SModel sm) {
     return TypesystemIntentionArgument.newInstance(sm, false);
   }
-
 }

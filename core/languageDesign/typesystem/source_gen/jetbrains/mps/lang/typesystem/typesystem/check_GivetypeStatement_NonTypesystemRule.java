@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_GivetypeStatement_NonTypesystemRule() {
   }
 
@@ -35,5 +34,4 @@ public class check_GivetypeStatement_NonTypesystemRule extends AbstractNonTypesy
   public boolean overrides() {
     return false;
   }
-
 }

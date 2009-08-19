@@ -16,7 +16,6 @@ import jetbrains.mps.xmlSchema.behavior.ElementDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public Attribute_attributeDeclaration_ReferentConstraint() {
   }
 
@@ -33,11 +32,9 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
     SNode element = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xml.structure.Element", false, false);
     if ((element == null)) {
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
-    } else
-    {
+    } else {
       searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1213877429821(SLinkOperations.getTarget(element, "elementDeclaration", false)));
     }
     return searchScope;
   }
-
 }

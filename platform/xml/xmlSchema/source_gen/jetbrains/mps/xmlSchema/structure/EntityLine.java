@@ -34,7 +34,6 @@ public class EntityLine extends BaseConcept {
     super.setChild(EntityLine.COMMENT, node);
   }
 
-
   public static EntityLine newInstance(SModel sm, boolean init) {
     return (EntityLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class EntityLine extends BaseConcept {
   public static EntityLine newInstance(SModel sm) {
     return EntityLine.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class EntityDeclaration_alias_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public EntityDeclaration_alias_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class EntityDeclaration_alias_PropertyConstraint implements IModelConstra
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(node, "entityName");
   }
-
 }

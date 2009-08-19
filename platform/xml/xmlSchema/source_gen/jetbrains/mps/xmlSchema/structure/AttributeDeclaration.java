@@ -69,7 +69,6 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
     super.setChild(AttributeDeclaration.USE_ATTRIBUTE, node);
   }
 
-
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
     return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   public static AttributeDeclaration newInstance(SModel sm) {
     return AttributeDeclaration.newInstance(sm, false);
   }
-
 }

@@ -53,7 +53,6 @@ public class ForEachVariable extends BaseConcept implements INamedConcept, IVali
     this.setProperty(ForEachVariable.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ForEachVariable newInstance(SModel sm, boolean init) {
     return (ForEachVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class ForEachVariable extends BaseConcept implements INamedConcept, IVali
   public static ForEachVariable newInstance(SModel sm) {
     return ForEachVariable.newInstance(sm, false);
   }
-
 }

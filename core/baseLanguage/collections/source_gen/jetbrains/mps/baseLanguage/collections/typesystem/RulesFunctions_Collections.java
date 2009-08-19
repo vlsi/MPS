@@ -13,15 +13,13 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 
 public class RulesFunctions_Collections {
-
-  @CheckingMethod()
+  @CheckingMethod
   public static SNode getInput(final TypeCheckingContext typeCheckingContext, SNode op) {
     SNode input = null;
     SNode parent = SNodeOperations.getParent(op);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       input = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-    } else
-    {
+    } else {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -37,13 +35,12 @@ public class RulesFunctions_Collections {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       output = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation");
       return output;
-    } else
-    {
+    } else {
       return null;
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void setInputSequenceType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
@@ -64,7 +61,7 @@ public class RulesFunctions_Collections {
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void setInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
@@ -85,7 +82,7 @@ public class RulesFunctions_Collections {
     }
   }
 
-  @InferenceMethod()
+  @InferenceMethod
   public static void isInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
@@ -105,5 +102,4 @@ public class RulesFunctions_Collections {
       }
     }
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ActionDataParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ActionDataParameterDeclaration_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class typeof_ActionDataParameterDeclaration_InferenceRule extends Abstrac
   public boolean overrides() {
     return false;
   }
-
 }

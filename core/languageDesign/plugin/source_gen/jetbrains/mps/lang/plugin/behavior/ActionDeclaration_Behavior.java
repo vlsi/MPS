@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.checkedName.PropertyReference;
 
 public class ActionDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -32,5 +31,4 @@ public class ActionDeclaration_Behavior {
   public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
   }
-
 }

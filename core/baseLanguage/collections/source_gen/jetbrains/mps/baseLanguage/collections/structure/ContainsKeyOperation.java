@@ -24,7 +24,6 @@ public class ContainsKeyOperation extends MapOperation {
     super.setChild(ContainsKeyOperation.KEY, node);
   }
 
-
   public static ContainsKeyOperation newInstance(SModel sm, boolean init) {
     return (ContainsKeyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ContainsKeyOperation extends MapOperation {
   public static ContainsKeyOperation newInstance(SModel sm) {
     return ContainsKeyOperation.newInstance(sm, false);
   }
-
 }

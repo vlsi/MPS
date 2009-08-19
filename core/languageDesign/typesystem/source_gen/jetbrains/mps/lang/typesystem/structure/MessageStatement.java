@@ -11,6 +11,7 @@ public interface MessageStatement extends INodeAdapter {
   public static final String HELGINS_INTENTION = "helginsIntention";
   public static final String MESSAGE_TARGET = "messageTarget";
 
+
   public Expression getNodeToReport();
   public void setNodeToReport(Expression node);
   public TypesystemIntention getHelginsIntention();

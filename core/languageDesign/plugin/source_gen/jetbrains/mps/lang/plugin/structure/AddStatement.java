@@ -24,7 +24,6 @@ public class AddStatement extends Statement {
     super.setChild(AddStatement.ITEM, node);
   }
 
-
   public static AddStatement newInstance(SModel sm, boolean init) {
     return (AddStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AddStatement extends Statement {
   public static AddStatement newInstance(SModel sm) {
     return AddStatement.newInstance(sm, false);
   }
-
 }

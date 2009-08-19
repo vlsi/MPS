@@ -11,17 +11,13 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class Sequence_iteration1 extends TestCase {
-
   public void test_shortSequence1() {
     // sequence with no memory
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -67,12 +63,12 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
     Assert.assertEquals(count, 5);
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - 5), s);
       count++ ;
     }
@@ -82,14 +78,11 @@ __switch__:
   public void test_shortSequence2() {
     // sequence with memory
     final Wrappers._int yield_count = new Wrappers._int(0);
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -140,13 +133,13 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
     Assert.assertEquals(count, 5);
     Assert.assertEquals(yield_count.value, 5);
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
@@ -157,14 +150,11 @@ __switch__:
   public void test_longSequence1() {
     // sequence with no memory
     final int sequence_size = 1234;
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -211,12 +201,12 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
     Assert.assertEquals(count, sequence_size);
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + (count - sequence_size), s);
       count++ ;
     }
@@ -227,14 +217,11 @@ __switch__:
     // sequence with memory
     final int sequence_size = 1234;
     final Wrappers._int yield_count = new Wrappers._int(0);
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -285,18 +272,17 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
     Assert.assertEquals(count, sequence_size);
     Assert.assertEquals(yield_count.value, sequence_size);
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
     }
     Assert.assertEquals(count, sequence_size * 2);
     Assert.assertEquals(yield_count.value, sequence_size * 2);
   }
-
 }

@@ -21,5 +21,4 @@ public class IsEmptyOperation extends NoArgumentsSequenceOperation {
   public static IsEmptyOperation newInstance(SModel sm) {
     return IsEmptyOperation.newInstance(sm, false);
   }
-
 }

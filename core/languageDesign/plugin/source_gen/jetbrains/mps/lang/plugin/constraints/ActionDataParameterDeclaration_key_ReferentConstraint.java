@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_Behavior;
 
 public class ActionDataParameterDeclaration_key_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ActionDataParameterDeclaration_key_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class ActionDataParameterDeclaration_key_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ActionDataParameterDeclaration_Behavior.getVariants_1227641865136();
   }
-
 }

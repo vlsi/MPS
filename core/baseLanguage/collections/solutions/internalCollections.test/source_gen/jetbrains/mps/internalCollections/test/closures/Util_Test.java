@@ -13,8 +13,7 @@ import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 public class Util_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_dummy() throws Exception {
   }
 
@@ -30,7 +29,7 @@ public class Util_Test extends TestCase {
 
   public void assertIterableEqualsAsSet(Iterable exp, Iterable test) {
     HashSet expSet = new HashSet();
-    for(Object e : exp) {
+    for (Object e : exp) {
       Assert.assertTrue(expSet.add(e));
     }
     Iterator testIt = test.iterator();
@@ -43,7 +42,7 @@ public class Util_Test extends TestCase {
 
   public void assertIterableEqualsIgnoreOrder(Iterable exp, Iterable test) {
     HashMap<Object, Integer> cardMap = new HashMap<Object, Integer>();
-    for(Object e : exp) {
+    for (Object e : exp) {
       Integer card = cardMap.get(e);
       cardMap.put(e, (card != null ?
         card + 1 :
@@ -104,7 +103,7 @@ public class Util_Test extends TestCase {
   }
 
   public void assertIteratorYields(Iterator it, Object... values) {
-    for(Object v : values) {
+    for (Object v : values) {
       Assert.assertSame(v, it.next());
     }
     Assert.assertFalse(it.hasNext());
@@ -115,5 +114,4 @@ public class Util_Test extends TestCase {
       // expected exception
     }
   }
-
 }

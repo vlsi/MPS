@@ -17,8 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 
 public class Iterator_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_null() throws Exception {
     Iterable<Integer> test = null;
     Assert.assertFalse(Sequence.fromIterable(test).iterator() == null);
@@ -38,7 +37,7 @@ public class Iterator_Test extends Util_Test {
     }
   }
 
-  @Test()
+  @Test
   public void test_singleton() throws Exception {
     Iterable<Integer> test = Sequence.<Integer>singleton(42);
     Iterator<Integer> is = Sequence.fromIterable(test).iterator();
@@ -63,36 +62,35 @@ public class Iterator_Test extends Util_Test {
     }
   }
 
-  @Test()
+  @Test
   public void test_iterating() throws Exception {
     Iterable<String> test = this.inputABC();
     String res = "";
-    for(Iterator<String> itr = Sequence.fromIterable(test).iterator() ; itr.hasNext() ; ) {
+    for (Iterator<String> itr = Sequence.fromIterable(test).iterator() ; itr.hasNext() ; ) {
       res = res + itr.next();
     }
     Assert.assertEquals("ABC", res);
     res = "";
-    for(IEnumerator<String> enm = Sequence.fromIterable(test).enumerator() ; enm.moveNext() ; ) {
+    for (IEnumerator<String> enm = Sequence.fromIterable(test).enumerator() ; enm.moveNext() ; ) {
       res = res + enm.current();
       res = res + enm.current();
     }
     Assert.assertEquals("AABBCC", res);
   }
 
-  @Test()
+  @Test
   public void test_containerIterator() throws Exception {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    for(Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
+    for (Iterator<Integer> cit = ListSequence.fromList(list).iterator() ; cit.hasNext() ; ) {
       cit.next();
       cit.remove();
     }
     Assert.assertTrue(ListSequence.fromList(list).isEmpty());
     Set<Integer> set = SetSequence.fromSetAndArray(new HashSet<Integer>(), 1, 2, 3);
-    for(Iterator<Integer> cit = SetSequence.fromSet(set).iterator() ; cit.hasNext() ; ) {
+    for (Iterator<Integer> cit = SetSequence.fromSet(set).iterator() ; cit.hasNext() ; ) {
       cit.next();
       cit.remove();
     }
     Assert.assertTrue(SetSequence.fromSet(set).isEmpty());
   }
-
 }

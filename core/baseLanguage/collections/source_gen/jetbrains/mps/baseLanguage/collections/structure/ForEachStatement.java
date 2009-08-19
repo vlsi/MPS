@@ -34,7 +34,6 @@ public class ForEachStatement extends AbstractLoopStatement {
     super.setChild(ForEachStatement.INPUT_SEQUENCE, node);
   }
 
-
   public static ForEachStatement newInstance(SModel sm, boolean init) {
     return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class ForEachStatement extends AbstractLoopStatement {
   public static ForEachStatement newInstance(SModel sm) {
     return ForEachStatement.newInstance(sm, false);
   }
-
 }

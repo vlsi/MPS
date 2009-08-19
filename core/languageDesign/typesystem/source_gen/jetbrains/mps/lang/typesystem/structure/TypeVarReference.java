@@ -24,7 +24,6 @@ public class TypeVarReference extends Expression {
     super.setReferent(TypeVarReference.TYPE_VAR_DECLARATION, node);
   }
 
-
   public static TypeVarReference newInstance(SModel sm, boolean init) {
     return (TypeVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TypeVarReference extends Expression {
   public static TypeVarReference newInstance(SModel sm) {
     return TypeVarReference.newInstance(sm, false);
   }
-
 }

@@ -28,5 +28,4 @@ public class INamedConcept_Behavior {
   public static String callSuper_getFqName_1213877404258(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
   }
-
 }

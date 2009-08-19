@@ -24,7 +24,6 @@ public class ImmediateSupertypesExpression extends Expression {
     super.setChild(ImmediateSupertypesExpression.SUBTYPE_EXPRESSION, node);
   }
 
-
   public static ImmediateSupertypesExpression newInstance(SModel sm, boolean init) {
     return (ImmediateSupertypesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ImmediateSupertypesExpression extends Expression {
   public static ImmediateSupertypesExpression newInstance(SModel sm) {
     return ImmediateSupertypesExpression.newInstance(sm, false);
   }
-
 }

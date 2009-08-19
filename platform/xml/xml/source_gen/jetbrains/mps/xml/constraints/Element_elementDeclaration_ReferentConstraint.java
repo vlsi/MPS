@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class Element_elementDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public Element_elementDeclaration_ReferentConstraint() {
   }
 
@@ -36,11 +35,9 @@ public class Element_elementDeclaration_ReferentConstraint extends BaseNodeRefer
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), _context.getEnclosingNode(), operationContext.getScope());
     if (ListSequence.fromList(elementDeclarations).isEmpty()) {
       searchScope = SModelSearchUtil.createModelAndImportedModelsScope(_context.getModel(), operationContext.getScope());
-    } else
-    {
+    } else {
       searchScope = new SimpleSearchScope(elementDeclarations);
     }
     return searchScope;
   }
-
 }

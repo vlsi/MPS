@@ -22,5 +22,4 @@ public class Executor_FunctionParameter extends ConceptFunctionParameter {
   public static Executor_FunctionParameter newInstance(SModel sm) {
     return Executor_FunctionParameter.newInstance(sm, false);
   }
-
 }

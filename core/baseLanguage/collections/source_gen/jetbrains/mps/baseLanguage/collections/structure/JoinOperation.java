@@ -24,7 +24,6 @@ public class JoinOperation extends SequenceOperation {
     super.setChild(JoinOperation.DELIMITER, node);
   }
 
-
   public static JoinOperation newInstance(SModel sm, boolean init) {
     return (JoinOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.JoinOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class JoinOperation extends SequenceOperation {
   public static JoinOperation newInstance(SModel sm) {
     return JoinOperation.newInstance(sm, false);
   }
-
 }

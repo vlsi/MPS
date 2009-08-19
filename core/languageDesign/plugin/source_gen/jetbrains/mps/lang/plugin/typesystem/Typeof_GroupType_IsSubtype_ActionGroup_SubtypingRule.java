@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   public boolean isWeak() {
     return false;
   }
-
 }

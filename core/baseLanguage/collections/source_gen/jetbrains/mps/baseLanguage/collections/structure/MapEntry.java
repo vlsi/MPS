@@ -34,7 +34,6 @@ public class MapEntry extends BaseConcept {
     super.setChild(MapEntry.VALUE, node);
   }
 
-
   public static MapEntry newInstance(SModel sm, boolean init) {
     return (MapEntry)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapEntry", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class MapEntry extends BaseConcept {
   public static MapEntry newInstance(SModel sm) {
     return MapEntry.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class Operation_parameter extends ConceptFunctionParameter {
   public static Operation_parameter newInstance(SModel sm) {
     return Operation_parameter.newInstance(sm, false);
   }
-
 }

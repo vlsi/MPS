@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class FindSourceBlock_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,13 +24,13 @@ public class FindSourceBlock_Behavior {
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(thisNode);
     SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).last();
     Set<SNode> expressions = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode returnStatement : returnStatements) {
+    for (SNode returnStatement : returnStatements) {
       SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(returnStatement, "expression", true));
     }
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SetSequence.fromSet(expressions).addElement(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true));
     }
-    for(SNode expr : expressions) {
+    for (SNode expr : expressions) {
       SNode type = TypeChecker.getInstance().getTypeOf(expr);
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new _Quotations.QuotationClass_1().createNode()) && !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType"))) {
         return true;
@@ -39,5 +38,4 @@ public class FindSourceBlock_Behavior {
     }
     return false;
   }
-
 }

@@ -10,7 +10,6 @@ import junit.framework.Assert;
 import java.util.Arrays;
 
 public class ListOperations_Test extends TestCase {
-
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Integer at_2 = ListSequence.fromList(list).getElement(2);
@@ -30,5 +29,4 @@ public class ListOperations_Test extends TestCase {
     List<Integer> lo = ListSequence.fromList(li).concat(ListSequence.fromList(li)).distinct().toListSequence();
     Assert.assertEquals(li, lo);
   }
-
 }

@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ConceptTypeClause_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2811_0(editorContext, node);
   }
@@ -112,7 +111,6 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2811_0 extends AbstractCellProvider {
-
     public _Inline2811_0() {
       super();
     }
@@ -143,10 +141,9 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class linkInfoListHandler_2811_0 extends RefNodeListHandler {
-
     public linkInfoListHandler_2811_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -193,7 +190,5 @@ public class ConceptTypeClause_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

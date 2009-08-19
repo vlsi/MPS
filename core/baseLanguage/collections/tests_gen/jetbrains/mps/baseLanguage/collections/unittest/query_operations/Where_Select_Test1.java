@@ -17,17 +17,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Where_Select_Test1 extends TestCase {
-
-  @Test()
+  @Test
   public void test__1() throws Exception {
-    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -76,13 +72,11 @@ __switch__:
     // from sequence of 10 numbers
     // take each even number and produce string: "num:<n>"
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter <Integer>() {
-
+    Iterable<String> strings = Sequence.fromIterable(nums).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
-    }).select(new ISelector <Integer, String>() {
-
+    }).select(new ISelector<Integer, String>() {
       public String select(Integer n) {
         count.value++ ;
         return "num:" + n;
@@ -90,7 +84,7 @@ __switch__:
     });
     Assert.assertEquals(0, count.value);
     int expectedNum = 0;
-    for(String s : Sequence.fromIterable(strings)) {
+    for (String s : Sequence.fromIterable(strings)) {
       String expected = "num:" + expectedNum;
       Assert.assertEquals(expected, s);
       expectedNum = expectedNum + 2;
@@ -98,18 +92,16 @@ __switch__:
     Assert.assertEquals(5, count.value);
   }
 
-  @Test()
+  @Test
   public void test__2() throws Exception {
     // 'where' and 'select' tolerate 'null' operand 
     List<Integer> nums = null;
-    Iterable<Integer> evenNums = ListSequence.fromList(nums).where(new IWhereFilter <Integer>() {
-
+    Iterable<Integer> evenNums = ListSequence.fromList(nums).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer n) {
         return n % 2 == 0;
       }
     });
-    Iterable<String> strings = Sequence.fromIterable(evenNums).select(new ISelector <Integer, String>() {
-
+    Iterable<String> strings = Sequence.fromIterable(evenNums).select(new ISelector<Integer, String>() {
       public String select(Integer it) {
         return "" + it;
       }
@@ -117,35 +109,30 @@ __switch__:
     Assert.assertEquals(0, Sequence.fromIterable(strings).count());
   }
 
-  @Test()
+  @Test
   public void test__3() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       // 'select' skips all 'null'-s
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
-      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector <String, String>() {
-
+      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
           return (String)null;
         }
       });
       Assert.assertTrue(Sequence.fromIterable(empty).isEmpty());
-    } else
-    {
+    } else {
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
-      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector <String, String>() {
-
+      Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
           return (String)null;
         }
       });
       Assert.assertSame(3, Sequence.fromIterable(empty).count());
-      Assert.assertFalse(Sequence.fromIterable(empty).any(new IWhereFilter <String>() {
-
+      Assert.assertFalse(Sequence.fromIterable(empty).any(new IWhereFilter<String>() {
         public boolean accept(String it) {
           return it != null;
         }
       }));
     }
   }
-
 }

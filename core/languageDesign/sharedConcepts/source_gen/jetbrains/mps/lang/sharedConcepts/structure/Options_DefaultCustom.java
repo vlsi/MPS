@@ -54,5 +54,4 @@ public enum Options_DefaultCustom {
     }
     return Options_DefaultCustom.getDefault();
   }
-
 }

@@ -21,5 +21,4 @@ public class MappingsSetOperation extends MapOperation {
   public static MappingsSetOperation newInstance(SModel sm) {
     return MappingsSetOperation.newInstance(sm, false);
   }
-
 }

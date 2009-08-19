@@ -42,7 +42,6 @@ public class DoUpdateGroupBlock extends ConceptFunction implements GroupContents
     this.setProperty(DoUpdateGroupBlock.VIRTUAL_PACKAGE, value);
   }
 
-
   public static DoUpdateGroupBlock newInstance(SModel sm, boolean init) {
     return (DoUpdateGroupBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DoUpdateGroupBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class DoUpdateGroupBlock extends ConceptFunction implements GroupContents
   public static DoUpdateGroupBlock newInstance(SModel sm) {
     return DoUpdateGroupBlock.newInstance(sm, false);
   }
-
 }

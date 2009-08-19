@@ -21,5 +21,4 @@ public class NoArgumentsSequenceOperation extends SequenceOperation {
   public static NoArgumentsSequenceOperation newInstance(SModel sm) {
     return NoArgumentsSequenceOperation.newInstance(sm, false);
   }
-
 }

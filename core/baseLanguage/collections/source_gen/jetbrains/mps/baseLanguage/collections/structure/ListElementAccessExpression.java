@@ -33,7 +33,6 @@ public class ListElementAccessExpression extends Expression {
     super.setChild(ListElementAccessExpression.INDEX, node);
   }
 
-
   public static ListElementAccessExpression newInstance(SModel sm, boolean init) {
     return (ListElementAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class ListElementAccessExpression extends Expression {
   public static ListElementAccessExpression newInstance(SModel sm) {
     return ListElementAccessExpression.newInstance(sm, false);
   }
-
 }

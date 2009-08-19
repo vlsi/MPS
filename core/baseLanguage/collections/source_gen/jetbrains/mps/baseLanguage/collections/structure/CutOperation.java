@@ -21,5 +21,4 @@ public class CutOperation extends ChunkOperation {
   public static CutOperation newInstance(SModel sm) {
     return CutOperation.newInstance(sm, false);
   }
-
 }

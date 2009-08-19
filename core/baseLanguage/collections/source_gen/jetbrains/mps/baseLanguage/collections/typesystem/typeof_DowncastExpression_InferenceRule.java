@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_DowncastExpression_InferenceRule() {
   }
 
@@ -23,7 +22,6 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
     {
       final SNode expType = typeCheckingContext.typeOf(SLinkOperations.getTarget(expression, "expression", true), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231559409", true);
       typeCheckingContext.whenConcrete(expType, new Runnable() {
-
         public void run() {
           {
             IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type");
@@ -34,8 +32,7 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
                 BaseIntentionProvider intentionProvider = null;
                 typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode)ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_0), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", intentionProvider);
               }
-            } else
-            {
+            } else {
             }
           }
         }
@@ -54,5 +51,4 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-
 }

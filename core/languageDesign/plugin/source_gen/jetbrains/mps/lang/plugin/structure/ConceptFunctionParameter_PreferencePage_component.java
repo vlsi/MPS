@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_PreferencePage_component extends ConceptFu
   public static ConceptFunctionParameter_PreferencePage_component newInstance(SModel sm) {
     return ConceptFunctionParameter_PreferencePage_component.newInstance(sm, false);
   }
-
 }

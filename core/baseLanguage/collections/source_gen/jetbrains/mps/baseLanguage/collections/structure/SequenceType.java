@@ -24,7 +24,6 @@ public class SequenceType extends Type {
     super.setChild(SequenceType.ELEMENT_TYPE, node);
   }
 
-
   public static SequenceType newInstance(SModel sm, boolean init) {
     return (SequenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SequenceType extends Type {
   public static SequenceType newInstance(SModel sm) {
     return SequenceType.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class _NotInRules_Component extends AbstractCellProvider {
-
   public _NotInRules_Component(SNode node) {
     super(node);
   }
@@ -44,5 +43,4 @@ public class _NotInRules_Component extends AbstractCellProvider {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
 }

@@ -21,5 +21,4 @@ public class SortedMapType extends MapType {
   public static SortedMapType newInstance(SModel sm) {
     return SortedMapType.newInstance(sm, false);
   }
-
 }

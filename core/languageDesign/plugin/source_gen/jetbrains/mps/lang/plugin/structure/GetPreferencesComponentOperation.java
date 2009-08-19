@@ -23,7 +23,6 @@ public class GetPreferencesComponentOperation extends ProjectOperation {
     super.setReferent(GetPreferencesComponentOperation.COMPONENT_DECLARATION, node);
   }
 
-
   public static GetPreferencesComponentOperation newInstance(SModel sm, boolean init) {
     return (GetPreferencesComponentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GetPreferencesComponentOperation extends ProjectOperation {
   public static GetPreferencesComponentOperation newInstance(SModel sm) {
     return GetPreferencesComponentOperation.newInstance(sm, false);
   }
-
 }

@@ -23,5 +23,4 @@ public class SingletabbedEditorTab_Behavior {
   public static SNode callSuper_createType_144706109457730962(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_144706109457730962);
   }
-
 }

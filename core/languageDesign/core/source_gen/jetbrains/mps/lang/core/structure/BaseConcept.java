@@ -47,7 +47,6 @@ public class BaseConcept extends BaseAdapter {
     this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
   }
 
-
   public static BaseConcept newInstance(SModel sm, boolean init) {
     return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -55,5 +54,4 @@ public class BaseConcept extends BaseAdapter {
   public static BaseConcept newInstance(SModel sm) {
     return BaseConcept.newInstance(sm, false);
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ApplicableNodeReference_applicableNode_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ApplicableNodeReference_applicableNode_ReferentConstraint() {
   }
 
@@ -54,5 +53,4 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint extends B
     }
     return result;
   }
-
 }

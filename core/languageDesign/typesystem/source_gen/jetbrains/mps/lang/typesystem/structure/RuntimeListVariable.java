@@ -52,7 +52,6 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
     this.setProperty(RuntimeListVariable.VIRTUAL_PACKAGE, value);
   }
 
-
   public static RuntimeListVariable newInstance(SModel sm, boolean init) {
     return (RuntimeListVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeListVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class RuntimeListVariable extends BaseConcept implements INamedConcept {
   public static RuntimeListVariable newInstance(SModel sm) {
     return RuntimeListVariable.newInstance(sm, false);
   }
-
 }

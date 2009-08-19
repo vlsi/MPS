@@ -22,5 +22,4 @@ public class GenerationListener_models extends ConceptFunctionParameter {
   public static GenerationListener_models newInstance(SModel sm) {
     return GenerationListener_models.newInstance(sm, false);
   }
-
 }

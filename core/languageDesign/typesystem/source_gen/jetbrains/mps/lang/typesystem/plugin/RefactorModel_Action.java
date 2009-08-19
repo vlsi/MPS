@@ -25,7 +25,7 @@ public class RefactorModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -35,7 +35,7 @@ public class RefactorModel_Action extends GeneratedAction {
     return languageAspect == LanguageAspect.TYPESYSTEM;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -47,7 +47,7 @@ public class RefactorModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -59,12 +59,11 @@ public class RefactorModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RefactorModelUtil.refactorModel(RefactorModel_Action.this.model);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RefactorModel", t);
     }
   }
-
 }

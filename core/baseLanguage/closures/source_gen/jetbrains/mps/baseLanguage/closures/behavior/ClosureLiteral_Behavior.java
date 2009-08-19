@@ -18,7 +18,7 @@ public class ClosureLiteral_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("{");
     String sep = " ";
-    for(SNode pd : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+    for (SNode pd : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       sb.append(sep).append(BaseConcept_Behavior.call_getPresentation_1213877396640(pd));
       sep = ", ";
     }
@@ -54,5 +54,4 @@ public class ClosureLiteral_Behavior {
   public static SNode callSuper_getType_1229718192182(SNode thisNode, String callerConceptFqName, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_getType_1229718192182", PARAMETERS_1229718192182, paramTypes, resultType, returnType, termType, throwsTypes);
   }
-
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_FindFirstOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_FindFirstOperation_InferenceRule() {
   }
 
@@ -46,5 +45,4 @@ public class typeof_FindFirstOperation_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-
 }

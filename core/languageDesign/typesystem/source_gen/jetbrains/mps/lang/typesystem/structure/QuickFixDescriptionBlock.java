@@ -22,5 +22,4 @@ public class QuickFixDescriptionBlock extends ConceptFunction {
   public static QuickFixDescriptionBlock newInstance(SModel sm) {
     return QuickFixDescriptionBlock.newInstance(sm, false);
   }
-
 }

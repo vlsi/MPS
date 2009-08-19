@@ -22,5 +22,4 @@ public class UpdateBlock extends ConceptFunction {
   public static UpdateBlock newInstance(SModel sm) {
     return UpdateBlock.newInstance(sm, false);
   }
-
 }

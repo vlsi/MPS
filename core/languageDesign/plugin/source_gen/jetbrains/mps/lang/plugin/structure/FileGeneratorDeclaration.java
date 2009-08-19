@@ -135,7 +135,6 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
     this.insertChild(prev, FileGeneratorDeclaration.FIELD, node);
   }
 
-
   public static FileGeneratorDeclaration newInstance(SModel sm, boolean init) {
     return (FileGeneratorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -143,5 +142,4 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   public static FileGeneratorDeclaration newInstance(SModel sm) {
     return FileGeneratorDeclaration.newInstance(sm, false);
   }
-
 }

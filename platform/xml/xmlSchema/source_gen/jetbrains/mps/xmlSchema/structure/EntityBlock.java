@@ -48,7 +48,6 @@ public class EntityBlock extends BaseConcept {
     this.insertChild(prev, EntityBlock.ENTITY_LINE, node);
   }
 
-
   public static EntityBlock newInstance(SModel sm, boolean init) {
     return (EntityBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class EntityBlock extends BaseConcept {
   public static EntityBlock newInstance(SModel sm) {
     return EntityBlock.newInstance(sm, false);
   }
-
 }

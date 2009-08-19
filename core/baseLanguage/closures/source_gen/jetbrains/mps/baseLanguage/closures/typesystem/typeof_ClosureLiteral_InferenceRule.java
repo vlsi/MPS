@@ -20,13 +20,12 @@ import jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ClosureLiteral_InferenceRule() {
   }
 
   public void applyRule(final SNode closure, final TypeCheckingContext typeCheckingContext) {
     List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
+    for (SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(param, "type", true), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
         final SNode pt_typevar_1221579075465 = typeCheckingContext.createNewRuntimeTypesVariable();
         {
@@ -44,7 +43,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
     List<SNode> allYldAlls = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> allStmts = ListSequence.fromList(new LinkedList<SNode>());
     List<SNode> allThrows = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode c : SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true))) {
+    for (SNode c : SNodeOperations.getChildren(SLinkOperations.getTarget(closure, "body", true))) {
       if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
         ListSequence.fromList(allRets).addElement(c);
       } else if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
@@ -66,8 +65,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       } else
       if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement")) {
         ListSequence.fromList(allYlds).addElement(stmt);
-      } else
-      {
+      } else {
         if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ThrowStatement")) {
           final SNode tt_typevar_1221579075612 = typeCheckingContext.createNewRuntimeTypesVariable();
           {
@@ -78,7 +76,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
           ListSequence.fromList(allThrows).addElement(typeCheckingContext.getEquationManager().getRepresentator(tt_typevar_1221579075612));
         } else
         if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-          for(SNode thr : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "throwsItem", true))) {
+          for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "throwsItem", true))) {
             ListSequence.fromList(allThrows).addElement(SNodeOperations.copyNode(thr));
           }
         }
@@ -87,7 +85,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         while (ListSequence.fromList(allChildren).isNotEmpty()) {
           SNode c = ListSequence.fromList(allChildren).removeElementAt(0);
           if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.baseLanguage.structure.StatementList")) {
-            for(SNode cstmt : SLinkOperations.getTargets(SNodeOperations.cast(c, "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)) {
+            for (SNode cstmt : SLinkOperations.getTargets(SNodeOperations.cast(c, "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)) {
               if (!(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock")) && !(SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"))) {
                 ListSequence.fromList(allStmts).addElement(cstmt);
               }
@@ -99,7 +97,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     final SNode RLCS_typevar_1221579075692 = typeCheckingContext.createNewRuntimeTypesVariable();
-    for(SNode rs : allRets) {
+    for (SNode rs : allRets) {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
@@ -110,7 +108,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     final SNode YLCS_typevar_1221579075693 = typeCheckingContext.createNewRuntimeTypesVariable();
-    for(SNode ys : allYlds) {
+    for (SNode ys : allYlds) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(ys, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement"), "expression", true);
         BaseIntentionProvider intentionProvider = null;
@@ -118,7 +116,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
       }
     }
     final SNode YALCS_typevar_1229000934873 = typeCheckingContext.createNewRuntimeTypesVariable();
-    for(SNode yas : allYldAlls) {
+    for (SNode yas : allYldAlls) {
       final SNode elementType_typevar_1229000969704 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(yas, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement"), "expression", true);
@@ -191,8 +189,7 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(RESULT_typevar_1221579592331), (SNode)typeCheckingContext.getEquationManager().getRepresentator(RET_AND_TERM_typevar_1232125197501), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1221663085197", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
@@ -206,8 +203,8 @@ public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_R
     }
     List<SNode> realThrows = ListSequence.fromList(new ArrayList<SNode>());
 with_allThrows:
-    for(SNode another : allThrows) {
-      for(SNode one : realThrows) {
+    for (SNode another : allThrows) {
+      for (SNode one : realThrows) {
         if (SNodeOperations.isInstanceOf(one, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SNodeOperations.isInstanceOf(another, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(one, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(SNodeOperations.cast(another, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)) {
           continue with_allThrows;
         }
@@ -237,8 +234,7 @@ with_allThrows:
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718251100", true), (SNode)ClosureLiteral_Behavior.call_getType_1229718192182(closure, paramTypes, new _Quotations.QuotationClass_13().createNode(typeCheckingContext.getEquationManager().getRepresentator(YLCS_typevar_1221579075693), typeCheckingContext), null, null, realThrows), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1229718256918", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         SNode _nodeToCheck_1029348928467 = closure;
         BaseIntentionProvider intentionProvider = null;
@@ -258,5 +254,4 @@ with_allThrows:
   public boolean overrides() {
     return false;
   }
-
 }

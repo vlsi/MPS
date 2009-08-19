@@ -75,7 +75,6 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
     this.insertChild(prev, InvokeFunctionExpression.PARAMETER, node);
   }
 
-
   public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {
     return (InvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   public static InvokeFunctionExpression newInstance(SModel sm) {
     return InvokeFunctionExpression.newInstance(sm, false);
   }
-
 }

@@ -9,5 +9,4 @@ public enum ParameterType {
   ANY();
 
   ParameterType() {
-  }
-}
+  }}

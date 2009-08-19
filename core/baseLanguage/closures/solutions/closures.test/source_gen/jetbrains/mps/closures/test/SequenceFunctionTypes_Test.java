@@ -12,21 +12,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
-
-  @Test()
+  @Test
   public void test_returnSequence() throws Exception {
     _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun1 = null;
     _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun2 = null;
     fun1 = fun2;
     fun2 = fun1;
-    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -55,26 +51,21 @@ __switch__:
         };
       }
     });
-    fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return seq;
       }
     };
-    fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return ListSequence.fromListAndArray(new ArrayList<Integer>(), Integer.valueOf(1));
       }
     };
-    fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -103,14 +94,11 @@ __switch__:
         };
       }
     };
-    fun1 = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    fun1 = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -141,15 +129,13 @@ __switch__:
     };
   }
 
-  @Test()
+  @Test
   public void test_acceptSequence() throws Exception {
-    _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun1 = new _FunctionTypes._void_P1_E0 <Iterable<Integer>>() {
-
+    _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun1 = new _FunctionTypes._void_P1_E0<Iterable<Integer>>() {
       public void invoke(Iterable<Integer> p) {
       }
     };
-    _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun2 = new _FunctionTypes._void_P1_E0 <Iterable<Integer>>() {
-
+    _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun2 = new _FunctionTypes._void_P1_E0<Iterable<Integer>>() {
       public void invoke(Iterable<Integer> p) {
       }
     };
@@ -157,16 +143,13 @@ __switch__:
     fun2 = fun1;
   }
 
-  @Test()
+  @Test
   public void test_resultsReturnSequence() throws Exception {
-    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -203,19 +186,15 @@ __switch__:
         };
       }
     });
-    this.assertResultsEqual(new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
         return seq;
       }
-    }, new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -253,5 +232,4 @@ __switch__:
       }
     });
   }
-
 }

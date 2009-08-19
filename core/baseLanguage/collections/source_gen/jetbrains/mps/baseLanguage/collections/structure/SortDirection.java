@@ -22,5 +22,4 @@ public class SortDirection extends BooleanConstant {
   public static SortDirection newInstance(SModel sm) {
     return SortDirection.newInstance(sm, false);
   }
-
 }

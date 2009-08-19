@@ -23,7 +23,6 @@ public class ElementWithContent extends ElementDeclaration {
     super.setChild(ElementWithContent.COMPLEX_TYPE, node);
   }
 
-
   public static ElementWithContent newInstance(SModel sm, boolean init) {
     return (ElementWithContent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithContent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ElementWithContent extends ElementDeclaration {
   public static ElementWithContent newInstance(SModel sm) {
     return ElementWithContent.newInstance(sm, false);
   }
-
 }

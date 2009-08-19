@@ -33,7 +33,6 @@ public class GeneratePlugins extends BaseConcept {
     this.setBooleanProperty(GeneratePlugins.GENERATE_PROJECT_PLUGIN, value);
   }
 
-
   public static GeneratePlugins newInstance(SModel sm, boolean init) {
     return (GeneratePlugins)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GeneratePlugins", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class GeneratePlugins extends BaseConcept {
   public static GeneratePlugins newInstance(SModel sm) {
     return GeneratePlugins.newInstance(sm, false);
   }
-
 }

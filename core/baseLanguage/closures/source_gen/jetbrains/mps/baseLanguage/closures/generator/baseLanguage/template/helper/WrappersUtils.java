@@ -21,18 +21,17 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import java.util.Iterator;
 
 public class WrappersUtils {
-
   public static List<SNode> collectVariableDeclarationsToWrap2(SNode closure) {
     List<SNode> resVdecls = ListSequence.fromList(new ArrayList<SNode>());
     SNode wrpPrgNode = SNodeOperations.getAncestorWhereConceptInList(closure, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
     if ((wrpPrgNode != null)) {
       Map<SNode, Integer> clsMap = collectVariableUsages(SLinkOperations.getTarget(closure, "body", true));
-      for(IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
+      for (IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
         ListSequence.fromList(resVdecls).addElement(SNodeOperations.cast(m.key(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
       }
       if (MapSequence.fromMap(clsMap).isNotEmpty()) {
         Map<SNode, Integer> wrpMap = collectVariableUsages(wrpPrgNode);
-        for(IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
+        for (IMapping<SNode, Integer> m : SetSequence.fromSet(MapSequence.fromMap(clsMap).mappingsSet())) {
           if (m.value() == 0) {
             if (!(MapSequence.fromMap(wrpMap).containsKey(m.key())) || MapSequence.fromMap(wrpMap).get(m.key()) <= 1) {
               ListSequence.fromList(resVdecls).removeElement(SNodeOperations.cast(m.key(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
@@ -47,7 +46,7 @@ public class WrappersUtils {
   public static Map<SNode, Integer> collectVariableUsages(SNode start) {
     Map<SNode, Integer> resMap = MapSequence.fromMap(new HashMap<SNode, Integer>());
     Program prg = DataFlowManager.getInstance().buildProgramFor(start);
-    for(Instruction ins : prg.getInstructions()) {
+    for (Instruction ins : prg.getInstructions()) {
       if (ins instanceof ReadInstruction) {
         ReadInstruction ri = ((ReadInstruction)ins);
         SNode var = (SNode)ri.getVariable();
@@ -70,7 +69,7 @@ public class WrappersUtils {
 
   public static List<SNode> collectVariableDeclarationsToWrap(SNode closure) {
     List<SNode> vdecls = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode desc : SNodeOperations.getDescendants(closure, null, false, new String[]{})) {
+    for (SNode desc : SNodeOperations.getDescendants(closure, null, false, new String[]{})) {
       if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && closure == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
         SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
         if (closure != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
@@ -81,10 +80,10 @@ public class WrappersUtils {
       }
     }
 with_decls:
-    for(Iterator<SNode> it = ListSequence.fromList(vdecls).iterator() ; it.hasNext() ; ) {
+    for (Iterator<SNode> it = ListSequence.fromList(vdecls).iterator() ; it.hasNext() ; ) {
       SNode vd = it.next();
       SNode sl = SNodeOperations.getAncestorWhereConceptInList(vd, new String[]{"jetbrains.mps.baseLanguage.structure.StatementList","jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"}, false, false);
-      for(SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
+      for (SNode desc : SNodeOperations.getDescendants(sl, null, false, new String[]{})) {
         if ((SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.LocalVariableReference") || SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.ParameterReference")) && SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == vd) {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true) == desc) {
             continue with_decls;
@@ -104,5 +103,4 @@ with_decls:
     }
     return vdecls;
   }
-
 }

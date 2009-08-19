@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_OriginalInputNode extends ConceptFunctionP
   public static ConceptFunctionParameter_OriginalInputNode newInstance(SModel sm) {
     return ConceptFunctionParameter_OriginalInputNode.newInstance(sm, false);
   }
-
 }

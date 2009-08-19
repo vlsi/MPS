@@ -41,7 +41,6 @@ public class ComplexType extends Declaration {
     super.setChild(ComplexType.MIXED_ATTRIBUTE, node);
   }
 
-
   public static ComplexType newInstance(SModel sm, boolean init) {
     return (ComplexType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class ComplexType extends Declaration {
   public static ComplexType newInstance(SModel sm) {
     return ComplexType.newInstance(sm, false);
   }
-
 }

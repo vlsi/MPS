@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_ContextNode extends ConceptFunctionParamet
   public static ConceptFunctionParameter_ContextNode newInstance(SModel sm) {
     return ConceptFunctionParameter_ContextNode.newInstance(sm, false);
   }
-
 }

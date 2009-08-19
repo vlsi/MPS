@@ -22,5 +22,4 @@ public class OnModelsGeneratedBlock extends ConceptFunction {
   public static OnModelsGeneratedBlock newInstance(SModel sm) {
     return OnModelsGeneratedBlock.newInstance(sm, false);
   }
-
 }

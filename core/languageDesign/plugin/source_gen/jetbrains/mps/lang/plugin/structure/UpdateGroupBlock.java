@@ -60,7 +60,6 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
     super.setChild(UpdateGroupBlock.ENUMERATE_FUNCTION, node);
   }
 
-
   public static UpdateGroupBlock newInstance(SModel sm, boolean init) {
     return (UpdateGroupBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   public static UpdateGroupBlock newInstance(SModel sm) {
     return UpdateGroupBlock.newInstance(sm, false);
   }
-
 }

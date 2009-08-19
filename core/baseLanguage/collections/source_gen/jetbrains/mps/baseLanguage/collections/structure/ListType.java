@@ -24,7 +24,6 @@ public class ListType extends Type {
     super.setChild(ListType.ELEMENT_TYPE, node);
   }
 
-
   public static ListType newInstance(SModel sm, boolean init) {
     return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ListType extends Type {
   public static ListType newInstance(SModel sm) {
     return ListType.newInstance(sm, false);
   }
-
 }

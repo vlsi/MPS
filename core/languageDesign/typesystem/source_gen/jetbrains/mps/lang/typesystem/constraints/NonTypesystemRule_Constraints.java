@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeARootContext;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class NonTypesystemRule_Constraints {
-
   public static boolean canBeARoot(final IOperationContext operationContext, final CanBeARootContext _context) {
     return LanguageAspect.TYPESYSTEM.is(_context.getModel());
   }
-
 }

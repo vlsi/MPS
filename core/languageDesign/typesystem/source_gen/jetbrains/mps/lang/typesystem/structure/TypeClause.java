@@ -22,5 +22,4 @@ public class TypeClause extends BaseConcept {
   public static TypeClause newInstance(SModel sm) {
     return TypeClause.newInstance(sm, false);
   }
-
 }

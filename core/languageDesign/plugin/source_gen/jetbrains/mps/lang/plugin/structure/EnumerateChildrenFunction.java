@@ -22,5 +22,4 @@ public class EnumerateChildrenFunction extends ConceptFunction {
   public static EnumerateChildrenFunction newInstance(SModel sm) {
     return EnumerateChildrenFunction.newInstance(sm, false);
   }
-
 }

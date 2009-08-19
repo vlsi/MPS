@@ -24,7 +24,6 @@ public class JoinContainer extends BaseConcept {
     super.setChild(JoinContainer.JOIN_TYPE, node);
   }
 
-
   public static JoinContainer newInstance(SModel sm, boolean init) {
     return (JoinContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class JoinContainer extends BaseConcept {
   public static JoinContainer newInstance(SModel sm) {
     return JoinContainer.newInstance(sm, false);
   }
-
 }

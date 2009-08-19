@@ -24,7 +24,6 @@ public class TailSetOperation extends SortedSetOperation {
     super.setChild(TailSetOperation.FROM_ELEMENT, node);
   }
 
-
   public static TailSetOperation newInstance(SModel sm, boolean init) {
     return (TailSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TailSetOperation extends SortedSetOperation {
   public static TailSetOperation newInstance(SModel sm) {
     return TailSetOperation.newInstance(sm, false);
   }
-
 }

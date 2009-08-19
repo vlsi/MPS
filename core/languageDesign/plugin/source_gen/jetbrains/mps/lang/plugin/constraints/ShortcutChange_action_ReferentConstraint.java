@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class ShortcutChange_action_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ShortcutChange_action_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class ShortcutChange_action_ReferentConstraint extends BaseNodeReferenceS
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
   }
-
 }

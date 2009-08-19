@@ -42,7 +42,6 @@ public class BuildGroupBlock extends ConceptFunction implements GroupContents {
     this.setProperty(BuildGroupBlock.VIRTUAL_PACKAGE, value);
   }
 
-
   public static BuildGroupBlock newInstance(SModel sm, boolean init) {
     return (BuildGroupBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BuildGroupBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class BuildGroupBlock extends ConceptFunction implements GroupContents {
   public static BuildGroupBlock newInstance(SModel sm) {
     return BuildGroupBlock.newInstance(sm, false);
   }
-
 }

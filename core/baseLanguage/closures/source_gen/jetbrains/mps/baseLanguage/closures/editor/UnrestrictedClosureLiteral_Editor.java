@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1012_0(editorContext, node);
   }
@@ -66,8 +65,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator <Boolean>() {
-
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
           return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1012_0((cell == null ?
             null :
@@ -127,13 +125,11 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean _StyleParameter_QueryFunction_1012_0(SNode node, EditorContext editorContext) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 
   private static class parameterListHandler_1012_0 extends RefNodeListHandler {
-
     public parameterListHandler_1012_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -195,7 +191,5 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

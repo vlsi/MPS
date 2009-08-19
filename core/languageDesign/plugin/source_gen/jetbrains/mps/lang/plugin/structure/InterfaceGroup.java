@@ -24,7 +24,6 @@ public class InterfaceGroup extends ActionGroupDeclaration {
     super.setChild(InterfaceGroup.GROUP_I_D, node);
   }
 
-
   public static InterfaceGroup newInstance(SModel sm, boolean init) {
     return (InterfaceGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InterfaceGroup extends ActionGroupDeclaration {
   public static InterfaceGroup newInstance(SModel sm) {
     return InterfaceGroup.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 
 public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7753_3(editorContext, node);
   }
@@ -287,7 +286,6 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7753_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -295,5 +293,4 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7753_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
-
 }

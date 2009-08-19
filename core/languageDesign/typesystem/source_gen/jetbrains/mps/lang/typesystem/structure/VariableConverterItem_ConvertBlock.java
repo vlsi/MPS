@@ -22,5 +22,4 @@ public class VariableConverterItem_ConvertBlock extends ConceptFunction {
   public static VariableConverterItem_ConvertBlock newInstance(SModel sm) {
     return VariableConverterItem_ConvertBlock.newInstance(sm, false);
   }
-
 }

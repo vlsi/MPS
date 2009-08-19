@@ -23,7 +23,6 @@ public class Text extends BaseText {
     this.setProperty(Text.TEXT, value);
   }
 
-
   public static Text newInstance(SModel sm, boolean init) {
     return (Text)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Text extends BaseText {
   public static Text newInstance(SModel sm) {
     return Text.newInstance(sm, false);
   }
-
 }

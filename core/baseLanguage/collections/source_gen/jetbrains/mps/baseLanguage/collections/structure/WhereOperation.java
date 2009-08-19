@@ -23,7 +23,6 @@ public class WhereOperation extends InternalSequenceOperation {
     this.setClosure(node);
   }
 
-
   public static WhereOperation newInstance(SModel sm, boolean init) {
     return (WhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class WhereOperation extends InternalSequenceOperation {
   public static WhereOperation newInstance(SModel sm) {
     return WhereOperation.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class FindSourceBlockParameter extends ConceptFunctionParameter {
   public static FindSourceBlockParameter newInstance(SModel sm) {
     return FindSourceBlockParameter.newInstance(sm, false);
   }
-
 }

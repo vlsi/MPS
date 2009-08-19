@@ -79,7 +79,6 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
     super.setChild(GenerationListenerDeclaration.AFTER_GENERATION_BLOCK, node);
   }
 
-
   public static GenerationListenerDeclaration newInstance(SModel sm, boolean init) {
     return (GenerationListenerDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -87,5 +86,4 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   public static GenerationListenerDeclaration newInstance(SModel sm) {
     return GenerationListenerDeclaration.newInstance(sm, false);
   }
-
 }

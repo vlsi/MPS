@@ -11,13 +11,12 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class RulesUtil_Closures {
-  /* package */static List<SNode> ourInterfaces;
+  /*package*/ static List<SNode> ourInterfaces;
 
   public static List<SNode> getInterfaces() {
     if (ourInterfaces == null) {
       ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
       ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
-
         public void onReload() {
           RulesUtil_Closures.ourInterfaces = null;
           ClassLoaderManager.getInstance().removeReloadHandler(this);
@@ -26,5 +25,4 @@ public class RulesUtil_Closures {
     }
     return ourInterfaces;
   }
-
 }

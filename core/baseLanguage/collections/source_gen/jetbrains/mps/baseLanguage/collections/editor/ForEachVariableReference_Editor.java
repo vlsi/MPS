@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ForEachVariableReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3065_0(editorContext, node);
   }
@@ -54,7 +53,6 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline3065_0 extends AbstractCellProvider {
-
     public _Inline3065_0() {
       super();
     }
@@ -89,7 +87,5 @@ public class ForEachVariableReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4196_0(editorContext, node);
   }
@@ -123,9 +122,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-
   private static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }
-
 }

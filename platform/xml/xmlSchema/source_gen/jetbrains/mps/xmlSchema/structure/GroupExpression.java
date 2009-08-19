@@ -21,5 +21,4 @@ public class GroupExpression extends TypeExpression {
   public static GroupExpression newInstance(SModel sm) {
     return GroupExpression.newInstance(sm, false);
   }
-
 }

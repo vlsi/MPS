@@ -14,5 +14,4 @@ public class JoinAnnotation_AnnotationLink {
   public static JoinContainer getJoinAnnotation(BaseConcept source) {
     return (JoinContainer)source.getAttribute(JoinAnnotation_AnnotationLink.JOIN_ANNOTATION);
   }
-
 }

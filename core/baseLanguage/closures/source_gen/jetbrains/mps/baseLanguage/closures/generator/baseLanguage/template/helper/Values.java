@@ -37,5 +37,4 @@ public enum Values {
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.closures.generator." + str;
   }
-
 }

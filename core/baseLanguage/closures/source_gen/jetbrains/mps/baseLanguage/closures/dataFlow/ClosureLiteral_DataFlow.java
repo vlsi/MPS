@@ -10,14 +10,12 @@ import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClosureLiteral_DataFlow extends DataFlowBuilder {
-
   public ClosureLiteral_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
+    for (SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
       _context.getBuilder().emitRead(var);
     }
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Element_alias_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public Element_alias_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class Element_alias_PropertyConstraint implements IModelConstraints, INod
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "elementDeclaration", false), "elementName");
   }
-
 }

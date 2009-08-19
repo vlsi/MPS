@@ -21,5 +21,4 @@ public class CreateComparableEquationStatement extends AbstractEquationStatement
   public static CreateComparableEquationStatement newInstance(SModel sm) {
     return CreateComparableEquationStatement.newInstance(sm, false);
   }
-
 }

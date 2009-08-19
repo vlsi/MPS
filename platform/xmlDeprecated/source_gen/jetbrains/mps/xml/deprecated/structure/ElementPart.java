@@ -53,7 +53,6 @@ public class ElementPart extends BaseConcept implements INamedConcept {
     this.setProperty(ElementPart.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ElementPart newInstance(SModel sm, boolean init) {
     return (ElementPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class ElementPart extends BaseConcept implements INamedConcept {
   public static ElementPart newInstance(SModel sm) {
     return ElementPart.newInstance(sm, false);
   }
-
 }

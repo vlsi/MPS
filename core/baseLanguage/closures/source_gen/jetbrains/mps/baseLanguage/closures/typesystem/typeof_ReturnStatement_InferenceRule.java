@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ReturnStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ReturnStatement_InferenceRule() {
   }
 
@@ -40,5 +39,4 @@ public class typeof_ReturnStatement_InferenceRule extends AbstractInferenceRule_
   public boolean overrides() {
     return false;
   }
-
 }

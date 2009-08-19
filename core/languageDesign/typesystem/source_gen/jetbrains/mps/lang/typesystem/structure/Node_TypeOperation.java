@@ -22,5 +22,4 @@ public class Node_TypeOperation extends SNodeOperation {
   public static Node_TypeOperation newInstance(SModel sm) {
     return Node_TypeOperation.newInstance(sm, false);
   }
-
 }

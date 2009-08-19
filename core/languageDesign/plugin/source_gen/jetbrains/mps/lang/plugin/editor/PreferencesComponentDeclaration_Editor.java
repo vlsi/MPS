@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4007_2(editorContext, node);
   }
@@ -247,7 +246,6 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4007_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -257,7 +255,6 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class persistenPropertyDeclarationListHandler_4007_0 extends RefNodeListHandler {
-
     public persistenPropertyDeclarationListHandler_4007_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -309,10 +306,9 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class preferencePageListHandler_4007_0 extends RefNodeListHandler {
-
     public preferencePageListHandler_4007_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -364,7 +360,5 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

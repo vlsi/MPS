@@ -24,7 +24,6 @@ public class FileGeneratorType extends BaseClassifierType {
     super.setReferent(FileGeneratorType.GENERATOR, node);
   }
 
-
   public static FileGeneratorType newInstance(SModel sm, boolean init) {
     return (FileGeneratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class FileGeneratorType extends BaseClassifierType {
   public static FileGeneratorType newInstance(SModel sm) {
     return FileGeneratorType.newInstance(sm, false);
   }
-
 }

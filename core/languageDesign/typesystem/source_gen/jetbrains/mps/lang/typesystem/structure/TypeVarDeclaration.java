@@ -61,7 +61,6 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
     this.setBooleanProperty(TypeVarDeclaration.NULLABLE, value);
   }
 
-
   public static TypeVarDeclaration newInstance(SModel sm, boolean init) {
     return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   public static TypeVarDeclaration newInstance(SModel sm) {
     return TypeVarDeclaration.newInstance(sm, false);
   }
-
 }

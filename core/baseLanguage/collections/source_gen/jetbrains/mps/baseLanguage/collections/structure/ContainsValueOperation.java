@@ -24,7 +24,6 @@ public class ContainsValueOperation extends MapOperation {
     super.setChild(ContainsValueOperation.VALUE, node);
   }
 
-
   public static ContainsValueOperation newInstance(SModel sm, boolean init) {
     return (ContainsValueOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ContainsValueOperation extends MapOperation {
   public static ContainsValueOperation newInstance(SModel sm) {
     return ContainsValueOperation.newInstance(sm, false);
   }
-
 }

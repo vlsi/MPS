@@ -22,5 +22,4 @@ public class LeftOperandType_parameter extends ConceptFunctionParameter {
   public static LeftOperandType_parameter newInstance(SModel sm) {
     return LeftOperandType_parameter.newInstance(sm, false);
   }
-
 }

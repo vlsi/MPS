@@ -21,5 +21,4 @@ public class AbstractSetOperation extends SequenceOperation {
   public static AbstractSetOperation newInstance(SModel sm) {
     return AbstractSetOperation.newInstance(sm, false);
   }
-
 }

@@ -5,8 +5,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class PatternVariableReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

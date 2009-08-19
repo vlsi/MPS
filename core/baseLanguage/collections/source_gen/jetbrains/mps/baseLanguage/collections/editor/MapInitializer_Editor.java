@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MapInitializer_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4662_0(editorContext, node);
   }
@@ -69,7 +68,6 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
   }
 
   private static class entriesListHandler_4662_0 extends RefNodeListHandler {
-
     public entriesListHandler_4662_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -116,7 +114,5 @@ public class MapInitializer_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

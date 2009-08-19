@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9150_0(editorContext, node);
   }
@@ -102,14 +101,11 @@ public class CoerceStrongExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class CoerceStrongExpression_Editor_replaceWith_CoerceExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public CoerceStrongExpression_Editor_replaceWith_CoerceExpression_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.CoerceExpression";
     }
-
-}
-
+  }
 }

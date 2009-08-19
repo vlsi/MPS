@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
   public boolean isWeak() {
     return false;
   }
-
 }

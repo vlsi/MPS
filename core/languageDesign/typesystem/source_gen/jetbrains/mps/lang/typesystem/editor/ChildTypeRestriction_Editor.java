@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.smodel.editor.Styles_StyleSheet;
 
 public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4762_0(editorContext, node);
   }
@@ -168,7 +167,6 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4762_0 extends AbstractCellProvider {
-
     public _Inline4762_0() {
       super();
     }
@@ -200,7 +198,5 @@ public class ChildTypeRestriction_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

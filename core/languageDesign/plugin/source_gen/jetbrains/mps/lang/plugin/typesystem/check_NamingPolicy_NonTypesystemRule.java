@@ -17,12 +17,11 @@ import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_NamingPolicy_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext) {
-    for(SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(node)) {
+    for (SNode s : ICheckedNamePolicy_Behavior.call_getDescendantsToCheck_1628770029971140562(node)) {
       if (!(NameUtil.satisfiesPartNamingPolicy(SPropertyOperations.getString(s, "value")))) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -41,7 +40,7 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
         }
       }
     }
-    for(PropertyReference p : ICheckedNamePolicy_Behavior.call_getPropertiesToCheck_1628770029971140570(node)) {
+    for (PropertyReference p : ICheckedNamePolicy_Behavior.call_getPropertiesToCheck_1628770029971140570(node)) {
       if (p.getValue() == null) {
         continue;
       }
@@ -78,5 +77,4 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
   public boolean overrides() {
     return false;
   }
-
 }

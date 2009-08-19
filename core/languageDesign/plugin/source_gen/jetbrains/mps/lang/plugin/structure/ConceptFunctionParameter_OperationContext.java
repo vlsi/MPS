@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_OperationContext extends ConceptFunctionPa
   public static ConceptFunctionParameter_OperationContext newInstance(SModel sm) {
     return ConceptFunctionParameter_OperationContext.newInstance(sm, false);
   }
-
 }

@@ -33,7 +33,6 @@ import jetbrains.mps.nodeEditor.BlockCells;
 import javax.swing.JComponent;
 
 public class PreferencePage_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6322_5(editorContext, node);
   }
@@ -44,8 +43,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_6322_4(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_6322_5(editorContext, node);
     }
     return editorCell;
@@ -271,8 +269,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
 
   private EditorCell createImage_6322_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0 <String>() {
-
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, "icon");
       }
@@ -401,7 +398,6 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6322_0(SNode node, EditorContext editorContext, IScope scope) {
     String path = null;
     IModule module = EditorUtil.findAnchorModule(node);
@@ -422,5 +418,4 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
   private static JComponent _QueryFunction_JComponent_6322_0(SNode node, EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "icon", editorContext);
   }
-
 }

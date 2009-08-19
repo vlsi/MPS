@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 import jetbrains.mps.lang.typesystem.typesystem.RulesUtil;
 
 public class MessageStatement_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     return RulesUtil.withinCheckingItem(_context.getParentNode());
   }
-
 }

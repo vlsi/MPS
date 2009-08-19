@@ -24,7 +24,6 @@ public class Literal extends BaseConcept {
     this.setProperty(Literal.VALUE, value);
   }
 
-
   public static Literal newInstance(SModel sm, boolean init) {
     return (Literal)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Literal", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Literal extends BaseConcept {
   public static Literal newInstance(SModel sm) {
     return Literal.newInstance(sm, false);
   }
-
 }

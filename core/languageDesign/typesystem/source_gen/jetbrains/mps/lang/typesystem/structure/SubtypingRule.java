@@ -21,5 +21,4 @@ public class SubtypingRule extends AbstractSubtypingRule {
   public static SubtypingRule newInstance(SModel sm) {
     return SubtypingRule.newInstance(sm, false);
   }
-
 }

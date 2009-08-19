@@ -14,5 +14,4 @@ public class Processed_AnnotationLink {
   public static Processed getProcessed(BaseConcept source) {
     return (Processed)source.getAttribute(Processed_AnnotationLink.PROCESSED);
   }
-
 }

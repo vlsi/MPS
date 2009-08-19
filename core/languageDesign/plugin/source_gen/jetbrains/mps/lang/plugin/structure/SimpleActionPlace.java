@@ -42,7 +42,6 @@ public class SimpleActionPlace extends BaseConcept implements ActionPlaceSpecifi
     this.setProperty(SimpleActionPlace.VIRTUAL_PACKAGE, value);
   }
 
-
   public static SimpleActionPlace newInstance(SModel sm, boolean init) {
     return (SimpleActionPlace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SimpleActionPlace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class SimpleActionPlace extends BaseConcept implements ActionPlaceSpecifi
   public static SimpleActionPlace newInstance(SModel sm) {
     return SimpleActionPlace.newInstance(sm, false);
   }
-
 }

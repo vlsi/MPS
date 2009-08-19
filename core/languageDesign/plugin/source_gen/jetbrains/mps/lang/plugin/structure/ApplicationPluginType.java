@@ -24,7 +24,6 @@ public class ApplicationPluginType extends BaseClassifierType {
     super.setReferent(ApplicationPluginType.PLUGIN, node);
   }
 
-
   public static ApplicationPluginType newInstance(SModel sm, boolean init) {
     return (ApplicationPluginType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ApplicationPluginType extends BaseClassifierType {
   public static ApplicationPluginType newInstance(SModel sm) {
     return ApplicationPluginType.newInstance(sm, false);
   }
-
 }

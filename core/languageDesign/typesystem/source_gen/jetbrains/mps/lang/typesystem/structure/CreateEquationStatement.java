@@ -24,7 +24,6 @@ public class CreateEquationStatement extends AbstractEquationStatement {
     super.setProperty(CreateEquationStatement.DIRECTION, value.getValueAsString());
   }
 
-
   public static CreateEquationStatement newInstance(SModel sm, boolean init) {
     return (CreateEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class CreateEquationStatement extends AbstractEquationStatement {
   public static CreateEquationStatement newInstance(SModel sm) {
     return CreateEquationStatement.newInstance(sm, false);
   }
-
 }

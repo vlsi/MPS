@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6987_0(editorContext, node);
   }
@@ -78,7 +77,6 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6987_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return SPropertyOperations.getString(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "name");
       }
@@ -111,5 +109,4 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

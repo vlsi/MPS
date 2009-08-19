@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CompactInvokeFunctionExpression_DELETE {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CompactInvokeFunctionExpression_DELETE.CompactInvokeFunctionExpression_DELETE_DELETE(node));
   }
 
   public static class CompactInvokeFunctionExpression_DELETE_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public CompactInvokeFunctionExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
@@ -31,7 +29,5 @@ public class CompactInvokeFunctionExpression_DELETE {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "function", true));
     }
-
-}
-
+  }
 }

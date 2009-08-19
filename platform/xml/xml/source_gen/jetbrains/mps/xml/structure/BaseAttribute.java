@@ -22,5 +22,4 @@ public class BaseAttribute extends BaseConcept {
   public static BaseAttribute newInstance(SModel sm) {
     return BaseAttribute.newInstance(sm, false);
   }
-
 }

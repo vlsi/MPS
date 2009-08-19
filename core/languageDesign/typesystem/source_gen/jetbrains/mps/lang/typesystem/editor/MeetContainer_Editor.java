@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class MeetContainer_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4798_0(editorContext, node);
   }
@@ -66,5 +65,4 @@ public class MeetContainer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

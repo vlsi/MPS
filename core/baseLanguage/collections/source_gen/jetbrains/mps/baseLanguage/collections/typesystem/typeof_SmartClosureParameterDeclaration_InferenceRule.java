@@ -12,7 +12,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SmartClosureParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SmartClosureParameterDeclaration_InferenceRule() {
   }
 
@@ -43,5 +42,4 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   public boolean overrides() {
     return false;
   }
-
 }

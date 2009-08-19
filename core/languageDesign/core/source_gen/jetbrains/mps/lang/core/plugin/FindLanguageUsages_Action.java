@@ -33,7 +33,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F7";
   }
@@ -42,7 +42,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     return FindLanguageUsages_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -74,14 +74,13 @@ public class FindLanguageUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       final IModule module = FindLanguageUsages_Action.this.module;
       final IScope scope = FindLanguageUsages_Action.this.scope;
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           query[0] = new SearchQuery(module, scope);
           provider[0] = FindUtils.makeProvider(new LanguageUsagesFinder());
@@ -92,5 +91,4 @@ public class FindLanguageUsages_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "FindLanguageUsages", t);
     }
   }
-
 }

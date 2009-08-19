@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeof_InvokeFunctionExpression_InferenceRule();
@@ -74,7 +73,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-
         public String getSourceConceptFQName() {
           return "jetbrains.mps.lang.core.structure.BaseConcept";
         }

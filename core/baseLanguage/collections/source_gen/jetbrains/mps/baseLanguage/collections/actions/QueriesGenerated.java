@@ -29,7 +29,6 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.SortOperation") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation");
   }
@@ -181,7 +180,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_LinkedListCreator_1241474511500(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
-      for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
+      for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
         SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
@@ -191,7 +190,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ListCreatorWithInit_1241474531796(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
-      for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
+      for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
         SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
@@ -201,7 +200,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_HashSetCreator_1241475097268(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
-      for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
+      for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
         SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
@@ -211,7 +210,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_LinkedHashSetCreator_1241475118080(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
-      for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
+      for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
         SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
@@ -221,7 +220,7 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_TreeSetCreator_1241475137154(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
-      for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
+      for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
         SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
@@ -304,7 +303,6 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.collections.structure.SortDirection", null);
             SPropertyOperations.set(direction, "value", "" + (true));
@@ -330,7 +328,6 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.collections.structure.SortDirection", null);
             SPropertyOperations.set(direction, "value", "" + (false));
@@ -379,7 +376,6 @@ public class QueriesGenerated {
     final SNode mapType;
     {
       Calculable calculable = new Calculable() {
-
         public Object calculate() {
           return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.MapType"), false);
         }
@@ -389,7 +385,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapElement");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode mapElement = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.collections.structure.MapElement");
           SLinkOperations.setTarget(mapElement, "map", _context.getSourceNode(), true);
@@ -417,7 +412,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode lea = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
           SLinkOperations.setTarget(lea, "list", _context.getSourceNode(), true);
@@ -445,7 +439,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SNode de = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.collections.structure.DowncastExpression");
           SLinkOperations.setTarget(de, "expression", _context.getSourceNode(), true);
@@ -473,7 +466,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SLinkOperations.addNewChild(_context.getSourceNode(), "initValue", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
@@ -495,7 +487,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SLinkOperations.setNewChild(_context.getSourceNode(), "copyFrom", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
@@ -522,7 +513,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SLinkOperations.setNewChild(_context.getSourceNode(), "initializer", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer");
           return _context.getSourceNode();
@@ -549,7 +539,6 @@ public class QueriesGenerated {
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.JoinOperation");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-
         public SNode doSubstitute(String pattern) {
           SLinkOperations.setNewChild(_context.getSourceNode(), "delimiter", "jetbrains.mps.baseLanguage.structure.Expression");
           return _context.getSourceNode();
@@ -566,5 +555,4 @@ public class QueriesGenerated {
     }
     return result;
   }
-
 }

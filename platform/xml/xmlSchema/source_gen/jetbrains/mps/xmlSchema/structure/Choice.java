@@ -32,7 +32,6 @@ public class Choice extends GroupExpression {
     super.setChild(Choice.OCCURS_ATTRIBUTE, node);
   }
 
-
   public static Choice newInstance(SModel sm, boolean init) {
     return (Choice)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Choice", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class Choice extends GroupExpression {
   public static Choice newInstance(SModel sm) {
     return Choice.newInstance(sm, false);
   }
-
 }

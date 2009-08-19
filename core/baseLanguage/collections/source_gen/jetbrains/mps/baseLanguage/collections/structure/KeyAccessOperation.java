@@ -21,5 +21,4 @@ public class KeyAccessOperation extends AbstractMappingOperation {
   public static KeyAccessOperation newInstance(SModel sm) {
     return KeyAccessOperation.newInstance(sm, false);
   }
-
 }

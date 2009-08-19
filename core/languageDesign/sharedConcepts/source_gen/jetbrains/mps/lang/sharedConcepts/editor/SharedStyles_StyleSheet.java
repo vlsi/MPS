@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SharedStyles_StyleSheet {
-
   public static Style getReferenceDecorated(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -29,5 +28,4 @@ public class SharedStyles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
-
 }

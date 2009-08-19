@@ -21,5 +21,4 @@ public class DisjunctOperation extends BinaryOperation {
   public static DisjunctOperation newInstance(SModel sm) {
     return DisjunctOperation.newInstance(sm, false);
   }
-
 }

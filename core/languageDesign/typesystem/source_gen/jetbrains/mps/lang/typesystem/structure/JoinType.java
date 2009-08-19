@@ -38,7 +38,6 @@ public class JoinType extends BaseConcept {
     this.insertChild(prev, JoinType.ARGUMENT, node);
   }
 
-
   public static JoinType newInstance(SModel sm, boolean init) {
     return (JoinType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class JoinType extends BaseConcept {
   public static JoinType newInstance(SModel sm) {
     return JoinType.newInstance(sm, false);
   }
-
 }

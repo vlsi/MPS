@@ -22,5 +22,4 @@ public class GetInnerTabCaptionBlock extends ConceptFunction {
   public static GetInnerTabCaptionBlock newInstance(SModel sm) {
     return GetInnerTabCaptionBlock.newInstance(sm, false);
   }
-
 }

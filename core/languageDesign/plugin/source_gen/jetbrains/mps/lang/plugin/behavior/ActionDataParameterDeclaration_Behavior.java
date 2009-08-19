@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class ActionDataParameterDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,5 +29,4 @@ public class ActionDataParameterDeclaration_Behavior {
     ListSequence.fromList(dataKeys).removeElement(SLinkOperations.getTarget(new _Quotations.QuotationClass_9().createNode(), "variableDeclaration", false));
     return dataKeys;
   }
-
 }

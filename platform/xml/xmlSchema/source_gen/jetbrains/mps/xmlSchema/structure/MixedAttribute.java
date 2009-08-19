@@ -22,5 +22,4 @@ public class MixedAttribute extends BaseConcept {
   public static MixedAttribute newInstance(SModel sm) {
     return MixedAttribute.newInstance(sm, false);
   }
-
 }

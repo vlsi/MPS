@@ -23,7 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6235_0(editorContext, node);
   }
@@ -177,14 +176,11 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   }
 
   public static class CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
-
-}
-
+  }
 }

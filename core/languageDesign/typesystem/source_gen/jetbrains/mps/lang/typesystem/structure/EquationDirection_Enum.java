@@ -59,5 +59,4 @@ public enum EquationDirection_Enum {
     }
     return EquationDirection_Enum.getDefault();
   }
-
 }

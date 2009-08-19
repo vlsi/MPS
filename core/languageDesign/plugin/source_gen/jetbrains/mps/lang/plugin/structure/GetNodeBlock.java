@@ -22,5 +22,4 @@ public class GetNodeBlock extends ConceptFunction {
   public static GetNodeBlock newInstance(SModel sm) {
     return GetNodeBlock.newInstance(sm, false);
   }
-
 }

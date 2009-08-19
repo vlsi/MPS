@@ -33,7 +33,6 @@ public class VariableConverterItem extends BaseConcept {
     super.setChild(VariableConverterItem.CONVERT_BLOCK, node);
   }
 
-
   public static VariableConverterItem newInstance(SModel sm, boolean init) {
     return (VariableConverterItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class VariableConverterItem extends BaseConcept {
   public static VariableConverterItem newInstance(SModel sm) {
     return VariableConverterItem.newInstance(sm, false);
   }
-
 }

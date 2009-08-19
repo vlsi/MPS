@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class wildcardtype_comparable_ComparisonRule extends ComparisonRule_Runtime {
-
   public wildcardtype_comparable_ComparisonRule() {
   }
 
@@ -34,5 +33,4 @@ public class wildcardtype_comparable_ComparisonRule extends ComparisonRule_Runti
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
 }

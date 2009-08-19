@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0068_0(editorContext, node);
   }
@@ -71,7 +70,6 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline0068_0 extends AbstractCellProvider {
-
     public _Inline0068_0() {
       super();
     }
@@ -102,10 +100,9 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class keystrokeListHandler_0068_0 extends RefNodeListHandler {
-
     public keystrokeListHandler_0068_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -145,7 +142,5 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

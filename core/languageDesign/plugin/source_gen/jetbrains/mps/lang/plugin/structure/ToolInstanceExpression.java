@@ -22,5 +22,4 @@ public class ToolInstanceExpression extends Expression {
   public static ToolInstanceExpression newInstance(SModel sm) {
     return ToolInstanceExpression.newInstance(sm, false);
   }
-
 }

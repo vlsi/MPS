@@ -17,17 +17,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Mapping_Test1 extends TestCase {
-
-  @Test()
+  @Test
   public void test__1() throws Exception {
-    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> nums = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_num;
 
@@ -78,14 +74,11 @@ __switch__:
     // "num:<n>"
     // "num:<n*100>"
     final Wrappers._int count = new Wrappers._int(0);
-    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2 <Integer, String>() {
-
+    Iterable<String> strings = Sequence.fromIterable(nums).translate(new ITranslator2<Integer, String>() {
       public Iterable<String> translate(final Integer n) {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -157,7 +150,7 @@ __switch__:
     });
     Assert.assertEquals(0, count.value);
     int resultCount = 0;
-    for(String s : Sequence.fromIterable(strings)) {
+    for (String s : Sequence.fromIterable(strings)) {
       String expected = "num:" + resultCount;
       if (resultCount % 2 != 0) {
         expected = "num:" + ((resultCount - 1) * 100);
@@ -168,18 +161,15 @@ __switch__:
     Assert.assertEquals(5, count.value);
   }
 
-  @Test()
+  @Test
   public void test__yieldNull() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2 <String, String>() {
-
+      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
-          return new Iterable <String>() {
-
+          return new Iterable<String>() {
             public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
-
+              return new YieldingIterator<String>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -209,17 +199,13 @@ __switch__:
         }
       }).toListSequence();
       Assert.assertEquals(0, ListSequence.fromList(strings2).count());
-    } else
-    {
+    } else {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
-      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2 <String, String>() {
-
+      List<String> strings2 = ListSequence.fromList(strings).translate(new ITranslator2<String, String>() {
         public Iterable<String> translate(final String it) {
-          return new Iterable <String>() {
-
+          return new Iterable<String>() {
             public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
-
+              return new YieldingIterator<String>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -254,17 +240,14 @@ __switch__:
     }
   }
 
-  @Test()
+  @Test
   public void test__null() throws Exception {
     List<String> s1 = null;
-    Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2 <String, String>() {
-
+    Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String it) {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -295,5 +278,4 @@ __switch__:
     });
     Assert.assertEquals(0, Sequence.fromIterable(s2).count());
   }
-
 }

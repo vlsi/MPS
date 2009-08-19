@@ -24,7 +24,6 @@ public class DocumentStatement extends Statement {
     super.setChild(DocumentStatement.DOCUMENT, node);
   }
 
-
   public static DocumentStatement newInstance(SModel sm, boolean init) {
     return (DocumentStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class DocumentStatement extends Statement {
   public static DocumentStatement newInstance(SModel sm) {
     return DocumentStatement.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class AlsoSortOperation extends SortOperation {
   public static AlsoSortOperation newInstance(SModel sm) {
     return AlsoSortOperation.newInstance(sm, false);
   }
-
 }

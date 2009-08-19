@@ -43,7 +43,6 @@ public class AbstractIteratorOperation extends BaseConcept implements IOperation
     this.setProperty(AbstractIteratorOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AbstractIteratorOperation newInstance(SModel sm, boolean init) {
     return (AbstractIteratorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractIteratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class AbstractIteratorOperation extends BaseConcept implements IOperation
   public static AbstractIteratorOperation newInstance(SModel sm) {
     return AbstractIteratorOperation.newInstance(sm, false);
   }
-
 }

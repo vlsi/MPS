@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5489_0(editorContext, node);
   }
@@ -95,7 +94,6 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline5489_0 extends AbstractCellProvider {
-
     public _Inline5489_0() {
       super();
     }
@@ -127,7 +125,5 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

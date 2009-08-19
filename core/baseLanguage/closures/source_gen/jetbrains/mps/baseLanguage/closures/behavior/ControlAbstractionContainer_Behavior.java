@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ControlAbstractionContainer_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class ControlAbstractionContainer_Behavior {
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return true;
   }
-
 }

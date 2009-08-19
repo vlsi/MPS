@@ -22,5 +22,4 @@ public class QuickFixExecuteBlock extends ConceptFunction {
   public static QuickFixExecuteBlock newInstance(SModel sm) {
     return QuickFixExecuteBlock.newInstance(sm, false);
   }
-
 }

@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class sequence_type_comparableWith_Iterable_ComparisonRule extends ComparisonRule_Runtime {
-
-  /* package */_Patterns.Pattern_14 myMatchingPattern2;
+  /*package*/ _Patterns.Pattern_14 myMatchingPattern2;
 
   public sequence_type_comparableWith_Iterable_ComparisonRule() {
   }
@@ -37,5 +36,4 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
 }

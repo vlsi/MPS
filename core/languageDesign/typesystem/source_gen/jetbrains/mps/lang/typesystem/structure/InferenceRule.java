@@ -58,7 +58,6 @@ public class InferenceRule extends AbstractCheckingRule {
     this.insertChild(prev, InferenceRule.CHILD_TYPE_RESTRICTION, node);
   }
 
-
   public static InferenceRule newInstance(SModel sm, boolean init) {
     return (InferenceRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InferenceRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -66,5 +65,4 @@ public class InferenceRule extends AbstractCheckingRule {
   public static InferenceRule newInstance(SModel sm) {
     return InferenceRule.newInstance(sm, false);
   }
-
 }

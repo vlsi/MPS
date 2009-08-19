@@ -21,5 +21,4 @@ public class ControlClosureLiteral extends UnrestrictedClosureLiteral {
   public static ControlClosureLiteral newInstance(SModel sm) {
     return ControlClosureLiteral.newInstance(sm, false);
   }
-
 }

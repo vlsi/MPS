@@ -10,10 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class HashMapCreator_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
     return (dtype == null) || SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), "jetbrains.mps.baseLanguage.collections.structure.MapType");
   }
-
 }

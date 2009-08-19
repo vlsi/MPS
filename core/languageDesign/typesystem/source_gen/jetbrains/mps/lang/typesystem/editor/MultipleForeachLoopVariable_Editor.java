@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6386_0(editorContext, node);
   }
@@ -68,5 +67,4 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

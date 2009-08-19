@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SubSetOperation_DataFlow extends DataFlowBuilder {
-
   public SubSetOperation_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class SubSetOperation_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "fromElement", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "toElement", true));
   }
-
 }

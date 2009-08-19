@@ -33,7 +33,6 @@ public class SubSetOperation extends SortedSetOperation {
     super.setChild(SubSetOperation.TO_ELEMENT, node);
   }
 
-
   public static SubSetOperation newInstance(SModel sm, boolean init) {
     return (SubSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class SubSetOperation extends SortedSetOperation {
   public static SubSetOperation newInstance(SModel sm) {
     return SubSetOperation.newInstance(sm, false);
   }
-
 }

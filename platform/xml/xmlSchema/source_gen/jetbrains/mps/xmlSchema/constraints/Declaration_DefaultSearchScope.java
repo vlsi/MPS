@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class Declaration_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public Declaration_DefaultSearchScope() {
   }
 
@@ -27,5 +26,4 @@ public class Declaration_DefaultSearchScope extends BaseNodeReferenceSearchScope
     SNode schema = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.xmlSchema.structure.Schema", true, false);
     return new SubnodesSearchScope(schema);
   }
-
 }

@@ -33,7 +33,6 @@ public class OccursAttribute extends BaseConcept {
     super.setChild(OccursAttribute.MAX_OCCURS, node);
   }
 
-
   public static OccursAttribute newInstance(SModel sm, boolean init) {
     return (OccursAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.OccursAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class OccursAttribute extends BaseConcept {
   public static OccursAttribute newInstance(SModel sm) {
     return OccursAttribute.newInstance(sm, false);
   }
-
 }

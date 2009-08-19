@@ -5,12 +5,10 @@ package jetbrains.mps.lang.sharedConcepts.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ConceptFunctionParameter_operationContext_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return false;
   }
-
 }

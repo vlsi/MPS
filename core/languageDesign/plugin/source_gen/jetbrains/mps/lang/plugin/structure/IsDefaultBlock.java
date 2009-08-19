@@ -22,5 +22,4 @@ public class IsDefaultBlock extends ConceptFunction {
   public static IsDefaultBlock newInstance(SModel sm) {
     return IsDefaultBlock.newInstance(sm, false);
   }
-
 }

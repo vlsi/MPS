@@ -10,17 +10,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 
 public class Sequence_iteration2 extends TestCase {
-
   public void test_1() {
     // inner iteration
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -66,11 +62,11 @@ __switch__:
       }
     });
     int count = 0;
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       Assert.assertEquals("" + count, s);
       count++ ;
       int count_inner = 0;
-      for(String s_inner : Sequence.fromIterable(ss)) {
+      for (String s_inner : Sequence.fromIterable(ss)) {
         Assert.assertEquals("" + count_inner, s_inner);
         count_inner++ ;
       }
@@ -78,5 +74,4 @@ __switch__:
     }
     Assert.assertEquals(count, 5);
   }
-
 }

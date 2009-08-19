@@ -21,5 +21,4 @@ public class ExecuteLightweightCommandStatement extends BaseExecuteCommandStatem
   public static ExecuteLightweightCommandStatement newInstance(SModel sm) {
     return ExecuteLightweightCommandStatement.newInstance(sm, false);
   }
-
 }

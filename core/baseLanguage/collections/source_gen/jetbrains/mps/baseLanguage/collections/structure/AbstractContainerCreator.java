@@ -59,7 +59,6 @@ public class AbstractContainerCreator extends AbstractCreator {
     this.insertChild(prev, AbstractContainerCreator.INIT_VALUE, node);
   }
 
-
   public static AbstractContainerCreator newInstance(SModel sm, boolean init) {
     return (AbstractContainerCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class AbstractContainerCreator extends AbstractCreator {
   public static AbstractContainerCreator newInstance(SModel sm) {
     return AbstractContainerCreator.newInstance(sm, false);
   }
-
 }

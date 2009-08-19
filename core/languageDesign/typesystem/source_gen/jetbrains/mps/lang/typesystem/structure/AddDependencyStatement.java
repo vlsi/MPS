@@ -25,7 +25,6 @@ public class AddDependencyStatement extends Statement {
     super.setChild(AddDependencyStatement.DEPENDENCY, node);
   }
 
-
   public static AddDependencyStatement newInstance(SModel sm, boolean init) {
     return (AddDependencyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AddDependencyStatement extends Statement {
   public static AddDependencyStatement newInstance(SModel sm) {
     return AddDependencyStatement.newInstance(sm, false);
   }
-
 }

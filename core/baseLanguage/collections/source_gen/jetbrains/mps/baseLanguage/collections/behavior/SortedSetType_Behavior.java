@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SortedSetType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class SortedSetType_Behavior {
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return new _Quotations.QuotationClass_11().createNode();
   }
-
 }

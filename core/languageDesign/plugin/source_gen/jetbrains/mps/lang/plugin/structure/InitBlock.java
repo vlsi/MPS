@@ -22,5 +22,4 @@ public class InitBlock extends ConceptFunction {
   public static InitBlock newInstance(SModel sm) {
     return InitBlock.newInstance(sm, false);
   }
-
 }

@@ -16,12 +16,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import junit.framework.Assert;
 
 public class SelectTest_Test extends Util_Test {
-
-  @Test()
+  @Test
   public void test_selectMethod() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ISequence<Integer> test = seq.select(new ISelector <Integer, Integer>() {
-
+    ISequence<Integer> test = seq.select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return (it % 2 == 1 ?
           it * 2 :
@@ -32,13 +30,12 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
   }
 
-  @Test()
+  @Test
   public void test_selectMethod2() throws Exception {
     int a = Character.valueOf('a').charValue();
     Iterable<Integer> input = Arrays.asList(a, a + 1, a + 2, a + 3, a + 4);
     ISequence<Integer> seq = Sequence.fromIterable(input);
-    ISequence<String> test = seq.select(new ISelector <Integer, String>() {
-
+    ISequence<String> test = seq.select(new ISelector<Integer, String>() {
       public String select(Integer it) {
         return Character.valueOf((char)it.intValue()).toString();
       }
@@ -46,11 +43,10 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList("a", "b", "c", "d", "e"), test.toIterable());
   }
 
-  @Test()
+  @Test
   public void test_selectorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
-    ISelector<Integer, Integer> selector = new ISelector <Integer, Integer>() {
-
+    ISelector<Integer, Integer> selector = new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return (it % 2 == 1 ?
           it * 2 :
@@ -62,10 +58,9 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
   }
 
-  @Test()
+  @Test
   public void test_selectOperation() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector <Integer, Integer>() {
-
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -73,10 +68,9 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), test);
   }
 
-  @Test()
+  @Test
   public void test_legacySelector() throws Exception {
-    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector <Integer, Integer>() {
-
+    Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it * 2;
       }
@@ -84,17 +78,14 @@ public class SelectTest_Test extends Util_Test {
     this.assertIterableEquals(this.expectEven10(), test);
   }
 
-  @Test()
+  @Test
   public void test_selectMany() throws Exception {
     final List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
-    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -123,14 +114,12 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(test).select(new ISelector <Integer, List<Integer>>() {
-
+    Sequence.fromIterable(test).select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
     });
-    Iterable<List<Integer>> result = Sequence.fromIterable(test).select(new ISelector <Integer, List<Integer>>() {
-
+    Iterable<List<Integer>> result = Sequence.fromIterable(test).select(new ISelector<Integer, List<Integer>>() {
       public List<Integer> select(Integer it) {
         return list;
       }
@@ -138,14 +127,12 @@ __switch__:
     Assert.assertEquals(list, Sequence.fromIterable(result).first());
   }
 
-  @Test()
+  @Test
   public void test_nextWithoutHasNext() throws Exception {
-    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector <Integer, Integer>() {
-
+    this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
         return i * 2;
       }
     }).iterator(), 2, 4, 6);
   }
-
 }

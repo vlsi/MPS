@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CreateJoinExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6670_0(editorContext, node);
   }
@@ -119,7 +118,6 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6670_0 extends AbstractCellProvider {
-
     public _Inline6670_0() {
       super();
     }
@@ -150,10 +148,9 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class argumentListHandler_6670_0 extends RefNodeListHandler {
-
     public argumentListHandler_6670_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -193,7 +190,5 @@ public class CreateJoinExpression_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

@@ -15,12 +15,10 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class ForEach_Test1 extends TestCase {
-
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     final Wrappers._int sum = new Wrappers._int(0);
-    ListSequence.fromList(list).visitAll(new IVisitor <Integer>() {
-
+    ListSequence.fromList(list).visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
         sum.value = sum.value + i;
       }
@@ -29,14 +27,11 @@ public class ForEach_Test1 extends TestCase {
   }
 
   public void test_2() {
-    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -83,8 +78,7 @@ __switch__:
       }
     });
     final Wrappers._int sum = new Wrappers._int(0);
-    Sequence.fromIterable(seq).visitAll(new IVisitor <Integer>() {
-
+    Sequence.fromIterable(seq).visitAll(new IVisitor<Integer>() {
       public void visit(Integer i) {
         sum.value = sum.value + i;
       }
@@ -95,13 +89,11 @@ __switch__:
   public void test_null() {
     Iterable<String> zseq = null;
     final Wrappers._int sum = new Wrappers._int(0);
-    Sequence.fromIterable(zseq).visitAll(new IVisitor <String>() {
-
+    Sequence.fromIterable(zseq).visitAll(new IVisitor<String>() {
       public void visit(String s) {
         sum.value = sum.value + s.length();
       }
     });
     Assert.assertEquals(0, sum.value);
   }
-
 }

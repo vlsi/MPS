@@ -24,7 +24,6 @@ public class ActionType extends BaseClassifierType {
     super.setReferent(ActionType.ACTION, node);
   }
 
-
   public static ActionType newInstance(SModel sm, boolean init) {
     return (ActionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ActionType extends BaseClassifierType {
   public static ActionType newInstance(SModel sm) {
     return ActionType.newInstance(sm, false);
   }
-
 }

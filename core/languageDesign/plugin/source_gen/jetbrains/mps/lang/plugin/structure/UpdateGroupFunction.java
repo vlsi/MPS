@@ -22,5 +22,4 @@ public class UpdateGroupFunction extends ConceptFunction {
   public static UpdateGroupFunction newInstance(SModel sm) {
     return UpdateGroupFunction.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class ContainerIteratorType extends IteratorType {
   public static ContainerIteratorType newInstance(SModel sm) {
     return ContainerIteratorType.newInstance(sm, false);
   }
-
 }

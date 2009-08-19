@@ -33,7 +33,6 @@ public class MapType extends Type {
     super.setChild(MapType.VALUE_TYPE, node);
   }
 
-
   public static MapType newInstance(SModel sm, boolean init) {
     return (MapType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class MapType extends Type {
   public static MapType newInstance(SModel sm) {
     return MapType.newInstance(sm, false);
   }
-
 }

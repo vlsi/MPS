@@ -24,7 +24,6 @@ public class TailMapOperation extends SortedMapOperation {
     super.setChild(TailMapOperation.FROM_KEY, node);
   }
 
-
   public static TailMapOperation newInstance(SModel sm, boolean init) {
     return (TailMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TailMapOperation extends SortedMapOperation {
   public static TailMapOperation newInstance(SModel sm) {
     return TailMapOperation.newInstance(sm, false);
   }
-
 }

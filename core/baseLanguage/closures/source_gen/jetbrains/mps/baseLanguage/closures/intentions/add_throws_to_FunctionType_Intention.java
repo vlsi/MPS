@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class add_throws_to_FunctionType_Intention extends BaseIntention {
-
   public add_throws_to_FunctionType_Intention() {
   }
 
@@ -51,5 +50,4 @@ public class add_throws_to_FunctionType_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
-
 }

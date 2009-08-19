@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class containerIterator_subtrypeOf_containerIterator_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public containerIterator_subtrypeOf_containerIterator_InequationReplacementRule() {
   }
 
@@ -49,5 +48,4 @@ public class containerIterator_subtrypeOf_containerIterator_InequationReplacemen
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType";
   }
-
 }

@@ -22,5 +22,4 @@ public class PreferencePageCommitBlock extends ConceptFunction {
   public static PreferencePageCommitBlock newInstance(SModel sm) {
     return PreferencePageCommitBlock.newInstance(sm, false);
   }
-
 }

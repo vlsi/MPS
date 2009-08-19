@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public erasure_SNodeType_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   public boolean isWeak() {
     return false;
   }
-
 }

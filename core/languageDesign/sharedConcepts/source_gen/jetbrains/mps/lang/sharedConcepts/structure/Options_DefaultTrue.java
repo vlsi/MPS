@@ -54,5 +54,4 @@ public enum Options_DefaultTrue {
     }
     return Options_DefaultTrue.getDefault();
   }
-
 }

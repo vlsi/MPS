@@ -24,7 +24,6 @@ public class ShortcutChange extends BaseConcept {
     super.setReferent(ShortcutChange.ACTION, node);
   }
 
-
   public static ShortcutChange newInstance(SModel sm, boolean init) {
     return (ShortcutChange)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ShortcutChange extends BaseConcept {
   public static ShortcutChange newInstance(SModel sm) {
     return ShortcutChange.newInstance(sm, false);
   }
-
 }

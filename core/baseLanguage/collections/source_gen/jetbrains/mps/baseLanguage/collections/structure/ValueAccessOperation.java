@@ -21,5 +21,4 @@ public class ValueAccessOperation extends AbstractMappingOperation {
   public static ValueAccessOperation newInstance(SModel sm) {
     return ValueAccessOperation.newInstance(sm, false);
   }
-
 }

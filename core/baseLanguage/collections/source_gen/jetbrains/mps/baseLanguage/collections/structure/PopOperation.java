@@ -41,7 +41,6 @@ public class PopOperation extends NoArgumentsSequenceOperation implements IStack
     this.setProperty(PopOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PopOperation newInstance(SModel sm, boolean init) {
     return (PopOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PopOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class PopOperation extends NoArgumentsSequenceOperation implements IStack
   public static PopOperation newInstance(SModel sm) {
     return PopOperation.newInstance(sm, false);
   }
-
 }

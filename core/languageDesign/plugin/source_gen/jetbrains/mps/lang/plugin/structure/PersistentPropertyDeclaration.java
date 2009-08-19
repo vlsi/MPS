@@ -52,7 +52,6 @@ public class PersistentPropertyDeclaration extends VariableDeclaration implement
     this.setProperty(PersistentPropertyDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PersistentPropertyDeclaration newInstance(SModel sm, boolean init) {
     return (PersistentPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class PersistentPropertyDeclaration extends VariableDeclaration implement
   public static PersistentPropertyDeclaration newInstance(SModel sm) {
     return PersistentPropertyDeclaration.newInstance(sm, false);
   }
-
 }

@@ -41,7 +41,6 @@ public class RemoveLastElementOperation extends NoArgumentsSequenceOperation imp
     this.setProperty(RemoveLastElementOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static RemoveLastElementOperation newInstance(SModel sm, boolean init) {
     return (RemoveLastElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class RemoveLastElementOperation extends NoArgumentsSequenceOperation imp
   public static RemoveLastElementOperation newInstance(SModel sm) {
     return RemoveLastElementOperation.newInstance(sm, false);
   }
-
 }

@@ -41,7 +41,6 @@ public class AddAllElementsOperation extends SingleArgumentSequenceOperation imp
     this.setProperty(AddAllElementsOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AddAllElementsOperation newInstance(SModel sm, boolean init) {
     return (AddAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class AddAllElementsOperation extends SingleArgumentSequenceOperation imp
   public static AddAllElementsOperation newInstance(SModel sm) {
     return AddAllElementsOperation.newInstance(sm, false);
   }
-
 }

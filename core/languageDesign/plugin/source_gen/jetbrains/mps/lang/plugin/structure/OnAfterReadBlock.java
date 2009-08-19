@@ -22,5 +22,4 @@ public class OnAfterReadBlock extends ConceptFunction {
   public static OnAfterReadBlock newInstance(SModel sm) {
     return OnAfterReadBlock.newInstance(sm, false);
   }
-
 }

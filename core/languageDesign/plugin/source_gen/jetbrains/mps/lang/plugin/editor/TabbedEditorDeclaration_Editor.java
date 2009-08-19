@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9269_3(editorContext, node);
   }
@@ -224,7 +223,6 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9269_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -234,7 +232,6 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline9269_0 extends AbstractCellProvider {
-
     public _Inline9269_0() {
       super();
     }
@@ -265,10 +262,9 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class tabsListHandler_9269_0 extends RefNodeListHandler {
-
     public tabsListHandler_9269_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -315,7 +311,5 @@ public class TabbedEditorDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

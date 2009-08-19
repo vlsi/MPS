@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XmlFile_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public XmlFile_name_PropertyConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class XmlFile_name_PropertyConstraint implements IModelConstraints, INode
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(node, "fileName") + "." + SPropertyOperations.getString(node, "extension");
   }
-
 }

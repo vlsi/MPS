@@ -22,5 +22,4 @@ public class TypeCheckerAccessExpression extends Expression {
   public static TypeCheckerAccessExpression newInstance(SModel sm) {
     return TypeCheckerAccessExpression.newInstance(sm, false);
   }
-
 }

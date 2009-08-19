@@ -10,14 +10,12 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class PersistenPropertyDeclaration_Actions {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new PersistenPropertyDeclaration_Actions.PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM(node));
   }
 
   public static class PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public PersistenPropertyDeclaration_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
@@ -34,7 +32,5 @@ public class PersistenPropertyDeclaration_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.structure.Expression");
     }
-
-}
-
+  }
 }

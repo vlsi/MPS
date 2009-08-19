@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PreferencesComponentDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,5 +29,4 @@ public class PreferencesComponentDeclaration_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistenPropertyDeclaration", true)));
     return members;
   }
-
 }

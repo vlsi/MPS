@@ -25,7 +25,6 @@ public class SimpleElement extends BaseElement {
     super.setChild(SimpleElement.ELEMENT_NAME, node);
   }
 
-
   public static SimpleElement newInstance(SModel sm, boolean init) {
     return (SimpleElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SimpleElement extends BaseElement {
   public static SimpleElement newInstance(SModel sm) {
     return SimpleElement.newInstance(sm, false);
   }
-
 }

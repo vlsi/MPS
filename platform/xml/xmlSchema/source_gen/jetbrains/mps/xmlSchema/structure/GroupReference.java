@@ -23,7 +23,6 @@ public class GroupReference extends TypeExpression {
     super.setReferent(GroupReference.GROUP_DECLARATION, node);
   }
 
-
   public static GroupReference newInstance(SModel sm, boolean init) {
     return (GroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class GroupReference extends TypeExpression {
   public static GroupReference newInstance(SModel sm) {
     return GroupReference.newInstance(sm, false);
   }
-
 }

@@ -62,7 +62,6 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
     super.setChild(QuickFixArgument.ARGUMENT_TYPE, node);
   }
 
-
   public static QuickFixArgument newInstance(SModel sm, boolean init) {
     return (QuickFixArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   public static QuickFixArgument newInstance(SModel sm) {
     return QuickFixArgument.newInstance(sm, false);
   }
-
 }

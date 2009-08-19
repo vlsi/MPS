@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AbstractCheckingRule_DataFlow extends DataFlowBuilder {
-
   public AbstractCheckingRule_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class AbstractCheckingRule_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "applicableNode", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
-
 }

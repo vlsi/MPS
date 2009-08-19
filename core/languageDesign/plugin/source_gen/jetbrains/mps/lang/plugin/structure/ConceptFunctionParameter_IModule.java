@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_IModule extends ConceptFunctionParameter {
   public static ConceptFunctionParameter_IModule newInstance(SModel sm) {
     return ConceptFunctionParameter_IModule.newInstance(sm, false);
   }
-
 }

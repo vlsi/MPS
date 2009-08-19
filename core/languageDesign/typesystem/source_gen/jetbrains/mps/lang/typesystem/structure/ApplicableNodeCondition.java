@@ -52,7 +52,6 @@ public class ApplicableNodeCondition extends BaseConcept implements INamedConcep
     this.setProperty(ApplicableNodeCondition.VIRTUAL_PACKAGE, value);
   }
 
-
   public static ApplicableNodeCondition newInstance(SModel sm, boolean init) {
     return (ApplicableNodeCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ApplicableNodeCondition extends BaseConcept implements INamedConcep
   public static ApplicableNodeCondition newInstance(SModel sm) {
     return ApplicableNodeCondition.newInstance(sm, false);
   }
-
 }

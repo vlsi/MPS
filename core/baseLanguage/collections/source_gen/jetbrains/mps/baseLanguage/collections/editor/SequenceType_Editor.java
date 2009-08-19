@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class SequenceType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3295_0(editorContext, node);
   }
@@ -107,7 +106,6 @@ public class SequenceType_Editor extends DefaultNodeEditor {
   }
 
   public static class SequenceType_component_cellMenu0 implements SubstituteInfoPart {
-
     private replace_withAnotherSequenceType myComponent;
 
     public SequenceType_component_cellMenu0() {
@@ -117,7 +115,5 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-
-}
-
+  }
 }

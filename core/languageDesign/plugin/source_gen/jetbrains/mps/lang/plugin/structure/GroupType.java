@@ -24,7 +24,6 @@ public class GroupType extends BaseClassifierType {
     super.setReferent(GroupType.ACTION_GROUP, node);
   }
 
-
   public static GroupType newInstance(SModel sm, boolean init) {
     return (GroupType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class GroupType extends BaseClassifierType {
   public static GroupType newInstance(SModel sm) {
     return GroupType.newInstance(sm, false);
   }
-
 }

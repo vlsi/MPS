@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class GenerationListenerDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,5 +17,4 @@ public class GenerationListenerDeclaration_Behavior {
   public static String call_getFieldName_1213877431640(SNode thisNode) {
     return NameUtil.decapitalize(GenerationListenerDeclaration_Behavior.call_getClassName_1213877431631(thisNode));
   }
-
 }

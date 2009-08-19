@@ -21,5 +21,4 @@ public class StackType extends AbstractContainerType {
   public static StackType newInstance(SModel sm) {
     return StackType.newInstance(sm, false);
   }
-
 }

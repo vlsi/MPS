@@ -24,7 +24,6 @@ public class InternalSequenceOperation extends SequenceOperation {
     super.setChild(InternalSequenceOperation.CLOSURE, node);
   }
 
-
   public static InternalSequenceOperation newInstance(SModel sm, boolean init) {
     return (InternalSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class InternalSequenceOperation extends SequenceOperation {
   public static InternalSequenceOperation newInstance(SModel sm) {
     return InternalSequenceOperation.newInstance(sm, false);
   }
-
 }

@@ -16,23 +16,19 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 
 public class AbstractContainerCreator_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     SNode dtype = TypeDerivable_Behavior.call_deriveType_1213877435747(SNodeOperations.as(SNodeOperations.getParent(_context.getParentNode()), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
     if ((dtype != null)) {
-      final SNode cld = ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "conceptLinkDeclaration", true)).findFirst(new IWhereFilter <SNode>() {
-
+      final SNode cld = ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "conceptLinkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return "availableFor".equals(SPropertyOperations.getString(it, "name"));
         }
       });
-      for(SNode avlbForConcept : ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter <SNode>() {
-
+      for (SNode avlbForConcept : ListSequence.fromList(SLinkOperations.getTargets(_context.getChildConcept(), "conceptLink", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return cld == SLinkOperations.getTarget(it, "conceptLinkDeclaration", false);
         }
-      }).select(new ISelector <SNode, SNode>() {
-
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
         }
@@ -45,5 +41,4 @@ public class AbstractContainerCreator_Constraints {
     }
     return true;
   }
-
 }

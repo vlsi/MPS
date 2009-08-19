@@ -24,7 +24,6 @@ public class ForEachVariableReference extends Expression {
     super.setReferent(ForEachVariableReference.VARIABLE, node);
   }
 
-
   public static ForEachVariableReference newInstance(SModel sm, boolean init) {
     return (ForEachVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ForEachVariableReference extends Expression {
   public static ForEachVariableReference newInstance(SModel sm) {
     return ForEachVariableReference.newInstance(sm, false);
   }
-
 }

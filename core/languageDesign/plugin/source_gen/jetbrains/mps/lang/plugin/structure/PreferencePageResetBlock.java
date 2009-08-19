@@ -22,5 +22,4 @@ public class PreferencePageResetBlock extends ConceptFunction {
   public static PreferencePageResetBlock newInstance(SModel sm) {
     return PreferencePageResetBlock.newInstance(sm, false);
   }
-
 }

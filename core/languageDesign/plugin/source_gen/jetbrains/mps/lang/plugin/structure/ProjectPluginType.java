@@ -24,7 +24,6 @@ public class ProjectPluginType extends BaseClassifierType {
     super.setReferent(ProjectPluginType.PLUGIN, node);
   }
 
-
   public static ProjectPluginType newInstance(SModel sm, boolean init) {
     return (ProjectPluginType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectPluginType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ProjectPluginType extends BaseClassifierType {
   public static ProjectPluginType newInstance(SModel sm) {
     return ProjectPluginType.newInstance(sm, false);
   }
-
 }

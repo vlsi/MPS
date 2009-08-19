@@ -13,7 +13,6 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import java.util.ArrayList;
 
 public class SimpleRule_VarRef_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SimpleRule_VarRef_link_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class SimpleRule_VarRef_link_ReferentConstraint extends BaseNodeReference
     }
     return new ArrayList<SNode>();
   }
-
 }

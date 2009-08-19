@@ -21,5 +21,4 @@ public class IsStrongSubtypeExpression extends IsSubtypeExpression {
   public static IsStrongSubtypeExpression newInstance(SModel sm) {
     return IsStrongSubtypeExpression.newInstance(sm, false);
   }
-
 }

@@ -34,7 +34,6 @@ public class SimpleRule_Annotated extends SimpleRule {
     super.setChild(SimpleRule_Annotated.PATH_EXPRESSION, node);
   }
 
-
   public static SimpleRule_Annotated newInstance(SModel sm, boolean init) {
     return (SimpleRule_Annotated)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SimpleRule_Annotated extends SimpleRule {
   public static SimpleRule_Annotated newInstance(SModel sm) {
     return SimpleRule_Annotated.newInstance(sm, false);
   }
-
 }

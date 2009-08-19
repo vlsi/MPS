@@ -21,5 +21,4 @@ public class BaseText extends Content {
   public static BaseText newInstance(SModel sm) {
     return BaseText.newInstance(sm, false);
   }
-
 }

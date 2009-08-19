@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention {
-
   public ConvertGivetypeToTypeOfIntention_Intention() {
   }
 
@@ -52,5 +51,4 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.typesystem.intentions";
   }
-
 }

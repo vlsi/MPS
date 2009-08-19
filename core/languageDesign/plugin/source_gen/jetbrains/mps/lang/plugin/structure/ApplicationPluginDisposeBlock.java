@@ -22,5 +22,4 @@ public class ApplicationPluginDisposeBlock extends ConceptFunction {
   public static ApplicationPluginDisposeBlock newInstance(SModel sm) {
     return ApplicationPluginDisposeBlock.newInstance(sm, false);
   }
-
 }

@@ -43,7 +43,6 @@ public class AbstractEnumeratorOperation extends BaseConcept implements IOperati
     this.setProperty(AbstractEnumeratorOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AbstractEnumeratorOperation newInstance(SModel sm, boolean init) {
     return (AbstractEnumeratorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractEnumeratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class AbstractEnumeratorOperation extends BaseConcept implements IOperati
   public static AbstractEnumeratorOperation newInstance(SModel sm) {
     return AbstractEnumeratorOperation.newInstance(sm, false);
   }
-
 }

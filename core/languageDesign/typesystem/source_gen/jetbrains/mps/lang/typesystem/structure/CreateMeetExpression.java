@@ -48,7 +48,6 @@ public class CreateMeetExpression extends Expression {
     this.insertChild(prev, CreateMeetExpression.ARGUMENT, node);
   }
 
-
   public static CreateMeetExpression newInstance(SModel sm, boolean init) {
     return (CreateMeetExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateMeetExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class CreateMeetExpression extends Expression {
   public static CreateMeetExpression newInstance(SModel sm) {
     return CreateMeetExpression.newInstance(sm, false);
   }
-
 }

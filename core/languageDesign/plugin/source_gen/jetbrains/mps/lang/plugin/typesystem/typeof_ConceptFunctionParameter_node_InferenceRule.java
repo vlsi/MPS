@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ConceptFunctionParameter_node_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ConceptFunctionParameter_node_InferenceRule() {
   }
 
@@ -25,8 +24,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186129666", true), (SNode)new _Quotations.QuotationClass_0().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206186129664", intentionProvider);
       }
-    } else
-    {
+    } else {
       SNode tabbedEditor = SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", false, false);
       if (tabbedEditor != null && SLinkOperations.getTarget(tabbedEditor, "mainConcept", false) != null) {
         {
@@ -49,5 +47,4 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
   public boolean overrides() {
     return true;
   }
-
 }

@@ -10,8 +10,7 @@ import java.util.HashMap;
 import junit.framework.Assert;
 
 public class Map_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_simple() throws Exception {
     Map<String, String> map = MapSequence.fromMap(new HashMap<String, String>());
     MapSequence.fromMap(map).put("key1", "value1");
@@ -19,7 +18,7 @@ public class Map_Test extends TestCase {
     Assert.assertTrue(MapSequence.fromMap(map).containsKey("key1"));
   }
 
-  @Test()
+  @Test
   public void test_null() throws Exception {
     /*
       Map<String, String> map = null;
@@ -29,10 +28,9 @@ public class Map_Test extends TestCase {
     */
   }
 
-  @Test()
+  @Test
   public void test_initializer() throws Exception {
     Map<String, String> map = MapSequence.<String, String>fromKeysArray("key1").withValues("value1");
     Assert.assertEquals("value1", MapSequence.fromMap(map).get("key1"));
   }
-
 }

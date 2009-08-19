@@ -22,5 +22,4 @@ public class ApplyEditorBlock extends ConceptFunction {
   public static ApplyEditorBlock newInstance(SModel sm) {
     return ApplyEditorBlock.newInstance(sm, false);
   }
-
 }

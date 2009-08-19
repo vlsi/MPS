@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.collections.actions;
 
 
 public class ApplicableTypesInfo {
-
   public boolean myApplicableToList = false;
   public boolean myApplicableToSequence = false;
 

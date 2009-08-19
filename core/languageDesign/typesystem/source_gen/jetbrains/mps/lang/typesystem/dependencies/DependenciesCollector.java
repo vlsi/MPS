@@ -18,26 +18,25 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class DependenciesCollector {
-
   public DependenciesCollector() {
   }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
-    for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
+    for (SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
       if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         SetSequence.fromSet(roots).addElement(applicableNodeReference);
       }
     }
     int prevSize = SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count();
     int leavesSize = SetSequence.fromSet(leaves).count();
-    for(SNode root : roots) {
+    for (SNode root : roots) {
       MapSequence.fromMap(dependencies).put(root, null);
     }
     while (SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count() > prevSize || SetSequence.fromSet(leaves).count() > leavesSize) {
       prevSize = SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).count();
       leavesSize = SetSequence.fromSet(leaves).count();
-      for(SNode node : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
+      for (SNode node : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
         SNode parent = SNodeOperations.getParent(node);
         do {
           SNode matchedNode_0 = parent;
@@ -97,7 +96,7 @@ public class DependenciesCollector {
                 }
               }
               if (matches_3) {
-                for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+                for (SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                   if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
                     MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new _Quotations.QuotationClass_3().createNode()));
                   }
@@ -116,7 +115,7 @@ public class DependenciesCollector {
               if (matches_4) {
                 {
                   SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false);
-                  for(SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
+                  for (SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                     if (SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false) == variableDeclaration) {
                       SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -124,7 +123,6 @@ public class DependenciesCollector {
                         usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       }
                       List<SNode> list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement).getChildren(), new Condition() {
-
                         public boolean met(Object p0) {
                           return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");
                         }
@@ -143,5 +141,4 @@ public class DependenciesCollector {
       }
     }
   }
-
 }

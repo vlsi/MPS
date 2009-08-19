@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Collections_Style_StyleSheet {
-
   public static Style getOperation(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -36,5 +35,4 @@ public class Collections_Style_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
-
 }

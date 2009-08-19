@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.lang.typesystem.search.ListVarScope;
 
 public class ListVarReference_listVarDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ListVarReference_listVarDeclaration_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class ListVarReference_listVarDeclaration_ReferentConstraint extends Base
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new ListVarScope(_context.getEnclosingNode());
   }
-
 }

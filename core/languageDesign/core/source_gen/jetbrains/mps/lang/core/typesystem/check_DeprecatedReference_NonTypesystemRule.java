@@ -16,12 +16,11 @@ import jetbrains.mps.typesystem.inference.ReferenceErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_DeprecatedReference_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext) {
-    for(SReference ref : baseConcept.getReferences()) {
+    for (SReference ref : baseConcept.getReferences()) {
       SNode node = ref.getTargetNode();
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IDeprecatable") && IDeprecatable_Behavior.call_isDeprecated_1224609060727(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IDeprecatable"))) {
         {
@@ -45,5 +44,4 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
   public boolean overrides() {
     return false;
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Typeof_ApplicationPluginType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Typeof_ApplicationPluginType_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class Typeof_ApplicationPluginType_SubtypingRule extends SubtypingRule_Ru
   public boolean isWeak() {
     return false;
   }
-
 }

@@ -22,5 +22,4 @@ public class OverridesDefaultBlock extends ConceptFunction {
   public static OverridesDefaultBlock newInstance(SModel sm) {
     return OverridesDefaultBlock.newInstance(sm, false);
   }
-
 }

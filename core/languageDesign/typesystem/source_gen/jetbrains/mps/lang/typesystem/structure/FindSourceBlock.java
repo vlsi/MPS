@@ -22,5 +22,4 @@ public class FindSourceBlock extends ConceptFunction {
   public static FindSourceBlock newInstance(SModel sm) {
     return FindSourceBlock.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class SortedMapOperation extends MapOperation {
   public static SortedMapOperation newInstance(SModel sm) {
     return SortedMapOperation.newInstance(sm, false);
   }
-
 }

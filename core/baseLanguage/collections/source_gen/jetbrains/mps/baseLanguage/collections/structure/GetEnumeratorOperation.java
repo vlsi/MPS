@@ -21,5 +21,4 @@ public class GetEnumeratorOperation extends NoArgumentsSequenceOperation {
   public static GetEnumeratorOperation newInstance(SModel sm) {
     return GetEnumeratorOperation.newInstance(sm, false);
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class add_copy_from_Intention extends BaseIntention {
-
   public add_copy_from_Intention() {
   }
 
@@ -50,5 +49,4 @@ public class add_copy_from_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.collections.intentions";
   }
-
 }

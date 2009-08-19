@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class convert_to_from_unrestricted_Intention extends BaseIntention {
-
   public convert_to_from_unrestricted_Intention() {
   }
 
@@ -60,7 +59,7 @@ public class convert_to_from_unrestricted_Intention extends BaseIntention {
     cl.setId(SNodeId.fromString(id));
     SNodeOperations.replaceWithAnother(node, cl);
     List<SNode> params = SLinkOperations.getTargets(node, "parameter", true);
-    for(SNode p : params) {
+    for (SNode p : params) {
       SLinkOperations.addChild(cl, "parameter", SNodeOperations.detachNode(p));
     }
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "body", true)), true);
@@ -69,5 +68,4 @@ public class convert_to_from_unrestricted_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
-
 }

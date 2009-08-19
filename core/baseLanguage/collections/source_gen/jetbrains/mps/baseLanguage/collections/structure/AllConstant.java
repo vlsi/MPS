@@ -22,5 +22,4 @@ public class AllConstant extends IntegerConstant {
   public static AllConstant newInstance(SModel sm) {
     return AllConstant.newInstance(sm, false);
   }
-
 }

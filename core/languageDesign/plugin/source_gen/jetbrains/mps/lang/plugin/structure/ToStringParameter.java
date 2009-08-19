@@ -22,5 +22,4 @@ public class ToStringParameter extends ConceptFunctionParameter {
   public static ToStringParameter newInstance(SModel sm) {
     return ToStringParameter.newInstance(sm, false);
   }
-
 }

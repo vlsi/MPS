@@ -21,5 +21,4 @@ public class RemoveOperation extends AbstractIteratorOperation {
   public static RemoveOperation newInstance(SModel sm) {
     return RemoveOperation.newInstance(sm, false);
   }
-
 }

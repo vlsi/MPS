@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_SubtypingRule_ExpectedReturns_NonTypesystemRule() {
   }
 
@@ -30,5 +29,4 @@ public class check_SubtypingRule_ExpectedReturns_NonTypesystemRule extends Abstr
   public boolean overrides() {
     return false;
   }
-
 }

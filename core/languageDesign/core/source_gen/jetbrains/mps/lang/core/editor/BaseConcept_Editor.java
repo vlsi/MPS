@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class BaseConcept_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_0843_0(editorContext, node);
   }
@@ -30,5 +29,4 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("<abstract concept>");
     return editorCell;
   }
-
 }

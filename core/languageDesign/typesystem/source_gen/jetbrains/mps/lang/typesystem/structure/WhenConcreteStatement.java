@@ -90,7 +90,6 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
     super.setChild(WhenConcreteStatement.ARGUMENT_REPRESENTATOR, node);
   }
 
-
   public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
     return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -98,5 +97,4 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   public static WhenConcreteStatement newInstance(SModel sm) {
     return WhenConcreteStatement.newInstance(sm, false);
   }
-
 }

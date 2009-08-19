@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class TypeClause_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_8701_0(editorContext, node);
   }
@@ -19,5 +18,4 @@ public class TypeClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Error_8701_0");
     return editorCell;
   }
-
 }

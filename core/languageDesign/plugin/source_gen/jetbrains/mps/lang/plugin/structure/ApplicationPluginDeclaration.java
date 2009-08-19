@@ -94,7 +94,6 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
     this.insertChild(prev, ApplicationPluginDeclaration.FIELD_DECLARATION, node);
   }
 
-
   public static ApplicationPluginDeclaration newInstance(SModel sm, boolean init) {
     return (ApplicationPluginDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,5 +101,4 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   public static ApplicationPluginDeclaration newInstance(SModel sm) {
     return ApplicationPluginDeclaration.newInstance(sm, false);
   }
-
 }

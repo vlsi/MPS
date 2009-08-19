@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public supertypesOf_FunctionType_SubtypingRule() {
   }
 
@@ -30,7 +29,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
       if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
         SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
       }
-      for(SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
+      for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
         SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(pt));
       }
       supertypes = ListSequence.fromList(new ArrayList<SNode>());
@@ -49,5 +48,4 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
   public boolean isWeak() {
     return true;
   }
-
 }

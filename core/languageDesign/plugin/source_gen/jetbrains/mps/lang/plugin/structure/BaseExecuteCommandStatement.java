@@ -24,7 +24,6 @@ public class BaseExecuteCommandStatement extends Statement {
     super.setChild(BaseExecuteCommandStatement.COMMAND_CLOSURE_LITERAL, node);
   }
 
-
   public static BaseExecuteCommandStatement newInstance(SModel sm, boolean init) {
     return (BaseExecuteCommandStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class BaseExecuteCommandStatement extends Statement {
   public static BaseExecuteCommandStatement newInstance(SModel sm) {
     return BaseExecuteCommandStatement.newInstance(sm, false);
   }
-
 }

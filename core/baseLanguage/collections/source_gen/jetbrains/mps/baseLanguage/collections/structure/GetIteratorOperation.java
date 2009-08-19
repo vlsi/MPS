@@ -21,5 +21,4 @@ public class GetIteratorOperation extends NoArgumentsSequenceOperation {
   public static GetIteratorOperation newInstance(SModel sm) {
     return GetIteratorOperation.newInstance(sm, false);
   }
-
 }

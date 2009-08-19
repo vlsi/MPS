@@ -9,7 +9,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.GlobalScope;
 
 public class AddMissingLanguageImport_Intention extends BaseIntention {
-
   public AddMissingLanguageImport_Intention() {
   }
 
@@ -55,5 +54,4 @@ public class AddMissingLanguageImport_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.core.intentions";
   }
-
 }

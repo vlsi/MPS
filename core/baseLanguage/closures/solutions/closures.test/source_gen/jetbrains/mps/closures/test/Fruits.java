@@ -6,5 +6,4 @@ package jetbrains.mps.closures.test;
 public enum Fruits {
   APPLES(),
   ORANGES(),
-  CARS();
-}
+  CARS();}

@@ -28,5 +28,4 @@ public class ActionParameter_Behavior {
   public static SNode callSuper_getFieldDeclaration_1171743928471867409(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ActionParameter"), callerConceptFqName, "virtual_getFieldDeclaration_1171743928471867409", PARAMETERS_1171743928471867409);
   }
-
 }

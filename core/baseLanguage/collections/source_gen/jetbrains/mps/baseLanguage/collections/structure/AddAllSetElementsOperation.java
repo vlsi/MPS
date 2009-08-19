@@ -24,7 +24,6 @@ public class AddAllSetElementsOperation extends AbstractSetOperation {
     super.setChild(AddAllSetElementsOperation.ARGUMENT, node);
   }
 
-
   public static AddAllSetElementsOperation newInstance(SModel sm, boolean init) {
     return (AddAllSetElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AddAllSetElementsOperation extends AbstractSetOperation {
   public static AddAllSetElementsOperation newInstance(SModel sm) {
     return AddAllSetElementsOperation.newInstance(sm, false);
   }
-
 }

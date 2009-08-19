@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 
 public class GeneratePlugins_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1681_3(editorContext, node);
   }
@@ -193,7 +192,6 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1681_0(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
@@ -201,5 +199,4 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition1681_1(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
-
 }

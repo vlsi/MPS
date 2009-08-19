@@ -34,7 +34,6 @@ public class SimpleAttribute extends BaseAttribute {
     super.setChild(SimpleAttribute.VALUE, node);
   }
 
-
   public static SimpleAttribute newInstance(SModel sm, boolean init) {
     return (SimpleAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class SimpleAttribute extends BaseAttribute {
   public static SimpleAttribute newInstance(SModel sm) {
     return SimpleAttribute.newInstance(sm, false);
   }
-
 }

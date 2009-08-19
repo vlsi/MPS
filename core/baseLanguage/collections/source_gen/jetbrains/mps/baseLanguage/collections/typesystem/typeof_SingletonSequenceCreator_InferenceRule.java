@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SingletonSequenceCreator_InferenceRule() {
   }
 
@@ -40,5 +39,4 @@ public class typeof_SingletonSequenceCreator_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return false;
   }
-
 }

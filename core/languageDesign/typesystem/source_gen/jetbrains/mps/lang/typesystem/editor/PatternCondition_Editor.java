@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PatternCondition_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7841_0(editorContext, node);
   }
@@ -84,5 +83,4 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

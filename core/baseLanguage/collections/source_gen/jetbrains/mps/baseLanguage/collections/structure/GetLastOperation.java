@@ -21,5 +21,4 @@ public class GetLastOperation extends NoArgumentsSequenceOperation {
   public static GetLastOperation newInstance(SModel sm) {
     return GetLastOperation.newInstance(sm, false);
   }
-
 }

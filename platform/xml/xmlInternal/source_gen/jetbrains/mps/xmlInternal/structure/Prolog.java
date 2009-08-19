@@ -24,7 +24,6 @@ public class Prolog extends BaseConcept {
     super.setChild(Prolog.DOCUMENT_TYPE_DECLARATION, node);
   }
 
-
   public static Prolog newInstance(SModel sm, boolean init) {
     return (Prolog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Prolog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class Prolog extends BaseConcept {
   public static Prolog newInstance(SModel sm) {
     return Prolog.newInstance(sm, false);
   }
-
 }

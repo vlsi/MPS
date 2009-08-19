@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class PersistentPropertyDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
   }
-
 }

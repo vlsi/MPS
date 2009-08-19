@@ -25,7 +25,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1205318778177(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation"))) {
       return false;
@@ -134,7 +133,7 @@ public class QueriesGenerated {
     if (cl == null) {
       return false;
     }
-    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+    for (SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.SkipStatement")) {
           return true;
@@ -150,7 +149,7 @@ public class QueriesGenerated {
     if (cl == null) {
       return false;
     }
-    for(SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
+    for (SNode dsc : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
       if (SNodeOperations.getAncestor(dsc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false) == cl) {
         if (SNodeOperations.isInstanceOf(dsc, "jetbrains.mps.baseLanguage.collections.structure.StopStatement")) {
           return true;
@@ -686,7 +685,7 @@ public class QueriesGenerated {
     SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
     if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true);
-      for(SNode arg : arguments) {
+      for (SNode arg : arguments) {
         if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.VoidType")) && SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.Type")) {
           componentType = SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.Type");
           break;
@@ -698,8 +697,7 @@ public class QueriesGenerated {
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(componentType, pattern_0);
       if (coercedNode_0 != null) {
         return SLinkOperations.getTarget(coercedNode_0, "classifier", false);
-      } else
-      {
+      } else {
       }
     }
     return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
@@ -934,8 +932,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1224426173795(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if ((SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"), "elementType", true) != null)) {
       return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"), "elementType", true));
-    } else
-    {
+    } else {
       return new _Quotations.QuotationClass_1().createNode();
     }
   }
@@ -943,8 +940,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1224426173826(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if ((SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"), "elementType", true) != null)) {
       return ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"), "elementType", true));
-    } else
-    {
+    } else {
       return new _Quotations.QuotationClass_2().createNode();
     }
   }
@@ -1022,8 +1018,7 @@ public class QueriesGenerated {
           SLinkOperations.getTarget(coercedNode_1, "elementType", true) :
           ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_1, "elementType", true))
         );
-      } else
-      {
+      } else {
       }
     }
     return new _Quotations.QuotationClass_3().createNode();
@@ -1042,8 +1037,7 @@ public class QueriesGenerated {
           SLinkOperations.getTarget(coercedNode_2, "elementType", true) :
           ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_2, "elementType", true))
         );
-      } else
-      {
+      } else {
       }
     }
     return new _Quotations.QuotationClass_4().createNode();
@@ -1821,7 +1815,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1206971567103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), "initializer", true), "entries", true);
     List<SNode> keys = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       keys.add(SLinkOperations.getTarget(e, "key", true));
     }
     return keys;
@@ -1830,7 +1824,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1206971731457(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator"), "initializer", true), "entries", true);
     List<SNode> values = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       values.add(SLinkOperations.getTarget(e, "value", true));
     }
     return values;
@@ -1843,7 +1837,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1240221363709(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"), "initializer", true), "entries", true);
     List<SNode> keys = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       keys.add(SLinkOperations.getTarget(e, "key", true));
     }
     return keys;
@@ -1852,7 +1846,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1240221363777(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator"), "initializer", true), "entries", true);
     List<SNode> values = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       values.add(SLinkOperations.getTarget(e, "value", true));
     }
     return values;
@@ -1861,7 +1855,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1240240884357(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator"), "initializer", true), "entries", true);
     List<SNode> keys = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       keys.add(SLinkOperations.getTarget(e, "key", true));
     }
     return keys;
@@ -1870,7 +1864,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1240240884425(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> entries = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator"), "initializer", true), "entries", true);
     List<SNode> values = new ArrayList<SNode>();
-    for(SNode e : entries) {
+    for (SNode e : entries) {
       values.add(SLinkOperations.getTarget(e, "value", true));
     }
     return values;
@@ -1903,5 +1897,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3444116434174665544(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(((SNode)Values.CREATOR.get(_context.getNode())), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true);
   }
-
 }

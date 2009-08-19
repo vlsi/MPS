@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Typesystem_ProjectPlugin extends BaseProjectPlugin {
-
   public List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     {
@@ -20,5 +19,4 @@ public class Typesystem_ProjectPlugin extends BaseProjectPlugin {
     }
     return res;
   }
-
 }

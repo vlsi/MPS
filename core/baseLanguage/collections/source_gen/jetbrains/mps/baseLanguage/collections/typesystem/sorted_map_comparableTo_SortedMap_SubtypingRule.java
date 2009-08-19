@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public sorted_map_comparableTo_SortedMap_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
   public boolean isWeak() {
     return true;
   }
-
 }

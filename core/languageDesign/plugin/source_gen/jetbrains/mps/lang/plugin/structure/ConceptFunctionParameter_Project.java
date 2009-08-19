@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_Project extends ConceptFunctionParameter {
   public static ConceptFunctionParameter_Project newInstance(SModel sm) {
     return ConceptFunctionParameter_Project.newInstance(sm, false);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ListElementAccessExpression_DataFlow extends DataFlowBuilder {
-
   public ListElementAccessExpression_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class ListElementAccessExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "list", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "index", true));
   }
-
 }

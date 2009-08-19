@@ -8,28 +8,22 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class AdvancedFunctionTypes_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_returnsFunction() throws Exception {
-    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends Integer>>() {
-
+    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> fun1 = new _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<? extends Integer>>() {
       public _FunctionTypes._return_P0_E0<? extends Integer> invoke() {
-        return new _FunctionTypes._return_P0_E0 <Integer>() {
-
+        return new _FunctionTypes._return_P0_E0<Integer>() {
           public Integer invoke() {
             return 1;
           }
         };
       }
     };
-    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>> fun2 = new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>>() {
-
+    _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>> fun2 = new _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>>>() {
       public _FunctionTypes._return_P0_E0<? extends _FunctionTypes._return_P0_E0<? extends Integer>> invoke() {
-        return new _FunctionTypes._return_P0_E0 <_FunctionTypes._return_P0_E0<? extends Integer>>() {
-
+        return new _FunctionTypes._return_P0_E0<_FunctionTypes._return_P0_E0<? extends Integer>>() {
           public _FunctionTypes._return_P0_E0<? extends Integer> invoke() {
-            return new _FunctionTypes._return_P0_E0 <Integer>() {
-
+            return new _FunctionTypes._return_P0_E0<Integer>() {
               public Integer invoke() {
                 return 1;
               }
@@ -46,22 +40,19 @@ public class AdvancedFunctionTypes_Test extends TestCase {
     fun4 = fun2.invoke();
   }
 
-  @Test()
+  @Test
   public void test_acceptsFunction() throws Exception {
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0 <Integer, _FunctionTypes._return_P0_E0<? extends Integer>>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super _FunctionTypes._return_P0_E0<? extends Integer>> fun = new _FunctionTypes._return_P1_E0<Integer, _FunctionTypes._return_P0_E0<? extends Integer>>() {
       public Integer invoke(_FunctionTypes._return_P0_E0<? extends Integer> f) {
         return f.invoke();
       }
     };
-    _FunctionTypes._return_P2_E0<? extends Integer, ? super Integer, ? super Integer> add = new _FunctionTypes._return_P2_E0 <Integer, Integer, Integer>() {
-
+    _FunctionTypes._return_P2_E0<? extends Integer, ? super Integer, ? super Integer> add = new _FunctionTypes._return_P2_E0<Integer, Integer, Integer>() {
       public Integer invoke(Integer x, Integer y) {
         return x + y;
       }
     };
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> plusThree = new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> plusThree = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer x) {
         return x + 3;
       }
@@ -71,12 +62,10 @@ public class AdvancedFunctionTypes_Test extends TestCase {
   }
 
   public _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> curry(final _FunctionTypes._return_P2_E0<? extends Integer, ? super Integer, ? super Integer> fun, final int y) {
-    return new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    return new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer x) {
         return fun.invoke(x, y);
       }
     };
   }
-
 }

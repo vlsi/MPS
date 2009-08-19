@@ -21,5 +21,4 @@ public class ListCreatorWithInit extends AbstractContainerCreator {
   public static ListCreatorWithInit newInstance(SModel sm) {
     return ListCreatorWithInit.newInstance(sm, false);
   }
-
 }

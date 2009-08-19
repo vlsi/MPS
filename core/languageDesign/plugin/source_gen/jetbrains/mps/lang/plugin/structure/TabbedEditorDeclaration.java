@@ -94,7 +94,6 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
     this.insertChild(prev, TabbedEditorDeclaration.TABS, node);
   }
 
-
   public static TabbedEditorDeclaration newInstance(SModel sm, boolean init) {
     return (TabbedEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -102,5 +101,4 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   public static TabbedEditorDeclaration newInstance(SModel sm) {
     return TabbedEditorDeclaration.newInstance(sm, false);
   }
-
 }

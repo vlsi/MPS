@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MappingsSetOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_MappingsSetOperation_InferenceRule() {
   }
 
@@ -47,5 +46,4 @@ public class typeof_MappingsSetOperation_InferenceRule extends AbstractInference
   public boolean overrides() {
     return false;
   }
-
 }

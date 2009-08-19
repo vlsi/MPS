@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class ActionParameterDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -26,5 +25,4 @@ public class ActionParameterDeclaration_Behavior {
     }
     throw new IllegalStateException("Action parameter has wrong type: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "type", true)));
   }
-
 }

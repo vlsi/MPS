@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class InterfaceGroup_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4570_0(editorContext, node);
   }
@@ -142,5 +141,4 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

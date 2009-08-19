@@ -24,7 +24,6 @@ public class SetType extends Type {
     super.setChild(SetType.ELEMENT_TYPE, node);
   }
 
-
   public static SetType newInstance(SModel sm, boolean init) {
     return (SetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class SetType extends Type {
   public static SetType newInstance(SModel sm) {
     return SetType.newInstance(sm, false);
   }
-
 }

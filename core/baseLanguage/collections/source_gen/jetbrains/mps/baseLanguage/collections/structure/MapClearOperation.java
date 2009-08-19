@@ -21,5 +21,4 @@ public class MapClearOperation extends MapOperation {
   public static MapClearOperation newInstance(SModel sm) {
     return MapClearOperation.newInstance(sm, false);
   }
-
 }

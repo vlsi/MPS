@@ -33,7 +33,6 @@ public class MapElement extends Expression {
     super.setChild(MapElement.KEY, node);
   }
 
-
   public static MapElement newInstance(SModel sm, boolean init) {
     return (MapElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class MapElement extends Expression {
   public static MapElement newInstance(SModel sm) {
     return MapElement.newInstance(sm, false);
   }
-
 }

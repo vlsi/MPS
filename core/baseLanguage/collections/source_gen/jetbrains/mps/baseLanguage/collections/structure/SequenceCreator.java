@@ -35,7 +35,6 @@ public class SequenceCreator extends AbstractCreator {
     super.setChild(SequenceCreator.INITIALIZER, node);
   }
 
-
   public static SequenceCreator newInstance(SModel sm, boolean init) {
     return (SequenceCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class SequenceCreator extends AbstractCreator {
   public static SequenceCreator newInstance(SModel sm) {
     return SequenceCreator.newInstance(sm, false);
   }
-
 }

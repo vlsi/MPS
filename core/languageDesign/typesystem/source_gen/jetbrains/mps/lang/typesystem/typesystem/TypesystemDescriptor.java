@@ -8,7 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
-
   public TypesystemDescriptor() {
     {
       InferenceRule_Runtime inferenceRule = new typeOf_PatternCondition_InferenceRule();

@@ -15,11 +15,9 @@ import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationToCollections_MigrationScript extends BaseMigrationScript {
-
   public MigrationToCollections_MigrationScript(IOperationContext operationContext) {
     super("Migration from List to collections");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "ListMigration";
       }
@@ -47,7 +45,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Size ";
       }
@@ -73,7 +70,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Get";
       }
@@ -102,7 +98,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Clear";
       }
@@ -128,7 +123,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add element to List";
       }
@@ -156,7 +150,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add element to pos";
       }
@@ -185,7 +178,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "isEmpty";
       }
@@ -211,7 +203,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "set";
       }
@@ -240,7 +231,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "remove";
       }
@@ -268,7 +258,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "removeObject";
       }
@@ -296,7 +285,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "removeAll";
       }
@@ -324,7 +312,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "indexOf";
       }
@@ -352,7 +339,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "contains";
       }
@@ -380,7 +366,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "addAll";
       }
@@ -408,7 +393,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add First";
       }
@@ -436,7 +420,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add Last";
       }
@@ -464,7 +447,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Remove first";
       }
@@ -490,7 +472,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "ArrayList";
       }
@@ -521,7 +502,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "LinkedList";
       }
@@ -549,7 +529,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "SetMigration";
       }
@@ -577,7 +556,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Add element to Set";
       }
@@ -605,7 +583,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "AddAll elements to Set";
       }
@@ -633,7 +610,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "RemoveAll elements to Set";
       }
@@ -661,7 +637,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Remove element from Set";
       }
@@ -689,7 +664,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "HashSet migration";
       }
@@ -720,7 +694,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "LinkedHashSet migration";
       }
@@ -751,7 +724,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "hasNext";
       }
@@ -778,7 +750,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "next";
       }
@@ -805,7 +776,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "getIterator";
       }
@@ -832,7 +802,6 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Iterator";
       }

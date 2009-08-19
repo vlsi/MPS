@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 
 public class ControlAbstractionContainer_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public ControlAbstractionContainer_DefaultSearchScope() {
   }
 
@@ -25,5 +24,4 @@ public class ControlAbstractionContainer_DefaultSearchScope extends BaseNodeRefe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.CLASS, operationContext.getScope());
   }
-
 }

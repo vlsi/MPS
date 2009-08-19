@@ -22,5 +22,4 @@ public class ExecuteConfigBlock extends ConceptFunction {
   public static ExecuteConfigBlock newInstance(SModel sm) {
     return ExecuteConfigBlock.newInstance(sm, false);
   }
-
 }

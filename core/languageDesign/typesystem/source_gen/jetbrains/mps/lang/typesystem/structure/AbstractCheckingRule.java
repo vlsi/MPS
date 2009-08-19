@@ -33,7 +33,6 @@ public class AbstractCheckingRule extends AbstractRule {
     super.setChild(AbstractCheckingRule.BODY, node);
   }
 
-
   public static AbstractCheckingRule newInstance(SModel sm, boolean init) {
     return (AbstractCheckingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class AbstractCheckingRule extends AbstractRule {
   public static AbstractCheckingRule newInstance(SModel sm) {
     return AbstractCheckingRule.newInstance(sm, false);
   }
-
 }

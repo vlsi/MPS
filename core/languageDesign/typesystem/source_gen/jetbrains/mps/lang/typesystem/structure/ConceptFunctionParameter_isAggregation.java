@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_isAggregation extends ConceptFunctionParam
   public static ConceptFunctionParameter_isAggregation newInstance(SModel sm) {
     return ConceptFunctionParameter_isAggregation.newInstance(sm, false);
   }
-
 }

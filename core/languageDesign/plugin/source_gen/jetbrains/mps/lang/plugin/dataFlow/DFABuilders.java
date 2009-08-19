@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", new BaseExecuteCommandStatement_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", new CommandClosureLiteral_DataFlow());
@@ -22,5 +21,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", new ProcessHandlerStatement_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", new ExecutionConsoleStatement_DataFlow());
   }
-
 }

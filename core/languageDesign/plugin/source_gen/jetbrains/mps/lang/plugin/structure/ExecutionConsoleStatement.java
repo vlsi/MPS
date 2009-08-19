@@ -61,7 +61,6 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
     super.setChild(ExecutionConsoleStatement.DISPOSE_BLOCK, node);
   }
 
-
   public static ExecutionConsoleStatement newInstance(SModel sm, boolean init) {
     return (ExecutionConsoleStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
   public static ExecutionConsoleStatement newInstance(SModel sm) {
     return ExecutionConsoleStatement.newInstance(sm, false);
   }
-
 }

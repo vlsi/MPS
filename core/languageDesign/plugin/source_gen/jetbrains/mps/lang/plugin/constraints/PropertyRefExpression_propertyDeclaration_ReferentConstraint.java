@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class PropertyRefExpression_propertyDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PropertyRefExpression_propertyDeclaration_ReferentConstraint() {
   }
 
@@ -33,5 +32,4 @@ public class PropertyRefExpression_propertyDeclaration_ReferentConstraint extend
     }
     return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getReferenceNode(), "nodeExpr", true)), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
   }
-
 }

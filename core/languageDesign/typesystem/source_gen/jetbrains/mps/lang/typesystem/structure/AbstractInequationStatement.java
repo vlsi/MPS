@@ -24,7 +24,6 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
     super.setProperty(AbstractInequationStatement.INEQUATION_PRIORITY, value.getValueAsString());
   }
 
-
   public static AbstractInequationStatement newInstance(SModel sm, boolean init) {
     return (AbstractInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   public static AbstractInequationStatement newInstance(SModel sm) {
     return AbstractInequationStatement.newInstance(sm, false);
   }
-
 }

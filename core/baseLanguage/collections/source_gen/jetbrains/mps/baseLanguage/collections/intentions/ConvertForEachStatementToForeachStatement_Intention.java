@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ConvertForEachStatementToForeachStatement_Intention extends BaseIntention {
-
   public ConvertForEachStatementToForeachStatement_Intention() {
   }
 
@@ -58,8 +57,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     SNode newVariable = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(oldVariable, "name"));
     SLinkOperations.setTarget(newVariable, "type", variableType, true);
-    for(SNode oldRef : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    for (SNode oldRef : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SLinkOperations.getTarget(it, "variable", false) == oldVariable;
       }
@@ -71,5 +69,4 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.collections.intentions";
   }
-
 }

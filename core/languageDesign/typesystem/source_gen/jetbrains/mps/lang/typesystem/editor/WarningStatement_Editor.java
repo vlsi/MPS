@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WarningStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8935_0(editorContext, node);
   }
@@ -181,5 +180,4 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

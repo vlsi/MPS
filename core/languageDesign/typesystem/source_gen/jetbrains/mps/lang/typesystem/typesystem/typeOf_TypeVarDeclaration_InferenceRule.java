@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_TypeVarDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeOf_TypeVarDeclaration_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class typeOf_TypeVarDeclaration_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-
 }

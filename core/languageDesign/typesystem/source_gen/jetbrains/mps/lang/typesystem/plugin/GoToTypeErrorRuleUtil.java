@@ -26,8 +26,7 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    Computable<SNode> c = new Computable <SNode>() {
-
+    Computable<SNode> c = new Computable<SNode>() {
       public SNode compute() {
         return modelDescriptor.getSModel().getNodeById(ruleID);
       }
@@ -42,5 +41,4 @@ public class GoToTypeErrorRuleUtil {
     }
     context.getComponent(MPSEditorOpener.class).openNode(rule);
   }
-
 }

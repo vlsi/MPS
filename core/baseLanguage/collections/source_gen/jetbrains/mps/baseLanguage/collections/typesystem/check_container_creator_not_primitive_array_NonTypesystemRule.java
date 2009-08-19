@@ -17,7 +17,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_container_creator_not_primitive_array_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_container_creator_not_primitive_array_NonTypesystemRule() {
   }
 
@@ -31,8 +30,7 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
           IErrorTarget errorTarget = new NodeErrorTarget();
           typeCheckingContext.reportTypeError(SLinkOperations.getTarget(acc, "copyFrom", true), "Primitive arrays not supported", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240320024069", intentionProvider, errorTarget);
         }
-      } else
-      {
+      } else {
       }
     }
   }
@@ -48,5 +46,4 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
   public boolean overrides() {
     return false;
   }
-
 }

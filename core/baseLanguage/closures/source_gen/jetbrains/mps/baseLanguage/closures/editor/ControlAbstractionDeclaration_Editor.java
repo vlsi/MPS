@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7643_0(editorContext, node);
   }
@@ -297,7 +296,6 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7643_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
   }
@@ -307,7 +305,6 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class annotationListHandler_7643_0 extends RefNodeListHandler {
-
     public annotationListHandler_7643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -347,10 +344,9 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class parameterListHandler_7643_0 extends RefNodeListHandler {
-
     public parameterListHandler_7643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -414,10 +410,9 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_7643_1 extends RefNodeListHandler {
-
     public annotationListHandler_7643_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -457,10 +452,9 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class typeVariableDeclarationListHandler_7643_0 extends RefNodeListHandler {
-
     public typeVariableDeclarationListHandler_7643_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -507,7 +501,5 @@ public class ControlAbstractionDeclaration_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

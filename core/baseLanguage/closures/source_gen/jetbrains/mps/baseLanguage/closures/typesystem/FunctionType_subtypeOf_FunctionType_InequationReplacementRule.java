@@ -18,7 +18,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public FunctionType_subtypeOf_FunctionType_InequationReplacementRule() {
   }
 
@@ -48,7 +47,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       {
         final SNode superTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
         typeCheckingContext.whenConcrete(superTerminate, new Runnable() {
-
           public void run() {
             if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(superTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               {
@@ -83,10 +81,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
     }
     SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    for(SNode superThrows : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
+    for (SNode superThrows : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
       SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
     }
-    for(SNode subThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
+    for (SNode subThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         BaseIntentionProvider intentionProvider = null;
@@ -133,10 +131,10 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
       SNode join = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-      for(SNode superThrows : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
+      for (SNode superThrows : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
         SLinkOperations.addChild(join, "argument", SNodeOperations.copyNode(superThrows));
       }
-      for(SNode subThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
+      for (SNode subThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)subThrows, (SNode)join, true);
       }
     }
@@ -162,5 +160,4 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
 }

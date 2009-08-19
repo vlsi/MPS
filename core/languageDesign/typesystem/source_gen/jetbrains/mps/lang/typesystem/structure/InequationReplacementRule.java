@@ -23,7 +23,6 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
     super.setChild(InequationReplacementRule.SUPERTYPE_NODE, node);
   }
 
-
   public static InequationReplacementRule newInstance(SModel sm, boolean init) {
     return (InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   public static InequationReplacementRule newInstance(SModel sm) {
     return InequationReplacementRule.newInstance(sm, false);
   }
-
 }

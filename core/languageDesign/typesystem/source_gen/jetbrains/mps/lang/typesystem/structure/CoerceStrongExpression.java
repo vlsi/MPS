@@ -21,5 +21,4 @@ public class CoerceStrongExpression extends CoerceExpression {
   public static CoerceStrongExpression newInstance(SModel sm) {
     return CoerceStrongExpression.newInstance(sm, false);
   }
-
 }

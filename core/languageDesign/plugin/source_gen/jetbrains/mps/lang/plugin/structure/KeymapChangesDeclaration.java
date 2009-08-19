@@ -85,7 +85,6 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
     this.insertChild(prev, KeymapChangesDeclaration.SHORTCUT_CHANGE, node);
   }
 
-
   public static KeymapChangesDeclaration newInstance(SModel sm, boolean init) {
     return (KeymapChangesDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
   public static KeymapChangesDeclaration newInstance(SModel sm) {
     return KeymapChangesDeclaration.newInstance(sm, false);
   }
-
 }

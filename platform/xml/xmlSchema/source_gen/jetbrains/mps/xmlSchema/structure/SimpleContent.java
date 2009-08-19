@@ -21,5 +21,4 @@ public class SimpleContent extends TypeExpression {
   public static SimpleContent newInstance(SModel sm) {
     return SimpleContent.newInstance(sm, false);
   }
-
 }

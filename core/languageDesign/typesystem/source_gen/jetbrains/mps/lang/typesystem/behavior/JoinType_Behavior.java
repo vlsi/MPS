@@ -10,14 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class JoinType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("join(");
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
-    for(SNode arg : nodes) {
+    for (SNode arg : nodes) {
       sb.append(BaseConcept_Behavior.call_getPresentation_1213877396640(arg));
       if (SNodeOperations.getIndexInParent(arg) < ListSequence.fromList(nodes).count() - 1) {
         sb.append(" | ");
@@ -26,5 +25,4 @@ public class JoinType_Behavior {
     sb.append(")");
     return sb.toString();
   }
-
 }

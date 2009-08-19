@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public ActionParameterTypeIsNotClassifier_NonTypesystemRule() {
   }
 
@@ -39,5 +38,4 @@ public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends Abstra
   public boolean overrides() {
     return false;
   }
-
 }

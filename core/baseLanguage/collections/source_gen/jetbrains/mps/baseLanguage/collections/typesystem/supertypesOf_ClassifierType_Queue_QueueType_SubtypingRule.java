@@ -8,8 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
-  /* package */_Patterns.Pattern_16 myMatchingPattern;
+  /*package*/ _Patterns.Pattern_16 myMatchingPattern;
 
   public supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule() {
   }
@@ -30,5 +29,4 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   public boolean isWeak() {
     return true;
   }
-
 }

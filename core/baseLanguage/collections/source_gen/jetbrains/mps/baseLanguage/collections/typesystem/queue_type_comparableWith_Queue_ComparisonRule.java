@@ -7,8 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRule_Runtime {
-
-  /* package */_Patterns.Pattern_15 myMatchingPattern2;
+  /*package*/ _Patterns.Pattern_15 myMatchingPattern2;
 
   public queue_type_comparableWith_Queue_ComparisonRule() {
   }
@@ -37,5 +36,4 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
 }

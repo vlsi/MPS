@@ -25,7 +25,6 @@ public class ReportErrorStatement extends Statement {
     super.setChild(ReportErrorStatement.ERROR, node);
   }
 
-
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
     return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ReportErrorStatement extends Statement {
   public static ReportErrorStatement newInstance(SModel sm) {
     return ReportErrorStatement.newInstance(sm, false);
   }
-
 }

@@ -42,7 +42,6 @@ public class GetOperationType extends Expression {
     super.setChild(GetOperationType.RIGHT_OPERAND_TYPE, node);
   }
 
-
   public static GetOperationType newInstance(SModel sm, boolean init) {
     return (GetOperationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GetOperationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class GetOperationType extends Expression {
   public static GetOperationType newInstance(SModel sm) {
     return GetOperationType.newInstance(sm, false);
   }
-
 }

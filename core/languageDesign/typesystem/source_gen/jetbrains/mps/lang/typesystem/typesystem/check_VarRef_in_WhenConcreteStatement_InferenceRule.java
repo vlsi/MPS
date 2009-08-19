@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public check_VarRef_in_WhenConcreteStatement_InferenceRule() {
   }
 
@@ -28,8 +27,7 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends Abstrac
       while (parent != null && parent != ancestor) {
         if (parent == argument) {
           return;
-        } else
-        {
+        } else {
           parent = SNodeOperations.getParent(parent);
         }
       }
@@ -58,5 +56,4 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule extends Abstrac
   public boolean overrides() {
     return false;
   }
-
 }

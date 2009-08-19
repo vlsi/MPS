@@ -35,7 +35,6 @@ public class SingletonSequenceCreator extends AbstractCreator {
     super.setChild(SingletonSequenceCreator.SINGLETON_VALUE, node);
   }
 
-
   public static SingletonSequenceCreator newInstance(SModel sm, boolean init) {
     return (SingletonSequenceCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class SingletonSequenceCreator extends AbstractCreator {
   public static SingletonSequenceCreator newInstance(SModel sm) {
     return SingletonSequenceCreator.newInstance(sm, false);
   }
-
 }

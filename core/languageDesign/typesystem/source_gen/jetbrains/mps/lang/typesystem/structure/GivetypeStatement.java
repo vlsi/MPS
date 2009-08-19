@@ -34,7 +34,6 @@ public class GivetypeStatement extends Statement {
     super.setChild(GivetypeStatement.TERM_EXPRESSION, node);
   }
 
-
   public static GivetypeStatement newInstance(SModel sm, boolean init) {
     return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class GivetypeStatement extends Statement {
   public static GivetypeStatement newInstance(SModel sm) {
     return GivetypeStatement.newInstance(sm, false);
   }
-
 }

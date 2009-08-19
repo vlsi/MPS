@@ -33,7 +33,6 @@ public class Attribute extends BaseAttribute {
     super.setChild(Attribute.VALUE, node);
   }
 
-
   public static Attribute newInstance(SModel sm, boolean init) {
     return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class Attribute extends BaseAttribute {
   public static Attribute newInstance(SModel sm) {
     return Attribute.newInstance(sm, false);
   }
-
 }

@@ -36,7 +36,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7023_0(editorContext, node);
   }
@@ -219,7 +218,6 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7023_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "initValue") > 0;
   }
@@ -229,7 +227,6 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
   }
 
   private static class initValueListHandler_7023_0 extends RefNodeListHandler {
-
     public initValueListHandler_7023_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -295,17 +292,14 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   public static class AbstractContainerCreator_Editor_replaceWith_AbstractContainerCreator_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-
     public AbstractContainerCreator_Editor_replaceWith_AbstractContainerCreator_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
     }
-
-}
-
+  }
 }

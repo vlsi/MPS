@@ -11,7 +11,6 @@ import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_AbstractCheckingRule_NonTypesystemRule() {
   }
 
@@ -32,5 +31,4 @@ public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTyp
   public boolean overrides() {
     return false;
   }
-
 }

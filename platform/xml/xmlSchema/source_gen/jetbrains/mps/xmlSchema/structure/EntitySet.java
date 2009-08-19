@@ -93,7 +93,6 @@ public class EntitySet extends BaseConcept implements INamedConcept {
     this.insertChild(prev, EntitySet.ENTITY_BLOCK, node);
   }
 
-
   public static EntitySet newInstance(SModel sm, boolean init) {
     return (EntitySet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntitySet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -101,5 +100,4 @@ public class EntitySet extends BaseConcept implements INamedConcept {
   public static EntitySet newInstance(SModel sm) {
     return EntitySet.newInstance(sm, false);
   }
-
 }

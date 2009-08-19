@@ -24,7 +24,6 @@ public class HeadSetOperation extends SortedSetOperation {
     super.setChild(HeadSetOperation.TO_ELEMENT, node);
   }
 
-
   public static HeadSetOperation newInstance(SModel sm, boolean init) {
     return (HeadSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class HeadSetOperation extends SortedSetOperation {
   public static HeadSetOperation newInstance(SModel sm) {
     return HeadSetOperation.newInstance(sm, false);
   }
-
 }

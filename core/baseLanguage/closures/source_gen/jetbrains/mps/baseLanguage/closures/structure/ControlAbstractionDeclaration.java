@@ -120,7 +120,6 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
     this.insertChild(prev, ControlAbstractionDeclaration.ANNOTATION, node);
   }
 
-
   public static ControlAbstractionDeclaration newInstance(SModel sm, boolean init) {
     return (ControlAbstractionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -128,5 +127,4 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   public static ControlAbstractionDeclaration newInstance(SModel sm) {
     return ControlAbstractionDeclaration.newInstance(sm, false);
   }
-
 }

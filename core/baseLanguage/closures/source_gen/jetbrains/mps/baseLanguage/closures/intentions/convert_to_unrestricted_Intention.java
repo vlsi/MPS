@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class convert_to_unrestricted_Intention extends BaseIntention {
-
   public convert_to_unrestricted_Intention() {
   }
 
@@ -49,12 +48,12 @@ public class convert_to_unrestricted_Intention extends BaseIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode uft = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
     List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
-    for(SNode pt : ptypes) {
+    for (SNode pt : ptypes) {
       SLinkOperations.addChild(uft, "parameterType", SNodeOperations.detachNode(pt));
     }
     SLinkOperations.setTarget(uft, "resultType", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "resultType", true)), true);
     List<SNode> ttypes = SLinkOperations.getTargets(node, "throwsType", true);
-    for(SNode tt : ttypes) {
+    for (SNode tt : ttypes) {
       SLinkOperations.addChild(uft, "throwsType", SNodeOperations.detachNode(tt));
     }
   }
@@ -62,5 +61,4 @@ public class convert_to_unrestricted_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
-
 }

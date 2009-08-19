@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InsertElementOperation_DataFlow extends DataFlowBuilder {
-
   public InsertElementOperation_DataFlow() {
   }
 
@@ -17,5 +16,4 @@ public class InsertElementOperation_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "index", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "element", true));
   }
-
 }

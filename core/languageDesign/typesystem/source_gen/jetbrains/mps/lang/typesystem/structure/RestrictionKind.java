@@ -54,5 +54,4 @@ public enum RestrictionKind {
     }
     return RestrictionKind.getDefault();
   }
-
 }

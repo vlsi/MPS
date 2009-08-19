@@ -21,5 +21,4 @@ public class GetValuesOperation extends MapOperation {
   public static GetValuesOperation newInstance(SModel sm) {
     return GetValuesOperation.newInstance(sm, false);
   }
-
 }

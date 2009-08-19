@@ -114,7 +114,6 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
     this.insertChild(prev, PreferencesComponentDeclaration.PREFERENCE_PAGE, node);
   }
 
-
   public static PreferencesComponentDeclaration newInstance(SModel sm, boolean init) {
     return (PreferencesComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -122,5 +121,4 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   public static PreferencesComponentDeclaration newInstance(SModel sm) {
     return PreferencesComponentDeclaration.newInstance(sm, false);
   }
-
 }

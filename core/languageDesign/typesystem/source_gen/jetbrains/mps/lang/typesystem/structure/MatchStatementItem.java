@@ -34,7 +34,6 @@ public class MatchStatementItem extends BaseConcept {
     super.setChild(MatchStatementItem.IF_TRUE, node);
   }
 
-
   public static MatchStatementItem newInstance(SModel sm, boolean init) {
     return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class MatchStatementItem extends BaseConcept {
   public static MatchStatementItem newInstance(SModel sm) {
     return MatchStatementItem.newInstance(sm, false);
   }
-
 }

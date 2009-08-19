@@ -33,7 +33,6 @@ public class AbstractSubtypingRule extends AbstractRule {
     super.setChild(AbstractSubtypingRule.BODY, node);
   }
 
-
   public static AbstractSubtypingRule newInstance(SModel sm, boolean init) {
     return (AbstractSubtypingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class AbstractSubtypingRule extends AbstractRule {
   public static AbstractSubtypingRule newInstance(SModel sm) {
     return AbstractSubtypingRule.newInstance(sm, false);
   }
-
 }

@@ -33,7 +33,6 @@ public class Element extends BaseElement {
     super.setReferent(Element.ELEMENT_DECLARATION, node);
   }
 
-
   public static Element newInstance(SModel sm, boolean init) {
     return (Element)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class Element extends BaseElement {
   public static Element newInstance(SModel sm) {
     return Element.newInstance(sm, false);
   }
-
 }

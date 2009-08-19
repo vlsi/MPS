@@ -22,5 +22,4 @@ public class UnboundClosureParameterDeclaration extends ParameterDeclaration {
   public static UnboundClosureParameterDeclaration newInstance(SModel sm) {
     return UnboundClosureParameterDeclaration.newInstance(sm, false);
   }
-
 }

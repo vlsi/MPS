@@ -22,5 +22,4 @@ public class TypeExpression extends BaseConcept {
   public static TypeExpression newInstance(SModel sm) {
     return TypeExpression.newInstance(sm, false);
   }
-
 }

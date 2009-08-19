@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ClosureLiteralDataFlow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ClosureLiteralDataFlow_NonTypesystemRule() {
   }
 
@@ -33,5 +32,4 @@ public class check_ClosureLiteralDataFlow_NonTypesystemRule extends AbstractNonT
   public boolean overrides() {
     return false;
   }
-
 }

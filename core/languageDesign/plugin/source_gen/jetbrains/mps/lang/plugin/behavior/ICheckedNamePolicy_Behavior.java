@@ -76,5 +76,4 @@ public class ICheckedNamePolicy_Behavior {
   public static PropertyReference callSuper_getPropertyToCheck_5003188907305392322(SNode thisNode, String callerConceptFqName) {
     return (PropertyReference)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertyToCheck_5003188907305392322", PARAMETERS_5003188907305392322);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class SingletonSequenceCreator_DataFlow extends DataFlowBuilder {
-
   public SingletonSequenceCreator_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class SingletonSequenceCreator_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "singletonValue", true));
     }
   }
-
 }

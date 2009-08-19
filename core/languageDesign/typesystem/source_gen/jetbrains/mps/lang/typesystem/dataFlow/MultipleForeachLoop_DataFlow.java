@@ -9,26 +9,23 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MultipleForeachLoop_DataFlow extends DataFlowBuilder {
-
   public MultipleForeachLoop_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
+    for (SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(variable, "iterable", true));
     }
     _context.getBuilder().emitLabel("condition");
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()));
-    for(SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
+    for (SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
       _context.getBuilder().emitWrite(SLinkOperations.getTarget(variable, "variable", true));
     }
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
-
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "condition"));
       }
     });
   }
-
 }

@@ -8,6 +8,7 @@ public interface ActionParameter extends INamedConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ActionParameter";
   public static final String IS_OPTIONAL = "isOptional";
 
+
   public boolean getIsOptional();
   public void setIsOptional(boolean value);
 }

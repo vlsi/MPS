@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3933_0(editorContext, node);
   }
@@ -129,13 +128,11 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition3933_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 
   public static class _Inline3933_0 extends AbstractCellProvider {
-
     public _Inline3933_0() {
       super();
     }
@@ -166,7 +163,5 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

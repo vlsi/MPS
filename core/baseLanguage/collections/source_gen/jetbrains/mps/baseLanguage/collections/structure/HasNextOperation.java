@@ -21,5 +21,4 @@ public class HasNextOperation extends AbstractIteratorOperation {
   public static HasNextOperation newInstance(SModel sm) {
     return HasNextOperation.newInstance(sm, false);
   }
-
 }

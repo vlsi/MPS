@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_WhenConcreteStatement_DF_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_WhenConcreteStatement_DF_NonTypesystemRule() {
   }
 
@@ -30,5 +29,4 @@ public class check_WhenConcreteStatement_DF_NonTypesystemRule extends AbstractNo
   public boolean overrides() {
     return false;
   }
-
 }

@@ -41,7 +41,6 @@ public class AddFirstElementOperation extends SingleArgumentSequenceOperation im
     this.setProperty(AddFirstElementOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static AddFirstElementOperation newInstance(SModel sm, boolean init) {
     return (AddFirstElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class AddFirstElementOperation extends SingleArgumentSequenceOperation im
   public static AddFirstElementOperation newInstance(SModel sm) {
     return AddFirstElementOperation.newInstance(sm, false);
   }
-
 }

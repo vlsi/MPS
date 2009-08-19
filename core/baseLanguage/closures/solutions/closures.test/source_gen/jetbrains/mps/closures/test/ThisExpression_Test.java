@@ -8,16 +8,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 
 public class ThisExpression_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_anonymousClass() throws Exception {
     Runnable run = new Runnable() {
-
       private Integer foo = 0;
 
       public void run() {
-        new _FunctionTypes._return_P0_E0 <Integer>() {
-
+        new _FunctionTypes._return_P0_E0<Integer>() {
           public Integer invoke() {
             return foo = 42;
           }
@@ -28,10 +25,9 @@ public class ThisExpression_Test extends TestCase {
     run.run();
   }
 
-  @Test()
+  @Test
   public void test_topLevelClass() throws Exception {
     ThisProvider tp = new ThisProvider();
     tp.testThisExpression();
   }
-
 }

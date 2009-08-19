@@ -24,7 +24,6 @@ public class IteratorType extends Type {
     super.setChild(IteratorType.ELEMENT_TYPE, node);
   }
 
-
   public static IteratorType newInstance(SModel sm, boolean init) {
     return (IteratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class IteratorType extends Type {
   public static IteratorType newInstance(SModel sm) {
     return IteratorType.newInstance(sm, false);
   }
-
 }

@@ -38,7 +38,6 @@ public class MapInitializer extends BaseConcept {
     this.insertChild(prev, MapInitializer.ENTRIES, node);
   }
 
-
   public static MapInitializer newInstance(SModel sm, boolean init) {
     return (MapInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class MapInitializer extends BaseConcept {
   public static MapInitializer newInstance(SModel sm) {
     return MapInitializer.newInstance(sm, false);
   }
-
 }

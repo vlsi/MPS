@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PrepStatementUtil {
-
   private PrepStatementUtil.Context ctx;
   private ITemplateGenerator generator;
 
@@ -31,7 +30,7 @@ public class PrepStatementUtil {
   private int prepStatementList(SNode slist) {
     boolean labelAutoIncremented = true;
     int label = this.ctx.incrementLabel();
-    for(SNode stmt : SLinkOperations.getTargets(slist, "statement", true)) {
+    for (SNode stmt : SLinkOperations.getTargets(slist, "statement", true)) {
       if (!(labelAutoIncremented) && StatementListUtil.isControlStatement(stmt)) {
         label = this.ctx.incrementLabel();
       }
@@ -145,7 +144,7 @@ public class PrepStatementUtil {
     Values.CLOSURE_DATA.set(sn, data);
     this.prepStatementList(SLinkOperations.getTarget(ifstmt, "ifTrue", true));
     if (SLinkOperations.getCount(ifstmt, "elsifClauses") > 0) {
-      for(SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
+      for (SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
         int tmp = this.ctx.incrementLabel();
         SNode sn1 = SLinkOperations.getTarget(eicls, "statementList", true);
         Object data1 = new Integer[]{tmp,nextLabel};
@@ -180,7 +179,7 @@ public class PrepStatementUtil {
     Object data1 = new Integer[]{beginLabel,nextLabel};
     Values.CLOSURE_DATA.set(sstmt, data1);
     int nextCaseLabel = this.ctx.incrementLabel();
-    for(SNode scase : SLinkOperations.getTargets(sstmt, "case", true)) {
+    for (SNode scase : SLinkOperations.getTargets(sstmt, "case", true)) {
       int caseLabel = nextCaseLabel;
       nextCaseLabel = this.ctx.incrementLabel();
       if ((SLinkOperations.getTarget(scase, "body", true) != null)) {
@@ -290,14 +289,12 @@ public class PrepStatementUtil {
     return this.ctx.incrementLabel();
   }
 
-
   public static void prepStatementList(SNode slist, ITemplateGenerator generator) {
     PrepStatementUtil psu = new PrepStatementUtil(generator);
     psu.prepTopStatementList(slist);
   }
 
   private static class Context {
-
     public int label;
 
     public Context() {
@@ -308,7 +305,5 @@ public class PrepStatementUtil {
       this.label = this.label + 1;
       return this.label;
     }
-
-}
-
+  }
 }

@@ -24,7 +24,6 @@ public class EntityReference extends BaseText {
     super.setReferent(EntityReference.ENTITY_DECLARATION, node);
   }
 
-
   public static EntityReference newInstance(SModel sm, boolean init) {
     return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class EntityReference extends BaseText {
   public static EntityReference newInstance(SModel sm) {
     return EntityReference.newInstance(sm, false);
   }
-
 }

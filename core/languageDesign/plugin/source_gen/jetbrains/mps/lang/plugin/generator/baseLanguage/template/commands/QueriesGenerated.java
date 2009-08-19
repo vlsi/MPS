@@ -8,7 +8,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-
   public static SNode sourceNodeQuery_1225441503888(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
@@ -28,5 +27,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1225441503968(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true);
   }
-
 }

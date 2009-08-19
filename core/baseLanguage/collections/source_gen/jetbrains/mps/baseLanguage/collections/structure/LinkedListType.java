@@ -21,5 +21,4 @@ public class LinkedListType extends ListType {
   public static LinkedListType newInstance(SModel sm) {
     return LinkedListType.newInstance(sm, false);
   }
-
 }

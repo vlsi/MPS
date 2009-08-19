@@ -16,7 +16,6 @@ import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_AbstractContainerCreator_InferenceRule() {
   }
 
@@ -66,5 +65,4 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
   public boolean overrides() {
     return false;
   }
-
 }

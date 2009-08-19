@@ -22,5 +22,4 @@ public class GenerateFileBlock extends ConceptFunction {
   public static GenerateFileBlock newInstance(SModel sm) {
     return GenerateFileBlock.newInstance(sm, false);
   }
-
 }

@@ -61,7 +61,6 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
     this.setBooleanProperty(RuntimeTypeVariable.NULLABLE, value);
   }
 
-
   public static RuntimeTypeVariable newInstance(SModel sm, boolean init) {
     return (RuntimeTypeVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
   public static RuntimeTypeVariable newInstance(SModel sm) {
     return RuntimeTypeVariable.newInstance(sm, false);
   }
-
 }

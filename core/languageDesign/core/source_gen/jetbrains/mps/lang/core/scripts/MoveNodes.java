@@ -65,29 +65,26 @@ public class MoveNodes extends BaseGeneratedRefactoring {
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
       ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
       List<LinkDeclaration> linkDeclarations = superConceptsScope.getLinkDeclarationsExcludingOverridden();
-      Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter <LinkDeclaration>() {
-
+      Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<LinkDeclaration>() {
         public boolean accept(LinkDeclaration it) {
           return SPropertyOperations.hasValue(SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
         }
-      }).select(new ISelector <LinkDeclaration, SNode>() {
-
+      }).select(new ISelector<LinkDeclaration, SNode>() {
         public SNode select(LinkDeclaration it) {
           return SNodeOperations.cast(it.getNode(), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
         }
       });
-      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector <SNode, String>() {
-
+      Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SModelUtil.getGenuineLinkRole(it);
         }
       });
-      for(SNode node : refactoringContext.getSelectedNodes()) {
+      for (SNode node : refactoringContext.getSelectedNodes()) {
         String childRole = node.getRole_();
         if (!(Sequence.fromIterable(childLinksRoles).contains(childRole))) {
           return false;
         }
-        for(SNode linkDeclaration : childLinkDeclarations) {
+        for (SNode linkDeclaration : childLinkDeclarations) {
           if (SPropertyOperations.getString(linkDeclaration, "role").equals(childRole)) {
             if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
               return false;
@@ -98,7 +95,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
       return true;
     }
     if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      for(SNode node : refactoringContext.getSelectedNodes()) {
+      for (SNode node : refactoringContext.getSelectedNodes()) {
         if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
         }
@@ -118,7 +115,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
-    for(SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
+    for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), selNode, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
     return searchResults;
@@ -179,9 +176,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     return components;
   }
 
-
   public static String getKeyStroke_static() {
     return " F6";
   }
-
 }

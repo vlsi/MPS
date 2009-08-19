@@ -18,7 +18,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7356_0(editorContext, node);
   }
@@ -97,5 +96,4 @@ public class BaseExecuteCommandStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

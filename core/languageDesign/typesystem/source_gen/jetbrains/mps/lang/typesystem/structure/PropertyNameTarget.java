@@ -24,7 +24,6 @@ public class PropertyNameTarget extends MessageTarget {
     super.setChild(PropertyNameTarget.PROPERTY_NAME, node);
   }
 
-
   public static PropertyNameTarget newInstance(SModel sm, boolean init) {
     return (PropertyNameTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PropertyNameTarget extends MessageTarget {
   public static PropertyNameTarget newInstance(SModel sm) {
     return PropertyNameTarget.newInstance(sm, false);
   }
-
 }

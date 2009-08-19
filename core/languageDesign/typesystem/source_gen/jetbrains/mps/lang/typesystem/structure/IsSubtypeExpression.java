@@ -33,7 +33,6 @@ public class IsSubtypeExpression extends Expression {
     super.setChild(IsSubtypeExpression.SUPERTYPE_EXPRESSION, node);
   }
 
-
   public static IsSubtypeExpression newInstance(SModel sm, boolean init) {
     return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class IsSubtypeExpression extends Expression {
   public static IsSubtypeExpression newInstance(SModel sm) {
     return IsSubtypeExpression.newInstance(sm, false);
   }
-
 }

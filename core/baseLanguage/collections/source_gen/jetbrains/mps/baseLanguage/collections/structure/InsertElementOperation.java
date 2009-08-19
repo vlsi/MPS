@@ -60,7 +60,6 @@ public class InsertElementOperation extends SequenceOperation implements IListOp
     super.setChild(InsertElementOperation.ELEMENT, node);
   }
 
-
   public static InsertElementOperation newInstance(SModel sm, boolean init) {
     return (InsertElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class InsertElementOperation extends SequenceOperation implements IListOp
   public static InsertElementOperation newInstance(SModel sm) {
     return InsertElementOperation.newInstance(sm, false);
   }
-
 }

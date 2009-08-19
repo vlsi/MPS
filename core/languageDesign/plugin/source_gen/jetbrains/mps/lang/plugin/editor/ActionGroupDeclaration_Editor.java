@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.workbench.InternalFlag;
 
 public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7595_0(editorContext, node);
   }
@@ -359,7 +358,6 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7595_0(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", false, false) == null;
   }
@@ -371,5 +369,4 @@ public class ActionGroupDeclaration_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7595_2(SNode node, EditorContext editorContext, IScope scope) {
     return InternalFlag.isInternalMode();
   }
-
 }

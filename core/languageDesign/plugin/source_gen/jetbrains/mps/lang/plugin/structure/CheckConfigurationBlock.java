@@ -22,5 +22,4 @@ public class CheckConfigurationBlock extends ConceptFunction {
   public static CheckConfigurationBlock newInstance(SModel sm) {
     return CheckConfigurationBlock.newInstance(sm, false);
   }
-
 }

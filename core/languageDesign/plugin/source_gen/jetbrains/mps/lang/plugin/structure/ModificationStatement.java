@@ -33,7 +33,6 @@ public class ModificationStatement extends BaseConcept {
     super.setReferent(ModificationStatement.POINT, node);
   }
 
-
   public static ModificationStatement newInstance(SModel sm, boolean init) {
     return (ModificationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class ModificationStatement extends BaseConcept {
   public static ModificationStatement newInstance(SModel sm) {
     return ModificationStatement.newInstance(sm, false);
   }
-
 }

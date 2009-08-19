@@ -21,5 +21,4 @@ public class NonTypesystemRule extends AbstractCheckingRule {
   public static NonTypesystemRule newInstance(SModel sm) {
     return NonTypesystemRule.newInstance(sm, false);
   }
-
 }

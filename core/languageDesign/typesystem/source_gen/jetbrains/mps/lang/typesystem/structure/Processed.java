@@ -22,5 +22,4 @@ public class Processed extends BaseConcept {
   public static Processed newInstance(SModel sm) {
     return Processed.newInstance(sm, false);
   }
-
 }

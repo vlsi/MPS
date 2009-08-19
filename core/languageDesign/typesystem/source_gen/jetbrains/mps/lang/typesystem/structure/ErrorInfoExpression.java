@@ -22,5 +22,4 @@ public class ErrorInfoExpression extends Expression {
   public static ErrorInfoExpression newInstance(SModel sm) {
     return ErrorInfoExpression.newInstance(sm, false);
   }
-
 }

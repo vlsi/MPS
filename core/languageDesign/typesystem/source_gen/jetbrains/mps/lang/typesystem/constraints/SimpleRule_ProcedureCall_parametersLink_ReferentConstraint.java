@@ -16,7 +16,6 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public SimpleRule_ProcedureCall_parametersLink_ReferentConstraint() {
   }
 
@@ -33,7 +32,7 @@ public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint extends 
     if ((conceptDeclaration != null)) {
       List<SNode> aggregationLinkDeclarations = AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(conceptDeclaration);
       List<SNode> result = new ArrayList<SNode>();
-      for(SNode ld : aggregationLinkDeclarations) {
+      for (SNode ld : aggregationLinkDeclarations) {
         if (!(LinkDeclaration_Behavior.call_isSingular_1213877254557(ld))) {
           ListSequence.fromList(result).addElement(ld);
         }
@@ -42,5 +41,4 @@ public class SimpleRule_ProcedureCall_parametersLink_ReferentConstraint extends 
     }
     return new ArrayList<SNode>();
   }
-
 }

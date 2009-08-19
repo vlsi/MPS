@@ -46,7 +46,6 @@ public class ContentList extends Content {
     this.insertChild(prev, ContentList.CONTENT, node);
   }
 
-
   public static ContentList newInstance(SModel sm, boolean init) {
     return (ContentList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -54,5 +53,4 @@ public class ContentList extends Content {
   public static ContentList newInstance(SModel sm) {
     return ContentList.newInstance(sm, false);
   }
-
 }

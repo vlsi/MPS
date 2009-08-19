@@ -32,7 +32,6 @@ public class ElementWithType extends ElementDeclaration {
     super.setChild(ElementWithType.OCCURS_ATTRIBUTE, node);
   }
 
-
   public static ElementWithType newInstance(SModel sm, boolean init) {
     return (ElementWithType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class ElementWithType extends ElementDeclaration {
   public static ElementWithType newInstance(SModel sm) {
     return ElementWithType.newInstance(sm, false);
   }
-
 }

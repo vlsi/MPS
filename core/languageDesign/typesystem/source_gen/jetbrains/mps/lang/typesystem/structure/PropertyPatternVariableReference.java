@@ -25,7 +25,6 @@ public class PropertyPatternVariableReference extends Expression {
     super.setReferent(PropertyPatternVariableReference.PATTERN_VAR_DECL, node);
   }
 
-
   public static PropertyPatternVariableReference newInstance(SModel sm, boolean init) {
     return (PropertyPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class PropertyPatternVariableReference extends Expression {
   public static PropertyPatternVariableReference newInstance(SModel sm) {
     return PropertyPatternVariableReference.newInstance(sm, false);
   }
-
 }

@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9926_0(editorContext, node);
   }
@@ -53,7 +52,6 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline9926_0 extends AbstractCellProvider {
-
     public _Inline9926_0() {
       super();
     }
@@ -85,7 +83,5 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

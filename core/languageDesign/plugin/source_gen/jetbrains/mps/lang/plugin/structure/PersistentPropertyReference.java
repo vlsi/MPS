@@ -61,7 +61,6 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
     this.setMember(node);
   }
 
-
   public static PersistentPropertyReference newInstance(SModel sm, boolean init) {
     return (PersistentPropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
   public static PersistentPropertyReference newInstance(SModel sm) {
     return PersistentPropertyReference.newInstance(sm, false);
   }
-
 }

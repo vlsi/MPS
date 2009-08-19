@@ -82,7 +82,6 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
     super.setChild(ChildTypeRestriction.TYPE, node);
   }
 
-
   public static ChildTypeRestriction newInstance(SModel sm, boolean init) {
     return (ChildTypeRestriction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ChildTypeRestriction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -90,5 +89,4 @@ public class ChildTypeRestriction extends BaseConcept implements INamedConcept {
   public static ChildTypeRestriction newInstance(SModel sm) {
     return ChildTypeRestriction.newInstance(sm, false);
   }
-
 }

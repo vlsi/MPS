@@ -22,5 +22,4 @@ public class DisposeConsoleBlock extends ClosureLiteral {
   public static DisposeConsoleBlock newInstance(SModel sm) {
     return DisposeConsoleBlock.newInstance(sm, false);
   }
-
 }

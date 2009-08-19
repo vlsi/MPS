@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 
 public class HashMapCreator_DataFlow extends DataFlowBuilder {
-
   public HashMapCreator_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class HashMapCreator_DataFlow extends DataFlowBuilder {
       _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "initializer", true));
     }
   }
-
 }

@@ -23,7 +23,6 @@ public class AttributeGroupReference extends AttributeExpression {
     super.setReferent(AttributeGroupReference.ATTRIBUTE_GROUP, node);
   }
 
-
   public static AttributeGroupReference newInstance(SModel sm, boolean init) {
     return (AttributeGroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class AttributeGroupReference extends AttributeExpression {
   public static AttributeGroupReference newInstance(SModel sm) {
     return AttributeGroupReference.newInstance(sm, false);
   }
-
 }

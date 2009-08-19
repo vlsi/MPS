@@ -28,7 +28,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt shift M";
   }
@@ -37,7 +37,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     return !(ListSequence.fromList(((List<EditorMessage>)ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node))).isEmpty());
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -49,7 +49,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -65,11 +65,11 @@ public class ShowNodeMessages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       List<EditorMessage> messages = ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node);
       StringBuilder sb = new StringBuilder();
-      for(EditorMessage message : messages) {
+      for (EditorMessage message : messages) {
         sb.append(message.getMessage());
         sb.append("; owner is ");
         sb.append(message.getOwner().toString());
@@ -80,5 +80,4 @@ public class ShowNodeMessages_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeMessages", t);
     }
   }
-
 }

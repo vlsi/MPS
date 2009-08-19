@@ -12,7 +12,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class enumerator_subtypeOf_enumerator_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
-
   public enumerator_subtypeOf_enumerator_InequationReplacementRule() {
   }
 
@@ -49,5 +48,4 @@ public class enumerator_subtypeOf_enumerator_InequationReplacementRule extends A
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType";
   }
-
 }

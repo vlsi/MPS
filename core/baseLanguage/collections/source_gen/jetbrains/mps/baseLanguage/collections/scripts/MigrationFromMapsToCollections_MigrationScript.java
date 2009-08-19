@@ -15,11 +15,9 @@ import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationFromMapsToCollections_MigrationScript extends BaseMigrationScript {
-
   public MigrationFromMapsToCollections_MigrationScript(IOperationContext operationContext) {
     super("Migration from map to collections");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "MapMigration";
       }
@@ -48,7 +46,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Get ";
       }
@@ -77,7 +74,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "Put ";
       }
@@ -109,7 +105,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "values ";
       }
@@ -136,7 +131,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "keys ";
       }
@@ -163,7 +157,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "clear";
       }
@@ -190,7 +183,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-
       public String getName() {
         return "HashMap";
       }

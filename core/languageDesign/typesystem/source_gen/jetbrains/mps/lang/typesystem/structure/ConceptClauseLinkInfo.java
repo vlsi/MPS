@@ -44,7 +44,6 @@ public class ConceptClauseLinkInfo extends BaseConcept {
     super.setChild(ConceptClauseLinkInfo.CHILD_INDEX, node);
   }
 
-
   public static ConceptClauseLinkInfo newInstance(SModel sm, boolean init) {
     return (ConceptClauseLinkInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -52,5 +51,4 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   public static ConceptClauseLinkInfo newInstance(SModel sm) {
     return ConceptClauseLinkInfo.newInstance(sm, false);
   }
-
 }

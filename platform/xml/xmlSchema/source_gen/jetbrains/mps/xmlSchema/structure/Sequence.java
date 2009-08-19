@@ -23,7 +23,6 @@ public class Sequence extends GroupExpression {
     super.setChild(Sequence.TYPE_EXPRESSION_LIST, node);
   }
 
-
   public static Sequence newInstance(SModel sm, boolean init) {
     return (Sequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Sequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Sequence extends GroupExpression {
   public static Sequence newInstance(SModel sm) {
     return Sequence.newInstance(sm, false);
   }
-
 }
