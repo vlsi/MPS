@@ -34,7 +34,6 @@ public class AssertSame extends Statement {
     super.setChild(AssertSame.ACTUAL, node);
   }
 
-
   public static AssertSame newInstance(SModel sm, boolean init) {
     return (AssertSame)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -42,5 +41,4 @@ public class AssertSame extends Statement {
   public static AssertSame newInstance(SModel sm) {
     return AssertSame.newInstance(sm, false);
   }
-
 }

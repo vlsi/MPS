@@ -27,7 +27,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BTestCase_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7256_0(editorContext, node);
   }
@@ -221,7 +220,6 @@ public class BTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static class staticFieldListHandler_7256_0 extends RefNodeListHandler {
-
     public staticFieldListHandler_7256_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -277,10 +275,9 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_7256_0 extends RefNodeListHandler {
-
     public methodListHandler_7256_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -336,7 +333,5 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

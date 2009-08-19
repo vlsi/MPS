@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AssertSame_DataFlow extends DataFlowBuilder {
-
   public AssertSame_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class AssertSame_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "actual", true));
     _context.getBuilder().emitNop();
   }
-
 }

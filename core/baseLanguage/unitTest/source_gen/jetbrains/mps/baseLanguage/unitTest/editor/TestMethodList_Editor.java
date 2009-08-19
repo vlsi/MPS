@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TestMethodList_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8171_0(editorContext, node);
   }
@@ -47,7 +46,6 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
   }
 
   private static class testMethodListHandler_8171_0 extends RefNodeListHandler {
-
     public testMethodListHandler_8171_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -103,7 +101,5 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

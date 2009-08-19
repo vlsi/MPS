@@ -216,5 +216,19 @@
       <link role="intfc" targetNodeId="1215620452633" resolveInfo="ITestable" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7080278351417106679">
+    <property name="name" value="AssertInNotNull" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7080278351417106681">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7080278351417106680">
+      <property name="value" value="assert is not null" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

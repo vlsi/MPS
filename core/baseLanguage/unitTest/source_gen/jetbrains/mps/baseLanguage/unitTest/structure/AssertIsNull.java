@@ -25,7 +25,6 @@ public class AssertIsNull extends Statement {
     super.setChild(AssertIsNull.EXPRESSION, node);
   }
 
-
   public static AssertIsNull newInstance(SModel sm, boolean init) {
     return (AssertIsNull)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AssertIsNull extends Statement {
   public static AssertIsNull newInstance(SModel sm) {
     return AssertIsNull.newInstance(sm, false);
   }
-
 }

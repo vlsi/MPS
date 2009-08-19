@@ -69,7 +69,6 @@ public class BTestCase extends ClassConcept implements ITestCase {
     super.setChild(BTestCase.TEST_METHOD_LIST, node);
   }
 
-
   public static BTestCase newInstance(SModel sm, boolean init) {
     return (BTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class BTestCase extends ClassConcept implements ITestCase {
   public static BTestCase newInstance(SModel sm) {
     return BTestCase.newInstance(sm, false);
   }
-
 }

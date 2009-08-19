@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1171932074421(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -76,6 +75,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "exceptionType", true);
   }
 
+  public static SNode sourceNodeQuery_7080278351417106724(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
   public static Iterable sourceNodesQuery_1171932074411(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "testMethodList", true), "testMethod", true);
   }
@@ -87,5 +90,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1171986734537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "staticField", true);
   }
-
 }

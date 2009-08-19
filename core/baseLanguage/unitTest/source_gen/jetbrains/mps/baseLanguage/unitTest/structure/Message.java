@@ -25,7 +25,6 @@ public class Message extends BaseConcept {
     super.setChild(Message.MESSAGE, node);
   }
 
-
   public static Message newInstance(SModel sm, boolean init) {
     return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class Message extends BaseConcept {
   public static Message newInstance(SModel sm) {
     return Message.newInstance(sm, false);
   }
-
 }

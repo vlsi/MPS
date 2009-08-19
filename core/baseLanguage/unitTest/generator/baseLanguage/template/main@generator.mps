@@ -7,6 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -183,6 +184,12 @@
         <link role="template" targetNodeId="1171983925138" resolveInfo="reduce_AssertFalse" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7080278351417106732">
+      <link role="applicableConcept" targetNodeId="1.7080278351417106679" resolveInfo="AssertInNotNull" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7080278351417106734">
+        <link role="template" targetNodeId="7080278351417106707" resolveInfo="reduce_AssertInNotNull" />
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172028314084">
       <link role="applicableConcept" targetNodeId="1.1172028177041" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1172028351426">
@@ -222,6 +229,12 @@
     <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1171932074440">
       <link role="template" targetNodeId="1171932074406" resolveInfo="BTestCaseImpl" />
       <link role="applicableConcept" targetNodeId="1.1171931851043" />
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="7080278351417106704">
+      <link role="applicableConcept" targetNodeId="1.7080278351417106679" resolveInfo="AssertInNotNull" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="7080278351417106706">
+        <link role="template" targetNodeId="7080278351417106707" resolveInfo="reduce_AssertInNotNull" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1171932074441">
@@ -280,8 +293,8 @@
     <link role="applicableConcept" targetNodeId="1.1171978097730" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1171978845428">
       <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1171978858586">
-        <link role="baseMethodDeclaration" targetNodeId="4.~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolveInfo="assertEquals" />
         <link role="classConcept" targetNodeId="4.~Assert" resolveInfo="Assert" />
+        <link role="baseMethodDeclaration" targetNodeId="4.~Assert.assertEquals(java.lang.String,java.lang.String):void" resolveInfo="assertEquals" />
         <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1171978864229">
           <property name="value" value="expected" />
           <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1171978925029">
@@ -556,6 +569,34 @@
         </node>
       </node>
       <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1172078366718" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7080278351417106707">
+    <property name="name" value="reduce_AssertInNotNull" />
+    <link role="applicableConcept" targetNodeId="1.7080278351417106679" resolveInfo="AssertInNotNull" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7080278351417106709">
+      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7080278351417106721">
+        <link role="baseMethodDeclaration" targetNodeId="4.~Assert.assertNotNull(java.lang.Object):void" resolveInfo="assertNotNull" />
+        <link role="classConcept" targetNodeId="4.~Assert" resolveInfo="Assert" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7080278351417106722">
+          <property name="value" value="expression" />
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7080278351417106723">
+            <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7080278351417106724">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417106725">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7080278351417106726">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417106727">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7080278351417106728" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417106729">
+                      <link role="link" targetNodeId="1.7080278351417106681" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="7080278351417106719" />
     </node>
   </node>
 </model>

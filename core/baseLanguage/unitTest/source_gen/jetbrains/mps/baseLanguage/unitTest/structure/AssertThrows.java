@@ -70,7 +70,6 @@ public class AssertThrows extends Statement implements MessageHolder {
     super.setChild(AssertThrows.MESSAGE, node);
   }
 
-
   public static AssertThrows newInstance(SModel sm, boolean init) {
     return (AssertThrows)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -78,5 +77,4 @@ public class AssertThrows extends Statement implements MessageHolder {
   public static AssertThrows newInstance(SModel sm) {
     return AssertThrows.newInstance(sm, false);
   }
-
 }

@@ -442,5 +442,32 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237800981019" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7080278351417106682">
+    <link role="conceptDeclaration" targetNodeId="1.7080278351417106679" resolveInfo="AssertInNotNull" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7080278351417106684">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7080278351417106685">
+        <property name="text" value="assert" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="7080278351417106686">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7080278351417106687">
+        <link role="relationDeclaration" targetNodeId="1.7080278351417106681" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7080278351417106688">
+        <property name="text" value="is not null" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="7080278351417106689">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7080278351417106690">
+        <property name="text" value=";" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7080278351417106691">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7080278351417106692" />
+    </node>
+  </node>
 </model>
 

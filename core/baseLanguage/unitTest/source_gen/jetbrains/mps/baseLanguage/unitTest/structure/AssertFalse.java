@@ -25,7 +25,6 @@ public class AssertFalse extends Statement {
     super.setChild(AssertFalse.CONDITION, node);
   }
 
-
   public static AssertFalse newInstance(SModel sm, boolean init) {
     return (AssertFalse)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AssertFalse extends Statement {
   public static AssertFalse newInstance(SModel sm) {
     return AssertFalse.newInstance(sm, false);
   }
-
 }

@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestMethod_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4471_0(editorContext, node);
   }
@@ -144,10 +143,8 @@ public class TestMethod_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4471_0(SNode node, EditorContext editorContext, IScope scope) {
     List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
     return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
-
 }

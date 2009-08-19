@@ -51,7 +51,6 @@ public class TestMethod extends BaseMethodDeclaration implements ITestMethod {
     this.setProperty(TestMethod.VIRTUAL_PACKAGE, value);
   }
 
-
   public static TestMethod newInstance(SModel sm, boolean init) {
     return (TestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class TestMethod extends BaseMethodDeclaration implements ITestMethod {
   public static TestMethod newInstance(SModel sm) {
     return TestMethod.newInstance(sm, false);
   }
-
 }
