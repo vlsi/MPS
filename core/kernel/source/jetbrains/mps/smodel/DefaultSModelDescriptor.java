@@ -360,7 +360,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       * since method save works only in writeAction, this somebody has to wait.
       * So we have EDT blocked and Semaphore.waitFor can not be called. Deadlock.
       * */
-      throw new IllegalStateException("DefaultSModelDescriptor.Save sould only be called from EDT.");
+      throw new IllegalStateException("DefaultSModelDescriptor.Save should only be called from EDT.");
     }
 
     //we must be in command since model save might change model by adding model/language imports
