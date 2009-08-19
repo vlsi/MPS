@@ -2777,7 +2777,7 @@ __switch__:
           }
 
           public String getMatchingText(String text) {
-            return (item) + ".";
+            return SPropertyOperations.getString((item), "name") + ".";
           }
 
           public String getVisibleMatchingText(String text) {
