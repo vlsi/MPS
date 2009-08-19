@@ -182,8 +182,19 @@
               <link role="classConcept" targetNodeId="186788241848729168" resolveInfo="ABC" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2043122710974562956">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2043122710974562958">
+              <link role="classConcept" targetNodeId="8540045600162404084" resolveInfo="ABC.CDE" />
+            </node>
+          </node>
         </node>
       </node>
+    </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="2043122710974596231">
+      <property name="name" value="abcdef" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2043122710974596232" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2043122710974596233" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2043122710974596234" />
     </node>
   </node>
 </model>

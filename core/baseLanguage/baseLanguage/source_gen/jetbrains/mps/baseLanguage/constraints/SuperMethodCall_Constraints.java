@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.constraints;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 
-public class ThisExpression_Constraints {
+public class SuperMethodCall_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     return ConstraintsUtil.isInNonStaticClasssifierContext(_context.getParentNode());
   }
