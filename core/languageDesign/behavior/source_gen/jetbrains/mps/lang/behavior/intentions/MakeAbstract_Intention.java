@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MakeAbstract_Intention extends BaseIntention {
-
   public MakeAbstract_Intention() {
   }
 
@@ -31,8 +30,7 @@ public class MakeAbstract_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isAbstract")) {
       return "Make Non-Abstract";
-    } else
-    {
+    } else {
       return "Make Abstract";
     }
   }
@@ -58,5 +56,4 @@ public class MakeAbstract_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.behavior.intentions";
   }
-
 }

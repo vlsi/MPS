@@ -17,7 +17,6 @@ import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
-
   public ConceptMethodDeclaration_overriddenMethod_ReferentConstraint() {
   }
 
@@ -33,10 +32,10 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
 
   public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
     if (newReferentNode != null && referenceNode != null) {
-      for(SNode p : SLinkOperations.getTargets(referenceNode, "parameter", true)) {
+      for (SNode p : SLinkOperations.getTargets(referenceNode, "parameter", true)) {
         SNodeOperations.deleteNode(p);
       }
-      for(SNode p : SLinkOperations.getTargets(newReferentNode, "parameter", true)) {
+      for (SNode p : SLinkOperations.getTargets(newReferentNode, "parameter", true)) {
         SLinkOperations.addChild(referenceNode, "parameter", SNodeOperations.copyNode(p));
       }
       SPropertyOperations.set(referenceNode, "name", SPropertyOperations.getString(newReferentNode, "name"));
@@ -49,5 +48,4 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
     List<SNode> methods = AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(concept, operationContext.getScope());
     return methods;
   }
-
 }

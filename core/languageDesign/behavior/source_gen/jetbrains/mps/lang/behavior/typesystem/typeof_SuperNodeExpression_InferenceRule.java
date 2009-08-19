@@ -13,7 +13,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_SuperNodeExpression_InferenceRule() {
   }
 
@@ -24,8 +23,7 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode cd = ((SNode)concept);
       result = SLinkOperations.getTarget(cd, "extends", false);
-    } else
-    {
+    } else {
       SNode icd = ((SNode)concept);
       result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
     }
@@ -47,5 +45,4 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
   public boolean overrides() {
     return false;
   }
-
 }

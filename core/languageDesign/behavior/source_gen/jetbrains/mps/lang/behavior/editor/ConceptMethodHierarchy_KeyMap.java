@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.plugin.uiActions.OverrideBehaviorMethodDialog;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementBehaviorMethodDialog;
 
 public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
-
   public ConceptMethodHierarchy_KeyMap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
@@ -25,7 +24,6 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     this.putAction("ctrl", "VK_I", action);
   }
   public static class ConceptMethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
-
     public ConceptMethodHierarchy_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
@@ -61,7 +59,6 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           new OverrideBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
@@ -71,10 +68,9 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl O";
     }
+  }
 
-}
   public static class ConceptMethodHierarchy_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public ConceptMethodHierarchy_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
@@ -110,7 +106,6 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           new ImplementBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
         }
@@ -120,7 +115,5 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl I";
     }
-
-}
-
+  }
 }

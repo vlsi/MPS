@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1225195370259(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "PARAMETERS_" + _context.getNode().getId();
   }
@@ -266,8 +265,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1225195370241(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "method", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isVirtual");
       }
@@ -321,5 +319,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1232967387673(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
-
 }

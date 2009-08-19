@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticConceptMethodDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class StaticConceptMethodDeclaration_Behavior {
   public static SNode call_getBehavior_1225196403935(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
-
 }

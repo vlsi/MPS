@@ -19,6 +19,7 @@ public class ThisNodeExpression extends Expression implements IThisExpression {
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ThisNodeExpression.SHORT_DESCRIPTION);
   }
@@ -51,5 +52,4 @@ public class ThisNodeExpression extends Expression implements IThisExpression {
   public static ThisNodeExpression newInstance(SModel sm) {
     return ThisNodeExpression.newInstance(sm, false);
   }
-
 }

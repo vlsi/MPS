@@ -14,7 +14,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConceptBehavior_defaultConcreteConcept_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ConceptBehavior_defaultConcreteConcept_ReferentConstraint() {
   }
 
@@ -31,5 +30,4 @@ public class ConceptBehavior_defaultConcreteConcept_ReferentConstraint extends B
     List<SNode> concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
     return concepts;
   }
-
 }

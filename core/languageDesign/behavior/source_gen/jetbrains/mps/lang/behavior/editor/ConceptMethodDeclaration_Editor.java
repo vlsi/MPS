@@ -44,7 +44,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6299_0(editorContext, node);
   }
@@ -356,7 +355,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private EditorCell createReadOnlyModelAccessor_6299_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-
       public String getText() {
         return ConceptMethodDeclaration_Behavior.call_getOverridenMethodConceptName_1225196403980(node);
       }
@@ -627,7 +625,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline6299_0 extends AbstractCellProvider {
-
     public _Inline6299_0() {
       super();
     }
@@ -658,10 +655,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline6299_1 extends AbstractCellProvider {
-
     public _Inline6299_1() {
       super();
     }
@@ -692,10 +688,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class parameterListHandler_6299_0 extends RefNodeListHandler {
-
     public parameterListHandler_6299_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -757,10 +752,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_6299_0 extends RefNodeListHandler {
-
     public annotationListHandler_6299_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -800,10 +794,9 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_6299_1 extends RefNodeListHandler {
-
     public annotationListHandler_6299_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -843,20 +836,18 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class ConceptMethodDeclaration_component_cellMenu0 implements SubstituteInfoPart {
-
     private ConceptMethodDeclaration_Menu myComponent;
 
     public ConceptMethodDeclaration_component_cellMenu0() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 
+
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-
-}
-
+  }
 }

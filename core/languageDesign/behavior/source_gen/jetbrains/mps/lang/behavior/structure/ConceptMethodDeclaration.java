@@ -25,6 +25,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(ConceptMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -97,5 +98,4 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   public static ConceptMethodDeclaration newInstance(SModel sm) {
     return ConceptMethodDeclaration.newInstance(sm, false);
   }
-
 }

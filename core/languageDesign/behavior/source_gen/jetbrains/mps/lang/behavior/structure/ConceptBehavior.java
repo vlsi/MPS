@@ -43,6 +43,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
     super(node);
   }
 
+
   public String getName() {
     return this.getProperty(ConceptBehavior.NAME);
   }
@@ -211,5 +212,4 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   public static ConceptBehavior newInstance(SModel sm) {
     return ConceptBehavior.newInstance(sm, false);
   }
-
 }

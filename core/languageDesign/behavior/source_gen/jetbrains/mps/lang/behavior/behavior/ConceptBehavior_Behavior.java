@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 
 public class ConceptBehavior_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -33,7 +32,7 @@ public class ConceptBehavior_Behavior {
 
   public static List<SNode> call_getVisibleStaticMethods_1225194243338(SNode thisNode, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode method : SLinkOperations.getTargets(thisNode, "staticMethod", true)) {
+    for (SNode method : SLinkOperations.getTargets(thisNode, "staticMethod", true)) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
         ListSequence.fromList(result).addElement(method);
       }
@@ -60,7 +59,6 @@ public class ConceptBehavior_Behavior {
 
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     AbstractExtractMethodRefactoringProcessor result = new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract) {
-
       public SNode createMethodCall(SNode declaration, List<SNode> arguments) {
         if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
           SNode call = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
@@ -86,7 +84,6 @@ public class ConceptBehavior_Behavior {
 
   public static AbstractStaticContainerProcessor virtual_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
     return new AbstractStaticContainerProcessor(node) {
-
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", null);
       }
@@ -100,7 +97,7 @@ public class ConceptBehavior_Behavior {
   public static List<SNode> call_getMethodsToImplement_5167929551696729662(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
 method:
-    for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
+    for (SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
       if (SPropertyOperations.getBoolean(method, "isFinal")) {
         continue;
       }
@@ -115,7 +112,7 @@ method:
       if (container == thisNode || container == null) {
         continue;
       }
-      for(SNode mymethod : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true))) {
+      for (SNode mymethod : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true))) {
         if ((SLinkOperations.getTarget(mymethod, "overriddenMethod", false) != null) && SLinkOperations.getTarget(mymethod, "overriddenMethod", false) == method) {
           continue method;
         }
@@ -128,7 +125,7 @@ method:
 
   public static List<SNode> call_getMethodsToOverride_6603209858471710849(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
-    for(SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
+    for (SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
       if (SPropertyOperations.getBoolean(method, "isFinal")) {
         continue;
       }
@@ -150,10 +147,10 @@ method:
 
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
     List<SNode> methods = new ArrayList<SNode>();
-    for(SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
+    for (SNode concept : SConceptOperations.getAllSuperConcepts(SLinkOperations.getTarget(thisNode, "concept", false), false)) {
       SNode behaviour = AbstractConceptDeclaration_Behavior.call_findBehaviour_1213877394029(concept, scope);
       if (behaviour != null) {
-        for(SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
+        for (SNode method : SLinkOperations.getTargets(behaviour, "method", true)) {
           ListSequence.fromList(methods).addElement(method);
         }
       }
@@ -164,5 +161,4 @@ method:
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
   }
-
 }

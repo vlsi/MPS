@@ -120,6 +120,9 @@
             <link role="variableDeclaration" targetNodeId="1225194243308" resolveInfo="members" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3615455246402911256">
+          <node role="expression" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3615455246402911257" />
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="1225194243336" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1225194243337" />

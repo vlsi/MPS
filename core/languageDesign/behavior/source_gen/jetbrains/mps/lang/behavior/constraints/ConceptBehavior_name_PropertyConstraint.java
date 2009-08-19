@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptBehavior_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public ConceptBehavior_name_PropertyConstraint() {
   }
 
@@ -27,11 +26,9 @@ public class ConceptBehavior_name_PropertyConstraint implements IModelConstraint
     String conceptName;
     if (SLinkOperations.getTarget(node, "concept", false) != null) {
       conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name");
-    } else
-    {
+    } else {
       conceptName = "???";
     }
     return conceptName + "_Behavior";
   }
-
 }

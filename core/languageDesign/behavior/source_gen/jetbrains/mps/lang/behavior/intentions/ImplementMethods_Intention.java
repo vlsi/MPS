@@ -11,7 +11,6 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.baseLanguage.plugin.uiActions.ImplementBehaviorMethodDialog;
 
 public class ImplementMethods_Intention extends BaseIntention {
-
   public ImplementMethods_Intention() {
   }
 
@@ -48,7 +47,6 @@ public class ImplementMethods_Intention extends BaseIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
-
       public void run() {
         new ImplementBehaviorMethodDialog(node, editorContext, editorContext.getOperationContext().getMainFrame()).showDialog();
       }
@@ -58,5 +56,4 @@ public class ImplementMethods_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.behavior.intentions";
   }
-
 }

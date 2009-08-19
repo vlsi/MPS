@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConceptBehavior_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1330_0(editorContext, node);
   }
@@ -574,7 +573,6 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1330_0 extends AbstractCellProvider {
-
     public _Inline1330_0() {
       super();
     }
@@ -606,10 +604,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline1330_1 extends AbstractCellProvider {
-
     public _Inline1330_1() {
       super();
     }
@@ -640,10 +637,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class propertiesListHandler_1330_0 extends RefNodeListHandler {
-
     public propertiesListHandler_1330_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -698,10 +694,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class referencesListHandler_1330_0 extends RefNodeListHandler {
-
     public referencesListHandler_1330_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -756,10 +751,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class methodListHandler_1330_0 extends RefNodeListHandler {
-
     public methodListHandler_1330_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -814,10 +808,9 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class staticMethodListHandler_1330_0 extends RefNodeListHandler {
-
     public staticMethodListHandler_1330_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -872,7 +865,5 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

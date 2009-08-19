@@ -173,9 +173,6 @@
       <property name="value" value="this node" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="short_description" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1225194691556">
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1225194691557">
       <link role="intfc" targetNodeId="2.1224609861009" resolveInfo="IThisExpression" />
     </node>

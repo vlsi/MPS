@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MakeVirtual_Intention extends BaseIntention {
-
   public MakeVirtual_Intention() {
   }
 
@@ -31,8 +30,7 @@ public class MakeVirtual_Intention extends BaseIntention {
   public String getDescription(final SNode node, final EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "isVirtual")) {
       return "Make Non-Virtual";
-    } else
-    {
+    } else {
       return "Make Virtual";
     }
   }
@@ -55,5 +53,4 @@ public class MakeVirtual_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.behavior.intentions";
   }
-
 }

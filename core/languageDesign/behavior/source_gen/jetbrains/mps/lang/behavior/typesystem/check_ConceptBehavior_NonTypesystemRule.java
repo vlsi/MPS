@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public check_ConceptBehavior_NonTypesystemRule() {
   }
 
@@ -34,7 +33,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       boolean notImplementedMethods = false;
-      for(SNode cm : methodDeclarations) {
+      for (SNode cm : methodDeclarations) {
         if (!(ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "method", true)).contains(cm))) {
           notImplementedMethods = true;
         }
@@ -47,7 +46,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
         }
       }
     }
-    for(SNode cmd : SLinkOperations.getTargets(nodeToCheck, "method", true)) {
+    for (SNode cmd : SLinkOperations.getTargets(nodeToCheck, "method", true)) {
       if (SConceptPropertyOperations.getBoolean(cmd, "abstract")) {
         {
           BaseIntentionProvider intentionProvider = null;
@@ -69,5 +68,4 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
   public boolean overrides() {
     return false;
   }
-
 }

@@ -15,12 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
-
   public ConceptMethodDeclaration_Menu() {
     super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenu0()});
   }
   public static class ConceptMethodDeclaration_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public ConceptMethodDeclaration_generic_cellMenu0() {
     }
 
@@ -40,7 +38,5 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     public boolean isReferentPresentation() {
       return false;
     }
-
-}
-
+  }
 }

@@ -22,6 +22,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
     super(node);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(StaticConceptMethodDeclaration.SHORT_DESCRIPTION);
   }
@@ -70,5 +71,4 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   public static StaticConceptMethodDeclaration newInstance(SModel sm) {
     return StaticConceptMethodDeclaration.newInstance(sm, false);
   }
-
 }

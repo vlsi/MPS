@@ -12,12 +12,10 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuComponent {
-
   public ConceptMethodDeclaration_Visibility() {
     super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu1(),new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu2()});
   }
   public static class ConceptMethodDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
     public ConceptMethodDeclaration_generic_cellMenu1() {
     }
 
@@ -28,10 +26,9 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
     public String getMatchingText() {
       return "private";
     }
+  }
 
-}
   public static class ConceptMethodDeclaration_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-
     public ConceptMethodDeclaration_generic_cellMenu2() {
     }
 
@@ -42,7 +39,5 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
     public String getMatchingText() {
       return "public";
     }
-
-}
-
+  }
 }

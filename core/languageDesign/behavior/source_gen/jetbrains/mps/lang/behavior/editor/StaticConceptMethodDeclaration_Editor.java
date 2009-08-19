@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5645_0(editorContext, node);
   }
@@ -338,7 +337,6 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static class parameterListHandler_5645_0 extends RefNodeListHandler {
-
     public parameterListHandler_5645_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -396,10 +394,9 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class annotationListHandler_5645_0 extends RefNodeListHandler {
-
     public annotationListHandler_5645_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -439,10 +436,9 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class annotationListHandler_5645_1 extends RefNodeListHandler {
-
     public annotationListHandler_5645_1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -482,20 +478,18 @@ public class StaticConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class StaticConceptMethodDeclaration_component_cellMenu0 implements SubstituteInfoPart {
-
     private ConceptMethodDeclaration_Menu myComponent;
 
     public StaticConceptMethodDeclaration_component_cellMenu0() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 
+
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
-
-}
-
+  }
 }
