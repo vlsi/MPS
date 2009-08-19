@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.plugin.DebugInfo;
 
 /**
  * Igor Alshannikov
@@ -28,6 +29,7 @@ public class GenerationStatus extends Status {
   private boolean myCanceled;
   private boolean myWarnings;
   private TraceMap myTraceMap;
+  private DebugInfo myDebugInfo;
 
   public GenerationStatus(SModel inputModel, SModel outputModel, TraceMap traceMap, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
@@ -60,6 +62,14 @@ public class GenerationStatus extends Status {
 
   public SModel getInputModel() {
     return myInputModel;
+  }
+
+  public DebugInfo getDebugInfo() {
+    return myDebugInfo;
+  }
+
+  public void setDebugInfo(DebugInfo debugInfo) {
+    myDebugInfo = debugInfo;
   }
 
   public static class ERROR extends GenerationStatus {

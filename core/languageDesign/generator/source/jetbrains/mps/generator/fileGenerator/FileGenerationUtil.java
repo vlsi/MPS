@@ -111,27 +111,22 @@ public class FileGenerationUtil {
   public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents, String outputRootDir) {
     boolean hasErrors = false;
     DebugInfo info = new DebugInfo();
-    SModel model = null;
+    status.setDebugInfo(info);
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-
-        model = fillDebugInfo(info, outputNode, result);
+        fillDebugInfo(info, outputNode, result);
 
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
       } finally {
         TextGenManager.reset();
       }
-    }
-    if (model != null) {
-      info.saveTo(DebugInfo.getDebugFileOfModel(outputRootDir, model.getModelDescriptor()));
-    }
+    }    
     return !hasErrors;
   }
 
-  private static SModel fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
-    SModel model = null;
+  private static void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
     for (SNode out : result.getPositions().keySet()) {      
       SNode input = out;
       while (input != null && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
@@ -141,12 +136,11 @@ public class FileGenerationUtil {
       if (input != null) {
         PositionInfo positionInfo = result.getPositions().get(out);
         positionInfo.setNodeId(input.getId());
+        info.setModel(input.getModel());
         positionInfo.setFileName(outputNode.getName() + ".java");
         info.addPosition(positionInfo);
-        model = input.getModel();
       }
-    }
-    return model;
+    }    
   }
 
   public static void cleanUp(IOperationContext context, Set<File> generatedFiles, Set<File> directories) {
@@ -208,6 +202,11 @@ public class FileGenerationUtil {
       } catch (IOException e) {
         LOG.error(e);
       }
+    }
+    if (status.getDebugInfo() != null && status.getDebugInfo().getModel() != null) {
+      IFile file = DebugInfo.getDebugFileOfModel(outputRootDirectory.getAbsolutePath(), status.getDebugInfo().getModel().getModelDescriptor());
+      status.getDebugInfo().saveTo(file);
+      generatedFiles.add(file.toFile());
     }
   }
 
