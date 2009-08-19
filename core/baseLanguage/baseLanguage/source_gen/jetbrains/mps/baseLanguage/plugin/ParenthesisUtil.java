@@ -101,7 +101,7 @@ public class ParenthesisUtil {
       SLinkOperations.setTarget(binOp, "leftExpression", leaf, true);
     }
     if (sideSubtree != leaf) {
-      SNode leafParentOperation = SNodeOperations.cast(SNodeOperations.getParent(leaf), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+      SNode leafParentOperation = SNodeOperations.cast(sideSubtree, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       SNode exprParent = SNodeOperations.getParent(expr);
       SNodeOperations.replaceWithAnother(expr, sideSubtree);
       if (toRight) {
@@ -109,7 +109,9 @@ public class ParenthesisUtil {
       } else {
         SLinkOperations.setTarget(leafParentOperation, "rightExpression", expr, true);
       }
-      checkOperationWRTPriority(SNodeOperations.cast(exprParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      if (SNodeOperations.isInstanceOf(exprParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+        checkOperationWRTPriority(SNodeOperations.cast(exprParent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      }
     }
     SNode binOpCheck = (SNodeOperations.isInstanceOf(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") ?
       SNodeOperations.cast(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation") :
@@ -137,7 +139,7 @@ public class ParenthesisUtil {
     } else {
       SLinkOperations.setTarget(binOp, "leftExpression", expr, true);
     }
-    checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+    checkOperationWRTPriority(binOp);
     selectNode(context, expr, false);
   }
 

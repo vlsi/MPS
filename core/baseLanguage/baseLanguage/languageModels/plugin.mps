@@ -36697,11 +36697,8 @@
                 </node>
                 <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="155142699038773533">
                   <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="155142699038773534">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="155142699038773535">
-                      <link role="variableDeclaration" targetNodeId="155142699038773437" resolveInfo="leaf" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="155142699038773536" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5590797116069456743">
+                    <link role="variableDeclaration" targetNodeId="155142699038773495" resolveInfo="sideSubtree" />
                   </node>
                 </node>
               </node>
@@ -36775,13 +36772,27 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="155142699038773567">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="155142699038773568">
-                <link role="baseMethodDeclaration" targetNodeId="155142699038773694" resolveInfo="checkOperationWRTPriority" />
-                <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="155142699038773569">
-                  <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="155142699038773570">
-                    <link role="variableDeclaration" targetNodeId="155142699038773538" resolveInfo="exprParent" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7728825675618895267">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7728825675618895268">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7728825675618895279">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="7728825675618895280">
+                    <link role="baseMethodDeclaration" targetNodeId="155142699038773694" resolveInfo="checkOperationWRTPriority" />
+                    <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="7728825675618895281">
+                      <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7728825675618895282">
+                        <link role="variableDeclaration" targetNodeId="155142699038773538" resolveInfo="exprParent" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7728825675618895272">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7728825675618895271">
+                  <link role="variableDeclaration" targetNodeId="155142699038773538" resolveInfo="exprParent" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="7728825675618895276">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="7728825675618895278">
+                    <link role="conceptDeclaration" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
                   </node>
                 </node>
               </node>
@@ -37048,14 +37059,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="155142699038773677">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="155142699038773678">
             <link role="baseMethodDeclaration" targetNodeId="155142699038773694" resolveInfo="checkOperationWRTPriority" />
-            <node role="actualArgument" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="155142699038773679">
-              <link role="concept" targetNodeId="1.1081773326031" resolveInfo="BinaryOperation" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="155142699038773680">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="155142699038773681">
-                  <link role="variableDeclaration" targetNodeId="155142699038773627" resolveInfo="binOp" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="155142699038773682" />
-              </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="155142699038773681">
+              <link role="variableDeclaration" targetNodeId="155142699038773627" resolveInfo="binOp" />
             </node>
           </node>
         </node>
@@ -41501,14 +41506,6 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197552" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6173548178016197553">
         <property name="value" value="nodeInfo" />
-      </node>
-    </node>
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6173548178016197554">
-      <property name="name" value="NODE_ID" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6173548178016197555" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="6173548178016197556" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6173548178016197557">
-        <property name="value" value="nodeId" />
       </node>
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6173548178016197562">
