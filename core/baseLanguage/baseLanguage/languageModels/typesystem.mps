@@ -17877,6 +17877,22 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="4539702814067106471">
     <property name="name" value="check_CorrectScope" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4539702814067106472">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4697033193812037384">
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4697033193812037385">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4697033193812037399" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4697033193812037394">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4697033193812037389">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4697033193812037388">
+              <link role="applicableNode" targetNodeId="4539702814067106474" resolveInfo="thisExpression" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4697033193812037393">
+              <link role="link" targetNodeId="1.1182955020723" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="4697033193812037398" />
+        </node>
+      </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4539702814067113796">
         <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="4539702814067113813">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4539702814067113814">
