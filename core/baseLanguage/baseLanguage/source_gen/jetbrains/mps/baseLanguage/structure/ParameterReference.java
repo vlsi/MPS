@@ -14,7 +14,6 @@ public class ParameterReference extends VariableReference {
     super(node);
   }
 
-
   public ParameterDeclaration getParameterDeclaration() {
     return this.ensureAdapter(ParameterDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -22,7 +21,6 @@ public class ParameterReference extends VariableReference {
   public void setParameterDeclaration(ParameterDeclaration node) {
     this.setVariableDeclaration(node);
   }
-
 
   public static ParameterReference newInstance(SModel sm, boolean init) {
     return (ParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();

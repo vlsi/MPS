@@ -22,7 +22,6 @@ public class DotExpression_Actions_DeleteOperation {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "Delete operation";
     }

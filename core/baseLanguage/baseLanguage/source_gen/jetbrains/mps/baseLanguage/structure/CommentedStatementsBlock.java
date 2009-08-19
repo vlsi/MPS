@@ -20,7 +20,6 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(CommentedStatementsBlock.SHORT_DESCRIPTION);
   }
@@ -64,7 +63,6 @@ public class CommentedStatementsBlock extends Statement implements ILocalVariabl
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, CommentedStatementsBlock.STATEMENT, node);
   }
-
 
   public static CommentedStatementsBlock newInstance(SModel sm, boolean init) {
     return (CommentedStatementsBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -15,7 +15,6 @@ public class ForeachStatement extends AbstractForStatement {
     super(node);
   }
 
-
   public Expression getIterable() {
     return (Expression)this.getChild(Expression.class, ForeachStatement.ITERABLE);
   }
@@ -23,7 +22,6 @@ public class ForeachStatement extends AbstractForStatement {
   public void setIterable(Expression node) {
     super.setChild(ForeachStatement.ITERABLE, node);
   }
-
 
   public static ForeachStatement newInstance(SModel sm, boolean init) {
     return (ForeachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement", sm, GlobalScope.getInstance(), init).getAdapter();

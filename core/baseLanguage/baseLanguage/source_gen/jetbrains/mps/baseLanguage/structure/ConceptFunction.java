@@ -24,7 +24,6 @@ public class ConceptFunction extends BaseConcept implements IMethodLike {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ConceptFunction.SHORT_DESCRIPTION);
   }
@@ -56,7 +55,6 @@ public class ConceptFunction extends BaseConcept implements IMethodLike {
   public void setBody(StatementList node) {
     super.setChild(ConceptFunction.BODY, node);
   }
-
 
   public static ConceptFunction newInstance(SModel sm, boolean init) {
     return (ConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();

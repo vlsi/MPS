@@ -15,7 +15,6 @@ public class UpperBoundType extends Type {
     super(node);
   }
 
-
   public Type getBound() {
     return (Type)this.getChild(Type.class, UpperBoundType.BOUND);
   }
@@ -23,7 +22,6 @@ public class UpperBoundType extends Type {
   public void setBound(Type node) {
     super.setChild(UpperBoundType.BOUND, node);
   }
-
 
   public static UpperBoundType newInstance(SModel sm, boolean init) {
     return (UpperBoundType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", sm, GlobalScope.getInstance(), init).getAdapter();

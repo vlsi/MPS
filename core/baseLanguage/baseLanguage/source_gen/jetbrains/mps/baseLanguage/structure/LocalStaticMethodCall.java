@@ -14,7 +14,6 @@ public class LocalStaticMethodCall extends BaseMethodCall {
     super(node);
   }
 
-
   public StaticMethodDeclaration getStaticMethodDeclaration() {
     return this.ensureAdapter(StaticMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
@@ -22,7 +21,6 @@ public class LocalStaticMethodCall extends BaseMethodCall {
   public void setStaticMethodDeclaration(StaticMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
   }
-
 
   public static LocalStaticMethodCall newInstance(SModel sm, boolean init) {
     return (LocalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();

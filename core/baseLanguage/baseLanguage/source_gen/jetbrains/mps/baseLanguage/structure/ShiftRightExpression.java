@@ -14,7 +14,6 @@ public class ShiftRightExpression extends BinaryBitwiseOperation {
     super(node);
   }
 
-
   public static ShiftRightExpression newInstance(SModel sm, boolean init) {
     return (ShiftRightExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShiftRightExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

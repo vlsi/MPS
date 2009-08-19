@@ -15,7 +15,6 @@ public class PropertyImplementation extends BaseConcept {
     super(node);
   }
 
-
   public static PropertyImplementation newInstance(SModel sm, boolean init) {
     return (PropertyImplementation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PropertyImplementation", sm, GlobalScope.getInstance(), init).getAdapter();
   }

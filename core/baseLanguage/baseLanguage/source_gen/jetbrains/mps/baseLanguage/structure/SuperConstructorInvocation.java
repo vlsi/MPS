@@ -14,7 +14,6 @@ public class SuperConstructorInvocation extends ConstructorInvocationStatement {
     super(node);
   }
 
-
   public static SuperConstructorInvocation newInstance(SModel sm, boolean init) {
     return (SuperConstructorInvocation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", sm, GlobalScope.getInstance(), init).getAdapter();
   }

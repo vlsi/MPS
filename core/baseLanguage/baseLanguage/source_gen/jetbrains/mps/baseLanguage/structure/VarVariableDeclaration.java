@@ -20,7 +20,6 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(VarVariableDeclaration.NAME);
   }
@@ -60,7 +59,6 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
   public void setInit(Expression node) {
     super.setChild(VarVariableDeclaration.INIT, node);
   }
-
 
   public static VarVariableDeclaration newInstance(SModel sm, boolean init) {
     return (VarVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

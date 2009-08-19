@@ -102,7 +102,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0235_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }

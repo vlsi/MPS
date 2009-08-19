@@ -15,7 +15,6 @@ public class ArrayType extends Type {
     super(node);
   }
 
-
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, ArrayType.COMPONENT_TYPE);
   }
@@ -23,7 +22,6 @@ public class ArrayType extends Type {
   public void setComponentType(Type node) {
     super.setChild(ArrayType.COMPONENT_TYPE, node);
   }
-
 
   public static ArrayType newInstance(SModel sm, boolean init) {
     return (ArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", sm, GlobalScope.getInstance(), init).getAdapter();

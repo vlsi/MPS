@@ -5,4 +5,5 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IMethodLike extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IMethodLike";}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IMethodLike";
+}

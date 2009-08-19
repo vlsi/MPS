@@ -17,7 +17,6 @@ public class EnumClass extends ClassConcept {
     super(node);
   }
 
-
   public int getEnumConstantsCount() {
     return this.getChildCount(EnumClass.ENUM_CONSTANT);
   }
@@ -37,7 +36,6 @@ public class EnumClass extends ClassConcept {
   public void insertEnumConstant(EnumConstantDeclaration prev, EnumConstantDeclaration node) {
     this.insertChild(prev, EnumClass.ENUM_CONSTANT, node);
   }
-
 
   public static EnumClass newInstance(SModel sm, boolean init) {
     return (EnumClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass", sm, GlobalScope.getInstance(), init).getAdapter();

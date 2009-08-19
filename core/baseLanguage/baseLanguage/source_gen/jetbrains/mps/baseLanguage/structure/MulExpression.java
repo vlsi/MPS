@@ -14,7 +14,6 @@ public class MulExpression extends BinaryOperation {
     super(node);
   }
 
-
   public static MulExpression newInstance(SModel sm, boolean init) {
     return (MulExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

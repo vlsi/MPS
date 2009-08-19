@@ -113,7 +113,6 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4254_0(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;

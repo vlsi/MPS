@@ -14,7 +14,6 @@ public class BitwiseXorExpression extends BinaryBitwiseOperation {
     super(node);
   }
 
-
   public static BitwiseXorExpression newInstance(SModel sm, boolean init) {
     return (BitwiseXorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

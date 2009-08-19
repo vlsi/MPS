@@ -71,7 +71,6 @@ public class StatementList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6577_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }

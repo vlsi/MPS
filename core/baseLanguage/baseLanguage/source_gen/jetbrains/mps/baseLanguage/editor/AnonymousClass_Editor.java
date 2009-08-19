@@ -330,7 +330,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1871_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
   }

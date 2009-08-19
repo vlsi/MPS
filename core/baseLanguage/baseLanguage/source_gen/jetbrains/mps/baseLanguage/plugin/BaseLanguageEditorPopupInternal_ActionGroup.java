@@ -20,7 +20,6 @@ public class BaseLanguageEditorPopupInternal_ActionGroup extends GeneratedAction
     }
   }
 
-
   public void adjust() {
     this.insertGroupIntoAnother(EditorInternal_ActionGroup.ID, null);
   }

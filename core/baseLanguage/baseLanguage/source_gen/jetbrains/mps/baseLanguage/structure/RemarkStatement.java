@@ -15,7 +15,6 @@ public class RemarkStatement extends Statement {
     super(node);
   }
 
-
   public String getValue() {
     return this.getProperty(RemarkStatement.VALUE);
   }
@@ -23,7 +22,6 @@ public class RemarkStatement extends Statement {
   public void setValue(String value) {
     this.setProperty(RemarkStatement.VALUE, value);
   }
-
 
   public static RemarkStatement newInstance(SModel sm, boolean init) {
     return (RemarkStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement", sm, GlobalScope.getInstance(), init).getAdapter();

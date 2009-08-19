@@ -53,7 +53,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     super(p, f, name);
   }
 
-
   public RunConfiguration clone() {
     try {
       DefaultJavaApplication_Configuration result = ((DefaultJavaApplication_Configuration)super.clone());
@@ -211,7 +210,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
     public MySettingsEditor() {
     }
 
-
     protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
     }
@@ -240,7 +238,6 @@ public class DefaultJavaApplication_Configuration extends RunConfigurationBase {
 
     public MyState() {
     }
-
 
     public Object clone() throws CloneNotSupportedException {
       return super.clone();

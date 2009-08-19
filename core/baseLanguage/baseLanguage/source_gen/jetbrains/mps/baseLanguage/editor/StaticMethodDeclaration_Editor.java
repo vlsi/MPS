@@ -318,7 +318,6 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition5695_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "throwsItem") > 0;
   }

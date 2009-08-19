@@ -15,7 +15,6 @@ public class AbstractCreator extends BaseConcept {
     super(node);
   }
 
-
   public static AbstractCreator newInstance(SModel sm, boolean init) {
     return (AbstractCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }

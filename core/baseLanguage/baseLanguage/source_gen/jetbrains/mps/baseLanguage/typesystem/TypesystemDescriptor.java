@@ -662,7 +662,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = false;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
@@ -682,7 +681,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
@@ -704,7 +702,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = false;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
             return null;
@@ -724,7 +721,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
@@ -746,7 +742,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = false;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_114().createNode();
         }
@@ -762,7 +757,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
@@ -784,7 +778,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myRightTypeIsExact = false;
         }
 
-
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return leftOperandType;
         }
@@ -798,7 +791,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
         }
-
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
           return new _Quotations.QuotationClass_128().createNode();

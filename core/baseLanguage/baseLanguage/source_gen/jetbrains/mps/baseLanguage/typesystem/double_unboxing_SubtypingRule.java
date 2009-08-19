@@ -13,7 +13,6 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   public double_unboxing_SubtypingRule() {
   }
 
-
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_49().createNode(typeCheckingContext);
   }

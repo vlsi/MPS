@@ -22,7 +22,6 @@ public class BitwiseNotExpression_Parens_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "remove bitwise not-expression";
     }

@@ -25,7 +25,6 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
     this.myComponent = this.createPanel();
   }
 
-
   protected JComponent getMainComponent() {
     return this.myComponent;
   }

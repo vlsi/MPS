@@ -16,7 +16,6 @@ public class CastExpression extends Expression {
     super(node);
   }
 
-
   public Type getType() {
     return (Type)this.getChild(Type.class, CastExpression.TYPE);
   }
@@ -32,7 +31,6 @@ public class CastExpression extends Expression {
   public void setExpression(Expression node) {
     super.setChild(CastExpression.EXPRESSION, node);
   }
-
 
   public static CastExpression newInstance(SModel sm, boolean init) {
     return (CastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();

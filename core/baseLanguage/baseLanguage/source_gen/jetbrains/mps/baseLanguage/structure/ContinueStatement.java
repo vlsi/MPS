@@ -15,7 +15,6 @@ public class ContinueStatement extends Statement {
     super(node);
   }
 
-
   public String getLabel() {
     return this.getProperty(ContinueStatement.LABEL);
   }
@@ -23,7 +22,6 @@ public class ContinueStatement extends Statement {
   public void setLabel(String value) {
     this.setProperty(ContinueStatement.LABEL, value);
   }
-
 
   public static ContinueStatement newInstance(SModel sm, boolean init) {
     return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -15,7 +15,6 @@ public class CommentedStatement extends Statement {
     super(node);
   }
 
-
   public Statement getStatement() {
     return (Statement)this.getChild(Statement.class, CommentedStatement.STATEMENT);
   }
@@ -23,7 +22,6 @@ public class CommentedStatement extends Statement {
   public void setStatement(Statement node) {
     super.setChild(CommentedStatement.STATEMENT, node);
   }
-
 
   public static CommentedStatement newInstance(SModel sm, boolean init) {
     return (CommentedStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement", sm, GlobalScope.getInstance(), init).getAdapter();

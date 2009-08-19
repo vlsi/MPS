@@ -91,7 +91,6 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4497_0(SNode node, EditorContext editorContext, IScope scope) {
     if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
       return false;

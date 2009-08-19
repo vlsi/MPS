@@ -253,7 +253,6 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6130_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }

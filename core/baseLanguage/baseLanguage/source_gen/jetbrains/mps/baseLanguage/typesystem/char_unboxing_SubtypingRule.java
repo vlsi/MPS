@@ -13,7 +13,6 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public char_unboxing_SubtypingRule() {
   }
 
-
   public SNode getSubOrSuperType(SNode charType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_48().createNode(typeCheckingContext);
   }

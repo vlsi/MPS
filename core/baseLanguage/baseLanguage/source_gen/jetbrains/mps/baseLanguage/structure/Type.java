@@ -19,7 +19,6 @@ public class Type extends BaseConcept implements IType {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(Type.SHORT_DESCRIPTION);
   }
@@ -43,7 +42,6 @@ public class Type extends BaseConcept implements IType {
   public void setVirtualPackage(String value) {
     this.setProperty(Type.VIRTUAL_PACKAGE, value);
   }
-
 
   public static Type newInstance(SModel sm, boolean init) {
     return (Type)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -15,7 +15,6 @@ public class ParenthesizedExpression extends Expression {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, ParenthesizedExpression.EXPRESSION);
   }
@@ -23,7 +22,6 @@ public class ParenthesizedExpression extends Expression {
   public void setExpression(Expression node) {
     super.setChild(ParenthesizedExpression.EXPRESSION, node);
   }
-
 
   public static ParenthesizedExpression newInstance(SModel sm, boolean init) {
     return (ParenthesizedExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();

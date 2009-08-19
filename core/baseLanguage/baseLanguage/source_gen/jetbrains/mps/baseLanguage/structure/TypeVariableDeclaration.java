@@ -26,7 +26,6 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(TypeVariableDeclaration.NAME);
   }
@@ -102,7 +101,6 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   public void insertAuxBounds(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, TypeVariableDeclaration.AUX_BOUNDS, node);
   }
-
 
   public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
     return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

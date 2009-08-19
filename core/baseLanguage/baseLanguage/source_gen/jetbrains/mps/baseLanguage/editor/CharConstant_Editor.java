@@ -101,7 +101,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition2322_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }

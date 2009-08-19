@@ -17,4 +17,5 @@ public interface IMethodCall extends TypeDerivable, TypeAnnotable {
   public void addActualArgument(Expression node);
   public void insertActualArgument(Expression prev, Expression node);
   public BaseMethodDeclaration getBaseMethodDeclaration();
-  public void setBaseMethodDeclaration(BaseMethodDeclaration node);}
+  public void setBaseMethodDeclaration(BaseMethodDeclaration node);
+}

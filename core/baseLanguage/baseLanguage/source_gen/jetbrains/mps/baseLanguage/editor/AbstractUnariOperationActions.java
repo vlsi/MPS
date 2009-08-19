@@ -22,7 +22,6 @@ public class AbstractUnariOperationActions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "Delete decrement";
     }

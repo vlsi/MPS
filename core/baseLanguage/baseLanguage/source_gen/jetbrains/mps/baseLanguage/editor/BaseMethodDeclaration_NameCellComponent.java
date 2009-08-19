@@ -84,7 +84,6 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return editorCell;
   }
 
-
   private static boolean _StyleParameter_QueryFunction_4313_0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
   }

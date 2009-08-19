@@ -10,4 +10,5 @@ public interface IVisible extends INodeAdapter {
 
 
   public Visibility getVisibility();
-  public void setVisibility(Visibility node);}
+  public void setVisibility(Visibility node);
+}

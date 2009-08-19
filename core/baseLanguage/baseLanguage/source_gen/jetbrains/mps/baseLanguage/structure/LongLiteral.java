@@ -15,7 +15,6 @@ public class LongLiteral extends Expression {
     super(node);
   }
 
-
   public String getValue() {
     return this.getProperty(LongLiteral.VALUE);
   }
@@ -23,7 +22,6 @@ public class LongLiteral extends Expression {
   public void setValue(String value) {
     this.setProperty(LongLiteral.VALUE, value);
   }
-
 
   public static LongLiteral newInstance(SModel sm, boolean init) {
     return (LongLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", sm, GlobalScope.getInstance(), init).getAdapter();

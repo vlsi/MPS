@@ -5,4 +5,5 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface IStaticContainerForMethods extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods";}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods";
+}

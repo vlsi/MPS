@@ -77,7 +77,6 @@ public class SmartActions_Generated {
               this.add(scrollPane, BorderLayout.CENTER);
             }
 
-
             private MPSTree myTree;
 
             public void fillActionContext() {

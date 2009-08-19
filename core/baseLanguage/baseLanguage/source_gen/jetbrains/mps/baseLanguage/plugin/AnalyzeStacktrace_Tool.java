@@ -44,7 +44,6 @@ public class AnalyzeStacktrace_Tool extends GeneratedTool {
     super(project, "Analyze Stacktrace", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, false);
   }
 
-
   public JComponent getComponent() {
     return AnalyzeStacktrace_Tool.this.myComponent;
   }

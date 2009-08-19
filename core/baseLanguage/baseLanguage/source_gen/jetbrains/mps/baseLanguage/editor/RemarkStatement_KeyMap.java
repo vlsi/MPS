@@ -21,6 +21,7 @@ public class RemarkStatement_KeyMap extends EditorCellKeyMap {
     action = new RemarkStatement_KeyMap.RemarkStatement_KeyMap_Action0();
     this.putAction("any", "VK_ENTER", action);
   }
+
   public static class RemarkStatement_KeyMap_Action0 extends EditorCellKeyMapAction {
     public RemarkStatement_KeyMap_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION);

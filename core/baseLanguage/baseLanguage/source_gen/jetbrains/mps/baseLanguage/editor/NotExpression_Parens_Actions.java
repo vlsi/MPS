@@ -22,7 +22,6 @@ public class NotExpression_Parens_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "remove not-expression";
     }

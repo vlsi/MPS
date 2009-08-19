@@ -20,6 +20,7 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
     action = new TestCoercion_Keymap.TestCoercion_Keymap_Action0();
     this.putAction("ctrl+alt+shift", "VK_T", action);
   }
+
   public static class TestCoercion_Keymap_Action0 extends EditorCellKeyMapAction {
     public TestCoercion_Keymap_Action0() {
       this.setShownInPopupMenu(true);

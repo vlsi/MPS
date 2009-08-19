@@ -14,7 +14,6 @@ public class UnaryMinus extends AbstractUnaryNumberOperation {
     super(node);
   }
 
-
   public static UnaryMinus newInstance(SModel sm, boolean init) {
     return (UnaryMinus)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UnaryMinus", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -251,7 +251,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1261_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }

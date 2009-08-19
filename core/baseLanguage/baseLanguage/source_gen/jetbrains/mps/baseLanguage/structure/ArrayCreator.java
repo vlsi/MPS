@@ -18,7 +18,6 @@ public class ArrayCreator extends AbstractCreator {
     super(node);
   }
 
-
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, ArrayCreator.COMPONENT_TYPE);
   }
@@ -46,7 +45,6 @@ public class ArrayCreator extends AbstractCreator {
   public void insertDimensionExpression(DimensionExpression prev, DimensionExpression node) {
     this.insertChild(prev, ArrayCreator.DIMENSION_EXPRESSION, node);
   }
-
 
   public static ArrayCreator newInstance(SModel sm, boolean init) {
     return (ArrayCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator", sm, GlobalScope.getInstance(), init).getAdapter();

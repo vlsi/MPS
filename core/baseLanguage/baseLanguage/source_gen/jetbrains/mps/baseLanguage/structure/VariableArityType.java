@@ -15,7 +15,6 @@ public class VariableArityType extends Type {
     super(node);
   }
 
-
   public Type getComponentType() {
     return (Type)this.getChild(Type.class, VariableArityType.COMPONENT_TYPE);
   }
@@ -23,7 +22,6 @@ public class VariableArityType extends Type {
   public void setComponentType(Type node) {
     super.setChild(VariableArityType.COMPONENT_TYPE, node);
   }
-
 
   public static VariableArityType newInstance(SModel sm, boolean init) {
     return (VariableArityType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableArityType", sm, GlobalScope.getInstance(), init).getAdapter();

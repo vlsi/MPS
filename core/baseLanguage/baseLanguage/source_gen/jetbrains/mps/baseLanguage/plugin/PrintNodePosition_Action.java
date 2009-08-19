@@ -27,7 +27,6 @@ public class PrintNodePosition_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-
   @NotNull
   public String getKeyStroke() {
     return "";

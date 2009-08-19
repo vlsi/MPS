@@ -21,7 +21,6 @@ public class _TryCatchStatement_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "catch";
     }

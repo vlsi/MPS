@@ -132,7 +132,6 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1944_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }

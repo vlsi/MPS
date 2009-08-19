@@ -16,7 +16,6 @@ public class AsExpression extends Expression {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, AsExpression.EXPRESSION);
   }
@@ -32,7 +31,6 @@ public class AsExpression extends Expression {
   public void setClassifierType(ClassifierType node) {
     super.setChild(AsExpression.CLASSIFIER_TYPE, node);
   }
-
 
   public static AsExpression newInstance(SModel sm, boolean init) {
     return (AsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression", sm, GlobalScope.getInstance(), init).getAdapter();

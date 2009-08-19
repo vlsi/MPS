@@ -14,7 +14,6 @@ public class NullType extends PrimitiveType {
     super(node);
   }
 
-
   public static NullType newInstance(SModel sm, boolean init) {
     return (NullType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

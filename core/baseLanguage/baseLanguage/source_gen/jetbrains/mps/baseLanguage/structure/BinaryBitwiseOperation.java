@@ -14,7 +14,6 @@ public class BinaryBitwiseOperation extends BinaryOperation {
     super(node);
   }
 
-
   public static BinaryBitwiseOperation newInstance(SModel sm, boolean init) {
     return (BinaryBitwiseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }

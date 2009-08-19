@@ -14,7 +14,6 @@ public class FloatType extends PrimitiveType {
     super(node);
   }
 
-
   public static FloatType newInstance(SModel sm, boolean init) {
     return (FloatType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -56,7 +56,6 @@ public class Type_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }

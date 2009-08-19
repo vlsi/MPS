@@ -165,7 +165,6 @@ public class ClosuresUtil {
     public ClosureContextData() {
     }
 
-
     public List<SNode> getVariables() {
       if (this.myVars == null) {
         return new ArrayList<SNode>();

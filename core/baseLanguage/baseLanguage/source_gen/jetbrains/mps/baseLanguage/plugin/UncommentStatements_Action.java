@@ -25,7 +25,6 @@ public class UncommentStatements_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-
   @NotNull
   public String getKeyStroke() {
     return "ctrl shift SLASH";

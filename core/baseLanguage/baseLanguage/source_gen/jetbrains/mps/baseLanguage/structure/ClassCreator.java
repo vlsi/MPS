@@ -22,7 +22,6 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ClassCreator.SHORT_DESCRIPTION);
   }
@@ -102,7 +101,6 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ClassCreator.ACTUAL_ARGUMENT, node);
   }
-
 
   public static ClassCreator newInstance(SModel sm, boolean init) {
     return (ClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();

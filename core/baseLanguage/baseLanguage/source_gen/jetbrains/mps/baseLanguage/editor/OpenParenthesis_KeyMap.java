@@ -20,6 +20,7 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     action = new OpenParenthesis_KeyMap.OpenParenthesis_KeyMap_Action1();
     this.putAction("ctrl+shift", "VK_RIGHT", action);
   }
+
   public static class OpenParenthesis_KeyMap_Action0 extends EditorCellKeyMapAction {
     public OpenParenthesis_KeyMap_Action0() {
       this.setShownInPopupMenu(false);

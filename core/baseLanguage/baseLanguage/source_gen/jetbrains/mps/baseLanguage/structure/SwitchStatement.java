@@ -20,7 +20,6 @@ public class SwitchStatement extends Statement {
     super(node);
   }
 
-
   public String getLabel() {
     return this.getProperty(SwitchStatement.LABEL);
   }
@@ -64,7 +63,6 @@ public class SwitchStatement extends Statement {
   public void insertCase(SwitchCase prev, SwitchCase node) {
     this.insertChild(prev, SwitchStatement.CASE, node);
   }
-
 
   public static SwitchStatement newInstance(SModel sm, boolean init) {
     return (SwitchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();

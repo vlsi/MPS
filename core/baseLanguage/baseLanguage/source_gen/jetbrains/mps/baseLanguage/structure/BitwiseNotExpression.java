@@ -15,7 +15,6 @@ public class BitwiseNotExpression extends Expression {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, BitwiseNotExpression.EXPRESSION);
   }
@@ -23,7 +22,6 @@ public class BitwiseNotExpression extends Expression {
   public void setExpression(Expression node) {
     super.setChild(BitwiseNotExpression.EXPRESSION, node);
   }
-
 
   public static BitwiseNotExpression newInstance(SModel sm, boolean init) {
     return (BitwiseNotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", sm, GlobalScope.getInstance(), init).getAdapter();

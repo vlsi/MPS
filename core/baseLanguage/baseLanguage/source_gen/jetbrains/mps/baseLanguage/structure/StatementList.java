@@ -22,7 +22,6 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(StatementList.SHORT_DESCRIPTION);
   }
@@ -66,7 +65,6 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, StatementList.STATEMENT, node);
   }
-
 
   public static StatementList newInstance(SModel sm, boolean init) {
     return (StatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -247,7 +247,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6732_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }

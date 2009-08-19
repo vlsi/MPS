@@ -16,7 +16,6 @@ public class StaticInitializer extends BaseConcept {
     super(node);
   }
 
-
   public StatementList getStatementList() {
     return (StatementList)this.getChild(StatementList.class, StaticInitializer.STATEMENT_LIST);
   }
@@ -24,7 +23,6 @@ public class StaticInitializer extends BaseConcept {
   public void setStatementList(StatementList node) {
     super.setChild(StaticInitializer.STATEMENT_LIST, node);
   }
-
 
   public static StaticInitializer newInstance(SModel sm, boolean init) {
     return (StaticInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticInitializer", sm, GlobalScope.getInstance(), init).getAdapter();

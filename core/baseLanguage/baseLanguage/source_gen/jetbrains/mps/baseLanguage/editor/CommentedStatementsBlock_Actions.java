@@ -23,7 +23,6 @@ public class CommentedStatementsBlock_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "remove commenting";
     }

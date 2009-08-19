@@ -17,7 +17,6 @@ public class CatchClause extends BaseConcept {
     super(node);
   }
 
-
   public LocalVariableDeclaration getThrowable() {
     return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
   }
@@ -33,7 +32,6 @@ public class CatchClause extends BaseConcept {
   public void setCatchBody(StatementList node) {
     super.setChild(CatchClause.CATCH_BODY, node);
   }
-
 
   public static CatchClause newInstance(SModel sm, boolean init) {
     return (CatchClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause", sm, GlobalScope.getInstance(), init).getAdapter();

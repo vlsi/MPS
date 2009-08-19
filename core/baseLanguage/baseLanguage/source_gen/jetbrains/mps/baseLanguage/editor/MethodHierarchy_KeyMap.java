@@ -34,6 +34,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     action = new MethodHierarchy_KeyMap.MethodHierarchy_KeyMap_Action2();
     this.putAction("ctrl", "VK_I", action);
   }
+
   public static class MethodHierarchy_KeyMap_Action0 extends EditorCellKeyMapAction {
     public MethodHierarchy_KeyMap_Action0() {
       this.setShownInPopupMenu(true);

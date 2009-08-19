@@ -21,7 +21,6 @@ public class TypeVariableDeclaration_deleteBound {
       this.myNode = node;
     }
 
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }

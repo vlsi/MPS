@@ -19,7 +19,6 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
     super(node);
   }
 
-
   public String getResolveInfo() {
     return this.getProperty(ParameterDeclaration.RESOLVE_INFO);
   }
@@ -51,7 +50,6 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
   public void setVirtualPackage(String value) {
     this.setProperty(ParameterDeclaration.VIRTUAL_PACKAGE, value);
   }
-
 
   public static ParameterDeclaration newInstance(SModel sm, boolean init) {
     return (ParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

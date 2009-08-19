@@ -104,7 +104,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6285_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(RemarkStatement_Behavior.call_isTodo_1213877427548(node));
   }

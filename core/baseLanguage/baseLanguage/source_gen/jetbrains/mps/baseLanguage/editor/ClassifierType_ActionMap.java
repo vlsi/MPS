@@ -21,7 +21,6 @@ public class ClassifierType_ActionMap {
       this.myNode = node;
     }
 
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }

@@ -20,7 +20,6 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(InstanceInitializer.SHORT_DESCRIPTION);
   }
@@ -60,7 +59,6 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   public void setVisibility(Visibility node) {
     super.setChild(InstanceInitializer.VISIBILITY, node);
   }
-
 
   public static InstanceInitializer newInstance(SModel sm, boolean init) {
     return (InstanceInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceInitializer", sm, GlobalScope.getInstance(), init).getAdapter();

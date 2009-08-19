@@ -21,7 +21,6 @@ public class BaseMethodCall extends Expression implements IMethodCall {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(BaseMethodCall.SHORT_DESCRIPTION);
   }
@@ -73,7 +72,6 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
   }
-
 
   public static BaseMethodCall newInstance(SModel sm, boolean init) {
     return (BaseMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -130,7 +130,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9185_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "parameter") > 0;
   }

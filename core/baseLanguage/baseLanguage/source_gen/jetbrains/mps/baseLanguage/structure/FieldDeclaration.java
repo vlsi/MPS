@@ -22,7 +22,6 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(FieldDeclaration.SHORT_DESCRIPTION);
   }
@@ -78,7 +77,6 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public void setVisibility(Visibility node) {
     super.setChild(FieldDeclaration.VISIBILITY, node);
   }
-
 
   public static FieldDeclaration newInstance(SModel sm, boolean init) {
     return (FieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

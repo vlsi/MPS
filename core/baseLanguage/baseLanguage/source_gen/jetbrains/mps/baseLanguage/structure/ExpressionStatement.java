@@ -19,7 +19,6 @@ public class ExpressionStatement extends Statement implements IWrapper {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ExpressionStatement.SHORT_DESCRIPTION);
   }
@@ -51,7 +50,6 @@ public class ExpressionStatement extends Statement implements IWrapper {
   public void setExpression(Expression node) {
     super.setChild(ExpressionStatement.EXPRESSION, node);
   }
-
 
   public static ExpressionStatement newInstance(SModel sm, boolean init) {
     return (ExpressionStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", sm, GlobalScope.getInstance(), init).getAdapter();

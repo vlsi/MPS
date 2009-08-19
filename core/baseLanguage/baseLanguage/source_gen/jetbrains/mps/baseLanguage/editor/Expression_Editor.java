@@ -71,7 +71,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;
   }

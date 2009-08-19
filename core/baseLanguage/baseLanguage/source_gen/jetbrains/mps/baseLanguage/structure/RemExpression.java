@@ -14,7 +14,6 @@ public class RemExpression extends BinaryOperation {
     super(node);
   }
 
-
   public static RemExpression newInstance(SModel sm, boolean init) {
     return (RemExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -16,7 +16,6 @@ public class ForStatement extends AbstractForStatement {
     super(node);
   }
 
-
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, ForStatement.CONDITION);
   }
@@ -32,7 +31,6 @@ public class ForStatement extends AbstractForStatement {
   public void setIteration(Expression node) {
     super.setChild(ForStatement.ITERATION, node);
   }
-
 
   public static ForStatement newInstance(SModel sm, boolean init) {
     return (ForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();

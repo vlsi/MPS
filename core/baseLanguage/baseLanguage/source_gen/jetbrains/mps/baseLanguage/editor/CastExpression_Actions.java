@@ -22,7 +22,6 @@ public class CastExpression_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "remove type cast";
     }

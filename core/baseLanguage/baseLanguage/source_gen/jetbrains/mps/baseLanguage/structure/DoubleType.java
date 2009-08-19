@@ -14,7 +14,6 @@ public class DoubleType extends PrimitiveType {
     super(node);
   }
 
-
   public static DoubleType newInstance(SModel sm, boolean init) {
     return (DoubleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

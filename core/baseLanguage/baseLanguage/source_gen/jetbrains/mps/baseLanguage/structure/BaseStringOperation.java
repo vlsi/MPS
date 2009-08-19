@@ -18,7 +18,6 @@ public class BaseStringOperation extends BaseConcept implements IOperation {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(BaseStringOperation.SHORT_DESCRIPTION);
   }
@@ -42,7 +41,6 @@ public class BaseStringOperation extends BaseConcept implements IOperation {
   public void setVirtualPackage(String value) {
     this.setProperty(BaseStringOperation.VIRTUAL_PACKAGE, value);
   }
-
 
   public static BaseStringOperation newInstance(SModel sm, boolean init) {
     return (BaseStringOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseStringOperation", sm, GlobalScope.getInstance(), init).getAdapter();

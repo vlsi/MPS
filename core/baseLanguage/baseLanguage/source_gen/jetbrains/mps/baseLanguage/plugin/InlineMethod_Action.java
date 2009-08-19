@@ -31,7 +31,6 @@ public class InlineMethod_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-
   @NotNull
   public String getKeyStroke() {
     return "ctrl alt N";

@@ -14,7 +14,6 @@ public class SuperMethodCall extends BaseMethodCall {
     super(node);
   }
 
-
   public InstanceMethodDeclaration getInstanceMethodDeclaration() {
     return this.ensureAdapter(InstanceMethodDeclaration.class, "baseMethodDeclaration", this.getBaseMethodDeclaration());
   }
@@ -22,7 +21,6 @@ public class SuperMethodCall extends BaseMethodCall {
   public void setInstanceMethodDeclaration(InstanceMethodDeclaration node) {
     this.setBaseMethodDeclaration(node);
   }
-
 
   public static SuperMethodCall newInstance(SModel sm, boolean init) {
     return (SuperMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();

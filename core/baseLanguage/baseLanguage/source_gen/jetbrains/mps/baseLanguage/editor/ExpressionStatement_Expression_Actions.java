@@ -21,7 +21,6 @@ public class ExpressionStatement_Expression_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "delete whole statement";
     }

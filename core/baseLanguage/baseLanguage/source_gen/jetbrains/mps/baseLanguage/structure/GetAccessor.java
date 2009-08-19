@@ -16,7 +16,6 @@ public class GetAccessor extends BaseConcept {
     super(node);
   }
 
-
   public StatementList getStatementList() {
     return (StatementList)this.getChild(StatementList.class, GetAccessor.STATEMENT_LIST);
   }
@@ -24,7 +23,6 @@ public class GetAccessor extends BaseConcept {
   public void setStatementList(StatementList node) {
     super.setChild(GetAccessor.STATEMENT_LIST, node);
   }
-
 
   public static GetAccessor newInstance(SModel sm, boolean init) {
     return (GetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();

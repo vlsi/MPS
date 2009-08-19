@@ -15,7 +15,6 @@ public class ThrowStatement extends Statement {
     super(node);
   }
 
-
   public Expression getThrowable() {
     return (Expression)this.getChild(Expression.class, ThrowStatement.THROWABLE);
   }
@@ -23,7 +22,6 @@ public class ThrowStatement extends Statement {
   public void setThrowable(Expression node) {
     super.setChild(ThrowStatement.THROWABLE, node);
   }
-
 
   public static ThrowStatement newInstance(SModel sm, boolean init) {
     return (ThrowStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThrowStatement", sm, GlobalScope.getInstance(), init).getAdapter();

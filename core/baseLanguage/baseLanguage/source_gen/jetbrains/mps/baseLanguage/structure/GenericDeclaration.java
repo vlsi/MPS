@@ -23,7 +23,6 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(GenericDeclaration.NAME);
   }
@@ -75,7 +74,6 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   public void insertTypeVariableDeclaration(TypeVariableDeclaration prev, TypeVariableDeclaration node) {
     this.insertChild(prev, GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
   }
-
 
   public static GenericDeclaration newInstance(SModel sm, boolean init) {
     return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

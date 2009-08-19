@@ -14,7 +14,6 @@ public class PrimitiveType extends Type {
     super(node);
   }
 
-
   public static PrimitiveType newInstance(SModel sm, boolean init) {
     return (PrimitiveType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

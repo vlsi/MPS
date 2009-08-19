@@ -25,7 +25,6 @@ public class IfStatement_elseBlockStatement_delete {
       this.myNode = node;
     }
 
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }

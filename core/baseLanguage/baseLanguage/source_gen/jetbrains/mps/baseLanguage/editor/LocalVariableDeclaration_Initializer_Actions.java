@@ -25,7 +25,6 @@ public class LocalVariableDeclaration_Initializer_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "remove initializer";
     }

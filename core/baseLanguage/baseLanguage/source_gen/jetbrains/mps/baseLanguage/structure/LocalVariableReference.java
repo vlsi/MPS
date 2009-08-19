@@ -14,7 +14,6 @@ public class LocalVariableReference extends VariableReference {
     super(node);
   }
 
-
   public LocalVariableDeclaration getLocalVariableDeclaration() {
     return this.ensureAdapter(LocalVariableDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -22,7 +21,6 @@ public class LocalVariableReference extends VariableReference {
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {
     this.setVariableDeclaration(node);
   }
-
 
   public static LocalVariableReference newInstance(SModel sm, boolean init) {
     return (LocalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -15,7 +15,6 @@ public class BlockStatement extends Statement {
     super(node);
   }
 
-
   public StatementList getStatements() {
     return (StatementList)this.getChild(StatementList.class, BlockStatement.STATEMENTS);
   }
@@ -23,7 +22,6 @@ public class BlockStatement extends Statement {
   public void setStatements(StatementList node) {
     super.setChild(BlockStatement.STATEMENTS, node);
   }
-
 
   public static BlockStatement newInstance(SModel sm, boolean init) {
     return (BlockStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", sm, GlobalScope.getInstance(), init).getAdapter();

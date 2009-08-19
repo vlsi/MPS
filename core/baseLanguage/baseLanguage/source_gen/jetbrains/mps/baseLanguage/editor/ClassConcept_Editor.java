@@ -732,7 +732,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8372_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }

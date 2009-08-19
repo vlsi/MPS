@@ -22,7 +22,6 @@ public class ParameterDeclaration_Name_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "add next parameter";
     }

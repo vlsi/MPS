@@ -10,4 +10,5 @@ public interface IBLDeprecatable extends IDeprecatable {
 
 
   public boolean getIsDeprecated();
-  public void setIsDeprecated(boolean value);}
+  public void setIsDeprecated(boolean value);
+}

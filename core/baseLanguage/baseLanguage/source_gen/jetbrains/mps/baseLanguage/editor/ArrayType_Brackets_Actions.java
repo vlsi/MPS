@@ -22,7 +22,6 @@ public class ArrayType_Brackets_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "replace array type with array's component type";
     }

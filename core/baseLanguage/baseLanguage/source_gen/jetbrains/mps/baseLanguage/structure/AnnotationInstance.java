@@ -19,7 +19,6 @@ public class AnnotationInstance extends BaseConcept {
     super(node);
   }
 
-
   public Annotation getAnnotation() {
     return (Annotation)this.getReferent(Annotation.class, AnnotationInstance.ANNOTATION);
   }
@@ -47,7 +46,6 @@ public class AnnotationInstance extends BaseConcept {
   public void insertValue(AnnotationInstanceValue prev, AnnotationInstanceValue node) {
     this.insertChild(prev, AnnotationInstance.VALUE, node);
   }
-
 
   public static AnnotationInstance newInstance(SModel sm, boolean init) {
     return (AnnotationInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", sm, GlobalScope.getInstance(), init).getAdapter();

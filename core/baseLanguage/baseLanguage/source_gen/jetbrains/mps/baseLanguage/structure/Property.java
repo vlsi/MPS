@@ -24,7 +24,6 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
     super(node);
   }
 
-
   public String getPropertyName() {
     return this.getProperty(Property.PROPERTY_NAME);
   }
@@ -88,7 +87,6 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   public void setVisibility(Visibility node) {
     super.setChild(Property.VISIBILITY, node);
   }
-
 
   public static Property newInstance(SModel sm, boolean init) {
     return (Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -139,7 +139,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition6954_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "classConcept", false) != null);
   }

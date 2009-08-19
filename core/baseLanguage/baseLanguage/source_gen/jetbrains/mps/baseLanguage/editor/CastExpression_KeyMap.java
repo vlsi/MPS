@@ -22,6 +22,7 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     action = new CastExpression_KeyMap.CastExpression_KeyMap_Action1();
     this.putAction("ctrl+shift", "VK_SPACE", action);
   }
+
   public static class CastExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
     public CastExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);

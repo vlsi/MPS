@@ -25,6 +25,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     this.putAction("alt", "VK_INSERT", action);
     this.putAction("alt", "VK_HELP", action);
   }
+
   public static class FieldDeclaration_keyMap_Action0 extends EditorCellKeyMapAction {
     public FieldDeclaration_keyMap_Action0() {
       this.setShownInPopupMenu(true);

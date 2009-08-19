@@ -16,7 +16,6 @@ public class DefaultSetAccessor extends BaseConcept {
     super(node);
   }
 
-
   public Visibility getVisibility() {
     return (Visibility)this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
   }
@@ -24,7 +23,6 @@ public class DefaultSetAccessor extends BaseConcept {
   public void setVisibility(Visibility node) {
     super.setChild(DefaultSetAccessor.VISIBILITY, node);
   }
-
 
   public static DefaultSetAccessor newInstance(SModel sm, boolean init) {
     return (DefaultSetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();

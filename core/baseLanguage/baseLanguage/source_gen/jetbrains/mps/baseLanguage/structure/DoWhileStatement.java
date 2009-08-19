@@ -15,7 +15,6 @@ public class DoWhileStatement extends AbstractLoopStatement {
     super(node);
   }
 
-
   public Expression getCondition() {
     return (Expression)this.getChild(Expression.class, DoWhileStatement.CONDITION);
   }
@@ -23,7 +22,6 @@ public class DoWhileStatement extends AbstractLoopStatement {
   public void setCondition(Expression node) {
     super.setChild(DoWhileStatement.CONDITION, node);
   }
-
 
   public static DoWhileStatement newInstance(SModel sm, boolean init) {
     return (DoWhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();

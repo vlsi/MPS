@@ -73,7 +73,6 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0068_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }

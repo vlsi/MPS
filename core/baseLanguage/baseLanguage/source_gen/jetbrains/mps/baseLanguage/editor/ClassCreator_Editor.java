@@ -120,7 +120,6 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
   }

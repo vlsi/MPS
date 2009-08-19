@@ -26,7 +26,6 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(EnumConstantDeclaration.NAME);
   }
@@ -110,7 +109,6 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
   }
-
 
   public static EnumConstantDeclaration newInstance(SModel sm, boolean init) {
     return (EnumConstantDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

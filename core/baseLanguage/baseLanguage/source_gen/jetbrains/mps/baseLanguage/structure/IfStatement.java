@@ -23,7 +23,6 @@ public class IfStatement extends Statement implements IContainsStatementList {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(IfStatement.SHORT_DESCRIPTION);
   }
@@ -91,7 +90,6 @@ public class IfStatement extends Statement implements IContainsStatementList {
   public void insertElsifClauses(ElsifClause prev, ElsifClause node) {
     this.insertChild(prev, IfStatement.ELSIF_CLAUSES, node);
   }
-
 
   public static IfStatement newInstance(SModel sm, boolean init) {
     return (IfStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", sm, GlobalScope.getInstance(), init).getAdapter();

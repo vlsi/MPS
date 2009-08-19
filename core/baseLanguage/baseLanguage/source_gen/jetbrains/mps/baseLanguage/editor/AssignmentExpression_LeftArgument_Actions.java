@@ -22,7 +22,6 @@ public class AssignmentExpression_LeftArgument_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "Delete left argument";
     }

@@ -15,7 +15,6 @@ public class Visibility extends BaseConcept {
     super(node);
   }
 
-
   public static Visibility newInstance(SModel sm, boolean init) {
     return (Visibility)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Visibility", sm, GlobalScope.getInstance(), init).getAdapter();
   }

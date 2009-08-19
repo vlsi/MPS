@@ -18,7 +18,6 @@ public class ThisExpression extends Expression implements IThisExpression {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ThisExpression.SHORT_DESCRIPTION);
   }
@@ -50,7 +49,6 @@ public class ThisExpression extends Expression implements IThisExpression {
   public void setClassConcept(Classifier node) {
     super.setReferent(ThisExpression.CLASS_CONCEPT, node);
   }
-
 
   public static ThisExpression newInstance(SModel sm, boolean init) {
     return (ThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();

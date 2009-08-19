@@ -18,7 +18,6 @@ public class UsingStatement extends Statement {
     super(node);
   }
 
-
   public StatementList getBody() {
     return (StatementList)this.getChild(StatementList.class, UsingStatement.BODY);
   }
@@ -46,7 +45,6 @@ public class UsingStatement extends Statement {
   public void insertResource(Expression prev, Expression node) {
     this.insertChild(prev, UsingStatement.RESOURCE, node);
   }
-
 
   public static UsingStatement newInstance(SModel sm, boolean init) {
     return (UsingStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UsingStatement", sm, GlobalScope.getInstance(), init).getAdapter();

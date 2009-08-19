@@ -18,7 +18,6 @@ public class TryCatchStatement extends Statement {
     super(node);
   }
 
-
   public StatementList getBody() {
     return (StatementList)this.getChild(StatementList.class, TryCatchStatement.BODY);
   }
@@ -46,7 +45,6 @@ public class TryCatchStatement extends Statement {
   public void insertCatchClause(CatchClause prev, CatchClause node) {
     this.insertChild(prev, TryCatchStatement.CATCH_CLAUSE, node);
   }
-
 
   public static TryCatchStatement newInstance(SModel sm, boolean init) {
     return (TryCatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();

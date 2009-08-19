@@ -50,7 +50,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ClassConcept_DefaultSearchScope());
   }
 
-
   public void unRegisterSelf(ModelConstraintsManager p0) {
     for (IModelConstraints c : this.myConstraints) {
       c.unRegisterSelf(p0);

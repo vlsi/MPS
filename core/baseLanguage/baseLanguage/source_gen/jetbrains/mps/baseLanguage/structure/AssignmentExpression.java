@@ -17,7 +17,6 @@ public class AssignmentExpression extends BaseAssignmentExpression implements Ty
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(AssignmentExpression.SHORT_DESCRIPTION);
   }
@@ -41,7 +40,6 @@ public class AssignmentExpression extends BaseAssignmentExpression implements Ty
   public void setVirtualPackage(String value) {
     this.setProperty(AssignmentExpression.VIRTUAL_PACKAGE, value);
   }
-
 
   public static AssignmentExpression newInstance(SModel sm, boolean init) {
     return (AssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();

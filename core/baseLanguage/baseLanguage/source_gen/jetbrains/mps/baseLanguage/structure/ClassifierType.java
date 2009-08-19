@@ -18,7 +18,6 @@ public class ClassifierType extends Type {
     super(node);
   }
 
-
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, ClassifierType.CLASSIFIER);
   }
@@ -46,7 +45,6 @@ public class ClassifierType extends Type {
   public void insertParameter(Type prev, Type node) {
     this.insertChild(prev, ClassifierType.PARAMETER, node);
   }
-
 
   public static ClassifierType newInstance(SModel sm, boolean init) {
     return (ClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();

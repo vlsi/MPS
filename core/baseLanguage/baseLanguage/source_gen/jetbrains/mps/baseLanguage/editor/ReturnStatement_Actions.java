@@ -23,7 +23,6 @@ public class ReturnStatement_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "add return expression";
     }
@@ -45,7 +44,6 @@ public class ReturnStatement_Actions {
     public ReturnStatement_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
 
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);

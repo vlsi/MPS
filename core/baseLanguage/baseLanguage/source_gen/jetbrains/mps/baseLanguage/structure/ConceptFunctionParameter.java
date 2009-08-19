@@ -19,7 +19,6 @@ public class ConceptFunctionParameter extends Expression implements IParameter {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ConceptFunctionParameter.SHORT_DESCRIPTION);
   }
@@ -43,7 +42,6 @@ public class ConceptFunctionParameter extends Expression implements IParameter {
   public void setVirtualPackage(String value) {
     this.setProperty(ConceptFunctionParameter.VIRTUAL_PACKAGE, value);
   }
-
 
   public static ConceptFunctionParameter newInstance(SModel sm, boolean init) {
     return (ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();

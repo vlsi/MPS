@@ -15,7 +15,6 @@ public class IntegerConstant extends IntegerLiteral {
     super(node);
   }
 
-
   public int getValue() {
     return this.getIntegerProperty(IntegerConstant.VALUE);
   }
@@ -23,7 +22,6 @@ public class IntegerConstant extends IntegerLiteral {
   public void setValue(int value) {
     this.setIntegerProperty(IntegerConstant.VALUE, value);
   }
-
 
   public static IntegerConstant newInstance(SModel sm, boolean init) {
     return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -14,7 +14,6 @@ public class CharType extends PrimitiveType {
     super(node);
   }
 
-
   public static CharType newInstance(SModel sm, boolean init) {
     return (CharType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

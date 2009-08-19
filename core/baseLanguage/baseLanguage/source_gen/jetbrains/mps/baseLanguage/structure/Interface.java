@@ -21,7 +21,6 @@ public class Interface extends Classifier implements IBLDeprecatable {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(Interface.SHORT_DESCRIPTION);
   }
@@ -73,7 +72,6 @@ public class Interface extends Classifier implements IBLDeprecatable {
   public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
   }
-
 
   public static Interface newInstance(SModel sm, boolean init) {
     return (Interface)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", sm, GlobalScope.getInstance(), init).getAdapter();

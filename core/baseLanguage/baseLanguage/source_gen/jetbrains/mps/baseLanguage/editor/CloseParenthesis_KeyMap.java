@@ -20,6 +20,7 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     action = new CloseParenthesis_KeyMap.CloseParenthesis_KeyMap_Action1();
     this.putAction("ctrl+shift", "VK_LEFT", action);
   }
+
   public static class CloseParenthesis_KeyMap_Action0 extends EditorCellKeyMapAction {
     public CloseParenthesis_KeyMap_Action0() {
       this.setShownInPopupMenu(false);

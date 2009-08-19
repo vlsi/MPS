@@ -20,7 +20,6 @@ public class BaseLanguageNodeActionsInternal_ActionGroup extends GeneratedAction
     }
   }
 
-
   public void adjust() {
     this.insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, null);
   }

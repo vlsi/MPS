@@ -30,7 +30,6 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
     super(node);
   }
 
-
   public String getNestedName() {
     return this.getProperty(Classifier.NESTED_NAME);
   }
@@ -162,7 +161,6 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, Classifier.ANNOTATION, node);
   }
-
 
   public static Classifier newInstance(SModel sm, boolean init) {
     return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();

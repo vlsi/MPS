@@ -14,7 +14,6 @@ public class ProtectedVisibility extends Visibility {
     super(node);
   }
 
-
   public static ProtectedVisibility newInstance(SModel sm, boolean init) {
     return (ProtectedVisibility)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", sm, GlobalScope.getInstance(), init).getAdapter();
   }

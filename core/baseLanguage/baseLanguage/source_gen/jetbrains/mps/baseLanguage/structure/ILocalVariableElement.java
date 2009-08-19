@@ -5,4 +5,5 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ILocalVariableElement extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.ILocalVariableElement";}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ILocalVariableElement";
+}

@@ -16,7 +16,6 @@ public class DimensionExpression extends BaseConcept {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, DimensionExpression.EXPRESSION);
   }
@@ -24,7 +23,6 @@ public class DimensionExpression extends BaseConcept {
   public void setExpression(Expression node) {
     super.setChild(DimensionExpression.EXPRESSION, node);
   }
-
 
   public static DimensionExpression newInstance(SModel sm, boolean init) {
     return (DimensionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DimensionExpression", sm, GlobalScope.getInstance(), init).getAdapter();

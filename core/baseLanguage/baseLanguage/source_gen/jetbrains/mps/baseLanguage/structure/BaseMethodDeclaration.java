@@ -28,7 +28,6 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(BaseMethodDeclaration.NAME);
   }
@@ -152,7 +151,6 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, BaseMethodDeclaration.ANNOTATION, node);
   }
-
 
   public static BaseMethodDeclaration newInstance(SModel sm, boolean init) {
     return (BaseMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

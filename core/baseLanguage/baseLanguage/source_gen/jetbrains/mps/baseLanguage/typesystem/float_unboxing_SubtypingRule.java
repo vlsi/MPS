@@ -13,7 +13,6 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   public float_unboxing_SubtypingRule() {
   }
 
-
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_51().createNode(typeCheckingContext);
   }

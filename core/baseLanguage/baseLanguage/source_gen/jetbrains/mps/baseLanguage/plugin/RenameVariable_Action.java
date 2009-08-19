@@ -25,7 +25,6 @@ public class RenameVariable_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-
   @NotNull
   public String getKeyStroke() {
     return "shift F6";

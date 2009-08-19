@@ -15,7 +15,6 @@ public class TrimOperation extends BaseStringOperation {
     super(node);
   }
 
-
   public TrimKind getTrimKind() {
     String value = super.getProperty(TrimOperation.TRIM_KIND);
     return TrimKind.parseValue(value);
@@ -24,7 +23,6 @@ public class TrimOperation extends BaseStringOperation {
   public void setTrimKind(TrimKind value) {
     super.setProperty(TrimOperation.TRIM_KIND, value.getValueAsString());
   }
-
 
   public static TrimOperation newInstance(SModel sm, boolean init) {
     return (TrimOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TrimOperation", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -14,7 +14,6 @@ public class BooleanType extends PrimitiveType {
     super(node);
   }
 
-
   public static BooleanType newInstance(SModel sm, boolean init) {
     return (BooleanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

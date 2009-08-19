@@ -15,7 +15,6 @@ public class FloatingPointConstant extends Expression {
     super(node);
   }
 
-
   public String getValue() {
     return this.getProperty(FloatingPointConstant.VALUE);
   }
@@ -23,7 +22,6 @@ public class FloatingPointConstant extends Expression {
   public void setValue(String value) {
     this.setProperty(FloatingPointConstant.VALUE, value);
   }
-
 
   public static FloatingPointConstant newInstance(SModel sm, boolean init) {
     return (FloatingPointConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();

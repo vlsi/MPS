@@ -254,7 +254,6 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8963_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }

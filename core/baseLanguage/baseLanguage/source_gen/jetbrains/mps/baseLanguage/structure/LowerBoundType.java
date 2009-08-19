@@ -15,7 +15,6 @@ public class LowerBoundType extends Type {
     super(node);
   }
 
-
   public Type getBound() {
     return (Type)this.getChild(Type.class, LowerBoundType.BOUND);
   }
@@ -23,7 +22,6 @@ public class LowerBoundType extends Type {
   public void setBound(Type node) {
     super.setChild(LowerBoundType.BOUND, node);
   }
-
 
   public static LowerBoundType newInstance(SModel sm, boolean init) {
     return (LowerBoundType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", sm, GlobalScope.getInstance(), init).getAdapter();

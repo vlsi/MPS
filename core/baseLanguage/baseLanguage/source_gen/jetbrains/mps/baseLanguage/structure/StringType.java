@@ -14,7 +14,6 @@ public class StringType extends Type {
     super(node);
   }
 
-
   public static StringType newInstance(SModel sm, boolean init) {
     return (StringType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", sm, GlobalScope.getInstance(), init).getAdapter();
   }

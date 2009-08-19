@@ -65,7 +65,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7565_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }

@@ -14,7 +14,6 @@ public class MinusAssignmentExpression extends BaseAssignmentExpression {
     super(node);
   }
 
-
   public static MinusAssignmentExpression newInstance(SModel sm, boolean init) {
     return (MinusAssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

@@ -18,7 +18,6 @@ public class Statement extends BaseConcept implements ILocalVariableElement {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(Statement.SHORT_DESCRIPTION);
   }
@@ -42,7 +41,6 @@ public class Statement extends BaseConcept implements ILocalVariableElement {
   public void setVirtualPackage(String value) {
     this.setProperty(Statement.VIRTUAL_PACKAGE, value);
   }
-
 
   public static Statement newInstance(SModel sm, boolean init) {
     return (Statement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", sm, GlobalScope.getInstance(), init).getAdapter();

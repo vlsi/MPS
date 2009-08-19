@@ -17,7 +17,6 @@ public class SubstringExpression extends Expression {
     super(node);
   }
 
-
   public Expression getOperand() {
     return (Expression)this.getChild(Expression.class, SubstringExpression.OPERAND);
   }
@@ -41,7 +40,6 @@ public class SubstringExpression extends Expression {
   public void setEndIndex(Expression node) {
     super.setChild(SubstringExpression.END_INDEX, node);
   }
-
 
   public static SubstringExpression newInstance(SModel sm, boolean init) {
     return (SubstringExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression", sm, GlobalScope.getInstance(), init).getAdapter();

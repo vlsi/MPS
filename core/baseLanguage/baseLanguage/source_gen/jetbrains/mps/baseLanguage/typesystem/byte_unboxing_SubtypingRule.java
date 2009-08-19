@@ -13,7 +13,6 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public byte_unboxing_SubtypingRule() {
   }
 
-
   public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
     return new _Quotations.QuotationClass_50().createNode(typeCheckingContext);
   }

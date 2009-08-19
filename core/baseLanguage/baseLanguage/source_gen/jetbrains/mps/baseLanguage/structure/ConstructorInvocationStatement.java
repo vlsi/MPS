@@ -21,7 +21,6 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(ConstructorInvocationStatement.SHORT_DESCRIPTION);
   }
@@ -81,7 +80,6 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ConstructorInvocationStatement.ACTUAL_ARGUMENT, node);
   }
-
 
   public static ConstructorInvocationStatement newInstance(SModel sm, boolean init) {
     return (ConstructorInvocationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", sm, GlobalScope.getInstance(), init).getAdapter();

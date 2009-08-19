@@ -121,7 +121,6 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4312_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "annotation", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true)).isNotEmpty();
   }

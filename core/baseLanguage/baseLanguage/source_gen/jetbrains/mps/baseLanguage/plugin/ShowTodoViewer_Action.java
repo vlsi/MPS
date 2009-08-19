@@ -24,7 +24,6 @@ public class ShowTodoViewer_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-
   @NotNull
   public String getKeyStroke() {
     return "";

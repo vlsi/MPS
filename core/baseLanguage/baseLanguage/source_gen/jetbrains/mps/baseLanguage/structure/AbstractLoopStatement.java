@@ -20,7 +20,6 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
     super(node);
   }
 
-
   public String getLabel() {
     return this.getProperty(AbstractLoopStatement.LABEL);
   }
@@ -60,7 +59,6 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   public void setBody(StatementList node) {
     super.setChild(AbstractLoopStatement.BODY, node);
   }
-
 
   public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
     return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();

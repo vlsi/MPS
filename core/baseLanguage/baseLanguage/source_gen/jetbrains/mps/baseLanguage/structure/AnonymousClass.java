@@ -19,7 +19,6 @@ public class AnonymousClass extends ClassConcept {
     super(node);
   }
 
-
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(Classifier.class, AnonymousClass.CLASSIFIER);
   }
@@ -67,7 +66,6 @@ public class AnonymousClass extends ClassConcept {
   public void insertTypeParameter(Type prev, Type node) {
     this.insertChild(prev, AnonymousClass.TYPE_PARAMETER, node);
   }
-
 
   public static AnonymousClass newInstance(SModel sm, boolean init) {
     return (AnonymousClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -14,7 +14,6 @@ public class GreaterThanOrEqualsExpression extends BinaryCompareOperation {
     super(node);
   }
 
-
   public static GreaterThanOrEqualsExpression newInstance(SModel sm, boolean init) {
     return (GreaterThanOrEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

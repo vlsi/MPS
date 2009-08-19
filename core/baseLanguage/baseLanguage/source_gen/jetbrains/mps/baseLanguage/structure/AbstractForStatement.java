@@ -15,7 +15,6 @@ public class AbstractForStatement extends AbstractLoopStatement {
     super(node);
   }
 
-
   public LocalVariableDeclaration getVariable() {
     return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, AbstractForStatement.VARIABLE);
   }
@@ -23,7 +22,6 @@ public class AbstractForStatement extends AbstractLoopStatement {
   public void setVariable(LocalVariableDeclaration node) {
     super.setChild(AbstractForStatement.VARIABLE, node);
   }
-
 
   public static AbstractForStatement newInstance(SModel sm, boolean init) {
     return (AbstractForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractForStatement", sm, GlobalScope.getInstance(), init).getAdapter();

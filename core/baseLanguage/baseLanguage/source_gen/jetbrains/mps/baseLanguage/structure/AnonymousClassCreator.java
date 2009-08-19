@@ -15,7 +15,6 @@ public class AnonymousClassCreator extends AbstractCreator {
     super(node);
   }
 
-
   public AnonymousClass getCls() {
     return (AnonymousClass)this.getChild(AnonymousClass.class, AnonymousClassCreator.CLS);
   }
@@ -23,7 +22,6 @@ public class AnonymousClassCreator extends AbstractCreator {
   public void setCls(AnonymousClass node) {
     super.setChild(AnonymousClassCreator.CLS, node);
   }
-
 
   public static AnonymousClassCreator newInstance(SModel sm, boolean init) {
     return (AnonymousClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();

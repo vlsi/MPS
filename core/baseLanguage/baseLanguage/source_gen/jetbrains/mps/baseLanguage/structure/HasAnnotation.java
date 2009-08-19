@@ -15,4 +15,5 @@ public interface HasAnnotation extends INodeAdapter {
   public Iterator<AnnotationInstance> annotations();
   public List<AnnotationInstance> getAnnotations();
   public void addAnnotation(AnnotationInstance node);
-  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node);}
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node);
+}

@@ -17,7 +17,6 @@ public class BinaryOperation extends Expression {
     super(node);
   }
 
-
   public Expression getRightExpression() {
     return (Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
   }
@@ -33,7 +32,6 @@ public class BinaryOperation extends Expression {
   public void setLeftExpression(Expression node) {
     super.setChild(BinaryOperation.LEFT_EXPRESSION, node);
   }
-
 
   public static BinaryOperation newInstance(SModel sm, boolean init) {
     return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();

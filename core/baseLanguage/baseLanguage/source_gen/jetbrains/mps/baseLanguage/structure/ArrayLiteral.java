@@ -17,7 +17,6 @@ public class ArrayLiteral extends Expression {
     super(node);
   }
 
-
   public int getItemsCount() {
     return this.getChildCount(ArrayLiteral.ITEM);
   }
@@ -37,7 +36,6 @@ public class ArrayLiteral extends Expression {
   public void insertItem(Expression prev, Expression node) {
     this.insertChild(prev, ArrayLiteral.ITEM, node);
   }
-
 
   public static ArrayLiteral newInstance(SModel sm, boolean init) {
     return (ArrayLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", sm, GlobalScope.getInstance(), init).getAdapter();

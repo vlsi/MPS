@@ -25,7 +25,6 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
     super(node);
   }
 
-
   public String getName() {
     return this.getProperty(VariableDeclaration.NAME);
   }
@@ -101,7 +100,6 @@ public class VariableDeclaration extends BaseConcept implements IValidIdentifier
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
   }
-
 
   public static VariableDeclaration newInstance(SModel sm, boolean init) {
     return (VariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();

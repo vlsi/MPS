@@ -22,7 +22,6 @@ public class ElseifClause_DeletePrevious {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "delete previous if there is one or current ";
     }

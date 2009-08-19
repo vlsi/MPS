@@ -14,7 +14,6 @@ public class PrefixIncrementExpression extends AbstractUnaryNumberOperation {
     super(node);
   }
 
-
   public static PrefixIncrementExpression newInstance(SModel sm, boolean init) {
     return (PrefixIncrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }

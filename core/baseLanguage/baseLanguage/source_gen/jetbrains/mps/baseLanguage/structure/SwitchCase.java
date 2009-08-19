@@ -17,7 +17,6 @@ public class SwitchCase extends BaseConcept {
     super(node);
   }
 
-
   public Expression getExpression() {
     return (Expression)this.getChild(Expression.class, SwitchCase.EXPRESSION);
   }
@@ -33,7 +32,6 @@ public class SwitchCase extends BaseConcept {
   public void setBody(StatementList node) {
     super.setChild(SwitchCase.BODY, node);
   }
-
 
   public static SwitchCase newInstance(SModel sm, boolean init) {
     return (SwitchCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchCase", sm, GlobalScope.getInstance(), init).getAdapter();

@@ -308,7 +308,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition5292_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "throwsItem") > 0;
   }

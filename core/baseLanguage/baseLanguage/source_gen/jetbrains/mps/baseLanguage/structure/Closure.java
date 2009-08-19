@@ -17,7 +17,6 @@ public class Closure extends ConceptFunction implements Closureoid {
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(Closure.SHORT_DESCRIPTION);
   }
@@ -41,7 +40,6 @@ public class Closure extends ConceptFunction implements Closureoid {
   public void setVirtualPackage(String value) {
     this.setProperty(Closure.VIRTUAL_PACKAGE, value);
   }
-
 
   public static Closure newInstance(SModel sm, boolean init) {
     return (Closure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Closure", sm, GlobalScope.getInstance(), init).getAdapter();

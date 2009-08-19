@@ -14,7 +14,6 @@ public class LocalStaticFieldReference extends VariableReference {
     super(node);
   }
 
-
   public StaticFieldDeclaration getStaticFieldDeclaration() {
     return this.ensureAdapter(StaticFieldDeclaration.class, "variableDeclaration", this.getVariableDeclaration());
   }
@@ -22,7 +21,6 @@ public class LocalStaticFieldReference extends VariableReference {
   public void setStaticFieldDeclaration(StaticFieldDeclaration node) {
     this.setVariableDeclaration(node);
   }
-
 
   public static LocalStaticFieldReference newInstance(SModel sm, boolean init) {
     return (LocalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();

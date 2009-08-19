@@ -15,7 +15,6 @@ public class HexIntegerLiteral extends IntegerLiteral {
     super(node);
   }
 
-
   public String getValue() {
     return this.getProperty(HexIntegerLiteral.VALUE);
   }
@@ -23,7 +22,6 @@ public class HexIntegerLiteral extends IntegerLiteral {
   public void setValue(String value) {
     this.setProperty(HexIntegerLiteral.VALUE, value);
   }
-
 
   public static HexIntegerLiteral newInstance(SModel sm, boolean init) {
     return (HexIntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();

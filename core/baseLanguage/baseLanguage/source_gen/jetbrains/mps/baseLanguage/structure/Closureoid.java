@@ -5,4 +5,5 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface Closureoid extends INodeAdapter {
-  public static final String concept = "jetbrains.mps.baseLanguage.structure.Closureoid";}
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.Closureoid";
+}

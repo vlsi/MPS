@@ -15,7 +15,6 @@ public class Number extends BaseConcept {
     super(node);
   }
 
-
   public static Number newInstance(SModel sm, boolean init) {
     return (Number)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Number", sm, GlobalScope.getInstance(), init).getAdapter();
   }

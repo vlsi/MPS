@@ -22,7 +22,6 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
     super(node);
   }
 
-
   public String getShortDescription() {
     return this.getProperty(InstanceMethodCallOperation.SHORT_DESCRIPTION);
   }
@@ -82,7 +81,6 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InstanceMethodCallOperation.ACTUAL_ARGUMENT, node);
   }
-
 
   public static InstanceMethodCallOperation newInstance(SModel sm, boolean init) {
     return (InstanceMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();

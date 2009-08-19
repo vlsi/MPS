@@ -25,7 +25,6 @@ public class BinaryOperation_Symbol_Actions {
       this.myNode = node;
     }
 
-
     public String getDescriptionText() {
       return "delete";
     }
