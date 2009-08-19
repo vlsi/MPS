@@ -102,4 +102,28 @@ public class Classifier_Behavior {
   public static boolean callSuper_hasStaticMemebers_1214840444586(SNode thisNode, String callerConceptFqName) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), callerConceptFqName, "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }
+
+  public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {
+    List<SNode> result = new ArrayList<SNode>();
+    boolean prevWasStatic = false;
+    for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
+        if ((classifier == null)) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(classifier);
+      } else {
+        if (!(prevWasStatic)) {
+          ListSequence.fromList(result).addElement(current);
+        }
+        if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
+          prevWasStatic = true;
+          continue;
+        }
+      }
+      prevWasStatic = false;
+    }
+    return result;
+  }
 }

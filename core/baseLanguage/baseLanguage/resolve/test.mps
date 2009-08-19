@@ -177,6 +177,11 @@
               <link role="classConcept" targetNodeId="186788241848729168" resolveInfo="ABC" />
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230548027">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6775591514230548029">
+              <link role="classConcept" targetNodeId="186788241848729168" resolveInfo="ABC" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

@@ -4,36 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ThisExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> call_getPossibleClassifiers_1215682129821(SNode thisNode) {
-    List<SNode> result = new ArrayList<SNode>();
-    boolean prevWasStatic = false;
-    for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false))) {
-      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-        SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
-        if ((classifier == null)) {
-          continue;
-        }
-        ListSequence.fromList(result).addElement(classifier);
-      } else {
-        if (!(prevWasStatic)) {
-          ListSequence.fromList(result).addElement(current);
-        }
-        if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
-          prevWasStatic = true;
-          continue;
-        }
-      }
-      prevWasStatic = false;
-    }
-    return result;
+    return Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(thisNode);
   }
 }

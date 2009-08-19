@@ -63,7 +63,7 @@
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8533578990689130296">
               <property name="name" value="c" />
               <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8533578990689130297">
-                <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+                <link role="classifier" targetNodeId="4539702814068031388" resolveInfo="B" />
               </node>
             </node>
           </node>
@@ -105,6 +105,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6775591514230454307">
+      <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="A.B.C" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4539702814068031372">
