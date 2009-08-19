@@ -142,7 +142,52 @@
       </node>
       <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480068636">
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480068637" />
-        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IncludeMacro" id="1892993302480068639" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IncludeMacro" id="1892993302480068639">
+          <link role="includeTemplate" targetNodeId="1892993302480251689" resolveInfo="reduce_InputNode_A_included" />
+        </node>
+      </node>
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480310362">
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480310363" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="1892993302480310365">
+          <link role="templateSwitch" targetNodeId="1892993302480310366" resolveInfo="switch_InputNode_A" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1892993302480251689">
+    <property name="name" value="reduce_InputNode_A_included" />
+    <node role="contentNode" type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1892993302480251691">
+      <property name="name" value="context" />
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480251692">
+        <property name="text" value="child included #1" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480251693" />
+      </node>
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480277769">
+        <property name="text" value="child included #2" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480277770" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="1892993302480310366">
+    <property name="name" value="switch_InputNode_A" />
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1892993302480310367">
+      <link role="applicableConcept" targetNodeId="2.1195171011194" resolveInfo="InputNode_A" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1892993302480311962">
+        <link role="template" targetNodeId="1892993302480311955" resolveInfo="reduce_InputNode_A_switch" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="1892993302480311955">
+    <property name="name" value="reduce_InputNode_A_switch" />
+    <node role="contentNode" type="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" id="1892993302480311957">
+      <property name="name" value="context" />
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480311958">
+        <property name="text" value="child switch #1" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480311959" />
+      </node>
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480311960">
+        <property name="text" value="child switch #2" />
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480311961" />
       </node>
     </node>
   </node>
