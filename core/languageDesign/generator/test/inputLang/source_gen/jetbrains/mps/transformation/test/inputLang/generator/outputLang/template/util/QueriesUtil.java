@@ -10,15 +10,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesUtil {
-
   public static boolean isTest1(SModel model) {
     List<SNode> nodes = SModelOperations.getRoots(model, "jetbrains.mps.transformation.test.inputLang.structure.InputRoot");
-    for(SNode node : ListSequence.fromList(nodes)) {
+    for (SNode node : ListSequence.fromList(nodes)) {
       if (SPropertyOperations.hasValue(node, "useInTest", "test1", "none")) {
         return true;
       }
     }
     return false;
   }
-
 }

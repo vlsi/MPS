@@ -97,6 +97,7 @@
     </node>
     <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="3893401255414086888">
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="3893401255414086893">
+        <property name="comment" value="all children" />
         <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="3893401255414086894">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3893401255414086895">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3893401255414100160">
@@ -119,6 +120,7 @@
         <property name="text" value="child #1" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="3893401255414100173" />
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="3893401255414161782">
+          <property name="comment" value="list of two input nodes" />
           <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="3893401255414161783">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3893401255414161784">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3893401255414163870">

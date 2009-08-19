@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_3893401255414129777(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
   }
@@ -28,5 +27,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3893401255414161783(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _context.getNode(), _context.getNode());
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1218738676457(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "weaveManyToSingularChild", "none");
   }
@@ -27,5 +26,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1218738863685(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "generated_root");
   }
-
 }

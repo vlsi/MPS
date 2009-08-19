@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1202255161954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "getPrevInputTest", "none");
   }
@@ -118,5 +117,4 @@ public class QueriesGenerated {
   public static void mapSrcMacro_post_mapper_1233603527948(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     _context.showInformationMessage(_context.getNode(), "POST-PROC LEVEL1 " + SPropertyOperations.getString(_context.getNode(), "name"));
   }
-
 }
