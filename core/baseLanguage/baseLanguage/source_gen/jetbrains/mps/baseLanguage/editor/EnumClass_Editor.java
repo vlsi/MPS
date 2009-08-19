@@ -294,13 +294,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3195_0(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< fields >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3195_0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<< fields >>");
       return editorCell;
     }
   }
@@ -351,13 +351,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3195_3(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< enum constants >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3195_3");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<< enum constants >>");
       return editorCell;
     }
   }
@@ -408,13 +408,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3195_5(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< constructors >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3195_5");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<< constructors >>");
       return editorCell;
     }
   }
@@ -465,13 +465,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3195_6(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< methods >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3195_6");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<< methods >>");
       return editorCell;
     }
   }
@@ -522,13 +522,13 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_3195_7(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< static methods >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_3195_7");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<< static methods >>");
       return editorCell;
     }
   }

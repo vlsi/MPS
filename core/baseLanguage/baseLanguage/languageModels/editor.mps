@@ -4005,7 +4005,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1083245396908" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085483277591">
-          <property name="text" value="&lt;&lt; enum constants &gt;&gt;" />
+          <property name="nullText" value="&lt;&lt; enum constants &gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998184">
             <property name="flag" value="true" />
           </node>
@@ -4033,7 +4033,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1068390468199" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085483273081">
-          <property name="text" value="&lt;&lt; fields &gt;&gt;" />
+          <property name="nullText" value="&lt;&lt; fields &gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996933">
             <property name="flag" value="true" />
           </node>
@@ -4058,7 +4058,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1068390468201" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085483457773">
-          <property name="text" value="&lt;&lt; constructors &gt;&gt;" />
+          <property name="nullText" value="&lt;&lt; constructors &gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310998058">
             <property name="flag" value="true" />
           </node>
@@ -4083,7 +4083,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1107880067339" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085483457777">
-          <property name="text" value="&lt;&lt; methods &gt;&gt;" />
+          <property name="nullText" value="&lt;&lt; methods &gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310997293">
             <property name="flag" value="true" />
           </node>
@@ -4108,7 +4108,7 @@
         <property name="vertical" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1070462273904" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085483457781">
-          <property name="text" value="&lt;&lt; static methods &gt;&gt;" />
+          <property name="nullText" value="&lt;&lt; static methods &gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310995549">
             <property name="flag" value="true" />
           </node>
