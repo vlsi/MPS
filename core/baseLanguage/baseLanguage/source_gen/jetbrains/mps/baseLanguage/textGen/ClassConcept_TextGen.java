@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,7 +15,7 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
-    if (!(node.isRoot())) {
+    if (!(Classifier_Behavior.call_isInner_521412098689998677(node) && Classifier_Behavior.call_isStatic_521412098689998668(node))) {
       this.append("static ");
     }
     if (SPropertyOperations.getBoolean(node, "abstractClass")) {
