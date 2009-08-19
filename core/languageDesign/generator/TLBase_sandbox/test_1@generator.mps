@@ -7,6 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -681,6 +682,9 @@
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="1226346470484">
           <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="1226346470485">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1226346470486" />
+          </node>
+          <node role="alternativeConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1892993302480554284">
+            <node role="templateNode" type="jetbrains.mps.lang.core.structure.BaseConcept" id="1892993302480554285" />
           </node>
         </node>
       </node>
