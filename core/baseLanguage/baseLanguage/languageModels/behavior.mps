@@ -2255,15 +2255,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6775591514230482819">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6775591514230482820">
-            <property name="name" value="prevWasStatic" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="6775591514230482821" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6775591514230482822">
-              <property name="value" value="false" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="6775591514230482823">
           <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="6775591514230482824">
             <property name="name" value="current" />
@@ -2339,40 +2330,27 @@
               </node>
               <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="6775591514230482855">
                 <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6775591514230482856">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6775591514230482857">
-                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6775591514230482858">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230482859">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6775591514230482860">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6775591514230482861">
-                            <link role="variableDeclaration" targetNodeId="6775591514230482814" resolveInfo="result" />
-                          </node>
-                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="6775591514230482862">
-                            <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6775591514230482863">
-                              <link role="variable" targetNodeId="6775591514230482824" resolveInfo="current" />
-                            </node>
-                          </node>
-                        </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6935810692634799411">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634799412">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6935810692634799413">
+                        <link role="variableDeclaration" targetNodeId="6775591514230482814" resolveInfo="result" />
                       </node>
-                    </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6775591514230482864">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6775591514230482865">
-                        <link role="variableDeclaration" targetNodeId="6775591514230482820" resolveInfo="prevWasStatic" />
+                      <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="6935810692634799414">
+                        <node role="argument" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6935810692634799415">
+                          <link role="variable" targetNodeId="6775591514230482824" resolveInfo="current" />
+                        </node>
                       </node>
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6775591514230482866">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6775591514230482867">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230482868">
-                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6775591514230482869">
-                          <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6775591514230482870">
-                            <property name="value" value="true" />
-                          </node>
-                          <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6775591514230482871">
-                            <link role="variableDeclaration" targetNodeId="6775591514230482820" resolveInfo="prevWasStatic" />
-                          </node>
-                        </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6935810692634799462">
+                        <property name="value" value="according to Java rules static inner classifiers can be only on the second level so we can" />
                       </node>
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="6775591514230482872" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="6935810692634799478">
+                        <property name="value" value="safely break here" />
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.BreakStatement" id="6935810692634799446" />
                     </node>
                     <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6775591514230482873">
                       <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6775591514230482874">
@@ -2383,16 +2361,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230482876">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6775591514230482877">
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6775591514230482878">
-                  <property name="value" value="false" />
-                </node>
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6775591514230482879">
-                  <link role="variableDeclaration" targetNodeId="6775591514230482820" resolveInfo="prevWasStatic" />
                 </node>
               </node>
             </node>

@@ -117,7 +117,6 @@ public class Classifier_Behavior {
 
   public static List<SNode> getNonStaticContextClassifiers_6775591514230482802(SNode context) {
     List<SNode> result = new ArrayList<SNode>();
-    boolean prevWasStatic = false;
     for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         SNode classifier = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
@@ -126,15 +125,13 @@ public class Classifier_Behavior {
         }
         ListSequence.fromList(result).addElement(classifier);
       } else {
-        if (!(prevWasStatic)) {
-          ListSequence.fromList(result).addElement(current);
-        }
+        ListSequence.fromList(result).addElement(current);
         if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
-          prevWasStatic = true;
-          continue;
+          // according to Java rules static inner classifiers can be only on the second level so we can
+          // safely break here
+          break;
         }
       }
-      prevWasStatic = false;
     }
     return result;
   }
