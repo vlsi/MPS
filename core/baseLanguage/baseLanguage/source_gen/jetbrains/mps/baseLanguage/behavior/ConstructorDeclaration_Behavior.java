@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -37,8 +36,12 @@ public class ConstructorDeclaration_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(thisNode, null);
+  }
+
+  public static String call_getPresentationInContext_983626226385657373(SNode thisNode, SNode context) {
     StringBuilder result = new StringBuilder();
-    result.append(SPropertyOperations.getString(thisNode, "nestedName"));
+    result.append(Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"), context));
     result.append("(");
     boolean first = true;
     for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {

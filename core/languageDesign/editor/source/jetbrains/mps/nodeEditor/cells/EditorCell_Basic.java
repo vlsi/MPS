@@ -34,6 +34,7 @@ import jetbrains.mps.util.ListMap;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.kernel.model.SModelUtil;
 
 import javax.swing.JComponent;
 import java.awt.*;
@@ -244,7 +245,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public SNode getSNodeWRTReference() {
     SNode node = getSNode();
     SNode operationNode = null;
-    LinkDeclaration linkDeclaration = getLinkDeclaration();
+    LinkDeclaration linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(getLinkDeclaration());
     if (linkDeclaration != null && linkDeclaration.getMetaClass() == LinkMetaclass.reference) {
       SNode referentNode = node.getReferent(linkDeclaration.getRole());
       if (referentNode != null) {

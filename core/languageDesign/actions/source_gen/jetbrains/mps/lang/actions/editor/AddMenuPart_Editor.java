@@ -36,7 +36,6 @@ public class AddMenuPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_5863_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5863_0");
-    editorCell.setUsesBraces(true);
     editorCell.addEditorCell(this.createCollection_5863_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_5863_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5863_1(editorContext, node));

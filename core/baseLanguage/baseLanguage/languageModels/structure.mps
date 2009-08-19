@@ -2713,6 +2713,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1212690175805">
       <link role="intfc" targetNodeId="1204053956946" resolveInfo="IMethodCall" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="983626226385868620">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1214918800624">
     <property name="name" value="PostfixIncrementExpression" />

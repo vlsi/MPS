@@ -11,22 +11,36 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.constraints.VisibleClassConstructorsScope;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class ClassCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,7 +50,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9368_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9368_0");
-    editorCell.addEditorCell(this.createRefCell_9368_0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_9368_0(editorContext, node));
     if (renderingCondition9368_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9368_1(editorContext, node));
     }
@@ -94,6 +108,33 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createReadOnlyModelAccessor_9368_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        if ((SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null)) {
+          return "?no constructor?";
+        }
+        return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), node);
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ClassCreator_Editor.ClassCreator_generic_cellMenu0()}));
+    editorCell.setCellId("ReadOnlyModelAccessor_9368_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "constructorDeclaration");
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    }
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_9368_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ClassCreator_Editor.typeParameterListHandler_9368_0(node, "typeParameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -102,64 +143,8 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_9368_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("constructorDeclaration");
-    provider.setNoTargetText("<no constructor declaration>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassCreator_Editor._Inline9368_0());
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private static boolean renderingCondition9368_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "typeParameter") > 0;
-  }
-
-  public static class _Inline9368_0 extends AbstractCellProvider {
-    public _Inline9368_0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9368_0(editorContext, node);
-    }
-
-    private EditorCell createProperty_9368_0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("resolveInfo");
-      provider.setNoTargetText("<no resolveInfo>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_resolveInfo");
-      BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
-      {
-        Style style = editorCell.getStyle();
-        style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
-      }
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 
   private static class typeParameterListHandler_9368_0 extends RefNodeListHandler {
@@ -208,6 +193,48 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
         editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
         return editorCell;
       }
+    }
+  }
+
+  public static class ClassCreator_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+    public ClassCreator_generic_cellMenu0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      List<SNode> constructors = (List<SNode>)new VisibleClassConstructorsScope(SNodeOperations.getModel(node), scope).getNodes();
+      List<Pair<SNode, SNode>> result = ListSequence.fromList(new ArrayList<Pair<SNode, SNode>>());
+      for (SNode c : constructors) {
+        ListSequence.fromList(result).addElement(new Pair<SNode, SNode>(c, node));
+      }
+      return result;
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((Pair<SNode, SNode>)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(Pair<SNode, SNode> parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SLinkOperations.setTarget(node, "baseMethodDeclaration", parameterObject.o1, false);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((Pair<SNode, SNode>)parameterObject);
+    }
+
+    public String getMatchingText_internal(Pair<SNode, SNode> parameterObject) {
+      return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(parameterObject.o1, parameterObject.o2);
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((Pair<SNode, SNode>)parameterObject);
+    }
+
+    public String getDescriptionText_internal(Pair<SNode, SNode> parameterObject) {
+      return NodePresentationUtil.descriptionText(parameterObject.o1);
     }
   }
 }
