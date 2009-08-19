@@ -17932,5 +17932,43 @@
       <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="6935810692634462740">
+    <property name="name" value="check_NonStaticInnerClassCreation" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6935810692634462741">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="6935810692634467390">
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6935810692634467402">
+          <property name="value" value="Can't instantiate here" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634467403">
+          <link role="applicableNode" targetNodeId="6935810692634462743" resolveInfo="classCreator" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634467394">
+          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634467395">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634467396">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634467397">
+                <link role="applicableNode" targetNodeId="6935810692634462743" resolveInfo="classCreator" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6935810692634467398">
+                <link role="baseMethodDeclaration" targetNodeId="37.8008512149545154471" resolveInfo="getInstanceType" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6935810692634467399">
+              <link role="link" targetNodeId="1.1107535924139" />
+            </node>
+          </node>
+          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6935810692634467400">
+            <link role="baseMethodDeclaration" targetNodeId="37.6935810692634457550" resolveInfo="canInstantiateIn" />
+            <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634467401">
+              <link role="applicableNode" targetNodeId="6935810692634462743" resolveInfo="classCreator" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6935810692634462743">
+      <property name="name" value="classCreator" />
+      <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
+    </node>
+  </node>
 </model>
 

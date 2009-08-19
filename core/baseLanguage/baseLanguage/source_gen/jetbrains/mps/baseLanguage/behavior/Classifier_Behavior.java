@@ -95,6 +95,18 @@ public class Classifier_Behavior {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
+  public static boolean call_canInstantiateIn_6935810692634457550(SNode thisNode, SNode context) {
+    List<SNode> contextClassifiers = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(context);
+    List<SNode> required = Classifier_Behavior.getNonStaticContextClassifiers_6775591514230482802(thisNode);
+    ListSequence.fromList(required).removeElement(thisNode);
+    for (SNode req : required) {
+      if (!(ListSequence.fromList(contextClassifiers).contains(req))) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static boolean call_hasStaticMemebers_1214840444586(SNode thisNode) {
     return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_hasStaticMemebers_1214840444586", PARAMETERS_1214840444586);
   }

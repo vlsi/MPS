@@ -125,6 +125,13 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6935810692634403410">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6935810692634403411">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6935810692634407034">
+              <link role="baseMethodDeclaration" targetNodeId="4539702814068031409" resolveInfo="A2.B.C" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4539702814068031388">
@@ -138,6 +145,7 @@
       </node>
       <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4539702814068031407">
         <property name="name" value="C" />
+        <property name="nonStatic" value="true" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4539702814068031408" />
         <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4539702814068031409">
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4539702814068031410" />
@@ -150,6 +158,9 @@
                   <link role="classifier" targetNodeId="4539702814068031407" resolveInfo="C" />
                 </node>
               </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6935810692634674710">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6935810692634674711" />
             </node>
           </node>
         </node>
