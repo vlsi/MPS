@@ -356,5 +356,88 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="7080278351417190887">
+    <property name="name" value="AddRemoveMessage" />
+    <property name="isAvailableInChildNodes" value="true" />
+    <link role="forConcept" targetNodeId="1.1172075514136" resolveInfo="MessageHolder" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="7080278351417190888">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417190889">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7080278351417190912">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="7080278351417190913">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190931">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190926">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190921">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="7080278351417190917" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190925">
+                    <link role="link" targetNodeId="1.1172075534298" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190930">
+                  <link role="link" targetNodeId="1.1172073511101" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="7080278351417190936" />
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7080278351417190937">
+              <property name="value" value="Add message" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7080278351417190938">
+              <property name="value" value="Remove message" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="7080278351417190890">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417190891">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7080278351417190939">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190953">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190948">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190943">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="7080278351417190942" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190947">
+                  <link role="link" targetNodeId="1.1172075534298" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190952">
+                <link role="link" targetNodeId="1.1172073511101" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="7080278351417190957" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417190941">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7080278351417190958">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190965">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190960">
+                  <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="7080278351417190959" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190964">
+                    <link role="link" targetNodeId="1.1172075534298" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="7080278351417190969" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="7080278351417190971">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417190972">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7080278351417190973">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190980">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417190975">
+                    <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="7080278351417190974" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417190979">
+                      <link role="link" targetNodeId="1.1172075534298" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="7080278351417190984">
+                    <node role="linkTarget" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7080278351417190987" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

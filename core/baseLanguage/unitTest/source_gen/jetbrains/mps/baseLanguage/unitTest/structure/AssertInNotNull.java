@@ -9,12 +9,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssertInNotNull extends Statement {
+public class AssertInNotNull extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPRESSION = "expression";
+  public static final String MESSAGE = "message";
 
   public AssertInNotNull(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AssertInNotNull.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AssertInNotNull.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AssertInNotNull.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AssertInNotNull.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AssertInNotNull.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AssertInNotNull.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getExpression() {
@@ -23,6 +51,14 @@ public class AssertInNotNull extends Statement {
 
   public void setExpression(Expression node) {
     super.setChild(AssertInNotNull.EXPRESSION, node);
+  }
+
+  public Message getMessage() {
+    return (Message)this.getChild(Message.class, AssertInNotNull.MESSAGE);
+  }
+
+  public void setMessage(Message node) {
+    super.setChild(AssertInNotNull.MESSAGE, node);
   }
 
   public static AssertInNotNull newInstance(SModel sm, boolean init) {

@@ -79,6 +79,9 @@
       <property name="value" value="assert equals" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417151317">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171981022339">
     <property name="name" value="AssertTrue" />
@@ -93,6 +96,9 @@
       <property name="value" value="assert true" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417156124">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171983834376">
     <property name="name" value="AssertFalse" />
@@ -106,6 +112,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1171983849111">
       <property name="value" value="assert false" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417153306">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1171985735491">
@@ -126,6 +135,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1171985744679">
       <property name="value" value="assert same (&quot;==&quot;)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417154761">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172017222794">
@@ -151,6 +163,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1172028196636">
       <property name="value" value="assert is null" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417153310">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172069869612">
@@ -182,6 +197,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1172073511101">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="message" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1172076030111">
@@ -228,6 +244,9 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7080278351417106680">
       <property name="value" value="assert is not null" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="7080278351417153308">
+      <link role="intfc" targetNodeId="1172075514136" resolveInfo="MessageHolder" />
     </node>
   </node>
 </model>

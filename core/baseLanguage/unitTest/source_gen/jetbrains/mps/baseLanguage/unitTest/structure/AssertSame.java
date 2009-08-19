@@ -9,13 +9,41 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssertSame extends Statement {
+public class AssertSame extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String EXPECTED = "expected";
   public static final String ACTUAL = "actual";
+  public static final String MESSAGE = "message";
 
   public AssertSame(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AssertSame.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AssertSame.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AssertSame.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AssertSame.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AssertSame.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AssertSame.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getExpected() {
@@ -32,6 +60,14 @@ public class AssertSame extends Statement {
 
   public void setActual(Expression node) {
     super.setChild(AssertSame.ACTUAL, node);
+  }
+
+  public Message getMessage() {
+    return (Message)this.getChild(Message.class, AssertSame.MESSAGE);
+  }
+
+  public void setMessage(Message node) {
+    super.setChild(AssertSame.MESSAGE, node);
   }
 
   public static AssertSame newInstance(SModel sm, boolean init) {

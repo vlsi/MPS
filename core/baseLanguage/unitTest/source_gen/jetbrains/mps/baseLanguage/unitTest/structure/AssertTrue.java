@@ -9,12 +9,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AssertTrue extends Statement {
+public class AssertTrue extends Statement implements MessageHolder {
   public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONDITION = "condition";
+  public static final String MESSAGE = "message";
 
   public AssertTrue(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AssertTrue.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AssertTrue.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AssertTrue.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AssertTrue.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AssertTrue.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AssertTrue.VIRTUAL_PACKAGE, value);
   }
 
   public Expression getCondition() {
@@ -23,6 +51,14 @@ public class AssertTrue extends Statement {
 
   public void setCondition(Expression node) {
     super.setChild(AssertTrue.CONDITION, node);
+  }
+
+  public Message getMessage() {
+    return (Message)this.getChild(Message.class, AssertTrue.MESSAGE);
+  }
+
+  public void setMessage(Message node) {
+    super.setChild(AssertTrue.MESSAGE, node);
   }
 
   public static AssertTrue newInstance(SModel sm, boolean init) {

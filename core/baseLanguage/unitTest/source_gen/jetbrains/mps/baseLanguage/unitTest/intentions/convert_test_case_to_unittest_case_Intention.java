@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class convert_test_case_to_unittest_case_Intention extends BaseIntention {
-
   public convert_test_case_to_unittest_case_Intention() {
   }
 
@@ -55,15 +54,14 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
     if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)) {
       SLinkOperations.setTarget(SLinkOperations.getTarget(testCase, "superclass", true), "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), false);
     }
-    for(SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
+    for (SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
       if (SPropertyOperations.getString(m, "name").startsWith("test")) {
         SLinkOperations.addChild(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", new _Quotations.QuotationClass_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
-      } else
-      {
+      } else {
         SLinkOperations.addChild(testCase, "method", SNodeOperations.detachNode(m));
       }
     }
-    for(SNode f : ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true))) {
+    for (SNode f : ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true))) {
       SLinkOperations.addChild(testCase, "staticField", SNodeOperations.detachNode(f));
     }
   }
@@ -71,5 +69,4 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions";
   }
-
 }

@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -27,7 +28,14 @@ public class AssertIsNull_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7317_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7317_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7317_2(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7317_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7317_1(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_7317_0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new MessageComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
