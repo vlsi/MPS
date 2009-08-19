@@ -17970,5 +17970,66 @@
       <link role="concept" targetNodeId="1.1212685548494" resolveInfo="ClassCreator" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="6935810692634693777">
+    <property name="package" value="classifier" />
+    <property name="name" value="check_InnerClassesCantHaveStaticInnerClasses" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6935810692634693778">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6935810692634700297">
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6935810692634700322">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634700341">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="6935810692634700339">
+              <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634700326">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634700325">
+                  <link role="applicableNode" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6935810692634700330" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6935810692634700345">
+              <link role="baseMethodDeclaration" targetNodeId="37.521412098689998677" resolveInfo="isInner" />
+            </node>
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="6935810692634700308">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634700303">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634700302">
+                <link role="applicableNode" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6935810692634700307">
+                <link role="baseMethodDeclaration" targetNodeId="37.521412098689998668" resolveInfo="isStatic" />
+              </node>
+            </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634700317">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6935810692634700312">
+                <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634700311">
+                  <link role="applicableNode" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" id="6935810692634700316" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="6935810692634700335">
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="6935810692634700338">
+                  <link role="conceptDeclaration" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6935810692634700299">
+          <node role="statement" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" id="6935810692634700346">
+            <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6935810692634700349">
+              <property name="value" value="Inner classes can't have static declarations" />
+            </node>
+            <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6935810692634700350">
+              <link role="applicableNode" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6935810692634693780">
+      <property name="name" value="classConcept" />
+      <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    </node>
+  </node>
 </model>
 
