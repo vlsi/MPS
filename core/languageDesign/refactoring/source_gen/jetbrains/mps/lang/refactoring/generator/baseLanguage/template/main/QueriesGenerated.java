@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.refactoring.behavior.RequiredAdditionalArgument_Behavior;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1189763354452(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference");
   }
@@ -115,8 +114,7 @@ public class QueriesGenerated {
       if (coercedNode_0 != null) {
         SNode abstractConceptDeclaration = SNodeOperations.cast(pattern_0.PatternVar0, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
         return SNodeOperations.getModel(abstractConceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
-      } else
-      {
+      } else {
       }
     }
     return null;
@@ -458,7 +456,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1197992301257(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
-    for(SNode argument : requiredUserEnteredArguments) {
+    for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
         ListSequence.fromList(result).addElement(argument);
       }
@@ -469,7 +467,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1198600029014(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
-    for(SNode argument : requiredUserEnteredArguments) {
+    for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
         ListSequence.fromList(result).addElement(argument);
       }
@@ -480,7 +478,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1198673830801(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_context.getNode(), "arguments", true);
-    for(SNode argument : requiredUserEnteredArguments) {
+    for (SNode argument : requiredUserEnteredArguments) {
       if ((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
         ListSequence.fromList(result).addElement(argument);
       }
@@ -490,12 +488,12 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1201177824403(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
+    for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "arguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
     }
-    for(SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
+    for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "internalArguments", true)) {
       if (RequiredAdditionalArgument_Behavior.call_isTransient_1213877343864(argument)) {
         ListSequence.fromList(result).addElement(argument);
       }
@@ -510,5 +508,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7110754463748604291(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "arguments", true);
   }
-
 }

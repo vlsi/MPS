@@ -22,5 +22,4 @@ public class MigrationScriptPart_node extends ConceptFunctionParameter {
   public static MigrationScriptPart_node newInstance(SModel sm) {
     return MigrationScriptPart_node.newInstance(sm, false);
   }
-
 }

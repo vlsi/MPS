@@ -22,5 +22,4 @@ public class UpdateModelByDefaultOperation extends Statement {
   public static UpdateModelByDefaultOperation newInstance(SModel sm) {
     return UpdateModelByDefaultOperation.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
     super.setChild(MoveNodesToNodeExpression.ROLE_IN_TARGET, node);
   }
 
-
   public static MoveNodesToNodeExpression newInstance(SModel sm, boolean init) {
     return (MoveNodesToNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
   public static MoveNodesToNodeExpression newInstance(SModel sm) {
     return MoveNodesToNodeExpression.newInstance(sm, false);
   }
-
 }

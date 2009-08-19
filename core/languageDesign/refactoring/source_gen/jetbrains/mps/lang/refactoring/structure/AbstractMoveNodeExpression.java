@@ -21,5 +21,4 @@ public class AbstractMoveNodeExpression extends AbstractMoveExpression {
   public static AbstractMoveNodeExpression newInstance(SModel sm) {
     return AbstractMoveNodeExpression.newInstance(sm, false);
   }
-
 }

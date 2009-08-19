@@ -25,7 +25,6 @@ public class DeleteFeatureOperation extends Statement {
     super.setChild(DeleteFeatureOperation.FEATURE, node);
   }
 
-
   public static DeleteFeatureOperation newInstance(SModel sm, boolean init) {
     return (DeleteFeatureOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class DeleteFeatureOperation extends Statement {
   public static DeleteFeatureOperation newInstance(SModel sm) {
     return DeleteFeatureOperation.newInstance(sm, false);
   }
-
 }

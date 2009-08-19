@@ -57,17 +57,16 @@ public class ScriptsGlobally_ActionGroup extends GeneratedActionGroup {
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
-    for(Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
+    for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }
   }
 
-  public void addPlace(ActionPlace place, @Nullable() Condition<BaseAction> cond) {
+  public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
 
   public void adjust() {
     this.insertGroupIntoAnother(Tools_ActionGroup.ID, null);
   }
-
 }

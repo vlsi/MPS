@@ -24,7 +24,6 @@ public class RequiredAdditionalArgumentReference extends Expression {
     super.setReferent(RequiredAdditionalArgumentReference.ARGUMENT, node);
   }
 
-
   public static RequiredAdditionalArgumentReference newInstance(SModel sm, boolean init) {
     return (RequiredAdditionalArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class RequiredAdditionalArgumentReference extends Expression {
   public static RequiredAdditionalArgumentReference newInstance(SModel sm) {
     return RequiredAdditionalArgumentReference.newInstance(sm, false);
   }
-
 }

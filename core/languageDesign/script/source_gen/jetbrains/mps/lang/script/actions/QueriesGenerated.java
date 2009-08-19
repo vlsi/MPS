@@ -8,9 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.VersionUtil;
 
 public class QueriesGenerated {
-
   public static void nodeFactory_NodeSetup_MigrationScript_1209061300939(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "migrationFromBuild", VersionUtil.getVersionString());
   }
-
 }

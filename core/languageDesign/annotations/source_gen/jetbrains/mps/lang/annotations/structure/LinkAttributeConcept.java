@@ -23,7 +23,6 @@ public class LinkAttributeConcept extends AttributeConcept {
     this.setProperty(LinkAttributeConcept.LINK_ROLE, value);
   }
 
-
   public static LinkAttributeConcept newInstance(SModel sm, boolean init) {
     return (LinkAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.LinkAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class LinkAttributeConcept extends AttributeConcept {
   public static LinkAttributeConcept newInstance(SModel sm) {
     return LinkAttributeConcept.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class NodesToOpenClause extends ConceptFunction {
   public static NodesToOpenClause newInstance(SModel sm) {
     return NodesToOpenClause.newInstance(sm, false);
   }
-
 }

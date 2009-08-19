@@ -22,5 +22,4 @@ public class InitialValueClause extends ConceptFunction {
   public static InitialValueClause newInstance(SModel sm) {
     return InitialValueClause.newInstance(sm, false);
   }
-
 }

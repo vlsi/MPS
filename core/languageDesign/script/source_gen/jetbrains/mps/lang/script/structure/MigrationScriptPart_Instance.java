@@ -61,7 +61,6 @@ public class MigrationScriptPart_Instance extends BaseConcept {
     super.setChild(MigrationScriptPart_Instance.AFFECTED_INSTANCE_UPDATER, node);
   }
 
-
   public static MigrationScriptPart_Instance newInstance(SModel sm, boolean init) {
     return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   public static MigrationScriptPart_Instance newInstance(SModel sm) {
     return MigrationScriptPart_Instance.newInstance(sm, false);
   }
-
 }

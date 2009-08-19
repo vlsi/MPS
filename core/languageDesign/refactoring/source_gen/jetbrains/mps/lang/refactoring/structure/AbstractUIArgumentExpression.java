@@ -22,5 +22,4 @@ public class AbstractUIArgumentExpression extends Expression {
   public static AbstractUIArgumentExpression newInstance(SModel sm) {
     return AbstractUIArgumentExpression.newInstance(sm, false);
   }
-
 }

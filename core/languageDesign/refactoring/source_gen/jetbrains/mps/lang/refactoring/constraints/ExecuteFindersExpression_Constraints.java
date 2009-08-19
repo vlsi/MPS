@@ -8,15 +8,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExecuteFindersExpression_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     SNode function = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     if (function == null) {
       return false;
-    } else
-    {
+    } else {
       return SNodeOperations.getAncestor(function, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false) != null;
     }
   }
-
 }

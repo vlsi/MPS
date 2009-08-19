@@ -56,7 +56,6 @@ public class ExecuteFindersExpression extends Expression {
     this.insertChild(prev, ExecuteFindersExpression.FINDERS, node);
   }
 
-
   public static ExecuteFindersExpression newInstance(SModel sm, boolean init) {
     return (ExecuteFindersExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -64,5 +63,4 @@ public class ExecuteFindersExpression extends Expression {
   public static ExecuteFindersExpression newInstance(SModel sm) {
     return ExecuteFindersExpression.newInstance(sm, false);
   }
-
 }

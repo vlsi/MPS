@@ -69,5 +69,4 @@ public enum RefactoringTargetKind_Enum {
     }
     return RefactoringTargetKind_Enum.getDefault();
   }
-
 }

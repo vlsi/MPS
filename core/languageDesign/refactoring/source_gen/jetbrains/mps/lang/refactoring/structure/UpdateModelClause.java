@@ -22,5 +22,4 @@ public class UpdateModelClause extends ConceptFunction {
   public static UpdateModelClause newInstance(SModel sm) {
     return UpdateModelClause.newInstance(sm, false);
   }
-
 }

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RequiredAdditionalArgumentReference_argument_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public RequiredAdditionalArgumentReference_argument_ReferentConstraint() {
   }
 
@@ -34,5 +33,4 @@ public class RequiredAdditionalArgumentReference_argument_ReferentConstraint ext
     ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(refactoring, "internalArguments", true)));
     return nodes;
   }
-
 }

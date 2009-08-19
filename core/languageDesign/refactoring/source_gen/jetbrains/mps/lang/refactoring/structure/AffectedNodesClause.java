@@ -22,5 +22,4 @@ public class AffectedNodesClause extends ConceptFunction {
   public static AffectedNodesClause newInstance(SModel sm) {
     return AffectedNodesClause.newInstance(sm, false);
   }
-
 }

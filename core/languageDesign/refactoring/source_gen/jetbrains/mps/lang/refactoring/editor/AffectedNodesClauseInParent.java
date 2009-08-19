@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AffectedNodesClauseInParent extends AbstractCellProvider {
-
   public AffectedNodesClauseInParent(SNode node) {
     super(node);
   }
@@ -164,7 +163,6 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition5723_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "refactorImmediatelyIfNoUsages");
   }
@@ -172,5 +170,4 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   private static boolean renderingCondition5723_1(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
   }
-
 }

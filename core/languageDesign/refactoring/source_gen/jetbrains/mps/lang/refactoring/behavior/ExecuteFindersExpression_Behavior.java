@@ -5,8 +5,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ExecuteFindersExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

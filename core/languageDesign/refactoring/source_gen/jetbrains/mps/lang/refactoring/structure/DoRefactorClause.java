@@ -22,5 +22,4 @@ public class DoRefactorClause extends ConceptFunction {
   public static DoRefactorClause newInstance(SModel sm) {
     return DoRefactorClause.newInstance(sm, false);
   }
-
 }

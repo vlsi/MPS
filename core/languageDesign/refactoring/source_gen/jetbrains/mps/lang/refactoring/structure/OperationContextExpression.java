@@ -21,5 +21,4 @@ public class OperationContextExpression extends AbstractUIArgumentExpression {
   public static OperationContextExpression newInstance(SModel sm) {
     return OperationContextExpression.newInstance(sm, false);
   }
-
 }

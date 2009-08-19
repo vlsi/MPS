@@ -25,7 +25,6 @@ public class UpdateModelProcedure extends Statement {
     super.setChild(UpdateModelProcedure.ARGUMENT, node);
   }
 
-
   public static UpdateModelProcedure newInstance(SModel sm, boolean init) {
     return (UpdateModelProcedure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class UpdateModelProcedure extends Statement {
   public static UpdateModelProcedure newInstance(SModel sm) {
     return UpdateModelProcedure.newInstance(sm, false);
   }
-
 }

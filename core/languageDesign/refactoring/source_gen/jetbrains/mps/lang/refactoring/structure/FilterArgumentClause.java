@@ -22,5 +22,4 @@ public class FilterArgumentClause extends ConceptFunction {
   public static FilterArgumentClause newInstance(SModel sm) {
     return FilterArgumentClause.newInstance(sm, false);
   }
-
 }

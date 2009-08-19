@@ -12,7 +12,6 @@ import java.util.Comparator;
 import jetbrains.mps.workbench.action.BaseGroup;
 
 public class ScriptsMenuBuilder {
-
   private boolean applyToSelection;
   private List<Language> allLanguages;
   private List<MigrationScript> allScripts;
@@ -20,8 +19,7 @@ public class ScriptsMenuBuilder {
   public ScriptsMenuBuilder(boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
     this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), GlobalScope.getInstance().getVisibleLanguages());
-    ListSequence.fromList(this.allLanguages).sort(new Comparator <Language>() {
-
+    ListSequence.fromList(this.allLanguages).sort(new Comparator<Language>() {
       public int compare(Language l1, Language l2) {
         return l1.getNamespace().compareTo(l2.getNamespace());
       }
@@ -46,7 +44,7 @@ public class ScriptsMenuBuilder {
   public BaseGroup create_ByLanguagePopup() {
     BaseGroup byLanguageGroup = new BaseGroup("By Language");
     byLanguageGroup.setPopup(true);
-    for(Language language : ListSequence.fromList(this.allLanguages)) {
+    for (Language language : ListSequence.fromList(this.allLanguages)) {
       ScriptsActionGroupHelper.populateByLanguageGroup(language, byLanguageGroup, this.applyToSelection);
     }
     return byLanguageGroup;
@@ -55,5 +53,4 @@ public class ScriptsMenuBuilder {
   public List<MigrationScript> getAllScripts() {
     return this.allScripts;
   }
-
 }

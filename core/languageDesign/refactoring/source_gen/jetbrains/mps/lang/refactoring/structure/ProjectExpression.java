@@ -21,5 +21,4 @@ public class ProjectExpression extends AbstractUIArgumentExpression {
   public static ProjectExpression newInstance(SModel sm) {
     return ProjectExpression.newInstance(sm, false);
   }
-
 }

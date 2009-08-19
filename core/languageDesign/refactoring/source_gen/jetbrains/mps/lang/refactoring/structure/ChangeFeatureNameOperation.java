@@ -43,7 +43,6 @@ public class ChangeFeatureNameOperation extends Statement {
     super.setChild(ChangeFeatureNameOperation.NEW_FEATURE_NAME, node);
   }
 
-
   public static ChangeFeatureNameOperation newInstance(SModel sm, boolean init) {
     return (ChangeFeatureNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class ChangeFeatureNameOperation extends Statement {
   public static ChangeFeatureNameOperation newInstance(SModel sm) {
     return ChangeFeatureNameOperation.newInstance(sm, false);
   }
-
 }

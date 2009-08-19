@@ -35,7 +35,6 @@ public class AttributeConcept extends BaseConcept {
     super.setReferent(AttributeConcept.ATTRIBUTED_NODE, node);
   }
 
-
   public static AttributeConcept newInstance(SModel sm, boolean init) {
     return (AttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.AttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -43,5 +42,4 @@ public class AttributeConcept extends BaseConcept {
   public static AttributeConcept newInstance(SModel sm) {
     return AttributeConcept.newInstance(sm, false);
   }
-
 }

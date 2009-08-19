@@ -21,5 +21,4 @@ public class ScopeExpression extends AbstractUIArgumentExpression {
   public static ScopeExpression newInstance(SModel sm) {
     return ScopeExpression.newInstance(sm, false);
   }
-
 }

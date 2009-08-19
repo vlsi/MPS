@@ -21,5 +21,4 @@ public class MoveNodeToModelExpression extends AbstractMoveNodeExpression {
   public static MoveNodeToModelExpression newInstance(SModel sm) {
     return MoveNodeToModelExpression.newInstance(sm, false);
   }
-
 }

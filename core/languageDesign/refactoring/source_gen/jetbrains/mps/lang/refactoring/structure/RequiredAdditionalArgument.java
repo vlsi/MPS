@@ -71,7 +71,6 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
     super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
   }
 
-
   public static RequiredAdditionalArgument newInstance(SModel sm, boolean init) {
     return (RequiredAdditionalArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   public static RequiredAdditionalArgument newInstance(SModel sm) {
     return RequiredAdditionalArgument.newInstance(sm, false);
   }
-
 }

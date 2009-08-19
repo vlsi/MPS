@@ -21,5 +21,4 @@ public class NodeExpression extends AbstractUIArgumentExpression {
   public static NodeExpression newInstance(SModel sm) {
     return NodeExpression.newInstance(sm, false);
   }
-
 }

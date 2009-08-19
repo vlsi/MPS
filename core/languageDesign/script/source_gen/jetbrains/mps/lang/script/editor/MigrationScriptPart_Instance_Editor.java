@@ -21,7 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7916_0(editorContext, node);
   }
@@ -323,7 +322,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline7916_0 extends AbstractCellProvider {
-
     public _Inline7916_0() {
       super();
     }
@@ -358,7 +356,5 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

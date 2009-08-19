@@ -23,7 +23,6 @@ public class PropertyAttributeConcept extends AttributeConcept {
     this.setProperty(PropertyAttributeConcept.PROPERTY_NAME, value);
   }
 
-
   public static PropertyAttributeConcept newInstance(SModel sm, boolean init) {
     return (PropertyAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class PropertyAttributeConcept extends AttributeConcept {
   public static PropertyAttributeConcept newInstance(SModel sm) {
     return PropertyAttributeConcept.newInstance(sm, false);
   }
-
 }

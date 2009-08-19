@@ -22,5 +22,4 @@ public class MigrationScriptPart_Instance_Predicate extends ConceptFunction {
   public static MigrationScriptPart_Instance_Predicate newInstance(SModel sm) {
     return MigrationScriptPart_Instance_Predicate.newInstance(sm, false);
   }
-
 }

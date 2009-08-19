@@ -22,5 +22,4 @@ public class ConceptFunctionParameter_UserArgument extends ConceptFunctionParame
   public static ConceptFunctionParameter_UserArgument newInstance(SModel sm) {
     return ConceptFunctionParameter_UserArgument.newInstance(sm, false);
   }
-
 }

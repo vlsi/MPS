@@ -8,10 +8,8 @@ import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 
 public class RefactoringHelper {
-
   public static BaseAction getActionForRefactoring(ILoggableRefactoring refactoring) {
     BaseAction action = ((BaseAction)ActionFactory.getInstance().acquireRegisteredAction(GenericRefactoringAction.class.getName(), "jetbrains.mps.ide", refactoring));
     return action;
   }
-
 }

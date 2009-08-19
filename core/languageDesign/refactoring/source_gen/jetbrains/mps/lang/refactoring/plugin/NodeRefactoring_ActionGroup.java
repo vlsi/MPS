@@ -20,7 +20,7 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
-      for(ILoggableRefactoring refactoring : Sequence.fromIterable(RefactoringUtil.getRefactorings(RefactoringTarget.NODE).values())) {
+      for (ILoggableRefactoring refactoring : Sequence.fromIterable(RefactoringUtil.getRefactorings(RefactoringTarget.NODE).values())) {
         NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
       }
     } catch (Throwable t) {
@@ -32,5 +32,4 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, null);
   }
-
 }

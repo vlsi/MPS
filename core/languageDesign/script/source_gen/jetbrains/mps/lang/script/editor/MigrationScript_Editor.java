@@ -37,7 +37,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.VersionUtil;
 
 public class MigrationScript_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6813_0(editorContext, node);
   }
@@ -275,7 +274,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   }
 
   private static class partListHandler_6813_0 extends RefNodeListHandler {
-
     public partListHandler_6813_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -315,31 +313,27 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   public static class MigrationScript_category_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public MigrationScript_category_cellMenu0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector <SNode, String>() {
-
+      return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "category");
         }
       }).distinct().toListSequence();
     }
+  }
 
-}
   public static class MigrationScript_migrationFromBuild_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-
     public MigrationScript_migrationFromBuild_cellMenu0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> list = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector <SNode, String>() {
-
+      List<String> list = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.script.structure.MigrationScript")).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SPropertyOperations.getString(it, "migrationFromBuild");
         }
@@ -347,7 +341,5 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       ListSequence.fromList(list).addElement(VersionUtil.getVersionString());
       return ListSequence.fromList(list).distinct().toListSequence();
     }
-
-}
-
+  }
 }

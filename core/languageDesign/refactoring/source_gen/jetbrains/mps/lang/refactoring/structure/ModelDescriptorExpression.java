@@ -21,5 +21,4 @@ public class ModelDescriptorExpression extends AbstractUIArgumentExpression {
   public static ModelDescriptorExpression newInstance(SModel sm) {
     return ModelDescriptorExpression.newInstance(sm, false);
   }
-
 }

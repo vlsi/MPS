@@ -38,12 +38,12 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -52,7 +52,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -74,7 +74,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IScope scope = AbstractMigrationScriptHelper.createMigrationScope(RunMigrationScripts_Action.this.models, RunMigrationScripts_Action.this.modules, RunMigrationScripts_Action.this.selectionOnly);
       if (scope.getModelDescriptors().isEmpty()) {
@@ -96,7 +96,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(RunMigrationScripts_Action.class.getName());
@@ -108,9 +108,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     return res.toString();
   }
 
-
   public static String scripts_State(List<MigrationScript> object) {
     return "";
   }
-
 }

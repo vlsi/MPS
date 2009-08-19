@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ChooseComponentClause_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -15,5 +14,4 @@ public class ChooseComponentClause_Behavior {
     SNode elementType = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"), "argumentType", true);
     return new _Quotations.QuotationClass_0().createNode(elementType);
   }
-
 }

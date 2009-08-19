@@ -22,5 +22,4 @@ public class GetModelsToGenerateClause extends ConceptFunction {
   public static GetModelsToGenerateClause newInstance(SModel sm) {
     return GetModelsToGenerateClause.newInstance(sm, false);
   }
-
 }

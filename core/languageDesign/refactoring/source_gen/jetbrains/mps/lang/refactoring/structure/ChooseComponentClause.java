@@ -22,5 +22,4 @@ public class ChooseComponentClause extends ConceptFunction {
   public static ChooseComponentClause newInstance(SModel sm) {
     return ChooseComponentClause.newInstance(sm, false);
   }
-
 }

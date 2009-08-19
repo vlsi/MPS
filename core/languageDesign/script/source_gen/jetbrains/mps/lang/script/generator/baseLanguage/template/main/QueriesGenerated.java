@@ -15,7 +15,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
   }
@@ -64,5 +63,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1177464931683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "part", true);
   }
-
 }

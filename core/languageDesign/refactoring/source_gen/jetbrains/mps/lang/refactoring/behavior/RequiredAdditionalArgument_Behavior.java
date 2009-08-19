@@ -8,7 +8,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RequiredAdditionalArgument_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,12 +17,11 @@ public class RequiredAdditionalArgument_Behavior {
       return true;
     }
     List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelClause", true), "jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", false, new String[]{});
-    for(SNode reference : references) {
+    for (SNode reference : references) {
       if (SLinkOperations.getTarget(reference, "argument", false) == thisNode) {
         return false;
       }
     }
     return true;
   }
-
 }

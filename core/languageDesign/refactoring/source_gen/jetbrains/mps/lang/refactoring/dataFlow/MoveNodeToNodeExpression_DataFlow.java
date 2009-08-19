@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MoveNodeToNodeExpression_DataFlow extends DataFlowBuilder {
-
   public MoveNodeToNodeExpression_DataFlow() {
   }
 
@@ -18,5 +17,4 @@ public class MoveNodeToNodeExpression_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "destination", true));
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "roleInTarget", true));
   }
-
 }

@@ -22,5 +22,4 @@ public class MigrationScriptPart_Instance_Updater extends ConceptFunction {
   public static MigrationScriptPart_Instance_Updater newInstance(SModel sm) {
     return MigrationScriptPart_Instance_Updater.newInstance(sm, false);
   }
-
 }

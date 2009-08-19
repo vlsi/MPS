@@ -22,5 +22,4 @@ public class IsApplicableToModelClause extends ConceptFunction {
   public static IsApplicableToModelClause newInstance(SModel sm) {
     return IsApplicableToModelClause.newInstance(sm, false);
   }
-
 }

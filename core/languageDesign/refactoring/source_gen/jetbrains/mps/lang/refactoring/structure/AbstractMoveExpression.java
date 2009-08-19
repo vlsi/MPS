@@ -33,7 +33,6 @@ public class AbstractMoveExpression extends Expression {
     super.setChild(AbstractMoveExpression.DESTINATION, node);
   }
 
-
   public static AbstractMoveExpression newInstance(SModel sm, boolean init) {
     return (AbstractMoveExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class AbstractMoveExpression extends Expression {
   public static AbstractMoveExpression newInstance(SModel sm) {
     return AbstractMoveExpression.newInstance(sm, false);
   }
-
 }

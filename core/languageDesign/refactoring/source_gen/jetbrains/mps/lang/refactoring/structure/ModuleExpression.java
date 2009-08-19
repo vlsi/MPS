@@ -21,5 +21,4 @@ public class ModuleExpression extends AbstractUIArgumentExpression {
   public static ModuleExpression newInstance(SModel sm) {
     return ModuleExpression.newInstance(sm, false);
   }
-
 }
