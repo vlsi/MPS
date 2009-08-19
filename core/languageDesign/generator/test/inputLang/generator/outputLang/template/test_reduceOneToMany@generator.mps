@@ -140,6 +140,10 @@
         <property name="text" value="child #2" />
         <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1391450457158185609" />
       </node>
+      <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1892993302480068636">
+        <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="1892993302480068637" />
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IncludeMacro" id="1892993302480068639" />
+      </node>
     </node>
   </node>
 </model>

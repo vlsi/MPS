@@ -4243,7 +4243,7 @@
             </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1194566535729">
-            <property name="noTargetText" value="&lt;current source node&gt;" />
+            <property name="noTargetText" value="&lt;current input node&gt;" />
             <link role="relationDeclaration" targetNodeId="1.1194565823413" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1214310996472">

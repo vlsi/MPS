@@ -259,7 +259,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6568_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodeQuery");
-    provider.setNoTargetText("<current source node>");
+    provider.setNoTargetText("<current input node>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
