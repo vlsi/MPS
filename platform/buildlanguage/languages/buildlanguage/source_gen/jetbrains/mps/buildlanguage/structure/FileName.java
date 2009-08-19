@@ -23,7 +23,6 @@ public class FileName extends PropertyValueExpression {
     super.setChild(FileName.VALUE, node);
   }
 
-
   public static FileName newInstance(SModel sm, boolean init) {
     return (FileName)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.FileName", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class FileName extends PropertyValueExpression {
   public static FileName newInstance(SModel sm) {
     return FileName.newInstance(sm, false);
   }
-
 }

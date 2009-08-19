@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EditorComponentExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConceptProperty_9180_0(editorContext, node);
   }
@@ -34,5 +33,4 @@ public class EditorComponentExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

@@ -25,7 +25,6 @@ public class SingleComplexExpression extends Expression {
     super.setChild(SingleComplexExpression.COMPLEX_EXPRESSION, node);
   }
 
-
   public static SingleComplexExpression newInstance(SModel sm, boolean init) {
     return (SingleComplexExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.SingleComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class SingleComplexExpression extends Expression {
   public static SingleComplexExpression newInstance(SModel sm) {
     return SingleComplexExpression.newInstance(sm, false);
   }
-
 }

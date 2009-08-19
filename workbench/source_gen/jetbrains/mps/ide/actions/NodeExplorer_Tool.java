@@ -18,7 +18,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class NodeExplorer_Tool extends GeneratedTool {
-
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;
 
@@ -36,7 +35,6 @@ public class NodeExplorer_Tool extends GeneratedTool {
     NodeExplorer_Tool.this.myPanel.add(NodeExplorer_Tool.this.myNodeExplorer.getComponent(), BorderLayout.CENTER);
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new CloseAction(NodeExplorer_Tool.this) {
-
       public void doExecute(AnActionEvent e) {
         super.doExecute(e);
         myNodeExplorer.clear();
@@ -49,5 +47,4 @@ public class NodeExplorer_Tool extends GeneratedTool {
   public NodeExplorerComponent getNodeExplorer() {
     return NodeExplorer_Tool.this.myNodeExplorer;
   }
-
 }

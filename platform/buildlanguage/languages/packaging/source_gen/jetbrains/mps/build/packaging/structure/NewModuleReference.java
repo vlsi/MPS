@@ -24,7 +24,6 @@ public class NewModuleReference extends BaseConcept {
     super.setReferent(NewModuleReference.MODULE, node);
   }
 
-
   public static NewModuleReference newInstance(SModel sm, boolean init) {
     return (NewModuleReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NewModuleReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class NewModuleReference extends BaseConcept {
   public static NewModuleReference newInstance(SModel sm) {
     return NewModuleReference.newInstance(sm, false);
   }
-
 }

@@ -60,7 +60,6 @@ public class ConcreteChildPart extends ChildPart implements INamedConcept {
     super.setChild(ConcreteChildPart.CONCEPT_REFERENCE, node);
   }
 
-
   public static ConcreteChildPart newInstance(SModel sm, boolean init) {
     return (ConcreteChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConcreteChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class ConcreteChildPart extends ChildPart implements INamedConcept {
   public static ConcreteChildPart newInstance(SModel sm) {
     return ConcreteChildPart.newInstance(sm, false);
   }
-
 }

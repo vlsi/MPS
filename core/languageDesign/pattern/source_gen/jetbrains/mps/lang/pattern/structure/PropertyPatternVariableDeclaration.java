@@ -61,7 +61,6 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
     this.setProperty(PropertyPatternVariableDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PropertyPatternVariableDeclaration newInstance(SModel sm, boolean init) {
     return (PropertyPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class PropertyPatternVariableDeclaration extends PropertyAttributeConcept
   public static PropertyPatternVariableDeclaration newInstance(SModel sm) {
     return PropertyPatternVariableDeclaration.newInstance(sm, false);
   }
-
 }

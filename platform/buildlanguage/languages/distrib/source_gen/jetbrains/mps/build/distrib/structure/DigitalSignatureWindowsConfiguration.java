@@ -48,7 +48,6 @@ public class DigitalSignatureWindowsConfiguration extends BaseConcept {
     this.insertChild(prev, DigitalSignatureWindowsConfiguration.COMMAND_LINE, node);
   }
 
-
   public static DigitalSignatureWindowsConfiguration newInstance(SModel sm, boolean init) {
     return (DigitalSignatureWindowsConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class DigitalSignatureWindowsConfiguration extends BaseConcept {
   public static DigitalSignatureWindowsConfiguration newInstance(SModel sm) {
     return DigitalSignatureWindowsConfiguration.newInstance(sm, false);
   }
-
 }

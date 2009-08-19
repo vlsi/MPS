@@ -24,7 +24,6 @@ public class AssertType extends AbstractNodeAssert {
     super.setChild(AssertType.TYPE_TO_CHECK, node);
   }
 
-
   public static AssertType newInstance(SModel sm, boolean init) {
     return (AssertType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AssertType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class AssertType extends AbstractNodeAssert {
   public static AssertType newInstance(SModel sm) {
     return AssertType.newInstance(sm, false);
   }
-
 }

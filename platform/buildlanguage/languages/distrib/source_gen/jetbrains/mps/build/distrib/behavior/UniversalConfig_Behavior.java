@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class UniversalConfig_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,5 +23,4 @@ public class UniversalConfig_Behavior {
   public static boolean call_addWindowsStartupScript_1239641827577(SNode thisNode) {
     return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(thisNode, null, false, true), "jetbrains.mps.build.distrib.structure.WindowsConfig", false, new String[]{})).isNotEmpty();
   }
-
 }

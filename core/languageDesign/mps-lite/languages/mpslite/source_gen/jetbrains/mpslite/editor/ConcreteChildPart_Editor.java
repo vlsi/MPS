@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConcreteChildPart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4338_0(editorContext, node);
   }
@@ -105,7 +104,6 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4338_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiple");
   }
@@ -113,5 +111,4 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition4338_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
   }
-
 }

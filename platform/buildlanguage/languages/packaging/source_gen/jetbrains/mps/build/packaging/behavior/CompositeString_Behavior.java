@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CompositeString_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getValue_1213877173054(SNode thisNode) {
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(thisNode, "left", true)) + IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(thisNode, "right", true));
   }
-
 }

@@ -23,12 +23,12 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -39,7 +39,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -51,7 +51,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ModuleRepository_Tool tool = ShowModuleRepository_Action.this.project.getPluginManager().getTool(ModuleRepository_Tool.class);
       assert tool != null;
@@ -62,5 +62,4 @@ public class ShowModuleRepository_Action extends GeneratedAction {
       }
     }
   }
-
 }

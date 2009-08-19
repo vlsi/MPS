@@ -22,5 +22,4 @@ public class DialogExpression extends Expression {
   public static DialogExpression newInstance(SModel sm) {
     return DialogExpression.newInstance(sm, false);
   }
-
 }

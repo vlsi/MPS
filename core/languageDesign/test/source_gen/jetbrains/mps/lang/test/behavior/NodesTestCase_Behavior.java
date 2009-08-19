@@ -14,16 +14,15 @@ import java.net.URL;
 import jetbrains.mps.lang.test.runtime.TransformationTestRuner;
 
 public class NodesTestCase_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
       ListSequence.fromList(result).addElement(method);
     }
-    for(SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
+    for (SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation", false, new String[]{}))) {
       ListSequence.fromList(result).addElement(operation);
     }
     return result;
@@ -44,7 +43,7 @@ public class NodesTestCase_Behavior {
     Class cls = classLoader.getClass();
     try {
       List<URL> urls = ((List<URL>)cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
-      for(URL url : urls) {
+      for (URL url : urls) {
         ListSequence.fromList(result).addElement(url.getFile());
       }
     } catch (Throwable e) {
@@ -65,5 +64,4 @@ public class NodesTestCase_Behavior {
   public static String getTestBodyName_1224602741295() {
     return "TestBody";
   }
-
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Module_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6816_0(editorContext, node);
   }
@@ -95,7 +94,6 @@ public class Module_Editor extends DefaultNodeEditor {
   }
 
   public static class Module_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-
     public Module_generic_cellMenu0() {
     }
 
@@ -123,7 +121,5 @@ public class Module_Editor extends DefaultNodeEditor {
     public String getMatchingText_internal(IModule parameterObject) {
       return parameterObject.getModuleReference().getModuleFqName();
     }
-
-}
-
+  }
 }

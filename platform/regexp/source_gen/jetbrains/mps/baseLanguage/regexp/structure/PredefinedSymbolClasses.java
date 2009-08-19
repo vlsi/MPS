@@ -75,7 +75,6 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
     this.insertChild(prev, PredefinedSymbolClasses.SYMBOL_CLASS, node);
   }
 
-
   public static PredefinedSymbolClasses newInstance(SModel sm, boolean init) {
     return (PredefinedSymbolClasses)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   public static PredefinedSymbolClasses newInstance(SModel sm) {
     return PredefinedSymbolClasses.newInstance(sm, false);
   }
-
 }

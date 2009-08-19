@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class DistribConfiguration_Styles_StyleSheet {
-
   public static Style getKeyword(final EditorCell cell) {
     Style style = new Style(cell);
     style.putAll(PackagingStyles_StyleSheet.getProjectComponent(null));
@@ -25,8 +24,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     Style style = new Style(cell);
     style.putAll(DistribConfiguration_Styles_StyleSheet.getKeyword(null));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_4592_0((cell == null ?
           null :
@@ -56,5 +54,4 @@ public class DistribConfiguration_Styles_StyleSheet {
   private static boolean _StyleParameter_QueryFunction_4592_0(SNode node, EditorContext editorContext) {
     return true;
   }
-
 }

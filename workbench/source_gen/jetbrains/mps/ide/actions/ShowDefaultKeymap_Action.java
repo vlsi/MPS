@@ -21,12 +21,12 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
     this.setMnemonic("K".charAt(0));
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -37,7 +37,7 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -45,7 +45,7 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       BrowserUtil.launchBrowser("http://www.jetbrains.net/confluence/display/MPS/Default+Keymap+Reference");
     } catch (Throwable t) {
@@ -54,5 +54,4 @@ public class ShowDefaultKeymap_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -4,7 +4,6 @@ package jetbrains.mps.build.packaging.plugin;
 
 
 public class CheckBoxNamespaceNode extends CheckBoxNode<NamespaceData> {
-
   public CheckBoxNamespaceNode(NamespaceData data) {
     super(data, false);
   }
@@ -16,5 +15,4 @@ public class CheckBoxNamespaceNode extends CheckBoxNode<NamespaceData> {
   public void setName(String name) {
     this.myData.setText(name);
   }
-
 }

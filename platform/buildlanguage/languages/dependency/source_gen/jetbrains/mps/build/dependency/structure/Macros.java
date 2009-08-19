@@ -52,7 +52,6 @@ public class Macros extends BaseConcept implements INamedConcept {
     this.setProperty(Macros.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Macros newInstance(SModel sm, boolean init) {
     return (Macros)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.Macros", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class Macros extends BaseConcept implements INamedConcept {
   public static Macros newInstance(SModel sm) {
     return Macros.newInstance(sm, false);
   }
-
 }

@@ -31,7 +31,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -40,7 +40,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     return GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor) != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -52,7 +52,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,13 +72,12 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       // calculate output path
       final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
       final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           configuration.value = ListSequence.fromList(SLinkOperations.getTargets(layout, "configuration", true)).first();
         }
@@ -88,5 +87,4 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
   }
-
 }

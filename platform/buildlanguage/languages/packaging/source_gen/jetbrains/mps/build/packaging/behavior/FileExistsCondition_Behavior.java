@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FileExistsCondition_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class FileExistsCondition_Behavior {
   public static boolean virtual_isTrueWhileGeneration_1233161599461(SNode thisNode) {
     return IPath_Behavior.call_getFile_1233322718999(SLinkOperations.getTarget(thisNode, "pathToCheck", true)).exists();
   }
-
 }

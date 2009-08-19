@@ -35,7 +35,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -44,7 +44,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     return SNodeOperations.isInstanceOf(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase");
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -84,11 +84,11 @@ public class RunTestInMPS_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<SNode> tests = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(tests).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(SNodeOperations.cast(RunTestInMPS_Action.this.node, "jetbrains.mps.lang.test.structure.NodesTestCase"))).toListSequence());
-      for(SNode test : SetSequence.fromSet(tests)) {
+      for (SNode test : SetSequence.fromSet(tests)) {
         RunTestInMPS_Action.this.runTest(test);
       }
     } catch (Throwable t) {
@@ -96,7 +96,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     }
   }
 
-  /* package */void runTest(final SNode test) {
+  /*package*/ void runTest(final SNode test) {
     try {
       final String className = ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test));
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
@@ -106,7 +106,6 @@ public class RunTestInMPS_Action extends GeneratedAction {
       testClass.setProject(RunTestInMPS_Action.this.project);
       testClass.setModelDescriptor(RunTestInMPS_Action.this.model.getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
-
         public void run() {
           try {
             testClass.runTest(className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);
@@ -120,5 +119,4 @@ public class RunTestInMPS_Action extends GeneratedAction {
       e.printStackTrace();
     }
   }
-
 }

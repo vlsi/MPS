@@ -33,12 +33,12 @@ public class NewLanguage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -49,7 +49,7 @@ public class NewLanguage_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -69,7 +69,7 @@ public class NewLanguage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NewLanguageDialog dialog = new NewLanguageDialog(NewLanguage_Action.this.frame);
       dialog.setProject(NewLanguage_Action.this.project);
@@ -79,7 +79,6 @@ public class NewLanguage_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteAction(new Runnable() {
-
         public void run() {
           NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
         }
@@ -92,7 +91,7 @@ public class NewLanguage_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(NewLanguage_Action.class.getName());
@@ -102,9 +101,7 @@ public class NewLanguage_Action extends GeneratedAction {
     return res.toString();
   }
 
-
   public static String folder_State(String object) {
     return object;
   }
-
 }

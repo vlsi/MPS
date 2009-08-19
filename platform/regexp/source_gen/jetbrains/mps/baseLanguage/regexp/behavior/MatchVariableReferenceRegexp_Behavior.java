@@ -26,5 +26,4 @@ public class MatchVariableReferenceRegexp_Behavior {
   public static String callSuper_getString_1222610343965(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222610343965, vars);
   }
-
 }

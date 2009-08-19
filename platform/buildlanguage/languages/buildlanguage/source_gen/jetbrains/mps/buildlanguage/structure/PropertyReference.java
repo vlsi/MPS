@@ -60,7 +60,6 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
   }
 
-
   public static PropertyReference newInstance(SModel sm, boolean init) {
     return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   public static PropertyReference newInstance(SModel sm) {
     return PropertyReference.newInstance(sm, false);
   }
-
 }

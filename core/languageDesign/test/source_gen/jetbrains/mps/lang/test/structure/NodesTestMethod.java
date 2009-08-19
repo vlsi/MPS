@@ -53,7 +53,6 @@ public class NodesTestMethod extends BaseMethodDeclaration implements INamedConc
     this.setProperty(NodesTestMethod.VIRTUAL_PACKAGE, value);
   }
 
-
   public static NodesTestMethod newInstance(SModel sm, boolean init) {
     return (NodesTestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class NodesTestMethod extends BaseMethodDeclaration implements INamedConc
   public static NodesTestMethod newInstance(SModel sm) {
     return NodesTestMethod.newInstance(sm, false);
   }
-
 }

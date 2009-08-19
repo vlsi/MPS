@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class MPSBuild_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public MPSBuild_name_PropertyConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class MPSBuild_name_PropertyConstraint implements IModelConstraints, INod
     }
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(node, "title", true));
   }
-
 }

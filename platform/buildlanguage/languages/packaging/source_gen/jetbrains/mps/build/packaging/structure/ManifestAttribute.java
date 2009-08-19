@@ -75,7 +75,6 @@ public class ManifestAttribute extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ManifestAttribute.VALUE, node);
   }
 
-
   public static ManifestAttribute newInstance(SModel sm, boolean init) {
     return (ManifestAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ManifestAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class ManifestAttribute extends BaseConcept implements INamedConcept {
   public static ManifestAttribute newInstance(SModel sm) {
     return ManifestAttribute.newInstance(sm, false);
   }
-
 }

@@ -6,7 +6,6 @@ import jetbrains.mps.build.packaging.plugin.GenerateBuildWizard;
 import com.intellij.openapi.project.Project;
 
 public class GenerateCustomMpsBuildWizard extends GenerateBuildWizard {
-
   public GenerateCustomMpsBuildWizard(String title, Project project, CustomMPSBuildGenerator generator) {
     super(title, project, generator);
   }
@@ -15,5 +14,4 @@ public class GenerateCustomMpsBuildWizard extends GenerateBuildWizard {
     this.addStep(new BuildToolsStep(((CustomMPSBuildGenerator)this.myGenerator), this.myErrorHandler));
     super.initWizard();
   }
-
 }

@@ -34,5 +34,4 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother("ToolsMenu", null);
   }
-
 }

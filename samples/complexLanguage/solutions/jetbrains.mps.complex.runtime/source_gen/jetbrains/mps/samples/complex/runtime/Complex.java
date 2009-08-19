@@ -33,12 +33,10 @@ public class Complex {
       double result = Math.acos(this.myReal / r);
       if (this.myImaginary > 0.0) {
         return result;
-      } else
-      {
+      } else {
         return -1 * result;
       }
-    } else
-    {
+    } else {
       return 0.0;
     }
   }
@@ -67,7 +65,6 @@ public class Complex {
     return getComplexPolar(Math.pow(this.getAbs(), n), this.getArg() * n);
   }
 
-
   public static Complex sum(Complex c1, Complex c2) {
     return new Complex(c1.myReal + c2.myReal, c1.myImaginary + c2.myImaginary);
   }
@@ -94,5 +91,4 @@ public class Complex {
   public static Complex getI() {
     return I;
   }
-
 }

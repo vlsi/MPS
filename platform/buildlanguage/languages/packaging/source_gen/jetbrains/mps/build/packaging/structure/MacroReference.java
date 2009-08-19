@@ -33,7 +33,6 @@ public class MacroReference extends BaseConcept {
     this.setProperty(MacroReference.PATH, value);
   }
 
-
   public static MacroReference newInstance(SModel sm, boolean init) {
     return (MacroReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class MacroReference extends BaseConcept {
   public static MacroReference newInstance(SModel sm) {
     return MacroReference.newInstance(sm, false);
   }
-
 }

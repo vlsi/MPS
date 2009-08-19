@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4982_0(editorContext, node);
   }
@@ -92,7 +91,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline4982_0 extends AbstractCellProvider {
-
     public _Inline4982_0() {
       super();
     }
@@ -123,10 +121,9 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       } else
       return editorCell;
     }
+  }
 
-}
   private static class actualArgumentListHandler_4982_0 extends RefNodeListHandler {
-
     public actualArgumentListHandler_4982_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -189,7 +186,5 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

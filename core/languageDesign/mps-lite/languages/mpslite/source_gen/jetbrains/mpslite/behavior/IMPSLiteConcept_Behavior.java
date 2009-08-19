@@ -82,5 +82,4 @@ public class IMPSLiteConcept_Behavior {
   public static SNode callSuper_createAdditionalEditor_1239891670850(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.IMPSLiteConcept"), callerConceptFqName, "virtual_createAdditionalEditor_1239891670850", PARAMETERS_1239891670850, conceptsToTargets, partsToLinks);
   }
-
 }

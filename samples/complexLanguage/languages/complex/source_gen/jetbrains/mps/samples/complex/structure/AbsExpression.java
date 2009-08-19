@@ -21,5 +21,4 @@ public class AbsExpression extends SingleComplexExpression {
   public static AbsExpression newInstance(SModel sm) {
     return AbsExpression.newInstance(sm, false);
   }
-
 }

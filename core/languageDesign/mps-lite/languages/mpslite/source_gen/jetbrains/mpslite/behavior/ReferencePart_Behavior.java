@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReferencePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -29,5 +28,4 @@ public class ReferencePart_Behavior {
     }
     return refCell;
   }
-
 }

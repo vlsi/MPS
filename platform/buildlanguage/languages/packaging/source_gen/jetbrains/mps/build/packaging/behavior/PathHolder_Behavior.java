@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PathHolder_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -28,5 +27,4 @@ public class PathHolder_Behavior {
     }
     return PathHolder_Behavior.call_getValue_1219231432401(thisNode).equals(PathHolder_Behavior.call_getValue_1219231432401(pathHolder));
   }
-
 }

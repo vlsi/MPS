@@ -13,7 +13,6 @@ import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class File_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public File_name_PropertyConstraint() {
   }
 
@@ -34,5 +33,4 @@ public class File_name_PropertyConstraint implements IModelConstraints, INodePro
     }
     return IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(node, "title", true));
   }
-
 }

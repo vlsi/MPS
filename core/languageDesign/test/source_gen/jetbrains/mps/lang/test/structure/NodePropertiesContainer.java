@@ -38,7 +38,6 @@ public class NodePropertiesContainer extends BaseConcept {
     this.insertChild(prev, NodePropertiesContainer.PROPERTIES, node);
   }
 
-
   public static NodePropertiesContainer newInstance(SModel sm, boolean init) {
     return (NodePropertiesContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class NodePropertiesContainer extends BaseConcept {
   public static NodePropertiesContainer newInstance(SModel sm) {
     return NodePropertiesContainer.newInstance(sm, false);
   }
-
 }

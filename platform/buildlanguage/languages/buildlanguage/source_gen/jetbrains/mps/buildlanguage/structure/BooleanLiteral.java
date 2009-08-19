@@ -23,7 +23,6 @@ public class BooleanLiteral extends PropertyValueExpression {
     this.setBooleanProperty(BooleanLiteral.VALUE, value);
   }
 
-
   public static BooleanLiteral newInstance(SModel sm, boolean init) {
     return (BooleanLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BooleanLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class BooleanLiteral extends PropertyValueExpression {
   public static BooleanLiteral newInstance(SModel sm) {
     return BooleanLiteral.newInstance(sm, false);
   }
-
 }

@@ -35,17 +35,17 @@ public class GenerateModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         event.getPresentation().setText(GenerateModel_Action.this.generationType.toString());
         boolean applicable = ListSequence.fromList(GenerateModel_Action.this.getModels()).isNotEmpty();
-        for(SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels())) {
+        for (SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels())) {
           if (!(GenerateModel_Action.this.generationType.isApplicable(model))) {
             applicable = false;
             break;
@@ -61,7 +61,7 @@ public class GenerateModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -79,7 +79,7 @@ public class GenerateModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationType);
     } catch (Throwable t) {
@@ -89,7 +89,7 @@ public class GenerateModel_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateModel_Action.class.getName());
@@ -99,7 +99,7 @@ public class GenerateModel_Action extends GeneratedAction {
     return res.toString();
   }
 
-  /* package */List<SModelDescriptor> getModels() {
+  /*package*/ List<SModelDescriptor> getModels() {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     if (GenerateModel_Action.this.models != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(GenerateModel_Action.this.models));
@@ -110,9 +110,7 @@ public class GenerateModel_Action extends GeneratedAction {
     return result;
   }
 
-
   public static String generationType_State(IGenerationType object) {
     return object.toString();
   }
-
 }

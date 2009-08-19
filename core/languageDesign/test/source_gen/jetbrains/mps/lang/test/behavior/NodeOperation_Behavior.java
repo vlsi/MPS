@@ -48,5 +48,4 @@ public class NodeOperation_Behavior {
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
   }
-
 }

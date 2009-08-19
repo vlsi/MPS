@@ -21,5 +21,4 @@ public class BaseDirPath extends Path {
   public static BaseDirPath newInstance(SModel sm) {
     return BaseDirPath.newInstance(sm, false);
   }
-
 }

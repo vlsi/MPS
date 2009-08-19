@@ -31,7 +31,7 @@ public class SolutionProperties_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt ENTER";
   }
@@ -40,7 +40,7 @@ public class SolutionProperties_Action extends GeneratedAction {
     return SolutionProperties_Action.this.module instanceof Solution;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class SolutionProperties_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,12 +70,11 @@ public class SolutionProperties_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Solution solution = (Solution)SolutionProperties_Action.this.module;
       final Wrappers._T<SolutionPropertiesDialog> dialog = new Wrappers._T<SolutionPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           dialog.value = new SolutionPropertiesDialog(solution, SolutionProperties_Action.this.context);
         }
@@ -87,5 +86,4 @@ public class SolutionProperties_Action extends GeneratedAction {
       }
     }
   }
-
 }

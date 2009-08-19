@@ -10,7 +10,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 
 public class NewLanguageDialog extends BaseDialog {
-
   public NewLanguageDialogContentPane myContentPane;
 
   public NewLanguageDialog(Frame frame) {
@@ -92,5 +91,4 @@ public class NewLanguageDialog extends BaseDialog {
   public void buttonMethod1() {
     myContentPane.onCancel();
   }
-
 }

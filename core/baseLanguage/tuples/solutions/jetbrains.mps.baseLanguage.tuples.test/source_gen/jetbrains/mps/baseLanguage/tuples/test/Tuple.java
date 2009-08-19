@@ -5,8 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.test;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class Tuple <AAA> extends MultiTuple._2<Integer, AAA> {
-
+public class Tuple<AAA> extends MultiTuple._2<Integer, AAA> {
   public Tuple() {
     super();
   }
@@ -34,5 +33,4 @@ public class Tuple <AAA> extends MultiTuple._2<Integer, AAA> {
   public Tuple assignFrom(Tuples._2<Integer, AAA> from) {
     return (Tuple)super.assign(from);
   }
-
 }

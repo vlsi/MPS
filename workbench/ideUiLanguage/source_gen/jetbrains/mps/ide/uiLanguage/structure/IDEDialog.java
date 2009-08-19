@@ -124,7 +124,6 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
     this.insertChild(prev, IDEDialog.CONTENT, node);
   }
 
-
   public static IDEDialog newInstance(SModel sm, boolean init) {
     return (IDEDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -132,5 +131,4 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   public static IDEDialog newInstance(SModel sm) {
     return IDEDialog.newInstance(sm, false);
   }
-
 }

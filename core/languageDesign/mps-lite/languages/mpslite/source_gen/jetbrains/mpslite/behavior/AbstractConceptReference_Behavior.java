@@ -20,5 +20,4 @@ public class AbstractConceptReference_Behavior {
   public static SNode callSuper_getConcept_1238594571574(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> conceptsToTargets) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.AbstractConceptReference"), callerConceptFqName, "virtual_getConcept_1238594571574", PARAMETERS_1238594571574, conceptsToTargets);
   }
-
 }

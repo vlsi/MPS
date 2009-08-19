@@ -18,7 +18,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 
 public class ExternalVariableReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8488_0(editorContext, node);
   }
@@ -53,7 +52,6 @@ public class ExternalVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline8488_0 extends AbstractCellProvider {
-
     public _Inline8488_0() {
       super();
     }
@@ -85,7 +83,5 @@ public class ExternalVariableReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

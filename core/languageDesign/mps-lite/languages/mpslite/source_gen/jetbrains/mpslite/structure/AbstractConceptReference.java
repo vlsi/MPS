@@ -25,7 +25,6 @@ public class AbstractConceptReference extends BaseConcept {
     super.setReferent(AbstractConceptReference.CONCEPT_DECLARATION, node);
   }
 
-
   public static AbstractConceptReference newInstance(SModel sm, boolean init) {
     return (AbstractConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.AbstractConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AbstractConceptReference extends BaseConcept {
   public static AbstractConceptReference newInstance(SModel sm) {
     return AbstractConceptReference.newInstance(sm, false);
   }
-
 }

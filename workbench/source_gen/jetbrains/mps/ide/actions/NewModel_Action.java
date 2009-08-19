@@ -35,12 +35,12 @@ public class NewModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -51,7 +51,7 @@ public class NewModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -75,7 +75,7 @@ public class NewModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
         JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no module roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
@@ -87,7 +87,6 @@ public class NewModel_Action extends GeneratedAction {
         NewModel_Action.this.module
       );
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext);
         }
@@ -108,5 +107,4 @@ public class NewModel_Action extends GeneratedAction {
   protected String getNamespace() {
     return null;
   }
-
 }

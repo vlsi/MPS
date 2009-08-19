@@ -23,7 +23,6 @@ public class IntLiteral extends PropertyValueExpression {
     this.setIntegerProperty(IntLiteral.VALUE, value);
   }
 
-
   public static IntLiteral newInstance(SModel sm, boolean init) {
     return (IntLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class IntLiteral extends PropertyValueExpression {
   public static IntLiteral newInstance(SModel sm) {
     return IntLiteral.newInstance(sm, false);
   }
-
 }

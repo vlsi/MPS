@@ -71,7 +71,6 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
     super.setChild(MatchRegexpStatement.REGEXP, node);
   }
 
-
   public static MatchRegexpStatement newInstance(SModel sm, boolean init) {
     return (MatchRegexpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   public static MatchRegexpStatement newInstance(SModel sm) {
     return MatchRegexpStatement.newInstance(sm, false);
   }
-
 }

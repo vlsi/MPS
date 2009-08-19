@@ -13,11 +13,11 @@ import java.util.Iterator;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class FILE_NG extends TreePath<File> {
-
   public FILE_NG() {
     this.registerFeature(new FILE_NG.Desc_Feature_children());
     this.registerFeature(new FILE_NG.Desc_Feature_parent());
   }
+
   public static class DIR_NodeKindTrigger implements IFilter<File> {
     private static FILE_NG.DIR_NodeKindTrigger instance;
 
@@ -28,17 +28,15 @@ public class FILE_NG extends TreePath<File> {
       return node.isDirectory();
     }
 
-
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new FILE_NG.DIR_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   private static class Feature_children extends AbstractList<File> {
-
     private File thisNode;
 
     public Feature_children(File thisNode) {
@@ -58,10 +56,9 @@ public class FILE_NG extends TreePath<File> {
         0
       );
     }
+  }
 
-}
   private static class Feature_parent extends AbstractCollection<File> {
-
     private File thisNode;
 
     public Feature_parent(File thisNode) {
@@ -79,10 +76,9 @@ public class FILE_NG extends TreePath<File> {
     public int size() {
       return 1;
     }
+  }
 
-}
   public static class Desc_Feature_children extends IFeatureDescriptor.Stub<File> implements IFeatureDescriptor<File> {
-
     public Desc_Feature_children() {
     }
 
@@ -105,10 +101,9 @@ public class FILE_NG extends TreePath<File> {
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_parent extends IFeatureDescriptor.Stub<File> implements IFeatureDescriptor<File> {
-
     public Desc_Feature_parent() {
     }
 
@@ -131,7 +126,5 @@ public class FILE_NG extends TreePath<File> {
     public boolean isAscending() {
       return true;
     }
-
-}
-
+  }
 }

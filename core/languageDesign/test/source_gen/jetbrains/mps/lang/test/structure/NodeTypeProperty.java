@@ -24,7 +24,6 @@ public class NodeTypeProperty extends NodeProperty {
     super.setChild(NodeTypeProperty.TYPE, node);
   }
 
-
   public static NodeTypeProperty newInstance(SModel sm, boolean init) {
     return (NodeTypeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeTypeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class NodeTypeProperty extends NodeProperty {
   public static NodeTypeProperty newInstance(SModel sm) {
     return NodeTypeProperty.newInstance(sm, false);
   }
-
 }

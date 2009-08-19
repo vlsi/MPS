@@ -23,7 +23,6 @@ public class File extends AbstractProjectComponent {
     super.setChild(File.SOURCE_PATH, node);
   }
 
-
   public static File newInstance(SModel sm, boolean init) {
     return (File)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.File", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class File extends AbstractProjectComponent {
   public static File newInstance(SModel sm) {
     return File.newInstance(sm, false);
   }
-
 }

@@ -23,7 +23,6 @@ public class UnaryRegexp extends Regexp {
     super.setChild(UnaryRegexp.REGEXP, node);
   }
 
-
   public static UnaryRegexp newInstance(SModel sm, boolean init) {
     return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class UnaryRegexp extends Regexp {
   public static UnaryRegexp newInstance(SModel sm) {
     return UnaryRegexp.newInstance(sm, false);
   }
-
 }

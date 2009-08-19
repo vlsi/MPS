@@ -21,5 +21,4 @@ public class NodeWarningProperty extends NodeProperty {
   public static NodeWarningProperty newInstance(SModel sm) {
     return NodeWarningProperty.newInstance(sm, false);
   }
-
 }

@@ -25,5 +25,4 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
 
   public void adjust() {
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class MPSLite_Style_StyleSheet {
-
   public static Style getMPSLiteOperation(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -50,5 +49,4 @@ public class MPSLite_Style_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     return style;
   }
-
 }

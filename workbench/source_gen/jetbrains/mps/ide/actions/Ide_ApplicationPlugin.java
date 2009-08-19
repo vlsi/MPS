@@ -15,7 +15,6 @@ import com.intellij.openapi.actionSystem.Anchor;
 import jetbrains.mps.workbench.action.BaseKeymapChanges;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
-
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.ide";
@@ -84,8 +83,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     if (labelName != null) {
       Constraints constraints = new Constraints(Anchor.AFTER, labelName);
       gTo.add(gWhat, constraints);
-    } else
-    {
+    } else {
       gTo.add(gWhat);
     }
   }
@@ -95,5 +93,4 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     ListSequence.fromList(res).addElement(new Mac_KeymapChanges());
     return res;
   }
-
 }

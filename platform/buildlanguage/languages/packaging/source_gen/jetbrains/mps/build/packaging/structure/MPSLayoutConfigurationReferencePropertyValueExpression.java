@@ -24,7 +24,6 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression extends Prop
     super.setReferent(MPSLayoutConfigurationReferencePropertyValueExpression.CONFIGURATION, node);
   }
 
-
   public static MPSLayoutConfigurationReferencePropertyValueExpression newInstance(SModel sm, boolean init) {
     return (MPSLayoutConfigurationReferencePropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayoutConfigurationReferencePropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression extends Prop
   public static MPSLayoutConfigurationReferencePropertyValueExpression newInstance(SModel sm) {
     return MPSLayoutConfigurationReferencePropertyValueExpression.newInstance(sm, false);
   }
-
 }

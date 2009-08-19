@@ -18,8 +18,7 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class NamedTuples_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_createAndAssign() throws Exception {
     Data tpl = new Data("ABC", "XYZ");
     Assert.assertEquals("ABC", tpl.foo());
@@ -44,30 +43,30 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("xyz", tpl2.bar());
   }
 
-  @Test()
+  @Test
   public void test_returnValue() throws Exception {
     Data data = new Data().assignFrom(this.getData());
     Assert.assertEquals("ABC", data.foo());
     Assert.assertEquals("XYZ", data.bar());
   }
 
-  @Test()
+  @Test
   public void test_sequenceOfTuples() throws Exception {
     Iterable<Data> seq = this.getSequence();
-    for(Data tpl : Sequence.fromIterable(seq)) {
+    for (Data tpl : Sequence.fromIterable(seq)) {
       Assert.assertTrue("abc".equalsIgnoreCase(tpl.foo()));
       Assert.assertTrue("xyz".equalsIgnoreCase(tpl.bar()));
     }
   }
 
-  @Test()
+  @Test
   public void test_assignToIndexedTupleType() throws Exception {
     Tuples._2<String, String> itpl = MultiTuple.<String, String>empty2().assign(this.getData());
     Assert.assertEquals("ABC", itpl._0());
     Assert.assertEquals("XYZ", itpl._1());
   }
 
-  @Test()
+  @Test
   public void test_patternMatching() throws Exception {
     String foo;
     String bar;
@@ -80,7 +79,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("XYZ", bar);
   }
 
-  @Test()
+  @Test
   public void test_equalsOperator() throws Exception {
     Data tpl1 = new Data().assignFrom(this.getData());
     Data tpl2 = new Data().assignFrom(this.getData());
@@ -92,24 +91,23 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
   }
 
-  @Test()
+  @Test
   public void test_boolean() throws Exception {
     Bool truth = new Bool(true);
     Assert.assertTrue(truth.isTrue());
   }
 
-  @Test()
+  @Test
   public void test_filter() throws Exception {
     Iterable<Data> seq = this.getSequence();
-    Sequence.fromIterable(seq).any(new IWhereFilter <Data>() {
-
+    Sequence.fromIterable(seq).any(new IWhereFilter<Data>() {
       public boolean accept(Data it) {
         return it.foo() == it.bar();
       }
     });
   }
 
-  @Test()
+  @Test
   public void test_pair() throws Exception {
     Pair<Integer, String> p = new Pair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
@@ -120,7 +118,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("a", pp.second());
   }
 
-  @Test()
+  @Test
   public void test_valueOfAssignment() throws Exception {
     Pair<String, Integer> pair = new Pair<String, Integer>("foo", 13);
     String res = pair.first("bar");
@@ -129,7 +127,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(99, i);
   }
 
-  @Test()
+  @Test
   public void test_sharedPair() throws Exception {
     SharedPair<Integer, String> p = new SharedPair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
@@ -140,27 +138,26 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("a", pp.second());
   }
 
-  @Test()
+  @Test
   public void test_vararg1() throws Exception {
     String string = this.getString(new Pair<String, String>("a", "A"), new Pair<String, String>("b", "B"), new Pair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
 
-  @Test()
+  @Test
   public void test_vararg2() throws Exception {
     String string = this.getString(new SharedPair<String, String>("a", "A"), new SharedPair<String, String>("b", "B"), new SharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
 
-  @Test()
+  @Test
   public void test_vararg3() throws Exception {
     String string = this.getString(new GlobalSharedPair<String, String>("a", "A"), new GlobalSharedPair<String, String>("b", "B"), new GlobalSharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
 
   public String getString(SharedPair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <SharedPair<String, String>, String>() {
-
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<SharedPair<String, String>, String>() {
       public String select(SharedPair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -168,8 +165,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(Pair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <Pair<String, String>, String>() {
-
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -177,8 +173,7 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public String getString(GlobalSharedPair<String, String>... tuples) {
-    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector <GlobalSharedPair<String, String>, String>() {
-
+    return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<GlobalSharedPair<String, String>, String>() {
       public String select(GlobalSharedPair<String, String> t) {
         return t.first() + "=" + t.second();
       }
@@ -190,14 +185,11 @@ public class NamedTuples_Test extends TestCase {
   }
 
   public Iterable<Data> getSequence() {
-    return Sequence.fromClosure(new ISequenceClosure <Data>() {
-
+    return Sequence.fromClosure(new ISequenceClosure<Data>() {
       public Iterable<Data> iterable() {
-        return new Iterable <Data>() {
-
+        return new Iterable<Data>() {
           public Iterator<Data> iterator() {
-            return new YieldingIterator <Data>() {
-
+            return new YieldingIterator<Data>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -231,5 +223,4 @@ __switch__:
       }
     });
   }
-
 }

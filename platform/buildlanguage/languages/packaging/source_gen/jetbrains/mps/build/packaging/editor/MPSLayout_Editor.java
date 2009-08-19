@@ -31,7 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class MPSLayout_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8098_0(editorContext, node);
   }
@@ -417,7 +416,6 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
   }
 
   private static class componentListHandler_8098_0 extends RefNodeListHandler {
-
     public componentListHandler_8098_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -469,10 +467,9 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
+  }
 
-}
   private static class configurationListHandler_8098_0 extends RefNodeListHandler {
-
     public configurationListHandler_8098_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -519,10 +516,9 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class variableListHandler_8098_0 extends RefNodeListHandler {
-
     public variableListHandler_8098_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -562,7 +558,5 @@ public class MPSLayout_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

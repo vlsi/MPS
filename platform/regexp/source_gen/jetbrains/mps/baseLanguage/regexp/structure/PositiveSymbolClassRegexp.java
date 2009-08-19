@@ -21,5 +21,4 @@ public class PositiveSymbolClassRegexp extends SymbolClassRegexp {
   public static PositiveSymbolClassRegexp newInstance(SModel sm) {
     return PositiveSymbolClassRegexp.newInstance(sm, false);
   }
-
 }

@@ -146,7 +146,6 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
     this.insertChild(prev, VariableConcept.SCOPE_BLOCK, node);
   }
 
-
   public static VariableConcept newInstance(SModel sm, boolean init) {
     return (VariableConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.VariableConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -154,5 +153,4 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   public static VariableConcept newInstance(SModel sm) {
     return VariableConcept.newInstance(sm, false);
   }
-
 }

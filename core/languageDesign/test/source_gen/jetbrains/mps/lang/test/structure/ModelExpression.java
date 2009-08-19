@@ -22,5 +22,4 @@ public class ModelExpression extends Expression {
   public static ModelExpression newInstance(SModel sm) {
     return ModelExpression.newInstance(sm, false);
   }
-
 }

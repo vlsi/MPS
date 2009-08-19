@@ -48,7 +48,6 @@ public class MatrixLiteral extends Expression {
     this.insertChild(prev, MatrixLiteral.ROW, node);
   }
 
-
   public static MatrixLiteral newInstance(SModel sm, boolean init) {
     return (MatrixLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -56,5 +55,4 @@ public class MatrixLiteral extends Expression {
   public static MatrixLiteral newInstance(SModel sm) {
     return MatrixLiteral.newInstance(sm, false);
   }
-
 }

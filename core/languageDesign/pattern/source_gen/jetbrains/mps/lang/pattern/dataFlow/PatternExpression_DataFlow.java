@@ -9,17 +9,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class PatternExpression_DataFlow extends DataFlowBuilder {
-
   public PatternExpression_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
+    for (SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
       _context.getBuilder().build((SNode)antiquotation);
     }
-    for(SNode patternVar : SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration","jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"}, false, new String[]{})) {
+    for (SNode patternVar : SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration","jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"}, false, new String[]{})) {
       _context.getBuilder().build((SNode)patternVar);
     }
   }
-
 }

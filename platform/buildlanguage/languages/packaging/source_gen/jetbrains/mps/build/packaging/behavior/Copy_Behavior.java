@@ -12,7 +12,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 
 public class Copy_Behavior {
-
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "");
     SPropertyOperations.set(thisNode, "excludes", "");
@@ -58,5 +57,4 @@ public class Copy_Behavior {
     }
     return EqualUtil.equalsIgnoreCase(Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(thisNode, "sourcePath", true)), Path_Behavior.call_getName_1221141245424(SLinkOperations.getTarget(SNodeOperations.cast(snode, "jetbrains.mps.build.packaging.structure.Copy"), "sourcePath", true)));
   }
-
 }

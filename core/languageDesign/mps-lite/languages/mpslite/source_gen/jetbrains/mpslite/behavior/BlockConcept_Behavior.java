@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BlockConcept_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -34,5 +33,4 @@ public class BlockConcept_Behavior {
     SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
     return editor;
   }
-
 }

@@ -27,7 +27,7 @@ public class RenameSolution_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F6";
   }
@@ -36,7 +36,7 @@ public class RenameSolution_Action extends GeneratedAction {
     return RenameSolution_Action.this.module instanceof Solution;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -50,7 +50,7 @@ public class RenameSolution_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,7 +66,7 @@ public class RenameSolution_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new RenameSolutionDialog(RenameSolution_Action.this.frame, ((Solution)RenameSolution_Action.this.module)).showDialog();
     } catch (Throwable t) {
@@ -75,5 +75,4 @@ public class RenameSolution_Action extends GeneratedAction {
       }
     }
   }
-
 }

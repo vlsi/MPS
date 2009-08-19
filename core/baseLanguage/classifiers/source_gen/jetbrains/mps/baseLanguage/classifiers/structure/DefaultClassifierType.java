@@ -23,7 +23,6 @@ public class DefaultClassifierType extends BaseClassifierType {
     super.setReferent(DefaultClassifierType.CLASSIFIER, node);
   }
 
-
   public static DefaultClassifierType newInstance(SModel sm, boolean init) {
     return (DefaultClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class DefaultClassifierType extends BaseClassifierType {
   public static DefaultClassifierType newInstance(SModel sm) {
     return DefaultClassifierType.newInstance(sm, false);
   }
-
 }

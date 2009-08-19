@@ -8,19 +8,18 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class GenerationResult {
-
   private SNode myNode;
   private GenerateClassesGenerationType myType;
   private IOperationContext myContext;
   private SModelDescriptor myDescriptor;
 
-  /* package */GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, GenerateClassesGenerationType type) {
+  /*package*/ GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, GenerateClassesGenerationType type) {
     this.myContext = context;
     this.myNode = node;
     this.myDescriptor = modelDescriptor;
     this.myType = type;
   }
-  /* package */GenerationResult(SNode node, IOperationContext context) {
+  /*package*/ GenerationResult(SNode node, IOperationContext context) {
     this.myContext = context;
     this.myNode = node;
   }
@@ -43,5 +42,4 @@ public class GenerationResult {
     }
     return this.myType.getClassLoader(parentLoader);
   }
-
 }

@@ -22,5 +22,4 @@ public class MockAnnotation extends BaseConcept {
   public static MockAnnotation newInstance(SModel sm) {
     return MockAnnotation.newInstance(sm, false);
   }
-
 }

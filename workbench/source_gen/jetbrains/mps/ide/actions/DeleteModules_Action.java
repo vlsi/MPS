@@ -36,7 +36,7 @@ public class DeleteModules_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " DELETE";
   }
@@ -48,7 +48,7 @@ public class DeleteModules_Action extends GeneratedAction {
     if (DeleteModules_Action.this.selSize != DeleteModules_Action.this.modules.size()) {
       return false;
     }
-    for(IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
+    for (IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
       if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
         return false;
       }
@@ -56,7 +56,7 @@ public class DeleteModules_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -70,7 +70,7 @@ public class DeleteModules_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -94,7 +94,7 @@ public class DeleteModules_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
       final DeleteDialog dialog = new DeleteDialog(DeleteModules_Action.this.project, "Delete Modules", message);
@@ -104,9 +104,8 @@ public class DeleteModules_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
-          for(IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
+          for (IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
             DeleteModuleHelper.deleteModule(DeleteModules_Action.this.project, DeleteModules_Action.this.mpsProject, module, dialog.isSafe(), dialog.isDeleteFiles());
           }
         }
@@ -117,5 +116,4 @@ public class DeleteModules_Action extends GeneratedAction {
       }
     }
   }
-
 }

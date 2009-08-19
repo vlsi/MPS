@@ -18,7 +18,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class TestFeatures_Test extends TestCase {
   private static String SIMPLE = "<root r1=\"r1\"><a a1=\"a1\"><b b1=\"b1\" b2=\"b2\"><c c1=\"c1\"/></b></a></root>";
 
-  @Test()
+  @Test
   public void test_nodesAndAttributes() throws Exception {
     Document doc = this.parse(SIMPLE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes");
@@ -40,11 +40,10 @@ public class TestFeatures_Test extends TestCase {
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for(Node n : Sequence.fromIterable(nodes)) {
+    for (Node n : Sequence.fromIterable(nodes)) {
       sb.append(sep).append(n.getNodeName());
       sep = ", ";
     }
     return sb.toString();
   }
-
 }

@@ -53,7 +53,6 @@ public class ExternalVariableReference extends PropertyValueExpression implement
     super.setReferent(ExternalVariableReference.VARIABLE, node);
   }
 
-
   public static ExternalVariableReference newInstance(SModel sm, boolean init) {
     return (ExternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ExternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -61,5 +60,4 @@ public class ExternalVariableReference extends PropertyValueExpression implement
   public static ExternalVariableReference newInstance(SModel sm) {
     return ExternalVariableReference.newInstance(sm, false);
   }
-
 }

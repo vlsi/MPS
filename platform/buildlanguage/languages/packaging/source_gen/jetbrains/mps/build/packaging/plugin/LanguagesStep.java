@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class LanguagesStep extends AbstractStep {
-
   private final Project myProject;
   private final AbstractBuildGenerator myGenerator;
   private CheckBoxTree myCheckTree;
@@ -58,8 +57,7 @@ public class LanguagesStep extends AbstractStep {
     List<IModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
     List<ModuleData> children = data.getModules();
-    ListSequence.fromList(children).sort(new Comparator <ModuleData>() {
-
+    ListSequence.fromList(children).sort(new Comparator<ModuleData>() {
       public int compare(ModuleData data1, ModuleData data2) {
         IModule module1 = data1.getModule();
         IModule module2 = data2.getModule();
@@ -76,7 +74,7 @@ public class LanguagesStep extends AbstractStep {
       }
     }, true);
     NamespaceTreeBuilder builder = new LanguagesStep.MyTreeBuilder(this.myMpsProject);
-    for(ModuleData moduleData : ListSequence.fromList(children)) {
+    for (ModuleData moduleData : ListSequence.fromList(children)) {
       builder.addNode(new CheckBoxNode(moduleData, false));
     }
     CheckBoxNode allModulesNode = new CheckBoxNode(data, false);
@@ -85,9 +83,9 @@ public class LanguagesStep extends AbstractStep {
     return new CheckBoxTree(allModulesNode);
   }
 
-  public  <N extends NodeData>void fillChildren(CheckBoxNode<N> node) {
+  public <N extends NodeData>void fillChildren(CheckBoxNode<N> node) {
     int childCount = node.getChildCount();
-    for(int i = 0 ; i < childCount ; i++ ) {
+    for (int i = 0 ; i < childCount ; i++ ) {
       N data = node.getData();
       CheckBoxNode<N> child = (CheckBoxNode<N>)node.getChildAt(i);
       NodeData childData = child.getData();
@@ -104,12 +102,11 @@ public class LanguagesStep extends AbstractStep {
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
     Set<NodeData> modules = SetSequence.fromSet(new LinkedHashSet<NodeData>());
-    for(NodeData item : SetSequence.fromSet(selectedItems)) {
+    for (NodeData item : SetSequence.fromSet(selectedItems)) {
       this.fillWithParents(item, modules);
     }
     List<NodeData> toSort = ListSequence.fromListWithValues(new LinkedList<NodeData>(), modules);
-    ListSequence.fromList(toSort).sort(new Comparator <NodeData>() {
-
+    ListSequence.fromList(toSort).sort(new Comparator<NodeData>() {
       public int compare(NodeData a, NodeData b) {
         if ((a instanceof NamespaceData) && (b instanceof ModuleData)) {
           return -1;
@@ -143,12 +140,10 @@ public class LanguagesStep extends AbstractStep {
   }
 
   public static class MyTreeBuilder extends NamespaceTreeBuilder<CheckBoxNode, CheckBoxNamespaceNode> {
-
     private MPSProject myMpsProject;
 
     public MyTreeBuilder(MPSProject mpsProject) {
-      super(new NamespaceTreeBuilder.NamespaceNodeBuilder <CheckBoxNamespaceNode>() {
-
+      super(new NamespaceTreeBuilder.NamespaceNodeBuilder<CheckBoxNamespaceNode>() {
         public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
         }
@@ -180,7 +175,5 @@ public class LanguagesStep extends AbstractStep {
       }
       return namespace;
     }
-
-}
-
+  }
 }

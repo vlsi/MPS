@@ -32,12 +32,12 @@ public class CloneRoot_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F5";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class CloneRoot_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -60,8 +60,7 @@ public class CloneRoot_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -75,9 +74,9 @@ public class CloneRoot_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      for(SNode node : ListSequence.fromList(CloneRoot_Action.this.nodes)) {
+      for (SNode node : ListSequence.fromList(CloneRoot_Action.this.nodes)) {
         SNode root = SNodeOperations.getContainingRoot(node);
         SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
@@ -90,5 +89,4 @@ public class CloneRoot_Action extends GeneratedAction {
       }
     }
   }
-
 }

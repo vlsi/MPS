@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FindMatchStatement_DataFlow extends DataFlowBuilder {
-
   public FindMatchStatement_DataFlow() {
   }
 
@@ -20,5 +19,4 @@ public class FindMatchStatement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "begin"));
   }
-
 }

@@ -31,12 +31,12 @@ public class AddModuleToProject_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -47,7 +47,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,9 +63,9 @@ public class AddModuleToProject_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      for(IModule module : ListSequence.fromList(AddModuleToProject_Action.this.modules)) {
+      for (IModule module : ListSequence.fromList(AddModuleToProject_Action.this.modules)) {
         if (module instanceof Language) {
           AddModuleToProject_Action.this.mpsProject.addProjectLanguage(((Language)module));
         } else if (module instanceof Solution) {
@@ -84,5 +84,4 @@ public class AddModuleToProject_Action extends GeneratedAction {
       }
     }
   }
-
 }

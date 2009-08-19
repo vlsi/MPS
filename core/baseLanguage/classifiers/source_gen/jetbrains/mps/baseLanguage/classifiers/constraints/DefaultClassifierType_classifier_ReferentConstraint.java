@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class DefaultClassifierType_classifier_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public DefaultClassifierType_classifier_ReferentConstraint() {
   }
 
@@ -31,13 +30,11 @@ public class DefaultClassifierType_classifier_ReferentConstraint extends BaseNod
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> classifiers = SModelOperations.getRootsIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier");
-    classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter <SNode>() {
-
+    classifiers = ListSequence.fromList(classifiers).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getConceptDeclaration(IClassifier_Behavior.call_createType_1213877527970(it)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType");
       }
     }).toListSequence();
     return classifiers;
   }
-
 }

@@ -7,7 +7,6 @@ import java.io.File;
 import jetbrains.mps.ypath.runtime.IFilter;
 
 public class File_TreePath extends TreePath<File> {
-
   public File_TreePath() {
   }
 
@@ -20,19 +19,17 @@ public class File_TreePath extends TreePath<File> {
   }
 
   private static class Parent {
-
     public static File parent(File n) {
       return n;
     }
+  }
 
-}
   private static class Children {
-
     public static File[] childrenArray(File n) {
       return n.listFiles();
     }
+  }
 
-}
   public static class FILE_NodeKindTrigger implements IFilter<File> {
     private static File_TreePath.FILE_NodeKindTrigger instance;
 
@@ -43,15 +40,14 @@ public class File_TreePath extends TreePath<File> {
       return f.isFile();
     }
 
-
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new File_TreePath.FILE_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class DIR_NodeKindTrigger implements IFilter<File> {
     private static File_TreePath.DIR_NodeKindTrigger instance;
 
@@ -62,32 +58,27 @@ public class File_TreePath extends TreePath<File> {
       return f.isDirectory();
     }
 
-
     public static IFilter<File> getInstance() {
       if (instance == null) {
         instance = new File_TreePath.DIR_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class FILE_name_Property {
-
     public static IFilter<File> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             File node = (File)n;
             String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
@@ -99,13 +90,9 @@ public class File_TreePath extends TreePath<File> {
     }
 
     private static class Getter {
-
       public static String getValue(File f) {
         return f.getName();
       }
-
-}
-
-}
-
+    }
+  }
 }

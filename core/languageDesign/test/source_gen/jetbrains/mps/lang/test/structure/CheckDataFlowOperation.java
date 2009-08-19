@@ -21,5 +21,4 @@ public class CheckDataFlowOperation extends NodeOperation {
   public static CheckDataFlowOperation newInstance(SModel sm) {
     return CheckDataFlowOperation.newInstance(sm, false);
   }
-
 }

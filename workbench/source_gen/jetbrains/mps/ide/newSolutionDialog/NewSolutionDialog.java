@@ -10,7 +10,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 
 public class NewSolutionDialog extends BaseDialog {
-
   public NewSolutionDialogContentPane myContentPane;
 
   public NewSolutionDialog(Frame frame) {
@@ -92,5 +91,4 @@ public class NewSolutionDialog extends BaseDialog {
   public void buttonMethod1() {
     myContentPane.onCancel();
   }
-
 }

@@ -29,12 +29,12 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,7 +45,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -57,14 +57,13 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
       File targetDir;
       if (!(SystemInfo.isMac)) {
         targetDir = new File(System.getProperty("user.home") + File.separator + ".IntelliJIdea80" + File.separator + "config" + File.separator + "plugins");
-      } else
-      {
+      } else {
         targetDir = new File(System.getProperty("user.home") + File.separator + "Library" + File.separator + "Application Support" + File.separator + "IntelliJIDEA80");
       }
       if (!(targetDir.exists())) {
@@ -82,5 +81,4 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       }
     }
   }
-
 }

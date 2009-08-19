@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class TryFeatures extends TreePath<Node> {
-
   public TryFeatures() {
     this.registerFeature(new TryFeatures.Desc_Feature_nodes());
     this.registerFeature(new TryFeatures.Desc_Feature_attributes());
@@ -25,14 +24,14 @@ public class TryFeatures extends TreePath<Node> {
   }
 
   private static class Parent {
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
+  }
 
-}
   private static class Children {
-}
+  }
+
   public static class foo_NodeKindTrigger implements IFilter<Node> {
     private static TryFeatures.foo_NodeKindTrigger instance;
 
@@ -43,32 +42,27 @@ public class TryFeatures extends TreePath<Node> {
       return true;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new TryFeatures.foo_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class foo_BAR_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
@@ -80,31 +74,25 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node node) {
         return "";
       }
+    }
+  }
 
-}
-
-}
   public static class foo_BAZ_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
@@ -116,16 +104,13 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node node) {
         return "";
       }
+    }
+  }
 
-}
-
-}
   private static class Feature_nodes extends AbstractList<Node> {
-
     private Node thisNode;
 
     public Feature_nodes(Node thisNode) {
@@ -142,10 +127,9 @@ public class TryFeatures extends TreePath<Node> {
     public int size() {
       return this.thisNode.getChildNodes().getLength();
     }
+  }
 
-}
   private static class Feature_attributes extends AbstractCollection<Node> {
-
     private Node thisNode;
 
     public Feature_attributes(Node thisNode) {
@@ -154,14 +138,11 @@ public class TryFeatures extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final Node _node = this.thisNode;
-      return Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private int _3_count;
                 private int _4_idx;
@@ -218,10 +199,9 @@ __switch__:
     public int size() {
       return this.thisNode.getAttributes().getLength();
     }
+  }
 
-}
   public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_nodes() {
     }
 
@@ -244,10 +224,9 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_attributes() {
     }
 
@@ -270,7 +249,5 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
-
-}
-
+  }
 }

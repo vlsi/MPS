@@ -12,14 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CompositeString_RT {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new CompositeString_RT.CompositeString_RT_RIGHT_TRANSFORM(node));
   }
 
   public static class CompositeString_RT_RIGHT_TRANSFORM extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public CompositeString_RT_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
@@ -34,7 +32,5 @@ public class CompositeString_RT {
       SNodeOperations.replaceWithAnother(node, newNode);
       SLinkOperations.setTarget(newNode, "left", node, true);
     }
-
-}
-
+  }
 }

@@ -24,12 +24,12 @@ public class MPSProjectPaths_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt ENTER";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -40,7 +40,7 @@ public class MPSProjectPaths_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -52,7 +52,7 @@ public class MPSProjectPaths_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPropertiesDialog dialog = new ProjectPropertiesDialog(MPSProjectPaths_Action.this.project);
       dialog.showDialog();
@@ -62,5 +62,4 @@ public class MPSProjectPaths_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -23,7 +23,6 @@ public class ExternalPropertyDeclaration extends PropertyDeclaration {
     this.setBooleanProperty(ExternalPropertyDeclaration.CHECK_ON_START, value);
   }
 
-
   public static ExternalPropertyDeclaration newInstance(SModel sm, boolean init) {
     return (ExternalPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ExternalPropertyDeclaration extends PropertyDeclaration {
   public static ExternalPropertyDeclaration newInstance(SModel sm) {
     return ExternalPropertyDeclaration.newInstance(sm, false);
   }
-
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.generictasks.behavior.TaskCall_Behavior;
 
 public class PathReference_call_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public PathReference_call_ReferentConstraint() {
   }
 
@@ -31,7 +30,7 @@ public class PathReference_call_ReferentConstraint extends BaseNodeReferenceSear
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> importedNodes = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.TaskCall");
     List<SNode> newScope = ListSequence.fromList(new ArrayList<SNode>());
-    for(SNode node : ListSequence.fromList(importedNodes)) {
+    for (SNode node : ListSequence.fromList(importedNodes)) {
       SNode gcall = SNodeOperations.cast(node, "jetbrains.mps.build.generictasks.structure.TaskCall");
       if (TaskCall_Behavior.call_isReferencedAndOfDeclaration_353793545802644027(gcall, "path")) {
         ListSequence.fromList(newScope).addElement(gcall);
@@ -39,5 +38,4 @@ public class PathReference_call_ReferentConstraint extends BaseNodeReferenceSear
     }
     return newScope;
   }
-
 }

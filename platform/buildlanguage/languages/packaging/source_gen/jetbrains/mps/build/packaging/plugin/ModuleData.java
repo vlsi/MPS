@@ -14,7 +14,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.ide.projectPane.Icons;
 
 public class ModuleData implements NodeData {
-
   private final IModule myModule;
   private NodeData myParent;
 
@@ -61,5 +60,4 @@ public class ModuleData implements NodeData {
   public void setParent(NodeData parent) {
     this.myParent = parent;
   }
-
 }

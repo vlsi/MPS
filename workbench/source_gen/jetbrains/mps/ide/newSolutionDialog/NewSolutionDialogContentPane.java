@@ -38,7 +38,6 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 
 public class NewSolutionDialogContentPane extends JPanel {
-
   public NewSolutionDialogContentPane myThis;
   private JLabel myComponent0;
   private JTextField myName0;
@@ -54,7 +53,6 @@ public class NewSolutionDialogContentPane extends JPanel {
   private Events myEvents = new Events(null) {
     {
     }
-
 
     public void initialize() {
     }
@@ -111,7 +109,7 @@ public class NewSolutionDialogContentPane extends JPanel {
   }
 
   private void unbind() {
-    for(AutoBinding binding : this.myBindings) {
+    for (AutoBinding binding : this.myBindings) {
       if (binding.isBound()) {
         binding.unbind();
       }
@@ -206,7 +204,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  /* package */void onOk() {
+  /*package*/ void onOk() {
     if (myThis.getSolutionPath().length() == 0) {
       myThis.getDialog().setErrorText("Enter solution directory");
       return;
@@ -236,11 +234,9 @@ public class NewSolutionDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
-
-      public void run(@NotNull() ProgressIndicator indicator) {
+      public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
-
           public void run() {
             myThis.setResult(myThis.createNewSolution(myThis.getSolutionName(), FileSystem.getFile(file)));
           }
@@ -249,11 +245,11 @@ public class NewSolutionDialogContentPane extends JPanel {
     });
   }
 
-  /* package */void onCancel() {
+  /*package*/ void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  /* package */Solution createNewSolution(String solutionName, final IFile solutionDescriptorFile) {
+  /*package*/ Solution createNewSolution(String solutionName, final IFile solutionDescriptorFile) {
     File dir = solutionDescriptorFile.toFile().getParentFile();
     if (!(dir.exists())) {
       dir.mkdirs();
@@ -269,7 +265,6 @@ public class NewSolutionDialogContentPane extends JPanel {
     solutionDescriptor.getModelRoots().add(modelRoot);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
-
       public void run() {
         ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(solutionDescriptorFile), false);
       }
@@ -277,7 +272,7 @@ public class NewSolutionDialogContentPane extends JPanel {
     return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
   }
 
-  /* package */void updateSolutionPath() {
+  /*package*/ void updateSolutionPath() {
     if (myThis.getProject() == null) {
       return;
     }
@@ -287,5 +282,4 @@ public class NewSolutionDialogContentPane extends JPanel {
       myThis.setSolutionPath(prefix + myThis.getSolutionName());
     }
   }
-
 }

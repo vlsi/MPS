@@ -14,7 +14,6 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 
 public class Module_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public Module_name_PropertyConstraint() {
   }
 
@@ -36,5 +35,4 @@ public class Module_name_PropertyConstraint implements IModelConstraints, INodeP
     }
     return Module_Behavior.extractModuleProperName_1235487584035(module);
   }
-
 }

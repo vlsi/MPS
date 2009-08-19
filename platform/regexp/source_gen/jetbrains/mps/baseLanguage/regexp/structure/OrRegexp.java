@@ -21,5 +21,4 @@ public class OrRegexp extends BinaryRegexp {
   public static OrRegexp newInstance(SModel sm) {
     return OrRegexp.newInstance(sm, false);
   }
-
 }

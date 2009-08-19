@@ -21,7 +21,6 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 
 public class EvensssssstsSample extends JDialog {
-
   public EvensssssstsSample myThis;
   private JLabel myComponent0;
   private JButton myBtn0;
@@ -32,10 +31,8 @@ public class EvensssssstsSample extends JDialog {
       this.addEvent(new Event("onAction"));
     }
 
-
     public void initialize() {
       myThis.myBtn0.addActionListener(new ActionListener() {
-
         public void actionPerformed(ActionEvent e) {
           myEvents.getEvent("onAction").raise(e);
         }
@@ -51,7 +48,6 @@ public class EvensssssstsSample extends JDialog {
     component.add(this.createComponent1());
     this.myEvents.initialize();
     myThis.getEvents().getEvent("onAction").addListener(new IListener() {
-
       public void invoke(Object o) {
         if (!(o instanceof ActionEvent)) {
           throw new IllegalArgumentException();
@@ -89,7 +85,7 @@ public class EvensssssstsSample extends JDialog {
   }
 
   private void unbind() {
-    for(AutoBinding binding : this.myBindings) {
+    for (AutoBinding binding : this.myBindings) {
       if (binding.isBound()) {
         binding.unbind();
       }
@@ -119,8 +115,7 @@ public class EvensssssstsSample extends JDialog {
     this.firePropertyChange("myCount", oldValue, newValue);
   }
 
-  /* package */void pressHandler(ActionEvent event) {
+  /*package*/ void pressHandler(ActionEvent event) {
     myThis.setMyCount(myThis.getMyCount() + 1);
   }
-
 }

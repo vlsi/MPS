@@ -29,12 +29,12 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift S";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,7 +45,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,7 +66,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode concept = SNodeOperations.getConceptDeclaration(GoToConceptDeclaration_Action.this.node);
       GoToConceptDeclaration_Action.this.context.getComponent(MPSEditorOpener.class).openNode(concept);
@@ -76,5 +76,4 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
       }
     }
   }
-
 }

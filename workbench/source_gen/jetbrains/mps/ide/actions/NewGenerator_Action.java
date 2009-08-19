@@ -32,7 +32,7 @@ public class NewGenerator_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -41,7 +41,7 @@ public class NewGenerator_Action extends GeneratedAction {
     return NewGenerator_Action.this.module != null && NewGenerator_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -55,7 +55,7 @@ public class NewGenerator_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -75,12 +75,11 @@ public class NewGenerator_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Frame localFrame = NewGenerator_Action.this.frame;
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           dialog[0] = new NewGeneratorDialog(localFrame, ((Language)NewGenerator_Action.this.module));
         }
@@ -96,5 +95,4 @@ public class NewGenerator_Action extends GeneratedAction {
       }
     }
   }
-
 }

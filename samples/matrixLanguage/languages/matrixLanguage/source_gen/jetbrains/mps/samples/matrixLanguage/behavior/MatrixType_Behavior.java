@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MatrixType_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class MatrixType_Behavior {
     }
     return "node<" + scalar + ">";
   }
-
 }

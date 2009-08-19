@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Antcall_Behavior {
-
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "delete", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Delete", null), true);
   }
@@ -44,5 +43,4 @@ public class Antcall_Behavior {
   public static List<SNode> virtual_getPostProcessingTasks_1213877333861(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "delete", true));
   }
-
 }

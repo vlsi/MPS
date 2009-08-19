@@ -117,7 +117,6 @@ public class Cycle extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Cycle.CLASSPATH, node);
   }
 
-
   public static Cycle newInstance(SModel sm, boolean init) {
     return (Cycle)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.Cycle", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -125,5 +124,4 @@ public class Cycle extends BaseConcept implements INamedConcept {
   public static Cycle newInstance(SModel sm) {
     return Cycle.newInstance(sm, false);
   }
-
 }

@@ -60,7 +60,6 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
     this.setProperty(StringLiteral.VIRTUAL_PACKAGE, value);
   }
 
-
   public static StringLiteral newInstance(SModel sm, boolean init) {
     return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
   public static StringLiteral newInstance(SModel sm) {
     return StringLiteral.newInstance(sm, false);
   }
-
 }

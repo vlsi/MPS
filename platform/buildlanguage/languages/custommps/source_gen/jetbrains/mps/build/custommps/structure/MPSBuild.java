@@ -113,7 +113,6 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
     this.insertChild(prev, MPSBuild.ENTRY, node);
   }
 
-
   public static MPSBuild newInstance(SModel sm, boolean init) {
     return (MPSBuild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.MPSBuild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -121,5 +120,4 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   public static MPSBuild newInstance(SModel sm) {
     return MPSBuild.newInstance(sm, false);
   }
-
 }

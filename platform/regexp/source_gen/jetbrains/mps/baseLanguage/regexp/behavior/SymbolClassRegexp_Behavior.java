@@ -28,13 +28,12 @@ public class SymbolClassRegexp_Behavior {
 
   public static String call_partsToString_1222857748873(SNode thisNode, List<SNode> parts) {
     StringBuilder result = new StringBuilder();
-    for(SNode part : parts) {
+    for (SNode part : parts) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart")) {
         SNode cscp = SNodeOperations.cast(part, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
         if (Regexp_Behavior.call_checkStringForUnicode_1222857160881(thisNode, SPropertyOperations.getString(cscp, "character"))) {
           result.append(SPropertyOperations.getString(cscp, "character"));
-        } else
-        {
+        } else {
           result.append(Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(cscp, "character").charAt(0)));
         }
       } else if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart")) {
@@ -48,8 +47,7 @@ public class SymbolClassRegexp_Behavior {
           if (Regexp_Behavior.call_checkStringForUnicode_1222857160881(thisNode, SPropertyOperations.getString(iscp, "end"))) {
             end = SPropertyOperations.getString(iscp, "end");
           }
-        } else
-        {
+        } else {
           start = Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(iscp, "start").charAt(0));
           end = Regexp_Behavior.call_quote_1222857178958(thisNode, SPropertyOperations.getString(iscp, "end").charAt(0));
         }
@@ -65,8 +63,7 @@ public class SymbolClassRegexp_Behavior {
           List<SNode> tr = new ArrayList<SNode>();
           ListSequence.fromList(tr).addElement(tmLeft);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
-        } else
-        {
+        } else {
           throw new RuntimeException("NOT SUPPORTED: " + part.getClass());
         }
         result.append("&&");
@@ -76,12 +73,10 @@ public class SymbolClassRegexp_Behavior {
           List<SNode> tr = new ArrayList<SNode>();
           ListSequence.fromList(tr).addElement(tmrRight);
           result.append(SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, tr));
-        } else
-        {
+        } else {
           throw new RuntimeException("NOT SUPPORTED: " + part.getClass());
         }
-      } else
-      {
+      } else {
         throw new RuntimeException("NOT SUPPORTED: " + part.getClass());
       }
     }
@@ -95,5 +90,4 @@ public class SymbolClassRegexp_Behavior {
   public static String callSuper_getString_1222857578599(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222857578599, vars);
   }
-
 }

@@ -6,14 +6,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class TestLabel {
-
   public static void main(String[] args) {
 outer:
-    for(Integer foo : ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)) {
+    for (Integer foo : ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)) {
 label:
       do {
 none:
-        for(int i = 0 ; i < 10 ; i++ ) {
+        for (int i = 0 ; i < 10 ; i++ ) {
           System.out.println("i=" + i);
           if (i == 5) {
             continue outer;
@@ -22,5 +21,4 @@ none:
       } while(true);
     }
   }
-
 }

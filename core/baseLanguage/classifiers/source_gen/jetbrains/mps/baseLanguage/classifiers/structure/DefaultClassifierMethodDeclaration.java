@@ -62,7 +62,6 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
     super.setChild(DefaultClassifierMethodDeclaration.VISIBILITY, node);
   }
 
-
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm, boolean init) {
     return (DefaultClassifierMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -70,5 +69,4 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm) {
     return DefaultClassifierMethodDeclaration.newInstance(sm, false);
   }
-
 }

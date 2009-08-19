@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ChildPart_Actions extends EditorCellKeyMap {
-
   public ChildPart_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -21,8 +20,8 @@ public class ChildPart_Actions extends EditorCellKeyMap {
     action = new ChildPart_Actions.ChildPart_Actions_Action1();
     this.putAction("any", "V", action);
   }
-  public static class ChildPart_Actions_Action0 extends EditorCellKeyMapAction {
 
+  public static class ChildPart_Actions_Action0 extends EditorCellKeyMapAction {
     public ChildPart_Actions_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -58,10 +57,9 @@ public class ChildPart_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " *";
     }
+  }
 
-}
   public static class ChildPart_Actions_Action1 extends EditorCellKeyMapAction {
-
     public ChildPart_Actions_Action1() {
       this.setShownInPopupMenu(false);
     }
@@ -99,7 +97,5 @@ public class ChildPart_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " V";
     }
-
-}
-
+  }
 }

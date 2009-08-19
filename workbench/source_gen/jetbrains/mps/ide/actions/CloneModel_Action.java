@@ -29,7 +29,7 @@ public class CloneModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F5";
   }
@@ -42,13 +42,12 @@ public class CloneModel_Action extends GeneratedAction {
     if (module instanceof Language) {
       Language language = (Language)module;
       return language.getAspectForModel(CloneModel_Action.this.model) == null;
-    } else
-    {
+    } else {
       return true;
     }
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -62,7 +61,7 @@ public class CloneModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -82,7 +81,7 @@ public class CloneModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CloneModelDialog dialog = new CloneModelDialog(CloneModel_Action.this.model, CloneModel_Action.this.context);
       dialog.showDialog();
@@ -92,5 +91,4 @@ public class CloneModel_Action extends GeneratedAction {
       }
     }
   }
-
 }

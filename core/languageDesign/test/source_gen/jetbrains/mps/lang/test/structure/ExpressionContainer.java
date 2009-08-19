@@ -25,7 +25,6 @@ public class ExpressionContainer extends Statement {
     super.setChild(ExpressionContainer.EXPRESSION, node);
   }
 
-
   public static ExpressionContainer newInstance(SModel sm, boolean init) {
     return (ExpressionContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.ExpressionContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class ExpressionContainer extends Statement {
   public static ExpressionContainer newInstance(SModel sm) {
     return ExpressionContainer.newInstance(sm, false);
   }
-
 }

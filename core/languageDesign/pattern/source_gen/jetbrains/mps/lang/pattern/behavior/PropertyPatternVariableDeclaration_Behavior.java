@@ -5,8 +5,6 @@ package jetbrains.mps.lang.pattern.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class PropertyPatternVariableDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

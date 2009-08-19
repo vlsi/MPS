@@ -22,5 +22,4 @@ public class SwitchToInspector extends Statement {
   public static SwitchToInspector newInstance(SModel sm) {
     return SwitchToInspector.newInstance(sm, false);
   }
-
 }

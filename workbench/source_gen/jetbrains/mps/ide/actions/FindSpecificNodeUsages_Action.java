@@ -46,7 +46,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F7";
   }
@@ -55,7 +55,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     return FindSpecificNodeUsages_Action.this.getTool() != null && FindSpecificNodeUsages_Action.this.getOptionsComponent() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -69,7 +69,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -103,12 +103,11 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       // get node
       final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           operationNode.value = (FindSpecificNodeUsages_Action.this.cell == null ?
             FindSpecificNodeUsages_Action.this.node :
@@ -130,7 +129,6 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
       final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
       final Wrappers._T<ViewOptions> viewOptions = new Wrappers._T<ViewOptions>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           provider.value = options.value.getOption(FindersOptions.class).getResult();
           query.value = options.value.getOption(ScopeOptions.class).getResult(operationNode.value, FindSpecificNodeUsages_Action.this.context, FindSpecificNodeUsages_Action.this.model);
@@ -152,5 +150,4 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
   private UsagesViewTool getTool() {
     return FindSpecificNodeUsages_Action.this.project.getComponent(UsagesViewTool.class);
   }
-
 }

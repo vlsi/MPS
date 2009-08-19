@@ -27,12 +27,12 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,7 +41,7 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -57,13 +57,12 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CustomMPSBuildGenerator buildGenerator = new CustomMPSBuildGenerator(GenerateCustomMPSBuildForProjectAction_Action.this.project);
       final GenerateBuildWizard wizard = new GenerateCustomMpsBuildWizard("Generate Custom MPS Build", GenerateCustomMPSBuildForProjectAction_Action.this.project, buildGenerator);
       wizard.initWizard();
       ApplicationManager.getApplication().invokeLater(new Runnable() {
-
         public void run() {
           wizard.show();
         }
@@ -72,5 +71,4 @@ public class GenerateCustomMPSBuildForProjectAction_Action extends GeneratedActi
       LOG.error("User's action execute method failed. Action:" + "GenerateCustomMPSBuildForProjectAction", t);
     }
   }
-
 }

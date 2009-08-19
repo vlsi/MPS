@@ -21,5 +21,4 @@ public class StringType extends PropertyType {
   public static StringType newInstance(SModel sm) {
     return StringType.newInstance(sm, false);
   }
-
 }

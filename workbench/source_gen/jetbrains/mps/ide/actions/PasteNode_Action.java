@@ -41,7 +41,7 @@ public class PasteNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl V";
   }
@@ -50,7 +50,7 @@ public class PasteNode_Action extends GeneratedAction {
     return PasteNode_Action.this.getPasteData() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -64,7 +64,7 @@ public class PasteNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -82,7 +82,7 @@ public class PasteNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PasteNodeData pasteNodeData = PasteNode_Action.this.getPasteData();
       boolean successfull = CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), PasteNode_Action.this.contextModel.getSModel(), pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), PasteNode_Action.this.context);
@@ -95,7 +95,6 @@ public class PasteNode_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           if (PasteNode_Action.this.node == null) {
             NodePaster paster = new NodePaster(pasteNodes);
@@ -103,8 +102,7 @@ public class PasteNode_Action extends GeneratedAction {
               return;
             }
             paster.pasteAsRoots(PasteNode_Action.this.contextModel.getSModel(), PasteNode_Action.this.pack);
-          } else
-          {
+          } else {
             NodePaster paster = new NodePaster(pasteNodes);
             if (!(paster.canPaste(PasteNode_Action.this.node, PasteEnv.PROJECT_TREE))) {
               return;
@@ -117,7 +115,6 @@ public class PasteNode_Action extends GeneratedAction {
           assert root != null;
           PasteNode_Action.this.context.getComponent(MPSEditorOpener.class).editNode(root, PasteNode_Action.this.context);
           SwingUtilities.invokeLater(new Runnable() {
-
             public void run() {
               PasteNode_Action.this.context.getComponent(ProjectPane.class).selectNode(pasteNodes.get(0), PasteNode_Action.this.context);
             }
@@ -134,12 +131,10 @@ public class PasteNode_Action extends GeneratedAction {
   private PasteNodeData getPasteData() {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         result.value = CopyPasteUtil.getPasteNodeDataFromClipboard(PasteNode_Action.this.contextModel.getSModel());
       }
     });
     return result.value;
   }
-
 }

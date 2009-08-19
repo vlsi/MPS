@@ -21,5 +21,4 @@ public class SeqRegexp extends BinaryRegexp {
   public static SeqRegexp newInstance(SModel sm) {
     return SeqRegexp.newInstance(sm, false);
   }
-
 }

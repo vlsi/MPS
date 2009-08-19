@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", new MatchVariableReference_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", new MatchParensRegexp_DataFlow());
@@ -29,5 +28,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", new ParensRegexp_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", new BinaryRegexp_DataFlow());
   }
-
 }

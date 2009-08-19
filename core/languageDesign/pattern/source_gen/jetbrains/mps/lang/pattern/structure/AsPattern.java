@@ -21,5 +21,4 @@ public class AsPattern extends PatternVariableDeclaration {
   public static AsPattern newInstance(SModel sm) {
     return AsPattern.newInstance(sm, false);
   }
-
 }

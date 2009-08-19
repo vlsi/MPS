@@ -22,5 +22,4 @@ public class MatrixMultExpression extends BinaryOperation {
   public static MatrixMultExpression newInstance(SModel sm) {
     return MatrixMultExpression.newInstance(sm, false);
   }
-
 }

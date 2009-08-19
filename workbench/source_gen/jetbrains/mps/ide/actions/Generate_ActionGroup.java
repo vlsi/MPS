@@ -30,5 +30,4 @@ public class Generate_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother("GenerateMenu", null);
   }
-
 }

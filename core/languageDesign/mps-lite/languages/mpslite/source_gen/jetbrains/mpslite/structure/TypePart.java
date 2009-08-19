@@ -21,5 +21,4 @@ public class TypePart extends ChildPart {
   public static TypePart newInstance(SModel sm) {
     return TypePart.newInstance(sm, false);
   }
-
 }

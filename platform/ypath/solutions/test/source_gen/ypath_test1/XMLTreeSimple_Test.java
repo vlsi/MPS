@@ -20,7 +20,7 @@ public class XMLTreeSimple_Test extends TestCase {
   private static String SINGLE_NODE = "<foo/>";
   private static String SIMPLE_TREE = "<root><a1><b1/><b2/></a1><a2><b3><c1/></b3></a2></root>";
 
-  @Test()
+  @Test
   public void test_single() throws Exception {
     Document doc = this.parse(SINGLE_NODE);
     ITreeTraversal<Node> tp = new DOM().startTraversal(doc);
@@ -28,7 +28,7 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertEquals(Sequence.fromIterable(tp).first(), doc);
   }
 
-  @Test()
+  @Test
   public void test_children() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes1 = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"));
@@ -39,7 +39,7 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertEquals("a1, a2", this.toString(nodes2));
   }
 
-  @Test()
+  @Test
   public void test_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
@@ -47,7 +47,7 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertEquals("root, a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
 
-  @Test()
+  @Test
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")));
@@ -55,7 +55,7 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertEquals("b3", this.toString(nodes));
   }
 
-  @Test()
+  @Test
   public void test_sibling_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     Node a1 = Sequence.fromIterable(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN"))).first();
@@ -74,11 +74,10 @@ public class XMLTreeSimple_Test extends TestCase {
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
-    for(Node n : Sequence.fromIterable(nodes)) {
+    for (Node n : Sequence.fromIterable(nodes)) {
       sb.append(sep).append(n.getNodeName());
       sep = ", ";
     }
     return sb.toString();
   }
-
 }

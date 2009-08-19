@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class PathHolder_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4245_0(editorContext, node);
   }
@@ -114,7 +113,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition4245_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "macro", false) != null);
   }
@@ -124,7 +122,6 @@ public class PathHolder_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline4245_0 extends AbstractCellProvider {
-
     public _Inline4245_0() {
       super();
     }
@@ -155,10 +152,9 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline4245_1 extends AbstractCellProvider {
-
     public _Inline4245_1() {
       super();
     }
@@ -189,7 +185,5 @@ public class PathHolder_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

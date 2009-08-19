@@ -51,7 +51,7 @@ public class AbstractProjectComponent_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
       return true;
     }
-    for(SNode ref : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true))) {
+    for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true))) {
       if (SLinkOperations.getTarget(ref, "configuration", false) == config) {
         return true;
       }
@@ -99,5 +99,4 @@ public class AbstractProjectComponent_Behavior {
   public static boolean callSuper_equals_1213877333900(SNode thisNode, String callerConceptFqName, SNode snode) {
     return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent"), callerConceptFqName, "virtual_equals_1213877333900", PARAMETERS_1213877333900, snode);
   }
-
 }

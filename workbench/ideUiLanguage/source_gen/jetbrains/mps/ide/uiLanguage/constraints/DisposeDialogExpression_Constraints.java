@@ -6,9 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.CanBeAChildContext;
 
 public class DisposeDialogExpression_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     return DialogUtil.dialogAccessible(_context.getParentNode());
   }
-
 }

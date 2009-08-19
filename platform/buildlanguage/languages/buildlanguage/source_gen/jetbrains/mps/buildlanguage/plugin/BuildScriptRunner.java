@@ -19,7 +19,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class BuildScriptRunner extends BaseRunner {
-
   private BuildScriptRunnerComponent myComponent;
 
   public BuildScriptRunner(BuildScriptRunnerComponent component) {
@@ -40,7 +39,6 @@ public class BuildScriptRunner extends BaseRunner {
     try {
       final Process process = builder.start();
       this.myComponent.setRunnerActions(new BuildScriptRunnerComponent.RunnerActions() {
-
         public void kill() {
           process.destroy();
         }
@@ -52,10 +50,8 @@ public class BuildScriptRunner extends BaseRunner {
         }
       });
       BaseOutputReader input = new BaseOutputReader(process.getInputStream()) {
-
         protected void addMessage(final String message) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
-
             public void run() {
               BuildScriptRunner.this.myComponent.addMessage(message);
             }
@@ -64,10 +60,8 @@ public class BuildScriptRunner extends BaseRunner {
       };
       input.start();
       BaseOutputReader error = new BaseOutputReader(process.getErrorStream()) {
-
         protected void addMessage(final String message) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
-
             public void run() {
               BuildScriptRunner.this.myComponent.addError(message);
             }
@@ -78,7 +72,6 @@ public class BuildScriptRunner extends BaseRunner {
     } catch (IOException exception) {
     }
   }
-
 
   public static List<String> getJavaHomes() {
     String systemJavaHome = System.getProperty("java.home");
@@ -94,7 +87,7 @@ public class BuildScriptRunner extends BaseRunner {
   }
 
   public static String getJdkHome() {
-    for(String javaHome : ListSequence.fromList(BuildScriptRunner.getJavaHomes())) {
+    for (String javaHome : ListSequence.fromList(BuildScriptRunner.getJavaHomes())) {
       String javaBinHome = javaHome + File.separator + "bin" + File.separator;
       String osName = System.getProperty("os.name");
       if (osName.startsWith("Mac OS")) {
@@ -106,8 +99,7 @@ public class BuildScriptRunner extends BaseRunner {
         if (new File(javaBinHome + "java.exe").exists()) {
           return javaHome;
         }
-      } else
-      {
+      } else {
         if (new File(javaBinHome + "java").exists()) {
           return javaHome;
         }
@@ -124,8 +116,7 @@ public class BuildScriptRunner extends BaseRunner {
     } else
     if (osName.startsWith("Windows")) {
       return javaBinHome + "java.exe";
-    } else
-    {
+    } else {
       return javaBinHome + "java";
     }
   }
@@ -151,9 +142,8 @@ public class BuildScriptRunner extends BaseRunner {
     PathMacros pathMacros = PathMacros.getInstance();
     ListSequence.fromList(parameters).addElement("-D" + "mps_home" + "=" + jetbrains.mps.util.PathManager.getHomePath());
     Set<String> macroNames = pathMacros.getUserMacroNames();
-    for(String macro : SetSequence.fromSet(macroNames)) {
+    for (String macro : SetSequence.fromSet(macroNames)) {
       ListSequence.fromList(parameters).addElement("-D" + macro + "=" + pathMacros.getValue(macro));
     }
   }
-
 }

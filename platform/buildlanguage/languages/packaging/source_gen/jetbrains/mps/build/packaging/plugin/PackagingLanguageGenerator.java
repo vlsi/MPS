@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
 
 public class PackagingLanguageGenerator {
-
   public PackagingLanguageGenerator() {
   }
 
@@ -60,7 +59,7 @@ public class PackagingLanguageGenerator {
     String[] pathComponents = pathTail.split(File.separator.replace("\\", "\\\\"));
     if (pathComponents.length > 0) {
       List<SNode> pathComponentNodes = ListSequence.fromList(new ArrayList<SNode>());
-      for(String pathComponentName : pathComponents) {
+      for (String pathComponentName : pathComponents) {
         if (StringUtils.isEmpty(pathComponentName)) {
           continue;
         }
@@ -70,5 +69,4 @@ public class PackagingLanguageGenerator {
       SLinkOperations.setTarget(path, "compositePathComponent", compositePathComponent, true);
     }
   }
-
 }

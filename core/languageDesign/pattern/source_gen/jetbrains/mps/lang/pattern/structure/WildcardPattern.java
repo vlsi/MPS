@@ -21,5 +21,4 @@ public class WildcardPattern extends Pattern {
   public static WildcardPattern newInstance(SModel sm) {
     return WildcardPattern.newInstance(sm, false);
   }
-
 }

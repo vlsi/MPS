@@ -21,5 +21,4 @@ public class IntegerType extends PropertyType {
   public static IntegerType newInstance(SModel sm) {
     return IntegerType.newInstance(sm, false);
   }
-
 }

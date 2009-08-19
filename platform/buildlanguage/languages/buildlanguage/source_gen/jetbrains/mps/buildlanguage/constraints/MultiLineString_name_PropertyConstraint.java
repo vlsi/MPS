@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior;
 
 public class MultiLineString_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public MultiLineString_name_PropertyConstraint() {
   }
 
@@ -26,7 +25,7 @@ public class MultiLineString_name_PropertyConstraint implements IModelConstraint
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     String result = "";
-    for(SNode lit : ListSequence.fromList(SLinkOperations.getTargets(node, "stringExpression", true))) {
+    for (SNode lit : ListSequence.fromList(SLinkOperations.getTargets(node, "stringExpression", true))) {
       result += PropertyValueExpression_Behavior.call_toString_1213877472569(lit);
     }
     return (result.length() > 0 ?
@@ -34,5 +33,4 @@ public class MultiLineString_name_PropertyConstraint implements IModelConstraint
       ""
     );
   }
-
 }

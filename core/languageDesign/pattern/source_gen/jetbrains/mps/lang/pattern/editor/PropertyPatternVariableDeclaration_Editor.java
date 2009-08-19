@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9335_0(editorContext, node);
   }
@@ -65,5 +64,4 @@ public class PropertyPatternVariableDeclaration_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
 }

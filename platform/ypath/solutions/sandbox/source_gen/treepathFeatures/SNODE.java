@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 
 public class SNODE extends TreePath<SNode> {
-
   public SNODE() {
   }
 
   public SNode parent(SNode node) {
     return SNODE.Parent.parent(node);
   }
-
 
   public static IFeatureDescriptor<SNode> child(String param) {
     return new SNODE.Desc_Feature_child(param);
@@ -29,16 +27,15 @@ public class SNODE extends TreePath<SNode> {
   }
 
   private static class Parent {
-
     public static SNode parent(SNode node) {
       return SNodeOperations.getParent(node);
     }
+  }
 
-}
   private static class Children {
-}
-  private static class Feature_child extends AbstractCollection<SNode> {
+  }
 
+  private static class Feature_child extends AbstractCollection<SNode> {
     private SNode thisNode;
     private String param;
 
@@ -58,10 +55,9 @@ public class SNODE extends TreePath<SNode> {
     public int size() {
       return SLinkOperations.getTargets(this.thisNode, this.param, true).size();
     }
+  }
 
-}
   private static class Feature_link extends AbstractCollection<SNode> {
-
     private SNode thisNode;
     private String param;
 
@@ -81,10 +77,9 @@ public class SNODE extends TreePath<SNode> {
     public int size() {
       return SLinkOperations.getTargets(this.thisNode, this.param, false).size();
     }
+  }
 
-}
   public static class Desc_Feature_child extends IFeatureDescriptor.Stub<SNode> implements IFeatureDescriptor<SNode> {
-
     private String param;
 
     public Desc_Feature_child(String param) {
@@ -110,10 +105,9 @@ public class SNODE extends TreePath<SNode> {
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_link extends IFeatureDescriptor.Stub<SNode> implements IFeatureDescriptor<SNode> {
-
     private String param;
 
     public Desc_Feature_link(String param) {
@@ -139,7 +133,5 @@ public class SNODE extends TreePath<SNode> {
     public boolean isAscending() {
       return false;
     }
-
-}
-
+  }
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public abstract class AbstractBuildGenerator {
-
   private String myProjectName;
   private String mySolutionName;
   private Solution mySolution;
@@ -121,5 +120,4 @@ public abstract class AbstractBuildGenerator {
   public boolean isValid() {
     return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution));
   }
-
 }

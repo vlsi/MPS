@@ -7,11 +7,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 
 public class EditorOperation_DataFlow extends DataFlowBuilder {
-
   public EditorOperation_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
   }
-
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PackagingStyles_StyleSheet {
-
   public static Style getHint(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
@@ -61,5 +60,4 @@ public class PackagingStyles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
-
 }

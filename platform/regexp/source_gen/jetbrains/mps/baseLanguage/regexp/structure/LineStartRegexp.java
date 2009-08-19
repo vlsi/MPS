@@ -21,5 +21,4 @@ public class LineStartRegexp extends Regexp {
   public static LineStartRegexp newInstance(SModel sm) {
     return LineStartRegexp.newInstance(sm, false);
   }
-
 }

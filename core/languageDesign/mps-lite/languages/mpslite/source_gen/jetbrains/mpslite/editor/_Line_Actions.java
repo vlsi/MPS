@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class _Line_Actions extends EditorCellKeyMap {
-
   public _Line_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -25,8 +24,8 @@ public class _Line_Actions extends EditorCellKeyMap {
     action = new _Line_Actions._Line_Actions_Action2();
     this.putAction("none", "VK_ENTER", action);
   }
-  public static class _Line_Actions_Action0 extends EditorCellKeyMapAction {
 
+  public static class _Line_Actions_Action0 extends EditorCellKeyMapAction {
     public _Line_Actions_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
@@ -63,10 +62,9 @@ public class _Line_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none ENTER";
     }
+  }
 
-}
   public static class _Line_Actions_Action1 extends EditorCellKeyMapAction {
-
     public _Line_Actions_Action1() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_FIRST_POSITION);
       this.setShownInPopupMenu(false);
@@ -103,10 +101,9 @@ public class _Line_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none ENTER";
     }
+  }
 
-}
   public static class _Line_Actions_Action2 extends EditorCellKeyMapAction {
-
     public _Line_Actions_Action2() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION);
       this.setShownInPopupMenu(false);
@@ -160,7 +157,5 @@ public class _Line_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none ENTER";
     }
-
-}
-
+  }
 }

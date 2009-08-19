@@ -33,7 +33,7 @@ public class RebuildModule_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -42,7 +42,7 @@ public class RebuildModule_Action extends GeneratedAction {
     return RebuildModule_Action.this.module.isCompileInMPS();
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class RebuildModule_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,14 +72,12 @@ public class RebuildModule_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final ModuleMaker maker = new ModuleMaker();
       ProgressManager.getInstance().run(new Task.Modal(RebuildModule_Action.this.project, "Rebuilding", true) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               Set<IModule> modules = CollectionUtil.set(RebuildModule_Action.this.module);
               maker.clean(modules, indicator);
@@ -95,5 +93,4 @@ public class RebuildModule_Action extends GeneratedAction {
       }
     }
   }
-
 }

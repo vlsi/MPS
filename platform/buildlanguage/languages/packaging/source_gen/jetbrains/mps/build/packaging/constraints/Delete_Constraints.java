@@ -8,9 +8,7 @@ import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Delete_Constraints {
-
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
     return ObjectUtils.equals(SPropertyOperations.getString(_context.getLink(), "role"), "delete");
   }
-
 }

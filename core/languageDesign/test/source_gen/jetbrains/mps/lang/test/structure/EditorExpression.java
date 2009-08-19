@@ -22,5 +22,4 @@ public class EditorExpression extends Expression {
   public static EditorExpression newInstance(SModel sm) {
     return EditorExpression.newInstance(sm, false);
   }
-
 }

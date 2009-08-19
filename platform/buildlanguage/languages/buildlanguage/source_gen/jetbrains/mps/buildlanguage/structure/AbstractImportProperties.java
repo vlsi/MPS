@@ -22,5 +22,4 @@ public class AbstractImportProperties extends BaseConcept {
   public static AbstractImportProperties newInstance(SModel sm) {
     return AbstractImportProperties.newInstance(sm, false);
   }
-
 }

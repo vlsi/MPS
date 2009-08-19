@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CompositePathComponent_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,10 +16,9 @@ public class CompositePathComponent_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "pathComponent", true)).count() == 0) {
       return path;
     }
-    for(SNode p : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "pathComponent", true))) {
+    for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "pathComponent", true))) {
       path += SPropertyOperations.getString(p, "path") + "/";
     }
     return path.substring(0, path.length() - 1);
   }
-
 }

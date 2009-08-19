@@ -23,7 +23,6 @@ public class PredefinedSymbolClassRegexp extends Regexp {
     super.setReferent(PredefinedSymbolClassRegexp.SYMBOL_CLASS, node);
   }
 
-
   public static PredefinedSymbolClassRegexp newInstance(SModel sm, boolean init) {
     return (PredefinedSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class PredefinedSymbolClassRegexp extends Regexp {
   public static PredefinedSymbolClassRegexp newInstance(SModel sm) {
     return PredefinedSymbolClassRegexp.newInstance(sm, false);
   }
-
 }

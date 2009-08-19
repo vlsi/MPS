@@ -21,5 +21,4 @@ public class ArgExpression extends SingleComplexExpression {
   public static ArgExpression newInstance(SModel sm) {
     return ArgExpression.newInstance(sm, false);
   }
-
 }

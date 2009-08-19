@@ -22,5 +22,4 @@ public class ReplaceBlock extends Closure {
   public static ReplaceBlock newInstance(SModel sm) {
     return ReplaceBlock.newInstance(sm, false);
   }
-
 }

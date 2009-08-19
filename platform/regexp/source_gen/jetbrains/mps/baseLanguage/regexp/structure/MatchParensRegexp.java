@@ -61,7 +61,6 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
     super.setChild(MatchParensRegexp.REGEXP, node);
   }
 
-
   public static MatchParensRegexp newInstance(SModel sm, boolean init) {
     return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
   public static MatchParensRegexp newInstance(SModel sm) {
     return MatchParensRegexp.newInstance(sm, false);
   }
-
 }

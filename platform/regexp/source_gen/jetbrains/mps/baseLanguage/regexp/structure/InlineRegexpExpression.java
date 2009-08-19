@@ -50,7 +50,6 @@ public class InlineRegexpExpression extends RegexpExpression {
     super.setChild(InlineRegexpExpression.REGEXP, node);
   }
 
-
   public static InlineRegexpExpression newInstance(SModel sm, boolean init) {
     return (InlineRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -58,5 +57,4 @@ public class InlineRegexpExpression extends RegexpExpression {
   public static InlineRegexpExpression newInstance(SModel sm) {
     return InlineRegexpExpression.newInstance(sm, false);
   }
-
 }

@@ -22,5 +22,4 @@ public class Pattern extends AttributeConcept {
   public static Pattern newInstance(SModel sm) {
     return Pattern.newInstance(sm, false);
   }
-
 }

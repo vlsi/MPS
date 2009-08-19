@@ -60,7 +60,6 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
     super.setChild(SplitExpression.REGEXP, node);
   }
 
-
   public static SplitExpression newInstance(SModel sm, boolean init) {
     return (SplitExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
   public static SplitExpression newInstance(SModel sm) {
     return SplitExpression.newInstance(sm, false);
   }
-
 }

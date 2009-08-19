@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 
 public class DistribConfiguration_projectFolder_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public DistribConfiguration_projectFolder_ReferentConstraint() {
   }
 
@@ -25,5 +24,4 @@ public class DistribConfiguration_projectFolder_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return DistribConfiguration_Behavior.call_getAvailableFolders_1230293856288(_context.getReferenceNode());
   }
-
 }

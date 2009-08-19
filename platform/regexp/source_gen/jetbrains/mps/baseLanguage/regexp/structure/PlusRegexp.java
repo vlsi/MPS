@@ -21,5 +21,4 @@ public class PlusRegexp extends UnaryRegexp {
   public static PlusRegexp newInstance(SModel sm) {
     return PlusRegexp.newInstance(sm, false);
   }
-
 }

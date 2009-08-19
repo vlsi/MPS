@@ -52,7 +52,6 @@ public class Role extends BaseConcept implements INamedConcept {
     this.setProperty(Role.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Role newInstance(SModel sm, boolean init) {
     return (Role)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.Role", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class Role extends BaseConcept implements INamedConcept {
   public static Role newInstance(SModel sm) {
     return Role.newInstance(sm, false);
   }
-
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 
 public class EmbeddableEditor {
-
   private MPSFileNodeEditor myFileNodeEditor;
   private EmbeddableEditorPanel myPanel;
   private IOperationContext myContext;
@@ -35,7 +34,6 @@ public class EmbeddableEditor {
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.myModel.getSModel().runLoadingAction(new Runnable() {
-
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myNode);
       }
@@ -55,7 +53,6 @@ public class EmbeddableEditor {
     }
     EditorGenerateType type = new EditorGenerateType();
     GeneratorManager manager = new GeneratorManager(this.myContext.getProject(), new GenerationSettings()) {
-
       protected boolean generateRequirements() {
         return false;
       }
@@ -66,7 +63,6 @@ public class EmbeddableEditor {
 
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addImportedModel(language.getStructureModelDescriptor().getSModelReference());
       }
@@ -75,7 +71,6 @@ public class EmbeddableEditor {
 
   public void addLanguage(final Language language) {
     ModelAccess.instance().runWriteAction(new Runnable() {
-
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addLanguage(language);
       }
@@ -84,7 +79,6 @@ public class EmbeddableEditor {
 
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
-
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addImportedModel(model);
       }
@@ -99,5 +93,4 @@ public class EmbeddableEditor {
   protected IOperationContext createOperationContext() {
     return this.myContext;
   }
-
 }

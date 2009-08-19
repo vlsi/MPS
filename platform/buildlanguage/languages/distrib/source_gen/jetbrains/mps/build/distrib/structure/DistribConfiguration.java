@@ -237,7 +237,6 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
     this.insertChild(prev, DistribConfiguration.MACRO, node);
   }
 
-
   public static DistribConfiguration newInstance(SModel sm, boolean init) {
     return (DistribConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DistribConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -245,5 +244,4 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   public static DistribConfiguration newInstance(SModel sm) {
     return DistribConfiguration.newInstance(sm, false);
   }
-
 }

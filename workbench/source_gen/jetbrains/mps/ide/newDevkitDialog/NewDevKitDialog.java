@@ -10,7 +10,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
 
 public class NewDevKitDialog extends BaseDialog {
-
   public NewDevKitDialogContentPane myContentPane;
 
   public NewDevKitDialog(Frame frame) {
@@ -82,5 +81,4 @@ public class NewDevKitDialog extends BaseDialog {
   public void buttonMethod1() {
     myContentPane.onCancel();
   }
-
 }

@@ -21,5 +21,4 @@ public class UniversalConfig extends SystemSpecificConfig {
   public static UniversalConfig newInstance(SModel sm) {
     return UniversalConfig.newInstance(sm, false);
   }
-
 }

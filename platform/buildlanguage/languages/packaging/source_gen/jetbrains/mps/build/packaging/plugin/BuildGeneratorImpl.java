@@ -38,7 +38,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
-
   private final Project myProject;
 
   public BuildGeneratorImpl(Project project) {
@@ -53,8 +52,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   public void generate() {
     ProgressManager.getInstance().run(new Task.Modal(this.myProject, "Generating Build Script", false) {
-
-      public void run(@NotNull() ProgressIndicator progressIndicator) {
+      public void run(@NotNull ProgressIndicator progressIndicator) {
         progressIndicator.setIndeterminate(true);
         progressIndicator.setText("Preparing...");
         final SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(progressIndicator);
@@ -64,22 +62,19 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         progressIndicator.setText("Creating Script...");
         final List<ModuleReference> moduleReferencesToAdd = BuildGeneratorImpl.this.getModuleReferencesToAdd();
         ApplicationManager.getApplication().invokeLater(new Runnable() {
-
           public void run() {
             final Wrappers._T<Runnable> runnable = new Wrappers._T<Runnable>();
             final Solution solution = (Solution)descriptor.getModule();
             ModelAccess.instance().runWriteAction(new Runnable() {
-
               public void run() {
-                for(ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+                for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
                   (solution).getSolutionDescriptor().getUsedLanguages().add(ref);
                 }
               }
             });
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
               public void run() {
-                for(ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
+                for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
                   descriptor.getSModel().addLanguage(ref);
                 }
                 runnable.value = BuildGeneratorImpl.this.generate(descriptor, projectName, projectBasedirPath, modules);
@@ -89,12 +84,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
             project.getProjectDescriptor().addSolution(solution.getDescriptorFile().getAbsolutePath());
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
-
-              public void run(@NotNull() ProgressIndicator progressIndicator) {
+              public void run(@NotNull ProgressIndicator progressIndicator) {
                 progressIndicator.setIndeterminate(true);
                 progressIndicator.setText("Realoding Classes... Please Wait");
                 ModelAccess.instance().runWriteAction(new Runnable() {
-
                   public void run() {
                     project.update();
                   }
@@ -122,14 +115,12 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
         indicator.setText("Creating Solution...");
         solution = BuildGeneratorUtil.createSolution(mpsProject, solutionName, solutionBaseDir);
-      } else
-      {
+      } else {
         solution = this.getSolution();
       }
       indicator.setText("Creating Model...");
       return BuildGeneratorUtil.createModel(this.getNewModelName(), solution);
-    } else
-    {
+    } else {
       return this.getModel();
     }
   }
@@ -148,7 +139,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   public Runnable generate(final SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     final SNode mpsLayout = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
     return new Runnable() {
-
       public void run() {
         BuildGeneratorImpl.this.finishGeneration(targetModelDescriptor, mpsLayout);
       }
@@ -170,8 +160,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     if (index > -1) {
       String macro = result.substring(result.indexOf("{") + 1, index);
       basedirPath = PackagingLanguageGenerator.createBasedirPath(macro, result.substring(index + 2));
-    } else
-    {
+    } else {
       basedirPath = PackagingLanguageGenerator.createBasedirPath("", basedir);
     }
     SLinkOperations.setTarget(mpsLayout, "baseDirectory", basedirPath, true);
@@ -193,7 +182,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   protected void finishGeneration(final SModelDescriptor targetModelDescriptor, SNode mpsLayout) {
     targetModelDescriptor.getModule().save();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
       public void run() {
         targetModelDescriptor.save();
       }
@@ -201,7 +189,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     MPSEditorOpener editorOpener = this.myProject.getComponent(MPSEditorOpener.class);
     editorOpener.openNode(mpsLayout);
   }
-
 
   public static SNode createComponent(NodeData data, SModel targetSModel) {
     if (data instanceof ModuleData) {
@@ -216,7 +203,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static void createContent(List<NodeData> selectedData, SNode folder, SModel targetSModel) {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
     Set<SNode> topLevel = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    for(NodeData data : ListSequence.fromList(selectedData)) {
+    for (NodeData data : ListSequence.fromList(selectedData)) {
       // creating component
       SNode component = createComponent(data, targetSModel);
       if (component == null) {
@@ -227,7 +214,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       // dealing with children
       if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
         List<NodeData> children = data.getChildren();
-        for(NodeData child : ListSequence.fromList(children)) {
+        for (NodeData child : ListSequence.fromList(children)) {
           if (MapSequence.fromMap(createdComponent).containsKey(child)) {
             SNode childComponent = MapSequence.fromMap(createdComponent).get(child);
             SLinkOperations.addChild(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", childComponent);
@@ -248,9 +235,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       }
     }
     // 
-    for(SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
+    for (SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
       SLinkOperations.addChild(folder, "entry", topLevelComponent);
     }
   }
-
 }

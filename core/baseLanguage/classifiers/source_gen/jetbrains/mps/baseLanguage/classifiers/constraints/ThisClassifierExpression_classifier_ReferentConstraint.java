@@ -11,7 +11,6 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ThisClassifierExpression_classifier_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ThisClassifierExpression_classifier_ReferentConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class ThisClassifierExpression_classifier_ReferentConstraint extends Base
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
   }
-
 }

@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 
 public class NodesTestCase_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1929_0(editorContext, node);
   }
@@ -222,7 +221,6 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
   }
 
   private static class testMethodsListHandler_1929_0 extends RefNodeListHandler {
-
     public testMethodsListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -262,10 +260,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class methodsListHandler_1929_0 extends RefNodeListHandler {
-
     public methodsListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -312,10 +309,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class nodesToCheckListHandler_1929_0 extends RefNodeListHandler {
-
     public nodesToCheckListHandler_1929_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -355,7 +351,5 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

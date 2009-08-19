@@ -18,7 +18,6 @@ import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule() {
   }
 
@@ -45,5 +44,4 @@ public class MPSBuildShouldHaveToolsZipDefined_NonTypesystemRule extends Abstrac
   public boolean overrides() {
     return false;
   }
-
 }

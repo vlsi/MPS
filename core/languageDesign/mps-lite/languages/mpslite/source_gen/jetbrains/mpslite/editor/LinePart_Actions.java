@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LinePart_Actions extends EditorCellKeyMap {
-
   public LinePart_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -25,8 +24,8 @@ public class LinePart_Actions extends EditorCellKeyMap {
     action = new LinePart_Actions.LinePart_Actions_Action2();
     this.putAction("none", "VK_SPACE", action);
   }
-  public static class LinePart_Actions_Action0 extends EditorCellKeyMapAction {
 
+  public static class LinePart_Actions_Action0 extends EditorCellKeyMapAction {
     public LinePart_Actions_Action0() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_INTERMEDIATE_POSITION);
       this.setShownInPopupMenu(false);
@@ -74,10 +73,9 @@ public class LinePart_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none SPACE";
     }
+  }
 
-}
   public static class LinePart_Actions_Action1 extends EditorCellKeyMapAction {
-
     public LinePart_Actions_Action1() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
@@ -115,10 +113,9 @@ public class LinePart_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none SPACE";
     }
+  }
 
-}
   public static class LinePart_Actions_Action2 extends EditorCellKeyMapAction {
-
     public LinePart_Actions_Action2() {
       super.setCaretPolicy(EditorCellKeyMapAction.CARET_AT_FIRST_POSITION);
       this.setShownInPopupMenu(false);
@@ -156,7 +153,5 @@ public class LinePart_Actions extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "none SPACE";
     }
-
-}
-
+  }
 }

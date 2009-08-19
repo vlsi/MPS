@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Configuration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,5 +17,4 @@ public class Configuration_Behavior {
   public static String call_getBuildFileName_1230217425313(SNode thisNode) {
     return SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(thisNode), "name") + "-" + SPropertyOperations.getString(thisNode, "name");
   }
-
 }

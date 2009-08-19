@@ -74,7 +74,6 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
     this.insertChild(prev, MultiLineString.STRING_EXPRESSION, node);
   }
 
-
   public static MultiLineString newInstance(SModel sm, boolean init) {
     return (MultiLineString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.MultiLineString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -82,5 +81,4 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
   public static MultiLineString newInstance(SModel sm) {
     return MultiLineString.newInstance(sm, false);
   }
-
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1194610104145(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     SModel smodel = _context.getInputModel();
     return ListSequence.fromList(SModelOperations.getNodes(smodel, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")).count() > 0;
@@ -238,5 +237,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1194610249636(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
   }
-
 }

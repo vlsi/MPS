@@ -56,7 +56,6 @@ public class MacConfig extends SystemSpecificConfig {
     this.insertChild(prev, MacConfig.ASSOCIATION, node);
   }
 
-
   public static MacConfig newInstance(SModel sm, boolean init) {
     return (MacConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -64,5 +63,4 @@ public class MacConfig extends SystemSpecificConfig {
   public static MacConfig newInstance(SModel sm) {
     return MacConfig.newInstance(sm, false);
   }
-
 }

@@ -27,12 +27,12 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F12";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -43,7 +43,7 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,7 +63,7 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeExplorer_Tool tool = ShowNodeInExplorer_Action.this.project.getPluginManager().getTool(NodeExplorer_Tool.class);
       tool.getNodeExplorer().showNode(ShowNodeInExplorer_Action.this.node, ShowNodeInExplorer_Action.this.project);
@@ -74,5 +74,4 @@ public class ShowNodeInExplorer_Action extends GeneratedAction {
       }
     }
   }
-
 }

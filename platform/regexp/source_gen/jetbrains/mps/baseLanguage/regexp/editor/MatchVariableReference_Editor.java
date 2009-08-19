@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class MatchVariableReference_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2814_0(editorContext, node);
   }
@@ -52,7 +51,6 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline2814_0 extends AbstractCellProvider {
-
     public _Inline2814_0() {
       super();
     }
@@ -89,7 +87,5 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

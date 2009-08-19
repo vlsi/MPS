@@ -12,15 +12,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IndexedTuples_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_empty() throws Exception {
     Tuples._0 empty = MultiTuple.from();
     empty.assign(MultiTuple.from());
     Tuples._0 emptyToo = MultiTuple.empty0().assign(empty);
   }
 
-  @Test()
+  @Test
   public void test_creatingAndAssigning() throws Exception {
     Tuples._2<Integer, String> pair = MultiTuple.from(1, "a");
     Assert.assertSame(1, pair._0());
@@ -39,7 +38,7 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertEquals("aaaa", pair._1());
   }
 
-  @Test()
+  @Test
   public void test_writeVar() throws Exception {
     int a;
     {
@@ -57,7 +56,7 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertSame('b', c);
   }
 
-  @Test()
+  @Test
   public void test_swapVars() throws Exception {
     String foo = "bar";
     String bar = "foo";
@@ -70,14 +69,14 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertEquals("bar", bar);
   }
 
-  @Test()
+  @Test
   public void test_multiValueReturn() throws Exception {
     Tuples._2<String, Character> pair = MultiTuple.<String, Character>empty2().assign(this.toTuple("abc", 'd'));
     Assert.assertEquals("abc", pair._0());
     Assert.assertSame('d', pair._1());
   }
 
-  @Test()
+  @Test
   public void test_equalsOperator() throws Exception {
     Tuples._2<Integer, Character> tpl1 = MultiTuple.from(1, 'a');
     Tuples._2<Integer, Character> tpl2 = MultiTuple.from(1, 'a');
@@ -89,11 +88,10 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
   }
 
-  @Test()
+  @Test
   public void test_mps5466() throws Exception {
     Iterable<Tuples._2<String, Boolean>> seq = A.foo();
-    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter <Tuples._2<String, Boolean>>() {
-
+    Assert.assertSame(1, Sequence.fromIterable(seq).where(new IWhereFilter<Tuples._2<String, Boolean>>() {
       public boolean accept(Tuples._2<String, Boolean> it) {
         return it._1() != true;
       }
@@ -103,5 +101,4 @@ public class IndexedTuples_Test extends TestCase {
   public Tuples._2<String, Character> toTuple(String s, char c) {
     return MultiTuple.from(s, c);
   }
-
 }

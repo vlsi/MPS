@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2583_0(editorContext, node);
   }
@@ -52,7 +51,6 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
   }
 
   public static class _Inline2583_0 extends AbstractCellProvider {
-
     public _Inline2583_0() {
       super();
     }
@@ -84,7 +82,5 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

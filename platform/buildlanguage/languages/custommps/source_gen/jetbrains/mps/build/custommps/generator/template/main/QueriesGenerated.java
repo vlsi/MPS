@@ -33,7 +33,6 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1234878205127(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false, new String[]{})).isNotEmpty();
   }
@@ -219,8 +218,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1234780240997(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).isNotEmpty()) {
       return SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true)).first(), "configuration", false);
-    } else
-    {
+    } else {
       return ListSequence.fromList(SLinkOperations.getTargets(_context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false)), "configuration", true)).first();
     }
   }
@@ -238,7 +236,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270263(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
       }
@@ -251,7 +249,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
       }
@@ -260,7 +258,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270602(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -269,7 +267,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270630(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("date")) {
         return builtInVar;
       }
@@ -278,7 +276,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -287,7 +285,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270687(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -304,7 +302,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240405287357(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -313,7 +311,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240846949751(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -322,7 +320,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240847003285(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -331,7 +329,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240847352773(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -340,7 +338,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240847360953(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -349,7 +347,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240847398978(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    for(SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
+    for (SNode builtInVar : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "builtInVariable", true))) {
       if (SPropertyOperations.getString(builtInVar, "name").equals("\\n")) {
         return builtInVar;
       }
@@ -436,7 +434,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1237471483870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode module = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
     SPropertyOperations.set(module, "id", SPropertyOperations.getString(_context.getNode(), "id"));
-    for(SNode config : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true))) {
+    for (SNode config : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true))) {
       SLinkOperations.addChild(module, "configuration", config);
     }
     return module;
@@ -465,7 +463,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1233749730940(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> components = ListSequence.fromList(new ArrayList<SNode>());
     String[] path = SPropertyOperations.getString(_context.getNode(), "artifactName").replace("\\", "/").split("/");
-    for(String p : path) {
+    for (String p : path) {
       SNode c = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
       SPropertyOperations.set(c, "path", p);
       ListSequence.fromList(components).addElement(c);
@@ -476,8 +474,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1234877027528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false, new String[]{})).distinct();
-    return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter <SNode>() {
-
+    return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (IVariableHolder_Behavior.call_findVariable_1234876428215(_context.getCopiedOutputNodeForInputNode(_context.getNode()), SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(it, "antName")) == null);
       }
@@ -486,8 +483,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1234877165687(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     Iterable<SNode> undeclaredVariables = ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", false, new String[]{})).distinct();
-    return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter <SNode>() {
-
+    return Sequence.fromIterable(undeclaredVariables).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (IVariableHolder_Behavior.call_findVariable_1234876428215(_context.getCopiedOutputNodeForInputNode(_context.getNode()), SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(it, "antName")) == null);
       }
@@ -541,5 +537,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1240396533793(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
-
 }

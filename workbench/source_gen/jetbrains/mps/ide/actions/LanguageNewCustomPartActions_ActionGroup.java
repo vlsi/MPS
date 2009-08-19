@@ -15,7 +15,7 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      for(LanguageAspect aspect : LanguageAspect.values()) {
+      for (LanguageAspect aspect : LanguageAspect.values()) {
         LanguageNewCustomPartActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAspectModel_Action", "jetbrains.mps.ide", aspect);
       }
     } catch (Throwable t) {
@@ -26,5 +26,4 @@ public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGro
   public void adjust() {
     this.insertGroupIntoAnother(LanguageNewActions_ActionGroup.ID, null);
   }
-
 }

@@ -100,7 +100,6 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
     this.insertChild(prev, Folder.ENTRY, node);
   }
 
-
   public static Folder newInstance(SModel sm, boolean init) {
     return (Folder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Folder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -108,5 +107,4 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   public static Folder newInstance(SModel sm) {
     return Folder.newInstance(sm, false);
   }
-
 }

@@ -34,7 +34,7 @@ public class RenameModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F6";
   }
@@ -43,7 +43,7 @@ public class RenameModel_Action extends GeneratedAction {
     return !(RenameModel_Action.this.module instanceof Language);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -57,7 +57,7 @@ public class RenameModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -81,11 +81,10 @@ public class RenameModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<SModelRoot> root = new Wrappers._T<SModelRoot>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           root.value = RenameModel_Action.this.model.getSModelRoot();
         }
@@ -97,5 +96,4 @@ public class RenameModel_Action extends GeneratedAction {
       }
     }
   }
-
 }

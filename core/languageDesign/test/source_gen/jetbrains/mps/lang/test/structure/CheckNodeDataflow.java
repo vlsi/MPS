@@ -21,5 +21,4 @@ public class CheckNodeDataflow extends AbstractNodeAssert {
   public static CheckNodeDataflow newInstance(SModel sm) {
     return CheckNodeDataflow.newInstance(sm, false);
   }
-
 }

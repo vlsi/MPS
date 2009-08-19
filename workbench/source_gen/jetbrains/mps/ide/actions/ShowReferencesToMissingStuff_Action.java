@@ -33,7 +33,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -42,7 +42,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     return ShowReferencesToMissingStuff_Action.this.getTool() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -76,7 +76,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SearchQuery query = new SearchQuery(ShowReferencesToMissingStuff_Action.this.model.getSModel(), GlobalScope.getInstance());
       IResultProvider provider = FindUtils.makeProvider(new MissingReferencesFinder(ShowReferencesToMissingStuff_Action.this.scope, ShowReferencesToMissingStuff_Action.this.model));
@@ -91,5 +91,4 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   private UsagesViewTool getTool() {
     return ShowReferencesToMissingStuff_Action.this.project.getComponentSafe(UsagesViewTool.class);
   }
-
 }

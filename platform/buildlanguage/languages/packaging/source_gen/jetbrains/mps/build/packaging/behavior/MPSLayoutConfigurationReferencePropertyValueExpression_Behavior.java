@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior;
 
 public class MPSLayoutConfigurationReferencePropertyValueExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -25,5 +24,4 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Behavior {
   public static String call_getProjectName_1230223364921(SNode thisNode) {
     return Configuration_Behavior.call_getBuildFileName_1230217425313(SLinkOperations.getTarget(thisNode, "configuration", false));
   }
-
 }

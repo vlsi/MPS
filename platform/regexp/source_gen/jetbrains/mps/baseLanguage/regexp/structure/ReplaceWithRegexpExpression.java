@@ -69,7 +69,6 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
     super.setChild(ReplaceWithRegexpExpression.REGEXP, node);
   }
 
-
   public static ReplaceWithRegexpExpression newInstance(SModel sm, boolean init) {
     return (ReplaceWithRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   public static ReplaceWithRegexpExpression newInstance(SModel sm) {
     return ReplaceWithRegexpExpression.newInstance(sm, false);
   }
-
 }

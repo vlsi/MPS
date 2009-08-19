@@ -33,7 +33,7 @@ public class ModelProperties_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt ENTER";
   }
@@ -42,7 +42,7 @@ public class ModelProperties_Action extends GeneratedAction {
     return ModelProperties_Action.this.size == 1;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class ModelProperties_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -84,7 +84,7 @@ public class ModelProperties_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new ModelPropertiesDialog(ModelProperties_Action.this.model, ModelProperties_Action.this.context).showDialog();
     } catch (Throwable t) {
@@ -93,5 +93,4 @@ public class ModelProperties_Action extends GeneratedAction {
       }
     }
   }
-
 }

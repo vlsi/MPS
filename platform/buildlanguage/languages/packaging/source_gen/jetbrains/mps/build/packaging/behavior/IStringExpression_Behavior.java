@@ -36,5 +36,4 @@ public class IStringExpression_Behavior {
   public static String callSuper_getAntValue_8148924375507875982(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982);
   }
-
 }

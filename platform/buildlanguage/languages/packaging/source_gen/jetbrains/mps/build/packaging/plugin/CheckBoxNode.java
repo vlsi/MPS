@@ -5,8 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.Icon;
 
-public class CheckBoxNode <N extends NodeData> extends MPSTreeNode {
-
+public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
   protected final N myData;
   private boolean myIsChecked = false;
 
@@ -40,7 +39,7 @@ public class CheckBoxNode <N extends NodeData> extends MPSTreeNode {
   }
 
   private void createChildren() {
-    for(NodeData childNode : this.myData.getChildren()) {
+    for (NodeData childNode : this.myData.getChildren()) {
       this.add(new CheckBoxNode<N>((N)childNode, true));
     }
   }
@@ -48,5 +47,4 @@ public class CheckBoxNode <N extends NodeData> extends MPSTreeNode {
   public boolean isLeaf() {
     return !(this.myData.canHaveChildren());
   }
-
 }

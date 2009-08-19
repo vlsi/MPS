@@ -24,7 +24,7 @@ public class Path_Behavior {
       return "";
     }
     StringBuffer sb = new StringBuffer();
-    for(SNode component : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
+    for (SNode component : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "compositePathComponent", true), "pathComponent", true))) {
       sb.append(SPropertyOperations.getString(component, "path"));
       sb.append(File.separator);
     }
@@ -58,5 +58,4 @@ public class Path_Behavior {
   public static String callSuper_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424);
   }
-
 }

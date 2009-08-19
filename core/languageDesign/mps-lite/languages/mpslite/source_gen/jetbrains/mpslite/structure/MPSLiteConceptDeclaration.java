@@ -87,7 +87,6 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
     super.setChild(MPSLiteConceptDeclaration.EXTENDS, node);
   }
 
-
   public static MPSLiteConceptDeclaration newInstance(SModel sm, boolean init) {
     return (MPSLiteConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -95,5 +94,4 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   public static MPSLiteConceptDeclaration newInstance(SModel sm) {
     return MPSLiteConceptDeclaration.newInstance(sm, false);
   }
-
 }

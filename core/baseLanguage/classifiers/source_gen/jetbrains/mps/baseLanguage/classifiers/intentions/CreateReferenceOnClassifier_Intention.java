@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CreateReferenceOnClassifier_Intention extends BaseIntention {
-
   public CreateReferenceOnClassifier_Intention() {
   }
 
@@ -52,5 +51,4 @@ public class CreateReferenceOnClassifier_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.classifiers.intentions";
   }
-
 }

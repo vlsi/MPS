@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class TaskReference_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public TaskReference_declaration_ReferentConstraint() {
   }
 
@@ -32,7 +31,7 @@ public class TaskReference_declaration_ReferentConstraint extends BaseNodeRefere
     List<SNode> decls = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.buildlanguage.structure.Declaration");
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "interfaces")) {
       List<SNode> newDecls = new ArrayList<SNode>();
-      for(SNode decl : ListSequence.fromList(decls)) {
+      for (SNode decl : ListSequence.fromList(decls)) {
         if (SNodeOperations.isInstanceOf(decl, "jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration")) {
           ListSequence.fromList(newDecls).addElement(decl);
         }
@@ -41,7 +40,7 @@ public class TaskReference_declaration_ReferentConstraint extends BaseNodeRefere
     } else
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration") && SNodeOperations.hasRole(_context.getReferenceNode(), "jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", "parentRef")) {
       List<SNode> newDecls = new ArrayList<SNode>();
-      for(SNode decl : ListSequence.fromList(decls)) {
+      for (SNode decl : ListSequence.fromList(decls)) {
         if (!(SNodeOperations.isInstanceOf(decl, "jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration"))) {
           ListSequence.fromList(newDecls).addElement(decl);
         }
@@ -50,5 +49,4 @@ public class TaskReference_declaration_ReferentConstraint extends BaseNodeRefere
     }
     return decls;
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Antcall_project_ReferentConstraint implements IModelConstraints, INodeReferentSetEventHandler {
-
   public Antcall_project_ReferentConstraint() {
   }
 
@@ -27,5 +26,4 @@ public class Antcall_project_ReferentConstraint implements IModelConstraints, IN
       SLinkOperations.setTarget(referenceNode, "targetDeclaration", null, false);
     }
   }
-
 }

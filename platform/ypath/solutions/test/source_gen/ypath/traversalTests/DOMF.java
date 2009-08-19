@@ -14,7 +14,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.w3c.dom.Element;
 
 public class DOMF extends TreePath<Node> {
-
   public DOMF() {
     this.registerFeature(new DOMF.Desc_Feature_elements());
   }
@@ -23,22 +22,20 @@ public class DOMF extends TreePath<Node> {
     return DOMF.Parent.parent(node);
   }
 
-
   public static IFeatureDescriptor<Node> child(String param) {
     return new DOMF.Desc_Feature_child(param);
   }
 
   private static class Parent {
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
+  }
 
-}
   private static class Children {
-}
-  private static class Feature_elements extends AbstractCollection<Node> {
+  }
 
+  private static class Feature_elements extends AbstractCollection<Node> {
     private Node thisNode;
 
     public Feature_elements(Node thisNode) {
@@ -47,14 +44,11 @@ public class DOMF extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final NodeList cns = this.thisNode.getChildNodes();
-      return Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private Node _7_it;
                 private int _2_i;
@@ -120,14 +114,11 @@ __switch__:
 
     public int size() {
       final NodeList cns = this.thisNode.getChildNodes();
-      Iterable<Node> seq = Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      Iterable<Node> seq = Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private Node _7_it;
                 private int _2_i;
@@ -187,10 +178,9 @@ __switch__:
       });
       return Sequence.fromIterable(seq).count();
     }
+  }
 
-}
   private static class Feature_child extends AbstractCollection<Node> {
-
     private Node thisNode;
     private String param;
 
@@ -201,14 +191,11 @@ __switch__:
 
     public Iterable<Node> sequence() {
       final NodeList els = ((Element)this.thisNode).getElementsByTagName(this.param);
-      return Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private int _2_i;
 
@@ -263,10 +250,9 @@ __switch__:
     public int size() {
       return ((Element)this.thisNode).getElementsByTagName(this.param).getLength();
     }
+  }
 
-}
   public static class Desc_Feature_elements extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_elements() {
     }
 
@@ -289,10 +275,9 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_child extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     private String param;
 
     public Desc_Feature_child(String param) {
@@ -318,7 +303,5 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
-
-}
-
+  }
 }

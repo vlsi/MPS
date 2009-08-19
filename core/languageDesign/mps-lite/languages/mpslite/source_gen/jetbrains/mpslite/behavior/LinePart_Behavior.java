@@ -40,5 +40,4 @@ public class LinePart_Behavior {
   public static SNode callSuper_createCellModel_1238614099938(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> partsToLinks) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), callerConceptFqName, "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, partsToLinks);
   }
-
 }

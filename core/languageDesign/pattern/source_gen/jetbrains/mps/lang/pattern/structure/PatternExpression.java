@@ -24,7 +24,6 @@ public class PatternExpression extends BaseConcept {
     super.setChild(PatternExpression.PATTERN_NODE, node);
   }
 
-
   public static PatternExpression newInstance(SModel sm, boolean init) {
     return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PatternExpression extends BaseConcept {
   public static PatternExpression newInstance(SModel sm) {
     return PatternExpression.newInstance(sm, false);
   }
-
 }

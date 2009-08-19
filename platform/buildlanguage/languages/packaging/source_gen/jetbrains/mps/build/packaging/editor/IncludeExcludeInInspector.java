@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IncludeExcludeInInspector extends AbstractCellProvider {
-
   public IncludeExcludeInInspector(SNode node) {
     super(node);
   }
@@ -104,5 +103,4 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     } else
     return editorCell;
   }
-
 }

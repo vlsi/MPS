@@ -24,7 +24,6 @@ public class DeterminantExpression extends Expression {
     super.setChild(DeterminantExpression.LITERAL, node);
   }
 
-
   public static DeterminantExpression newInstance(SModel sm, boolean init) {
     return (DeterminantExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class DeterminantExpression extends Expression {
   public static DeterminantExpression newInstance(SModel sm) {
     return DeterminantExpression.newInstance(sm, false);
   }
-
 }

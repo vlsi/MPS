@@ -27,12 +27,12 @@ public class CopyNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl C";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -43,7 +43,7 @@ public class CopyNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -55,8 +55,7 @@ public class CopyNode_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -66,7 +65,7 @@ public class CopyNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyNodesToClipboard(CopyNode_Action.this.nodes);
     } catch (Throwable t) {
@@ -75,5 +74,4 @@ public class CopyNode_Action extends GeneratedAction {
       }
     }
   }
-
 }

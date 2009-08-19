@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class NotCondition_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class NotCondition_Behavior {
   public static boolean virtual_isTrueWhileGeneration_1233161599461(SNode thisNode) {
     return !(ICondition_Behavior.call_isTrueWhileGeneration_1233161599461(SLinkOperations.getTarget(thisNode, "condition", true)));
   }
-
 }

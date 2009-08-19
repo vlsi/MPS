@@ -25,7 +25,6 @@ public class BuildLanguageTargetReference extends BaseConcept {
     super.setReferent(BuildLanguageTargetReference.TARGET_DECLARATION, node);
   }
 
-
   public static BuildLanguageTargetReference newInstance(SModel sm, boolean init) {
     return (BuildLanguageTargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class BuildLanguageTargetReference extends BaseConcept {
   public static BuildLanguageTargetReference newInstance(SModel sm) {
     return BuildLanguageTargetReference.newInstance(sm, false);
   }
-
 }

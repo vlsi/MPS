@@ -21,7 +21,6 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class SetNodePackageDialog extends BaseDialog {
-
   private boolean myIsCancelled = true;
   private JPanel myMainPanel;
   private JComboBox myCbPackage;
@@ -38,13 +37,11 @@ public class SetNodePackageDialog extends BaseDialog {
     this.myCbPackage.setEditable(true);
     this.myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
     this.myCbPackage.addActionListener(new ActionListener() {
-
       public void actionPerformed(ActionEvent e) {
         SetNodePackageDialog.this.myPackage = ((String)SetNodePackageDialog.this.myCbPackage.getSelectedItem());
       }
     });
     this.myCbPackage.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
-
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER && !(SetNodePackageDialog.this.myCbPackage.isPopupVisible())) {
           SetNodePackageDialog.this.onOk();
@@ -100,5 +97,4 @@ public class SetNodePackageDialog extends BaseDialog {
   public void onCancel() {
     this.dispose();
   }
-
 }

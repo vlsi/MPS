@@ -51,7 +51,6 @@ public class DefaultClassifierFieldDeclaration extends FieldDeclaration implemen
     this.setProperty(DefaultClassifierFieldDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static DefaultClassifierFieldDeclaration newInstance(SModel sm, boolean init) {
     return (DefaultClassifierFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class DefaultClassifierFieldDeclaration extends FieldDeclaration implemen
   public static DefaultClassifierFieldDeclaration newInstance(SModel sm) {
     return DefaultClassifierFieldDeclaration.newInstance(sm, false);
   }
-
 }

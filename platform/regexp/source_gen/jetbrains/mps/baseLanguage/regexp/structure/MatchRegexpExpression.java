@@ -60,7 +60,6 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
     super.setChild(MatchRegexpExpression.REGEXP, node);
   }
 
-
   public static MatchRegexpExpression newInstance(SModel sm, boolean init) {
     return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   public static MatchRegexpExpression newInstance(SModel sm) {
     return MatchRegexpExpression.newInstance(sm, false);
   }
-
 }

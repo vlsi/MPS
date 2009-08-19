@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public Antcall_targetDeclaration_ReferentConstraint() {
   }
 
@@ -32,5 +31,4 @@ public class Antcall_targetDeclaration_ReferentConstraint extends BaseNodeRefere
     }
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getReferenceNode(), "project", false), "target", true)).toListSequence();
   }
-
 }

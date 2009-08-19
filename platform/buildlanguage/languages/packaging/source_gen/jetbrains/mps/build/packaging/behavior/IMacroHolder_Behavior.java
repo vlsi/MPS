@@ -22,7 +22,7 @@ public class IMacroHolder_Behavior {
   }
 
   public static SNode call_findMacroForReference_1234972707641(SNode thisNode, SNode macroReference) {
-    for(SNode macro : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macro", true))) {
+    for (SNode macro : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "macro", true))) {
       if (SPropertyOperations.getString(macroReference, "name").equals(SPropertyOperations.getString(macro, "name"))) {
         return macro;
       }
@@ -67,5 +67,4 @@ public class IMacroHolder_Behavior {
   public static List<String> callSuper_getAllMacroNames_1234975567387(SNode thisNode, String callerConceptFqName, boolean addBasedir) {
     return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
   }
-
 }

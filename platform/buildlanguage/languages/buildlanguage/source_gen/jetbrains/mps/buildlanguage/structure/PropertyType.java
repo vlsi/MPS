@@ -22,5 +22,4 @@ public class PropertyType extends BaseConcept {
   public static PropertyType newInstance(SModel sm) {
     return PropertyType.newInstance(sm, false);
   }
-
 }

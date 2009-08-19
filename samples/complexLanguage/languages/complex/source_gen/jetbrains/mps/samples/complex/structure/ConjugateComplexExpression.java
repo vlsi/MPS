@@ -21,5 +21,4 @@ public class ConjugateComplexExpression extends SingleComplexExpression {
   public static ConjugateComplexExpression newInstance(SModel sm) {
     return ConjugateComplexExpression.newInstance(sm, false);
   }
-
 }

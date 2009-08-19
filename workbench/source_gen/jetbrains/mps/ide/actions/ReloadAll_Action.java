@@ -30,12 +30,12 @@ public class ReloadAll_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,7 +46,7 @@ public class ReloadAll_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -58,14 +58,12 @@ public class ReloadAll_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(ReloadAll_Action.this.project, "Reloading Classes", false) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           indicator.setIndeterminate(true);
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
@@ -78,5 +76,4 @@ public class ReloadAll_Action extends GeneratedAction {
       }
     }
   }
-
 }

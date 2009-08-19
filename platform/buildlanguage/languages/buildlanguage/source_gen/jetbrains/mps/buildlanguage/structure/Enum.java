@@ -39,7 +39,6 @@ public class Enum extends BaseConcept {
     this.insertChild(prev, Enum.CONSTANTS, node);
   }
 
-
   public static Enum newInstance(SModel sm, boolean init) {
     return (Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Enum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -47,5 +46,4 @@ public class Enum extends BaseConcept {
   public static Enum newInstance(SModel sm) {
     return Enum.newInstance(sm, false);
   }
-
 }

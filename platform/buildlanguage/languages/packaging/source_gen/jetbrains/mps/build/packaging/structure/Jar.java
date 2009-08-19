@@ -23,7 +23,6 @@ public class Jar extends Zip {
     super.setChild(Jar.MANIFEST, node);
   }
 
-
   public static Jar newInstance(SModel sm, boolean init) {
     return (Jar)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Jar", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Jar extends Zip {
   public static Jar newInstance(SModel sm) {
     return Jar.newInstance(sm, false);
   }
-
 }

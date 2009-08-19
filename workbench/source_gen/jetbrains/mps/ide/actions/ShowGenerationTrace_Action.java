@@ -33,20 +33,19 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer();
         event.getPresentation().setVisible(tracer.hasTracingData());
         if (ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).isEmpty()) {
           event.getPresentation().setEnabled(false);
-        } else
-        {
+        } else {
           boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).first()).getSModelReference());
           event.getPresentation().setEnabled(hasTraceInputData);
         }
@@ -59,7 +58,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -71,8 +70,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -90,7 +88,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerationTracer tracer = ShowGenerationTrace_Action.this.getGenTracer();
       if (!(tracer.showTraceInputData(ListSequence.fromList(ShowGenerationTrace_Action.this.nodes).first()))) {
@@ -106,5 +104,4 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   private GenerationTracer getGenTracer() {
     return ShowGenerationTrace_Action.this.project.getComponentSafe(GenerationTracer.class);
   }
-
 }

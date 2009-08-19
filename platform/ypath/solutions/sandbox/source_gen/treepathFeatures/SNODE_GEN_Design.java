@@ -13,12 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 
-public class SNODE_GEN_Design {
-  public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
-
+public class SNODE_GEN_Design {  public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return "aggregation".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
@@ -42,8 +39,7 @@ public class SNODE_GEN_Design {
       if (SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"))) {
         op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
         SLinkOperations.setTarget(SNodeOperations.cast(op, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), "link", param, false);
-      } else
-      {
+      } else {
         op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(SNodeOperations.cast(op, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", param, false);
       }
@@ -54,13 +50,11 @@ public class SNODE_GEN_Design {
     public boolean isSingleTargetCardinality(SNode param) {
       return SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
     }
+  }
 
-}
   public static class Design_Feature_link extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
-
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+      return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString_def(it, "metaClass", "reference") == null || "reference".equals(SPropertyOperations.getString_def(it, "metaClass", "reference"));
         }
@@ -84,8 +78,7 @@ public class SNODE_GEN_Design {
       if (SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"))) {
         op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkAccess", null);
         SLinkOperations.setTarget(SNodeOperations.cast(op, "jetbrains.mps.lang.smodel.structure.SLinkAccess"), "link", param, false);
-      } else
-      {
+      } else {
         op = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SLinkListAccess", null);
         SLinkOperations.setTarget(SNodeOperations.cast(op, "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", param, false);
       }
@@ -96,21 +89,17 @@ public class SNODE_GEN_Design {
     public boolean isSingleTargetCardinality(SNode param) {
       return SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
     }
+  }
 
-}
   public static class Design_Feature_allChildren extends IGenericFeatureDesign.Stub implements IGenericFeatureDesign {
-
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
       return new _Quotations.QuotationClass_4().createNode(expression);
     }
+  }
 
-}
   public static class Design_Feature_parent extends IGenericFeatureDesign.Stub implements IGenericFeatureDesign {
-
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
       return new _Quotations.QuotationClass_5().createNode(expression);
     }
-
-}
-
+  }
 }

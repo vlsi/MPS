@@ -31,7 +31,7 @@ public class CutNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl X";
   }
@@ -40,7 +40,7 @@ public class CutNode_Action extends GeneratedAction {
     return CutNode_Action.this.getProjectPane() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class CutNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -66,8 +66,7 @@ public class CutNode_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -81,10 +80,10 @@ public class CutNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyNodesToClipboard(CutNode_Action.this.nodes);
-      for(SNode node : ListSequence.fromList(CutNode_Action.this.nodes)) {
+      for (SNode node : ListSequence.fromList(CutNode_Action.this.nodes)) {
         if (node == ListSequence.fromList(CutNode_Action.this.nodes).last()) {
           ProjectPane pane = CutNode_Action.this.getProjectPane();
           if (ListSequence.fromList(CutNode_Action.this.nodes).count() != 1) {
@@ -104,5 +103,4 @@ public class CutNode_Action extends GeneratedAction {
   private ProjectPane getProjectPane() {
     return CutNode_Action.this.context.getComponent(ProjectPane.class);
   }
-
 }

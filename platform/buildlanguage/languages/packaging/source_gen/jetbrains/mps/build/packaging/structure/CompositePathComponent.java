@@ -38,7 +38,6 @@ public class CompositePathComponent extends BaseConcept {
     this.insertChild(prev, CompositePathComponent.PATH_COMPONENT, node);
   }
 
-
   public static CompositePathComponent newInstance(SModel sm, boolean init) {
     return (CompositePathComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class CompositePathComponent extends BaseConcept {
   public static CompositePathComponent newInstance(SModel sm) {
     return CompositePathComponent.newInstance(sm, false);
   }
-
 }

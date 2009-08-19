@@ -12,7 +12,6 @@ import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Attr;
 
 public class DOM extends TreePath<Node> {
-
   public DOM() {
   }
 
@@ -25,14 +24,12 @@ public class DOM extends TreePath<Node> {
   }
 
   private static class Parent {
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
+  }
 
-}
   private static class Children {
-
     public static Iterable<Node> children(Node node) {
       Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
       if (node instanceof Element) {
@@ -40,8 +37,8 @@ public class DOM extends TreePath<Node> {
       }
       return (Iterable<Node>)children;
     }
+  }
 
-}
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
     private static DOM.ELEMENT_NodeKindTrigger instance;
 
@@ -52,15 +49,14 @@ public class DOM extends TreePath<Node> {
       return e instanceof Element;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM.ELEMENT_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class ATTR_NodeKindTrigger implements IFilter<Node> {
     private static DOM.ATTR_NodeKindTrigger instance;
 
@@ -71,32 +67,27 @@ public class DOM extends TreePath<Node> {
       return a instanceof Attr;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM.ATTR_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class ELEMENT_tag_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
@@ -108,31 +99,25 @@ public class DOM extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
       }
+    }
+  }
 
-}
-
-}
   public static class ATTR_name_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
@@ -144,31 +129,25 @@ public class DOM extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node a) {
         return ((Attr)a).getName();
       }
+    }
+  }
 
-}
-
-}
   public static class ATTR_value_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
@@ -180,13 +159,9 @@ public class DOM extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node a) {
         return ((Attr)a).getValue();
       }
-
-}
-
-}
-
+    }
+  }
 }

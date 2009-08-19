@@ -22,5 +22,4 @@ public class NodeProperty extends BaseConcept {
   public static NodeProperty newInstance(SModel sm) {
     return NodeProperty.newInstance(sm, false);
   }
-
 }

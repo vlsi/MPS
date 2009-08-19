@@ -25,5 +25,4 @@ public class ProjectNewActions_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);
   }
-
 }

@@ -22,5 +22,4 @@ public class DisposeDialogExpression extends Expression {
   public static DisposeDialogExpression newInstance(SModel sm) {
     return DisposeDialogExpression.newInstance(sm, false);
   }
-
 }

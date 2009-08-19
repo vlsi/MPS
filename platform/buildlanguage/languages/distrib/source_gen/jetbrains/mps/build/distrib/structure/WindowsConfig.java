@@ -105,7 +105,6 @@ public class WindowsConfig extends SystemSpecificConfig {
     super.setChild(WindowsConfig.SIGNATURE_CONFIGURATION, node);
   }
 
-
   public static WindowsConfig newInstance(SModel sm, boolean init) {
     return (WindowsConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.WindowsConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -113,5 +112,4 @@ public class WindowsConfig extends SystemSpecificConfig {
   public static WindowsConfig newInstance(SModel sm) {
     return WindowsConfig.newInstance(sm, false);
   }
-
 }

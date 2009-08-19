@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class UnaryRegexp_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9804_0(editorContext, node);
   }
@@ -72,5 +71,4 @@ public class UnaryRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

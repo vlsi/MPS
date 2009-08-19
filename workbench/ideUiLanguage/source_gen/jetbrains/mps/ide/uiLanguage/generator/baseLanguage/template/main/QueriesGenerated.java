@@ -21,7 +21,6 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1203594167922(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "root", true), "jetbrains.mps.ide.uiLanguage.structure.IDEDialog");
   }
@@ -189,11 +188,10 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1203594547726(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for(SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+    for (SNode cc : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       if ("_ToRemove".equals(SPropertyOperations.getString(cc, "name"))) {
         SNodeOperations.deleteNode(cc);
       }
     }
   }
-
 }

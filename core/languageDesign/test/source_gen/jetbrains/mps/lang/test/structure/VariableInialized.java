@@ -24,7 +24,6 @@ public class VariableInialized extends NodeProperty {
     super.setChild(VariableInialized.VAR, node);
   }
 
-
   public static VariableInialized newInstance(SModel sm, boolean init) {
     return (VariableInialized)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableInialized", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class VariableInialized extends NodeProperty {
   public static VariableInialized newInstance(SModel sm) {
     return VariableInialized.newInstance(sm, false);
   }
-
 }

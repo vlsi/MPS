@@ -12,13 +12,12 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MatrixRow_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_MatrixRow_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     SNode type = SLinkOperations.getTarget(SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", false, false), "scalarType", true);
-    for(SNode arg : SLinkOperations.getTargets(nodeToCheck, "items", true)) {
+    for (SNode arg : SLinkOperations.getTargets(nodeToCheck, "items", true)) {
       {
         SNode _nodeToCheck_1029348928467 = arg;
         BaseIntentionProvider intentionProvider = null;
@@ -38,5 +37,4 @@ public class typeof_MatrixRow_InferenceRule extends AbstractInferenceRule_Runtim
   public boolean overrides() {
     return false;
   }
-
 }

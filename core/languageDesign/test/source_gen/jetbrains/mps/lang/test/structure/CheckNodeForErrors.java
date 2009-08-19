@@ -21,5 +21,4 @@ public class CheckNodeForErrors extends AbstractNodeAssert {
   public static CheckNodeForErrors newInstance(SModel sm) {
     return CheckNodeForErrors.newInstance(sm, false);
   }
-
 }

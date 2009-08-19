@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class AssertMatch_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9939_0(editorContext, node);
   }
@@ -113,7 +112,6 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
   }
 
   private static class beforeListHandler_9939_0 extends RefNodeListHandler {
-
     public beforeListHandler_9939_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -160,10 +158,9 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
+  }
 
-}
   private static class afterListHandler_9939_0 extends RefNodeListHandler {
-
     public afterListHandler_9939_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -210,7 +207,5 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

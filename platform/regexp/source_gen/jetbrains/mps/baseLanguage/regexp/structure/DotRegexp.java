@@ -21,5 +21,4 @@ public class DotRegexp extends Regexp {
   public static DotRegexp newInstance(SModel sm) {
     return DotRegexp.newInstance(sm, false);
   }
-
 }

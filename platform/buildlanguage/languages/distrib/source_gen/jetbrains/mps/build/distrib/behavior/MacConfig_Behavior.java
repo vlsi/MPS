@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacConfig_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -24,7 +23,7 @@ public class MacConfig_Behavior {
 
   public static SNode call_getUnixConfig_1234542090729(SNode thisNode) {
     List<SNode> configs = SLinkOperations.getTargets(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "systemSpecificConfig", true);
-    for(SNode config : ListSequence.fromList(configs)) {
+    for (SNode config : ListSequence.fromList(configs)) {
       if (SNodeOperations.isInstanceOf(config, "jetbrains.mps.build.distrib.structure.UniversalConfig")) {
         return SNodeOperations.cast(config, "jetbrains.mps.build.distrib.structure.UniversalConfig");
       }
@@ -35,5 +34,4 @@ public class MacConfig_Behavior {
   public static boolean call_addVmoptionsToArchive_1239641445163(SNode thisNode) {
     return (MacConfig_Behavior.call_getUnixConfig_1234542090729(thisNode) != null) && SPropertyOperations.getBoolean(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode), "useVMOptionsFile");
   }
-
 }

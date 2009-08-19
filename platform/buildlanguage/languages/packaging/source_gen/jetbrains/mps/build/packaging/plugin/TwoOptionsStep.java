@@ -22,8 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
-public abstract class TwoOptionsStep <M> extends AbstractStep {
-
+public abstract class TwoOptionsStep<M> extends AbstractStep {
   protected final AbstractBuildGenerator myGenerator;
   protected final Project myProject;
   private JTextField myTextField;
@@ -99,7 +98,6 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
 
   private JCheckBox createOptionsCheckBox() {
     return new JCheckBox(new AbstractAction(TwoOptionsStep.this.getCheckBoxName()) {
-
       public void actionPerformed(ActionEvent event) {
         boolean checkBoxSelected = TwoOptionsStep.this.myOptionsCheckBox.isSelected();
         TwoOptionsStep.this.setEnabledState(checkBoxSelected);
@@ -116,7 +114,6 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
     final JTextField textField = new JTextField();
     this.myDefaultTextFieldColor = textField.getForeground();
     textField.addCaretListener(new CaretListener() {
-
       public void caretUpdate(CaretEvent p0) {
         TwoOptionsStep.this.checkTextField(textField);
       }
@@ -129,8 +126,7 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
     if (!(this.isValid(text)) && this.myOptionsCheckBox.isSelected()) {
       this.myTextField.setForeground(Color.red);
       this.myHandler.setErrorText(TwoOptionsStep.this.getWarningText(text));
-    } else
-    {
+    } else {
       this.myTextField.setForeground(this.myDefaultTextFieldColor);
       this.myHandler.setErrorText(null);
     }
@@ -149,10 +145,9 @@ public abstract class TwoOptionsStep <M> extends AbstractStep {
     }
     this.myVariantsArray = newVariants;
     List<String> items = ListSequence.fromList(new ArrayList<String>());
-    for(M variant : this.myVariantsArray) {
+    for (M variant : this.myVariantsArray) {
       ListSequence.fromList(items).addElement(TwoOptionsStep.this.getVariantName(variant));
     }
     return new DefaultComboBoxModel(ListSequence.fromList(items).toGenericArray(String.class));
   }
-
 }

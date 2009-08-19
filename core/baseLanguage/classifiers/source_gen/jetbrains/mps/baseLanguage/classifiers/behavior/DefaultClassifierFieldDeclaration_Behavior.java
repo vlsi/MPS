@@ -6,12 +6,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DefaultClassifierFieldDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "visibility", true);
   }
-
 }

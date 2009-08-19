@@ -5,12 +5,10 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class Echo_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static boolean virtual_equals_1213877333900(SNode thisNode, SNode snode) {
     return false;
   }
-
 }

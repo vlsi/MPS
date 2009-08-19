@@ -30,12 +30,12 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,7 +46,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -62,12 +62,11 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModel memory = ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getSModel();
       final SModel disk = ModelPersistence.readModel(ShowDifferencesWithModelOnDisk_Action.this.modelDescriptor.getModelFile());
       ApplicationManager.getApplication().invokeLater(new Runnable() {
-
         public void run() {
           String[] titles = new String[]{"Disk","Memory"};
           new ModelDifferenceDialog(event.getRequiredData(MPSDataKeys.OPERATION_CONTEXT), ShowDifferencesWithModelOnDisk_Action.this.frame, disk, memory, "Model Difference", true, titles).showDialog();
@@ -79,5 +78,4 @@ public class ShowDifferencesWithModelOnDisk_Action extends GeneratedAction {
       }
     }
   }
-
 }

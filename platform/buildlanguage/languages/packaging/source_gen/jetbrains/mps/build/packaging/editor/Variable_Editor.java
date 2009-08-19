@@ -16,7 +16,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class Variable_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6096_0(editorContext, node);
   }
@@ -112,5 +111,4 @@ public class Variable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

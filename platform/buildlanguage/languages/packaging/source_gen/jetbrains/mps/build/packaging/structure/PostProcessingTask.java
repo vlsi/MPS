@@ -21,5 +21,4 @@ public class PostProcessingTask extends AbstractProjectComponent {
   public static PostProcessingTask newInstance(SModel sm) {
     return PostProcessingTask.newInstance(sm, false);
   }
-
 }

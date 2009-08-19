@@ -21,5 +21,4 @@ public class NegativeSymbolClassRegexp extends SymbolClassRegexp {
   public static NegativeSymbolClassRegexp newInstance(SModel sm) {
     return NegativeSymbolClassRegexp.newInstance(sm, false);
   }
-
 }

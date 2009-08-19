@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MatchVariableReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public MatchVariableReference_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class MatchVariableReference_InferenceRule extends AbstractInferenceRule_
   public boolean overrides() {
     return false;
   }
-
 }

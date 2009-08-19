@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class BinaryOperationConcept_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,8 +29,7 @@ public class BinaryOperationConcept_Behavior {
     SPropertyOperations.set(leftLink, "sourceCardinality", "1");
     SPropertyOperations.set(rightLink, "sourceCardinality", "1");
     SNode conceptProperty = SLinkOperations.addNewChild(conceptDeclaration, "conceptProperty", "jetbrains.mps.lang.structure.structure.StringConceptProperty");
-    SLinkOperations.setTarget(conceptProperty, "conceptPropertyDeclaration", SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"), "conceptPropertyDeclaration", true)).where(new IWhereFilter <SNode>() {
-
+    SLinkOperations.setTarget(conceptProperty, "conceptPropertyDeclaration", SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"), "conceptPropertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("alias");
       }
@@ -54,5 +52,4 @@ public class BinaryOperationConcept_Behavior {
     SLinkOperations.setTarget(result, "cellModel", contentCell, true);
     return result;
   }
-
 }

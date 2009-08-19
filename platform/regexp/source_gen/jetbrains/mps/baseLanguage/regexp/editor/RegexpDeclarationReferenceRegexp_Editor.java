@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1993_0(editorContext, node);
   }
@@ -50,7 +49,6 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1993_0 extends AbstractCellProvider {
-
     public _Inline1993_0() {
       super();
     }
@@ -86,7 +84,5 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

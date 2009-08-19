@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class BinaryRegexp_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_0978_0(editorContext, node);
   }
@@ -88,5 +87,4 @@ public class BinaryRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

@@ -22,5 +22,4 @@ public class SuperClassifierExpresson extends Expression {
   public static SuperClassifierExpresson newInstance(SModel sm) {
     return SuperClassifierExpresson.newInstance(sm, false);
   }
-
 }

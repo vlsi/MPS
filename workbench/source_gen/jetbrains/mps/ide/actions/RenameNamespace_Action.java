@@ -32,7 +32,7 @@ public class RenameNamespace_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -41,7 +41,7 @@ public class RenameNamespace_Action extends GeneratedAction {
     return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -55,7 +55,7 @@ public class RenameNamespace_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -75,7 +75,7 @@ public class RenameNamespace_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NamespaceTextNode node = ((NamespaceTextNode)RenameNamespace_Action.this.treeNode);
       String newFolder = JOptionPane.showInputDialog(RenameNamespace_Action.this.frame, "Enter New Folder", node.getName());
@@ -85,7 +85,7 @@ public class RenameNamespace_Action extends GeneratedAction {
       if (newFolder.equals("")) {
         newFolder = null;
       }
-      for(IModule module : ListSequence.fromList(node.getModulesUnder())) {
+      for (IModule module : ListSequence.fromList(node.getModulesUnder())) {
         RenameNamespace_Action.this.project.setFolderFor(module, newFolder);
       }
       RenameNamespace_Action.this.getProjectPane().rebuild();
@@ -99,5 +99,4 @@ public class RenameNamespace_Action extends GeneratedAction {
   private ProjectPane getProjectPane() {
     return RenameNamespace_Action.this.project.getComponent(ProjectPane.class);
   }
-
 }

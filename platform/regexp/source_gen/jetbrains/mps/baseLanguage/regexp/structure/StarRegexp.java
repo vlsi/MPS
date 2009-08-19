@@ -21,5 +21,4 @@ public class StarRegexp extends UnaryRegexp {
   public static StarRegexp newInstance(SModel sm) {
     return StarRegexp.newInstance(sm, false);
   }
-
 }

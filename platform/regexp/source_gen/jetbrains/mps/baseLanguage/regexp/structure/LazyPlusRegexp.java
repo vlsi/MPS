@@ -21,5 +21,4 @@ public class LazyPlusRegexp extends UnaryRegexp {
   public static LazyPlusRegexp newInstance(SModel sm) {
     return LazyPlusRegexp.newInstance(sm, false);
   }
-
 }

@@ -10,11 +10,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Custommps_ProjectPlugin extends BaseProjectPlugin {
-
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
     ListSequence.fromList(tools).addElement(new CustomMPSBuildTool_Tool(project));
     return tools;
   }
-
 }

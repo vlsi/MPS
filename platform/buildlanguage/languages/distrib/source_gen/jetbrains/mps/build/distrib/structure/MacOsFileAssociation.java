@@ -23,7 +23,6 @@ public class MacOsFileAssociation extends FileAssociation {
     super.setChild(MacOsFileAssociation.ROLE, node);
   }
 
-
   public static MacOsFileAssociation newInstance(SModel sm, boolean init) {
     return (MacOsFileAssociation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacOsFileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class MacOsFileAssociation extends FileAssociation {
   public static MacOsFileAssociation newInstance(SModel sm) {
     return MacOsFileAssociation.newInstance(sm, false);
   }
-
 }

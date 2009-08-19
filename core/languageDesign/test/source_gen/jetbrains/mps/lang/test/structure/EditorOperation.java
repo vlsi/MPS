@@ -43,7 +43,6 @@ public class EditorOperation extends BaseConcept implements IOperation {
     this.setProperty(EditorOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static EditorOperation newInstance(SModel sm, boolean init) {
     return (EditorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class EditorOperation extends BaseConcept implements IOperation {
   public static EditorOperation newInstance(SModel sm) {
     return EditorOperation.newInstance(sm, false);
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public MatchVariableReferenceRegexp_match_ReferentConstraint() {
   }
 
@@ -38,5 +37,4 @@ public class MatchVariableReferenceRegexp_match_ReferentConstraint extends BaseN
     }
     return matches;
   }
-
 }

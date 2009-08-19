@@ -61,7 +61,6 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
     this.setProperty(LinkPatternVariableDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
     return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
   public static LinkPatternVariableDeclaration newInstance(SModel sm) {
     return LinkPatternVariableDeclaration.newInstance(sm, false);
   }
-
 }

@@ -19,5 +19,4 @@ public class ILayoutComponent_Behavior {
   public static String callSuper_getPath_1213877230696(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ILayoutComponent"), callerConceptFqName, "virtual_getPath_1213877230696", PARAMETERS_1213877230696);
   }
-
 }

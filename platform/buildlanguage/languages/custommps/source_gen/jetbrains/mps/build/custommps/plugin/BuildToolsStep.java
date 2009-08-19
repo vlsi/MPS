@@ -17,7 +17,6 @@ import org.apache.commons.lang.StringUtils;
 import java.io.File;
 
 public class BuildToolsStep extends AbstractStep {
-
   private PathField myPathField;
   private IErrorHandler myErrorHandler;
   private CustomMPSBuildGenerator myBuildGenerator;
@@ -31,7 +30,6 @@ public class BuildToolsStep extends AbstractStep {
     this.myPathField = new PathField();
     this.myPathField.setMode(TreeFileChooser.MODE_FILES);
     this.myPathField.addPropertyChangeListener("path", new PropertyChangeListener() {
-
       public void propertyChange(PropertyChangeEvent p0) {
         BuildToolsStep.this.myBuildGenerator.setPathToBuildTools(BuildToolsStep.this.myPathField.getPath());
         BuildToolsStep.this.updateErrorMessage();
@@ -64,10 +62,8 @@ public class BuildToolsStep extends AbstractStep {
       this.myErrorHandler.setErrorText("Empty path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");
     } else if (!(new File(path).exists())) {
       this.myErrorHandler.setErrorText("Illegal path to " + MPSBuild_Behavior.getMPSBuildToolsZipName_1234294616845() + ".");
-    } else
-    {
+    } else {
       this.myErrorHandler.setErrorText(null);
     }
   }
-
 }

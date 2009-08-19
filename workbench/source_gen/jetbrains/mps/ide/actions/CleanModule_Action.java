@@ -32,7 +32,7 @@ public class CleanModule_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -42,7 +42,7 @@ public class CleanModule_Action extends GeneratedAction {
     return m != null && m.isCompileInMPS();
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class CleanModule_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,14 +72,12 @@ public class CleanModule_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final IModule m = CleanModule_Action.this.context.getModule();
       ProgressManager.getInstance().run(new Task.Modal(CleanModule_Action.this.project, "Cleaning", true) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ModuleMaker maker = new ModuleMaker();
               maker.clean(CollectionUtil.set(m), indicator);
@@ -93,5 +91,4 @@ public class CleanModule_Action extends GeneratedAction {
       }
     }
   }
-
 }

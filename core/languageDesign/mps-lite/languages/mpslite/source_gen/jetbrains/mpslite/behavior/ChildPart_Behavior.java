@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ChildPart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,18 +19,15 @@ public class ChildPart_Behavior {
       SNode refNodeList = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
       if (SPropertyOperations.getBoolean(thisNode, "vertical")) {
         SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
-      } else
-      {
+      } else {
         SLinkOperations.setTarget(refNodeList, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
       }
       SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNodeList;
-    } else
-    {
+    } else {
       SNode refNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
       SLinkOperations.setTarget(refNode, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(thisNode), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
       return refNode;
     }
   }
-
 }

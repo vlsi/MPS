@@ -78,7 +78,6 @@ public class ExpressionConcept extends BaseConcept implements IMPSLiteConcept {
     super.setChild(ExpressionConcept.EXTENDS, node);
   }
 
-
   public static ExpressionConcept newInstance(SModel sm, boolean init) {
     return (ExpressionConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ExpressionConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -86,5 +85,4 @@ public class ExpressionConcept extends BaseConcept implements IMPSLiteConcept {
   public static ExpressionConcept newInstance(SModel sm) {
     return ExpressionConcept.newInstance(sm, false);
   }
-
 }

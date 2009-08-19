@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CompositeString_Left_Delete {
-
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CompositeString_Left_Delete.CompositeString_Left_Delete_DELETE(node));
   }
 
   public static class CompositeString_Left_Delete_DELETE extends EditorCellAction {
-
-    /* package */SNode myNode;
+    /*package*/ SNode myNode;
 
     public CompositeString_Left_Delete_DELETE(SNode node) {
       this.myNode = node;
@@ -32,7 +30,5 @@ public class CompositeString_Left_Delete {
       SNode rightExpression = SLinkOperations.getTarget(node, "right", true);
       SNodeOperations.replaceWithAnother(node, rightExpression);
     }
-
-}
-
+  }
 }

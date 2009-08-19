@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AsPattern_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_AsPattern_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class typeof_AsPattern_InferenceRule extends AbstractInferenceRule_Runtim
   public boolean overrides() {
     return true;
   }
-
 }

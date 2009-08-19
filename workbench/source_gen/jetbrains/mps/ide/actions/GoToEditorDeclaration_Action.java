@@ -51,7 +51,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift E";
   }
@@ -60,7 +60,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     return SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(GoToEditorDeclaration_Action.this.node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -74,7 +74,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -115,11 +115,10 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Language> l = new Wrappers._T<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           l.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(GoToEditorDeclaration_Action.this.node), GoToEditorDeclaration_Action.this.scope);
         }
@@ -130,7 +129,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       }
       final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           conceptDeclaration.value = ((ConceptDeclaration)GoToEditorDeclaration_Action.this.node.getConceptDeclarationAdapter());
         }
@@ -144,7 +142,6 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
         return;
       }
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           GoToEditorDeclaration_Action.this.navigateToEditorDeclaration(editorNode, new ModuleContext(l.value, GoToEditorDeclaration_Action.this.project), GoToEditorDeclaration_Action.this.editor);
         }
@@ -156,9 +153,8 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     }
   }
 
-  /* package */void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor) {
+  /*package*/ void navigateToEditorDeclaration(SNode editorNode, IOperationContext oContext, IEditor editor) {
     oContext.getComponent(ProjectPane.class).selectNode(editorNode, oContext);
     oContext.getComponent(MPSEditorOpener.class).editNode(editorNode, oContext);
   }
-
 }

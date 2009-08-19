@@ -87,7 +87,6 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
     super.setChild(BlockConcept.EXTENDS, node);
   }
 
-
   public static BlockConcept newInstance(SModel sm, boolean init) {
     return (BlockConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -95,5 +94,4 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
   public static BlockConcept newInstance(SModel sm) {
     return BlockConcept.newInstance(sm, false);
   }
-
 }

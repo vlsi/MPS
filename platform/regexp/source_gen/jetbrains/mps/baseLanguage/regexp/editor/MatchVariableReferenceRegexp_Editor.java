@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1753_0(editorContext, node);
   }
@@ -69,7 +68,6 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   }
 
   public static class _Inline1753_0 extends AbstractCellProvider {
-
     public _Inline1753_0() {
       super();
     }
@@ -105,7 +103,5 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

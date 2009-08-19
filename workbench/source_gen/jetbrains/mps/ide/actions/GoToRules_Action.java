@@ -32,12 +32,12 @@ public class GoToRules_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt R";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class GoToRules_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -80,7 +80,7 @@ public class GoToRules_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GoToRulesHelper.go(GoToRules_Action.this.frame, GoToRules_Action.this.cell, GoToRules_Action.this.context, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(GoToRules_Action.this.node)));
     } catch (Throwable t) {
@@ -89,5 +89,4 @@ public class GoToRules_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_Behavior;
 
 public class ExternalVariableReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,5 +26,4 @@ public class ExternalVariableReference_Behavior {
   public static String virtual_toString_1213877472569(SNode thisNode) {
     return PropertyValueExpression_Behavior.call_getActualValue_1213877472572(thisNode);
   }
-
 }

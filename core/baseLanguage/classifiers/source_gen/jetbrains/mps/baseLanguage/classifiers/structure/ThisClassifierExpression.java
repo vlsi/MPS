@@ -52,7 +52,6 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
     super.setReferent(ThisClassifierExpression.CLASSIFIER, node);
   }
 
-
   public static ThisClassifierExpression newInstance(SModel sm, boolean init) {
     return (ThisClassifierExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
   public static ThisClassifierExpression newInstance(SModel sm) {
     return ThisClassifierExpression.newInstance(sm, false);
   }
-
 }

@@ -5,8 +5,6 @@ package jetbrains.mps.samples.complex.constraints;
 import jetbrains.mps.smodel.SNode;
 
 public class SingleComplexExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

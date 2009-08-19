@@ -32,7 +32,6 @@ public class BinaryRegexp extends Regexp {
     super.setChild(BinaryRegexp.RIGHT, node);
   }
 
-
   public static BinaryRegexp newInstance(SModel sm, boolean init) {
     return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class BinaryRegexp extends Regexp {
   public static BinaryRegexp newInstance(SModel sm) {
     return BinaryRegexp.newInstance(sm, false);
   }
-
 }

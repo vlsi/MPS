@@ -24,7 +24,6 @@ public class TestNodeReference extends Expression {
     super.setReferent(TestNodeReference.DECLARATION, node);
   }
 
-
   public static TestNodeReference newInstance(SModel sm, boolean init) {
     return (TestNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TestNodeReference extends Expression {
   public static TestNodeReference newInstance(SModel sm) {
     return TestNodeReference.newInstance(sm, false);
   }
-
 }

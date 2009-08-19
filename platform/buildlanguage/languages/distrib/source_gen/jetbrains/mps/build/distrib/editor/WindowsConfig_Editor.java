@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class WindowsConfig_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1449_0(editorContext, node);
   }
@@ -38,8 +37,7 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createRefNode_1449_1(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_1449_3(editorContext, node);
     }
     return editorCell;
@@ -535,7 +533,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition1449_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "signatureConfiguration", true) != null);
   }
@@ -545,7 +542,6 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
   }
 
   public static class WindowsConfig_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-
     public WindowsConfig_generic_cellMenu0() {
     }
 
@@ -557,7 +553,5 @@ public class WindowsConfig_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "digital signature configuration";
     }
-
-}
-
+  }
 }

@@ -71,7 +71,6 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
     super.setChild(FileAssociation.ICON, node);
   }
 
-
   public static FileAssociation newInstance(SModel sm, boolean init) {
     return (FileAssociation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.FileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
   public static FileAssociation newInstance(SModel sm) {
     return FileAssociation.newInstance(sm, false);
   }
-
 }

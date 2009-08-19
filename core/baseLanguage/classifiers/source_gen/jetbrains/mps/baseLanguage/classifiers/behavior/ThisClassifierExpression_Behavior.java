@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ThisClassifierExpression_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,10 +22,9 @@ public class ThisClassifierExpression_Behavior {
 
   public static List<SNode> call_getPossibleClassifiers_1219068414643(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false))) {
+    for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false))) {
       ListSequence.fromList(result).addElement(current);
     }
     return result;
   }
-
 }

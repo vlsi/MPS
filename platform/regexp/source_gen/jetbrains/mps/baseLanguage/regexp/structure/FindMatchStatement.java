@@ -71,7 +71,6 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
     super.setChild(FindMatchStatement.REGEXP, node);
   }
 
-
   public static FindMatchStatement newInstance(SModel sm, boolean init) {
     return (FindMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   public static FindMatchStatement newInstance(SModel sm) {
     return FindMatchStatement.newInstance(sm, false);
   }
-
 }

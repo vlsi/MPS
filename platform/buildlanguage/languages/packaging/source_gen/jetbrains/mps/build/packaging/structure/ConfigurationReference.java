@@ -24,7 +24,6 @@ public class ConfigurationReference extends BaseConcept {
     super.setReferent(ConfigurationReference.CONFIGURATION, node);
   }
 
-
   public static ConfigurationReference newInstance(SModel sm, boolean init) {
     return (ConfigurationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ConfigurationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ConfigurationReference extends BaseConcept {
   public static ConfigurationReference newInstance(SModel sm) {
     return ConfigurationReference.newInstance(sm, false);
   }
-
 }

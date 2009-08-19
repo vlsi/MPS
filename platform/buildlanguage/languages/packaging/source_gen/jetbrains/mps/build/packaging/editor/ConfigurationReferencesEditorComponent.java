@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ConfigurationReferencesEditorComponent extends AbstractCellProvider {
-
   public ConfigurationReferencesEditorComponent(SNode node) {
     super(node);
   }
@@ -78,13 +77,11 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     return editorCell;
   }
 
-
   private static boolean renderingCondition4382_0(SNode node, EditorContext editorContext, IScope scope) {
     return editorContext.isInspector() || (!(ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).isEmpty()));
   }
 
   private static class configurationListHandler_4382_0 extends RefNodeListHandler {
-
     public configurationListHandler_4382_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -143,7 +140,5 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
       editorCell.setDefaultText("");
       return editorCell;
     }
-
-}
-
+  }
 }

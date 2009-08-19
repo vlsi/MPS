@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class CreateDigitalSignatureConfiguration_Intension_Intention extends BaseIntention {
-
   public CreateDigitalSignatureConfiguration_Intension_Intention() {
   }
 
@@ -52,5 +51,4 @@ public class CreateDigitalSignatureConfiguration_Intension_Intention extends Bas
   public String getLocationString() {
     return "jetbrains.mps.build.distrib.intentions";
   }
-
 }

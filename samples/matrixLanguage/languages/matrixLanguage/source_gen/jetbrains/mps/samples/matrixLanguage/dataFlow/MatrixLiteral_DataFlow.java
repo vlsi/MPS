@@ -9,14 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MatrixLiteral_DataFlow extends DataFlowBuilder {
-
   public MatrixLiteral_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode r : SLinkOperations.getTargets(_context.getNode(), "row", true)) {
+    for (SNode r : SLinkOperations.getTargets(_context.getNode(), "row", true)) {
       _context.getBuilder().build((SNode)r);
     }
   }
-
 }

@@ -5,8 +5,7 @@ package jetbrains.mps.regexp.examples;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-/* package */class EmailExample {
-
+/*package*/ class EmailExample {
   public static void msain(String emailToAnalyse) {
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP0;
@@ -20,5 +19,4 @@ import java.util.regex.Matcher;
       System.out.println("");
     }
   }
-
 }

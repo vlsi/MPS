@@ -25,7 +25,7 @@ public class ImportAntStuff_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -34,7 +34,7 @@ public class ImportAntStuff_Action extends GeneratedAction {
     return (ImportAntStuff_Action.this.module instanceof Language) && (ImportAntStuff_Action.this.module.getModuleFqName().contains("jetbrains.mps.build.generictasks"));
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -46,7 +46,7 @@ public class ImportAntStuff_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -58,7 +58,7 @@ public class ImportAntStuff_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = ((Language)ImportAntStuff_Action.this.module);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE);
@@ -74,5 +74,4 @@ public class ImportAntStuff_Action extends GeneratedAction {
     assert model != null;
     new Generator().generateTasks(model.getSModel(), m, ImportAntStuffUtil.getAllModels(l));
   }
-
 }

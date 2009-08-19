@@ -26,12 +26,12 @@ public class SetBookmark6_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift 6";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -42,7 +42,7 @@ public class SetBookmark6_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -58,7 +58,7 @@ public class SetBookmark6_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       BookmarkManager bookmarkManager = SetBookmark6_Action.this.project.getComponent(BookmarkManager.class);
       bookmarkManager.setBookmark(SetBookmark6_Action.this.node, 6);
@@ -68,5 +68,4 @@ public class SetBookmark6_Action extends GeneratedAction {
       }
     }
   }
-
 }

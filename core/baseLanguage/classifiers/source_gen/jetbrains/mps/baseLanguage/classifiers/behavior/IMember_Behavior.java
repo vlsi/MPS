@@ -63,5 +63,4 @@ public class IMember_Behavior {
   public static SNode callSuper_createOperation_1213877353000(SNode thisNode, String callerConceptFqName) {
     return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"), callerConceptFqName, "virtual_createOperation_1213877353000", PARAMETERS_1213877353000);
   }
-
 }

@@ -35,12 +35,12 @@ public class DeleteModels_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " DELETE";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -51,7 +51,7 @@ public class DeleteModels_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -75,7 +75,7 @@ public class DeleteModels_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final DeleteDialog dialog = new DeleteDialog(DeleteModels_Action.this.project, "Delete Models", "Are you sure you want to delete selected models?");
       dialog.setOptions(false, true, true, false);
@@ -84,9 +84,8 @@ public class DeleteModels_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
-          for(SModelDescriptor model : ListSequence.fromList(DeleteModels_Action.this.models)) {
+          for (SModelDescriptor model : ListSequence.fromList(DeleteModels_Action.this.models)) {
             if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
               continue;
             }
@@ -100,5 +99,4 @@ public class DeleteModels_Action extends GeneratedAction {
       }
     }
   }
-
 }

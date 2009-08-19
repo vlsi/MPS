@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.NodeRangeSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AnonymousCellAnnotation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,7 +26,6 @@ public class AnonymousCellAnnotation_Behavior {
     final Wrappers._T<EditorComponent> editorComponent = new Wrappers._T<EditorComponent>(nodeEditorComponent);
     final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
           editorComponent.value = AnonymousCellAnnotation_Behavior.call_setupInspector_5681471431307922086(thisNode, node, nodeEditorComponent);
@@ -41,7 +39,6 @@ public class AnonymousCellAnnotation_Behavior {
     });
     editorComponent.value.changeSelection(cellWithId.value);
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
           SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
@@ -55,8 +52,7 @@ public class AnonymousCellAnnotation_Behavior {
   public static int call_getCaretPosition_6268941039745717986(SNode thisNode, EditorCell_Label label) {
     if (SPropertyOperations.getBoolean(thisNode, "isLastPosition")) {
       return label.getText().length();
-    } else
-    {
+    } else {
       return SPropertyOperations.getInteger(thisNode, "caretPosition");
     }
   }
@@ -98,5 +94,4 @@ public class AnonymousCellAnnotation_Behavior {
     nodeEditorComponent.selectNode(nodeToSelect);
     return nodeEditorComponent.getInspector();
   }
-
 }

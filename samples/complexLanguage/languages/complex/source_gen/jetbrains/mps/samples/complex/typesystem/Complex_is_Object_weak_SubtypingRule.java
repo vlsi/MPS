@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Complex_is_Object_weak_SubtypingRule() {
   }
 
@@ -28,5 +27,4 @@ public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime 
   public boolean isWeak() {
     return true;
   }
-
 }

@@ -25,7 +25,6 @@ public class AbstractNodeAssert extends Statement {
     super.setChild(AbstractNodeAssert.NODE_TO_CHECK, node);
   }
 
-
   public static AbstractNodeAssert newInstance(SModel sm, boolean init) {
     return (AbstractNodeAssert)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AbstractNodeAssert", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class AbstractNodeAssert extends Statement {
   public static AbstractNodeAssert newInstance(SModel sm) {
     return AbstractNodeAssert.newInstance(sm, false);
   }
-
 }

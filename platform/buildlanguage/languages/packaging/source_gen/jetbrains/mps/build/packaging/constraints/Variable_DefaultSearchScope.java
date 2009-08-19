@@ -10,7 +10,6 @@ import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public Variable_DefaultSearchScope() {
   }
 
@@ -25,5 +24,4 @@ public class Variable_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return IVariableHolder_Behavior.call_getAllVariable_1234864693585(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false));
   }
-
 }

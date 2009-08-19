@@ -78,7 +78,6 @@ public class StatementConcept extends BaseConcept implements IMPSLiteConcept {
     super.setChild(StatementConcept.EXTENDS, node);
   }
 
-
   public static StatementConcept newInstance(SModel sm, boolean init) {
     return (StatementConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.StatementConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -86,5 +85,4 @@ public class StatementConcept extends BaseConcept implements IMPSLiteConcept {
   public static StatementConcept newInstance(SModel sm) {
     return StatementConcept.newInstance(sm, false);
   }
-
 }

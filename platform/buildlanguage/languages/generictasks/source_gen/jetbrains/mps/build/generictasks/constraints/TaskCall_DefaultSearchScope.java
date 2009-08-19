@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TaskCall_DefaultSearchScope extends BaseNodeReferenceSearchScopeProvider {
-
   public TaskCall_DefaultSearchScope() {
   }
 
@@ -30,12 +29,11 @@ public class TaskCall_DefaultSearchScope extends BaseNodeReferenceSearchScopePro
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> nodes = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.TaskCall");
     List<SNode> visible = new ArrayList<SNode>();
-    for(SNode call : ListSequence.fromList(nodes)) {
+    for (SNode call : ListSequence.fromList(nodes)) {
       if ((SPropertyOperations.getString(call, "name") != null) && (SNodeOperations.getContainingRoot(call) == SNodeOperations.getContainingRoot(_context.getEnclosingNode()))) {
         ListSequence.fromList(visible).addElement(call);
       }
     }
     return visible;
   }
-
 }

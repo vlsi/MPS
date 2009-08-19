@@ -21,5 +21,4 @@ public class ListPattern extends AsPattern {
   public static ListPattern newInstance(SModel sm) {
     return ListPattern.newInstance(sm, false);
   }
-
 }

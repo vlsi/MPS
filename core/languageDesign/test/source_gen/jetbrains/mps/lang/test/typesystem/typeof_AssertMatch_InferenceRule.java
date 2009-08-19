@@ -13,19 +13,18 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_AssertMatch_InferenceRule() {
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    for(SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true))) {
+    for (SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "before", true))) {
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433134", true), (SNode)new _Quotations.QuotationClass_2().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590385(jetbrains.mps.lang.test.typesystem)", "1211982433132", false, 0, intentionProvider);
       }
     }
-    for(SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true))) {
+    for (SNode node : ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "after", true))) {
       {
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
@@ -66,5 +65,4 @@ public class typeof_AssertMatch_InferenceRule extends AbstractInferenceRule_Runt
   public boolean overrides() {
     return false;
   }
-
 }

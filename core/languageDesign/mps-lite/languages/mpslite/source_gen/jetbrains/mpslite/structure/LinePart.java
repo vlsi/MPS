@@ -22,5 +22,4 @@ public class LinePart extends BaseConcept {
   public static LinePart newInstance(SModel sm) {
     return LinePart.newInstance(sm, false);
   }
-
 }

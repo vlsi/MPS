@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ListPattern_InferenceRule() {
   }
 
@@ -26,8 +25,7 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231736", true), (SNode)new _Quotations.QuotationClass_6().createNode(typeCheckingContext), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231731", intentionProvider);
       }
-    } else
-    {
+    } else {
       String role = attributedNode.getRole_();
       SNode linkDeclaration = AbstractConceptDeclaration_Behavior.call_findLinkDeclaration_1213877394467(SNodeOperations.getConceptDeclaration(parent), role);
       {
@@ -49,5 +47,4 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
   public boolean overrides() {
     return true;
   }
-
 }

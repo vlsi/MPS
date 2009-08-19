@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public NotExisingModule_NonTypesystemRule() {
   }
 
@@ -39,5 +38,4 @@ public class NotExisingModule_NonTypesystemRule extends AbstractNonTypesystemRul
   public boolean overrides() {
     return false;
   }
-
 }

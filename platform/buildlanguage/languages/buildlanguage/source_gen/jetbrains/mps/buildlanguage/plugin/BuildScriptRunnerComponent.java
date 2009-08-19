@@ -70,7 +70,6 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
   private DefaultActionGroup createActions() {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new AnAction("Stop", "Stop executing ant task.", BuildScriptRunnerComponent.this.loadIcon("suspend")) {
-
       public void actionPerformed(AnActionEvent p0) {
         BuildScriptRunnerComponent.this.stop();
       }
@@ -83,7 +82,6 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
       }
     });
     group.add(new AnAction("Close", "Stop executing ant task and close tool.", BuildScriptRunnerComponent.this.loadIcon("close")) {
-
       public void actionPerformed(AnActionEvent p0) {
         BuildScriptRunnerComponent.this.stop();
         BuildScriptRunnerComponent.this.myCloseAction.close();
@@ -111,17 +109,17 @@ public static   interface RunnerActions {
     public void kill();
     public void pause();
     public void play();
-}
+  }
+
 public static   interface ToolCloseAction {
 
     public void close();
-}
+  }
+
   public static   enum BuildState {
     RUNNING(),
     STOPPED();
 
     BuildState() {
-    }
-}
-
+    }}
 }

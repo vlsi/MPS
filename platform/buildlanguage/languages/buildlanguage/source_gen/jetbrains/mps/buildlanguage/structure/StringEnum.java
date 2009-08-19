@@ -21,5 +21,4 @@ public class StringEnum extends Enum {
   public static StringEnum newInstance(SModel sm) {
     return StringEnum.newInstance(sm, false);
   }
-
 }

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
-
   public List<GeneratedTool> initTools(Project project) {
     List<GeneratedTool> tools = ListSequence.fromList(new ArrayList<GeneratedTool>());
     ListSequence.fromList(tools).addElement(new BuildLanguageTool_Tool(project));
@@ -23,5 +22,4 @@ public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
     ListSequence.fromList(components).addElement(new AntRunnerPreferences_PreferencesComponent(project));
     return components;
   }
-
 }

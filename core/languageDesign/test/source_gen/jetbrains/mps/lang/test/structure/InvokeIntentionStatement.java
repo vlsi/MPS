@@ -25,7 +25,6 @@ public class InvokeIntentionStatement extends Statement {
     super.setReferent(InvokeIntentionStatement.INTENTION, node);
   }
 
-
   public static InvokeIntentionStatement newInstance(SModel sm, boolean init) {
     return (InvokeIntentionStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.InvokeIntentionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class InvokeIntentionStatement extends Statement {
   public static InvokeIntentionStatement newInstance(SModel sm) {
     return InvokeIntentionStatement.newInstance(sm, false);
   }
-
 }

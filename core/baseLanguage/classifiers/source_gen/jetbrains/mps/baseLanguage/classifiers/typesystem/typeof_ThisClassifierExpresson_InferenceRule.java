@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ThisClassifierExpresson_InferenceRule() {
   }
 
@@ -26,8 +25,7 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
         BaseIntentionProvider intentionProvider = null;
         typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753197519", true), (SNode)IClassifier_Behavior.call_createType_1213877527970(classifier), _nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1205753196184", intentionProvider);
       }
-    } else
-    {
+    } else {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
@@ -47,5 +45,4 @@ public class typeof_ThisClassifierExpresson_InferenceRule extends AbstractInfere
   public boolean overrides() {
     return false;
   }
-
 }

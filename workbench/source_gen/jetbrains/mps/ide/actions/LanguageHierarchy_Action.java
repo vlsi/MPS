@@ -31,7 +31,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -40,7 +40,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     return LanguageHierarchy_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,7 +70,7 @@ public class LanguageHierarchy_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Language language = (Language)LanguageHierarchy_Action.this.module;
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
@@ -84,5 +84,4 @@ public class LanguageHierarchy_Action extends GeneratedAction {
       }
     }
   }
-
 }

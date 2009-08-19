@@ -33,7 +33,6 @@ public class PathHolder extends BaseConcept {
     super.setReferent(PathHolder.MACRO, node);
   }
 
-
   public static PathHolder newInstance(SModel sm, boolean init) {
     return (PathHolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.PathHolder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class PathHolder extends BaseConcept {
   public static PathHolder newInstance(SModel sm) {
     return PathHolder.newInstance(sm, false);
   }
-
 }

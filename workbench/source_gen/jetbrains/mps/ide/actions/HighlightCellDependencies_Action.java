@@ -31,12 +31,12 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl alt shift F7";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -47,7 +47,7 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -63,20 +63,20 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       NodeHighlightManager highlightManager = HighlightCellDependencies_Action.this.editorComponent.getHighlightManager();
       EditorMessageOwner messageOwner = HighlightCellDependencies_Action.this.editorComponent.getHighlightMessagesOwner();
       highlightManager.mark(HighlightCellDependencies_Action.this.editorCell.getSNode(), HighlightConstants.NODE_COLOR, "node", messageOwner);
       Set<SNode> copyOfNodes = HighlightCellDependencies_Action.this.editorComponent.getCopyOfNodesCellDependsOn(HighlightCellDependencies_Action.this.editorCell);
       if (copyOfNodes != null) {
-        for(SNode node : SetSequence.fromSet(copyOfNodes)) {
+        for (SNode node : SetSequence.fromSet(copyOfNodes)) {
           highlightManager.mark(node, HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
         }
       }
       Set<SNodePointer> copyOfRefTargets = HighlightCellDependencies_Action.this.editorComponent.getCopyOfRefTargetsCellDependsOn(HighlightCellDependencies_Action.this.editorCell);
       if (copyOfRefTargets != null) {
-        for(SNodePointer nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
+        for (SNodePointer nodePointer : SetSequence.fromSet(copyOfRefTargets)) {
           if (nodePointer.getNode() != null) {
             highlightManager.mark(nodePointer.getNode(), HighlightConstants.DEPENDENCY_COLOR, "usage", messageOwner);
           }
@@ -88,5 +88,4 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
       }
     }
   }
-
 }

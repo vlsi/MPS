@@ -30,12 +30,12 @@ public class AddModelImport_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl M";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -46,7 +46,7 @@ public class AddModelImport_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,7 +70,7 @@ public class AddModelImport_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ImportHelper.addModelImport(AddModelImport_Action.this.project, AddModelImport_Action.this.mpsProject, AddModelImport_Action.this.module, AddModelImport_Action.this.model);
     } catch (Throwable t) {
@@ -79,5 +79,4 @@ public class AddModelImport_Action extends GeneratedAction {
       }
     }
   }
-
 }

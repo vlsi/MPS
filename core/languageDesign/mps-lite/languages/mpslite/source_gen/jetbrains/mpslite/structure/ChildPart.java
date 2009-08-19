@@ -41,7 +41,6 @@ public class ChildPart extends LinePart {
     this.setBooleanProperty(ChildPart.VERTICAL, value);
   }
 
-
   public static ChildPart newInstance(SModel sm, boolean init) {
     return (ChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class ChildPart extends LinePart {
   public static ChildPart newInstance(SModel sm) {
     return ChildPart.newInstance(sm, false);
   }
-
 }

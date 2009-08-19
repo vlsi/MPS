@@ -9,18 +9,13 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
-public class DOMF_Design {
-  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
-
+public class DOMF_Design {  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
     public Iterable<String> getParameters(SNode nodeType) {
-      return Sequence.fromClosure(new ISequenceClosure <String>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<String>() {
         public Iterable<String> iterable() {
-          return new Iterable <String>() {
-
+          return new Iterable<String>() {
             public Iterator<String> iterator() {
-              return new YieldingIterator <String>() {
-
+              return new YieldingIterator<String>() {
                 private int __CP__ = 0;
 
                 protected boolean moveToNext() {
@@ -66,7 +61,5 @@ __switch__:
     public String parameterToString(String param) {
       return param;
     }
-
-}
-
+  }
 }

@@ -35,7 +35,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -44,7 +44,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     return NewAccessoryModel_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -58,7 +58,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -74,12 +74,11 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = ((Language)NewAccessoryModel_Action.this.module);
       final Wrappers._T<String> languageNamespace = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           languageNamespace.value = language.getNamespace();
         }
@@ -89,7 +88,6 @@ public class NewAccessoryModel_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           try {
             ModelRoot newAccRoot = language.createAccessoriesRoot();
@@ -120,5 +118,4 @@ public class NewAccessoryModel_Action extends GeneratedAction {
       }
     }
   }
-
 }

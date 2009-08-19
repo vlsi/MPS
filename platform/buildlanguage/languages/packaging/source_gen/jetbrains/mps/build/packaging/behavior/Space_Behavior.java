@@ -5,12 +5,10 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class Space_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getValue_1213877173054(SNode thisNode) {
     return " ";
   }
-
 }

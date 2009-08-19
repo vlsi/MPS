@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Copy_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2873_0(editorContext, node);
   }
@@ -269,7 +268,6 @@ public class Copy_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition2873_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
@@ -277,5 +275,4 @@ public class Copy_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition2873_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
-
 }

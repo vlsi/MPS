@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class CompositePathComponent_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6133_0(editorContext, node);
   }
@@ -46,7 +45,6 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
   }
 
   private static class pathComponentListHandler_6133_0 extends RefNodeListHandler {
-
     public pathComponentListHandler_6133_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -94,7 +92,5 @@ public class CompositePathComponent_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

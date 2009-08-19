@@ -16,7 +16,6 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
-
   public ModelStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     super(project, buildGenerator, handler);
   }
@@ -34,8 +33,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
   }
 
   protected String getVariantName(final SModelDescriptor model) {
-    return ModelAccess.instance().runReadAction(new Computable <String>() {
-
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return model.getName();
       }
@@ -66,20 +64,17 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
     final Solution solution = this.myGenerator.getSolution();
     if (solution == null) {
       return new SModelDescriptor[0];
-    } else
-    {
+    } else {
       final List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(solution);
-      List<SModelDescriptor> filteredDescriptors = ModelAccess.instance().runReadAction(new Computable <List<SModelDescriptor>>() {
-
+      List<SModelDescriptor> filteredDescriptors = ModelAccess.instance().runReadAction(new Computable<List<SModelDescriptor>>() {
         public List<SModelDescriptor> compute() {
-          return CollectionUtil.filter(modelDescriptors, new Condition <SModelDescriptor>() {
-
+          return CollectionUtil.filter(modelDescriptors, new Condition<SModelDescriptor>() {
             public boolean met(SModelDescriptor modelDescriptor) {
               IFile modelFile = modelDescriptor.getModelFile();
               if (modelFile == null) {
                 return false;
               }
-              for(SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
+              for (SModelRoot root : ListSequence.fromList(solution.getSModelRoots())) {
                 if (modelFile.getAbsolutePath().startsWith(root.getPath())) {
                   return true;
                 }
@@ -111,5 +106,4 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
     }
     return "Model " + text + " already exists, choose another name.";
   }
-
 }

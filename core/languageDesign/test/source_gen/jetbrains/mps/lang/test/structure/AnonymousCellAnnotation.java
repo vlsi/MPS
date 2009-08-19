@@ -133,7 +133,6 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
     super.setReferent(AnonymousCellAnnotation.NODE_RANGE_SELECTION_END, node);
   }
 
-
   public static AnonymousCellAnnotation newInstance(SModel sm, boolean init) {
     return (AnonymousCellAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -141,5 +140,4 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   public static AnonymousCellAnnotation newInstance(SModel sm) {
     return AnonymousCellAnnotation.newInstance(sm, false);
   }
-
 }

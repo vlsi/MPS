@@ -24,7 +24,6 @@ public class TestNode extends BaseConcept {
     super.setChild(TestNode.NODE_TO_CHECK, node);
   }
 
-
   public static TestNode newInstance(SModel sm, boolean init) {
     return (TestNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TestNode extends BaseConcept {
   public static TestNode newInstance(SModel sm) {
     return TestNode.newInstance(sm, false);
   }
-
 }

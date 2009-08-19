@@ -7,7 +7,6 @@ import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UnixConfig_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -18,5 +17,4 @@ public class UnixConfig_Behavior {
   public static String call_getStartupScriptExtension_1241440511792(SNode thisNode) {
     return "sh";
   }
-
 }

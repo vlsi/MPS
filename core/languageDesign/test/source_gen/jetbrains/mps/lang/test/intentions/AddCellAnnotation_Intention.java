@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class AddCellAnnotation_Intention extends BaseIntention {
-
   public AddCellAnnotation_Intention() {
   }
 
@@ -56,7 +55,7 @@ public class AddCellAnnotation_Intention extends BaseIntention {
     while (ancessor != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ancessor), "jetbrains.mps.lang.test.structure.EditorTestCase"))) {
       ancessor = SNodeOperations.getParent(ancessor);
     }
-    for(SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{})) {
+    for (SNode oldAnnotation : SNodeOperations.getDescendants(ancessor, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{})) {
       SNodeOperations.deleteNode(oldAnnotation);
     }
     SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
@@ -69,15 +68,13 @@ public class AddCellAnnotation_Intention extends BaseIntention {
       int caretPosition = label.getCaretPosition();
       if (caretPosition == label.getText().length()) {
         SPropertyOperations.set(newAnnotation, "isLastPosition", "" + true);
-      } else
-      {
+      } else {
         SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
       }
       SPropertyOperations.set(newAnnotation, "useLabelSelection", "" + true);
       SPropertyOperations.set(newAnnotation, "selectionStart", "" + label.getSelectionStart());
       SPropertyOperations.set(newAnnotation, "selectionEnd", "" + label.getSelectionEnd());
-    } else
-    {
+    } else {
       SPropertyOperations.set(newAnnotation, "caretPosition", "" + 0);
     }
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
@@ -93,5 +90,4 @@ public class AddCellAnnotation_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.test.intentions";
   }
-
 }

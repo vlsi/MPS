@@ -31,7 +31,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -40,7 +40,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     return ShowDiffererenesWithCurrentRevision_Action.this.node.isRoot();
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -82,7 +82,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       VcsActionsHelper.showDiffrence(ShowDiffererenesWithCurrentRevision_Action.this.frame, ShowDiffererenesWithCurrentRevision_Action.this.context, ShowDiffererenesWithCurrentRevision_Action.this.model.getSModel(), ShowDiffererenesWithCurrentRevision_Action.this.node, ShowDiffererenesWithCurrentRevision_Action.this.project);
     } catch (Throwable t) {
@@ -91,5 +91,4 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
       }
     }
   }
-
 }

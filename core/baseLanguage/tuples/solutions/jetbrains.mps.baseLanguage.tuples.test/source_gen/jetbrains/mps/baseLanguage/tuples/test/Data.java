@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class Data extends MultiTuple._2<String, String> {
-
   public Data() {
     super();
   }
@@ -34,5 +33,4 @@ public class Data extends MultiTuple._2<String, String> {
   public Data assignFrom(Tuples._2<String, String> from) {
     return (Data)super.assign(from);
   }
-
 }

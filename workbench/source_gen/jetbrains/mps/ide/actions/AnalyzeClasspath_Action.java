@@ -26,12 +26,12 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -42,7 +42,7 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -58,7 +58,7 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ClassPathViewerTool tool = AnalyzeClasspath_Action.this.context.getComponent(ClassPathViewerTool.class);
       tool.openToolLater(true);
@@ -69,5 +69,4 @@ public class AnalyzeClasspath_Action extends GeneratedAction {
       }
     }
   }
-
 }

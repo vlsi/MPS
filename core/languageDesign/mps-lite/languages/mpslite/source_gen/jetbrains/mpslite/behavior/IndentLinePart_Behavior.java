@@ -7,12 +7,10 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class IndentLinePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Indent", null);
   }
-
 }

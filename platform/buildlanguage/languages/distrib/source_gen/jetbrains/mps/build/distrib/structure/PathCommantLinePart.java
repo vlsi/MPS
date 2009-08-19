@@ -24,7 +24,6 @@ public class PathCommantLinePart extends AbstractCommandLinePart {
     super.setChild(PathCommantLinePart.PATH, node);
   }
 
-
   public static PathCommantLinePart newInstance(SModel sm, boolean init) {
     return (PathCommantLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.PathCommantLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PathCommantLinePart extends AbstractCommandLinePart {
   public static PathCommantLinePart newInstance(SModel sm) {
     return PathCommantLinePart.newInstance(sm, false);
   }
-
 }

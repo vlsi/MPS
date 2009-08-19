@@ -23,7 +23,6 @@ public class LookRegexp extends Regexp {
     super.setChild(LookRegexp.REGEXP, node);
   }
 
-
   public static LookRegexp newInstance(SModel sm, boolean init) {
     return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class LookRegexp extends Regexp {
   public static LookRegexp newInstance(SModel sm) {
     return LookRegexp.newInstance(sm, false);
   }
-
 }

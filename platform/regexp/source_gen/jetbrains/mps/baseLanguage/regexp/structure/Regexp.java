@@ -22,5 +22,4 @@ public class Regexp extends BaseConcept {
   public static Regexp newInstance(SModel sm) {
     return Regexp.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class IntegerEnum extends Enum {
   public static IntegerEnum newInstance(SModel sm) {
     return IntegerEnum.newInstance(sm, false);
   }
-
 }

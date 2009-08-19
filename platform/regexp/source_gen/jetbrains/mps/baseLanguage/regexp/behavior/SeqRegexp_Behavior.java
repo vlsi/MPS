@@ -25,5 +25,4 @@ public class SeqRegexp_Behavior {
   public static String callSuper_getString_1222436755347(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222436755347, vars);
   }
-
 }

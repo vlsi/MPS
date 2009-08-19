@@ -24,5 +24,4 @@ public class SystemSpecificConfig extends BaseConcept {
   public static SystemSpecificConfig newInstance(SModel sm) {
     return SystemSpecificConfig.newInstance(sm, false);
   }
-
 }

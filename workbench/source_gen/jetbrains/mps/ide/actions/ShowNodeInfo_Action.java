@@ -32,12 +32,12 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl Q";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,7 +72,7 @@ public class ShowNodeInfo_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Point point = new Point(ShowNodeInfo_Action.this.cell.getX() + ShowNodeInfo_Action.this.cell.getWidth(), ShowNodeInfo_Action.this.cell.getY());
       SwingUtilities.convertPointToScreen(point, ShowNodeInfo_Action.this.editor);
@@ -83,5 +83,4 @@ public class ShowNodeInfo_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -61,7 +61,6 @@ public class Configuration extends BaseConcept implements INamedConcept {
     this.setProperty(Configuration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Configuration newInstance(SModel sm, boolean init) {
     return (Configuration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Configuration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class Configuration extends BaseConcept implements INamedConcept {
   public static Configuration newInstance(SModel sm) {
     return Configuration.newInstance(sm, false);
   }
-
 }

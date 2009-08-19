@@ -23,5 +23,4 @@ public class GeneratorNewActions_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(GeneratorActions_ActionGroup.ID, GeneratorActions_ActionGroup.LABEL_ID_generatorNew);
   }
-
 }

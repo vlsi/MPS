@@ -33,7 +33,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " DELETE";
   }
@@ -42,7 +42,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
     return DeleteGenerator_Action.this.module instanceof Generator;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -76,7 +76,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final DeleteDialog dialog = new DeleteDialog(DeleteGenerator_Action.this.project, "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.");
       dialog.setOptions(true, false, false, false);
@@ -85,7 +85,6 @@ public class DeleteGenerator_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           Generator generator = ((Generator)DeleteGenerator_Action.this.module);
           Language sourceLanguage = generator.getSourceLanguage();
@@ -100,5 +99,4 @@ public class DeleteGenerator_Action extends GeneratedAction {
       }
     }
   }
-
 }

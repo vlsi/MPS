@@ -17,7 +17,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class ModuleRepository_Tool extends GeneratedTool {
-
   private ModuleRepositoryComponent myComponent;
   private JPanel myPanel;
 
@@ -47,10 +46,9 @@ public class ModuleRepository_Tool extends GeneratedTool {
     ModuleRepository_Tool.this.myComponent.install();
   }
 
-  @Override()
+  @Override
   public void makeUnavailable() {
     super.makeUnavailable();
     ModuleRepository_Tool.this.myComponent.uninstall();
   }
-
 }

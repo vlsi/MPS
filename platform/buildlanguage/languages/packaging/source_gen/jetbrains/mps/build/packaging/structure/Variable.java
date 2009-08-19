@@ -61,7 +61,6 @@ public class Variable extends BaseConcept implements INamedConcept {
     this.setProperty(Variable.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Variable newInstance(SModel sm, boolean init) {
     return (Variable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Variable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class Variable extends BaseConcept implements INamedConcept {
   public static Variable newInstance(SModel sm) {
     return Variable.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class BlockBodyPart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +20,4 @@ public class BlockBodyPart_Behavior {
     SLinkOperations.setTarget(refNodeList, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(blockConcept), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     return refNodeList;
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MPSLiteConceptDeclaration_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -27,5 +26,4 @@ public class MPSLiteConceptDeclaration_Behavior {
     SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
     return editor;
   }
-
 }

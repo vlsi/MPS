@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_ComplexExpression_InferenceRule() {
   }
 
@@ -40,5 +39,4 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
   public boolean overrides() {
     return false;
   }
-
 }

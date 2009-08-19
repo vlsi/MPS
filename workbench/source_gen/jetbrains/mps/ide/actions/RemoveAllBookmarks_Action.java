@@ -24,12 +24,12 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -40,7 +40,7 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -52,7 +52,7 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       RemoveAllBookmarks_Action.this.project.getComponent(BookmarkManager.class).clearBookmarks();
     } catch (Throwable t) {
@@ -61,5 +61,4 @@ public class RemoveAllBookmarks_Action extends GeneratedAction {
       }
     }
   }
-
 }

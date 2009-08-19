@@ -10,22 +10,20 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.workbench.MPSDataKeys;
 
-/* package */class EmbeddableEditorPanel extends JPanel implements DataProvider {
-
+/*package*/ class EmbeddableEditorPanel extends JPanel implements DataProvider {
   private MPSFileNodeEditor myFileNodeEditor;
 
-  /* package */EmbeddableEditorPanel(MPSFileNodeEditor editor) {
+  /*package*/ EmbeddableEditorPanel(MPSFileNodeEditor editor) {
     super(new BorderLayout());
     this.myFileNodeEditor = editor;
     this.add(editor.getComponent(), BorderLayout.CENTER);
   }
 
-  @Nullable()
-  public Object getData(@NonNls() String dataId) {
+  @Nullable
+  public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.FILE_EDITOR.getName())) {
       return this.myFileNodeEditor;
     }
     return null;
   }
-
 }

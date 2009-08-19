@@ -21,5 +21,4 @@ public class FileType extends PropertyType {
   public static FileType newInstance(SModel sm) {
     return FileType.newInstance(sm, false);
   }
-
 }

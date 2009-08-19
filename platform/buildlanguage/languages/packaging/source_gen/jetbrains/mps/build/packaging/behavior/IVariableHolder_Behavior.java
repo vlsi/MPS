@@ -17,7 +17,7 @@ public class IVariableHolder_Behavior {
 
   public static SNode call_findVariable_1234876428215(SNode thisNode, String name, String antName) {
     List<SNode> allVars = IVariableHolder_Behavior.call_getAllVariable_1234864693585(thisNode);
-    for(SNode var : ListSequence.fromList(allVars)) {
+    for (SNode var : ListSequence.fromList(allVars)) {
       if (SPropertyOperations.getString(var, "name").equals(name) && SPropertyOperations.getString(var, "antName").equals(antName)) {
         return var;
       }
@@ -32,5 +32,4 @@ public class IVariableHolder_Behavior {
   public static List<SNode> callSuper_getAllVariable_1234864693585(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
   }
-
 }

@@ -23,7 +23,6 @@ public class Delete extends PostProcessingTask {
     this.setProperty(Delete.PATH, value);
   }
 
-
   public static Delete newInstance(SModel sm, boolean init) {
     return (Delete)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Delete", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class Delete extends PostProcessingTask {
   public static Delete newInstance(SModel sm) {
     return Delete.newInstance(sm, false);
   }
-
 }

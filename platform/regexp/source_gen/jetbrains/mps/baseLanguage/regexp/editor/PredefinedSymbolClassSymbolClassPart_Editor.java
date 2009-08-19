@@ -19,7 +19,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8173_0(editorContext, node);
   }
@@ -50,7 +49,6 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
   }
 
   public static class _Inline8173_0 extends AbstractCellProvider {
-
     public _Inline8173_0() {
       super();
     }
@@ -86,7 +84,5 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

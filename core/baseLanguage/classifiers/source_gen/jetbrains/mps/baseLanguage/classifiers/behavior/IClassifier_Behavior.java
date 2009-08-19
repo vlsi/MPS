@@ -35,7 +35,7 @@ public class IClassifier_Behavior {
 
   public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
+    for (SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
       if (IClassifierPart_Behavior.call_getMainClassifier_1213877255428(part) == thisNode) {
         ListSequence.fromList(result).addElement(part);
       }
@@ -45,7 +45,7 @@ public class IClassifier_Behavior {
 
   public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode member : IClassifier_Behavior.call_getMembers_1213877528124(thisNode)) {
+    for (SNode member : IClassifier_Behavior.call_getMembers_1213877528124(thisNode)) {
       if (IMember_Behavior.call_getVisiblity_1213877352965(member) == null && SNodeOperations.getModel(member) == SNodeOperations.getModel(contextNode)) {
         ListSequence.fromList(result).addElement(member);
       }
@@ -67,12 +67,12 @@ public class IClassifier_Behavior {
 
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getChildren(thisNode)) {
+    for (SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         ListSequence.fromList(result).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember"));
       }
     }
-    for(SNode part : IClassifier_Behavior.call_getParts_1213877527988(thisNode)) {
+    for (SNode part : IClassifier_Behavior.call_getParts_1213877527988(thisNode)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IClassifierPart_Behavior.call_getMembers_1213877255431(part)));
     }
     return result;
@@ -80,7 +80,6 @@ public class IClassifier_Behavior {
 
   public static AbstractExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
-
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
       }
@@ -136,5 +135,4 @@ public class IClassifier_Behavior {
     }
     return IClassifierPart_Behavior.call_getMainClassifier_1213877255428(SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", true, false));
   }
-
 }

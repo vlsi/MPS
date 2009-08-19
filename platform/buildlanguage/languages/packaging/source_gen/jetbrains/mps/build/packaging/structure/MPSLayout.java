@@ -217,7 +217,6 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
     this.insertChild(prev, MPSLayout.MACRO, node);
   }
 
-
   public static MPSLayout newInstance(SModel sm, boolean init) {
     return (MPSLayout)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -225,5 +224,4 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   public static MPSLayout newInstance(SModel sm) {
     return MPSLayout.newInstance(sm, false);
   }
-
 }

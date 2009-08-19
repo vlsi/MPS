@@ -33,7 +33,6 @@ public class Pair extends BaseConcept {
     super.setChild(Pair.SECOND, node);
   }
 
-
   public static Pair newInstance(SModel sm, boolean init) {
     return (Pair)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Pair", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -41,5 +40,4 @@ public class Pair extends BaseConcept {
   public static Pair newInstance(SModel sm) {
     return Pair.newInstance(sm, false);
   }
-
 }

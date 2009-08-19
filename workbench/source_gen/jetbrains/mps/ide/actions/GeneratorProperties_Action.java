@@ -29,7 +29,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt ENTER";
   }
@@ -38,7 +38,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
     return GeneratorProperties_Action.this.module instanceof Generator;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -52,7 +52,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -68,7 +68,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Generator generator = (Generator)GeneratorProperties_Action.this.module;
       GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
@@ -79,5 +79,4 @@ public class GeneratorProperties_Action extends GeneratedAction {
       }
     }
   }
-
 }

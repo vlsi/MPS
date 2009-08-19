@@ -8,8 +8,7 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class GenericNamedTuples_Test extends TestCase {
-
-  @Test()
+  @Test
   public void test_pair() throws Exception {
     Pair<String, Integer> pair = new Pair<String, Integer>("abcd", 1);
     Assert.assertEquals("abcd", pair.first());
@@ -19,7 +18,7 @@ public class GenericNamedTuples_Test extends TestCase {
     Assert.assertSame(2, pair.second());
   }
 
-  @Test()
+  @Test
   public void test_pairToIndexedTuple() throws Exception {
     Pair<Integer, String> pair = new Pair<Integer, String>(1, "abc");
     int x;
@@ -36,5 +35,4 @@ public class GenericNamedTuples_Test extends TestCase {
   public Pair<String, String> pairOfStrings() {
     return new Pair<String, String>("X", "Y");
   }
-
 }

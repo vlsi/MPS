@@ -43,5 +43,4 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother("GoToMenu", null);
   }
-
 }

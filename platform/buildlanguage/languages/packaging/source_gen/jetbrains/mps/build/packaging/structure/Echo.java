@@ -32,7 +32,6 @@ public class Echo extends File {
     super.setChild(Echo.MESSAGE, node);
   }
 
-
   public static Echo newInstance(SModel sm, boolean init) {
     return (Echo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Echo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class Echo extends File {
   public static Echo newInstance(SModel sm) {
     return Echo.newInstance(sm, false);
   }
-
 }

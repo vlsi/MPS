@@ -41,7 +41,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1230234493429(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.distrib.structure.DistribConfiguration");
   }
@@ -165,7 +164,7 @@ public class QueriesGenerated {
     }
     String[] path = startupDir.split("/");
     String pathFromStartupDir = "..";
-    for(int i = 0 ; i < path.length - 1 ; i++ ) {
+    for (int i = 0 ; i < path.length - 1 ; i++ ) {
       pathFromStartupDir += "/..";
     }
     return pathFromStartupDir;
@@ -197,7 +196,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1231869446305(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String commandLine = "";
-    for(SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
+    for (SNode commandLinePart : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "signatureConfiguration", true), "commandLine", true))) {
       commandLine += AbstractCommandLinePart_Behavior.call_getText_1231864533228(commandLinePart);
     }
     return commandLine;
@@ -219,7 +218,7 @@ public class QueriesGenerated {
     String pathString = "";
     String prefix = "$APP_PACKAGE/";
     List<SNode> classPathItemList = SLinkOperations.getTargets(SLinkOperations.getTarget(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(_context.getNode()), "classPath", true), "classPathItem", true);
-    for(SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
+    for (SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
       pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(cpItem).replace("\\", "/") + ":";
     }
     pathString += prefix + AbstractPath_Behavior.call_getFullPath_1230059208735(ListSequence.fromList(classPathItemList).last()).replace("\\", "/");
@@ -537,8 +536,7 @@ public class QueriesGenerated {
       return unixDecl;
     }
     SNode target = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.buildlanguage.structure.TargetDeclaration", true, false);
-    for(SNode propertyDeclaration : ListSequence.fromList(SLinkOperations.getTargets(target, "propertyList", true)).where(new IWhereFilter <SNode>() {
-
+    for (SNode propertyDeclaration : ListSequence.fromList(SLinkOperations.getTargets(target, "propertyList", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration");
       }
@@ -951,7 +949,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1231694345955(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     String[] options = SPropertyOperations.getString(_context.getNode(), "defaultVMOptions").split("\\s");
     List<SNode> lines = new ArrayList<SNode>();
-    for(String option : options) {
+    for (String option : options) {
       if (StringUtils.isEmpty(option)) {
         continue;
       }
@@ -971,7 +969,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1234544998538(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     String[] extensions = SPropertyOperations.getString(_context.getNode(), "extensions").split("\\s");
     List<SNode> elements = ListSequence.fromList(new LinkedList<SNode>());
-    for(String ext : extensions) {
+    for (String ext : extensions) {
       SNode element = SConceptOperations.createNewNode("jetbrains.mps.xml.deprecated.structure.Element", null);
       SPropertyOperations.set(element, "name", "string");
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.xml.deprecated.structure.Text", null);
@@ -987,8 +985,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234550534606(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "association", true)).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "association", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "icon", true) != null);
       }
@@ -1021,9 +1018,9 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1234975234874(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
-    for(SNode holder : ListSequence.fromList(holders)) {
+    for (SNode holder : ListSequence.fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
-      for(String macroName : ListSequence.fromList(allMAcroNames)) {
+      for (String macroName : ListSequence.fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", "/"));
@@ -1031,5 +1028,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

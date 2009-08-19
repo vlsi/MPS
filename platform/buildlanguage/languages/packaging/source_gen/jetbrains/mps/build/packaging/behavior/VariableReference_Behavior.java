@@ -7,12 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class VariableReference_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
   public static String virtual_getValue_1213877173054(SNode thisNode) {
     return "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variable", false), "antName") + "}";
   }
-
 }

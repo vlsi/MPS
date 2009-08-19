@@ -5,8 +5,7 @@ package jetbrains.mps.baseLanguage.tuples.util;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class SharedPair <F, S> extends MultiTuple._2<F, S> {
-
+public class SharedPair<F, S> extends MultiTuple._2<F, S> {
   public SharedPair() {
     super();
   }
@@ -34,5 +33,4 @@ public class SharedPair <F, S> extends MultiTuple._2<F, S> {
   public SharedPair assignFrom(Tuples._2<F, S> from) {
     return (SharedPair)super.assign(from);
   }
-
 }

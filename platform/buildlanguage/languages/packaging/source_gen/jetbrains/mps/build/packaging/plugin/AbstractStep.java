@@ -13,7 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.border.EtchedBorder;
 
 public abstract class AbstractStep extends StepAdapter {
-
   protected JPanel myMainPanel;
 
   public AbstractStep() {
@@ -58,5 +57,4 @@ public abstract class AbstractStep extends StepAdapter {
     }
     this.myMainPanel.doLayout();
   }
-
 }

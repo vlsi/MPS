@@ -41,7 +41,6 @@ public class TypesCheckOperation extends NodeOperation {
     this.setBooleanProperty(TypesCheckOperation.ALLOW_WARNINGS, value);
   }
 
-
   public static TypesCheckOperation newInstance(SModel sm, boolean init) {
     return (TypesCheckOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TypesCheckOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class TypesCheckOperation extends NodeOperation {
   public static TypesCheckOperation newInstance(SModel sm) {
     return TypesCheckOperation.newInstance(sm, false);
   }
-
 }

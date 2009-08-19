@@ -21,5 +21,4 @@ public class SimpleNodeTest extends NodesTestMethod {
   public static SimpleNodeTest newInstance(SModel sm) {
     return SimpleNodeTest.newInstance(sm, false);
   }
-
 }

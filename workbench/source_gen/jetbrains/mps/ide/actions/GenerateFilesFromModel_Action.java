@@ -24,12 +24,12 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     this.addPlace(null);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F9";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       GenerateFilesFromModel_Action.this.action.update(event);
     } catch (Throwable t) {
@@ -40,7 +40,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -48,7 +48,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GenerateFilesFromModel_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
@@ -58,7 +58,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateFilesFromModel_Action.class.getName());
@@ -68,9 +68,7 @@ public class GenerateFilesFromModel_Action extends GeneratedAction {
     return res.toString();
   }
 
-
   public static String action_State(AnAction object) {
     return "";
   }
-
 }

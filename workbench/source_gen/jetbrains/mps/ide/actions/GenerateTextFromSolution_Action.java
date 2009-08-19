@@ -38,7 +38,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -47,7 +47,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     return GenerateTextFromSolution_Action.this.module instanceof Solution;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -61,7 +61,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -85,12 +85,11 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<GenParameters> params = new Wrappers._T<GenParameters>(null);
       final Wrappers._T<String> exceptionMsg = new Wrappers._T<String>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           ModuleTestConfiguration conf = new ModuleTestConfiguration();
           conf.setModuleRef(GenerateTextFromSolution_Action.this.module.getModuleReference());
@@ -115,5 +114,4 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -23,7 +23,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.generictasks.behavior.AbstractTaskDeclaration_Behavior;
 
 public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
-
   public TaskCall_declaration_ReferentConstraint() {
   }
 
@@ -38,7 +37,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
   }
 
   public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
-    for(SNode attrDecl : BuiltInTaskDeclaration_Behavior.call_getAttributesDeaclarations_353793545802644071(newReferentNode)) {
+    for (SNode attrDecl : BuiltInTaskDeclaration_Behavior.call_getAttributesDeaclarations_353793545802644071(newReferentNode)) {
       if (AttributeDeclaration_Behavior.call_isRequired_353793545802643811(attrDecl)) {
         SNode attr = SConceptOperations.createNewNode("jetbrains.mps.build.generictasks.structure.Attribute", null);
         SLinkOperations.setTarget(attr, "attributeDeclaration", attrDecl, false);
@@ -50,8 +49,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> declarations = SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.build.generictasks.structure.AbstractTaskDeclaration");
     if (!(SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"))) {
-      return new SimpleSearchScope(ListSequence.fromList(declarations).where(new IWhereFilter <SNode>() {
-
+      return new SimpleSearchScope(ListSequence.fromList(declarations).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return AbstractTaskDeclaration_Behavior.call_canBeRootTask_1191515374482685348(it);
         }
@@ -59,5 +57,4 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
     }
     return AbstractTaskDeclaration_Behavior.call_getPossibleNesteds_1191515374482689153(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall"), "declaration", false), declarations);
   }
-
 }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExpressionConcept_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -30,5 +29,4 @@ public class ExpressionConcept_Behavior {
     SPropertyOperations.set(cellModelError, "text", "<abstract expression>");
     return result;
   }
-
 }

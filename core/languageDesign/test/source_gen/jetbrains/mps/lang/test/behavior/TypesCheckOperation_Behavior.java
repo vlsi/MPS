@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 
 public class TypesCheckOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,10 +22,8 @@ public class TypesCheckOperation_Behavior {
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "operationName") == null || SPropertyOperations.getString(thisNode, "operationName").length() == 0) {
       return ITestMethod_Behavior.callSuper_getTestName_1216136419751(thisNode, "jetbrains.mps.lang.test.structure.TypesCheckOperation");
-    } else
-    {
+    } else {
       return SPropertyOperations.getString(thisNode, "operationName");
     }
   }
-
 }

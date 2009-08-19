@@ -34,12 +34,12 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -50,7 +50,7 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -62,12 +62,11 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      for(final IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
+      for (final IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
         final Wrappers._T<String> report = new Wrappers._T<String>("");
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
           public void run() {
             if (module instanceof Solution) {
               report.value = OptimizeImportsHelper.optimizeSolutionImports(OptimizeImportsInGlobalScope_Action.this.context, ((Solution)module));
@@ -87,5 +86,4 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
       }
     }
   }
-
 }

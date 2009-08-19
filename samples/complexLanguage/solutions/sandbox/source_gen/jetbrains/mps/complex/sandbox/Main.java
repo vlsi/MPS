@@ -5,7 +5,6 @@ package jetbrains.mps.complex.sandbox;
 import jetbrains.mps.samples.complex.runtime.Complex;
 
 public class Main {
-
   public static void main(String[] args) {
     Complex c1 = Complex.sum(new Complex(1, 0), Complex.product(new Complex(2, 0), Complex.getI()));
     Complex c2 = Complex.sub(new Complex(1, 0), Complex.product(new Complex(2, 0), Complex.getI()));
@@ -13,5 +12,4 @@ public class Main {
     System.out.println(c1 + " = " + (c2.getConjugative()));
     System.out.println((Complex.sum(c1, c2)) + " = " + c1 + " + " + c2);
   }
-
 }

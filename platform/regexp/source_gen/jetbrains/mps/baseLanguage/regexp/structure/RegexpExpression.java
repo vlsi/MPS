@@ -22,5 +22,4 @@ public class RegexpExpression extends Expression {
   public static RegexpExpression newInstance(SModel sm) {
     return RegexpExpression.newInstance(sm, false);
   }
-
 }

@@ -14,5 +14,4 @@ public class Pattern_AnnotationLink {
   public static Pattern getPattern(BaseConcept source) {
     return (Pattern)source.getAttribute(Pattern_AnnotationLink.PATTERN);
   }
-
 }

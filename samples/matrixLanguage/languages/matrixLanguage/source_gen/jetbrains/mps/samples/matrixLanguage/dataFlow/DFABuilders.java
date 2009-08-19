@@ -6,7 +6,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilders;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 
 public class DFABuilders extends DataFlowBuilders {
-
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", new ForEachMatrixElement_DataFlow());
     manager.register("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", new DeterminantExpression_DataFlow());
@@ -14,5 +13,4 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.samples.matrixLanguage.structure.MatrixLiteral", new MatrixLiteral_DataFlow());
     manager.register("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", new MatrixRow_DataFlow());
   }
-
 }

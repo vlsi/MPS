@@ -78,7 +78,6 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
     super.setChild(FeatureAccessConcept.EXTENDS, node);
   }
 
-
   public static FeatureAccessConcept newInstance(SModel sm, boolean init) {
     return (FeatureAccessConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.FeatureAccessConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -86,5 +85,4 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
   public static FeatureAccessConcept newInstance(SModel sm) {
     return FeatureAccessConcept.newInstance(sm, false);
   }
-
 }

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
 
 public class TargetReference_targetDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public TargetReference_targetDeclaration_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class TargetReference_targetDeclaration_ReferentConstraint extends BaseNo
     SNode project = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.buildlanguage.structure.Project", true, false);
     return Project_Behavior.call_getAllTargets_1213877351828(project);
   }
-
 }

@@ -24,7 +24,6 @@ public class PathComponent extends BaseConcept {
     this.setProperty(PathComponent.PATH, value);
   }
 
-
   public static PathComponent newInstance(SModel sm, boolean init) {
     return (PathComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class PathComponent extends BaseConcept {
   public static PathComponent newInstance(SModel sm) {
     return PathComponent.newInstance(sm, false);
   }
-
 }

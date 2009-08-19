@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcretePropertyPart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -23,5 +22,4 @@ public class ConcretePropertyPart_Behavior {
     }
     MapSequence.fromMap(partsToLinks).put(thisNode, propertyDeclaration);
   }
-
 }

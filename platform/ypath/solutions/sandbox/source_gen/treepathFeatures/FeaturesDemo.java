@@ -11,14 +11,12 @@ import jetbrains.mps.ypath.runtime.IFilter;
 import org.w3c.dom.Node;
 
 public class FeaturesDemo {
-
   public static void main(String[] args) {
     String INPUT = new String("<root><a a1=\"a1\"><b b1=\"b1\" b2=\"b2\"><c c1=\"c1\"/></b></a></root>");
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new IFilter <Node>() {
-
+      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new IFilter<Node>() {
         public boolean accept(Node node) {
           return node.getNodeValue().equals("c");
         }
@@ -26,5 +24,4 @@ public class FeaturesDemo {
     } catch (Exception ignored) {
     }
   }
-
 }

@@ -32,7 +32,6 @@ public class IntersectionSymbolClassPart extends SymbolClassPart {
     super.setChild(IntersectionSymbolClassPart.RIGHT, node);
   }
 
-
   public static IntersectionSymbolClassPart newInstance(SModel sm, boolean init) {
     return (IntersectionSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class IntersectionSymbolClassPart extends SymbolClassPart {
   public static IntersectionSymbolClassPart newInstance(SModel sm) {
     return IntersectionSymbolClassPart.newInstance(sm, false);
   }
-
 }

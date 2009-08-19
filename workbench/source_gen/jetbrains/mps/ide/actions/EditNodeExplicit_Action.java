@@ -29,12 +29,12 @@ public class EditNodeExplicit_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -45,7 +45,7 @@ public class EditNodeExplicit_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -57,8 +57,7 @@ public class EditNodeExplicit_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -72,10 +71,10 @@ public class EditNodeExplicit_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MPSEditorOpener opener = EditNodeExplicit_Action.this.context.getComponent(MPSEditorOpener.class);
-      for(SNode node : EditNodeExplicit_Action.this.nodes) {
+      for (SNode node : EditNodeExplicit_Action.this.nodes) {
         if (node != null) {
           opener.editNodeExplicitly(node, EditNodeExplicit_Action.this.context);
         }
@@ -86,5 +85,4 @@ public class EditNodeExplicit_Action extends GeneratedAction {
       }
     }
   }
-
 }

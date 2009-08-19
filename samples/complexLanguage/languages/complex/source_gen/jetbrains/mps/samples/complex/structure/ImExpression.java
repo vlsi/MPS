@@ -21,5 +21,4 @@ public class ImExpression extends SingleComplexExpression {
   public static ImExpression newInstance(SModel sm) {
     return ImExpression.newInstance(sm, false);
   }
-
 }

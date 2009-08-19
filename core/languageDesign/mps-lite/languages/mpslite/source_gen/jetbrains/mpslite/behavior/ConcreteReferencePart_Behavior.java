@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ConcreteReferencePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -19,12 +18,10 @@ public class ConcreteReferencePart_Behavior {
     SPropertyOperations.set(linkDeclaration, "role", SPropertyOperations.getString(thisNode, "name"));
     if (SPropertyOperations.getBoolean(thisNode, "optional")) {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "0..1");
-    } else
-    {
+    } else {
       SPropertyOperations.set(linkDeclaration, "sourceCardinality", "1");
     }
     SLinkOperations.setTarget(linkDeclaration, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "conceptReference", true), conceptsToTargets), false);
     MapSequence.fromMap(partsToLinks).put(thisNode, linkDeclaration);
   }
-
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
 public class VcsActionsHelper {
-
   public VcsActionsHelper() {
   }
 
@@ -37,7 +36,6 @@ public class VcsActionsHelper {
       SModel oldModel = VcsActionsHelper.loadModel(content.getContent(), model.getModelDescriptor());
       final RootDifferenceDialog dialog = new RootDifferenceDialog(frame, model, oldModel, true);
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           dialog.init(context, node, "Local", revisionNumber.asString());
         }
@@ -53,7 +51,6 @@ public class VcsActionsHelper {
       final Document document = JDOMUtil.loadDocument(new StringReader(modelContent));
       final Wrappers._T<SModel> sModel = new Wrappers._T<SModel>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           sModel.value = ModelPersistence.readModel(document, model.getLongName(), model.getStereotype());
         }
@@ -64,5 +61,4 @@ public class VcsActionsHelper {
     }
     return null;
   }
-
 }

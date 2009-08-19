@@ -23,12 +23,12 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F1";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       SelectInActionAdapter_Action.this.selectInAction.update(event);
     } catch (Throwable t) {
@@ -39,7 +39,7 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -47,7 +47,7 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SelectInActionAdapter_Action.this.selectInAction.actionPerformed(event);
     } catch (Throwable t) {
@@ -57,7 +57,7 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(SelectInActionAdapter_Action.class.getName());
@@ -67,9 +67,7 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     return res.toString();
   }
 
-
   public static String selectInAction_State(AnAction object) {
     return "";
   }
-
 }

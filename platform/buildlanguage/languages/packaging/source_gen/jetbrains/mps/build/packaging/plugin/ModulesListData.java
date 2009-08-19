@@ -10,17 +10,15 @@ import java.util.Comparator;
 import javax.swing.Icon;
 
 public class ModulesListData implements NodeData {
-
   private final List<NodeData> myData = ListSequence.fromList(new LinkedList<NodeData>());
   private final List<ModuleData> myModules = ListSequence.fromList(new LinkedList<ModuleData>());
 
   public ModulesListData(List<IModule> modules) {
-    for(IModule m : modules) {
+    for (IModule m : modules) {
       ModuleData moduleData = new ModuleData(m);
       ListSequence.fromList(this.myModules).addElement(moduleData);
     }
-    ListSequence.fromList(this.myModules).sort(new Comparator <ModuleData>() {
-
+    ListSequence.fromList(this.myModules).sort(new Comparator<ModuleData>() {
       public int compare(ModuleData p0, ModuleData p1) {
         return p0.getText().compareToIgnoreCase(p1.getText());
       }
@@ -57,5 +55,4 @@ public class ModulesListData implements NodeData {
 
   public void setParent(NodeData parent) {
   }
-
 }

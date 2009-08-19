@@ -16,13 +16,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public DuplicateModule_NonTypesystemRule() {
   }
 
   public void applyRule(final SNode iCompositeComponent, final TypeCheckingContext typeCheckingContext) {
-    for(SNode e : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
-      for(SNode e2 : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
+    for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
+      for (SNode e2 : ListSequence.fromList(SLinkOperations.getTargets(iCompositeComponent, "entry", true))) {
         if (!(e == e2)) {
           if (AbstractProjectComponent_Behavior.call_equals_1213877333900(e, e2)) {
             {
@@ -52,5 +51,4 @@ public class DuplicateModule_NonTypesystemRule extends AbstractNonTypesystemRule
   public boolean overrides() {
     return true;
   }
-
 }

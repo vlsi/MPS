@@ -20,5 +20,4 @@ public class ITransparentProjectComponent_Behavior {
   public static List<SNode> callSuper_getChildrenToDo_1240564451382(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), callerConceptFqName, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
   }
-
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ConstantLinePart_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7743_0(editorContext, node);
   }
@@ -43,5 +42,4 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

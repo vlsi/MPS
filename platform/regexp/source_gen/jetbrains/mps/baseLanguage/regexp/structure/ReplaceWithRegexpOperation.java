@@ -61,7 +61,6 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
     super.setChild(ReplaceWithRegexpOperation.REGEXP, node);
   }
 
-
   public static ReplaceWithRegexpOperation newInstance(SModel sm, boolean init) {
     return (ReplaceWithRegexpOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   public static ReplaceWithRegexpOperation newInstance(SModel sm) {
     return ReplaceWithRegexpOperation.newInstance(sm, false);
   }
-
 }

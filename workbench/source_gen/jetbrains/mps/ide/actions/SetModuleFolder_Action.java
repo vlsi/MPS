@@ -30,7 +30,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -40,7 +40,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
     return SetModuleFolder_Action.this.project.isProjectModule(module);
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -54,7 +54,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -74,7 +74,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = SetModuleFolder_Action.this.context.getComponent(ProjectPane.class);
       IModule module = SetModuleFolder_Action.this.context.getModule();
@@ -84,7 +84,7 @@ public class SetModuleFolder_Action extends GeneratedAction {
         if (newFolder.equals("")) {
           newFolder = null;
         }
-        for(IModule m : pane.getSelectedModules()) {
+        for (IModule m : pane.getSelectedModules()) {
           SetModuleFolder_Action.this.project.setFolderFor(m, newFolder);
         }
         pane.rebuild();
@@ -95,5 +95,4 @@ public class SetModuleFolder_Action extends GeneratedAction {
       }
     }
   }
-
 }

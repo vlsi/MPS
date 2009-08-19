@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_8203_0(editorContext, node);
   }
@@ -34,8 +33,7 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createCollection_8203_0(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createConstant_8203_0(editorContext, node);
     }
     return editorCell;
@@ -100,13 +98,11 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition8203_0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "classifier", false) != null;
   }
 
   public static class _Inline8203_0 extends AbstractCellProvider {
-
     public _Inline8203_0() {
       super();
     }
@@ -138,7 +134,5 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

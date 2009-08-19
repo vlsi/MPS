@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class NamePropertyNamePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -20,5 +19,4 @@ public class NamePropertyNamePart_Behavior {
     SLinkOperations.setTarget(propertyCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(variableConcept), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
     return propertyCell;
   }
-
 }

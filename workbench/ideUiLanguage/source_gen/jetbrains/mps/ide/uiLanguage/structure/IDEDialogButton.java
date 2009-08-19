@@ -43,7 +43,6 @@ public class IDEDialogButton extends BaseConcept {
     super.setChild(IDEDialogButton.HANDLER, node);
   }
 
-
   public static IDEDialogButton newInstance(SModel sm, boolean init) {
     return (IDEDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class IDEDialogButton extends BaseConcept {
   public static IDEDialogButton newInstance(SModel sm) {
     return IDEDialogButton.newInstance(sm, false);
   }
-
 }

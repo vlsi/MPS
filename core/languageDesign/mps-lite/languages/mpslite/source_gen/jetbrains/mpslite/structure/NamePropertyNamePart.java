@@ -21,5 +21,4 @@ public class NamePropertyNamePart extends PropertyPart {
   public static NamePropertyNamePart newInstance(SModel sm) {
     return NamePropertyNamePart.newInstance(sm, false);
   }
-
 }

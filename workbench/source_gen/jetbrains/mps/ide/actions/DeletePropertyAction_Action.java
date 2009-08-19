@@ -25,7 +25,7 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " DELETE";
   }
@@ -38,7 +38,7 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     return parent instanceof PropertiesTreeNode;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -52,7 +52,7 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -64,7 +64,7 @@ public class DeletePropertyAction_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TreeNode parent = DeletePropertyAction_Action.this.node.getParent();
       PropertiesTreeNode propsNode = (PropertiesTreeNode)parent;
@@ -76,5 +76,4 @@ public class DeletePropertyAction_Action extends GeneratedAction {
       }
     }
   }
-
 }

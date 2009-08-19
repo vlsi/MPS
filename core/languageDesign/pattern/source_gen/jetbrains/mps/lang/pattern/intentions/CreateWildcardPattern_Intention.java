@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreateWildcardPattern_Intention extends BaseIntention {
-
   public CreateWildcardPattern_Intention() {
   }
 
@@ -53,5 +52,4 @@ public class CreateWildcardPattern_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.pattern.intentions";
   }
-
 }

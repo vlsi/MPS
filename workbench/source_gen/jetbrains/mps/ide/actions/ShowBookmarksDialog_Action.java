@@ -25,12 +25,12 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F11";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -41,7 +41,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -53,7 +53,7 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       BookmarkManager bookmarkManager = ShowBookmarksDialog_Action.this.project.getComponent(BookmarkManager.class);
       BookmarksDialog dialog = new BookmarksDialog(ShowBookmarksDialog_Action.this.project, bookmarkManager);
@@ -64,5 +64,4 @@ public class ShowBookmarksDialog_Action extends GeneratedAction {
       }
     }
   }
-
 }

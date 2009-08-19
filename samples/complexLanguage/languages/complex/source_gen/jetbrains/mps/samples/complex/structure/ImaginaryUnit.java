@@ -22,5 +22,4 @@ public class ImaginaryUnit extends Expression {
   public static ImaginaryUnit newInstance(SModel sm) {
     return ImaginaryUnit.newInstance(sm, false);
   }
-
 }

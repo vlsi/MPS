@@ -9,18 +9,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class LibraryFolder_Behavior {
-
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "sourcePath", null, true);
   }
 
   public static String call_getLibraryPathRelativeToMPSBuild_1240408519032(SNode thisNode) {
     String path = "";
-    for(SNode p : ListSequence.fromList(MPSBuild_Behavior.call_getPathToLibrary_1233680013340(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.custommps.structure.MPSBuild", false, false), thisNode))) {
+    for (SNode p : ListSequence.fromList(MPSBuild_Behavior.call_getPathToLibrary_1233680013340(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.custommps.structure.MPSBuild", false, false), thisNode))) {
       path += IStringExpression_Behavior.call_getValue_1213877173054(p);
       path += "/";
     }
     return path;
   }
-
 }

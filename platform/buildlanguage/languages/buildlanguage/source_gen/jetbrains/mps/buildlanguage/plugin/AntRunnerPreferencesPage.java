@@ -11,7 +11,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class AntRunnerPreferencesPage extends JPanel {
-
   private BuildTableModel myModel;
   private boolean myIsModified;
 
@@ -19,7 +18,6 @@ public class AntRunnerPreferencesPage extends JPanel {
     super(new BorderLayout());
     this.myModel = new BuildTableModel(data);
     this.myModel.addTableModelListener(new TableModelListener() {
-
       public void tableChanged(TableModelEvent p0) {
         AntRunnerPreferencesPage.this.myIsModified = true;
       }
@@ -40,5 +38,4 @@ public class AntRunnerPreferencesPage extends JPanel {
   public boolean isModified() {
     return this.myIsModified;
   }
-
 }

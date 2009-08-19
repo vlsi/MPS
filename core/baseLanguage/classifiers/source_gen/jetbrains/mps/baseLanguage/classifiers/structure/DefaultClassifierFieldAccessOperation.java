@@ -59,7 +59,6 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
     this.setMember(node);
   }
 
-
   public static DefaultClassifierFieldAccessOperation newInstance(SModel sm, boolean init) {
     return (DefaultClassifierFieldAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
   public static DefaultClassifierFieldAccessOperation newInstance(SModel sm) {
     return DefaultClassifierFieldAccessOperation.newInstance(sm, false);
   }
-
 }

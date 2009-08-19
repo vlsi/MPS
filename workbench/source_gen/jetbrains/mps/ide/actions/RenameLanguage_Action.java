@@ -29,7 +29,7 @@ public class RenameLanguage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F6";
   }
@@ -38,7 +38,7 @@ public class RenameLanguage_Action extends GeneratedAction {
     return RenameLanguage_Action.this.module instanceof Language;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -52,7 +52,7 @@ public class RenameLanguage_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,7 +72,7 @@ public class RenameLanguage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new RenameLanguageDialog(RenameLanguage_Action.this.frame, RenameLanguage_Action.this.project, ((Language)RenameLanguage_Action.this.module)).showDialog();
     } catch (Throwable t) {
@@ -81,5 +81,4 @@ public class RenameLanguage_Action extends GeneratedAction {
       }
     }
   }
-
 }

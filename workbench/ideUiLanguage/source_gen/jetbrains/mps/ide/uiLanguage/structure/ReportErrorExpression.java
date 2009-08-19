@@ -24,7 +24,6 @@ public class ReportErrorExpression extends Expression {
     super.setChild(ReportErrorExpression.ERROR_TEXT, node);
   }
 
-
   public static ReportErrorExpression newInstance(SModel sm, boolean init) {
     return (ReportErrorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.ReportErrorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ReportErrorExpression extends Expression {
   public static ReportErrorExpression newInstance(SModel sm) {
     return ReportErrorExpression.newInstance(sm, false);
   }
-
 }

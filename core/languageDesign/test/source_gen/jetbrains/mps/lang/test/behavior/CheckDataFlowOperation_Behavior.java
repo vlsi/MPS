@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.test.runtime.SubtreeChecker;
 
 public class CheckDataFlowOperation_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class CheckDataFlowOperation_Behavior {
   public static String virtual_getName_1217435265700(SNode thisNode) {
     return "DataFlow";
   }
-
 }

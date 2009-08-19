@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class MatrixRow_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6019_0(editorContext, node);
   }
@@ -41,7 +40,6 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
   }
 
   private static class itemsListHandler_6019_0 extends RefNodeListHandler {
-
     public itemsListHandler_6019_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -88,7 +86,5 @@ public class MatrixRow_Editor extends DefaultNodeEditor {
         return editorCell;
       }
     }
-
-}
-
+  }
 }

@@ -39,7 +39,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
 
 public class NewLanguageDialogContentPane extends JPanel {
-
   public NewLanguageDialogContentPane myThis;
   private JLabel myComponent0;
   private JTextField myName0;
@@ -55,7 +54,6 @@ public class NewLanguageDialogContentPane extends JPanel {
   private Events myEvents = new Events(null) {
     {
     }
-
 
     public void initialize() {
     }
@@ -112,7 +110,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   private void unbind() {
-    for(AutoBinding binding : this.myBindings) {
+    for (AutoBinding binding : this.myBindings) {
       if (binding.isBound()) {
         binding.unbind();
       }
@@ -207,7 +205,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  /* package */void onOk() {
+  /*package*/ void onOk() {
     File dir = new File(myThis.getLanguagePath());
     if (!(dir.isAbsolute())) {
       myThis.getDialog().setErrorText("Path should be absolute");
@@ -235,11 +233,9 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
-
-      public void run(@NotNull() ProgressIndicator indicator) {
+      public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
-
           public void run() {
             myThis.createNewLanguage();
           }
@@ -248,11 +244,11 @@ public class NewLanguageDialogContentPane extends JPanel {
     });
   }
 
-  /* package */void onCancel() {
+  /*package*/ void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  /* package */void updateLanguagePath() {
+  /*package*/ void updateLanguagePath() {
     if (myThis.getProject() == null) {
       return;
     }
@@ -263,7 +259,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
   }
 
-  /* package */void createNewLanguage() {
+  /*package*/ void createNewLanguage() {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
     final File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
     File dir = descriptorFile.getParentFile();
@@ -285,11 +281,9 @@ public class NewLanguageDialogContentPane extends JPanel {
     myThis.setResult(language);
     // add to vcs
     ApplicationManager.getApplication().invokeLater(new Runnable() {
-
       public void run() {
         ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()), true);
       }
     }, ModalityState.NON_MODAL);
   }
-
 }

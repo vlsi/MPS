@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class NonEmptyLibraryName_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-
   public NonEmptyLibraryName_NonTypesystemRule() {
   }
 
@@ -38,5 +37,4 @@ public class NonEmptyLibraryName_NonTypesystemRule extends AbstractNonTypesystem
   public boolean overrides() {
     return false;
   }
-
 }

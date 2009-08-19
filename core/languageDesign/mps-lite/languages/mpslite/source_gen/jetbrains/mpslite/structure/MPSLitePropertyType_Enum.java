@@ -54,5 +54,4 @@ public enum MPSLitePropertyType_Enum {
     }
     return MPSLitePropertyType_Enum.getDefault();
   }
-
 }

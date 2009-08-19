@@ -129,7 +129,6 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
     this.insertChild(prev, Antcall.ENTRY, node);
   }
 
-
   public static Antcall newInstance(SModel sm, boolean init) {
     return (Antcall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Antcall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -137,5 +136,4 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   public static Antcall newInstance(SModel sm) {
     return Antcall.newInstance(sm, false);
   }
-
 }

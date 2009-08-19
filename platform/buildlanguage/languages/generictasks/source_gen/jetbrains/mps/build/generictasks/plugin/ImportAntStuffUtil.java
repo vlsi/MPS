@@ -30,5 +30,4 @@ public class ImportAntStuffUtil {
   public static SModel[] getAllModels(Language l) {
     return new SModel[]{getGenerated(l).getSModel(),getOptional(l).getSModel()};
   }
-
 }

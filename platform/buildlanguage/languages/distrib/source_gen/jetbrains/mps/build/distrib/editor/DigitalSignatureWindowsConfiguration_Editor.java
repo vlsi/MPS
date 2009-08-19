@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5815_0(editorContext, node);
   }
@@ -144,7 +143,6 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
   }
 
   private static class commandLineListHandler_5815_0 extends RefNodeListHandler {
-
     public commandLineListHandler_5815_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -184,7 +182,5 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

@@ -20,7 +20,6 @@ import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 
 public class DistribConfiguration_Behavior {
-
   public static void init(SNode thisNode) {
     SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
     SPropertyOperations.set(path, "path", ".");
@@ -40,14 +39,12 @@ public class DistribConfiguration_Behavior {
       return ListSequence.fromList(new LinkedList<SNode>());
     }
     final SNode selectedConfiguration = SLinkOperations.getTarget(thisNode, "buildScriptConfiguration", false);
-    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(layout, "component", true)).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(layout, "component", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.Folder") && (ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(it, "configuration", true)).contains(selectedConfiguration));
       }
     });
-    return Sequence.fromIterable(seq).select(new ISelector <SNode, SNode>() {
-
+    return Sequence.fromIterable(seq).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.build.packaging.structure.Folder");
       }
@@ -96,5 +93,4 @@ public class DistribConfiguration_Behavior {
   public static String getSuffix_1240229578757() {
     return "-dist";
   }
-
 }

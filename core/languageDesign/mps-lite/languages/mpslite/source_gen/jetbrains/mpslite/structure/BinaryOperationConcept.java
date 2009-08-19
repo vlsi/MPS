@@ -132,7 +132,6 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
     super.setChild(BinaryOperationConcept.EXTENDS, node);
   }
 
-
   public static BinaryOperationConcept newInstance(SModel sm, boolean init) {
     return (BinaryOperationConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BinaryOperationConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -140,5 +139,4 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   public static BinaryOperationConcept newInstance(SModel sm) {
     return BinaryOperationConcept.newInstance(sm, false);
   }
-
 }

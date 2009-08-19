@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 
 public class Configuration_fullName_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public Configuration_fullName_PropertyConstraint() {
   }
 
@@ -26,5 +25,4 @@ public class Configuration_fullName_PropertyConstraint implements IModelConstrai
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(node, "name") + "@" + SPropertyOperations.getString(Configuration_Behavior.call_getLayout_1213877261819(node), "name");
   }
-
 }

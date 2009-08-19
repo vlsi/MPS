@@ -10,7 +10,6 @@ import com.intellij.openapi.options.ConfigurationException;
 import javax.swing.JComponent;
 
 public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPage {
-
   private AntRunnerPreferencesPage myComponent;
   private Icon icon;
 
@@ -64,5 +63,4 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   private void reset(Project project, AntRunnerPreferencesPage component) {
     ((AntRunnerPreferencesPage)component).updateState(((AntRunnerPreferences_PreferencesComponent)AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
   }
-
 }

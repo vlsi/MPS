@@ -4,7 +4,6 @@ package jetbrains.mps.samples.matrixLanguage.runtime;
 
 
 public class DoubleFieldOperations implements FieldOperations<Double> {
-
   public DoubleFieldOperations() {
   }
 
@@ -23,5 +22,4 @@ public class DoubleFieldOperations implements FieldOperations<Double> {
   public Double multiplicativeInverse(Double a) {
     return 1 / a;
   }
-
 }

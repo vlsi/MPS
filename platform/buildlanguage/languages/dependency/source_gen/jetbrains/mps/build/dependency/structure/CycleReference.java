@@ -24,7 +24,6 @@ public class CycleReference extends BaseConcept {
     super.setReferent(CycleReference.CYCLE, node);
   }
 
-
   public static CycleReference newInstance(SModel sm, boolean init) {
     return (CycleReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.CycleReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class CycleReference extends BaseConcept {
   public static CycleReference newInstance(SModel sm) {
     return CycleReference.newInstance(sm, false);
   }
-
 }

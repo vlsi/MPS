@@ -36,12 +36,12 @@ public class HighlightUsages_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl shift F7";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -52,7 +52,7 @@ public class HighlightUsages_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,10 +72,9 @@ public class HighlightUsages_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           NodeHighlightManager highlightManager = HighlightUsages_Action.this.editorComponent.getHighlightManager();
           EditorMessageOwner messageOwner = HighlightUsages_Action.this.editorComponent.getHighlightMessagesOwner();
@@ -85,18 +84,16 @@ public class HighlightUsages_Action extends GeneratedAction {
           if (usages.size() > 0 && SNodeOperations.getContainingRoot(node) == HighlightUsages_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
-            } else
-            {
+            } else {
               EditorMessage message = highlightManager.getMessageFor(node);
               highlightManager.removeMessage(message);
             }
           }
-          for(SReference ref : SetSequence.fromSet(usages)) {
+          for (SReference ref : SetSequence.fromSet(usages)) {
             if (ref.getSourceNode().getContainingRoot() == HighlightUsages_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
               if (highlight) {
                 highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
-              } else
-              {
+              } else {
                 EditorMessage message = highlightManager.getMessageFor(ref.getSourceNode());
                 highlightManager.removeMessage(message);
               }
@@ -111,5 +108,4 @@ public class HighlightUsages_Action extends GeneratedAction {
       }
     }
   }
-
 }

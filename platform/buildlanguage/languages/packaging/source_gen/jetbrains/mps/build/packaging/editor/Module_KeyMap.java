@@ -14,15 +14,14 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 
 public class Module_KeyMap extends EditorCellKeyMap {
-
   public Module_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new Module_KeyMap.Module_KeyMap_Action0();
     this.putAction("ctrl", "VK_B", action);
   }
-  public static class Module_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class Module_KeyMap_Action0 extends EditorCellKeyMapAction {
     public Module_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -59,7 +58,5 @@ public class Module_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return "ctrl B";
     }
-
-}
-
+  }
 }

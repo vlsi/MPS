@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class FindMatchStatement_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2791_0(editorContext, node);
   }
@@ -154,5 +153,4 @@ public class FindMatchStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

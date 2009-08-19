@@ -14,5 +14,4 @@ public class NodePropertiesMarker_AnnotationLink {
   public static NodePropertiesContainer getNodePropertiesMarker(BaseConcept source) {
     return (NodePropertiesContainer)source.getAttribute(NodePropertiesMarker_AnnotationLink.NODE_PROPERTIES_MARKER);
   }
-
 }

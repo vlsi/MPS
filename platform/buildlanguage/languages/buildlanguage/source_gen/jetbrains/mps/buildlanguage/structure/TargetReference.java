@@ -24,7 +24,6 @@ public class TargetReference extends BaseConcept {
     super.setReferent(TargetReference.TARGET_DECLARATION, node);
   }
 
-
   public static TargetReference newInstance(SModel sm, boolean init) {
     return (TargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TargetReference extends BaseConcept {
   public static TargetReference newInstance(SModel sm) {
     return TargetReference.newInstance(sm, false);
   }
-
 }

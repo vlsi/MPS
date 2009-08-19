@@ -8,7 +8,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ComponentsList_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -22,5 +21,4 @@ public class ComponentsList_Behavior {
   public static List<SNode> virtual_getChildrenToDo_1240564451382(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "entry", true);
   }
-
 }

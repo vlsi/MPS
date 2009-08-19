@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import jetbrains.mps.workbench.action.ActionFactory;
 
 public class Test_ApplicationPlugin extends BaseApplicationPlugin {
-
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.test";
@@ -24,5 +23,4 @@ public class Test_ApplicationPlugin extends BaseApplicationPlugin {
       ListSequence.fromList(groups).addElement(group);
     }
   }
-
 }

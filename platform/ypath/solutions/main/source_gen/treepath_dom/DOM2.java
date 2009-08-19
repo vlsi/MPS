@@ -17,7 +17,6 @@ import java.util.AbstractList;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class DOM2 extends TreePath<Node> {
-
   public DOM2() {
     this.registerFeature(new DOM2.Desc_Feature_attributes());
     this.registerFeature(new DOM2.Desc_Feature_nodes());
@@ -28,14 +27,14 @@ public class DOM2 extends TreePath<Node> {
   }
 
   private static class Parent {
-
     public static Node parent(Node node) {
       return node.getParentNode();
     }
+  }
 
-}
   private static class Children {
-}
+  }
+
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
     private static DOM2.ELEMENT_NodeKindTrigger instance;
 
@@ -46,15 +45,14 @@ public class DOM2 extends TreePath<Node> {
       return e instanceof Element;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM2.ELEMENT_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class ATTR_NodeKindTrigger implements IFilter<Node> {
     private static DOM2.ATTR_NodeKindTrigger instance;
 
@@ -65,32 +63,27 @@ public class DOM2 extends TreePath<Node> {
       return a instanceof Attr;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM2.ATTR_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class ELEMENT_tag_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ELEMENT_tag_Property.Getter.getValue(node);
@@ -102,31 +95,25 @@ public class DOM2 extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
       }
+    }
+  }
 
-}
-
-}
   public static class ATTR_name_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ATTR_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ATTR_name_Property.Getter.getValue(node);
@@ -138,31 +125,25 @@ public class DOM2 extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node a) {
         return ((Attr)a).getName();
       }
+    }
+  }
 
-}
-
-}
   public static class ATTR_value_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ATTR_value_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM2.ATTR_value_Property.Getter.getValue(node);
@@ -174,16 +155,13 @@ public class DOM2 extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node a) {
         return ((Attr)a).getValue();
       }
+    }
+  }
 
-}
-
-}
   private static class Feature_attributes extends AbstractCollection<Node> {
-
     private Node thisNode;
 
     public Feature_attributes(Node thisNode) {
@@ -192,14 +170,11 @@ public class DOM2 extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final Node _node = this.thisNode;
-      return Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private NamedNodeMap _3_attributes;
                 private int _7_count;
@@ -268,10 +243,9 @@ __switch__:
     public int size() {
       return this.thisNode.getAttributes().getLength();
     }
+  }
 
-}
   private static class Feature_nodes extends AbstractList<Node> {
-
     private Node thisNode;
 
     public Feature_nodes(Node thisNode) {
@@ -288,10 +262,9 @@ __switch__:
     public int size() {
       return this.thisNode.getChildNodes().getLength();
     }
+  }
 
-}
   public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_attributes() {
     }
 
@@ -314,10 +287,9 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_nodes() {
     }
 
@@ -340,7 +312,5 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
-
-}
-
+  }
 }

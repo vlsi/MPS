@@ -51,7 +51,6 @@ public class NotCondition extends BaseConcept implements ICondition {
     super.setChild(NotCondition.CONDITION, node);
   }
 
-
   public static NotCondition newInstance(SModel sm, boolean init) {
     return (NotCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NotCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class NotCondition extends BaseConcept implements ICondition {
   public static NotCondition newInstance(SModel sm) {
     return NotCondition.newInstance(sm, false);
   }
-
 }

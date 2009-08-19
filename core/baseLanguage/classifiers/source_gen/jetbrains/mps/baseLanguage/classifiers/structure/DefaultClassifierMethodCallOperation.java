@@ -83,7 +83,6 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
     this.insertChild(prev, DefaultClassifierMethodCallOperation.ACTUAL_ARGUMENT, node);
   }
 
-
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm, boolean init) {
     return (DefaultClassifierMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -91,5 +90,4 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm) {
     return DefaultClassifierMethodCallOperation.newInstance(sm, false);
   }
-
 }

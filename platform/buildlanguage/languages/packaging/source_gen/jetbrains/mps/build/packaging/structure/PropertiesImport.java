@@ -22,5 +22,4 @@ public class PropertiesImport extends BaseConcept {
   public static PropertiesImport newInstance(SModel sm) {
     return PropertiesImport.newInstance(sm, false);
   }
-
 }

@@ -8,12 +8,10 @@ import javax.swing.JComponent;
 import com.intellij.ide.wizard.Step;
 
 public class GenerateBuildWizard extends AbstractWizard {
-
   private final String myTitle;
   private final Project myProject;
   protected final AbstractBuildGenerator myGenerator;
   protected IErrorHandler myErrorHandler = new IErrorHandler() {
-
     public void setErrorText(String text) {
       GenerateBuildWizard.this.setErrorText(text);
     }
@@ -56,5 +54,4 @@ public class GenerateBuildWizard extends AbstractWizard {
     this.addStep(languagesStep);
     this.init();
   }
-
 }

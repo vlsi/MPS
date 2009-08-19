@@ -22,5 +22,4 @@ public class AbstractCommandLinePart extends BaseConcept {
   public static AbstractCommandLinePart newInstance(SModel sm) {
     return AbstractCommandLinePart.newInstance(sm, false);
   }
-
 }

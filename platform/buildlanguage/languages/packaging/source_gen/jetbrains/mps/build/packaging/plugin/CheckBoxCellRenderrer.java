@@ -13,7 +13,6 @@ import javax.swing.JTree;
 import java.awt.Dimension;
 
 public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
-
   private final JCheckBox myCheckBox;
   private final JLabel myLabel;
 
@@ -51,5 +50,4 @@ public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
     this.myLabel.setLocation(checkBoxDim.width, baseline - labelDim.height / 2);
     this.myLabel.setSize(labelDim.width, labelDim.height);
   }
-
 }

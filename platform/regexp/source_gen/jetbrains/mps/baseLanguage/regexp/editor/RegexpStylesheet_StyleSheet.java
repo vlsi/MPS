@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RegexpStylesheet_StyleSheet {
-
   public static Style getRegexpBrace(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -29,5 +28,4 @@ public class RegexpStylesheet_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     return style;
   }
-
 }

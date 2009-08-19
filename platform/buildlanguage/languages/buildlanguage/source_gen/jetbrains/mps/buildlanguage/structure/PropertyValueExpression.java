@@ -42,7 +42,6 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
     this.setProperty(PropertyValueExpression.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PropertyValueExpression newInstance(SModel sm, boolean init) {
     return (PropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
   public static PropertyValueExpression newInstance(SModel sm) {
     return PropertyValueExpression.newInstance(sm, false);
   }
-
 }

@@ -21,5 +21,4 @@ public class NodeReachable extends NodeProperty {
   public static NodeReachable newInstance(SModel sm) {
     return NodeReachable.newInstance(sm, false);
   }
-
 }

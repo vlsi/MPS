@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsComponent {
-
   @Tag(value = "state")
   private AntRunnerPreferences_PreferencesComponent.MyState myState = new AntRunnerPreferences_PreferencesComponent.MyState();
 
@@ -38,13 +37,13 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
   public void loadState(Element state) {
     XmlSerializer.deserializeInto(this.myState, state);
     this.afterRead(this.getMPSProject());
-    for(BasePrefsPage page : ListSequence.fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
       page.reset();
     }
   }
 
   public Element getState() {
-    for(BasePrefsPage page : ListSequence.fromList(this.getPages())) {
+    for (BasePrefsPage page : ListSequence.fromList(this.getPages())) {
       try {
         page.apply();
       } catch (ConfigurationException e) {
@@ -61,16 +60,15 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
     if (IdeMain.getTestMode() == IdeMain.TestMode.CORE_TEST) {
       return;
     }
-    for(Solution sln : ListSequence.fromList(project.getProjectSolutions())) {
-      for(final SModelDescriptor descriptor : ListSequence.fromList(sln.getOwnModelDescriptors())) {
+    for (Solution sln : ListSequence.fromList(project.getProjectSolutions())) {
+      for (final SModelDescriptor descriptor : ListSequence.fromList(sln.getOwnModelDescriptors())) {
         if (!(SModelStereotype.isUserModel(descriptor))) {
           continue;
         }
         ModelAccess.instance().runReadAction(new Runnable() {
-
           public void run() {
             SModel sModel = descriptor.getSModel();
-            for(SNode root : ListSequence.fromList(sModel.getRoots())) {
+            for (SNode root : ListSequence.fromList(sModel.getRoots())) {
               if (SNodeOperations.isInstanceOf(((SNode)root), "jetbrains.mps.buildlanguage.structure.IAntScript")) {
                 SNodePointer pointer = new SNodePointer(root);
                 String pointerString = BuildTableModel.pointerToString(pointer);
@@ -99,11 +97,9 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
   }
 
   public static class MyState {
-
     public Map<String, String> data = MapSequence.fromMap(new HashMap<String, String>());
 
     public MyState() {
     }
-}
-
+  }
 }

@@ -12,6 +12,7 @@ public interface ICompositeComponent extends IAbstractCompositeComponent {
   public static final String INCLUDES = "includes";
   public static final String ENTRY = "entry";
 
+
   public String getExcludes();
   public void setExcludes(String value);
   public String getIncludes();

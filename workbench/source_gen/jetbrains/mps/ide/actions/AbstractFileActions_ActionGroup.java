@@ -35,5 +35,4 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(FolderActions_ActionGroup.ID, FolderActions_ActionGroup.LABEL_ID_abstractFileActions);
     this.insertGroupIntoAnother(ModuleActions_ActionGroup.ID, ModuleActions_ActionGroup.LABEL_ID_abstractFileActions);
   }
-
 }

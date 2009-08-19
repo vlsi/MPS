@@ -71,7 +71,6 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
     super.setChild(ForEachMatchStatement.REGEXP, node);
   }
 
-
   public static ForEachMatchStatement newInstance(SModel sm, boolean init) {
     return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -79,5 +78,4 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   public static ForEachMatchStatement newInstance(SModel sm) {
     return ForEachMatchStatement.newInstance(sm, false);
   }
-
 }

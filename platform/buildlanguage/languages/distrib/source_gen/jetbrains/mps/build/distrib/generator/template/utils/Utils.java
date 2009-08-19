@@ -4,11 +4,9 @@ package jetbrains.mps.build.distrib.generator.template.utils;
 
 
 public class Utils {
-
   public static String getFileNameFromPath(String path) {
     String fullPath = path.replace("/", "\\");
     int index = fullPath.lastIndexOf("\\");
     return fullPath.substring(index + 1);
   }
-
 }

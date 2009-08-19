@@ -32,12 +32,12 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,7 +72,7 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       new ModelPropertiesDialog(ModelPropertiesWOShortcut_Action.this.model, ModelPropertiesWOShortcut_Action.this.context).showDialog();
     } catch (Throwable t) {
@@ -81,5 +81,4 @@ public class ModelPropertiesWOShortcut_Action extends GeneratedAction {
       }
     }
   }
-
 }

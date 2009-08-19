@@ -75,7 +75,6 @@ public class Regexps extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Regexps.REGEXP, node);
   }
 
-
   public static Regexps newInstance(SModel sm, boolean init) {
     return (Regexps)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexps", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -83,5 +82,4 @@ public class Regexps extends BaseConcept implements INamedConcept {
   public static Regexps newInstance(SModel sm) {
     return Regexps.newInstance(sm, false);
   }
-
 }

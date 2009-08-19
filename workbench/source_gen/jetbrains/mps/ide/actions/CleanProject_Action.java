@@ -37,12 +37,12 @@ public class CleanProject_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -53,7 +53,7 @@ public class CleanProject_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -73,17 +73,15 @@ public class CleanProject_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(CleanProject_Action.this.project.getProjectDevKits()));
       ProgressManager.getInstance().run(new Task.Modal(CleanProject_Action.this.ideaProject, "Cleaning", true) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ModuleMaker maker = new ModuleMaker();
               maker.clean(modulesToBuild, indicator);
@@ -97,5 +95,4 @@ public class CleanProject_Action extends GeneratedAction {
       }
     }
   }
-
 }

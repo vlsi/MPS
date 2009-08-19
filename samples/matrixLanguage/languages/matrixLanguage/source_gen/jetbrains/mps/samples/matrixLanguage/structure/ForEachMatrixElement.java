@@ -52,7 +52,6 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
     super.setChild(ForEachMatrixElement.MATRIX, node);
   }
 
-
   public static ForEachMatrixElement newInstance(SModel sm, boolean init) {
     return (ForEachMatrixElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   public static ForEachMatrixElement newInstance(SModel sm) {
     return ForEachMatrixElement.newInstance(sm, false);
   }
-
 }

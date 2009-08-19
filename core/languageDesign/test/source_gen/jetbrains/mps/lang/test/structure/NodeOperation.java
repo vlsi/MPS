@@ -43,7 +43,6 @@ public class NodeOperation extends BaseConcept implements ITestMethod {
     this.setProperty(NodeOperation.VIRTUAL_PACKAGE, value);
   }
 
-
   public static NodeOperation newInstance(SModel sm, boolean init) {
     return (NodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -51,5 +50,4 @@ public class NodeOperation extends BaseConcept implements ITestMethod {
   public static NodeOperation newInstance(SModel sm) {
     return NodeOperation.newInstance(sm, false);
   }
-
 }

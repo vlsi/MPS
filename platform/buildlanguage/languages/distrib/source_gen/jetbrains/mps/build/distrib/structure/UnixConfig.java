@@ -21,5 +21,4 @@ public class UnixConfig extends SystemSpecificConfig {
   public static UnixConfig newInstance(SModel sm) {
     return UnixConfig.newInstance(sm, false);
   }
-
 }

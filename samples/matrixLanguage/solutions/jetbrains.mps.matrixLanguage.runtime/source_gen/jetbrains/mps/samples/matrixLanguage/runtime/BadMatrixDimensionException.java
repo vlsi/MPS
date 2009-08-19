@@ -4,7 +4,6 @@ package jetbrains.mps.samples.matrixLanguage.runtime;
 
 
 public class BadMatrixDimensionException extends RuntimeException {
-
   public BadMatrixDimensionException() {
   }
 }

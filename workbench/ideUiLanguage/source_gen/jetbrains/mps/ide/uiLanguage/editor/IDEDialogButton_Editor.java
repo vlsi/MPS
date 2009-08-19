@@ -17,7 +17,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class IDEDialogButton_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8408_0(editorContext, node);
   }
@@ -156,5 +155,4 @@ public class IDEDialogButton_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

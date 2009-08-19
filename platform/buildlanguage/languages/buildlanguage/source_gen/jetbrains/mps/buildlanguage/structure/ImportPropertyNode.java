@@ -60,7 +60,6 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
     super.setReferent(ImportPropertyNode.PROPERTY_NODE, node);
   }
 
-
   public static ImportPropertyNode newInstance(SModel sm, boolean init) {
     return (ImportPropertyNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportPropertyNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
   public static ImportPropertyNode newInstance(SModel sm) {
     return ImportPropertyNode.newInstance(sm, false);
   }
-
 }

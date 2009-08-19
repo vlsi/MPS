@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreatePropertyPatternVariable_Intention extends BaseIntention {
-
   public CreatePropertyPatternVariable_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class CreatePropertyPatternVariable_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.pattern.intentions";
   }
-
 }

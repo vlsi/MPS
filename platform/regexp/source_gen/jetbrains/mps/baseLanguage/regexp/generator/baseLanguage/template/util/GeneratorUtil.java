@@ -7,17 +7,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GeneratorUtil {
-
   public static SNode findRegexpUsingConstructionFor(SNode ref) {
     SNode parens = SLinkOperations.getTarget(ref, "match", false);
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false, false);
     if (ruc != null) {
       return ruc;
-    } else
-    {
+    } else {
       SNode dcl = SNodeOperations.getAncestor(parens, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", false, false);
-      for(SNode parentRuc : SNodeOperations.getAncestors(ref, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false)) {
-        for(SNode regref : SNodeOperations.getDescendants(parentRuc, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
+      for (SNode parentRuc : SNodeOperations.getAncestors(ref, "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false)) {
+        for (SNode regref : SNodeOperations.getDescendants(parentRuc, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", false, new String[]{})) {
           if (SLinkOperations.getTarget(regref, "regexp", false) == dcl) {
             return parentRuc;
           }
@@ -26,5 +24,4 @@ public class GeneratorUtil {
       return null;
     }
   }
-
 }

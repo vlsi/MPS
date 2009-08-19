@@ -9,14 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Regexps_DataFlow extends DataFlowBuilder {
-
   public Regexps_DataFlow() {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for(SNode regexp : SLinkOperations.getTargets(_context.getNode(), "regexp", true)) {
+    for (SNode regexp : SLinkOperations.getTargets(_context.getNode(), "regexp", true)) {
       _context.getBuilder().build((SNode)regexp);
     }
   }
-
 }

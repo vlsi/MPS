@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class _PatternExpression_KeyMap extends EditorCellKeyMap {
-
   public _PatternExpression_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
@@ -42,8 +41,8 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     action = new _PatternExpression_KeyMap._PatternExpression_KeyMap_Action7();
     this.putAction("any", "^", action);
   }
-  public static class _PatternExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
 
+  public static class _PatternExpression_KeyMap_Action0 extends EditorCellKeyMapAction {
     public _PatternExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
@@ -84,10 +83,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " _";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action1 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
@@ -128,10 +126,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " @";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action2 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action2() {
       this.setShownInPopupMenu(false);
     }
@@ -172,10 +169,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " #";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action3 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action3() {
       this.setShownInPopupMenu(false);
     }
@@ -218,10 +214,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " $";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action4 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action4() {
       this.setShownInPopupMenu(false);
     }
@@ -258,7 +253,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
       SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
-      for(SNode sibling : siblings) {
+      for (SNode sibling : siblings) {
         SNodeOperations.deleteNode(sibling);
       }
     }
@@ -266,10 +261,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " *";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action5 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action5() {
       this.setShownInPopupMenu(false);
     }
@@ -323,10 +317,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " %";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action6 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action6() {
       this.setShownInPopupMenu(false);
     }
@@ -381,10 +374,9 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " *";
     }
+  }
 
-}
   public static class _PatternExpression_KeyMap_Action7 extends EditorCellKeyMapAction {
-
     public _PatternExpression_KeyMap_Action7() {
       this.setShownInPopupMenu(false);
     }
@@ -442,8 +434,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
       }
       if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), true) != null) {
         SLinkOperations.setTarget(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), null, true);
-      } else
-      {
+      } else {
         SLinkOperations.setNewChild(contextNode, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
       }
     }
@@ -451,7 +442,5 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     public String getKeyStroke() {
       return " ^";
     }
-
-}
-
+  }
 }

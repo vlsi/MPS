@@ -22,5 +22,4 @@ public class DisposeDialogStatement extends Statement {
   public static DisposeDialogStatement newInstance(SModel sm) {
     return DisposeDialogStatement.newInstance(sm, false);
   }
-
 }

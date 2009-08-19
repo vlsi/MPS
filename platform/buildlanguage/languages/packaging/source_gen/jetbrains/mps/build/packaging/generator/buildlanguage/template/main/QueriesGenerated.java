@@ -53,7 +53,6 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1221758915287(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.packaging.structure.Module", false, new String[]{})).isNotEmpty();
   }
@@ -301,7 +300,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1239624236213(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = "";
-    for(SNode v : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true))) {
+    for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "value", true))) {
       result += IStringExpression_Behavior.call_getValue_1213877173054(v);
     }
     return result;
@@ -331,8 +330,7 @@ public class QueriesGenerated {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
       List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
-      SNode macro = ListSequence.fromList(descendants).findFirst(new IWhereFilter <SNode>() {
-
+      SNode macro = ListSequence.fromList(descendants).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"));
         }
@@ -340,8 +338,7 @@ public class QueriesGenerated {
       if (macro != null) {
         return ListSequence.fromList(_context.getAllOutputNodesByInputNodeAndMappingLabel(macro, "MacroToPropertyDeclaration")).first();
       }
-      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter <SNode>() {
-
+      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"));
         }
@@ -359,13 +356,12 @@ public class QueriesGenerated {
     SNode holder = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", false, false);
     if (holder == null) {
       List<SNode> descendants = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.build.packaging.structure.Macro", false, new String[]{});
-      for(SNode m : ListSequence.fromList(descendants)) {
+      for (SNode m : ListSequence.fromList(descendants)) {
         if (SPropertyOperations.getString(m, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"))) {
           return m;
         }
       }
-      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter <SNode>() {
-
+      return ListSequence.fromList(PropertyReference_Behavior.getAllVisibleDeclarations_1239123615225(_context.getOutputNode())).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"));
         }
@@ -534,7 +530,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1220361608323(final IOperationContext operationContext, final IfMacroContext _context) {
     List<SNode> references = SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), "jetbrains.mps.build.packaging.structure.VariableReference", false, new String[]{});
-    for(SNode ref : ListSequence.fromList(references)) {
+    for (SNode ref : ListSequence.fromList(references)) {
       if (SLinkOperations.getTarget(ref, "variable", false) == _context.getNode()) {
         return true;
       }
@@ -681,8 +677,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1203613712380(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228296(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getNode())).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(MPSLayout_Behavior.call_getTopologicalSortedComponents_1213877228296(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getNode())).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.packaging.structure.ICompositeComponent");
       }
@@ -742,8 +737,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1234271765511(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "jetbrains.mps.build.packaging.structure.Replace", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AbstractProjectComponent_Behavior.call_included_1213877333807(it, _context.getNode());
       }
@@ -776,14 +770,14 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1217435006860(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
-    for(SNode layout : ListSequence.fromList(layouts)) {
+    for (SNode layout : ListSequence.fromList(layouts)) {
       if (!(SPropertyOperations.getBoolean(layout, "compile"))) {
         continue;
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
       Map<IModule, List<SNode>> map = MapSequence.fromMap(new HashMap<IModule, List<SNode>>());
       // fill map
-      for(SNode module : ListSequence.fromList(modules)) {
+      for (SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
@@ -798,12 +792,12 @@ public class QueriesGenerated {
       // calculate module cycles
       List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
       // say to all modules it's cycle
-      for(Set<IModule> moduleSet : ListSequence.fromList(sm)) {
+      for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         SLinkOperations.addChild(layout, "cycle", cycle);
-        for(IModule imodule : SetSequence.fromSet(moduleSet)) {
+        for (IModule imodule : SetSequence.fromSet(moduleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
-          for(SNode module : ListSequence.fromList(modulesForIModule)) {
+          for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
             SLinkOperations.addChild(cycle, "moduleReference", ref);
@@ -815,10 +809,10 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1219229087938(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
-    for(SNode holder : ListSequence.fromList(holders)) {
+    for (SNode holder : ListSequence.fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
       SLinkOperations.removeAllChildren(holder, "macro");
-      for(String macroName : ListSequence.fromList(allMAcroNames)) {
+      for (String macroName : ListSequence.fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
@@ -832,14 +826,14 @@ public class QueriesGenerated {
       return;
     }
     List<SNode> layouts = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout");
-    for(SNode layout : ListSequence.fromList(layouts)) {
+    for (SNode layout : ListSequence.fromList(layouts)) {
       Set<IModule> modules = SetSequence.fromSet(new HashSet<IModule>());
-      for(SNode m : ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228340(layout))) {
+      for (SNode m : ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228340(layout))) {
         SetSequence.fromSet(modules).addElement(Module_Behavior.call_getModule_1213877515148(m));
       }
-      for(IModule module : SetSequence.fromSet(modules)) {
+      for (IModule module : SetSequence.fromSet(modules)) {
         List<IModule> dependency = module.getAllDependOnModules();
-        for(IModule dependent : ListSequence.fromList(dependency)) {
+        for (IModule dependent : ListSequence.fromList(dependency)) {
           if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent))) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
             System.err.println(errorText);
@@ -849,5 +843,4 @@ public class QueriesGenerated {
       }
     }
   }
-
 }

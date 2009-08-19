@@ -52,7 +52,6 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
     super.setChild(MatchRegexpOperation.REGEXP, node);
   }
 
-
   public static MatchRegexpOperation newInstance(SModel sm, boolean init) {
     return (MatchRegexpOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
   public static MatchRegexpOperation newInstance(SModel sm) {
     return MatchRegexpOperation.newInstance(sm, false);
   }
-
 }

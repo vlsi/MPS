@@ -11,12 +11,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 
 public class CustomMpsStyles_StyleSheet {
-
   public static Style getUndeclaredVaribale(final EditorCell cell) {
     Style style = new Style(cell);
     style.putAll(PackagingStyles_StyleSheet.getVariable(null));
-    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator <Boolean>() {
-
+    style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
         return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_1345_0((cell == null ?
           null :
@@ -33,5 +31,4 @@ public class CustomMpsStyles_StyleSheet {
   private static boolean _StyleParameter_QueryFunction_1345_0(SNode node, EditorContext editorContext) {
     return true;
   }
-
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 
 public class ModuleUtil {
-
   public ModuleUtil() {
   }
 
@@ -32,7 +31,7 @@ public class ModuleUtil {
   }
 
   public static void findMacro(SNode pathHolder, List<SNode> macro) {
-    for(SNode m : ListSequence.fromList(macro)) {
+    for (SNode m : ListSequence.fromList(macro)) {
       if (SPropertyOperations.getString(pathHolder, "fullPath").startsWith(SPropertyOperations.getString(m, "path"))) {
         SLinkOperations.setTarget(pathHolder, "macro", m, false);
         SPropertyOperations.set(pathHolder, "fullPath", getRelativePath(SPropertyOperations.getString(pathHolder, "fullPath"), SPropertyOperations.getString(m, "path")));
@@ -45,11 +44,10 @@ public class ModuleUtil {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     if (cpitem instanceof CompositeClassPathItem) {
       List<IClassPathItem> flattenedClassPath = cpitem.flatten();
-      for(IClassPathItem item : ListSequence.fromList(flattenedClassPath)) {
+      for (IClassPathItem item : ListSequence.fromList(flattenedClassPath)) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(retrieveClassPath(item)));
       }
-    } else
-    {
+    } else {
       // TODO how not to use instanceof here?
       if (cpitem instanceof FileClassPathItem) {
         ListSequence.fromList(result).addElement(((FileClassPathItem)cpitem).getClassPath());
@@ -59,5 +57,4 @@ public class ModuleUtil {
     }
     return result;
   }
-
 }

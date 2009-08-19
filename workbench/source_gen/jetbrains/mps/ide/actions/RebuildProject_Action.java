@@ -36,12 +36,12 @@ public class RebuildProject_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -52,7 +52,7 @@ public class RebuildProject_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -68,17 +68,15 @@ public class RebuildProject_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(RebuildProject_Action.this.project.getProjectSolutions()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(RebuildProject_Action.this.project.getProjectLanguages()));
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(RebuildProject_Action.this.project.getProjectDevKits()));
       ProgressManager.getInstance().run(new Task.Modal(RebuildProject_Action.this.ideaProject, "Making", true) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ModuleMaker maker = new ModuleMaker();
               maker.clean(modules, indicator);
@@ -94,5 +92,4 @@ public class RebuildProject_Action extends GeneratedAction {
       }
     }
   }
-
 }

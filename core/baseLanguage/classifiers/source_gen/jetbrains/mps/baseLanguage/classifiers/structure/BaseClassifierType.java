@@ -22,5 +22,4 @@ public class BaseClassifierType extends Type {
   public static BaseClassifierType newInstance(SModel sm) {
     return BaseClassifierType.newInstance(sm, false);
   }
-
 }

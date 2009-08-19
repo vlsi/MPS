@@ -21,5 +21,4 @@ public class NodeErrorPropety extends NodeProperty {
   public static NodeErrorPropety newInstance(SModel sm) {
     return NodeErrorPropety.newInstance(sm, false);
   }
-
 }

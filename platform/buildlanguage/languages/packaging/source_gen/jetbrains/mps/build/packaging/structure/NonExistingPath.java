@@ -60,7 +60,6 @@ public class NonExistingPath extends BaseConcept implements IPath {
     super.setChild(NonExistingPath.MACRO, node);
   }
 
-
   public static NonExistingPath newInstance(SModel sm, boolean init) {
     return (NonExistingPath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NonExistingPath", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class NonExistingPath extends BaseConcept implements IPath {
   public static NonExistingPath newInstance(SModel sm) {
     return NonExistingPath.newInstance(sm, false);
   }
-
 }

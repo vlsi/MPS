@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ICompositeComponent_Behavior {
-
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "excludes", "");
   }
@@ -37,5 +36,4 @@ public class ICompositeComponent_Behavior {
       ""
     );
   }
-
 }

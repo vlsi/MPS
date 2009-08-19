@@ -61,7 +61,6 @@ public class Macro extends PropertyDeclaration implements INamedConcept {
     this.setProperty(Macro.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Macro newInstance(SModel sm, boolean init) {
     return (Macro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Macro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -69,5 +68,4 @@ public class Macro extends PropertyDeclaration implements INamedConcept {
   public static Macro newInstance(SModel sm) {
     return Macro.newInstance(sm, false);
   }
-
 }

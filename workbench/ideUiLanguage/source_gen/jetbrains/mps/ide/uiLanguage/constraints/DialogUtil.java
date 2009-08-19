@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DialogUtil {
-
   public static SNode getContextComponent(SNode parentNode) {
     SNode container = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.uiLanguage.structure.ComponentDeclaration","jetbrains.mps.uiLanguage.structure.ComponentController"}, true, false);
     if (container == null) {
@@ -16,8 +15,7 @@ public class DialogUtil {
     SNode declaration;
     if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
       declaration = SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentController"), "component", false);
-    } else
-    {
+    } else {
       declaration = SNodeOperations.cast(container, "jetbrains.mps.uiLanguage.structure.ComponentDeclaration");
     }
     return declaration;
@@ -27,5 +25,4 @@ public class DialogUtil {
     SNode component = getContextComponent(parentNode);
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(component, "root", true), "jetbrains.mps.ide.uiLanguage.structure.IDEDialog");
   }
-
 }

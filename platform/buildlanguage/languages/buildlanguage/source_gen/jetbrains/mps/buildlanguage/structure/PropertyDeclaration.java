@@ -69,7 +69,6 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
     super.setChild(PropertyDeclaration.PROPERTY_VALUE, node);
   }
 
-
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
     return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -77,5 +76,4 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   public static PropertyDeclaration newInstance(SModel sm) {
     return PropertyDeclaration.newInstance(sm, false);
   }
-
 }

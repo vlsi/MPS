@@ -12,5 +12,4 @@ public class Classifiers_Language {
   public static Language get() {
     return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
-
 }

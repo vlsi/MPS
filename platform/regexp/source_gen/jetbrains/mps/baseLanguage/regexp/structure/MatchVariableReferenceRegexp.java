@@ -23,7 +23,6 @@ public class MatchVariableReferenceRegexp extends Regexp {
     super.setReferent(MatchVariableReferenceRegexp.MATCH, node);
   }
 
-
   public static MatchVariableReferenceRegexp newInstance(SModel sm, boolean init) {
     return (MatchVariableReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class MatchVariableReferenceRegexp extends Regexp {
   public static MatchVariableReferenceRegexp newInstance(SModel sm) {
     return MatchVariableReferenceRegexp.newInstance(sm, false);
   }
-
 }

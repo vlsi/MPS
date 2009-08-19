@@ -22,5 +22,4 @@ public class ComplexType extends PrimitiveType {
   public static ComplexType newInstance(SModel sm) {
     return ComplexType.newInstance(sm, false);
   }
-
 }

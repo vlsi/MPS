@@ -11,7 +11,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ForEachMatchStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public ForEachMatchStatement_InferenceRule() {
   }
 
@@ -34,5 +33,4 @@ public class ForEachMatchStatement_InferenceRule extends AbstractInferenceRule_R
   public boolean overrides() {
     return false;
   }
-
 }

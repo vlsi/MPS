@@ -24,7 +24,6 @@ public class TransposeExpression extends Expression {
     super.setChild(TransposeExpression.MATRIX, node);
   }
 
-
   public static TransposeExpression newInstance(SModel sm, boolean init) {
     return (TransposeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class TransposeExpression extends Expression {
   public static TransposeExpression newInstance(SModel sm) {
     return TransposeExpression.newInstance(sm, false);
   }
-
 }

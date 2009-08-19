@@ -5,8 +5,6 @@ package jetbrains.mps.ide.uiLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class IDEDialog_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

@@ -6,8 +6,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 
-/* package */class BaseLanguageIntegration {
-
+/*package*/ class BaseLanguageIntegration {
   public static void email(String emailToAnalyse) {
     {
       Pattern _pattern_0 = _PrecompiledPatterns.REGEXP1;
@@ -45,9 +44,8 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
   }
 
   public static void split(String s) {
-    for(String st : RegexpOperations.split(s, _PrecompiledPatterns.REGEXP5)) {
+    for (String st : RegexpOperations.split(s, _PrecompiledPatterns.REGEXP5)) {
       System.out.println("s = " + st);
     }
   }
-
 }

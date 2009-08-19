@@ -32,7 +32,7 @@ public class ShowParameters_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl P";
   }
@@ -47,7 +47,7 @@ public class ShowParameters_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -61,7 +61,7 @@ public class ShowParameters_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -81,7 +81,7 @@ public class ShowParameters_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       Point p = new Point(ShowParameters_Action.this.cell.getX() + ShowParameters_Action.this.cell.getWidth(), ShowParameters_Action.this.cell.getY());
       SwingUtilities.convertPointToScreen(p, ShowParameters_Action.this.editor);
@@ -93,7 +93,7 @@ public class ShowParameters_Action extends GeneratedAction {
     }
   }
 
-  /* package */SNode getMethod() {
+  /*package*/ SNode getMethod() {
     SNode methodCall = SNodeOperations.getAncestor(ShowParameters_Action.this.getCellNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall", true, false);
     if (methodCall == null) {
       return null;
@@ -101,8 +101,7 @@ public class ShowParameters_Action extends GeneratedAction {
     return SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
   }
 
-  /* package */SNode getCellNode() {
+  /*package*/ SNode getCellNode() {
     return ShowParameters_Action.this.cell.getSNode();
   }
-
 }

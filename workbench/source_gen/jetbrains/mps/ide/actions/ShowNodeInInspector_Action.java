@@ -26,7 +26,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -35,7 +35,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     return ShowNodeInInspector_Action.this.editor instanceof InspectorEditorComponent;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -49,7 +49,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -65,7 +65,7 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       InspectorEditorComponent inspector = (InspectorEditorComponent)ShowNodeInInspector_Action.this.editor;
       inspector.inspectNode(ShowNodeInInspector_Action.this.node, inspector.getOperationContext());
@@ -75,5 +75,4 @@ public class ShowNodeInInspector_Action extends GeneratedAction {
       }
     }
   }
-
 }

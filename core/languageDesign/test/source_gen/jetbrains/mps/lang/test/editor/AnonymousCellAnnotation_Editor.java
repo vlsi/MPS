@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7250_0(editorContext, node);
   }
@@ -33,8 +32,7 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = this.createConstant_7250_5(editorContext, node);
-    } else
-    {
+    } else {
       editorCell = this.createNonEmptyProperty_7250_0(editorContext, node);
     }
     {
@@ -270,7 +268,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7250_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isLastPosition");
   }
@@ -278,5 +275,4 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition7250_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "useLabelSelection");
   }
-
 }

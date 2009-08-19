@@ -23,7 +23,6 @@ public class AtLeastNTimesRegexp extends UnaryRegexp {
     this.setIntegerProperty(AtLeastNTimesRegexp.N, value);
   }
 
-
   public static AtLeastNTimesRegexp newInstance(SModel sm, boolean init) {
     return (AtLeastNTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class AtLeastNTimesRegexp extends UnaryRegexp {
   public static AtLeastNTimesRegexp newInstance(SModel sm) {
     return AtLeastNTimesRegexp.newInstance(sm, false);
   }
-
 }

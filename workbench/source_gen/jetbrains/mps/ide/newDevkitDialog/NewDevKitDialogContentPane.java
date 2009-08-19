@@ -35,7 +35,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
 
 public class NewDevKitDialogContentPane extends JPanel {
-
   public NewDevKitDialogContentPane myThis;
   private JLabel myComponent0;
   private JTextField myName0;
@@ -50,7 +49,6 @@ public class NewDevKitDialogContentPane extends JPanel {
   private Events myEvents = new Events(null) {
     {
     }
-
 
     public void initialize() {
     }
@@ -107,7 +105,7 @@ public class NewDevKitDialogContentPane extends JPanel {
   }
 
   private void unbind() {
-    for(AutoBinding binding : this.myBindings) {
+    for (AutoBinding binding : this.myBindings) {
       if (binding.isBound()) {
         binding.unbind();
       }
@@ -192,7 +190,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     this.firePropertyChange("dialog", oldValue, newValue);
   }
 
-  /* package */void onOk() {
+  /*package*/ void onOk() {
     if (myThis.getDevkitDir().length() == 0) {
       myThis.getDialog().setErrorText("Enter DevKit Directory");
       return;
@@ -219,11 +217,9 @@ public class NewDevKitDialogContentPane extends JPanel {
     Project ideaProject = myThis.getProject().getComponent(Project.class);
     final DevKit[] localResult = new DevKit[1];
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Creating", false) {
-
-      public void run(@NotNull() ProgressIndicator indicator) {
+      public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
-
           public void run() {
             localResult[0] = myThis.createNewDevKit(new File(devkitPath));
           }
@@ -233,11 +229,11 @@ public class NewDevKitDialogContentPane extends JPanel {
     myThis.setResult(localResult[0]);
   }
 
-  /* package */void onCancel() {
+  /*package*/ void onCancel() {
     myThis.getDialog().dispose();
   }
 
-  /* package */void updateSolutionPath() {
+  /*package*/ void updateSolutionPath() {
     if (myThis.getProject() == null) {
       return;
     }
@@ -248,7 +244,7 @@ public class NewDevKitDialogContentPane extends JPanel {
     }
   }
 
-  /* package */DevKit createNewDevKit(final File devkitPath) {
+  /*package*/ DevKit createNewDevKit(final File devkitPath) {
     File dir = new File(myThis.getDevkitDir());
     if (!(dir.exists())) {
       dir.mkdirs();
@@ -259,12 +255,10 @@ public class NewDevKitDialogContentPane extends JPanel {
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptor, devkitFile);
     DevKit devkit = myThis.getProject().addProjectDevKit(devkitFile);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
-
       public void run() {
         ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(devkitPath), false);
       }
     }, ModalityState.NON_MODAL);
     return devkit;
   }
-
 }

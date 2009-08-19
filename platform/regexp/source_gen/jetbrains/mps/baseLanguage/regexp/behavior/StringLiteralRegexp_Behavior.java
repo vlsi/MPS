@@ -17,7 +17,7 @@ public class StringLiteralRegexp_Behavior {
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     char[] chars = new char[]{'\\','(',')','}','{','[',']','+','*','?','|','^','.','$'};
     String text = SPropertyOperations.getString(thisNode, "text");
-    for(int i = 0 ; i < chars.length ; i++ ) {
+    for (int i = 0 ; i < chars.length ; i++ ) {
       text = text.replaceAll("\\" + chars[i], "\\\\\\\\" + chars[i]);
     }
     return text;
@@ -30,5 +30,4 @@ public class StringLiteralRegexp_Behavior {
   public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
   }
-
 }

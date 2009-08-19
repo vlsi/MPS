@@ -25,7 +25,6 @@ public class LibraryFolder extends Folder {
     super.setChild(LibraryFolder.LIBRARY_NAME, node);
   }
 
-
   public static LibraryFolder newInstance(SModel sm, boolean init) {
     return (LibraryFolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.LibraryFolder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -33,5 +32,4 @@ public class LibraryFolder extends Folder {
   public static LibraryFolder newInstance(SModel sm) {
     return LibraryFolder.newInstance(sm, false);
   }
-
 }

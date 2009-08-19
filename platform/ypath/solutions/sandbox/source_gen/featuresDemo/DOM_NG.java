@@ -18,12 +18,12 @@ import java.util.ArrayList;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 
 public class DOM_NG extends TreePath<Node> {
-
   public DOM_NG() {
     this.registerFeature(new DOM_NG.Desc_Feature_nodes());
     this.registerFeature(new DOM_NG.Desc_Feature_attributes());
     this.registerFeature(new DOM_NG.Desc_Feature_parent());
   }
+
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
     private static DOM_NG.ELEMENT_NodeKindTrigger instance;
 
@@ -34,32 +34,27 @@ public class DOM_NG extends TreePath<Node> {
       return e instanceof Element;
     }
 
-
     public static IFilter<Node> getInstance() {
       if (instance == null) {
         instance = new DOM_NG.ELEMENT_NodeKindTrigger();
       }
       return instance;
     }
+  }
 
-}
   public static class ELEMENT_tag_Property {
-
     public static IFilter<Node> getMatcher(final String matchValue) {
       IFilter filter;
       if (matchValue != null) {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
         };
-      } else
-      {
+      } else {
         filter = new IFilter() {
-
           public boolean accept(Object n) {
             Node node = (Node)n;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
@@ -71,16 +66,13 @@ public class DOM_NG extends TreePath<Node> {
     }
 
     private static class Getter {
-
       public static String getValue(Node e) {
         return ((Element)e).getTagName();
       }
+    }
+  }
 
-}
-
-}
   private static class Feature_nodes extends AbstractList<Node> {
-
     private Node thisNode;
 
     public Feature_nodes(Node thisNode) {
@@ -97,10 +89,9 @@ public class DOM_NG extends TreePath<Node> {
     public int size() {
       return this.thisNode.getChildNodes().getLength();
     }
+  }
 
-}
   private static class Feature_attributes extends AbstractCollection<Node> {
-
     private Node thisNode;
 
     public Feature_attributes(Node thisNode) {
@@ -109,14 +100,11 @@ public class DOM_NG extends TreePath<Node> {
 
     public Iterable<Node> sequence() {
       final Node _node = this.thisNode;
-      return Sequence.fromClosure(new ISequenceClosure <Node>() {
-
+      return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
-          return new Iterable <Node>() {
-
+          return new Iterable<Node>() {
             public Iterator<Node> iterator() {
-              return new YieldingIterator <Node>() {
-
+              return new YieldingIterator<Node>() {
                 private int __CP__ = 0;
                 private NamedNodeMap _3_attributes;
                 private int _7_count;
@@ -185,10 +173,9 @@ __switch__:
     public int size() {
       return this.thisNode.getAttributes().getLength();
     }
+  }
 
-}
   private static class Feature_parent extends AbstractCollection<Node> {
-
     private Node thisNode;
 
     public Feature_parent(Node thisNode) {
@@ -210,10 +197,9 @@ __switch__:
     public int size() {
       return 1;
     }
+  }
 
-}
   public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_nodes() {
     }
 
@@ -236,10 +222,9 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_attributes() {
     }
 
@@ -262,10 +247,9 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
+  }
 
-}
   public static class Desc_Feature_parent extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
-
     public Desc_Feature_parent() {
     }
 
@@ -288,7 +272,5 @@ __switch__:
     public boolean isAscending() {
       return false;
     }
-
-}
-
+  }
 }

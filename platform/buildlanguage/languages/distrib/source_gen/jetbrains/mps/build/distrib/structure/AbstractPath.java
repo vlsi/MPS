@@ -22,5 +22,4 @@ public class AbstractPath extends BaseConcept {
   public static AbstractPath newInstance(SModel sm) {
     return AbstractPath.newInstance(sm, false);
   }
-
 }

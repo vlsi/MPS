@@ -24,7 +24,6 @@ public class DegreeComplexExpression extends SingleComplexExpression {
     super.setChild(DegreeComplexExpression.DEGREE, node);
   }
 
-
   public static DegreeComplexExpression newInstance(SModel sm, boolean init) {
     return (DegreeComplexExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class DegreeComplexExpression extends SingleComplexExpression {
   public static DegreeComplexExpression newInstance(SModel sm) {
     return DegreeComplexExpression.newInstance(sm, false);
   }
-
 }

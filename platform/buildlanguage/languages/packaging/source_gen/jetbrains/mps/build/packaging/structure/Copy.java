@@ -41,7 +41,6 @@ public class Copy extends AbstractProjectComponent {
     super.setChild(Copy.SOURCE_PATH, node);
   }
 
-
   public static Copy newInstance(SModel sm, boolean init) {
     return (Copy)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Copy", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -49,5 +48,4 @@ public class Copy extends AbstractProjectComponent {
   public static Copy newInstance(SModel sm) {
     return Copy.newInstance(sm, false);
   }
-
 }

@@ -14,8 +14,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
 
-public class CheckBoxTree <N extends NodeData> extends JPanel {
-
+public class CheckBoxTree<N extends NodeData> extends JPanel {
   private final JTree myTree;
   private final Set<N> mySelectedItems = SetSequence.fromSet(new HashSet<N>());
 
@@ -25,7 +24,6 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
     this.myTree.setCellRenderer(new CheckBoxCellRenderrer());
     this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     this.myTree.addMouseListener(new MouseAdapter() {
-
       public void mousePressed(MouseEvent e) {
         CheckBoxTree.this.mouseParessed(e.getX(), e.getY());
       }
@@ -56,7 +54,7 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
   public void checkNodeRecursively(CheckBoxNode<N> checkBoxNode, boolean check) {
     this.checkNode(checkBoxNode, check);
     int childCount = checkBoxNode.getChildCount();
-    for(int i = 0 ; i < childCount ; i++ ) {
+    for (int i = 0 ; i < childCount ; i++ ) {
       this.checkNodeRecursively((CheckBoxNode<N>)checkBoxNode.getChildAt(i), check);
     }
   }
@@ -77,8 +75,7 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
   private void checkNode(CheckBoxNode<N> checkBoxNode, boolean check) {
     if (check) {
       SetSequence.fromSet(CheckBoxTree.this.mySelectedItems).addElement(checkBoxNode.getData());
-    } else
-    {
+    } else {
       SetSequence.fromSet(CheckBoxTree.this.mySelectedItems).removeElement(checkBoxNode.getData());
     }
     checkBoxNode.setChecked(check);
@@ -87,5 +84,4 @@ public class CheckBoxTree <N extends NodeData> extends JPanel {
   public Set<N> getSelectedItems() {
     return SetSequence.fromSetWithValues(new HashSet<N>(), this.mySelectedItems);
   }
-
 }

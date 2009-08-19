@@ -65,7 +65,6 @@ public class NodeOperationsContainer extends BaseConcept implements INodeAnnotat
     this.insertChild(prev, NodeOperationsContainer.OPERATIONS, node);
   }
 
-
   public static NodeOperationsContainer newInstance(SModel sm, boolean init) {
     return (NodeOperationsContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperationsContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -73,5 +72,4 @@ public class NodeOperationsContainer extends BaseConcept implements INodeAnnotat
   public static NodeOperationsContainer newInstance(SModel sm) {
     return NodeOperationsContainer.newInstance(sm, false);
   }
-
 }

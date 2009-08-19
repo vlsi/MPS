@@ -22,7 +22,6 @@ public class BlockReference extends MPSLiteConceptReference {
     this.setMpsLiteConceptDeclaration(node);
   }
 
-
   public static BlockReference newInstance(SModel sm, boolean init) {
     return (BlockReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -30,5 +29,4 @@ public class BlockReference extends MPSLiteConceptReference {
   public static BlockReference newInstance(SModel sm) {
     return BlockReference.newInstance(sm, false);
   }
-
 }

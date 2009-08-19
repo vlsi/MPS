@@ -32,7 +32,6 @@ public class Module extends AbstractProjectComponent {
     super.setReferent(Module.CYCLE, node);
   }
 
-
   public static Module newInstance(SModel sm, boolean init) {
     return (Module)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Module", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -40,5 +39,4 @@ public class Module extends AbstractProjectComponent {
   public static Module newInstance(SModel sm) {
     return Module.newInstance(sm, false);
   }
-
 }

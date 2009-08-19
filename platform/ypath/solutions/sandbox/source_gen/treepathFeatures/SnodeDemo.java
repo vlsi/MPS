@@ -17,17 +17,13 @@ import java.util.List;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 
 public class SnodeDemo {
-
   public static void main(String[] args) {
     final SNode foo = null;
-    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).translate(new ITranslator2 <SNode, SNode>() {
-
+    ListSequence.fromList((SLinkOperations.getTargets(foo, "implements", true))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -55,14 +51,11 @@ __switch__:
           }
         };
       }
-    }).translate(new ITranslator2 <SNode, SNode>() {
-
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2__zzz_;
               private Iterator<SNode> _2__zzz__it;
@@ -107,20 +100,16 @@ __switch__:
       }
     });
     // The following ypath construct should result in the same expression as above
-    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure <SNode>() {
-
+    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
       }
-    })).translate(new ITranslator2 <SNode, SNode>() {
-
+    })).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -148,14 +137,11 @@ __switch__:
           }
         };
       }
-    }).translate(new ITranslator2 <SNode, SNode>() {
-
+    }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2__yyy_;
               private Iterator<SNode> _2__yyy__it;
@@ -200,14 +186,11 @@ __switch__:
       }
     });
     // Another pair of tests
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2 <SNode, SNode>() {
-
+    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_p;
               private Iterator<SNode> _2_p_it;
@@ -276,14 +259,11 @@ __switch__:
         };
       }
     });
-    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2 <SNode, SNode>() {
-
+    ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(foo, "extends", false))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _5__yyy_;
               private Iterator<SNode> _5__yyy__it;
@@ -355,17 +335,13 @@ __switch__:
     // And another one
     /*
       //  way too complicated
-      ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).translate(new ITranslator2 <SNode, SNode>() {
-
+      ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), foo)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return new _FunctionTypes._return_P1_E0 <Iterable<SNode>, SNode>() {
-
+          return new _FunctionTypes._return_P1_E0<Iterable<SNode>, SNode>() {
             public Iterable<SNode> invoke(final SNode _zzz_) {
-              return new Iterable <SNode>() {
-
+              return new Iterable<SNode>() {
                 public Iterator<SNode> iterator() {
-                  return new YieldingIterator <SNode>() {
-
+                  return new YieldingIterator<SNode>() {
                     private int __CP__ = 0;
                     private SNode _2__yyy_;
                     private Iterator<SNode> _2__yyy__it;
@@ -416,14 +392,11 @@ __switch__:
         }
       });
     */
-    Sequence.fromClosure(new ISequenceClosure <SNode>() {
-
+    Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3__zzz_;
               private List<SNode> _5__yyy_;
@@ -478,20 +451,16 @@ __switch__:
       }
     });
     // Following is just a test
-    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure <SNode>() {
-
+    Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SLinkOperations.getTargets(_zzz_, "implements", true);
       }
-    })).translate(new ITranslator2 <SNode, SNode>() {
-
+    })).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -522,14 +491,11 @@ __switch__:
     });
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("ANCESTORS"));
-    Sequence.fromClosure(new ISequenceClosure <SNode>() {
-
+    Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _3__zzz_;
               private List<SNode> _7__yyy_;
@@ -590,8 +556,7 @@ __switch__:
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
     TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"));
-    Sequence.fromClosure(new ISequenceClosure <SNode>() {
-
+    Sequence.fromClosure(new ISequenceClosure<SNode>() {
       public Iterable<SNode> iterable() {
         SNode _zzz_ = foo;
         return SNodeOperations.getChildren(_zzz_);
@@ -599,5 +564,4 @@ __switch__:
     });
     // !@#$&
   }
-
 }

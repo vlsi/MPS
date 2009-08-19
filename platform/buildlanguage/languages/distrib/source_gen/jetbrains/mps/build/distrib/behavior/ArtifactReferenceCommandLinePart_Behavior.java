@@ -5,7 +5,6 @@ package jetbrains.mps.build.distrib.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public class ArtifactReferenceCommandLinePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -16,5 +15,4 @@ public class ArtifactReferenceCommandLinePart_Behavior {
   public static String getExecutableFilePropertyName_1231864298769() {
     return "installer";
   }
-
 }

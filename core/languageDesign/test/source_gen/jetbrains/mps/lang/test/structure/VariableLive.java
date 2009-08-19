@@ -24,7 +24,6 @@ public class VariableLive extends NodeProperty {
     super.setChild(VariableLive.VAR, node);
   }
 
-
   public static VariableLive newInstance(SModel sm, boolean init) {
     return (VariableLive)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableLive", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class VariableLive extends NodeProperty {
   public static VariableLive newInstance(SModel sm) {
     return VariableLive.newInstance(sm, false);
   }
-
 }

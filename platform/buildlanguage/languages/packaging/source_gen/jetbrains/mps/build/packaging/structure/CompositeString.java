@@ -60,7 +60,6 @@ public class CompositeString extends BaseConcept implements IStringExpression {
     super.setChild(CompositeString.RIGHT, node);
   }
 
-
   public static CompositeString newInstance(SModel sm, boolean init) {
     return (CompositeString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositeString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   public static CompositeString newInstance(SModel sm) {
     return CompositeString.newInstance(sm, false);
   }
-
 }

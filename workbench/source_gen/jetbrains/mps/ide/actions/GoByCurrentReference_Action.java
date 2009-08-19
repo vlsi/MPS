@@ -40,7 +40,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl B";
   }
@@ -62,7 +62,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -76,7 +76,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -104,7 +104,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
       if (SModelStereotype.JAVA_STUB.equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.project.getProjectHandler() != null) {
@@ -155,8 +155,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
         String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
         SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         handler.openMethod(classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count());
-      } else
-      {
+      } else {
         String classifierName = GoByCurrentReference_Action.this.getClassifierName(targetNode, ref);
         handler.openField(classifierName, targetNode.getName());
       }
@@ -173,5 +172,4 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     assert classifier != null;
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
-
 }

@@ -23,7 +23,6 @@ public class StringCommandLinePart extends AbstractCommandLinePart {
     this.setProperty(StringCommandLinePart.TEXT, value);
   }
 
-
   public static StringCommandLinePart newInstance(SModel sm, boolean init) {
     return (StringCommandLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.StringCommandLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class StringCommandLinePart extends AbstractCommandLinePart {
   public static StringCommandLinePart newInstance(SModel sm) {
     return StringCommandLinePart.newInstance(sm, false);
   }
-
 }

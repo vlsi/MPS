@@ -25,7 +25,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ProjectDescription_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6967_0(editorContext, node);
   }
@@ -209,7 +208,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   }
 
   private static class cycleListHandler_6967_0 extends RefNodeListHandler {
-
     public cycleListHandler_6967_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -249,10 +247,9 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class macroListHandler_6967_0 extends RefNodeListHandler {
-
     public macroListHandler_6967_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -292,10 +289,9 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
+  }
 
-}
   private static class commonClasspathListHandler_6967_0 extends RefNodeListHandler {
-
     public commonClasspathListHandler_6967_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -335,7 +331,5 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

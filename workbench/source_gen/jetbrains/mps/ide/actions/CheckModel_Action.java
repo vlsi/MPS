@@ -34,12 +34,12 @@ public class CheckModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -50,7 +50,7 @@ public class CheckModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -70,16 +70,14 @@ public class CheckModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final IOperationContext context = CheckModel_Action.this.operationContext;
       final SModelDescriptor model = CheckModel_Action.this.model;
       ProgressManager.getInstance().run(new Task.Modal(CheckModel_Action.this.project, "Checking", false) {
-
-        public void run(@NotNull() ProgressIndicator indicator) {
+        public void run(@NotNull ProgressIndicator indicator) {
           indicator.setIndeterminate(true);
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ModelCheckerUtil.checkModels(context, CollectionUtil.set(model), new NullAdaptiveProgressMonitor());
             }
@@ -92,5 +90,4 @@ public class CheckModel_Action extends GeneratedAction {
       }
     }
   }
-
 }

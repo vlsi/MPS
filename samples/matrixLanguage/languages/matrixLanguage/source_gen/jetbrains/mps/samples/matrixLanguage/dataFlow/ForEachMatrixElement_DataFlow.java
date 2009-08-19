@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ForEachMatrixElement_DataFlow extends DataFlowBuilder {
-
   public ForEachMatrixElement_DataFlow() {
   }
 
@@ -22,5 +21,4 @@ public class ForEachMatrixElement_DataFlow extends DataFlowBuilder {
     _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "start"));
   }
-
 }

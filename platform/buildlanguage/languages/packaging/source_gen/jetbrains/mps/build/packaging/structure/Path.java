@@ -60,7 +60,6 @@ public class Path extends PropertyValueExpression implements IPath {
     super.setChild(Path.COMPOSITE_PATH_COMPONENT, node);
   }
 
-
   public static Path newInstance(SModel sm, boolean init) {
     return (Path)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class Path extends PropertyValueExpression implements IPath {
   public static Path newInstance(SModel sm) {
     return Path.newInstance(sm, false);
   }
-
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class CreateNewTarget_Intention extends BaseIntention {
-
   public CreateNewTarget_Intention() {
   }
 
@@ -56,5 +55,4 @@ public class CreateNewTarget_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.build.packaging.intentions";
   }
-
 }

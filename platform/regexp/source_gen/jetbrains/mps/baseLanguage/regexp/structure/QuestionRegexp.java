@@ -21,5 +21,4 @@ public class QuestionRegexp extends UnaryRegexp {
   public static QuestionRegexp newInstance(SModel sm) {
     return QuestionRegexp.newInstance(sm, false);
   }
-
 }

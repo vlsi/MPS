@@ -33,19 +33,18 @@ public class NewAspectModel_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       event.getPresentation().setText("New " + NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
       event.getPresentation().setIcon(NewAspectModel_Action.this.aspect.getIcon());
       if (NewAspectModel_Action.this.module instanceof Language) {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language)NewAspectModel_Action.this.module)) == null);
-      } else
-      {
+      } else {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
     } catch (Throwable t) {
@@ -56,7 +55,7 @@ public class NewAspectModel_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,12 +71,11 @@ public class NewAspectModel_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language)NewAspectModel_Action.this.module));
       // we need it since tree is updated later
       SwingUtilities.invokeLater(new Runnable() {
-
         public void run() {
           NewAspectModel_Action.this.project.getComponentSafe(ProjectPane.class).selectModel(modelDescriptor);
         }
@@ -89,7 +87,7 @@ public class NewAspectModel_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(NewAspectModel_Action.class.getName());
@@ -99,9 +97,7 @@ public class NewAspectModel_Action extends GeneratedAction {
     return res.toString();
   }
 
-
   public static String aspect_State(LanguageAspect object) {
     return object.getName();
   }
-
 }

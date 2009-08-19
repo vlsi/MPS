@@ -33,7 +33,7 @@ public class RenamePackage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "shift F6";
   }
@@ -42,7 +42,7 @@ public class RenamePackage_Action extends GeneratedAction {
     return RenamePackage_Action.this.ppNode instanceof PackageNode;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class RenamePackage_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,13 +72,12 @@ public class RenamePackage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();
       final PackageNode treeNode = (PackageNode)RenamePackage_Action.this.ppNode;
       final String name = treeNode.getPackage();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           nodes.value = treeNode.getNodesUnderPackage();
         }
@@ -88,9 +87,8 @@ public class RenamePackage_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
-          for(SNode node : SetSequence.fromSet(nodes.value)) {
+          for (SNode node : SetSequence.fromSet(nodes.value)) {
             String oldPackage = node.getProperty(SModelTreeNode.PACK);
             String newPackage = newName + oldPackage.substring(name.length());
             node.setProperty(SModelTreeNode.PACK, (newPackage.length() > 0 ?
@@ -106,5 +104,4 @@ public class RenamePackage_Action extends GeneratedAction {
       }
     }
   }
-
 }

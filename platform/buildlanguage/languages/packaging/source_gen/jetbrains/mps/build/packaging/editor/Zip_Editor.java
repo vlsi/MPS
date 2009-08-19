@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Zip_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5723_0(editorContext, node);
   }
@@ -209,5 +208,4 @@ public class Zip_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

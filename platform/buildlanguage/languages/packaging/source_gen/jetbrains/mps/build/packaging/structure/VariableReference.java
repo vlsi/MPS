@@ -51,7 +51,6 @@ public class VariableReference extends BaseConcept implements IStringExpression 
     super.setReferent(VariableReference.VARIABLE, node);
   }
 
-
   public static VariableReference newInstance(SModel sm, boolean init) {
     return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class VariableReference extends BaseConcept implements IStringExpression 
   public static VariableReference newInstance(SModel sm) {
     return VariableReference.newInstance(sm, false);
   }
-
 }

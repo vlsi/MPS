@@ -83,7 +83,6 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
     this.insertChild(prev, AbstractCall.NESTED, node);
   }
 
-
   public static AbstractCall newInstance(SModel sm, boolean init) {
     return (AbstractCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -91,5 +90,4 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
   public static AbstractCall newInstance(SModel sm) {
     return AbstractCall.newInstance(sm, false);
   }
-
 }

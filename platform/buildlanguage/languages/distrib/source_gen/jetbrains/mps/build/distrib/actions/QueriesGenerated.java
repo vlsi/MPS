@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Role_1234544619638(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -26,16 +25,14 @@ public class QueriesGenerated {
       SNode childConcept = (SNode)_context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
-
           public Object calculate() {
             return ListSequence.fromListAndArray(new LinkedList<String>(), "Editor", "Viewer", "Shell", "None");
           }
         };
         Iterable<String> queryResult = (Iterable)calc.calculate();
         if (queryResult != null) {
-          for(final String item : queryResult) {
+          for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
-
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode role = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.Role", null);
                 SPropertyOperations.set(role, "name", "" + ((item)));
@@ -48,5 +45,4 @@ public class QueriesGenerated {
     }
     return result;
   }
-
 }

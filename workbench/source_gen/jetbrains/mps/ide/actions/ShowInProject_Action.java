@@ -28,12 +28,12 @@ public class ShowInProject_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "alt F2";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -44,7 +44,7 @@ public class ShowInProject_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -60,7 +60,7 @@ public class ShowInProject_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProjectPane pane = ShowInProject_Action.this.context.getComponent(ProjectPane.class);
       pane.selectNode(ShowInProject_Action.this.node, ShowInProject_Action.this.context);
@@ -71,5 +71,4 @@ public class ShowInProject_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -41,13 +41,13 @@ public class SetNodePackage_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    for(SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
+    for (SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
       if (!(node.isRoot())) {
         return false;
       }
@@ -55,7 +55,7 @@ public class SetNodePackage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -69,7 +69,7 @@ public class SetNodePackage_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -81,8 +81,7 @@ public class SetNodePackage_Action extends GeneratedAction {
       }
       if (error || nodes == null) {
         this.nodes = null;
-      } else
-      {
+      } else {
         this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
       }
     }
@@ -100,12 +99,11 @@ public class SetNodePackage_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
       final Wrappers._T<String> oldPackage = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           packages.value = SetNodePackage_Action.this.fetchExistingPackages(SetNodePackage_Action.this.nodes);
           oldPackage.value = ListSequence.fromList(SetNodePackage_Action.this.nodes).first().getProperty(SModelTreeNode.PACK);
@@ -118,12 +116,11 @@ public class SetNodePackage_Action extends GeneratedAction {
         return;
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
-          for(SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
+          for (SNode node : ListSequence.fromList(SetNodePackage_Action.this.nodes)) {
             node.setProperty(SModelTreeNode.PACK, dialog.getPackage());
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-              for(SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SetNodePackage_Action.this.scope))) {
+              for (SNode aspect : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), SetNodePackage_Action.this.scope))) {
                 aspect.setProperty(SModelTreeNode.PACK, dialog.getPackage());
               }
             }
@@ -137,14 +134,14 @@ public class SetNodePackage_Action extends GeneratedAction {
     }
   }
 
-  /* package */List<String> fetchExistingPackages(List<SNode> nlist) {
+  /*package*/ List<String> fetchExistingPackages(List<SNode> nlist) {
     Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
-    for(SNode node : ListSequence.fromList(nlist)) {
+    for (SNode node : ListSequence.fromList(nlist)) {
       SetSequence.fromSet(models).addElement(SNodeOperations.getModel(node));
     }
     Set<String> packages = SetSequence.fromSet(new HashSet<String>());
-    for(SModel model : SetSequence.fromSet(models)) {
-      for(SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
+    for (SModel model : SetSequence.fromSet(models)) {
+      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
         String p = root.getProperty(SModelTreeNode.PACK);
         if (p != null) {
           SetSequence.fromSet(packages).addElement(p);
@@ -155,5 +152,4 @@ public class SetNodePackage_Action extends GeneratedAction {
     Collections.sort(result);
     return result;
   }
-
 }

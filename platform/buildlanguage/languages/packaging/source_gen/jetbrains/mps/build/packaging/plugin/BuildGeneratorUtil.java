@@ -23,7 +23,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
-
   public BuildGeneratorUtil() {
   }
 
@@ -31,7 +30,7 @@ public class BuildGeneratorUtil {
     SModelFqName newModelFQName = SModelFqName.fromString(modelName);
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
     SModelDescriptor modelDescriptor = null;
-    for(SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
+    for (SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
       if (descriptor.getSModelFqName().equals(newModelFQName)) {
         modelDescriptor = descriptor;
         break;
@@ -52,8 +51,7 @@ public class BuildGeneratorUtil {
     final IFile solutionFile = FileSystem.getFile(solutionFilePath);
     final Solution solution;
     if (solutionFile.exists()) {
-      IModule module = ModelAccess.instance().runReadAction(new Computable <IModule>() {
-
+      IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
         public IModule compute() {
           return MPSModuleRepository.getInstance().getModuleByFile(solutionFile.toFile());
         }
@@ -62,12 +60,10 @@ public class BuildGeneratorUtil {
         solution = (Solution)module;
       } else if (module == null) {
         solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
-      } else
-      {
+      } else {
         return null;
       }
-    } else
-    {
+    } else {
       solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
     }
     return solution;
@@ -84,8 +80,7 @@ public class BuildGeneratorUtil {
     mr.setPath(solutionDescriptorFile.getParent().getAbsolutePath());
     descriptor.getModelRoots().add(mr);
     SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor);
-    return ModelAccess.instance().runWriteAction(new Computable <Solution>() {
-
+    return ModelAccess.instance().runWriteAction(new Computable<Solution>() {
       public Solution compute() {
         return MPSModuleRepository.getInstance().registerSolution(solutionDescriptorFile, mpsProject);
       }
@@ -96,5 +91,4 @@ public class BuildGeneratorUtil {
     Language packagingLanguage = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging");
     return packagingLanguage.getModuleReference();
   }
-
 }

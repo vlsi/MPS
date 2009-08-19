@@ -23,7 +23,6 @@ public class StringLiteralRegexp extends Regexp {
     this.setProperty(StringLiteralRegexp.TEXT, value);
   }
 
-
   public static StringLiteralRegexp newInstance(SModel sm, boolean init) {
     return (StringLiteralRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class StringLiteralRegexp extends Regexp {
   public static StringLiteralRegexp newInstance(SModel sm) {
     return StringLiteralRegexp.newInstance(sm, false);
   }
-
 }

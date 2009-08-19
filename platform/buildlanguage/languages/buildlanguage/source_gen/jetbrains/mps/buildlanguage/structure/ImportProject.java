@@ -23,7 +23,6 @@ public class ImportProject extends AbstractImportProject {
     super.setReferent(ImportProject.PROJECT, node);
   }
 
-
   public static ImportProject newInstance(SModel sm, boolean init) {
     return (ImportProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ImportProject extends AbstractImportProject {
   public static ImportProject newInstance(SModel sm) {
     return ImportProject.newInstance(sm, false);
   }
-
 }

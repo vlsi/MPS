@@ -26,5 +26,4 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, LanguageActions_ActionGroup.LABEL_ID_newGroup);
   }
-
 }

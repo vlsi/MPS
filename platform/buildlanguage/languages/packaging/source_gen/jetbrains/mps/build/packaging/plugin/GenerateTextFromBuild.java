@@ -29,8 +29,7 @@ public class GenerateTextFromBuild {
   }
 
   public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, MPSProject project, boolean showWindow) {
-    String basedir = ModelAccess.instance().runReadAction(new Computable <String>() {
-
+    String basedir = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
       }
@@ -40,10 +39,8 @@ public class GenerateTextFromBuild {
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, configuration);
     if (showWindow) {
       generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationType, true);
-    } else
-    {
+    } else {
       generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationType, new EmptyProgressIndicator(), new IMessageHandler() {
-
         public void handle(Message message) {
           switch (message.getKind()) {
             case ERROR:
@@ -64,9 +61,8 @@ public class GenerateTextFromBuild {
     final List<SNode> roots = descriptor.getSModel().getRoots();
     final Wrappers._T<SNode> layout = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
-        for(SNode root : ListSequence.fromList(roots)) {
+        for (SNode root : ListSequence.fromList(roots)) {
           if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.build.packaging.structure.MPSLayout")) {
             layout.value = SNodeOperations.cast(root, "jetbrains.mps.build.packaging.structure.MPSLayout");
             return;
@@ -76,5 +72,4 @@ public class GenerateTextFromBuild {
     });
     return layout.value;
   }
-
 }

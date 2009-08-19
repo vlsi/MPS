@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class CreateListPattern_Intention extends BaseIntention {
-
   public CreateListPattern_Intention() {
   }
 
@@ -52,7 +51,7 @@ public class CreateListPattern_Intention extends BaseIntention {
     SNode currentNode = editorContext.getSelectedNode();
     List<SNode> siblings = SNodeOperations.getAllSiblings(currentNode, false);
     SLinkOperations.setNewChild(currentNode, AttributesRolesUtil.childRoleFromAttributeRole("asPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
-    for(SNode sibling : siblings) {
+    for (SNode sibling : siblings) {
       SNodeOperations.deleteNode(sibling);
     }
   }
@@ -60,5 +59,4 @@ public class CreateListPattern_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.pattern.intentions";
   }
-
 }

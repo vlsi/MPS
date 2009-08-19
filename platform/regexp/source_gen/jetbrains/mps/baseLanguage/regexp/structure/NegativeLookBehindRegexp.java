@@ -21,5 +21,4 @@ public class NegativeLookBehindRegexp extends LookRegexp {
   public static NegativeLookBehindRegexp newInstance(SModel sm) {
     return NegativeLookBehindRegexp.newInstance(sm, false);
   }
-
 }

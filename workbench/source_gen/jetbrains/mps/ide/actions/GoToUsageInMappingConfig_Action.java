@@ -34,7 +34,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -55,7 +55,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     return true;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -69,7 +69,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -94,7 +94,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator)GoToUsageInMappingConfig_Action.this.module), SNodeOperations.getContainingRoot(GoToUsageInMappingConfig_Action.this.node));
       GoToUsageInMappingConfig_Action.this.project.getComponentSafe(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
@@ -104,5 +104,4 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
       }
     }
   }
-
 }

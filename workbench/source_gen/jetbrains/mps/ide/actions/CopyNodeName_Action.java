@@ -24,7 +24,7 @@ public class CopyNodeName_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -33,7 +33,7 @@ public class CopyNodeName_Action extends GeneratedAction {
     return CopyNodeName_Action.this.node.isRoot();
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -47,7 +47,7 @@ public class CopyNodeName_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -59,7 +59,7 @@ public class CopyNodeName_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       CopyPasteUtil.copyTextToClipboard(CopyNodeName_Action.this.node.getModel().getLongName() + "." + CopyNodeName_Action.this.node.getName());
     } catch (Throwable t) {
@@ -68,5 +68,4 @@ public class CopyNodeName_Action extends GeneratedAction {
       }
     }
   }
-
 }

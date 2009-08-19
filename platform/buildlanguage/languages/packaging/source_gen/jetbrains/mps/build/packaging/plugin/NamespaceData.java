@@ -10,7 +10,6 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.projectPane.Icons;
 
 public class NamespaceData implements NodeData {
-
   private String myText;
   private final List<NodeData> myData = ListSequence.fromList(new LinkedList<NodeData>());
   private NodeData myParent;
@@ -53,5 +52,4 @@ public class NamespaceData implements NodeData {
   public void setParent(NodeData parent) {
     this.myParent = parent;
   }
-
 }

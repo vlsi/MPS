@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.IStringExpression_Behavior;
 
 public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
-
   private String myPathToBuildTools = "";
 
   public CustomMPSBuildGenerator(Project project) {
@@ -57,7 +56,7 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     SLinkOperations.addChild(mpsLayout, "component", mpsBuild);
     // 
     SNode libraryFolder = createLibraryFolder(rootFolder);
-    for(SNode entry : ListSequence.fromList(entries)) {
+    for (SNode entry : ListSequence.fromList(entries)) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
         SLinkOperations.addChild(libraryFolder, "entry", entry);
       } else if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Folder")) {
@@ -78,20 +77,17 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     if (index > -1) {
       String macro = result.substring(result.indexOf("{") + 1, index);
       PackagingLanguageGenerator.createPath(buildToolsPath, macro, result.substring(index + 2));
-    } else
-    {
+    } else {
       PackagingLanguageGenerator.createPath(buildToolsPath, "", this.myPathToBuildTools);
     }
     SLinkOperations.setTarget(mpsBuild, "pathToBuildToolsZip", buildToolsPath, true);
     SPropertyOperations.set(mpsLayout, "scriptsFolder", "build");
     return new Runnable() {
-
       public void run() {
         CustomMPSBuildGenerator.this.finishGeneration(targetModelDescriptor, mpsLayout);
       }
     };
   }
-
 
   public static SNode createLibraryFolder(SNode prototypeFolder) {
     SNode libraryFolder = SConceptOperations.createNewNode("jetbrains.mps.build.custommps.structure.LibraryFolder", null);
@@ -100,5 +96,4 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     SLinkOperations.setTarget(libraryFolder, "libraryName", PackagingLanguageGenerator.createSimpleString(IStringExpression_Behavior.call_getValue_1213877173054(SLinkOperations.getTarget(libraryFolder, "title", true)).toLowerCase()), true);
     return libraryFolder;
   }
-
 }

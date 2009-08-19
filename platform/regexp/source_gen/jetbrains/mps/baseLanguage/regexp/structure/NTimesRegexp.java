@@ -23,7 +23,6 @@ public class NTimesRegexp extends UnaryRegexp {
     this.setIntegerProperty(NTimesRegexp.N, value);
   }
 
-
   public static NTimesRegexp newInstance(SModel sm, boolean init) {
     return (NTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class NTimesRegexp extends UnaryRegexp {
   public static NTimesRegexp newInstance(SModel sm) {
     return NTimesRegexp.newInstance(sm, false);
   }
-
 }

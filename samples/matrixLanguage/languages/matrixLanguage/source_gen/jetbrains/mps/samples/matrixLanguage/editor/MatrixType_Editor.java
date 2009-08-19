@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MatrixType_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2303_0(editorContext, node);
   }
@@ -70,5 +69,4 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

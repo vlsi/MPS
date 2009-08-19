@@ -23,7 +23,6 @@ public class CharacterSymbolClassPart extends SymbolClassPart {
     this.setProperty(CharacterSymbolClassPart.CHARACTER, value);
   }
 
-
   public static CharacterSymbolClassPart newInstance(SModel sm, boolean init) {
     return (CharacterSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class CharacterSymbolClassPart extends SymbolClassPart {
   public static CharacterSymbolClassPart newInstance(SModel sm) {
     return CharacterSymbolClassPart.newInstance(sm, false);
   }
-
 }

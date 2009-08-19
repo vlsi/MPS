@@ -60,7 +60,6 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
     this.setProperty(PatternVariableDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-
   public static PatternVariableDeclaration newInstance(SModel sm, boolean init) {
     return (PatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -68,5 +67,4 @@ public class PatternVariableDeclaration extends Pattern implements INamedConcept
   public static PatternVariableDeclaration newInstance(SModel sm) {
     return PatternVariableDeclaration.newInstance(sm, false);
   }
-
 }

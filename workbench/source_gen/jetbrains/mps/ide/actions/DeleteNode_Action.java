@@ -33,7 +33,7 @@ public class DeleteNode_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return " DELETE";
   }
@@ -42,7 +42,7 @@ public class DeleteNode_Action extends GeneratedAction {
     return DeleteNode_Action.this.nodes.size() != 0;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -56,7 +56,7 @@ public class DeleteNode_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -76,14 +76,13 @@ public class DeleteNode_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._boolean safe = new Wrappers._boolean(false);
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
-          for(SNode node : DeleteNode_Action.this.nodes) {
+          for (SNode node : DeleteNode_Action.this.nodes) {
             if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && node.isRoot()) {
               dialogNeeded.value = true;
               break;
@@ -101,7 +100,6 @@ public class DeleteNode_Action extends GeneratedAction {
         safe.value = dialog.isSafe();
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-
         public void run() {
           new DeleteNodesHelper(DeleteNode_Action.this.nodes, DeleteNode_Action.this.context, safe.value).deleteNodes(true);
         }
@@ -112,5 +110,4 @@ public class DeleteNode_Action extends GeneratedAction {
       }
     }
   }
-
 }

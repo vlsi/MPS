@@ -52,7 +52,6 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
     super.setChild(SplitOperation.REGEXP, node);
   }
 
-
   public static SplitOperation newInstance(SModel sm, boolean init) {
     return (SplitOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -60,5 +59,4 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
   public static SplitOperation newInstance(SModel sm) {
     return SplitOperation.newInstance(sm, false);
   }
-
 }

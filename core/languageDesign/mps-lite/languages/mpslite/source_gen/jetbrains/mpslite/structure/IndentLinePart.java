@@ -21,5 +21,4 @@ public class IndentLinePart extends LinePart {
   public static IndentLinePart newInstance(SModel sm) {
     return IndentLinePart.newInstance(sm, false);
   }
-
 }

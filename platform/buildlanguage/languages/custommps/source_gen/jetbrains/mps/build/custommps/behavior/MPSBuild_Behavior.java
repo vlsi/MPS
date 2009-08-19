@@ -28,7 +28,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class MPSBuild_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -38,7 +37,7 @@ public class MPSBuild_Behavior {
 
   public static List<SNode> call_getPathToLibrary_1233680013340(SNode thisNode, SNode folder) {
     List<SNode> path = ListSequence.fromList(new LinkedList<SNode>());
-    for(SNode currentComponent = folder ; !(SNodeOperations.isInstanceOf(currentComponent, "jetbrains.mps.build.custommps.structure.MPSBuild")) ; currentComponent = SNodeOperations.cast(SNodeOperations.getParent(currentComponent), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent")) {
+    for (SNode currentComponent = folder ; !(SNodeOperations.isInstanceOf(currentComponent, "jetbrains.mps.build.custommps.structure.MPSBuild")) ; currentComponent = SNodeOperations.cast(SNodeOperations.getParent(currentComponent), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent")) {
       ListSequence.fromList(path).insertElement(0, SLinkOperations.getTarget(folder, "title", true));
     }
     return path;
@@ -70,14 +69,14 @@ public class MPSBuild_Behavior {
     File dir = new File(PathManager.getHomePath() + File.separator + prefix.replace("/", File.separator));
     List<IModule> modulesList = MPSModuleRepository.getInstance().getAllModulesInDirectory(dir);
     Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
-    for(IModule module : ListSequence.fromList(modulesList)) {
+    for (IModule module : ListSequence.fromList(modulesList)) {
       if (module instanceof Language) {
         Language language = (Language)module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
         SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(language.getRuntimeDependOnModules()));
       }
     }
-    for(IModule module : SetSequence.fromSet(modulesInClasspath)) {
+    for (IModule module : SetSequence.fromSet(modulesInClasspath)) {
       String moduleProperName = Module_Behavior.extractModuleProperName_1235487584035(module);
       SNode path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
       SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.PACKAGE_SUFFIX);
@@ -93,8 +92,7 @@ public class MPSBuild_Behavior {
         }
       }
     }
-    return ListSequence.fromList(paths).sort(new ISelector <SNode, Comparable<?>>() {
-
+    return ListSequence.fromList(paths).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(it, "path");
       }
@@ -104,5 +102,4 @@ public class MPSBuild_Behavior {
   public static boolean isInMPSBuild_1239995424995() {
     return new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "mps.jar").exists();
   }
-
 }

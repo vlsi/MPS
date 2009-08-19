@@ -23,7 +23,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class LibraryFolder_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6803_0(editorContext, node);
   }
@@ -181,5 +180,4 @@ public class LibraryFolder_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

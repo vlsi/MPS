@@ -23,7 +23,6 @@ public class ParensRegexp extends Regexp {
     super.setChild(ParensRegexp.EXPR, node);
   }
 
-
   public static ParensRegexp newInstance(SModel sm, boolean init) {
     return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class ParensRegexp extends Regexp {
   public static ParensRegexp newInstance(SModel sm) {
     return ParensRegexp.newInstance(sm, false);
   }
-
 }

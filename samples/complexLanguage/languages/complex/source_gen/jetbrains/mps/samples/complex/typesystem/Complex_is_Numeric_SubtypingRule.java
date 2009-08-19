@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-
   public Complex_is_Numeric_SubtypingRule() {
   }
 
@@ -29,5 +28,4 @@ public class Complex_is_Numeric_SubtypingRule extends SubtypingRule_Runtime impl
   public boolean isWeak() {
     return false;
   }
-
 }

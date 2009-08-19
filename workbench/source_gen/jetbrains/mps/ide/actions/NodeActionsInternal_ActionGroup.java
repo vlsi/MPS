@@ -22,5 +22,4 @@ public class NodeActionsInternal_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, null);
   }
-
 }

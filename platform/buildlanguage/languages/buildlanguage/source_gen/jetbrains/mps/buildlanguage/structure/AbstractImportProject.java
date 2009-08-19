@@ -22,5 +22,4 @@ public class AbstractImportProject extends BaseConcept {
   public static AbstractImportProject newInstance(SModel sm) {
     return AbstractImportProject.newInstance(sm, false);
   }
-
 }

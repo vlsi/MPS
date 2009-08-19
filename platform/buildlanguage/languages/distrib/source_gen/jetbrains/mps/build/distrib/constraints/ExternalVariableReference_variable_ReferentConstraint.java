@@ -16,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 
 public class ExternalVariableReference_variable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ExternalVariableReference_variable_ReferentConstraint() {
   }
 
@@ -35,5 +34,4 @@ public class ExternalVariableReference_variable_ReferentConstraint extends BaseN
     ListSequence.fromList(availableVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(Configuration_Behavior.call_getLayout_1213877261819(SLinkOperations.getTarget(ancestor, "buildScriptConfiguration", false)), "variable", true)));
     return availableVars;
   }
-
 }

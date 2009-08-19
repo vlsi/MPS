@@ -34,7 +34,7 @@ public class GenerateFiles_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -43,7 +43,7 @@ public class GenerateFiles_Action extends GeneratedAction {
     return GenerateFiles_Action.this.ppNode instanceof NamespaceTextNode && GenerateFiles_Action.this.getGenManager() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -57,7 +57,7 @@ public class GenerateFiles_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -73,11 +73,11 @@ public class GenerateFiles_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       IOperationContext projectContext = GenerateFiles_Action.this.project.createOperationContext();
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for(SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode)GenerateFiles_Action.this.ppNode).getModelsUnder())) {
+      for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode)GenerateFiles_Action.this.ppNode).getModelsUnder())) {
         if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
           models.add(model);
         }
@@ -93,5 +93,4 @@ public class GenerateFiles_Action extends GeneratedAction {
   private GeneratorManager getGenManager() {
     return GenerateFiles_Action.this.project.getComponentSafe(GeneratorManager.class);
   }
-
 }

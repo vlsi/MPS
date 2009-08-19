@@ -22,11 +22,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class Ide_ProjectPlugin extends BaseProjectPlugin {
-
   public void initEditors(MPSProject project) {
     MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
-
       public SNode getBaseNode(IOperationContext context, SNode node) {
         SNode baseNode = null;
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
@@ -88,5 +86,4 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
     ListSequence.fromList(tools).addElement(new ModelRepository_Tool(project));
     return tools;
   }
-
 }

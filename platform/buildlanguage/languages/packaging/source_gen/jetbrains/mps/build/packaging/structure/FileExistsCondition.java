@@ -51,7 +51,6 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
     super.setChild(FileExistsCondition.PATH_TO_CHECK, node);
   }
 
-
   public static FileExistsCondition newInstance(SModel sm, boolean init) {
     return (FileExistsCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.FileExistsCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -59,5 +58,4 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
   public static FileExistsCondition newInstance(SModel sm) {
     return FileExistsCondition.newInstance(sm, false);
   }
-
 }

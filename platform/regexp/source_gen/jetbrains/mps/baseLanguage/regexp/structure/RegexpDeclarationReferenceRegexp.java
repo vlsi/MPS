@@ -23,7 +23,6 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
     super.setReferent(RegexpDeclarationReferenceRegexp.REGEXP, node);
   }
 
-
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm, boolean init) {
     return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm) {
     return RegexpDeclarationReferenceRegexp.newInstance(sm, false);
   }
-
 }

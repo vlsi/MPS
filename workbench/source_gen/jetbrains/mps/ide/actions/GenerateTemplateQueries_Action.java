@@ -39,12 +39,12 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         String text = ((GenerateTemplateQueries_Action.this.regenerate ?
@@ -62,7 +62,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -78,18 +78,16 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       GeneratorManager manager = GenerateTemplateQueries_Action.this.context.getComponent(GeneratorManager.class);
       IGenerationType genType = manager.getDefaultModuleGenerationType();
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator)GenerateTemplateQueries_Action.this.module)));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
-            models.value = ListSequence.fromList(models.value).where(new IWhereFilter <SModelDescriptor>() {
-
+            models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
                 return ModelGenerationStatusManager.getInstance().generationRequired(it);
               }
@@ -105,7 +103,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     }
   }
 
-  @NotNull()
+  @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateTemplateQueries_Action.class.getName());
@@ -114,5 +112,4 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     res.append("!");
     return res.toString();
   }
-
 }

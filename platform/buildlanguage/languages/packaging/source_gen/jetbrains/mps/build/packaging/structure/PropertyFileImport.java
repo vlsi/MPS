@@ -23,7 +23,6 @@ public class PropertyFileImport extends PropertiesImport {
     super.setChild(PropertyFileImport.FILE, node);
   }
 
-
   public static PropertyFileImport newInstance(SModel sm, boolean init) {
     return (PropertyFileImport)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertyFileImport", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class PropertyFileImport extends PropertiesImport {
   public static PropertyFileImport newInstance(SModel sm) {
     return PropertyFileImport.newInstance(sm, false);
   }
-
 }

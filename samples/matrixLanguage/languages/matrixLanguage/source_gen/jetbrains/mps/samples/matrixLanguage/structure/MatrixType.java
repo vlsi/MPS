@@ -24,7 +24,6 @@ public class MatrixType extends Type {
     super.setChild(MatrixType.SCALAR_TYPE, node);
   }
 
-
   public static MatrixType newInstance(SModel sm, boolean init) {
     return (MatrixType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class MatrixType extends Type {
   public static MatrixType newInstance(SModel sm) {
     return MatrixType.newInstance(sm, false);
   }
-
 }

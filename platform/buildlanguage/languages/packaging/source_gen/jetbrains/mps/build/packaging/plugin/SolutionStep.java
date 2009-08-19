@@ -15,7 +15,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SolutionStep extends TwoOptionsStep<IModule> {
-
   private final MPSProject myMpsProject;
 
   public SolutionStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
@@ -40,8 +39,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected String getVariantName(final IModule module) {
-    return ModelAccess.instance().runReadAction(new Computable <String>() {
-
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return module.toString();
       }
@@ -69,8 +67,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected IModule[] getVariants() {
-    List<IModule> solutionsList = CollectionUtil.filter(this.myMpsProject.getModules(), new Condition <IModule>() {
-
+    List<IModule> solutionsList = CollectionUtil.filter(this.myMpsProject.getModules(), new Condition<IModule>() {
       public boolean met(IModule module) {
         return module instanceof Solution;
       }
@@ -92,5 +89,4 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
     }
     return "Module " + text + " already exists, choose another name.";
   }
-
 }

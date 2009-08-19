@@ -105,7 +105,6 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ModuleDescription.CLASSPATH, node);
   }
 
-
   public static ModuleDescription newInstance(SModel sm, boolean init) {
     return (ModuleDescription)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ModuleDescription", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -113,5 +112,4 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   public static ModuleDescription newInstance(SModel sm) {
     return ModuleDescription.newInstance(sm, false);
   }
-
 }

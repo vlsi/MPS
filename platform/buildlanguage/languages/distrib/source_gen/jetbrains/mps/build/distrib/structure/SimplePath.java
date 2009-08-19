@@ -23,7 +23,6 @@ public class SimplePath extends AbstractPath {
     this.setProperty(SimplePath.PATH, value);
   }
 
-
   public static SimplePath newInstance(SModel sm, boolean init) {
     return (SimplePath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.SimplePath", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class SimplePath extends AbstractPath {
   public static SimplePath newInstance(SModel sm) {
     return SimplePath.newInstance(sm, false);
   }
-
 }

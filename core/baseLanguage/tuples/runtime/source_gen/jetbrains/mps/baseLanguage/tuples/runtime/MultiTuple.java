@@ -12,8 +12,7 @@ public class MultiTuple {
   private MultiTuple(Object... objs) {
     if (objs == null || objs.length == 0) {
       this.values = EMPTY;
-    } else
-    {
+    } else {
       this.values = new Object[objs.length];
       System.arraycopy(objs, 0, this.values, 0, objs.length);
     }
@@ -25,7 +24,7 @@ public class MultiTuple {
     this.values = new Object[size];
   }
 
-  @Override()
+  @Override
   public boolean equals(Object that) {
     if (this == that) {
       return true;
@@ -36,16 +35,16 @@ public class MultiTuple {
     return false;
   }
 
-  @Override()
+  @Override
   public int hashCode() {
     return Arrays.deepHashCode(this.values);
   }
 
-  @Override()
+  @Override
   public String toString() {
     StringBuilder sb = new StringBuilder("[");
     String sep = "";
-    for(int i = 0 ; i < this.values.length ; i++ ) {
+    for (int i = 0 ; i < this.values.length ; i++ ) {
       sb.append(sep).append(String.valueOf(this.values[i]));
       sep = ", ";
     }
@@ -64,7 +63,6 @@ public class MultiTuple {
     System.arraycopy(values, 0, this.values, 0, values.length);
   }
 
-
   public static boolean eq(Object a, Object b) {
     return (a == b) || (a != null ?
       a.equals(b) :
@@ -76,39 +74,39 @@ public class MultiTuple {
     return new MultiTuple._0();
   }
 
-  public static  <T0>Tuples._1<T0> from(T0 o0) {
+  public static <T0>Tuples._1<T0> from(T0 o0) {
     return new MultiTuple._1<T0>(o0);
   }
 
-  public static  <T0, T1>Tuples._2<T0, T1> from(T0 o0, T1 o1) {
+  public static <T0, T1>Tuples._2<T0, T1> from(T0 o0, T1 o1) {
     return new MultiTuple._2<T0, T1>(o0, o1);
   }
 
-  public static  <T0, T1, T2>Tuples._3<T0, T1, T2> from(T0 o0, T1 o1, T2 o2) {
+  public static <T0, T1, T2>Tuples._3<T0, T1, T2> from(T0 o0, T1 o1, T2 o2) {
     return new MultiTuple._3<T0, T1, T2>(o0, o1, o2);
   }
 
-  public static  <T0, T1, T2, T3>Tuples._4<T0, T1, T2, T3> from(T0 o0, T1 o1, T2 o2, T3 o3) {
+  public static <T0, T1, T2, T3>Tuples._4<T0, T1, T2, T3> from(T0 o0, T1 o1, T2 o2, T3 o3) {
     return new MultiTuple._4<T0, T1, T2, T3>(o0, o1, o2, o3);
   }
 
-  public static  <T0, T1, T2, T3, T4>Tuples._5<T0, T1, T2, T3, T4> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4) {
+  public static <T0, T1, T2, T3, T4>Tuples._5<T0, T1, T2, T3, T4> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4) {
     return new MultiTuple._5<T0, T1, T2, T3, T4>(o0, o1, o2, o3, o4);
   }
 
-  public static  <T0, T1, T2, T3, T4, T5>Tuples._6<T0, T1, T2, T3, T4, T5> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5) {
+  public static <T0, T1, T2, T3, T4, T5>Tuples._6<T0, T1, T2, T3, T4, T5> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5) {
     return new MultiTuple._6<T0, T1, T2, T3, T4, T5>(o0, o1, o2, o3, o4, o5);
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6>Tuples._7<T0, T1, T2, T3, T4, T5, T6> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6) {
+  public static <T0, T1, T2, T3, T4, T5, T6>Tuples._7<T0, T1, T2, T3, T4, T5, T6> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6) {
     return new MultiTuple._7<T0, T1, T2, T3, T4, T5, T6>(o0, o1, o2, o3, o4, o5, o6);
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6, T7>Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6, T7 o7) {
+  public static <T0, T1, T2, T3, T4, T5, T6, T7>Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6, T7 o7) {
     return new MultiTuple._8<T0, T1, T2, T3, T4, T5, T6, T7>(o0, o1, o2, o3, o4, o5, o6, o7);
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6, T7, T8>Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6, T7 o7, T8 o8) {
+  public static <T0, T1, T2, T3, T4, T5, T6, T7, T8>Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> from(T0 o0, T1 o1, T2 o2, T3 o3, T4 o4, T5 o5, T6 o6, T7 o7, T8 o8) {
     return new MultiTuple._9<T0, T1, T2, T3, T4, T5, T6, T7, T8>(o0, o1, o2, o3, o4, o5, o6, o7, o8);
   }
 
@@ -116,44 +114,43 @@ public class MultiTuple {
     return new MultiTuple._0();
   }
 
-  public static  <T0>Tuples._1<T0> empty1() {
+  public static <T0>Tuples._1<T0> empty1() {
     return new MultiTuple._1<T0>();
   }
 
-  public static  <T0, T1>Tuples._2<T0, T1> empty2() {
+  public static <T0, T1>Tuples._2<T0, T1> empty2() {
     return new MultiTuple._2<T0, T1>();
   }
 
-  public static  <T0, T1, T2>Tuples._3<T0, T1, T2> empty3() {
+  public static <T0, T1, T2>Tuples._3<T0, T1, T2> empty3() {
     return new MultiTuple._3<T0, T1, T2>();
   }
 
-  public static  <T0, T1, T2, T3>Tuples._4<T0, T1, T2, T3> empty4() {
+  public static <T0, T1, T2, T3>Tuples._4<T0, T1, T2, T3> empty4() {
     return new MultiTuple._4<T0, T1, T2, T3>();
   }
 
-  public static  <T0, T1, T2, T3, T4>Tuples._5<T0, T1, T2, T3, T4> empty5() {
+  public static <T0, T1, T2, T3, T4>Tuples._5<T0, T1, T2, T3, T4> empty5() {
     return new MultiTuple._5<T0, T1, T2, T3, T4>();
   }
 
-  public static  <T0, T1, T2, T3, T4, T5>Tuples._6<T0, T1, T2, T3, T4, T5> empty6() {
+  public static <T0, T1, T2, T3, T4, T5>Tuples._6<T0, T1, T2, T3, T4, T5> empty6() {
     return new MultiTuple._6<T0, T1, T2, T3, T4, T5>();
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6>Tuples._7<T0, T1, T2, T3, T4, T5, T6> empty7() {
+  public static <T0, T1, T2, T3, T4, T5, T6>Tuples._7<T0, T1, T2, T3, T4, T5, T6> empty7() {
     return new MultiTuple._7<T0, T1, T2, T3, T4, T5, T6>();
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6, T7>Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> empty8() {
+  public static <T0, T1, T2, T3, T4, T5, T6, T7>Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> empty8() {
     return new MultiTuple._8<T0, T1, T2, T3, T4, T5, T6, T7>();
   }
 
-  public static  <T0, T1, T2, T3, T4, T5, T6, T7, T8>Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> empty9() {
+  public static <T0, T1, T2, T3, T4, T5, T6, T7, T8>Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> empty9() {
     return new MultiTuple._9<T0, T1, T2, T3, T4, T5, T6, T7, T8>();
   }
 
   public static class _0 extends MultiTuple implements Tuples._0 {
-
     protected _0(Object... objs) {
       super(objs);
     }
@@ -165,10 +162,9 @@ public class MultiTuple {
       this.assign();
       return this;
     }
+  }
 
-}
-  public static class _1 <T0> extends MultiTuple implements Tuples._1<T0> {
-
+  public static class _1<T0> extends MultiTuple implements Tuples._1<T0> {
     protected _1(Object... objs) {
       super(objs);
     }
@@ -190,10 +186,9 @@ public class MultiTuple {
       this.assign(from._0());
       return this;
     }
+  }
 
-}
-  public static class _2 <T0, T1> extends MultiTuple implements Tuples._2<T0, T1> {
-
+  public static class _2<T0, T1> extends MultiTuple implements Tuples._2<T0, T1> {
     protected _2(Object... objs) {
       super(objs);
     }
@@ -225,10 +220,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1());
       return this;
     }
+  }
 
-}
-  public static class _3 <T0, T1, T2> extends MultiTuple implements Tuples._3<T0, T1, T2> {
-
+  public static class _3<T0, T1, T2> extends MultiTuple implements Tuples._3<T0, T1, T2> {
     protected _3(Object... objs) {
       super(objs);
     }
@@ -270,10 +264,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2());
       return this;
     }
+  }
 
-}
-  public static class _4 <T0, T1, T2, T3> extends MultiTuple implements Tuples._4<T0, T1, T2, T3> {
-
+  public static class _4<T0, T1, T2, T3> extends MultiTuple implements Tuples._4<T0, T1, T2, T3> {
     protected _4(Object... objs) {
       super(objs);
     }
@@ -325,10 +318,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3());
       return this;
     }
+  }
 
-}
-  public static class _5 <T0, T1, T2, T3, T4> extends MultiTuple implements Tuples._5<T0, T1, T2, T3, T4> {
-
+  public static class _5<T0, T1, T2, T3, T4> extends MultiTuple implements Tuples._5<T0, T1, T2, T3, T4> {
     protected _5(Object... objs) {
       super(objs);
     }
@@ -390,10 +382,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4());
       return this;
     }
+  }
 
-}
-  public static class _6 <T0, T1, T2, T3, T4, T5> extends MultiTuple implements Tuples._6<T0, T1, T2, T3, T4, T5> {
-
+  public static class _6<T0, T1, T2, T3, T4, T5> extends MultiTuple implements Tuples._6<T0, T1, T2, T3, T4, T5> {
     protected _6(Object... objs) {
       super(objs);
     }
@@ -465,10 +456,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5());
       return this;
     }
+  }
 
-}
-  public static class _7 <T0, T1, T2, T3, T4, T5, T6> extends MultiTuple implements Tuples._7<T0, T1, T2, T3, T4, T5, T6> {
-
+  public static class _7<T0, T1, T2, T3, T4, T5, T6> extends MultiTuple implements Tuples._7<T0, T1, T2, T3, T4, T5, T6> {
     protected _7(Object... objs) {
       super(objs);
     }
@@ -550,10 +540,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6());
       return this;
     }
+  }
 
-}
-  public static class _8 <T0, T1, T2, T3, T4, T5, T6, T7> extends MultiTuple implements Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> {
-
+  public static class _8<T0, T1, T2, T3, T4, T5, T6, T7> extends MultiTuple implements Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> {
     protected _8(Object... objs) {
       super(objs);
     }
@@ -645,10 +634,9 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7());
       return this;
     }
+  }
 
-}
-  public static class _9 <T0, T1, T2, T3, T4, T5, T6, T7, T8> extends MultiTuple implements Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
-
+  public static class _9<T0, T1, T2, T3, T4, T5, T6, T7, T8> extends MultiTuple implements Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> {
     protected _9(Object... objs) {
       super(objs);
     }
@@ -750,7 +738,5 @@ public class MultiTuple {
       this.assign(from._0(), from._1(), from._2(), from._3(), from._4(), from._5(), from._6(), from._7(), from._8());
       return this;
     }
-
-}
-
+  }
 }

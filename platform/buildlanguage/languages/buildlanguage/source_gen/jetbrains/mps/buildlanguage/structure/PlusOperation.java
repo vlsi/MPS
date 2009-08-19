@@ -21,5 +21,4 @@ public class PlusOperation extends BinaryOperation {
   public static PlusOperation newInstance(SModel sm) {
     return PlusOperation.newInstance(sm, false);
   }
-
 }

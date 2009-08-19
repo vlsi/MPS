@@ -82,7 +82,6 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
     super.setChild(EditorTestCase.CODE, node);
   }
 
-
   public static EditorTestCase newInstance(SModel sm, boolean init) {
     return (EditorTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -90,5 +89,4 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   public static EditorTestCase newInstance(SModel sm) {
     return EditorTestCase.newInstance(sm, false);
   }
-
 }

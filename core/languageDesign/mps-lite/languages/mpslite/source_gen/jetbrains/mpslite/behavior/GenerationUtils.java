@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GenerationUtils {
-
   public GenerationUtils() {
   }
 
@@ -24,32 +23,29 @@ public class GenerationUtils {
         SNode errorCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
         SPropertyOperations.set(errorCell, "text", "abstract " + SPropertyOperations.getString(concept, "name"));
         return errorCell;
-      } else
-      {
+      } else {
         return null;
       }
     } else if (ListSequence.fromList(lines).count() == 1) {
       List<SNode> lineParts = SLinkOperations.getTargets(ListSequence.fromList(lines).first(), "linePart", true);
       if (ListSequence.fromList(lineParts).count() == 1) {
         return LinePart_Behavior.call_createCellModel_1238614099938(ListSequence.fromList(lineParts).first(), partsToLinks);
-      } else
-      {
+      } else {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-        for(SNode linePart : lineParts) {
+        for (SNode linePart : lineParts) {
           SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
         return hCollection;
       }
-    } else
-    {
+    } else {
       SNode vCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
       SLinkOperations.setTarget(vCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
-      for(SNode line : lines) {
+      for (SNode line : lines) {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
         SLinkOperations.addChild(vCollection, "childCellModel", hCollection);
-        for(SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
+        for (SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
           SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
       }
@@ -66,5 +62,4 @@ public class GenerationUtils {
       SLinkOperations.addChild(actions, "actionsBuilder", ltBuilder);
     }
   }
-
 }

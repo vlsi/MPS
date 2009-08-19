@@ -59,7 +59,6 @@ public class TargetReferencePropertyValueExpression extends PropertyValueExpress
     super.setReferent(TargetReferencePropertyValueExpression.DECLARATION, node);
   }
 
-
   public static TargetReferencePropertyValueExpression newInstance(SModel sm, boolean init) {
     return (TargetReferencePropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -67,5 +66,4 @@ public class TargetReferencePropertyValueExpression extends PropertyValueExpress
   public static TargetReferencePropertyValueExpression newInstance(SModel sm) {
     return TargetReferencePropertyValueExpression.newInstance(sm, false);
   }
-
 }

@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class VariableConcept_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -78,7 +77,7 @@ public class VariableConcept_Behavior {
   public static SNode call_createVariableScope_1239942296621(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     SNode statementConcept = MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "statementConcept", true));
     final List<SNode> conceptReferences = new ArrayList<SNode>();
-    for(SNode blockReference : SLinkOperations.getTargets(thisNode, "scopeBlock", true)) {
+    for (SNode blockReference : SLinkOperations.getTargets(thisNode, "scopeBlock", true)) {
       ListSequence.fromList(conceptReferences).addElement(new _Quotations.QuotationClass_5().createNode(MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(blockReference, "conceptDeclaration", false))));
     }
     return VariableConcept_Behavior.call_createVariableScope_internal_1239972513878(thisNode, statementConcept, conceptReferences, conceptsToTargets, partsToLinks);
@@ -88,5 +87,4 @@ public class VariableConcept_Behavior {
     SNode result = new _Quotations.QuotationClass_6().createNode(SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), statementConcept, conceptReferences, statementConcept, statementConcept);
     return result;
   }
-
 }

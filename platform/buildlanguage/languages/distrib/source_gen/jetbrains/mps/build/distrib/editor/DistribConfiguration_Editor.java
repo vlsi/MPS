@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DistribConfiguration_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7701_0(editorContext, node);
   }
@@ -825,13 +824,11 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition7701_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "useVMOptionsFile");
   }
 
   public static class _Inline7701_0 extends AbstractCellProvider {
-
     public _Inline7701_0() {
       super();
     }
@@ -863,10 +860,9 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   public static class _Inline7701_1 extends AbstractCellProvider {
-
     public _Inline7701_1() {
       super();
     }
@@ -897,10 +893,9 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
 
-}
   private static class systemSpecificConfigListHandler_7701_0 extends RefNodeListHandler {
-
     public systemSpecificConfigListHandler_7701_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
@@ -940,7 +935,5 @@ public class DistribConfiguration_Editor extends DefaultNodeEditor {
     public EditorCell createSeparatorCell(EditorContext editorContext) {
       return super.createSeparatorCell(editorContext);
     }
-
-}
-
+  }
 }

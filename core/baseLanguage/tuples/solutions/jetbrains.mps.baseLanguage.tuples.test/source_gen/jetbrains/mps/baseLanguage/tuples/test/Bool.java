@@ -6,7 +6,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
 public class Bool extends MultiTuple._1<Boolean> {
-
   public Bool() {
     super();
   }
@@ -26,5 +25,4 @@ public class Bool extends MultiTuple._1<Boolean> {
   public Bool assignFrom(Tuples._1<Boolean> from) {
     return (Bool)super.assign(from);
   }
-
 }

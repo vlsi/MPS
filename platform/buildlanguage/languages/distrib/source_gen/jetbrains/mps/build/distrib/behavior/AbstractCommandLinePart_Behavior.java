@@ -19,5 +19,4 @@ public class AbstractCommandLinePart_Behavior {
   public static String callSuper_getText_1231864533228(SNode thisNode, String callerConceptFqName) {
     return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.distrib.structure.AbstractCommandLinePart"), callerConceptFqName, "virtual_getText_1231864533228", PARAMETERS_1231864533228);
   }
-
 }

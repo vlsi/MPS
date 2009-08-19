@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.generictasks.behavior.TaskCall_Behavior;
 
 public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
-
   public Attribute_attributeDeclaration_ReferentConstraint() {
   }
 
@@ -40,5 +39,4 @@ public class Attribute_attributeDeclaration_ReferentConstraint extends BaseNodeR
     SNode taskCall = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.build.generictasks.structure.TaskCall", true, false);
     return TaskCall_Behavior.call_getUndefinedAttributes_353793545802643943(taskCall);
   }
-
 }

@@ -118,7 +118,6 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
     this.insertChild(prev, Zip.ENTRY, node);
   }
 
-
   public static Zip newInstance(SModel sm, boolean init) {
     return (Zip)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Zip", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -126,5 +125,4 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
   public static Zip newInstance(SModel sm) {
     return Zip.newInstance(sm, false);
   }
-
 }

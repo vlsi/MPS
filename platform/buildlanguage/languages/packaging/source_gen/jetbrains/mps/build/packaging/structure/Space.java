@@ -42,7 +42,6 @@ public class Space extends BaseConcept implements IStringExpression {
     this.setProperty(Space.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Space newInstance(SModel sm, boolean init) {
     return (Space)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Space", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class Space extends BaseConcept implements IStringExpression {
   public static Space newInstance(SModel sm) {
     return Space.newInstance(sm, false);
   }
-
 }

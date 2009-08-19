@@ -24,5 +24,4 @@ public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_saveTransientModels);
   }
-
 }

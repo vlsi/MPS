@@ -177,7 +177,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     this.insertChild(prev, Project.PROPERTY, node);
   }
 
-
   public static Project newInstance(SModel sm, boolean init) {
     return (Project)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -185,5 +184,4 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public static Project newInstance(SModel sm) {
     return Project.newInstance(sm, false);
   }
-
 }

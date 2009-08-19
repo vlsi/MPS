@@ -27,5 +27,4 @@ public class GenerateModule_ActionGroup extends GeneratedActionGroup {
     this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, SolutionActions_ActionGroup.LABEL_ID_generateModule);
     this.insertGroupIntoAnother(Generate_ActionGroup.ID, Generate_ActionGroup.LABEL_ID_generateModule);
   }
-
 }

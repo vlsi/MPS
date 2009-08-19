@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MPSBuild_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2334_0(editorContext, node);
   }
@@ -193,9 +192,7 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-
   private static boolean renderingCondition2334_0(SNode node, EditorContext editorContext, IScope scope) {
     return MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.packaging").isPackaged();
   }
-
 }

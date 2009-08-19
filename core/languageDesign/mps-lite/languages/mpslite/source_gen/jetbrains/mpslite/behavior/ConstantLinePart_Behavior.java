@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConstantLinePart_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -17,5 +16,4 @@ public class ConstantLinePart_Behavior {
     SPropertyOperations.set(constantCell, "text", SPropertyOperations.getString(thisNode, "text"));
     return constantCell;
   }
-
 }

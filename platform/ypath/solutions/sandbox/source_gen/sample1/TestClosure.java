@@ -7,11 +7,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class TestClosure {
-
   public static void main(String[] args) {
     _FunctionTypes._void_P0_E0 closure;
-    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fib = new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fib = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
@@ -20,8 +18,7 @@ public class TestClosure {
       }
     };
     System.out.println("fib(8)=" + fib.invoke(8));
-    System.out.println("fib(9)=" + new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    System.out.println("fib(9)=" + new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer n) {
         return (n <= 1 ?
           n :
@@ -29,15 +26,13 @@ public class TestClosure {
         );
       }
     }.invoke(9));
-    int calc = new _FunctionTypes._return_P0_E0 <Integer>() {
-
+    int calc = new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
         return 2 + 2;
       }
     }.invoke();
     System.out.println("2+2=" + calc);
-    System.out.println("fact(5)=" + new _FunctionTypes._return_P1_E0 <Integer, Integer>() {
-
+    System.out.println("fact(5)=" + new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer n) {
         int res = 1;
         while (n > 1) {
@@ -47,14 +42,11 @@ public class TestClosure {
         return res;
       }
     }.invoke(5));
-    _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> fun = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _6_bar;
               private int _3_foo;
@@ -169,17 +161,14 @@ __switch__:
       }
     };
     Iterable<Integer> seq = fun.invoke();
-    for(int i : seq) {
+    for (int i : seq) {
       System.out.println("yielded: " + i);
     }
-    seq = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
               private int _6_j;
@@ -252,17 +241,14 @@ __switch__:
         };
       }
     }.invoke();
-    for(int i : seq) {
+    for (int i : seq) {
       System.out.println("yielded: " + i);
     }
-    seq = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_i;
               private int _7_j;
@@ -323,17 +309,14 @@ __switch__:
         };
       }
     }.invoke();
-    for(int i : seq) {
+    for (int i : seq) {
       System.out.println("yielded: " + i);
     }
-    final Iterable<Integer> si = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    final Iterable<Integer> si = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
 
@@ -379,14 +362,11 @@ __switch__:
         };
       }
     }.invoke();
-    for(int i : new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    for (int i : new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private Integer _2_i;
               private Iterator<Integer> _2_i_it;
@@ -432,14 +412,11 @@ __switch__:
     }.invoke()) {
       System.out.println("i=" + i);
     }
-    seq = new _FunctionTypes._return_P0_E0 <Iterable<Integer>>() {
-
+    seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_i;
               private int _9_j;
@@ -538,7 +515,7 @@ __switch__:
         };
       }
     }.invoke();
-    for(int i : seq) {
+    for (int i : seq) {
       System.out.println("yielded: " + i);
     }
   }
@@ -546,7 +523,5 @@ __switch__:
   public static   enum Enm {
     A(),
     B(),
-    C();
-}
-
+    C();}
 }

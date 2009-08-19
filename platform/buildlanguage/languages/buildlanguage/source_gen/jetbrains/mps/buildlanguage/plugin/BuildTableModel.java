@@ -40,7 +40,7 @@ public class BuildTableModel implements TableModel {
   private void updateStateInternal(Map<SNodePointer, String> pointersToMap) {
     ListSequence.fromList(this.mySNodes).clear();
     MapSequence.fromMap(this.myCommandLines).clear();
-    for(SNodePointer pointer : SetSequence.fromSet(MapSequence.fromMap(pointersToMap).keySet())) {
+    for (SNodePointer pointer : SetSequence.fromSet(MapSequence.fromMap(pointersToMap).keySet())) {
       ListSequence.fromList(this.mySNodes).addElement(pointer);
       MapSequence.fromMap(this.myCommandLines).put(pointer, MapSequence.fromMap(pointersToMap).get(pointer));
     }
@@ -53,8 +53,7 @@ public class BuildTableModel implements TableModel {
   public Class<?> getColumnClass(int column) {
     if (column != 0) {
       return String.class;
-    } else
-    {
+    } else {
       return SNodePointer.class;
     }
   }
@@ -76,7 +75,6 @@ public class BuildTableModel implements TableModel {
     if (column == 0) {
       final Wrappers._T<String> name = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           name.value = snode.getNode().getName();
         }
@@ -104,30 +102,28 @@ public class BuildTableModel implements TableModel {
 
   private void notifyListeners() {
     TableModelEvent event = new TableModelEvent(this);
-    for(TableModelListener l : SetSequence.fromSet(this.myListeners)) {
+    for (TableModelListener l : SetSequence.fromSet(this.myListeners)) {
       l.tableChanged(event);
     }
   }
 
   public Map<String, String> saveState() {
     Map<String, String> mapToSerialize = MapSequence.fromMap(new HashMap<String, String>());
-    for(SNodePointer pointer : ListSequence.fromList(this.mySNodes)) {
+    for (SNodePointer pointer : ListSequence.fromList(this.mySNodes)) {
       MapSequence.fromMap(mapToSerialize).put(pointerToString(pointer), MapSequence.fromMap(this.myCommandLines).get(pointer));
     }
     return mapToSerialize;
   }
-
 
   public static Map<SNodePointer, String> loadState(Map<String, String> state) {
     Map<SNodePointer, String> result = MapSequence.fromMap(new HashMap<SNodePointer, String>());
     if (state == null) {
       return result;
     }
-    for(String name : SetSequence.fromSet(MapSequence.fromMap(state).keySet())) {
+    for (String name : SetSequence.fromSet(MapSequence.fromMap(state).keySet())) {
       final SNodePointer pointer = stringToPointer(name);
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
-
         public void run() {
           node.value = pointer.getNode();
         }
@@ -149,12 +145,10 @@ public class BuildTableModel implements TableModel {
   public static String pointerToString(final SNodePointer pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
-
       public void run() {
         value.value = pointer.getModel().getSModelReference().toString() + "#" + pointer.getNode().getId();
       }
     });
     return value.value;
   }
-
 }

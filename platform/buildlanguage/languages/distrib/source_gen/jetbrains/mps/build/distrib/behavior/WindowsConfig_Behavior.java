@@ -12,7 +12,6 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class WindowsConfig_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -75,5 +74,4 @@ public class WindowsConfig_Behavior {
   public static String call_getVMOptionsTargetFileName_8356548439144137599(SNode thisNode) {
     return DistribConfiguration_Behavior.call_getVMOptionsFileName_1231749012626(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode)) + ".exe." + DistribConfiguration_Behavior.call_getVMOptionsExt_1231692561653(SystemSpecificConfig_Behavior.call_getDistribConfiguration_1230207861621(thisNode));
   }
-
 }

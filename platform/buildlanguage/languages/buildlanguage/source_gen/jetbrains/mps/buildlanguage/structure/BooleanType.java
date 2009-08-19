@@ -21,5 +21,4 @@ public class BooleanType extends PropertyType {
   public static BooleanType newInstance(SModel sm) {
     return BooleanType.newInstance(sm, false);
   }
-
 }

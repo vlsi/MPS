@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IncludeExcludeEditorComponent extends AbstractCellProvider {
-
   public IncludeExcludeEditorComponent(SNode node) {
     super(node);
   }
@@ -118,7 +117,6 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-
   private static boolean renderingCondition0446_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
@@ -126,5 +124,4 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   private static boolean renderingCondition0446_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
-
 }

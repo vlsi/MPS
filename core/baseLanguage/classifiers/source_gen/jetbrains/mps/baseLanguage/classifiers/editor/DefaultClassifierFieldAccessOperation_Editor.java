@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Measure;
 
 public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2689_0(editorContext, node);
   }
@@ -55,7 +54,6 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
   }
 
   public static class _Inline2689_0 extends AbstractCellProvider {
-
     public _Inline2689_0() {
       super();
     }
@@ -91,7 +89,5 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
       } else
       return editorCell;
     }
-
-}
-
+  }
 }

@@ -24,7 +24,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 
 public class Module_Behavior {
-
   public static void init(SNode thisNode) {
   }
 
@@ -54,7 +53,7 @@ public class Module_Behavior {
     if (children == null) {
       return null;
     }
-    for(File child : children) {
+    for (File child : children) {
       if (!(child.isDirectory()) && (child.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT))) {
         return child.getParent();
       }
@@ -94,7 +93,7 @@ public class Module_Behavior {
       }
     }
     // process classpath
-    for(String cp : ListSequence.fromList(classpath)) {
+    for (String cp : ListSequence.fromList(classpath)) {
       if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
         ListSequence.fromList(result).addElement(Module_Behavior.call_getPathHolder_1239195000114(thisNode, cp));
       }
@@ -140,13 +139,13 @@ public class Module_Behavior {
 
   public static List<String> getAllAvailableModules_1222444513017() {
     List<String> list = ListSequence.fromList(new ArrayList<String>());
-    for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
+    for (Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language.getModuleReference().getModuleFqName());
     }
-    for(DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
+    for (DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
       ListSequence.fromList(list).addElement(devKit.getModuleReference().getModuleFqName());
     }
-    for(Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
+    for (Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
       ListSequence.fromList(list).addElement(solution.getModuleReference().getModuleFqName());
     }
     return list;
@@ -154,13 +153,13 @@ public class Module_Behavior {
 
   public static List<IModule> getAllAvailableModules_1222444746697() {
     List<IModule> list = ListSequence.fromList(new ArrayList<IModule>());
-    for(Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
+    for (Language language : ListSequence.fromList(GlobalScope.getInstance().getVisibleLanguages())) {
       ListSequence.fromList(list).addElement(language);
     }
-    for(DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
+    for (DevKit devKit : ListSequence.fromList(GlobalScope.getInstance().getVisibleDevkits())) {
       ListSequence.fromList(list).addElement(devKit);
     }
-    for(Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
+    for (Solution solution : ListSequence.fromList(GlobalScope.getInstance().getVisibleSolutions())) {
       ListSequence.fromList(list).addElement(solution);
     }
     return list;
@@ -179,5 +178,4 @@ public class Module_Behavior {
   public static String replaceBadCharacters_1235487831795(String name) {
     return name.replace("/", "_").replace("\\", "_");
   }
-
 }

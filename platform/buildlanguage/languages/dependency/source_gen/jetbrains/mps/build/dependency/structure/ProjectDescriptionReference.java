@@ -24,7 +24,6 @@ public class ProjectDescriptionReference extends ImportProject {
     super.setReferent(ProjectDescriptionReference.DESCRIPTION, node);
   }
 
-
   public static ProjectDescriptionReference newInstance(SModel sm, boolean init) {
     return (ProjectDescriptionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -32,5 +31,4 @@ public class ProjectDescriptionReference extends ImportProject {
   public static ProjectDescriptionReference newInstance(SModel sm) {
     return ProjectDescriptionReference.newInstance(sm, false);
   }
-
 }

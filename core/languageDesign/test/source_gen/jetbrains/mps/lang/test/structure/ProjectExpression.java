@@ -22,5 +22,4 @@ public class ProjectExpression extends Expression {
   public static ProjectExpression newInstance(SModel sm) {
     return ProjectExpression.newInstance(sm, false);
   }
-
 }

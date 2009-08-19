@@ -21,5 +21,4 @@ public class CallReferenceType extends PropertyType {
   public static CallReferenceType newInstance(SModel sm) {
     return CallReferenceType.newInstance(sm, false);
   }
-
 }

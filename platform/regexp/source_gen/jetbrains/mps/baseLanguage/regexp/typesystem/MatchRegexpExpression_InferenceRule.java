@@ -10,7 +10,6 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MatchRegexpExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public MatchRegexpExpression_InferenceRule() {
   }
 
@@ -33,5 +32,4 @@ public class MatchRegexpExpression_InferenceRule extends AbstractInferenceRule_R
   public boolean overrides() {
     return false;
   }
-
 }

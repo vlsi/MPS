@@ -9,7 +9,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MatrixElementVariableDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
-
   public typeof_MatrixElementVariableDeclaration_InferenceRule() {
   }
 
@@ -27,5 +26,4 @@ public class typeof_MatrixElementVariableDeclaration_InferenceRule extends Abstr
   public boolean overrides() {
     return true;
   }
-
 }

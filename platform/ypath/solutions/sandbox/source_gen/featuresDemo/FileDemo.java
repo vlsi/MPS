@@ -7,12 +7,10 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 
 public class FileDemo {
-
   public static void main(String[] args) {
     File dir = new File(System.getProperty("user.home"));
-    for(File d : Sequence.fromIterable(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new FILE_NG().startTraversal(dir), TreeTraversalFactory.Axis("DESCENDANTS"), "children"), FILE_NG.DIR_NodeKindTrigger.getInstance()))) {
+    for (File d : Sequence.fromIterable(TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new FILE_NG().startTraversal(dir), TreeTraversalFactory.Axis("DESCENDANTS"), "children"), FILE_NG.DIR_NodeKindTrigger.getInstance()))) {
       System.out.println(d.getName());
     }
   }
-
 }

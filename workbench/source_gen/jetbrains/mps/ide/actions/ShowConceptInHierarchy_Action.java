@@ -35,7 +35,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(false);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "ctrl H";
   }
@@ -44,7 +44,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     return ShowConceptInHierarchy_Action.this.getConceptNode() != null;
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -58,7 +58,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -78,7 +78,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
       tool.showConceptInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), new ProjectOperationContext(ShowConceptInHierarchy_Action.this.project));
@@ -90,7 +90,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
   }
 
-  /* package */SNode getConceptNode() {
+  /*package*/ SNode getConceptNode() {
     if (!(ShowConceptInHierarchy_Action.this.editor instanceof TabbedEditor)) {
       return null;
     }
@@ -101,5 +101,4 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     }
     return SNodeOperations.cast(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
 }

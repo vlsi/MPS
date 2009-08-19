@@ -85,7 +85,6 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
     this.insertChild(prev, AbstractProjectComponent.CONFIGURATION, node);
   }
 
-
   public static AbstractProjectComponent newInstance(SModel sm, boolean init) {
     return (AbstractProjectComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.AbstractProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -93,5 +92,4 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
   public static AbstractProjectComponent newInstance(SModel sm) {
     return AbstractProjectComponent.newInstance(sm, false);
   }
-
 }

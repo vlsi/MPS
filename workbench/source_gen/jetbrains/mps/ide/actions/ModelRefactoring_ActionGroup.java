@@ -23,5 +23,4 @@ public class ModelRefactoring_ActionGroup extends GeneratedActionGroup {
   public void adjust() {
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_refactoring);
   }
-
 }

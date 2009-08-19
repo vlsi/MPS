@@ -23,7 +23,6 @@ public class RegularConceptReference extends AbstractConceptReference {
     this.setConceptDeclaration(node);
   }
 
-
   public static RegularConceptReference newInstance(SModel sm, boolean init) {
     return (RegularConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.RegularConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class RegularConceptReference extends AbstractConceptReference {
   public static RegularConceptReference newInstance(SModel sm) {
     return RegularConceptReference.newInstance(sm, false);
   }
-
 }

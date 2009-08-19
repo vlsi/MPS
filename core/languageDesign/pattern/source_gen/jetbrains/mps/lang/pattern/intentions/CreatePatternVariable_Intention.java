@@ -8,7 +8,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.pattern.util.PatternAddingUtil;
 
 public class CreatePatternVariable_Intention extends BaseIntention {
-
   public CreatePatternVariable_Intention() {
   }
 
@@ -50,5 +49,4 @@ public class CreatePatternVariable_Intention extends BaseIntention {
   public String getLocationString() {
     return "jetbrains.mps.lang.pattern.intentions";
   }
-
 }

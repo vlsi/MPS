@@ -21,5 +21,4 @@ public class BlockBodyPart extends ChildPart {
   public static BlockBodyPart newInstance(SModel sm) {
     return BlockBodyPart.newInstance(sm, false);
   }
-
 }

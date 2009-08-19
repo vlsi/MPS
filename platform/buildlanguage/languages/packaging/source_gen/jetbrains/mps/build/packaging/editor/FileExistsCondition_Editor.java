@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class FileExistsCondition_Editor extends DefaultNodeEditor {
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2665_0(editorContext, node);
   }
@@ -62,5 +61,4 @@ public class FileExistsCondition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
 }

@@ -56,7 +56,6 @@ public class ConceptContainer extends BaseConcept {
     this.insertChild(prev, ConceptContainer.MPS_LITE_CONCEPT, node);
   }
 
-
   public static ConceptContainer newInstance(SModel sm, boolean init) {
     return (ConceptContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConceptContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -64,5 +63,4 @@ public class ConceptContainer extends BaseConcept {
   public static ConceptContainer newInstance(SModel sm) {
     return ConceptContainer.newInstance(sm, false);
   }
-
 }

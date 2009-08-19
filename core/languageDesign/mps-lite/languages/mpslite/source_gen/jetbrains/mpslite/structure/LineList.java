@@ -38,7 +38,6 @@ public class LineList extends BaseConcept {
     this.insertChild(prev, LineList.LINE, node);
   }
 
-
   public static LineList newInstance(SModel sm, boolean init) {
     return (LineList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.LineList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -46,5 +45,4 @@ public class LineList extends BaseConcept {
   public static LineList newInstance(SModel sm) {
     return LineList.newInstance(sm, false);
   }
-
 }

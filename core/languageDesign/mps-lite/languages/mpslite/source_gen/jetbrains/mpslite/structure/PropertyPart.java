@@ -21,5 +21,4 @@ public class PropertyPart extends LinePart {
   public static PropertyPart newInstance(SModel sm) {
     return PropertyPart.newInstance(sm, false);
   }
-
 }

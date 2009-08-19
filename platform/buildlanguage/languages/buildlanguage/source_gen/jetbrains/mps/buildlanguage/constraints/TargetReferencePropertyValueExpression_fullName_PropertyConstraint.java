@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TargetReferencePropertyValueExpression_fullName_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public TargetReferencePropertyValueExpression_fullName_PropertyConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class TargetReferencePropertyValueExpression_fullName_PropertyConstraint 
     }
     return SLinkOperations.getTarget(node, "declaration", false) + "@" + SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "declaration", false), "jetbrains.mps.buildlanguage.structure.Project", false, true);
   }
-
 }

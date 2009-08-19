@@ -21,5 +21,4 @@ public class ArtifactReferenceCommandLinePart extends AbstractCommandLinePart {
   public static ArtifactReferenceCommandLinePart newInstance(SModel sm) {
     return ArtifactReferenceCommandLinePart.newInstance(sm, false);
   }
-
 }

@@ -39,7 +39,6 @@ public class PressKeyStatement extends Statement {
     this.insertChild(prev, PressKeyStatement.KEY_STROKES, node);
   }
 
-
   public static PressKeyStatement newInstance(SModel sm, boolean init) {
     return (PressKeyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.PressKeyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -47,5 +46,4 @@ public class PressKeyStatement extends Statement {
   public static PressKeyStatement newInstance(SModel sm) {
     return PressKeyStatement.newInstance(sm, false);
   }
-
 }

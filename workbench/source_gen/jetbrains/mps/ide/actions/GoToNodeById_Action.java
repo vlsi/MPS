@@ -32,12 +32,12 @@ public class GoToNodeById_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
@@ -48,7 +48,7 @@ public class GoToNodeById_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -72,7 +72,7 @@ public class GoToNodeById_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       String value = JOptionPane.showInputDialog(GoToNodeById_Action.this.frame, "Enter node ID:", "Find node in model " + GoToNodeById_Action.this.model.getLongName(), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
@@ -90,5 +90,4 @@ public class GoToNodeById_Action extends GeneratedAction {
       }
     }
   }
-
 }

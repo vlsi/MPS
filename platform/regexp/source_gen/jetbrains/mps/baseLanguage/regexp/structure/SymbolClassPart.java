@@ -42,7 +42,6 @@ public class SymbolClassPart extends BaseConcept implements SymbolClassRegexpAnd
     this.setProperty(SymbolClassPart.VIRTUAL_PACKAGE, value);
   }
 
-
   public static SymbolClassPart newInstance(SModel sm, boolean init) {
     return (SymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -50,5 +49,4 @@ public class SymbolClassPart extends BaseConcept implements SymbolClassRegexpAnd
   public static SymbolClassPart newInstance(SModel sm) {
     return SymbolClassPart.newInstance(sm, false);
   }
-
 }

@@ -14,5 +14,4 @@ public class NodeOpraretionsMark_AnnotationLink {
   public static NodeOperationsContainer getNodeOpraretionsMark(BaseConcept source) {
     return (NodeOperationsContainer)source.getAttribute(NodeOpraretionsMark_AnnotationLink.NODE_OPRARETIONS_MARK);
   }
-
 }

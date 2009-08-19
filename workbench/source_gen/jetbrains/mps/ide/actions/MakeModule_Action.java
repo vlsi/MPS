@@ -32,7 +32,7 @@ public class MakeModule_Action extends GeneratedAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  @NotNull()
+  @NotNull
   public String getKeyStroke() {
     return "";
   }
@@ -41,7 +41,7 @@ public class MakeModule_Action extends GeneratedAction {
     return MakeModule_Action.this.module.isCompileInMPS();
   }
 
-  public void doUpdate(@NotNull() AnActionEvent event) {
+  public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
         boolean enabled = this.isApplicable(event);
@@ -55,7 +55,7 @@ public class MakeModule_Action extends GeneratedAction {
     }
   }
 
-  @Override()
+  @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
       return false;
@@ -71,13 +71,11 @@ public class MakeModule_Action extends GeneratedAction {
     return true;
   }
 
-  public void doExecute(@NotNull() final AnActionEvent event) {
+  public void doExecute(@NotNull final AnActionEvent event) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(MakeModule_Action.this.project, "Making...", true) {
-
-        public void run(@NotNull() final ProgressIndicator indicator) {
+        public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
-
             public void run() {
               ModuleMaker maker = new ModuleMaker();
               maker.make(CollectionUtil.set(MakeModule_Action.this.module), indicator);
@@ -92,5 +90,4 @@ public class MakeModule_Action extends GeneratedAction {
       }
     }
   }
-
 }

@@ -23,7 +23,6 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
     super.setReferent(PredefinedSymbolClassSymbolClassPart.DECLARATION, node);
   }
 
-
   public static PredefinedSymbolClassSymbolClassPart newInstance(SModel sm, boolean init) {
     return (PredefinedSymbolClassSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
@@ -31,5 +30,4 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   public static PredefinedSymbolClassSymbolClassPart newInstance(SModel sm) {
     return PredefinedSymbolClassSymbolClassPart.newInstance(sm, false);
   }
-
 }

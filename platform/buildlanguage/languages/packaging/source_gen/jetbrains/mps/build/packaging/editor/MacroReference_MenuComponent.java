@@ -17,12 +17,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
-
   public MacroReference_MenuComponent() {
     super(new SubstituteInfoPart[]{new MacroReference_MenuComponent.MacroReference_generic_cellMenu0()});
   }
-  public static class MacroReference_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
 
+  public static class MacroReference_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
     public MacroReference_generic_cellMenu0() {
     }
 
@@ -39,8 +38,7 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       if (parameterObject.equals("no macro")) {
         SPropertyOperations.set(node, "name", "");
-      } else
-      {
+      } else {
         SPropertyOperations.set(node, "name", parameterObject);
       }
     }
@@ -48,7 +46,5 @@ public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
     public boolean isReferentPresentation() {
       return false;
     }
-
-}
-
+  }
 }
