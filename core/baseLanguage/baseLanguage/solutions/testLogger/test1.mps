@@ -34,6 +34,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514230454302">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6775591514230454303">
+            <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="A.B.C" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6775591514229982253">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6775591514230191076">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="6775591514229985641">
+              <link role="classifier" targetNodeId="4539702814067579805" resolveInfo="C" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6775591514230197020">
+              <link role="baseMethodDeclaration" targetNodeId="3.~Class.getName():java.lang.String" resolveInfo="getName" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="4539702814067105036">
